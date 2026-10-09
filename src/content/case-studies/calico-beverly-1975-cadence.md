@@ -70,10 +70,6 @@ For its first London appearance, BEVERLY 1975 built its space around its signatu
 - **Seams that disappear.** With a tonal, painterly ground there is no motif to hide a join in. Every seam was butted and rolled to vanish.
 - **One day, ready for styling.** The wall was finished in a single day, leaving the space clear for the BEVERLY team to style before the opening.
 
-## In Calico's words
-
-> "Gorgeous! Thank you so much!" (Calico Wallpaper)
-
 ## Links and press
 
 - [Cadence collection (Alabaster, Fawn, Jasper, Oxblood, Porcelain)](https://calicowallpaper.com/collection/cadence/)

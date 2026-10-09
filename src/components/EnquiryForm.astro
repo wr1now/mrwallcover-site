@@ -29,6 +29,7 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
   <input type="hidden" name="idempotencyKey" value="" />
   <input type="hidden" name="reference" value="" />
   <input type="hidden" name="shortlist" value="" />
+  <input type="hidden" name="materialPreferences" value="" />
   {isFormSubmit && (
     <>
       <input type="hidden" name="_subject" value={variant === 'aftercare' ? 'Aftercare note from mrwallcover.com' : 'New enquiry from mrwallcover.com'} />
@@ -39,6 +40,7 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
   )}
 
   <div data-hide-on-success>
+    <div class="selection-summary" data-selection-summary hidden><p class="eyebrow">Your material choices</p><p data-selection-text></p><button type="button" class="btn btn-line" data-clear-selection>Remove these choices</button></div>
     <div data-error-summary class="form-summary" tabindex="-1" hidden></div>
 
     {variant === 'enquiry' && (
@@ -60,7 +62,9 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
                 <option value="">Not sure</option>
                 <option value="homeowner">Homeowner</option>
                 <option value="designer">Designer or architect</option>
-                <option value="commercial">Hotel, commercial or main-contractor package</option>
+                <option value="developer">Property developer or main contractor</option>
+                <option value="hotel">Hotel or property operator</option>
+                <option value="commercial">Other commercial project</option>
               </select>
             </div>
             <div class="field" id="field-intent">
@@ -91,6 +95,7 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
               </div>
             </div>
             <div data-pro hidden class="grid gap-5">
+              <p data-professional-help class="m-0 text-stone"></p>
               <div class="field">
                 <label for="material-responsibility">Who is supplying the material?</label>
                 <input id="material-responsibility" name="materialResponsibility" type="text" placeholder="Not sure is fine" />
@@ -99,6 +104,7 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
                 <label for="programme">Programme or tender date</label>
                 <input id="programme" name="programme" type="text" />
               </div>
+              <div class="field"><label for="specification-notes">Specification, drawing revisions or open questions</label><textarea id="specification-notes" name="specificationNotes" maxlength="1200" placeholder="Optional. Include design details, approvals or documents the project requires."></textarea></div>
             </div>
           </fieldset>
         </div>
@@ -150,7 +156,7 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
       <legend class="font-serif text-[1.8rem]">{variant === 'aftercare' ? 'Tell us what you are seeing' : 'How we should reply'}</legend>
       {variant === 'aftercare' && (
         <>
-          <p class="m-0 text-stone">This is for care of work, or for a wallcovering that needs looking at. Sending it does not decide whether a guarantee applies.</p>
+          <p class="m-0 text-stone">This is for care of work, or for a wallcovering that needs looking at. We look at the photograph first and say whether it is the hang, a knock or the building; the guarantee question follows that.</p>
           <div class="field">
             <label for="project-reference">Reference, if you have one</label>
             <input id="project-reference" name="projectReference" type="text" autocomplete="off" />
@@ -197,8 +203,8 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
       </label>
       <p class="form-note m-0 text-stone">
         {LEAD_API_URL
-          ? 'This enquiry is stored before the page says it has been received. You will see a reference. A failed email alert does not delete it.'
-          : `Until the private store is switched on, this form is delivered by our form host to ${PUBLIC_EMAIL}. A reference is included. If you do not hear back, email that address. We do not promise a reply time.`}
+          ? `Your enquiry is saved with a reference before this page confirms it. Dorin Burcus reads it. If you have not heard back, email ${PUBLIC_EMAIL} and quote the reference.`
+          : `Your note is sent to ${PUBLIC_EMAIL} with a reference. Dorin Burcus reads it. If you have not heard back, email that address directly.`}
       </p>
       <button class="btn btn-solid-ink" type="submit">{variant === 'aftercare' ? 'Send the note' : 'Start your project'}</button>
     </fieldset>
@@ -207,7 +213,7 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
   <div data-receipt hidden>
     <h2 class="m-0 font-serif text-[2rem]">Received. Reference <span data-reference></span>.</h2>
     <p data-notification class="lede mt-4"></p>
-    <p class="m-0">You can also email {PUBLIC_EMAIL}. This is not a booked survey.</p>
+    <p class="m-0">You can also email {PUBLIC_EMAIL}. If the project needs a survey, we arrange it after we have spoken.</p>
   </div>
   <noscript><p>This form needs JavaScript. Email {PUBLIC_EMAIL} instead.</p></noscript>
 </form>

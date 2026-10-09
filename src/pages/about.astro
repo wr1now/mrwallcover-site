@@ -9,7 +9,6 @@ const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about/' },
 ];
-// Award name will be added later. The sentence in the copy stays "award-winning (2021)".
 ---
 
 <Base
@@ -19,7 +18,7 @@ const crumbs = [
   extraSchema={[breadcrumbNode(crumbs)]}
 >
   <div class="container-page">
-    <header class="page-head">
+    <header class="page-head" id="dorin">
       <Breadcrumb items={crumbs} />
       <p class="eyebrow">{about.eyebrow}</p>
       <h1>{about.heading}</h1>

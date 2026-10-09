@@ -11,6 +11,8 @@
   "email": "info@mrwallcover.com",
   "place": "London",
   "coverage": "London and the surrounding areas; UK-wide for selected projects",
+  "_lastReviewed": "ISO date of the last site-wide copy review. Pages without a date of their own (guides and case studies carry theirs) show this as 'Last reviewed'. Move it forward when the copy is reviewed again; never backdate it.",
+  "lastReviewed": "2026-10-09",
   "profiles": [
     {
       "name": "Instagram",

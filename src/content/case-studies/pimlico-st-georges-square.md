@@ -44,4 +44,4 @@ The survey was in June 2024. Works ran from July to November 2024, and the scaff
 
 The scaffold for the front and the rear was supplied and managed by the practice. Repairs took in the cornice, the pediment and the portico, where cracks were made good, and the parapet. Masonry and render were painted in a Dulux Trade system. Sills and entrance joinery, the columns, the balustrade and the railings were finished with the elevation.
 
-This page names the street only. It is a private residential building.
+A private residential building, named here by street only.

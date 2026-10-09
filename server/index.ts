@@ -178,6 +178,8 @@ function fieldsFrom(raw: Record<string, string>): EnquiryFields {
     access: raw.access || '',
     programme: raw.programme || '',
     materialResponsibility: raw.materialResponsibility || '',
+    specificationNotes: raw.specificationNotes || '',
+    materialPreferences: raw.materialPreferences || '',
     budget: raw.budget || '',
     marketing: raw.marketing === 'yes' || raw.marketing === 'true',
     shortlist: raw.shortlist || '',

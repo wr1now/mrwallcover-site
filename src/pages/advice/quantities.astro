@@ -1,40 +1,43 @@
 ---
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Base from '../../layouts/Base.astro';
+import { guideHref } from '../../lib/guides';
 import { breadcrumbNode } from '../../lib/schema';
 
 const crumbs = [
   { name: 'Home', href: '/' },
-  { name: 'Advice', href: '/advice/' },
+  { name: 'Wallcovering Guide', href: '/advice/' },
   { name: 'Quantities', href: '/advice/quantities/' },
 ];
 ---
 
 <Base
-  title="Wallpaper quantity calculator | Mr Wallcover"
-  description="A restricted roll calculator for free-match and straight-match rectangular walls. No prices. Half-drop, murals, stairs and panels are refused."
+  title="How much wallpaper should you order? | Mr Wallcover"
+  description="Count drops, not square metres. A restricted roll calculator for free-match and straight-match rectangular walls, and why repeat, batch and spares change the order."
   path="/advice/quantities/"
   extraSchema={[breadcrumbNode(crumbs)]}
 >
   <div class="container-page pb-20">
-    <header class="page-head">
+    <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
-      <p class="eyebrow">Quantities</p>
-      <h1>Rolls, under stated assumptions.</h1>
-      <p class="lede mt-5">Free match and simple straight match only. Doors and windows are not deducted. This is not a purchase quantity and it is not a quotation.</p>
+      <p class="eyebrow">The Wallcovering Guide / planning</p>
+      <h1>How much wallpaper should you order?</h1>
+      <p class="lede mt-5">Count the drops, not the square metres. Wallpaper is cut in full-height lengths, so the number of rolls follows the width of the wall, the height plus trim, the pattern repeat and the usable length of a roll. The calculator below works that out for plain and straight-match rectangular walls. It is not a purchase quantity and it is not a quotation.</p>
     </header>
-    <form class="grid max-w-3xl gap-5" data-quantity>
+    <form class="grid max-w-3xl gap-5" data-quantity aria-labelledby="calculator-heading">
+      <h2 id="calculator-heading" class="m-0 text-[1.6rem]">Roll calculator</h2>
+      <p class="m-0 text-stone">Free match and simple straight match only. Doors and windows are not deducted. Half-drop, murals, stairs and bespoke panel sets are refused, because they need a surveyed set-out.</p>
       <div data-walls class="grid gap-5">
         <div class="grid gap-5 md:grid-cols-2">
-          <div class="field"><label>Width, metres <input name="width" type="number" min="0" step="0.01" value="4" /></label></div>
-          <div class="field"><label>Height, metres <input name="height" type="number" min="0" step="0.01" value="2.4" /></label></div>
+          <div class="field"><label>Width, metres <input name="width" type="number" min="0" step="0.01" value="5" /></label></div>
+          <div class="field"><label>Height, metres <input name="height" type="number" min="0" step="0.01" value="2.7" /></label></div>
         </div>
       </div>
       <button class="btn btn-line" type="button" data-add-wall>Add another wall</button>
       <div class="grid gap-5 md:grid-cols-2">
         <div class="field"><label>Top and bottom trim, metres <input name="trim" type="number" min="0" step="0.01" value="0.1" /></label></div>
-        <div class="field"><label>Usable roll width, metres <input name="rollWidth" type="number" min="0" step="0.01" value="0.52" /></label></div>
-        <div class="field"><label>Roll length, metres <input name="rollLength" type="number" min="0" step="0.01" value="10" /></label></div>
+        <div class="field"><label>Usable roll width, metres <input name="rollWidth" type="number" min="0" step="0.01" value="0.53" /></label></div>
+        <div class="field"><label>Roll length, metres <input name="rollLength" type="number" min="0" step="0.01" value="10.05" /></label></div>
         <div class="field">
           <label>Match
             <select name="match">
@@ -52,6 +55,40 @@ const crumbs = [
       <button class="btn btn-solid-ink" type="submit">Calculate</button>
       <p data-quantity-output role="status" hidden></p>
     </form>
+
+    <div class="guide-layout">
+      <aside class="guide-contents">
+        <nav aria-label="On this page"><p class="eyebrow">In this guide</p><ol>
+          <li><a href="#drops">Why width decides the number of drops</a></li>
+          <li><a href="#repeat">How the pattern repeat changes the cut length</a></li>
+          <li><a href="#openings">Do doors and windows save a drop?</a></li>
+          <li><a href="#batch">Why order everything from one batch</a></li>
+          <li><a href="#limits">When the calculator stops being reliable</a></li>
+        </ol></nav>
+        <a class="btn btn-line mt-5" href="/contact/?intent=install">Ask for a surveyed quantity</a>
+      </aside>
+      <article class="prose guide-prose">
+        <h2 id="drops">Why width decides the number of drops</h2>
+        <p>A drop is one full-height length of paper. Divide the wall width by the usable width of the roll and round up: that is the number of drops. Each drop is cut to the wall height plus a trimming allowance at the top and bottom, and a roll yields only as many whole drops as fit into its length. Round the drops up, the drops per roll down and the rolls up. Offcuts shorter than a drop are rarely usable on the same wall.</p>
+        <p>Take a simple wall, as an illustration rather than an order: 5.00 metres wide and 2.70 metres high, with a free-match paper on a roll labelled 10.05 metres long and 0.53 metres wide. Allow 50 millimetres for trimming at the top and 50 at the bottom, so each cut length is 2.80 metres. The width needs 10 drops: 5.00 ÷ 0.53 is 9.43, so nine full widths cover 4.77 metres and the tenth drop is a strip about 0.23 metres wide that still uses a full 2.80-metre length. Each roll yields 3 drops, because 10.05 ÷ 2.80 is 3.59 and the remainder is too short for a fourth. Ten drops at three per roll is 4 rolls.</p>
+        <p>Dividing the wall area by the roll area gives a different answer. The wall is 13.5 square metres and the roll about 5.33, so 13.5 ÷ 5.33 is 2.53, which rounds up to 3 rolls: one short, because the area method counts the offcuts and the narrow last strip as if they could be used. Enter the figures above and the calculator gives 4. The example assumes a plumb, square wall, the usable dimensions on the label, a free match, no defects and no spare; a real order adds a spare from the same batch.</p>
+
+        <h2 id="repeat">How the pattern repeat changes the cut length</h2>
+        <p>A patterned paper has to be cut so the design lines up across the seam. With a straight match, every drop starts at the same point in the pattern, so the cut length rounds up to a whole number of repeats. On a 2.40-metre wall with the same 0.10-metre trim, a plain paper needs a 2.50-metre cut, and a 10.05-metre roll gives four drops with 5 centimetres to spare. With a 0.64-metre straight-match repeat, the cut rounds up to four repeats, 2.56 metres, and the same roll gives only three, because 10.05 ÷ 2.56 is 3.93. The repeat has cost a drop on every roll, which is why it is counted as a length and not added as a percentage. The calculator applies that rounding for straight match.</p>
+        <p>A half-drop match offsets alternate drops by half a repeat, and large or irregular designs may need the pattern to sit at a particular height, above a dado or centred on a chimney breast. Those decisions change the waste in ways a single percentage cannot predict, which is why the calculator refuses half-drop rather than guessing. On the <a href="/services/">services page</a> we describe how a survey sets out the room and allows for the repeat.</p>
+
+        <h2 id="openings">Do doors and windows save a drop?</h2>
+        <p>Usually less than people hope. The drops either side of a window still run full height, and the short pieces above and below it must keep the correct pattern relationship with their neighbours. Only a wide opening, or a plain paper where any offcut will do, reliably saves material. The calculator leaves openings in for that reason. A survey takes them out where it is safe to.</p>
+
+        <h2 id="batch">Why order everything from one batch</h2>
+        <p>Rolls from different production batches can differ slightly in colour, and that difference shows most at a seam. Order the whole room, including a spare, from one batch number, and check the batch on delivery before anything is cut. A spare roll kept from the same batch is also the only realistic way to make a later repair blend in.</p>
+
+        <h2 id="limits">When the calculator stops being reliable</h2>
+        <p>Stop trusting a formula when the wall is not a simple rectangle, when the paper is a mural or a set of panels, or when the pattern needs a set-out. Stairwells have sloping lines and changing heights. Hand-painted and panoramic papers are made to the elevations and ordered by panel, not by roll; our guide to <a href={guideHref('hand-painted-murals-set-out')}>setting out hand-painted papers and murals</a> explains what has to be decided first. Designers specifying several rooms can use the <a href={guideHref('designer-specification-checklist')}>specification checklist</a> to record repeat, match and usable width for every product.</p>
+        <p>Whatever the calculator says, the maker's instruction and a surveyed set-out take precedence. Keep the purchase quantity separate from any labour measurement in a quotation: our guide to <a href={guideHref('installation-cost')}>what changes the cost of installation</a> explains the difference.</p>
+        <div class="guide-next"><p class="eyebrow">Your next step</p><h2>Send the wall, and we will count the drops.</h2><p>A photograph, the dimensions you have and the product reference are enough for a first quantity. Where the geometry needs it, we measure on site. Back to <a href="/advice/">the Wallcovering Guide</a>.</p><a class="btn btn-solid-ink" href="/contact/?intent=install">Ask for a surveyed quantity</a></div>
+      </article>
+    </div>
   </div>
 </Base>
 

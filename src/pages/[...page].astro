@@ -6,7 +6,7 @@
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FaqList from '../components/FaqList.astro';
 import Base from '../layouts/Base.astro';
-import { editorialPages, projectBySlug, projectHref } from '../lib/content';
+import { editorialPages, linkedProjects, projectHref } from '../lib/content';
 import type { EditorialPageData } from '../lib/content';
 import { breadcrumbNode, faqNode } from '../lib/schema';
 
@@ -24,7 +24,7 @@ interface Props {
 
 const { page, Content } = Astro.props;
 const crumbs = [{ name: 'Home', href: '/' }, page.parent, { name: page.title, href: page.path }];
-const linked = page.projects.map((slug) => projectBySlug(slug)).filter((p) => p !== undefined);
+const linked = linkedProjects(page.projects, `editorial page "${page.path}"`);
 ---
 
 <Base

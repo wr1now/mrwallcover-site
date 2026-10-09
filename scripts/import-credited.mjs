@@ -1,5 +1,5 @@
 /**
- * Credited third-party photographs (client or press images) for the media library.
+ * Credited client or press photographs for the media library.
  * Same output shape as scripts/import-previews.mjs: full webp + jpeg (1800px max), 800px thumbs,
  * plus sizes, alt text and blur placeholders in src/content/credited-media.json. Re-encoding strips
  * the source metadata.

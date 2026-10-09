@@ -5,6 +5,7 @@ import { CONTACT_PAYLOAD } from '../lib/phone';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import MobileDock from '../components/MobileDock.astro';
+import PageMeta from '../components/PageMeta.astro';
 import { businessNode, founderNode, jsonLd, webPageNode, websiteNode } from '../lib/schema';
 
 interface Props {
@@ -17,27 +18,40 @@ interface Props {
   /** Site-relative JPEG for social cards. Defaults to /og.jpg. */
   image?: string;
   imageAlt?: string;
+  /** Credit printed beside the page's lead image, e.g. "Photography: House of Hackney". Goes into the WebPage ImageObject. */
+  imageCredit?: string | null;
   ogType?: 'website' | 'article';
+  author?: string;
+  /** ISO date of the page's last content change when the page knows it (guides, case studies). Otherwise the site-wide review date is shown. */
+  updated?: string;
+  /** Set false when the page renders its own PageMeta line in its header. */
+  meta?: boolean;
 }
 
 const {
   title,
   description,
   path,
-  noindex = false,
+  noindex: requestedNoindex = false,
   extraSchema = [],
   preloadHero = false,
   image: imagePath,
   imageAlt = "Corridor at Brown's Hotel, Mayfair, for Mr Wallcover.",
+  imageCredit = null,
   ogType = 'website',
+  author = 'Dorin Burcus',
+  updated,
+  meta = true,
 } = Astro.props;
+const reviewBuild = import.meta.env.MW_CONTENT_PREVIEW === '1';
+const noindex = requestedNoindex || reviewBuild;
 const canonical = new URL(path, SITE_URL).href;
 const image = new URL(imagePath ?? '/og.jpg', SITE_URL).href;
 const schema = jsonLd([
   businessNode(),
   founderNode(),
   websiteNode(),
-  webPageNode({ url: canonical, name: title, description, image }),
+  webPageNode({ url: canonical, name: title, description, image, imageCredit }),
   ...extraSchema,
 ]);
 const heroSrcset =
@@ -64,8 +78,11 @@ const heroSrcset =
     {noindex && <meta name="robots" content="noindex" />}
     {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
+    <link rel="alternate" type="application/atom+xml" href="/feed.xml" title={`${BRAND_NAME}: guides and case studies`} />
+    {/* The Markdown twin scripts/build-ai-layer.mjs writes next to every published page after the build. Noindex pages have none. */}
+    {!noindex && <link rel="alternate" type="text/markdown" href={`${canonical}index.md`} title="Markdown version" />}
     <meta name="theme-color" content="#141210" />
-    <meta name="author" content="Dorin Burcus" />
+    <meta name="author" content={author} />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     {GOOGLE_SITE_VERIFICATION && <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />}
     <meta property="og:type" content={ogType} />
@@ -105,7 +122,13 @@ const heroSrcset =
     <a class="skip-link" href="#main">Skip to content</a>
     <Header path={Astro.url.pathname} />
     <main id="main">
+      {reviewBuild && <div class="review-banner" role="note">Content review preview · Guide drafts await technical review.</div>}
       <slot />
+      {meta && !noindex && (
+        <div class="container-page page-meta-wrap">
+          <PageMeta updated={updated} />
+        </div>
+      )}
     </main>
     <Footer />
     <MobileDock />

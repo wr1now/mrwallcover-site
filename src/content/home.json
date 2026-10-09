@@ -72,7 +72,7 @@
   "featured": {
     "eyebrow": "Selected work",
     "title": "Hotels, a flagship, and the rooms between.",
-    "text": "Private houses are not shown. These are commissions already on the public record.",
+    "text": "Commissions already on the public record. Private clients are not named. Residential work appears only by street or area, with the owner's agreement.",
     "leadSlug": "browns-hotel-mayfair",
     "leadImage": "browns-hotel-mayfair-07"
   },
@@ -107,19 +107,10 @@
       }
     ]
   },
-  "praise": {
-    "eyebrow": "Client praise",
-    "title": "Two lines from Calico Wallpaper.",
-    "items": [
-      {
-        "quote": "Gorgeous! Thank you so much!",
-        "attribution": "Calico Wallpaper, on the Beverly 1975 installation"
-      },
-      {
-        "quote": "Thank you for the update Dorin and for your hard work!",
-        "attribution": "Calico Wallpaper"
-      }
-    ]
+  "partners": {
+    "eyebrow": "Calico Wallpaper",
+    "title": "Work delivered in partnership with Calico Wallpaper.",
+    "text": "Calico Wallpaper murals and papers installed for public events and stores in London, each with its own case study."
   },
   "aftercare": {
     "eyebrow": "Aftercare",

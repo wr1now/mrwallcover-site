@@ -79,7 +79,7 @@ Airport retail is one of the most tightly controlled places we work. The broad s
 - **Overnight working.** In a terminal that never fully closes, the fit-out has to fit around passenger flows. Our photographs of the finished walls were taken between 02:30 and 03:42, with the gate lounges outside empty.
 - **Clean, contained and quiet.** We work inside the hoarding, with protected floors and nothing left outside the unit, so the concourse is ready for the first departures.
 
-*(Only the overnight working is documented for this job, in our timestamped photographs. The other points describe what airside work at Heathrow requires in general; they are not taken from records of this project.)*
+Of these, the overnight working is what our timestamped photographs record for this job. The security and containment points describe what airside work at Heathrow requires in general.
 
 ## Our approach
 

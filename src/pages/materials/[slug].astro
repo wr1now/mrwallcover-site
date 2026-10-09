@@ -1,4 +1,5 @@
 ---
+import { guides, guideHref } from '../../lib/guides';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Base from '../../layouts/Base.astro';
 import { materials, projectHref, projects, specialismHref, specialisms } from '../../lib/content';
@@ -10,6 +11,7 @@ export function getStaticPaths() {
 
 const { material } = Astro.props;
 const service = specialisms.find((entry) => entry.slug === material.specialism);
+const relatedGuides = guides.filter((guide) => material.decision.relatedGuides.includes(guide.frontmatter.slug));
 const related = projects.filter((project) => project.caseStudy).slice(0, 3);
 const crumbs = [
   { name: 'Home', href: '/' },
@@ -33,6 +35,7 @@ const crumbs = [
     </header>
     <div class="reading grid gap-10 md:grid-cols-12">
       <div class="prose md:col-span-7">
+        <dl class="material-decision"><dt>Consider it when</dt><dd>{material.decision.considerWhen}</dd><dt>The trade-off</dt><dd>{material.decision.tradeoff}</dd><dt>Before ordering</dt><dd>{material.decision.checkBeforeOrdering}</dd></dl>
         <h2>Joins</h2>
         <p>{material.joins}</p>
         <h2>Where it belongs</h2>
@@ -41,14 +44,16 @@ const crumbs = [
         <p>{material.handling}</p>
         <h2>Care</h2>
         <p>{material.care}</p>
-        <p>Digital colour is a guide. Order a cutting or a sample before you commit to a room. We can install material you have already bought, or source a family and install it. There is no checkout on this site.</p>
+        <p>Digital colour is a guide. Order a cutting or a sample before you commit to a room. We can install material you have already bought, or source a family and install it. Either way, the next step is a short note about the room.</p>
       </div>
       <aside class="md:col-span-4 md:col-start-9">
         <button class="btn btn-solid-ink" type="button" data-shortlist={material.slug} aria-pressed="false">Save to shortlist</button>
         <p class="mt-4 text-stone">Saved on this device only.</p>
+        <p data-shortlist-status role="status"></p>
         <p class="mt-4"><a class="btn btn-line" href={`/contact/?intent=source`}>Discuss this material</a></p>
         <p class="mt-3"><a class="btn btn-line" href="/contact/?intent=install">I already have it</a></p>
         {service && <p class="mt-3"><a href={specialismHref(service.slug)}>How we install it</a></p>}
+        {relatedGuides.length > 0 && <section class="mt-8"><h2 class="text-[1.4rem]">Useful reading</h2><ul>{relatedGuides.map((guide) => <li class="my-3"><a href={guideHref(guide.frontmatter.slug)}>{guide.frontmatter.shortTitle}</a></li>)}</ul></section>}
         <h2 class="mt-8 text-[1.4rem]">Selected work</h2>
         <ul class="m-0 grid list-none gap-2 p-0">
           {related.map((project) => (

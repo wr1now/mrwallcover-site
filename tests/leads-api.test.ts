@@ -136,3 +136,25 @@ test('a foreign origin and a bad token do not reveal a lead', async () => {
   assert.equal(body.error, 'Not found.');
   assert.equal(JSON.stringify(body).includes('lead.json'), false);
 });
+
+test('developer and hotel context survives storage with specification and material choices', async () => {
+  for (const audience of ['developer', 'hotel']) {
+    const preferences = { use: 'commercial', look: 'uniform', cleaning: 'frequent', panels: 'discreet', light: 'mixed' };
+    const response = await post(form((body) => {
+      body.set('audience', audience);
+      body.set('programme', 'Phase one in November');
+      body.set('specificationNotes', 'Drawing revision C; sample area to agree.');
+      body.set('materialResponsibility', 'Client supply');
+      body.set('materialPreferences', JSON.stringify(preferences));
+      body.set('shortlist', 'contract-vinyl,paper-and-non-woven');
+    }));
+    assert.equal(response.status, 201);
+    const { reference } = await response.json() as { reference: string };
+    const stored = JSON.parse(await readFile(path.join(dir, reference, 'lead.json'), 'utf8'));
+    assert.equal(stored.enquiry.audience, audience);
+    assert.equal(stored.enquiry.specificationNotes, 'Drawing revision C; sample area to agree.');
+    assert.equal(stored.enquiry.materialResponsibility, 'Client supply');
+    assert.deepEqual(JSON.parse(stored.enquiry.materialPreferences), preferences);
+    assert.deepEqual(stored.enquiry.shortlist, ['contract-vinyl', 'paper-and-non-woven']);
+  }
+});

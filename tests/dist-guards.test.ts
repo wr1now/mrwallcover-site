@@ -22,7 +22,8 @@ test('the built site keeps private names and the verification token out of the w
     assert.equal(html.toLowerCase().includes(banned.toLowerCase()), false, banned);
   }
   // The two private residential buildings: street only, never a house number or a full postcode.
-  for (const pattern of [/\b\d{1,4}[a-z]?\s+St\.?\s?George'?s?\s+Square/i, /\b\d{1,4}[a-z]?\s+Inverness\s+Terrace/i, /\bSW1V\s?\d[A-Z]{2}\b/, /\bW2\s?\d[A-Z]{2}\b/]) {
+  // Private homes: street or area only. Trematon keeps "near Saltash, Cornwall" without its postcode district; North London stays North London.
+  for (const pattern of [/\b\d{1,4}[a-z]?\s+St\.?\s?George'?s?\s+Square/i, /\b\d{1,4}[a-z]?\s+Inverness\s+Terrace/i, /\bSW1V\s?\d[A-Z]{2}\b/, /\bW2\s?\d[A-Z]{2}\b/, /\bPL12\b/, /\bN\d{1,2}\s?\d[A-Z]{2}\b/]) {
     assert.doesNotMatch(html, pattern);
   }
   assert.match(html, /98zhpiyda4qDA6fYcKJ-zC6pItC6-LZKqqEugO5-fKo/);
@@ -37,17 +38,154 @@ test('the built site keeps private names and the verification token out of the w
   assert.match(html, /Moxy London ExCeL/);
   assert.match(html, /St George's Square, Pimlico/);
   assert.match(html, /Inverness Terrace, Bayswater/);
-  assert.match(html, /Penny Morrison showroom/);
   assert.match(html, /House of Hackney showroom/);
   const exterior = await readFile('dist/services/exterior-works/index.html', 'utf8');
   assert.match(exterior, /pimlico-st-georges-square/);
   assert.match(exterior, /inverness-terrace/);
-  assert.match(exterior, /penny-morrison-showroom/);
+  assert.doesNotMatch(exterior, /penny-morrison-showroom/);
   assert.match(exterior, /all the internal works plus the full exterior/i);
   assert.doesNotMatch(exterior, /House of Hackney|Lanesborough|Chesham|hackney/i);
   // No phone number in clear, whatever SITE_PHONE was at build time. The number only ever ships inside the reversed payload.
   assert.doesNotMatch(html, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|wa\.me/);
   assert.doesNotMatch(html, /loadedAt/);
+});
+
+test('claims decided by Dorin on 9 October 2026 hold in the built site', async () => {
+  const files = await htmlFiles('dist');
+  // Inline image placeholders are base64 and can spell any word (an "award" inside a data URI is noise, not a claim); strip them before the word scans.
+  const html = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n').replace(/data:image\/[^"')\s]+/g, '');
+  const llms = await readFile('dist/llms.txt', 'utf8');
+  const sitemap = await readFile('dist/sitemap-0.xml', 'utf8');
+  const everything = `${html}\n${llms}\n${sitemap}`;
+  // 1) No award until its name is supplied.
+  assert.doesNotMatch(everything, /award-winning|2021 award|award \(2021\)|\baward\b/i);
+  // 2) Four Seasons: 2016–2019, guest room and suite wallpapering; no "main contractor 2014" wording.
+  assert.doesNotMatch(everything, /main contractor 2014|2014 to 2019|2014–2019|main wallcovering installation contractor/i);
+  assert.match(html, /Four Seasons Hotel London at Ten Trinity Square, 2016 to 2019, guest room and suite wallpapering/);
+  assert.match(html, /in the trade since 2014/i);
+  // 3) The OWO: 2020–2023 everywhere.
+  assert.doesNotMatch(everything, /2020–2022|2020 to 2022|2020 and 2022/);
+  const owo = await readFile('dist/projects/raffles-london-the-owo/index.html', 'utf8');
+  assert.match(owo, /2020–2023/);
+  // 4) No Calico praise quotes; the partnership line stays.
+  assert.doesNotMatch(everything, /Gorgeous! Thank you so much|for your hard work|In Calico's words|Client praise/i);
+  assert.match(html, /Delivered in partnership with/);
+  assert.doesNotMatch(everything, /Trusted by Calico/i);
+  // 5) North London residence is live, with no press links and no owner name.
+  const northLondon = await readFile('dist/projects/north-london-residence/index.html', 'utf8');
+  assert.match(northLondon, /BAMBUSA/);
+  assert.doesNotMatch(everything, /Kate Moss|thesun\.co\.uk|As seen in the press|house-of-kate-moss|celebrated North London/i);
+  // 6) Penny Morrison showroom is a draft: no route, no link, nowhere in the sitemap or llms.txt.
+  let built = true;
+  try {
+    await stat('dist/projects/penny-morrison-showroom/index.html');
+  } catch {
+    built = false;
+  }
+  assert.equal(built, false, 'the Penny Morrison route must not be built');
+  assert.doesNotMatch(everything, /penny-morrison-showroom|Penny Morrison|9 Langton Street/);
+  // 7) The approved privacy sentence replaces "Private houses are not shown".
+  assert.doesNotMatch(everything, /Private houses are not shown|Private houses are not named/i);
+  assert.match(html, /Private clients are not named\. Residential work appears only by street or area, with the owner(?:'|&#39;|’)s agreement\./);
+});
+
+test('every project an area or service page lists resolves to a built page, is linked from that page, and is never a draft', async () => {
+  const drafts = new Set<string>();
+  const aliases = new Map<string, string>();
+  for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
+    const text = await readFile(`src/content/case-studies/${name}`, 'utf8');
+    const fm = JSON.parse(text.match(/^---\n([\s\S]*?)\n---\n/)![1]) as { slug: string; replaces?: string | null; draft?: boolean };
+    if (fm.draft) drafts.add(fm.slug);
+    else if (fm.replaces) aliases.set(fm.replaces, fm.slug);
+  }
+  assert.ok(drafts.has('penny-morrison-showroom'), 'this guard expects the showroom to be a draft; update it if that changes');
+  type Landing = { slug: string; projects: string[] };
+  const areas = (JSON.parse(await readFile('src/content/areas.json', 'utf8')) as { items: Landing[] }).items;
+  const specialisms = (JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as { items: Landing[] }).items;
+  const problems: string[] = [];
+  let checked = 0;
+  for (const [kind, items] of [['areas', areas], ['services', specialisms]] as const) {
+    for (const item of items) {
+      const page = `/${kind}/${item.slug}/`;
+      const html = await readFile(`dist${page}index.html`, 'utf8');
+      for (const listed of item.projects) {
+        checked += 1;
+        if (drafts.has(listed) || drafts.has(aliases.get(listed) ?? '')) problems.push(`${page} lists draft case study ${listed}`);
+        const target = aliases.get(listed) ?? listed;
+        const href = `/projects/${target}/`;
+        let built: string | undefined;
+        try {
+          built = await readFile(`dist${href}index.html`, 'utf8');
+        } catch {
+          problems.push(`${page} lists ${listed} but ${href} is not built`);
+        }
+        if (built && /http-equiv="refresh"/.test(built)) problems.push(`${page} lists ${listed} but ${href} is only a redirect`);
+        if (!html.includes(`href="${href}"`)) problems.push(`${page} does not link ${href}`);
+      }
+      // No link on the page may point at a draft route or an unbuilt project page, whatever its source.
+      for (const link of html.matchAll(/href="\/projects\/([a-z0-9-]+)\/"/g)) {
+        const slug = link[1];
+        if (drafts.has(slug)) problems.push(`${page} links the draft route /projects/${slug}/`);
+        try {
+          await stat(`dist/projects/${slug}/index.html`);
+        } catch {
+          problems.push(`${page} links /projects/${slug}/ which is not built`);
+        }
+      }
+    }
+  }
+  assert.deepEqual(problems, []);
+  assert.ok(checked >= 15, `only ${checked} listed projects checked`);
+  // Decisions of 9 October 2026: Kensington cites the published Lavery case study; Chelsea cites nothing while the showroom is a draft.
+  assert.deepEqual(areas.find((a) => a.slug === 'kensington')?.projects, ['calico-beverly-1975-cadence']);
+  assert.deepEqual(areas.find((a) => a.slug === 'chelsea')?.projects, []);
+  const kensington = await readFile('dist/areas/kensington/index.html', 'utf8');
+  assert.match(kensington, /On the public record/);
+  assert.match(kensington, /href="\/projects\/calico-beverly-1975-cadence\/"/);
+  const content = await readFile('src/lib/content.ts', 'utf8');
+  assert.match(content, /export function linkedProjects/, 'pages must resolve listed projects through linkedProjects, which fails the build on an unknown slug');
+  for (const file of ['src/components/LandingBody.astro', 'src/pages/[...page].astro']) {
+    assert.match(await readFile(file, 'utf8'), /linkedProjects\(/, `${file} must use linkedProjects`);
+    assert.doesNotMatch(await readFile(file, 'utf8'), /\.filter\(\(p\) => p !== undefined\)/, `${file} must not silently drop unresolved slugs`);
+  }
+});
+
+test('no internal-drafting or defensive phrasing reaches the public pages', async () => {
+  const files = await htmlFiles('dist');
+  const raw = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
+  // Inline image placeholders are base64 and can contain any letters; strip them before matching words.
+  const html = raw.replace(/data:image\/[^"')\s]+/g, '');
+  const llms = await readFile('dist/llms.txt', 'utf8');
+  const text = `${html}\n${llms}`;
+  for (const banned of [
+    /not a consumer quiz/i,
+    /A library, not a shop/i,
+    /\bnot a shop\b/i,
+    /we do not publish/i,
+    /partner level/i,
+    /trade tier/i,
+    /reply time/i,
+    /response time/i,
+    /respond within/i,
+    /published waiting list/i,
+    /cleared for the site/i,
+    /form host/i,
+    /private store/i,
+    /What this page does not claim/i,
+    /not a club you join/i,
+    /No basket\./,
+    /Not a homeowner form/i,
+    /\bTBC\b/,
+    /\blorem\b/i,
+    /TODO/,
+  ]) {
+    assert.doesNotMatch(text, banned, String(banned));
+  }
+  assert.match(html, /Find the right wallcovering for your room\./);
+  // Brief section 10 / Dorin's steering, 9 October 2026: the professionals H1 is the customer's task.
+  const professionals = await readFile('dist/professionals/index.html', 'utf8');
+  assert.match(professionals, /<h1>Wallcovering support for your specification\.<\/h1>/);
+  assert.doesNotMatch(html, /From specification<br>to the finished room/);
 });
 
 test('the homepage H1 and meta description define the firm', async () => {
@@ -81,9 +219,43 @@ test('the fact-sheet sentence appears identically in the footer, the JSON-LD and
   assert.equal(person.name, facts.founder.name);
   assert.equal(person.url, 'https://www.mrwallcover.com/about/');
   assert.match(about, /about\/#dorin/);
+  // The Person @id fragment must resolve: the About page element that introduces Dorin carries id="dorin" and holds the H1.
+  assert.match(about, /<header[^>]*\sid="dorin"[^>]*>[\s\S]*?<h1>/, 'About page: the founder header must carry id="dorin"');
+  assert.equal(about.match(/\sid="dorin"/g)?.length, 1, 'id="dorin" must appear exactly once');
   const llms = await readFile('dist/llms.txt', 'utf8');
   assert.ok(llms.split('\n').includes(`> ${sentence}`), 'llms.txt');
   assert.doesNotMatch(llms, /Lanesborough|Moxy/);
+});
+
+test('the business offers exactly the built service pages, by name and URL, with no price', async () => {
+  const specialisms = (JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as { items: { slug: string; name: string }[] }).items;
+  const home = await readFile('dist/index.html', 'utf8');
+  const graph = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]) as { '@graph': Record<string, any>[] };
+  const business = graph['@graph'].find((node) => node['@id'] === 'https://www.mrwallcover.com/#business')!;
+  const catalog = business.hasOfferCatalog;
+  assert.equal(catalog?.['@type'], 'OfferCatalog');
+  assert.equal(catalog.itemListElement.length, specialisms.length);
+  for (const [index, offer] of (catalog.itemListElement as Record<string, any>[]).entries()) {
+    const expected = specialisms[index];
+    assert.equal(offer['@type'], 'Offer');
+    const service = offer.itemOffered;
+    assert.equal(service['@type'], 'Service');
+    assert.equal(service.name, expected.name);
+    assert.equal(service.url, `https://www.mrwallcover.com/services/${expected.slug}/`);
+    assert.equal(service['@id'], `${service.url}#service`);
+    assert.deepEqual(service.provider, { '@id': 'https://www.mrwallcover.com/#business' });
+    const page = await readFile(`dist/services/${expected.slug}/index.html`, 'utf8');
+    assert.doesNotMatch(page, /http-equiv="refresh"/, `${service.url} must be a real page`);
+    const pageGraph = JSON.parse(page.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]) as { '@graph': Record<string, any>[] };
+    const onPage = pageGraph['@graph'].find((node) => node['@id'] === service['@id']);
+    assert.ok(onPage, `${service.url} must emit the Service node the catalogue points at`);
+    assert.equal(onPage.name, service.name);
+    assert.equal(onPage.serviceType, service.serviceType);
+  }
+  assert.doesNotMatch(JSON.stringify(catalog), /price|Price|offers"|availability|eligibleRegion/, 'the catalogue carries no price or stock claims');
+  // The same catalogue is on every indexable page, because the business node is.
+  const about = await readFile('dist/about/index.html', 'utf8');
+  assert.match(about, /"hasOfferCatalog":\{"@type":"OfferCatalog"/);
 });
 
 test('each case-study Article carries its frontmatter dates and Dorin as author; the sitemap lastmod matches', async () => {
@@ -150,6 +322,56 @@ test('draft editorial pages are not built, not in the sitemap, not in llms.txt a
       assert.ok(sitemap.includes(url), `${fm.path} missing from sitemap`);
     }
   }
+});
+
+test('no public dist file contains TODO', async () => {
+  async function textFiles(dir: string): Promise<string[]> {
+    const entries = await readdir(dir, { withFileTypes: true });
+    const out: string[] = [];
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) out.push(...await textFiles(full));
+      else if (/\.(html|xml|txt|csv|json|js|css)$/.test(entry.name)) out.push(full);
+    }
+    return out;
+  }
+  const files = await textFiles('dist');
+  assert.ok(files.length > 50);
+  const offenders: string[] = [];
+  for (const file of files) {
+    if ((await readFile(file, 'utf8')).includes('TODO')) offenders.push(file);
+  }
+  assert.deepEqual(offenders, []);
+});
+
+test('each published guide carries an Article with the founder as author, the business as publisher and its frontmatter dates', async () => {
+  const names = (await readdir('src/content/guides')).filter((entry) => entry.endsWith('.md'));
+  let articles = 0;
+  for (const name of names) {
+    const text = await readFile(`src/content/guides/${name}`, 'utf8');
+    if (/^draft: true$/m.test(text)) continue;
+    const slug = name.slice(0, -3);
+    const published = text.match(/^published: "(\d{4}-\d{2}-\d{2})"$/m)![1];
+    const updated = text.match(/^updated: "(\d{4}-\d{2}-\d{2})"$/m)![1];
+    const html = await readFile(`dist/advice/${slug}/index.html`, 'utf8');
+    const graph = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]) as { '@graph': Record<string, any>[] };
+    const article = graph['@graph'].find((node) => node['@type'] === 'Article');
+    assert.ok(article, `${slug} has an Article`);
+    assert.equal(article.datePublished, published, `${slug} datePublished`);
+    assert.equal(article.dateModified, updated, `${slug} dateModified`);
+    assert.equal(article.author['@id'], 'https://www.mrwallcover.com/about/#dorin', `${slug} author`);
+    assert.equal(article.author.name, 'Dorin Burcus');
+    assert.deepEqual(article.publisher, { '@id': 'https://www.mrwallcover.com/#business' }, `${slug} publisher`);
+    assert.equal(article.mainEntityOfPage['@id'], `https://www.mrwallcover.com/advice/${slug}/#webpage`);
+    assert.ok(graph['@graph'].some((node) => node['@type'] === 'BreadcrumbList'), `${slug} breadcrumbs`);
+    // FAQPage only where the page shows the questions.
+    const faqPage = graph['@graph'].find((node) => node['@type'] === 'FAQPage');
+    assert.equal(Boolean(faqPage), html.includes('id="questions"'), `${slug} FAQPage must match a visible question block`);
+    if (faqPage) for (const q of faqPage.mainEntity) assert.ok(html.includes(`<h3>${q.name}</h3>`), `${slug}: ${q.name} is not visible`);
+    assert.match(html, /By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · Last updated/);
+    articles += 1;
+  }
+  assert.ok(articles >= 1, 'at least one guide is published');
 });
 
 test('the homepage does not load the 3D engine up front', async () => {

@@ -25,3 +25,15 @@ Own Brown's Hotel photographs can be used large. Exterior and press images stay 
 ## Rollback
 
 Revert the merge on `main` and let GitHub Pages redeploy. Do not change names.co.uk DNS, MX, SPF, DKIM or DMARC to roll back the website. Email is separate from the Pages certificate, which was still being issued when this branch was prepared.
+
+## Wallcovering Guide and professional pages
+
+Guide copy lives in `src/content/guides/*.md`. Its frontmatter connects it to materials, related guides and the enquiry action. Internal editorial notes are in `docs/content/guides/`, outside page content.
+
+Run `npm run build:review` to include draft guides in a separate `dist-review/` build. Every review page is noindex; the review build emits no sitemap. `npm run preview:review` serves that folder locally at http://localhost:4321/ (Astro's preview server pointed at `dist-review/`, checked on 9 October 2026: the served page is byte-identical to `dist-review/advice/index.html`, carries `<meta name="robots" content="noindex">`, and `/sitemap-index.xml` returns 404, which the production `dist/` build would not). Stop it with `npx astro preview stop`. PR builds attach this output as `wallcovering-content-review`. Do not deploy that artifact as the production site.
+
+After a guide is technically reviewed, set `draft: false`, record only an actual reviewer and publication date, and check the normal build. Do not invent a review or date to fill metadata. Guides appear automatically in advice, search, relevant material pages and the text summary when published. The sitemap follows the generated routes.
+
+Professional page text is in `src/content/professionals.json`. Designers, developers and hotels have distinct paths and intake values. Existing `commercial` links remain valid. CSV planning templates are in `public/downloads/`; they are not quantity calculators.
+
+Material finder choices remain in session storage until cleared. They are shown on the enquiry form with a remove control. A shortlist remains on the device until cleared. The finder offers family comparisons, not product suitability or certification.

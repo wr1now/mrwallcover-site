@@ -21,6 +21,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Full history: the case-study date check compares each file's `updated` with its last commit date.
+          fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -28,6 +31,9 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
+      - name: Check case-study dates against git
+        # Fails when a case study was edited without re-running scripts/stamp-case-study-dates.mjs.
+        run: node scripts/stamp-case-study-dates.mjs --check
       - name: Check
         run: npm run check
       - name: Build
@@ -42,6 +48,17 @@ jobs:
         run: npm run check:dist
       - name: Check both phone builds
         run: npm run check:phone
+      - name: Build editorial review
+        run: npm run build:review
+      - name: Check guide publication boundaries
+        run: npm run check:guides
+      - name: Upload editorial review
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: wallcovering-content-review
+          path: dist-review
+          retention-days: 7
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

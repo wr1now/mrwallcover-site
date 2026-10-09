@@ -1,7 +1,26 @@
 [
-  { "href": "/services/", "label": "Services" },
-  { "href": "/materials/", "label": "Materials" },
-  { "href": "/projects/", "label": "Projects" },
-  { "href": "/professionals/", "label": "For Professionals" },
-  { "href": "/about/", "label": "About" }
+  {
+    "href": "/services/",
+    "label": "Services"
+  },
+  {
+    "href": "/materials/",
+    "label": "Materials"
+  },
+  {
+    "href": "/projects/",
+    "label": "Projects"
+  },
+  {
+    "href": "/professionals/",
+    "label": "For Professionals"
+  },
+  {
+    "href": "/advice/",
+    "label": "Guide"
+  },
+  {
+    "href": "/about/",
+    "label": "About"
+  }
 ]

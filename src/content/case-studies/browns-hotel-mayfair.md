@@ -88,7 +88,7 @@ Its guest book reads like a syllabus. Alexander Graham Bell made Britain's first
 
 ## The brief
 
-To act as main decorating contractor across a sequence of rooms and suites: preparing every surface, hanging premium wallcoverings, fine painting, French polishing and specialist finishes, and spray-finishing the hotel's richly moulded ceilings. All of it within a fully operating hotel, to programme, and without disturbing a single guest.
+To act as main decorating contractor across a sequence of rooms and suites: preparing every surface, hanging premium wallcoverings, fine painting, French polishing and specialist finishes, and spray-finishing the hotel's richly moulded ceilings. All of it within a fully operating hotel, to programme, around guests in residence.
 
 ## Our approach
 
@@ -100,7 +100,7 @@ To act as main decorating contractor across a sequence of rooms and suites: prep
 
 **Fine finishes.** Fine painting, French polishing and specialist finishes were carried out by the same team, so that joinery, walls and ceilings were finished as one coherent scheme.
 
-**A live hotel.** Brown's remained open throughout. We worked closely with the main contractor and the hotel's management on access, timing, protection and housekeeping, keeping work contained and quiet. The project was delivered on time, with no disruption to guests.
+**A live hotel.** Brown's remained open throughout. We worked closely with the main contractor and the hotel's management on access, timing, protection and housekeeping, keeping work contained and quiet. The project was delivered on time, with the hotel open throughout.
 
 ## Materials
 

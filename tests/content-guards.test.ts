@@ -9,9 +9,26 @@ async function filesUnder(dir: string): Promise<string[]> {
   for (const entry of entries) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) out.push(...await filesUnder(full));
-    else if (/\.(astro|ts|json|css|md|mjs)$/.test(entry.name)) out.push(full);
+    else if (/\.(astro|ts|json|css|md|mjs|js|py|sh|ya?ml)$/.test(entry.name)) out.push(full);
   }
   return out;
+}
+
+/**
+ * The only place in scripts/ allowed to spell a banned word is the explicit
+ * banned-word list in import-previews.mjs, which exists to reject those words
+ * in alt text. The guard removes that single `const banned = [...]` line
+ * before scanning and requires it to appear exactly once, so a second list
+ * or any other mention still fails.
+ */
+const BANNED_LIST_FILE = path.join('scripts', 'import-previews.mjs');
+const BANNED_LIST_LINE = /^const banned = \[.*\];$/m;
+
+function scannable(file: string, text: string): string {
+  if (path.normalize(file) !== BANNED_LIST_FILE) return text;
+  const lines = text.match(new RegExp(BANNED_LIST_LINE.source, 'gm')) ?? [];
+  assert.equal(lines.length, 1, `${file} must hold exactly one banned-word list line`);
+  return text.replace(BANNED_LIST_LINE, '');
 }
 
 /**
@@ -37,18 +54,22 @@ const forbidden = [
   /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}/,
 ];
 
-test('public copy keeps the brand boundaries', async () => {
-  const roots = ['src/content', 'src/pages', 'src/components', 'src/layouts', 'src/lib'];
+test('public copy and the repo scripts keep the brand boundaries', async () => {
+  const roots = ['src/content', 'src/pages', 'src/components', 'src/layouts', 'src/lib', 'scripts'];
   const hits: string[] = [];
+  let scannedScripts = 0;
   for (const root of roots) {
     for (const file of await filesUnder(root)) {
-      const text = await readFile(file, 'utf8');
+      if (root === 'scripts') scannedScripts += 1;
+      const text = scannable(file, await readFile(file, 'utf8'));
       for (const pattern of forbidden) {
         if (pattern.test(text)) hits.push(`${file} matched ${pattern}`);
       }
     }
   }
   assert.deepEqual(hits, []);
+  assert.ok(scannedScripts >= 5, `only ${scannedScripts} script files scanned`);
+  assert.match(await readFile('scripts/import-credited.mjs', 'utf8'), /Credited client or press photographs/);
 });
 
 test('privacy notice keeps Dorin Burcus trading as Mr Wallcover', async () => {
@@ -57,11 +78,14 @@ test('privacy notice keeps Dorin Burcus trading as Mr Wallcover', async () => {
   assert.doesNotMatch(privacy, /PRIMEST|CLAUDI LTD|Renovart/i);
 });
 
-test('Search Console token and the unnamed award stay in config', async () => {
+test('Search Console token stays in config and no award line exists in source', async () => {
   const config = await readFile('src/config.ts', 'utf8');
   assert.match(config, /98zhpiyda4qDA6fYcKJ-zC6pItC6-LZKqqEugO5-fKo/);
-  assert.match(config, /label: 'Award-winning'/);
+  assert.doesNotMatch(config, /Award-winning|AWARD/);
   assert.match(config, /from '\.\/data\/facts\.json'/);
+  for (const file of ['src/content/about.json', 'src/content/home.json', 'src/pages/index.astro', 'src/pages/about.astro']) {
+    assert.doesNotMatch(await readFile(file, 'utf8'), /award/i, `${file} must not mention an award`);
+  }
 });
 
 const REQUIRED_OPENING = 'Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus';
@@ -85,11 +109,28 @@ test('the fact sheet holds one description sentence of 160 characters or fewer, 
   assert.ok(facts.profiles.some((profile) => profile.url === 'https://www.instagram.com/mrwallcover/'));
   const blob = JSON.stringify(facts);
   assert.doesNotMatch(blob, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|Ltd|Limited|Companies House|award/i);
+  // The site-wide review date: a real ISO date, never before the 9 October 2026 review and never in the future.
+  const reviewed = (facts as { lastReviewed?: string }).lastReviewed ?? '';
+  assert.match(reviewed, /^\d{4}-\d{2}-\d{2}$/, 'facts.lastReviewed must be an ISO date');
+  assert.ok(reviewed >= '2026-10-09', 'facts.lastReviewed cannot be earlier than the 9 October 2026 review');
+  // "Today" is the site's own day in London, not UTC: after 11pm BST the UTC date is still yesterday and would wrongly reject a same-day review.
+  const todayInLondon = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/London', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  assert.match(todayInLondon, /^\d{4}-\d{2}-\d{2}$/, 'en-CA formats as ISO');
+  assert.ok(reviewed <= todayInLondon, `facts.lastReviewed ${reviewed} cannot be after today in London (${todayInLondon})`);
   for (const file of ['src/components/Footer.astro', 'src/lib/schema.ts', 'src/pages/llms.txt.ts']) {
     const text = await readFile(file, 'utf8');
     assert.match(text, /from '\.\.\/data\/facts\.json'/, `${file} must import the fact sheet`);
     assert.match(text, /facts\.description/, `${file} must print facts.description`);
   }
+});
+
+test('the founder sentences /for-ai/ quotes are the approved About paragraphs, word for word', async () => {
+  const about = JSON.parse(await readFile('src/content/about.json', 'utf8')) as { paragraphs: string[]; founderSummary: string; publicRecord: string };
+  for (const [key, value] of [['founderSummary', about.founderSummary], ['publicRecord', about.publicRecord]] as const) {
+    assert.ok(typeof value === 'string' && value.length > 20, `about.${key} is a sentence`);
+    assert.ok(about.paragraphs.some((paragraph) => paragraph.includes(value)), `about.${key} must appear inside about.paragraphs: "${value}"`);
+  }
+  assert.doesNotMatch(await readFile('src/pages/for-ai.astro', 'utf8'), /about\.paragraphs\[\d+\]/, '/for-ai/ must not pick About paragraphs by index');
 });
 
 test('draft case studies are filtered out before they are built', async () => {
@@ -129,6 +170,16 @@ test('every case study carries ISO published and updated dates as data, and the 
   assert.doesNotMatch(config, /lastmod:\s*new Date/);
   const schema = await readFile('src/lib/schema.ts', 'utf8');
   assert.doesNotMatch(schema, /new Date\(/);
+  // The stamp script's --check compares `updated` with the last commit that touched the file, and CI runs it with full history before the build.
+  const stamp = await readFile('scripts/stamp-case-study-dates.mjs', 'utf8');
+  assert.match(stamp, /\['log', '-1', '--format=%cs', '--', file\]/);
+  assert.match(stamp, /fm\.updated !== expected/);
+  const workflow = await readFile('.github/workflows/pages.yml', 'utf8');
+  assert.match(workflow, /uses: actions\/checkout@v4\n\s+with:\n(\s+#.*\n)*\s+fetch-depth: 0/, 'checkout needs fetch-depth: 0');
+  const checkStep = workflow.indexOf('node scripts/stamp-case-study-dates.mjs --check');
+  const buildStep = workflow.indexOf('run: npm run build');
+  assert.ok(checkStep > 0, 'CI must run the case-study date check');
+  assert.ok(buildStep > checkStep, 'the date check must run before the build');
 });
 
 test('held hotels stay out of the public content module', async () => {
@@ -152,21 +203,37 @@ test('held hotels stay out of the public content module', async () => {
   assert.match(held, /Waldorf Astoria London Admiralty Arch/);
 });
 
-test('exterior works lists only the three cleared projects', async () => {
+test('exterior works lists only the two cleared projects while the showroom case study is a draft', async () => {
   const data = JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as {
     items: { slug: string; projects: string[]; paragraphs: string[]; lede: string }[];
   };
   const page = data.items.find((item) => item.slug === 'exterior-works');
   assert.ok(page);
-  assert.deepEqual(page.projects, ['pimlico-st-georges-square', 'inverness-terrace', 'penny-morrison-showroom']);
+  // The Penny Morrison showroom returns to this list only when its case study leaves draft (client confirmation in writing).
+  assert.deepEqual(page.projects, ['pimlico-st-georges-square', 'inverness-terrace']);
   const blob = JSON.stringify(page);
   assert.match(blob, /all the internal works plus the full exterior/i);
   assert.match(blob, /scaffolding supplied and managed/i);
-  assert.doesNotMatch(blob, /House of Hackney|Lanesborough|Chesham|Threadneedle|Mulberry|Aethos/i);
+  assert.doesNotMatch(blob, /House of Hackney|Lanesborough|Chesham|Threadneedle|Mulberry|Aethos|Penny Morrison|penny-morrison/i);
+  const showroom = await readFile('src/content/case-studies/penny-morrison-showroom.md', 'utf8');
+  assert.match(showroom, /"draft": true/);
+  assert.match(showroom, /9 Langton Street/, 'the showroom address stays in the draft source (commercial, approved)');
   const services = await readFile('src/pages/services.astro', 'utf8');
   assert.match(services, /exterior-works/);
   const hackney = await readFile('src/content/case-studies/house-of-hackney-st-michaels.md', 'utf8');
   assert.doesNotMatch(hackney, /exterior-works/);
+});
+
+test('the hand-painted service names the Brown\'s paper its case study records', async () => {
+  const data = JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as { items: { slug: string; paragraphs: string[] }[] };
+  const page = data.items.find((item) => item.slug === 'hand-painted-wallpaper-installation');
+  assert.ok(page);
+  const proof = page.paragraphs.find((p) => p.includes("Brown's Hotel"));
+  assert.ok(proof, 'the hand-painted page cites Brown\'s Hotel');
+  assert.match(proof, /Lewis & Wood's Adam's Eden/);
+  const study = await readFile('src/content/case-studies/browns-hotel-mayfair.md', 'utf8');
+  assert.match(study, /Lewis & Wood – Adam's Eden/, 'the case study must still record the same paper');
+  assert.doesNotMatch(proof, /de Gournay|Fromental/, 'the proof sentence names the paper actually hung, not a maker it is compared with');
 });
 
 test('House of Hackney client photographs are committed, so the build does not download them', async () => {

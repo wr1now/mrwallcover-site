@@ -39,13 +39,13 @@ Wording lives in `src/content/`. The pages read those files. You do not need to 
 | `src/content/alts.json` | Image descriptions |
 | `src/content/team.json` | Future team page. Not in the menu yet |
 | `src/data/facts.json` | The fact sheet: brand, founder, email, coverage, profiles and the one description sentence (160 characters or fewer) |
-| `src/config.ts` | Form, analytics, award line. Re-exports the fact sheet |
+| `src/config.ts` | Form, analytics, Search Console token. Re-exports the fact sheet |
 
 The public email address is `info@mrwallcover.com`, set once in `src/data/facts.json`. The footer, the form, the structured data and `llms.txt` all read that file. Paste its description sentence unchanged into every outside profile.
 
 The phone number is not in the repository. See `SITE_PHONE` below.
 
-The award line on the site is “Award-winning (2021)”. The award’s name will be added later. See the comment in `src/config.ts`. Do not invent a title.
+No award is mentioned on the site until its name is supplied (decided 9 October 2026). Do not add an award line, a rating, a review count or a partner status.
 
 Case studies live in `src/content/case-studies/`. Each carries `published` and `updated` dates in its frontmatter; they feed the Article structured data and the sitemap. After editing a case study, run `node scripts/stamp-case-study-dates.mjs` so the `updated` date follows the change. The build refuses a case study without both dates and never substitutes the build time.
 
@@ -113,9 +113,38 @@ The same build works on either host with no adapter and no extra config file bey
 
 **Netlify.** `netlify.toml` already sets the build command and the publish directory `dist`. Connect the repository and deploy. For stored form submissions, set `PUBLIC_FORM_PROVIDER` to `netlify` as described above.
 
+## Files for search engines and AI assistants
+
+All of these are generated at build time from `src/data/facts.json` and the content files. None is edited by hand, and none is a ranking promise: Google says its AI features need ordinary crawlable pages, not special files. The pages come first; these are extras.
+
+| File | What it is | Made by |
+| --- | --- | --- |
+| `/for-ai/` | A plain-facts page for people and assistants | `src/pages/for-ai.astro` |
+| `/llms.txt` | A curated index in the llmstxt.org shape | `src/pages/llms.txt.ts` |
+| `/llms-full.txt` | The main content of every published page as text | `scripts/build-ai-layer.mjs` (postbuild) |
+| `/<page>/index.md` | A Markdown twin of each published page, linked from its `<head>` | same script |
+| `/facts.json` | The fact sheet as data, through an allowlist | `src/pages/facts.json.ts` |
+| `/feed.xml` | Atom feed of the published guides and case studies | `src/pages/feed.xml.ts` |
+| `/robots.txt` | Named groups for search and AI crawlers, same rules each | `public/robots.txt` |
+
+Drafts, the 404, thank-you and search pages and the old redirect stubs never appear in any of them. `npm run check:dist` proves it (`tests/ai-layer.test.ts`).
+
+### IndexNow (off until the Cloudflare move)
+
+`scripts/indexnow-ping.mjs` tells Bing, Yandex and the other IndexNow engines which URLs changed by posting the sitemap URLs to `api.indexnow.org`. The key file `public/<key>.txt` is already in the repository and is served at `https://www.mrwallcover.com/<key>.txt`; do not rename it, and if you ever change the key, change the file name and its content together.
+
+The script does nothing unless `INDEXNOW_ENABLED=1`, so it cannot fire by accident. It is not in the GitHub Pages workflow. To enable it when the site moves to Cloudflare Pages:
+
+1. Confirm the key file is live: open `https://www.mrwallcover.com/<key>.txt` and check it shows the key.
+2. Add a deploy hook or a final build step that runs `INDEXNOW_ENABLED=1 npm run indexnow` after `npm run build` has produced `dist/`.
+3. Watch the first run's output: `200` or `202` means accepted. Anything else is printed and the step fails.
+
+Google does not use IndexNow. It reads the sitemap, so nothing else is needed for Google.
+
 ## Pages
 
 - `/` Home
+- `/for-ai/` Plain facts for AI assistants
 - `/services/` Services
 - `/aftercare/` Aftercare
 - `/projects/` Work, with a page for each commission

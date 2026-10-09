@@ -9,3 +9,7 @@
 
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Markdown twins of the published pages (scripts/build-ai-layer.mjs). GitHub Pages ignores this file; Cloudflare Pages and Netlify honour it.
+/*.md
+  Content-Type: text/markdown; charset=utf-8

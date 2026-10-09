@@ -10,6 +10,7 @@
   "wallcoverings": [
     "Penny Morrison's own papers"
   ],
+  "draft": true,
   "modest": false,
   "awaitingPhotos": false,
   "metaTitle": "Penny Morrison showroom | Mr Wallcover",

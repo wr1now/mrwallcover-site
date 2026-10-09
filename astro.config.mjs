@@ -30,6 +30,7 @@ export default defineConfig({
     sitemap({
       // Old project URLs now redirect to case studies; keep them out of the sitemap.
       filter: (page) =>
+        process.env.MW_CONTENT_PREVIEW !== '1' &&
         !page.includes('/thank-you') &&
         !page.includes('/404') &&
         !page.includes('/search') &&

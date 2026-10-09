@@ -1,4 +1,6 @@
 import { SITE_URL } from '../config';
+import areasJson from '../content/areas.json';
+import specialismsJson from '../content/specialisms.json';
 import facts from '../data/facts.json';
 import type { FaqItem } from './types';
 
@@ -12,15 +14,81 @@ export const FOUNDER_ID = `${SITE_URL}${facts.founder.path}#${facts.founder.frag
 export const FOUNDER_URL = `${SITE_URL}${facts.founder.path}`;
 
 /**
- * Coverage: London and the surrounding areas; UK-wide for selected projects.
- * The phone number is deliberately not published in schema (Dorin's request:
- * no openly visible number). Add telephone back here if that changes.
+ * The fact-sheet coverage line is written "<local>; <national>", today
+ * "London and the surrounding areas; UK-wide for selected projects". The two
+ * halves become the AdministrativeArea name and the Country description, so
+ * the schema carries the same wording as /for-ai/, llms.txt and facts.json.
+ */
+const coverageParts = facts.coverage.split('; ');
+if (coverageParts.length !== 2 || coverageParts.some((part) => !part.trim())) {
+  throw new Error(`facts.coverage must read "<local area>; <national reach>", got "${facts.coverage}"`);
+}
+const [COVERAGE_LOCAL, COVERAGE_NATIONAL] = coverageParts;
+
+/**
+ * Coverage, matching what the site shows: the fact-sheet line split as
+ * above, and one Place per area page in src/content/areas.json, named
+ * exactly as areas.json names the area and as its page heading reads
+ * ("the City of London", "the Cotswolds"), never a rewritten string.
+ * No invented offices. The phone number is deliberately not published in
+ * schema (Dorin's request: no openly visible number). Add telephone back
+ * here if that changes.
  */
 export const AREAS_SERVED = [
-  { '@type': 'City', name: 'London' },
-  { '@type': 'AdministrativeArea', name: 'Greater London and the surrounding areas' },
-  { '@type': 'Country', name: 'United Kingdom', description: 'Selected projects' },
+  { '@type': 'City', name: facts.place },
+  { '@type': 'AdministrativeArea', name: COVERAGE_LOCAL },
+  { '@type': 'Country', name: 'United Kingdom', description: COVERAGE_NATIONAL },
+  ...(areasJson.items as { slug: string; name: string }[]).map((area) => ({
+    '@type': 'Place',
+    name: area.name,
+    url: `${SITE_URL}/areas/${area.slug}/`,
+  })),
 ];
+
+/**
+ * An ImageObject for a photograph the site shows, carrying the credit the
+ * page prints beside it. Credits are written "Photography: House of Hackney"
+ * or "Image: Raffles London at The OWO (official)"; the name after the colon
+ * is the credit holder, so it becomes creditText. A printed credit is not a
+ * copyright notice, so no copyrightNotice is claimed. A plain caption such as
+ * "Before" is not a credit and adds nothing. Our own photographs carry no
+ * credit line on the page, so none is invented here.
+ */
+export function imageObject(url: string, credit?: string | null) {
+  const holder = credit?.match(/^(?:Photography|Photograph|Photo|Image|Images)\s*:\s*(.+?)\s*(?:\(official\))?$/i)?.[1];
+  return {
+    '@type': 'ImageObject',
+    url,
+    ...(holder ? { creditText: holder } : {}),
+  };
+}
+
+/**
+ * The services the business offers, one per built /services/<slug>/ page.
+ * Names, @ids and service types match the Service node each page emits.
+ * No prices: the site publishes none.
+ */
+export function offerCatalogNode() {
+  return {
+    '@type': 'OfferCatalog',
+    name: `${BRAND_NAME} services`,
+    itemListElement: (specialismsJson.items as { slug: string; name: string; serviceType?: string }[]).map((item) => {
+      const url = `${SITE_URL}/services/${item.slug}/`;
+      return {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          '@id': `${url}#service`,
+          name: item.name,
+          // Same fallback as src/pages/services/[slug].astro, so the catalogue and the page agree.
+          serviceType: item.serviceType ?? item.name,
+          url,
+          provider: { '@id': BUSINESS_ID },
+        },
+      };
+    }),
+  };
+}
 
 export function businessNode() {
   return {
@@ -35,7 +103,7 @@ export function businessNode() {
     founder: { '@id': FOUNDER_ID },
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'London',
+      addressLocality: facts.place,
       addressCountry: 'GB',
     },
     areaServed: AREAS_SERVED,
@@ -58,6 +126,7 @@ export function businessNode() {
     ],
     /** Only profiles that exist. Add each new one to src/data/facts.json as it goes live. */
     sameAs: facts.profiles.map((profile) => profile.url),
+    hasOfferCatalog: offerCatalogNode(),
     contactPoint: {
       '@type': 'ContactPoint',
       email: PUBLIC_EMAIL,
@@ -138,7 +207,7 @@ export function websiteNode() {
   };
 }
 
-export function webPageNode(opts: { url: string; name: string; description: string; image?: string; type?: string }) {
+export function webPageNode(opts: { url: string; name: string; description: string; image?: string; imageCredit?: string | null; type?: string }) {
   return {
     '@type': opts.type ?? 'WebPage',
     '@id': `${opts.url}#webpage`,
@@ -148,7 +217,7 @@ export function webPageNode(opts: { url: string; name: string; description: stri
     inLanguage: 'en-GB',
     isPartOf: { '@id': WEBSITE_ID },
     about: { '@id': BUSINESS_ID },
-    ...(opts.image ? { primaryImageOfPage: { '@type': 'ImageObject', url: opts.image } } : {}),
+    ...(opts.image ? { primaryImageOfPage: imageObject(opts.image, opts.imageCredit) } : {}),
   };
 }
 
@@ -186,12 +255,49 @@ export function projectNode(opts: { url: string; name: string; description: stri
   };
 }
 
+/**
+ * Advice-guide Article. The founder's Person node is the author; the business
+ * is the publisher. Dates come from the guide's frontmatter, never the build.
+ */
+export function guideArticleNode(opts: { url: string; headline: string; description: string; published: string; updated: string }) {
+  const iso = /^\d{4}-\d{2}-\d{2}$/;
+  if (!iso.test(opts.published) || !iso.test(opts.updated)) {
+    throw new Error(`Guide ${opts.url} needs ISO published and updated dates in its frontmatter`);
+  }
+  return {
+    '@type': 'Article',
+    '@id': `${opts.url}#article`,
+    headline: opts.headline,
+    description: opts.description,
+    url: opts.url,
+    mainEntityOfPage: { '@id': `${opts.url}#webpage` },
+    inLanguage: 'en-GB',
+    datePublished: opts.published,
+    dateModified: opts.updated,
+    author: { '@type': 'Person', '@id': FOUNDER_ID, name: facts.founder.name, url: FOUNDER_URL },
+    publisher: { '@id': BUSINESS_ID },
+  };
+}
+
+/** FAQPage for a guide's visible question-and-answer block. Only call it when that block is rendered. */
+export function guideFaqNode(items: { q: string; a: string }[]) {
+  return {
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  };
+}
+
 /** Case-study article about a completed commission. Facts only from the page itself. */
 export function caseStudyArticleNode(opts: {
   url: string;
   headline: string;
   description: string;
-  images: string[];
+  /** Absolute image URLs with the credit printed beside each on the page, if any. */
+  images: { url: string; credit?: string | null }[];
   location: string;
   dates?: string | null;
   mentions?: string[];
@@ -215,7 +321,7 @@ export function caseStudyArticleNode(opts: {
     dateModified: opts.updated,
     author: { '@type': 'Person', '@id': FOUNDER_ID, name: facts.founder.name, url: FOUNDER_URL },
     publisher: { '@id': BUSINESS_ID },
-    ...(opts.images.length ? { image: opts.images } : {}),
+    ...(opts.images.length ? { image: opts.images.map((img) => imageObject(img.url, img.credit)) } : {}),
     about: {
       '@type': 'CreativeWork',
       '@id': `${opts.url}#project`,

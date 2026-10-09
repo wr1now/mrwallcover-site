@@ -1,0 +1,32 @@
+---
+/**
+ * The visible author and date line every published page carries.
+ *
+ * `updated` is an ISO date the page knows for itself (a guide's or case study's
+ * frontmatter, stamped from the edit, never the build time) and is shown as
+ * "Last updated". Without it the line shows the site-wide review date from
+ * src/data/facts.json as "Last reviewed", which is honest for pages whose
+ * copy is reviewed together rather than dated one by one.
+ *
+ * The <time> element carries data-page-updated so the Markdown twins and
+ * llms-full.txt (scripts/build-ai-layer.mjs) read the same date from the HTML.
+ */
+import facts from '../data/facts.json';
+import { formatGuideDate } from '../lib/guides';
+
+interface Props {
+  updated?: string;
+  class?: string;
+}
+
+const { updated, class: className } = Astro.props;
+const iso = updated ?? facts.lastReviewed;
+if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) throw new Error(`PageMeta needs an ISO date, got "${iso}"`);
+const label = updated ? 'Last updated' : 'Last reviewed';
+const authorHref = `${facts.founder.path}#${facts.founder.fragment}`;
+---
+
+<p class:list={['page-meta text-sm text-stone', className]}>
+  By <a href={authorHref}>{facts.founder.name}</a>, {facts.founder.jobTitle.toLowerCase()} · {label}{' '}
+  <time datetime={iso} data-page-updated={updated ? 'updated' : 'reviewed'}>{formatGuideDate(iso)}</time>
+</p>

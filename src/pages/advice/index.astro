@@ -1,44 +1,49 @@
 ---
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import GuideCard from '../../components/GuideCard.astro';
 import Base from '../../layouts/Base.astro';
+import { hubCards, guideCategories } from '../../lib/guides';
 import { breadcrumbNode } from '../../lib/schema';
-
-const crumbs = [
-  { name: 'Home', href: '/' },
-  { name: 'Advice', href: '/advice/' },
-];
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href: '/advice/' }];
 ---
-
-<Base
-  title="Advice | Mr Wallcover"
-  description="Practical notes on measuring, preparation, material expectations and aftercare from Mr Wallcover in London."
-  path="/advice/"
-  extraSchema={[breadcrumbNode(crumbs)]}
->
+<Base title="Wallcovering Guide | Mr Wallcover" description="Practical guidance on choosing wallpaper, preparation, quantity, specification and care." path="/advice/" extraSchema={[breadcrumbNode(crumbs)]}>
   <div class="container-page pb-20">
-    <header class="page-head">
+    <header class="page-head guide-intro">
       <Breadcrumb items={crumbs} />
-      <p class="eyebrow">Advice</p>
-      <h1>Before the first length is cut.</h1>
-      <p class="lede mt-5">Short notes from the way the practice works. They are not a specification, and they do not replace the maker’s instruction or a survey.</p>
+      <p class="eyebrow">The Wallcovering Guide</p>
+      <h1>Before the first<br /><em>length is cut.</em></h1>
+      <p class="lede mt-5">The sample is only the start. Make sense of the material, the wall and the work before committing to a room.</p>
     </header>
-    <div class="grid gap-8 md:grid-cols-2">
-      <article class="border-t border-line pt-4">
-        <h2 class="m-0 text-[1.8rem]"><a href="/advice/quantities/">Quantities</a></h2>
-        <p>A restricted calculator for plain and straight-match walls. It refuses half-drop, murals, stairs and panels, and it does not give a price.</p>
-      </article>
-      <article class="border-t border-line pt-4">
-        <h2 class="m-0 text-[1.8rem]"><a href="/services/#surveying">Preparation</a></h2>
-        <p>The wall is part of the job. If it is not ready for the material, that belongs in the scope before the paper is ordered.</p>
-      </article>
-      <article class="border-t border-line pt-4">
-        <h2 class="m-0 text-[1.8rem]"><a href="/materials/">Material expectations</a></h2>
-        <p>Seams, variation and sheen. Natural materials do not have invisible joins.</p>
-      </article>
-      <article class="border-t border-line pt-4">
-        <h2 class="m-0 text-[1.8rem]"><a href="/aftercare/">Aftercare</a></h2>
-        <p>A return visit about four to six weeks after completion, and twelve months on the workmanship of the hang.</p>
-      </article>
+    <div class="guide-tools">
+      <a href="/materials/#material-finder"><span class="eyebrow">Choose</span><strong>Find a material family</strong><span>Compare appearance and everyday use ↗</span></a>
+      <a href="/advice/quantities/"><span class="eyebrow">Plan</span><strong>Check a simple quantity</strong><span>Plain and straight-match walls ↗</span></a>
+      <a href="/professionals/"><span class="eyebrow">Specify</span><strong>Plan a professional package</strong><span>Designers, developers and hotels ↗</span></a>
     </div>
+    {hubCards.length > 0 && <section class="guide-library" aria-labelledby="guide-library-heading">
+      <h2 id="guide-library-heading">Find the answer you need.</h2>
+      <fieldset class="guide-filters" data-guide-filters hidden><legend class="sr-only">Filter guides by topic</legend><button type="button" data-filter="all" aria-pressed="true">All guides</button>{guideCategories.map((category) => <button type="button" data-filter={category.id} aria-pressed="false">{category.label}</button>)}</fieldset>
+      <p class="sr-only" data-guide-count role="status"></p>
+      <div class="guide-grid">{hubCards.map((card) => <GuideCard guide={card} />)}</div>
+    </section>}
+    <section class="guide-next"><p class="eyebrow">A question about your project?</p><h2>Start with what you know.</h2><p>Tell us about the room or send the material you are considering. We can discuss preparation, installation or the complete package.</p><div class="flex flex-wrap gap-3"><a class="btn btn-solid-ink" href="/contact/?intent=advice">Discuss your project</a><a class="btn btn-line" href="/aftercare/">Care and repairs</a></div></section>
   </div>
 </Base>
+<script>
+  const filters = document.querySelector<HTMLElement>('[data-guide-filters]');
+  if (filters) {
+    filters.hidden = false;
+    filters.addEventListener('click', (event) => {
+      const button = (event.target as Element).closest<HTMLButtonElement>('[data-filter]');
+      if (!button) return;
+      const category = button.dataset.filter;
+      filters.querySelectorAll('[data-filter]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      let shown = 0;
+      document.querySelectorAll<HTMLElement>('[data-guide-category]').forEach((card) => {
+        card.hidden = category !== 'all' && card.dataset.guideCategory !== category;
+        if (!card.hidden) shown++;
+      });
+      const count = document.querySelector('[data-guide-count]');
+      if (count) count.textContent = `${shown} guides shown`;
+    });
+  }
+</script>

@@ -1,5 +1,6 @@
 ---
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import MaterialFinder from '../../components/MaterialFinder.astro';
 import MaterialStudio from '../../components/MaterialStudio.astro';
 import Base from '../../layouts/Base.astro';
 import { materials, specialismHref, specialisms } from '../../lib/content';
@@ -20,6 +21,7 @@ const crumbs = [
       <p class="lede mt-5">{materials.lede}</p>
       <p class="m-0 mt-4 text-stone">Saved materials stay on this device. There is no account. If you send an enquiry from this browser, the shortlist is attached.</p>
     </header>
+    <MaterialFinder />
     <ul class="m-0 grid list-none gap-8 p-0 md:grid-cols-2">
       {materials.items.map((item) => {
         const service = specialisms.find((entry) => entry.slug === item.specialism);
@@ -37,6 +39,8 @@ const crumbs = [
       })}
     </ul>
     <section class="mt-16 border-t border-line pt-10" aria-labelledby="compare-heading">
+      <p data-shortlist-status role="status"></p>
+      <button type="button" class="btn btn-line mb-5" data-shortlist-clear>Clear shortlist</button>
       <h2 id="compare-heading" class="m-0 text-[2rem]">Compare the shortlist <span data-shortlist-count>0</span></h2>
       <p data-compare-empty class="lede mt-4">Save two or more families to compare joins, care and where they belong.</p>
       <div class="mt-6 grid gap-6">
