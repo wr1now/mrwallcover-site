@@ -38,7 +38,7 @@ export const AWARD = {
 export type FormProvider = 'mailto' | 'netlify' | 'formspree' | 'formsubmit';
 
 const providerFromFile: FormProvider = 'formsubmit';
-const endpointFromFile = 'https://formsubmit.co/info@mrwallcover.com';
+const endpointFromFile = 'https://formsubmit.co/569da49cb2508b0d1d180f0ca82da262';
 
 function resolveProvider(): FormProvider {
   const fromEnv = import.meta.env.PUBLIC_FORM_PROVIDER;
@@ -49,8 +49,7 @@ function resolveProvider(): FormProvider {
 
 /**
  * FormSubmit (formsubmit.co) posts the form to info@ with its own captcha.
- * The first submission sends a one-time activation email to info@; click it once.
- * After activation, FormSubmit offers a random alias; swap it in here to hide the address.
+ * Uses FormSubmit's random alias (activated 9 Oct 2026) so the address never appears in the code.
  */
 export const FORM_PROVIDER: FormProvider = resolveProvider();
 export const FORM_ENDPOINT: string = import.meta.env.PUBLIC_FORM_ENDPOINT || endpointFromFile;
