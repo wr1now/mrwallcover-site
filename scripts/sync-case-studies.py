@@ -47,7 +47,29 @@ TITLE_OVERRIDE = {'old-bailey-hotel': 'Hyde London City (the Old Bailey Hotel)'}
 MODEST = {'trematon-castle', 'old-bailey-hotel'}
 # Research files published by hand instead (anonymised). kate-moss-bedroom.md ->
 # src/content/case-studies/north-london-residence.md, written manually; never auto-publish it.
-SKIP = {'kate-moss-bedroom'}
+SKIP = {'kate-moss-bedroom', 'calico-estuary-nomad-dinner'}  # NoMad dinner is folded into the Rosewood page
+
+# Calico design-week and fashion commissions (own photos, previews, EXIF stripped).
+# Excluded: Beverly 01-02 (street views with parked cars), Beverly 09 (duplicate),
+# Lee Broom 02 (near-duplicate), Rosewood 04-05 (hands/tools), NoMad 02 (vehicle in background).
+GALLERY_OVERRIDE.update({
+    'calico-lee-broom-overture': [f'lee-broom-{n}' for n in ['03','01','04','08','05','06','07','09','10','11']],
+    'calico-beverly-1975-cadence': [f'beverly-{n}' for n in ['06','08','04','05','07','03']],
+    'calico-ahluwalia-estuary-rosewood': [f'ahluwalia-estuary-{n}' for n in ['06','07','01','02','03']] + ['nomad-01'],
+})
+MODEST |= {'calico-lee-broom-overture', 'calico-beverly-1975-cadence', 'calico-ahluwalia-estuary-rosewood'}
+YEARS = {'calico-lee-broom-overture': '2025', 'calico-beverly-1975-cadence': '2026', 'calico-ahluwalia-estuary-rosewood': '2026'}
+META_TITLE = {
+    'calico-lee-broom-overture': 'Lee Broom x Calico: Overture, Shoreditch | Mr Wallcover',
+    'calico-beverly-1975-cadence': 'BEVERLY 1975 x Calico: Cadence, LDF 2026 | Mr Wallcover',
+    'calico-ahluwalia-estuary-rosewood': 'Ahluwalia x Calico: Estuary at Rosewood | Mr Wallcover',
+}
+GROUP = {k: 'design-weeks' for k in YEARS}
+META_DESC = {
+    'calico-lee-broom-overture': "Survey, preparation and installation of Lee Broom's Overture mural for Calico Wallpaper at his Shoreditch showroom, London Design Festival 2025.",
+    'calico-beverly-1975-cadence': 'Cadence in Oxblood by Calico Wallpaper, hung in a day for BEVERLY 1975 at The Lavery, Cromwell Place, Brompton Design District 2026.',
+    'calico-ahluwalia-estuary-rosewood': "Ahluwalia's Estuary mural for Calico Wallpaper, installed as the runway backdrop at Rosewood London for London Fashion Week, September 2026.",
+}
 # Per-slug wording fixes for internal phrasing in the research file.
 BODY_SUBS = {
     'old-bailey-hotel': [
@@ -68,7 +90,7 @@ BODY_SUBS = {
          'Alongside the decoration, we fitted [Solar Screen](https://solarscreen.eu/en/) window film to the glazing. See our [window film service](/services/window-film/).'),
     ],
 }  # preview-size photos: show small, never upscale
-TBC = re.compile(r'to be confirmed|once confirmed|will be added once|unconfirmed|to confirm before publishing|divine savages', re.I)
+TBC = re.compile(r'^\*(?:to confirm|note):\*|to be confirmed|once confirmed|will be added once|unconfirmed|to confirm before publishing|divine savages', re.I)
 
 
 def parse_frontmatter(text):
@@ -166,8 +188,53 @@ def anonymise(text):
     return text
 
 
+def links_table_to_list(body):
+    """'| Item | Link |' tables become a plain list of linked titles."""
+    def repl(m):
+        rows = [r for r in m.group(0).strip().splitlines() if r.startswith('|') and '---' not in r][1:]
+        out = []
+        for r in rows:
+            cells = [c.strip() for c in r.strip('|').split('|')]
+            label, link = cells[0], cells[-1]
+            if link.startswith('http'):
+                out.append(f'- [{label}]({link})')
+        return '\n'.join(out) + '\n'
+    return re.sub(r'^\|\s*Item\s*\|\s*Link\s*\|\n(?:\|[^\n]*\n?)+', repl, body, flags=re.M)
+
+
+def nomad_section():
+    """The NoMad launch dinner, folded into the Rosewood page."""
+    src = SRC / 'calico-estuary-nomad-dinner.md'
+    if not src.exists():
+        return ''
+    _, b = parse_frontmatter(src.read_text())
+    b = links_table_to_list(clean_body(b))
+    b = re.sub(r'^\*(?!\*).+?\*\s*\n', '', b, count=1, flags=re.M).lstrip()
+    b = re.sub(r'^## ', '### ', b, flags=re.M)
+    b = b.replace('### Materials and links', '### Links')
+    # The dinner date is not confirmed (records say 15 Sep, Calico posted on the 16th).
+    b = b.replace('panels hung 14 September 2026; dinner 15 September 2026', 'panels hung 14 September 2026, ahead of the dinner')
+    return '\n## Launch dinner, NoMad London\n\n' + b
+
+
+def calico_callout(clean):
+    """Partnership line plus press links, placed at the top of the Calico pages."""
+    links = re.findall(r'^- \[(.+?)\]\((https?://[^)]+)\)', clean, flags=re.M)
+    press, seen = [], set()
+    for label, url in links:
+        if 'calicowallpaper.com/collection' in url or 'calicowallpaper.com/product' in url or url in seen:
+            continue
+        seen.add(url)
+        press.append(f'[{label}]({url})')
+    line = '> **Delivered in partnership with [Calico Wallpaper](https://calicowallpaper.com/).**'
+    if press:
+        line += '\n>\n> **In the press:** ' + ' · '.join(press)
+    return line + '\n\n'
+
+
 def clean_body(body):
     body = anonymise(body)
+    body = links_table_to_list(body)
     body = re.sub(r'^## Images\n.*?(?=^## |\Z)', '', body, flags=re.S | re.M)
     body = re.sub(r'^## Instagram\n.*?(?=^## |\Z)', '', body, flags=re.S | re.M)
     body = materials_table_to_list(body)
@@ -218,6 +285,12 @@ for path in sorted(SRC.glob('*.md')):
     clean = clean_body(body)
     for a, b in BODY_SUBS.get(slug, []):
         clean = clean.replace(a, b)
+    clean = clean.replace('## Materials and links', '## Links and press')
+    if slug == 'calico-ahluwalia-estuary-rosewood':
+        clean = clean.rstrip() + '\n' + nomad_section()
+    if GROUP.get(slug) == 'design-weeks':
+        clean = clean.replace('- **For:** Calico Wallpaper', '- **In partnership with:** Calico Wallpaper')
+        clean = calico_callout(clean) + clean
     if lead:
         clean = re.sub(r'^\*(?!\*)' + re.escape(lead) + r'\*\s*\n', '', clean, count=1, flags=re.M).lstrip()
     years = fm.get('years') or ''
@@ -227,10 +300,13 @@ for path in sorted(SRC.glob('*.md')):
         'replaces': REPLACES.get(slug),
         'client': anonymise(fm.get('client', '')),
         'location': fm.get('location', ''),
-        'years': None if TBC.search(years) or not years else re.sub(r'\s*\(photo record[^)]*\)', '', years),
+        'years': YEARS[slug] if slug in YEARS else None if TBC.search(years) or not years else re.sub(r'\s*\(photo record[^)]*\)', '', years),
         'role': re.split(r'\.\s*Scope as briefed', fm.get('role', ''))[0],
         'wallcoverings': [w.replace(' Superwide', '') for w in [re.sub(r'\s*\((?:[^)]*(?:confirmed|probable|possible|visual match|roll label|photographed))[^)]*\)', '', w, flags=re.I) for w in fm.get('wallcoverings', []) or [] if not TBC.search(w)]],
         'modest': slug in MODEST,
+        'metaTitle': META_TITLE.get(slug),
+        'metaDescription': META_DESC.get(slug),
+        'group': GROUP.get(slug),
         'standfirst': lead,
         'hero': hero if hero_ok else (gallery[0]['id'] if gallery else None),
         'gallery': gallery,

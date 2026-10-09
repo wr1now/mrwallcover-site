@@ -18,6 +18,9 @@
     "Lincrusta heritage relief wallcovering"
   ],
   "modest": true,
+  "metaTitle": null,
+  "metaDescription": null,
+  "group": null,
   "standfirst": "Nearly three years inside a Norman castle's Georgian heart, hanging the prints of the house that made maximalism modern.",
   "hero": "trematon-01",
   "gallery": [

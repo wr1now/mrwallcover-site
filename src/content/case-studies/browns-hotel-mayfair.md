@@ -11,6 +11,9 @@
     "Lewis & Wood – Adam's Eden (designed by Adam Calkin)"
   ],
   "modest": false,
+  "metaTitle": null,
+  "metaDescription": null,
+  "group": null,
   "standfirst": "A full decorating package for London's oldest hotel, delivered while it never stopped welcoming guests.",
   "hero": "browns-hotel-mayfair-11",
   "gallery": [

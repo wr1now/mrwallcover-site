@@ -897,3 +897,13 @@ article h3 a {
     min-height: 44px;
   }
 }
+@layer components {
+  .trusted-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+  }
+}

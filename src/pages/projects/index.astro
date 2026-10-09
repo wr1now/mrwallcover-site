@@ -6,6 +6,16 @@ import { projectHref, projects } from '../../lib/content';
 import { breadcrumbNode } from '../../lib/schema';
 import indexCopy from '../../content/projects.json';
 
+const groups = [
+  { id: 'hotels-homes', title: 'Hotels, homes and landmarks', intro: '', items: projects.filter((p) => !p.group) },
+  {
+    id: 'design-weeks',
+    title: 'Design weeks & fashion',
+    intro: 'Installations for Calico Wallpaper during London Design Festival and London Fashion Week.',
+    items: projects.filter((p) => p.group === 'design-weeks'),
+  },
+].filter((g) => g.items.length > 0);
+
 const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'Work', href: '/projects/' },
@@ -25,28 +35,34 @@ const crumbs = [
       <h1>{indexCopy.index.heading}</h1>
       <p class="lede mt-5">{indexCopy.index.lede}</p>
     </header>
-    <div class="grid gap-x-8 gap-y-12 pb-20 sm:grid-cols-2">
-      {
-        projects.map((project) => (
-          <a class="project-card" href={projectHref(project.slug)}>
-            {project.imagePolicy === 'none' ? (
-              <div class="flex min-h-40 items-end border border-line bg-paper p-4">
-                <p class="m-0 font-serif text-3xl">{project.client}</p>
-              </div>
-            ) : (
-              project.imageId && (
-                <Picture id={project.imageId} thumbOnly sizes="(min-width: 640px) 22rem, 100vw" />
-              )
-            )}
-            <h2>{project.title}</h2>
-            <p class="m-0 text-stone">
-              {project.role}
-              {project.dates ? ` · ${project.dates}` : ''}
-            </p>
-            <p class="mt-2 mb-0">{project.summary}</p>
-          </a>
-        ))
-      }
-    </div>
+    {
+      groups.map((group) => (
+        <section id={group.id} class="scroll-mt-24 pb-16" aria-labelledby={`${group.id}-heading`}>
+          <h2 id={`${group.id}-heading`} class="m-0 mb-8 border-t border-line pt-6 text-[clamp(1.9rem,3.5vw,2.8rem)]">{group.title}</h2>
+          {group.intro && <p class="lede -mt-4 mb-8">{group.intro}</p>}
+          <div class="grid gap-x-8 gap-y-12 sm:grid-cols-2">
+            {group.items.map((project) => (
+              <a class="project-card" href={projectHref(project.slug)}>
+                {project.imagePolicy === 'none' ? (
+                  <div class="flex min-h-40 items-end border border-line bg-paper p-4">
+                    <p class="m-0 font-serif text-3xl">{project.client}</p>
+                  </div>
+                ) : (
+                  project.imageId && (
+                    <Picture id={project.imageId} thumbOnly sizes="(min-width: 640px) 22rem, 100vw" />
+                  )
+                )}
+                <h3>{project.title}</h3>
+                <p class="m-0 text-stone">
+                  {project.role}
+                  {project.dates ? ` · ${project.dates}` : ''}
+                </p>
+                <p class="mt-2 mb-0">{project.summary}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))
+    }
   </div>
 </Base>

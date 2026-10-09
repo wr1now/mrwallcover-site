@@ -13,6 +13,9 @@
     "House of Hackney – LIMERENCE, Galapagos"
   ],
   "modest": true,
+  "metaTitle": null,
+  "metaDescription": null,
+  "group": null,
   "standfirst": "A complete decorating package for 110 rooms: paint, specialist wallcoverings and window film, delivered over about two years inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.",
   "hero": "old-bailey-12",
   "gallery": [

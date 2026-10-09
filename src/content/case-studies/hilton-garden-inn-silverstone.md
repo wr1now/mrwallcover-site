@@ -9,6 +9,9 @@
   "role": "Main wallcoverings contractor",
   "wallcoverings": [],
   "modest": false,
+  "metaTitle": null,
+  "metaDescription": null,
+  "group": null,
   "standfirst": "Main wallcoverings contractor for the only hotel on the Silverstone Circuit.",
   "hero": null,
   "gallery": []

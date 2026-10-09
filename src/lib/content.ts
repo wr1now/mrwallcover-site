@@ -56,6 +56,9 @@ interface CaseStudyData {
   hero: string | null;
   gallery: { id: string; credit: string | null }[];
   modest?: boolean;
+  metaTitle?: string | null;
+  metaDescription?: string | null;
+  group?: string | null;
 }
 
 type CaseStudyModule = { frontmatter: CaseStudyData; Content: any };
@@ -73,6 +76,9 @@ const CASE_STUDY_ORDER = [
   'trematon-castle',
   'old-bailey-hotel',
   'north-london-residence',
+  'calico-ahluwalia-estuary-rosewood',
+  'calico-beverly-1975-cadence',
+  'calico-lee-broom-overture',
   'hilton-garden-inn-silverstone',
 ];
 
@@ -94,11 +100,11 @@ export const projectAliases: Record<string, string> = Object.fromEntries(
 
 function fromCaseStudy(cs: CaseStudyData, base?: Project): Project {
   const full = `${cs.role} at ${cs.title.replace(/^A /, "a ")}${cs.years ? `, ${cs.years}` : ''}. ${cs.standfirst}`;
-  const description = full.length <= 158 ? full : `${full.slice(0, 155).replace(/\s+\S*$/, '')}…`;
+  const description = cs.metaDescription ? cs.metaDescription : full.length <= 158 ? full : `${full.slice(0, 155).replace(/\s+\S*$/, '')}…`;
   return {
     slug: cs.slug,
     title: cs.title,
-    metaTitle: `${cs.title} | Case Study | Mr Wallcover`.length <= 65 ? `${cs.title} | Case Study | Mr Wallcover` : `${cs.title} | Mr Wallcover`,
+    metaTitle: cs.metaTitle ?? (`${cs.title} | Case Study | Mr Wallcover`.length <= 65 ? `${cs.title} | Case Study | Mr Wallcover` : `${cs.title} | Mr Wallcover`),
     description,
     role: cs.role,
     client: cs.client,
@@ -114,6 +120,7 @@ function fromCaseStudy(cs: CaseStudyData, base?: Project): Project {
     featured: base?.featured ?? true,
     caseStudy: true,
     modest: Boolean(cs.modest),
+    group: cs.group ?? undefined,
     credits: Object.fromEntries(cs.gallery.filter((g) => g.credit).map((g) => [g.id, g.credit as string])),
   };
 }
