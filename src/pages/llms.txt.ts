@@ -75,6 +75,7 @@ export const GET: APIRoute = () => {
     '## Optional',
     entry('Full text', '/llms-full.txt', 'the main content of every published page, each headed by its title and canonical URL'),
     entry('Facts as data', '/facts.json', 'the public fact sheet: brand, description, founder, email, coverage, profiles'),
+    entry('Feed', '/feed.xml', 'Atom feed of the published guides and case studies, with their dates'),
     entry('Sitemap', '/sitemap-index.xml', 'every published page'),
     entry('Accessibility', '/accessibility/', 'how the site is built for keyboard, mobile and reduced-motion use'),
     entry('Privacy', '/privacy/', 'how enquiry details are handled; no cookies and no analytics by default'),

@@ -311,3 +311,48 @@ test('IndexNow: one 32-hex key file served from the site root, a script that is 
   const { stdout } = await promisify(execFile)('node', ['scripts/indexnow-ping.mjs', 'dist'], { env });
   assert.match(stdout, /nothing sent/);
 });
+
+test('/feed.xml is Atom with exactly the published guides and case studies, their frontmatter dates and no drafts; every page links it', async () => {
+  const feed = await readFile('dist/feed.xml', 'utf8');
+  assert.ok(feed.startsWith('<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom"'), 'Atom root');
+  assert.match(feed, /<link rel="self" type="application\/atom\+xml" href="https:\/\/www\.mrwallcover\.com\/feed\.xml"\/>/);
+  assert.match(feed, /<updated>\d{4}-\d{2}-\d{2}T00:00:00Z<\/updated>/);
+  const entries = [...feed.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map((m) => m[1]);
+  const byUrl = new Map(entries.map((entry) => [entry.match(/<id>([^<]+)<\/id>/)![1], entry]));
+  assert.equal(byUrl.size, entries.length, 'ids are unique');
+  const expected = new Map<string, { published: string; updated: string; title: string }>();
+  for (const name of (await readdir('src/content/guides')).filter((entry) => entry.endsWith('.md'))) {
+    const text = await readFile(`src/content/guides/${name}`, 'utf8');
+    if (/^draft: true$/m.test(text)) continue;
+    expected.set(`${SITE}/advice/${name.slice(0, -3)}/`, {
+      published: text.match(/^published: "([^"]+)"$/m)![1],
+      updated: text.match(/^updated: "([^"]+)"$/m)![1],
+      title: JSON.parse(text.match(/^title: (".*")$/m)![1]),
+    });
+  }
+  for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
+    const fm = JSON.parse((await readFile(`src/content/case-studies/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { slug: string; draft?: boolean; published: string; updated: string; title: string };
+    if (fm.draft) {
+      assert.equal(feed.includes(`/projects/${fm.slug}/`), false, `${fm.slug} is a draft`);
+      continue;
+    }
+    expected.set(`${SITE}/projects/${fm.slug}/`, { published: fm.published, updated: fm.updated, title: fm.title });
+  }
+  assert.deepEqual([...byUrl.keys()].sort(), [...expected.keys()].sort(), 'the feed lists exactly the published guides and case studies');
+  for (const [url, item] of expected) {
+    const entry = byUrl.get(url)!;
+    assert.ok(entry.includes(`<published>${item.published}T00:00:00Z</published>`), `${url} published`);
+    assert.ok(entry.includes(`<updated>${item.updated}T00:00:00Z</updated>`), `${url} updated`);
+    assert.ok(entry.includes(`<link rel="alternate" type="text/html" href="${url}"/>`), `${url} link`);
+    assert.ok(entry.includes(`<title>${item.title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')}</title>`), `${url} title`);
+    assert.match(entry, /<summary>\S[^<]*<\/summary>/, `${url} summary`);
+  }
+  // Newest first, and no unescaped ampersand anywhere.
+  const updates = entries.map((entry) => entry.match(/<updated>([^<]+)<\/updated>/)![1]);
+  assert.deepEqual(updates, [...updates].sort().reverse());
+  assert.doesNotMatch(feed, /&(?!amp;|lt;|gt;|quot;|apos;|#)/);
+  for (const page of await publishedPages()) {
+    assert.ok(page.html.includes('<link rel="alternate" type="application/atom+xml" href="/feed.xml"'), `${page.pathname} links the feed`);
+  }
+  assert.match(await readFile('dist/llms.txt', 'utf8'), /\(https:\/\/www\.mrwallcover\.com\/feed\.xml\)/);
+});

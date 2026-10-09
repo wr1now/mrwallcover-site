@@ -119,6 +119,7 @@ const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.fr
         <li><a href="/llms-full.txt">/llms-full.txt</a>: the main content of every published page as plain text.</li>
         <li><a href="/facts.json">/facts.json</a>: this fact sheet as data.</li>
         <li>Every published page also has a Markdown version at its address plus <code>index.md</code>, for example <a href="/for-ai/index.md">/for-ai/index.md</a>.</li>
+        <li><a href="/feed.xml">/feed.xml</a>: an Atom feed of the guides and case studies, with their dates.</li>
         <li><a href="/sitemap-index.xml">/sitemap-index.xml</a>: every published page.</li>
       </ul>
       <p>Profiles: {facts.profiles.map((profile) => <a href={profile.url} rel="noopener">{profile.name} {profile.handle}</a>)}.</p>
