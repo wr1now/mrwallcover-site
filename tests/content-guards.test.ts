@@ -176,6 +176,18 @@ test('exterior works lists only the two cleared projects while the showroom case
   assert.doesNotMatch(hackney, /exterior-works/);
 });
 
+test('the hand-painted service names the Brown\'s paper its case study records', async () => {
+  const data = JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as { items: { slug: string; paragraphs: string[] }[] };
+  const page = data.items.find((item) => item.slug === 'hand-painted-wallpaper-installation');
+  assert.ok(page);
+  const proof = page.paragraphs.find((p) => p.includes("Brown's Hotel"));
+  assert.ok(proof, 'the hand-painted page cites Brown\'s Hotel');
+  assert.match(proof, /Lewis & Wood's Adam's Eden/);
+  const study = await readFile('src/content/case-studies/browns-hotel-mayfair.md', 'utf8');
+  assert.match(study, /Lewis & Wood – Adam's Eden/, 'the case study must still record the same paper');
+  assert.doesNotMatch(proof, /de Gournay|Fromental/, 'the proof sentence names the paper actually hung, not a maker it is compared with');
+});
+
 test('House of Hackney client photographs are committed, so the build does not download them', async () => {
   const manifest = JSON.parse(await readFile('scripts/credited/house-of-hackney.json', 'utf8')) as {
     images: Record<string, { image: string }>;
