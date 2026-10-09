@@ -94,6 +94,49 @@ test('/for-ai/ states the facts from facts.json, links every published case stud
   assert.match(home, /<footer[\s\S]*href="\/for-ai\/"[\s\S]*<\/footer>/, 'footer link');
 });
 
+test('/llms.txt follows the llmstxt.org shape, lists only published pages that resolve, and ends with an Optional section', async () => {
+  const llms = await readFile('dist/llms.txt', 'utf8');
+  const lines = llms.split('\n');
+  const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { brand: string; description: string };
+  assert.equal(lines[0], `# ${facts.brand}`, 'H1 first');
+  assert.equal(lines[1], '');
+  assert.equal(lines[2], `> ${facts.description}`, 'blockquote summary second');
+  const h1s = lines.filter((line) => line.startsWith('# '));
+  assert.equal(h1s.length, 1, 'exactly one H1');
+  const sections = lines.filter((line) => line.startsWith('## '));
+  assert.ok(sections.length >= 6, `${sections.length} sections`);
+  assert.equal(sections.at(-1), '## Optional', 'Optional is the last section');
+  assert.ok(sections.includes('## Wallcovering Guide'));
+  // Paragraphs come before the first H2; after it, every non-blank line is a heading or a "- [Title](url): note" entry.
+  const firstSection = lines.indexOf(sections[0]);
+  const entryPattern = /^- \[[^\]]+\]\((https:\/\/www\.mrwallcover\.com\/[^)\s]*)\): \S.*$/;
+  const urls: string[] = [];
+  for (const line of lines.slice(firstSection)) {
+    if (line === '' || line.startsWith('## ')) continue;
+    const match = line.match(entryPattern);
+    assert.ok(match, `not an llms.txt entry: ${line}`);
+    urls.push(match![1]);
+  }
+  assert.ok(urls.length >= 60, `${urls.length} entries`);
+  assert.ok(urls.includes(`${SITE}/for-ai/`), '/for-ai/ is listed');
+  assert.ok(urls.includes(`${SITE}/advice/quantities/`), 'the quantity guide is listed');
+  // Every listed page URL is a built, indexable page (fragments and non-HTML files aside).
+  const pages = await publishedPages();
+  const built = new Set(pages.map((page) => `${SITE}${page.pathname}`));
+  for (const url of urls) {
+    const clean = url.replace(/#.*$/, '');
+    if (!clean.endsWith('/')) continue;
+    assert.ok(built.has(clean), `${url} is not a published page`);
+  }
+  // Drafts and noindex pages never appear.
+  for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
+    const fm = JSON.parse((await readFile(`src/content/case-studies/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { slug: string; draft?: boolean };
+    assert.equal(urls.includes(`${SITE}/projects/${fm.slug}/`), !fm.draft, fm.slug);
+  }
+  for (const path of ['/thank-you/', '/search/', '/404/']) assert.equal(llms.includes(`${SITE}${path}`), false, path);
+  assert.doesNotMatch(llms, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b/, 'no phone number');
+});
+
 test('every published HTML page has exactly one H1', async () => {
   const problems: string[] = [];
   for (const page of await publishedPages()) {
