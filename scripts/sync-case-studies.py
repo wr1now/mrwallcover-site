@@ -57,15 +57,20 @@ GALLERY_OVERRIDE.update({
     'calico-beverly-1975-cadence': [f'beverly-{n}' for n in ['06','08','04','05','07','03']],
     'calico-ahluwalia-estuary-rosewood': [f'ahluwalia-estuary-{n}' for n in ['06','07','01','02','03']] + ['nomad-01'],
 })
+GALLERY_OVERRIDE['heathrow-terminal-4-calico'] = [f'heathrow-{n}' for n in ['03','02','04','05','06','07','08','01']]
+SLUG_OVERRIDE = {'calico-heathrow-airside': 'heathrow-terminal-4-calico'}
+MODEST |= {'heathrow-terminal-4-calico'}
 MODEST |= {'calico-lee-broom-overture', 'calico-beverly-1975-cadence', 'calico-ahluwalia-estuary-rosewood'}
-YEARS = {'calico-lee-broom-overture': '2025', 'calico-beverly-1975-cadence': '2026', 'calico-ahluwalia-estuary-rosewood': '2026'}
+YEARS = {'heathrow-terminal-4-calico': '2018', 'calico-lee-broom-overture': '2025', 'calico-beverly-1975-cadence': '2026', 'calico-ahluwalia-estuary-rosewood': '2026'}
 META_TITLE = {
+    'heathrow-terminal-4-calico': 'Calico Wallpaper Mural, Heathrow Terminal 4 | Mr Wallcover',
     'calico-lee-broom-overture': 'Lee Broom x Calico: Overture, Shoreditch | Mr Wallcover',
     'calico-beverly-1975-cadence': 'BEVERLY 1975 x Calico: Cadence, LDF 2026 | Mr Wallcover',
     'calico-ahluwalia-estuary-rosewood': 'Ahluwalia x Calico: Estuary at Rosewood | Mr Wallcover',
 }
 GROUP = {k: 'design-weeks' for k in YEARS}
 META_DESC = {
+    'heathrow-terminal-4-calico': "A bespoke Calico Wallpaper landscape mural hung overnight in a luxury fashion house's airside store at Heathrow Terminal 4, in a live terminal.",
     'calico-lee-broom-overture': "Survey, preparation and installation of Lee Broom's Overture mural for Calico Wallpaper at his Shoreditch showroom, London Design Festival 2025.",
     'calico-beverly-1975-cadence': 'Cadence in Oxblood by Calico Wallpaper, hung in a day for BEVERLY 1975 at The Lavery, Cromwell Place, Brompton Design District 2026.',
     'calico-ahluwalia-estuary-rosewood': "Ahluwalia's Estuary mural for Calico Wallpaper, installed as the runway backdrop at Rosewood London for London Fashion Week, September 2026.",
@@ -222,7 +227,7 @@ def calico_callout(clean):
     links = re.findall(r'^- \[(.+?)\]\((https?://[^)]+)\)', clean, flags=re.M)
     press, seen = [], set()
     for label, url in links:
-        if 'calicowallpaper.com/collection' in url or 'calicowallpaper.com/product' in url or url in seen:
+        if 'calicowallpaper.com/' in url or url in seen:
             continue
         seen.add(url)
         press.append(f'[{label}]({url})')
@@ -263,6 +268,7 @@ for path in sorted(SRC.glob('*.md')):
         continue
     fm, body = parse_frontmatter(path.read_text())
     slug = fm.get('slug') or path.stem
+    slug = SLUG_OVERRIDE.get(slug, slug)
     rights = image_rights(body)
     gallery = []
     if slug in GALLERY_OVERRIDE:

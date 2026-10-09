@@ -1,7 +1,7 @@
 {
   "index": {
     "title": "Hotel Wallcovering Projects | Mr Wallcover",
-    "description": "Wallcovering and decorating for The OWO, Brown's Hotel, Four Seasons Ten Trinity Square, Hilton hotels and Mulberry.",
+    "description": "Wallcovering and decorating for The OWO, Brown's Hotel, Four Seasons Ten Trinity Square, Hilton hotels and Calico Wallpaper.",
     "eyebrow": "Work",
     "heading": "Public commissions.",
     "lede": "A selection of work already on the public record. Private houses are not shown, and they are not named."
@@ -151,27 +151,6 @@
       "gallery": [],
       "videos": [],
       "caption": "The hotel at Silverstone. A photograph of the building.",
-      "featured": false
-    },
-    {
-      "slug": "mulberry-flagship-london",
-      "title": "Mulberry Flagship, London",
-      "metaTitle": "Mulberry Flagship London | Mr Wallcover",
-      "description": "Wallcovering at the Mulberry flagship on Regent Street, London. Photographs of this commission have not been added.",
-      "role": "Wallcovering",
-      "client": "Mulberry",
-      "location": "Regent Street, London",
-      "dates": null,
-      "summary": "Wallcovering at the Regent Street flagship.",
-      "paragraphs": [
-        "Wallcovering at the Mulberry flagship on Regent Street, London.",
-        "The previous website listed this commission without a written description and without photographs. Those details are not invented here. The page stays with what is on the record: the client, the street, and the trade."
-      ],
-      "imagePolicy": "none",
-      "imageId": null,
-      "gallery": [],
-      "videos": [],
-      "caption": null,
       "featured": false
     }
   ]
