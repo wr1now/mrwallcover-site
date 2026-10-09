@@ -7,6 +7,11 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
+author: "Dorin Burcus"
+authorRole: "founder"
+authorHref: "/about/#dorin"
+published: "2026-10-09"
+updated: "2026-10-09"
 description: "What a wallcovering package needs to be priced, programmed and handed over: scope matrix, measurement basis, substrate handover, programme, change control, snagging and spares."
 shortTitle: "Developer package"
 order: 9

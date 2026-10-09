@@ -7,6 +7,11 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
+author: "Dorin Burcus"
+authorRole: "founder"
+authorHref: "/about/#dorin"
+published: "2026-10-09"
+updated: "2026-10-09"
 description: "What to do when a wallcovering bubbles, lifts or marks: what to photograph and record, what not to touch, how to clean each material, and when an inspection is needed."
 shortTitle: "Problems and aftercare"
 order: 10
@@ -15,6 +20,13 @@ relatedGuides: ["wall-preparation", "grasscloth-seams-and-variation", "choosing-
 ctaLabel: "Request aftercare"
 ctaHref: "/aftercare/"
 sources: []
+faq:
+  - q: "Should I cut a bubble in wallpaper and glue it down?"
+    a: "No. Photograph it, note when it appeared and what changed nearby, and leave it. A bubble that came with the heating season may settle as the paper dries; one over a cold, soft patch is a damp problem. Cutting it first makes the cause harder to find and the repair more visible."
+  - q: "Can I wipe grasscloth or silk with a damp cloth?"
+    a: "No. Silk and natural weaves are dry-dust surfaces; moisture stains them. Contract vinyl will take a barely damp cloth and mild soap, then drying. When in doubt, treat the product as not washable and check its own care sheet."
+  - q: "When does a wallcovering problem need a site inspection?"
+    a: "When the cause is not clear from photographs, when it is spreading, when there is any sign of damp, or when the covering is part of a listed, acoustic or specified system where the detail matters."
 ---
 
 A bubble has appeared, an edge has lifted or there is a mark on the wall: what now? Photograph it, note when it appeared and what changed nearby, and do not touch it. Most wallcovering problems are easier to diagnose and repair before anyone has cut a bubble, pressed an edge back with the wrong adhesive or tried a household cleaner. The symptom tells you less than the cause, and similar symptoms come from quite different causes.

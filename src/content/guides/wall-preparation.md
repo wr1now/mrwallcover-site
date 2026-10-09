@@ -7,6 +7,11 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
+author: "Dorin Burcus"
+authorRole: "founder"
+authorHref: "/about/#dorin"
+published: "2026-10-09"
+updated: "2026-10-09"
 description: "How to tell whether a wall is ready for wallcovering: old coatings, dryness, soundness, filling and sanding, lining paper, priming and what needs a site inspection."
 shortTitle: "Wall preparation"
 order: 3
@@ -15,6 +20,13 @@ relatedGuides: ["installation-cost", "wallcovering-problems-and-aftercare", "cho
 ctaLabel: "Discuss wall preparation"
 ctaHref: "/contact/?intent=prepare"
 sources: [{"label": "Vescom: adhesives and accessories", "url": "https://vescom.com/en/adhesives-accessories"}]
+faq:
+  - q: "Can you hang new wallpaper over old wallpaper?"
+    a: "Not reliably. Old paper, and the backing left after stripping, can let go under the pull of a drying wallcovering, and any joint or texture beneath shows through a fine finish. Where the specification includes preparation, the old covering is stripped and the wall made good first."
+  - q: "Does wallpaper need lining paper?"
+    a: "It depends on the maker's specification. Many silks, hand-painted papers and natural weaves are hung over a lining; some murals and most contract vinyls are not. We follow the specification for the product rather than a house rule."
+  - q: "How do you know a wall is dry enough?"
+    a: "By a moisture reading, not by the calendar. New plaster, fresh filler and any wall with a history of damp are checked before they are covered, and the cause of any damp is investigated rather than hidden behind a new finish."
 ---
 
 Is the wall ready? It is ready when it is sound, dry, smooth enough for the material, evenly porous and free of anything that will come away later. Most walls fail at least one of those on first inspection, and the expensive paper does not fix any of them. A fine finish makes an uneven wall more noticeable, especially under side light or with a smooth, reflective material such as [silk](/materials/silk-and-textiles/) or a plain contract vinyl.

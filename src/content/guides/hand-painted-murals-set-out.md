@@ -7,6 +7,11 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
+author: "Dorin Burcus"
+authorRole: "founder"
+authorHref: "/about/#dorin"
+published: "2026-10-09"
+updated: "2026-10-09"
 description: "How a scenic or hand-painted paper is set out: elevations, the focal point, panel sequence, doors and corners, finished dimensions and when the survey has to happen."
 shortTitle: "Hand-painted papers and murals"
 order: 6

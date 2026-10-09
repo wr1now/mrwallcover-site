@@ -7,6 +7,11 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
+author: "Dorin Burcus"
+authorRole: "founder"
+authorHref: "/about/#dorin"
+published: "2026-10-09"
+updated: "2026-10-09"
 description: "Specifying wallcoverings for an occupied hotel: cleaning and durability, the sample room, batch control, phasing around guests, product documentation, spares and handover."
 shortTitle: "Hotel wallcoverings"
 order: 7

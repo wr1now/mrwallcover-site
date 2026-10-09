@@ -7,6 +7,11 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
+author: "Dorin Burcus"
+authorRole: "founder"
+authorHref: "/about/#dorin"
+published: "2026-10-09"
+updated: "2026-10-09"
 description: "Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a complete quotation should include."
 shortTitle: "Installation cost"
 order: 5
@@ -15,6 +20,13 @@ relatedGuides: ["wall-preparation", "hand-painted-murals-set-out", "developer-wa
 ctaLabel: "Request a scoped quotation"
 ctaHref: "/contact/?intent=install"
 sources: []
+faq:
+  - q: "Is there a price per roll for wallpaper installation?"
+    a: "No. The figure follows the measured wall area after openings are taken off, the pattern repeat and the wastage it creates, the state of the walls, the material, and the access and protection the room needs. A quotation prices a surveyed scope, not a roll."
+  - q: "What should a wallpaper installation quotation include?"
+    a: "Whether the survey, preparation, lining and primers, adhesive, protection, access equipment, waste removal and the aftercare visit are included, with material supply shown separately from installation, and parking, travel and VAT treatment made clear."
+  - q: "Does the pattern repeat change the cost?"
+    a: "Yes. A large or half-drop repeat wastes material at the top of each drop, so the order is larger, and matching each drop by eye and setting the room out from its focal points takes longer than a plain paper run from a corner."
 ---
 
 What does wallpaper installation cost? There is no honest flat rate per roll. The figure follows the measured wall area after openings are taken off, the pattern repeat and the wastage it creates, the state of the walls, the material, and the access and protection the room needs. Two rooms with the same floor area can be quite different days of work: a plain contract vinyl in an empty flat is not a hand-painted scenic in an occupied house, or a hotel corridor that can only be reached between guests. This guide explains each factor so you can compare quotations on the same basis. It deliberately contains no price bands.

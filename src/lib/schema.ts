@@ -186,6 +186,42 @@ export function projectNode(opts: { url: string; name: string; description: stri
   };
 }
 
+/**
+ * Advice-guide Article. The founder's Person node is the author; the business
+ * is the publisher. Dates come from the guide's frontmatter, never the build.
+ */
+export function guideArticleNode(opts: { url: string; headline: string; description: string; published: string; updated: string }) {
+  const iso = /^\d{4}-\d{2}-\d{2}$/;
+  if (!iso.test(opts.published) || !iso.test(opts.updated)) {
+    throw new Error(`Guide ${opts.url} needs ISO published and updated dates in its frontmatter`);
+  }
+  return {
+    '@type': 'Article',
+    '@id': `${opts.url}#article`,
+    headline: opts.headline,
+    description: opts.description,
+    url: opts.url,
+    mainEntityOfPage: { '@id': `${opts.url}#webpage` },
+    inLanguage: 'en-GB',
+    datePublished: opts.published,
+    dateModified: opts.updated,
+    author: { '@type': 'Person', '@id': FOUNDER_ID, name: facts.founder.name, url: FOUNDER_URL },
+    publisher: { '@id': BUSINESS_ID },
+  };
+}
+
+/** FAQPage for a guide's visible question-and-answer block. Only call it when that block is rendered. */
+export function guideFaqNode(items: { q: string; a: string }[]) {
+  return {
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  };
+}
+
 /** Case-study article about a completed commission. Facts only from the page itself. */
 export function caseStudyArticleNode(opts: {
   url: string;

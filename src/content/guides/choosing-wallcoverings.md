@@ -7,6 +7,11 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
+author: "Dorin Burcus"
+authorRole: "founder"
+authorHref: "/about/#dorin"
+published: "2026-10-09"
+updated: "2026-10-09"
 description: "How to choose a wallcovering that still looks right once it is on the wall: traffic, light, cleaning, moisture, sample size and the questions to settle before ordering."
 shortTitle: "Choosing wallcoverings"
 order: 1

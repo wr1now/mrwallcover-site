@@ -7,6 +7,11 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
+author: "Dorin Burcus"
+authorRole: "founder"
+authorHref: "/about/#dorin"
+published: "2026-10-09"
+updated: "2026-10-09"
 description: "Grasscloth seams show and panels vary in shade. What is normal, what is a fault, how the set-out and the batch change the result, and what to settle before you order."
 shortTitle: "Grasscloth seams and variation"
 order: 2
@@ -15,6 +20,13 @@ relatedGuides: ["choosing-wallcoverings", "wall-preparation", "wallcovering-prob
 ctaLabel: "Discuss a natural wallcovering"
 ctaHref: "/contact/?intent=source"
 sources: [{"label": "Phillip Jeffries: The Art of Smooth Shading", "url": "https://blog.phillipjeffries.com/the-hang-guide-to-grasscloth-shading"}, {"label": "Phillip Jeffries: Engineering a Room", "url": "https://blog.phillipjeffries.com/the-hang-how-many-wallcovering-panels-in-a-room"}, {"label": "Phillip Jeffries: hanging instructions", "url": "https://www.phillipjeffries.com/hanging-instructions"}]
+faq:
+  - q: "Are visible seams in grasscloth a fault?"
+    a: "No. Visible seams and a change of shade between neighbouring drops are properties of natural grasscloth. An open joint, a lifted seam, adhesive on the face or a tear is different and should be reported."
+  - q: "Should alternate drops of grasscloth be reversed?"
+    a: "Only if the maker's hanging instruction says so. Some products are reverse-hung to balance shading; others must be hung in one direction. Follow the instruction for the exact product and review the first drops in the room's light."
+  - q: "Can grasscloth go in a bathroom or a busy hallway?"
+    a: "Natural grasscloth is a dry-dust surface that moisture stains and frequent wiping damages. In a wet room or a heavily used passage, compare a textured vinyl or a printed texture, and check the exact product's care sheet before deciding."
 ---
 
 Will the seams in grasscloth show? Yes. Every seam in a natural grasscloth is visible, and adjacent drops can differ in shade. That is the material, not a hanging fault, and it is the reason to look at a whole installed wall, not a sample, before you commit a room to it. The sample shows the fibres. The wall shows how the panels sit beside one another.
