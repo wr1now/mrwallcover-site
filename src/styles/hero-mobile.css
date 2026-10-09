@@ -6,27 +6,28 @@
  */
 .hero-copy h1 {
   max-width: 22ch;
-  font-size: 2.3rem;
+  font-size: var(--text-hero);
   line-height: 1.08;
 }
 
 @media (min-width: 1024px) {
   .hero-copy h1 {
-    font-size: clamp(2.6rem, 3.3vw, 3.4rem);
+    font-size: var(--text-hero-desktop);
   }
 }
 
 @media (max-width: 1023px) {
   /*
    * Keep the hero's first two buttons above the fixed dock. The hero fills the
-   * screen below the header (4.0625rem) and above the dock (3.6rem + safe area),
-   * plus 4.75rem for the third button row, which may sit below the fold. The
-   * photograph gives up height first (object-fit: cover).
+   * screen below the floating header (its height plus its top inset) and above
+   * the dock (its clearance token, which includes the safe area), plus 4.75rem
+   * for the third button row, which may sit below the fold. The photograph
+   * gives up height first (object-fit: cover).
    */
   .hero {
     display: flex;
     flex-direction: column;
-    min-height: calc(100svh - 4.0625rem - 3.6rem - env(safe-area-inset-bottom) + 4.75rem);
+    min-height: calc(100svh - var(--header-height) - var(--header-inset-top) - var(--dock-clearance) + 4.75rem);
   }
 
   .hero-media {
@@ -60,7 +61,7 @@
 /* From 640px the three buttons share one row, so no allowance for a wrapped third button. */
 @media (min-width: 40rem) and (max-width: 1023px) {
   .hero {
-    min-height: calc(100svh - 4.0625rem - 3.6rem - env(safe-area-inset-bottom) + 0.75rem);
+    min-height: calc(100svh - var(--header-height) - var(--header-inset-top) - var(--dock-clearance) + 0.75rem);
   }
 }
 

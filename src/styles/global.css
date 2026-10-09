@@ -3,19 +3,8 @@
 @import "@fontsource/cormorant-garamond/latin-500-italic.css";
 @import "@fontsource/outfit/latin-400.css";
 @import "@fontsource/outfit/latin-500.css";
-
-@theme {
-  --font-serif: "Cormorant Garamond", "Palatino Linotype", Palatino, Georgia, serif;
-  --font-sans: Outfit, "Avenir Next", "Segoe UI", sans-serif;
-  --color-ink: #141210;
-  --color-ivory: #f4f0e8;
-  --color-paper: #f7f4ee;
-  --color-brass: #6b542f;
-  --color-gold: #c6a36a;
-  --color-stone: #4e4942;
-  --color-line: #ddd6c8;
-  --color-panel: #fffdf8;
-}
+/* Design tokens: palette (as Tailwind @theme), glass recipes, type scale, grid, spacing, radii, shadows, motion. */
+@import "./tokens.css";
 
 @layer base {
   html {
@@ -29,8 +18,8 @@
     background: var(--color-ivory);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    font-size: 1.0625rem;
-    line-height: 1.65;
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
     font-weight: 400;
   }
 
@@ -39,12 +28,15 @@
   h3 {
     font-family: var(--font-serif);
     font-weight: 500;
-    line-height: 1.02;
-    letter-spacing: -0.02em;
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+    /* Display type never hyphenates ("non-" / "woven" in a narrow panel) and balances its lines. */
+    hyphens: manual;
+    text-wrap: balance;
   }
 
   [id] {
-    scroll-margin-top: 5.5rem;
+    scroll-margin-top: calc(var(--header-height) + var(--header-inset-top) + 1rem);
   }
 
   img {
@@ -70,9 +62,9 @@
 @layer components {
   .container-page {
     width: 100%;
-    max-width: 72rem;
+    max-width: var(--content-max);
     margin-inline: auto;
-    padding-inline: 1.25rem;
+    padding-inline: var(--gutter);
   }
 
   .skip-link {
@@ -91,9 +83,9 @@
 
   .eyebrow {
     margin: 0 0 0.85rem;
-    font-size: 0.75rem;
+    font-size: var(--text-eyebrow);
     font-weight: 500;
-    letter-spacing: 0.16em;
+    letter-spacing: var(--tracking-eyebrow);
     text-transform: uppercase;
     color: var(--color-brass);
   }
@@ -105,12 +97,12 @@
   .lede {
     max-width: 38rem;
     color: var(--color-stone);
-    font-size: 1.125rem;
-    line-height: 1.6;
+    font-size: var(--text-lede);
+    line-height: var(--leading-lede);
   }
 
   .on-dark .lede {
-    color: #efe7da;
+    color: var(--color-ivory-soft);
   }
 
   .wordmark {
@@ -201,6 +193,12 @@
     font-size: 0.95rem;
     letter-spacing: 0.01em;
     border: 1px solid transparent;
+    border-radius: var(--radius-control);
+    transition: transform var(--dur-control) var(--ease-standard), opacity var(--dur-control) var(--ease-standard);
+  }
+
+  .btn:active {
+    transform: translateY(1px);
   }
 
   .btn-solid {
@@ -216,7 +214,7 @@
   .btn-ghost {
     background: transparent;
     color: var(--color-ivory);
-    border-color: color-mix(in srgb, var(--color-ivory) 55%, transparent);
+    border-color: color-mix(in srgb, var(--color-ivory) calc(var(--ghost-ring-alpha) * 100%), transparent);
   }
 
   .btn-line {
@@ -238,7 +236,7 @@
   .media-frame {
     display: block;
     position: relative;
-    background-color: #d9d2c6;
+    background-color: var(--color-media-fill);
     background-position: center;
     background-size: cover;
     line-height: 0;
@@ -253,7 +251,7 @@
 
   .js .media-frame img {
     opacity: 0;
-    transition: opacity 0.45s ease;
+    transition: opacity var(--dur-media) var(--ease-decel);
   }
 
   .js .media-frame img.is-ready {
@@ -290,6 +288,7 @@
 
   .hero-copy h1 {
     margin: 0;
+    /* hero-mobile.css sets the real sizes (--text-hero, --text-hero-desktop); this is the pre-PR #12 fallback. */
     font-size: clamp(2.7rem, 8vw, 4.75rem);
     max-width: 11ch;
   }
@@ -312,17 +311,17 @@
   }
 
   .page-head {
-    padding-block: 3.5rem 2.5rem;
+    padding-block: var(--space-12) var(--space-10);
   }
 
   .page-head h1 {
     margin: 0;
-    font-size: clamp(2.6rem, 6vw, 4.4rem);
-    max-width: 14ch;
+    font-size: var(--text-display);
+    max-width: var(--measure-title);
   }
 
   .prose {
-    max-width: 40rem;
+    max-width: var(--measure-prose);
   }
 
   .prose p + p,
@@ -338,7 +337,7 @@
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.18em;
-    text-decoration-color: #b7ad9c;
+    text-decoration-color: var(--color-underline);
   }
 
   .site-footer a {
@@ -349,7 +348,7 @@
 
   .field input::placeholder,
   .field textarea::placeholder {
-    color: #5c564e;
+    color: var(--color-stone-deep);
     opacity: 1;
   }
 
@@ -403,7 +402,7 @@
   .caption {
     margin: 0.55rem 0 0;
     color: var(--color-stone);
-    font-size: 0.9rem;
+    font-size: var(--text-small);
   }
 
   .step-num {
@@ -506,8 +505,8 @@
   }
 
   .meta-list dt {
-    font-size: 0.75rem;
-    letter-spacing: 0.14em;
+    font-size: var(--text-eyebrow);
+    letter-spacing: var(--tracking-eyebrow);
     text-transform: uppercase;
     color: var(--color-brass);
   }
@@ -528,11 +527,11 @@
     width: 100%;
     min-height: 48px;
     padding: 0.75rem 0.85rem;
-    border: 1px solid var(--color-line);
+    border: 1px solid var(--color-field-border);
     background: var(--color-panel);
     color: var(--color-ink);
     font: inherit;
-    border-radius: 0;
+    border-radius: var(--radius-control);
   }
 
   .field textarea {
@@ -556,7 +555,7 @@
     padding: 0;
     list-style: none;
     color: var(--color-stone);
-    font-size: 0.92rem;
+    font-size: var(--text-small);
   }
 
   .crumbs a,
@@ -620,13 +619,9 @@
 }
 
 @media (min-width: 768px) {
-  .container-page {
-    padding-inline: 2rem;
-  }
-
   .proof-strip {
-    scroll-padding-inline: max(2rem, calc((100% - 72rem) / 2 + 2rem));
-    padding-inline: max(2rem, calc((100% - 72rem) / 2 + 2rem));
+    scroll-padding-inline: max(var(--gutter), calc((100% - var(--content-max)) / 2 + var(--gutter)));
+    padding-inline: max(var(--gutter), calc((100% - var(--content-max)) / 2 + var(--gutter)));
   }
 
   .hero-copy {
@@ -634,7 +629,7 @@
   }
 
   .page-head {
-    padding-block: 5rem 3rem;
+    padding-block: var(--space-20) var(--space-12);
   }
 }
 
@@ -662,8 +657,9 @@
 }
 
 @media (max-width: 1023px) {
+  /* The fixed dock never covers the footer's last line: the body ends with the dock's full clearance. */
   body {
-    padding-bottom: calc(3.4rem + env(safe-area-inset-bottom));
+    padding-bottom: var(--dock-clearance);
   }
 }
 
@@ -683,7 +679,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy {
-    animation: rise 700ms ease both;
+    animation: rise var(--dur-media) var(--ease-decel) both;
   }
 }
 
@@ -895,6 +891,8 @@ article h3 a {
   .crumbs li {
     display: inline-flex;
     align-items: center;
+    /* The separator " / " is a flex item, so its own spaces collapse; the gap puts the space back on both sides. */
+    gap: 0.35rem;
     min-height: 44px;
   }
 }
@@ -968,6 +966,7 @@ article h3 a {
     place-items: center;
     border: 1px solid var(--color-line);
     background: var(--color-paper);
+    border-radius: var(--radius-control);
     text-align: center;
     padding: 2rem;
   }
@@ -984,13 +983,14 @@ article h3 a {
 
   .form-error {
     margin: 0.35rem 0 0;
-    color: #6b2e24;
+    color: var(--color-error);
   }
 
   .form-summary {
     padding: 0.8rem 1rem;
     background: var(--color-paper);
     border: 1px solid var(--color-line);
+    border-radius: var(--radius-control);
   }
 
   .form-summary a {
@@ -1099,10 +1099,10 @@ html[data-effects='plain'] .glass-smoked {
 .guide-library, .guide-related { margin-top: 4rem; }
 .guide-library > h2, .guide-related > h2 { font-size: clamp(2rem,4vw,3rem); }
 .guide-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0 2rem; border: 0; padding: 0; }
-.guide-filters button { min-height: 48px; border: 1px solid var(--color-line); padding: .5rem 1rem; border-radius: 99px; cursor: pointer; }
+.guide-filters button { min-height: 48px; border: 1px solid var(--color-line); padding: .5rem 1rem; border-radius: var(--radius-pill); cursor: pointer; }
 .guide-filters button[aria-pressed="true"] { background: var(--color-ink); color: var(--color-ivory); border-color: var(--color-ink); }
 .guide-grid { display: grid; gap: 1.5rem; }
-.guide-card { display: flex; flex-direction: column; padding: 1.75rem; border: 1px solid var(--color-line); background: var(--color-paper); }
+.guide-card { display: flex; flex-direction: column; padding: 1.75rem; border: 1px solid var(--color-line); background: var(--color-paper); border-radius: var(--radius-control); }
 .guide-card h2 { font-size: 2rem; margin: 0; }
 .guide-card h2 a { color: inherit; text-decoration: none; }
 .guide-card > p:not(.eyebrow) { color: var(--color-stone); margin: 1rem 0; }
@@ -1126,10 +1126,10 @@ html[data-effects='plain'] .glass-smoked {
 .guide-faq-item p { margin: 0; }
 .guide-sources { border-top: 1px solid var(--color-line); margin-top: 2.5rem; font-size: .9rem; }
 .guide-sources h2 { font-size: 1.4rem; }
-.guide-next { margin-top: 3rem; padding: clamp(1.5rem,4vw,2.5rem); background: #eae3d6; }
+.guide-next { margin-top: 3rem; padding: clamp(1.5rem,4vw,2.5rem); background: var(--color-ivory-deep); border-radius: var(--radius-control); }
 .guide-next h2 { font-size: 2.3rem; margin: 0 0 1rem; }
 .guide-next p:not(.eyebrow) { max-width: 40rem; margin-bottom: 1.5rem; }
-.material-finder { margin-bottom: 3.5rem; padding: clamp(1.25rem,4vw,2rem); background: var(--color-paper); border: 1px solid var(--color-line); }
+.material-finder { margin-bottom: 3.5rem; padding: clamp(1.25rem,4vw,2rem); background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
 .material-finder h2 { font-size: 2.5rem; margin: 0; }
 .material-finder form { margin-top: 1.5rem; }
 .material-result { padding-block: 1.5rem; border-top: 1px solid var(--color-line); }
@@ -1137,7 +1137,7 @@ html[data-effects='plain'] .glass-smoked {
 .material-decision { margin-block: 2rem; padding-block: 1rem; border-block: 1px solid var(--color-line); }
 .material-decision dt { font-weight: 500; margin-top: 1rem; }
 .material-decision dd { margin: .3rem 0 1rem; }
-.professional-intake { background: var(--color-paper); border: 1px solid var(--color-line); padding: 1.5rem; }
+.professional-intake { background: var(--color-paper); border: 1px solid var(--color-line); padding: 1.5rem; border-radius: var(--radius-control); }
 .professional-intake h2 { font-size: 2rem; margin-top: 0; }
 .professional-intake li { margin-block: .65rem; }
 .selection-summary { padding: 1rem; border-left: 2px solid var(--color-brass); margin-bottom: 1.5rem; }

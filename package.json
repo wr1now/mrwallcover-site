@@ -13,7 +13,7 @@
     "postbuild": "node scripts/build-ai-layer.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "node --experimental-strip-types --test tests/quantity.test.ts tests/enquiry.test.ts tests/leads-api.test.ts tests/content-guards.test.ts tests/phone.test.ts tests/material-advice.test.ts",
+    "check": "node --experimental-strip-types --test tests/quantity.test.ts tests/enquiry.test.ts tests/leads-api.test.ts tests/content-guards.test.ts tests/phone.test.ts tests/material-advice.test.ts tests/contrast.test.ts",
     "check:dist": "node --experimental-strip-types --test tests/dist-guards.test.ts tests/ai-layer.test.ts",
     "check:phone": "node --experimental-strip-types --test tests/phone-build.test.ts",
     "lead-api": "LEAD_API_ENABLED=1 node --experimental-strip-types server/index.ts",

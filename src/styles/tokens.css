@@ -1,0 +1,148 @@
+/*
+ * Glass Atelier design tokens (contract section 6, stage 5 step G3).
+ *
+ * Imported first by global.css. The palette and the two typefaces live in the
+ * Tailwind @theme block so the existing utility names (text-stone, bg-paper,
+ * border-line, font-serif) keep working; everything else is a plain custom
+ * property on :root and is not a Tailwind namespace, so Tailwind's own
+ * defaults (--radius-sm, --text-sm, --ease-out...) never collide with it.
+ *
+ * scripts/contrast-record.mjs reads this file, one token per line, and
+ * measures every text/background pair the site uses, including text on each
+ * glass variant composited over its lightest and darkest plausible backdrop.
+ * The result is tests/contrast.test.ts (npm run check) and
+ * docs/glass-atelier/CONTRAST.md. Change a colour here and the record follows.
+ */
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-sans: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+
+  /* Palette, contract section 6 */
+  --color-ink: #141210;
+  --color-ivory: #f4f0e8;
+  --color-paper: #f7f4ee;
+  --color-brass: #6b542f;
+  --color-gold: #c6a36a;
+  --color-stone: #4e4942;
+
+  /* Derived neutrals */
+  --color-line: #ddd6c8; /* hairline on ivory and paper */
+  --color-panel: #fffdf8; /* field and panel fill */
+  --color-ivory-deep: #eae3d6; /* one step below ivory: the guide "next step" band */
+  --color-ivory-soft: #efe7da; /* lede on ink */
+  --color-stone-deep: #5c564e; /* placeholder text on panel */
+  --color-error: #6b2e24; /* form errors on ivory and panel */
+  --color-field-border: #8f877b; /* field boundary on panel, 3:1 (1.4.11) */
+  --color-underline: #b7ad9c; /* link underline on ivory and paper, decorative */
+  --color-media-fill: #d9d2c6; /* image frame while a photograph loads */
+}
+
+:root {
+  /* ---- Glass recipes (independent critique, 9 October 2026, starting values; the contrast record decides) ---- */
+  /* Champagne: navigation and floating utility surfaces over warm imagery. */
+  --glass-champagne-alpha: 0.82;
+  --glass-champagne-blur: 20px;
+  --glass-champagne-saturate: 1.15;
+  --glass-champagne-border: rgba(255, 255, 255, 0.55);
+  --glass-champagne-highlight: rgba(255, 255, 255, 0.65);
+  --glass-champagne-shadow: 0 10px 28px rgba(20, 18, 16, 0.08);
+  /* Smoked: controls over dark photography or the material studio, never titles. */
+  --glass-smoked-alpha: 0.72;
+  --glass-smoked-blur: 16px;
+  --glass-smoked-saturate: 1.1;
+  --glass-smoked-border: rgba(255, 255, 255, 0.22);
+  --glass-smoked-highlight: rgba(255, 255, 255, 0.22);
+  --glass-smoked-shadow: 0 12px 32px rgba(20, 18, 16, 0.28);
+  /* Clear: small controls only, over light backgrounds only. 12px blur, below the 16px floor the brief sets for champagne and smoked; recorded in ART_DIRECTION.md. */
+  --glass-clear-alpha: 0.4;
+  --glass-clear-blur: 12px;
+  --glass-clear-saturate: 1.05;
+  --glass-clear-border-alpha: 0.12;
+  --glass-clear-border: rgba(20, 18, 16, 0.12);
+  /* Opaque dock: champagne without blur, so the header is the only blurred surface on phones. */
+  --glass-dock-alpha: 0.96;
+  --glass-dock-border: rgba(20, 18, 16, 0.08);
+  --glass-dock-shadow: 0 8px 20px rgba(20, 18, 16, 0.08);
+  /* Ghost button ring on ink (3:1 non-text rule). */
+  --ghost-ring-alpha: 0.45;
+
+  /* ---- Type scale ---- */
+  --text-display: clamp(2.375rem, 1rem + 5.5vw, 6.5rem); /* short page titles, 38px -> 104px */
+  --text-title: clamp(2.2rem, 1.3rem + 2.6vw, 3.4rem); /* section titles, 35px -> 54px */
+  --text-hero: 2.3rem; /* homepage sentence on phones, unchanged from PR #12 */
+  --text-hero-desktop: clamp(2.6rem, 3.3vw, 3.4rem); /* homepage sentence on desktop, unchanged from PR #12 */
+  --text-body: 1.0625rem; /* 17px */
+  --text-lede: 1.125rem; /* 18px */
+  --text-eyebrow: 0.75rem; /* 12px, never smaller */
+  --text-small: 0.9rem;
+  --tracking-eyebrow: 0.12em;
+  --tracking-display: -0.02em;
+  --leading-body: 1.65;
+  --leading-lede: 1.6;
+  --leading-display: 1.02;
+  --measure-prose: 40rem; /* 60 to 70 characters of body copy */
+  --measure-title: min(42rem, 100%);
+
+  /* ---- Grid and layout: 4 columns on phones, 6 on tablets, 12 on desktops ---- */
+  --grid-columns: 4;
+  --grid-gap: 1rem;
+  --content-max: 80rem; /* 1280px content width; photography may go full bleed */
+  --gutter: 1.25rem;
+  --header-height: 3.5rem; /* 56px on phones */
+  --header-inset-top: calc(0.5rem + env(safe-area-inset-top));
+  --header-inset-side: 0.75rem;
+  --dock-height: 3.5rem;
+  --dock-inset: 0.75rem;
+  --dock-clearance: calc(var(--dock-height) + var(--dock-inset) * 2 + env(safe-area-inset-bottom));
+
+  /* ---- Spacing scale ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ---- Radii: one language. Pill for the header action and small chips, control radius for everything else, bar radius for the floating bars. ---- */
+  --radius-control: 12px;
+  --radius-bar: 16px;
+  --radius-pill: 999px;
+
+  /* ---- Shadows ---- */
+  --shadow-float: 0 10px 28px rgba(20, 18, 16, 0.08);
+  --shadow-lift: 0 24px 60px rgba(20, 18, 16, 0.14);
+
+  /* ---- Motion: opacity and transform only ---- */
+  --dur-control: 180ms;
+  --dur-panel: 360ms;
+  --dur-media: 600ms;
+  --ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-decel: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --grid-columns: 6;
+    --grid-gap: 1.5rem;
+    --gutter: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --grid-columns: 12;
+    --grid-gap: 2rem;
+    --gutter: 2.5rem;
+    --header-height: 4rem; /* 64px */
+    --header-inset-top: 1rem;
+    --header-inset-side: 1.5rem;
+    --radius-bar: 18px;
+  }
+}

@@ -67,3 +67,25 @@ Images checked by eye and rejected for this work:
 - No B-style full-bleed project heads. The project template keeps its inline figure.
 - No Three.js use and no new runtime dependency.
 - No variant switcher in the shipped site. `data-variant` exists only in the preview stylesheet and the runner.
+
+## Independent critique and response
+
+An independent art-direction critique of the three variants (Grok Heavy, verified by Grok Bot, 9 October 2026, filed outside the repository as `grok/glass-artdirection-critique.md`) re-scored A 25, B 23, C 27 and confirmed A as the default: C wins only a paper tally and does not do what the contract asks. What stage 5 took from it, and what it deferred:
+
+Applied in stage 5 (G3 to G6):
+
+1. The champagne page-head panel in the preview was three glass boxes with visible seams. The Glass component wraps one element: one blur, one border, one inner highlight. No shipped page head carries glass in this slice (see stage 6 below), so the rule is enforced in the component rather than on a page.
+2. The 74% ivory dock sat over the hero's buttons and "Start your project" ghosted through it. The shipped dock is champagne without blur (ivory at 96%, 1px ink at 8%, soft shadow), the body gets bottom padding equal to the dock's full clearance on phones, and the header is the only blurred surface on a phone.
+3. "Paper and non-woven" hyphenated inside the narrow preview panel. Display headings now set `hyphens: manual` and `text-wrap: balance`, with a title measure of `min(42rem, 100%)`.
+4. One radius language: pill (999px) only for the header action and small chips; 12px for buttons, fields and panels; 18px for the header bar (16px on phones) and the dock. The "Save to shortlist" rectangle was fixed through the shared button tokens only, with no copy or markup change.
+5. Breadcrumb separator spacing (the " / " lost its spaces as a flex item) is fixed in CSS. Eyebrows on glass are stone or ink, 12px, 0.12em tracking, never gold or brass; brass on champagne is allowed only at display size (the wordmark). The measurements are in `CONTRAST.md`.
+
+Token direction taken as starting values (champagne ivory 82% / blur 20px / saturate 1.15; smoked ink 72% / blur 16px; clear white 40% / blur 12px with a 1px ink ring at 12%; opaque surfaces for the page, cards, ledes, the hero sentence, primary buttons and the dock). Clear glass uses a 12px blur, below the brief's 16px floor, because it is a small-control recipe only and a heavier blur on a 44px button reads as smearing; the floor applies to champagne and smoked. The contrast record (`scripts/contrast-record.mjs`, `tests/contrast.test.ts`) measures each glass tint over white and over ink and the worst case wins; the expected failures the critique named (gold on ivory and champagne, gold eyebrow on smoked over light paper, brass at small sizes on champagne, clear glass over ink) are recorded there as forbidden pairs.
+
+Not in this slice (direction recorded for later stages, not implemented):
+
+- Project heads should lead with `browns-hotel-mayfair-09` as one image and drop the second figure (the B project frame at 1440 was the best of the set). A project template and content change: stage 7.
+- Home: running the photograph to the top behind the inset bar is a homepage hero layout change, which is PR #12 territory.
+- Material pages with a photographic head in shipped code: stage 6, and it needs a finished-room photograph per family.
+- `browns-hotel-mayfair-07` as the homepage "Selected work" lead image and the Brown's card image shows freshly hung walls in an empty room with floor protection, a vacuum cleaner and film on the windows. Whether that is a "finished room" is Dorin's call; the content data is unchanged.
+- The Brown's alt texts that describe a different photograph from the file they name are corrected in a separate commit (G6b), limited to what is visible in the file, with no new claims.
