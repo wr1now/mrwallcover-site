@@ -47,8 +47,6 @@ To act as main wallcoverings contractor on a new-build, 197-room hotel due to op
 
 **Coordination.** As main wallcoverings contractor we sequenced our work with the main contractor and the other trades, so that rooms could be handed over cleanly.
 
-## Materials
-
 ## Outcome
 
 A trackside hotel that opened in time for the 2022 British Grand Prix, its rooms finished to one consistent standard. Wallcovering on this scale is rarely noticed when it is done well, and that is precisely the point.

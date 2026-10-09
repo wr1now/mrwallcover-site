@@ -38,6 +38,6 @@ The commission was the guest rooms. Pattern, batch and the order of rooms were a
 
 The photograph on this page is the Southampton Row facade from when the building still carried the Bonnington name. It shows the building, not the finished rooms. Interior photographs from the commission are not on this site yet.
 
-## What this page does not claim
+## Next step
 
-There is no published rate, and no photograph here should be read as the finished guest room. A survey still decides preparation, quantities and programme.
+Interior photographs will be added once they are cleared. For a similar guest-room package, send the room types, the programme and who supplies the material; a survey then decides preparation, quantities and the order of rooms.
