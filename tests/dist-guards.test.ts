@@ -46,6 +46,16 @@ test('the built site keeps private names and the verification token out of the w
   assert.doesNotMatch(html, /loadedAt/);
 });
 
+test('the homepage H1 and meta description define the firm', async () => {
+  const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { description: string };
+  const home = await readFile('dist/index.html', 'utf8');
+  const h1 = home.match(/<h1>([\s\S]*?)<\/h1>/)![1].replace(/<[^>]+>/g, '');
+  assert.match(h1, /^Mr Wallcover is a London specialist wallcovering installer, founded by Dorin Burcus\.$/);
+  assert.equal(home.match(/<meta name="description" content="([^"]*)"/)![1], facts.description);
+  assert.equal(home.match(/<meta property="og:description" content="([^"]*)"/)![1], facts.description);
+  assert.match(home, /Wallcoverings, hung properly\./);
+});
+
 test('the fact-sheet sentence appears identically in the footer, the JSON-LD and llms.txt', async () => {
   const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { description: string; founder: { name: string } };
   const sentence = facts.description;

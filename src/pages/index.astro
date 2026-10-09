@@ -1,5 +1,6 @@
 ---
 import { AWARD } from '../config';
+import facts from '../data/facts.json';
 import PhoneReveal from '../components/PhoneReveal.astro';
 import FaqList from '../components/FaqList.astro';
 import Hero from '../components/Hero.astro';
@@ -17,7 +18,7 @@ const others = projects.filter((project) => !project.featured);
 
 <Base
   title={home.title}
-  description={home.description}
+  description={facts.description}
   path="/"
   preloadHero={true}
   extraSchema={[faqNode(faqItems)]}
@@ -27,7 +28,8 @@ const others = projects.filter((project) => !project.featured);
     <div class="hero-copy on-dark">
       <p class="eyebrow">{home.hero.eyebrow}</p>
       <span class="rule"></span>
-      <h1>Wallcoverings, <em>hung properly.</em></h1>
+      <!-- The H1 defines the firm for people and for answer engines. The literary voice follows in the lede. -->
+      <h1>{home.hero.titleLead} <em>{home.hero.titleEm}</em></h1>
       <p class="lede mt-5">{home.hero.lede}</p>
       <!-- Award name will be added later. Public copy is the label and the year only. -->
       <p class="mt-5 mb-0 text-gold">{AWARD.label} ({AWARD.year}) · <a class="trusted-link" href="/projects/#design-weeks">Trusted by Calico Wallpaper</a></p>

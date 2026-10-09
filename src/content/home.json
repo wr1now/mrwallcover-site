@@ -1,10 +1,11 @@
 {
   "title": "Mr Wallcover | Wallpaper Installer London",
-  "description": "London wallpaper installer for prime hotels, flagship retail and private homes. Surveying, management, supply, installation and aftercare.",
+  "_description": "The meta description is the fact-sheet sentence in src/data/facts.json.",
   "hero": {
     "eyebrow": "Wallpaper installer, London",
-    "title": "Wallcoverings, hung properly.",
-    "lede": "Mr Wallcover surveys, manages, supplies and installs wallcoverings for prime hotels, flagship retail and private homes. Aftercare is part of the commission, not an extra.",
+    "titleLead": "Mr Wallcover is a London specialist wallcovering installer,",
+    "titleEm": "founded by Dorin Burcus.",
+    "lede": "Wallcoverings, hung properly. We survey, manage, supply and install for prime hotels, flagship retail and private homes, and aftercare is part of the commission, not an extra.",
     "image": "browns-hotel-mayfair-02"
   },
   "proof": {
