@@ -28,4 +28,4 @@ uploads/
 tmp-scaffold/
 
 # private enquiry store (never commit leads or room photographs)
-data/
+/data/

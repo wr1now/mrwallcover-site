@@ -130,6 +130,7 @@
   "cta": {
     "eyebrow": "A quotation",
     "title": "Tell us the building, the material and the date.",
-    "text": "A hotel floor, a house, a shop, or a paper that needs looking after. Call, send a note, or use WhatsApp."
+    "text": "A hotel floor, a house, a shop, or a paper that needs looking after. Call, send a note, or use WhatsApp.",
+    "textNoPhone": "A hotel floor, a house, a shop, or a paper that needs looking after. Send a note; a short one is enough."
   }
 }

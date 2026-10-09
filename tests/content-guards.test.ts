@@ -40,7 +40,35 @@ test('Search Console token and the unnamed award stay in config', async () => {
   const config = await readFile('src/config.ts', 'utf8');
   assert.match(config, /98zhpiyda4qDA6fYcKJ-zC6pItC6-LZKqqEugO5-fKo/);
   assert.match(config, /label: 'Award-winning'/);
-  assert.match(config, /info@mrwallcover.com/);
+  assert.match(config, /from '\.\/data\/facts\.json'/);
+});
+
+const REQUIRED_OPENING = 'Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus';
+
+test('the fact sheet holds one description sentence of 160 characters or fewer, and the footer, schema and llms.txt read it', async () => {
+  const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as {
+    brand: string;
+    description: string;
+    email: string;
+    founder: { name: string; path: string; fragment: string };
+    profiles: { name: string; url: string }[];
+  };
+  assert.equal(facts.brand, 'Mr Wallcover');
+  assert.equal(facts.email, 'info@mrwallcover.com');
+  assert.equal(facts.founder.name, 'Dorin Burcus');
+  assert.equal(facts.founder.path, '/about/');
+  assert.equal(facts.founder.fragment, 'dorin');
+  assert.ok(facts.description.startsWith(REQUIRED_OPENING), 'description must start with the fixed opening');
+  assert.ok(facts.description.length <= 160, `description is ${facts.description.length} characters`);
+  assert.doesNotMatch(facts.description, /["'&<>]/, 'keep the sentence free of characters that HTML or JSON would escape');
+  assert.ok(facts.profiles.some((profile) => profile.url === 'https://www.instagram.com/mrwallcover/'));
+  const blob = JSON.stringify(facts);
+  assert.doesNotMatch(blob, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|Ltd|Limited|Companies House|award/i);
+  for (const file of ['src/components/Footer.astro', 'src/lib/schema.ts', 'src/pages/llms.txt.ts']) {
+    const text = await readFile(file, 'utf8');
+    assert.match(text, /from '\.\.\/data\/facts\.json'/, `${file} must import the fact sheet`);
+    assert.match(text, /facts\.description/, `${file} must print facts.description`);
+  }
 });
 
 test('draft case studies are filtered out before they are built', async () => {

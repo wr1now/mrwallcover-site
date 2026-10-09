@@ -7,8 +7,10 @@ import {
 import Breadcrumb from '../components/Breadcrumb.astro';
 import EnquiryForm from '../components/EnquiryForm.astro';
 import PhoneReveal from '../components/PhoneReveal.astro';
+import WhatsAppLink from '../components/WhatsAppLink.astro';
 import Base from '../layouts/Base.astro';
 import { contact } from '../lib/content';
+import { phoneAvailable } from '../lib/phone';
 import { breadcrumbNode } from '../lib/schema';
 
 const crumbs = [
@@ -35,16 +37,12 @@ const crumbs = [
         <EnquiryForm />
       </div>
       <aside class="md:col-span-4 md:col-start-9">
-        <p class="m-0">{contact.direct}</p>
-        <p class="mt-6 mb-0">
-          <PhoneReveal />
-        </p>
-        <p class="m-0">
+        <p class="m-0">{phoneAvailable ? contact.direct : contact.directNoPhone}</p>
+        <PhoneReveal wrap="mt-6 mb-0" />
+        <p class:list={['m-0', !phoneAvailable && 'mt-6']}>
           <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
         </p>
-        <p class="m-0">
-          <a href="/contact/" data-wa>WhatsApp</a>
-        </p>
+        <WhatsAppLink wrap="m-0" />
         <p class="m-0">
           <a href={INSTAGRAM_URL}>Instagram {INSTAGRAM_HANDLE}</a>
         </p>

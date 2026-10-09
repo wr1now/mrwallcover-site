@@ -38,9 +38,12 @@ Wording lives in `src/content/`. The pages read those files. You do not need to 
 | `src/content/privacy.json` | Privacy notice |
 | `src/content/alts.json` | Image descriptions |
 | `src/content/team.json` | Future team page. Not in the menu yet |
-| `src/config.ts` | Email address, form, analytics, award line |
+| `src/data/facts.json` | The fact sheet: brand, founder, email, coverage, profiles and the one description sentence (160 characters or fewer) |
+| `src/config.ts` | Form, analytics, award line. Re-exports the fact sheet |
 
-The public email address is `info@mrwallcover.com`, set once in `src/config.ts`. The footer, the form and the structured data all use that constant.
+The public email address is `info@mrwallcover.com`, set once in `src/data/facts.json`. The footer, the form, the structured data and `llms.txt` all read that file. Paste its description sentence unchanged into every outside profile.
+
+The phone number is not in the repository. See `SITE_PHONE` below.
 
 The award line on the site is “Award-winning (2021)”. The award’s name will be added later. See the comment in `src/config.ts`. Do not invent a title.
 
@@ -64,6 +67,7 @@ Then build the site with `PUBLIC_LEAD_API` set to that server’s origin, for ex
 | `PUBLIC_FORM_ENDPOINT` | Overrides the FormSubmit alias |
 | `PUBLIC_LEAD_API` | Origin of the private store. Empty on the live build |
 | `PUBLIC_ANALYTICS_SRC` | Optional cookie-free analytics script. Empty means no script and no cookies |
+| `SITE_PHONE` | Build-time only. UK mobile or international form. Never stored in the repository. Set it as the GitHub Actions secret `SITE_PHONE` to show the click-to-reveal phone and WhatsApp controls; leave it unset and those controls do not render at all |
 
 Do not put lead files, room photographs or the staff token in the repository.
 

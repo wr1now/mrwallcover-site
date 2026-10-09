@@ -1,0 +1,25 @@
+---
+/**
+ * WhatsApp link. Rendered only when SITE_PHONE was set at build time. The
+ * href starts as /contact/ and is replaced by the inline script in Base.astro
+ * once the page loads, so the number is never printed in the HTML.
+ */
+import { phoneAvailable } from '../lib/phone';
+
+interface Props {
+  class?: string;
+  /** Wrap the link in a paragraph with this class (footer and contact column). */
+  wrap?: string;
+}
+
+const { class: cls, wrap } = Astro.props;
+---
+
+{phoneAvailable && wrap && (
+  <p class={wrap}>
+    <a href="/contact/" data-wa class={cls}><slot>WhatsApp</slot></a>
+  </p>
+)}
+{phoneAvailable && !wrap && (
+  <a href="/contact/" data-wa class={cls}><slot>WhatsApp</slot></a>
+)}

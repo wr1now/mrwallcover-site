@@ -15,7 +15,7 @@ test('email alone is enough', () => {
 });
 
 test('phone alone is enough', () => {
-  const result = validateEnquiry(fields({ name: 'Ada', replyBy: 'phone', phone: '07450 000000', message: 'Please call about a repair.' }));
+  const result = validateEnquiry(fields({ name: 'Ada', replyBy: 'phone', phone: '07700 900000', message: 'Please call about a repair.' }));
   assert.equal(result.ok, true);
   if (!result.ok) return;
   assert.equal(result.value.email, '');

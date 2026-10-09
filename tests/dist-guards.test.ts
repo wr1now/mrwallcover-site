@@ -41,8 +41,35 @@ test('the built site keeps private names and the verification token out of the w
   assert.match(exterior, /penny-morrison-showroom/);
   assert.match(exterior, /all the internal works plus the full exterior/i);
   assert.doesNotMatch(exterior, /House of Hackney|Lanesborough|Chesham|hackney/i);
-  assert.doesNotMatch(html, /07450|447450843246/);
+  // No phone number in clear, whatever SITE_PHONE was at build time. The number only ever ships inside the reversed payload.
+  assert.doesNotMatch(html, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|wa\.me/);
   assert.doesNotMatch(html, /loadedAt/);
+});
+
+test('the fact-sheet sentence appears identically in the footer, the JSON-LD and llms.txt', async () => {
+  const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { description: string; founder: { name: string } };
+  const sentence = facts.description;
+  assert.ok(sentence.length <= 160);
+  const home = await readFile('dist/index.html', 'utf8');
+  const about = await readFile('dist/about/index.html', 'utf8');
+  const footerText = home.match(/<p[^>]*data-fact-sheet[^>]*>([^<]*)<\/p>/)?.[1];
+  assert.equal(footerText, sentence, 'footer');
+  const graph = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]) as { '@graph': Record<string, unknown>[] };
+  const business = graph['@graph'].find((node) => node['@id'] === 'https://www.mrwallcover.com/#business')!;
+  assert.equal(business.description, sentence, 'schema');
+  assert.deepEqual(business.founder, { '@id': 'https://www.mrwallcover.com/about/#dorin' });
+  assert.deepEqual(business.sameAs, ['https://www.instagram.com/mrwallcover/']);
+  for (const key of ['award', 'aggregateRating', 'memberOf', 'hasCredential', 'legalName', 'telephone', 'foundingDate']) {
+    assert.equal(key in business, false, key);
+  }
+  const person = graph['@graph'].find((node) => node['@id'] === 'https://www.mrwallcover.com/about/#dorin')!;
+  assert.equal(person['@type'], 'Person');
+  assert.equal(person.name, facts.founder.name);
+  assert.equal(person.url, 'https://www.mrwallcover.com/about/');
+  assert.match(about, /about\/#dorin/);
+  const llms = await readFile('dist/llms.txt', 'utf8');
+  assert.ok(llms.split('\n').includes(`> ${sentence}`), 'llms.txt');
+  assert.doesNotMatch(llms, /Lanesborough|Moxy/);
 });
 
 test('the homepage does not load the 3D engine up front', async () => {

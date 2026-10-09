@@ -1,15 +1,15 @@
-import {
-  BRAND_NAME,
-  COVERAGE,
-  FOUNDER_NAME,
-  INSTAGRAM_URL,
-  PUBLIC_EMAIL,
-  SITE_URL,
-} from '../config';
+import { SITE_URL } from '../config';
+import facts from '../data/facts.json';
 import type { FaqItem } from './types';
+
+const BRAND_NAME = facts.brand;
+const PUBLIC_EMAIL = facts.email;
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
+/** The founder's Person node. Lives on the About page; referenced from the business and every case-study Article. */
+export const FOUNDER_ID = `${SITE_URL}${facts.founder.path}#${facts.founder.fragment}`;
+export const FOUNDER_URL = `${SITE_URL}${facts.founder.path}`;
 
 /**
  * Coverage: London and the surrounding areas; UK-wide for selected projects.
@@ -30,14 +30,9 @@ export function businessNode() {
     url: SITE_URL,
     image: `${SITE_URL}/og.jpg`,
     logo: `${SITE_URL}/apple-touch-icon.png`,
-    description:
-      `London wallcovering installation practice for prime hotels, flagship retail and private homes: surveying, management, supply, installation and aftercare. ${COVERAGE}.`,
+    description: facts.description,
     email: PUBLIC_EMAIL,
-    founder: {
-      '@type': 'Person',
-      name: FOUNDER_NAME,
-      jobTitle: 'Founder',
-    },
+    founder: { '@id': FOUNDER_ID },
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'London',
@@ -61,7 +56,8 @@ export function businessNode() {
       'Architectural and furniture film wrapping',
       'Window film installation',
     ],
-    sameAs: [INSTAGRAM_URL],
+    /** Only profiles that exist. Add each new one to src/data/facts.json as it goes live. */
+    sameAs: facts.profiles.map((profile) => profile.url),
     contactPoint: {
       '@type': 'ContactPoint',
       email: PUBLIC_EMAIL,
@@ -117,6 +113,18 @@ export function jsonLd(nodes: object[]): string {
     '@context': 'https://schema.org',
     '@graph': nodes,
   }).replace(/</g, '\\u003c');
+}
+
+/** Dorin Burcus as a Person node, anchored on the About page. */
+export function founderNode() {
+  return {
+    '@type': 'Person',
+    '@id': FOUNDER_ID,
+    name: facts.founder.name,
+    jobTitle: facts.founder.jobTitle,
+    url: FOUNDER_URL,
+    worksFor: { '@id': BUSINESS_ID },
+  };
 }
 
 export function websiteNode() {
@@ -196,7 +204,7 @@ export function caseStudyArticleNode(opts: {
     url: opts.url,
     mainEntityOfPage: { '@id': `${opts.url}#webpage` },
     inLanguage: 'en-GB',
-    author: { '@id': BUSINESS_ID },
+    author: { '@type': 'Person', '@id': FOUNDER_ID, name: facts.founder.name, url: FOUNDER_URL },
     publisher: { '@id': BUSINESS_ID },
     ...(opts.images.length ? { image: opts.images } : {}),
     about: {
