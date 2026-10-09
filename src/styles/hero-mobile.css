@@ -106,11 +106,6 @@
 }
 
 @media (max-width: 1023px) and (max-height: 760px) {
-  /* On short phones the copy is taller than the space, so the photograph sits at its floor; the gains above buy a slightly taller floor. */
-  .hero-media {
-    min-height: 8rem;
-  }
-
   .hero-copy {
     padding-top: 1rem;
   }
@@ -138,5 +133,17 @@
 
   .hero-copy .lede + p + div {
     margin-top: 0.8rem;
+  }
+}
+
+/*
+ * 667px-class phones: the copy is taller than the space, so the photograph sits
+ * at its floor; the tighter gaps above buy a slightly taller floor with the
+ * buttons still clear of the dock. Not below 661px tall, where the copy already
+ * reaches the dock (360x640) and must not lose more room.
+ */
+@media (max-width: 1023px) and (max-height: 760px) and (min-height: 661px) {
+  .hero-media {
+    min-height: 8rem;
   }
 }
