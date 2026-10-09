@@ -3,7 +3,8 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import Picture from '../components/Picture.astro';
 import Base from '../layouts/Base.astro';
 import { areaHref, areas, services, specialismHref, specialisms } from '../lib/content';
-import { breadcrumbNode, serviceNodes } from '../lib/schema';
+import { breadcrumbNode, serviceNodes, singleServiceNode } from '../lib/schema';
+import { SITE_URL } from '../config';
 
 const crumbs = [
   { name: 'Home', href: '/' },
@@ -15,7 +16,13 @@ const crumbs = [
   title={services.title}
   description={services.description}
   path="/services/"
-  extraSchema={[...serviceNodes(services.pillars), breadcrumbNode(crumbs)]}
+  extraSchema={[
+    ...serviceNodes(services.pillars),
+    ...specialisms.map((s) =>
+      singleServiceNode({ name: s.name, description: s.description, url: new URL(specialismHref(s.slug), SITE_URL).href, serviceType: s.serviceType ?? s.name }),
+    ),
+    breadcrumbNode(crumbs),
+  ]}
 >
   <div class="container-page">
     <header class="page-head">
@@ -79,12 +86,12 @@ const crumbs = [
   </section>
   <section class="border-t border-line" aria-labelledby="films-heading">
     <div class="container-page py-14 md:py-20">
-      <p class="eyebrow">Films</p>
-      <h2 id="films-heading" class="m-0 text-[clamp(2rem,4vw,3rem)]">Architectural, furniture and window film.</h2>
-      <div class="mt-8 grid gap-8 md:grid-cols-2">
+      <p class="eyebrow">Joinery, panels and films</p>
+      <h2 id="films-heading" class="m-0 text-[clamp(2rem,4vw,3rem)]">Joinery, bespoke panels, architectural and window film.</h2>
+      <div class="mt-8 grid gap-8 md:grid-cols-3">
         {
-          specialisms
-            .filter((s) => s.slug === 'architectural-film-wrapping' || s.slug === 'window-film')
+          ['joinery-wallcoverings-and-panels', 'architectural-film-wrapping', 'window-film']
+            .map((slug) => specialisms.find((s) => s.slug === slug)!)
             .map((s) => (
               <article class="border-t border-line pt-4">
                 <h3 class="m-0 text-[1.8rem]"><a href={specialismHref(s.slug)}>{s.name}</a></h3>

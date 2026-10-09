@@ -56,6 +56,10 @@ export function businessNode() {
       'Fabric walling',
       'Wallpaper mural installation',
       'Contract vinyl wallcoverings',
+      'Wallcoverings on joinery',
+      'Bespoke wall panels and joinery',
+      'Architectural and furniture film wrapping',
+      'Window film installation',
     ],
     sameAs: [INSTAGRAM_URL],
     contactPoint: {

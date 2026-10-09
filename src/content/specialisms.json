@@ -221,6 +221,7 @@
         "Architectural film is a thin, self-adhesive surface in wood, stone, metal, leather-look, textured or solid finishes. Applied properly, it renews a door, a run of joinery or a piece of furniture where it stands. There is no spraying on site and no long drying time, and far less goes in the skip than with a replacement.",
         "It suits hotels and offices that cannot close a floor for long: bedroom doors and wardrobes, lift cars and lift lobbies, reception desks, bar fronts, kitchen fronts, wall panelling and loose furniture. Rooms can usually go back into use as each area is finished.",
         "The finish depends on the preparation. Surfaces are cleaned, keyed, filled and primed to the film maker's instruction. Edges, corners and returns are where a wrap succeeds or fails, so we plan them at the survey and agree them on a sample before the run starts.",
+        "Where the finish calls for new panels or joinery rather than a wrap, see [wallcoverings on joinery and bespoke panels](/services/joinery-wallcoverings-and-panels/): designed, made and installed as one package.",
         "Trained at Solar Screen's headquarters in Luxembourg in window films (Solar Screen) and architectural and furniture wrapping film (Cover Styl'). We install to the maker's own instructions. The same practice surveys, quantifies, supplies the film if you need it, installs and returns for aftercare."
       ],
       "projects": [],
@@ -308,6 +309,69 @@
         {
           "label": "Cover Styl' architectural and furniture films",
           "href": "https://coverstyl.com/en/"
+        }
+      ]
+    },
+    {
+      "slug": "joinery-wallcoverings-and-panels",
+      "name": "Joinery wallcoverings & bespoke panels",
+      "title": "Wallcoverings on Joinery & Bespoke Panels London | Mr Wallcover",
+      "description": "Wallcoverings on doors, wardrobes and panelling, film-wrapped panels, and bespoke wall panels and joinery in London. Design to install, as one managed package.",
+      "heading": "Joinery, panels and the finish between them",
+      "lede": "Wallcoverings carried onto doors, wardrobes, panelling and bespoke furniture. Panels wrapped in specialist architectural film. Bespoke wall panels and joinery made to achieve a specific finish, from design through manufacture to install.",
+      "serviceType": "Wallcovering on joinery and bespoke wall panels",
+      "paragraphs": [
+        "The most considered rooms carry the finish beyond the wall: across doors, wardrobe fronts, panelling and bespoke furniture, so that joinery and walls read as one surface. We apply wallcoverings to joinery with the same discipline as the walls around it. Seams, edges and returns are planned at the survey so the joins disappear.",
+        "Joinery is a different surface from plaster. Faces are sealed and primed to suit the material, edges are wrapped or finished tight, and the pattern is carried across doors and frames. At [Lee Broom's Shoreditch showroom](/projects/calico-lee-broom-overture/) we ran Calico Wallpaper's Overture straight across a flush door until it vanished into the drape. At [Raffles London at The OWO](/projects/raffles-london-the-owo/) the wallcovering continued from the walls onto parts of the joinery.",
+        "Where a panel, door or carcass needs a new surface rather than paper, we wrap it in specialist architectural film such as Cover Styl', in wood, stone, metal, leather-look and solid finishes. Where film is not the right answer, we finish panels in paper, fabric or relief wallcovering instead. See [architectural and furniture film wrapping](/services/architectural-film-wrapping/) for film on existing joinery.",
+        "When the finish a designer wants cannot be bought off the shelf, we create bespoke wall panels and joinery to achieve it: panelling, framed and shaped panels, headboards, and door and wardrobe faces, made to the drawing and the finish. Heritage relief belongs to the same family. At the [Castle of Trematon](/projects/trematon-castle/) we hung Lincrusta relief panels to a laser line.",
+        "Everything runs as one managed package. We develop the detail with the designer, agree a sample in the room's own light, make the panels and joinery, then fit, finish and wallcover them on site. One team, one programme and one point of responsibility from the drawing to the handover, followed by the same [aftercare](/aftercare/) as every installation.",
+        "Trained at Solar Screen's headquarters in Luxembourg in window films (Solar Screen) and architectural and furniture wrapping film (Cover Styl'). We install to the maker's own instructions."
+      ],
+      "projects": [
+        "calico-lee-broom-overture",
+        "raffles-london-the-owo",
+        "trematon-castle"
+      ],
+      "imageId": "lee-broom-01",
+      "faq": [
+        {
+          "id": "jp-doors",
+          "question": "Can wallpaper be applied to doors and wardrobes?",
+          "paragraphs": [
+            "Yes, on sound, smooth joinery that has been sealed and primed for it. The pattern is set out across the doors so it reads as one surface when they are closed, and hinge edges, handles and returns are detailed at the survey."
+          ]
+        },
+        {
+          "id": "jp-bespoke",
+          "question": "Can you create panels to match a specific finish?",
+          "paragraphs": [
+            "Yes. We create bespoke wall panels and joinery to the drawing, then finish them in wallcovering, film or relief. The finish is designed in from the start rather than applied afterwards, and agreed on a sample before the run is made."
+          ]
+        },
+        {
+          "id": "jp-film-or-paper",
+          "question": "Film or wallcovering on joinery: which is better?",
+          "paragraphs": [
+            "Film suits hard-wearing, wipe-clean surfaces in busy areas: hotel bedroom doors, wardrobes, lifts and counters. Wallcovering suits pattern, texture and continuity with the walls. Where both could work, we sample both in the room."
+          ]
+        },
+        {
+          "id": "jp-package",
+          "question": "Who looks after design, manufacture and installation?",
+          "paragraphs": [
+            "We do, as one managed package. The same team develops the detail, makes the panels and joinery, installs and finishes them, and returns for aftercare, so there is one point of responsibility throughout."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Cover Styl' architectural and furniture films",
+          "href": "https://coverstyl.com/en/"
+        },
+        {
+          "label": "Lincrusta heritage relief",
+          "href": "https://www.lincrusta.com/"
         }
       ]
     }

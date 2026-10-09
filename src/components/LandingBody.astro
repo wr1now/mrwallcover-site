@@ -16,6 +16,20 @@ const { page, crumbs, eyebrow, kind } = Astro.props;
 const linked = page.projects.map((slug) => projectBySlug(slug)).filter((p) => p !== undefined);
 const otherAreas = areas.filter((a) => a.slug !== page.slug);
 const otherSpecialisms = specialisms.filter((s) => s.slug !== page.slug);
+
+/** Split a paragraph into text and [label](href) link segments. Content is our own JSON. */
+function segments(text: string) {
+  const parts: { text: string; href?: string }[] = [];
+  const re = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+  let last = 0;
+  for (const m of text.matchAll(re)) {
+    if (m.index! > last) parts.push({ text: text.slice(last, m.index) });
+    parts.push({ text: m[1], href: m[2] });
+    last = m.index! + m[0].length;
+  }
+  if (last < text.length) parts.push({ text: text.slice(last) });
+  return parts;
+}
 ---
 
 <div class="container-page">
@@ -31,7 +45,9 @@ const otherSpecialisms = specialisms.filter((s) => s.slug !== page.slug);
   </header>
   <div class="grid gap-10 pb-12 md:grid-cols-12">
     <div class="prose md:col-span-7">
-      {page.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      {page.paragraphs.map((paragraph) => (
+        <p>{segments(paragraph).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</p>
+      ))}
       {
         page.links && page.links.length > 0 && (
           <p>
