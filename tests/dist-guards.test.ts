@@ -42,6 +42,10 @@ test('the built site keeps private names and the verification token out of the w
   assert.match(exterior, /all the internal works plus the full exterior/i);
   assert.doesNotMatch(exterior, /House of Hackney|Lanesborough|Chesham|hackney/i);
   assert.doesNotMatch(html, /07450|447450843246/);
+  assert.doesNotMatch(html, /UNPUBLISHED SCAFFOLD/);
+  assert.match(html, /datePublished/);
+  assert.match(html, /dateModified/);
+  assert.match(html, /about\/#founder/);
   assert.doesNotMatch(html, /loadedAt/);
 });
 

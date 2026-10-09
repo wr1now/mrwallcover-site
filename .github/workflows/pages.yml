@@ -31,6 +31,8 @@ jobs:
       - name: Check
         run: npm run check
       - name: Build
+        env:
+          SITE_PHONE: ${{ secrets.SITE_PHONE }}
         run: npm run build
       - name: Check built site
         run: npm run check:dist

@@ -1,20 +1,15 @@
 ---
-import {
-  BRAND_NAME,
-  FOUNDER_NAME,
-  INSTAGRAM_HANDLE,
-  INSTAGRAM_URL,
-  PUBLIC_EMAIL,
-} from '../config';
+import factSheet from '../content/fact-sheet.json';
 import PhoneReveal from './PhoneReveal.astro';
+import WhatsAppLink from './WhatsAppLink.astro';
 import { areaHref, areas, home } from '../lib/content';
 ---
 
 <footer class="site-footer">
   <div class="container-page grid gap-10 md:grid-cols-12">
     <div class="md:col-span-5">
-      <p class="footer-brand">{BRAND_NAME}</p>
-      <p class="mt-3 max-w-sm text-stone">{home.promise}</p>
+      <p class="footer-brand">{factSheet.name}</p>
+      <p class="mt-3 max-w-sm text-stone">{factSheet.oneLine}</p>
       <p class="mt-4 text-sm tracking-[0.14em] text-brass uppercase">
         {home.pillars.join(' · ')}
       </p>
@@ -45,23 +40,27 @@ import { areaHref, areas, home } from '../lib/content';
     </div>
     <div class="md:col-span-4">
       <p class="eyebrow">Contact</p>
-      <p class="m-0">{FOUNDER_NAME}, founder</p>
+      <p class="m-0">{factSheet.founder.name}, {factSheet.founder.jobTitle.toLowerCase()}</p>
       <p class="m-0 mt-2">
         <PhoneReveal />
       </p>
       <p class="m-0">
-        <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
+        <a href={`mailto:${factSheet.email}`}>{factSheet.email}</a>
       </p>
       <p class="m-0">
-        <a href="/contact/" data-wa>WhatsApp</a>
+        <WhatsAppLink />
       </p>
-      <p class="m-0">
-        <a href={INSTAGRAM_URL}>{INSTAGRAM_HANDLE}</a>
-      </p>
+      {
+        factSheet.profiles.map((profile) => (
+          <p class="m-0">
+            <a href={profile.url}>{profile.name}</a>
+          </p>
+        ))
+      }
     </div>
   </div>
   <div class="container-page mt-10 flex flex-wrap items-center justify-between gap-4 text-sm text-stone">
-    <p class="m-0">© {new Date().getFullYear()} {BRAND_NAME}. {FOUNDER_NAME}, founder. London.</p>
+    <p class="m-0">© {new Date().getFullYear()} {factSheet.name}. {factSheet.founder.name}, founder. {factSheet.place}.</p>
     <button class="btn btn-line" type="button" data-effects-toggle>Calmer display</button>
   </div>
 </footer>

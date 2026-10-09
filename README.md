@@ -64,6 +64,7 @@ Then build the site with `PUBLIC_LEAD_API` set to that server’s origin, for ex
 | `PUBLIC_FORM_ENDPOINT` | Overrides the FormSubmit alias |
 | `PUBLIC_LEAD_API` | Origin of the private store. Empty on the live build |
 | `PUBLIC_ANALYTICS_SRC` | Optional cookie-free analytics script. Empty means no script and no cookies |
+| `SITE_PHONE` | Build-time only. International or UK mobile. Not stored in the repository. Empty hides the phone and WhatsApp buttons |
 
 Do not put lead files, room photographs or the staff token in the repository.
 
@@ -73,7 +74,7 @@ This is the intended host. DNS stays at names.co.uk.
 
 1. Push this repository to GitHub.
 2. In the repository, open **Settings → Pages → Build and deployment** and choose **GitHub Actions**.
-3. The workflow `.github/workflows/pages.yml` builds the site and deploys `dist/` on every push to `main`.
+3. The workflow `.github/workflows/pages.yml` builds the site and deploys `dist/` on every push to `main`. Create a repository secret named `SITE_PHONE` (Settings → Secrets and variables → Actions) if the phone and WhatsApp buttons should appear. Until that secret exists, those buttons stay hidden. Do not put the number in the repository.
 4. Under **Custom domain**, enter `www.mrwallcover.com`. The file `public/CNAME` already contains that host, so the built site carries it.
 5. After the certificate is issued, turn on **Enforce HTTPS**.
 

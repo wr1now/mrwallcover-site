@@ -1,5 +1,6 @@
 ---
 import PhoneReveal from '../components/PhoneReveal.astro';
+import WhatsAppLink from '../components/WhatsAppLink.astro';
 import Base from '../layouts/Base.astro';
 import utility from '../content/utility.json';
 ---
@@ -12,7 +13,7 @@ import utility from '../content/utility.json';
     <p class="mt-4 hidden" data-receipt-line></p>
     <div class="mt-8 flex flex-wrap gap-3">
       <PhoneReveal class="btn btn-solid-ink" label="Show phone number" prefix="Call " />
-      <a class="btn btn-line" href="/contact/" data-wa>WhatsApp</a>
+      <WhatsAppLink class="btn btn-line" />
     </div>
   </div>
   <script>

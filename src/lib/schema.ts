@@ -1,12 +1,8 @@
-import {
-  BRAND_NAME,
-  COVERAGE,
-  FOUNDER_NAME,
-  INSTAGRAM_URL,
-  PUBLIC_EMAIL,
-  SITE_URL,
-} from '../config';
+import { SITE_URL } from '../config';
+import factSheet from '../content/fact-sheet.json';
 import type { FaqItem } from './types';
+
+export const FOUNDER_ID = `${SITE_URL}/about/#founder`;
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -26,26 +22,20 @@ export function businessNode() {
   return {
     '@type': ['HomeAndConstructionBusiness', 'ProfessionalService'],
     '@id': BUSINESS_ID,
-    name: BRAND_NAME,
+    name: factSheet.name,
     url: SITE_URL,
     image: `${SITE_URL}/og.jpg`,
     logo: `${SITE_URL}/apple-touch-icon.png`,
-    description:
-      `London wallcovering installation practice for prime hotels, flagship retail and private homes: surveying, management, supply, installation and aftercare. ${COVERAGE}.`,
-    email: PUBLIC_EMAIL,
-    founder: {
-      '@type': 'Person',
-      name: FOUNDER_NAME,
-      jobTitle: 'Founder',
-    },
+    description: factSheet.oneLine,
+    email: factSheet.email,
+    founder: { '@id': FOUNDER_ID },
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'London',
       addressCountry: 'GB',
     },
     areaServed: AREAS_SERVED,
-    slogan:
-      'Premium wallcoverings services: surveying, management, supply, install and aftercare.',
+    slogan: factSheet.oneLine,
     knowsAbout: [
       'Wallpaper installation',
       'Wallcovering installation for hotels',
@@ -61,10 +51,10 @@ export function businessNode() {
       'Architectural and furniture film wrapping',
       'Window film installation',
     ],
-    sameAs: [INSTAGRAM_URL],
+    sameAs: factSheet.profiles.map((profile) => profile.url),
     contactPoint: {
       '@type': 'ContactPoint',
-      email: PUBLIC_EMAIL,
+      email: factSheet.email,
       url: `${SITE_URL}/contact/`,
       contactType: 'quotations',
       areaServed: AREAS_SERVED,
@@ -119,12 +109,23 @@ export function jsonLd(nodes: object[]): string {
   }).replace(/</g, '\\u003c');
 }
 
+export function founderNode() {
+  return {
+    '@type': 'Person',
+    '@id': FOUNDER_ID,
+    name: factSheet.founder.name,
+    jobTitle: factSheet.founder.jobTitle,
+    url: new URL(factSheet.founder.aboutPath, SITE_URL).href,
+    worksFor: { '@id': BUSINESS_ID },
+  };
+}
+
 export function websiteNode() {
   return {
     '@type': 'WebSite',
     '@id': WEBSITE_ID,
     url: SITE_URL,
-    name: BRAND_NAME,
+    name: factSheet.name,
     inLanguage: 'en-GB',
     publisher: { '@id': BUSINESS_ID },
   };
@@ -187,6 +188,8 @@ export function caseStudyArticleNode(opts: {
   location: string;
   dates?: string | null;
   mentions?: string[];
+  published?: string;
+  updated?: string;
 }) {
   return {
     '@type': 'Article',
@@ -196,7 +199,14 @@ export function caseStudyArticleNode(opts: {
     url: opts.url,
     mainEntityOfPage: { '@id': `${opts.url}#webpage` },
     inLanguage: 'en-GB',
-    author: { '@id': BUSINESS_ID },
+    ...(opts.published ? { datePublished: opts.published } : {}),
+    ...(opts.updated ? { dateModified: opts.updated } : {}),
+    author: {
+      '@type': 'Person',
+      '@id': FOUNDER_ID,
+      name: factSheet.founder.name,
+      url: new URL(factSheet.founder.aboutPath, SITE_URL).href,
+    },
     publisher: { '@id': BUSINESS_ID },
     ...(opts.images.length ? { image: opts.images } : {}),
     about: {

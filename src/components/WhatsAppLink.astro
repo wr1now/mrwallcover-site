@@ -1,0 +1,13 @@
+---
+import { phoneAvailable } from '../lib/phone';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+{phoneAvailable && (
+  <a href="/contact/" data-wa class={className}><slot>WhatsApp</slot></a>
+)}

@@ -1,0 +1,38 @@
+{
+  "name": "Mr Wallcover",
+  "oneLine": "London wallpaper installer for prime hotels, flagship retail and private homes. Surveying, management, supply, installation and aftercare.",
+  "founder": {
+    "name": "Dorin Burcus",
+    "jobTitle": "Founder",
+    "aboutPath": "/about/"
+  },
+  "place": "London",
+  "coverage": "London and the surrounding areas; UK-wide for selected projects",
+  "email": "info@mrwallcover.com",
+  "profiles": [
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/mrwallcover/"
+    }
+  ],
+  "makers": [
+    { "name": "Calico Wallpaper", "project": "calico-lee-broom-overture" },
+    { "name": "House of Hackney", "project": "house-of-hackney-st-michaels" },
+    { "name": "Timorous Beasties", "project": "old-bailey-hotel" },
+    { "name": "Vescom", "project": "raffles-london-the-owo" },
+    { "name": "Lewis & Wood", "project": "browns-hotel-mayfair" },
+    { "name": "Lincrusta", "project": "trematon-castle" },
+    { "name": "Penny Morrison", "project": "penny-morrison-showroom" }
+  ],
+  "withheld": {
+    "legalIdentity": "TODO: which legal identity stands behind Mr Wallcover. Do not publish until Dorin decides.",
+    "tradingNameSince": "TODO: the year the name Mr Wallcover was first used. In the trade since 2014 is not that year. Do not publish.",
+    "phoneListing": "TODO: publish a dedicated number, or stay phone-free. Do not add a number to the fact sheet.",
+    "linkedIn": "TODO: founder LinkedIn profile URL. Do not publish.",
+    "awardName": "TODO: the name of the 2021 award, or agreement to remove the line. Do not publish.",
+    "insurance": "TODO: insurance levels. Do not publish.",
+    "accreditations": "TODO: site cards, memberships and approvals. Do not publish.",
+    "priceRanges": "TODO: real price ranges for a cost guide. Do not publish.",
+    "reviews": "TODO: named, dated client statements, with permission. Do not publish."
+  }
+}

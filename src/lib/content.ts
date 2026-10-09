@@ -70,6 +70,10 @@ interface CaseStudyData {
   draft?: boolean;
   /** Interior photographs are not in the repo. The page shows a labelled placeholder. */
   awaitingPhotos?: boolean;
+  /** ISO date the case-study page was first published. */
+  published?: string;
+  /** ISO date the case-study page was last updated. */
+  updated?: string;
 }
 
 type CaseStudyModule = { frontmatter: CaseStudyData; Content: any };

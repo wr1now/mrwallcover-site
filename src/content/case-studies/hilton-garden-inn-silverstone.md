@@ -14,7 +14,9 @@
   "group": null,
   "standfirst": "Main wallcoverings contractor for the only hotel on the Silverstone Circuit.",
   "hero": null,
-  "gallery": []
+  "gallery": [],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 

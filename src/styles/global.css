@@ -574,7 +574,7 @@
     bottom: 0;
     z-index: 35;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     background: var(--color-ivory);
     border-top: 1px solid var(--color-line);
     padding-bottom: env(safe-area-inset-bottom);

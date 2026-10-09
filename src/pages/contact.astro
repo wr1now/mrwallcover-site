@@ -7,6 +7,7 @@ import {
 import Breadcrumb from '../components/Breadcrumb.astro';
 import EnquiryForm from '../components/EnquiryForm.astro';
 import PhoneReveal from '../components/PhoneReveal.astro';
+import WhatsAppLink from '../components/WhatsAppLink.astro';
 import Base from '../layouts/Base.astro';
 import { contact } from '../lib/content';
 import { breadcrumbNode } from '../lib/schema';
@@ -43,7 +44,7 @@ const crumbs = [
           <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
         </p>
         <p class="m-0">
-          <a href="/contact/" data-wa>WhatsApp</a>
+          <WhatsAppLink />
         </p>
         <p class="m-0">
           <a href={INSTAGRAM_URL}>Instagram {INSTAGRAM_HANDLE}</a>

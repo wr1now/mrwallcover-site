@@ -1,8 +1,10 @@
 ---
 /**
- * Click-to-reveal phone number. The number is not in the HTML; the script in
- * Base.astro decodes it on click and swaps this button for a tel: link.
+ * Click-to-reveal phone number. Rendered only when SITE_PHONE was set at build
+ * time. The number is not in the repository; Base.astro decodes it on click.
  */
+import { phoneAvailable } from '../lib/phone';
+
 interface Props {
   label?: string;
   prefix?: string;
@@ -11,4 +13,6 @@ interface Props {
 const { label = 'Show phone number', prefix = '', class: cls = 'reveal-phone' } = Astro.props;
 ---
 
-<button type="button" class={cls} data-phone-reveal data-prefix={prefix || undefined}>{label}</button>
+{phoneAvailable && (
+  <button type="button" class={cls} data-phone-reveal data-prefix={prefix || undefined}>{label}</button>
+)}

@@ -14,7 +14,7 @@ async function filesUnder(dir: string): Promise<string[]> {
   return out;
 }
 
-const forbidden = [/CLAUDI/i, /\bLandmark\b/i, /\bSamantha\b/, /third[\s-]party/i, /subcontract/i, /Threadneedle/i, /Mulberry/i, /\bAethos\b/i, /95 St George/i, /26 Inverness/i, /SW1V 3QW/, /W2 3JA/];
+const forbidden = [/CLAUDI/i, /\bLandmark\b/i, /\bSamantha\b/, /third[\s-]party/i, /subcontract/i, /Threadneedle/i, /Mulberry/i, /\bAethos\b/i, /95 St George/i, /26 Inverness/i, /SW1V 3QW/, /W2 3JA/, /07450 843246/, /447450843246/];
 
 test('public copy keeps the brand boundaries', async () => {
   const roots = ['src/content', 'src/pages', 'src/components', 'src/layouts', 'src/lib'];
@@ -84,6 +84,38 @@ test('exterior works lists only the three cleared projects', async () => {
   assert.match(services, /exterior-works/);
   const hackney = await readFile('src/content/case-studies/house-of-hackney-st-michaels.md', 'utf8');
   assert.doesNotMatch(hackney, /exterior-works/);
+});
+
+test('the fact sheet is the sentence used by the footer, schema and llms.txt', async () => {
+  const fact = JSON.parse(await readFile('src/content/fact-sheet.json', 'utf8')) as { oneLine: string; withheld: Record<string, string> };
+  assert.ok(fact.oneLine.length > 40 && fact.oneLine.length <= 160);
+  const footer = await readFile('src/components/Footer.astro', 'utf8');
+  const schema = await readFile('src/lib/schema.ts', 'utf8');
+  const llms = await readFile('src/pages/llms.txt.ts', 'utf8');
+  assert.match(footer, /factSheet\.oneLine/);
+  assert.match(schema, /factSheet\.oneLine/);
+  assert.match(llms, /factSheet\.oneLine/);
+  assert.match(schema, /founderNode/);
+  assert.doesNotMatch(schema, /factSheet\.withheld|awardName|legalIdentity/);
+});
+
+test('unpublished scaffolds stay out of the site and case studies carry dates', async () => {
+  const content = await readFile('src/lib/content.ts', 'utf8');
+  assert.doesNotMatch(content, /unpublished\/scaffolds/);
+  const scaffolds = await readdir('src/content/unpublished/scaffolds');
+  assert.ok(scaffolds.filter((name) => name.endsWith('.md')).length >= 7);
+  for (const name of scaffolds.filter((entry) => entry.endsWith('.md'))) {
+    const text = await readFile(`src/content/unpublished/scaffolds/${name}`, 'utf8');
+    assert.match(text, /"publish": false/);
+    assert.match(text, /UNPUBLISHED SCAFFOLD/);
+    assert.match(text, /TODO/);
+  }
+  const studies = await readdir('src/content/case-studies');
+  for (const name of studies.filter((entry) => entry.endsWith('.md'))) {
+    const text = await readFile(`src/content/case-studies/${name}`, 'utf8');
+    assert.match(text, /"published": "\d{4}-\d{2}-\d{2}"/);
+    assert.match(text, /"updated": "\d{4}-\d{2}-\d{2}"/);
+  }
 });
 
 test('the four-second submit trap is gone', async () => {

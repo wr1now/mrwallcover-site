@@ -11,18 +11,6 @@ export const SITE_URL = 'https://www.mrwallcover.com';
 export const BRAND_NAME = 'Mr Wallcover';
 export const FOUNDER_NAME = 'Dorin Burcus';
 export const PUBLIC_EMAIL = 'info@mrwallcover.com';
-export const PHONE_DISPLAY = '07450 843246';
-export const PHONE_TEL = '+447450843246';
-export const WHATSAPP_URL =
-  'https://wa.me/447450843246?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20wallcovering.';
-/**
- * The phone number is never printed in the HTML. It is shipped reversed and
- * base64-encoded, and revealed on click by the script in Base.astro.
- * WhatsApp links are filled in the same way after the page loads.
- */
-export const CONTACT_PAYLOAD = btoa(
-  JSON.stringify({ t: PHONE_TEL, d: PHONE_DISPLAY, w: WHATSAPP_URL }).split('').reverse().join(''),
-);
 
 /** Coverage line used across the site and in schema descriptions. */
 export const COVERAGE = 'London and the surrounding areas; UK-wide for selected projects';
