@@ -47,7 +47,7 @@ No one can guarantee first place in an AI answer, because there is no fixed list
 5. A point of wording about project roles, set out in the private copy.
 6. Real price ranges for a cost guide.
 7. Whether I should open a pull request for the backlog that pull request 15 left: IndexNow, analytics and the source field on the enquiry form.
-8. Whether the complete plan may sit in the public repository. Only a repository edition is there now.
+8. Whether the complete plan may sit in the public repository. Only a repository edition is there now, in pull request 16.
 
 ## B. Assumptions and scope
 
@@ -365,12 +365,12 @@ The one candidate on your site is the wallpaper quantity calculator. It would ne
 
 A figure with a unit, a date and a named project is what an assistant quotes. General advice is not, because any site could have written it.
 
-**Three studies across projects, drafted.** Each uses only facts already on your project pages, so no project or figure is invented. Each ends with the list of facts to confirm before it goes live.
+**Three studies across projects, drafted.** Each uses only facts already on your project pages, so no project or figure is invented. Each ends with the list of facts to confirm before it goes live. A separate reviewer then checked every statement against the project pages. It found no wrong date, number, name or role, and seven places where a draft said more than its page did. All are corrected, and one study was retitled.
 
 | Draft | Built from | Prompts it serves |
 | --- | --- | --- |
-| Hotel wallcoverings at scale: what six hotel projects have in common | Six hotel pages | P13 to P15, P17, P30, P39 |
-| Installing a mural against a fixed deadline | Four Calico pages, covering five installations | P06, P07, P16, P18, P26 |
+| Hotel wallcoverings at scale: three habits from our hotel projects | Six hotel pages | P13 to P15, P17, P30, P39 |
+| Murals for events and shops: five Calico Wallpaper installations | Four Calico pages, covering five installations | P06, P07, P16, P18, P26 |
 | Hanging wallpaper in old rooms that are not square | Trematon, the North London bedroom, Brown's, St Michael's Clergy House and 15 Old Bailey | P22, P32, P34 |
 
 **Makers' installation notes, drafted for four makers.** Copying a maker's guide would add nothing an assistant cannot get from the maker, and the guide is the maker's copyright. Each note instead gives the maker's main figures in a table, links the maker's own document, says when it was read, and adds your dated installations of that product.
@@ -384,7 +384,7 @@ A figure with a unit, a date and a named project is what an assistant quotes. Ge
 
 Three limits apply to these notes:
 
-- An automated reader took the figures from each document, and a second automated read checked the main ones. No person has checked them. Check every table against the maker's document before publishing.
+- An automated reader took the figures from each document. A second, independent reviewer then checked all 210 facts in the four tables against the nine documents. It confirmed 208 and found no misread figure. Two entries were corrected, two re-credited to the right guide and six softened to match the maker's wording. No person has checked them. Check every table against the maker's document before publishing.
 - The notes say nothing new about your own method. The most useful addition is yours to make. For Calico it is the primers and adhesive you use in the United Kingdom in place of the American products its guide names.
 - Seven makers remain: Timorous Beasties, Vescom, Phillip Jeffries, Omexco, Lewis & Wood, Penny Morrison and Solar Screen. The brief in pull request 14 lists a Phillip Jeffries hanging-instructions page and a Vescom adhesives page as starting points.
 
@@ -478,8 +478,11 @@ No blocking problems found.
 | Search for mrwallcover, 18:00 | Ten results: the repository, eight of its pull requests, and one Facebook photo page that I did not open. No Instagram post. |
 | Kit tests, all six files in one folder | 20 of 20 on Python 3.9.25, 3.11.17 and 3.13.16. The tests start a server on the same machine and never contact the live site. |
 | Scorer on a partial folder | Three made-up answers to two prompts were scored without error |
-| Draft checker | Seven drafts pass: front matter, draft status, unique addresses, a built page behind every internal link, and no match with the repository's own banned-wording test. Two planted faults were caught. It does not check facts. |
-| Makers' documents | Nine pages and documents read. For four of them a second automated read checked the main figures and corrected several details. |
+| Draft checker | Seven drafts pass, on Python 3.9 and 3.13: front matter, draft status, unique addresses, a built page behind every link, and no match with the repository's own banned-wording test. Planted faults were caught. It does not check facts. |
+| Makers' documents | Nine pages and documents read. A second, independent reviewer checked 210 facts in the four tables: 208 confirmed, 2 corrected, 2 re-credited to the right guide, 6 softened. No misread figure. |
+| The drafts inside pull request 14's build, commit 62798f6 | Wired into a scratch copy. The review build grew from 74 pages to 81, and the production build stayed at 64, so no draft is published. Its tests passed (38, 8 and 2) except one line that expects exactly ten guides; with that line changed, 3 of 3. No sideways overflow at phone width on any of the seven pages. Its guide pages do not style tables yet. Repeated after the reviewers' corrections, with the same results. |
+| Pull request 16, opened 18:42 | One new file, docs/ai-visibility-plan.md, 697 lines. The build check on the pull request passed. Before pushing, the file was scanned for postcodes, phone numbers, the held-back names and the repository's banned strings. None was found. |
+| The drafts against the site's own files | A second, independent reviewer checked every statement about your own work against the project and service pages. No wrong date, number, name or role. Seven over-statements and 14 points of wording, all corrected. No private name or address in any draft. |
 
 **Not verified**
 
@@ -544,7 +547,7 @@ cd ~/Desktop/mrwallcover-content-drafts
 python3 check_drafts.py --drafts . --site "$SITE"
 ```
 
-Expect seven lines that begin PASS, then "RESULT: PASS". The checker tests form, links and banned wording. It does not test facts.
+Expect seven lines that begin PASS, then "RESULT: PASS". The checker tests form, links and banned wording. It does not test facts. A second script in the pack, wire_drafts.py, prepares the drafts for the site's guide loader.
 
 **Routine**
 
@@ -624,7 +627,7 @@ Twenty-six actions, in order. The first eleven are due by Friday 16 October.
 | --- | --- |
 | Coverage of the request | 85 out of 100. The plan and the four follow-up additions are covered. Instagram is not, because I could not read it. The gaps listed below remain open. |
 | Tests | Pass. Four site builds passed, the kit passed 20 of 20 on three versions of Python, the seven drafts passed the draft checker, and the access check passed against a local copy. The kit was not run against the live site. |
-| Second-pass review | A separate reviewer found 17 errors and 14 overstatements in the first version, including a site audit that had gone stale within the hour. All are corrected here. |
+| Second-pass review | A separate reviewer found 17 errors and 14 overstatements in the first version, including a site audit that had gone stale within the hour. All are corrected here. Two more reviewers checked the seven drafts and found 7 over-statements, 2 wrong table entries and 22 points of wording. All are corrected in the drafts. |
 | Top risks | Rows 1 to 5 in section G |
 | Claims I could not verify | Listed under "Not verified" in section E. Study figures are quoted from the linked pages. The Peec and Steady Demand findings come from firms that sell tracking or marketing services, not from OpenAI or Google. |
 
