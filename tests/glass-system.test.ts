@@ -117,3 +117,11 @@ test('nothing from the art-direction preview ships, and the phone hero keeps its
   assert.doesNotMatch(everything, /--dock-clearance\) \+ [\d.]+rem\)/, 'no allowance for a hero row below the fold');
   assert.match(everything, /padding-bottom:var\(--dock-clearance\)/, 'body clearance');
 });
+
+test('mobile hero keeps the wallpaper in frame: phone object-position set, desktop untouched', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const css = await readFile(new URL('../src/styles/hero-mobile.css', import.meta.url), 'utf8');
+  const phone = css.slice(css.indexOf('@media (max-width: 1023px) {'));
+  assert.match(phone.slice(0, phone.indexOf('\n}\n')), /object-position:\s*50% 18%/);
+  assert.equal(/@media \(min-width: 1024px\)[^}]*object-position/.test(css), false);
+});

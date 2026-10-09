@@ -94,3 +94,13 @@ test('heic brand is recognised', () => {
   assert.equal(sniffType(bytes), 'heic');
   assert.equal(prepareUpload(bytes).metadata, 'stored');
 });
+
+test('FormSubmit returns to the thank-you page on the origin in use, not a hard-coded https URL', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const script = await readFile(new URL('../src/scripts/enquiry-form.ts', import.meta.url), 'utf8');
+  const branch = script.slice(script.indexOf("form.dataset.provider === 'formsubmit'"));
+  assert.match(branch, /\[name="_next"\]/);
+  assert.match(branch, /window\.location\.origin\}\/thank-you\//);
+  // The rewrite happens before the native submit continues (the handler returns without preventDefault).
+  assert.ok(branch.indexOf('_next') < branch.indexOf('return;'));
+});

@@ -306,6 +306,11 @@ export function bindEnquiryForm(form: HTMLFormElement) {
         /* ignore */
       }
       form.action = atob(endpoint).split('').reverse().join('');
+      // Return to the thank-you page on the origin the visitor is actually using. A hard-coded
+      // https URL lands on a certificate warning while the custom domain's certificate is not
+      // live, and sessionStorage (the receipt) is per origin, so http and https must not mix.
+      const next = form.querySelector<HTMLInputElement>('[name="_next"]');
+      if (next && /^https?:$/.test(window.location.protocol)) next.value = `${window.location.origin}/thank-you/`;
       if (button) button.disabled = true;
       return;
     }
