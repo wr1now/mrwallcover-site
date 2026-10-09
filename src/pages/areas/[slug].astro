@@ -31,7 +31,7 @@ const url = new URL(path, SITE_URL).href;
   image={ogImageFor(page.imageId)}
   imageAlt={page.heading}
   extraSchema={[
-    singleServiceNode({ name: page.heading, description: page.description, url, areaName: page.name.replace(/^the /, '') }),
+    singleServiceNode({ name: page.heading, description: page.description, url, areaName: page.name }),
     faqNode(page.faq),
     breadcrumbNode(crumbs),
   ]}

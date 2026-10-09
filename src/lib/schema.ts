@@ -14,19 +14,33 @@ export const FOUNDER_ID = `${SITE_URL}${facts.founder.path}#${facts.founder.frag
 export const FOUNDER_URL = `${SITE_URL}${facts.founder.path}`;
 
 /**
- * Coverage, matching what the site shows: the fact-sheet line
- * ("London and the surrounding areas; UK-wide for selected projects") and
- * one Place per area page in src/content/areas.json. No invented offices.
- * The phone number is deliberately not published in schema (Dorin's request:
- * no openly visible number). Add telephone back here if that changes.
+ * The fact-sheet coverage line is written "<local>; <national>", today
+ * "London and the surrounding areas; UK-wide for selected projects". The two
+ * halves become the AdministrativeArea name and the Country description, so
+ * the schema carries the same wording as /for-ai/, llms.txt and facts.json.
+ */
+const coverageParts = facts.coverage.split('; ');
+if (coverageParts.length !== 2 || coverageParts.some((part) => !part.trim())) {
+  throw new Error(`facts.coverage must read "<local area>; <national reach>", got "${facts.coverage}"`);
+}
+const [COVERAGE_LOCAL, COVERAGE_NATIONAL] = coverageParts;
+
+/**
+ * Coverage, matching what the site shows: the fact-sheet line split as
+ * above, and one Place per area page in src/content/areas.json, named
+ * exactly as areas.json names the area and as its page heading reads
+ * ("the City of London", "the Cotswolds"), never a rewritten string.
+ * No invented offices. The phone number is deliberately not published in
+ * schema (Dorin's request: no openly visible number). Add telephone back
+ * here if that changes.
  */
 export const AREAS_SERVED = [
   { '@type': 'City', name: facts.place },
-  { '@type': 'AdministrativeArea', name: 'Greater London and the surrounding areas' },
-  { '@type': 'Country', name: 'United Kingdom', description: 'Selected projects' },
+  { '@type': 'AdministrativeArea', name: COVERAGE_LOCAL },
+  { '@type': 'Country', name: 'United Kingdom', description: COVERAGE_NATIONAL },
   ...(areasJson.items as { slug: string; name: string }[]).map((area) => ({
     '@type': 'Place',
-    name: area.name.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase()),
+    name: area.name,
     url: `${SITE_URL}/areas/${area.slug}/`,
   })),
 ];
@@ -35,7 +49,8 @@ export const AREAS_SERVED = [
  * An ImageObject for a photograph the site shows, carrying the credit the
  * page prints beside it. Credits are written "Photography: House of Hackney"
  * or "Image: Raffles London at The OWO (official)"; the name after the colon
- * is the credit holder and the copyright notice. A plain caption such as
+ * is the credit holder, so it becomes creditText. A printed credit is not a
+ * copyright notice, so no copyrightNotice is claimed. A plain caption such as
  * "Before" is not a credit and adds nothing. Our own photographs carry no
  * credit line on the page, so none is invented here.
  */
@@ -44,7 +59,7 @@ export function imageObject(url: string, credit?: string | null) {
   return {
     '@type': 'ImageObject',
     url,
-    ...(holder ? { creditText: holder, copyrightNotice: holder } : {}),
+    ...(holder ? { creditText: holder } : {}),
   };
 }
 

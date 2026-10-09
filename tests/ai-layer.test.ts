@@ -391,10 +391,22 @@ test('/feed.xml is Atom with exactly the published guides and case studies, thei
   assert.match(await readFile('dist/llms.txt', 'utf8'), /\(https:\/\/www\.mrwallcover\.com\/feed\.xml\)/);
 });
 
-test('schema audit: business coverage matches the area pages, Person present, Service on service pages, Article on guides and case studies, FAQPage only with visible questions, BreadcrumbList on every non-home page, credited ImageObjects, no SearchAction, no ratings, reviews, offers or prices', async () => {
+test('schema audit: business coverage matches the fact sheet and the area pages, Person present, Service on service pages, Article on guides and case studies, FAQPage only with visible questions, BreadcrumbList on every non-home page, credited ImageObjects without copyright claims, no SearchAction, no ratings, reviews, offers or prices', async () => {
   type Node = Record<string, any>;
   const graphOf = (html: string): Node[] => JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1])['@graph'];
-  const areas = (JSON.parse(await readFile('src/content/areas.json', 'utf8')) as { items: { slug: string; name: string }[] }).items;
+  const areas = (JSON.parse(await readFile('src/content/areas.json', 'utf8')) as { items: { slug: string; name: string; heading: string }[] }).items;
+  const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { place: string; coverage: string };
+  // The fact-sheet coverage line is "<local>; <national>"; the schema must carry both halves word for word.
+  const [coverageLocal, coverageNational] = facts.coverage.split('; ');
+  assert.ok(coverageLocal && coverageNational, 'facts.coverage reads "<local>; <national>"');
+  // Each area Place is named exactly as areas.json names it, and that name is what the area page's H1 reads.
+  for (const area of areas) {
+    const areaHtml = await readFile(`dist/areas/${area.slug}/index.html`, 'utf8');
+    const h1 = stripTags(areaHtml.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)![1]);
+    assert.ok(h1.includes(area.name), `/areas/${area.slug}/ H1 "${h1}" names "${area.name}"`);
+    const service = graphOf(areaHtml).find((node) => node['@type'] === 'Service' && node['@id'] === `${SITE}/areas/${area.slug}/#service`);
+    assert.equal(service?.areaServed?.name, area.name, `/areas/${area.slug}/ Service areaServed uses the area's own name`);
+  }
   const specialisms = (JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as { items: { slug: string }[] }).items;
   const credits = new Map<string, string>();
   const drafts = new Set<string>();
@@ -410,17 +422,20 @@ test('schema audit: business coverage matches the area pages, Person present, Se
     const graph = graphOf(page.html);
     const types = graph.map((node) => (Array.isArray(node['@type']) ? node['@type'].join('+') : node['@type']));
     const serialised = JSON.stringify(graph);
-    for (const banned of ['aggregateRating', 'reviewRating', '"review"', '"reviews"', '"offers"', 'priceRange', '"price"', 'priceCurrency', 'SearchAction', 'potentialAction', 'telephone', '"award"']) {
+    // copyrightNotice is banned: a printed photo credit is a credit, not a copyright claim.
+    for (const banned of ['aggregateRating', 'reviewRating', '"review"', '"reviews"', '"offers"', 'priceRange', '"price"', 'priceCurrency', 'SearchAction', 'potentialAction', 'telephone', '"award"', 'copyrightNotice']) {
       if (serialised.includes(banned)) problems.push(`${page.pathname}: schema contains ${banned}`);
     }
     const business = graph.find((node) => node['@id'] === `${SITE}/#business`);
     if (!business) problems.push(`${page.pathname}: no business node`);
     else {
-      const served = (business.areaServed as Node[]).map((area) => area.name);
-      if (!served.includes('London')) problems.push(`${page.pathname}: areaServed lacks London`);
+      const servedNodes = business.areaServed as Node[];
+      const served = servedNodes.map((area) => area.name);
+      if (!served.includes(facts.place)) problems.push(`${page.pathname}: areaServed lacks ${facts.place}`);
+      if (!servedNodes.some((area) => area['@type'] === 'AdministrativeArea' && area.name === coverageLocal)) problems.push(`${page.pathname}: areaServed lacks the fact-sheet coverage "${coverageLocal}"`);
+      if (!servedNodes.some((area) => area['@type'] === 'Country' && area.name === 'United Kingdom' && area.description === coverageNational)) problems.push(`${page.pathname}: areaServed Country lacks the fact-sheet reach "${coverageNational}"`);
       for (const area of areas) {
-        const name = area.name.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase());
-        if (!served.includes(name)) problems.push(`${page.pathname}: areaServed lacks ${name}`);
+        if (!servedNodes.some((node) => node['@type'] === 'Place' && node.name === area.name && node.url === `${SITE}/areas/${area.slug}/`)) problems.push(`${page.pathname}: areaServed lacks Place "${area.name}" at /areas/${area.slug}/`);
       }
       if (served.length !== areas.length + 3) problems.push(`${page.pathname}: areaServed has ${served.length} entries, expected ${areas.length + 3}`);
     }
@@ -453,7 +468,7 @@ test('schema audit: business coverage matches the area pages, Person present, Se
       if (!credit) continue;
       creditedImages += 1;
       const holder = credit.replace(/^(Photography|Image):\s*/, '').replace(/\s*\(official\)$/, '');
-      if (!match[2].includes(`"creditText":"${holder}"`) || !match[2].includes(`"copyrightNotice":"${holder}"`)) problems.push(`${page.pathname}: ${match[1]} lacks creditText/copyrightNotice "${holder}"`);
+      if (!match[2].includes(`"creditText":"${holder}"`)) problems.push(`${page.pathname}: ${match[1]} lacks creditText "${holder}"`);
       if (!page.html.includes(credit)) problems.push(`${page.pathname}: credit "${credit}" is in schema but not printed on the page`);
     }
     for (const slug of drafts) if (serialised.includes(`/projects/${slug}/`)) problems.push(`${page.pathname}: schema mentions draft ${slug}`);
@@ -461,7 +476,8 @@ test('schema audit: business coverage matches the area pages, Person present, Se
   assert.deepEqual(problems, []);
   assert.ok(creditedImages >= 10, `${creditedImages} credited ImageObjects checked`);
   const hoh = await readFile('dist/projects/house-of-hackney-st-michaels/index.html', 'utf8');
-  assert.match(hoh, /"creditText":"House of Hackney","copyrightNotice":"House of Hackney"/);
+  assert.match(hoh, /"creditText":"House of Hackney"/);
+  assert.doesNotMatch(hoh, /copyrightNotice/);
   // Specialism pages each carry their Service; the business node is the HomeAndConstructionBusiness already in use.
   for (const item of specialisms) assert.match(await readFile(`dist/services/${item.slug}/index.html`, 'utf8'), /"@type":"Service"/);
   const home = graphOf(await readFile('dist/index.html', 'utf8'));
