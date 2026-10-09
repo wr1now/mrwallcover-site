@@ -1,5 +1,5 @@
 ---
-title: "Grasscloth: understand the seams before you buy"
+title: "Grasscloth: the seams and variation to expect"
 slug: "grasscloth-seams-and-variation"
 audience: "homeowners-and-designers"
 category: "choosing"
@@ -7,32 +7,44 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
-description: "What natural panel variation looks like, and what to settle before ordering grasscloth."
-shortTitle: "Grasscloth seams & shading"
+description: "Grasscloth seams show and panels vary in shade. What is normal, what is a fault, how the set-out and the batch change the result, and what to settle before you order."
+shortTitle: "Grasscloth seams and variation"
 order: 2
-relatedMaterials: ["grasscloth-and-weaves"]
-relatedGuides: ["choosing-wallcoverings","wall-preparation"]
+relatedMaterials: ["grasscloth-and-weaves", "paper-and-non-woven"]
+relatedGuides: ["choosing-wallcoverings", "wall-preparation", "wallcovering-problems-and-aftercare"]
 ctaLabel: "Discuss a natural wallcovering"
 ctaHref: "/contact/?intent=source"
-sources: [{"label": "Phillip Jeffries: shading and panel variation", "url": "https://blog.phillipjeffries.com/the-hang-guide-to-grasscloth-shading"}]
+sources: [{"label": "Phillip Jeffries: The Art of Smooth Shading", "url": "https://blog.phillipjeffries.com/the-hang-guide-to-grasscloth-shading"}, {"label": "Phillip Jeffries: Engineering a Room", "url": "https://blog.phillipjeffries.com/the-hang-how-many-wallcovering-panels-in-a-room"}, {"label": "Phillip Jeffries: hanging instructions", "url": "https://www.phillipjeffries.com/hanging-instructions"}]
 ---
 
-If you want grasscloth because you love its natural texture, look at a whole wall before making the final decision. The sample shows the fibres. An installed room shows how the panels sit beside one another.
+Will the seams in grasscloth show? Yes. Every seam in a natural grasscloth is visible, and adjacent drops can differ in shade. That is the material, not a hanging fault, and it is the reason to look at a whole installed wall, not a sample, before you commit a room to it. The sample shows the fibres. The wall shows how the panels sit beside one another.
 
-## The panels are part of the appearance
+## Why do the panels look different from one another?
 
-Natural fibres are not as uniform as a printed imitation. Colour and texture can vary, and adjacent drops may catch light differently. The result can have a panelled character even when the material has been installed carefully.
+Grasscloth is woven from natural fibres, sisal, raffia, arrowroot, jute and others, dyed and laid on a paper backing. Dye takes unevenly on natural fibre, so colour shifts along a roll and between rolls, and the weave itself is irregular. Once hung, each drop reads as a panel with its own tone, and light crossing the wall exaggerates the difference. Makers describe this as shading or panelling. Phillip Jeffries, whose Tweed we installed at [Four Seasons Ten Trinity Square](/projects/four-seasons-ten-trinity-square/), publishes a clear account of it in [The Art of Smooth Shading](https://blog.phillipjeffries.com/the-hang-guide-to-grasscloth-shading).
 
-That does not make every visible line acceptable. An open joint, damage or lifting edge needs assessment. But a change in shade between panels should not automatically be mistaken for an installation defect.
+Printed and vinyl imitations of grasscloth remove that variation. If a uniform wall is what you want, compare one; our [choosing guide](/advice/choosing-wallcoverings/) covers that decision.
 
-## Agree the layout before cutting
+## What is normal, and what is a fault?
 
-Doors, windows and the widths of the walls influence where joints land. On a prominent wall, a narrow strip at one end can draw the eye more than a considered arrangement of panels. This is worth discussing before installation, especially where furniture, a fireplace or artwork establishes a visual centre.
+Normal: a visible seam line; a step in tone between neighbouring drops; a slightly different texture from one panel to the next; fibres that catch the light at a different angle on alternate drops.
 
-Hanging direction depends on the product. Do not assume that reversing alternate drops is right for every natural wallcovering. Follow the particular manufacturer's instructions and review the appearance early, before committing the whole room.
+Worth assessing: an open joint you can see the wall through; a seam that has lifted; a dark line at the seam from adhesive on the face; a crease, bubble or tear. These are installation or handling problems and should be reported, not lived with. Our [problems and aftercare guide](/advice/wallcovering-problems-and-aftercare/) explains what to photograph and what not to touch.
 
-## Think about use and cleaning
+## How does the set-out change the result?
 
-Natural grasscloth is not automatically suited to frequent wiping or splashes. Check the actual care instructions. In a busy family entrance hall, a textured imitation may be worth comparing if cleanability matters more than natural fibre.
+The wall widths, the doors and the windows decide where seams land. On a prominent wall, a narrow strip at one end draws the eye more than a balanced arrangement of equal panels, so the set-out often starts from the centre of the chimney breast or the bed wall and works outwards, accepting the narrow pieces in the corners. Phillip Jeffries' [Engineering a Room](https://blog.phillipjeffries.com/the-hang-how-many-wallcovering-panels-in-a-room) shows how the panel count is worked out from the elevations. The direction of the weave is agreed before the first length is cut; it is part of how we [install grasscloth](/services/grasscloth-installation/).
 
-Ask to see an installed example, preferably in similar light. If you like the texture but dislike the visible panel character, it is better to change the specification now than feel disappointed once the room is finished.
+Hanging direction is a product decision. Some makers ask for alternate drops to be reversed so the shading balances; others say not to. Follow the hanging instruction for that product, which for Phillip Jeffries is on their [hanging instructions page](https://www.phillipjeffries.com/hanging-instructions), and review the first two or three drops in the room's own light before the rest goes up.
+
+## Why does the batch matter so much?
+
+Variation between batches is larger than variation within one. Order the whole room, with a spare, from one batch number, and keep lengths from the same roll together on the same wall where the design of the room allows. Quantities for grasscloth allow for that, and for the fact that offcuts rarely blend. Our [quantities page](/advice/quantities/) explains why drops, not square metres, decide the order.
+
+## Will it cope with the room?
+
+Natural grasscloth is a dry-dust surface. Moisture stains it, adhesive on the face marks it, and it is not suited to frequent wiping or splashes. In a busy family hall or beside a kitchen, a textured vinyl may be the better answer if cleanability matters more than natural fibre. The wall beneath it also matters: a sound, true, evenly porous surface, lined where the maker specifies it, because grasscloth telegraphs a poor substrate less than silk but hides nothing that is proud of the surface. See [wall preparation](/advice/wall-preparation/).
+
+## When does this advice stop being reliable?
+
+This guide describes natural grasscloth in general. Paper-backed, non-woven-backed and vinyl-backed weaves behave differently, and so do the adhesives they need. The product's own hanging instruction and care sheet take precedence over anything here. If you like the texture but dislike the panel character, change the specification now; it is a much better moment than after the room is finished.

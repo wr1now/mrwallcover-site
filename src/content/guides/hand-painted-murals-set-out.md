@@ -1,5 +1,5 @@
 ---
-title: "Scenic murals and panoramic wallpaper: plan the room before ordering"
+title: "Hand-painted papers and murals: plan the room before ordering"
 slug: "hand-painted-murals-set-out"
 audience: "homeowners-and-designers"
 category: "planning"
@@ -7,34 +7,44 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
-description: "Plan focal points, elevations, panel sequence and interruptions before ordering a scene."
-shortTitle: "Scenic wallpaper planning"
+description: "How a scenic or hand-painted paper is set out: elevations, the focal point, panel sequence, doors and corners, finished dimensions and when the survey has to happen."
+shortTitle: "Hand-painted papers and murals"
 order: 6
-relatedMaterials: ["murals", "hand-painted"]
-relatedGuides: ["designer-specification-checklist"]
+relatedMaterials: ["hand-painted", "murals"]
+relatedGuides: ["designer-specification-checklist", "wall-preparation", "installation-cost"]
 ctaLabel: "Discuss a scenic layout"
-ctaHref: "/contact/?intent=install"
+ctaHref: "/contact/?audience=designer&intent=install"
 sources: []
 ---
 
-A scenic wallpaper is closer to a composition than a repeating pattern. The question is not simply whether the panels cover the wall. It is what remains visible once the doors, furniture and corners are taken into account.
+When should a scenic paper be planned? Before it is ordered, and before the room's dimensions are final. A hand-painted or panoramic paper is a composition, not a repeating pattern: the panels are made to the elevations, and the question is not whether they cover the wall but what remains visible once the doors, the corners and the furniture are taken into account. Change the plan after production and the only remedies are cropping, stretching or re-ordering.
 
-## Draw the wall first
+## Which wall, and what is the focal point?
 
-Record the wall dimensions and the position of doors, windows, sockets, joinery and other interruptions. For a wraparound scene, draw each wall in sequence and mark the corners. Check whether the dimensions are finished dimensions or whether further building work will change them.
+Draw each wall first. Record the finished width and height, and the position of every door, window, socket, switch, radiator, cornice and piece of joinery. For a wraparound scene, draw the walls in sequence and mark the corners. Then decide what deserves the centre. The middle of the wall is not always the visual centre: a bed, a chimneypiece or a dining table often fixes where the main motif should sit, and a recognisable feature in the design should not disappear behind a wardrobe. This is how we set out [hand-painted papers](/services/hand-painted-wallpaper-installation/) and [murals](/services/mural-installation/): from a fixed point, before the first panel goes up.
 
-## Choose what deserves the centre
+## How does the panel sequence work?
 
-The centre of the wall is not always the best visual centre. A bed, fireplace or dining arrangement can define where the main scene should sit. Discuss that position before ordering, particularly if the design contains a recognisable feature that should not disappear behind furniture.
+Scenic papers arrive as numbered panels of a stated width, hung in order. The maker's layout drawing shows where each panel begins and how the scene continues around a corner; the installer's set-out shows where that layout meets the real wall. Agree both before production, including whether a corner falls on a panel edge or inside a panel, and how a door opening is handled, since the scene has to continue correctly above it.
 
-Ask how the supplier handles cropping, panel dimensions and any custom scaling. Stretching an image to fit is not necessarily an acceptable design adjustment.
+Keep the layout on site and check the delivered panels against it before anything is cut. A sequence or sizing problem is easy to resolve at that stage and expensive afterwards.
 
-## Understand the panel sequence
+## What happens at doors, windows and corners?
 
-Check the order of panels, their dimensions, orientation and the approved layout. Keep the installation plan available on site. Review the delivered material before cutting; an ordering or sequence problem is easier to address at that stage.
+Every interruption removes part of the picture. Decide where the loss is least painful: usually behind a door that stands open, above a window, or in a corner that furniture hides. Ask the maker how they handle cropping, panel dimensions and any custom scaling. Stretching a design to fit is not necessarily an acceptable adjustment, and a scene that has been scaled up loses the detail you chose it for.
 
-## Know what a visualisation can tell you
+## Should the dimensions be the finished dimensions?
 
-A room preview helps with placement and overall effect. It cannot guarantee colour, surface texture or the way the material catches real light. Physical samples and supplier proofs still matter.
+Yes. If the room is still being built, decided or re-plastered, involve the installer and the maker before the dimensions go to production. Skirting height, cornice depth and the thickness of a new lining all change the finished wall. We measure on site, take out the openings and give the supplier the dimensions of the wall that will actually be hung; our [mural installation](/services/mural-installation/) page explains that survey.
 
-If the room is being rebuilt, involve the installer and supplier before the dimensions are finalised for production. A small design change made early may prevent a much larger compromise later.
+## What should the wall be like?
+
+Hand-painted papers need a sound wall, a patient set-out and time. Some are hung over a lining and some are specified without one; we follow the maker's instruction. The surface has to be true, because a scenic paper is usually smooth and lit from the side. See [wall preparation](/advice/wall-preparation/) for what has to be checked, and plan the filling, lining and drying time into the programme rather than discovering it on the day the panels arrive.
+
+## Can a visualisation settle it?
+
+A room preview helps with placement and overall effect. It cannot show real colour, the texture of the paper or the way the surface takes light. Physical samples, a strike-off or the maker's proof still decide colour, and a full-size paper mock-up of one panel on the wall is often the cheapest insurance on a large commission.
+
+## When does this advice stop being reliable?
+
+Each maker has its own panel widths, overlaps, hanging direction and adhesive requirements, and some papers must not be trimmed on site at all. The maker's hanging instruction and layout drawing take precedence over this guide. For a commission with several rooms, record the elevations, focal points and panel expectations in a schedule; our [designer specification checklist](/advice/designer-specification-checklist/) has the fields, and the [hand-painted](/materials/hand-painted/) and [murals](/materials/murals/) material pages describe what each family needs.

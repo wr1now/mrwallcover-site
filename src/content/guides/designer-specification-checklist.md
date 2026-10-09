@@ -1,5 +1,5 @@
 ---
-title: "A designer's checklist before specifying wallcoverings"
+title: "A designer's wallcovering specification checklist"
 slug: "designer-specification-checklist"
 audience: "designers-and-architects"
 category: "planning"
@@ -7,38 +7,54 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
-description: "A practical specification checklist: product identity, elevations, samples and responsibilities."
-shortTitle: "For designers"
+description: "What a wallcovering specification needs before it reaches site: maker and code, elevations, repeat and match, samples and strike-offs, light, lining, free-issue responsibilities and change control."
+shortTitle: "Designer checklist"
 order: 8
-relatedMaterials: ["silk-and-textiles", "hand-painted"]
-relatedGuides: ["hand-painted-murals-set-out","hotel-wallcovering-specification"]
-ctaLabel: "Send a designer brief"
+relatedMaterials: ["silk-and-textiles", "hand-painted", "grasscloth-and-weaves", "acoustic"]
+relatedGuides: ["hand-painted-murals-set-out", "grasscloth-seams-and-variation", "developer-wallcovering-package"]
+ctaLabel: "Send a specification"
 ctaHref: "/contact/?audience=designer&intent=install"
-sources: []
+sources: [{"label": "Phillip Jeffries: hanging instructions", "url": "https://www.phillipjeffries.com/hanging-instructions"}]
 ---
 
-The sample may be approved long before anyone decides where the first joint will fall. Bringing installation into the specification discussion early helps protect the design when the room reaches site.
+What should a wallcovering specification contain? Enough for the installer to set out the room without a phone call: the exact product, the elevations with the focal points marked, the repeat and match, what has been sampled, who supplies the material and who signs off the wall. The sample is often approved long before anyone decides where the first seam will fall. The checklist below brings that decision forward, so the design survives contact with the site. It is also available as a blank [specification schedule](/downloads/wallcovering-specification-schedule.csv) to fill in per room.
 
-## Give the material a precise identity
+## Product identity
 
-Record the manufacturer, collection, product code and colourway. Include the current technical and hanging instructions, usable dimensions, repeat, match and any panel sequence. Note where the specification remains provisional.
+- Maker, collection, product code and colourway, with the current hanging instruction attached. For Phillip Jeffries that is their [hanging instructions page](https://www.phillipjeffries.com/hanging-instructions); every maker has an equivalent.
+- Usable width, roll or panel length, sale unit and minimum order.
+- Repeat, match type (free, straight, half-drop, panel sequence) and hanging direction, including whether alternate drops are reversed.
+- Backing, and the adhesive and primer the maker specifies for it.
+- Whether the item is confirmed or provisional, so a provisional reference is never mistaken for an order.
 
-## Show the design intent
+## Elevations and design intent
 
-Room elevations are particularly useful for scenic designs, pronounced patterns and natural materials. Identify focal points, intended centrelines, corners, doors and joinery transitions. Clarify whether the designer expects visible natural panels or a more uniform finish.
+- A drawn elevation for every wall that carries a scenic, a pronounced pattern, a natural weave or a textile, showing doors, windows, joinery, cornice, dado and services.
+- The focal point and the intended centreline: chimney breast, bed wall or window, so the set-out starts from the right place. Our guide to [hand-painted papers and murals](/advice/hand-painted-murals-set-out/) shows why this has to precede production.
+- Where seams may fall and where they must not, including internal and external corners and returns.
+- Whether visible natural panels are expected or a uniform finish is wanted; see [grasscloth seams and variation](/advice/grasscloth-seams-and-variation/).
+- How the covering meets joinery, and whether it continues onto it; our [joinery and panels](/services/joinery-wallcoverings-and-panels/) page describes that detail.
 
-## Check the conditions
+## Conditions
 
-List the room's use, likely cleaning regime and any project-specific performance requirements. Obtain documentation for the exact product rather than relying on a general collection description. If a sample or site mock-up is required, agree its purpose and who will accept it.
+- Room use, expected cleaning regime and the light: a textile wall lit from the side needs a truer substrate than one lit from the front. See [wall preparation](/advice/wall-preparation/).
+- Lining: specified, not specified, or to the maker's instruction.
+- Any fire, acoustic or wet-area requirement, with the document for the exact product rather than the collection. An [acoustic system](/materials/acoustic/) is only acoustic as installed to its own detail.
+- Whether a sample area, strike-off or mock-up is required, its purpose and who accepts it.
 
-## Agree responsibilities
+## Responsibilities
 
-Who confirms quantity? Who orders and checks delivery? Who approves the batch or supplied material? Who signs off wall readiness and layout? Who decides whether a substitution is acceptable?
+- Who confirms the purchase quantity, and on what measurement basis. Our [quantities page](/advice/quantities/) explains drops, repeat and batch.
+- Who orders, who receives and checks the delivery, and who approves the batch. On many hotel and flagship jobs the material is free-issue from the designer, the brand or the client; we manage delivery and check it against the measure.
+- Who signs off wall readiness and the set-out before cutting starts.
+- Who decides whether a substitution is acceptable, and what evidence it needs.
 
-These questions are easier to settle in a short schedule than in a series of urgent messages after installation has started.
+## Change control
 
-## Keep a change record
+- A dated revision on the schedule and the affected elevation whenever a colourway, dimension or wall position changes.
+- A rule that an approved sample is not enough if the final order carries a different reference.
+- A record of what remains unresolved, marked clearly, so the first site conversation can go straight to the decisions still needed.
 
-If a colourway, room dimension or wall position changes, update the schedule and affected elevations. An approved sample is not enough if the final order carries a different reference.
+## When does this checklist stop being enough?
 
-For an initial review, send the specification, elevations, project location, programme and procurement responsibilities. Where an item is unresolved, mark it clearly. That allows the discussion to focus on the decisions still needed.
+It covers what an installer needs. It does not establish a product's fire or acoustic performance, does not replace the maker's own specification sheet, and does not turn a family description into a product approval. For a first review, send the specification, the elevations, the project location, the programme and the procurement responsibilities to the [designers and architects page](/professionals/designers/). Where a main contractor is procuring the package, the [developer package guide](/advice/developer-wallcovering-package/) sets out the tender side.

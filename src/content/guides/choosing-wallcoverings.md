@@ -1,5 +1,5 @@
 ---
-title: "How to choose wallpaper you will still like once it is on the wall"
+title: "Choosing wallpaper for the room, not just the photograph"
 slug: "choosing-wallcoverings"
 audience: "homeowners"
 category: "choosing"
@@ -7,56 +7,54 @@ draft: true
 reviewStatus: "awaiting-owner-technical-review"
 prepared: "2026-10-09"
 reviewer: null
-description: "Compare material, light, pattern and everyday use before choosing a wallcovering."
-shortTitle: "Choosing wallpaper"
+description: "How to choose a wallcovering that still looks right once it is on the wall: traffic, light, cleaning, moisture, sample size and the questions to settle before ordering."
+shortTitle: "Choosing wallcoverings"
 order: 1
-relatedMaterials: ["paper-and-non-woven", "grasscloth-and-weaves", "silk-and-textiles"]
-relatedGuides: ["grasscloth-seams-and-variation"]
+relatedMaterials: ["paper-and-non-woven", "grasscloth-and-weaves", "silk-and-textiles", "contract-vinyl"]
+relatedGuides: ["grasscloth-seams-and-variation", "wall-preparation", "installation-cost"]
 ctaLabel: "Discuss my room"
 ctaHref: "/contact/?audience=homeowner&intent=advice"
 sources: []
 ---
 
-A wallpaper sample is a small piece of a much bigger decision. You are choosing how an entire wall will look in daylight, under lamps and beside everything already in the room.
+Will this wallpaper suit the room? That depends less on the photograph you fell for than on four things the photograph cannot show: how much the wall gets touched, how the light crosses it, how it will be cleaned, and whether moisture reaches it. Settle those first, then choose between the samples that pass. A sample is a small piece of a much bigger decision, because you are choosing how an entire wall looks in daylight, under lamps and beside everything already in the room.
 
-Start with the room. A bedroom, a busy entrance hall and a restaurant all ask different things of a wallcovering. Think about how often the wall will be touched, whether it needs cleaning and whether you want a quiet background or something that becomes the main feature.
+## How will the wall actually be used?
 
-## Look at a sample where it will be installed
+Start with traffic. A bedroom wall is rarely touched. The wall beside a staircase takes hands, bags and the odd suitcase every day. A restaurant banquette wall takes chair backs. The more contact a wall gets, the more the surface matters: a delicate paper or a silk can suit a protected feature wall and become a frustration beside a busy passage, where a [contract vinyl](/materials/contract-vinyl/) or a washable non-woven would shrug off the same use.
 
-Place the sample beside the flooring, curtains and joinery. Look at it during the day and again with the room's usual lighting. A metallic surface can look restrained from one angle and much brighter from another. Texture can also change noticeably when light travels across the wall.
+Then think about the room's job. A quiet background and a wall that becomes the main feature ask for different things, and that choice affects pattern scale, sheen and colour as much as it affects price.
 
-If the design has a large repeat, ask to see enough of it to understand the pattern. One attractive flower or fragment of a mural does not show how the room will feel when the whole design is present.
+## What will the light do to it?
 
-## Decide what you expect from the finish
+Look at the sample where it will be installed, beside the flooring, the curtains and the joinery, during the day and again under the room's usual lamps. A metallic surface can look restrained from one angle and much brighter from another. Texture changes noticeably as light travels across a wall, and strong side light from a window will show every ridge in the surface beneath it, which is one reason [wall preparation](/advice/wall-preparation/) matters more for smooth and reflective finishes than for a textured paper.
 
-Some customers want a very uniform surface. Others want the movement and character of a natural material. Neither preference is wrong, but it should be settled before ordering. Grasscloth and other natural wallcoverings can show individual panels and variation; they should not be chosen on the assumption that every joint will disappear.
+Ask for enough of a large design to understand the repeat. One flower, or one fragment of a scene, does not tell you how the room feels when the whole pattern is present. For a bold design, a larger sample or a quick room elevation is worth the delay.
 
-## Check the wall as well as the wallpaper
+## How will it be cleaned?
 
-The existing surface matters. Old paint, repairs, moisture concerns and uneven walls can affect preparation and the programme. Choosing the material first and dealing with the wall on installation day is an avoidable risk.
+Decide this before you order, not after the first mark. Many papers are not washable at all. Grasscloth and silk are dry-dust surfaces. Contract vinyl will take a damp cloth and mild soap, but only as its own maker allows. The word "vinyl" on a sample card does not make every product suitable for every kitchen position, and "washable" means what the product's own care sheet says it means. Our [aftercare page](/aftercare/) sets out the general care each family can take; the exact product's instructions take precedence.
 
-Before you buy, collect the product reference, a photograph of the room and any dimensions you have. Ask about care, quantity, lead time and installation together. That gives you a much clearer picture of the finished project than the roll price alone.
+## Will moisture reach it?
 
-## Room by room (merged from the former room guide)
+Separate decorative walls from walls exposed to splashes, steam, grease or heat. A rarely used cloakroom and a bathroom with daily steam are very different rooms. Ordinary decorative wallpaper should not be assumed to work in a direct wet zone, and wallpaper should never be used to hide a damp problem. If a wall feels cold or soft, or a stain has spread, investigate the cause before you choose a finish for it.
 
-The room name alone does not decide whether a wallpaper is suitable. A rarely used cloakroom and a bathroom with daily steam are very different environments. So are a quiet entrance lobby and a corridor carrying luggage all day.
+## Do you want an even surface or a natural one?
 
-## Hallways and stairs
+Some clients want a very uniform wall. Others want the movement and character of a natural material. Neither is wrong, but it should be decided before ordering. [Grasscloth and other natural weaves](/materials/grasscloth-and-weaves/) show their panels: colour and texture vary from roll to roll, and adjacent drops can catch the light differently. That is the material, not a fault, and our [guide to grasscloth seams and variation](/advice/grasscloth-seams-and-variation/) shows what to expect. If you like the texture but not the panel character, a woven-look vinyl or a printed texture is worth comparing.
 
-Look at the places where bags, hands and furniture meet the wall. Cleaning requirements and repair options matter here. A wallcovering with a delicate surface might suit a protected feature wall but become frustrating beside a heavily used passage.
+## Room by room
 
-Stairs introduce practical installation questions too: access, changing wall heights, pattern placement and the condition of the existing surface. Supply dimensions and photographs before asking for a firm quantity or installation price.
+**Hallways and stairs.** Look at where bags, hands and furniture meet the wall. Cleanability and the chance of a local repair matter most here. Stairs add installation questions too: access, changing wall heights and where the pattern should sit as the wall climbs.
 
-## Kitchens and dining spaces
+**Kitchens and dining rooms.** Keep the decorative wall away from the hob and the sink, and check the exact product's suitability for the positions that will take splashes.
 
-Separate decorative walls from areas exposed to splashes, grease or heat. “Vinyl” does not mean every product is approved for every kitchen position. Check the exact manufacturer's suitability and cleaning instructions, and consider a different finish where exposure is substantial.
+**Bathrooms and cloakrooms.** Understand the ventilation and the existing moisture condition. A direct wet zone needs a system specifically made for it.
 
-## Bathrooms and cloakrooms
+**Bedrooms and living rooms.** These usually give you the most freedom. Appearance still deserves care: side lighting emphasises texture and imperfection, and a large pattern needs a large sample.
 
-Understand the ventilation, existing moisture condition and location of the wall. Wallpaper should not be used to conceal a damp problem. Direct wet zones require a specifically suitable system; ordinary decorative wallpaper should not be assumed to work there.
+## When does this advice stop being reliable?
 
-## Bedrooms and living rooms
+General family guidance cannot tell you whether a particular product is approved for a wet position, whether it carries a fire classification, or how it should be cleaned. Those answers come from that product's own data sheet and care instructions, and from the maker where the room is unusual. If an answer is missing, keep the product on the shortlist rather than treating it as the final choice.
 
-These rooms often give you more freedom, but appearance still deserves careful thought. Strong side lighting can emphasise texture and imperfections. A bold pattern may need a larger sample or a room elevation to judge its scale.
-
-For any room, ask three questions: is this particular material suitable here, how will it be cleaned, and what preparation does the wall need? If one answer is missing, keep the product on the shortlist rather than treating it as the final choice.
+Before you buy, collect the product reference, a photograph of the room and any dimensions you have, then ask about care, [quantity](/advice/quantities/), lead time and installation together. The [material finder](/materials/#material-finder) compares the seven families we hang by room, appearance and cleaning, and lets you save a shortlist to bring to the conversation.
