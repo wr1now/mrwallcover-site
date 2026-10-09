@@ -281,8 +281,8 @@ export function bindEnquiryForm(form: HTMLFormElement) {
           const note = receipt.querySelector('[data-notification]');
           if (note) {
             note.textContent = payload.notification === 'sent'
-              ? 'A notification was queued for the studio.'
-              : 'Your enquiry is stored. The email notification still needs attention, and the enquiry has not been discarded.';
+              ? 'Dorin Burcus has been notified and will reply by the email or phone you chose.'
+              : 'Your enquiry is saved under this reference. If you hear nothing, email info@mrwallcover.com and quote it.';
           }
         }
         try {
