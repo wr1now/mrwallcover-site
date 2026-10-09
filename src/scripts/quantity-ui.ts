@@ -33,7 +33,7 @@ if (form && output) {
     const list = form.querySelector('[data-walls]');
     const row = document.createElement('div');
     row.className = 'grid gap-5 md:grid-cols-2';
-    row.innerHTML = '<div class="field"><label>Width, metres <input name="width" type="number" min="0" step="0.01" value="4" /></label></div><div class="field"><label>Height, metres <input name="height" type="number" min="0" step="0.01" value="2.4" /></label></div>';
+    row.innerHTML = '<div class="field"><label>Width, metres <input name="width" type="number" min="0" step="0.01" value="5" /></label></div><div class="field"><label>Height, metres <input name="height" type="number" min="0" step="0.01" value="2.7" /></label></div>';
     list?.append(row);
   });
 }
