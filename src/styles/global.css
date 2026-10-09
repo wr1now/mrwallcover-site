@@ -492,36 +492,6 @@
     min-height: 48px;
   }
 
-  .dock {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 35;
-    display: grid;
-    /* Two to four items: the WhatsApp and phone controls only exist when SITE_PHONE was set at build time. */
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-    background: var(--color-ivory);
-    border-top: 1px solid var(--color-line);
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-
-  .dock a {
-    min-height: 56px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: inherit;
-    font-size: 0.95rem;
-  }
-
-  .dock a + a {
-    border-left: 1px solid var(--color-line);
-  }
-
   .site-footer {
     border-top: 1px solid var(--color-line);
     padding-block: 3rem 2rem;
@@ -659,18 +629,6 @@ body {
 video {
   max-width: 100%;
   height: auto;
-}
-.dock-primary {
-  background: var(--color-ink);
-  color: var(--color-ivory) !important;
-  font-weight: 500;
-}
-.dock a span {
-  font-size: 0.82rem;
-  line-height: 1.1;
-}
-.dock-primary span {
-  font-size: 0.95rem;
 }
 /* Lists of links: every link is a comfortable tap target */
 .site-footer li a,
@@ -868,17 +826,6 @@ article h3 a {
     display: block;
     width: 100%;
     height: auto;
-  }
-
-  .dock .dock-phone {
-    appearance: none;
-    border: 0;
-    border-left: 1px solid var(--color-line);
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    min-height: 56px;
-    cursor: pointer;
   }
 
   .hotel-list a {

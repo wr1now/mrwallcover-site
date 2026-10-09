@@ -1,10 +1,20 @@
 ---
+/**
+ * Mobile action dock (stage 5, step G6). Four actions at most: "Start your
+ * project" first, then Projects, WhatsApp and the phone reveal; the last two
+ * exist only when SITE_PHONE was set at build time. Opaque champagne (no
+ * blur), so on a phone the header is the only blurred surface. Hidden while
+ * the mobile menu is open and while a text field has focus (an on-screen
+ * keyboard is likely up); body padding (--dock-clearance) keeps it off the
+ * footer's last line.
+ */
+import Glass from './Glass.astro';
 import PhoneReveal from './PhoneReveal.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
 ---
 
-<nav class="dock lg:hidden" aria-label="Contact shortcuts">
-  <a href="/contact/">
+<Glass element="nav" variant="champagne" opaque class="dock" aria-label="Contact shortcuts" data-dock>
+  <a class="dock-primary" href="/contact/">
     <span>Start</span>
   </a>
   <a href="/projects/">
@@ -14,4 +24,19 @@ import WhatsAppLink from './WhatsAppLink.astro';
     <span>WhatsApp</span>
   </WhatsAppLink>
   <PhoneReveal class="dock-phone" label="Phone" />
-</nav>
+</Glass>
+
+<script>
+  // While a text field has focus an on-screen keyboard is likely up, and the dock would sit on top of it.
+  const isTextField = (el: EventTarget | null) =>
+    (el instanceof HTMLInputElement && !['button', 'submit', 'reset', 'checkbox', 'radio', 'range', 'file', 'color'].includes(el.type)) ||
+    el instanceof HTMLTextAreaElement ||
+    el instanceof HTMLSelectElement ||
+    (el instanceof HTMLElement && el.isContentEditable);
+  document.addEventListener('focusin', (event) => {
+    document.body.classList.toggle('field-focus', isTextField(event.target));
+  });
+  document.addEventListener('focusout', () => {
+    document.body.classList.remove('field-focus');
+  });
+</script>

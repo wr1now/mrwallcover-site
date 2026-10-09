@@ -195,9 +195,70 @@
     padding-right: var(--scrollbar-comp, 0px);
   }
 
+  /* ---- Mobile dock: opaque champagne, inset, 56px cells ---- */
+  .dock {
+    position: fixed;
+    left: var(--dock-inset);
+    right: var(--dock-inset);
+    bottom: calc(var(--dock-inset) + env(safe-area-inset-bottom));
+    z-index: 35;
+    display: grid;
+    /* Two to four cells: WhatsApp and the phone exist only when SITE_PHONE was set at build time. */
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    height: var(--dock-height);
+    border-radius: var(--radius-bar);
+    overflow: hidden;
+  }
+
+  .dock a,
+  .dock .dock-phone {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.85rem;
+    line-height: 1.1;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .dock a + a,
+  .dock a + .dock-phone {
+    border-left: 1px solid var(--glass-dock-border);
+  }
+
+  .dock a.dock-primary {
+    background: var(--color-ink);
+    color: var(--color-ivory);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .dock a.dock-primary:focus-visible {
+    outline-color: var(--color-gold);
+    outline-offset: -4px;
+  }
+
+  /* Hidden while the mobile menu is open and while a text field has focus (keyboard likely up). */
+  body.nav-open .dock,
+  body.field-focus .dock {
+    display: none;
+  }
+
   @media (min-width: 1024px) {
     .site-header {
       padding-inline: 1.25rem;
+    }
+
+    .dock {
+      display: none !important;
     }
 
     .primary-nav {
