@@ -22,79 +22,79 @@ const note = 'own photo, preview, metadata stripped';
 const frames = {
   'pimlico-st-georges-square-exterior-01': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-01.jpg',
-    alt: "Finished white stucco front on St George's Square, Pimlico, with a columned entrance and black railings.",
+    alt: "Rear brick elevation on St George's Square, seen from an upper balcony, under scaffold and sheeting.",
   },
   'pimlico-st-georges-square-exterior-02': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-02.jpg',
-    alt: "Front elevation on St George's Square under scaffold, with the portico and sash windows protected.",
+    alt: "Front elevation on St George's Square under scaffold, with a columned portico and sash windows.",
   },
   'pimlico-st-georges-square-exterior-03': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-03.jpg',
-    alt: "Close view of a stucco cornice and window architrave on St George's Square, in fresh white masonry paint.",
+    alt: "Close view of a white stucco cornice and sash window on St George's Square, with scaffold poles in front.",
   },
   'pimlico-st-georges-square-exterior-04': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-04.jpg',
-    alt: "Scaffolded corner on St George's Square, with the cornice and upper windows prepared for painting.",
+    alt: "Scaffolded corner on St George's Square, with the cornice and upper sash windows.",
   },
   'pimlico-st-georges-square-exterior-06': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-06.jpg',
-    alt: "Rear elevation on St George's Square under a full scaffold, with render and brick being painted.",
+    alt: "Rear elevation on St George's Square under a full scaffold, red brick and white render, with paint buckets on the boards.",
   },
   'pimlico-st-georges-square-exterior-07': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-07.jpg',
-    alt: "Ground-floor entrance on St George's Square, with columns, steps and railings during exterior decorating.",
+    alt: "Ground-floor entrance on St George's Square under scaffold, with white columns, steps and black railings.",
   },
   'pimlico-st-georges-square-exterior-08': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-08.jpg',
-    alt: "Upper facade on St George's Square, with sash windows, a cornice and a balcony balustrade.",
+    alt: "Upper facade on St George's Square under scaffold, with sash windows, a cornice and a black balcony railing.",
   },
   'pimlico-st-georges-square-exterior-10': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-10.jpg',
-    alt: "Close view of a repaired and painted stucco cornice on St George's Square.",
+    alt: "Close view of a white stucco cornice on St George's Square, with scaffold beside the moulding.",
   },
   'pimlico-st-georges-square-exterior-11': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-11.jpg',
-    alt: "Scaffold against the stucco front on St George's Square, with sash windows and a balcony.",
+    alt: "Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.",
   },
   'inverness-terrace-exterior-01': {
     file: 'inverness-terrace-exterior/inverness-terrace-exterior-01.jpg',
-    alt: "Finished white stucco front on Inverness Terrace, Bayswater, with columned entrances and black railings.",
+    alt: "Rear brick elevation on Inverness Terrace, seen from above, under scaffold.",
   },
   'inverness-terrace-exterior-02': {
     file: 'inverness-terrace-exterior/inverness-terrace-exterior-02.jpg',
-    alt: "Inverness Terrace facade under scaffold netting, with balcony ironwork and sash windows.",
+    alt: "Inverness Terrace front under scaffold netting, with black balcony ironwork and sash windows.",
   },
   'inverness-terrace-exterior-03': {
     file: 'inverness-terrace-exterior/inverness-terrace-exterior-03.jpg',
-    alt: "Close view of ornamental capitals and a balcony on Inverness Terrace during exterior repairs.",
+    alt: "Close view of ornamental capitals and a balcony railing on Inverness Terrace, with scaffold poles in front.",
   },
   'inverness-terrace-exterior-04': {
     file: 'inverness-terrace-exterior/inverness-terrace-exterior-04.jpg',
-    alt: "Rear brick elevation on Inverness Terrace under scaffold, with sash windows.",
+    alt: "Rear elevation on Inverness Terrace under scaffold, with white render, brick and sash windows.",
   },
   'inverness-terrace-exterior-05': {
     file: 'inverness-terrace-exterior/inverness-terrace-exterior-05.jpg',
-    alt: "Close view of a sash window and stucco architrave on Inverness Terrace, in fresh masonry paint.",
+    alt: "Close view of a sash window and white stucco surround on Inverness Terrace, with scaffold poles in front.",
   },
   'inverness-terrace-exterior-07': {
     file: 'inverness-terrace-exterior/inverness-terrace-exterior-07.jpg',
-    alt: "Inverness Terrace front with scaffold netting partly struck, showing repaired stucco and balconies.",
+    alt: "Inverness Terrace front under scaffold netting, with a columned entrance, balconies and sash windows.",
   },
   'inverness-terrace-exterior-08': {
     file: 'inverness-terrace-exterior/inverness-terrace-exterior-08.jpg',
-    alt: "Inverness Terrace front under scaffold, with the portico and a first-floor balcony.",
+    alt: "Inverness Terrace front under scaffold, with a columned entrance and a first-floor balcony.",
   },
   'inverness-terrace-exterior-09': {
     file: 'inverness-terrace-exterior/inverness-terrace-exterior-09.jpg',
-    alt: "Close view of stucco cornice and balcony brackets on Inverness Terrace.",
+    alt: "Upper facade on Inverness Terrace under scaffold, with a stucco cornice, balcony brackets and a black iron railing.",
   },
   'inverness-terrace-exterior-10': {
     file: 'inverness-terrace-exterior/inverness-terrace-exterior-10.jpg',
-    alt: "Stucco architraves and sash windows on Inverness Terrace during masonry painting.",
+    alt: "Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down.",
   },
   'inverness-terrace-exterior-11': {
     file: 'inverness-terrace-exterior/inverness-terrace-exterior-11.jpg',
-    alt: "Inverness Terrace facade as the scaffold is struck, showing the painted stucco and balconies.",
+    alt: "Inverness Terrace front with balconies and sash windows, scaffold still on the facade.",
   },
   'penny-morrison-showroom-01': {
     file: 'penny-morrison-showroom/penny-morrison-showroom-01.jpg',
