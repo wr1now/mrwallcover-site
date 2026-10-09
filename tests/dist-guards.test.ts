@@ -18,8 +18,12 @@ test('the built site keeps private names and the verification token out of the w
   const files = await htmlFiles('dist');
   assert.ok(files.length > 10);
   const html = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
-  for (const banned of ['CLAUDI', 'Landmark', 'Samantha', 'Koroseal', 'Admiralty', 'Metropole', 'Canary Wharf', 'subcontract', 'Threadneedle', 'Mulberry', 'Aethos', '95 St George', '26 Inverness', 'SW1V 3QW', 'W2 3JA']) {
+  for (const banned of ['CLAUDI', 'Landmark', 'Samantha', 'Koroseal', 'Admiralty', 'Metropole', 'Canary Wharf', 'subcontract', 'third party', 'third-party', 'Threadneedle', 'Mulberry', 'Aethos']) {
     assert.equal(html.toLowerCase().includes(banned.toLowerCase()), false, banned);
+  }
+  // The two private residential buildings: street only, never a house number or a full postcode.
+  for (const pattern of [/\b\d{1,4}[a-z]?\s+St\.?\s?George'?s?\s+Square/i, /\b\d{1,4}[a-z]?\s+Inverness\s+Terrace/i, /\bSW1V\s?\d[A-Z]{2}\b/, /\bW2\s?\d[A-Z]{2}\b/]) {
+    assert.doesNotMatch(html, pattern);
   }
   assert.match(html, /98zhpiyda4qDA6fYcKJ-zC6pItC6-LZKqqEugO5-fKo/);
   assert.match(html, /Dorin Burcus/);
@@ -118,6 +122,36 @@ test('each case-study Article carries its frontmatter dates and Dorin as author;
   }
 });
 
+test('draft editorial pages are not built, not in the sitemap, not in llms.txt and not linked', async () => {
+  const sitemap = await readFile('dist/sitemap-0.xml', 'utf8');
+  const llms = await readFile('dist/llms.txt', 'utf8');
+  const files = await htmlFiles('dist');
+  const html = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
+  const names = (await readdir('src/content/pages')).filter((entry) => entry.endsWith('.md'));
+  assert.ok(names.length >= 6);
+  for (const name of names) {
+    const text = await readFile(`src/content/pages/${name}`, 'utf8');
+    const fm = JSON.parse(text.match(/^---\n([\s\S]*?)\n---\n/)![1]) as { draft?: boolean; path: string; heading: string };
+    const url = `https://www.mrwallcover.com${fm.path}`;
+    let built = true;
+    try {
+      await stat(`dist${fm.path}index.html`);
+    } catch {
+      built = false;
+    }
+    if (fm.draft) {
+      assert.equal(built, false, `${fm.path} must not be built`);
+      assert.equal(sitemap.includes(url), false, `${fm.path} in sitemap`);
+      assert.equal(llms.includes(url), false, `${fm.path} in llms.txt`);
+      assert.equal(html.includes(`href="${fm.path}"`), false, `${fm.path} is linked`);
+      assert.equal(html.includes('TODO(Dorin)'), false, 'a TODO(Dorin) marker reached the build');
+    } else {
+      assert.equal(built, true, `${fm.path} must be built`);
+      assert.ok(sitemap.includes(url), `${fm.path} missing from sitemap`);
+    }
+  }
+});
+
 test('the homepage does not load the 3D engine up front', async () => {
   const home = await readFile('dist/index.html', 'utf8');
   assert.equal(home.includes('three.module'), false);
@@ -130,6 +164,30 @@ test('the homepage does not load the 3D engine up front', async () => {
   }
   const studio = await readFile(path.join('dist', sources.find((source) => source.includes('MaterialStudio'))!.replace(/^\//, '')), 'utf8');
   assert.match(studio, /import\(`\.\/three\.module/);
+});
+
+test('every indexable page has an https canonical, a description, JSON-LD, one H1 and no de Gournay title', async () => {
+  const files = await htmlFiles('dist');
+  const problems: string[] = [];
+  for (const file of files) {
+    const html = await readFile(file, 'utf8');
+    if (/<meta name="robots" content="noindex">/.test(html) || /http-equiv="refresh"/.test(html)) continue;
+    const rel = file.replace(/^dist/, '');
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
+    if (!canonical || !canonical.startsWith('https://www.mrwallcover.com/') || !canonical.endsWith('/')) problems.push(`${rel}: canonical ${canonical}`);
+    const expectedPath = rel.replace(/index\.html$/, '');
+    if (canonical && new URL(canonical).pathname !== expectedPath) problems.push(`${rel}: canonical points at ${canonical}`);
+    const description = html.match(/<meta name="description" content="([^"]*)">/)?.[1];
+    if (!description || description.length < 40 || description.length > 170) problems.push(`${rel}: description ${description?.length ?? 0} chars`);
+    if (!/<script type="application\/ld\+json">/.test(html)) problems.push(`${rel}: no JSON-LD`);
+    const h1s = html.match(/<h1[\s>]/g)?.length ?? 0;
+    if (h1s !== 1) problems.push(`${rel}: ${h1s} H1s`);
+    const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '';
+    if (/gournay/i.test(title)) problems.push(`${rel}: title names de Gournay`);
+    if (/gournay/i.test(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] ?? '')) problems.push(`${rel}: H1 names de Gournay`);
+    for (const name of html.matchAll(/"name":"([^"]*gournay[^"]*)"/gi)) problems.push(`${rel}: schema name ${name[1]}`);
+  }
+  assert.deepEqual(problems, []);
 });
 
 test('every media file the built pages point to exists', async () => {

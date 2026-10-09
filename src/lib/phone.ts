@@ -15,7 +15,7 @@
 export interface ContactDetails {
   /** tel: target, E.164 */
   t: string;
-  /** Display form, e.g. 07700 900000 */
+  /** Display form: a UK mobile prints with a space after the fifth digit, anything else prints as E.164 */
   d: string;
   /** WhatsApp link */
   w: string;
