@@ -52,7 +52,8 @@ test('the built site keeps private names and the verification token out of the w
 
 test('claims decided by Dorin on 9 October 2026 hold in the built site', async () => {
   const files = await htmlFiles('dist');
-  const html = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
+  // Inline image placeholders are base64 and can spell any word (an "award" inside a data URI is noise, not a claim); strip them before the word scans.
+  const html = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n').replace(/data:image\/[^"')\s]+/g, '');
   const llms = await readFile('dist/llms.txt', 'utf8');
   const sitemap = await readFile('dist/sitemap-0.xml', 'utf8');
   const everything = `${html}\n${llms}\n${sitemap}`;
