@@ -45,6 +45,9 @@ GALLERY_OVERRIDE['old-bailey-hotel'] = [f'old-bailey-{n}' for n in
 # Display titles agreed with Dorin (slug unchanged, so no redirect is needed).
 TITLE_OVERRIDE = {'old-bailey-hotel': 'Hyde London City (the Old Bailey Hotel)'}
 MODEST = {'trematon-castle', 'old-bailey-hotel'}
+# Research files published by hand instead (anonymised). kate-moss-bedroom.md ->
+# src/content/case-studies/north-london-residence.md, written manually; never auto-publish it.
+SKIP = {'kate-moss-bedroom'}
 # Per-slug wording fixes for internal phrasing in the research file.
 BODY_SUBS = {
     'old-bailey-hotel': [
@@ -189,7 +192,7 @@ def standfirst(body):
 
 
 for path in sorted(SRC.glob('*.md')):
-    if path.name.upper() == 'SOURCES.MD':
+    if path.name.upper() == 'SOURCES.MD' or path.stem in SKIP:
         continue
     fm, body = parse_frontmatter(path.read_text())
     slug = fm.get('slug') or path.stem
