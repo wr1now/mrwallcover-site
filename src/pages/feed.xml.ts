@@ -5,8 +5,8 @@
  * Only pages with real ISO dates in their frontmatter are listed (guides and
  * case studies both carry published/updated, stamped from the edit, never the
  * build). An item without them is left out rather than given an invented
- * date. Drafts never reach this file because the sources are already
- * filtered.
+ * date. Drafts are filtered out here explicitly, even though the content
+ * modules already exclude them: the feed must never depend on that alone.
  */
 import type { APIRoute } from 'astro';
 import { SITE_URL } from '../config';
@@ -30,7 +30,7 @@ export interface FeedEntry {
 
 export function feedEntries(): FeedEntry[] {
   const entries: FeedEntry[] = [
-    ...publishedGuides.map((guide) => ({
+    ...publishedGuides.filter((guide) => !guide.frontmatter.draft).map((guide) => ({
       title: guide.frontmatter.title,
       url: `${SITE_URL}${guideHref(guide.frontmatter.slug)}`,
       summary: guide.frontmatter.description,
@@ -38,7 +38,7 @@ export function feedEntries(): FeedEntry[] {
       updated: guide.frontmatter.updated,
       category: 'guide' as const,
     })),
-    ...caseStudies.map((study) => ({
+    ...caseStudies.filter((study) => !study.frontmatter.draft).map((study) => ({
       title: study.frontmatter.title,
       url: `${SITE_URL}${projectHref(study.frontmatter.slug)}`,
       summary: study.frontmatter.standfirst,

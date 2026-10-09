@@ -121,6 +121,15 @@ test('the fact sheet holds one description sentence of 160 characters or fewer, 
   }
 });
 
+test('the founder sentences /for-ai/ quotes are the approved About paragraphs, word for word', async () => {
+  const about = JSON.parse(await readFile('src/content/about.json', 'utf8')) as { paragraphs: string[]; founderSummary: string; publicRecord: string };
+  for (const [key, value] of [['founderSummary', about.founderSummary], ['publicRecord', about.publicRecord]] as const) {
+    assert.ok(typeof value === 'string' && value.length > 20, `about.${key} is a sentence`);
+    assert.ok(about.paragraphs.some((paragraph) => paragraph.includes(value)), `about.${key} must appear inside about.paragraphs: "${value}"`);
+  }
+  assert.doesNotMatch(await readFile('src/pages/for-ai.astro', 'utf8'), /about\.paragraphs\[\d+\]/, '/for-ai/ must not pick About paragraphs by index');
+});
+
 test('draft case studies are filtered out before they are built', async () => {
   const content = await readFile('src/lib/content.ts', 'utf8');
   assert.match(content, /!\s*mod\.frontmatter\.draft/);

@@ -69,8 +69,8 @@ const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.fr
       </ul>
 
       <h2 id="who">Who runs it</h2>
-      <p><a href={founderHref}>{facts.founder.name}</a>, {facts.founder.jobTitle.toLowerCase()}. {about.paragraphs[0].replace(/^Dorin Burcus is the founder of Mr Wallcover\.\s*/, '')}</p>
-      <p>{about.paragraphs[3]}</p>
+      <p><a href={founderHref}>{facts.founder.name}</a>, {facts.founder.jobTitle.toLowerCase()}. {about.founderSummary}</p>
+      <p>{about.publicRecord}</p>
 
       <h2 id="services">Services</h2>
       <p>One page for each installation service:</p>

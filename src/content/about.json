@@ -10,6 +10,9 @@
     "The practice is based in London and covers London and the surrounding areas, working UK-wide for selected projects. Services are built around the building and the people who have to keep using it, so that disruption stays small.",
     "What you see on this site is public. Private clients are not named."
   ],
+  "_founderSummary": "Sentences /for-ai/ quotes about the founder. They must appear word for word inside `paragraphs` above (tests/content-guards.test.ts checks); change the paragraph first, then these.",
+  "founderSummary": "He has worked in the trade since 2014. He started as a labourer and went on to run wallcovering packages in prime hotels.",
+  "publicRecord": "What you see on this site is public. Private clients are not named.",
   "image": "browns-hotel-mayfair-04",
   "imageCaption": "Scenic wallcovering at Brown's Hotel, Mayfair. Photographed on site.",
   "values": {

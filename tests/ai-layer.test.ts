@@ -70,6 +70,10 @@ test('/for-ai/ states the facts from facts.json, links every published case stud
   assert.ok(html.includes(`href="${facts.founder.path}#${facts.founder.fragment}"`), 'founder link');
   assert.match(html, /By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · Last reviewed <time datetime="\d{4}-\d{2}-\d{2}" data-page-updated="reviewed">\d{1,2} \w+ \d{4}<\/time>/);
   assert.ok(html.includes(`datetime="${facts.lastReviewed}"`), 'the byline date is the site-wide review date');
+  // "Who runs it" prints the stable About fields, not paragraphs picked by index.
+  const about = JSON.parse(await readFile('src/content/about.json', 'utf8')) as { founderSummary: string; publicRecord: string };
+  assert.ok(html.includes(`>${facts.founder.name}</a>, founder. ${about.founderSummary}</p>`), 'founder sentence from about.founderSummary');
+  assert.ok(html.includes(`<p>${about.publicRecord}</p>`), 'privacy sentence from about.publicRecord');
   // No endorsement wording, no phone, no draft route.
   assert.doesNotMatch(html, /approved by|accredited by|endorsed by|recommended by/i);
   assert.doesNotMatch(html, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b/);
@@ -373,6 +377,10 @@ test('/feed.xml is Atom with exactly the published guides and case studies, thei
     expected.set(`${SITE}/projects/${fm.slug}/`, { published: fm.published, updated: fm.updated, title: fm.title });
   }
   assert.deepEqual([...byUrl.keys()].sort(), [...expected.keys()].sort(), 'the feed lists exactly the published guides and case studies');
+  // The feed filters drafts itself, on both sources, rather than trusting the content modules alone.
+  const feedSource = await readFile('src/pages/feed.xml.ts', 'utf8');
+  assert.match(feedSource, /caseStudies\.filter\(\(study\) => !study\.frontmatter\.draft\)/, 'case studies filtered on !draft in the feed');
+  assert.match(feedSource, /publishedGuides\.filter\(\(guide\) => !guide\.frontmatter\.draft\)/, 'guides filtered on !draft in the feed');
   for (const [url, item] of expected) {
     const entry = byUrl.get(url)!;
     assert.ok(entry.includes(`<published>${item.published}T00:00:00Z</published>`), `${url} published`);
