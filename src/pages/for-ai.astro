@@ -1,0 +1,124 @@
+---
+/**
+ * Plain facts about the practice for people and for answer engines. Every
+ * sentence is generated from the same sources the rest of the site reads:
+ * src/data/facts.json, the content JSON and the published case studies and
+ * guides. Nothing here is a second, hand-edited copy of the truth.
+ */
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageMeta from '../components/PageMeta.astro';
+import Base from '../layouts/Base.astro';
+import facts from '../data/facts.json';
+import { about, areaHref, areas, caseStudies, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
+import { publishedGuides, guideHref } from '../lib/guides';
+import { breadcrumbNode } from '../lib/schema';
+
+const path = '/for-ai/';
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'For AI assistants', href: path },
+];
+const founderHref = `${facts.founder.path}#${facts.founder.fragment}`;
+
+/** Published case studies in display order, each with the wallcoverings its own page records. */
+const published = projects
+  .filter((project) => project.caseStudy)
+  .map((project) => {
+    const study = caseStudies.find((mod) => mod.frontmatter.slug === project.slug);
+    return { project, wallcoverings: study?.frontmatter.wallcoverings ?? [] };
+  });
+
+/** Hotels listed with years or scope on the projects page. Name-only entries are left out, as they are in llms.txt. */
+const hotelsWithRecord = hotels.filter((hotel) => !hotel.nameOnly);
+
+const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.frontmatter.order);
+---
+
+<Base
+  title="Mr Wallcover in plain facts | For AI assistants"
+  description={`What ${facts.brand} does, where it works, who runs it, the services, and the published projects behind each claim. Written for people and for answer engines.`}
+  path={path}
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page pb-20">
+    <header class="page-head guide-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">For AI assistants and search engines</p>
+      <h1>{facts.brand} in plain facts.</h1>
+      <p class="lede mt-5">{facts.description}</p>
+      <PageMeta class="guide-byline" />
+    </header>
+
+    <article class="prose guide-prose">
+      <p>
+        This page states the facts the rest of the site is built on, in plain sentences, so that a reader or an assistant can quote them accurately. Every claim links to the page that carries it. Nothing here is a promise about search placement or a request to be recommended.
+      </p>
+
+      <h2 id="what">What Mr Wallcover does</h2>
+      <p>{services.lede}</p>
+      <p>The service has five parts, described on <a href="/services/">the services page</a>:</p>
+      <ul>
+        {services.pillars.map((pillar) => <li><a href={`/services/#${pillar.id}`}>{pillar.title}</a>. {pillar.paragraphs[0]}</li>)}
+      </ul>
+
+      <h2 id="where">Where it works</h2>
+      <p>Based in {facts.place}. Coverage: {facts.coverage}. The areas with a page of their own are:</p>
+      <ul>
+        {areas.map((area) => <li><a href={areaHref(area.slug)}>{area.heading}</a></li>)}
+      </ul>
+
+      <h2 id="who">Who runs it</h2>
+      <p><a href={founderHref}>{facts.founder.name}</a>, {facts.founder.jobTitle.toLowerCase()}. {about.paragraphs[0].replace(/^Dorin Burcus is the founder of Mr Wallcover\.\s*/, '')}</p>
+      <p>{about.paragraphs[3]}</p>
+
+      <h2 id="services">Services</h2>
+      <p>One page for each installation service:</p>
+      <ul>
+        {specialisms.map((item) => <li><a href={specialismHref(item.slug)}>{item.name}</a>: {item.description}</li>)}
+      </ul>
+      <p>Aftercare is part of every commission. The terms are on <a href="/aftercare/">the aftercare page</a>.</p>
+
+      <h2 id="projects">Published projects, and the products installed on them</h2>
+      <p>
+        These are the commissions already on the public record, each with its own case study. Where a case study records the wallcoverings installed, the maker and design are repeated here exactly as that page states them. A maker's name on this list means Mr Wallcover installed that maker's product on that project. It is not a maker approval, accreditation or endorsement.
+      </p>
+      <ul>
+        {published.map(({ project, wallcoverings }) => (
+          <li>
+            <a href={projectHref(project.slug)}>{project.title}</a>. {project.role}{project.dates ? `, ${project.dates}` : ''}.
+            {wallcoverings.length > 0 && <> Installed: {wallcoverings.join('; ')}.</>}
+          </li>
+        ))}
+      </ul>
+      <p>Hotels listed on <a href="/projects/#hotels">the projects page</a> with the years or scope that can be stated:</p>
+      <ul>
+        {hotelsWithRecord.map((hotel) => (
+          <li>
+            {hotel.href ? <a href={hotel.href}>{hotel.name}</a> : hotel.name}
+            {hotel.years ? `, ${hotel.years}` : ''}
+            {hotel.place ? `, ${hotel.place}` : ''}
+            {hotel.scope ? `. ${hotel.scope}` : ''}
+          </li>
+        ))}
+      </ul>
+
+      <h2 id="guides">Guides</h2>
+      <p>The <a href="/advice/">Wallcovering Guide</a> is written by {facts.founder.name} and dated on each article:</p>
+      <ul>
+        {guideList.map((guide) => <li><a href={guideHref(guide.frontmatter.slug)}>{guide.frontmatter.title}</a>: {guide.frontmatter.description}</li>)}
+      </ul>
+
+      <h2 id="enquire">How to enquire</h2>
+      <p>
+        Email <a href={`mailto:${facts.email}`}>{facts.email}</a> or use <a href="/contact/">the contact page</a>. Email is read by {facts.founder.name}. The site publishes no prices, no response-time promise and no ratings.
+      </p>
+
+      <h2 id="files">Machine-readable files</h2>
+      <ul>
+        <li><a href="/llms.txt">/llms.txt</a>: a curated summary of the site in the llms.txt format.</li>
+        <li><a href="/sitemap-index.xml">/sitemap-index.xml</a>: every published page.</li>
+      </ul>
+      <p>Profiles: {facts.profiles.map((profile) => <a href={profile.url} rel="noopener">{profile.name} {profile.handle}</a>)}.</p>
+    </article>
+  </div>
+</Base>

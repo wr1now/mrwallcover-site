@@ -109,6 +109,11 @@ test('the fact sheet holds one description sentence of 160 characters or fewer, 
   assert.ok(facts.profiles.some((profile) => profile.url === 'https://www.instagram.com/mrwallcover/'));
   const blob = JSON.stringify(facts);
   assert.doesNotMatch(blob, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|Ltd|Limited|Companies House|award/i);
+  // The site-wide review date: a real ISO date, never before the 9 October 2026 review and never in the future.
+  const reviewed = (facts as { lastReviewed?: string }).lastReviewed ?? '';
+  assert.match(reviewed, /^\d{4}-\d{2}-\d{2}$/, 'facts.lastReviewed must be an ISO date');
+  assert.ok(reviewed >= '2026-10-09', 'facts.lastReviewed cannot be earlier than the 9 October 2026 review');
+  assert.ok(reviewed <= new Date().toISOString().slice(0, 10), 'facts.lastReviewed cannot be in the future');
   for (const file of ['src/components/Footer.astro', 'src/lib/schema.ts', 'src/pages/llms.txt.ts']) {
     const text = await readFile(file, 'utf8');
     assert.match(text, /from '\.\.\/data\/facts\.json'/, `${file} must import the fact sheet`);
