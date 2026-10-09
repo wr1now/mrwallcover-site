@@ -14,7 +14,7 @@ export default defineConfig({
         !page.includes('/thank-you') &&
         !page.includes('/404') &&
         !page.includes('/search') &&
-        !['/projects/owo-whitehall/', '/projects/four-seasons-ten-trinity/', '/projects/hilton-silverstone/'].some((old) =>
+        !['/projects/owo-whitehall/', '/projects/four-seasons-ten-trinity/', '/projects/hilton-silverstone/', '/projects/hilton-holborn/'].some((old) =>
           page.endsWith(old),
         ),
       lastmod: new Date(),
