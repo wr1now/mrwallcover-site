@@ -67,4 +67,5 @@ export const ANALYTICS_SRC: string = import.meta.env.PUBLIC_ANALYTICS_SRC || '';
  * Paste only the content value Google gives you, e.g. 'AbC123...'.
  * Empty means no tag is printed. Domain (DNS TXT) verification needs no change here.
  */
-export const GOOGLE_SITE_VERIFICATION: string = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION || '';
+export const GOOGLE_SITE_VERIFICATION: string =
+  import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION || '98zhpiyda4qDA6fYcKJ-zC6pItC6-LZKqqEugO5-fKo';
