@@ -285,3 +285,29 @@ test('robots.txt names every required crawler with the same Disallow lines as th
   assert.match(robots, /AI-training controls[\s\S]*GPTBot[\s\S]*Google-Extended[\s\S]*Applebot-Extended[\s\S]*ClaudeBot/, 'comment naming the training controls');
   assert.doesNotMatch(robots, /Disallow: \/\s*$/m, 'nothing is blocked site-wide');
 });
+
+test('IndexNow: one 32-hex key file served from the site root, a script that is a no-op unless enabled, and no call from the Pages workflow', async () => {
+  const keyFiles = (await readdir('public')).filter((name) => /^[0-9a-f]{32}\.txt$/.test(name));
+  assert.equal(keyFiles.length, 1, 'exactly one key file');
+  const key = keyFiles[0].slice(0, -4);
+  assert.equal((await readFile(`public/${keyFiles[0]}`, 'utf8')).trim(), key, 'the key file contains its own name');
+  assert.equal((await readFile(`dist/${keyFiles[0]}`, 'utf8')).trim(), key, 'the key file is in the build');
+  const script = await readFile('scripts/indexnow-ping.mjs', 'utf8');
+  assert.match(script, /process\.env\.INDEXNOW_ENABLED !== '1'/, 'guarded by INDEXNOW_ENABLED=1');
+  assert.match(script, /https:\/\/api\.indexnow\.org\/indexnow/);
+  assert.match(script, /const HOST = 'www\.mrwallcover\.com'/);
+  assert.match(script, /keyLocation/);
+  const pkg = JSON.parse(await readFile('package.json', 'utf8')) as { scripts: Record<string, string> };
+  assert.equal(pkg.scripts.indexnow, 'node scripts/indexnow-ping.mjs dist');
+  for (const lifecycle of ['build', 'postbuild', 'prebuild']) assert.doesNotMatch(pkg.scripts[lifecycle] ?? '', /indexnow/, `${lifecycle} must not ping`);
+  const workflow = await readFile('.github/workflows/pages.yml', 'utf8');
+  assert.doesNotMatch(workflow, /indexnow/i, 'not wired into GitHub Pages yet');
+  assert.match(await readFile('README.md', 'utf8'), /INDEXNOW_ENABLED=1 npm run indexnow/, 'README documents how to enable it');
+  // Dry run: without the flag the script sends nothing and exits 0.
+  const { execFile } = await import('node:child_process');
+  const { promisify } = await import('node:util');
+  const env = { ...process.env };
+  delete env.INDEXNOW_ENABLED;
+  const { stdout } = await promisify(execFile)('node', ['scripts/indexnow-ping.mjs', 'dist'], { env });
+  assert.match(stdout, /nothing sent/);
+});

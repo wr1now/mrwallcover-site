@@ -19,7 +19,8 @@
     "lead-api": "LEAD_API_ENABLED=1 node --experimental-strip-types server/index.ts",
     "build:review": "npm run prebuild && MW_CONTENT_PREVIEW=1 astro build --outDir dist-review",
     "preview:review": "astro preview --outDir dist-review",
-    "check:guides": "node --experimental-strip-types --test tests/guide-build.test.ts"
+    "check:guides": "node --experimental-strip-types --test tests/guide-build.test.ts",
+    "indexnow": "node scripts/indexnow-ping.mjs dist"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
