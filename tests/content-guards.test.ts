@@ -132,6 +132,16 @@ test('every case study carries ISO published and updated dates as data, and the 
   assert.doesNotMatch(config, /lastmod:\s*new Date/);
   const schema = await readFile('src/lib/schema.ts', 'utf8');
   assert.doesNotMatch(schema, /new Date\(/);
+  // The stamp script's --check compares `updated` with the last commit that touched the file, and CI runs it with full history before the build.
+  const stamp = await readFile('scripts/stamp-case-study-dates.mjs', 'utf8');
+  assert.match(stamp, /\['log', '-1', '--format=%cs', '--', file\]/);
+  assert.match(stamp, /fm\.updated !== expected/);
+  const workflow = await readFile('.github/workflows/pages.yml', 'utf8');
+  assert.match(workflow, /uses: actions\/checkout@v4\n\s+with:\n(\s+#.*\n)*\s+fetch-depth: 0/, 'checkout needs fetch-depth: 0');
+  const checkStep = workflow.indexOf('node scripts/stamp-case-study-dates.mjs --check');
+  const buildStep = workflow.indexOf('run: npm run build');
+  assert.ok(checkStep > 0, 'CI must run the case-study date check');
+  assert.ok(buildStep > checkStep, 'the date check must run before the build');
 });
 
 test('held hotels stay out of the public content module', async () => {
