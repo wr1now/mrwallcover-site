@@ -115,7 +115,25 @@ def materials_table_to_list(body):
     return re.sub(r'^\|[^\n]*Confidence[^\n]*\|\n(?:\|[^\n]*\n?)+', repl, body, flags=re.M)
 
 
+# Private clients are not named on the site.
+ANON = [
+    (r'Frieda Gormley and Javvy M\.? Royle, founders of \[House of Hackney\]\(([^)]*)\), custodians of the Castle of Trematon',
+     r'The new owners of Trematon Castle, the founders of [House of Hackney](\1)'),
+    (r'Frieda Gormley and Javvy M\.? Royle, founders of House of Hackney \(custodians of the Castle of Trematon since 2018\)',
+     'The new owners of Trematon Castle, the founders of House of Hackney'),
+    (r', in Javvy Royle\'s words, needed', ', in the founders\' words, needed'),
+    (r'(Frieda|Javvy)( M\.)? (Gormley|Royle)', 'the founders'),
+]
+
+
+def anonymise(text):
+    for pat, rep in ANON:
+        text = re.sub(pat, rep, text)
+    return text
+
+
 def clean_body(body):
+    body = anonymise(body)
     body = re.sub(r'^## Images\n.*?(?=^## |\Z)', '', body, flags=re.S | re.M)
     body = re.sub(r'^## Instagram\n.*?(?=^## |\Z)', '', body, flags=re.S | re.M)
     body = materials_table_to_list(body)
@@ -171,7 +189,7 @@ for path in sorted(SRC.glob('*.md')):
         'title': fm.get('title', slug),
         'slug': slug,
         'replaces': REPLACES.get(slug),
-        'client': fm.get('client', ''),
+        'client': anonymise(fm.get('client', '')),
         'location': fm.get('location', ''),
         'years': None if TBC.search(years) or not years else re.sub(r'\s*\(photo record[^)]*\)', '', years),
         'role': re.split(r'\.\s*Scope as briefed', fm.get('role', ''))[0],
