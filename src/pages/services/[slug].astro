@@ -1,0 +1,40 @@
+---
+import LandingBody from '../../components/LandingBody.astro';
+import Base from '../../layouts/Base.astro';
+import { ogImageFor, specialismHref, specialisms } from '../../lib/content';
+import type { LandingPage } from '../../lib/content';
+import { breadcrumbNode, faqNode, singleServiceNode } from '../../lib/schema';
+import { SITE_URL } from '../../config';
+
+export function getStaticPaths() {
+  return specialisms.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+interface Props {
+  page: LandingPage;
+}
+
+const { page } = Astro.props;
+const path = specialismHref(page.slug);
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services/' },
+  { name: page.name, href: path },
+];
+const url = new URL(path, SITE_URL).href;
+---
+
+<Base
+  title={page.title}
+  description={page.description}
+  path={path}
+  image={ogImageFor(page.imageId)}
+  imageAlt={page.heading}
+  extraSchema={[
+    singleServiceNode({ name: page.name, description: page.description, url, serviceType: page.name }),
+    faqNode(page.faq),
+    breadcrumbNode(crumbs),
+  ]}
+>
+  <LandingBody page={page} crumbs={crumbs} eyebrow="Services" kind="specialism" />
+</Base>

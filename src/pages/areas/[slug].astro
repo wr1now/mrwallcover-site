@@ -1,0 +1,40 @@
+---
+import LandingBody from '../../components/LandingBody.astro';
+import Base from '../../layouts/Base.astro';
+import { areaHref, areas, ogImageFor } from '../../lib/content';
+import type { LandingPage } from '../../lib/content';
+import { breadcrumbNode, faqNode, singleServiceNode } from '../../lib/schema';
+import { SITE_URL } from '../../config';
+
+export function getStaticPaths() {
+  return areas.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+interface Props {
+  page: LandingPage;
+}
+
+const { page } = Astro.props;
+const path = areaHref(page.slug);
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Areas', href: '/areas/' },
+  { name: page.name.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase()), href: path },
+];
+const url = new URL(path, SITE_URL).href;
+---
+
+<Base
+  title={page.title}
+  description={page.description}
+  path={path}
+  image={ogImageFor(page.imageId)}
+  imageAlt={page.heading}
+  extraSchema={[
+    singleServiceNode({ name: page.heading, description: page.description, url, areaName: page.name.replace(/^the /, '') }),
+    faqNode(page.faq),
+    breadcrumbNode(crumbs),
+  ]}
+>
+  <LandingBody page={page} crumbs={crumbs} eyebrow="Where we work" kind="area" />
+</Base>

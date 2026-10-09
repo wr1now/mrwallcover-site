@@ -35,6 +35,9 @@ export interface Project {
   videos: string[];
   caption: string | null;
   featured: boolean;
+  /** Set when this entry is a full case study rendered from src/content/case-studies. */
+  caseStudy?: boolean;
+  credits?: Record<string, string>;
 }
 
 export interface FaqItem {

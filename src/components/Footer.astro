@@ -9,7 +9,7 @@ import {
   PUBLIC_EMAIL,
   WHATSAPP_URL,
 } from '../config';
-import { home } from '../lib/content';
+import { areaHref, areas, home } from '../lib/content';
 ---
 
 <footer class="site-footer">
@@ -29,7 +29,14 @@ import { home } from '../lib/content';
         <li><a href="/aftercare/">Aftercare</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/faq/">Questions</a></li>
+        <li><a href="/areas/">Areas</a></li>
         <li><a href="/privacy/">Privacy</a></li>
+      </ul>
+      <p class="eyebrow mt-6">Areas</p>
+      <ul class="m-0 flex list-none flex-wrap gap-x-3 gap-y-1 p-0 text-sm">
+        {areas.map((area) => (
+          <li><a href={areaHref(area.slug)}>{area.name.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase())}</a></li>
+        ))}
       </ul>
     </div>
     <div class="md:col-span-4">

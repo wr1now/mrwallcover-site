@@ -2,35 +2,89 @@
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Picture from '../../components/Picture.astro';
 import Base from '../../layouts/Base.astro';
-import { media, projectHref, projects, videoById } from '../../lib/content';
-import { breadcrumbNode } from '../../lib/schema';
+import { areaHref, areas, caseStudyBySlug, media, ogImageFor, projectAliases, projectHref, projects, specialismHref, specialisms, videoById } from '../../lib/content';
+import { SITE_URL } from '../../config';
+import { breadcrumbNode, caseStudyArticleNode, projectNode } from '../../lib/schema';
 import type { Project } from '../../lib/types';
 
 export function getStaticPaths() {
-  return projects.map((project) => ({
-    params: { slug: project.slug },
-    props: { project },
-  }));
+  return [
+    ...projects.map((project) => ({
+      params: { slug: project.slug },
+      props: { project, redirectTo: null },
+    })),
+    // Earlier URLs now served by a case study.
+    ...Object.entries(projectAliases).map(([oldSlug, newSlug]) => ({
+      params: { slug: oldSlug },
+      props: { project: projects.find((p) => p.slug === newSlug)!, redirectTo: projectHref(newSlug) },
+    })),
+  ];
 }
 
 interface Props {
   project: Project;
+  redirectTo: string | null;
 }
 
-const { project } = Astro.props;
+const { project, redirectTo } = Astro.props;
+const study = project.caseStudy ? caseStudyBySlug(project.slug) : undefined;
+const StudyContent = study?.Content;
+const redirectUrl = redirectTo ? new URL(redirectTo, SITE_URL).href : null;
 const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'Work', href: '/projects/' },
   { name: project.title, href: projectHref(project.slug) },
 ];
 const films = project.videos.map((id) => videoById(id));
+const ogImage = project.imagePolicy === 'none' ? undefined : ogImageFor(project.imageId);
+const pageUrl = new URL(projectHref(project.slug), SITE_URL).href;
+const galleryAbs = project.gallery.map((id) => new URL(media(id).jpg, SITE_URL).href);
+const relatedAreas = areas.filter((a) => a.projects.some((slug) => (projectAliases[slug] ?? slug) === project.slug));
+const relatedServices = specialisms.filter((s) => s.projects.some((slug) => (projectAliases[slug] ?? slug) === project.slug));
+const otherStudies = projects.filter((p) => p.caseStudy && p.slug !== project.slug);
+const schemaNodes = study
+  ? caseStudyArticleNode({
+      url: pageUrl,
+      headline: project.title,
+      description: project.description,
+      images: galleryAbs,
+      location: project.location,
+      dates: project.dates,
+      mentions: study.frontmatter.wallcoverings,
+    })
+  : projectNode({
+      url: pageUrl,
+      name: project.title,
+      description: project.description,
+      location: project.location,
+      dates: project.dates,
+      image: ogImage ? new URL(ogImage, SITE_URL).href : undefined,
+    });
 ---
 
+{redirectUrl ? (
+  <html lang="en-GB">
+    <head>
+      <meta charset="utf-8" />
+      <title>Moved: {project.title}</title>
+      <meta name="robots" content="noindex" />
+      <link rel="canonical" href={redirectUrl} />
+      <meta http-equiv="refresh" content={`0; url=${redirectTo}`} />
+    </head>
+    <body><a href={redirectTo}>{project.title}</a></body>
+  </html>
+) : (
 <Base
   title={project.metaTitle}
   description={project.description}
   path={projectHref(project.slug)}
-  extraSchema={[breadcrumbNode(crumbs)]}
+  image={ogImage}
+  imageAlt={project.imageId ? media(project.imageId).alt : undefined}
+  ogType="article"
+  extraSchema={[
+    schemaNodes,
+    breadcrumbNode(crumbs),
+  ]}
 >
   <div class="container-page">
     <header class="page-head">
@@ -39,6 +93,72 @@ const films = project.videos.map((id) => videoById(id));
       <h1>{project.title}</h1>
       <p class="lede mt-5">{project.summary}</p>
     </header>
+    {StudyContent ? (
+      <div class="pb-12">
+        {project.imageId && (
+          <figure class="m-0 mb-10">
+            <Picture id={project.imageId} loading="eager" fetchpriority="high" sizes="(min-width: 768px) 72rem, 100vw" />
+            {project.credits?.[project.imageId] && <figcaption class="caption">{project.credits[project.imageId]}</figcaption>}
+          </figure>
+        )}
+        <article class="prose case-study">
+          <StudyContent />
+        </article>
+        {project.gallery.length > 1 && (
+          <section class="mt-14" aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading" class="m-0 text-[clamp(2rem,3vw,2.7rem)]">Photographs</h2>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              {project.gallery.filter((id) => id !== project.imageId).map((id) => (
+                <figure class="m-0">
+                  <Picture id={id} sizes="(min-width: 768px) 36rem, 100vw" />
+                  {project.credits?.[id] && <figcaption class="caption">{project.credits[id]}</figcaption>}
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+        {films.length > 0 && (
+          <section class="mt-14">
+            <h2 class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On site</h2>
+            <div class="mt-6 grid gap-6 md:grid-cols-3">
+              {films.map((film) => (
+                <figure class="m-0">
+                  <div class="video-frame">
+                    <video controls playsinline preload="none" poster={film.poster} width={film.width} height={film.height} aria-label={film.alt}>
+                      <source src={film.src} type="video/mp4" />
+                    </video>
+                  </div>
+                  <figcaption class="caption">{film.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+        <nav class="mt-14 grid gap-10 border-t border-line pt-10 md:grid-cols-3" aria-label="Related pages">
+          <div>
+            <p class="eyebrow">More case studies</p>
+            <ul class="m-0 grid list-none gap-1 p-0">
+              {otherStudies.map((p) => <li><a href={projectHref(p.slug)}>{p.title}</a></li>)}
+            </ul>
+          </div>
+          <div>
+            <p class="eyebrow">Services</p>
+            <ul class="m-0 grid list-none gap-1 p-0">
+              {(relatedServices.length ? relatedServices : specialisms.slice(0, 4)).map((s) => <li><a href={specialismHref(s.slug)}>{s.name}</a></li>)}
+              <li><a href="/aftercare/">Aftercare</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="eyebrow">Where we work</p>
+            <ul class="m-0 grid list-none gap-1 p-0">
+              {(relatedAreas.length ? relatedAreas : areas.slice(0, 3)).map((a) => <li><a href={areaHref(a.slug)}>{a.heading}</a></li>)}
+            </ul>
+            <p class="mt-6"><a class="btn btn-solid-ink" href="/contact/">Request a quotation</a></p>
+          </div>
+        </nav>
+      </div>
+    ) : (
+    <>
     <div class="grid gap-10 pb-12 md:grid-cols-12">
       <dl class="meta-list md:col-span-4">
         <div>
@@ -122,5 +242,8 @@ const films = project.videos.map((id) => videoById(id));
         </div>
       )
     }
+    </>
+    )}
   </div>
 </Base>
+)}

@@ -9,6 +9,19 @@ import {
 import type { FaqItem } from './types';
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+
+/** Areas named on the site. Kept in step with src/content/areas.json. */
+const AREAS_SERVED = [
+  { '@type': 'City', name: 'London' },
+  { '@type': 'Place', name: 'Mayfair, London' },
+  { '@type': 'Place', name: 'Belgravia, London' },
+  { '@type': 'Place', name: 'Chelsea, London' },
+  { '@type': 'Place', name: 'Kensington, London' },
+  { '@type': 'Place', name: 'City of London' },
+  { '@type': 'Place', name: 'Cotswolds' },
+  { '@type': 'AdministrativeArea', name: 'South East England' },
+];
 
 export function businessNode() {
   return {
@@ -17,6 +30,9 @@ export function businessNode() {
     name: BRAND_NAME,
     url: SITE_URL,
     image: `${SITE_URL}/og.jpg`,
+    logo: `${SITE_URL}/apple-touch-icon.png`,
+    description:
+      'London wallcovering installation practice for prime hotels, flagship retail and private homes: surveying, management, supply, installation and aftercare.',
     telephone: PHONE_TEL,
     email: PUBLIC_EMAIL,
     founder: {
@@ -29,10 +45,7 @@ export function businessNode() {
       addressLocality: 'London',
       addressCountry: 'GB',
     },
-    areaServed: [
-      { '@type': 'City', name: 'London' },
-      { '@type': 'AdministrativeArea', name: 'South East England' },
-    ],
+    areaServed: AREAS_SERVED,
     slogan:
       'Premium wallcoverings services: surveying, management, supply, install and aftercare.',
     knowsAbout: [
@@ -41,6 +54,10 @@ export function businessNode() {
       'Grasscloth installation',
       'Hand-painted wallcoverings',
       'Acoustic wallcoverings',
+      'Silk wallcovering installation',
+      'Fabric walling',
+      'Wallpaper mural installation',
+      'Contract vinyl wallcoverings',
     ],
     sameAs: [INSTAGRAM_URL],
     contactPoint: {
@@ -101,4 +118,96 @@ export function jsonLd(nodes: object[]): string {
     '@context': 'https://schema.org',
     '@graph': nodes,
   }).replace(/</g, '\\u003c');
+}
+
+export function websiteNode() {
+  return {
+    '@type': 'WebSite',
+    '@id': WEBSITE_ID,
+    url: SITE_URL,
+    name: BRAND_NAME,
+    inLanguage: 'en-GB',
+    publisher: { '@id': BUSINESS_ID },
+  };
+}
+
+export function webPageNode(opts: { url: string; name: string; description: string; image?: string; type?: string }) {
+  return {
+    '@type': opts.type ?? 'WebPage',
+    '@id': `${opts.url}#webpage`,
+    url: opts.url,
+    name: opts.name,
+    description: opts.description,
+    inLanguage: 'en-GB',
+    isPartOf: { '@id': WEBSITE_ID },
+    about: { '@id': BUSINESS_ID },
+    ...(opts.image ? { primaryImageOfPage: { '@type': 'ImageObject', url: opts.image } } : {}),
+  };
+}
+
+export function singleServiceNode(opts: {
+  name: string;
+  description: string;
+  url: string;
+  areaName?: string;
+  serviceType?: string;
+}) {
+  return {
+    '@type': 'Service',
+    '@id': `${opts.url}#service`,
+    name: opts.name,
+    description: opts.description,
+    serviceType: opts.serviceType ?? 'Wallcovering installation',
+    url: opts.url,
+    areaServed: opts.areaName ? { '@type': 'Place', name: opts.areaName } : AREAS_SERVED,
+    provider: { '@id': BUSINESS_ID },
+  };
+}
+
+/** A completed commission, described only with facts already on the page. */
+export function projectNode(opts: { url: string; name: string; description: string; location: string; image?: string; dates?: string | null }) {
+  return {
+    '@type': 'CreativeWork',
+    '@id': `${opts.url}#project`,
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    creator: { '@id': BUSINESS_ID },
+    locationCreated: { '@type': 'Place', name: opts.location },
+    ...(opts.dates ? { temporalCoverage: opts.dates.replace('–', '/') } : {}),
+    ...(opts.image ? { image: opts.image } : {}),
+  };
+}
+
+/** Case-study article about a completed commission. Facts only from the page itself. */
+export function caseStudyArticleNode(opts: {
+  url: string;
+  headline: string;
+  description: string;
+  images: string[];
+  location: string;
+  dates?: string | null;
+  mentions?: string[];
+}) {
+  return {
+    '@type': 'Article',
+    '@id': `${opts.url}#article`,
+    headline: opts.headline,
+    description: opts.description,
+    url: opts.url,
+    mainEntityOfPage: { '@id': `${opts.url}#webpage` },
+    inLanguage: 'en-GB',
+    author: { '@id': BUSINESS_ID },
+    publisher: { '@id': BUSINESS_ID },
+    ...(opts.images.length ? { image: opts.images } : {}),
+    about: {
+      '@type': 'CreativeWork',
+      '@id': `${opts.url}#project`,
+      name: opts.headline,
+      creator: { '@id': BUSINESS_ID },
+      locationCreated: { '@type': 'Place', name: opts.location },
+      ...(opts.dates ? { temporalCoverage: opts.dates.replace('–', '/') } : {}),
+    },
+    ...(opts.mentions?.length ? { mentions: opts.mentions.map((name) => ({ '@type': 'Thing', name })) } : {}),
+  };
 }

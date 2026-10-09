@@ -1,0 +1,32 @@
+---
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Base from '../../layouts/Base.astro';
+import { areaHref, areas, areasIndex } from '../../lib/content';
+import { breadcrumbNode } from '../../lib/schema';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Areas', href: '/areas/' },
+];
+---
+
+<Base title={areasIndex.title} description={areasIndex.description} path="/areas/" extraSchema={[breadcrumbNode(crumbs)]}>
+  <div class="container-page">
+    <header class="page-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">{areasIndex.eyebrow}</p>
+      <h1>{areasIndex.heading}</h1>
+      <p class="lede mt-5">{areasIndex.lede}</p>
+    </header>
+    <div class="grid gap-x-8 pb-20 sm:grid-cols-2">
+      {
+        areas.map((area) => (
+          <a class="card-link" href={areaHref(area.slug)}>
+            <h2 class="text-[1.8rem]">{area.heading}</h2>
+            <p class="m-0 text-stone">{area.description}</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Base>
