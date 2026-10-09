@@ -27,13 +27,13 @@ const { chromium: playwright } = require(process.env.MW_PLAYWRIGHT_MODULE || 'pl
   const overflow=[];
   for(const width of [390,768,1024,1440]) {
     await page.setViewportSize({width,height:900});
-    for(const route of ['/advice/','/advice/grasscloth-seams-and-shading/','/materials/','/professionals/','/professionals/developers/','/contact/?audience=developer&intent=install']) {
+    for(const route of ['/advice/','/advice/grasscloth-seams-and-variation/','/materials/','/professionals/','/professionals/developers/','/contact/?audience=developer&intent=install']) {
       await page.goto(base+route);
       if(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1)) overflow.push({width,route});
     }
   }
   await page.setViewportSize({width:390,height:1000});
-  await page.goto(base+'/advice/grasscloth-seams-and-shading/');
+  await page.goto(base+'/advice/grasscloth-seams-and-variation/');
   await page.screenshot({path:'docs/content/review/guide-mobile.png'});
   await page.keyboard.press('Tab');
   assert.equal(await page.evaluate(()=>document.activeElement.textContent),'Skip to content');
@@ -90,7 +90,7 @@ const { chromium: playwright } = require(process.env.MW_PLAYWRIGHT_MODULE || 'pl
   const download=await downloadPromise;
   assert.equal(download.suggestedFilename(),'wallcovering-package-schedule.csv');
   const noJs=await browser.newContext({javaScriptEnabled:false});
-  const staticPage=await noJs.newPage();await staticPage.goto(base+'/advice/grasscloth-seams-and-shading/');
+  const staticPage=await noJs.newPage();await staticPage.goto(base+'/advice/grasscloth-seams-and-variation/');
   assert.match(await staticPage.locator('article.guide-prose').innerText(),/panels are part of the appearance/);
   assert.equal(await staticPage.locator('h1').count(),1);
   await noJs.close();

@@ -42,7 +42,7 @@
     "cta": "Send drawings and schedule",
     "download": "wallcovering-package-schedule.csv",
     "downloadLabel": "Download a package schedule",
-    "guide": "commercial-wallcovering-planning",
+    "guide": "developer-wallcovering-package",
     "sections": [
       {
         "title": "Define the package",
@@ -75,7 +75,7 @@
     "cta": "Discuss a phased project",
     "download": "wallcovering-package-schedule.csv",
     "downloadLabel": "Download a room and phase schedule",
-    "guide": "commercial-wallcovering-planning",
+    "guide": "hotel-wallcovering-specification",
     "sections": [
       {
         "title": "Plan around occupation",

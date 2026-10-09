@@ -1,6 +1,6 @@
 ---
-import { guideHref, type GuideData } from '../lib/guides';
-interface Props { guide: GuideData; }
+import { guideHref, type GuideCardData } from '../lib/guides';
+interface Props { guide: GuideCardData; }
 const { guide } = Astro.props;
 ---
 <article class="guide-card" data-guide-category={guide.category}>

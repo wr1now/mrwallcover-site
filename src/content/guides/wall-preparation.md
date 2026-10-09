@@ -9,9 +9,9 @@ prepared: "2026-10-09"
 reviewer: null
 description: "How wall condition, old coatings and preparation affect the finish and programme."
 shortTitle: "Wall preparation"
-order: 4
+order: 3
 relatedMaterials: []
-relatedGuides: ["installation-cost-factors", "wallcovering-care-and-repairs"]
+relatedGuides: ["installation-cost","wallcovering-problems-and-aftercare"]
 ctaLabel: "Discuss wall preparation"
 ctaHref: "/contact/?intent=prepare"
 sources: [{"label": "Vescom: preparation and adhesive guidance", "url": "https://vescom.com/en/adhesives-accessories"}]

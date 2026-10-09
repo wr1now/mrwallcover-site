@@ -1,6 +1,6 @@
 ---
 title: "Grasscloth: understand the seams before you buy"
-slug: "grasscloth-seams-and-shading"
+slug: "grasscloth-seams-and-variation"
 audience: "homeowners-and-designers"
 category: "choosing"
 draft: true
@@ -11,7 +11,7 @@ description: "What natural panel variation looks like, and what to settle before
 shortTitle: "Grasscloth seams & shading"
 order: 2
 relatedMaterials: ["grasscloth-and-weaves"]
-relatedGuides: ["choosing-wallpaper", "wall-preparation"]
+relatedGuides: ["choosing-wallcoverings","wall-preparation"]
 ctaLabel: "Discuss a natural wallcovering"
 ctaHref: "/contact/?intent=source"
 sources: [{"label": "Phillip Jeffries: shading and panel variation", "url": "https://blog.phillipjeffries.com/the-hang-guide-to-grasscloth-shading"}]

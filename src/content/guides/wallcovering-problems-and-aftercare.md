@@ -1,6 +1,6 @@
 ---
 title: "Caring for wallpaper, and what to do when something goes wrong"
-slug: "wallcovering-care-and-repairs"
+slug: "wallcovering-problems-and-aftercare"
 audience: "existing-customers"
 category: "caring"
 draft: true
@@ -11,7 +11,7 @@ description: "Keep the right care information and record a problem before attemp
 shortTitle: "Care & repairs"
 order: 10
 relatedMaterials: []
-relatedGuides: ["wall-preparation", "grasscloth-seams-and-shading"]
+relatedGuides: ["wall-preparation","grasscloth-seams-and-variation"]
 ctaLabel: "Request aftercare"
 ctaHref: "/aftercare/"
 sources: []

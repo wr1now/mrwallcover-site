@@ -1,6 +1,6 @@
 ---
 title: "Planning a wallcovering package for a development or hotel"
-slug: "commercial-wallcovering-planning"
+slug: "hotel-wallcovering-specification"
 audience: "developers-and-contractors"
 category: "planning"
 draft: true
@@ -9,9 +9,9 @@ prepared: "2026-10-09"
 reviewer: null
 description: "Coordinate wall readiness, deliveries, working areas and handover across a site."
 shortTitle: "For developers & hotels"
-order: 9
+order: 7
 relatedMaterials: ["contract-vinyl", "acoustic"]
-relatedGuides: ["designer-specification-checklist", "wall-preparation"]
+relatedGuides: ["designer-specification-checklist","wall-preparation"]
 ctaLabel: "Send a development brief"
 ctaHref: "/contact/?audience=developer&intent=install"
 sources: []

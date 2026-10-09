@@ -1,6 +1,6 @@
 ---
 title: "What affects the cost of wallpaper installation?"
-slug: "installation-cost-factors"
+slug: "installation-cost"
 audience: "homeowners-and-procurement"
 category: "planning"
 draft: true
@@ -9,9 +9,9 @@ prepared: "2026-10-09"
 reviewer: null
 description: "Compare preparation, material handling, access and scope rather than a headline rate."
 shortTitle: "Installation cost factors"
-order: 7
+order: 5
 relatedMaterials: []
-relatedGuides: ["wall-preparation", "wallpaper-quantity"]
+relatedGuides: ["wall-preparation"]
 ctaLabel: "Request a project quotation"
 ctaHref: "/contact/?intent=install"
 sources: []
@@ -34,6 +34,10 @@ Stair access, high walls, small returns, deep reveals and junctions with joinery
 ## Compare complete scope
 
 Check whether a price includes preparation, lining, primers, adhesive, protection, access arrangements, waste removal and any agreed follow-up. Material supply and installation should be distinguishable. Parking, travel and VAT treatment should be clear where relevant.
+
+## What moves the price
+
+The measured area after openings are taken off. The pattern repeat and the wastage it creates. The state of the walls, and the preparation written into the scope. The material. Access, protection and making good, which are in the scope from the start.
 
 A low headline rate is not a useful comparison if essential work sits outside it. Equally, a premium price needs a clear scope rather than vague promises.
 

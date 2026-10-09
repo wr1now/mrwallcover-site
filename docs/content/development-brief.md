@@ -70,18 +70,18 @@ Create location pages only when there is a distinct useful reason: genuine proje
 
 ## 5. Ten launch guides
 
-| No. | Title | Main reader | Suggested slug |
+| No. | Title | Main reader | Slug (section 27.6 of the master build prompt) |
 | --- | --- | --- | --- |
-| 1 | How to choose wallpaper you will still like once it is on the wall | Homeowners | choosing-wallpaper |
-| 2 | Grasscloth: understand the seams before you buy | Homeowners and designers | grasscloth-seams-and-shading |
-| 3 | Wallpaper for hallways, kitchens and bathrooms: start with how the room is used | Homeowners | wallpaper-by-room |
-| 4 | Why expensive wallpaper still needs proper wall preparation | All clients | wall-preparation |
-| 5 | How much wallpaper do you need? Why wall area is only the start | All clients | wallpaper-quantity |
-| 6 | Scenic murals and panoramic wallpaper: plan the room before ordering | Homeowners and designers | planning-scenic-wallpaper |
-| 7 | What affects the cost of wallpaper installation? | Homeowners and procurement | installation-cost-factors |
-| 8 | A designer's checklist before specifying wallcoverings | Designers and architects | designer-specification-checklist |
-| 9 | Planning a wallcovering package for a development or hotel | Developers and contractors | commercial-wallcovering-planning |
-| 10 | Caring for wallpaper, and what to do when something goes wrong | Existing customers | wallcovering-care-and-repairs |
+| 1 | Choosing wallpaper for the room, not just the photograph | Homeowners | choosing-wallcoverings (room-by-room guidance merged in) |
+| 2 | Grasscloth: the seams and variation to expect | Homeowners and designers | grasscloth-seams-and-variation |
+| 3 | Is the wall ready for wallpaper? | All clients | wall-preparation |
+| 4 | How much wallpaper should you order? | All clients | the existing `/advice/quantities/` calculator page |
+| 5 | What changes the cost of wallpaper installation? | Homeowners and procurement | installation-cost |
+| 6 | Hand-painted papers and murals: plan the room before ordering | Homeowners and designers | hand-painted-murals-set-out |
+| 7 | Wallcoverings for working hotels and busy corridors | Hotels and operators | hotel-wallcovering-specification |
+| 8 | A designer's wallcovering specification checklist | Designers and architects | designer-specification-checklist |
+| 9 | A developer's wallcovering tender and handover checklist | Developers and contractors | developer-wallcovering-package |
+| 10 | Bubbles, lifting edges and cleaning: what to do next | Existing customers | wallcovering-problems-and-aftercare |
 
 The linked guide files hold the proposed public copy. Editorial notes are internal and must not appear on published pages. These are complete concise launch drafts; expand only where a real photograph, tested example or verified product adds useful information.
 

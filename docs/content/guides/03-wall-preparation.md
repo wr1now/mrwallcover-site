@@ -1,4 +1,4 @@
-# Why expensive wallpaper still needs proper wall preparation
+# Is the wall ready for wallpaper?
 
 The single source for this article is [wall-preparation](../../../src/content/guides/wall-preparation.md).
 

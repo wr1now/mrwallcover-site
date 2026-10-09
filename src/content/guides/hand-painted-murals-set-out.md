@@ -1,6 +1,6 @@
 ---
 title: "Scenic murals and panoramic wallpaper: plan the room before ordering"
-slug: "planning-scenic-wallpaper"
+slug: "hand-painted-murals-set-out"
 audience: "homeowners-and-designers"
 category: "planning"
 draft: true
@@ -11,7 +11,7 @@ description: "Plan focal points, elevations, panel sequence and interruptions be
 shortTitle: "Scenic wallpaper planning"
 order: 6
 relatedMaterials: ["murals", "hand-painted"]
-relatedGuides: ["designer-specification-checklist", "wallpaper-quantity"]
+relatedGuides: ["designer-specification-checklist"]
 ctaLabel: "Discuss a scenic layout"
 ctaHref: "/contact/?intent=install"
 sources: []

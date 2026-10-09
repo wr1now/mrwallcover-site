@@ -20,8 +20,7 @@
         "tradeoff": "Print, backing and care vary substantially between products.",
         "checkBeforeOrdering": "Confirm the repeat, match, usable width and actual cleaning instructions.",
         "relatedGuides": [
-          "choosing-wallpaper",
-          "wallpaper-quantity"
+          "choosing-wallcoverings"
         ]
       }
     },
@@ -40,8 +39,8 @@
         "tradeoff": "Adjacent drops can differ in shade; do not expect an invisible joint.",
         "checkBeforeOrdering": "Review a full-wall example, panel layout and the exact care sheet.",
         "relatedGuides": [
-          "grasscloth-seams-and-shading",
-          "wallpaper-by-room"
+          "grasscloth-seams-and-variation",
+          "choosing-wallcoverings"
         ]
       }
     },
@@ -60,7 +59,7 @@
         "tradeoff": "Delicate faces can be less forgiving of marks and handling.",
         "checkBeforeOrdering": "See the sample in the room and confirm preparation and care requirements.",
         "relatedGuides": [
-          "choosing-wallpaper",
+          "choosing-wallcoverings",
           "wall-preparation"
         ]
       }
@@ -80,7 +79,7 @@
         "tradeoff": "Doors, corners and furniture can interrupt the composition.",
         "checkBeforeOrdering": "Agree elevations, panel sequence, supplier proof and finished dimensions.",
         "relatedGuides": [
-          "planning-scenic-wallpaper",
+          "hand-painted-murals-set-out",
           "designer-specification-checklist"
         ]
       }
@@ -100,8 +99,7 @@
         "tradeoff": "A preview cannot confirm the real colour, texture or precise crop.",
         "checkBeforeOrdering": "Confirm scale, panel count, sequence, backing and care instructions.",
         "relatedGuides": [
-          "planning-scenic-wallpaper",
-          "wallpaper-quantity"
+          "hand-painted-murals-set-out"
         ]
       }
     },
@@ -120,8 +118,8 @@
         "tradeoff": "The material name alone does not establish wet-area or fire suitability.",
         "checkBeforeOrdering": "Check the particular product, cleaning method and project specification.",
         "relatedGuides": [
-          "wallpaper-by-room",
-          "commercial-wallcovering-planning"
+          "hotel-wallcovering-specification",
+          "choosing-wallcoverings"
         ]
       }
     },
@@ -141,7 +139,7 @@
         "checkBeforeOrdering": "Obtain the exact system data, installation detail and project acceptance.",
         "relatedGuides": [
           "designer-specification-checklist",
-          "commercial-wallcovering-planning"
+          "developer-wallcovering-package"
         ]
       }
     }

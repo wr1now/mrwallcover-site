@@ -11,7 +11,7 @@ description: "A practical specification checklist: product identity, elevations,
 shortTitle: "For designers"
 order: 8
 relatedMaterials: ["silk-and-textiles", "hand-painted"]
-relatedGuides: ["planning-scenic-wallpaper", "commercial-wallcovering-planning"]
+relatedGuides: ["hand-painted-murals-set-out","hotel-wallcovering-specification"]
 ctaLabel: "Send a designer brief"
 ctaHref: "/contact/?audience=designer&intent=install"
 sources: []

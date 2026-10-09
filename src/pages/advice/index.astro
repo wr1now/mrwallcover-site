@@ -2,7 +2,7 @@
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import GuideCard from '../../components/GuideCard.astro';
 import Base from '../../layouts/Base.astro';
-import { guides, guideCategories } from '../../lib/guides';
+import { hubCards, guideCategories } from '../../lib/guides';
 import { breadcrumbNode } from '../../lib/schema';
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href: '/advice/' }];
 ---
@@ -19,11 +19,11 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href:
       <a href="/advice/quantities/"><span class="eyebrow">Plan</span><strong>Check a simple quantity</strong><span>Plain and straight-match walls ↗</span></a>
       <a href="/professionals/"><span class="eyebrow">Specify</span><strong>Plan a professional package</strong><span>Designers, developers and hotels ↗</span></a>
     </div>
-    {guides.length > 0 && <section class="guide-library" aria-labelledby="guide-library-heading">
+    {hubCards.length > 0 && <section class="guide-library" aria-labelledby="guide-library-heading">
       <h2 id="guide-library-heading">Find the answer you need.</h2>
       <fieldset class="guide-filters" data-guide-filters hidden><legend class="sr-only">Filter guides by topic</legend><button type="button" data-filter="all" aria-pressed="true">All guides</button>{guideCategories.map((category) => <button type="button" data-filter={category.id} aria-pressed="false">{category.label}</button>)}</fieldset>
       <p class="sr-only" data-guide-count role="status"></p>
-      <div class="guide-grid">{guides.map((guide) => <GuideCard guide={guide.frontmatter} />)}</div>
+      <div class="guide-grid">{hubCards.map((card) => <GuideCard guide={card} />)}</div>
     </section>}
     <section class="guide-next"><p class="eyebrow">A question about your project?</p><h2>Start with what you know.</h2><p>Tell us about the room or send the material you are considering. We can discuss preparation, installation or the complete package.</p><div class="flex flex-wrap gap-3"><a class="btn btn-solid-ink" href="/contact/?intent=advice">Discuss your project</a><a class="btn btn-line" href="/aftercare/">Care and repairs</a></div></section>
   </div>
