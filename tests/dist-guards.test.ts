@@ -88,6 +88,67 @@ test('claims decided by Dorin on 9 October 2026 hold in the built site', async (
   assert.match(html, /Private clients are not named\. Residential work appears only by street or area, with the owner(?:'|&#39;|’)s agreement\./);
 });
 
+test('every project an area or service page lists resolves to a built page, is linked from that page, and is never a draft', async () => {
+  const drafts = new Set<string>();
+  const aliases = new Map<string, string>();
+  for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
+    const text = await readFile(`src/content/case-studies/${name}`, 'utf8');
+    const fm = JSON.parse(text.match(/^---\n([\s\S]*?)\n---\n/)![1]) as { slug: string; replaces?: string | null; draft?: boolean };
+    if (fm.draft) drafts.add(fm.slug);
+    else if (fm.replaces) aliases.set(fm.replaces, fm.slug);
+  }
+  assert.ok(drafts.has('penny-morrison-showroom'), 'this guard expects the showroom to be a draft; update it if that changes');
+  type Landing = { slug: string; projects: string[] };
+  const areas = (JSON.parse(await readFile('src/content/areas.json', 'utf8')) as { items: Landing[] }).items;
+  const specialisms = (JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as { items: Landing[] }).items;
+  const problems: string[] = [];
+  let checked = 0;
+  for (const [kind, items] of [['areas', areas], ['services', specialisms]] as const) {
+    for (const item of items) {
+      const page = `/${kind}/${item.slug}/`;
+      const html = await readFile(`dist${page}index.html`, 'utf8');
+      for (const listed of item.projects) {
+        checked += 1;
+        if (drafts.has(listed) || drafts.has(aliases.get(listed) ?? '')) problems.push(`${page} lists draft case study ${listed}`);
+        const target = aliases.get(listed) ?? listed;
+        const href = `/projects/${target}/`;
+        let built: string | undefined;
+        try {
+          built = await readFile(`dist${href}index.html`, 'utf8');
+        } catch {
+          problems.push(`${page} lists ${listed} but ${href} is not built`);
+        }
+        if (built && /http-equiv="refresh"/.test(built)) problems.push(`${page} lists ${listed} but ${href} is only a redirect`);
+        if (!html.includes(`href="${href}"`)) problems.push(`${page} does not link ${href}`);
+      }
+      // No link on the page may point at a draft route or an unbuilt project page, whatever its source.
+      for (const link of html.matchAll(/href="\/projects\/([a-z0-9-]+)\/"/g)) {
+        const slug = link[1];
+        if (drafts.has(slug)) problems.push(`${page} links the draft route /projects/${slug}/`);
+        try {
+          await stat(`dist/projects/${slug}/index.html`);
+        } catch {
+          problems.push(`${page} links /projects/${slug}/ which is not built`);
+        }
+      }
+    }
+  }
+  assert.deepEqual(problems, []);
+  assert.ok(checked >= 15, `only ${checked} listed projects checked`);
+  // Decisions of 9 October 2026: Kensington cites the published Lavery case study; Chelsea cites nothing while the showroom is a draft.
+  assert.deepEqual(areas.find((a) => a.slug === 'kensington')?.projects, ['calico-beverly-1975-cadence']);
+  assert.deepEqual(areas.find((a) => a.slug === 'chelsea')?.projects, []);
+  const kensington = await readFile('dist/areas/kensington/index.html', 'utf8');
+  assert.match(kensington, /On the public record/);
+  assert.match(kensington, /href="\/projects\/calico-beverly-1975-cadence\/"/);
+  const content = await readFile('src/lib/content.ts', 'utf8');
+  assert.match(content, /export function linkedProjects/, 'pages must resolve listed projects through linkedProjects, which fails the build on an unknown slug');
+  for (const file of ['src/components/LandingBody.astro', 'src/pages/[...page].astro']) {
+    assert.match(await readFile(file, 'utf8'), /linkedProjects\(/, `${file} must use linkedProjects`);
+    assert.doesNotMatch(await readFile(file, 'utf8'), /\.filter\(\(p\) => p !== undefined\)/, `${file} must not silently drop unresolved slugs`);
+  }
+});
+
 test('no internal-drafting or defensive phrasing reaches the public pages', async () => {
   const files = await htmlFiles('dist');
   const raw = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');

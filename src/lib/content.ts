@@ -207,6 +207,25 @@ export function projectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === target);
 }
 
+/**
+ * Resolve the project slugs an area, service or editorial page lists, in
+ * order. Published case studies and their old aliases resolve; a slug that
+ * does not (a typo, or a case study that has gone to draft) fails the build
+ * with the page named, so a link to a route that is not built can never be
+ * silently dropped.
+ */
+export function linkedProjects(slugs: string[], owner: string): Project[] {
+  return slugs.map((slug) => {
+    const project = projectBySlug(slug);
+    if (!project) {
+      throw new Error(
+        `${owner} lists project "${slug}", which is not a published case study or project. Remove it from the list, or publish the case study (remove its draft flag).`,
+      );
+    }
+    return project;
+  });
+}
+
 export function projectHref(slug: string): string {
   return `/projects/${slug}/`;
 }
