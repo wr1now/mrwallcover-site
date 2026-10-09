@@ -1,6 +1,6 @@
-# Accessibility results: Glass Atelier stage 5 (G7)
+# Accessibility results: Glass Atelier stage 5 (G7, rerun after the G8 review fixes)
 
-Run on 9 October 2026 against the production build of this branch (built without `SITE_PHONE`, so the phone and WhatsApp controls were absent; the dock had two cells) served by `astro preview`, with `scripts/glass-verify.cjs`: Playwright (Chromium, device scale 1) at 1440x900 and 390x844, axe-core 4.12.1 with the `wcag2a`, `wcag2aa`, `wcag21aa` and `wcag22aa` tags, and a scripted keyboard pass. Screenshots are in the operator folder `screens/glass/` (not committed). This is an automated check plus one scripted interaction pass, not an audit; the accessibility page says the same.
+Run on 9 October 2026, and rerun after the final review's fixes F1 to F8 (commits 135ee03 and 29bdfe8), against the production build of this branch (built without `SITE_PHONE`, so the phone and WhatsApp controls were absent; the dock had two cells) served by `astro preview`, with `scripts/glass-verify.cjs`: Playwright (Chromium, device scale 1) at 1440x900 and 390x844, axe-core 4.12.1 with the `wcag2a`, `wcag2aa`, `wcag21aa` and `wcag22aa` tags, and a scripted keyboard pass. Screenshots are in the operator folder `screens/glass/` (not committed). This is an automated check plus one scripted interaction pass, not an audit; the accessibility page says the same.
 
 ## axe-core
 
@@ -13,7 +13,7 @@ Run on 9 October 2026 against the production build of this branch (built without
 | `/advice/choosing-wallcoverings/` | 0 | 0 | 21 | color-contrast x1 |
 | `/` with `html[data-effects="reduced"]` (390) | 0 | n/a | 30 | as `/` |
 
-Violations by rule and impact: none, at either width, with or without the reduced-effects preference. Nothing introduced by stage 5 needed fixing after the run; the one serious issue found during the work (the "Save to shortlist" and field boundaries at 1.35:1 against their panel) was fixed in G3 by the `--color-field-border` token, 3.49:1, before this pass.
+Violations by rule and impact: none, at either width, with or without the reduced-effects preference, before and after the G8 fixes (same pass counts on the rerun). Nothing introduced by stage 5 needed fixing after the run; the one serious issue found during the work (the "Save to shortlist" and field boundaries at 1.35:1 against their panel) was fixed in G3 by the `--color-field-border` token, 3.49:1, before this pass.
 
 Incomplete results are checks axe could not decide, not failures. Each was looked at:
 
@@ -36,11 +36,13 @@ Phone, 390x844, from the top of `/`:
 | Tab x4 | wordmark, Start, toggle, Services again: the cycle stays inside the bar and the panel; the rest of the page is inert | true |
 | Shift+Tab | toggle | true |
 | Escape | toggle (focus returned, panel closed, scroll unlocked) | false |
+| Click the toggle | "Services" (opens) | true |
+| Click the toggle again | toggle (closed, focus returned: review F1) | false |
 | Space | "Services" (opens again) | true |
 | Click a panel link | navigated to `/contact/`; the new page's toggle is closed | false |
 | Open, then resize to 1440 | panel closed, scroll unlocked | false |
 
-Without JavaScript (Playwright with scripts disabled): the 7 panel links render in flow under the bar and the toggle is not shown.
+While the script is live the panel carries `role="dialog"`, `aria-modal="true"` and `aria-label="Menu"` (set by the Header script, review F2; recorded from the DOM after open) and the root carries `js-nav`. Without JavaScript (Playwright with scripts disabled): the 7 panel links render in flow under the bar and the toggle is not shown. The hidden-panel and hidden-toggle rules key on `html.js-nav`, which the Header script sets itself (review F6), so a failed module gives the same in-flow result as no JavaScript.
 
 Desktop, 1440x900, Tab order: skip link, wordmark, Services, Materials, Projects, For Professionals, Guide, About, "Start your project", then into the page (the hero's partnership link, then the hero's first button). The phone reveal was absent in this build; with `SITE_PHONE` it sits between About and the action, as a button.
 
@@ -49,7 +51,8 @@ Desktop, 1440x900, Tab order: skip link, wordmark, Services, Materials, Projects
 - Two cells in this build (Start, Projects); four with `SITE_PHONE`. Dock top at 776px, 56px tall.
 - Hero buttons end at 670px, 670px and 732px: none under the dock in the first view.
 - Scrolled to the end, the footer's last control ("Reduce visual effects") ends at 732px, above the dock.
-- Dock hidden while the menu is open; hidden while a text field on `/contact/` has focus; back after blur.
+- Dock hidden while the menu is open; hidden while the name field on `/contact/` has focus; still hidden, with zero momentary drops of the body class (mutation observer), when focus moves straight to the email field (review F3); back after blur.
+- Focus ring inset inside every dock cell, so the dock's radius clip no longer cuts it (review F4).
 - No horizontal overflow on any screenshot at either width.
 
 ## What this does not cover

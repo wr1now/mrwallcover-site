@@ -102,8 +102,18 @@ async function shots(browser, summary) {
       });
       // A focused text field hides the dock (keyboard likely up).
       await page.goto(BASE + '/contact/', { waitUntil: 'networkidle' });
-      await page.focus('input[type="text"], input[type="email"], textarea');
+      await page.focus('input[name="name"]');
       const dockHiddenWithField = await page.evaluate(() => getComputedStyle(document.querySelector('.dock')).display === 'none');
+      // Moving straight from one field to another must not bring the dock back in between (review F3): count any momentary loss of the class.
+      await page.evaluate(() => {
+        window.__fieldFocusDrops = 0;
+        new MutationObserver(() => {
+          if (!document.body.classList.contains('field-focus')) window.__fieldFocusDrops += 1;
+        }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+      });
+      await page.focus('input[name="email"]');
+      await page.waitForTimeout(120);
+      const dockStillHiddenNextField = await page.evaluate(() => document.activeElement.name === 'email' && getComputedStyle(document.querySelector('.dock')).display === 'none' && window.__fieldFocusDrops === 0);
       await page.evaluate(() => document.activeElement.blur());
       const dockBackAfterBlur = await page.evaluate(() => getComputedStyle(document.querySelector('.dock')).display !== 'none');
       // Scrolled to the end: the footer's last control sits above the dock.
@@ -116,7 +126,7 @@ async function shots(browser, summary) {
         const last = document.querySelector('.site-footer [data-effects-toggle]').getBoundingClientRect();
         return { scrollY: window.scrollY, dockTop: d.top, footerLastBottom: last.bottom, viewport: window.innerHeight, covered: last.bottom > d.top };
       });
-      summary.dock = { cells: await page.evaluate(() => document.querySelectorAll('.dock a, .dock button').length), dockHiddenWhileMenuOpen, dockHiddenWithField, dockBackAfterBlur, hero, footer };
+      summary.dock = { cells: await page.evaluate(() => document.querySelectorAll('.dock a, .dock button').length), dockHiddenWhileMenuOpen, dockHiddenWithField, dockStillHiddenNextField, dockBackAfterBlur, hero, footer };
       console.log('dock', JSON.stringify(summary.dock));
     } else {
       await page.goto(BASE + '/', { waitUntil: 'networkidle' });
@@ -189,6 +199,10 @@ async function keys(browser, summary) {
   await page.goto(BASE + '/', { waitUntil: 'networkidle' });
   const log = summary.keyboard.phone;
   const step = async (label) => log.push({ step: label, focus: await page.evaluate(describe), expanded: await page.getAttribute('[data-menu-toggle]', 'aria-expanded'), bodyLocked: await page.evaluate(() => document.body.classList.contains('nav-open')) });
+  summary.keyboard.panelSemantics = await page.evaluate(() => {
+    const p = document.querySelector('[data-mobile-menu]');
+    return { role: p.getAttribute('role'), modal: p.getAttribute('aria-modal'), label: p.getAttribute('aria-label'), jsNav: document.documentElement.classList.contains('js-nav') };
+  });
   await page.keyboard.press('Tab'); // skip link
   await step('Tab 1');
   await page.keyboard.press('Tab'); // wordmark
@@ -210,6 +224,12 @@ async function keys(browser, summary) {
   await page.keyboard.press('Escape');
   await page.waitForTimeout(60);
   await step('Escape (closes, focus returns)');
+  await page.click('[data-menu-toggle]');
+  await page.waitForTimeout(120);
+  await step('toggle click (opens)');
+  await page.click('[data-menu-toggle]');
+  await page.waitForTimeout(60);
+  await step('toggle click (closes, focus returns)');
   // Space opens too; a link click closes.
   await page.keyboard.press('Space');
   await page.waitForTimeout(120);
