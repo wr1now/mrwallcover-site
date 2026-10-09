@@ -1,5 +1,6 @@
 ---
-import { AWARD, PHONE_DISPLAY, PHONE_TEL } from '../config';
+import { AWARD } from '../config';
+import PhoneReveal from '../components/PhoneReveal.astro';
 import FaqList from '../components/FaqList.astro';
 import Hero from '../components/Hero.astro';
 import Picture from '../components/Picture.astro';
@@ -219,7 +220,7 @@ const others = projects.filter((project) => !project.featured);
       <p class="lede mt-4">{home.cta.text}</p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a class="btn btn-solid-ink" href="/contact/">Request a quotation</a>
-        <a class="btn btn-line" href={`tel:${PHONE_TEL}`}>Call {PHONE_DISPLAY}</a>
+        <PhoneReveal class="btn btn-line" label="Show phone number" prefix="Call " />
       </div>
     </div>
   </section>

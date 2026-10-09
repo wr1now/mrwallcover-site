@@ -1,11 +1,12 @@
 {
   "title": "Request a Quote | Mr Wallcover London",
-  "description": "Request a quotation from Mr Wallcover in London. Call 07450 843246, use WhatsApp, or email info@mrwallcover.com.",
+  "description": "Request a quotation from Mr Wallcover in London. Use the enquiry form, WhatsApp, or email info@mrwallcover.com.",
   "eyebrow": "Contact",
   "heading": "Request a quotation.",
   "lede": "Tell us the building, the material and when you hope to start. A month is enough if the day is not fixed. Reference photographs are welcome.",
-  "photoNote": "You can send photographs of the walls, the paper or the drawings with your email. If this form is connected to a host that accepts files, you can attach them below. Otherwise, send them to the address on this page.",
+  "photoNote": "Photographs of the walls, the paper or the drawings help. Attach them below (up to 5 MB in total), or email them to the address on this page.",
   "submit": "Send the enquiry",
   "mailtoStatus": "Your email application should open with this enquiry. If it does not, write to us at the address below.",
-  "direct": "Or write directly, or call. The number is answered by Dorin Burcus."
+  "direct": "Or write directly. The phone is answered by Dorin Burcus; the number is shown on request.",
+  "spamNote": "This form is protected against spam. After you press send you may be asked to tick a short check before the message reaches us."
 }

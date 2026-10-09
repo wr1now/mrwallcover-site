@@ -206,6 +206,108 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "architectural-film-wrapping",
+      "name": "Architectural & furniture film wrapping",
+      "title": "Architectural & Furniture Film Wrapping London | Mr Wallcover",
+      "description": "Architectural and furniture film wrapping in London: doors, joinery, lift interiors, reception desks and furniture refinished in place. Survey to aftercare.",
+      "heading": "Architectural & furniture film wrapping",
+      "lede": "Self-adhesive architectural films that refinish doors, joinery, lifts, counters and furniture in place, without stripping out or replacing them.",
+      "serviceType": "Architectural film installation",
+      "paragraphs": [
+        "Architectural film is a thin, self-adhesive surface in wood, stone, metal, leather-look, textured or solid finishes. Applied properly, it renews a door, a run of joinery or a piece of furniture where it stands. There is no spraying on site and no long drying time, and far less goes in the skip than with a replacement.",
+        "It suits hotels and offices that cannot close a floor for long: bedroom doors and wardrobes, lift cars and lift lobbies, reception desks, bar fronts, kitchen fronts, wall panelling and loose furniture. Rooms can usually go back into use as each area is finished.",
+        "The finish depends on the preparation. Surfaces are cleaned, keyed, filled and primed to the film maker's instruction. Edges, corners and returns are where a wrap succeeds or fails, so we plan them at the survey and agree them on a sample before the run starts.",
+        "Trained at Solar Screen's headquarters in Luxembourg in window films (Solar Screen) and architectural and furniture wrapping film (Cover Styl'). We install to the maker's own instructions. The same practice surveys, quantifies, supplies the film if you need it, installs and returns for aftercare."
+      ],
+      "projects": [],
+      "imageId": null,
+      "faq": [
+        {
+          "id": "af-what",
+          "question": "What can architectural film be applied to?",
+          "paragraphs": [
+            "Most smooth, sound and non-porous surfaces: painted or laminated doors, joinery, MDF, metal, lift interiors, counters and furniture. The surface is checked at the survey. Where it is flaking, damp or very textured, it needs work first, and we say so."
+          ]
+        },
+        {
+          "id": "af-occupied",
+          "question": "Can film wrapping be done while a hotel or office stays open?",
+          "paragraphs": [
+            "Usually, yes. There is no spraying and little dust or smell, so work can go room by room or floor by floor, and each area can be handed back as it is finished."
+          ]
+        },
+        {
+          "id": "af-sample",
+          "question": "Can we see the finish before committing?",
+          "paragraphs": [
+            "Yes. We apply a sample on a real door or panel so the finish, the edges and the colour can be approved in the room's own light before the full run is ordered."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Cover Styl' architectural and furniture films",
+          "href": "https://coverstyl.com/en/"
+        },
+        {
+          "label": "Solar Screen window films",
+          "href": "https://solarscreen.eu/en/"
+        }
+      ]
+    },
+    {
+      "slug": "window-film",
+      "name": "Window film installation",
+      "title": "Window Film Installation London | Mr Wallcover",
+      "description": "Window film installation in London: decorative, privacy, solar control and safety films for homes, hotels, offices and shopfronts. Survey to aftercare.",
+      "heading": "Window film: decorative, privacy, solar and safety",
+      "lede": "Films applied to existing glass: frosted and decorative designs, privacy, solar control and safety films for London homes, hotels, offices and shopfronts.",
+      "serviceType": "Window film installation",
+      "paragraphs": [
+        "Window film changes how existing glass behaves without replacing it. There are four families. Decorative films give a frosted, etched, gradient or patterned finish, including logos and manifestations. Privacy films screen a view by day, or hide a room completely. Solar control films reduce heat gain and glare. Safety and security films help hold broken glass together.",
+        "The right film depends on the glass, the frame, the orientation and what the room needs. Some films are not suitable for every type of double glazing, so we check the glass and the film maker's guidance before we recommend one.",
+        "Glass is cleaned to a high standard, the film is cut to the visible pane and squeegeed out, and edges are finished neatly to the frame. Small moisture haze is normal for a short time while the adhesive cures, and we explain what to expect on the day.",
+        "Trained at Solar Screen's headquarters in Luxembourg in window films (Solar Screen) and architectural and furniture wrapping film (Cover Styl'). We install to the maker's instructions. At Hyde London City (the Old Bailey Hotel) we fitted Solar Screen film to the glazing as part of the full decorating package. The same practice surveys, supplies the film if you need it, installs and comes back for aftercare."
+      ],
+      "projects": [
+        "old-bailey-hotel"
+      ],
+      "imageId": null,
+      "faq": [
+        {
+          "id": "wf-types",
+          "question": "Which type of window film do I need?",
+          "paragraphs": [
+            "Decorative or frosted film for screening and design, privacy film to hide a view, solar control film for heat and glare, and safety or security film to help hold broken glass together. Some films combine more than one job. We recommend one after seeing the glass and the room."
+          ]
+        },
+        {
+          "id": "wf-double",
+          "question": "Can window film go on double glazing?",
+          "paragraphs": [
+            "Often, but not every film suits every unit. Solar films in particular can raise the temperature of the glass. We check the glazing type and follow the film maker's guidance on what can be applied."
+          ]
+        },
+        {
+          "id": "wf-remove",
+          "question": "Can window film be removed later?",
+          "paragraphs": [
+            "Yes. Film can be taken off and the glass cleaned, which makes it useful for rented premises, changing branding or a room that changes use."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Solar Screen window films",
+          "href": "https://solarscreen.eu/en/"
+        },
+        {
+          "label": "Cover Styl' architectural and furniture films",
+          "href": "https://coverstyl.com/en/"
+        }
+      ]
     }
   ]
 }

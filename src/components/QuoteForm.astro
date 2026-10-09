@@ -1,9 +1,21 @@
 ---
-import { FORM_ENDPOINT, FORM_PROVIDER, PUBLIC_EMAIL } from '../config';
+import { FORM_ENDPOINT, FORM_PROVIDER, PUBLIC_EMAIL, SITE_URL } from '../config';
 import { contact } from '../lib/content';
 
-const postsNatively = FORM_PROVIDER === 'netlify' || (FORM_PROVIDER === 'formspree' && FORM_ENDPOINT.length > 0);
+/**
+ * Spam protection, in layers:
+ * 1. Honeypot field (_honey) that people never see; FormSubmit drops filled ones and so does our script.
+ * 2. Time-trap: the script refuses a submit within 4 seconds of the page loading.
+ * 3. The real endpoint is not in the action attribute; the script sets it on a genuine submit,
+ *    so bots that read raw HTML post nowhere.
+ * 4. FormSubmit's own captcha step (_captcha left on).
+ */
+const isFormSubmit = FORM_PROVIDER === 'formsubmit' && FORM_ENDPOINT.length > 0;
+const postsNatively =
+  isFormSubmit || FORM_PROVIDER === 'netlify' || (FORM_PROVIDER === 'formspree' && FORM_ENDPOINT.length > 0);
 const action = FORM_PROVIDER === 'formspree' ? FORM_ENDPOINT : FORM_PROVIDER === 'netlify' ? '/thank-you/' : undefined;
+const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().join('')) : undefined;
+const honeyName = isFormSubmit ? '_honey' : 'bot-field';
 ---
 
 <form
@@ -15,14 +27,26 @@ const action = FORM_PROVIDER === 'formspree' ? FORM_ENDPOINT : FORM_PROVIDER ===
   data-quote-form
   data-provider={FORM_PROVIDER}
   data-email={PUBLIC_EMAIL}
+  data-endpoint={encodedEndpoint}
+  data-honey={honeyName}
   data-netlify={FORM_PROVIDER === 'netlify' ? 'true' : undefined}
   data-netlify-honeypot={FORM_PROVIDER === 'netlify' ? 'bot-field' : undefined}
 >
-  <input type="hidden" name="form-name" value="quote-request" />
-  <p class="honeypot">
+  {FORM_PROVIDER === 'netlify' && <input type="hidden" name="form-name" value="quote-request" />}
+  {
+    isFormSubmit && (
+      <>
+        <input type="hidden" name="_subject" value="New enquiry from mrwallcover.com" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value={`${SITE_URL}/thank-you/`} />
+        <input type="hidden" name="_captcha" value="true" />
+      </>
+    )
+  }
+  <p class="honeypot" aria-hidden="true">
     <label>
-      Company website
-      <input name="bot-field" tabindex="-1" autocomplete="off" />
+      Leave this field empty
+      <input name={honeyName} type="text" tabindex="-1" autocomplete="off" />
     </label>
   </p>
   <div class="grid gap-5 md:grid-cols-2">
@@ -45,6 +69,7 @@ const action = FORM_PROVIDER === 'formspree' ? FORM_ENDPOINT : FORM_PROVIDER ===
         <option>Hotel</option>
         <option>Prime residential</option>
         <option>Retail</option>
+        <option>Film: architectural, furniture or window</option>
         <option>Aftercare of existing work</option>
         <option>Other</option>
       </select>
@@ -67,25 +92,59 @@ const action = FORM_PROVIDER === 'formspree' ? FORM_ENDPOINT : FORM_PROVIDER ===
     postsNatively && (
       <div class="field">
         <label for="photos">Photographs, if you have them</label>
-        <input id="photos" name="photos" type="file" accept="image/*" multiple />
+        <input id="photos" name="attachment" type="file" accept="image/*" multiple />
       </div>
     )
   }
+  {isFormSubmit && <p class="form-note m-0 text-stone">{contact.spamNote}</p>}
   <div>
     <button class="btn btn-solid-ink" type="submit">{contact.submit}</button>
   </div>
   <p id="form-status" class="m-0" role="status" hidden></p>
+  <noscript><p class="m-0">This form needs JavaScript. Please email {PUBLIC_EMAIL} instead.</p></noscript>
 </form>
 
 <script is:inline>
-  const form = document.querySelector('[data-quote-form]');
-  if (form) {
+  (function () {
+    const form = document.querySelector('[data-quote-form]');
+    if (!form) return;
+    const loadedAt = Date.now();
+    const status = document.getElementById('form-status');
+    const say = (text) => {
+      if (!status) return;
+      status.hidden = false;
+      status.textContent = text;
+    };
     form.addEventListener('submit', (event) => {
       const provider = form.getAttribute('data-provider');
+      const honey = form.querySelector('[name="' + form.getAttribute('data-honey') + '"]');
+      if (honey && honey.value.trim()) {
+        event.preventDefault();
+        return;
+      }
+      if (Date.now() - loadedAt < 4000) {
+        event.preventDefault();
+        say('Thank you. Please check the details and press send again.');
+        return;
+      }
+      if (provider === 'formsubmit') {
+        const enc = form.getAttribute('data-endpoint');
+        if (enc) {
+          const files = form.querySelector('input[type="file"]');
+          let total = 0;
+          if (files && files.files) for (const f of files.files) total += f.size;
+          if (total > 5 * 1024 * 1024) {
+            event.preventDefault();
+            say('The photographs are over 5 MB in total. Please send fewer, or email them to ' + form.getAttribute('data-email') + '.');
+            return;
+          }
+          form.action = atob(enc).split('').reverse().join('');
+        }
+        return;
+      }
       if (provider === 'netlify' || provider === 'formspree') return;
       event.preventDefault();
       const data = new FormData(form);
-      if (String(data.get('bot-field') || '').trim()) return;
       const lines = [];
       for (const [key, value] of data.entries()) {
         if (key === 'bot-field' || key === 'form-name') continue;
@@ -93,13 +152,9 @@ const action = FORM_PROVIDER === 'formspree' ? FORM_ENDPOINT : FORM_PROVIDER ===
         lines.push(key + ': ' + value.trim());
       }
       const email = form.getAttribute('data-email');
-      const href = 'mailto:' + email + '?subject=' + encodeURIComponent('Quotation request') + '&body=' + encodeURIComponent(lines.join('\n'));
-      window.location.href = href;
-      const status = document.getElementById('form-status');
-      if (status) {
-        status.hidden = false;
-        status.textContent = 'Your email application should open with this enquiry. If it does not, write to ' + email + '.';
-      }
+      window.location.href =
+        'mailto:' + email + '?subject=' + encodeURIComponent('Quotation request') + '&body=' + encodeURIComponent(lines.join('\n'));
+      say('Your email application should open with this enquiry. If it does not, write to ' + email + '.');
     });
-  }
+  })();
 </script>

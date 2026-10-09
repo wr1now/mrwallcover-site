@@ -1,8 +1,8 @@
 import {
   BRAND_NAME,
+  COVERAGE,
   FOUNDER_NAME,
   INSTAGRAM_URL,
-  PHONE_TEL,
   PUBLIC_EMAIL,
   SITE_URL,
 } from '../config';
@@ -11,16 +11,15 @@ import type { FaqItem } from './types';
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
-/** Areas named on the site. Kept in step with src/content/areas.json. */
-const AREAS_SERVED = [
+/**
+ * Coverage: London and the surrounding areas; UK-wide for selected projects.
+ * The phone number is deliberately not published in schema (Dorin's request:
+ * no openly visible number). Add telephone back here if that changes.
+ */
+export const AREAS_SERVED = [
   { '@type': 'City', name: 'London' },
-  { '@type': 'Place', name: 'Mayfair, London' },
-  { '@type': 'Place', name: 'Belgravia, London' },
-  { '@type': 'Place', name: 'Chelsea, London' },
-  { '@type': 'Place', name: 'Kensington, London' },
-  { '@type': 'Place', name: 'City of London' },
-  { '@type': 'Place', name: 'Cotswolds' },
-  { '@type': 'AdministrativeArea', name: 'South East England' },
+  { '@type': 'AdministrativeArea', name: 'Greater London and the surrounding areas' },
+  { '@type': 'Country', name: 'United Kingdom', description: 'Selected projects' },
 ];
 
 export function businessNode() {
@@ -32,8 +31,7 @@ export function businessNode() {
     image: `${SITE_URL}/og.jpg`,
     logo: `${SITE_URL}/apple-touch-icon.png`,
     description:
-      'London wallcovering installation practice for prime hotels, flagship retail and private homes: surveying, management, supply, installation and aftercare.',
-    telephone: PHONE_TEL,
+      `London wallcovering installation practice for prime hotels, flagship retail and private homes: surveying, management, supply, installation and aftercare. ${COVERAGE}.`,
     email: PUBLIC_EMAIL,
     founder: {
       '@type': 'Person',
@@ -62,10 +60,10 @@ export function businessNode() {
     sameAs: [INSTAGRAM_URL],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: PHONE_TEL,
       email: PUBLIC_EMAIL,
+      url: `${SITE_URL}/contact/`,
       contactType: 'quotations',
-      areaServed: ['London', 'South East England'],
+      areaServed: AREAS_SERVED,
       availableLanguage: ['English'],
     },
   };
@@ -79,10 +77,7 @@ export function serviceNodes(
     name: item.title,
     description: item.paragraphs[0],
     serviceType: item.title,
-    areaServed: [
-      { '@type': 'City', name: 'London' },
-      { '@type': 'AdministrativeArea', name: 'South East England' },
-    ],
+    areaServed: AREAS_SERVED,
     provider: { '@id': BUSINESS_ID },
   }));
 }

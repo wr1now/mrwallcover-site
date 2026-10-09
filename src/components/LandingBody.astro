@@ -32,10 +32,27 @@ const otherSpecialisms = specialisms.filter((s) => s.slug !== page.slug);
   <div class="grid gap-10 pb-12 md:grid-cols-12">
     <div class="prose md:col-span-7">
       {page.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      {
+        page.links && page.links.length > 0 && (
+          <p>
+            Makers:{' '}
+            {page.links.map((link, i) => (
+              <>
+                {i > 0 && ', '}
+                <a href={link.href} rel="noopener">{link.label}</a>
+              </>
+            ))}
+          </p>
+        )
+      }
     </div>
-    <div class="md:col-span-4 md:col-start-9">
-      <Picture id={page.imageId} thumbOnly sizes="(min-width: 768px) 22rem, 100vw" />
-    </div>
+    {
+      page.imageId && (
+        <div class="md:col-span-4 md:col-start-9">
+          <Picture id={page.imageId} thumbOnly sizes="(min-width: 768px) 22rem, 100vw" />
+        </div>
+      )
+    }
   </div>
 
   {

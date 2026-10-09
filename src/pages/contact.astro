@@ -2,13 +2,11 @@
 import {
   INSTAGRAM_HANDLE,
   INSTAGRAM_URL,
-  PHONE_DISPLAY,
-  PHONE_TEL,
   PUBLIC_EMAIL,
-  WHATSAPP_URL,
 } from '../config';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import QuoteForm from '../components/QuoteForm.astro';
+import PhoneReveal from '../components/PhoneReveal.astro';
 import Base from '../layouts/Base.astro';
 import { contact } from '../lib/content';
 import { breadcrumbNode } from '../lib/schema';
@@ -33,19 +31,19 @@ const crumbs = [
       <p class="lede mt-5">{contact.lede}</p>
     </header>
     <div class="grid gap-12 md:grid-cols-12">
-      <div class="md:col-span-7">
+      <div id="enquiry" class="scroll-mt-24 md:col-span-7">
         <QuoteForm />
       </div>
       <aside class="md:col-span-4 md:col-start-9">
         <p class="m-0">{contact.direct}</p>
         <p class="mt-6 mb-0">
-          <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
+          <PhoneReveal />
         </p>
         <p class="m-0">
           <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
         </p>
         <p class="m-0">
-          <a href={WHATSAPP_URL}>WhatsApp</a>
+          <a href="/contact/" data-wa>WhatsApp</a>
         </p>
         <p class="m-0">
           <a href={INSTAGRAM_URL}>Instagram {INSTAGRAM_HANDLE}</a>
