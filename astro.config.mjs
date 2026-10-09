@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://www.mrwallcover.com',
   trailingSlash: 'always',
+  build: { inlineStylesheets: 'auto' },
   integrations: [
     sitemap({
       // Old project URLs now redirect to case studies; keep them out of the sitemap.

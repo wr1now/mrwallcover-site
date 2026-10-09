@@ -33,6 +33,14 @@ REPLACES = {
     'raffles-london-the-owo': 'owo-whitehall',
     'hilton-garden-inn-silverstone': 'hilton-silverstone',
 }
+# Explicit publish lists where the research file's own gallery is a shortlist.
+# Trematon: own photographs (previews). Excluded: 02 (crew faces), 22 (unverified subject),
+# and the House of Hackney delivery note (client name and address), which is not in the folder.
+GALLERY_OVERRIDE = {
+    'trematon-castle': [f'trematon-{n}' for n in
+        ['01','03','11','16','13','18','06','07','08','09','10','12','14','15','17','19','21','23','24','25','26','04','05','20']],
+}
+MODEST = {'trematon-castle'}  # preview-size photos: show small, never upscale
 TBC = re.compile(r'to be confirmed|once confirmed|will be added once|unconfirmed', re.I)
 
 
@@ -86,8 +94,35 @@ def allowed(note):
     return 'own' in n or 'official' in n
 
 
+def materials_table_to_list(body):
+    """Turn an internal evidence/confidence table into a public list.
+    Confirmed rows are stated plainly; probable rows are marked as identified from
+    our photographs; possible rows are dropped."""
+    def repl(m):
+        rows = [r for r in m.group(0).strip().splitlines() if r.startswith('|') and '---' not in r][1:]
+        out = []
+        for r in rows:
+            cells = [c.strip() for c in r.strip('|').split('|')]
+            design, conf = cells[0], cells[-1].lower()
+            if 'possible' in conf and 'probable' not in conf:
+                continue
+            design = re.sub(r'\s*HoH names it.*$', '', design)
+            design = design.rstrip('. ')
+            note = ' (identified from our site photographs)' if 'probable' in conf else ''
+            design = design.replace('(not HoH)', '(not House of Hackney)')
+            out.append(f'- {design}{note}')
+        return '\n'.join(out) + '\n'
+    return re.sub(r'^\|[^\n]*Confidence[^\n]*\|\n(?:\|[^\n]*\n?)+', repl, body, flags=re.M)
+
+
 def clean_body(body):
     body = re.sub(r'^## Images\n.*?(?=^## |\Z)', '', body, flags=re.S | re.M)
+    body = re.sub(r'^## Instagram\n.*?(?=^## |\Z)', '', body, flags=re.S | re.M)
+    body = materials_table_to_list(body)
+    # internal editorial asides
+    body = re.sub(r'\s*\*\((?:Dorin|confidence|scope)[^)]*\)\*', '', body, flags=re.I)
+    body = re.sub(r'\s*\((?:Dorin\'s account|Dorin\'s brief)[^)]*\)', '', body)
+    body = body.replace(' (evidenced in our photos)', '')
     body = re.sub(r'^# .*\n', '', body, count=1, flags=re.M)
     out = []
     for line in body.splitlines():
@@ -111,6 +146,9 @@ for path in sorted(SRC.glob('*.md')):
     slug = fm.get('slug') or path.stem
     rights = image_rights(body)
     gallery = []
+    if slug in GALLERY_OVERRIDE:
+        fm['gallery'] = []
+        gallery = [{'id': i, 'credit': None} for i in GALLERY_OVERRIDE[slug] if i in SIZES]
     for item in fm.get('gallery', []) or []:
         did = re.search(r'/d/([A-Za-z0-9_-]+)/', item)
         if did:
@@ -135,9 +173,10 @@ for path in sorted(SRC.glob('*.md')):
         'replaces': REPLACES.get(slug),
         'client': fm.get('client', ''),
         'location': fm.get('location', ''),
-        'years': None if TBC.search(years) or not years else years,
-        'role': fm.get('role', ''),
-        'wallcoverings': [w for w in fm.get('wallcoverings', []) or [] if not TBC.search(w)],
+        'years': None if TBC.search(years) or not years else re.sub(r'\s*\(photo record[^)]*\)', '', years),
+        'role': re.split(r'\.\s*Scope as briefed', fm.get('role', ''))[0],
+        'wallcoverings': [re.sub(r'\s*\((?:confirmed|probable|possible)[^)]*\)', '', w, flags=re.I) for w in fm.get('wallcoverings', []) or [] if not TBC.search(w)],
+        'modest': slug in MODEST,
         'standfirst': lead,
         'hero': hero if hero_ok else (gallery[0]['id'] if gallery else None),
         'gallery': gallery,

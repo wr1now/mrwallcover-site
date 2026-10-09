@@ -8,6 +8,7 @@
   "years": null,
   "role": "Main wallcoverings contractor",
   "wallcoverings": [],
+  "modest": false,
   "standfirst": "Main wallcoverings contractor for the only hotel on the Silverstone Circuit.",
   "hero": null,
   "gallery": []

@@ -168,7 +168,9 @@
         "Measurements for a bespoke print are taken on site so the artwork is sized to the wall that will actually be hung."
       ],
       "materialKey": "Murals",
-      "projects": [],
+      "projects": [
+        "trematon-castle"
+      ],
       "imageId": "browns-hotel-mayfair-04",
       "faq": [
         {
