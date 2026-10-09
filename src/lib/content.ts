@@ -119,6 +119,40 @@ export const caseStudies = Object.values(caseStudyModules)
       (CASE_STUDY_ORDER.indexOf(a.frontmatter.slug) + 1 || 99) - (CASE_STUDY_ORDER.indexOf(b.frontmatter.slug) + 1 || 99),
   );
 
+/**
+ * Editorial pages (maker installer pages, the trade page, the cost guide, the
+ * reviews page) in src/content/pages/*.md. Same draft rule as case studies:
+ * `"draft": true` keeps a page in the repo for review and out of the build,
+ * the sitemap, llms.txt and every link.
+ */
+export interface EditorialPageData {
+  /** Site path the page is served at, with leading and trailing slash. */
+  path: string;
+  title: string;
+  metaTitle: string;
+  description: string;
+  eyebrow: string;
+  heading: string;
+  lede: string;
+  /** Breadcrumb parent, e.g. Services or Advice. */
+  parent: { name: string; href: string };
+  /** Case-study slugs this page may cite. */
+  projects: string[];
+  faq: FaqItem[];
+  draft?: boolean;
+}
+
+type EditorialPageModule = { frontmatter: EditorialPageData; Content: any };
+
+const editorialModules = import.meta.glob<EditorialPageModule>('../content/pages/*.md', { eager: true });
+
+for (const mod of Object.values(editorialModules)) {
+  const { path, title } = mod.frontmatter;
+  if (!/^\/[a-z0-9-]+(\/[a-z0-9-]+)*\/$/.test(path ?? '')) throw new Error(`Editorial page "${title}" needs a path like /trade/ or /services/x/`);
+}
+
+export const editorialPages = Object.values(editorialModules).filter((mod) => !mod.frontmatter.draft);
+
 export function caseStudyBySlug(slug: string): CaseStudyModule | undefined {
   return caseStudies.find((mod) => mod.frontmatter.slug === slug);
 }

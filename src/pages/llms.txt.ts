@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { SITE_URL } from '../config';
 import facts from '../data/facts.json';
-import { areaHref, areas, faqItems, projectHref, projects, specialismHref, specialisms } from '../lib/content';
+import { areaHref, areas, editorialPages, faqItems, projectHref, projects, specialismHref, specialisms } from '../lib/content';
 
 const abs = (path: string) => new URL(path, SITE_URL).href;
 const BRAND_NAME = facts.brand;
@@ -29,6 +29,10 @@ export const GET: APIRoute = () => {
     '',
     '## Services by material',
     ...specialisms.map((s) => `- [${s.name}](${abs(specialismHref(s.slug))}): ${s.description}`),
+    // Editorial pages appear here only once published (drafts are never built).
+    ...(editorialPages.length
+      ? ['', '## Guides', ...editorialPages.map((p) => `- [${p.frontmatter.title}](${abs(p.frontmatter.path)}): ${p.frontmatter.description}`)]
+      : []),
     '',
     '## Areas',
     ...areas.map((a) => `- [${a.heading}](${abs(areaHref(a.slug))}): ${a.description}`),
