@@ -11,6 +11,7 @@
     "Phillip Jeffries – Tweed",
     "Omexco (Belgium)"
   ],
+  "modest": false,
   "standfirst": "Almost six years inside one of the City's great Beaux-Arts buildings, dressing its walls with tailored precision.",
   "hero": null,
   "gallery": []

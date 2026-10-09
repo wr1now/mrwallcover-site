@@ -8,6 +8,7 @@
   "years": null,
   "role": "Main decorating contractor: management, supply and fit",
   "wallcoverings": [],
+  "modest": false,
   "standfirst": "Management, supply and fit of specialist wallcoverings for a Victorian hotel returning to its first vocation.",
   "hero": null,
   "gallery": []

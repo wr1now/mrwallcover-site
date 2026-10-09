@@ -37,6 +37,8 @@ export interface Project {
   featured: boolean;
   /** Set when this entry is a full case study rendered from src/content/case-studies. */
   caseStudy?: boolean;
+  /** Preview-size photographs: displayed small and never upscaled. */
+  modest?: boolean;
   credits?: Record<string, string>;
 }
 

@@ -11,6 +11,7 @@
     "Vescom – bespoke wallcovering made for the hotel",
     "Vescom Alcantara (selected suites)"
   ],
+  "modest": false,
   "standfirst": "Bespoke Vescom wallcoverings for the guest rooms of London's most storied address.",
   "hero": "owo-official-classic",
   "gallery": [

@@ -572,15 +572,17 @@
     bottom: 0;
     z-index: 35;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     background: var(--color-ivory);
     border-top: 1px solid var(--color-line);
     padding-bottom: env(safe-area-inset-bottom);
   }
 
   .dock a {
-    min-height: 52px;
+    min-height: 56px;
     display: flex;
+    flex-direction: column;
+    gap: 2px;
     align-items: center;
     justify-content: center;
     text-decoration: none;
@@ -718,4 +720,119 @@
 .case-study ol li {
   font-size: 0.9rem;
   overflow-wrap: anywhere;
+}
+
+@layer components {
+/* ---- Mobile-first hardening (tap targets, overflow, readable long-form) ---- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  overflow-x: clip;
+}
+video {
+  max-width: 100%;
+  height: auto;
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+}
+.menu-toggle {
+  gap: 0.55rem;
+  padding-inline: 0.5rem;
+}
+.burger {
+  display: inline-grid;
+  gap: 4px;
+  width: 20px;
+}
+.burger span {
+  display: block;
+  height: 2px;
+  background: currentColor;
+}
+.mobile-nav[open] .burger {
+  display: none;
+}
+.dock-primary {
+  background: var(--color-ink);
+  color: var(--color-ivory) !important;
+  font-weight: 500;
+}
+.dock a span {
+  font-size: 0.82rem;
+  line-height: 1.1;
+}
+.dock-primary span {
+  font-size: 0.95rem;
+}
+/* Lists of links: every link is a comfortable tap target */
+.site-footer li a,
+.site-footer p > a,
+nav[aria-label="Related pages"] li a,
+.card-link h3 a,
+article h3 a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.field input[type="file"] {
+  min-height: 48px;
+  padding: 0.6rem 0;
+}
+/* Case studies */
+.case-study {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+.case-study table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
+.case-study img {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .case-study h2 {
+    margin-top: 2rem;
+  }
+  .caption {
+    font-size: 0.85rem;
+  }
+  .btn {
+    min-height: 48px;
+  }
+  .page-head .btn {
+    flex: 1 1 auto;
+  }
+}
+}
+@layer components {
+  aside a[href^="tel:"],
+  aside a[href^="mailto:"],
+  aside a[href*="wa.me"],
+  aside a[href*="instagram"] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .site-footer li a,
+  .crumbs a,
+  .card-link h3 a,
+  article h3 a {
+    min-width: 44px;
+  }
+}
+@layer components {
+  .modest-hero {
+    max-width: 360px;
+  }
+  .modest-gallery figure {
+    max-width: 360px;
+  }
 }

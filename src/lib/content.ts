@@ -55,6 +55,7 @@ interface CaseStudyData {
   standfirst: string;
   hero: string | null;
   gallery: { id: string; credit: string | null }[];
+  modest?: boolean;
 }
 
 type CaseStudyModule = { frontmatter: CaseStudyData; Content: any };
@@ -111,6 +112,7 @@ function fromCaseStudy(cs: CaseStudyData, base?: Project): Project {
     caption: null,
     featured: base?.featured ?? true,
     caseStudy: true,
+    modest: Boolean(cs.modest),
     credits: Object.fromEntries(cs.gallery.filter((g) => g.credit).map((g) => [g.id, g.credit as string])),
   };
 }

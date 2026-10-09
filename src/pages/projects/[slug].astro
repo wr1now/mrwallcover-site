@@ -96,8 +96,8 @@ const schemaNodes = study
     {StudyContent ? (
       <div class="pb-12">
         {project.imageId && (
-          <figure class="m-0 mb-10">
-            <Picture id={project.imageId} loading="eager" fetchpriority="high" sizes="(min-width: 768px) 72rem, 100vw" />
+          <figure class:list={['m-0 mb-10', project.modest && 'modest-hero']}>
+            <Picture id={project.imageId} loading="eager" fetchpriority="high" thumbOnly={project.modest} sizes={project.modest ? '(min-width: 480px) 360px, 100vw' : '(min-width: 768px) 72rem, 100vw'} />
             {project.credits?.[project.imageId] && <figcaption class="caption">{project.credits[project.imageId]}</figcaption>}
           </figure>
         )}
@@ -107,10 +107,10 @@ const schemaNodes = study
         {project.gallery.length > 1 && (
           <section class="mt-14" aria-labelledby="gallery-heading">
             <h2 id="gallery-heading" class="m-0 text-[clamp(2rem,3vw,2.7rem)]">Photographs</h2>
-            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <div class:list={['mt-6 grid gap-4', project.modest ? 'modest-gallery sm:grid-cols-2 md:grid-cols-3' : 'sm:grid-cols-2']}>
               {project.gallery.filter((id) => id !== project.imageId).map((id) => (
                 <figure class="m-0">
-                  <Picture id={id} sizes="(min-width: 768px) 36rem, 100vw" />
+                  <Picture id={id} thumbOnly={project.modest} sizes={project.modest ? '(min-width: 768px) 360px, (min-width: 640px) 50vw, 100vw' : '(min-width: 768px) 36rem, 100vw'} />
                   {project.credits?.[id] && <figcaption class="caption">{project.credits[id]}</figcaption>}
                 </figure>
               ))}
