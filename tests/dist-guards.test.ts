@@ -154,6 +154,9 @@ test('the fact-sheet sentence appears identically in the footer, the JSON-LD and
   assert.equal(person.name, facts.founder.name);
   assert.equal(person.url, 'https://www.mrwallcover.com/about/');
   assert.match(about, /about\/#dorin/);
+  // The Person @id fragment must resolve: the About page element that introduces Dorin carries id="dorin" and holds the H1.
+  assert.match(about, /<header[^>]*\sid="dorin"[^>]*>[\s\S]*?<h1>/, 'About page: the founder header must carry id="dorin"');
+  assert.equal(about.match(/\sid="dorin"/g)?.length, 1, 'id="dorin" must appear exactly once');
   const llms = await readFile('dist/llms.txt', 'utf8');
   assert.ok(llms.split('\n').includes(`> ${sentence}`), 'llms.txt');
   assert.doesNotMatch(llms, /Lanesborough|Moxy/);
