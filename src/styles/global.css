@@ -534,7 +534,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(22rem, 0.8fr);
     align-items: stretch;
-    min-height: calc(100svh - 4.25rem);
+    min-height: calc(100svh - var(--header-height) - var(--header-inset-top));
     background: var(--color-ink);
   }
 

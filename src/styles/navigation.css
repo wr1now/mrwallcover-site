@@ -241,9 +241,14 @@
     font-size: 0.95rem;
   }
 
+  /* The dock clips to its radius, so the focus ring sits inside every cell. */
+  .dock a:focus-visible,
+  .dock .dock-phone:focus-visible {
+    outline-offset: -4px;
+  }
+
   .dock a.dock-primary:focus-visible {
     outline-color: var(--color-gold);
-    outline-offset: -4px;
   }
 
   /* Hidden while the mobile menu is open and while a text field has focus (keyboard likely up). */

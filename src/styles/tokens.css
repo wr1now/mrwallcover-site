@@ -54,9 +54,9 @@
   --glass-smoked-border: rgba(255, 255, 255, 0.22);
   --glass-smoked-highlight: rgba(255, 255, 255, 0.22);
   --glass-smoked-shadow: 0 12px 32px rgba(20, 18, 16, 0.28);
-  /* Clear: small controls only, over light backgrounds only. 12px blur, below the 16px floor the brief sets for champagne and smoked; recorded in ART_DIRECTION.md. */
+  /* Clear: small controls only, over light backgrounds only. 16px blur, the floor the brief sets for every glass surface. */
   --glass-clear-alpha: 0.4;
-  --glass-clear-blur: 12px;
+  --glass-clear-blur: 16px;
   --glass-clear-saturate: 1.05;
   --glass-clear-border-alpha: 0.12;
   --glass-clear-border: rgba(20, 18, 16, 0.12);

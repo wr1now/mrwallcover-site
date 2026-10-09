@@ -31,11 +31,9 @@ test('the six palette tokens from contract section 6 are the ones in tokens.css'
   assert.ok(ms('dur-control') >= 150 && ms('dur-control') <= 250);
   assert.ok(ms('dur-panel') >= 300 && ms('dur-panel') <= 500);
   assert.ok(ms('dur-media') >= 500 && ms('dur-media') <= 800);
-  // Blur: champagne and smoked within 16 to 24px; clear is a small-control recipe at 12px (recorded in ART_DIRECTION.md).
+  // Blur: every variant within the brief's 16 to 24px.
   const px = (name: string) => Number(tokens.get(name)!.replace('px', ''));
-  assert.ok(px('glass-champagne-blur') >= 16 && px('glass-champagne-blur') <= 24);
-  assert.ok(px('glass-smoked-blur') >= 16 && px('glass-smoked-blur') <= 24);
-  assert.ok(px('glass-clear-blur') >= 12 && px('glass-clear-blur') <= 16);
+  for (const name of ['glass-champagne-blur', 'glass-smoked-blur', 'glass-clear-blur']) assert.ok(px(name) >= 16 && px(name) <= 24, name);
 });
 
 test('every used text/background pair meets WCAG 2.2 AA, worst-case backdrop included', () => {

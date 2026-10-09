@@ -57,6 +57,10 @@ test('the three Glass variants ship with the @supports fallback, the reduced-eff
   assert.match(css, /html:not\(\.js-nav\) \.menu-toggle\{display:none\}/);
   assert.match(css, /\.js-nav \.mobile-menu:not\(\.is-open\)\{display:none\}/);
   assert.doesNotMatch(css, /\.js \.mobile-menu/);
+  // Eyebrows on glass keep the measured colours even inside .on-dark (whose gold eyebrow rule has the same specificity as a plain .glass .eyebrow).
+  assert.match(css, /\.on-dark \.glass \.eyebrow[^{]*\{color:var\(--color-stone\)\}/);
+  assert.match(css, /\.on-dark \.glass-smoked \.eyebrow[^{]*\{color:var\(--color-ivory-soft\)\}/);
+  assert.match(css, /\.hero\{[^}]*min-height:calc\(100svh - var\(--header-height\) - var\(--header-inset-top\)\)/, 'desktop hero height follows the header tokens');
 });
 
 test('every page: the header is one Glass element with a real disclosure toggle, the dock has at most four actions, the toggle is applied before first paint', async () => {

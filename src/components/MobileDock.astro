@@ -36,7 +36,11 @@ import WhatsAppLink from './WhatsAppLink.astro';
   document.addEventListener('focusin', (event) => {
     document.body.classList.toggle('field-focus', isTextField(event.target));
   });
-  document.addEventListener('focusout', () => {
-    document.body.classList.remove('field-focus');
+  // Moving between two fields fires focusout then focusin; only remove the class when focus is really leaving a field.
+  document.addEventListener('focusout', (event) => {
+    if (isTextField(event.relatedTarget)) return;
+    requestAnimationFrame(() => {
+      if (!isTextField(document.activeElement)) document.body.classList.remove('field-focus');
+    });
   });
 </script>

@@ -74,13 +74,19 @@
     backdrop-filter: none;
   }
 
-  /* Text on glass: eyebrows are stone or ink, never brass or gold (CONTRAST.md). Links keep the surface colour. */
-  .glass .eyebrow {
+  /* Text on glass: eyebrows are stone or ink, never brass or gold (CONTRAST.md), whatever .on-dark says around or on the surface. Links keep the surface colour. */
+  .glass .eyebrow,
+  .on-dark .glass .eyebrow,
+  .glass.on-dark .eyebrow {
     color: var(--color-stone);
   }
 
   .glass-smoked .eyebrow,
-  .glass-smoked .lede {
+  .on-dark .glass-smoked .eyebrow,
+  .glass-smoked.on-dark .eyebrow,
+  .glass-smoked .lede,
+  .on-dark .glass-smoked .lede,
+  .glass-smoked.on-dark .lede {
     color: var(--color-ivory-soft);
   }
 
