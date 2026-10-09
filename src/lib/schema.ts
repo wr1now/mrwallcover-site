@@ -1,4 +1,5 @@
 import { SITE_URL } from '../config';
+import specialismsJson from '../content/specialisms.json';
 import facts from '../data/facts.json';
 import type { FaqItem } from './types';
 
@@ -21,6 +22,33 @@ export const AREAS_SERVED = [
   { '@type': 'AdministrativeArea', name: 'Greater London and the surrounding areas' },
   { '@type': 'Country', name: 'United Kingdom', description: 'Selected projects' },
 ];
+
+/**
+ * The services the business offers, one per built /services/<slug>/ page.
+ * Names, @ids and service types match the Service node each page emits.
+ * No prices: the site publishes none.
+ */
+export function offerCatalogNode() {
+  return {
+    '@type': 'OfferCatalog',
+    name: `${BRAND_NAME} services`,
+    itemListElement: (specialismsJson.items as { slug: string; name: string; serviceType?: string }[]).map((item) => {
+      const url = `${SITE_URL}/services/${item.slug}/`;
+      return {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          '@id': `${url}#service`,
+          name: item.name,
+          // Same fallback as src/pages/services/[slug].astro, so the catalogue and the page agree.
+          serviceType: item.serviceType ?? item.name,
+          url,
+          provider: { '@id': BUSINESS_ID },
+        },
+      };
+    }),
+  };
+}
 
 export function businessNode() {
   return {
@@ -58,6 +86,7 @@ export function businessNode() {
     ],
     /** Only profiles that exist. Add each new one to src/data/facts.json as it goes live. */
     sameAs: facts.profiles.map((profile) => profile.url),
+    hasOfferCatalog: offerCatalogNode(),
     contactPoint: {
       '@type': 'ContactPoint',
       email: PUBLIC_EMAIL,

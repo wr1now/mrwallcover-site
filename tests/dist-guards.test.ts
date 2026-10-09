@@ -223,6 +223,37 @@ test('the fact-sheet sentence appears identically in the footer, the JSON-LD and
   assert.doesNotMatch(llms, /Lanesborough|Moxy/);
 });
 
+test('the business offers exactly the built service pages, by name and URL, with no price', async () => {
+  const specialisms = (JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as { items: { slug: string; name: string }[] }).items;
+  const home = await readFile('dist/index.html', 'utf8');
+  const graph = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]) as { '@graph': Record<string, any>[] };
+  const business = graph['@graph'].find((node) => node['@id'] === 'https://www.mrwallcover.com/#business')!;
+  const catalog = business.hasOfferCatalog;
+  assert.equal(catalog?.['@type'], 'OfferCatalog');
+  assert.equal(catalog.itemListElement.length, specialisms.length);
+  for (const [index, offer] of (catalog.itemListElement as Record<string, any>[]).entries()) {
+    const expected = specialisms[index];
+    assert.equal(offer['@type'], 'Offer');
+    const service = offer.itemOffered;
+    assert.equal(service['@type'], 'Service');
+    assert.equal(service.name, expected.name);
+    assert.equal(service.url, `https://www.mrwallcover.com/services/${expected.slug}/`);
+    assert.equal(service['@id'], `${service.url}#service`);
+    assert.deepEqual(service.provider, { '@id': 'https://www.mrwallcover.com/#business' });
+    const page = await readFile(`dist/services/${expected.slug}/index.html`, 'utf8');
+    assert.doesNotMatch(page, /http-equiv="refresh"/, `${service.url} must be a real page`);
+    const pageGraph = JSON.parse(page.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]) as { '@graph': Record<string, any>[] };
+    const onPage = pageGraph['@graph'].find((node) => node['@id'] === service['@id']);
+    assert.ok(onPage, `${service.url} must emit the Service node the catalogue points at`);
+    assert.equal(onPage.name, service.name);
+    assert.equal(onPage.serviceType, service.serviceType);
+  }
+  assert.doesNotMatch(JSON.stringify(catalog), /price|Price|offers"|availability|eligibleRegion/, 'the catalogue carries no price or stock claims');
+  // The same catalogue is on every indexable page, because the business node is.
+  const about = await readFile('dist/about/index.html', 'utf8');
+  assert.match(about, /"hasOfferCatalog":\{"@type":"OfferCatalog"/);
+});
+
 test('each case-study Article carries its frontmatter dates and Dorin as author; the sitemap lastmod matches', async () => {
   const sitemap = await readFile('dist/sitemap-0.xml', 'utf8');
   const entries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => m[1]);
