@@ -48,7 +48,7 @@
       ],
       "materialKey": "Grasscloth and natural weaves",
       "projects": [],
-      "imageId": "browns-hotel-mayfair-08",
+      "imageId": null,
       "faq": [
         {
           "id": "gc-seams",
@@ -393,7 +393,7 @@
         "pimlico-st-georges-square",
         "inverness-terrace"
       ],
-      "imageId": "pimlico-st-georges-square-exterior-01",
+      "imageId": "pimlico-st-georges-square-exterior-11",
       "faq": [
         {
           "id": "ex-scaffold",

@@ -15,7 +15,7 @@
   "metaDescription": "A bespoke Calico Wallpaper landscape mural hung overnight in a luxury fashion house's airside store at Heathrow Terminal 4, in a live terminal.",
   "group": "design-weeks",
   "standfirst": "A painted landscape wraps the walls of a luxury fashion house's store, hung overnight while the terminal kept running.",
-  "hero": "heathrow-03",
+  "hero": "heathrow-06",
   "gallery": [
     {
       "id": "heathrow-03",
