@@ -1,34 +1,27 @@
 /**
  * Public site configuration.
- * Change the email address here. It is the address shown on the site,
- * used as the form fallback, and published in JSON-LD.
+ * Business facts (brand, founder, email, coverage, profiles, the one-line
+ * description) live in src/data/facts.json and are re-exported here.
+ *
+ * The phone number is not in the repository. It is read from the SITE_PHONE
+ * environment variable at build time; see src/lib/phone.ts.
  *
  * Award name will be added later. Until then the public line is only
  * "Award-winning", with the year. Do not invent a title.
  */
+import facts from './data/facts.json';
 
 export const SITE_URL = 'https://www.mrwallcover.com';
-export const BRAND_NAME = 'Mr Wallcover';
-export const FOUNDER_NAME = 'Dorin Burcus';
-export const PUBLIC_EMAIL = 'info@mrwallcover.com';
-export const PHONE_DISPLAY = '07450 843246';
-export const PHONE_TEL = '+447450843246';
-export const WHATSAPP_URL =
-  'https://wa.me/447450843246?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20wallcovering.';
-/**
- * The phone number is never printed in the HTML. It is shipped reversed and
- * base64-encoded, and revealed on click by the script in Base.astro.
- * WhatsApp links are filled in the same way after the page loads.
- */
-export const CONTACT_PAYLOAD = btoa(
-  JSON.stringify({ t: PHONE_TEL, d: PHONE_DISPLAY, w: WHATSAPP_URL }).split('').reverse().join(''),
-);
+export const BRAND_NAME: string = facts.brand;
+export const FOUNDER_NAME: string = facts.founder.name;
+export const PUBLIC_EMAIL: string = facts.email;
 
 /** Coverage line used across the site and in schema descriptions. */
-export const COVERAGE = 'London and the surrounding areas; UK-wide for selected projects';
+export const COVERAGE: string = facts.coverage;
 
-export const INSTAGRAM_URL = 'https://www.instagram.com/mrwallcover/';
-export const INSTAGRAM_HANDLE = '@mrwallcover';
+const instagram = facts.profiles.find((profile) => profile.name === 'Instagram');
+export const INSTAGRAM_URL: string = instagram?.url ?? '';
+export const INSTAGRAM_HANDLE: string = instagram?.handle ?? '';
 
 export const AWARD = {
   label: 'Award-winning',

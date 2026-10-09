@@ -18,7 +18,9 @@
   "group": null,
   "standfirst": "Wallcoverings in 2018 at the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair, including a Phillip Jeffries schedule.",
   "hero": null,
-  "gallery": []
+  "gallery": [],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 

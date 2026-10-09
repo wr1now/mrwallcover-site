@@ -1,5 +1,6 @@
 ---
 import PhoneReveal from './PhoneReveal.astro';
+import WhatsAppLink from './WhatsAppLink.astro';
 ---
 
 <nav class="dock lg:hidden" aria-label="Contact shortcuts">
@@ -9,8 +10,8 @@ import PhoneReveal from './PhoneReveal.astro';
   <a href="/projects/">
     <span>Projects</span>
   </a>
-  <a href="/contact/" data-wa>
+  <WhatsAppLink>
     <span>WhatsApp</span>
-  </a>
+  </WhatsAppLink>
   <PhoneReveal class="dock-phone" label="Phone" />
 </nav>

@@ -14,7 +14,28 @@ async function filesUnder(dir: string): Promise<string[]> {
   return out;
 }
 
-const forbidden = [/CLAUDI/i, /\bLandmark\b/i, /\bSamantha\b/, /third[\s-]party/i, /subcontract/i, /Threadneedle/i, /Mulberry/i, /\bAethos\b/i, /95 St George/i, /26 Inverness/i, /SW1V 3QW/, /W2 3JA/];
+/**
+ * Brand boundaries and privacy. The two private residential buildings are
+ * named by street only; any house number before those street names, and any
+ * full postcode in their districts, is banned by pattern so that the real
+ * number and postcode never appear in this file either.
+ */
+const forbidden = [
+  /CLAUDI/i,
+  /\bLandmark\b/i,
+  /\bSamantha\b/,
+  /third[\s-]party/i,
+  /subcontract/i,
+  /Threadneedle/i,
+  /Mulberry/i,
+  /\bAethos\b/i,
+  /\b\d{1,4}[a-z]?\s+St\.?\s?George'?s?\s+Square/i,
+  /\b\d{1,4}[a-z]?\s+Inverness\s+Terrace/i,
+  /\bSW1V\s?\d[A-Z]{2}\b/,
+  /\bW2\s?\d[A-Z]{2}\b/,
+  // No phone number anywhere in public source. Tests use Ofcom's drama range 07700 900000.
+  /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}/,
+];
 
 test('public copy keeps the brand boundaries', async () => {
   const roots = ['src/content', 'src/pages', 'src/components', 'src/layouts', 'src/lib'];
@@ -40,12 +61,74 @@ test('Search Console token and the unnamed award stay in config', async () => {
   const config = await readFile('src/config.ts', 'utf8');
   assert.match(config, /98zhpiyda4qDA6fYcKJ-zC6pItC6-LZKqqEugO5-fKo/);
   assert.match(config, /label: 'Award-winning'/);
-  assert.match(config, /info@mrwallcover.com/);
+  assert.match(config, /from '\.\/data\/facts\.json'/);
+});
+
+const REQUIRED_OPENING = 'Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus';
+
+test('the fact sheet holds one description sentence of 160 characters or fewer, and the footer, schema and llms.txt read it', async () => {
+  const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as {
+    brand: string;
+    description: string;
+    email: string;
+    founder: { name: string; path: string; fragment: string };
+    profiles: { name: string; url: string }[];
+  };
+  assert.equal(facts.brand, 'Mr Wallcover');
+  assert.equal(facts.email, 'info@mrwallcover.com');
+  assert.equal(facts.founder.name, 'Dorin Burcus');
+  assert.equal(facts.founder.path, '/about/');
+  assert.equal(facts.founder.fragment, 'dorin');
+  assert.ok(facts.description.startsWith(REQUIRED_OPENING), 'description must start with the fixed opening');
+  assert.ok(facts.description.length <= 160, `description is ${facts.description.length} characters`);
+  assert.doesNotMatch(facts.description, /["'&<>]/, 'keep the sentence free of characters that HTML or JSON would escape');
+  assert.ok(facts.profiles.some((profile) => profile.url === 'https://www.instagram.com/mrwallcover/'));
+  const blob = JSON.stringify(facts);
+  assert.doesNotMatch(blob, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|Ltd|Limited|Companies House|award/i);
+  for (const file of ['src/components/Footer.astro', 'src/lib/schema.ts', 'src/pages/llms.txt.ts']) {
+    const text = await readFile(file, 'utf8');
+    assert.match(text, /from '\.\.\/data\/facts\.json'/, `${file} must import the fact sheet`);
+    assert.match(text, /facts\.description/, `${file} must print facts.description`);
+  }
 });
 
 test('draft case studies are filtered out before they are built', async () => {
   const content = await readFile('src/lib/content.ts', 'utf8');
   assert.match(content, /!\s*mod\.frontmatter\.draft/);
+});
+
+test('the six Workstream 4 scaffolds exist as drafts on the same mechanism, with TODO(Dorin) markers and no invented figures', async () => {
+  const content = await readFile('src/lib/content.ts', 'utf8');
+  assert.match(content, /editorialModules\)\.filter\(\(mod\) => !mod\.frontmatter\.draft\)/);
+  const names = (await readdir('src/content/pages')).filter((entry) => entry.endsWith('.md')).sort();
+  const expected = ['calico-wallpaper-installer.md', 'cost-guide-2026.md', 'house-of-hackney-wallpaper-installer.md', 'reviews.md', 'timorous-beasties-installer.md', 'trade.md'];
+  for (const name of expected) assert.ok(names.includes(name), name);
+  for (const name of names) {
+    const text = await readFile(`src/content/pages/${name}`, 'utf8');
+    const fm = JSON.parse(text.match(/^---\n([\s\S]*?)\n---\n/)![1]) as { draft?: boolean; path: string; title: string };
+    assert.match(fm.path, /^\/[a-z0-9-]+(\/[a-z0-9-]+)*\/$/, `${name} path`);
+    if (fm.draft) {
+      assert.match(text, /TODO\(Dorin\)/, `${name} draft needs TODO(Dorin) markers`);
+      assert.match(text, /^DRAFT\. Not built/m, `${name} must say it is a draft`);
+    }
+    // No pound figures, star ratings or maker endorsement wording may be typed into these pages.
+    assert.doesNotMatch(text, /£\s?\d|\d\s?(stars?|★)|approved installer[^.]*\b(we are|Mr Wallcover is)\b|recommended by (Calico|House of Hackney|Timorous)/i, `${name} invented claim`);
+  }
+});
+
+test('every case study carries ISO published and updated dates as data, and the sitemap never uses the build time', async () => {
+  const iso = /^\d{4}-\d{2}-\d{2}$/;
+  for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
+    const text = await readFile(`src/content/case-studies/${name}`, 'utf8');
+    const fm = JSON.parse(text.match(/^---\n([\s\S]*?)\n---\n/)![1]) as { published?: string; updated?: string };
+    assert.match(fm.published ?? '', iso, `${name} published`);
+    assert.match(fm.updated ?? '', iso, `${name} updated`);
+    assert.ok((fm.updated as string) >= (fm.published as string), `${name} updated before published`);
+  }
+  const config = await readFile('astro.config.mjs', 'utf8');
+  assert.doesNotMatch(config, /lastmod:\s*new Date/);
+  const schema = await readFile('src/lib/schema.ts', 'utf8');
+  assert.doesNotMatch(schema, /new Date\(/);
 });
 
 test('held hotels stay out of the public content module', async () => {

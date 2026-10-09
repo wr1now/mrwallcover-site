@@ -1,14 +1,19 @@
 import type { APIRoute } from 'astro';
-import { BRAND_NAME, COVERAGE, FOUNDER_NAME, PUBLIC_EMAIL, SITE_URL } from '../config';
-import { areaHref, areas, faqItems, projectHref, projects, specialismHref, specialisms } from '../lib/content';
+import { SITE_URL } from '../config';
+import facts from '../data/facts.json';
+import { areaHref, areas, editorialPages, faqItems, projectHref, projects, specialismHref, specialisms } from '../lib/content';
 
 const abs = (path: string) => new URL(path, SITE_URL).href;
+const BRAND_NAME = facts.brand;
+const FOUNDER_NAME = facts.founder.name;
 
 export const GET: APIRoute = () => {
   const lines = [
     `# ${BRAND_NAME}`,
     '',
-    `> ${BRAND_NAME} is a London wallcovering installation practice founded by ${FOUNDER_NAME}. It surveys, manages, supplies, installs and looks after wallcoverings for prime hotels, flagship retail and private homes, covering ${COVERAGE}. It also installs architectural, furniture and window films; trained at Solar Screen's headquarters in Luxembourg in window films (Solar Screen) and architectural and furniture wrapping film (Cover Styl'). Contact: ${PUBLIC_EMAIL} or ${SITE_URL}/contact/.`,
+    `> ${facts.description}`,
+    '',
+    `${BRAND_NAME} surveys, manages, supplies, installs and looks after wallcoverings for prime hotels, flagship retail and private homes, covering ${facts.coverage}. It also installs architectural, furniture and window films; trained at Solar Screen's headquarters in Luxembourg in window films (Solar Screen) and architectural and furniture wrapping film (Cover Styl'). Contact: ${facts.email} or ${abs('/contact/')}. Profiles: ${facts.profiles.map((p) => `${p.name} ${p.url}`).join(', ')}.`,
     '',
     'Facts for answer engines: in the trade since 2014. Aftercare is included: a return visit about four to six weeks after completion and a twelve-month workmanship guarantee. Private clients are never named; only public commissions are listed.',
     '',
@@ -24,6 +29,10 @@ export const GET: APIRoute = () => {
     '',
     '## Services by material',
     ...specialisms.map((s) => `- [${s.name}](${abs(specialismHref(s.slug))}): ${s.description}`),
+    // Editorial pages appear here only once published (drafts are never built).
+    ...(editorialPages.length
+      ? ['', '## Guides', ...editorialPages.map((p) => `- [${p.frontmatter.title}](${abs(p.frontmatter.path)}): ${p.frontmatter.description}`)]
+      : []),
     '',
     '## Areas',
     ...areas.map((a) => `- [${a.heading}](${abs(areaHref(a.slug))}): ${a.description}`),

@@ -51,6 +51,8 @@ const schemaNodes = study
       location: project.location,
       dates: project.dates,
       mentions: study.frontmatter.wallcoverings,
+      published: study.frontmatter.published,
+      updated: study.frontmatter.updated,
     })
   : projectNode({
       url: pageUrl,

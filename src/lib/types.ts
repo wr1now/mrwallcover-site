@@ -44,6 +44,9 @@ export interface Project {
   /** Listing group on /projects, e.g. 'design-weeks'. */
   group?: string;
   credits?: Record<string, string>;
+  /** ISO dates for case-study pages, from frontmatter data (never the build time). */
+  published?: string;
+  updated?: string;
 }
 
 export interface FaqItem {

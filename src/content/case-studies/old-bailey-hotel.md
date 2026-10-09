@@ -95,7 +95,9 @@
       "id": "old-bailey-19",
       "credit": null
     }
-  ]
+  ],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 

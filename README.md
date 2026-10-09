@@ -38,11 +38,18 @@ Wording lives in `src/content/`. The pages read those files. You do not need to 
 | `src/content/privacy.json` | Privacy notice |
 | `src/content/alts.json` | Image descriptions |
 | `src/content/team.json` | Future team page. Not in the menu yet |
-| `src/config.ts` | Email address, form, analytics, award line |
+| `src/data/facts.json` | The fact sheet: brand, founder, email, coverage, profiles and the one description sentence (160 characters or fewer) |
+| `src/config.ts` | Form, analytics, award line. Re-exports the fact sheet |
 
-The public email address is `info@mrwallcover.com`, set once in `src/config.ts`. The footer, the form and the structured data all use that constant.
+The public email address is `info@mrwallcover.com`, set once in `src/data/facts.json`. The footer, the form, the structured data and `llms.txt` all read that file. Paste its description sentence unchanged into every outside profile.
+
+The phone number is not in the repository. See `SITE_PHONE` below.
 
 The award line on the site is “Award-winning (2021)”. The award’s name will be added later. See the comment in `src/config.ts`. Do not invent a title.
+
+Case studies live in `src/content/case-studies/`. Each carries `published` and `updated` dates in its frontmatter; they feed the Article structured data and the sitemap. After editing a case study, run `node scripts/stamp-case-study-dates.mjs` so the `updated` date follows the change. The build refuses a case study without both dates and never substitutes the build time.
+
+Editorial pages (maker installer pages, the trade page, the cost guide, the reviews page) live in `src/content/pages/`. A page with `"draft": true` stays in the repository for review and is never built, never in the sitemap or `llms.txt`, and never linked; `npm run check:dist` proves it. Each draft carries `TODO(Dorin)` markers where a figure, a maker's permission or a claim is still needed. Remove the draft flag only when every marker is resolved.
 
 Photographs are in `public/media/`. Hotel photographs that are not our own are used small, as project cards. Brown’s Hotel photographs and films were taken on site and are shown in full on that project.
 
@@ -64,6 +71,7 @@ Then build the site with `PUBLIC_LEAD_API` set to that server’s origin, for ex
 | `PUBLIC_FORM_ENDPOINT` | Overrides the FormSubmit alias |
 | `PUBLIC_LEAD_API` | Origin of the private store. Empty on the live build |
 | `PUBLIC_ANALYTICS_SRC` | Optional cookie-free analytics script. Empty means no script and no cookies |
+| `SITE_PHONE` | Build-time only. UK mobile or international form. Never stored in the repository. Set it as the GitHub Actions secret `SITE_PHONE` to show the click-to-reveal phone and WhatsApp controls; leave it unset and those controls do not render at all |
 
 Do not put lead files, room photographs or the staff token in the repository.
 

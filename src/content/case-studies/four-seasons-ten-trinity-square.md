@@ -17,7 +17,9 @@
   "group": null,
   "standfirst": "Almost six years inside one of the City's great Beaux-Arts buildings, dressing its walls with tailored precision.",
   "hero": null,
-  "gallery": []
+  "gallery": [],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 
