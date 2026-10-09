@@ -1,4 +1,5 @@
 import { SITE_URL } from '../config';
+import areasJson from '../content/areas.json';
 import specialismsJson from '../content/specialisms.json';
 import facts from '../data/facts.json';
 import type { FaqItem } from './types';
@@ -13,15 +14,39 @@ export const FOUNDER_ID = `${SITE_URL}${facts.founder.path}#${facts.founder.frag
 export const FOUNDER_URL = `${SITE_URL}${facts.founder.path}`;
 
 /**
- * Coverage: London and the surrounding areas; UK-wide for selected projects.
+ * Coverage, matching what the site shows: the fact-sheet line
+ * ("London and the surrounding areas; UK-wide for selected projects") and
+ * one Place per area page in src/content/areas.json. No invented offices.
  * The phone number is deliberately not published in schema (Dorin's request:
  * no openly visible number). Add telephone back here if that changes.
  */
 export const AREAS_SERVED = [
-  { '@type': 'City', name: 'London' },
+  { '@type': 'City', name: facts.place },
   { '@type': 'AdministrativeArea', name: 'Greater London and the surrounding areas' },
   { '@type': 'Country', name: 'United Kingdom', description: 'Selected projects' },
+  ...(areasJson.items as { slug: string; name: string }[]).map((area) => ({
+    '@type': 'Place',
+    name: area.name.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase()),
+    url: `${SITE_URL}/areas/${area.slug}/`,
+  })),
 ];
+
+/**
+ * An ImageObject for a photograph the site shows, carrying the credit the
+ * page prints beside it. Credits are written "Photography: House of Hackney"
+ * or "Image: Raffles London at The OWO (official)"; the name after the colon
+ * is the credit holder and the copyright notice. A plain caption such as
+ * "Before" is not a credit and adds nothing. Our own photographs carry no
+ * credit line on the page, so none is invented here.
+ */
+export function imageObject(url: string, credit?: string | null) {
+  const holder = credit?.match(/^(?:Photography|Photograph|Photo|Image|Images)\s*:\s*(.+?)\s*(?:\(official\))?$/i)?.[1];
+  return {
+    '@type': 'ImageObject',
+    url,
+    ...(holder ? { creditText: holder, copyrightNotice: holder } : {}),
+  };
+}
 
 /**
  * The services the business offers, one per built /services/<slug>/ page.
@@ -167,7 +192,7 @@ export function websiteNode() {
   };
 }
 
-export function webPageNode(opts: { url: string; name: string; description: string; image?: string; type?: string }) {
+export function webPageNode(opts: { url: string; name: string; description: string; image?: string; imageCredit?: string | null; type?: string }) {
   return {
     '@type': opts.type ?? 'WebPage',
     '@id': `${opts.url}#webpage`,
@@ -177,7 +202,7 @@ export function webPageNode(opts: { url: string; name: string; description: stri
     inLanguage: 'en-GB',
     isPartOf: { '@id': WEBSITE_ID },
     about: { '@id': BUSINESS_ID },
-    ...(opts.image ? { primaryImageOfPage: { '@type': 'ImageObject', url: opts.image } } : {}),
+    ...(opts.image ? { primaryImageOfPage: imageObject(opts.image, opts.imageCredit) } : {}),
   };
 }
 
@@ -256,7 +281,8 @@ export function caseStudyArticleNode(opts: {
   url: string;
   headline: string;
   description: string;
-  images: string[];
+  /** Absolute image URLs with the credit printed beside each on the page, if any. */
+  images: { url: string; credit?: string | null }[];
   location: string;
   dates?: string | null;
   mentions?: string[];
@@ -280,7 +306,7 @@ export function caseStudyArticleNode(opts: {
     dateModified: opts.updated,
     author: { '@type': 'Person', '@id': FOUNDER_ID, name: facts.founder.name, url: FOUNDER_URL },
     publisher: { '@id': BUSINESS_ID },
-    ...(opts.images.length ? { image: opts.images } : {}),
+    ...(opts.images.length ? { image: opts.images.map((img) => imageObject(img.url, img.credit)) } : {}),
     about: {
       '@type': 'CreativeWork',
       '@id': `${opts.url}#project`,

@@ -38,7 +38,7 @@ const crumbs = [
 const films = project.videos.map((id) => videoById(id));
 const ogImage = project.imagePolicy === 'none' ? undefined : ogImageFor(project.imageId);
 const pageUrl = new URL(projectHref(project.slug), SITE_URL).href;
-const galleryAbs = project.gallery.map((id) => new URL(media(id).jpg, SITE_URL).href);
+const galleryAbs = project.gallery.map((id) => ({ url: new URL(media(id).jpg, SITE_URL).href, credit: project.credits?.[id] ?? null }));
 const relatedAreas = areas.filter((a) => a.projects.some((slug) => (projectAliases[slug] ?? slug) === project.slug));
 const relatedServices = specialisms.filter((s) => s.projects.some((slug) => (projectAliases[slug] ?? slug) === project.slug));
 const otherStudies = projects.filter((p) => p.caseStudy && p.slug !== project.slug);
@@ -82,6 +82,7 @@ const schemaNodes = study
   path={projectHref(project.slug)}
   image={ogImage}
   imageAlt={project.imageId ? media(project.imageId).alt : undefined}
+  imageCredit={project.imageId ? project.credits?.[project.imageId] : undefined}
   ogType="article"
   extraSchema={[
     schemaNodes,

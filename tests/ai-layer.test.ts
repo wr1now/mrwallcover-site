@@ -356,3 +356,83 @@ test('/feed.xml is Atom with exactly the published guides and case studies, thei
   }
   assert.match(await readFile('dist/llms.txt', 'utf8'), /\(https:\/\/www\.mrwallcover\.com\/feed\.xml\)/);
 });
+
+test('schema audit: business coverage matches the area pages, Person present, Service on service pages, Article on guides and case studies, FAQPage only with visible questions, BreadcrumbList on every non-home page, credited ImageObjects, no SearchAction, no ratings, reviews, offers or prices', async () => {
+  type Node = Record<string, any>;
+  const graphOf = (html: string): Node[] => JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1])['@graph'];
+  const areas = (JSON.parse(await readFile('src/content/areas.json', 'utf8')) as { items: { slug: string; name: string }[] }).items;
+  const specialisms = (JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as { items: { slug: string }[] }).items;
+  const credits = new Map<string, string>();
+  const drafts = new Set<string>();
+  for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
+    const fm = JSON.parse((await readFile(`src/content/case-studies/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { slug: string; draft?: boolean; gallery: { id: string; credit: string | null }[] };
+    if (fm.draft) drafts.add(fm.slug);
+    else for (const item of fm.gallery) if (item.credit && /^(Photography|Image):/.test(item.credit)) credits.set(item.id, item.credit);
+  }
+  assert.ok(credits.size >= 10, 'credited photographs exist in the published case studies');
+  const problems: string[] = [];
+  let creditedImages = 0;
+  for (const page of await publishedPages()) {
+    const graph = graphOf(page.html);
+    const types = graph.map((node) => (Array.isArray(node['@type']) ? node['@type'].join('+') : node['@type']));
+    const serialised = JSON.stringify(graph);
+    for (const banned of ['aggregateRating', 'reviewRating', '"review"', '"reviews"', '"offers"', 'priceRange', '"price"', 'priceCurrency', 'SearchAction', 'potentialAction', 'telephone', '"award"']) {
+      if (serialised.includes(banned)) problems.push(`${page.pathname}: schema contains ${banned}`);
+    }
+    const business = graph.find((node) => node['@id'] === `${SITE}/#business`);
+    if (!business) problems.push(`${page.pathname}: no business node`);
+    else {
+      const served = (business.areaServed as Node[]).map((area) => area.name);
+      if (!served.includes('London')) problems.push(`${page.pathname}: areaServed lacks London`);
+      for (const area of areas) {
+        const name = area.name.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase());
+        if (!served.includes(name)) problems.push(`${page.pathname}: areaServed lacks ${name}`);
+      }
+      if (served.length !== areas.length + 3) problems.push(`${page.pathname}: areaServed has ${served.length} entries, expected ${areas.length + 3}`);
+    }
+    if (!graph.some((node) => node['@type'] === 'Person' && node['@id'] === `${SITE}/about/#dorin`)) problems.push(`${page.pathname}: no Person node`);
+    const website = graph.find((node) => node['@type'] === 'WebSite');
+    if (!website || website['@id'] !== `${SITE}/#website`) problems.push(`${page.pathname}: no WebSite node`);
+    if (page.pathname !== '/') {
+      const crumbs = graph.find((node) => node['@type'] === 'BreadcrumbList');
+      if (!crumbs) problems.push(`${page.pathname}: no BreadcrumbList`);
+      else {
+        const last = crumbs.itemListElement.at(-1);
+        if (last.item !== `${SITE}${page.pathname}`) problems.push(`${page.pathname}: breadcrumb ends at ${last.item}`);
+        if (crumbs.itemListElement[0].item !== `${SITE}/`) problems.push(`${page.pathname}: breadcrumb does not start at home`);
+      }
+    }
+    const faqVisible = /<details id="[a-z-]+">|<section class="guide-faq"/.test(page.html);
+    if (types.includes('FAQPage') !== faqVisible) problems.push(`${page.pathname}: FAQPage ${types.includes('FAQPage') ? 'without' : 'missing despite'} visible questions`);
+    if (/^\/services\/[a-z-]+\/$/.test(page.pathname)) {
+      const service = graph.find((node) => node['@type'] === 'Service' && node['@id'] === `${SITE}${page.pathname}#service`);
+      if (!service) problems.push(`${page.pathname}: no Service node with the page @id`);
+    }
+    if (/^\/(advice\/(?!quantities\/)[a-z-]+|projects\/[a-z0-9-]+)\/$/.test(page.pathname)) {
+      const article = graph.find((node) => node['@type'] === 'Article');
+      if (!article) problems.push(`${page.pathname}: no Article`);
+      else if (article.author?.['@id'] !== `${SITE}/about/#dorin`) problems.push(`${page.pathname}: Article author is not the founder`);
+    }
+    // Every ImageObject whose photograph carries a printed credit names the credit holder.
+    for (const match of serialised.matchAll(/\{"@type":"ImageObject","url":"https:\/\/www\.mrwallcover\.com\/media\/img\/([a-z0-9-]+)\.jpg"([^}]*)\}/g)) {
+      const credit = credits.get(match[1]);
+      if (!credit) continue;
+      creditedImages += 1;
+      const holder = credit.replace(/^(Photography|Image):\s*/, '').replace(/\s*\(official\)$/, '');
+      if (!match[2].includes(`"creditText":"${holder}"`) || !match[2].includes(`"copyrightNotice":"${holder}"`)) problems.push(`${page.pathname}: ${match[1]} lacks creditText/copyrightNotice "${holder}"`);
+      if (!page.html.includes(credit)) problems.push(`${page.pathname}: credit "${credit}" is in schema but not printed on the page`);
+    }
+    for (const slug of drafts) if (serialised.includes(`/projects/${slug}/`)) problems.push(`${page.pathname}: schema mentions draft ${slug}`);
+  }
+  assert.deepEqual(problems, []);
+  assert.ok(creditedImages >= 10, `${creditedImages} credited ImageObjects checked`);
+  const hoh = await readFile('dist/projects/house-of-hackney-st-michaels/index.html', 'utf8');
+  assert.match(hoh, /"creditText":"House of Hackney","copyrightNotice":"House of Hackney"/);
+  // Specialism pages each carry their Service; the business node is the HomeAndConstructionBusiness already in use.
+  for (const item of specialisms) assert.match(await readFile(`dist/services/${item.slug}/index.html`, 'utf8'), /"@type":"Service"/);
+  const home = graphOf(await readFile('dist/index.html', 'utf8'));
+  assert.deepEqual(home.find((node) => node['@id'] === `${SITE}/#business`)!['@type'], ['HomeAndConstructionBusiness', 'ProfessionalService']);
+  // No SearchAction because /search/ filters a static list in the browser and never reads a query parameter.
+  const search = await readFile('src/pages/search.astro', 'utf8');
+  assert.doesNotMatch(search, /location\.search|URLSearchParams|searchParams/, 'if /search/ starts honouring ?q=, add a SearchAction and update this test');
+});

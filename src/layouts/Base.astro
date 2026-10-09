@@ -17,6 +17,8 @@ interface Props {
   /** Site-relative JPEG for social cards. Defaults to /og.jpg. */
   image?: string;
   imageAlt?: string;
+  /** Credit printed beside the page's lead image, e.g. "Photography: House of Hackney". Goes into the WebPage ImageObject. */
+  imageCredit?: string | null;
   ogType?: 'website' | 'article';
   author?: string;
 }
@@ -30,6 +32,7 @@ const {
   preloadHero = false,
   image: imagePath,
   imageAlt = "Corridor at Brown's Hotel, Mayfair, for Mr Wallcover.",
+  imageCredit = null,
   ogType = 'website',
   author = 'Dorin Burcus',
 } = Astro.props;
@@ -41,7 +44,7 @@ const schema = jsonLd([
   businessNode(),
   founderNode(),
   websiteNode(),
-  webPageNode({ url: canonical, name: title, description, image }),
+  webPageNode({ url: canonical, name: title, description, image, imageCredit }),
   ...extraSchema,
 ]);
 const heroSrcset =
