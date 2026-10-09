@@ -1,46 +1,21 @@
 ---
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Base from '../layouts/Base.astro';
+import professionals from '../content/professionals.json';
 import { breadcrumbNode } from '../lib/schema';
-
-const crumbs = [
-  { name: 'Home', href: '/' },
-  { name: 'For professionals', href: '/professionals/' },
-];
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'For professionals', href: '/professionals/' }];
 ---
-
-<Base
-  title="For Designers and Hotels | Mr Wallcover"
-  description="Specification support, room schedules and installation for interior designers, hotels and main-contractor packages in London."
-  path="/professionals/"
-  extraSchema={[breadcrumbNode(crumbs)]}
->
+<Base title="For Designers, Developers & Hotels | Mr Wallcover" description="Wallcovering specification and installation routes for designers, property developers, contractors and hotel operators." path="/professionals/" extraSchema={[breadcrumbNode(crumbs)]}>
   <div class="container-page pb-20">
-    <header class="page-head">
+    <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
       <p class="eyebrow">For professionals</p>
-      <h1>A package, not a consumer quiz.</h1>
-      <p class="lede mt-5">Send the schedule, the drawings and what you already know. Unknowns can wait. There is no trade discount, partner level or promised reply time on this page.</p>
+      <h1>From specification<br />to the finished room.</h1>
+      <p class="lede mt-5">Choose the route that fits your work. Bring the drawings, the material and the decisions still to be made.</p>
     </header>
-    <section id="designers" class="border-t border-line py-12">
-      <h2 class="m-0 text-[clamp(2rem,4vw,3rem)]">Designers and architects</h2>
-      <p class="lede mt-4">Room schedules, drawings and a material specification are enough to start. Say who is supplying the material, which rooms are in the package, and any date the tender needs.</p>
-      <ul class="mt-6 grid gap-2">
-        <li>Sample areas and mock-ups when the specification is still open.</li>
-        <li>Batch checks when material is free-issue.</li>
-        <li>Room-by-room progress, snagging, and the same aftercare as every hang.</li>
-      </ul>
-      <a class="btn btn-solid-ink mt-6" href="/contact/?audience=designer&intent=source">Send a designer brief</a>
-    </section>
-    <section id="commercial" class="border-t border-line py-12">
-      <h2 class="m-0 text-[clamp(2rem,4vw,3rem)]">Hotels and commercial packages</h2>
-      <p class="lede mt-4">Repeat rooms, access limits, a programme and a clear line on who supplies the material. We work alongside main contractors, and we can also take a package directly.</p>
-      <p>Insurance, method statements and qualifications are issued current, and only when a live job needs them. A decorative finish is not a fire certificate.</p>
-      <a class="btn btn-solid-ink mt-6" href="/contact/?audience=commercial&intent=install">Send a commercial brief</a>
-    </section>
-    <section class="border-t border-line py-12">
-      <h2>Working with the studio</h2>
-      <p>If you specify wallcoverings regularly and want a direct line for future packages, say so in the note. We will reply about the work in front of us. We do not publish a trade price list.</p>
-    </section>
+    <div class="grid gap-6 md:grid-cols-3">
+      {professionals.map((item) => <section class="guide-card" id={item.slug === 'developers' ? 'commercial' : item.slug}><p class="eyebrow">{item.name}</p><h2><a href={`/professionals/${item.slug}/`}>{item.heading}</a></h2><p>{item.intro}</p><a class="guide-read" href={`/professionals/${item.slug}/`}>Explore this service ↗</a></section>)}
+    </div>
+    <section class="guide-next"><p class="eyebrow">Already have a complete brief?</p><h2>Send the work in front of you.</h2><p>A schedule, drawings and a short note are enough to begin. Include who is supplying the material and any date the tender needs.</p><a class="btn btn-solid-ink" href="/contact/?audience=commercial&intent=install">Start a professional enquiry</a></section>
   </div>
 </Base>

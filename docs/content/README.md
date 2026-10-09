@@ -1,8 +1,8 @@
 # Wallcovering Guide content pack
 
-Ten substantive article drafts and the specification for integrating them into the existing Mr Wallcover site.
+Ten article drafts, implemented guide pages, material decision support and professional journeys for the existing Mr Wallcover site.
 
-Start with [repository alignment](repository-alignment.md), then read the [development brief](development-brief.md). All guide drafts are awaiting technical/editorial review and remain outside the Astro route/content inputs. Nothing here is a live-site implementation.
+Start with [implementation status and verification](implementation-status.md), then read the [development brief](development-brief.md). The ten drafts now have a single source in `src/content/guides/`. Normal builds exclude them; `npm run build:review` renders them in `dist-review/` with noindex on every page. This branch has not been deployed.
 
 | Draft | Topic |
 | --- | --- |
@@ -17,6 +17,6 @@ Start with [repository alignment](repository-alignment.md), then read the [devel
 | [09](guides/09-commercial-wallcovering-planning.md) | Development and hotel packages |
 | [10](guides/10-wallcovering-care-and-repairs.md) | Care and repairs |
 
-Each guide contains proposed public copy and an internal editorial note. Do not render that note. Byline/reviewer and publication dates must reflect actual review. Image permissions follow [the existing rights register](../asset-rights.md).
+The links above retain editorial notes and point to the corresponding source file. Internal notes are kept out of the article source and rendered HTML. Byline/reviewer and publication dates must reflect actual review. Image permissions follow [the existing rights register](../asset-rights.md).
 
 The build brief also covers ChatGPT search discovery, material data, room/geographic coverage, different professional journeys and acceptance evidence. Its future functionality requirements are implementation targets, not claims about current live capability.

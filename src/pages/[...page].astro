@@ -1,0 +1,67 @@
+---
+/**
+ * Editorial pages from src/content/pages/*.md. A page is built only when its
+ * frontmatter does not say `"draft": true`; see editorialPages in lib/content.ts.
+ */
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FaqList from '../components/FaqList.astro';
+import Base from '../layouts/Base.astro';
+import { editorialPages, projectBySlug, projectHref } from '../lib/content';
+import type { EditorialPageData } from '../lib/content';
+import { breadcrumbNode, faqNode } from '../lib/schema';
+
+export function getStaticPaths() {
+  return editorialPages.map((mod) => ({
+    params: { page: mod.frontmatter.path.replace(/^\/|\/$/g, '') },
+    props: { page: mod.frontmatter, Content: mod.Content },
+  }));
+}
+
+interface Props {
+  page: EditorialPageData;
+  Content: any;
+}
+
+const { page, Content } = Astro.props;
+const crumbs = [{ name: 'Home', href: '/' }, page.parent, { name: page.title, href: page.path }];
+const linked = page.projects.map((slug) => projectBySlug(slug)).filter((p) => p !== undefined);
+---
+
+<Base
+  title={page.metaTitle}
+  description={page.description}
+  path={page.path}
+  extraSchema={[...(page.faq.length ? [faqNode(page.faq)] : []), breadcrumbNode(crumbs)]}
+>
+  <div class="container-page">
+    <header class="page-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">{page.eyebrow}</p>
+      <h1>{page.heading}</h1>
+      <p class="lede mt-5">{page.lede}</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="btn btn-solid-ink" href="/contact/">Request a quotation</a>
+        <a class="btn btn-line" href="/projects/">See the work</a>
+      </div>
+    </header>
+    <article class="prose max-w-3xl pb-12">
+      <Content />
+    </article>
+    {
+      linked.length > 0 && (
+        <section class="border-t border-line py-12" aria-labelledby="record-heading">
+          <h2 id="record-heading" class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On the public record</h2>
+          <ul class="link-row mt-6 grid list-none gap-3 p-0 md:grid-cols-2">
+            {linked.map((project) => (
+              <li>
+                <a href={projectHref(project!.slug)}>{project!.title}</a>
+                <span class="text-stone">. {project!.role}{project!.dates ? `, ${project!.dates}` : ''}.</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </div>
+  {page.faq.length > 0 && <FaqList items={page.faq} eyebrow="Questions" heading={`Asked about ${page.title}`} />}
+</Base>

@@ -2,7 +2,7 @@
 
 Prepared 9 October 2026. Ten first-edition article drafts, customer decision data, professional page copy and an implementation contract.
 
-Status: editorial drafts and build specification. Nothing in this document has been published or installed on the website. Dorin should review the technical advice and any wording presented as Mr Wallcover's practice before publication. Repository inspected at main commit 38bcc5bd9992155e0e9851544b361e282db14f56. Preserve the existing Astro implementation and reconcile these additions with current code. Production rendering and delivery remain unverified.
+Status: original editorial and build specification. The branch implementation is described in [implementation status](implementation-status.md); it has not been deployed. Dorin should review the technical advice and any wording presented as Mr Wallcover's practice before publication. Repository inspected at main commit 38bcc5bd9992155e0e9851544b361e282db14f56. Preserve the existing Astro implementation and reconcile these additions with current code. Production rendering and delivery remain unverified.
 
 ## 1. Direction
 
@@ -83,7 +83,7 @@ Create location pages only when there is a distinct useful reason: genuine proje
 | 9 | Planning a wallcovering package for a development or hotel | Developers and contractors | commercial-wallcovering-planning |
 | 10 | Caring for wallpaper, and what to do when something goes wrong | Existing customers | wallcovering-care-and-repairs |
 
-The copy below is proposed public copy. Editorial notes are internal and must not appear on published pages. These are complete concise launch drafts; expand only where a real photograph, tested example or verified product adds useful information.
+The linked guide files hold the proposed public copy. Editorial notes are internal and must not appear on published pages. These are complete concise launch drafts; expand only where a real photograph, tested example or verified product adds useful information.
 
 ---
 

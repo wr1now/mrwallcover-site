@@ -70,6 +70,10 @@ interface CaseStudyData {
   draft?: boolean;
   /** Interior photographs are not in the repo. The page shows a labelled placeholder. */
   awaitingPhotos?: boolean;
+  /** ISO date the page first entered the repository. Stamped by scripts/stamp-case-study-dates.mjs, never by the build. */
+  published: string;
+  /** ISO date of the last change to the file. Stamped by the same script. */
+  updated: string;
 }
 
 type CaseStudyModule = { frontmatter: CaseStudyData; Content: any };
@@ -100,12 +104,54 @@ const CASE_STUDY_ORDER = [
   'hilton-garden-inn-silverstone',
 ];
 
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+for (const mod of Object.values(caseStudyModules)) {
+  const { slug, published, updated } = mod.frontmatter;
+  if (!ISO_DATE.test(published ?? '') || !ISO_DATE.test(updated ?? '')) {
+    throw new Error(`Case study ${slug} lacks ISO published/updated dates. Run: node scripts/stamp-case-study-dates.mjs`);
+  }
+}
+
 export const caseStudies = Object.values(caseStudyModules)
   .filter((mod) => !mod.frontmatter.draft)
   .sort(
     (a, b) =>
       (CASE_STUDY_ORDER.indexOf(a.frontmatter.slug) + 1 || 99) - (CASE_STUDY_ORDER.indexOf(b.frontmatter.slug) + 1 || 99),
   );
+
+/**
+ * Editorial pages (maker installer pages, the trade page, the cost guide, the
+ * reviews page) in src/content/pages/*.md. Same draft rule as case studies:
+ * `"draft": true` keeps a page in the repo for review and out of the build,
+ * the sitemap, llms.txt and every link.
+ */
+export interface EditorialPageData {
+  /** Site path the page is served at, with leading and trailing slash. */
+  path: string;
+  title: string;
+  metaTitle: string;
+  description: string;
+  eyebrow: string;
+  heading: string;
+  lede: string;
+  /** Breadcrumb parent, e.g. Services or Advice. */
+  parent: { name: string; href: string };
+  /** Case-study slugs this page may cite. */
+  projects: string[];
+  faq: FaqItem[];
+  draft?: boolean;
+}
+
+type EditorialPageModule = { frontmatter: EditorialPageData; Content: any };
+
+const editorialModules = import.meta.glob<EditorialPageModule>('../content/pages/*.md', { eager: true });
+
+for (const mod of Object.values(editorialModules)) {
+  const { path, title } = mod.frontmatter;
+  if (!/^\/[a-z0-9-]+(\/[a-z0-9-]+)*\/$/.test(path ?? '')) throw new Error(`Editorial page "${title}" needs a path like /trade/ or /services/x/`);
+}
+
+export const editorialPages = Object.values(editorialModules).filter((mod) => !mod.frontmatter.draft);
 
 export function caseStudyBySlug(slug: string): CaseStudyModule | undefined {
   return caseStudies.find((mod) => mod.frontmatter.slug === slug);
@@ -141,6 +187,8 @@ function fromCaseStudy(cs: CaseStudyData, base?: Project): Project {
     awaitingPhotos: Boolean(cs.awaitingPhotos),
     group: cs.group ?? undefined,
     credits: Object.fromEntries(cs.gallery.filter((g) => g.credit).map((g) => [g.id, g.credit as string])),
+    published: cs.published,
+    updated: cs.updated,
   };
 }
 

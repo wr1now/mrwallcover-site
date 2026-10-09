@@ -1,0 +1,14 @@
+{
+  "filtering": true,
+  "keyboardSkipLink": true,
+  "materialPreferences": true,
+  "shortlist": true,
+  "professionalFormSubmissions": 3,
+  "transport": "FormSubmit intercepted locally; no external enquiry sent",
+  "wetAreaReview": true,
+  "reset": true,
+  "scheduleDownload": true,
+  "noJavaScriptArticle": true,
+  "overflow": [],
+  "errors": []
+}

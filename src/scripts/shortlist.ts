@@ -11,7 +11,15 @@ export function readShortlist(): string[] {
 }
 
 function write(slugs: string[]) {
-  localStorage.setItem(KEY, JSON.stringify([...new Set(slugs)]));
+  try {
+    localStorage.setItem(KEY, JSON.stringify([...new Set(slugs)]));
+    return true;
+  } catch {
+    document.querySelectorAll<HTMLElement>('[data-shortlist-status]').forEach((node) => {
+      node.textContent = 'This browser could not save the shortlist. You can still send the material names in your enquiry.';
+    });
+    return false;
+  }
 }
 
 function paint() {
@@ -34,13 +42,15 @@ function paint() {
 export function bindShortlist() {
   paint();
   document.addEventListener('click', (event) => {
+    const clear = (event.target as Element | null)?.closest('[data-shortlist-clear]');
+    if (clear) { if (write([])) paint(); return; }
     const button = (event.target as Element | null)?.closest<HTMLButtonElement>('[data-shortlist]');
     if (!button) return;
     const slug = button.dataset.shortlist || '';
     const next = new Set(readShortlist());
     if (next.has(slug)) next.delete(slug);
     else next.add(slug);
-    write([...next]);
+    if (!write([...next])) return;
     paint();
     const sink = (window as unknown as { __mwTrack?: (name: string, detail: Record<string, unknown>) => void }).__mwTrack;
     if (typeof sink === 'function') sink('shortlist_added', { slug, count: next.size });

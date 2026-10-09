@@ -34,7 +34,9 @@
     { "id": "house-of-hackney-st-michaels-04", "credit": null },
     { "id": "house-of-hackney-st-michaels-01", "credit": "Before" },
     { "id": "house-of-hackney-st-michaels-03", "credit": "Before" }
-  ]
+  ],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 

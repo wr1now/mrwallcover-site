@@ -31,9 +31,28 @@ jobs:
       - name: Check
         run: npm run check
       - name: Build
+        env:
+          # Build-time only. The phone number is never in the repository.
+          # When the secret is absent, the site builds without phone or WhatsApp controls.
+          SITE_PHONE: ${{ secrets.SITE_PHONE }}
         run: npm run build
       - name: Check built site
+        env:
+          SITE_PHONE: ${{ secrets.SITE_PHONE }}
         run: npm run check:dist
+      - name: Check both phone builds
+        run: npm run check:phone
+      - name: Build editorial review
+        run: npm run build:review
+      - name: Check guide publication boundaries
+        run: npm run check:guides
+      - name: Upload editorial review
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: wallcovering-content-review
+          path: dist-review
+          retention-days: 7
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

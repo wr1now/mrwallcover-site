@@ -38,6 +38,7 @@
       "heading": "Cookies and analytics",
       "paragraphs": [
         "This site does not set cookies and does not embed advertising. A shortlist of material names, and a calmer-display preference, can be saved in this browser after you use those controls. They are not sent anywhere unless you include the shortlist in an enquiry. A draft of a project brief keeps the non-sensitive answers in this tab only, and not your name, email, phone or message.",
+        "After you use the material finder, its room, appearance, cleaning, panel and lighting choices are kept in this browser session. The enquiry form shows those choices before you send them. You can clear them in the finder or remove them from the enquiry. They are only sent with an enquiry you submit.",
         "There is a place in the build for a cookie-free analytics script, such as Plausible, Fathom or Cloudflare Web Analytics. Nothing is loaded unless that script is deliberately switched on. If it is switched on later, this notice will be updated."
       ]
     },

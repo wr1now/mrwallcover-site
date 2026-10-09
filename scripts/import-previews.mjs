@@ -178,7 +178,8 @@ const frames = {
   },
 };
 
-const banned = [/Threadneedle/i, /Mulberry/i, /\bAethos\b/i, /\bLandmark\b/i, /95 St George/i, /26 Inverness/i, /SW1V 3QW/, /W2 3JA/];
+// Street names only for the two private residential buildings: no house number, no full postcode.
+const banned = [/Threadneedle/i, /Mulberry/i, /\bAethos\b/i, /\bLandmark\b/i, /\b\d{1,4}[a-z]?\s+St\.?\s?George'?s?\s+Square/i, /\b\d{1,4}[a-z]?\s+Inverness\s+Terrace/i, /\bSW1V\s?\d[A-Z]{2}\b/, /\bW2\s?\d[A-Z]{2}\b/];
 for (const [id, frame] of Object.entries(frames)) {
   for (const pattern of banned) {
     if (pattern.test(frame.alt) || pattern.test(id)) throw new Error(`${id} failed ${pattern}`);

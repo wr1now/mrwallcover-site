@@ -1,0 +1,21 @@
+{
+  "_note": "The one fact sheet. The footer, src/lib/schema.ts, src/pages/llms.txt.ts and src/config.ts read from here. Paste the description unchanged into every outside profile. No phone number, company details, prize name or price goes in this file.",
+  "brand": "Mr Wallcover",
+  "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus. Survey, supply, installation and aftercare for hotels, retail and homes.",
+  "founder": {
+    "name": "Dorin Burcus",
+    "jobTitle": "Founder",
+    "path": "/about/",
+    "fragment": "dorin"
+  },
+  "email": "info@mrwallcover.com",
+  "place": "London",
+  "coverage": "London and the surrounding areas; UK-wide for selected projects",
+  "profiles": [
+    {
+      "name": "Instagram",
+      "handle": "@mrwallcover",
+      "url": "https://www.instagram.com/mrwallcover/"
+    }
+  ]
+}

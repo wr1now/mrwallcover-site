@@ -574,7 +574,8 @@
     bottom: 0;
     z-index: 35;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* Two to four items: the WhatsApp and phone controls only exist when SITE_PHONE was set at build time. */
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     background: var(--color-ivory);
     border-top: 1px solid var(--color-line);
     padding-bottom: env(safe-area-inset-bottom);
@@ -1081,4 +1082,67 @@ html[data-effects='plain'] .glass-clear {
 html[data-effects='plain'] .glass-smoked {
   backdrop-filter: none;
   background: var(--color-ink);
+}
+
+/* The guide uses the same paper, ink and brass as the rest of the practice. */
+.review-banner { padding: .65rem 1.25rem; background: #e9dfcb; color: #473719; font-size: .85rem; text-align: center; }
+.guide-head h1 { max-width: 22ch; font-size: clamp(2.35rem,5.2vw,4.2rem); }
+.guide-intro { padding-block: 3.5rem; }
+.guide-intro h1 { max-width: 18ch; }
+.guide-intro h1 em { color: var(--color-brass); }
+.guide-tools { display: grid; border-block: 1px solid var(--color-line); }
+.guide-tools > a { display: grid; gap: .4rem; padding: 1.5rem 0; color: inherit; text-decoration: none; border-bottom: 1px solid var(--color-line); }
+.guide-tools > a:last-child { border: 0; }
+.guide-tools strong { font-family: var(--font-serif); font-size: 1.85rem; font-weight: 500; line-height: 1.1; }
+.guide-tools .eyebrow { margin: 0; }
+.guide-tools > a > span:last-child { font-size: .9rem; color: var(--color-stone); }
+.guide-library, .guide-related { margin-top: 4rem; }
+.guide-library > h2, .guide-related > h2 { font-size: clamp(2rem,4vw,3rem); }
+.guide-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0 2rem; border: 0; padding: 0; }
+.guide-filters button { min-height: 48px; border: 1px solid var(--color-line); padding: .5rem 1rem; border-radius: 99px; cursor: pointer; }
+.guide-filters button[aria-pressed="true"] { background: var(--color-ink); color: var(--color-ivory); border-color: var(--color-ink); }
+.guide-grid { display: grid; gap: 1.5rem; }
+.guide-card { display: flex; flex-direction: column; padding: 1.75rem; border: 1px solid var(--color-line); background: var(--color-paper); }
+.guide-card h2 { font-size: 2rem; margin: 0; }
+.guide-card h2 a { color: inherit; text-decoration: none; }
+.guide-card > p:not(.eyebrow) { color: var(--color-stone); margin: 1rem 0; }
+.guide-read { margin-top: auto; padding-top: 1rem; min-height: 48px; color: var(--color-brass); text-underline-offset: .25em; }
+.guide-read span { float: right; }
+.guide-layout { display: grid; gap: 2.5rem; border-top: 1px solid var(--color-line); padding-top: 2.5rem; }
+.guide-contents ol { margin: 0; padding-left: 1.2rem; }
+.guide-contents li { padding-block: .3rem; color: var(--color-stone); font-size: .95rem; }
+.guide-contents a { color: inherit; text-underline-offset: .2em; }
+.guide-prose { max-width: 42rem; }
+.guide-prose > p { line-height: 1.85; }
+.guide-prose > p:first-child { font-size: 1.25rem; line-height: 1.65; }
+.guide-prose h2 { font-size: clamp(1.8rem,3vw,2.35rem); margin-block: 2.5rem 1rem; }
+.guide-sources { border-top: 1px solid var(--color-line); margin-top: 2.5rem; font-size: .9rem; }
+.guide-sources h2 { font-size: 1.4rem; }
+.guide-next { margin-top: 3rem; padding: clamp(1.5rem,4vw,2.5rem); background: #eae3d6; }
+.guide-next h2 { font-size: 2.3rem; margin: 0 0 1rem; }
+.guide-next p:not(.eyebrow) { max-width: 40rem; margin-bottom: 1.5rem; }
+.material-finder { margin-bottom: 3.5rem; padding: clamp(1.25rem,4vw,2rem); background: var(--color-paper); border: 1px solid var(--color-line); }
+.material-finder h2 { font-size: 2.5rem; margin: 0; }
+.material-finder form { margin-top: 1.5rem; }
+.material-result { padding-block: 1.5rem; border-top: 1px solid var(--color-line); }
+.material-result h3 { font-size: 1.9rem; margin: 0 0 .75rem; }
+.material-decision { margin-block: 2rem; padding-block: 1rem; border-block: 1px solid var(--color-line); }
+.material-decision dt { font-weight: 500; margin-top: 1rem; }
+.material-decision dd { margin: .3rem 0 1rem; }
+.professional-intake { background: var(--color-paper); border: 1px solid var(--color-line); padding: 1.5rem; }
+.professional-intake h2 { font-size: 2rem; margin-top: 0; }
+.professional-intake li { margin-block: .65rem; }
+.selection-summary { padding: 1rem; border-left: 2px solid var(--color-brass); margin-bottom: 1.5rem; }
+@media (min-width: 48rem) {
+  .guide-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .guide-tools { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .guide-tools > a { padding: 1.75rem; border-bottom: 0; border-right: 1px solid var(--color-line); }
+  .guide-tools > a:first-child { padding-left: 0; }
+  .guide-layout { grid-template-columns: minmax(0,1fr) minmax(0,2.4fr); gap: 4rem; }
+  .guide-contents { align-self: start; position: sticky; top: 7rem; }
+}
+@media print {
+  .site-header, .site-footer, .dock, .guide-contents, .guide-related, .guide-next { display: none !important; }
+  .guide-layout { display: block; }
+  .guide-prose { max-width: none; }
 }

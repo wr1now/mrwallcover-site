@@ -42,7 +42,9 @@
       "id": "owo-official-lifestyle-suite",
       "credit": "Image: Raffles London at The OWO (official)"
     }
-  ]
+  ],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 

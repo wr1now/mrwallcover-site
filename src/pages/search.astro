@@ -1,4 +1,6 @@
 ---
+import { guides, guideHref } from '../lib/guides';
+import professionals from '../content/professionals.json';
 import Base from '../layouts/Base.astro';
 import { areaHref, areas, materials, projectHref, projects, specialismHref, specialisms } from '../lib/content';
 
@@ -12,6 +14,8 @@ const entries = [
   { href: '/aftercare/', label: 'Aftercare' },
   { href: '/contact/', label: 'Start your project' },
   { href: '/about/', label: 'About Dorin Burcus' },
+  ...professionals.map((item) => ({ href: `/professionals/${item.slug}/`, label: item.name })),
+  ...guides.map((guide) => ({ href: guideHref(guide.frontmatter.slug), label: guide.frontmatter.title })),
   ...specialisms.map((item) => ({ href: specialismHref(item.slug), label: item.name })),
   ...areas.map((item) => ({ href: areaHref(item.slug), label: item.heading })),
   ...materials.items.map((item) => ({ href: `/materials/${item.slug}/`, label: item.name })),

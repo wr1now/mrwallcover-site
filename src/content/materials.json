@@ -1,6 +1,6 @@
 {
   "title": "Material library | Mr Wallcover",
-  "description": "Paper, grasscloth, silk, hand-painted scenics, murals, contract vinyl and acoustic wallcoverings. Installation and sourcing, with physical samples as the colour authority.",
+  "description": "Paper, grasscloth, silk, hand-painted scenics, murals, contract vinyl and acoustic wallcoverings. Installation and sourcing; physical samples decide colour.",
   "eyebrow": "Materials",
   "heading": "A library, not a shop.",
   "lede": "These are families we hang, and can source when you want that. A screen cannot match colour, texture or sheen. Ask for a physical sample before you decide.",
@@ -14,7 +14,16 @@
       "appearance": "Printed or plain, from a quiet texture to a large repeat.",
       "joins": "Seams are part of a hung wall. The match follows the repeat: free or straight. Half-drop and murals are set out on site, not by the simple calculator.",
       "care": "Follow the maker. Many papers are not washable. We do not call a family washable, fire-rated or seamless unless that product’s own data says so.",
-      "handling": "The wall has to be sound first. Lining is used when the maker or the wall requires it."
+      "handling": "The wall has to be sound first. Lining is used when the maker or the wall requires it.",
+      "decision": {
+        "considerWhen": "You want a printed pattern or a quieter, more even visual finish.",
+        "tradeoff": "Print, backing and care vary substantially between products.",
+        "checkBeforeOrdering": "Confirm the repeat, match, usable width and actual cleaning instructions.",
+        "relatedGuides": [
+          "choosing-wallpaper",
+          "wallpaper-quantity"
+        ]
+      }
     },
     {
       "slug": "grasscloth-and-weaves",
@@ -25,7 +34,16 @@
       "appearance": "Sisal, raffia, grass and other weaves. Colour and texture move from roll to roll.",
       "joins": "Seams show. The direction of the weave is agreed before the first length is cut.",
       "care": "Dry and gentle. Adhesive on the face marks the weave. Not a washable surface.",
-      "handling": "Clean hands, an adhesive that suits the backing, and enough length from one batch to keep a wall together."
+      "handling": "Clean hands, an adhesive that suits the backing, and enough length from one batch to keep a wall together.",
+      "decision": {
+        "considerWhen": "Natural fibre and a visible panel character are part of the look you want.",
+        "tradeoff": "Adjacent drops can differ in shade; do not expect an invisible joint.",
+        "checkBeforeOrdering": "Review a full-wall example, panel layout and the exact care sheet.",
+        "relatedGuides": [
+          "grasscloth-seams-and-shading",
+          "wallpaper-by-room"
+        ]
+      }
     },
     {
       "slug": "silk-and-textiles",
@@ -36,7 +54,16 @@
       "appearance": "A cloth face with a sheen that changes as you move.",
       "joins": "Seams are planned so the light from the window does not catch a ridge.",
       "care": "Silk marks quickly. Care is the maker’s note, usually dry. It is not a corridor vinyl.",
-      "handling": "Clean hands, the specified adhesive, and preparation written into the scope, including a lining where one is required."
+      "handling": "Clean hands, the specified adhesive, and preparation written into the scope, including a lining where one is required.",
+      "decision": {
+        "considerWhen": "You want a textile surface whose appearance changes with the light.",
+        "tradeoff": "Delicate faces can be less forgiving of marks and handling.",
+        "checkBeforeOrdering": "See the sample in the room and confirm preparation and care requirements.",
+        "relatedGuides": [
+          "choosing-wallpaper",
+          "wall-preparation"
+        ]
+      }
     },
     {
       "slug": "hand-painted",
@@ -47,7 +74,16 @@
       "appearance": "Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them. We do not make them, and we are not affiliated with those makers.",
       "joins": "Panels follow a sequence. The scene has to meet across doors, windows and corners. The set-out starts from a fixed point.",
       "care": "As the maker specifies. These are not washable contract surfaces.",
-      "handling": "A sound wall, time, and the maker’s instruction on lining."
+      "handling": "A sound wall, time, and the maker’s instruction on lining.",
+      "decision": {
+        "considerWhen": "The scene should be designed around the room and its focal points.",
+        "tradeoff": "Doors, corners and furniture can interrupt the composition.",
+        "checkBeforeOrdering": "Agree elevations, panel sequence, supplier proof and finished dimensions.",
+        "relatedGuides": [
+          "planning-scenic-wallpaper",
+          "designer-specification-checklist"
+        ]
+      }
     },
     {
       "slug": "murals",
@@ -58,7 +94,16 @@
       "appearance": "Printed or hand-made scenes, including event murals hung for a fixed date.",
       "joins": "Set out from a fixed point so the image meets where it should. A roll calculator will not price a mural.",
       "care": "Follow the maker. An event mural is not the same duty as a guest-room vinyl.",
-      "handling": "Check the panel count, the sequence and the substrate before the first piece is opened."
+      "handling": "Check the panel count, the sequence and the substrate before the first piece is opened.",
+      "decision": {
+        "considerWhen": "One wall or a room needs a planned composition rather than a repeating pattern.",
+        "tradeoff": "A preview cannot confirm the real colour, texture or precise crop.",
+        "checkBeforeOrdering": "Confirm scale, panel count, sequence, backing and care instructions.",
+        "relatedGuides": [
+          "planning-scenic-wallpaper",
+          "wallpaper-quantity"
+        ]
+      }
     },
     {
       "slug": "contract-vinyl",
@@ -69,7 +114,16 @@
       "appearance": "A tighter face specified for wear. At The OWO the install included Vescom.",
       "joins": "Seams are still there. They are planned, not promised away.",
       "care": "More tolerant of cleaning than paper or silk, and still only as the maker allows. Vinyl on a wall is not, by itself, a fire certificate.",
-      "handling": "The specified adhesive, the right substrate, and a sample in the room’s own light when the specification is still open."
+      "handling": "The specified adhesive, the right substrate, and a sample in the room’s own light when the specification is still open.",
+      "decision": {
+        "considerWhen": "Cleaning and everyday wear are priorities worth discussing with the supplier.",
+        "tradeoff": "The material name alone does not establish wet-area or fire suitability.",
+        "checkBeforeOrdering": "Check the particular product, cleaning method and project specification.",
+        "relatedGuides": [
+          "wallpaper-by-room",
+          "commercial-wallcovering-planning"
+        ]
+      }
     },
     {
       "slug": "acoustic",
@@ -80,7 +134,16 @@
       "appearance": "A textured face over an acoustic construction, or an acoustic panel.",
       "joins": "Edges, trims and cuts have to keep the system the way it was specified.",
       "care": "Follow the system maker. We do not claim a decorative finish is an acoustic rating.",
-      "handling": "Adhesive, trimming and edges follow the instruction for that system. The material light studio does not show acoustic performance."
+      "handling": "Adhesive, trimming and edges follow the instruction for that system. The material light studio does not show acoustic performance.",
+      "decision": {
+        "considerWhen": "Sound performance forms part of a professionally specified system.",
+        "tradeoff": "A decorative texture is not evidence of acoustic performance.",
+        "checkBeforeOrdering": "Obtain the exact system data, installation detail and project acceptance.",
+        "relatedGuides": [
+          "designer-specification-checklist",
+          "commercial-wallcovering-planning"
+        ]
+      }
     }
   ]
 }

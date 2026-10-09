@@ -1,4 +1,5 @@
-import { emptyEnquiry, makeReference, sanitiseEvent, validateEnquiry, type EnquiryFields } from '../lib/enquiry.ts';
+import { preferencesFromJSON, preferenceSummary, PREFERENCE_KEY } from '../lib/material-advice.ts';
+import { emptyEnquiry, PROFESSIONAL_AUDIENCES, makeReference, sanitiseEvent, validateEnquiry, type EnquiryFields } from '../lib/enquiry.ts';
 
 const DRAFT_KEY = 'mw-brief-draft';
 
@@ -27,6 +28,8 @@ function readForm(form: HTMLFormElement): EnquiryFields {
     access: value('access'),
     programme: value('programme'),
     materialResponsibility: value('materialResponsibility'),
+    specificationNotes: value('specificationNotes'),
+    materialPreferences: value('materialPreferences'),
     budget: value('budget'),
     marketing: Boolean(marketing?.checked),
     shortlist: value('shortlist'),
@@ -97,7 +100,7 @@ function shortlistValue(): string {
   try {
     const raw = localStorage.getItem('mw-shortlist');
     const slugs = raw ? (JSON.parse(raw) as string[]) : [];
-    return slugs.filter((slug) => /^[a-z0-9-]{2,60}$/.test(slug)).join(',');
+    return (Array.isArray(slugs) ? slugs : []).filter((slug) => /^[a-z0-9-]{2,60}$/.test(slug)).join(',');
   } catch {
     return '';
   }
@@ -115,7 +118,7 @@ export function bindEnquiryForm(form: HTMLFormElement) {
   if (intent && params.get('intent')) intent.value = params.get('intent') || '';
   if (audience && params.get('audience')) audience.value = params.get('audience') || '';
   const shortlist = form.querySelector<HTMLInputElement>('[name="shortlist"]');
-  if (shortlist) shortlist.value = shortlistValue();
+  if (shortlist) shortlist.value = form.dataset.variant === 'aftercare' ? '' : shortlistValue();
   restoreDraft(form);
 
   const builder = form.querySelector<HTMLElement>('[data-builder]');
@@ -136,13 +139,37 @@ export function bindEnquiryForm(form: HTMLFormElement) {
   };
 
   const syncProfessional = () => {
-    const pro = audience?.value === 'designer' || audience?.value === 'commercial';
+    const pro = PROFESSIONAL_AUDIENCES.some((value) => value === audience?.value);
+    const help = form.querySelector<HTMLElement>('[data-professional-help]');
+    const prompts: Record<string, string> = { designer: 'Include material codes, sample status, focal points and the elevations that define the finish.', developer: 'Include room or floor phases, drawing revisions, wall readiness and any tender deadline.', hotel: 'Include occupied areas, room-release dates, working hours and maintenance requirements.', commercial: 'Include the scope, programme and who supplies the material.' };
+    if (help) help.textContent = prompts[audience?.value || ''] || '';
+    form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[data-pro] input, [data-pro] textarea').forEach((field) => { field.disabled = !pro; });
     form.querySelectorAll<HTMLElement>('[data-pro]').forEach((node) => {
       node.hidden = !pro;
     });
   };
   audience?.addEventListener('change', syncProfessional);
   syncProfessional();
+  if (audience && PROFESSIONAL_AUDIENCES.some((value) => value === audience.value)) {
+    if (builder) builder.hidden = false;
+    if (openBuilder) openBuilder.hidden = true;
+    showStep(0);
+  }
+  const preferencesField = form.querySelector<HTMLInputElement>('[name="materialPreferences"]');
+  const selection = form.querySelector<HTMLElement>('[data-selection-summary]');
+  try {
+    const preferences = preferencesFromJSON(sessionStorage.getItem(PREFERENCE_KEY) || '');
+    if (preferences && preferencesField && form.dataset.variant !== 'aftercare') {
+      preferencesField.value = JSON.stringify(preferences);
+      if (selection) { selection.hidden = false; selection.querySelector('[data-selection-text]')!.textContent = preferenceSummary(preferences); }
+    }
+  } catch { /* Optional session choices. */ }
+  form.querySelector('[data-clear-selection]')?.addEventListener('click', () => {
+    if (preferencesField) preferencesField.value = '';
+    if (selection) selection.hidden = true;
+    try { sessionStorage.removeItem(PREFERENCE_KEY); } catch { /* Optional persistence. */ }
+  });
+
 
   const syncReply = () => {
     const reply = form.querySelector<HTMLInputElement>('input[name="replyBy"]:checked')?.value;
@@ -197,7 +224,7 @@ export function bindEnquiryForm(form: HTMLFormElement) {
   fileInput?.addEventListener('change', renderFiles);
 
   form.addEventListener('submit', async (event) => {
-    if (shortlist) shortlist.value = shortlistValue();
+    if (shortlist) shortlist.value = form.dataset.variant === 'aftercare' ? '' : shortlistValue();
     const fields = readForm(form);
     const validated = validateEnquiry(fields);
     clearInvalid(form);

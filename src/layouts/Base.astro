@@ -1,10 +1,11 @@
 ---
 import '../styles/global.css';
-import { ANALYTICS_SRC, BRAND_NAME, CONTACT_PAYLOAD, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
+import { ANALYTICS_SRC, BRAND_NAME, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
+import { CONTACT_PAYLOAD } from '../lib/phone';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import MobileDock from '../components/MobileDock.astro';
-import { businessNode, jsonLd, webPageNode, websiteNode } from '../lib/schema';
+import { businessNode, founderNode, jsonLd, webPageNode, websiteNode } from '../lib/schema';
 
 interface Props {
   title: string;
@@ -17,23 +18,28 @@ interface Props {
   image?: string;
   imageAlt?: string;
   ogType?: 'website' | 'article';
+  author?: string;
 }
 
 const {
   title,
   description,
   path,
-  noindex = false,
+  noindex: requestedNoindex = false,
   extraSchema = [],
   preloadHero = false,
   image: imagePath,
   imageAlt = "Corridor at Brown's Hotel, Mayfair, for Mr Wallcover.",
   ogType = 'website',
+  author = 'Dorin Burcus',
 } = Astro.props;
+const reviewBuild = import.meta.env.MW_CONTENT_PREVIEW === '1';
+const noindex = requestedNoindex || reviewBuild;
 const canonical = new URL(path, SITE_URL).href;
 const image = new URL(imagePath ?? '/og.jpg', SITE_URL).href;
 const schema = jsonLd([
   businessNode(),
+  founderNode(),
   websiteNode(),
   webPageNode({ url: canonical, name: title, description, image }),
   ...extraSchema,
@@ -63,7 +69,7 @@ const heroSrcset =
     {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
     <meta name="theme-color" content="#141210" />
-    <meta name="author" content="Dorin Burcus" />
+    <meta name="author" content={author} />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     {GOOGLE_SITE_VERIFICATION && <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />}
     <meta property="og:type" content={ogType} />
@@ -103,28 +109,31 @@ const heroSrcset =
     <a class="skip-link" href="#main">Skip to content</a>
     <Header path={Astro.url.pathname} />
     <main id="main">
+      {reviewBuild && <div class="review-banner" role="note">Content review preview · Guide drafts await technical review.</div>}
       <slot />
     </main>
     <Footer />
     <MobileDock />
-    <script is:inline define:vars={{ payload: CONTACT_PAYLOAD }}>
-      (function () {
-        let c;
-        try { c = JSON.parse(atob(payload).split('').reverse().join('')); } catch (e) { return; }
-        document.querySelectorAll('a[data-wa]').forEach((a) => { a.href = c.w; a.rel = 'noopener'; });
-        document.addEventListener('click', (event) => {
-          const btn = event.target.closest && event.target.closest('[data-phone-reveal]');
-          if (!btn) return;
-          event.preventDefault();
-          const a = document.createElement('a');
-          a.href = 'tel:' + c.t;
-          a.textContent = (btn.getAttribute('data-prefix') || '') + c.d;
-          a.className = btn.className;
-          btn.replaceWith(a);
-          a.focus();
-        });
-      })();
-    </script>
+    {CONTACT_PAYLOAD && (
+      <script is:inline define:vars={{ payload: CONTACT_PAYLOAD }}>
+        (function () {
+          let c;
+          try { c = JSON.parse(atob(payload).split('').reverse().join('')); } catch (e) { return; }
+          document.querySelectorAll('a[data-wa]').forEach((a) => { a.href = c.w; a.rel = 'noopener'; });
+          document.addEventListener('click', (event) => {
+            const btn = event.target.closest && event.target.closest('[data-phone-reveal]');
+            if (!btn) return;
+            event.preventDefault();
+            const a = document.createElement('a');
+            a.href = 'tel:' + c.t;
+            a.textContent = (btn.getAttribute('data-prefix') || '') + c.d;
+            a.className = btn.className;
+            btn.replaceWith(a);
+            a.focus();
+          });
+        })();
+      </script>
+    )}
     <script is:inline>
       function markReady(img) {
         if (img && img.classList && img.classList.contains('media-img')) img.classList.add('is-ready');

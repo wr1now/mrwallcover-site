@@ -1,0 +1,11 @@
+---
+import { guideHref, type GuideData } from '../lib/guides';
+interface Props { guide: GuideData; }
+const { guide } = Astro.props;
+---
+<article class="guide-card" data-guide-category={guide.category}>
+  <p class="eyebrow">{String(guide.order).padStart(2, '0')} / {guide.category}</p>
+  <h2><a href={guideHref(guide.slug)}>{guide.shortTitle}</a></h2>
+  <p>{guide.description}</p>
+  <a class="guide-read" href={guideHref(guide.slug)} aria-label={`Read ${guide.shortTitle}`}>Read the guide <span aria-hidden="true">↗</span></a>
+</article>

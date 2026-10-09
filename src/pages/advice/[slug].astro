@@ -1,0 +1,50 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import GuideCard from '../../components/GuideCard.astro';
+import { guides, guideHref } from '../../lib/guides';
+import { materials } from '../../lib/content';
+import { breadcrumbNode, BUSINESS_ID } from '../../lib/schema';
+import { SITE_URL } from '../../config';
+export function getStaticPaths() {
+  return guides.map((guide) => ({ params: { slug: guide.frontmatter.slug }, props: { guide } }));
+}
+const { guide } = Astro.props;
+const { Content, frontmatter: data } = guide;
+const headings = guide.getHeadings().filter((heading) => heading.depth === 2);
+const path = guideHref(data.slug);
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href: '/advice/' }, { name: data.shortTitle, href: path }];
+const related = guides.filter((item) => data.relatedGuides.includes(item.frontmatter.slug));
+const relatedMaterials = materials.items.filter((item) => data.relatedMaterials.includes(item.slug));
+const article = {
+  '@type': 'Article', '@id': `${SITE_URL}${path}#article`, headline: data.title,
+  description: data.description, url: `${SITE_URL}${path}`, inLanguage: 'en-GB',
+  mainEntityOfPage: { '@id': `${SITE_URL}${path}#webpage` }, publisher: { '@id': BUSINESS_ID },
+  ...(data.published ? { datePublished: data.published } : {}),
+  ...(data.updated ? { dateModified: data.updated } : {}),
+};
+---
+<Base title={`${data.shortTitle} | Mr Wallcover`} description={data.description} path={path} author="Mr Wallcover" ogType="article" extraSchema={[breadcrumbNode(crumbs), ...(!data.draft ? [article] : [])]}>
+  <div class="container-page pb-20">
+    <header class="page-head guide-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">The Wallcovering Guide / {data.category}</p>
+      <h1>{data.title}</h1>
+      <p class="lede mt-5">{data.description}</p>
+      {data.published && <p class="text-sm text-stone">Published <time datetime={data.published}>{data.published}</time>{data.reviewer && ` · Reviewed by ${data.reviewer}`}</p>}
+    </header>
+    <div class="guide-layout">
+      <aside class="guide-contents">
+        <nav aria-label="On this page"><p class="eyebrow">In this guide</p><ol>{headings.map((heading) => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ol></nav>
+        <a class="btn btn-line mt-5" href={data.ctaHref}>{data.ctaLabel}</a>
+      </aside>
+      <article class="prose guide-prose">
+        <Content />
+        {data.sources.length > 0 && <aside class="guide-sources"><h2>Further reading</h2><ul>{data.sources.map((source) => <li><a href={source.url}>{source.label}</a></li>)}</ul></aside>}
+        <div class="guide-next"><p class="eyebrow">Your next step</p><h2>Bring it back to your room.</h2><p>Send the material reference and what you already know. A photograph and a short note are enough to start.</p><a class="btn btn-solid-ink" href={data.ctaHref}>{data.ctaLabel}</a></div>
+      </article>
+    </div>
+    {relatedMaterials.length > 0 && <section class="guide-related"><h2>Explore the materials</h2><div class="flex flex-wrap gap-3">{relatedMaterials.map((material) => <a class="btn btn-line" href={`/materials/${material.slug}/`}>{material.name}</a>)}</div></section>}
+    {related.length > 0 && <section class="guide-related"><h2>Keep reading</h2><div class="guide-grid">{related.map((item) => <GuideCard guide={item.frontmatter} />)}</div></section>}
+  </div>
+</Base>

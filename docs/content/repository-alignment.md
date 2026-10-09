@@ -1,6 +1,8 @@
 # Repository alignment
 
-Inspected `wr1now/mrwallcover-site` at `38bcc5bd9992155e0e9851544b361e282db14f56` on 9 October 2026. This is a documentation addition, not an application release.
+Inspected `wr1now/mrwallcover-site` at `38bcc5bd9992155e0e9851544b361e282db14f56` on 9 October 2026. This records the original inspection. Implementation has since been added on this branch; see [implementation status](implementation-status.md) for the current state.
+
+The implementation also incorporates `main` through `0c85c86932f2e8e72082edc1fd59d35856ea26b8`. It preserves the shared `src/data/facts.json`, founder schema, actual case-study dates, draft maker/trade pages, phone secret handling and revised homepage heading. The recursive tree at that revision also contained no AGENTS.md. The historical inventory below describes the initial base; the current validator now supports developer and hotel audiences alongside the original three.
 
 The full recursive tree contained no AGENTS.md. Reviewed the README, architecture, owner guide, asset rights, redirects, package and Astro configuration, deployment workflow, content loader, public content guards, built-site guards, enquiry validation, material and area records, navigation and existing advice/professional pages. This was a targeted architectural and content review, not a claim to have audited every source line or media file.
 
@@ -25,7 +27,7 @@ The full recursive tree contained no AGENTS.md. Reviewed the README, architectur
 
 The static site uses FormSubmit. The private store is implemented in `server/index.ts`, but the architecture document says it is off in the GitHub Pages build. A developer should not describe durable production storage as already active.
 
-Current validation accepts `homeowner`, `designer` and `commercial`. A developer section can initially use `audience=commercial` with appropriate project context. Adding a new `developer` or `hotel` enum requires coordinated browser, validator and API changes. Do not pass an unrecognised value and assume it is stored.
+The original validator accepted `homeowner`, `designer` and `commercial`. This branch adds `developer` and `hotel` through coordinated browser, validator and API changes, with storage and form-payload verification.
 
 Existing enquiry fields include programme and material responsibility. Reuse them. Only add missing professional fields after checking the actual form and notification payload. Upload capacity and delivery are provider-dependent; the private API's limits should not be advertised as the static FormSubmit path's limits.
 
@@ -43,7 +45,7 @@ Source settings are not proof of the production response. Production crawler acc
 
 `docs/` is not a website route. However, this GitHub repository is public: all documents committed here are publicly readable. These additions therefore contain no customer uploads, confidential project drawings, leads or private personal histories.
 
-The ten guide files are editorial drafts in `docs/content/guides/`. Their proposed paths and frontmatter are a handoff convention, not an already-connected Astro collection. Move or load reviewed copies under `src/content/` during implementation, preserving review state and filtering drafts before routes, links and sitemap generation. Internal notes must not be rendered.
+The ten guide sources are now in `src/content/guides/`, connected to `/advice/[slug]`. The documents in `docs/content/guides/` retain editorial notes and links to those sources. Drafts render only in the explicit review build; public production links and summaries exclude them.
 
 Preserve the repository's brand/privacy guard tests. Do not publish excluded names, street numbers, held hotel records or the telephone number in raw HTML. Do not broaden media permissions or aftercare commitments based on this pack.
 
@@ -51,9 +53,9 @@ Preserve the repository's brand/privacy guard tests. Do not publish excluded nam
 
 The workflow runs on pushes to `main`, pull requests and manual dispatch. A pull request builds but does not deploy. A push to the documentation branch does not match the main push trigger. Merging to `main` publishes through GitHub Pages.
 
-This change adds only documents. No production code, DNS, workflow or configuration is changed. A documentation-only validation checks ten complete drafts, unique proposed paths, explicit review state and links within the pack. Runtime tests become required when the guides and professional changes are wired into the site: `npm run check`, `npm run build`, `npm run check:dist`, followed by actual mobile/desktop and enquiry evidence.
+The branch now includes application changes and review-build CI checks. The existing deployment still publishes `dist/`; the review output is separate. DNS and hosting have not changed. See the implementation status for executed tests and limitations.
 
-## Remaining implementation
+## Original implementation checklist
 
 1. Review the ten drafts technically and add genuine, permitted detail photography where useful.
 2. Load and render the guide collection under `/advice/`, using the existing Base and Breadcrumb components.
