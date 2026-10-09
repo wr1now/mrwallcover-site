@@ -46,11 +46,11 @@ Identify which rooms can be released together, the permitted working hours, the 
 
 ## What documentation does the project need?
 
-Where the project sets fire, acoustic or environmental requirements, obtain the current test or classification document for the exact product, backing and installation method proposed, and have the responsible project professional confirm acceptance. "Contract wallcovering" or "vinyl" on a sample card is not evidence of any classification, and neither is this guide. The adhesive and primer are part of the specified system: Vescom lists the correct ones per product on its [adhesives and accessories page](https://vescom.com/en/adhesives-accessories).
+Where the project sets fire, acoustic or environmental requirements, obtain the current test or classification document for the exact product, backing and installation method proposed, and have the responsible project professional confirm acceptance. "Contract wallcovering" or "vinyl" on a sample card is not evidence of any classification, and neither is this guide. A classification belongs to the build-up that was tested, the wallcovering, adhesive and substrate together, so a substitute product or adhesive needs its own evidence. A guest room, a public corridor and a protected stair can carry different requirements; there is no single class that "hotels need". Whether an older British classification satisfies a project is for the responsible designer, fire engineer or building-control route to decide, not the installer. The adhesive and primer are part of the specified system: for Vescom products, Vescom lists the correct ones per product on its [adhesives and accessories page](https://vescom.com/en/adhesives-accessories), and other makers' instructions do the same for theirs.
 
 ## What should the hotel keep after handover?
 
-A room-by-room record of the installed product, colourway, batch and care sheet; spare material from the same batch, stored flat and dry as the maker recommends; and a clear note of the limits of matching a later repair, since a patch from a different batch will show. Our [problems and aftercare guide](/advice/wallcovering-problems-and-aftercare/) explains what to record when something goes wrong.
+A room-by-room record of the installed product, colourway, batch and care sheet; spare material from the same batch, kept dry with its batch label and stored as the maker recommends; and a clear note of the limits of matching a later repair, since a patch from a different batch will show. Our [problems and aftercare guide](/advice/wallcovering-problems-and-aftercare/) explains what to record when something goes wrong.
 
 ## When does this advice stop being reliable?
 

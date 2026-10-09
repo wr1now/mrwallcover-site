@@ -19,7 +19,7 @@ relatedMaterials: ["paper-and-non-woven", "grasscloth-and-weaves", "silk-and-tex
 relatedGuides: ["grasscloth-seams-and-variation", "wall-preparation", "installation-cost"]
 ctaLabel: "Discuss my room"
 ctaHref: "/contact/?audience=homeowner&intent=advice"
-sources: []
+sources: [{"label": "Zoffany: wallpaper FAQs", "url": "https://zoffany.sandersondesigngroup.com/product-faqs/wallpaper-faqs/"}]
 ---
 
 Will this wallpaper suit the room? That depends less on the photograph you fell for than on four things the photograph cannot show: how much the wall gets touched, how the light crosses it, how it will be cleaned, and whether moisture reaches it. Settle those first, then choose between the samples that pass. A sample is a small piece of a much bigger decision, because you are choosing how an entire wall looks in daylight, under lamps and beside everything already in the room.
@@ -38,11 +38,11 @@ Ask for enough of a large design to understand the repeat. One flower, or one fr
 
 ## How will it be cleaned?
 
-Decide this before you order, not after the first mark. Many papers are not washable at all. Grasscloth and silk are dry-dust surfaces. Contract vinyl will take a damp cloth and mild soap, but only as its own maker allows. The word "vinyl" on a sample card does not make every product suitable for every kitchen position, and "washable" means what the product's own care sheet says it means. Our [aftercare page](/aftercare/) sets out the general care each family can take; the exact product's instructions take precedence.
+Decide this before you order, not after the first mark. Many papers are not washable at all. Grasscloth and silk are dry-dust surfaces. Contract vinyl will take a damp cloth and mild soap, but only as its own maker allows. The word "vinyl" on a sample card does not make every product suitable for every kitchen position, and "washable" means what the product's own care sheet says it means. Washability marks are cleaning marks: even "extra-washable" or "scrubbable" describes how the surface takes a sponge, not whether it can stay wet, and none of them makes a paper suitable for a shower or a splashback. Our [aftercare page](/aftercare/) sets out the general care each family can take; the exact product's instructions take precedence.
 
 ## Will moisture reach it?
 
-Separate decorative walls from walls exposed to splashes, steam, grease or heat. A rarely used cloakroom and a bathroom with daily steam are very different rooms. Ordinary decorative wallpaper should not be assumed to work in a direct wet zone, and wallpaper should never be used to hide a damp problem. If a wall feels cold or soft, or a stain has spread, investigate the cause before you choose a finish for it.
+Separate decorative walls from walls exposed to splashes, steam, grease or heat. A rarely used cloakroom and a bathroom with daily steam are very different rooms. Ordinary decorative wallpaper should not be assumed to work in a direct wet zone, and wallpaper should never be used to hide a damp problem. Draw the line physically, not by label: inside a shower or bath enclosure, and the splash zone behind a basin, sink or hob, are not places for decorative paper. [Zoffany](https://zoffany.sandersondesigngroup.com/product-faqs/wallpaper-faqs/), for one, would never recommend paper "in an area which would come directly into contact with water splashes, i.e., behind a sink or shower". A dry cloakroom wall outside that line can take paper if the wall is dry and the product's sheet allows it. Extraction helps the room; it does not make a wet wall dry. If a wall feels cold or soft, or a stain has spread, investigate the cause before you choose a finish for it.
 
 ## Do you want an even surface or a natural one?
 
@@ -50,11 +50,11 @@ Some clients want a very uniform wall. Others want the movement and character of
 
 ## Room by room
 
-**Hallways and stairs.** Look at where bags, hands and furniture meet the wall. Cleanability and the chance of a local repair matter most here. Stairs add installation questions too: access, changing wall heights and where the pattern should sit as the wall climbs.
+**Hallways and stairs.** Look at where bags, hands and furniture meet the wall. Cleanability and the chance of a local repair matter most here. Stairs add installation questions too: access, changing wall heights and where the pattern should sit as the wall climbs. The drops stay plumb while the stair rises, so the motif steps up the wall rather than following the handrail; that is geometry, not a fault, and it is why a flat-wall calculation is not a stair quantity.
 
 **Kitchens and dining rooms.** Keep the decorative wall away from the hob and the sink, and check the exact product's suitability for the positions that will take splashes.
 
-**Bathrooms and cloakrooms.** Understand the ventilation and the existing moisture condition. A direct wet zone needs a system specifically made for it.
+**Bathrooms and cloakrooms.** Understand the ventilation and the existing moisture condition. Keep decorative paper out of the shower or bath enclosure and the splash zone at the basin; a direct wet zone needs a system specifically made for it.
 
 **Bedrooms and living rooms.** These usually give you the most freedom. Appearance still deserves care: side lighting emphasises texture and imperfection, and a large pattern needs a large sample.
 

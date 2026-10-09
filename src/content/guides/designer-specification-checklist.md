@@ -26,9 +26,9 @@ What should a wallcovering specification contain? Enough for the installer to se
 
 ## Product identity
 
-- Maker, collection, product code and colourway, with the current hanging instruction attached. For Phillip Jeffries that is their [hanging instructions page](https://www.phillipjeffries.com/hanging-instructions); every maker has an equivalent.
-- Usable width, roll or panel length, sale unit and minimum order.
-- Repeat, match type (free, straight, half-drop, panel sequence) and hanging direction, including whether alternate drops are reversed.
+- Maker, collection, product code and colourway, with the current hanging instruction attached and its date or revision noted, so everyone works from the same sheet. For Phillip Jeffries that is their [hanging instructions page](https://www.phillipjeffries.com/hanging-instructions); every maker has an equivalent.
+- Usable width, trimmed or untrimmed edges, roll or panel length, sale unit and minimum order.
+- Repeat, match type (free, straight, half-drop, panel sequence) and hanging direction, including whether alternate drops are reversed. Reversing is a direction, not a match: a half-drop hung with reversed drops is two separate instructions, and both belong on the schedule.
 - Backing, and the adhesive and primer the maker specifies for it.
 - Whether the item is confirmed or provisional, so a provisional reference is never mistaken for an order.
 

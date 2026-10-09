@@ -46,7 +46,7 @@ Decide who approves a substitute product, and require appearance, installation i
 
 ## Sample area and snagging: how is acceptance recorded?
 
-Use an agreed sample area or mock-up where the scope calls for one, record its acceptance and measure every later room against it. Agree who protects finished walls from following trades, how snags are recorded, and what counts as a material characteristic rather than a defect: visible seams and shading in natural weaves, for instance, are the material and should be settled at the sample stage. The [designer checklist](/advice/designer-specification-checklist/) covers the design side of that record.
+Agree a sample area or mock-up before the repeating rooms start, in the permanent lighting where possible, record its acceptance and measure every later room against it. Agree who protects finished walls from following trades, how snags are recorded, and what counts as a material characteristic rather than a defect: visible seams and shading in natural weaves, for instance, are the material and should be settled at the sample stage. The [designer checklist](/advice/designer-specification-checklist/) covers the design side of that record.
 
 ## Spares and handover: what does the client keep?
 

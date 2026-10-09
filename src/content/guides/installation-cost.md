@@ -19,7 +19,7 @@ relatedMaterials: ["paper-and-non-woven", "hand-painted", "contract-vinyl"]
 relatedGuides: ["wall-preparation", "hand-painted-murals-set-out", "developer-wallcovering-package"]
 ctaLabel: "Request a scoped quotation"
 ctaHref: "/contact/?intent=install"
-sources: []
+sources: [{"label": "Farrow & Ball: preparing wallpaper", "url": "https://www.farrow-ball.com/how-to-guide/wallpaper/preparing-wallpaper"}]
 faq:
   - q: "Is there a price per roll for wallpaper installation?"
     a: "No. The figure follows the measured wall area after openings are taken off, the pattern repeat and the wastage it creates, the state of the walls, the material, and the access and protection the room needs. A quotation prices a surveyed scope, not a roll."
@@ -41,11 +41,11 @@ A large or demanding repeat wastes material at the top of every drop, and a half
 
 ## What preparation is included?
 
-Installing onto a sound, prepared surface is one job. Stripping old coverings, repairing damage, filling, sanding and lining an uncertain substrate is another, and it can be the larger part of the time on a period wall. A useful quotation says what preparation is included, what is subject to inspection once the old paper is off, and how extra work would be authorised. Our [wall preparation guide](/advice/wall-preparation/) lists what has to be checked.
+Installing onto a sound, prepared surface is one job. Stripping old coverings, repairing damage, filling, sanding and lining an uncertain substrate is another, and it can be the larger part of the time on a period wall. A useful quotation says what preparation is included, what is subject to inspection once the old paper is off, and how extra work would be authorised. Lining usually means another visit, because the liner has to dry before the finish goes on ([Farrow & Ball](https://www.farrow-ball.com/how-to-guide/wallpaper/preparing-wallpaper) asks for at least 12 hours), so a price that is silent on lining is not comparable with one that includes it. Our [wall preparation guide](/advice/wall-preparation/) lists what has to be checked.
 
 ## How does the material change the work?
 
-A product code is more useful than a description. Narrow printed rolls, wide contract vinyl, natural weaves that need clean hands and a particular adhesive, delicate silks, and bespoke scenic panels each introduce different handling, set-out and risk. Some are specified over a lining, some are not. A [hand-painted scenic](/advice/hand-painted-murals-set-out/) is priced by the panel sequence and the time to set it out, not by the roll. Where you have not yet chosen the material, say so: it is a normal starting point, not a reason to guess.
+A product code is more useful than a description, because the code decides the labour: trimmed or untrimmed edges, paste-the-wall or paste-the-paper, a lining or none, drops shaded dry before hanging, a panel layout, or the maker's own adhesive system. Narrow printed rolls, wide contract vinyl, natural weaves that need clean hands and a particular adhesive, delicate silks, and bespoke scenic panels each introduce different handling, set-out and risk. Some are specified over a lining, some are not. A [hand-painted scenic](/advice/hand-painted-murals-set-out/) is priced by the panel sequence and the time to set it out, not by the roll. Where you have not yet chosen the material, say so: it is a normal starting point, not a reason to guess.
 
 ## What about access, protection and the awkward parts?
 
@@ -57,4 +57,4 @@ Check whether a price includes the survey, preparation, lining and primers, adhe
 
 ## When does this guide stop being reliable?
 
-It cannot tell you what your room will cost, because it has not seen your room. Exterior work, listed buildings, acoustic systems and anything with a fire or specification requirement need their own scope. For a first discussion, send the location, room photographs, approximate dimensions, the product reference if you have one and your preferred timing. Developers and main contractors tendering a package will find the measurement basis and scope matrix in our [developer package guide](/advice/developer-wallcovering-package/).
+It cannot tell you what your room will cost, because it has not seen your room. Exterior work, listed buildings, acoustic systems and anything with a fire or specification requirement need their own scope. For a first discussion, send the location, room photographs, approximate dimensions, the product reference if you have one, whether it is already ordered and from one batch, and your preferred timing. The most useful photographs show each wall square-on, a stair from below and from the landing, the ceiling height, and the way into the building: lift, common parts or parking. Developers and main contractors tendering a package will find the measurement basis and scope matrix in our [developer package guide](/advice/developer-wallcovering-package/).

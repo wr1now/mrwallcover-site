@@ -43,7 +43,7 @@ That is enough for a first assessment, and it is what the [aftercare page](/afte
 
 ## Why not just fix it?
 
-Cutting a bubble and injecting adhesive, or pressing a lifted edge back with whatever glue is to hand, can turn a small, invisible repair into a visible one and makes the cause harder to find afterwards. A bubble that appeared with the heating season may be the paper easing as it dries and may settle; a bubble over a cold, soft patch is a damp problem that no repair will hold. An edge lifting at every seam along one wall points to the substrate or the adhesive; one edge behind a door points to a knock.
+Cutting a bubble and injecting adhesive, or pressing a lifted edge back with whatever glue is to hand, can turn a small, invisible repair into a visible one and makes the cause harder to find afterwards. A household PVA worked into a lifting seam can stain the face, and a seam roller run over grasscloth or silk crushes the fibre into a shiny line. A bubble that appeared with the heating season may be the paper easing as it dries and may settle; a bubble over a cold, soft patch is a damp problem that no repair will hold. An edge lifting at every seam along one wall points to the substrate or the adhesive; one edge behind a door points to a knock.
 
 ## Is it a fault, or the material?
 
@@ -59,7 +59,7 @@ Start by knowing which product is on the wall; keep the reference and the maker'
 - **Contract vinyl:** a barely damp cloth with a drop of mild soap, then dry. No abrasive creams, no neat bleach, no scourers.
 - **Acoustic wallcoverings:** low-suction vacuum with a soft head. Do not soak the fabric or the perforations.
 
-Those are the general methods for each family; the exact product's care sheet takes precedence, and an unknown product is treated as not washable. Our [aftercare page](/aftercare/) has the full care notes by material.
+Those are the general methods for each family; the exact product's care sheet takes precedence, and an unknown product is treated as not washable. A washability mark describes how the surface takes a sponge, not whether it can stay wet: even a scrubbable paper is not a splashback. Our [aftercare page](/aftercare/) has the full care notes by material.
 
 ## What should you not do to the room?
 
@@ -67,7 +67,7 @@ Do not steam-clean wallcoverings. Do not point a fan heater at one seam or stand
 
 ## What can a repair realistically achieve?
 
-A local repair is often possible. An exact match is not always possible: ageing, light, batch differences and natural variation all show at the edge of a patch, and a spare from the same batch is the only reliable source. Ask whether the repair will remain visible before agreeing it, and keep approved spare material flat and dry for that reason.
+A local repair is often possible. An exact match is not always possible: ageing, light, batch differences and natural variation all show at the edge of a patch, and a spare from the same batch is the only reliable source. A patch on a plain paper can be sound and still show in side light, and grasscloth and silk rarely patch invisibly. Ask whether the repair will remain visible before agreeing it, and keep approved spare material dry, with its batch label, stored as the maker recommends.
 
 ## When is an inspection needed?
 
