@@ -9,9 +9,26 @@ async function filesUnder(dir: string): Promise<string[]> {
   for (const entry of entries) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) out.push(...await filesUnder(full));
-    else if (/\.(astro|ts|json|css|md|mjs)$/.test(entry.name)) out.push(full);
+    else if (/\.(astro|ts|json|css|md|mjs|js|py|sh|ya?ml)$/.test(entry.name)) out.push(full);
   }
   return out;
+}
+
+/**
+ * The only place in scripts/ allowed to spell a banned word is the explicit
+ * banned-word list in import-previews.mjs, which exists to reject those words
+ * in alt text. The guard removes that single `const banned = [...]` line
+ * before scanning and requires it to appear exactly once, so a second list
+ * or any other mention still fails.
+ */
+const BANNED_LIST_FILE = path.join('scripts', 'import-previews.mjs');
+const BANNED_LIST_LINE = /^const banned = \[.*\];$/m;
+
+function scannable(file: string, text: string): string {
+  if (path.normalize(file) !== BANNED_LIST_FILE) return text;
+  const lines = text.match(new RegExp(BANNED_LIST_LINE.source, 'gm')) ?? [];
+  assert.equal(lines.length, 1, `${file} must hold exactly one banned-word list line`);
+  return text.replace(BANNED_LIST_LINE, '');
 }
 
 /**
@@ -37,18 +54,22 @@ const forbidden = [
   /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}/,
 ];
 
-test('public copy keeps the brand boundaries', async () => {
-  const roots = ['src/content', 'src/pages', 'src/components', 'src/layouts', 'src/lib'];
+test('public copy and the repo scripts keep the brand boundaries', async () => {
+  const roots = ['src/content', 'src/pages', 'src/components', 'src/layouts', 'src/lib', 'scripts'];
   const hits: string[] = [];
+  let scannedScripts = 0;
   for (const root of roots) {
     for (const file of await filesUnder(root)) {
-      const text = await readFile(file, 'utf8');
+      if (root === 'scripts') scannedScripts += 1;
+      const text = scannable(file, await readFile(file, 'utf8'));
       for (const pattern of forbidden) {
         if (pattern.test(text)) hits.push(`${file} matched ${pattern}`);
       }
     }
   }
   assert.deepEqual(hits, []);
+  assert.ok(scannedScripts >= 5, `only ${scannedScripts} script files scanned`);
+  assert.match(await readFile('scripts/import-credited.mjs', 'utf8'), /Credited client or press photographs/);
 });
 
 test('privacy notice keeps Dorin Burcus trading as Mr Wallcover', async () => {
