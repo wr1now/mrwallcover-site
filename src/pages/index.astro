@@ -45,7 +45,7 @@ const others = projects.filter((project) => !project.featured);
       <h2 id="proof-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.4rem)]">{home.proof.title}</h2>
       <p class="lede mt-4 mb-8">{home.proof.text}</p>
     </div>
-    <div class="proof-strip" tabindex="0" aria-label="Photographs and films from Brown's Hotel">
+    <div class="proof-strip" role="region" tabindex="0" aria-label="Photographs and films from Brown's Hotel">
       {
         home.proof.images.map((id) => (
           <figure class="proof-item">

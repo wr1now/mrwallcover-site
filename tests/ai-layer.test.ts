@@ -522,7 +522,7 @@ test('every published page shows one author and date line: the page\'s own date 
   }
   const problems: string[] = [];
   for (const page of await publishedPages()) {
-    const main = page.html.match(/<main id="main">([\s\S]*?)<\/main>/)![1];
+    const main = page.html.match(/<main id="main"[^>]*>([\s\S]*?)<\/main>/)![1];
     const stamps = [...main.matchAll(/By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · (Last updated|Last reviewed) <time datetime="(\d{4}-\d{2}-\d{2})" data-page-updated="(updated|reviewed)">(\d{1,2} [A-Z][a-z]+ \d{4})<\/time>/g)];
     if (stamps.length !== 1) {
       problems.push(`${page.pathname}: ${stamps.length} author/date lines`);

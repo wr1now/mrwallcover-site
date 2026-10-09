@@ -18,15 +18,15 @@
   "hero": "beverly-08",
   "gallery": [
     {
-      "id": "beverly-06",
-      "credit": null
-    },
-    {
       "id": "beverly-08",
       "credit": null
     },
     {
-      "id": "beverly-04",
+      "id": "beverly-06",
+      "credit": null
+    },
+    {
+      "id": "beverly-07",
       "credit": null
     },
     {
@@ -34,7 +34,7 @@
       "credit": null
     },
     {
-      "id": "beverly-07",
+      "id": "beverly-04",
       "credit": null
     },
     {

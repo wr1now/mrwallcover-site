@@ -28,6 +28,8 @@ interface Props {
 
 const { project, redirectTo } = Astro.props;
 const study = project.caseStudy ? caseStudyBySlug(project.slug) : undefined;
+/* Modest (preview-only) heroes are shown at their own pixel width, never stretched past it. */
+const modestHeroWidth = project.modest && project.imageId ? media(project.imageId).thumbWidth : 360;
 const StudyContent = study?.Content;
 const redirectUrl = redirectTo ? new URL(redirectTo, SITE_URL).href : null;
 const crumbs = [
@@ -108,8 +110,8 @@ const schemaNodes = study
     {StudyContent ? (
       <div class="pb-12">
         {project.imageId && (
-          <figure class:list={['m-0 mb-10', project.modest && 'modest-hero']}>
-            <Picture id={project.imageId} loading="eager" fetchpriority="high" thumbOnly={project.modest} sizes={project.modest ? '(min-width: 480px) 360px, 100vw' : '(min-width: 768px) 72rem, 100vw'} />
+          <figure class:list={['m-0 mb-10', project.modest && 'modest-hero']} style={project.modest ? `max-width:${modestHeroWidth}px` : undefined}>
+            <Picture id={project.imageId} loading="eager" fetchpriority="high" thumbOnly={project.modest} sizes={project.modest ? `(min-width: ${modestHeroWidth + 40}px) ${modestHeroWidth}px, 100vw` : '(min-width: 768px) 72rem, 100vw'} />
             {project.credits?.[project.imageId] && <figcaption class="caption">{project.credits[project.imageId]}</figcaption>}
           </figure>
         )}

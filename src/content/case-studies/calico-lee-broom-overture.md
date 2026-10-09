@@ -18,11 +18,11 @@
   "hero": "lee-broom-08",
   "gallery": [
     {
-      "id": "lee-broom-01",
+      "id": "lee-broom-08",
       "credit": null
     },
     {
-      "id": "lee-broom-03",
+      "id": "lee-broom-11",
       "credit": null
     },
     {
@@ -30,7 +30,15 @@
       "credit": null
     },
     {
-      "id": "lee-broom-08",
+      "id": "lee-broom-03",
+      "credit": null
+    },
+    {
+      "id": "lee-broom-01",
+      "credit": null
+    },
+    {
+      "id": "lee-broom-07",
       "credit": null
     },
     {
@@ -42,19 +50,11 @@
       "credit": null
     },
     {
-      "id": "lee-broom-07",
-      "credit": null
-    },
-    {
       "id": "lee-broom-09",
       "credit": null
     },
     {
       "id": "lee-broom-10",
-      "credit": null
-    },
-    {
-      "id": "lee-broom-11",
       "credit": null
     }
   ],

@@ -135,3 +135,28 @@ test('every page: html.js-nav is set before first paint, with a load-time fallba
   const header = await readFile(new URL('../src/components/Header.astro', import.meta.url), 'utf8');
   assert.match(header, /setAttribute\('data-nav-ready'/);
 });
+
+test('skip link lands focus on <main>, and every "Start" link has the accessible name "Start your project"', async () => {
+  const html = await readFile('dist/index.html', 'utf8');
+  assert.match(html, /<a[^>]+href="#main"/, 'skip link present');
+  assert.match(html, /<main id="main" tabindex="-1"/, 'main is focusable from the skip link');
+  const starts = [...html.matchAll(/<a[^>]*href="\/contact\/"[^>]*>([\s\S]*?)<\/a>/g)].map((m) => m[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
+  assert.ok(starts.length > 0);
+  assert.equal(starts.filter((text) => /^start$/i.test(text)).length, 0, `bare "Start" link text: ${JSON.stringify(starts)}`);
+});
+
+test('preview-only case-study heroes are never stretched past their own pixel width', async () => {
+  const sizes = JSON.parse(await readFile('src/content/sizes.json', 'utf8')) as Record<string, { thumbWidth: number }>;
+  for (const [slug, id] of [['old-bailey-hotel', 'old-bailey-06'], ['heathrow-terminal-4-calico', 'heathrow-05'], ['north-london-residence', 'north-london-residence-01']] as const) {
+    const html = await readFile(`dist/projects/${slug}/index.html`, 'utf8');
+    assert.match(html, new RegExp(`class="[^"]*modest-hero[^"]*"[^>]*style="max-width:${sizes[id].thumbWidth}px"`), slug);
+  }
+});
+
+test('Calico case studies open their galleries on the finished frame used as the hero', async () => {
+  for (const slug of ['calico-ahluwalia-estuary-rosewood', 'heathrow-terminal-4-calico', 'calico-lee-broom-overture', 'calico-beverly-1975-cadence']) {
+    const text = await readFile(`src/content/case-studies/${slug}.md`, 'utf8');
+    const data = JSON.parse(text.split('---')[1]) as { hero: string; gallery: { id: string }[] };
+    assert.equal(data.gallery[0].id, data.hero, slug);
+  }
+});

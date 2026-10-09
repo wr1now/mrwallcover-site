@@ -203,7 +203,7 @@ function yamlString(value) {
 export async function readPage(file) {
   const html = await readFile(file, 'utf8');
   if (/<meta name="robots" content="noindex">/.test(html) || /http-equiv="refresh"/.test(html)) return null;
-  const main = html.match(/<main id="main">([\s\S]*?)<\/main>/)?.[1];
+  const main = html.match(/<main id="main"[^>]*>([\s\S]*?)<\/main>/)?.[1];
   if (!main) throw new Error(`${file}: no <main id="main">`);
   const canonical = html.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
   if (!canonical) throw new Error(`${file}: no canonical`);
