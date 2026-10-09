@@ -125,8 +125,8 @@
     display: none;
   }
 
-  /* The toggle does nothing without JavaScript, so it is not shown; the panel renders in flow instead. */
-  html:not(.js) .menu-toggle {
+  /* Until the Header script runs (it sets html.js-nav itself), the toggle is not shown and the panel renders in flow: no JavaScript, or a failed module, still leaves every link reachable. */
+  html:not(.js-nav) .menu-toggle {
     display: none;
   }
 
@@ -141,7 +141,7 @@
     overscroll-behavior: contain;
   }
 
-  .js .mobile-menu:not(.is-open) {
+  .js-nav .mobile-menu:not(.is-open) {
     display: none;
   }
 
@@ -149,7 +149,7 @@
     animation: menu-in var(--dur-panel) var(--ease-decel) both;
   }
 
-  html:not(.js) .mobile-menu {
+  html:not(.js-nav) .mobile-menu {
     position: static;
     padding: 1rem var(--gutter) 0;
   }

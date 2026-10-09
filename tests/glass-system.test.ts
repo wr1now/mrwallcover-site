@@ -53,6 +53,10 @@ test('the three Glass variants ship with the @supports fallback, the reduced-eff
   // The dock is the opaque recipe and the old "plain" preference is gone.
   assert.match(css, /\.glass-opaque\{[^}]*backdrop-filter:none/);
   assert.doesNotMatch(css, /data-effects=plain/);
+  // The menu's hidden state is keyed on a class the Header script sets itself, not on the head's html.js, so a failed module still shows the in-flow links and no dead toggle.
+  assert.match(css, /html:not\(\.js-nav\) \.menu-toggle\{display:none\}/);
+  assert.match(css, /\.js-nav \.mobile-menu:not\(\.is-open\)\{display:none\}/);
+  assert.doesNotMatch(css, /\.js \.mobile-menu/);
 });
 
 test('every page: the header is one Glass element with a real disclosure toggle, the dock has at most four actions, the toggle is applied before first paint', async () => {
