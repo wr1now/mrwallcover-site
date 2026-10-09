@@ -1,0 +1,23 @@
+{
+  "note": "Unpublished hotel credits. publish is false. Pages must not import this file. Confirm with Dorin before any of these names appear on the site. Do not add shipping labels or other people's company names.",
+  "items": [
+    {
+      "publish": false,
+      "slug": "hilton-london-metropole",
+      "name": "Hilton London Metropole",
+      "reason": "Held. A credit may be possible later. Do not publish photographs of delivery labels."
+    },
+    {
+      "publish": false,
+      "slug": "waldorf-astoria-admiralty-arch",
+      "name": "Waldorf Astoria London Admiralty Arch",
+      "reason": "Held. The hotel is not open, and the credit is not confirmed for publication."
+    },
+    {
+      "publish": false,
+      "slug": "london-marriott-canary-wharf",
+      "name": "London Marriott Hotel Canary Wharf",
+      "reason": "Held until the credit is confirmed for publication."
+    }
+  ]
+}

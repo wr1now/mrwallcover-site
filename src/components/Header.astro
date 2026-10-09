@@ -15,7 +15,7 @@ function isCurrent(href: string) {
 }
 ---
 
-<header class="site-header">
+<header class="site-header glass-champagne">
   <div class="container-page flex h-16 items-center justify-between gap-3 lg:h-[4.25rem]">
     <a class="wordmark" href="/" title="Home">
       <em>Mr</em>Wallcover
@@ -29,10 +29,11 @@ function isCurrent(href: string) {
         ))
       }
       <PhoneReveal class="nav-link reveal-phone" label="Phone" />
+      <a class="btn btn-solid-ink" href="/contact/">Start your project</a>
     </nav>
     <div class="flex items-center gap-1 lg:hidden">
-      <a class="nav-link min-w-12 justify-center px-2" href="/contact/" aria-label={`Contact ${BRAND_NAME}`}>Contact</a>
-      <details class="mobile-nav">
+      <a class="nav-link min-w-12 justify-center px-2" href="/contact/">Start</a>
+      <details class="mobile-nav" data-mobile-nav>
         <summary class="menu-toggle">
           <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
           <span class="open-label">Menu</span>
@@ -46,6 +47,7 @@ function isCurrent(href: string) {
               </a>
             ))
           }
+          <a href="/contact/">Start your project</a>
           <PhoneReveal class="reveal-phone menu-reveal" label="Show phone number" prefix="Call " />
         </nav>
       </details>
@@ -73,3 +75,18 @@ function isCurrent(href: string) {
     display: inline;
   }
 </style>
+
+<script>
+  const nav = document.querySelector<HTMLDetailsElement>('[data-mobile-nav]');
+  const summary = nav?.querySelector('summary');
+  nav?.addEventListener('toggle', () => {
+    document.body.classList.toggle('nav-open', Boolean(nav.open));
+    if (nav.open) nav.querySelector<HTMLElement>('nav a, nav button')?.focus();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && nav?.open) {
+      nav.open = false;
+      summary?.focus();
+    }
+  });
+</script>

@@ -26,3 +26,6 @@ pnpm-debug.log*
 # source uploads and local scaffolds
 uploads/
 tmp-scaffold/
+
+# private enquiry store (never commit leads or room photographs)
+data/

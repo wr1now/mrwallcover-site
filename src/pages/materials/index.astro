@@ -1,0 +1,60 @@
+---
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import MaterialStudio from '../../components/MaterialStudio.astro';
+import Base from '../../layouts/Base.astro';
+import { materials, specialismHref, specialisms } from '../../lib/content';
+import { breadcrumbNode } from '../../lib/schema';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Materials', href: '/materials/' },
+];
+---
+
+<Base title={materials.title} description={materials.description} path="/materials/" extraSchema={[breadcrumbNode(crumbs)]}>
+  <div class="container-page">
+    <header class="page-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">{materials.eyebrow}</p>
+      <h1>{materials.heading}</h1>
+      <p class="lede mt-5">{materials.lede}</p>
+      <p class="m-0 mt-4 text-stone">Saved materials stay on this device. There is no account. If you send an enquiry from this browser, the shortlist is attached.</p>
+    </header>
+    <ul class="m-0 grid list-none gap-8 p-0 md:grid-cols-2">
+      {materials.items.map((item) => {
+        const service = specialisms.find((entry) => entry.slug === item.specialism);
+        return (
+          <li class="border-t border-line pt-4">
+            <h2 class="m-0 text-[1.8rem]"><a href={`/materials/${item.slug}/`}>{item.name}</a></h2>
+            <p class="mt-3 mb-0 text-stone">{item.appearance}</p>
+            <p class="mt-3 mb-0">{item.joins}</p>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <button class="btn btn-line" type="button" data-shortlist={item.slug} aria-pressed="false">Save to shortlist</button>
+              {service && <a class="btn btn-line" href={specialismHref(service.slug)}>Installation</a>}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+    <section class="mt-16 border-t border-line pt-10" aria-labelledby="compare-heading">
+      <h2 id="compare-heading" class="m-0 text-[2rem]">Compare the shortlist <span data-shortlist-count>0</span></h2>
+      <p data-compare-empty class="lede mt-4">Save two or more families to compare joins, care and where they belong.</p>
+      <div class="mt-6 grid gap-6">
+        {materials.items.map((item) => (
+          <article data-compare-row={item.slug} hidden class="border-t border-line pt-4">
+            <h3 class="m-0 text-[1.6rem]">{item.name}</h3>
+            <p class="m-0 mt-2"><strong>Setting.</strong> {item.setting}</p>
+            <p class="m-0 mt-2"><strong>Joins.</strong> {item.joins}</p>
+            <p class="m-0 mt-2"><strong>Care.</strong> {item.care}</p>
+          </article>
+        ))}
+      </div>
+      <p class="mt-8"><a class="btn btn-solid-ink" href="/contact/?intent=source">Discuss this shortlist</a></p>
+    </section>
+  </div>
+  <MaterialStudio />
+</Base>
+
+<script>
+  import '../../scripts/shortlist';
+</script>

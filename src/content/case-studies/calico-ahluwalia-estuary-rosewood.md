@@ -14,7 +14,7 @@
   "metaTitle": "Ahluwalia x Calico: Estuary at Rosewood | Mr Wallcover",
   "metaDescription": "Ahluwalia's Estuary mural for Calico Wallpaper, installed as the runway backdrop at Rosewood London for London Fashion Week, September 2026.",
   "group": "design-weeks",
-  "standfirst": "The runway backdrop for Priya Ahluwalia's first wallcovering, hung in a single day before the show.",
+  "standfirst": "An event install for Calico Wallpaper: the runway backdrop for Priya Ahluwalia's first wallcovering, hung in a single day before the show. Not a hotel fit-out.",
   "hero": "ahluwalia-estuary-06",
   "gallery": [
     {
@@ -88,24 +88,24 @@ On 19 September 2026 Ahluwalia showed *Revel* in front of Estuary, and the colle
 - [Wallpaper*, LDF 2026 live coverage (Estuary)](https://www.wallpaper.com/design-interiors/live/london-design-festival-2026)
 - [Calico Wallpaper on LinkedIn, "Introducing Estuary" (15 Sep 2026)](https://www.linkedin.com/posts/calico-wallpaper_introducing-estuary-by-ahluwalia-known-for-activity-7505671848437886977-VyQ7)
 
-## Launch dinner, NoMad London
+## Launch dinner panels for Calico
 
 ### At a glance
 
 - **In partnership with:** Calico Wallpaper, Brooklyn
 - **Event:** the London launch dinner for Estuary by Ahluwalia, London Design Festival 2026
-- **Venue:** NoMad London's private dining room, Covent Garden
-- **Our work:** wallpapering the freestanding "step and repeat" walls, built by a set-building studio
+- **Where the dinner was held:** NoMad London, Covent Garden
+- **Our work:** the freestanding panels were papered in a workshop, not at the hotel
 - **When:** panels hung 14 September 2026, ahead of the dinner
 
 ### The project
 
-For its Estuary launch, Calico hosted an intimate dinner for guests from interiors and fashion at NoMad London. The backdrop was a pair of temporary walls built off-site, so they could be wallpapered in a workshop and delivered finished to the hotel. We hung the Estuary panels on the flats in the builder's workshop and took delivery of the panels beforehand.
+This was an event install for Calico Wallpaper, not a hotel fit-out. Calico hosted a dinner at NoMad London. The backdrop was a pair of temporary walls built off site. We papered the Estuary panels on those flats in the workshop and they were delivered finished. We did not hang them at the hotel.
 
 ### Our approach
 
-- **Workshop installation:** papering on the flat, in controlled conditions, gives cleaner edges and faster on-site set-up than hanging in a live hotel.
-- **Edges and returns:** for freestanding panels the edges show from every angle, so the paper was wrapped and finished to look like a solid, monolithic surface.
+- **Workshop installation:** papering on the flat, in controlled conditions, gives cleaner edges than hanging in a room that is about to host a dinner.
+- **Edges and returns:** for freestanding panels the edges show from every angle, so the paper was wrapped and finished to look like a solid surface.
 
 ### Links
 

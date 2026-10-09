@@ -1,0 +1,60 @@
+---
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Base from '../../layouts/Base.astro';
+import { breadcrumbNode } from '../../lib/schema';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Advice', href: '/advice/' },
+  { name: 'Quantities', href: '/advice/quantities/' },
+];
+---
+
+<Base
+  title="Wallpaper quantity calculator | Mr Wallcover"
+  description="A restricted roll calculator for free-match and straight-match rectangular walls. No prices. Half-drop, murals, stairs and panels are refused."
+  path="/advice/quantities/"
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page pb-20">
+    <header class="page-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Quantities</p>
+      <h1>Rolls, under stated assumptions.</h1>
+      <p class="lede mt-5">Free match and simple straight match only. Doors and windows are not deducted. This is not a purchase quantity and it is not a quotation.</p>
+    </header>
+    <form class="grid max-w-3xl gap-5" data-quantity>
+      <div data-walls class="grid gap-5">
+        <div class="grid gap-5 md:grid-cols-2">
+          <div class="field"><label>Width, metres <input name="width" type="number" min="0" step="0.01" value="4" /></label></div>
+          <div class="field"><label>Height, metres <input name="height" type="number" min="0" step="0.01" value="2.4" /></label></div>
+        </div>
+      </div>
+      <button class="btn btn-line" type="button" data-add-wall>Add another wall</button>
+      <div class="grid gap-5 md:grid-cols-2">
+        <div class="field"><label>Top and bottom trim, metres <input name="trim" type="number" min="0" step="0.01" value="0.1" /></label></div>
+        <div class="field"><label>Usable roll width, metres <input name="rollWidth" type="number" min="0" step="0.01" value="0.52" /></label></div>
+        <div class="field"><label>Roll length, metres <input name="rollLength" type="number" min="0" step="0.01" value="10" /></label></div>
+        <div class="field">
+          <label>Match
+            <select name="match">
+              <option value="free">Free / plain</option>
+              <option value="straight">Straight match</option>
+              <option value="half-drop">Half drop</option>
+              <option value="mural">Mural or panels</option>
+              <option value="stair">Stair or slope</option>
+              <option value="panel">Bespoke set</option>
+            </select>
+          </label>
+        </div>
+        <div class="field"><label>Pattern repeat, metres <input name="repeat" type="number" min="0" step="0.01" value="0.64" /></label></div>
+      </div>
+      <button class="btn btn-solid-ink" type="submit">Calculate</button>
+      <p data-quantity-output role="status" hidden></p>
+    </form>
+  </div>
+</Base>
+
+<script>
+  import '../../scripts/quantity-ui';
+</script>

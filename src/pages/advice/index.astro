@@ -1,0 +1,44 @@
+---
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Base from '../../layouts/Base.astro';
+import { breadcrumbNode } from '../../lib/schema';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Advice', href: '/advice/' },
+];
+---
+
+<Base
+  title="Advice | Mr Wallcover"
+  description="Practical notes on measuring, preparation, material expectations and aftercare from Mr Wallcover in London."
+  path="/advice/"
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page pb-20">
+    <header class="page-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Advice</p>
+      <h1>Before the first length is cut.</h1>
+      <p class="lede mt-5">Short notes from the way the practice works. They are not a specification, and they do not replace the maker’s instruction or a survey.</p>
+    </header>
+    <div class="grid gap-8 md:grid-cols-2">
+      <article class="border-t border-line pt-4">
+        <h2 class="m-0 text-[1.8rem]"><a href="/advice/quantities/">Quantities</a></h2>
+        <p>A restricted calculator for plain and straight-match walls. It refuses half-drop, murals, stairs and panels, and it does not give a price.</p>
+      </article>
+      <article class="border-t border-line pt-4">
+        <h2 class="m-0 text-[1.8rem]"><a href="/services/#surveying">Preparation</a></h2>
+        <p>The wall is part of the job. If it is not ready for the material, that belongs in the scope before the paper is ordered.</p>
+      </article>
+      <article class="border-t border-line pt-4">
+        <h2 class="m-0 text-[1.8rem]"><a href="/materials/">Material expectations</a></h2>
+        <p>Seams, variation and sheen. Natural materials do not have invisible joins.</p>
+      </article>
+      <article class="border-t border-line pt-4">
+        <h2 class="m-0 text-[1.8rem]"><a href="/aftercare/">Aftercare</a></h2>
+        <p>A return visit about four to six weeks after completion, and twelve months on the workmanship of the hang.</p>
+      </article>
+    </div>
+  </div>
+</Base>

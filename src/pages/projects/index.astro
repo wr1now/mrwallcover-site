@@ -2,7 +2,7 @@
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Picture from '../../components/Picture.astro';
 import Base from '../../layouts/Base.astro';
-import { projectHref, projects } from '../../lib/content';
+import { hotels, projectHref, projects } from '../../lib/content';
 import { breadcrumbNode } from '../../lib/schema';
 import indexCopy from '../../content/projects.json';
 
@@ -11,7 +11,7 @@ const groups = [
   {
     id: 'design-weeks',
     title: 'Design weeks & fashion',
-    intro: 'Delivered in partnership with Calico Wallpaper: London Design Festival, London Fashion Week and fashion retail.',
+    intro: 'Event installs for Calico Wallpaper, including London Design Festival and London Fashion Week. Rosewood London and NoMad London are named here only as those events, not as hotel fit-outs.',
     items: projects.filter((p) => p.group === 'design-weeks'),
   },
 ].filter((g) => g.items.length > 0);
@@ -35,6 +35,26 @@ const crumbs = [
       <h1>{indexCopy.index.heading}</h1>
       <p class="lede mt-5">{indexCopy.index.lede}</p>
     </header>
+    <section id="hotels" class="scroll-mt-24 pb-16" aria-labelledby="hotel-list-heading">
+      <h2 id="hotel-list-heading" class="m-0 border-t border-line pt-6 text-[clamp(1.9rem,3.5vw,2.8rem)]">Hotels</h2>
+      <p class="lede mt-4">Hotels we can name. Each line is a commission already cleared for the site. The Lanesborough and Moxy London ExCeL are names only.</p>
+      <ul class="hotel-list m-0 mt-8 grid list-none gap-4 p-0">
+        {hotels.map((hotel) => (
+          <li class="border-t border-line pt-4">
+            {hotel.href && !hotel.nameOnly ? (
+              <a class="font-serif text-[1.7rem] leading-none text-inherit no-underline" href={hotel.href}>{hotel.name}</a>
+            ) : (
+              <p class="m-0 font-serif text-[1.7rem] leading-none">{hotel.name}</p>
+            )}
+            {!hotel.nameOnly && (hotel.years || hotel.place || hotel.scope) && (
+              <p class="m-0 mt-2 text-stone">
+                {[hotel.place, hotel.years, hotel.scope].filter(Boolean).join(' · ')}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
     {
       groups.map((group) => (
         <section id={group.id} class="scroll-mt-24 pb-16" aria-labelledby={`${group.id}-heading`}>

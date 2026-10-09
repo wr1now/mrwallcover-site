@@ -13,6 +13,7 @@ export default defineConfig({
       filter: (page) =>
         !page.includes('/thank-you') &&
         !page.includes('/404') &&
+        !page.includes('/search') &&
         !['/projects/owo-whitehall/', '/projects/four-seasons-ten-trinity/', '/projects/hilton-silverstone/'].some((old) =>
           page.endsWith(old),
         ),
@@ -21,5 +22,8 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      modulePreload: false,
+    },
   },
 });

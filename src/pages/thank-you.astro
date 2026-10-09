@@ -9,9 +9,27 @@ import utility from '../content/utility.json';
     <p class="eyebrow">Contact</p>
     <h1 class="m-0 text-[clamp(2.6rem,6vw,4.2rem)]">{utility.thanks.heading}</h1>
     <p class="lede mt-5">{utility.thanks.text}</p>
+    <p class="mt-4 hidden" data-receipt-line></p>
     <div class="mt-8 flex flex-wrap gap-3">
       <PhoneReveal class="btn btn-solid-ink" label="Show phone number" prefix="Call " />
       <a class="btn btn-line" href="/contact/" data-wa>WhatsApp</a>
     </div>
   </div>
+  <script>
+  const line = document.querySelector<HTMLElement>('[data-receipt-line]');
+  try {
+    const raw = sessionStorage.getItem('mw-receipt');
+    if (raw && line) {
+      const receipt = JSON.parse(raw) as { reference?: string; channel?: string };
+      if (receipt.reference) {
+        line.hidden = false;
+        line.textContent = receipt.channel === 'api'
+          ? `Reference ${receipt.reference}. The enquiry is stored.`
+          : `Reference ${receipt.reference}. It is included in the message sent through the form host. That redirect is not proof the inbox has it.`;
+      }
+    }
+  } catch {
+    /* ignore */
+  }
+  </script>
 </Base>

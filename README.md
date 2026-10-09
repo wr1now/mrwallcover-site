@@ -46,19 +46,26 @@ The award line on the site is “Award-winning (2021)”. The award’s name wil
 
 Photographs are in `public/media/`. Hotel photographs that are not our own are used small, as project cards. Brown’s Hotel photographs and films were taken on site and are shown in full on that project.
 
-## Quotation form
+## Enquiry form
 
-By default the form opens an email to `info@mrwallcover.com`. That works on GitHub Pages, Cloudflare Pages and Netlify with no extra account.
+The public site posts to FormSubmit, which forwards the note to `info@mrwallcover.com`. The endpoint in `src/config.ts` is FormSubmit’s alias, not a mailto link. The visitor chooses email or phone. There is no four-second wait.
 
-To send the form somewhere else, change `src/config.ts` or set these at build time:
+A private lead store exists for when you run it yourself. It is off in the GitHub Pages build. Nothing on Pages can save a lead to disk.
+
+```bash
+LEAD_API_ENABLED=1 LEAD_STAFF_TOKEN=choose-a-long-token LEAD_NOTIFIER=file npm run lead-api
+```
+
+Then build the site with `PUBLIC_LEAD_API` set to that server’s origin, for example `http://127.0.0.1:8787`. Leads are written under `data/leads/`, which is not committed. A failed notification leaves the lead in place. See `docs/architecture.md` and `docs/owner-guide.md`.
 
 | Variable | Value |
 | --- | --- |
-| `PUBLIC_FORM_PROVIDER` | `mailto` (default), `netlify`, or `formspree` |
-| `PUBLIC_FORM_ENDPOINT` | Formspree URL, for example `https://formspree.io/f/xxxx` |
+| `PUBLIC_FORM_PROVIDER` | `formsubmit` in the file. Also `mailto`, `netlify`, or `formspree` |
+| `PUBLIC_FORM_ENDPOINT` | Overrides the FormSubmit alias |
+| `PUBLIC_LEAD_API` | Origin of the private store. Empty on the live build |
 | `PUBLIC_ANALYTICS_SRC` | Optional cookie-free analytics script. Empty means no script and no cookies |
 
-For Netlify Forms, set `PUBLIC_FORM_PROVIDER` to `netlify` in the Netlify environment and redeploy. The form name is `quote-request`.
+Do not put lead files, room photographs or the staff token in the repository.
 
 ## Deploy to GitHub Pages
 
