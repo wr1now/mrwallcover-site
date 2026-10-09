@@ -1,4 +1,65 @@
+# Mr Wallcover, www.mrwallcover.com
+# Every group below carries the same Disallow lines as the default group,
+# because a crawler that matches a named group ignores "User-agent: *".
+
 User-agent: *
+Allow: /
+Disallow: /thank-you/
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /thank-you/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /thank-you/
+
+User-agent: Applebot
+Allow: /
+Disallow: /thank-you/
+
+# AI search and assistant fetchers (answer engines that cite pages)
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /thank-you/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /thank-you/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /thank-you/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /thank-you/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /thank-you/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /thank-you/
+
+# AI-training controls. GPTBot, Google-Extended, Applebot-Extended and
+# ClaudeBot govern model training, not search. They are allowed for now;
+# the owner may switch any of them to "Disallow: /" without affecting search.
+User-agent: GPTBot
+Allow: /
+Disallow: /thank-you/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /thank-you/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /thank-you/
+
+User-agent: ClaudeBot
 Allow: /
 Disallow: /thank-you/
 

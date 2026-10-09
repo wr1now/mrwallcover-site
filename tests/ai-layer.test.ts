@@ -251,3 +251,37 @@ test('every published HTML page has exactly one H1', async () => {
   }
   assert.deepEqual(problems, []);
 });
+
+test('robots.txt names every required crawler with the same Disallow lines as the default group, keeps the Sitemap line and notes the training controls', async () => {
+  const robots = await readFile('dist/robots.txt', 'utf8');
+  const required = ['Googlebot', 'Bingbot', 'OAI-SearchBot', 'ChatGPT-User', 'GPTBot', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot', 'Applebot-Extended'];
+  // Parse groups: a run of User-agent lines followed by their rules.
+  const groups: { agents: string[]; rules: string[] }[] = [];
+  for (const raw of robots.split('\n')) {
+    const line = raw.replace(/#.*$/, '').trim();
+    if (!line) continue;
+    const [field, ...rest] = line.split(':');
+    const value = rest.join(':').trim();
+    if (field.toLowerCase() === 'user-agent') {
+      const last = groups.at(-1);
+      if (last && last.rules.length === 0) last.agents.push(value);
+      else groups.push({ agents: [value], rules: [] });
+    } else if (field.toLowerCase() === 'sitemap') {
+      continue;
+    } else {
+      groups.at(-1)!.rules.push(`${field}: ${value}`);
+    }
+  }
+  const star = groups.find((group) => group.agents.includes('*'));
+  assert.ok(star, 'User-agent: * group');
+  assert.ok(star!.rules.includes('Allow: /'), 'default group allows /');
+  assert.ok(star!.rules.includes('Disallow: /thank-you/'), 'default group keeps the thank-you Disallow');
+  for (const bot of required) {
+    const group = groups.find((item) => item.agents.includes(bot));
+    assert.ok(group, `${bot} has a group`);
+    assert.deepEqual(group!.rules, star!.rules, `${bot} must carry exactly the default rules`);
+  }
+  assert.match(robots, /^Sitemap: https:\/\/www\.mrwallcover\.com\/sitemap-index\.xml$/m);
+  assert.match(robots, /AI-training controls[\s\S]*GPTBot[\s\S]*Google-Extended[\s\S]*Applebot-Extended[\s\S]*ClaudeBot/, 'comment naming the training controls');
+  assert.doesNotMatch(robots, /Disallow: \/\s*$/m, 'nothing is blocked site-wide');
+});
