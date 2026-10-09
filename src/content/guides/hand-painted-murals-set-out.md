@@ -19,10 +19,10 @@ relatedMaterials: ["hand-painted", "murals"]
 relatedGuides: ["designer-specification-checklist", "wall-preparation", "installation-cost"]
 ctaLabel: "Discuss a scenic layout"
 ctaHref: "/contact/?audience=designer&intent=install"
-sources: []
+sources: [{"label": "de Gournay: wallpaper hanging instructions (2026)", "url": "https://degournay.com/uploads/technical/document/2026_Hanging_Instructions-After-2025.pdf"}, {"label": "Rebel Walls: bespoke wallpaper", "url": "https://rebelwalls.com/uk/bespoke-wallpaper"}, {"label": "Rebel Walls: how to measure for a custom mural", "url": "https://rebelwalls.com/en-ca/how-to-measure-for-wallpaper"}]
 ---
 
-When should a scenic paper be planned? Before it is ordered, and before the room's dimensions are final. A hand-painted or panoramic paper is a composition, not a repeating pattern: the panels are made to the elevations, and the question is not whether they cover the wall but what remains visible once the doors, the corners and the furniture are taken into account. Change the plan after production and the only remedies are cropping, stretching or re-ordering.
+When should a scenic paper be planned? Before it is ordered, and before the room's dimensions are final. A hand-painted or panoramic paper is a composition, not a repeating pattern: the panels are made to the elevations, and the question is not whether they cover the wall but what remains visible once the doors, the corners and the furniture are taken into account. Change the plan after production and the remedies are cropping or re-ordering; a hand-painted set cannot be stretched to make up the difference.
 
 ## Which wall, and what is the focal point?
 
@@ -32,11 +32,19 @@ Draw each wall first. Record the finished width and height, and the position of 
 
 Scenic papers arrive as numbered panels of a stated width, hung in order. The maker's layout drawing shows where each panel begins and how the scene continues around a corner; the installer's set-out shows where that layout meets the real wall. Agree both before production, including whether a corner falls on a panel edge or inside a panel, and how a door opening is handled, since the scene has to continue correctly above it.
 
-Keep the layout on site and check the delivered panels against it before anything is cut. A sequence or sizing problem is easy to resolve at that stage and expensive afterwards.
+Do not re-order numbered panels on a continuous wall to move a motif: the sequence is the artwork. [de Gournay's hanging instructions](https://degournay.com/uploads/technical/document/2026_Hanging_Instructions-After-2025.pdf) say panels "must be hung in their correct sequence on continuous wall sections", and that only a break in the wall, such as a door or window rising close to the design height, gives "the opportunity for the sequence to be altered".
+
+Keep the layout on site and check the delivered panels against it, dry and before any paste, before anything is cut. A sequence or sizing problem is easy to resolve at that stage and expensive afterwards.
 
 ## What happens at doors, windows and corners?
 
-Every interruption removes part of the picture. Decide where the loss is least painful: usually behind a door that stands open, above a window, or in a corner that furniture hides. Ask the maker how they handle cropping, panel dimensions and any custom scaling. Stretching a design to fit is not necessarily an acceptable adjustment, and a scene that has been scaled up loses the detail you chose it for.
+Every interruption removes part of the picture. Decide where the loss is least painful: usually behind a door that stands open, above a window, or in a corner that furniture hides. Ask the maker how they handle cropping and panel dimensions before production.
+
+## Can the design be stretched to fit?
+
+Not a hand-painted or hand-printed set. Its panels are made at a fixed width, numbered and hung in sequence. If the wall and the set disagree, the choices are to crop a designed edge, add panels or plain ground that the studio actually offers, or change the wall; pulling the image to fit is not one of them. On the wall, forcing a pasted panel to close a gap is a fault: [de Gournay](https://degournay.com/uploads/technical/document/2026_Hanging_Instructions-After-2025.pdf) warns that it "stretches the wallcovering and upon drying will lead to shrinkage".
+
+Some digital prints can be adjusted, and then only in the file, before printing. A made-to-measure digital mural is printed to the dimensions you supply: [Rebel Walls](https://rebelwalls.com/uk/bespoke-wallpaper), for example, prints to the measurements ordered, lets you crop the image in its editor and accepts only high-resolution images, and [asks for 10 cm](https://rebelwalls.com/en-ca/how-to-measure-for-wallpaper) to be added to the width and height for trimming. Whether a particular image can be scaled, and by how much, depends on its resolution and the supplier, so ask them to confirm it. Keep the proportions: a scene scaled up loses the detail you chose it for, and one distorted to a new shape looks wrong at once.
 
 ## Should the dimensions be the finished dimensions?
 
