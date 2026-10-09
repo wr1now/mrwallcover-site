@@ -1,4 +1,20 @@
-/* Homepage hero below 1024px. Imported by src/components/Hero.astro; desktop is untouched. */
+/* Homepage hero sizing. Imported by src/components/Hero.astro. */
+
+/*
+ * The homepage H1 is a full sentence that defines the firm, so it drops the
+ * display size and the 11ch measure that suited the old three-word headline.
+ */
+.hero-copy h1 {
+  max-width: 22ch;
+  font-size: 2.3rem;
+  line-height: 1.08;
+}
+
+@media (min-width: 1024px) {
+  .hero-copy h1 {
+    font-size: clamp(2.6rem, 3.3vw, 3.4rem);
+  }
+}
 
 @media (max-width: 1023px) {
   /*
@@ -34,27 +50,40 @@
   }
 }
 
+/* Narrow phones (360px): slimmer padding keeps the first two buttons on one row. */
+@media (max-width: 380px) {
+  .hero-copy .btn {
+    padding-inline: 0.95rem;
+  }
+}
+
+/* From 640px the three buttons share one row, so no allowance for a wrapped third button. */
+@media (min-width: 40rem) and (max-width: 1023px) {
+  .hero {
+    min-height: calc(100svh - 4.0625rem - 3.6rem - env(safe-area-inset-bottom) + 0.75rem);
+  }
+}
+
 @media (max-width: 1023px) and (max-height: 760px) {
   .hero-copy {
     padding-top: 1.25rem;
   }
 
-  .hero-copy .eyebrow {
-    margin-bottom: 0.5rem;
-  }
-
+  /* The H1 already says "London wallcovering installer", so the eyebrow and rule give way. */
+  .hero-copy .eyebrow,
   .hero-copy .rule {
-    margin-bottom: 0.6rem;
+    display: none;
   }
 
   .hero-copy h1 {
-    font-size: 2.25rem;
+    max-width: none;
+    font-size: 1.7rem;
   }
 
   .hero-copy .lede {
     margin-top: 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    line-height: 1.45;
   }
 
   .hero-copy .lede + p {
