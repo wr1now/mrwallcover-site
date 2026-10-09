@@ -59,6 +59,8 @@ interface CaseStudyData {
   metaTitle?: string | null;
   metaDescription?: string | null;
   group?: string | null;
+  /** Draft case studies are kept in the repo for review but never built or listed. */
+  draft?: boolean;
 }
 
 type CaseStudyModule = { frontmatter: CaseStudyData; Content: any };
@@ -83,7 +85,7 @@ const CASE_STUDY_ORDER = [
 ];
 
 export const caseStudies = Object.values(caseStudyModules)
-  .map((mod) => mod)
+  .filter((mod) => !mod.frontmatter.draft)
   .sort(
     (a, b) =>
       (CASE_STUDY_ORDER.indexOf(a.frontmatter.slug) + 1 || 99) - (CASE_STUDY_ORDER.indexOf(b.frontmatter.slug) + 1 || 99),
