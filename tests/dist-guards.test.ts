@@ -181,7 +181,10 @@ test('no internal-drafting or defensive phrasing reaches the public pages', asyn
     assert.doesNotMatch(text, banned, String(banned));
   }
   assert.match(html, /Find the right wallcovering for your room\./);
-  assert.match(html, /Wallcovering support for your specification|From specification<br>to the finished room\./);
+  // Brief section 10 / Dorin's steering, 9 October 2026: the professionals H1 is the customer's task.
+  const professionals = await readFile('dist/professionals/index.html', 'utf8');
+  assert.match(professionals, /<h1>Wallcovering support for your specification\.<\/h1>/);
+  assert.doesNotMatch(html, /From specification<br>to the finished room/);
 });
 
 test('the homepage H1 and meta description define the firm', async () => {
