@@ -10,6 +10,7 @@
     "dev": "astro dev",
     "prebuild": "node scripts/import-credited.mjs --build",
     "build": "astro build",
+    "postbuild": "node scripts/build-ai-layer.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
     "check": "node --experimental-strip-types --test tests/quantity.test.ts tests/enquiry.test.ts tests/leads-api.test.ts tests/content-guards.test.ts tests/phone.test.ts tests/material-advice.test.ts",

@@ -39,6 +39,7 @@ async function publishedPages(): Promise<{ file: string; pathname: string; html:
 
 function stripTags(html: string): string {
   return html
+    .replace(/<br\s*\/?>/g, ' ')
     .replace(/<[^>]+>/g, '')
     .replace(/&amp;/g, '&')
     .replace(/&#39;/g, "'")
@@ -67,7 +68,7 @@ test('/for-ai/ states the facts from facts.json, links every published case stud
   assert.ok(html.includes(`href="mailto:${facts.email}"`), 'email link');
   assert.ok(html.includes('href="/contact/"'), 'contact link');
   assert.ok(html.includes(`href="${facts.founder.path}#${facts.founder.fragment}"`), 'founder link');
-  assert.match(html, /By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · Last reviewed <time datetime="\d{4}-\d{2}-\d{2}" data-page-updated>\d{1,2} \w+ \d{4}<\/time>/);
+  assert.match(html, /By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · Last reviewed <time datetime="\d{4}-\d{2}-\d{2}" data-page-updated="reviewed">\d{1,2} \w+ \d{4}<\/time>/);
   assert.ok(html.includes(`datetime="${facts.lastReviewed}"`), 'the byline date is the site-wide review date');
   // No endorsement wording, no phone, no draft route.
   assert.doesNotMatch(html, /approved by|accredited by|endorsed by|recommended by/i);
@@ -135,6 +136,64 @@ test('/llms.txt follows the llmstxt.org shape, lists only published pages that r
   }
   for (const path of ['/thank-you/', '/search/', '/404/']) assert.equal(llms.includes(`${SITE}${path}`), false, path);
   assert.doesNotMatch(llms, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b/, 'no phone number');
+});
+
+test('every published page has a Markdown twin it links to, and its URL and main content are in llms-full.txt; noindex pages and drafts have neither', async () => {
+  const pages = await publishedPages();
+  const full = await readFile('dist/llms-full.txt', 'utf8');
+  const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { brand: string; description: string };
+  assert.ok(full.startsWith(`# ${facts.brand}: full text of every published page\n\n> ${facts.description}\n`), 'llms-full header');
+  const problems: string[] = [];
+  for (const page of pages) {
+    const canonical = `${SITE}${page.pathname}`;
+    const twinPath = path.join('dist', page.pathname, 'index.md');
+    let twin: string;
+    try {
+      twin = await readFile(twinPath, 'utf8');
+    } catch {
+      problems.push(`${page.pathname}: no twin at ${twinPath}`);
+      continue;
+    }
+    const title = stripTags(page.html.match(/<title>([^<]*)<\/title>/)![1]);
+    if (!twin.startsWith(`---\ntitle: ${JSON.stringify(title)}\nurl: ${canonical}\n`)) problems.push(`${page.pathname}: twin front matter does not open with its title and url`);
+    if (!/\n---\n\n[\s\S]*\S/.test(twin)) problems.push(`${page.pathname}: twin has no body`);
+    const h1 = stripTags(page.html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)![1]).replace(/\*/g, '');
+    if (!twin.replace(/\*/g, '').includes(`# ${h1}`)) problems.push(`${page.pathname}: twin lacks its H1 "${h1}"`);
+    if (!page.html.includes(`<link rel="alternate" type="text/markdown" href="${canonical}index.md" title="Markdown version">`)) problems.push(`${page.pathname}: no rel=alternate Markdown link`);
+    if (!full.includes(`\n# ${title}\nURL: ${canonical}\n`)) problems.push(`${page.pathname}: not in llms-full.txt`);
+    if (!full.replace(/\*/g, '').includes(`## ${h1}`)) problems.push(`${page.pathname}: H1 "${h1}" not in llms-full.txt`);
+    // Twins and llms-full carry no scripts, no navigation chrome and no breadcrumb trail.
+    // Only <main> is extracted: no HTML chrome, no skip link, no footer copyright line, no breadcrumb trail.
+    if (/<script|<nav|<style|<\/?div/.test(twin)) problems.push(`${page.pathname}: twin contains HTML chrome`);
+    if (/Skip to content|©|Home \/ /.test(twin)) problems.push(`${page.pathname}: twin contains header, footer or breadcrumb text`);
+  }
+  assert.deepEqual(problems, []);
+  assert.doesNotMatch(full, /<script|<nav|<style|<\/?div|Skip to content|©|Home \/ /);
+  const pageCount = full.match(/^URL: https:\/\/www\.mrwallcover\.com\//gm)?.length ?? 0;
+  assert.equal(pageCount, pages.length, 'llms-full lists exactly the published pages');
+  // Noindex pages, redirect stubs and drafts: no twin, not in llms-full.
+  const allTwins = (await filesUnder('dist', (name) => name === 'index.md')).map((file) => file.replace(/^dist/, '').replace(/index\.md$/, ''));
+  assert.deepEqual(allTwins.sort(), pages.map((page) => page.pathname).sort(), 'exactly one twin per published page');
+  for (const pathname of ['/thank-you/', '/search/', '/404/', '/projects/owo-whitehall/', '/projects/penny-morrison-showroom/', '/projects/biltmore-mayfair/', '/trade/', '/advice/cost/']) {
+    assert.equal(allTwins.includes(pathname), false, `${pathname} must have no twin`);
+    assert.equal(full.includes(`${SITE}${pathname}`), false, `${pathname} must not be in llms-full.txt`);
+  }
+  const thankYou = await readFile('dist/thank-you/index.html', 'utf8');
+  assert.doesNotMatch(thankYou, /type="text\/markdown"/, 'noindex pages do not advertise a twin');
+});
+
+test('no phone number, no forbidden word and no TODO in any text, Markdown, JSON or XML file in dist', async () => {
+  const files = await filesUnder('dist', (name) => /\.(md|txt|json|xml)$/.test(name));
+  assert.ok(files.length > 70, `${files.length} text files`);
+  const problems: string[] = [];
+  for (const file of files) {
+    const text = await readFile(file, 'utf8');
+    if (/\b0?7\d{3}\s?\d{6}\b|\+?44\s?\(?0?\)?\s?7\d{9}|\+?44\s?\(?0?\)?\s?20\s?\d{4}\s?\d{4}|\b020\s?\d{4}\s?\d{4}\b/.test(text)) problems.push(`${file}: phone number pattern`);
+    for (const banned of ['CLAUDI', 'Landmark', 'Threadneedle', 'third party', 'third-party', 'subcontract', 'TODO', 'lorem']) {
+      if (text.toLowerCase().includes(banned.toLowerCase())) problems.push(`${file}: ${banned}`);
+    }
+  }
+  assert.deepEqual(problems, []);
 });
 
 test('every published HTML page has exactly one H1', async () => {

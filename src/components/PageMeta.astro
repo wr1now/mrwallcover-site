@@ -28,5 +28,5 @@ const authorHref = `${facts.founder.path}#${facts.founder.fragment}`;
 
 <p class:list={['page-meta text-sm text-stone', className]}>
   By <a href={authorHref}>{facts.founder.name}</a>, {facts.founder.jobTitle.toLowerCase()} · {label}{' '}
-  <time datetime={iso} data-page-updated>{formatGuideDate(iso)}</time>
+  <time datetime={iso} data-page-updated={updated ? 'updated' : 'reviewed'}>{formatGuideDate(iso)}</time>
 </p>

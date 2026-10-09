@@ -68,6 +68,8 @@ const heroSrcset =
     {noindex && <meta name="robots" content="noindex" />}
     {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
+    {/* The Markdown twin scripts/build-ai-layer.mjs writes next to every published page after the build. Noindex pages have none. */}
+    {!noindex && <link rel="alternate" type="text/markdown" href={`${canonical}index.md`} title="Markdown version" />}
     <meta name="theme-color" content="#141210" />
     <meta name="author" content={author} />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
