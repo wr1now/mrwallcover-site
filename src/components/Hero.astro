@@ -1,5 +1,6 @@
 ---
 import { altFor, hero } from '../lib/content';
+import '../styles/hero-mobile.css';
 
 const srcset = hero.sources.map((source) => `${source.src} ${source.width}w`).join(', ');
 const alt = altFor(hero.id);
