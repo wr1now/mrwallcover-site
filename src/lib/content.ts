@@ -1,4 +1,6 @@
 import aboutJson from '../content/about.json';
+import areasJson from '../content/areas.json';
+import specialismsJson from '../content/specialisms.json';
 import contactJson from '../content/contact.json';
 import aftercareJson from '../content/aftercare.json';
 import altsJson from '../content/alts.json';
@@ -41,10 +43,91 @@ export function media(id: string): MediaFile & { alt: string } {
   return { ...size, alt: altFor(id) };
 }
 
-export const projects = projectsJson.items as Project[];
+interface CaseStudyData {
+  title: string;
+  slug: string;
+  replaces: string | null;
+  client: string;
+  location: string;
+  years: string | null;
+  role: string;
+  wallcoverings: string[];
+  standfirst: string;
+  hero: string | null;
+  gallery: { id: string; credit: string | null }[];
+}
+
+type CaseStudyModule = { frontmatter: CaseStudyData; Content: any };
+
+const caseStudyModules = import.meta.glob<CaseStudyModule>('../content/case-studies/*.md', { eager: true });
+
+/**
+ * Display order for case studies. trematon-castle is reserved: it is published
+ * automatically as soon as src/content/case-studies/trematon-castle.md exists.
+ */
+const CASE_STUDY_ORDER = [
+  'browns-hotel-mayfair',
+  'raffles-london-the-owo',
+  'four-seasons-ten-trinity-square',
+  'trematon-castle',
+  'old-bailey-hotel',
+  'hilton-garden-inn-silverstone',
+];
+
+export const caseStudies = Object.values(caseStudyModules)
+  .map((mod) => mod)
+  .sort(
+    (a, b) =>
+      (CASE_STUDY_ORDER.indexOf(a.frontmatter.slug) + 1 || 99) - (CASE_STUDY_ORDER.indexOf(b.frontmatter.slug) + 1 || 99),
+  );
+
+export function caseStudyBySlug(slug: string): CaseStudyModule | undefined {
+  return caseStudies.find((mod) => mod.frontmatter.slug === slug);
+}
+
+/** Old project URL -> case-study slug. Used for redirects and old links. */
+export const projectAliases: Record<string, string> = Object.fromEntries(
+  caseStudies.filter((m) => m.frontmatter.replaces).map((m) => [m.frontmatter.replaces as string, m.frontmatter.slug]),
+);
+
+function fromCaseStudy(cs: CaseStudyData, base?: Project): Project {
+  const full = `${cs.role} at ${cs.title}${cs.years ? `, ${cs.years}` : ''}. ${cs.standfirst}`;
+  const description = full.length <= 158 ? full : `${full.slice(0, 155).replace(/\s+\S*$/, '')}…`;
+  return {
+    slug: cs.slug,
+    title: cs.title,
+    metaTitle: `${cs.title} | Case Study | Mr Wallcover`.length <= 65 ? `${cs.title} | Case Study | Mr Wallcover` : `${cs.title} | Mr Wallcover`,
+    description,
+    role: cs.role,
+    client: cs.client,
+    location: cs.location,
+    dates: cs.years,
+    summary: cs.standfirst || base?.summary || '',
+    paragraphs: [],
+    imagePolicy: cs.hero ? 'own' : 'none',
+    imageId: cs.hero,
+    gallery: cs.gallery.map((g) => g.id),
+    videos: base?.videos ?? [],
+    caption: null,
+    featured: base?.featured ?? true,
+    caseStudy: true,
+    credits: Object.fromEntries(cs.gallery.filter((g) => g.credit).map((g) => [g.id, g.credit as string])),
+  };
+}
+
+const baseProjects = projectsJson.items as Project[];
+const replacedSlugs = new Set(caseStudies.map((m) => m.frontmatter.replaces ?? m.frontmatter.slug));
+
+export const projects: Project[] = [
+  ...caseStudies.map((m) =>
+    fromCaseStudy(m.frontmatter, baseProjects.find((p) => p.slug === (m.frontmatter.replaces ?? m.frontmatter.slug))),
+  ),
+  ...baseProjects.filter((p) => !replacedSlugs.has(p.slug)),
+];
 
 export function projectBySlug(slug: string): Project | undefined {
-  return projects.find((project) => project.slug === slug);
+  const target = projectAliases[slug] ?? slug;
+  return projects.find((project) => project.slug === target);
 }
 
 export function projectHref(slug: string): string {
@@ -60,3 +143,37 @@ export function videoById(id: string) {
 }
 
 export const faqItems = faq.items as FaqItem[];
+
+export interface LandingPage {
+  slug: string;
+  name: string;
+  title: string;
+  description: string;
+  heading: string;
+  lede: string;
+  paragraphs: string[];
+  projects: string[];
+  imageId: string;
+  faq: FaqItem[];
+  materialKey?: string;
+}
+
+export const areasIndex = areasJson.index;
+export const areas = areasJson.items as LandingPage[];
+export const specialisms = specialismsJson.items as LandingPage[];
+
+export function areaHref(slug: string): string {
+  return `/areas/${slug}/`;
+}
+
+export function specialismHref(slug: string): string {
+  return `/services/${slug}/`;
+}
+
+/** Absolute-path JPEG for an image id, used for Open Graph and schema images. */
+export function ogImageFor(id: string | null | undefined): string | undefined {
+  if (!id) return undefined;
+  const size = sizes[id];
+  if (!size) return undefined;
+  return size.hasFull ? size.jpg : size.thumbJpg;
+}

@@ -185,5 +185,71 @@
     "thumbWidth": 625,
     "thumbHeight": 421,
     "hasFull": false
+  },
+  "owo-official-classic": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/owo-official-classic.webp",
+    "jpg": "/media/img/owo-official-classic.jpg",
+    "thumb": "/media/img/thumbs/owo-official-classic-800.webp",
+    "thumbJpg": "/media/img/thumbs/owo-official-classic-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true
+  },
+  "owo-official-deluxe-double": {
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/owo-official-deluxe-double.webp",
+    "jpg": "/media/img/owo-official-deluxe-double.jpg",
+    "thumb": "/media/img/thumbs/owo-official-deluxe-double-800.webp",
+    "thumbJpg": "/media/img/thumbs/owo-official-deluxe-double-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 600,
+    "hasFull": true
+  },
+  "owo-official-deluxe-twin": {
+    "width": 1600,
+    "height": 1157,
+    "src": "/media/img/owo-official-deluxe-twin.webp",
+    "jpg": "/media/img/owo-official-deluxe-twin.jpg",
+    "thumb": "/media/img/thumbs/owo-official-deluxe-twin-800.webp",
+    "thumbJpg": "/media/img/thumbs/owo-official-deluxe-twin-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 578,
+    "hasFull": true
+  },
+  "owo-official-junior-suite": {
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/owo-official-junior-suite.webp",
+    "jpg": "/media/img/owo-official-junior-suite.jpg",
+    "thumb": "/media/img/thumbs/owo-official-junior-suite-800.webp",
+    "thumbJpg": "/media/img/thumbs/owo-official-junior-suite-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 600,
+    "hasFull": true
+  },
+  "owo-official-executive": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/owo-official-executive.webp",
+    "jpg": "/media/img/owo-official-executive.jpg",
+    "thumb": "/media/img/thumbs/owo-official-executive-800.webp",
+    "thumbJpg": "/media/img/thumbs/owo-official-executive-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 534,
+    "hasFull": true
+  },
+  "owo-official-lifestyle-suite": {
+    "width": 1600,
+    "height": 1403,
+    "src": "/media/img/owo-official-lifestyle-suite.webp",
+    "jpg": "/media/img/owo-official-lifestyle-suite.jpg",
+    "thumb": "/media/img/thumbs/owo-official-lifestyle-suite-800.webp",
+    "thumbJpg": "/media/img/thumbs/owo-official-lifestyle-suite-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 701,
+    "hasFull": true
   }
 }

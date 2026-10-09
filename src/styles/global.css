@@ -692,3 +692,30 @@
     transform: none;
   }
 }
+
+/* Case studies rendered from markdown */
+.case-study {
+  max-width: 44rem;
+}
+.case-study h2 {
+  margin: 2.6rem 0 0.8rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+.case-study h3 {
+  margin: 1.8rem 0 0.6rem;
+}
+.case-study ul,
+.case-study ol {
+  padding-left: 1.2rem;
+}
+.case-study li + li {
+  margin-top: 0.35rem;
+}
+.case-study a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.case-study ol li {
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}

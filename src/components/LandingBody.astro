@@ -1,0 +1,80 @@
+---
+import Breadcrumb from './Breadcrumb.astro';
+import FaqList from './FaqList.astro';
+import Picture from './Picture.astro';
+import { areaHref, areas, projectBySlug, projectHref, specialismHref, specialisms } from '../lib/content';
+import type { LandingPage } from '../lib/content';
+
+interface Props {
+  page: LandingPage;
+  crumbs: { name: string; href: string }[];
+  eyebrow: string;
+  kind: 'area' | 'specialism';
+}
+
+const { page, crumbs, eyebrow, kind } = Astro.props;
+const linked = page.projects.map((slug) => projectBySlug(slug)).filter((p) => p !== undefined);
+const otherAreas = areas.filter((a) => a.slug !== page.slug);
+const otherSpecialisms = specialisms.filter((s) => s.slug !== page.slug);
+---
+
+<div class="container-page">
+  <header class="page-head">
+    <Breadcrumb items={crumbs} />
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{page.heading}</h1>
+    <p class="lede mt-5">{page.lede}</p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="btn btn-solid-ink" href="/contact/">Request a quotation</a>
+      <a class="btn btn-line" href="/projects/">See the work</a>
+    </div>
+  </header>
+  <div class="grid gap-10 pb-12 md:grid-cols-12">
+    <div class="prose md:col-span-7">
+      {page.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+    <div class="md:col-span-4 md:col-start-9">
+      <Picture id={page.imageId} thumbOnly sizes="(min-width: 768px) 22rem, 100vw" />
+    </div>
+  </div>
+
+  {
+    linked.length > 0 && (
+      <section class="border-t border-line py-12" aria-labelledby="record-heading">
+        <h2 id="record-heading" class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On the public record</h2>
+        <ul class="link-row mt-6 grid list-none gap-3 p-0 md:grid-cols-2">
+          {linked.map((project) => (
+            <li>
+              <a href={projectHref(project!.slug)}>{project!.title}</a>
+              <span class="text-stone">. {project!.role}{project!.dates ? `, ${project!.dates}` : ''}.</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</div>
+
+<FaqList items={page.faq} eyebrow="Questions" heading={`Asked about ${page.name.replace(/^the /, '')}`} />
+
+<div class="container-page">
+  <nav class="grid gap-10 border-t border-line py-12 md:grid-cols-2" aria-label="Related pages">
+    <div>
+      <p class="eyebrow">{kind === 'area' ? 'What we hang' : 'Materials'}</p>
+      <ul class="m-0 grid list-none gap-1 p-0">
+        {(kind === 'area' ? specialisms : otherSpecialisms).map((s) => (
+          <li><a href={specialismHref(s.slug)}>{s.name}</a></li>
+        ))}
+        <li><a href="/aftercare/">Aftercare and the twelve-month guarantee</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">Where we work</p>
+      <ul class="m-0 grid list-none gap-1 p-0">
+        {(kind === 'area' ? otherAreas : areas).map((a) => (
+          <li><a href={areaHref(a.slug)}>Wallpaper installer, {a.name.replace(/^the /, '')}</a></li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+</div>

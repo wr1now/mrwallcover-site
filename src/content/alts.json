@@ -78,5 +78,29 @@
   "video-03": {
     "alt": "Short film from a bedroom doorway at Brown's Hotel, Mayfair, with patterned wallcovering and a made bed beyond.",
     "manifestNote": "own site video"
+  },
+  "owo-official-classic": {
+    "alt": "Classic room at Raffles London at The OWO, Whitehall. Official hotel photograph.",
+    "manifestNote": "official press image; credit Image: Raffles London at The OWO (official)"
+  },
+  "owo-official-deluxe-double": {
+    "alt": "Deluxe Double room at Raffles London at The OWO, Whitehall. Official hotel photograph.",
+    "manifestNote": "official press image; credit Image: Raffles London at The OWO (official)"
+  },
+  "owo-official-deluxe-twin": {
+    "alt": "Deluxe Twin room at Raffles London at The OWO, Whitehall. Official hotel photograph.",
+    "manifestNote": "official press image; credit Image: Raffles London at The OWO (official)"
+  },
+  "owo-official-junior-suite": {
+    "alt": "Junior Suite at Raffles London at The OWO, Whitehall. Official hotel photograph.",
+    "manifestNote": "official press image; credit Image: Raffles London at The OWO (official)"
+  },
+  "owo-official-executive": {
+    "alt": "Executive room at Raffles London at The OWO, Whitehall. Official hotel photograph.",
+    "manifestNote": "official press image; credit Image: Raffles London at The OWO (official)"
+  },
+  "owo-official-lifestyle-suite": {
+    "alt": "Lifestyle Suite bedroom at Raffles London at The OWO, Whitehall. Official hotel photograph.",
+    "manifestNote": "official press image; credit Image: Raffles London at The OWO (official)"
   }
 }

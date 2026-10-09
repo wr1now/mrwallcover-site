@@ -8,7 +8,14 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/thank-you'),
+      // Old project URLs now redirect to case studies; keep them out of the sitemap.
+      filter: (page) =>
+        !page.includes('/thank-you') &&
+        !page.includes('/404') &&
+        !['/projects/owo-whitehall/', '/projects/four-seasons-ten-trinity/', '/projects/hilton-silverstone/'].some((old) =>
+          page.endsWith(old),
+        ),
+      lastmod: new Date(),
     }),
   ],
   vite: {
