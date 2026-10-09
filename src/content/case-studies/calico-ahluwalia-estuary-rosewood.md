@@ -74,10 +74,6 @@ Install the Estuary mural as the show backdrop within the production schedule, w
 - **Panel sequencing.** A mural is a single image split across panels. Each one was hung in order and matched edge to edge so that the watercolour washes flow unbroken across the wall.
 - **Working to the clock.** We worked alongside the show production crew and finished on the evening of 18 September, ready for the runway the next day.
 
-## In Calico's words
-
-> "Thank you … for your hard work!" (Calico Wallpaper)
-
 ## Outcome
 
 On 19 September 2026 Ahluwalia showed *Revel* in front of Estuary, and the collection launched worldwide on Calico Wallpaper's site the same week.

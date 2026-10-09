@@ -57,11 +57,14 @@ test('privacy notice keeps Dorin Burcus trading as Mr Wallcover', async () => {
   assert.doesNotMatch(privacy, /PRIMEST|CLAUDI LTD|Renovart/i);
 });
 
-test('Search Console token and the unnamed award stay in config', async () => {
+test('Search Console token stays in config and no award line exists in source', async () => {
   const config = await readFile('src/config.ts', 'utf8');
   assert.match(config, /98zhpiyda4qDA6fYcKJ-zC6pItC6-LZKqqEugO5-fKo/);
-  assert.match(config, /label: 'Award-winning'/);
+  assert.doesNotMatch(config, /Award-winning|AWARD/);
   assert.match(config, /from '\.\/data\/facts\.json'/);
+  for (const file of ['src/content/about.json', 'src/content/home.json', 'src/pages/index.astro', 'src/pages/about.astro']) {
+    assert.doesNotMatch(await readFile(file, 'utf8'), /award/i, `${file} must not mention an award`);
+  }
 });
 
 const REQUIRED_OPENING = 'Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus';
@@ -152,17 +155,21 @@ test('held hotels stay out of the public content module', async () => {
   assert.match(held, /Waldorf Astoria London Admiralty Arch/);
 });
 
-test('exterior works lists only the three cleared projects', async () => {
+test('exterior works lists only the two cleared projects while the showroom case study is a draft', async () => {
   const data = JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as {
     items: { slug: string; projects: string[]; paragraphs: string[]; lede: string }[];
   };
   const page = data.items.find((item) => item.slug === 'exterior-works');
   assert.ok(page);
-  assert.deepEqual(page.projects, ['pimlico-st-georges-square', 'inverness-terrace', 'penny-morrison-showroom']);
+  // The Penny Morrison showroom returns to this list only when its case study leaves draft (client confirmation in writing).
+  assert.deepEqual(page.projects, ['pimlico-st-georges-square', 'inverness-terrace']);
   const blob = JSON.stringify(page);
   assert.match(blob, /all the internal works plus the full exterior/i);
   assert.match(blob, /scaffolding supplied and managed/i);
-  assert.doesNotMatch(blob, /House of Hackney|Lanesborough|Chesham|Threadneedle|Mulberry|Aethos/i);
+  assert.doesNotMatch(blob, /House of Hackney|Lanesborough|Chesham|Threadneedle|Mulberry|Aethos|Penny Morrison|penny-morrison/i);
+  const showroom = await readFile('src/content/case-studies/penny-morrison-showroom.md', 'utf8');
+  assert.match(showroom, /"draft": true/);
+  assert.match(showroom, /9 Langton Street/, 'the showroom address stays in the draft source (commercial, approved)');
   const services = await readFile('src/pages/services.astro', 'utf8');
   assert.match(services, /exterior-works/);
   const hackney = await readFile('src/content/case-studies/house-of-hackney-st-michaels.md', 'utf8');

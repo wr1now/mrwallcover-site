@@ -5,7 +5,7 @@
   "replaces": "owo-whitehall",
   "client": "Raffles London at The OWO (Hinduja Group and ONEX Holding; operated by Raffles, Accor)",
   "location": "The Old War Office, Whitehall, London SW1A 2BX",
-  "years": "2020–2022",
+  "years": "2020–2023",
   "role": "Wallcovering installation",
   "wallcoverings": [
     "Vescom – bespoke wallcovering made for the hotel",
@@ -52,7 +52,7 @@
 
 - **Client / brand:** Raffles London at The OWO
 - **Location:** The Old War Office, Whitehall, London
-- **Years:** 2020–2022
+- **Years:** 2020–2023
 - **Role:** Wallcovering installation
 - **Wallcoverings:** a bespoke [Vescom](https://vescom.com/en/wallcovering) wallcovering made for the hotel; Vescom [Alcantara](https://www.alcantara.com/solutions/alcantara-interior-design/) in selected suites
 - **Scope:** Installation to bedrooms and several other areas, including walls and parts of the joinery

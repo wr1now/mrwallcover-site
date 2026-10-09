@@ -37,17 +37,54 @@ test('the built site keeps private names and the verification token out of the w
   assert.match(html, /Moxy London ExCeL/);
   assert.match(html, /St George's Square, Pimlico/);
   assert.match(html, /Inverness Terrace, Bayswater/);
-  assert.match(html, /Penny Morrison showroom/);
   assert.match(html, /House of Hackney showroom/);
   const exterior = await readFile('dist/services/exterior-works/index.html', 'utf8');
   assert.match(exterior, /pimlico-st-georges-square/);
   assert.match(exterior, /inverness-terrace/);
-  assert.match(exterior, /penny-morrison-showroom/);
+  assert.doesNotMatch(exterior, /penny-morrison-showroom/);
   assert.match(exterior, /all the internal works plus the full exterior/i);
   assert.doesNotMatch(exterior, /House of Hackney|Lanesborough|Chesham|hackney/i);
   // No phone number in clear, whatever SITE_PHONE was at build time. The number only ever ships inside the reversed payload.
   assert.doesNotMatch(html, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|wa\.me/);
   assert.doesNotMatch(html, /loadedAt/);
+});
+
+test('claims decided by Dorin on 9 October 2026 hold in the built site', async () => {
+  const files = await htmlFiles('dist');
+  const html = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
+  const llms = await readFile('dist/llms.txt', 'utf8');
+  const sitemap = await readFile('dist/sitemap-0.xml', 'utf8');
+  const everything = `${html}\n${llms}\n${sitemap}`;
+  // 1) No award until its name is supplied.
+  assert.doesNotMatch(everything, /award-winning|2021 award|award \(2021\)|\baward\b/i);
+  // 2) Four Seasons: 2016–2019, guest room and suite wallpapering; no "main contractor 2014" wording.
+  assert.doesNotMatch(everything, /main contractor 2014|2014 to 2019|2014–2019|main wallcovering installation contractor/i);
+  assert.match(html, /Four Seasons Hotel London at Ten Trinity Square, 2016 to 2019, guest room and suite wallpapering/);
+  assert.match(html, /in the trade since 2014/i);
+  // 3) The OWO: 2020–2023 everywhere.
+  assert.doesNotMatch(everything, /2020–2022|2020 to 2022|2020 and 2022/);
+  const owo = await readFile('dist/projects/raffles-london-the-owo/index.html', 'utf8');
+  assert.match(owo, /2020–2023/);
+  // 4) No Calico praise quotes; the partnership line stays.
+  assert.doesNotMatch(everything, /Gorgeous! Thank you so much|for your hard work|In Calico's words|Client praise/i);
+  assert.match(html, /Delivered in partnership with/);
+  assert.doesNotMatch(everything, /Trusted by Calico/i);
+  // 5) North London residence is live, with no press links and no owner name.
+  const northLondon = await readFile('dist/projects/north-london-residence/index.html', 'utf8');
+  assert.match(northLondon, /BAMBUSA/);
+  assert.doesNotMatch(everything, /Kate Moss|thesun\.co\.uk|As seen in the press|house-of-kate-moss|celebrated North London/i);
+  // 6) Penny Morrison showroom is a draft: no route, no link, nowhere in the sitemap or llms.txt.
+  let built = true;
+  try {
+    await stat('dist/projects/penny-morrison-showroom/index.html');
+  } catch {
+    built = false;
+  }
+  assert.equal(built, false, 'the Penny Morrison route must not be built');
+  assert.doesNotMatch(everything, /penny-morrison-showroom|Penny Morrison|9 Langton Street/);
+  // 7) The approved privacy sentence replaces "Private houses are not shown".
+  assert.doesNotMatch(everything, /Private houses are not shown|Private houses are not named/i);
+  assert.match(html, /Private clients are not named\. Residential work appears only by street or area, with the owner(?:'|&#39;|’)s agreement\./);
 });
 
 test('the homepage H1 and meta description define the firm', async () => {

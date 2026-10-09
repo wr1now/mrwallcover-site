@@ -39,13 +39,13 @@ Wording lives in `src/content/`. The pages read those files. You do not need to 
 | `src/content/alts.json` | Image descriptions |
 | `src/content/team.json` | Future team page. Not in the menu yet |
 | `src/data/facts.json` | The fact sheet: brand, founder, email, coverage, profiles and the one description sentence (160 characters or fewer) |
-| `src/config.ts` | Form, analytics, award line. Re-exports the fact sheet |
+| `src/config.ts` | Form, analytics, Search Console token. Re-exports the fact sheet |
 
 The public email address is `info@mrwallcover.com`, set once in `src/data/facts.json`. The footer, the form, the structured data and `llms.txt` all read that file. Paste its description sentence unchanged into every outside profile.
 
 The phone number is not in the repository. See `SITE_PHONE` below.
 
-The award line on the site is “Award-winning (2021)”. The award’s name will be added later. See the comment in `src/config.ts`. Do not invent a title.
+No award is mentioned on the site until its name is supplied (decided 9 October 2026). Do not add an award line, a rating, a review count or a partner status.
 
 Case studies live in `src/content/case-studies/`. Each carries `published` and `updated` dates in its frontmatter; they feed the Article structured data and the sitemap. After editing a case study, run `node scripts/stamp-case-study-dates.mjs` so the `updated` date follows the change. The build refuses a case study without both dates and never substitutes the build time.
 

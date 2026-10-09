@@ -1,5 +1,4 @@
 ---
-import { AWARD } from '../config';
 import facts from '../data/facts.json';
 import PhoneReveal from '../components/PhoneReveal.astro';
 import FaqList from '../components/FaqList.astro';
@@ -31,8 +30,7 @@ const others = projects.filter((project) => !project.featured);
       <!-- The H1 defines the firm for people and for answer engines. The literary voice follows in the lede. -->
       <h1>{home.hero.titleLead} <em>{home.hero.titleEm}</em></h1>
       <p class="lede mt-5">{home.hero.lede}</p>
-      <!-- Award name will be added later. Public copy is the label and the year only. -->
-      <p class="mt-5 mb-0 text-gold">{AWARD.label} ({AWARD.year}) · <a class="trusted-link" href="/projects/#design-weeks">Trusted by Calico Wallpaper</a></p>
+      <p class="mt-5 mb-0 text-gold"><a class="trusted-link" href="/projects/#design-weeks">Work delivered in partnership with Calico Wallpaper</a></p>
       <div class="mt-6 flex flex-wrap gap-3">
         <a class="btn btn-solid" href="/contact/">Start your project</a>
         <a class="btn btn-ghost" href="/projects/">Explore our work</a>
@@ -222,24 +220,12 @@ const others = projects.filter((project) => !project.featured);
 
   <MaterialStudio />
 
-  <section class="border-t border-line" aria-labelledby="praise-heading">
+  <section class="border-t border-line" aria-labelledby="partners-heading">
     <div class="container-page py-16 md:py-24">
-      <p class="eyebrow">{home.praise.eyebrow}</p>
-      <h2 id="praise-heading" class="m-0 text-[clamp(2.2rem,4vw,3.2rem)]">{home.praise.title}</h2>
-      <div class="mt-10 grid gap-10 md:grid-cols-2">
-        {
-          home.praise.items.map((item) => (
-            <figure class="quote">
-              <blockquote>
-                <p>“{item.quote}”</p>
-              </blockquote>
-              <figcaption>{item.attribution}</figcaption>
-            </figure>
-          ))
-        }
-      </div>
-      <p class="mt-10 mb-0">Trusted by Calico Wallpaper. Work delivered in partnership with them:</p>
-      <ul class="link-row mt-3 grid list-none gap-2 p-0 md:grid-cols-2">
+      <p class="eyebrow">{home.partners.eyebrow}</p>
+      <h2 id="partners-heading" class="m-0 text-[clamp(2.2rem,4vw,3.2rem)]">{home.partners.title}</h2>
+      <p class="lede mt-4">{home.partners.text}</p>
+      <ul class="link-row mt-6 grid list-none gap-2 p-0 md:grid-cols-2">
         {projects.filter((p) => p.group === 'design-weeks').map((p) => (
           <li><a href={projectHref(p.slug)}>{p.slug === 'heathrow-terminal-4-calico' ? 'Calico Wallpaper at Heathrow Terminal 4' : p.title.replace(/: '?([^']+)'? at .*$/, ': $1')}</a></li>
         ))}

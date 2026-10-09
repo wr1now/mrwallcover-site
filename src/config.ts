@@ -6,8 +6,8 @@
  * The phone number is not in the repository. It is read from the SITE_PHONE
  * environment variable at build time; see src/lib/phone.ts.
  *
- * Award name will be added later. Until then the public line is only
- * "Award-winning", with the year. Do not invent a title.
+ * No award line is published anywhere on the site until the award's name is
+ * supplied (approved by Dorin, 9 October 2026). Do not add one here.
  */
 import facts from './data/facts.json';
 
@@ -22,11 +22,6 @@ export const COVERAGE: string = facts.coverage;
 const instagram = facts.profiles.find((profile) => profile.name === 'Instagram');
 export const INSTAGRAM_URL: string = instagram?.url ?? '';
 export const INSTAGRAM_HANDLE: string = instagram?.handle ?? '';
-
-export const AWARD = {
-  label: 'Award-winning',
-  year: 2021,
-} as const;
 
 export type FormProvider = 'mailto' | 'netlify' | 'formspree' | 'formsubmit';
 
