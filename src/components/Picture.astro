@@ -1,6 +1,7 @@
 ---
 import { media } from '../lib/content';
 import placeholders from '../content/placeholders.json';
+import creditedMedia from '../content/credited-media.json';
 
 interface Props {
   id: string;
@@ -21,7 +22,8 @@ const {
 } = Astro.props;
 
 const img = media(id);
-const placeholder = (placeholders as Record<string, string>)[id] ?? '';
+const placeholder =
+  (placeholders as Record<string, string>)[id] ?? (creditedMedia as Record<string, { placeholder?: string }>)[id]?.placeholder ?? '';
 const useFull = img.hasFull && !thumbOnly;
 const webp = useFull ? `${img.thumb} ${img.thumbWidth}w, ${img.src} ${img.width}w` : `${img.thumb} ${img.thumbWidth}w`;
 const jpeg = useFull

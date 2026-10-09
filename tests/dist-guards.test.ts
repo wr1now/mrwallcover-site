@@ -58,3 +58,20 @@ test('the homepage does not load the 3D engine up front', async () => {
   const studio = await readFile(path.join('dist', sources.find((source) => source.includes('MaterialStudio'))!.replace(/^\//, '')), 'utf8');
   assert.match(studio, /import\(`\.\/three\.module/);
 });
+
+test('every media file the built pages point to exists', async () => {
+  const files = await htmlFiles('dist');
+  const missing = new Set<string>();
+  for (const file of files) {
+    const html = await readFile(file, 'utf8');
+    for (const match of html.matchAll(/\/media\/[^"'\s,)?#]+/g)) {
+      const asset = path.join('dist', match[0]);
+      try {
+        await stat(asset);
+      } catch {
+        missing.add(match[0]);
+      }
+    }
+  }
+  assert.deepEqual([...missing], []);
+});

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/import-credited.mjs --build",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",

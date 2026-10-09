@@ -16,18 +16,24 @@
   "metaDescription": "Preparation, decorating and House of Hackney wallpapers at St Michael's Clergy House, Shoreditch, before the showroom opened in March 2022.",
   "group": null,
   "standfirst": "Preparation and making good of the 1856 clergy house, then decorating and hanging House of Hackney's own wallpapers through the concept rooms, bedroom and tiled cloakrooms.",
-  "hero": "house-of-hackney-st-michaels-01",
+  "hero": "hoh-official-01",
   "gallery": [
-    { "id": "house-of-hackney-st-michaels-01", "credit": null },
+    { "id": "hoh-official-01", "credit": "Photography: House of Hackney" },
+    { "id": "hoh-official-02", "credit": "Photography: House of Hackney" },
+    { "id": "hoh-official-03", "credit": "Photography: House of Hackney" },
+    { "id": "hoh-official-04", "credit": "Photography: House of Hackney" },
+    { "id": "hoh-official-05", "credit": "Photography: House of Hackney" },
+    { "id": "hoh-official-06", "credit": "Photography: House of Hackney" },
+    { "id": "hoh-official-07", "credit": "Photography: House of Hackney" },
     { "id": "house-of-hackney-st-michaels-05", "credit": null },
-    { "id": "house-of-hackney-st-michaels-09", "credit": null },
-    { "id": "house-of-hackney-st-michaels-10", "credit": null },
-    { "id": "house-of-hackney-st-michaels-02", "credit": null },
-    { "id": "house-of-hackney-st-michaels-03", "credit": null },
-    { "id": "house-of-hackney-st-michaels-08", "credit": null },
     { "id": "house-of-hackney-st-michaels-06", "credit": null },
+    { "id": "house-of-hackney-st-michaels-08", "credit": null },
+    { "id": "house-of-hackney-st-michaels-09", "credit": null },
+    { "id": "house-of-hackney-st-michaels-11", "credit": null },
+    { "id": "house-of-hackney-st-michaels-10", "credit": null },
     { "id": "house-of-hackney-st-michaels-04", "credit": null },
-    { "id": "house-of-hackney-st-michaels-11", "credit": null }
+    { "id": "house-of-hackney-st-michaels-01", "credit": "Before" },
+    { "id": "house-of-hackney-st-michaels-03", "credit": "Before" }
   ]
 }
 ---
@@ -48,4 +54,4 @@ The survey was in October 2021. Making good and decorating ran from January 2022
 
 Pattern names are not stated here. The papers are House of Hackney's own, hung through the rooms as specified for the showroom. This commission was internal works only.
 
-The photograph of the Mark Street front shows the clergy house. It is the building, not an exterior decorating contract.
+The finished-room photographs marked "Photography: House of Hackney" are House of Hackney's own, from their website. The others were taken on site by us; the two marked "Before" show rooms as found, before the works began.

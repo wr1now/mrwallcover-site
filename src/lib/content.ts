@@ -12,6 +12,7 @@ import privacyJson from '../content/privacy.json';
 import projectsJson from '../content/projects.json';
 import servicesJson from '../content/services.json';
 import sizesJson from '../content/sizes.json';
+import creditedMediaJson from '../content/credited-media.json';
 import teamJson from '../content/team.json';
 import videosJson from '../content/videos.json';
 import hotelsJson from '../content/hotels.json';
@@ -30,8 +31,10 @@ export const team = teamJson;
 export const hotels = hotelsJson.items.filter((item) => item.publish);
 export const materials = materialsJson;
 
-const alts = altsJson as Record<string, { alt: string; manifestNote: string }>;
-const sizes = sizesJson as Record<string, MediaFile>;
+/** Credited client/press photographs carry their own sizes, alt and note (scripts/import-credited.mjs). */
+const credited = creditedMediaJson as Record<string, MediaFile & { alt: string; manifestNote: string }>;
+const alts = { ...altsJson, ...credited } as Record<string, { alt: string; manifestNote: string }>;
+const sizes = { ...sizesJson, ...credited } as Record<string, MediaFile>;
 
 export const hero = heroJson as HeroImage;
 
