@@ -67,8 +67,10 @@ const heroSrcset =
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script is:inline>
+      /* The footer's "Reduce visual effects" preference, applied before first paint. "plain" is the value an earlier toggle stored. */
       try {
-        if (localStorage.getItem('mw-effects') === 'plain') document.documentElement.dataset.effects = 'plain';
+        var mwEffects = localStorage.getItem('mw-effects');
+        if (mwEffects === 'reduced' || mwEffects === 'plain') document.documentElement.dataset.effects = 'reduced';
       } catch (e) {}
     </script>
     <meta name="generator" content={Astro.generator} />

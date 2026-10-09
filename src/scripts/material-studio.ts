@@ -48,7 +48,7 @@ function weaveTexture(THREE: typeof import('three'), preset: Preset) {
 }
 
 export async function startStudio(root: HTMLElement) {
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.effects === 'plain';
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.effects === 'reduced';
   const fallback = root.querySelector<HTMLElement>('[data-studio-fallback]');
   const stage = root.querySelector<HTMLElement>('[data-studio-stage]');
   const note = root.querySelector<HTMLElement>('[data-studio-note]');

@@ -1,0 +1,37 @@
+---
+/**
+ * Glass surface (contract section 6, "Glass system: visible and intentional").
+ *
+ * One element carries the whole recipe: one blur, one border, one inner
+ * highlight, one shadow. Wrap the content once; never stack glass inside glass.
+ *
+ *   champagne  navigation and floating utility surfaces over warm imagery (ink text)
+ *   smoked     controls over dark photography or the studio stage (ivory text), never a page title
+ *   clear      small controls over the page and other light surfaces only
+ *
+ * `opaque` keeps the tint and drops the blur (the mobile dock), so on a phone
+ * the header is the only blurred surface that moves. Reading surfaces stay
+ * opaque: paragraphs, ledes and cards never go inside this component.
+ *
+ * Fallbacks live in src/styles/glass.css: no backdrop-filter support, the
+ * footer's "Reduce visual effects" preference (html[data-effects="reduced"]),
+ * prefers-reduced-motion and prefers-reduced-transparency all give an opaque
+ * surface with no blur and no transition.
+ */
+interface Props {
+  /** Tag to render, e.g. "header", "nav", "div". */
+  element?: string;
+  variant?: 'champagne' | 'smoked' | 'clear';
+  /** Same tint, no blur. */
+  opaque?: boolean;
+  class?: string;
+  [attr: string]: unknown;
+}
+
+const { element = 'div', variant = 'champagne', opaque = false, class: cls, ...rest } = Astro.props;
+const Element = element as 'div';
+---
+
+<Element class:list={['glass', `glass-${variant}`, opaque && 'glass-opaque', cls]} {...rest}>
+  <slot />
+</Element>

@@ -62,25 +62,23 @@ const PUBLIC_EMAIL = facts.email;
   </div>
   <div class="container-page mt-10 flex flex-wrap items-center justify-between gap-4 text-sm text-stone">
     <p class="m-0">© {new Date().getFullYear()} {BRAND_NAME}. {FOUNDER_NAME}, founder. {facts.place}.</p>
-    <button class="btn btn-line" type="button" data-effects-toggle>Calmer display</button>
+    {/* Opaque glass, no blur, no transitions. A user-requested preference, so localStorage holds it (the only thing the site stores). */}
+    <button class="btn btn-line" type="button" data-effects-toggle aria-pressed="false">Reduce visual effects</button>
   </div>
 </footer>
 
 <script>
   const button = document.querySelector<HTMLButtonElement>('[data-effects-toggle]');
-  const paint = () => {
-    const plain = document.documentElement.dataset.effects === 'plain';
-    if (button) button.setAttribute('aria-pressed', plain ? 'true' : 'false');
-  };
+  const reduced = () => document.documentElement.dataset.effects === 'reduced';
+  const paint = () => button?.setAttribute('aria-pressed', reduced() ? 'true' : 'false');
   paint();
   button?.addEventListener('click', () => {
-    const plain = document.documentElement.dataset.effects === 'plain';
-    if (plain) {
+    if (reduced()) {
       delete document.documentElement.dataset.effects;
-      localStorage.removeItem('mw-effects');
+      try { localStorage.removeItem('mw-effects'); } catch {}
     } else {
-      document.documentElement.dataset.effects = 'plain';
-      localStorage.setItem('mw-effects', 'plain');
+      document.documentElement.dataset.effects = 'reduced';
+      try { localStorage.setItem('mw-effects', 'reduced'); } catch {}
     }
     paint();
   });

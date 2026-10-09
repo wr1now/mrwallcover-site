@@ -1,0 +1,163 @@
+/*
+ * Glass system (contract section 6; stage 5 step G4). Imported by global.css
+ * after tokens.css. Used through src/components/Glass.astro; the variant
+ * classes also work on their own for small controls (the material studio's
+ * preset buttons carry .glass-clear directly).
+ *
+ * Recipe: tint at an alpha, backdrop blur with a little saturation, a bright
+ * hairline, an inner highlight on the top edge, a restrained shadow. Every
+ * value is a token in tokens.css and every text colour used on a variant is
+ * measured in docs/glass-atelier/CONTRAST.md.
+ *
+ * Fallbacks, all to the same opaque surface with no blur and no transition:
+ *   @supports not backdrop-filter      browsers without the filter
+ *   html[data-effects="reduced"]       the footer's "Reduce visual effects" button (localStorage, applied before first paint by Base.astro)
+ *   prefers-reduced-motion: reduce     the operating-system motion setting
+ *   prefers-reduced-transparency       the operating-system transparency setting, where the browser exposes it
+ */
+
+@layer components {
+  .glass,
+  .glass-champagne,
+  .glass-smoked,
+  .glass-clear {
+    --glass-tint: var(--color-ivory);
+    --glass-alpha: var(--glass-champagne-alpha);
+    --glass-blur: var(--glass-champagne-blur);
+    --glass-saturate: var(--glass-champagne-saturate);
+    --glass-border: var(--glass-champagne-border);
+    --glass-highlight: var(--glass-champagne-highlight);
+    --glass-shadow: var(--glass-champagne-shadow);
+    --glass-solid: var(--color-ivory);
+    --glass-text: var(--color-ink);
+    position: relative;
+    color: var(--glass-text);
+    background: color-mix(in srgb, var(--glass-tint) calc(var(--glass-alpha) * 100%), transparent);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-control);
+    box-shadow:
+      var(--glass-shadow),
+      inset 0 1px 0 var(--glass-highlight);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  }
+
+  .glass-smoked {
+    --glass-tint: var(--color-ink);
+    --glass-alpha: var(--glass-smoked-alpha);
+    --glass-blur: var(--glass-smoked-blur);
+    --glass-saturate: var(--glass-smoked-saturate);
+    --glass-border: var(--glass-smoked-border);
+    --glass-highlight: var(--glass-smoked-highlight);
+    --glass-shadow: var(--glass-smoked-shadow);
+    --glass-solid: var(--color-ink);
+    --glass-text: var(--color-ivory);
+  }
+
+  .glass-clear {
+    --glass-tint: #fff;
+    --glass-alpha: var(--glass-clear-alpha);
+    --glass-blur: var(--glass-clear-blur);
+    --glass-saturate: var(--glass-clear-saturate);
+    --glass-border: var(--glass-clear-border);
+    --glass-highlight: transparent;
+    --glass-shadow: 0 0 0 0 transparent;
+    --glass-solid: var(--color-paper);
+  }
+
+  /* Same tint, no blur: the mobile dock. */
+  .glass-opaque {
+    --glass-alpha: var(--glass-dock-alpha);
+    --glass-border: var(--glass-dock-border);
+    --glass-shadow: var(--glass-dock-shadow);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  /* Text on glass: eyebrows are stone or ink, never brass or gold (CONTRAST.md). Links keep the surface colour. */
+  .glass .eyebrow {
+    color: var(--color-stone);
+  }
+
+  .glass-smoked .eyebrow,
+  .glass-smoked .lede {
+    color: var(--color-ivory-soft);
+  }
+
+  .glass-smoked a,
+  .glass-smoked button {
+    color: inherit;
+  }
+
+  .glass-smoked :focus-visible {
+    outline-color: var(--color-gold);
+  }
+
+  /* Reading surfaces stay opaque. */
+  .reading {
+    background: var(--color-ivory);
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass,
+  .glass-champagne,
+  .glass-smoked,
+  .glass-clear {
+    background: var(--glass-solid);
+  }
+}
+
+html[data-effects="reduced"] .glass,
+html[data-effects="reduced"] .glass-champagne,
+html[data-effects="reduced"] .glass-smoked,
+html[data-effects="reduced"] .glass-clear {
+  background: var(--glass-solid);
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  transition: none;
+}
+
+html[data-effects="reduced"] .glass-champagne,
+html[data-effects="reduced"] .glass-clear {
+  border-color: var(--color-line);
+}
+
+/* The preference also stops every transition and animation, like the operating-system motion setting does. */
+html[data-effects="reduced"] *,
+html[data-effects="reduced"] *::before,
+html[data-effects="reduced"] *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+html[data-effects="reduced"] {
+  scroll-behavior: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass,
+  .glass-champagne,
+  .glass-smoked,
+  .glass-clear {
+    background: var(--glass-solid);
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass,
+  .glass-champagne,
+  .glass-smoked,
+  .glass-clear {
+    background: var(--glass-solid);
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    transition: none;
+  }
+}
