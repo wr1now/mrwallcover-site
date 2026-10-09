@@ -113,7 +113,10 @@ test('the fact sheet holds one description sentence of 160 characters or fewer, 
   const reviewed = (facts as { lastReviewed?: string }).lastReviewed ?? '';
   assert.match(reviewed, /^\d{4}-\d{2}-\d{2}$/, 'facts.lastReviewed must be an ISO date');
   assert.ok(reviewed >= '2026-10-09', 'facts.lastReviewed cannot be earlier than the 9 October 2026 review');
-  assert.ok(reviewed <= new Date().toISOString().slice(0, 10), 'facts.lastReviewed cannot be in the future');
+  // "Today" is the site's own day in London, not UTC: after 11pm BST the UTC date is still yesterday and would wrongly reject a same-day review.
+  const todayInLondon = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/London', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  assert.match(todayInLondon, /^\d{4}-\d{2}-\d{2}$/, 'en-CA formats as ISO');
+  assert.ok(reviewed <= todayInLondon, `facts.lastReviewed ${reviewed} cannot be after today in London (${todayInLondon})`);
   for (const file of ['src/components/Footer.astro', 'src/lib/schema.ts', 'src/pages/llms.txt.ts']) {
     const text = await readFile(file, 'utf8');
     assert.match(text, /from '\.\.\/data\/facts\.json'/, `${file} must import the fact sheet`);

@@ -190,19 +190,29 @@ test('every published page has a Markdown twin it links to, and its URL and main
   assert.doesNotMatch(thankYou, /type="text\/markdown"/, 'noindex pages do not advertise a twin');
 });
 
-test('forbidden strings are absent from every text file in dist, and no phone-number pattern appears in any Markdown, text, JSON or XML file', async () => {
+test('forbidden strings are absent from every text file in dist, and no phone-number pattern appears in any Markdown, text, JSON or XML file (nor in HTML or JS when SITE_PHONE is unset)', async () => {
   const files = await filesUnder('dist', (name) => /\.(html|md|txt|json|xml|js|css|csv)$/.test(name));
   assert.ok(files.length > 140, `${files.length} text files`);
+  // Without the SITE_PHONE secret nothing in the build may hold a number, so the HTML and scripts are scanned too.
+  // With it, the number ships only inside the reversed payload, which tests/dist-guards.test.ts and phone-build check.
+  const phoneUnset = !process.env.SITE_PHONE;
+  const phonePattern = /\b0?7\d{3}\s?\d{6}\b|\+?44\s?\(?0?\)?\s?7\d{9}|\+?44\s?\(?0?\)?\s?20\s?\d{4}\s?\d{4}|\b020\s?\d{4}\s?\d{4}\b/;
   const problems: string[] = [];
+  let scannedForPhone = 0;
   for (const file of files) {
     // Inline image placeholders are base64 and can spell anything; strip them before matching words.
     const text = (await readFile(file, 'utf8')).replace(/data:image\/[^"')\s]+/g, '');
     for (const banned of ['CLAUDI', 'Landmark', 'Threadneedles', 'Threadneedle', 'third party', 'third-party', 'subcontract', 'TODO', 'lorem']) {
       if (text.toLowerCase().includes(banned.toLowerCase())) problems.push(`${file}: ${banned}`);
     }
-    if (/\.(md|txt|json|xml)$/.test(file) && /\b0?7\d{3}\s?\d{6}\b|\+?44\s?\(?0?\)?\s?7\d{9}|\+?44\s?\(?0?\)?\s?20\s?\d{4}\s?\d{4}|\b020\s?\d{4}\s?\d{4}\b/.test(text)) problems.push(`${file}: phone number pattern`);
+    const scanPhone = /\.(md|txt|json|xml)$/.test(file) || (phoneUnset && /\.(html|js)$/.test(file));
+    if (scanPhone) {
+      scannedForPhone += 1;
+      if (phonePattern.test(text)) problems.push(`${file}: phone number pattern`);
+    }
   }
   assert.deepEqual(problems, []);
+  if (phoneUnset) assert.ok(files.filter((file) => /\.(html|js)$/.test(file)).length > 70 && scannedForPhone > 140, `${scannedForPhone} files scanned for a phone number`);
 });
 
 test('no draft URL appears in the sitemap, llms.txt, llms-full.txt or the feed', async () => {
@@ -222,7 +232,10 @@ test('no draft URL appears in the sitemap, llms.txt, llms-full.txt or the feed',
   const outputs = Object.fromEntries(await Promise.all(['sitemap-0.xml', 'llms.txt', 'llms-full.txt', 'feed.xml'].map(async (name) => [name, await readFile(`dist/${name}`, 'utf8')])));
   const problems: string[] = [];
   for (const draft of drafts) {
-    for (const [name, text] of Object.entries(outputs)) if (text.includes(`${SITE}${draft}`) || text.includes(`"${draft}"`)) problems.push(`${draft} in ${name}`);
+    // Any occurrence of the draft path is a leak: absolute or relative, quoted or bare, with or without its trailing slash.
+    // The lookahead stops "/advice/cost" from matching a published "/advice/cost-…" page.
+    const leak = new RegExp(`${draft.replace(/\/$/, '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![A-Za-z0-9-])`);
+    for (const [name, text] of Object.entries(outputs)) if (leak.test(text)) problems.push(`${draft} in ${name}`);
     let built = true;
     try {
       await readFile(`dist${draft}index.html`, 'utf8');
