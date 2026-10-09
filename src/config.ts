@@ -63,6 +63,13 @@ export const FORM_ENDPOINT: string = import.meta.env.PUBLIC_FORM_ENDPOINT || end
 export const ANALYTICS_SRC: string = import.meta.env.PUBLIC_ANALYTICS_SRC || '';
 
 /**
+ * Optional private enquiry API. Empty on the static GitHub Pages build.
+ * Set PUBLIC_LEAD_API to the origin of `npm run lead-api` (no trailing slash)
+ * only after that process is actually running. See docs/architecture.md.
+ */
+export const LEAD_API_URL: string = import.meta.env.PUBLIC_LEAD_API || '';
+
+/**
  * Google Search Console HTML-tag verification (URL-prefix property).
  * Paste only the content value Google gives you, e.g. 'AbC123...'.
  * Empty means no tag is printed. Domain (DNS TXT) verification needs no change here.

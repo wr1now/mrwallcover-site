@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import { areaHref, areas, materials, projectHref, projects, specialismHref, specialisms } from '../lib/content';
+
+const entries = [
+  { href: '/services/', label: 'Services' },
+  { href: '/materials/', label: 'Materials' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/professionals/', label: 'For professionals' },
+  { href: '/advice/', label: 'Advice' },
+  { href: '/advice/quantities/', label: 'Quantity calculator' },
+  { href: '/aftercare/', label: 'Aftercare' },
+  { href: '/contact/', label: 'Start your project' },
+  { href: '/about/', label: 'About Dorin Burcus' },
+  ...specialisms.map((item) => ({ href: specialismHref(item.slug), label: item.name })),
+  ...areas.map((item) => ({ href: areaHref(item.slug), label: item.heading })),
+  ...materials.items.map((item) => ({ href: `/materials/${item.slug}/`, label: item.name })),
+  ...projects.map((item) => ({ href: projectHref(item.slug), label: item.title })),
+];
+---
+
+<Base title="Search | Mr Wallcover" description="Find a service, material or project on the Mr Wallcover site." path="/search/" noindex={true}>
+  <div class="container-page py-16">
+    <h1 class="m-0 text-[clamp(2.4rem,5vw,4rem)]">Search</h1>
+    <form class="mt-6" role="search">
+      <label class="field" for="q">Search the site
+        <input id="q" name="q" type="search" data-search />
+      </label>
+    </form>
+    <p data-search-empty class="mt-6" hidden>Nothing matches. Try “grasscloth”, “aftercare” or “hotel”, or <a href="/contact/">start a project</a>.</p>
+    <ul class="mt-6 grid list-none gap-1 p-0" data-search-list>
+      {entries.map((entry) => (
+        <li data-search-item={entry.label.toLowerCase()}><a href={entry.href}>{entry.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</Base>
+
+<script>
+  const input = document.querySelector<HTMLInputElement>('[data-search]');
+  const items = [...document.querySelectorAll<HTMLElement>('[data-search-item]')];
+  const empty = document.querySelector<HTMLElement>('[data-search-empty]');
+  input?.addEventListener('input', () => {
+    const query = input.value.trim().toLowerCase();
+    let shown = 0;
+    for (const item of items) {
+      const match = !query || (item.dataset.searchItem || '').includes(query);
+      item.hidden = !match;
+      if (match) shown += 1;
+    }
+    if (empty) empty.hidden = shown !== 0;
+  });
+</script>

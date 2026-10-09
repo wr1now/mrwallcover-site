@@ -1,0 +1,86 @@
+{
+  "title": "Material library | Mr Wallcover",
+  "description": "Paper, grasscloth, silk, hand-painted scenics, murals, contract vinyl and acoustic wallcoverings. Installation and sourcing, with physical samples as the colour authority.",
+  "eyebrow": "Materials",
+  "heading": "A library, not a shop.",
+  "lede": "These are families we hang, and can source when you want that. A screen cannot match colour, texture or sheen. Ask for a physical sample before you decide.",
+  "items": [
+    {
+      "slug": "paper-and-non-woven",
+      "name": "Paper and non-woven",
+      "studio": "paper",
+      "setting": "Homes and hotels",
+      "specialism": null,
+      "appearance": "Printed or plain, from a quiet texture to a large repeat.",
+      "joins": "Seams are part of a hung wall. The match follows the repeat: free or straight. Half-drop and murals are set out on site, not by the simple calculator.",
+      "care": "Follow the maker. Many papers are not washable. We do not call a family washable, fire-rated or seamless unless that product’s own data says so.",
+      "handling": "The wall has to be sound first. Lining is used when the maker or the wall requires it."
+    },
+    {
+      "slug": "grasscloth-and-weaves",
+      "name": "Grasscloth and natural weaves",
+      "studio": "grasscloth",
+      "setting": "Rooms where variation is wanted",
+      "specialism": "grasscloth-installation",
+      "appearance": "Sisal, raffia, grass and other weaves. Colour and texture move from roll to roll.",
+      "joins": "Seams show. The direction of the weave is agreed before the first length is cut.",
+      "care": "Dry and gentle. Adhesive on the face marks the weave. Not a washable surface.",
+      "handling": "Clean hands, an adhesive that suits the backing, and enough length from one batch to keep a wall together."
+    },
+    {
+      "slug": "silk-and-textiles",
+      "name": "Silk and textiles",
+      "studio": "silk",
+      "setting": "Rooms where light is part of the finish",
+      "specialism": "silk-wallcovering-installation",
+      "appearance": "A cloth face with a sheen that changes as you move.",
+      "joins": "Seams are planned so the light from the window does not catch a ridge.",
+      "care": "Silk marks quickly. Care is the maker’s note, usually dry. It is not a corridor vinyl.",
+      "handling": "Clean hands, the specified adhesive, and preparation written into the scope, including a lining where one is required."
+    },
+    {
+      "slug": "hand-painted",
+      "name": "Hand-painted scenic papers",
+      "studio": "scenic",
+      "setting": "Suites and drawing rooms",
+      "specialism": "hand-painted-wallpaper-installation",
+      "appearance": "Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them. We do not make them, and we are not affiliated with those makers.",
+      "joins": "Panels follow a sequence. The scene has to meet across doors, windows and corners. The set-out starts from a fixed point.",
+      "care": "As the maker specifies. These are not washable contract surfaces.",
+      "handling": "A sound wall, time, and the maker’s instruction on lining."
+    },
+    {
+      "slug": "murals",
+      "name": "Murals",
+      "studio": "scenic",
+      "setting": "A single wall or a room with a scene",
+      "specialism": "mural-installation",
+      "appearance": "Printed or hand-made scenes, including event murals hung for a fixed date.",
+      "joins": "Set out from a fixed point so the image meets where it should. A roll calculator will not price a mural.",
+      "care": "Follow the maker. An event mural is not the same duty as a guest-room vinyl.",
+      "handling": "Check the panel count, the sequence and the substrate before the first piece is opened."
+    },
+    {
+      "slug": "contract-vinyl",
+      "name": "Contract vinyl",
+      "studio": "vinyl",
+      "setting": "Busy hotel rooms and corridors",
+      "specialism": "hotel-wallcovering-installation",
+      "appearance": "A tighter face specified for wear. At The OWO the install included Vescom.",
+      "joins": "Seams are still there. They are planned, not promised away.",
+      "care": "More tolerant of cleaning than paper or silk, and still only as the maker allows. Vinyl on a wall is not, by itself, a fire certificate.",
+      "handling": "The specified adhesive, the right substrate, and a sample in the room’s own light when the specification is still open."
+    },
+    {
+      "slug": "acoustic",
+      "name": "Acoustic wallcoverings",
+      "studio": "acoustic",
+      "setting": "Rooms where sound was part of the specification",
+      "specialism": "acoustic-wallcovering-installation",
+      "appearance": "A textured face over an acoustic construction, or an acoustic panel.",
+      "joins": "Edges, trims and cuts have to keep the system the way it was specified.",
+      "care": "Follow the system maker. We do not claim a decorative finish is an acoustic rating.",
+      "handling": "Adhesive, trimming and edges follow the instruction for that system. The material light studio does not show acoustic performance."
+    }
+  ]
+}

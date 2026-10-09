@@ -3,6 +3,7 @@ import { AWARD } from '../config';
 import PhoneReveal from '../components/PhoneReveal.astro';
 import FaqList from '../components/FaqList.astro';
 import Hero from '../components/Hero.astro';
+import MaterialStudio from '../components/MaterialStudio.astro';
 import Picture from '../components/Picture.astro';
 import Base from '../layouts/Base.astro';
 import { faq, faqItems, home, projectHref, projects, videoById } from '../lib/content';
@@ -25,13 +26,28 @@ const others = projects.filter((project) => !project.featured);
     <div class="hero-copy on-dark">
       <p class="eyebrow">{home.hero.eyebrow}</p>
       <span class="rule"></span>
-      <h1>Wallcoverings, <em>hung properly.</em></h1>
+      <h1>{home.hero.title} <em>{home.hero.accent}</em></h1>
       <p class="lede mt-5">{home.hero.lede}</p>
       <!-- Award name will be added later. Public copy is the label and the year only. -->
       <p class="mt-5 mb-0 text-gold">{AWARD.label} ({AWARD.year}) · <a class="trusted-link" href="/projects/#design-weeks">Trusted by Calico Wallpaper</a></p>
       <div class="mt-6 flex flex-wrap gap-3">
-        <a class="btn btn-solid" href="/contact/">Request a quotation</a>
-        <a class="btn btn-ghost" href="/projects/">See the work</a>
+        <a class="btn btn-solid" href="/contact/">Start your project</a>
+        <a class="btn btn-ghost" href="/projects/">Explore our work</a>
+        <a class="btn btn-ghost" href="/contact/?intent=install">Wallpaper already purchased</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-line" aria-labelledby="needs-heading">
+    <div class="container-page py-14 md:py-20">
+      <p class="eyebrow">What do you need?</p>
+      <h2 id="needs-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.4rem)]">Five ways to begin.</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <a class="card-link" href="/contact/?intent=install"><h3>I already have the wallpaper</h3><p class="m-0 text-stone">Installation, with the product you have bought. Measurements can wait.</p></a>
+        <a class="card-link" href="/contact/?intent=source"><h3>Help me choose and install it</h3><p class="m-0 text-stone">A material family, a sample, then the hang. No basket.</p></a>
+        <a class="card-link" href="/professionals/#designers"><h3>I am specifying a project</h3><p class="m-0 text-stone">A room schedule, drawings and a PDF. Not a homeowner form.</p></a>
+        <a class="card-link" href="/professionals/#commercial"><h3>A hotel or contractor package</h3><p class="m-0 text-stone">Access, programme and who supplies the material.</p></a>
+        <a class="card-link" href="/aftercare/#support"><h3>Aftercare or a repair</h3><p class="m-0 text-stone">A separate note. It does not decide a guarantee.</p></a>
       </div>
     </div>
   </section>
@@ -183,6 +199,26 @@ const others = projects.filter((project) => !project.featured);
     </div>
   </section>
 
+  <section class="border-t border-line" aria-labelledby="detail-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">Craft</p>
+      <h2 id="detail-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.4rem)]">The join, then the surface.</h2>
+      <p class="lede mt-4">Two details from Brown's Hotel. This is not a before and after.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <button class="btn btn-solid-ink" type="button" data-detail="join" aria-pressed="true">Corner and join</button>
+        <button class="btn btn-line" type="button" data-detail="surface" aria-pressed="false">Surface</button>
+      </div>
+      <div class="mt-6 max-w-3xl" data-detail-panel="join">
+        <Picture id="browns-hotel-mayfair-03" sizes="(min-width: 768px) 48rem, 100vw" />
+      </div>
+      <div class="mt-6 max-w-3xl" data-detail-panel="surface" hidden>
+        <Picture id="browns-hotel-mayfair-01" sizes="(min-width: 768px) 48rem, 100vw" />
+      </div>
+    </div>
+  </section>
+
+  <MaterialStudio />
+
   <section class="border-t border-line" aria-labelledby="praise-heading">
     <div class="container-page py-16 md:py-24">
       <p class="eyebrow">{home.praise.eyebrow}</p>
@@ -225,13 +261,26 @@ const others = projects.filter((project) => !project.featured);
       <h2 id="cta-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.4rem)]">{home.cta.title}</h2>
       <p class="lede mt-4">{home.cta.text}</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a class="btn btn-solid-ink" href="/contact/">Request a quotation</a>
+        <a class="btn btn-solid-ink" href="/contact/">Start your project</a>
         <PhoneReveal class="btn btn-line" label="Show phone number" prefix="Call " />
       </div>
     </div>
   </section>
 </Base>
 
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-detail]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const name = button.dataset.detail;
+      document.querySelectorAll<HTMLButtonElement>('[data-detail]').forEach((item) => {
+        item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+      });
+      document.querySelectorAll<HTMLElement>('[data-detail-panel]').forEach((panel) => {
+        panel.hidden = panel.dataset.detailPanel !== name;
+      });
+    });
+  });
+</script>
 <script is:inline>
   const films = document.querySelectorAll('video[data-src]');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

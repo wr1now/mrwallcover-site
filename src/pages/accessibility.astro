@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { PUBLIC_EMAIL } from '../config';
+---
+
+<Base
+  title="Accessibility | Mr Wallcover"
+  description="How the Mr Wallcover site is built for keyboard, mobile and reduced-motion use. WCAG 2.2 AA is the target. This page is not a certificate."
+  path="/accessibility/"
+>
+  <div class="container-page py-16">
+    <p class="eyebrow">Accessibility</p>
+    <h1 class="m-0 text-[clamp(2.4rem,5vw,4rem)]">Using this site</h1>
+    <div class="prose mt-6">
+      <p>The target is WCAG 2.2 AA. This page is not a certification, and an automated check is not a finished audit.</p>
+      <p>Pages use headings, visible keyboard focus and controls that can be used without dragging. The phone number stays hidden until you ask for it. Menus close with Escape. If motion or blur is a problem, use “Calmer display” in the footer, or your system’s reduced-motion setting.</p>
+      <p>The material studio is optional. If WebGL is unavailable, the photograph and the written notes remain.</p>
+      <p>If something blocks you, email {PUBLIC_EMAIL} and say which page. We will help with the enquiry directly.</p>
+    </div>
+  </div>
+</Base>

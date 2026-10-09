@@ -1,0 +1,49 @@
+---
+import Picture from './Picture.astro';
+---
+
+<section class="studio" data-studio aria-labelledby="studio-heading">
+  <div class="container-page py-16 md:py-24">
+    <p class="eyebrow">Material light studio</p>
+    <h2 id="studio-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.4rem)]">Light on a material, before a sample.</h2>
+    <p class="lede mt-4">An illustrative simulation of a room corner. It is not a certified match of a named product. A physical sample is the authority for colour, texture and sheen.</p>
+    <div class="mt-8" data-studio-fallback>
+      <Picture id="browns-hotel-mayfair-01" sizes="(min-width: 768px) 40rem, 100vw" />
+      <p class="caption">A real surface at Brown's Hotel, Mayfair. The studio does not replace this photograph.</p>
+    </div>
+    <p class="mt-6 mb-0">
+      <button class="btn btn-solid-ink" type="button" data-open-studio>Open the material light studio</button>
+    </p>
+    <p data-studio-status class="m-0 mt-3 text-stone" role="status"></p>
+    <div data-studio-controls hidden>
+      <div class="studio-stage mt-6" data-studio-stage></div>
+      <p class="mt-4 mb-0" data-studio-note>Paper and non-woven. A matte printed surface.</p>
+      <div class="mt-4 flex flex-wrap gap-2" role="group" aria-label="Material family">
+        <button class="btn btn-line glass-clear" type="button" data-preset="paper" aria-pressed="true">Paper</button>
+        <button class="btn btn-line glass-clear" type="button" data-preset="grasscloth" aria-pressed="false">Grasscloth</button>
+        <button class="btn btn-line glass-clear" type="button" data-preset="silk" aria-pressed="false">Silk</button>
+        <button class="btn btn-line glass-clear" type="button" data-preset="scenic" aria-pressed="false">Scenic</button>
+        <button class="btn btn-line glass-clear" type="button" data-preset="vinyl" aria-pressed="false">Vinyl</button>
+        <button class="btn btn-line glass-clear" type="button" data-preset="acoustic" aria-pressed="false">Acoustic</button>
+      </div>
+      <div class="mt-4 grid gap-4 md:grid-cols-2">
+        <label class="field">Light direction
+          <input data-light type="range" min="0" max="180" value="40" />
+        </label>
+        <div class="flex flex-wrap gap-2">
+          <button class="btn btn-line" type="button" data-daylight>Daylight</button>
+          <button class="btn btn-line" type="button" data-warm>Warm interior</button>
+          <button class="btn btn-line" type="button" data-overview>Overview</button>
+          <button class="btn btn-line" type="button" data-closeup>Close-up</button>
+          <button class="btn btn-line" type="button" data-reset-studio>Reset</button>
+          <button class="btn btn-line" type="button" data-close-studio>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { mountStudio } from '../scripts/material-studio';
+  mountStudio();
+</script>

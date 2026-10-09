@@ -1,0 +1,103 @@
+{
+  "items": [
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "Brown's Hotel",
+      "place": "Mayfair",
+      "years": "2022–2024",
+      "scope": "Decorating package, including wallcoverings",
+      "href": "/projects/browns-hotel-mayfair/"
+    },
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "Hyde London City",
+      "place": "15 Old Bailey",
+      "years": "2022–2024",
+      "scope": "Decorating package, including specialist wallcoverings",
+      "href": "/projects/old-bailey-hotel/"
+    },
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "Raffles London at The OWO",
+      "place": "Whitehall",
+      "years": "2020–2023",
+      "scope": "Guest room wallcoverings",
+      "href": "/projects/raffles-london-the-owo/"
+    },
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "Four Seasons Hotel London at Tower Bridge",
+      "place": "Ten Trinity Square",
+      "years": "",
+      "scope": "Guest room and suite wallcoverings",
+      "href": "/projects/four-seasons-ten-trinity-square/"
+    },
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "DoubleTree by Hilton London – West End",
+      "place": "Holborn",
+      "years": "2019",
+      "scope": "Guest room wallcoverings",
+      "href": "/projects/doubletree-west-end/"
+    },
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "DoubleTree by Hilton London – Victoria",
+      "place": "Victoria",
+      "years": "2023",
+      "scope": "Guest room wallcoverings",
+      "href": "/projects/doubletree-victoria/"
+    },
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "Hilton Garden Inn Silverstone",
+      "place": "Silverstone",
+      "years": "2022",
+      "scope": "Wallcoverings",
+      "href": "/projects/hilton-garden-inn-silverstone/"
+    },
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "The Biltmore Mayfair",
+      "place": "Grosvenor Square",
+      "years": "2018",
+      "scope": "Wallcoverings, including Phillip Jeffries",
+      "href": "/projects/biltmore-mayfair/"
+    },
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "Pendley Manor Hotel",
+      "place": "Tring",
+      "years": "December 2019 – January 2020",
+      "scope": "Wallpapering, including damask and patterned papers",
+      "href": ""
+    },
+    {
+      "publish": true,
+      "nameOnly": true,
+      "name": "Moxy London ExCeL",
+      "place": "",
+      "years": "",
+      "scope": "",
+      "href": ""
+    },
+    {
+      "publish": true,
+      "nameOnly": true,
+      "name": "The Lanesborough",
+      "place": "",
+      "years": "",
+      "scope": "",
+      "href": ""
+    }
+  ]
+}

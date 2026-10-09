@@ -29,14 +29,15 @@
     {
       "heading": "How the form works",
       "paragraphs": [
-        "The enquiry form is delivered to us by FormSubmit (formsubmit.co), which forwards the submission to our email address. FormSubmit processes the details so they can reach us, and may show a short anti-spam check on its own page. Its privacy notice applies to that processing.",
-        "The form includes simple anti-spam measures, such as a hidden field that people never see and a check on how quickly the form was sent. They do not use cookies on this site. You can always write to the email address on the contact page instead."
+        "On the public site, the enquiry form is delivered by FormSubmit (formsubmit.co), which forwards the submission to our email address. FormSubmit may show its own anti-spam check. Its privacy notice applies to that step. The form also uses a hidden field that people are asked not to fill. It does not use a timer.",
+        "A private enquiry store can be switched on later, off GitHub Pages. When it is, the enquiry is saved before the page says it was received, a reference is shown, and an email alert is separate from that save. Room photographs sent that way are kept out of the public site. JPEG and PNG copies have location data removed where the store can do so. HEIC files are kept as sent.",
+        "You can always email the address on the contact page instead."
       ]
     },
     {
       "heading": "Cookies and analytics",
       "paragraphs": [
-        "This site does not set cookies. It does not use local storage for tracking. It does not embed advertising.",
+        "This site does not set cookies and does not embed advertising. A shortlist of material names, and a calmer-display preference, can be saved in this browser after you use those controls. They are not sent anywhere unless you include the shortlist in an enquiry. A draft of a project brief keeps the non-sensitive answers in this tab only, and not your name, email, phone or message.",
         "There is a place in the build for a cookie-free analytics script, such as Plausible, Fathom or Cloudflare Web Analytics. Nothing is loaded unless that script is deliberately switched on. If it is switched on later, this notice will be updated."
       ]
     },

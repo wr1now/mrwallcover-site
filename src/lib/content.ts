@@ -14,6 +14,8 @@ import servicesJson from '../content/services.json';
 import sizesJson from '../content/sizes.json';
 import teamJson from '../content/team.json';
 import videosJson from '../content/videos.json';
+import hotelsJson from '../content/hotels.json';
+import materialsJson from '../content/materials.json';
 import type { FaqItem, HeroImage, MediaFile, Project } from './types';
 
 export const home = homeJson;
@@ -25,6 +27,8 @@ export const privacy = privacyJson;
 export const services = servicesJson;
 export const navigation = navigationJson;
 export const team = teamJson;
+export const hotels = hotelsJson.items.filter((item) => item.publish);
+export const materials = materialsJson;
 
 const alts = altsJson as Record<string, { alt: string; manifestNote: string }>;
 const sizes = sizesJson as Record<string, MediaFile>;
@@ -59,6 +63,10 @@ interface CaseStudyData {
   metaTitle?: string | null;
   metaDescription?: string | null;
   group?: string | null;
+  /** Draft case studies stay in the repo for review and are never built or listed. */
+  draft?: boolean;
+  /** Interior photographs are not in the repo. The page shows a labelled placeholder. */
+  awaitingPhotos?: boolean;
 }
 
 type CaseStudyModule = { frontmatter: CaseStudyData; Content: any };
@@ -75,6 +83,13 @@ const CASE_STUDY_ORDER = [
   'four-seasons-ten-trinity-square',
   'trematon-castle',
   'old-bailey-hotel',
+  'doubletree-west-end',
+  'doubletree-victoria',
+  'biltmore-mayfair',
+  'house-of-hackney-st-michaels',
+  'penny-morrison-showroom',
+  'pimlico-st-georges-square',
+  'inverness-terrace',
   'north-london-residence',
   'calico-ahluwalia-estuary-rosewood',
   'calico-beverly-1975-cadence',
@@ -83,7 +98,7 @@ const CASE_STUDY_ORDER = [
 ];
 
 export const caseStudies = Object.values(caseStudyModules)
-  .map((mod) => mod)
+  .filter((mod) => !mod.frontmatter.draft)
   .sort(
     (a, b) =>
       (CASE_STUDY_ORDER.indexOf(a.frontmatter.slug) + 1 || 99) - (CASE_STUDY_ORDER.indexOf(b.frontmatter.slug) + 1 || 99),
@@ -120,6 +135,7 @@ function fromCaseStudy(cs: CaseStudyData, base?: Project): Project {
     featured: base?.featured ?? true,
     caseStudy: true,
     modest: Boolean(cs.modest),
+    awaitingPhotos: Boolean(cs.awaitingPhotos),
     group: cs.group ?? undefined,
     credits: Object.fromEntries(cs.gallery.filter((g) => g.credit).map((g) => [g.id, g.credit as string])),
   };

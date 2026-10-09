@@ -1,0 +1,217 @@
+---
+import { LEAD_API_URL, FORM_ENDPOINT, FORM_PROVIDER, PUBLIC_EMAIL, SITE_URL } from '../config';
+
+interface Props {
+  variant?: 'enquiry' | 'aftercare';
+}
+
+const { variant = 'enquiry' } = Astro.props;
+const isFormSubmit = !LEAD_API_URL && FORM_PROVIDER === 'formsubmit' && FORM_ENDPOINT.length > 0;
+const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().join('')) : '';
+---
+
+<form
+  class="enquiry grid gap-5"
+  method="POST"
+  enctype="multipart/form-data"
+  data-enquiry-form
+  data-variant={variant}
+  data-provider={LEAD_API_URL ? 'lead-api' : FORM_PROVIDER}
+  data-lead-api={LEAD_API_URL}
+  data-endpoint={encodedEndpoint}
+  data-email={PUBLIC_EMAIL}
+  novalidate
+>
+  <p class="honeypot" aria-hidden="true">
+    <label>Leave this field empty <input name="_honey" type="text" tabindex="-1" autocomplete="off" /></label>
+  </p>
+  <input type="hidden" name="kind" value={variant === 'aftercare' ? 'aftercare' : 'enquiry'} />
+  <input type="hidden" name="idempotencyKey" value="" />
+  <input type="hidden" name="reference" value="" />
+  <input type="hidden" name="shortlist" value="" />
+  {isFormSubmit && (
+    <>
+      <input type="hidden" name="_subject" value={variant === 'aftercare' ? 'Aftercare note from mrwallcover.com' : 'New enquiry from mrwallcover.com'} />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_next" value={`${SITE_URL}/thank-you/`} />
+      <input type="hidden" name="_captcha" value="true" />
+    </>
+  )}
+
+  <div data-hide-on-success>
+    <div data-error-summary class="form-summary" tabindex="-1" hidden></div>
+
+    {variant === 'enquiry' && (
+      <div>
+        <button class="btn btn-line" type="button" data-open-builder>Add a fuller brief</button>
+        <p class="form-note m-0 mt-2 text-stone">The short note below is enough. The fuller brief is optional, and you can leave any answer as “not sure”.</p>
+      </div>
+    )}
+
+    {variant === 'enquiry' && (
+      <div data-builder hidden>
+        <p class="eyebrow" data-step-label>Step 1 of 4</p>
+        <div data-step>
+          <fieldset class="grid gap-5">
+            <legend class="font-serif text-[1.8rem]">Your project</legend>
+            <div class="field" id="field-audience">
+              <label for="audience">Who is enquiring?</label>
+              <select id="audience" name="audience">
+                <option value="">Not sure</option>
+                <option value="homeowner">Homeowner</option>
+                <option value="designer">Designer or architect</option>
+                <option value="commercial">Hotel, commercial or main-contractor package</option>
+              </select>
+            </div>
+            <div class="field" id="field-intent">
+              <label for="intent">What do you need?</label>
+              <select id="intent" name="intent">
+                <option value="">Not sure</option>
+                <option value="install">I already have the wallpaper</option>
+                <option value="source">Help me choose, then install it</option>
+                <option value="advice">Advice</option>
+                <option value="prepare">Removal or preparation</option>
+                <option value="repair">Repair</option>
+              </select>
+            </div>
+            <div class="grid gap-5 md:grid-cols-2">
+              <div class="field">
+                <label for="area">Area or postcode district</label>
+                <input id="area" name="area" type="text" autocomplete="address-level2" />
+              </div>
+              <div class="field">
+                <label for="rooms">Rooms</label>
+                <select id="rooms" name="rooms">
+                  <option value="">Not sure</option>
+                  <option>One room</option>
+                  <option>Several rooms</option>
+                  <option>A whole home</option>
+                  <option>A hotel floor or more</option>
+                </select>
+              </div>
+            </div>
+            <div data-pro hidden class="grid gap-5">
+              <div class="field">
+                <label for="material-responsibility">Who is supplying the material?</label>
+                <input id="material-responsibility" name="materialResponsibility" type="text" placeholder="Not sure is fine" />
+              </div>
+              <div class="field">
+                <label for="programme">Programme or tender date</label>
+                <input id="programme" name="programme" type="text" />
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div data-step hidden>
+          <fieldset class="grid gap-5">
+            <legend class="font-serif text-[1.8rem]">Walls and materials</legend>
+            <div class="field">
+              <label for="product">Product, brand or code, if you know it</label>
+              <input id="product" name="product" type="text" />
+            </div>
+            <div class="field">
+              <label for="wall-notes">Walls, heights or condition</label>
+              <textarea id="wall-notes" name="wallNotes" placeholder="Optional. Not sure is a complete answer."></textarea>
+            </div>
+          </fieldset>
+        </div>
+        <div data-step hidden>
+          <fieldset class="grid gap-5">
+            <legend class="font-serif text-[1.8rem]">Timing</legend>
+            <div class="field">
+              <label for="timing">When would you like to start?</label>
+              <input id="timing" name="timing" type="text" placeholder="A month is enough" />
+            </div>
+            <div class="field">
+              <label for="access">Access, occupied rooms, or site limits</label>
+              <textarea id="access" name="access"></textarea>
+            </div>
+            <div class="field">
+              <label for="budget">Budget</label>
+              <select id="budget" name="budget">
+                <option value="">Prefer to discuss</option>
+                <option>Prefer to discuss</option>
+                <option>I have a range and will say so in the note</option>
+              </select>
+            </div>
+          </fieldset>
+        </div>
+        <div data-step hidden>
+          <p class="m-0">Check the note below, then send. You can go back and change an answer. Nothing is stored in the page address.</p>
+        </div>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <button class="btn btn-line" type="button" data-step-back>Back</button>
+          <button class="btn btn-line" type="button" data-step-next>Continue</button>
+        </div>
+      </div>
+    )}
+
+    <fieldset class="grid gap-5" data-contact>
+      <legend class="font-serif text-[1.8rem]">{variant === 'aftercare' ? 'Tell us what you are seeing' : 'How we should reply'}</legend>
+      {variant === 'aftercare' && (
+        <>
+          <p class="m-0 text-stone">This is for care of work, or for a wallcovering that needs looking at. Sending it does not decide whether a guarantee applies.</p>
+          <div class="field">
+            <label for="project-reference">Reference, if you have one</label>
+            <input id="project-reference" name="projectReference" type="text" autocomplete="off" />
+          </div>
+        </>
+      )}
+      <div class="field" id="field-name">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" />
+        <p class="form-error" data-error="name"></p>
+      </div>
+      <fieldset>
+        <legend>Reply by</legend>
+        <div class="mt-2 flex flex-wrap gap-4">
+          <label class="inline-flex min-h-12 items-center gap-2"><input type="radio" name="replyBy" value="email" /> Email</label>
+          <label class="inline-flex min-h-12 items-center gap-2"><input type="radio" name="replyBy" value="phone" /> Phone</label>
+        </div>
+        <p class="form-error" data-error="replyBy"></p>
+      </fieldset>
+      <div class="field" id="field-email" data-reply="email">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" />
+        <p class="form-error" data-error="email"></p>
+      </div>
+      <div class="field" id="field-phone" data-reply="phone" hidden>
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" />
+        <p class="form-error" data-error="phone"></p>
+      </div>
+      <div class="field" id="field-message">
+        <label for="message">{variant === 'aftercare' ? 'What should we look at?' : 'Note'}</label>
+        <textarea id="message" name="message"></textarea>
+        <p class="form-error" data-error="message"></p>
+      </div>
+      <div class="field">
+        <label for="photos">Photographs or a PDF, if you have them</label>
+        <input id="photos" name="attachment" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif,.pdf,application/pdf" multiple />
+        <p class="form-note m-0 text-stone">Phone photographs and drawings help. JPEG, PNG, WebP, HEIC and PDF. Up to 8 files. You do not have to attach anything to write to us. If a file will not send, email {PUBLIC_EMAIL}.</p>
+        <ul class="file-list" data-file-list></ul>
+      </div>
+      <label class="inline-flex min-h-12 items-center gap-2">
+        <input type="checkbox" name="marketing" value="yes" />
+        Send occasional notes about the practice. This is separate from the enquiry.
+      </label>
+      <p class="form-note m-0 text-stone">
+        {LEAD_API_URL
+          ? 'This enquiry is stored before the page says it has been received. You will see a reference. A failed email alert does not delete it.'
+          : `Until the private store is switched on, this form is delivered by our form host to ${PUBLIC_EMAIL}. A reference is included. If you do not hear back, email that address. We do not promise a reply time.`}
+      </p>
+      <button class="btn btn-solid-ink" type="submit">{variant === 'aftercare' ? 'Send the note' : 'Start your project'}</button>
+    </fieldset>
+  </div>
+  <p data-status role="status" hidden></p>
+  <div data-receipt hidden>
+    <h2 class="m-0 font-serif text-[2rem]">Received. Reference <span data-reference></span>.</h2>
+    <p data-notification class="lede mt-4"></p>
+    <p class="m-0">You can also email {PUBLIC_EMAIL}. This is not a booked survey.</p>
+  </div>
+  <noscript><p>This form needs JavaScript. Email {PUBLIC_EMAIL} instead.</p></noscript>
+</form>
+
+<script>
+  import '../scripts/enquiry-form';
+</script>

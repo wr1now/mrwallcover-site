@@ -50,6 +50,11 @@ const heroSrcset =
       document.documentElement.classList.add('js');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      try {
+        if (localStorage.getItem('mw-effects') === 'plain') document.documentElement.dataset.effects = 'plain';
+      } catch (e) {}
+    </script>
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -94,7 +99,7 @@ const heroSrcset =
     <!-- Cookie-free analytics placeholder. No script loads, and the site sets no cookies, unless PUBLIC_ANALYTICS_SRC is set at build time. -->
     {ANALYTICS_SRC && <script is:inline defer src={ANALYTICS_SRC}></script>}
   </head>
-  <body>
+  <body class:list={[path === '/' && 'is-home']}>
     <a class="skip-link" href="#main">Skip to content</a>
     <Header path={Astro.url.pathname} />
     <main id="main">

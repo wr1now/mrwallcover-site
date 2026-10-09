@@ -22,13 +22,18 @@ import { areaHref, areas, home } from '../lib/content';
     <div class="md:col-span-3">
       <p class="eyebrow">Visit</p>
       <ul class="m-0 grid list-none gap-1 p-0">
-        <li><a href="/projects/">Work</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/projects/#hotels">Hotels</a></li>
         <li><a href="/services/">Services</a></li>
+        <li><a href="/materials/">Materials</a></li>
+        <li><a href="/professionals/">For professionals</a></li>
         <li><a href="/services/joinery-wallcoverings-and-panels/">Joinery &amp; bespoke panels</a></li>
+        <li><a href="/advice/">Advice</a></li>
         <li><a href="/aftercare/">Aftercare</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/faq/">Questions</a></li>
         <li><a href="/areas/">Areas</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
         <li><a href="/privacy/">Privacy</a></li>
       </ul>
       <p class="eyebrow mt-6">Areas</p>
@@ -55,7 +60,28 @@ import { areaHref, areas, home } from '../lib/content';
       </p>
     </div>
   </div>
-  <div class="container-page mt-10 text-sm text-stone">
+  <div class="container-page mt-10 flex flex-wrap items-center justify-between gap-4 text-sm text-stone">
     <p class="m-0">© {new Date().getFullYear()} {BRAND_NAME}. {FOUNDER_NAME}, founder. London.</p>
+    <button class="btn btn-line" type="button" data-effects-toggle>Calmer display</button>
   </div>
 </footer>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('[data-effects-toggle]');
+  const paint = () => {
+    const plain = document.documentElement.dataset.effects === 'plain';
+    if (button) button.setAttribute('aria-pressed', plain ? 'true' : 'false');
+  };
+  paint();
+  button?.addEventListener('click', () => {
+    const plain = document.documentElement.dataset.effects === 'plain';
+    if (plain) {
+      delete document.documentElement.dataset.effects;
+      localStorage.removeItem('mw-effects');
+    } else {
+      document.documentElement.dataset.effects = 'plain';
+      localStorage.setItem('mw-effects', 'plain');
+    }
+    paint();
+  });
+</script>

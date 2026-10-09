@@ -907,3 +907,226 @@ article h3 a {
     min-height: 48px;
   }
 }
+
+@layer components {
+  .glass-champagne {
+    background: color-mix(in srgb, var(--color-ivory) 78%, transparent);
+    border: 1px solid color-mix(in srgb, white 62%, transparent);
+    box-shadow: 0 12px 32px rgba(20, 18, 16, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px) saturate(1.15);
+  }
+
+  .glass-smoked {
+    background: color-mix(in srgb, var(--color-ink) 62%, transparent);
+    color: var(--color-ivory);
+    border: 1px solid color-mix(in srgb, white 28%, transparent);
+    backdrop-filter: blur(18px);
+  }
+
+  .glass-clear {
+    background: color-mix(in srgb, white 28%, transparent);
+    backdrop-filter: blur(10px);
+  }
+
+  .reading {
+    background: var(--color-ivory);
+  }
+
+  .site-header {
+    width: min(90rem, calc(100% - 1.5rem));
+    margin: 0.75rem auto 0;
+    border-radius: 1.1rem;
+    border-bottom: 0;
+    padding-inline: 0.4rem;
+  }
+
+  .site-header .container-page {
+    max-width: none;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  .is-home .hero {
+    position: relative;
+  }
+
+  .is-home .hero-copy {
+    background: color-mix(in srgb, var(--color-ink) 72%, transparent);
+    backdrop-filter: blur(16px);
+  }
+
+  @media (min-width: 960px) {
+    .is-home .site-header {
+      position: fixed;
+      top: 0.75rem;
+      left: 0;
+      right: 0;
+      z-index: 50;
+    }
+
+    .is-home .hero-media img {
+      width: 100%;
+      height: 100svh;
+      object-fit: cover;
+      object-position: center 42%;
+    }
+
+    .is-home .hero-copy {
+      position: absolute;
+      left: max(1.25rem, calc((100% - 72rem) / 2));
+      bottom: 8vh;
+      max-width: 38rem;
+      border: 1px solid color-mix(in srgb, white 24%, transparent);
+    }
+  }
+
+  @media (max-width: 959px) {
+    .site-header {
+      width: 100%;
+      margin: 0;
+      border-radius: 0;
+    }
+
+    .is-home .hero-media img {
+      height: 42svh;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+  }
+
+  .photo-awaiting {
+    max-width: 36rem;
+    margin: 0 0 2rem;
+  }
+
+  .photo-awaiting-frame {
+    display: grid;
+    min-height: 16rem;
+    place-items: center;
+    border: 1px solid var(--color-line);
+    background: var(--color-paper);
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .photo-awaiting-frame p {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 2rem;
+  }
+
+  .form-error:empty {
+    display: none;
+  }
+
+  .form-error {
+    margin: 0.35rem 0 0;
+    color: #6b2e24;
+  }
+
+  .form-summary {
+    padding: 0.8rem 1rem;
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+  }
+
+  .form-summary a {
+    display: block;
+    min-height: 44px;
+  }
+
+  .file-list {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .file-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .studio-stage {
+    min-height: 420px;
+    background: var(--color-ink);
+  }
+
+  .studio-stage canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .dock .dock-phone {
+    appearance: none;
+    border: 0;
+    border-left: 1px solid var(--color-line);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    min-height: 56px;
+    cursor: pointer;
+  }
+
+  .hotel-list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-champagne,
+  .glass-clear,
+  .is-home .hero-copy {
+    background: var(--color-ivory);
+    color: var(--color-ink);
+  }
+
+  .glass-smoked {
+    background: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass-champagne,
+  .glass-clear,
+  .glass-smoked,
+  .is-home .hero-copy {
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .media-frame img {
+    transition: none;
+  }
+}
+
+html[data-effects='plain'] .glass-champagne,
+html[data-effects='plain'] .glass-clear,
+html[data-effects='plain'] .is-home .hero-copy {
+  backdrop-filter: none;
+  background: var(--color-ivory);
+  color: var(--color-ink);
+}
+
+html[data-effects='plain'] .glass-smoked {
+  backdrop-filter: none;
+  background: var(--color-ink);
+}
+
+html[data-effects='plain'] .is-home .hero-copy .btn-ghost {
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}

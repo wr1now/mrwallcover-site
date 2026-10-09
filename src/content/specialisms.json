@@ -374,6 +374,57 @@
           "href": "https://www.lincrusta.com/"
         }
       ]
+    },
+    {
+      "slug": "exterior-works",
+      "name": "Exterior works",
+      "title": "Exterior Works London | Mr Wallcover",
+      "description": "Full exteriors in London. Scaffolding supplied and managed, masonry and render painting, and windows. Public projects: St George's Square, Inverness Terrace, and the Penny Morrison showroom.",
+      "heading": "Full exteriors, from scaffold to the finished elevation",
+      "lede": "Scaffolding supplied and managed, with masonry and render painting, windows, cornices and railings. The public record is three projects: St George's Square in Pimlico, Inverness Terrace in Bayswater, and the Penny Morrison showroom in Chelsea, all the internal works plus the full exterior.",
+      "serviceType": "Exterior decorating",
+      "paragraphs": [
+        "A full exterior is surveyed, scaffolded and painted as one piece of work. The practice supplies and manages the scaffold, then repairs and paints masonry, render and stucco, including cornices, pediments, capitals and parapets. Windows, sills and architraves are finished with the elevation, and so are balconies, balustrades and railings.",
+        "At [St George's Square, Pimlico](/projects/pimlico-st-georges-square/) the front and rear scaffolds were supplied and managed here. The work ran from cornice, pediment and portico repairs through masonry and render painting, sills, columns, balustrade and railings. At [Inverness Terrace, Bayswater](/projects/inverness-terrace/) the same approach covered a full scaffolded exterior, front and rear: stucco and render repairs, ornamental capitals and architraves, balconies, the portico, windows and the rear brickwork.",
+        "The [Penny Morrison showroom](/projects/penny-morrison-showroom/) at 9 Langton Street was all the internal works plus the full exterior. Inside, the showroom and stair hall were decorated and papered in Penny Morrison's own papers, with joinery and electrics coordinated. Outside, the full front elevation followed: windows, stucco and brick, and the entrance.",
+        "Private residential buildings are published by street only. A survey still decides access, repairs and the programme. After the scaffold is struck, the same [aftercare](/aftercare/) applies as on an interior."
+      ],
+      "projects": [
+        "pimlico-st-georges-square",
+        "inverness-terrace",
+        "penny-morrison-showroom"
+      ],
+      "imageId": "pimlico-st-georges-square-exterior-01",
+      "faq": [
+        {
+          "id": "ex-scaffold",
+          "question": "Do you supply and manage the scaffold?",
+          "paragraphs": [
+            "Yes. On the exteriors published here, the scaffold was supplied and managed by the practice, including the strike. Access, pavement and the order of elevations are agreed at the survey."
+          ]
+        },
+        {
+          "id": "ex-masonry",
+          "question": "What does the masonry and render painting cover?",
+          "paragraphs": [
+            "Stucco, render and masonry, including cornices, mouldings, pediments, parapets and crack repairs before paint. Where the rear is brick, that elevation is in the same scope when the survey includes it."
+          ]
+        },
+        {
+          "id": "ex-windows",
+          "question": "Are windows part of an exterior?",
+          "paragraphs": [
+            "Yes. Sashes, sills and architraves are part of a full exterior, with the entrance joinery, balconies and railings."
+          ]
+        },
+        {
+          "id": "ex-interior",
+          "question": "Can the interior be done with the exterior?",
+          "paragraphs": [
+            "Yes. At the Penny Morrison showroom the commission was all the internal works plus the full exterior: decorating and wallpapering inside, then the front elevation."
+          ]
+        }
+      ]
     }
   ]
 }

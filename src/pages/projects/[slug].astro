@@ -93,6 +93,14 @@ const schemaNodes = study
       <h1>{project.title}</h1>
       <p class="lede mt-5">{project.summary}</p>
     </header>
+    {project.awaitingPhotos && (
+      <figure class="photo-awaiting">
+        <div class="photo-awaiting-frame">
+          <p>Interior photographs to follow</p>
+        </div>
+        <figcaption class="caption">This panel is a placeholder. It is not a photograph of the hotel or of the finished rooms.</figcaption>
+      </figure>
+    )}
     {StudyContent ? (
       <div class="pb-12">
         {project.imageId && (
