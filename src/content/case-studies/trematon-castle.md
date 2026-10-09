@@ -3,7 +3,7 @@
   "title": "Castle of Trematon, Cornwall",
   "slug": "trematon-castle",
   "replaces": null,
-  "client": "Frieda Gormley and Javvy M. Royle, founders of House of Hackney (custodians of the Castle of Trematon since 2018)",
+  "client": "The new owners of Trematon Castle, the founders of House of Hackney",
   "location": "Castle of Trematon, near Saltash, Cornwall PL12",
   "years": "2019–2022",
   "role": "Wallcovering installation contractor across the Georgian house and estate",
@@ -123,7 +123,7 @@
 
 ## At a glance
 
-- **Client:** Frieda Gormley and Javvy M. Royle, founders of [House of Hackney](https://www.houseofhackney.com/), custodians of the Castle of Trematon
+- **Client:** The new owners of Trematon Castle, the founders of [House of Hackney](https://www.houseofhackney.com/)
 - **Location:** Castle of Trematon, above the Lynher and Tamar near Saltash, Cornwall
 - **Years:** 2019–2022. Our own site photographs run from **24 April 2019 to 7 January 2022**
 - **Role:** Wallcovering installation across the house and estate
@@ -134,7 +134,7 @@
 
 Trematon is one of Cornwall's oldest fortifications: a Norman motte-and-bailey, built in 1068 and granted to the Duchy of Cornwall in 1337. The Duchy still owns it today. A 13th-century gatehouse still guards the bailey. Within the walls, an 11,000 sq ft Georgian manor with nine bedrooms was added in the early 1800s, its windows looking out over nine acres of gardens and the estuary beyond.
 
-In 2018, after a chance visit to the gardens, House of Hackney's founders took over from the landscape designers Isabel and Julian Bannerman as the castle's custodians. They found a house of beautiful proportions that, in Javvy Royle's words, needed "a lot of restoration": paint stripped back to make "a blank canvas", then a multi-year, foundational renovation. Trematon became the brand's "spiritual home", the setting of its own campaigns and the namesake of its TREMATONIA print.
+In 2018, after a chance visit to the gardens, House of Hackney's founders took over from the landscape designers Isabel and Julian Bannerman as the castle's custodians. They found a house of beautiful proportions that, in the founders' words, needed "a lot of restoration": paint stripped back to make "a blank canvas", then a multi-year, foundational renovation. Trematon became the brand's "spiritual home", the setting of its own campaigns and the namesake of its TREMATONIA print.
 
 ## The brief
 
