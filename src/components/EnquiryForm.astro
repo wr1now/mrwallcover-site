@@ -203,8 +203,8 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
       </label>
       <p class="form-note m-0 text-stone">
         {LEAD_API_URL
-          ? 'Your enquiry is saved with a reference before this page confirms it. Dorin Burcus reads it and replies by the email or phone you chose.'
-          : `Your note goes to ${PUBLIC_EMAIL} with a reference. Dorin Burcus reads it and replies by the email or phone you chose; if the project needs a survey, that is the next step. If you hear nothing, email the address directly.`}
+          ? `Your enquiry is saved with a reference before this page confirms it. Dorin Burcus reads it. If you have not heard back, email ${PUBLIC_EMAIL} and quote the reference.`
+          : `Your note is sent to ${PUBLIC_EMAIL} with a reference. Dorin Burcus reads it. If you have not heard back, email that address directly.`}
       </p>
       <button class="btn btn-solid-ink" type="submit">{variant === 'aftercare' ? 'Send the note' : 'Start your project'}</button>
     </fieldset>
@@ -213,7 +213,7 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
   <div data-receipt hidden>
     <h2 class="m-0 font-serif text-[2rem]">Received. Reference <span data-reference></span>.</h2>
     <p data-notification class="lede mt-4"></p>
-    <p class="m-0">You can also email {PUBLIC_EMAIL}. A survey is arranged once we have spoken.</p>
+    <p class="m-0">You can also email {PUBLIC_EMAIL}. If the project needs a survey, we arrange it after we have spoken.</p>
   </div>
   <noscript><p>This form needs JavaScript. Email {PUBLIC_EMAIL} instead.</p></noscript>
 </form>

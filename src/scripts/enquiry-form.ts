@@ -280,9 +280,8 @@ export function bindEnquiryForm(form: HTMLFormElement) {
           if (ref) ref.textContent = payload.reference;
           const note = receipt.querySelector('[data-notification]');
           if (note) {
-            note.textContent = payload.notification === 'sent'
-              ? 'Dorin Burcus has been notified and will reply by the email or phone you chose.'
-              : 'Your enquiry is saved under this reference. If you hear nothing, email info@mrwallcover.com and quote it.';
+            // Same line whether or not the notification went through: the page never claims a reply or proof of delivery.
+            note.textContent = 'Your enquiry is saved under this reference. If you have not heard back, email info@mrwallcover.com and quote it.';
           }
         }
         try {
