@@ -72,6 +72,7 @@ const CASE_STUDY_ORDER = [
   'four-seasons-ten-trinity-square',
   'trematon-castle',
   'old-bailey-hotel',
+  'north-london-residence',
   'hilton-garden-inn-silverstone',
 ];
 
@@ -92,7 +93,7 @@ export const projectAliases: Record<string, string> = Object.fromEntries(
 );
 
 function fromCaseStudy(cs: CaseStudyData, base?: Project): Project {
-  const full = `${cs.role} at ${cs.title}${cs.years ? `, ${cs.years}` : ''}. ${cs.standfirst}`;
+  const full = `${cs.role} at ${cs.title.replace(/^A /, "a ")}${cs.years ? `, ${cs.years}` : ''}. ${cs.standfirst}`;
   const description = full.length <= 158 ? full : `${full.slice(0, 155).replace(/\s+\S*$/, '')}…`;
   return {
     slug: cs.slug,
