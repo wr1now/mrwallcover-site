@@ -124,6 +124,7 @@ All of these are generated at build time from `src/data/facts.json` and the cont
 | `/llms-full.txt` | The main content of every published page as text | `scripts/build-ai-layer.mjs` (postbuild) |
 | `/<page>/index.md` | A Markdown twin of each published page, linked from its `<head>` | same script |
 | `/facts.json` | The fact sheet as data, through an allowlist | `src/pages/facts.json.ts` |
+| `/feed.xml` | Atom feed of the published guides and case studies | `src/pages/feed.xml.ts` |
 | `/robots.txt` | Named groups for search and AI crawlers, same rules each | `public/robots.txt` |
 
 Drafts, the 404, thank-you and search pages and the old redirect stubs never appear in any of them. `npm run check:dist` proves it (`tests/ai-layer.test.ts`).

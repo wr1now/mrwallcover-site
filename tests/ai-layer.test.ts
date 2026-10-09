@@ -182,16 +182,46 @@ test('every published page has a Markdown twin it links to, and its URL and main
   assert.doesNotMatch(thankYou, /type="text\/markdown"/, 'noindex pages do not advertise a twin');
 });
 
-test('no phone number, no forbidden word and no TODO in any text, Markdown, JSON or XML file in dist', async () => {
-  const files = await filesUnder('dist', (name) => /\.(md|txt|json|xml)$/.test(name));
-  assert.ok(files.length > 70, `${files.length} text files`);
+test('forbidden strings are absent from every text file in dist, and no phone-number pattern appears in any Markdown, text, JSON or XML file', async () => {
+  const files = await filesUnder('dist', (name) => /\.(html|md|txt|json|xml|js|css|csv)$/.test(name));
+  assert.ok(files.length > 140, `${files.length} text files`);
   const problems: string[] = [];
   for (const file of files) {
-    const text = await readFile(file, 'utf8');
-    if (/\b0?7\d{3}\s?\d{6}\b|\+?44\s?\(?0?\)?\s?7\d{9}|\+?44\s?\(?0?\)?\s?20\s?\d{4}\s?\d{4}|\b020\s?\d{4}\s?\d{4}\b/.test(text)) problems.push(`${file}: phone number pattern`);
-    for (const banned of ['CLAUDI', 'Landmark', 'Threadneedle', 'third party', 'third-party', 'subcontract', 'TODO', 'lorem']) {
+    // Inline image placeholders are base64 and can spell anything; strip them before matching words.
+    const text = (await readFile(file, 'utf8')).replace(/data:image\/[^"')\s]+/g, '');
+    for (const banned of ['CLAUDI', 'Landmark', 'Threadneedles', 'Threadneedle', 'third party', 'third-party', 'subcontract', 'TODO', 'lorem']) {
       if (text.toLowerCase().includes(banned.toLowerCase())) problems.push(`${file}: ${banned}`);
     }
+    if (/\.(md|txt|json|xml)$/.test(file) && /\b0?7\d{3}\s?\d{6}\b|\+?44\s?\(?0?\)?\s?7\d{9}|\+?44\s?\(?0?\)?\s?20\s?\d{4}\s?\d{4}|\b020\s?\d{4}\s?\d{4}\b/.test(text)) problems.push(`${file}: phone number pattern`);
+  }
+  assert.deepEqual(problems, []);
+});
+
+test('no draft URL appears in the sitemap, llms.txt, llms-full.txt or the feed', async () => {
+  const drafts: string[] = [];
+  for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
+    const fm = JSON.parse((await readFile(`src/content/case-studies/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { slug: string; draft?: boolean };
+    if (fm.draft) drafts.push(`/projects/${fm.slug}/`);
+  }
+  for (const name of (await readdir('src/content/pages')).filter((entry) => entry.endsWith('.md'))) {
+    const fm = JSON.parse((await readFile(`src/content/pages/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { path: string; draft?: boolean };
+    if (fm.draft) drafts.push(fm.path);
+  }
+  for (const name of (await readdir('src/content/guides')).filter((entry) => entry.endsWith('.md'))) {
+    if (/^draft: true$/m.test(await readFile(`src/content/guides/${name}`, 'utf8'))) drafts.push(`/advice/${name.slice(0, -3)}/`);
+  }
+  assert.ok(drafts.length >= 3, `${drafts.length} drafts found; the showroom case study and the editorial scaffolds are expected to be drafts`);
+  const outputs = Object.fromEntries(await Promise.all(['sitemap-0.xml', 'llms.txt', 'llms-full.txt', 'feed.xml'].map(async (name) => [name, await readFile(`dist/${name}`, 'utf8')])));
+  const problems: string[] = [];
+  for (const draft of drafts) {
+    for (const [name, text] of Object.entries(outputs)) if (text.includes(`${SITE}${draft}`) || text.includes(`"${draft}"`)) problems.push(`${draft} in ${name}`);
+    let built = true;
+    try {
+      await readFile(`dist${draft}index.html`, 'utf8');
+    } catch {
+      built = false;
+    }
+    if (built) problems.push(`${draft} is built`);
   }
   assert.deepEqual(problems, []);
 });
