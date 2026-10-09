@@ -14,16 +14,16 @@
   "metaDescription": "Full scaffolded exterior, front and rear, at a Victorian stucco terrace of flats on Inverness Terrace, Bayswater, in 2018. Not a hotel.",
   "group": null,
   "standfirst": "A full exterior on Inverness Terrace in 2018: scaffolded front and rear, stucco and render repairs, windows, balconies and the rear brickwork.",
-  "hero": "inverness-terrace-exterior-01",
+  "hero": "inverness-terrace-exterior-10",
   "gallery": [
-    { "id": "inverness-terrace-exterior-01", "credit": null },
+    { "id": "inverness-terrace-exterior-10", "credit": null },
     { "id": "inverness-terrace-exterior-08", "credit": null },
     { "id": "inverness-terrace-exterior-02", "credit": null },
     { "id": "inverness-terrace-exterior-07", "credit": null },
     { "id": "inverness-terrace-exterior-11", "credit": null },
     { "id": "inverness-terrace-exterior-03", "credit": null },
     { "id": "inverness-terrace-exterior-05", "credit": null },
-    { "id": "inverness-terrace-exterior-10", "credit": null },
+    { "id": "inverness-terrace-exterior-01", "credit": null },
     { "id": "inverness-terrace-exterior-09", "credit": null },
     { "id": "inverness-terrace-exterior-04", "credit": null }
   ]

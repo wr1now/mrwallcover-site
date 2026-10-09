@@ -17,14 +17,14 @@
   "metaDescription": null,
   "group": null,
   "standfirst": "A complete decorating package for 110 rooms: paint, specialist wallcoverings and window film, delivered over about two years inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.",
-  "hero": "old-bailey-12",
+  "hero": "old-bailey-06",
   "gallery": [
     {
-      "id": "old-bailey-12",
+      "id": "old-bailey-06",
       "credit": null
     },
     {
-      "id": "old-bailey-06",
+      "id": "old-bailey-12",
       "credit": null
     },
     {

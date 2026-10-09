@@ -14,15 +14,15 @@
   "metaDescription": "Full exterior at a stucco townhouse of flats on St George's Square, Pimlico, in 2024. Scaffolding supplied and managed, with masonry and render painting and windows.",
   "group": null,
   "standfirst": "A full exterior on St George's Square: scaffold supplied and managed by the practice, then masonry and render repairs and painting, windows, and the entrance ironwork.",
-  "hero": "pimlico-st-georges-square-exterior-01",
+  "hero": "pimlico-st-georges-square-exterior-11",
   "gallery": [
-    { "id": "pimlico-st-georges-square-exterior-01", "credit": null },
+    { "id": "pimlico-st-georges-square-exterior-11", "credit": null },
     { "id": "pimlico-st-georges-square-exterior-02", "credit": null },
     { "id": "pimlico-st-georges-square-exterior-04", "credit": null },
     { "id": "pimlico-st-georges-square-exterior-03", "credit": null },
     { "id": "pimlico-st-georges-square-exterior-08", "credit": null },
     { "id": "pimlico-st-georges-square-exterior-07", "credit": null },
-    { "id": "pimlico-st-georges-square-exterior-11", "credit": null },
+    { "id": "pimlico-st-georges-square-exterior-01", "credit": null },
     { "id": "pimlico-st-georges-square-exterior-06", "credit": null },
     { "id": "pimlico-st-georges-square-exterior-10", "credit": null }
   ]
