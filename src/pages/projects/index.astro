@@ -1,0 +1,52 @@
+---
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Picture from '../../components/Picture.astro';
+import Base from '../../layouts/Base.astro';
+import { projectHref, projects } from '../../lib/content';
+import { breadcrumbNode } from '../../lib/schema';
+import indexCopy from '../../content/projects.json';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Work', href: '/projects/' },
+];
+---
+
+<Base
+  title={indexCopy.index.title}
+  description={indexCopy.index.description}
+  path="/projects/"
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page">
+    <header class="page-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">{indexCopy.index.eyebrow}</p>
+      <h1>{indexCopy.index.heading}</h1>
+      <p class="lede mt-5">{indexCopy.index.lede}</p>
+    </header>
+    <div class="grid gap-x-8 gap-y-12 pb-20 sm:grid-cols-2">
+      {
+        projects.map((project) => (
+          <a class="project-card" href={projectHref(project.slug)}>
+            {project.imagePolicy === 'none' ? (
+              <div class="flex min-h-40 items-end border border-line bg-paper p-4">
+                <p class="m-0 font-serif text-3xl">{project.client}</p>
+              </div>
+            ) : (
+              project.imageId && (
+                <Picture id={project.imageId} thumbOnly sizes="(min-width: 640px) 22rem, 100vw" />
+              )
+            )}
+            <h2>{project.title}</h2>
+            <p class="m-0 text-stone">
+              {project.role}
+              {project.dates ? ` · ${project.dates}` : ''}
+            </p>
+            <p class="mt-2 mb-0">{project.summary}</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Base>

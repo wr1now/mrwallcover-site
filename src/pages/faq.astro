@@ -1,0 +1,26 @@
+---
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FaqList from '../components/FaqList.astro';
+import Base from '../layouts/Base.astro';
+import { faq, faqItems } from '../lib/content';
+import { breadcrumbNode, faqNode } from '../lib/schema';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Questions', href: '/faq/' },
+];
+---
+
+<Base
+  title={faq.title}
+  description={faq.description}
+  path="/faq/"
+  extraSchema={[faqNode(faqItems), breadcrumbNode(crumbs)]}
+>
+  <div class="container-page">
+    <header class="page-head pb-0">
+      <Breadcrumb items={crumbs} />
+    </header>
+  </div>
+  <FaqList items={faqItems} eyebrow={faq.eyebrow} heading={faq.heading} lede={faq.lede} titleLevel="h1" />
+</Base>

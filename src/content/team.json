@@ -1,0 +1,13 @@
+{
+  "note": "Future Team page. Not linked in the navigation. Add people here when there is a public team to show.",
+  "members": [
+    {
+      "id": "dorin-burcus",
+      "name": "Dorin Burcus",
+      "role": "Founder",
+      "public": true,
+      "since": 2014,
+      "summary": "Founder of Mr Wallcover. In the trade since 2014, from labourer to wallcovering packages in prime hotels."
+    }
+  ]
+}

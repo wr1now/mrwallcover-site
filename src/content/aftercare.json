@@ -1,0 +1,78 @@
+{
+  "title": "Wallcovering Aftercare & Guarantee | Mr Wallcover",
+  "description": "Included return inspection, seam and edge care, a priority repair call-out, cleaning guidance, and a 12-month workmanship guarantee.",
+  "eyebrow": "Aftercare",
+  "heading": "We come back when the room has settled.",
+  "lede": "Aftercare is one of the five parts of a Mr Wallcover commission. It is not a club you join later, and it is not a coat of words on the invoice. The return visit is included.",
+  "inspection": {
+    "title": "Return inspection",
+    "paragraphs": [
+      "About four to six weeks after we finish, we come back. By then the heating, the ventilation and the humidity have had a chance to move the paper. That movement is settling. It is the reason for the visit.",
+      "We look at seams, edges, corners and any joinery that was covered. Touch-ups that belong to the hang are done on that visit. There is no call-out charge for this inspection."
+    ]
+  },
+  "seams": {
+    "title": "Seams and edges",
+    "paragraphs": [
+      "A seam that opens, or an edge that lifts, because of the way the material was hung, is our work to put right. We re-adhere, trim and touch in. We do not paint over a problem and hope the light is kind.",
+      "Natural seams in grasscloth, silk and hand-painted goods are a property of the material. We will have said so before the hang. Those are not faults. A seam that has let go is different, and we treat it as such."
+    ]
+  },
+  "callout": {
+    "title": "Priority repair call-out",
+    "paragraphs": [
+      "During the guarantee, a call about our own workmanship comes ahead of new enquiries. Telephone or WhatsApp is the quickest way. A photograph helps us see whether we are looking at the hang, a knock, or the building.",
+      "If it is the hang, we book the return as a priority. If it is the building, we will say that plainly rather than charge you for a repair that will fail again."
+    ]
+  },
+  "care": {
+    "title": "Care and cleaning",
+    "intro": "This is general guidance for the materials we hang. Where the maker has issued a care note, that note leads. When a mark appears, stop. Household cleaners, steam and magic sponges are how a small mark becomes a large one.",
+    "items": [
+      {
+        "title": "Silk",
+        "text": "Dust with a clean, dry, soft cloth. No water, no solvent, no steam. A stain needs a conservator, not a detergent. Keep handbags, chair backs and sun off the cloth where you can."
+      },
+      {
+        "title": "Grasscloth and natural weaves",
+        "text": "Dry dust only, and lightly. Moisture stains grasscloth and can swell the weave. Seams and variation in colour are part of the material. Do not try to scrub them even."
+      },
+      {
+        "title": "Fabric walling",
+        "text": "Vacuum on a low suction with a soft brush head, if the maker allows it. Do not soak the textile. Spot treatment belongs to a specialist, tested somewhere that will not show."
+      },
+      {
+        "title": "Vinyl and contract wallcoverings",
+        "text": "Wipe with a barely damp cloth and a drop of mild soap, then dry. No abrasive creams, no neat bleach, no scourers. Contract vinyl will take more than silk. It will not take a careless bucket."
+      },
+      {
+        "title": "Hand-painted papers",
+        "text": "No liquids on the surface. Dust dry, and rarely. Direct sun fades a scenic paper unevenly. Marks, flaking and water damage need a paper conservator. We can help you find the right person. We will not experiment on a de Gournay or Fromental-style panel."
+      },
+      {
+        "title": "Murals",
+        "text": "Follow the maker's care note for that print or that hand-made piece. Do not use household spray cleaner. If a panel is damaged, photograph it and call us before anyone tries to patch it."
+      },
+      {
+        "title": "Acoustic wallcoverings and panels",
+        "text": "Vacuum dust from the face with low suction and a soft head. Do not soak the fabric or the perforations. Water and heavy adhesive at the edge can close the surface the panel was specified to keep open."
+      }
+    ]
+  },
+  "humidity": {
+    "title": "Humidity and settling",
+    "paragraphs": [
+      "Paper and textile move with the moisture in the room. A new hang will ease as it dries, and it may ease again when the heating season starts or when a closed room is opened to damp weather. That is ordinary. It is why the return visit waits four to six weeks, rather than the next morning.",
+      "Keep the heat steady and the room ventilated. A cold, damp wall, a leak above a ceiling, or a fan heater pointed at one seam is how edges lift. Do not steam-clean wallcoverings. Do not sit a humidifier against the paper.",
+      "If a stain spreads, or a wall feels cold and soft, look for damp before you look for a decorator. We would rather be called early than asked to hang the same wall twice over a wet substrate."
+    ]
+  },
+  "guarantee": {
+    "title": "Twelve-month workmanship guarantee",
+    "paragraphs": [
+      "For twelve months from completion, Mr Wallcover guarantees the workmanship of the hang. That covers seams opening, edges lifting, and adhesive failure that comes from the way we hung the material.",
+      "It does not cover building movement, damp, leaks, or a substrate that fails. It does not cover damage by later trades, impact, furniture, or cleaning the material cannot take.",
+      "Some people call this a warranty. It is the same promise: twelve months on our workmanship, and a clear line where the building takes over from the hang."
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+---
+import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../config';
+import Base from '../layouts/Base.astro';
+import utility from '../content/utility.json';
+---
+
+<Base title={utility.thanks.title} description={utility.thanks.description} path="/thank-you/" noindex={true}>
+  <div class="container-page py-20">
+    <p class="eyebrow">Contact</p>
+    <h1 class="m-0 text-[clamp(2.6rem,6vw,4.2rem)]">{utility.thanks.heading}</h1>
+    <p class="lede mt-5">{utility.thanks.text}</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a class="btn btn-solid-ink" href={`tel:${PHONE_TEL}`}>Call {PHONE_DISPLAY}</a>
+      <a class="btn btn-line" href={WHATSAPP_URL}>WhatsApp</a>
+    </div>
+  </div>
+</Base>

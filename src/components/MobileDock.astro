@@ -1,0 +1,10 @@
+---
+import { PHONE_TEL } from '../config';
+import { WHATSAPP_URL } from '../config';
+---
+
+<nav class="dock lg:hidden" aria-label="Contact shortcuts">
+  <a href={`tel:${PHONE_TEL}`}>Call</a>
+  <a href={WHATSAPP_URL}>WhatsApp</a>
+  <a href="/contact/">Quote</a>
+</nav>

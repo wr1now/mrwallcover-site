@@ -1,0 +1,251 @@
+---
+import { AWARD, PHONE_DISPLAY, PHONE_TEL } from '../config';
+import FaqList from '../components/FaqList.astro';
+import Hero from '../components/Hero.astro';
+import Picture from '../components/Picture.astro';
+import Base from '../layouts/Base.astro';
+import { faq, faqItems, home, projectHref, projects, videoById } from '../lib/content';
+import { faqNode } from '../lib/schema';
+
+const lead = projects.find((project) => project.slug === home.featured.leadSlug);
+const featured = projects.filter((project) => project.featured && project.slug !== home.featured.leadSlug);
+const others = projects.filter((project) => !project.featured);
+---
+
+<Base
+  title={home.title}
+  description={home.description}
+  path="/"
+  preloadHero={true}
+  extraSchema={[faqNode(faqItems)]}
+>
+  <section class="hero on-dark">
+    <Hero />
+    <div class="hero-copy on-dark">
+      <p class="eyebrow">{home.hero.eyebrow}</p>
+      <span class="rule"></span>
+      <h1>Wallcoverings, <em>hung properly.</em></h1>
+      <p class="lede mt-5">{home.hero.lede}</p>
+      <!-- Award name will be added later. Public copy is the label and the year only. -->
+      <p class="mt-5 mb-0 text-gold">{AWARD.label} ({AWARD.year})</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="btn btn-solid" href="/contact/">Request a quotation</a>
+        <a class="btn btn-ghost" href="/projects/">See the work</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof border-b border-line bg-paper" aria-labelledby="proof-heading">
+    <div class="container-page pt-12 md:pt-16">
+      <p class="eyebrow">{home.proof.eyebrow}</p>
+      <h2 id="proof-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.4rem)]">{home.proof.title}</h2>
+      <p class="lede mt-4 mb-8">{home.proof.text}</p>
+    </div>
+    <div class="proof-strip" tabindex="0" aria-label="Photographs and films from Brown's Hotel">
+      {
+        home.proof.images.map((id) => (
+          <figure class="proof-item">
+            <Picture id={id} thumbOnly sizes="(min-width: 768px) 18rem, 78vw" />
+          </figure>
+        ))
+      }
+      {
+        home.proof.videos.map((id) => {
+          const film = videoById(id);
+          return (
+            <figure class="proof-item">
+              <video
+                muted
+                loop
+                playsinline
+                controls
+                preload="none"
+                poster={film.poster}
+                width={film.width}
+                height={film.height}
+                data-src={film.src}
+                aria-label={film.alt}
+              />
+              <figcaption class="caption">{film.caption}</figcaption>
+            </figure>
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <section class="border-b border-line" aria-label="The practice">
+    <div class="container-page grid gap-8 py-14 md:grid-cols-12 md:py-20">
+      <div class="md:col-span-6">
+        <h2 class="m-0 text-[clamp(2.2rem,4vw,3.4rem)]">{home.intro.title}</h2>
+        <p class="lede mt-4">{home.intro.text}</p>
+        <p class="mt-6 mb-0 text-sm tracking-[0.14em] text-brass uppercase">{home.pillars.join(' · ')}</p>
+      </div>
+      <dl class="m-0 grid gap-6 md:col-span-5 md:col-start-8">
+        {
+          home.facts.map((fact) => (
+            <div>
+              <dt class="eyebrow">{fact.label}</dt>
+              <dd class="fact-value m-0">{fact.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section aria-labelledby="services-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">{home.servicesIntro.eyebrow}</p>
+      <div class="grid gap-8 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <h2 id="services-heading" class="m-0 text-[clamp(2.2rem,4vw,3.4rem)]">{home.servicesIntro.title}</h2>
+          <p class="lede mt-4">{home.servicesIntro.text}</p>
+        </div>
+        <div class="grid gap-x-8 sm:grid-cols-2 lg:col-span-7">
+          {
+            home.serviceCards.map((card) => (
+              <a class="card-link" href={card.href}>
+                <h3>{card.title}</h3>
+                <p class="m-0 text-stone">{card.text}</p>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-line" aria-labelledby="work-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">{home.featured.eyebrow}</p>
+      <h2 id="work-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.4rem)]">{home.featured.title}</h2>
+      <p class="lede mt-4">{home.featured.text}</p>
+      {
+        lead && (
+          <a class="mt-10 grid items-end gap-6 no-underline text-inherit md:grid-cols-12" href={projectHref(lead.slug)}>
+            <div class="md:col-span-8">
+              <Picture id={home.featured.leadImage} sizes="(min-width: 768px) 60vw, 100vw" />
+            </div>
+            <div class="md:col-span-4">
+              <p class="eyebrow">{lead.dates}</p>
+              <h3 class="m-0 text-[clamp(2rem,3vw,2.8rem)]">{lead.title}</h3>
+              <p class="mt-3 mb-0 text-stone">{lead.summary}</p>
+            </div>
+          </a>
+        )
+      }
+      <div class="mt-12 grid gap-8 md:grid-cols-2">
+        {
+          featured.map((project) => (
+            <a class="project-card" href={projectHref(project.slug)}>
+              {project.imageId && (
+                <Picture id={project.imageId} thumbOnly sizes="(min-width: 768px) 20rem, 100vw" />
+              )}
+              <h3>{project.title}</h3>
+              <p class="m-0 text-stone">{project.role}{project.dates ? ` · ${project.dates}` : ''}</p>
+            </a>
+          ))
+        }
+      </div>
+      <div class="mt-12 border-t border-line pt-6">
+        <p class="eyebrow">Also on the record</p>
+        <ul class="link-row m-0 grid list-none gap-2 p-0 md:grid-cols-2">
+          {
+            others.map((project) => (
+              <li>
+                <a href={projectHref(project.slug)}>{project.title}</a>
+                <span class="text-stone">. {project.summary}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-line" aria-labelledby="process-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">{home.process.eyebrow}</p>
+      <h2 id="process-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.4rem)]">{home.process.title}</h2>
+      <ol class="m-0 mt-10 grid list-none gap-8 p-0 md:grid-cols-2 lg:grid-cols-5">
+        {
+          home.process.steps.map((step) => (
+            <li>
+              <span class="step-num">{step.number}</span>
+              <h3 class="mt-3 mb-2 text-[1.6rem]">{step.title}</h3>
+              <p class="m-0 text-stone">{step.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="border-t border-line" aria-labelledby="praise-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">{home.praise.eyebrow}</p>
+      <h2 id="praise-heading" class="m-0 text-[clamp(2.2rem,4vw,3.2rem)]">{home.praise.title}</h2>
+      <div class="mt-10 grid gap-10 md:grid-cols-2">
+        {
+          home.praise.items.map((item) => (
+            <figure class="quote">
+              <blockquote>
+                <p>“{item.quote}”</p>
+              </blockquote>
+              <figcaption>{item.attribution}</figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="band-dark on-dark" aria-labelledby="aftercare-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">{home.aftercare.eyebrow}</p>
+      <h2 id="aftercare-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.4rem)]">{home.aftercare.title}</h2>
+      <p class="lede mt-5">{home.aftercare.text}</p>
+      <a class="btn btn-ghost mt-8" href={home.aftercare.href}>{home.aftercare.label}</a>
+    </div>
+  </section>
+
+  <FaqList items={faqItems} eyebrow="Questions" heading="Before you book the hang." lede={faq.lede} />
+
+  <section class="border-t border-line" aria-labelledby="cta-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">{home.cta.eyebrow}</p>
+      <h2 id="cta-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.4rem)]">{home.cta.title}</h2>
+      <p class="lede mt-4">{home.cta.text}</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="btn btn-solid-ink" href="/contact/">Request a quotation</a>
+        <a class="btn btn-line" href={`tel:${PHONE_TEL}`}>Call {PHONE_DISPLAY}</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script is:inline>
+  const films = document.querySelectorAll('video[data-src]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (films.length && !reduceMotion) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const video = entry.target;
+          if (!video.querySelector('source')) {
+            const source = document.createElement('source');
+            source.src = video.dataset.src;
+            source.type = 'video/mp4';
+            video.append(source);
+            video.play().catch(() => {});
+          }
+          observer.unobserve(video);
+        }
+      },
+      { rootMargin: '160px' },
+    );
+    films.forEach((video) => observer.observe(video));
+  }
+</script>

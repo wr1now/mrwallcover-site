@@ -1,0 +1,71 @@
+{
+  "title": "Privacy | Mr Wallcover",
+  "description": "How Mr Wallcover handles personal information sent with a quotation request. No cookies and no analytics on this site by default.",
+  "eyebrow": "Privacy",
+  "heading": "Privacy notice",
+  "updated": "9 October 2026",
+  "sections": [
+    {
+      "heading": "Who we are",
+      "paragraphs": [
+        "This website is operated by Dorin Burcus, trading as Mr Wallcover, in London, United Kingdom. He is the controller of personal information sent through this site.",
+        "For any privacy request, write to the email address published on this site, or call the telephone number on the contact page."
+      ]
+    },
+    {
+      "heading": "What this notice covers",
+      "paragraphs": [
+        "It covers information you give us when you ask for a quotation or otherwise get in touch: your name, telephone number, email address, project type, location, preferred start, your message, and any photographs you choose to send.",
+        "It also covers the fact that this site, as published, does not use cookies and does not run analytics."
+      ]
+    },
+    {
+      "heading": "How we use it",
+      "paragraphs": [
+        "We use those details to answer you, to prepare a quotation, and to arrange a survey or the work if you ask us to proceed. Photographs are used only to understand the walls, the material or the building.",
+        "The lawful basis is steps taken at your request before a contract (UK GDPR Article 6(1)(b)). Keeping a record of the conversation, so we can reply properly and stand by any work that follows, is a legitimate interest (Article 6(1)(f)). You can object to that record-keeping. If you do, we may not be able to keep working from the enquiry."
+      ]
+    },
+    {
+      "heading": "How the form works",
+      "paragraphs": [
+        "By default the quotation form opens an email to us in your own email application. In that case the message travels as ordinary email, and no separate form company sits in the middle.",
+        "The form can be pointed at Netlify Forms or Formspree. If that is switched on, that provider processes the submission so it can reach us. Their privacy notice applies to that processing as well. The page will still show our email address, so you can write directly instead."
+      ]
+    },
+    {
+      "heading": "Cookies and analytics",
+      "paragraphs": [
+        "This site does not set cookies. It does not use local storage for tracking. It does not embed advertising.",
+        "There is a place in the build for a cookie-free analytics script, such as Plausible, Fathom or Cloudflare Web Analytics. Nothing is loaded unless that script is deliberately switched on. If it is switched on later, this notice will be updated."
+      ]
+    },
+    {
+      "heading": "Who we share it with",
+      "paragraphs": [
+        "We do not sell personal information. We do not pass enquiry details to mailing lists.",
+        "If an enquiry becomes a live commission, we may need to share relevant details with a client, a designer or a main contractor where you would expect that, for example to arrange access. Email you send also passes through your email provider and ours."
+      ]
+    },
+    {
+      "heading": "How long we keep it",
+      "paragraphs": [
+        "We keep enquiry correspondence for as long as we need it to answer you, to carry out any work that follows, and to meet the twelve-month workmanship guarantee. You can ask us to delete an enquiry that did not become a job.",
+        "We do not keep photographs once they are no longer needed for that enquiry or that commission."
+      ]
+    },
+    {
+      "heading": "Your rights",
+      "paragraphs": [
+        "You can ask for a copy of the personal information we hold about you, ask us to correct it, ask us to delete it, ask us to restrict how we use it, and object to use based on legitimate interests. Where the information was given so we could reply to you, you can also ask for it in a portable form.",
+        "To use any of these rights, email the address on this site. We may need to confirm it is you. You can also complain to the Information Commissioner's Office at ico.org.uk."
+      ]
+    },
+    {
+      "heading": "Children",
+      "paragraphs": [
+        "This site is not aimed at children, and we do not knowingly collect their information."
+      ]
+    }
+  ]
+}

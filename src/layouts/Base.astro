@@ -1,0 +1,92 @@
+---
+import '../styles/global.css';
+import { ANALYTICS_SRC, BRAND_NAME, SITE_URL } from '../config';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import MobileDock from '../components/MobileDock.astro';
+import { businessNode, jsonLd } from '../lib/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  noindex?: boolean;
+  extraSchema?: object[];
+  preloadHero?: boolean;
+}
+
+const { title, description, path, noindex = false, extraSchema = [], preloadHero = false } = Astro.props;
+const canonical = new URL(path, SITE_URL).href;
+const image = new URL('/og.jpg', SITE_URL).href;
+const schema = jsonLd([businessNode(), ...extraSchema]);
+const heroSrcset =
+  '/media/hero/corridor-640.webp 640w, /media/hero/corridor-960.webp 960w, /media/hero/corridor-1280.webp 1280w, /media/hero/corridor-1920.webp 1920w';
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="theme-color" content="#141210" />
+    <meta name="author" content="Dorin Burcus" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={BRAND_NAME} />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Corridor at Brown's Hotel, Mayfair, for Mr Wallcover." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {
+      preloadHero && (
+        <link
+          rel="preload"
+          as="image"
+          href="/media/hero/corridor-960.webp"
+          imagesrcset={heroSrcset}
+          imagesizes="100vw"
+          fetchpriority="high"
+        />
+      )
+    }
+    <script type="application/ld+json" set:html={schema} />
+    <!-- Cookie-free analytics placeholder. No script loads, and the site sets no cookies, unless PUBLIC_ANALYTICS_SRC is set at build time. -->
+    {ANALYTICS_SRC && <script is:inline defer src={ANALYTICS_SRC}></script>}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header path={Astro.url.pathname} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <MobileDock />
+    <script is:inline>
+      function markReady(img) {
+        if (img && img.classList && img.classList.contains('media-img')) img.classList.add('is-ready');
+      }
+      document.addEventListener('load', (event) => markReady(event.target), true);
+      document.querySelectorAll('img.media-img').forEach((img) => {
+        if (img.complete && img.naturalWidth > 0) img.classList.add('is-ready');
+      });
+    </script>
+  </body>
+</html>
