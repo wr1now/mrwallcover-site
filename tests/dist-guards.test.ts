@@ -88,6 +88,41 @@ test('claims decided by Dorin on 9 October 2026 hold in the built site', async (
   assert.match(html, /Private clients are not named\. Residential work appears only by street or area, with the owner(?:'|&#39;|’)s agreement\./);
 });
 
+test('no internal-drafting or defensive phrasing reaches the public pages', async () => {
+  const files = await htmlFiles('dist');
+  const raw = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
+  // Inline image placeholders are base64 and can contain any letters; strip them before matching words.
+  const html = raw.replace(/data:image\/[^"')\s]+/g, '');
+  const llms = await readFile('dist/llms.txt', 'utf8');
+  const text = `${html}\n${llms}`;
+  for (const banned of [
+    /not a consumer quiz/i,
+    /A library, not a shop/i,
+    /\bnot a shop\b/i,
+    /we do not publish/i,
+    /partner level/i,
+    /trade tier/i,
+    /reply time/i,
+    /response time/i,
+    /respond within/i,
+    /published waiting list/i,
+    /cleared for the site/i,
+    /form host/i,
+    /private store/i,
+    /What this page does not claim/i,
+    /not a club you join/i,
+    /No basket\./,
+    /Not a homeowner form/i,
+    /\bTBC\b/,
+    /\blorem\b/i,
+    /TODO/,
+  ]) {
+    assert.doesNotMatch(text, banned, String(banned));
+  }
+  assert.match(html, /Find the right wallcovering for your room\./);
+  assert.match(html, /Wallcovering support for your specification|From specification<br>to the finished room\./);
+});
+
 test('the homepage H1 and meta description define the firm', async () => {
   const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { description: string };
   const home = await readFile('dist/index.html', 'utf8');
