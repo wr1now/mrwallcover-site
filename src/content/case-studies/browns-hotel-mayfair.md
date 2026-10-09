@@ -15,22 +15,14 @@
   "metaDescription": null,
   "group": null,
   "standfirst": "A full decorating package for London's oldest hotel, delivered while it never stopped welcoming guests.",
-  "hero": "browns-hotel-mayfair-11",
+  "hero": "browns-hotel-mayfair-09",
   "gallery": [
     {
-      "id": "browns-hotel-mayfair-11",
+      "id": "browns-hotel-mayfair-09",
       "credit": null
     },
     {
-      "id": "browns-hotel-mayfair-08",
-      "credit": null
-    },
-    {
-      "id": "browns-hotel-mayfair-07",
-      "credit": null
-    },
-    {
-      "id": "browns-hotel-mayfair-12",
+      "id": "browns-hotel-mayfair-10",
       "credit": null
     },
     {
@@ -38,11 +30,11 @@
       "credit": null
     },
     {
-      "id": "browns-hotel-mayfair-09",
+      "id": "browns-hotel-mayfair-12",
       "credit": null
     },
     {
-      "id": "browns-hotel-mayfair-10",
+      "id": "browns-hotel-mayfair-11",
       "credit": null
     },
     {
@@ -63,6 +55,14 @@
     },
     {
       "id": "browns-hotel-mayfair-01",
+      "credit": null
+    },
+    {
+      "id": "browns-hotel-mayfair-07",
+      "credit": null
+    },
+    {
+      "id": "browns-hotel-mayfair-08",
       "credit": null
     }
   ],
