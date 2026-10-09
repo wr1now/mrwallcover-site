@@ -88,4 +88,4 @@ Not in this slice (direction recorded for later stages, not implemented):
 - Home: running the photograph to the top behind the inset bar is a homepage hero layout change, which is PR #12 territory.
 - Material pages with a photographic head in shipped code: stage 6, and it needs a finished-room photograph per family.
 - `browns-hotel-mayfair-07` as the homepage "Selected work" lead image and the Brown's card image shows freshly hung walls in an empty room with floor protection, a vacuum cleaner and film on the windows. Whether that is a "finished room" is Dorin's call; the content data is unchanged.
-- The Brown's alt texts that describe a different photograph from the file they name are corrected in a separate commit (G6b), limited to what is visible in the file, with no new claims.
+- The Brown's alt texts that describe a different photograph from the file they name (`-01`, `-04`, `-07`, `-08`, `-10`, see "Image choices per page") are handed to another agent; this slice leaves `alts.json` unchanged.
