@@ -83,6 +83,7 @@ const schemaNodes = study
   image={ogImage}
   imageAlt={project.imageId ? media(project.imageId).alt : undefined}
   imageCredit={project.imageId ? project.credits?.[project.imageId] : undefined}
+  updated={study?.frontmatter.updated}
   ogType="article"
   extraSchema={[
     schemaNodes,

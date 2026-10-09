@@ -1,8 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageMeta from '../../components/PageMeta.astro';
 import GuideCard from '../../components/GuideCard.astro';
-import { formatGuideDate, guides, guideHref } from '../../lib/guides';
+import { guides, guideHref } from '../../lib/guides';
 import { materials } from '../../lib/content';
 import { breadcrumbNode, guideArticleNode, guideFaqNode } from '../../lib/schema';
 import { SITE_URL } from '../../config';
@@ -22,14 +23,14 @@ const article = guideArticleNode({ url, headline: data.title, description: data.
 // FAQPage only when the questions are rendered on the page below; drafts carry no Article so the review build cannot be mistaken for publication.
 const extraSchema = [breadcrumbNode(crumbs), ...(data.draft ? [] : [article, ...(faq.length ? [guideFaqNode(faq)] : [])])];
 ---
-<Base title={`${data.shortTitle} | Mr Wallcover`} description={data.description} path={path} author={data.author} ogType="article" extraSchema={extraSchema}>
+<Base title={`${data.shortTitle} | Mr Wallcover`} description={data.description} path={path} author={data.author} ogType="article" extraSchema={extraSchema} updated={data.updated} meta={false}>
   <div class="container-page pb-20">
     <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
       <p class="eyebrow">The Wallcovering Guide / {data.category}</p>
       <h1>{data.title}</h1>
       <p class="lede mt-5">{data.description}</p>
-      <p class="guide-byline text-sm text-stone">By <a href={data.authorHref}>{data.author}</a>, {data.authorRole} · Last updated <time datetime={data.updated}>{formatGuideDate(data.updated)}</time></p>
+      <PageMeta updated={data.updated} class="guide-byline" />
     </header>
     <div class="guide-layout">
       <aside class="guide-contents">

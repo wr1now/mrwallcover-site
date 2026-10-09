@@ -5,6 +5,7 @@ import { CONTACT_PAYLOAD } from '../lib/phone';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import MobileDock from '../components/MobileDock.astro';
+import PageMeta from '../components/PageMeta.astro';
 import { businessNode, founderNode, jsonLd, webPageNode, websiteNode } from '../lib/schema';
 
 interface Props {
@@ -21,6 +22,10 @@ interface Props {
   imageCredit?: string | null;
   ogType?: 'website' | 'article';
   author?: string;
+  /** ISO date of the page's last content change when the page knows it (guides, case studies). Otherwise the site-wide review date is shown. */
+  updated?: string;
+  /** Set false when the page renders its own PageMeta line in its header. */
+  meta?: boolean;
 }
 
 const {
@@ -35,6 +40,8 @@ const {
   imageCredit = null,
   ogType = 'website',
   author = 'Dorin Burcus',
+  updated,
+  meta = true,
 } = Astro.props;
 const reviewBuild = import.meta.env.MW_CONTENT_PREVIEW === '1';
 const noindex = requestedNoindex || reviewBuild;
@@ -117,6 +124,11 @@ const heroSrcset =
     <main id="main">
       {reviewBuild && <div class="review-banner" role="note">Content review preview · Guide drafts await technical review.</div>}
       <slot />
+      {meta && !noindex && (
+        <div class="container-page page-meta-wrap">
+          <PageMeta updated={updated} />
+        </div>
+      )}
     </main>
     <Footer />
     <MobileDock />

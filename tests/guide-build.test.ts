@@ -61,7 +61,7 @@ test('review output renders every article, with the byline and without editorial
     assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, slug);
     assert.match(html, /class="prose guide-prose"/);
     assert.match(html, /Content review preview/);
-    assert.match(html, /By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · Last updated <time datetime="\d{4}-\d{2}-\d{2}">\d{1,2} [A-Z][a-z]+ \d{4}<\/time>/);
+    assert.match(html, /By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · Last updated <time datetime="\d{4}-\d{2}-\d{2}" data-page-updated="updated">\d{1,2} [A-Z][a-z]+ \d{4}<\/time>/);
     assert.match(html, new RegExp(`https://www.mrwallcover.com/advice/${slug}/`));
   }
 });

@@ -39,6 +39,7 @@ const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.fr
   description={`What ${facts.brand} does, where it works, who runs it, the services, and the published projects behind each claim. Written for people and for answer engines.`}
   path={path}
   extraSchema={[breadcrumbNode(crumbs)]}
+  meta={false}
 >
   <div class="container-page pb-20">
     <header class="page-head guide-head">

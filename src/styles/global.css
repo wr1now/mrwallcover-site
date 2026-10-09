@@ -1117,7 +1117,9 @@ html[data-effects='plain'] .glass-smoked {
 .guide-prose > p:first-child { font-size: 1.25rem; line-height: 1.65; }
 .guide-prose h2 { font-size: clamp(1.8rem,3vw,2.35rem); margin-block: 2.5rem 1rem; }
 .guide-byline { margin-top: 1.25rem; }
-.guide-byline a { color: inherit; text-underline-offset: .2em; }
+.page-meta a { color: inherit; text-underline-offset: .2em; }
+.page-meta-wrap { padding-block: 1.5rem 2.5rem; }
+.page-meta-wrap .page-meta { margin: 0; border-top: 1px solid var(--color-line); padding-top: 1.25rem; }
 .guide-faq { border-top: 1px solid var(--color-line); margin-top: 2.5rem; padding-top: .5rem; }
 .guide-faq-item { border-bottom: 1px solid var(--color-line); padding-block: 1rem 1.25rem; }
 .guide-faq-item h3 { font-size: 1.35rem; margin: 0 0 .5rem; }

@@ -436,3 +436,44 @@ test('schema audit: business coverage matches the area pages, Person present, Se
   const search = await readFile('src/pages/search.astro', 'utf8');
   assert.doesNotMatch(search, /location\.search|URLSearchParams|searchParams/, 'if /search/ starts honouring ?q=, add a SearchAction and update this test');
 });
+
+test('every published page shows one author and date line: the page\'s own date for guides and case studies, the site-wide review date elsewhere; the twins carry the same date', async () => {
+  const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { lastReviewed: string };
+  const guideDates = new Map<string, string>();
+  for (const name of (await readdir('src/content/guides')).filter((entry) => entry.endsWith('.md'))) {
+    const text = await readFile(`src/content/guides/${name}`, 'utf8');
+    if (!/^draft: true$/m.test(text)) guideDates.set(`/advice/${name.slice(0, -3)}/`, text.match(/^updated: "([^"]+)"$/m)![1]);
+  }
+  const studyDates = new Map<string, string>();
+  for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
+    const fm = JSON.parse((await readFile(`src/content/case-studies/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { slug: string; draft?: boolean; updated: string };
+    if (!fm.draft) studyDates.set(`/projects/${fm.slug}/`, fm.updated);
+  }
+  const problems: string[] = [];
+  for (const page of await publishedPages()) {
+    const main = page.html.match(/<main id="main">([\s\S]*?)<\/main>/)![1];
+    const stamps = [...main.matchAll(/By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · (Last updated|Last reviewed) <time datetime="(\d{4}-\d{2}-\d{2})" data-page-updated="(updated|reviewed)">(\d{1,2} [A-Z][a-z]+ \d{4})<\/time>/g)];
+    if (stamps.length !== 1) {
+      problems.push(`${page.pathname}: ${stamps.length} author/date lines`);
+      continue;
+    }
+    const [, label, iso, kind] = stamps[0];
+    const own = guideDates.get(page.pathname) ?? studyDates.get(page.pathname);
+    if (own) {
+      if (label !== 'Last updated' || kind !== 'updated' || iso !== own) problems.push(`${page.pathname}: expected "Last updated ${own}", got "${label} ${iso}"`);
+    } else if (label !== 'Last reviewed' || kind !== 'reviewed' || iso !== facts.lastReviewed) {
+      problems.push(`${page.pathname}: expected "Last reviewed ${facts.lastReviewed}", got "${label} ${iso}"`);
+    }
+    if (iso < '2026-10-09') problems.push(`${page.pathname}: date ${iso} precedes the 9 October 2026 review`);
+    const twin = await readFile(path.join('dist', page.pathname, 'index.md'), 'utf8');
+    const key = own ? 'last_updated' : 'last_reviewed';
+    if (!twin.includes(`\n${key}: ${iso}\n---\n`)) problems.push(`${page.pathname}: twin front matter lacks "${key}: ${iso}"`);
+    // Answer-first: a real opening paragraph of at least 60 characters within the first three paragraphs after the H1.
+    const after = main.split(/<\/h1>/)[1] ?? '';
+    const paragraphs = [...after.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)].slice(0, 3).map((m) => stripTags(m[1]));
+    if (!paragraphs.some((text) => text.length >= 60)) problems.push(`${page.pathname}: no opening paragraph of substance after the H1`);
+  }
+  assert.deepEqual(problems, []);
+  const full = await readFile('dist/llms-full.txt', 'utf8');
+  assert.equal(full.match(/^Last (updated|reviewed): \d{4}-\d{2}-\d{2}$/gm)?.length, (await publishedPages()).length, 'every page in llms-full carries its date line');
+});
