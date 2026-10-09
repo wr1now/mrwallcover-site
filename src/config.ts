@@ -61,3 +61,10 @@ export const FORM_ENDPOINT: string = import.meta.env.PUBLIC_FORM_ENDPOINT || end
  * Fathom or Cloudflare Web Analytics when you want numbers.
  */
 export const ANALYTICS_SRC: string = import.meta.env.PUBLIC_ANALYTICS_SRC || '';
+
+/**
+ * Google Search Console HTML-tag verification (URL-prefix property).
+ * Paste only the content value Google gives you, e.g. 'AbC123...'.
+ * Empty means no tag is printed. Domain (DNS TXT) verification needs no change here.
+ */
+export const GOOGLE_SITE_VERIFICATION: string = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION || '';

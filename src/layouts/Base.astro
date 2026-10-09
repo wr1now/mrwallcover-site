@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { ANALYTICS_SRC, BRAND_NAME, CONTACT_PAYLOAD, SITE_URL } from '../config';
+import { ANALYTICS_SRC, BRAND_NAME, CONTACT_PAYLOAD, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import MobileDock from '../components/MobileDock.astro';
@@ -60,6 +60,7 @@ const heroSrcset =
     <meta name="theme-color" content="#141210" />
     <meta name="author" content="Dorin Burcus" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
+    {GOOGLE_SITE_VERIFICATION && <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />}
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={BRAND_NAME} />
     <meta property="og:locale" content="en_GB" />
