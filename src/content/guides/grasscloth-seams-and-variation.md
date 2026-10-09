@@ -3,8 +3,8 @@ title: "Grasscloth: the seams and variation to expect"
 slug: "grasscloth-seams-and-variation"
 audience: "homeowners-and-designers"
 category: "choosing"
-draft: true
-reviewStatus: "awaiting-owner-technical-review"
+draft: false
+reviewStatus: "published"
 prepared: "2026-10-09"
 reviewer: null
 author: "Dorin Burcus"

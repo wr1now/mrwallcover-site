@@ -45,7 +45,7 @@ The optional `scripts/check-content-browser.cjs` runs against its own local stat
 
 ## Boundaries still to resolve
 
-- The ten articles remain editorial drafts. Clear their draft flags only after actual technical review; no personal expert byline or review has been fabricated.
+- On 9 October 2026 the nine articles were rewritten to the section 27.6 standard and published under Dorin Burcus's byline as founder, with that date as published and updated. The installation cost guide publishes without price bands; the bands and worked examples stay in the draft `src/content/pages/cost-guide-2026.md` as TODO(Dorin) until approved, then move into the guide. Guide 4 is the `/advice/quantities/` calculator page. Dorin should read the published guides and change anything that does not reflect his practice; the PR is the review gate.
 - Production still uses the existing FormSubmit path. The private lead API exists but is not a deployed email service. Live notification delivery and hosting remain separate operational checks.
 - Requests from this environment to the live robots.txt, sitemap and advice page returned 502 responses. That is a retrieval limitation, not a diagnosis that the website is down or blocks OpenAI. Source permits public crawling and already configures a sitemap and Search Console verification.
 - The material finder operates at family level. Exact product dimensions, stock, cleaning and performance claims require verified product data before a product catalogue is added.

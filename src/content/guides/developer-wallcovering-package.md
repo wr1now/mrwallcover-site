@@ -3,8 +3,8 @@ title: "A developer's wallcovering tender and handover checklist"
 slug: "developer-wallcovering-package"
 audience: "developers-and-contractors"
 category: "planning"
-draft: true
-reviewStatus: "awaiting-owner-technical-review"
+draft: false
+reviewStatus: "published"
 prepared: "2026-10-09"
 reviewer: null
 author: "Dorin Burcus"
@@ -12,7 +12,7 @@ authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-09"
-description: "What a wallcovering package needs to be priced, programmed and handed over: scope matrix, measurement basis, substrate handover, programme, change control, snagging and spares."
+description: "What a wallcovering package needs to be priced, programmed and handed over: scope, measurement basis, substrate handover, programme, changes, snagging and spares."
 shortTitle: "Developer package"
 order: 9
 relatedMaterials: ["contract-vinyl", "acoustic", "paper-and-non-woven"]

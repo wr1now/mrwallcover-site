@@ -152,6 +152,56 @@ test('draft editorial pages are not built, not in the sitemap, not in llms.txt a
   }
 });
 
+test('no public dist file contains TODO', async () => {
+  async function textFiles(dir: string): Promise<string[]> {
+    const entries = await readdir(dir, { withFileTypes: true });
+    const out: string[] = [];
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) out.push(...await textFiles(full));
+      else if (/\.(html|xml|txt|csv|json|js|css)$/.test(entry.name)) out.push(full);
+    }
+    return out;
+  }
+  const files = await textFiles('dist');
+  assert.ok(files.length > 50);
+  const offenders: string[] = [];
+  for (const file of files) {
+    if ((await readFile(file, 'utf8')).includes('TODO')) offenders.push(file);
+  }
+  assert.deepEqual(offenders, []);
+});
+
+test('each published guide carries an Article with the founder as author, the business as publisher and its frontmatter dates', async () => {
+  const names = (await readdir('src/content/guides')).filter((entry) => entry.endsWith('.md'));
+  let articles = 0;
+  for (const name of names) {
+    const text = await readFile(`src/content/guides/${name}`, 'utf8');
+    if (/^draft: true$/m.test(text)) continue;
+    const slug = name.slice(0, -3);
+    const published = text.match(/^published: "(\d{4}-\d{2}-\d{2})"$/m)![1];
+    const updated = text.match(/^updated: "(\d{4}-\d{2}-\d{2})"$/m)![1];
+    const html = await readFile(`dist/advice/${slug}/index.html`, 'utf8');
+    const graph = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]) as { '@graph': Record<string, any>[] };
+    const article = graph['@graph'].find((node) => node['@type'] === 'Article');
+    assert.ok(article, `${slug} has an Article`);
+    assert.equal(article.datePublished, published, `${slug} datePublished`);
+    assert.equal(article.dateModified, updated, `${slug} dateModified`);
+    assert.equal(article.author['@id'], 'https://www.mrwallcover.com/about/#dorin', `${slug} author`);
+    assert.equal(article.author.name, 'Dorin Burcus');
+    assert.deepEqual(article.publisher, { '@id': 'https://www.mrwallcover.com/#business' }, `${slug} publisher`);
+    assert.equal(article.mainEntityOfPage['@id'], `https://www.mrwallcover.com/advice/${slug}/#webpage`);
+    assert.ok(graph['@graph'].some((node) => node['@type'] === 'BreadcrumbList'), `${slug} breadcrumbs`);
+    // FAQPage only where the page shows the questions.
+    const faqPage = graph['@graph'].find((node) => node['@type'] === 'FAQPage');
+    assert.equal(Boolean(faqPage), html.includes('id="questions"'), `${slug} FAQPage must match a visible question block`);
+    if (faqPage) for (const q of faqPage.mainEntity) assert.ok(html.includes(`<h3>${q.name}</h3>`), `${slug}: ${q.name} is not visible`);
+    assert.match(html, /By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · Last updated/);
+    articles += 1;
+  }
+  assert.ok(articles >= 1, 'at least one guide is published');
+});
+
 test('the homepage does not load the 3D engine up front', async () => {
   const home = await readFile('dist/index.html', 'utf8');
   assert.equal(home.includes('three.module'), false);

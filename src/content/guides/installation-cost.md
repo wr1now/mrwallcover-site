@@ -3,8 +3,8 @@ title: "What changes the cost of wallpaper installation?"
 slug: "installation-cost"
 audience: "homeowners-and-procurement"
 category: "planning"
-draft: true
-reviewStatus: "awaiting-owner-technical-review"
+draft: false
+reviewStatus: "published"
 prepared: "2026-10-09"
 reviewer: null
 author: "Dorin Burcus"
@@ -12,7 +12,7 @@ authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-09"
-description: "Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a complete quotation should include."
+description: "Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include."
 shortTitle: "Installation cost"
 order: 5
 relatedMaterials: ["paper-and-non-woven", "hand-painted", "contract-vinyl"]

@@ -3,8 +3,8 @@ title: "Choosing wallpaper for the room, not just the photograph"
 slug: "choosing-wallcoverings"
 audience: "homeowners"
 category: "choosing"
-draft: true
-reviewStatus: "awaiting-owner-technical-review"
+draft: false
+reviewStatus: "published"
 prepared: "2026-10-09"
 reviewer: null
 author: "Dorin Burcus"

@@ -3,8 +3,8 @@ title: "A designer's wallcovering specification checklist"
 slug: "designer-specification-checklist"
 audience: "designers-and-architects"
 category: "planning"
-draft: true
-reviewStatus: "awaiting-owner-technical-review"
+draft: false
+reviewStatus: "published"
 prepared: "2026-10-09"
 reviewer: null
 author: "Dorin Burcus"
@@ -12,7 +12,7 @@ authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-09"
-description: "What a wallcovering specification needs before it reaches site: maker and code, elevations, repeat and match, samples and strike-offs, light, lining, free-issue responsibilities and change control."
+description: "What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, light, lining, free-issue responsibilities and change control."
 shortTitle: "Designer checklist"
 order: 8
 relatedMaterials: ["silk-and-textiles", "hand-painted", "grasscloth-and-weaves", "acoustic"]

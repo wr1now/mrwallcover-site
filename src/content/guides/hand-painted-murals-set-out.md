@@ -3,8 +3,8 @@ title: "Hand-painted papers and murals: plan the room before ordering"
 slug: "hand-painted-murals-set-out"
 audience: "homeowners-and-designers"
 category: "planning"
-draft: true
-reviewStatus: "awaiting-owner-technical-review"
+draft: false
+reviewStatus: "published"
 prepared: "2026-10-09"
 reviewer: null
 author: "Dorin Burcus"

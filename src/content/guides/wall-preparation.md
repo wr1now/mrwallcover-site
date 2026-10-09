@@ -3,8 +3,8 @@ title: "Is the wall ready for wallpaper?"
 slug: "wall-preparation"
 audience: "all-clients"
 category: "preparing"
-draft: true
-reviewStatus: "awaiting-owner-technical-review"
+draft: false
+reviewStatus: "published"
 prepared: "2026-10-09"
 reviewer: null
 author: "Dorin Burcus"

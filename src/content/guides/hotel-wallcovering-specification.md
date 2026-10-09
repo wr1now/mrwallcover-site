@@ -3,8 +3,8 @@ title: "Wallcoverings for working hotels and busy corridors"
 slug: "hotel-wallcovering-specification"
 audience: "hotels-and-operators"
 category: "planning"
-draft: true
-reviewStatus: "awaiting-owner-technical-review"
+draft: false
+reviewStatus: "published"
 prepared: "2026-10-09"
 reviewer: null
 author: "Dorin Burcus"
@@ -12,7 +12,7 @@ authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-09"
-description: "Specifying wallcoverings for an occupied hotel: cleaning and durability, the sample room, batch control, phasing around guests, product documentation, spares and handover."
+description: "Specifying wallcoverings for an occupied hotel: cleaning and durability, the sample room, batch control, phasing around guests, product documents, spares and handover."
 shortTitle: "Hotel wallcoverings"
 order: 7
 relatedMaterials: ["contract-vinyl", "acoustic", "grasscloth-and-weaves"]

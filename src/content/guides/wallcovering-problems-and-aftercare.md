@@ -3,8 +3,8 @@ title: "Bubbles, lifting edges and cleaning: what to do next"
 slug: "wallcovering-problems-and-aftercare"
 audience: "existing-customers"
 category: "caring"
-draft: true
-reviewStatus: "awaiting-owner-technical-review"
+draft: false
+reviewStatus: "published"
 prepared: "2026-10-09"
 reviewer: null
 author: "Dorin Burcus"
