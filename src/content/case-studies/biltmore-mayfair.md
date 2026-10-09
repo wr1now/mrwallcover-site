@@ -12,6 +12,7 @@
   ],
   "modest": false,
   "awaitingPhotos": true,
+  "draft": true,
   "metaTitle": "The Biltmore Mayfair | Mr Wallcover",
   "metaDescription": "Wallcoverings at the Millennium Hotel, Grosvenor Square, in 2018, including a Phillip Jeffries schedule. The hotel is now The Biltmore Mayfair.",
   "group": null,

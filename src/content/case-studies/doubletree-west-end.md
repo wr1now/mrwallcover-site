@@ -10,14 +10,13 @@
   "wallcoverings": [],
   "modest": true,
   "awaitingPhotos": true,
+  "draft": true,
   "metaTitle": "DoubleTree West End | Mr Wallcover",
   "metaDescription": "Guest room wallcoverings at DoubleTree by Hilton London – West End, Southampton Row, in 2019. Formerly the Bonnington Hotel.",
   "group": null,
   "standfirst": "Guest room wallcoverings at the Holborn hotel in 2019. The building was previously the Bonnington Hotel.",
-  "hero": "hilton-holborn-01",
-  "gallery": [
-    { "id": "hilton-holborn-01", "credit": null }
-  ]
+  "hero": null,
+  "gallery": []
 }
 ---
 
@@ -33,8 +32,8 @@
 
 The commission was the guest rooms. Pattern, batch and the order of rooms were agreed before the first length was cut, so a repeated room could stay consistent down a corridor.
 
-The photograph on this page is the Southampton Row facade from when the building still carried the Bonnington name. It shows the building, not the finished rooms. Interior photographs from the commission are not on this site yet.
+No photographs are shown yet. The earlier Southampton Row facade image was removed because it shows the wrong building. Interior photographs from the commission are to be added before this page is published.
 
 ## What this page does not claim
 
-There is no published rate, and no photograph here should be read as the finished guest room. A survey still decides preparation, quantities and programme.
+There is no published rate. A survey still decides preparation, quantities and programme.

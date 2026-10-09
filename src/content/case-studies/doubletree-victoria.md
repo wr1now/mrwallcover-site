@@ -10,6 +10,7 @@
   "wallcoverings": [],
   "modest": false,
   "awaitingPhotos": true,
+  "draft": true,
   "metaTitle": "DoubleTree Victoria | Mr Wallcover",
   "metaDescription": "Guest room wallcoverings at DoubleTree by Hilton London – Victoria, Bridge Place, in 2023.",
   "group": null,
