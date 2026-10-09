@@ -64,6 +64,15 @@ const heroSrcset =
     <meta charset="utf-8" />
     <script is:inline>
       document.documentElement.classList.add('js');
+      /*
+       * Mobile menu: collapse the no-JS in-flow link list before first paint, so the page does not
+       * jump when the Header script loads (it was a 0.6+ layout shift on every phone page). If that
+       * script never confirms (blocked or failed module), the load handler restores the in-flow links.
+       */
+      document.documentElement.classList.add('js-nav');
+      window.addEventListener('load', function () {
+        if (!document.documentElement.hasAttribute('data-nav-ready')) document.documentElement.classList.remove('js-nav');
+      });
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script is:inline>

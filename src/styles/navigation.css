@@ -125,7 +125,7 @@
     display: none;
   }
 
-  /* Until the Header script runs (it sets html.js-nav itself), the toggle is not shown and the panel renders in flow: no JavaScript, or a failed module, still leaves every link reachable. */
+  /* Without html.js-nav (no JavaScript, or Base.astro removed it on load because the Header script never confirmed), the toggle is not shown and the panel renders in flow: every link stays reachable. */
   html:not(.js-nav) .menu-toggle {
     display: none;
   }

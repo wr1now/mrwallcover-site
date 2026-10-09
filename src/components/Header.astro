@@ -8,9 +8,11 @@
  * menu panel below the bar. The panel is a sibling of the header so the bar
  * stays the only glass surface and the panel stays opaque ivory.
  *
- * Until this component's own script runs (html.js-nav), the panel renders in
- * flow under the bar and the toggle is hidden, so every link stays reachable
- * without JavaScript or if the module fails. Once the script runs the panel is
+ * Without JavaScript the panel renders in flow under the bar and the toggle is
+ * hidden, so every link stays reachable. Base.astro sets html.js-nav before
+ * first paint (no layout shift when this script loads) and removes it on window
+ * load unless this script has set data-nav-ready, so a failed module still
+ * leaves the links in flow. Once the script runs the panel is
  * a modal dialog (role="dialog", aria-modal, set by the script so the in-flow
  * version stays a plain nav) that works by click, keyboard and touch:
  * Enter/Space toggle, focus moves into the panel on open, Tab cycles through
@@ -87,6 +89,7 @@ function isCurrent(href: string) {
   if (toggle && panel) {
     // The script is live: hide the in-flow panel, show the toggle (navigation.css keys on html.js-nav), and give the panel dialog semantics.
     document.documentElement.classList.add('js-nav');
+    document.documentElement.setAttribute('data-nav-ready', '');
     panel.setAttribute('role', 'dialog');
     panel.setAttribute('aria-modal', 'true');
     panel.setAttribute('aria-label', 'Menu');

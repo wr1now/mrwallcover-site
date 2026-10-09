@@ -125,3 +125,13 @@ test('mobile hero keeps the wallpaper in frame: phone object-position set, deskt
   assert.match(phone.slice(0, phone.indexOf('\n}\n')), /object-position:\s*50% 18%/);
   assert.equal(/@media \(min-width: 1024px\)[^}]*object-position/.test(css), false);
 });
+
+test('every page: html.js-nav is set before first paint, with a load-time fallback if the Header script never confirms', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const html = await readFile('dist/index.html', 'utf8');
+  const head = html.slice(0, html.indexOf('</head>'));
+  assert.match(head, /classList\.add\('js-nav'\)/, 'js-nav added in <head>');
+  assert.match(head, /data-nav-ready/, 'fallback checks data-nav-ready');
+  const header = await readFile(new URL('../src/components/Header.astro', import.meta.url), 'utf8');
+  assert.match(header, /setAttribute\('data-nav-ready'/);
+});
