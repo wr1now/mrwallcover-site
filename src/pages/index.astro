@@ -28,7 +28,7 @@ const others = projects.filter((project) => !project.featured);
       <h1>Wallcoverings, <em>hung properly.</em></h1>
       <p class="lede mt-5">{home.hero.lede}</p>
       <!-- Award name will be added later. Public copy is the label and the year only. -->
-      <p class="mt-5 mb-0 text-gold">{AWARD.label} ({AWARD.year})</p>
+      <p class="mt-5 mb-0 text-gold">{AWARD.label} ({AWARD.year}) · <a class="trusted-link" href="/projects/#design-weeks">Trusted by Calico Wallpaper</a></p>
       <div class="mt-6 flex flex-wrap gap-3">
         <a class="btn btn-solid" href="/contact/">Request a quotation</a>
         <a class="btn btn-ghost" href="/projects/">See the work</a>
@@ -199,6 +199,12 @@ const others = projects.filter((project) => !project.featured);
           ))
         }
       </div>
+      <p class="mt-10 mb-0">Trusted by Calico Wallpaper. Work delivered in partnership with them:</p>
+      <ul class="link-row mt-3 grid list-none gap-2 p-0 md:grid-cols-2">
+        {projects.filter((p) => p.group === 'design-weeks').map((p) => (
+          <li><a href={projectHref(p.slug)}>{p.slug === 'heathrow-terminal-4-calico' ? 'Calico Wallpaper at Heathrow Terminal 4' : p.title.replace(/: '?([^']+)'? at .*$/, ': $1')}</a></li>
+        ))}
+      </ul>
     </div>
   </section>
 

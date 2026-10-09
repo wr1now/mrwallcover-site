@@ -39,6 +39,8 @@ export interface Project {
   caseStudy?: boolean;
   /** Preview-size photographs: displayed small and never upscaled. */
   modest?: boolean;
+  /** Listing group on /projects, e.g. 'design-weeks'. */
+  group?: string;
   credits?: Record<string, string>;
 }
 

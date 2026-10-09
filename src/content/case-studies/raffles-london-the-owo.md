@@ -12,6 +12,9 @@
     "Vescom Alcantara (selected suites)"
   ],
   "modest": false,
+  "metaTitle": null,
+  "metaDescription": null,
+  "group": null,
   "standfirst": "Bespoke Vescom wallcoverings for the guest rooms of London's most storied address.",
   "hero": "owo-official-classic",
   "gallery": [
