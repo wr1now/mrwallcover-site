@@ -121,6 +121,10 @@ test('/llms.txt follows the llmstxt.org shape, lists only published pages that r
   assert.ok(urls.length >= 60, `${urls.length} entries`);
   assert.ok(urls.includes(`${SITE}/for-ai/`), '/for-ai/ is listed');
   assert.ok(urls.includes(`${SITE}/advice/quantities/`), 'the quantity guide is listed');
+  // Every professional audience page is listed by name, not only the /professionals/ hub.
+  for (const slug of ['designers', 'developers', 'hotels']) {
+    assert.ok(urls.includes(`${SITE}/professionals/${slug}/`), `/professionals/${slug}/ is listed`);
+  }
   // Every listed page URL is a built, indexable page (fragments and non-HTML files aside).
   const pages = await publishedPages();
   const built = new Set(pages.map((page) => `${SITE}${page.pathname}`));
