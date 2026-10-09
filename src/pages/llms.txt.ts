@@ -73,6 +73,8 @@ export const GET: APIRoute = () => {
     ...faqItems.map((f) => entry(f.question, `/faq/#${f.id}`, f.paragraphs[0])),
     '',
     '## Optional',
+    entry('Full text', '/llms-full.txt', 'the main content of every published page, each headed by its title and canonical URL'),
+    entry('Facts as data', '/facts.json', 'the public fact sheet: brand, description, founder, email, coverage, profiles'),
     entry('Sitemap', '/sitemap-index.xml', 'every published page'),
     entry('Accessibility', '/accessibility/', 'how the site is built for keyboard, mobile and reduced-motion use'),
     entry('Privacy', '/privacy/', 'how enquiry details are handled; no cookies and no analytics by default'),

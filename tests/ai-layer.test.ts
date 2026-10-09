@@ -196,6 +196,53 @@ test('no phone number, no forbidden word and no TODO in any text, Markdown, JSON
   assert.deepEqual(problems, []);
 });
 
+test('/facts.json carries only allowlisted public fields from the fact sheet, no phone, and agrees with the JSON-LD', async () => {
+  const source = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as Record<string, unknown> & {
+    brand: string;
+    description: string;
+    email: string;
+    place: string;
+    coverage: string;
+    lastReviewed: string;
+    founder: { name: string; jobTitle: string; path: string; fragment: string };
+    profiles: { name: string; url: string }[];
+  };
+  const raw = await readFile('dist/facts.json', 'utf8');
+  const data = JSON.parse(raw) as Record<string, unknown>;
+  const endpoint = await readFile('src/pages/facts.json.ts', 'utf8');
+  const allow = endpoint.match(/PUBLIC_FACT_FIELDS = \[([^\]]+)\]/)![1].match(/'([^']+)'/g)!.map((s) => s.replace(/'/g, ''));
+  // Allowlist only: every fact-sheet field in the output is named in PUBLIC_FACT_FIELDS, and the underscore notes stay private.
+  for (const key of Object.keys(data)) {
+    if (key in source) assert.ok(allow.includes(key), `${key} is in facts.json but not allowlisted`);
+    assert.doesNotMatch(key, /^_/, `${key} is a private note`);
+  }
+  assert.doesNotMatch(raw, /phone|telephone|\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b|Ltd|Limited|award|licen[cs]e|price|rating/i);
+  assert.equal(data.brand, source.brand);
+  assert.equal(data.description, source.description);
+  assert.equal(data.email, source.email);
+  assert.equal(data.place, source.place);
+  assert.equal(data.coverage, source.coverage);
+  assert.equal(data.lastReviewed, source.lastReviewed);
+  assert.deepEqual(data.founder, { name: source.founder.name, jobTitle: source.founder.jobTitle, url: `${SITE}${source.founder.path}#${source.founder.fragment}` });
+  assert.deepEqual(data.profiles, source.profiles);
+  assert.equal(data.website, SITE);
+  assert.equal(data.isBasedOn, `${SITE}/for-ai/`);
+  // The JSON-LD on every page reads the same fact sheet.
+  const home = await readFile('dist/index.html', 'utf8');
+  const graph = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]) as { '@graph': Record<string, any>[] };
+  const business = graph['@graph'].find((node) => node['@id'] === `${SITE}/#business`)!;
+  assert.equal(business.name, data.brand);
+  assert.equal(business.description, data.description);
+  assert.equal(business.email, data.email);
+  assert.equal(business.address.addressLocality, data.place);
+  assert.deepEqual(business.sameAs, source.profiles.map((profile) => profile.url));
+  const person = graph['@graph'].find((node) => node['@id'] === (data.founder as { url: string }).url)!;
+  assert.equal(person.name, source.founder.name);
+  // Listed where readers look for it.
+  assert.match(await readFile('dist/llms.txt', 'utf8'), /\(https:\/\/www\.mrwallcover\.com\/facts\.json\)/);
+  assert.match(await readFile('dist/for-ai/index.html', 'utf8'), /href="\/facts\.json"/);
+});
+
 test('every published HTML page has exactly one H1', async () => {
   const problems: string[] = [];
   for (const page of await publishedPages()) {

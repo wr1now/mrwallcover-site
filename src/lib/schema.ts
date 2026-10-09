@@ -63,7 +63,7 @@ export function businessNode() {
     founder: { '@id': FOUNDER_ID },
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'London',
+      addressLocality: facts.place,
       addressCountry: 'GB',
     },
     areaServed: AREAS_SERVED,
