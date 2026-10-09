@@ -4,7 +4,7 @@
   "slug": "trematon-castle",
   "replaces": null,
   "client": "The new owners of Trematon Castle, the founders of House of Hackney",
-  "location": "Castle of Trematon, near Saltash, Cornwall PL12",
+  "location": "Castle of Trematon, near Saltash, Cornwall",
   "years": "2019–2022",
   "role": "Wallcovering installation contractor across the Georgian house and estate",
   "wallcoverings": [

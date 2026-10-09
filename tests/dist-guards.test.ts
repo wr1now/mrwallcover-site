@@ -22,7 +22,8 @@ test('the built site keeps private names and the verification token out of the w
     assert.equal(html.toLowerCase().includes(banned.toLowerCase()), false, banned);
   }
   // The two private residential buildings: street only, never a house number or a full postcode.
-  for (const pattern of [/\b\d{1,4}[a-z]?\s+St\.?\s?George'?s?\s+Square/i, /\b\d{1,4}[a-z]?\s+Inverness\s+Terrace/i, /\bSW1V\s?\d[A-Z]{2}\b/, /\bW2\s?\d[A-Z]{2}\b/]) {
+  // Private homes: street or area only. Trematon keeps "near Saltash, Cornwall" without its postcode district; North London stays North London.
+  for (const pattern of [/\b\d{1,4}[a-z]?\s+St\.?\s?George'?s?\s+Square/i, /\b\d{1,4}[a-z]?\s+Inverness\s+Terrace/i, /\bSW1V\s?\d[A-Z]{2}\b/, /\bW2\s?\d[A-Z]{2}\b/, /\bPL12\b/, /\bN\d{1,2}\s?\d[A-Z]{2}\b/]) {
     assert.doesNotMatch(html, pattern);
   }
   assert.match(html, /98zhpiyda4qDA6fYcKJ-zC6pItC6-LZKqqEugO5-fKo/);
