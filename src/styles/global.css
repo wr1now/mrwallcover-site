@@ -178,8 +178,10 @@
     margin-left: auto;
   }
 
-  .mobile-links a {
+  .mobile-links a,
+  .mobile-links .reveal-phone {
     display: flex;
+    width: 100%;
     align-items: center;
     min-height: 48px;
     font-family: var(--font-serif);
@@ -834,5 +836,64 @@ article h3 a {
   }
   .modest-gallery figure {
     max-width: 360px;
+  }
+}
+@layer components {
+  aside a[data-wa],
+  .site-footer p > a,
+  .site-footer p > .reveal-phone {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  button.reveal-phone {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  button.nav-link.reveal-phone {
+    text-decoration: none;
+  }
+  .mobile-links button.reveal-phone {
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: var(--font-serif);
+    min-height: 48px;
+  }
+  .form-note {
+    font-size: 0.9375rem;
+  }
+}
+@layer components {
+  .case-study blockquote {
+    margin: 0 0 2rem;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid currentColor;
+    background: color-mix(in srgb, currentColor 5%, transparent);
+  }
+  .case-study blockquote p {
+    margin: 0;
+  }
+  .case-study blockquote a {
+    display: inline;
+  }
+}
+@layer components {
+  .crumbs {
+    align-items: center;
+  }
+  .crumbs li {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
 }

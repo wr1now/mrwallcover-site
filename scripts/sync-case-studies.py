@@ -40,8 +40,32 @@ GALLERY_OVERRIDE = {
     'trematon-castle': [f'trematon-{n}' for n in
         ['01','03','11','16','13','18','06','07','08','09','10','12','14','15','17','19','21','23','24','25','26','04','05','20']],
 }
-MODEST = {'trematon-castle'}  # preview-size photos: show small, never upscale
-TBC = re.compile(r'to be confirmed|once confirmed|will be added once|unconfirmed', re.I)
+GALLERY_OVERRIDE['old-bailey-hotel'] = [f'old-bailey-{n}' for n in
+    ['12','06','07','08','09','10','11','13','14','16','17','18','01','02','03','04','05','15','19']]
+# Display titles agreed with Dorin (slug unchanged, so no redirect is needed).
+TITLE_OVERRIDE = {'old-bailey-hotel': 'Hyde London City (the Old Bailey Hotel)'}
+MODEST = {'trematon-castle', 'old-bailey-hotel'}
+# Per-slug wording fixes for internal phrasing in the research file.
+BODY_SUBS = {
+    'old-bailey-hotel': [
+        ('## At a glance\n',
+         '> **As featured by Timorous Beasties:** [Studio Moren x Timorous Beasties at Hyde London City](https://www.timorousbeasties.com/story/studio-moren-x-timorous-beasties-at-hyde-london-city). Their story shows the two designs in the finished bedrooms.\n\n## At a glance\n'),
+        ('- **Our package:**', '- **Interior design:** Studio Moren\n- **Our package:**'),
+        ('- **Wallcoverings:** Timorous Beasties (Tropical Clouded Leopard; Totem Damask) and House of Hackney (LIMERENCE)',
+         '- **Wallcoverings:** Timorous Beasties Tropical Clouded Leopard and Totem Damask (custom-printed vinyl), and House of Hackney LIMERENCE'),
+        ('## The brief\n',
+         '## The design\n\nThe interiors were designed by Studio Moren. For the bedrooms they selected two Timorous Beasties designs, produced as custom-printed vinyl wallpaper: Totem Damask in Black & Blue, and Tropical Clouded Leopard in Vanilla. Vinyl lets the patterns stand up to the daily wear of a busy hotel while keeping their colour and detail. Timorous Beasties describe the result as \u201cbold pattern with atmosphere\u201d ([Timorous Beasties](https://www.timorousbeasties.com/story/studio-moren-x-timorous-beasties-at-hyde-london-city)).\n\n## The brief\n'),
+        ('Tropical Clouded Leopard is a superwide, quarter-drop design with a 1.4 m vertical repeat. Hung',
+         'Tropical Clouded Leopard is a large-scale, quarter-drop design. Hung'),
+        ('- Timorous Beasties – Tropical Clouded Leopard Superwide, Vanilla: guest-room headboard walls',
+         '- Timorous Beasties – Tropical Clouded Leopard, Vanilla, custom-printed vinyl: guest-room headboard walls'),
+        ('- Timorous Beasties – Totem Damask, Black & Blue: guest-room feature walls',
+         '- Timorous Beasties – Totem Damask, Black & Blue, custom-printed vinyl: guest-room feature walls'),
+        ('Alongside the decoration, we fitted window film to the glazing. Solar Screen rolls were photographed on site in June 2024.',
+         'Alongside the decoration, we fitted [Solar Screen](https://solarscreen.eu/en/) window film to the glazing. See our [window film service](/services/window-film/).'),
+    ],
+}  # preview-size photos: show small, never upscale
+TBC = re.compile(r'to be confirmed|once confirmed|will be added once|unconfirmed|to confirm before publishing|divine savages', re.I)
 
 
 def parse_frontmatter(text):
@@ -99,11 +123,18 @@ def materials_table_to_list(body):
     Confirmed rows are stated plainly; probable rows are marked as identified from
     our photographs; possible rows are dropped."""
     def repl(m):
-        rows = [r for r in m.group(0).strip().splitlines() if r.startswith('|') and '---' not in r][1:]
+        all_rows = [r for r in m.group(0).strip().splitlines() if r.startswith('|') and '---' not in r]
+        head = [c.strip().lower() for c in all_rows[0].strip('|').split('|')]
+        ci = head.index('confidence') if 'confidence' in head else -1
+        wi = head.index('where') if 'where' in head else None
         out = []
-        for r in rows:
+        for r in all_rows[1:]:
             cells = [c.strip() for c in r.strip('|').split('|')]
-            design, conf = cells[0], cells[-1].lower()
+            design, conf = cells[0], cells[ci].lower()
+            if wi is not None:
+                design = re.sub(r'\s*Wallpaper,', ',', design)
+                where = re.sub(r'\s*\([^)]*\)', '', cells[wi]).strip()
+                design = f'{design}: {where[0].lower() + where[1:]}' if where else design
             if 'possible' in conf and 'probable' not in conf:
                 continue
             design = re.sub(r'\s*HoH names it.*$', '', design)
@@ -182,18 +213,20 @@ for path in sorted(SRC.glob('*.md')):
     hero_ok = hero and any(g['id'] == hero for g in gallery)
     lead = standfirst(body)
     clean = clean_body(body)
+    for a, b in BODY_SUBS.get(slug, []):
+        clean = clean.replace(a, b)
     if lead:
         clean = re.sub(r'^\*(?!\*)' + re.escape(lead) + r'\*\s*\n', '', clean, count=1, flags=re.M).lstrip()
     years = fm.get('years') or ''
     data = {
-        'title': fm.get('title', slug),
+        'title': TITLE_OVERRIDE.get(slug, fm.get('title', slug)),
         'slug': slug,
         'replaces': REPLACES.get(slug),
         'client': anonymise(fm.get('client', '')),
         'location': fm.get('location', ''),
         'years': None if TBC.search(years) or not years else re.sub(r'\s*\(photo record[^)]*\)', '', years),
         'role': re.split(r'\.\s*Scope as briefed', fm.get('role', ''))[0],
-        'wallcoverings': [re.sub(r'\s*\((?:confirmed|probable|possible)[^)]*\)', '', w, flags=re.I) for w in fm.get('wallcoverings', []) or [] if not TBC.search(w)],
+        'wallcoverings': [w.replace(' Superwide', '') for w in [re.sub(r'\s*\((?:[^)]*(?:confirmed|probable|possible|visual match|roll label|photographed))[^)]*\)', '', w, flags=re.I) for w in fm.get('wallcoverings', []) or [] if not TBC.search(w)]],
         'modest': slug in MODEST,
         'standfirst': lead,
         'hero': hero if hero_ok else (gallery[0]['id'] if gallery else None),

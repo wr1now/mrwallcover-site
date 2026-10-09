@@ -15,6 +15,18 @@ export const PHONE_DISPLAY = '07450 843246';
 export const PHONE_TEL = '+447450843246';
 export const WHATSAPP_URL =
   'https://wa.me/447450843246?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20wallcovering.';
+/**
+ * The phone number is never printed in the HTML. It is shipped reversed and
+ * base64-encoded, and revealed on click by the script in Base.astro.
+ * WhatsApp links are filled in the same way after the page loads.
+ */
+export const CONTACT_PAYLOAD = btoa(
+  JSON.stringify({ t: PHONE_TEL, d: PHONE_DISPLAY, w: WHATSAPP_URL }).split('').reverse().join(''),
+);
+
+/** Coverage line used across the site and in schema descriptions. */
+export const COVERAGE = 'London and the surrounding areas; UK-wide for selected projects';
+
 export const INSTAGRAM_URL = 'https://www.instagram.com/mrwallcover/';
 export const INSTAGRAM_HANDLE = '@mrwallcover';
 
@@ -23,19 +35,23 @@ export const AWARD = {
   year: 2021,
 } as const;
 
-export type FormProvider = 'mailto' | 'netlify' | 'formspree';
+export type FormProvider = 'mailto' | 'netlify' | 'formspree' | 'formsubmit';
 
-const providerFromFile: FormProvider = 'mailto';
-const endpointFromFile = '';
+const providerFromFile: FormProvider = 'formsubmit';
+const endpointFromFile = 'https://formsubmit.co/info@mrwallcover.com';
 
 function resolveProvider(): FormProvider {
   const fromEnv = import.meta.env.PUBLIC_FORM_PROVIDER;
-  if (fromEnv === 'mailto' || fromEnv === 'netlify' || fromEnv === 'formspree') return fromEnv;
+  if (fromEnv === 'mailto' || fromEnv === 'netlify' || fromEnv === 'formspree' || fromEnv === 'formsubmit') return fromEnv;
   if (import.meta.env.PUBLIC_FORM_ENDPOINT) return 'formspree';
   return providerFromFile;
 }
 
-/** mailto works on GitHub Pages with no extra service. Override for Netlify Forms or Formspree. */
+/**
+ * FormSubmit (formsubmit.co) posts the form to info@ with its own captcha.
+ * The first submission sends a one-time activation email to info@; click it once.
+ * After activation, FormSubmit offers a random alias; swap it in here to hide the address.
+ */
 export const FORM_PROVIDER: FormProvider = resolveProvider();
 export const FORM_ENDPOINT: string = import.meta.env.PUBLIC_FORM_ENDPOINT || endpointFromFile;
 

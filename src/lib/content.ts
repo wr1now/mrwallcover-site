@@ -155,8 +155,10 @@ export interface LandingPage {
   lede: string;
   paragraphs: string[];
   projects: string[];
-  imageId: string;
+  imageId: string | null;
   faq: FaqItem[];
+  serviceType?: string;
+  links?: { label: string; href: string }[];
   materialKey?: string;
 }
 

@@ -29,11 +29,11 @@
   "pillars": ["Surveying", "Management", "Supply", "Install", "Aftercare"],
   "intro": {
     "title": "A London practice for rooms that are meant to last.",
-    "text": "The work is hotel corridors and bedrooms, flagship shops, and private houses. Most of it is in central London. The South East is home ground, and the right project will travel further."
+    "text": "The work is hotel corridors and bedrooms, flagship shops, and private houses. We cover London and the surrounding areas, and work UK-wide for selected projects."
   },
   "facts": [
     { "label": "In the trade", "value": "Since 2014" },
-    { "label": "Ground", "value": "London and the South East" },
+    { "label": "Coverage", "value": "London and the surrounding areas; UK-wide for selected projects" },
     { "label": "The work", "value": "Hotels, retail and homes" }
   ],
   "servicesIntro": {

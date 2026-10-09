@@ -4,11 +4,9 @@ import {
   FOUNDER_NAME,
   INSTAGRAM_HANDLE,
   INSTAGRAM_URL,
-  PHONE_DISPLAY,
-  PHONE_TEL,
   PUBLIC_EMAIL,
-  WHATSAPP_URL,
 } from '../config';
+import PhoneReveal from './PhoneReveal.astro';
 import { areaHref, areas, home } from '../lib/content';
 ---
 
@@ -43,13 +41,13 @@ import { areaHref, areas, home } from '../lib/content';
       <p class="eyebrow">Contact</p>
       <p class="m-0">{FOUNDER_NAME}, founder</p>
       <p class="m-0 mt-2">
-        <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
+        <PhoneReveal />
       </p>
       <p class="m-0">
         <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
       </p>
       <p class="m-0">
-        <a href={WHATSAPP_URL}>WhatsApp</a>
+        <a href="/contact/" data-wa>WhatsApp</a>
       </p>
       <p class="m-0">
         <a href={INSTAGRAM_URL}>{INSTAGRAM_HANDLE}</a>

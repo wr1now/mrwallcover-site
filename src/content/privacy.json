@@ -9,7 +9,7 @@
       "heading": "Who we are",
       "paragraphs": [
         "This website is operated by Dorin Burcus, trading as Mr Wallcover, in London, United Kingdom. He is the controller of personal information sent through this site.",
-        "For any privacy request, write to the email address published on this site, or call the telephone number on the contact page."
+        "For any privacy request, write to the email address published on this site, or use the contact page."
       ]
     },
     {
@@ -29,8 +29,8 @@
     {
       "heading": "How the form works",
       "paragraphs": [
-        "By default the quotation form opens an email to us in your own email application. In that case the message travels as ordinary email, and no separate form company sits in the middle.",
-        "The form can be pointed at Netlify Forms or Formspree. If that is switched on, that provider processes the submission so it can reach us. Their privacy notice applies to that processing as well. The page will still show our email address, so you can write directly instead."
+        "The enquiry form is delivered to us by FormSubmit (formsubmit.co), which forwards the submission to our email address. FormSubmit processes the details so they can reach us, and may show a short anti-spam check on its own page. Its privacy notice applies to that processing.",
+        "The form includes simple anti-spam measures, such as a hidden field that people never see and a check on how quickly the form was sent. They do not use cookies on this site. You can always write to the email address on the contact page instead."
       ]
     },
     {

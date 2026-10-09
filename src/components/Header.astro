@@ -1,5 +1,6 @@
 ---
-import { BRAND_NAME, PHONE_DISPLAY, PHONE_TEL } from '../config';
+import { BRAND_NAME } from '../config';
+import PhoneReveal from './PhoneReveal.astro';
 import { navigation } from '../lib/content';
 
 interface Props {
@@ -16,7 +17,7 @@ function isCurrent(href: string) {
 
 <header class="site-header">
   <div class="container-page flex h-16 items-center justify-between gap-3 lg:h-[4.25rem]">
-    <a class="wordmark" href="/" aria-label={`${BRAND_NAME}, home`}>
+    <a class="wordmark" href="/" title="Home">
       <em>Mr</em>Wallcover
     </a>
     <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
@@ -27,10 +28,10 @@ function isCurrent(href: string) {
           </a>
         ))
       }
-      <a class="nav-link" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
+      <PhoneReveal class="nav-link reveal-phone" label="Phone" />
     </nav>
     <div class="flex items-center gap-1 lg:hidden">
-      <a class="nav-link min-w-12 justify-center px-2" href={`tel:${PHONE_TEL}`} aria-label={`Call ${BRAND_NAME} on ${PHONE_DISPLAY}`}>Call</a>
+      <a class="nav-link min-w-12 justify-center px-2" href="/contact/" aria-label={`Contact ${BRAND_NAME}`}>Contact</a>
       <details class="mobile-nav">
         <summary class="menu-toggle">
           <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -45,7 +46,7 @@ function isCurrent(href: string) {
               </a>
             ))
           }
-          <a href={`tel:${PHONE_TEL}`}>Call {PHONE_DISPLAY}</a>
+          <PhoneReveal class="reveal-phone menu-reveal" label="Show phone number" prefix="Call " />
         </nav>
       </details>
     </div>
