@@ -1,0 +1,73 @@
+---
+import { BRAND_NAME, PHONE_DISPLAY, PHONE_TEL } from '../config';
+import { navigation } from '../lib/content';
+
+interface Props {
+  path: string;
+}
+
+const { path } = Astro.props;
+
+function isCurrent(href: string) {
+  if (href === '/') return path === '/';
+  return path === href || path.startsWith(href);
+}
+---
+
+<header class="site-header">
+  <div class="container-page flex h-16 items-center justify-between gap-3 lg:h-[4.25rem]">
+    <a class="wordmark" href="/" aria-label={`${BRAND_NAME}, home`}>
+      <em>Mr</em>Wallcover
+    </a>
+    <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+      {
+        navigation.map((item) => (
+          <a class="nav-link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+            {item.label}
+          </a>
+        ))
+      }
+      <a class="nav-link" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
+    </nav>
+    <div class="flex items-center gap-1 lg:hidden">
+      <a class="nav-link px-2" href={`tel:${PHONE_TEL}`} aria-label={`Call ${BRAND_NAME} on ${PHONE_DISPLAY}`}>Call</a>
+      <details class="mobile-nav">
+        <summary class="menu-toggle">
+          <span class="open-label">Menu</span>
+          <span class="close-label hidden">Close</span>
+        </summary>
+        <nav class="mobile-links mt-6" aria-label="Mobile">
+          {
+            navigation.map((item) => (
+              <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                {item.label}
+              </a>
+            ))
+          }
+          <a href={`tel:${PHONE_TEL}`}>Call {PHONE_DISPLAY}</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<style>
+  .mobile-nav[open] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-nav[open] .menu-toggle {
+    align-self: flex-end;
+  }
+
+  .mobile-nav[open] .open-label {
+    display: none;
+  }
+  .mobile-nav:not([open]) .close-label {
+    display: none;
+  }
+  .mobile-nav[open] .close-label {
+    display: inline;
+  }
+</style>

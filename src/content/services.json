@@ -1,0 +1,89 @@
+{
+  "title": "de Gournay & Grasscloth Installer London | Mr Wallcover",
+  "description": "Wallcovering installation in London: surveying, management, supply and aftercare. Silk, grasscloth, fabric, vinyl, hand-painted papers, murals and acoustic panels.",
+  "eyebrow": "Services",
+  "heading": "Survey, supply, hang, and stay with the room.",
+  "lede": "Mr Wallcover is a wallpaper installer in London for hotels and prime homes. The same practice can take the survey, the management, the supply and the aftercare, or join a package that already has a main contractor.",
+  "pillars": [
+    {
+      "id": "surveying",
+      "title": "Surveying",
+      "paragraphs": [
+        "We measure on site, or from drawings when that is what the programme needs. Skirting, joinery, doors and windows come out of the area. What is left is the wall that will actually be hung.",
+        "Quantities include wastage and pattern repeat. Where the repeat is demanding, the allowance is generally higher, often in the region of 20%. A roll that looks generous on a plan can run short on the last pier.",
+        "The survey is also a judgement on the wall. If it is not ready for the material specified, we say so before anyone orders the last drop."
+      ]
+    },
+    {
+      "id": "management",
+      "title": "Project management",
+      "paragraphs": [
+        "Every project has a project leader on the ground. That person is the day-to-day contact for the craft, the progress and the expectations that have been set.",
+        "On a longer commission, senior oversight quality-controls the work and agrees a forward plan with you, in person, each week. Frequent and plain communication is part of the method, not a courtesy added at the end.",
+        "The team you meet on the first day is the core team that finishes. Disruption is kept low. The work is physically contained, and we leave the place tidy. In a home we are visitors. In a hotel we work around the house."
+      ]
+    },
+    {
+      "id": "supply",
+      "title": "Supply",
+      "paragraphs": [
+        "On many hotel and flagship jobs the wallcovering is free-issue from the designer, the brand or the client. We manage delivery, check the delivery against the measure, and hang what was specified.",
+        "We can also procure. Either way, the order has to cover the repeat and the wastage, or the last wall is the one that waits.",
+        "Delivery is timed to the hang. Paper sitting in a corridor for days is a risk to the goods and a nuisance to the building."
+      ]
+    },
+    {
+      "id": "installation",
+      "title": "Installation",
+      "paragraphs": [
+        "This is the craft the practice is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.",
+        "Preparation, where it is in the specification, includes stripping old paper, dustless sanding, and making good cracks and uneven surfaces. Some materials are specified with a lining paper. Some, including certain mural installs, are specified without one. We follow the specification.",
+        "Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Where Mr Wallcover is appointed as main decorating contractor, the package can include fine painting, French polishing and other specialist finishes, as it did at Brown's Hotel, Mayfair."
+      ]
+    },
+    {
+      "id": "aftercare",
+      "title": "Aftercare",
+      "paragraphs": [
+        "Aftercare is the fifth part of the service. A return inspection is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.",
+        "The detail, including care by material and what the guarantee does not cover, is on the aftercare page."
+      ]
+    }
+  ],
+  "materials": {
+    "id": "materials",
+    "eyebrow": "Materials",
+    "title": "What we hang.",
+    "intro": "A grasscloth installer and a de Gournay installer in London are often asked for as if they were different trades. They are the same hands, with different patience. These are the materials the practice hangs.",
+    "items": [
+      {
+        "title": "Silk",
+        "text": "Lustrous, and quick to mark. Hung with clean hands and an adhesive that suits the cloth. Seams are planned so the light does not catch a ridge."
+      },
+      {
+        "title": "Grasscloth and natural weaves",
+        "text": "The irregularity is the point of the material. Colour and weave vary from roll to roll, and the seams are visible. We agree that, and the direction of the weave, before the first length is cut."
+      },
+      {
+        "title": "Fabric walling",
+        "text": "Textile on the wall, often in wider goods, with care at the edges and where it meets joinery, skirtings and reveals."
+      },
+      {
+        "title": "Vinyl and contract wallcoverings",
+        "text": "The usual specification in busy hotel rooms and corridors. At The OWO, Whitehall, the install was Vescom, to walls and to parts of the joinery."
+      },
+      {
+        "title": "Hand-painted papers",
+        "text": "Scenic and panelled papers in the manner of de Gournay and Fromental. They need a sound wall, a patient set-out, and time. We hang them for London houses and hotels. This is installation, not a claim to make the paper."
+      },
+      {
+        "title": "Murals",
+        "text": "Printed and hand-made murals, set out from a fixed point so the scene meets where it should, including around doors and corners."
+      },
+      {
+        "title": "Acoustic wallcoverings and panels",
+        "text": "Acoustic wallcoverings and acoustic panels, hung so the face keeps the performance it was specified for. Adhesive, trimming and edges follow the maker's instruction."
+      }
+    ]
+  }
+}

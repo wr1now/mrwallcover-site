@@ -1,0 +1,29 @@
+[
+  {
+    "id": "browns-hotel-mayfair-video-01",
+    "src": "/media/video/browns-hotel-mayfair-video-01.mp4",
+    "poster": "/media/video/browns-hotel-mayfair-video-01-poster.jpg",
+    "width": 720,
+    "height": 1280,
+    "altKey": "video-01",
+    "caption": "Smoothing a length in a Brown's corridor."
+  },
+  {
+    "id": "browns-hotel-mayfair-video-02",
+    "src": "/media/video/browns-hotel-mayfair-video-02.mp4",
+    "poster": "/media/video/browns-hotel-mayfair-video-02-poster.jpg",
+    "width": 720,
+    "height": 1280,
+    "altKey": "video-02",
+    "caption": "A dark ground with a pale botanical trail."
+  },
+  {
+    "id": "browns-hotel-mayfair-video-03",
+    "src": "/media/video/browns-hotel-mayfair-video-03.mp4",
+    "poster": "/media/video/browns-hotel-mayfair-video-03-poster.jpg",
+    "width": 720,
+    "height": 1280,
+    "altKey": "video-03",
+    "caption": "A bedroom doorway, the paper already hung."
+  }
+]

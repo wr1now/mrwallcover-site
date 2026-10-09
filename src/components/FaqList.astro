@@ -1,0 +1,54 @@
+---
+import type { FaqItem } from '../lib/types';
+
+interface Props {
+  items: FaqItem[];
+  heading?: string;
+  lede?: string;
+  eyebrow?: string;
+  titleLevel?: 'h1' | 'h2';
+}
+
+const { items, heading, lede, eyebrow, titleLevel = 'h2' } = Astro.props;
+---
+
+<section class="faq" aria-labelledby="faq-heading">
+  <div class="container-page py-16 md:py-24">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+        {
+          heading && titleLevel === 'h1' ? (
+            <h1 id="faq-heading" class="m-0 text-[clamp(2.2rem,4vw,3.3rem)]">
+              {heading}
+            </h1>
+          ) : (
+            heading && (
+              <h2 id="faq-heading" class="m-0 text-[clamp(2.2rem,4vw,3.3rem)]">
+                {heading}
+              </h2>
+            )
+          )
+        }
+        {lede && <p class="lede mt-4">{lede}</p>}
+      </div>
+      <div class="lg:col-span-8">
+        {
+          items.map((item) => (
+            <details id={item.id}>
+              <summary>
+                <h3>{item.question}</h3>
+                <span class="plus" aria-hidden="true"></span>
+              </summary>
+              <div class="prose pb-5">
+                {item.paragraphs.map((paragraph) => (
+                  <p class="m-0">{paragraph}</p>
+                ))}
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

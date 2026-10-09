@@ -1,0 +1,57 @@
+---
+import { PUBLIC_EMAIL } from '../config';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Base from '../layouts/Base.astro';
+import { privacy } from '../lib/content';
+import { breadcrumbNode } from '../lib/schema';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Privacy', href: '/privacy/' },
+];
+---
+
+<Base
+  title={privacy.title}
+  description={privacy.description}
+  path="/privacy/"
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page pb-20">
+    <header class="page-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">{privacy.eyebrow}</p>
+      <h1>{privacy.heading}</h1>
+      <p class="mt-4 mb-0 text-stone">Updated {privacy.updated}</p>
+    </header>
+    <div class="grid gap-10">
+      {
+        privacy.sections.map((section) => (
+          <section class="max-w-2xl border-t border-line pt-6">
+            <h2 class="m-0 text-[2rem]">{section.heading}</h2>
+            <div class="prose mt-4">
+              {section.paragraphs.map((paragraph) => (
+                <p class="m-0">
+                  {paragraph.includes('email address published') ? (
+                    <>
+                      For any privacy request, write to <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>, or call
+                      the telephone number on the <a href="/contact/">contact page</a>.
+                    </>
+                  ) : paragraph.includes('ico.org.uk') ? (
+                    <>
+                      To use any of these rights, email <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>. We may
+                      need to confirm it is you. You can also complain to the Information Commissioner's Office at{' '}
+                      <a href="https://ico.org.uk/make-a-complaint/">ico.org.uk</a>.
+                    </>
+                  ) : (
+                    paragraph
+                  )}
+                </p>
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,7 @@
+[
+  { "href": "/projects/", "label": "Work" },
+  { "href": "/services/", "label": "Services" },
+  { "href": "/aftercare/", "label": "Aftercare" },
+  { "href": "/about/", "label": "About" },
+  { "href": "/contact/", "label": "Contact" }
+]

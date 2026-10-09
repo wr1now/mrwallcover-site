@@ -1,0 +1,14 @@
+{
+  "notFound": {
+    "title": "Page not found | Mr Wallcover",
+    "description": "This page is not on the Mr Wallcover site.",
+    "heading": "This page is not on the site.",
+    "text": "The address may have changed. The work, the services and a quotation are linked from here."
+  },
+  "thanks": {
+    "title": "Enquiry received | Mr Wallcover",
+    "description": "Thank you for the enquiry to Mr Wallcover.",
+    "heading": "Thank you.",
+    "text": "If your email application opened, send that message and we will reply. If the form was delivered by its host, we have it. You can also call or use WhatsApp."
+  }
+}

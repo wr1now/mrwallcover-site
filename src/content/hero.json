@@ -1,0 +1,24 @@
+{
+  "id": "browns-hotel-mayfair-02",
+  "width": 2000,
+  "height": 1500,
+  "sources": [
+    {
+      "src": "/media/hero/corridor-640.webp",
+      "width": 640
+    },
+    {
+      "src": "/media/hero/corridor-960.webp",
+      "width": 960
+    },
+    {
+      "src": "/media/hero/corridor-1280.webp",
+      "width": 1280
+    },
+    {
+      "src": "/media/hero/corridor-1920.webp",
+      "width": 1920
+    }
+  ],
+  "fallback": "/media/hero/corridor-1280.jpg"
+}

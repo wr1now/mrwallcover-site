@@ -1,0 +1,55 @@
+---
+import {
+  BRAND_NAME,
+  FOUNDER_NAME,
+  INSTAGRAM_HANDLE,
+  INSTAGRAM_URL,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  PUBLIC_EMAIL,
+  WHATSAPP_URL,
+} from '../config';
+import { home } from '../lib/content';
+---
+
+<footer class="site-footer">
+  <div class="container-page grid gap-10 md:grid-cols-12">
+    <div class="md:col-span-5">
+      <p class="footer-brand">{BRAND_NAME}</p>
+      <p class="mt-3 max-w-sm text-stone">{home.promise}</p>
+      <p class="mt-4 text-sm tracking-[0.14em] text-brass uppercase">
+        {home.pillars.join(' · ')}
+      </p>
+    </div>
+    <div class="md:col-span-3">
+      <p class="eyebrow">Visit</p>
+      <ul class="m-0 grid list-none gap-1 p-0">
+        <li><a href="/projects/">Work</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/aftercare/">Aftercare</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/faq/">Questions</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-4">
+      <p class="eyebrow">Contact</p>
+      <p class="m-0">{FOUNDER_NAME}, founder</p>
+      <p class="m-0 mt-2">
+        <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
+      </p>
+      <p class="m-0">
+        <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
+      </p>
+      <p class="m-0">
+        <a href={WHATSAPP_URL}>WhatsApp</a>
+      </p>
+      <p class="m-0">
+        <a href={INSTAGRAM_URL}>{INSTAGRAM_HANDLE}</a>
+      </p>
+    </div>
+  </div>
+  <div class="container-page mt-10 text-sm text-stone">
+    <p class="m-0">© {new Date().getFullYear()} {BRAND_NAME}. {FOUNDER_NAME}, founder. London.</p>
+  </div>
+</footer>

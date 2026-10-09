@@ -1,0 +1,58 @@
+---
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Picture from '../components/Picture.astro';
+import Base from '../layouts/Base.astro';
+import { about } from '../lib/content';
+import { breadcrumbNode } from '../lib/schema';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about/' },
+];
+// Award name will be added later. The sentence in the copy stays "award-winning (2021)".
+---
+
+<Base
+  title={about.title}
+  description={about.description}
+  path="/about/"
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page">
+    <header class="page-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">{about.eyebrow}</p>
+      <h1>{about.heading}</h1>
+      <p class="mt-3 mb-0 text-brass">{about.role}</p>
+    </header>
+    <div class="grid items-start gap-10 pb-16 md:grid-cols-12 md:pb-24">
+      <div class="prose md:col-span-6">
+        {about.paragraphs.map((paragraph) => <p class="m-0">{paragraph}</p>)}
+        <p class="m-0">
+          {about.disciplines.title} <a href="/services/">Read the services.</a>
+        </p>
+      </div>
+      <figure class="m-0 md:col-span-5 md:col-start-8">
+        <Picture id={about.image} sizes="(min-width: 768px) 28rem, 100vw" />
+        <figcaption class="caption">{about.imageCaption}</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section class="border-t border-line" aria-labelledby="values-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">{about.values.eyebrow}</p>
+      <h2 id="values-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{about.values.title}</h2>
+      <div class="mt-10 grid gap-8 md:grid-cols-3">
+        {
+          about.values.items.map((item) => (
+            <article class="border-t border-line pt-4">
+              <h3 class="m-0 text-[1.8rem]">{item.title}</h3>
+              <p class="mt-3 mb-0 text-stone">{item.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

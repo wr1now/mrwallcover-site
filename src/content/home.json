@@ -1,0 +1,135 @@
+{
+  "title": "Mr Wallcover | Wallpaper Installer London",
+  "description": "London wallpaper installer for prime hotels, flagship retail and private homes. Surveying, management, supply, installation and aftercare.",
+  "hero": {
+    "eyebrow": "Wallpaper installer, London",
+    "title": "Wallcoverings, hung properly.",
+    "lede": "Mr Wallcover surveys, manages, supplies and installs wallcoverings for prime hotels, flagship retail and private homes. Aftercare is part of the commission, not an extra.",
+    "image": "browns-hotel-mayfair-02"
+  },
+  "proof": {
+    "eyebrow": "Brown's Hotel, Mayfair",
+    "title": "On the wall.",
+    "text": "Photographs and short films taken on site during the decorating package, 2022–2024.",
+    "images": [
+      "browns-hotel-mayfair-09",
+      "browns-hotel-mayfair-04",
+      "browns-hotel-mayfair-08",
+      "browns-hotel-mayfair-10",
+      "browns-hotel-mayfair-03",
+      "browns-hotel-mayfair-06"
+    ],
+    "videos": [
+      "browns-hotel-mayfair-video-01",
+      "browns-hotel-mayfair-video-02",
+      "browns-hotel-mayfair-video-03"
+    ]
+  },
+  "promise": "Premium wallcoverings services",
+  "pillars": ["Surveying", "Management", "Supply", "Install", "Aftercare"],
+  "intro": {
+    "title": "A London practice for rooms that are meant to last.",
+    "text": "The work is hotel corridors and bedrooms, flagship shops, and private houses. Most of it is in central London. The South East is home ground, and the right project will travel further."
+  },
+  "facts": [
+    { "label": "In the trade", "value": "Since 2014" },
+    { "label": "Ground", "value": "London and the South East" },
+    { "label": "The work", "value": "Hotels, retail and homes" }
+  ],
+  "servicesIntro": {
+    "eyebrow": "The five parts",
+    "title": "From the survey to the return visit.",
+    "text": "One practice carries the job. Survey, management, supply, the hang, and the care of it afterwards."
+  },
+  "serviceCards": [
+    {
+      "href": "/services/#surveying",
+      "title": "Surveying",
+      "text": "Measure on site or from drawings. Openings come out. Repeat and wastage go in."
+    },
+    {
+      "href": "/services/#management",
+      "title": "Management",
+      "text": "A project leader on the ground, and a weekly look ahead on a longer job."
+    },
+    {
+      "href": "/services/#supply",
+      "title": "Supply",
+      "text": "Free-issue paper received and checked, or procurement when you want it."
+    },
+    {
+      "href": "/services/#installation",
+      "title": "Installation",
+      "text": "Silk, grasscloth, fabric, vinyl, hand-painted papers, murals and acoustic panels."
+    },
+    {
+      "href": "/aftercare/",
+      "title": "Aftercare",
+      "text": "A return visit once the paper has settled, and twelve months on the workmanship."
+    }
+  ],
+  "featured": {
+    "eyebrow": "Selected work",
+    "title": "Hotels, a flagship, and the rooms between.",
+    "text": "Private houses are not shown. These are commissions already on the public record.",
+    "leadSlug": "browns-hotel-mayfair",
+    "leadImage": "browns-hotel-mayfair-07"
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "Five steps, and the same people throughout.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Consultation",
+        "text": "We start with a conversation. We advise, and we listen to the date, the building, and the way you need to keep using it."
+      },
+      {
+        "number": "02",
+        "title": "Scope, room by room",
+        "text": "After the survey we estimate and write a scope of works by room. Once agreed, that scope is the template for the job. Openings come out of the measure. Pattern repeat and wastage go in."
+      },
+      {
+        "number": "03",
+        "title": "A leader on the ground",
+        "text": "Every project has a project leader who is your day-to-day contact. They look after the craft, the progress, and what you have been told to expect."
+      },
+      {
+        "number": "04",
+        "title": "Weekly oversight",
+        "text": "On a longer commission, senior oversight quality-controls the work and agrees with you, each week, what happens next."
+      },
+      {
+        "number": "05",
+        "title": "The same core team",
+        "text": "The people you meet at the start are the core team that finishes. On a long project, people can stay on site or nearby, where that suits the building and the budget."
+      }
+    ]
+  },
+  "praise": {
+    "eyebrow": "Client praise",
+    "title": "Two lines from Calico Wallpaper.",
+    "items": [
+      {
+        "quote": "Gorgeous! Thank you so much!",
+        "attribution": "Calico Wallpaper, on the Beverly 1975 installation"
+      },
+      {
+        "quote": "Thank you for the update Dorin and for your hard work!",
+        "attribution": "Calico Wallpaper"
+      }
+    ]
+  },
+  "aftercare": {
+    "eyebrow": "Aftercare",
+    "title": "The hang is not finished when we leave.",
+    "text": "About four to six weeks later we come back, once the paper has had a chance to settle. Seams and edges are looked at. For twelve months, workmanship of the hang is guaranteed. Building movement and damp are not.",
+    "href": "/aftercare/",
+    "label": "Read the aftercare"
+  },
+  "cta": {
+    "eyebrow": "A quotation",
+    "title": "Tell us the building, the material and the date.",
+    "text": "A hotel floor, a house, a shop, or a paper that needs looking after. Call, send a note, or use WhatsApp."
+  }
+}

@@ -1,0 +1,105 @@
+---
+import { FORM_ENDPOINT, FORM_PROVIDER, PUBLIC_EMAIL } from '../config';
+import { contact } from '../lib/content';
+
+const postsNatively = FORM_PROVIDER === 'netlify' || (FORM_PROVIDER === 'formspree' && FORM_ENDPOINT.length > 0);
+const action = FORM_PROVIDER === 'formspree' ? FORM_ENDPOINT : FORM_PROVIDER === 'netlify' ? '/thank-you/' : undefined;
+---
+
+<form
+  class="grid gap-5"
+  name="quote-request"
+  method="POST"
+  action={action}
+  enctype={postsNatively ? 'multipart/form-data' : undefined}
+  data-quote-form
+  data-provider={FORM_PROVIDER}
+  data-email={PUBLIC_EMAIL}
+  data-netlify={FORM_PROVIDER === 'netlify' ? 'true' : undefined}
+  data-netlify-honeypot={FORM_PROVIDER === 'netlify' ? 'bot-field' : undefined}
+>
+  <input type="hidden" name="form-name" value="quote-request" />
+  <p class="honeypot">
+    <label>
+      Company website
+      <input name="bot-field" tabindex="-1" autocomplete="off" />
+    </label>
+  </p>
+  <div class="grid gap-5 md:grid-cols-2">
+    <div class="field">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" autocomplete="name" required />
+    </div>
+    <div class="field">
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required />
+    </div>
+    <div class="field">
+      <label for="project-type">Project type</label>
+      <select id="project-type" name="project-type" required>
+        <option value="">Choose one</option>
+        <option>Hotel</option>
+        <option>Prime residential</option>
+        <option>Retail</option>
+        <option>Aftercare of existing work</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="location">Location</label>
+      <input id="location" name="location" type="text" autocomplete="address-level2" />
+    </div>
+    <div class="field">
+      <label for="start-date">Preferred start</label>
+      <input id="start-date" name="start-date" type="text" placeholder="A month is enough" />
+    </div>
+  </div>
+  <div class="field">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+  </div>
+  <p class="m-0 text-stone">{contact.photoNote}</p>
+  {
+    postsNatively && (
+      <div class="field">
+        <label for="photos">Photographs, if you have them</label>
+        <input id="photos" name="photos" type="file" accept="image/*" multiple />
+      </div>
+    )
+  }
+  <div>
+    <button class="btn btn-solid-ink" type="submit">{contact.submit}</button>
+  </div>
+  <p id="form-status" class="m-0" role="status" hidden></p>
+</form>
+
+<script is:inline>
+  const form = document.querySelector('[data-quote-form]');
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      const provider = form.getAttribute('data-provider');
+      if (provider === 'netlify' || provider === 'formspree') return;
+      event.preventDefault();
+      const data = new FormData(form);
+      if (String(data.get('bot-field') || '').trim()) return;
+      const lines = [];
+      for (const [key, value] of data.entries()) {
+        if (key === 'bot-field' || key === 'form-name') continue;
+        if (typeof value !== 'string' || !value.trim()) continue;
+        lines.push(key + ': ' + value.trim());
+      }
+      const email = form.getAttribute('data-email');
+      const href = 'mailto:' + email + '?subject=' + encodeURIComponent('Quotation request') + '&body=' + encodeURIComponent(lines.join('\n'));
+      window.location.href = href;
+      const status = document.getElementById('form-status');
+      if (status) {
+        status.hidden = false;
+        status.textContent = 'Your email application should open with this enquiry. If it does not, write to ' + email + '.';
+      }
+    });
+  }
+</script>

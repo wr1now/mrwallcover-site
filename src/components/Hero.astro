@@ -1,0 +1,21 @@
+---
+import { altFor, hero } from '../lib/content';
+
+const srcset = hero.sources.map((source) => `${source.src} ${source.width}w`).join(', ');
+const alt = altFor(hero.id);
+---
+
+<div class="hero-media">
+  <picture>
+    <source type="image/webp" srcset={srcset} sizes="100vw" />
+    <img
+      src={hero.fallback}
+      alt={alt}
+      width={hero.width}
+      height={hero.height}
+      sizes="100vw"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </picture>
+</div>
