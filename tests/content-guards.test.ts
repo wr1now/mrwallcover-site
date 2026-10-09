@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readdir, readFile } from 'node:fs/promises';
+import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { test } from 'node:test';
 
@@ -84,6 +84,32 @@ test('exterior works lists only the three cleared projects', async () => {
   assert.match(services, /exterior-works/);
   const hackney = await readFile('src/content/case-studies/house-of-hackney-st-michaels.md', 'utf8');
   assert.doesNotMatch(hackney, /exterior-works/);
+});
+
+test('House of Hackney client photographs are committed, so the build does not download them', async () => {
+  const manifest = JSON.parse(await readFile('scripts/credited/house-of-hackney.json', 'utf8')) as {
+    images: Record<string, { image: string }>;
+  };
+  const missing: string[] = [];
+  for (const id of Object.keys(manifest.images)) {
+    for (const file of [
+      `public/media/img/${id}.webp`,
+      `public/media/img/${id}.jpg`,
+      `public/media/img/thumbs/${id}-800.webp`,
+      `public/media/img/thumbs/${id}-800.jpg`,
+    ]) {
+      try {
+        await stat(file);
+      } catch {
+        missing.push(file);
+      }
+    }
+  }
+  assert.deepEqual(missing, []);
+  const rights = await readFile('docs/asset-rights.md', 'utf8');
+  for (const frame of Object.values(manifest.images)) {
+    assert.match(rights, new RegExp(frame.image.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  }
 });
 
 test('the four-second submit trap is gone', async () => {

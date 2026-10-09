@@ -24,7 +24,7 @@ test('the built site keeps private names and the verification token out of the w
   assert.match(html, /98zhpiyda4qDA6fYcKJ-zC6pItC6-LZKqqEugO5-fKo/);
   assert.match(html, /Dorin Burcus/);
   assert.match(html, /info@mrwallcover.com/);
-  assert.match(html, /Exceptional wallcoverings/);
+  assert.match(html, /hung properly/);
   assert.match(html, /DoubleTree by Hilton London – West End/);
   assert.match(html, /DoubleTree by Hilton London – Victoria/);
   assert.match(html, /The Biltmore Mayfair/);
