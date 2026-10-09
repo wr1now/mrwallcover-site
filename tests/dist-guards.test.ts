@@ -72,6 +72,42 @@ test('the fact-sheet sentence appears identically in the footer, the JSON-LD and
   assert.doesNotMatch(llms, /Lanesborough|Moxy/);
 });
 
+test('each case-study Article carries its frontmatter dates and Dorin as author; the sitemap lastmod matches', async () => {
+  const sitemap = await readFile('dist/sitemap-0.xml', 'utf8');
+  const entries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => m[1]);
+  assert.ok(entries.length > 30);
+  const lastmods = new Map<string, string | undefined>();
+  for (const entry of entries) {
+    const loc = entry.match(/<loc>([^<]+)<\/loc>/)![1];
+    lastmods.set(new URL(loc).pathname, entry.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1]);
+  }
+  let articles = 0;
+  for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
+    const text = await readFile(`src/content/case-studies/${name}`, 'utf8');
+    const fm = JSON.parse(text.match(/^---\n([\s\S]*?)\n---\n/)![1]) as { slug: string; draft?: boolean; published: string; updated: string };
+    const pagePath = `/projects/${fm.slug}/`;
+    if (fm.draft) {
+      assert.equal(lastmods.has(pagePath), false, `${pagePath} is a draft`);
+      continue;
+    }
+    const html = await readFile(`dist${pagePath}index.html`, 'utf8');
+    const graph = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]) as { '@graph': Record<string, any>[] };
+    const article = graph['@graph'].find((node) => node['@type'] === 'Article');
+    assert.ok(article, `${pagePath} has an Article`);
+    assert.equal(article.datePublished, fm.published, `${pagePath} datePublished`);
+    assert.equal(article.dateModified, fm.updated, `${pagePath} dateModified`);
+    assert.equal(article.author['@id'], 'https://www.mrwallcover.com/about/#dorin', `${pagePath} author`);
+    assert.equal(article.author.name, 'Dorin Burcus');
+    // @astrojs/sitemap prints the date as an ISO timestamp at midnight; the date part is the frontmatter value.
+    assert.equal(lastmods.get(pagePath)?.slice(0, 10), fm.updated, `${pagePath} sitemap lastmod`);
+    articles += 1;
+  }
+  assert.ok(articles >= 10);
+  for (const [pagePath, lastmod] of lastmods) {
+    if (!pagePath.startsWith('/projects/') || pagePath === '/projects/') assert.equal(lastmod, undefined, `${pagePath} must not carry a build-time lastmod`);
+  }
+});
+
 test('the homepage does not load the 3D engine up front', async () => {
   const home = await readFile('dist/index.html', 'utf8');
   assert.equal(home.includes('three.module'), false);

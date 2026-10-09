@@ -195,7 +195,14 @@ export function caseStudyArticleNode(opts: {
   location: string;
   dates?: string | null;
   mentions?: string[];
+  /** ISO dates from the case-study frontmatter (stamped from git by scripts/stamp-case-study-dates.mjs). Required, never the build time. */
+  published: string;
+  updated: string;
 }) {
+  const iso = /^\d{4}-\d{2}-\d{2}$/;
+  if (!iso.test(opts.published) || !iso.test(opts.updated)) {
+    throw new Error(`Case study ${opts.url} needs ISO published and updated dates in its frontmatter`);
+  }
   return {
     '@type': 'Article',
     '@id': `${opts.url}#article`,
@@ -204,6 +211,8 @@ export function caseStudyArticleNode(opts: {
     url: opts.url,
     mainEntityOfPage: { '@id': `${opts.url}#webpage` },
     inLanguage: 'en-GB',
+    datePublished: opts.published,
+    dateModified: opts.updated,
     author: { '@type': 'Person', '@id': FOUNDER_ID, name: facts.founder.name, url: FOUNDER_URL },
     publisher: { '@id': BUSINESS_ID },
     ...(opts.images.length ? { image: opts.images } : {}),

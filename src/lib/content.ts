@@ -70,6 +70,10 @@ interface CaseStudyData {
   draft?: boolean;
   /** Interior photographs are not in the repo. The page shows a labelled placeholder. */
   awaitingPhotos?: boolean;
+  /** ISO date the page first entered the repository. Stamped by scripts/stamp-case-study-dates.mjs, never by the build. */
+  published: string;
+  /** ISO date of the last change to the file. Stamped by the same script. */
+  updated: string;
 }
 
 type CaseStudyModule = { frontmatter: CaseStudyData; Content: any };
@@ -99,6 +103,14 @@ const CASE_STUDY_ORDER = [
   'calico-lee-broom-overture',
   'hilton-garden-inn-silverstone',
 ];
+
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+for (const mod of Object.values(caseStudyModules)) {
+  const { slug, published, updated } = mod.frontmatter;
+  if (!ISO_DATE.test(published ?? '') || !ISO_DATE.test(updated ?? '')) {
+    throw new Error(`Case study ${slug} lacks ISO published/updated dates. Run: node scripts/stamp-case-study-dates.mjs`);
+  }
+}
 
 export const caseStudies = Object.values(caseStudyModules)
   .filter((mod) => !mod.frontmatter.draft)
@@ -141,6 +153,8 @@ function fromCaseStudy(cs: CaseStudyData, base?: Project): Project {
     awaitingPhotos: Boolean(cs.awaitingPhotos),
     group: cs.group ?? undefined,
     credits: Object.fromEntries(cs.gallery.filter((g) => g.credit).map((g) => [g.id, g.credit as string])),
+    published: cs.published,
+    updated: cs.updated,
   };
 }
 

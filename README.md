@@ -47,6 +47,8 @@ The phone number is not in the repository. See `SITE_PHONE` below.
 
 The award line on the site is “Award-winning (2021)”. The award’s name will be added later. See the comment in `src/config.ts`. Do not invent a title.
 
+Case studies live in `src/content/case-studies/`. Each carries `published` and `updated` dates in its frontmatter; they feed the Article structured data and the sitemap. After editing a case study, run `node scripts/stamp-case-study-dates.mjs` so the `updated` date follows the change. The build refuses a case study without both dates and never substitutes the build time.
+
 Photographs are in `public/media/`. Hotel photographs that are not our own are used small, as project cards. Brown’s Hotel photographs and films were taken on site and are shown in full on that project.
 
 ## Enquiry form

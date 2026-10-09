@@ -26,7 +26,9 @@
     { "id": "inverness-terrace-exterior-01", "credit": null },
     { "id": "inverness-terrace-exterior-09", "credit": null },
     { "id": "inverness-terrace-exterior-04", "credit": null }
-  ]
+  ],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 

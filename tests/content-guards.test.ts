@@ -76,6 +76,21 @@ test('draft case studies are filtered out before they are built', async () => {
   assert.match(content, /!\s*mod\.frontmatter\.draft/);
 });
 
+test('every case study carries ISO published and updated dates as data, and the sitemap never uses the build time', async () => {
+  const iso = /^\d{4}-\d{2}-\d{2}$/;
+  for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
+    const text = await readFile(`src/content/case-studies/${name}`, 'utf8');
+    const fm = JSON.parse(text.match(/^---\n([\s\S]*?)\n---\n/)![1]) as { published?: string; updated?: string };
+    assert.match(fm.published ?? '', iso, `${name} published`);
+    assert.match(fm.updated ?? '', iso, `${name} updated`);
+    assert.ok((fm.updated as string) >= (fm.published as string), `${name} updated before published`);
+  }
+  const config = await readFile('astro.config.mjs', 'utf8');
+  assert.doesNotMatch(config, /lastmod:\s*new Date/);
+  const schema = await readFile('src/lib/schema.ts', 'utf8');
+  assert.doesNotMatch(schema, /new Date\(/);
+});
+
 test('held hotels stay out of the public content module', async () => {
   const content = await readFile('src/lib/content.ts', 'utf8');
   const hotels = await readFile('src/content/hotels.json', 'utf8');

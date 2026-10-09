@@ -16,7 +16,9 @@
   "group": null,
   "standfirst": "Guest room wallcoverings at the Victoria hotel through the spring and summer of 2023.",
   "hero": null,
-  "gallery": []
+  "gallery": [],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 
