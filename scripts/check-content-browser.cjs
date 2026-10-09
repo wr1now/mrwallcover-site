@@ -16,13 +16,27 @@ const { chromium: playwright } = require(process.env.MW_PLAYWRIGHT_MODULE || 'pl
   const page = await context.newPage();
   const errors=[];page.on('pageerror', e=>errors.push(e.message));
   const base='http://127.0.0.1:4321';
+  // Expected hub counts come from the guide frontmatter, not a hard-coded number. dist-review is built with
+  // MW_CONTENT_PREVIEW=1, so draft guides are on its hub too; the quantity calculator card is added by src/lib/guides.ts.
+  const guideDir=path.join(process.cwd(),'src/content/guides');
+  const guideCategories=fs.readdirSync(guideDir).filter(f=>f.endsWith('.md')).map(f=>{
+    const frontmatter=fs.readFileSync(path.join(guideDir,f),'utf8').match(/^---\n([\s\S]*?)\n---/);
+    const category=frontmatter&&frontmatter[1].match(/^category:\s*"?([a-z]+)"?\s*$/m);
+    assert.ok(category,`${f}: no category in frontmatter`);
+    return category[1];
+  });
+  const calculatorCategory=fs.readFileSync(path.join(process.cwd(),'src/lib/guides.ts'),'utf8').match(/quantityCalculatorCard[\s\S]*?category:\s*'([a-z]+)'/);
+  assert.ok(calculatorCategory,'src/lib/guides.ts: quantityCalculatorCard category not found');
+  const hubCategories=[...guideCategories,calculatorCategory[1]];
+  const expectedCards=hubCategories.length;
+  const expectedChoosing=hubCategories.filter(c=>c==='choosing').length;
   await page.goto(base+'/advice/');
-  assert.equal(await page.locator('[data-guide-category]:visible').count(),10);
+  assert.equal(await page.locator('[data-guide-category]:visible').count(),expectedCards);
   await page.locator('[data-filter="choosing"]').click();
-  assert.equal(await page.locator('[data-guide-category]:visible').count(),3);
+  assert.equal(await page.locator('[data-guide-category]:visible').count(),expectedChoosing);
   await page.locator('[data-filter="all"]').click();
   await page.waitForFunction(() => document.querySelector('[data-filter="all"]').getAttribute('aria-pressed') === 'true');
-  assert.equal(await page.locator('[data-guide-category]:visible').count(),10);
+  assert.equal(await page.locator('[data-guide-category]:visible').count(),expectedCards);
   await page.screenshot({path:'docs/content/review/guide-desktop.png'});
   const overflow=[];
   for(const width of [390,768,1024,1440]) {
@@ -91,7 +105,10 @@ const { chromium: playwright } = require(process.env.MW_PLAYWRIGHT_MODULE || 'pl
   assert.equal(download.suggestedFilename(),'wallcovering-package-schedule.csv');
   const noJs=await browser.newContext({javaScriptEnabled:false});
   const staticPage=await noJs.newPage();await staticPage.goto(base+'/advice/grasscloth-seams-and-variation/');
-  assert.match(await staticPage.locator('article.guide-prose').innerText(),/panels are part of the appearance/);
+  // The article must render without JavaScript: look for the opening of the guide's own first paragraph, read from the Markdown, not a remembered phrase.
+  const guideBody=fs.readFileSync(path.join(guideDir,'grasscloth-seams-and-variation.md'),'utf8').replace(/^---\n[\s\S]*?\n---\n/,'');
+  const firstParagraph=guideBody.split('\n').find(line=>line.trim()&&!line.startsWith('#')).replace(/\[([^\]]+)\]\([^)]*\)/g,'$1').trim();
+  assert.ok((await staticPage.locator('article.guide-prose').innerText()).includes(firstParagraph.slice(0,60)),`article without JavaScript should open with: ${firstParagraph.slice(0,60)}`);
   assert.equal(await staticPage.locator('h1').count(),1);
   await noJs.close();
   const result={filtering:true,keyboardSkipLink:true,materialPreferences:true,shortlist:true,professionalFormSubmissions:submissions.length,transport:'FormSubmit intercepted locally; no external enquiry sent',wetAreaReview:true,reset:true,scheduleDownload:true,noJavaScriptArticle:true,overflow,errors};
