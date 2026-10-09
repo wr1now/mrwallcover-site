@@ -1,0 +1,483 @@
+/*
+ * Glass Atelier art-direction variants. PREVIEW ONLY.
+ *
+ * Injected by scripts/glass-screens.cjs with page.addStyleTag after the page
+ * has loaded, together with <html data-variant="a|b|c">. This file is not
+ * imported anywhere in src/, so nothing here reaches dist/. It exists so the
+ * three treatments can be compared on the real pages and real photographs
+ * before the tokens, Glass component, header and dock are built (G3 to G6).
+ *
+ *   a  champagne inset   floating inset champagne-glass nav, warm ivory editorial
+ *   b  smoked gallery    smoked glass over deeper photography, light text on heads
+ *   c  clear minimal     lightest glass, most paper, hairlines only
+ *
+ * Photographs used (already in the repo, own site photos, checked by eye as
+ * finished rooms; see docs/glass-atelier/ART_DIRECTION.md):
+ *   /media/img/browns-hotel-mayfair-11.webp  finished wall with mirror and door, Brown's Hotel
+ *   /media/img/browns-hotel-mayfair-09.webp  finished bedroom, lit wall lights, Brown's Hotel
+ */
+
+/* ---------- shared: the Glass Atelier scale, applied in every variant ---------- */
+
+html[data-variant] {
+  --ga-ink: #141210;
+  --ga-ivory: #f4f0e8;
+  --ga-paper: #f7f4ee;
+  --ga-brass: #6b542f;
+  --ga-gold: #c6a36a;
+  --ga-stone: #4e4942;
+  --ga-line: #ddd6c8;
+  --ga-radius: 1.1rem;
+  --ga-blur: 20px;
+  --ga-dur-control: 180ms;
+  --ga-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ga-gutter: max(1.25rem, calc(50vw - 40rem + 2.5rem));
+}
+
+html[data-variant] body {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+html[data-variant] .eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+}
+
+html[data-variant] .page-head h1 {
+  font-size: clamp(2.6rem, 1.4rem + 4.6vw, 5.5rem);
+  max-width: 14ch;
+  line-height: 0.98;
+}
+
+html[data-variant] .page-head .lede {
+  font-size: 1.125rem;
+  max-width: 36rem;
+}
+
+@media (min-width: 1024px) {
+  html[data-variant] .hero-copy h1 {
+    font-size: clamp(2.8rem, 2.1rem + 1.6vw, 3.9rem);
+    max-width: 20ch;
+  }
+  html[data-variant] .container-page {
+    max-width: 80rem;
+    padding-inline: 2.5rem;
+  }
+}
+
+/* The header becomes a floating inset bar with a real glass recipe. */
+html[data-variant] .site-header {
+  position: sticky;
+  top: 0.75rem;
+  width: min(84rem, calc(100% - 2rem));
+  margin: 0.75rem auto 0;
+  border-radius: var(--ga-radius);
+  border: 1px solid;
+  padding-inline: 0.5rem;
+  transition: background-color var(--ga-dur-control) var(--ga-ease);
+}
+
+html[data-variant] .site-header .container-page {
+  max-width: none;
+  padding-inline: 1.25rem;
+}
+
+html[data-variant] .nav-link {
+  font-size: 0.95rem;
+  padding-inline: 0.15rem;
+}
+
+html[data-variant] button.nav-link.reveal-phone {
+  font-size: 0.95rem;
+}
+
+html[data-variant] .site-header .btn {
+  border-radius: 999px;
+  padding-inline: 1.35rem;
+  min-height: 44px;
+}
+
+@media (max-width: 1023px) {
+  html[data-variant] .dock a,
+  html[data-variant] .dock .dock-phone {
+    min-height: 56px;
+    font-size: 0.9rem;
+  }
+  html[data-variant] .dock a + a,
+  html[data-variant] .dock .dock-phone {
+    border-left: 1px solid;
+  }
+  html[data-variant] .site-header {
+    width: calc(100% - 1.5rem);
+    top: 0.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Cards: a quiet paper panel with a hairline, replacing the top-rule-only card. */
+html[data-variant] .card-link,
+html[data-variant] .project-card {
+  padding: 1.5rem;
+  border: 1px solid var(--ga-line);
+  border-radius: calc(var(--ga-radius) * 0.6);
+  background: var(--ga-paper);
+  transition: transform var(--ga-dur-control) var(--ga-ease), box-shadow var(--ga-dur-control) var(--ga-ease);
+}
+
+html[data-variant] .project-card .media-frame {
+  border-radius: calc(var(--ga-radius) * 0.4);
+  overflow: hidden;
+}
+
+/*
+ * Photographic page head, shared by A (material) and B (material + project).
+ * The eyebrow, title and lede each carry the same glass recipe and sit flush,
+ * so together they read as one panel without wrapping markup.
+ */
+html[data-variant="a"] body:has(.material-decision) .page-head,
+html[data-variant="b"] body:has(.material-decision) .page-head,
+html[data-variant="b"] body:has(.case-study) .page-head {
+  position: relative;
+  margin-inline: calc(50% - 50vw);
+  padding: 1.75rem var(--ga-gutter) 2.5rem;
+  min-height: 32rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: var(--ga-ink);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+html[data-variant="a"] body:has(.material-decision) .page-head > nav,
+html[data-variant="b"] body:has(.material-decision) .page-head > nav,
+html[data-variant="b"] body:has(.case-study) .page-head > nav {
+  margin-bottom: auto;
+  width: fit-content;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+}
+
+html[data-variant="a"] body:has(.material-decision) .page-head > nav .crumbs,
+html[data-variant="b"] body:has(.material-decision) .page-head > nav .crumbs,
+html[data-variant="b"] body:has(.case-study) .page-head > nav .crumbs {
+  margin: 0;
+  color: inherit;
+}
+
+html[data-variant="a"] body:has(.material-decision) .page-head > .eyebrow,
+html[data-variant="a"] body:has(.material-decision) .page-head > h1,
+html[data-variant="a"] body:has(.material-decision) .page-head > .lede,
+html[data-variant="b"] body:has(.material-decision) .page-head > .eyebrow,
+html[data-variant="b"] body:has(.material-decision) .page-head > h1,
+html[data-variant="b"] body:has(.material-decision) .page-head > .lede,
+html[data-variant="b"] body:has(.case-study) .page-head > .eyebrow,
+html[data-variant="b"] body:has(.case-study) .page-head > h1,
+html[data-variant="b"] body:has(.case-study) .page-head > .lede {
+  box-sizing: border-box;
+  width: min(100%, 38rem);
+  max-width: none;
+  margin: 0;
+  padding-inline: 1.5rem;
+}
+
+html[data-variant="a"] body:has(.material-decision) .page-head > .eyebrow,
+html[data-variant="b"] body:has(.material-decision) .page-head > .eyebrow,
+html[data-variant="b"] body:has(.case-study) .page-head > .eyebrow {
+  padding-top: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-radius: var(--ga-radius) var(--ga-radius) 0 0;
+  border-bottom: 0 !important;
+}
+
+html[data-variant="a"] body:has(.material-decision) .page-head > h1,
+html[data-variant="b"] body:has(.material-decision) .page-head > h1,
+html[data-variant="b"] body:has(.case-study) .page-head > h1 {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  border-radius: 0;
+  font-size: clamp(2.4rem, 1.2rem + 3.8vw, 4.4rem);
+}
+
+html[data-variant="a"] body:has(.material-decision) .page-head > .lede,
+html[data-variant="b"] body:has(.material-decision) .page-head > .lede,
+html[data-variant="b"] body:has(.case-study) .page-head > .lede {
+  padding-top: 0.75rem;
+  padding-bottom: 1.5rem;
+  border-top: 0 !important;
+  border-radius: 0 0 var(--ga-radius) var(--ga-radius);
+}
+
+/* ---------- A: champagne inset ---------- */
+
+html[data-variant="a"] body {
+  background: var(--ga-ivory);
+}
+
+html[data-variant="a"] .site-header,
+html[data-variant="a"] .dock,
+html[data-variant="a"] body:has(.material-decision) .page-head > nav,
+html[data-variant="a"] body:has(.material-decision) .page-head > .eyebrow,
+html[data-variant="a"] body:has(.material-decision) .page-head > h1,
+html[data-variant="a"] body:has(.material-decision) .page-head > .lede {
+  background: color-mix(in srgb, var(--ga-ivory) 74%, transparent);
+  color: var(--ga-ink);
+  border: 1px solid color-mix(in srgb, white 62%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(var(--ga-blur)) saturate(1.2);
+  -webkit-backdrop-filter: blur(var(--ga-blur)) saturate(1.2);
+}
+
+html[data-variant="a"] .site-header {
+  box-shadow:
+    0 14px 36px rgba(20, 18, 16, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+html[data-variant="a"] body:has(.material-decision) .page-head {
+  background-image: url("/media/img/browns-hotel-mayfair-11.webp");
+  background-position: center 30%;
+}
+
+html[data-variant="a"] body:has(.material-decision) .page-head > .eyebrow {
+  color: var(--ga-brass);
+}
+
+html[data-variant="a"] body:has(.material-decision) .page-head > .lede {
+  color: var(--ga-stone);
+}
+
+@media (max-width: 1023px) {
+  html[data-variant="a"] .dock {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    border-radius: var(--ga-radius);
+    padding-bottom: 0;
+    overflow: hidden;
+    box-shadow:
+      0 -2px 28px rgba(20, 18, 16, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+  html[data-variant="a"] body {
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  }
+  html[data-variant="a"] .hero {
+    min-height: calc(100svh - 4.0625rem - 4.5rem - env(safe-area-inset-bottom) + 4.75rem);
+  }
+}
+
+html[data-variant="a"] .dock a + a,
+html[data-variant="a"] .dock .dock-phone {
+  border-left-color: color-mix(in srgb, var(--ga-ink) 10%, transparent);
+}
+
+html[data-variant="a"] .dock a:first-child {
+  background: var(--ga-ink);
+  color: var(--ga-ivory);
+}
+
+html[data-variant="a"] .hero-copy {
+  background: linear-gradient(180deg, #1a1714 0%, #141210 100%);
+}
+
+html[data-variant="a"] .hero-copy .btn-solid,
+html[data-variant="a"] .hero-copy .btn-ghost {
+  border-radius: 999px;
+}
+
+html[data-variant="a"] .hero-copy .btn-ghost {
+  border-color: color-mix(in srgb, var(--ga-ivory) 45%, transparent);
+}
+
+html[data-variant="a"] body:has(.case-study) .pb-12 > figure .media-frame {
+  border-radius: var(--ga-radius);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(20, 18, 16, 0.14);
+}
+
+/* ---------- B: smoked gallery ---------- */
+
+html[data-variant="b"] body {
+  background: var(--ga-ivory);
+}
+
+html[data-variant="b"] .site-header,
+html[data-variant="b"] .dock,
+html[data-variant="b"] body:has(.material-decision) .page-head > nav,
+html[data-variant="b"] body:has(.material-decision) .page-head > .eyebrow,
+html[data-variant="b"] body:has(.material-decision) .page-head > h1,
+html[data-variant="b"] body:has(.material-decision) .page-head > .lede,
+html[data-variant="b"] body:has(.case-study) .page-head > nav,
+html[data-variant="b"] body:has(.case-study) .page-head > .eyebrow,
+html[data-variant="b"] body:has(.case-study) .page-head > h1,
+html[data-variant="b"] body:has(.case-study) .page-head > .lede {
+  background: color-mix(in srgb, var(--ga-ink) 64%, transparent);
+  color: var(--ga-ivory);
+  border: 1px solid color-mix(in srgb, white 24%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+}
+
+html[data-variant="b"] .site-header {
+  box-shadow:
+    0 14px 36px rgba(20, 18, 16, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+html[data-variant="b"] .site-header .wordmark em {
+  color: var(--ga-gold);
+}
+
+html[data-variant="b"] .site-header .nav-link[aria-current="page"] {
+  box-shadow: inset 0 -1px 0 var(--ga-gold);
+}
+
+html[data-variant="b"] .site-header .btn-solid-ink,
+html[data-variant="b"] .dock a:first-child {
+  background: var(--ga-ivory);
+  color: var(--ga-ink);
+}
+
+html[data-variant="b"] .site-header :focus-visible,
+html[data-variant="b"] .dock :focus-visible {
+  outline-color: var(--ga-gold);
+}
+
+@media (max-width: 1023px) {
+  html[data-variant="b"] .dock {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: var(--ga-radius) var(--ga-radius) 0 0;
+    padding-bottom: env(safe-area-inset-bottom);
+    overflow: hidden;
+    box-shadow:
+      0 -2px 28px rgba(20, 18, 16, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+  html[data-variant="b"] body {
+    padding-bottom: calc(3.6rem + env(safe-area-inset-bottom));
+  }
+}
+
+html[data-variant="b"] .dock a + a,
+html[data-variant="b"] .dock .dock-phone {
+  border-left-color: color-mix(in srgb, white 16%, transparent);
+}
+
+/* Home: the header floats over the top of the hero instead of sitting above it. */
+@media (min-width: 1024px) {
+  html[data-variant="b"] body.is-home .site-header {
+    margin-bottom: calc(-4.25rem - 0.75rem);
+  }
+  html[data-variant="b"] body.is-home .hero {
+    padding-top: 5rem;
+  }
+}
+
+html[data-variant="b"] .hero-copy .btn-solid,
+html[data-variant="b"] .hero-copy .btn-ghost {
+  border-radius: 999px;
+}
+
+html[data-variant="b"] body:has(.material-decision) .page-head {
+  background-image: url("/media/img/browns-hotel-mayfair-11.webp");
+  background-position: center 30%;
+}
+
+html[data-variant="b"] body:has(.case-study) .page-head {
+  background-image: url("/media/img/browns-hotel-mayfair-09.webp");
+  background-position: center 45%;
+  min-height: 36rem;
+}
+
+html[data-variant="b"] body:has(.case-study) .pb-12 > figure:first-child {
+  display: none;
+}
+
+html[data-variant="b"] .page-head > nav a {
+  color: inherit;
+}
+
+html[data-variant="b"] .page-head > .eyebrow {
+  color: var(--ga-gold);
+}
+
+html[data-variant="b"] .page-head > .lede {
+  color: #efe7da;
+}
+
+/* ---------- C: clear minimal ---------- */
+
+html[data-variant="c"] body {
+  background: var(--ga-paper);
+}
+
+html[data-variant="c"] .site-header {
+  top: 0;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ga-ink) 10%, transparent);
+  background: color-mix(in srgb, white 34%, transparent);
+  box-shadow: none;
+  backdrop-filter: blur(10px) saturate(1.05);
+  -webkit-backdrop-filter: blur(10px) saturate(1.05);
+}
+
+html[data-variant="c"] .site-header .btn {
+  border-radius: 0;
+}
+
+@media (max-width: 1023px) {
+  html[data-variant="c"] .dock {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    border-top: 1px solid color-mix(in srgb, var(--ga-ink) 10%, transparent);
+    border-radius: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: color-mix(in srgb, white 34%, transparent);
+    box-shadow: none;
+    backdrop-filter: blur(10px) saturate(1.05);
+    -webkit-backdrop-filter: blur(10px) saturate(1.05);
+  }
+  html[data-variant="c"] body {
+    padding-bottom: calc(3.6rem + env(safe-area-inset-bottom));
+  }
+}
+
+html[data-variant="c"] .dock a + a,
+html[data-variant="c"] .dock .dock-phone {
+  border-left-color: color-mix(in srgb, var(--ga-ink) 10%, transparent);
+}
+
+html[data-variant="c"] .card-link,
+html[data-variant="c"] .project-card {
+  padding: 1.25rem 0 0;
+  border: 0;
+  border-top: 1px solid var(--ga-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+html[data-variant="c"] .page-head {
+  padding-block: 6rem 3.5rem;
+}
+
+html[data-variant="c"] .page-head h1 {
+  font-size: clamp(2.6rem, 1rem + 5vw, 6rem);
+  letter-spacing: -0.025em;
+}
+
+html[data-variant="c"] .hero-copy {
+  background: var(--ga-ink);
+}

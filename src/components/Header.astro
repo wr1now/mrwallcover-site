@@ -1,5 +1,26 @@
 ---
-import { BRAND_NAME } from '../config';
+/**
+ * Floating inset champagne-glass header (stage 5, step G5).
+ *
+ * Desktop: wordmark, the navigation items, the phone reveal (only when
+ * SITE_PHONE was set at build time) and the "Start your project" action.
+ * Phones: wordmark, "Start" and a disclosure button that opens the mobile
+ * menu panel below the bar. The panel is a sibling of the header so the bar
+ * stays the only glass surface and the panel stays opaque ivory.
+ *
+ * Until this component's own script runs (html.js-nav), the panel renders in
+ * flow under the bar and the toggle is hidden, so every link stays reachable
+ * without JavaScript or if the module fails. Once the script runs the panel is
+ * a modal dialog (role="dialog", aria-modal, set by the script so the in-flow
+ * version stays a plain nav) that works by click, keyboard and touch:
+ * Enter/Space toggle, focus moves into the panel on open, Tab cycles through
+ * the bar and the panel (the rest of the page is inert), Escape, a close by
+ * the toggle, a same-page link or a resize to desktop close it and return
+ * focus to the toggle (a link to another page closes it and the page
+ * navigates), and the page behind does not scroll while it is open (no layout
+ * shift: the scrollbar width is compensated).
+ */
+import Glass from './Glass.astro';
 import PhoneReveal from './PhoneReveal.astro';
 import { navigation } from '../lib/content';
 
@@ -15,12 +36,12 @@ function isCurrent(href: string) {
 }
 ---
 
-<header class="site-header glass-champagne">
-  <div class="container-page flex h-16 items-center justify-between gap-3 lg:h-[4.25rem]">
+<Glass element="header" variant="champagne" class="site-header" data-site-header>
+  <div class="site-header-row">
     <a class="wordmark" href="/" title="Home">
       <em>Mr</em>Wallcover
     </a>
-    <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+    <nav class="primary-nav" aria-label="Primary">
       {
         navigation.map((item) => (
           <a class="nav-link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
@@ -29,64 +50,102 @@ function isCurrent(href: string) {
         ))
       }
       <PhoneReveal class="nav-link reveal-phone" label="Phone" />
-      <a class="btn btn-solid-ink" href="/contact/">Start your project</a>
+      <a class="btn btn-solid-ink header-action" href="/contact/">Start your project</a>
     </nav>
-    <div class="flex items-center gap-1 lg:hidden">
-      <a class="nav-link min-w-12 justify-center px-2" href="/contact/">Start</a>
-      <details class="mobile-nav" data-mobile-nav>
-        <summary class="menu-toggle">
-          <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
-          <span class="open-label">Menu</span>
-          <span class="close-label hidden">Close</span>
-        </summary>
-        <nav class="mobile-links mt-6" aria-label="Mobile">
-          {
-            navigation.map((item) => (
-              <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
-                {item.label}
-              </a>
-            ))
-          }
-          <a href="/contact/">Start your project</a>
-          <PhoneReveal class="reveal-phone menu-reveal" label="Show phone number" prefix="Call " />
-        </nav>
-      </details>
+    <div class="header-mobile">
+      <a class="nav-link header-start" href="/contact/">Start</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="open-label">Menu</span>
+        <span class="close-label">Close</span>
+      </button>
     </div>
   </div>
-</header>
-
-<style>
-  .mobile-nav[open] {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .mobile-nav[open] .menu-toggle {
-    align-self: flex-end;
-  }
-
-  .mobile-nav[open] .open-label {
-    display: none;
-  }
-  .mobile-nav:not([open]) .close-label {
-    display: none;
-  }
-  .mobile-nav[open] .close-label {
-    display: inline;
-  }
-</style>
+</Glass>
+<div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+  <nav class="mobile-links" aria-label="Mobile">
+    {
+      navigation.map((item) => (
+        <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+          {item.label}
+        </a>
+      ))
+    }
+    <a href="/contact/">Start your project</a>
+    <PhoneReveal class="reveal-phone menu-reveal" label="Show phone number" prefix="Call " />
+  </nav>
+</div>
 
 <script>
-  const nav = document.querySelector<HTMLDetailsElement>('[data-mobile-nav]');
-  const summary = nav?.querySelector('summary');
-  nav?.addEventListener('toggle', () => {
-    document.body.classList.toggle('nav-open', Boolean(nav.open));
-    if (nav.open) nav.querySelector<HTMLElement>('nav a, nav button')?.focus();
+  const header = document.querySelector<HTMLElement>('[data-site-header]');
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const panel = document.querySelector<HTMLElement>('[data-mobile-menu]');
+  const desktop = window.matchMedia('(min-width: 1024px)');
+  const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  let open = false;
+
+  if (toggle && panel) {
+    // The script is live: hide the in-flow panel, show the toggle (navigation.css keys on html.js-nav), and give the panel dialog semantics.
+    document.documentElement.classList.add('js-nav');
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-modal', 'true');
+    panel.setAttribute('aria-label', 'Menu');
+  }
+
+  /** Everything in <body> except the bar and the panel: made inert while the menu is open. */
+  const others = () => Array.from(document.body.children).filter((el) => el !== header && el !== panel);
+
+  function setOpen(next: boolean, returnFocus = false) {
+    if (!toggle || !panel || next === open) return;
+    open = next;
+    const root = document.documentElement;
+    toggle.setAttribute('aria-expanded', String(next));
+    panel.classList.toggle('is-open', next);
+    if (next) {
+      root.style.setProperty('--scrollbar-comp', `${window.innerWidth - root.clientWidth}px`);
+      root.classList.add('nav-open');
+      document.body.classList.add('nav-open');
+      others().forEach((el) => el.setAttribute('inert', ''));
+      requestAnimationFrame(() => panel.querySelector<HTMLElement>(FOCUSABLE)?.focus());
+    } else {
+      root.classList.remove('nav-open');
+      document.body.classList.remove('nav-open');
+      others().forEach((el) => el.removeAttribute('inert'));
+      if (returnFocus) toggle.focus();
+    }
+  }
+
+  toggle?.addEventListener('click', () => setOpen(!open, open));
+  panel?.addEventListener('click', (event) => {
+    const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('a[href]');
+    if (!link) return;
+    // A same-page target (current page, a hash, tel: or mailto:) does not unload the document, so focus must come back to the toggle.
+    const href = link.getAttribute('href') || '';
+    const url = new URL(link.href, location.href);
+    const staysOnPage = /^(tel|mailto):/.test(href) || (url.origin === location.origin && url.pathname === location.pathname);
+    setOpen(false, staysOnPage);
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && nav?.open) {
-      nav.open = false;
-      summary?.focus();
+    if (!open || !header || !panel) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setOpen(false, true);
+      return;
     }
+    if (event.key !== 'Tab') return;
+    const items = [...header.querySelectorAll<HTMLElement>(FOCUSABLE), ...panel.querySelectorAll<HTMLElement>(FOCUSABLE)].filter((el) => el.offsetParent !== null);
+    if (!items.length) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    } else if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    }
+  });
+  desktop.addEventListener('change', (event) => {
+    if (event.matches) setOpen(false, true);
   });
 </script>
