@@ -78,6 +78,10 @@ test('llms.txt lists every buyer question; /.well-known/facts.json carries them 
   const section = llms.split('\n## Buyer questions\n')[1]?.split('\n## ')[0] ?? '';
   const lines = section.split('\n').filter((line) => line.startsWith('- ['));
   assert.equal(lines.length, data.answers.length, 'one llms line per buyer question');
+  const hotelsLine = lines.find((line) => line.includes('/for-ai/#f-b1)'))!;
+  assert.ok(hotelsLine.includes('The Lanesborough is listed by name only.'), 'The Lanesborough, name only (Dorin, 10 Oct)');
+  assert.doesNotMatch(llms, /Moxy/);
+  assert.doesNotMatch(llms, /lanesborough[^\s]*\)|\/projects\/[a-z-]*lanesborough/i, 'no Lanesborough link');
   for (const item of data.answers) assert.ok(lines.some((line) => line.includes(`/for-ai/#${item.id})`)), item.id);
   const wellKnown = JSON.parse(await readFile('dist/.well-known/facts.json', 'utf8'));
   for (const [key, value] of Object.entries(data.factsAdditions)) assert.deepEqual(wellKnown[key], value, key);

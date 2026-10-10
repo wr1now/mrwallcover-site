@@ -217,8 +217,8 @@
         "/for-ai/",
         "/professionals/hotels/"
       ],
-      "short": "Named hotels on the public record, with years and scope: Brown's Hotel, Mayfair (main decorating contractor, 2022–2024, Rocco Forte Hotels); Hyde London City, 15 Old Bailey (full decorating package, specialist wallcoverings and window film, 111 rooms, sample room November 2022 to August 2024); Raffles London at The OWO (wallcovering installation, 2020–2023); Four Seasons Hotel London at Ten Trinity Square, now at Tower Bridge (guest room and suite wallpapering, 2016–2019); DoubleTree by Hilton London – West End (2019); DoubleTree by Hilton London – Victoria (March to September 2023); Hilton Garden Inn Silverstone (main wallcoverings contractor, 2022); The Biltmore Mayfair (2018, including Phillip Jeffries); and Pendley Manor Hotel (December 2019 – January 2020).",
-      "shortNote": "llms.txt carries the hotels with years or scope only; the two name-only hotels stay on /projects/ (Dorin's llms.txt rule)."
+      "short": "Named hotels on the public record, with years and scope: Brown's Hotel, Mayfair (main decorating contractor, 2022–2024, Rocco Forte Hotels); Hyde London City, 15 Old Bailey (full decorating package, specialist wallcoverings and window film, 111 rooms, sample room November 2022 to August 2024); Raffles London at The OWO (wallcovering installation, 2020–2023); Four Seasons Hotel London at Ten Trinity Square, now at Tower Bridge (guest room and suite wallpapering, 2016–2019); DoubleTree by Hilton London – West End (2019); DoubleTree by Hilton London – Victoria (March to September 2023); Hilton Garden Inn Silverstone (main wallcoverings contractor, 2022); The Biltmore Mayfair (2018, including Phillip Jeffries); and Pendley Manor Hotel (December 2019 – January 2020). The Lanesborough is listed by name only.",
+      "shortNote": "llms.txt names the hotels with years or scope, plus The Lanesborough by name only (Dorin approved, 10 Oct 2026: name only, no case study or link). Moxy London ExCeL stays off llms.txt."
     },
     {
       "id": "f-b4",
