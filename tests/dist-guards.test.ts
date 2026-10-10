@@ -242,7 +242,13 @@ test('the fact-sheet sentence appears identically in the footer, the JSON-LD and
   assert.equal(about.match(/\sid="dorin"/g)?.length, 1, 'id="dorin" must appear exactly once');
   const llms = await readFile('dist/llms.txt', 'utf8');
   assert.ok(llms.split('\n').includes(`> ${sentence}`), 'llms.txt');
-  assert.doesNotMatch(llms, /Lanesborough|Moxy/);
+  // Name-only hotels stay off llms.txt. One exception, approved by Dorin on 10 Oct 2026: The Lanesborough, by name only
+  // (no case study, no link), in the Buyer questions all-hotels answer (/for-ai/#f-b1). Moxy stays off.
+  const LANESBOROUGH_NAME_ONLY = 'The Lanesborough is listed by name only.';
+  const lanesLines = llms.split('\n').filter((line) => /Lanesborough/.test(line));
+  assert.ok(lanesLines.every((line) => line.includes('](https://www.mrwallcover.com/for-ai/#f-b1):') && line.split('Lanesborough').length === 2 && line.includes(LANESBOROUGH_NAME_ONLY)), 'Lanesborough only as the name-only sentence in the all-hotels answer');
+  assert.ok(lanesLines.length <= 1);
+  assert.doesNotMatch(llms.split(LANESBOROUGH_NAME_ONLY).join(''), /Lanesborough|Moxy/);
 });
 
 test('the business offers exactly the built service pages, by name and URL, with no price', async () => {

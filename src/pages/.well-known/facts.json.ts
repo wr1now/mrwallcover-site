@@ -8,6 +8,7 @@
  * reach this file.
  */
 import type { APIRoute } from 'astro';
+import { SITE_URL } from '../../config';
 import { publicFacts } from '../facts.json';
 import {
   AWARD,
@@ -16,6 +17,8 @@ import {
   SINCE_YEAR,
   WASTAGE,
   WELL_KNOWN_FACTS_URL,
+  BUYER_FACTS,
+  buyerQuestions,
   areaFacts,
   enquiryRoutes,
   projectFacts,
@@ -40,6 +43,14 @@ export function wellKnownFacts() {
       url: PROJECTS_INDEX_URL,
       count: projectFacts.length,
       items: projectFacts.map((p) => ({ title: p.title, url: p.url, markdownUrl: p.markdownUrl, area: p.area, years: p.years, client: p.client, role: p.role, makersAndProducts: p.makersAndProducts })),
+    },
+    // The AI answer audit's proposed keys (src/data/buyer-answers.json factsAdditions), added alongside; nothing above is replaced.
+    ...BUYER_FACTS,
+    buyerQuestions: {
+      url: `${SITE_URL}/for-ai/#questions`,
+      count: buyerQuestions.length,
+      note: 'Answered only from the published record. Where more is to be confirmed, the answer stops at what the site already states.',
+      items: buyerQuestions.map((q) => ({ id: q.id, question: q.question, answer: q.answer, url: `${SITE_URL}/for-ai/#${q.id}`, sources: q.sources })),
     },
   };
 }
