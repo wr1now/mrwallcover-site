@@ -38,6 +38,6 @@ A final live Git refresh found the owner’s correction: **in the trade since 20
 
 ## Readiness and limits
 
-Implementation is ready for an owner-private Sites release. The new version preserves public-domain canonicals but does not itself make the content publicly discoverable. Publication status and version are recorded by the Sites deployment receipt and the plan's release entry.
+Implementation passed the documented QA and was published owner-private through Sites; native deployment status is succeeded. Published source: `e606392129bf732adcc0b134a690a65fdd27b90c`. The new version preserves public-domain canonicals but does not itself make the content publicly discoverable. Publication status and version are recorded by the Sites deployment receipt and the plan's release entry.
 
 Public www.mrwallcover.com, DNS and GitHub main have not been changed by this branch. FormSubmit delivery is the existing integration and was not exercised with a live lead. The Sites build has no SITE_PHONE configured. No independent external corroboration of company-reported installation roles, insurer checks, cross-engine browser matrix, Lighthouse score or field Core Web Vitals result is claimed. Existing third-party image permissions are inherited; newly added large photography is from the owner's Brown’s Hotel originals.

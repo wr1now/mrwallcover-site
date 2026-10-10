@@ -22,7 +22,7 @@ Create a complete, elegant Sites edition of MR WALLCOVER using the real WR1 webs
 3. **Benchmark cycle 1 — complete.** Compare installation competitors; close obvious presentation/service discovery gaps. Test and commit.
 4. **Benchmark cycle 2 — complete.** Compare premium design portfolios; add a focused differentiated browsing improvement. Test and commit.
 5. **Benchmark cycle 3 — complete.** Compare authoritative crawler/accessibility guidance; harden discoverability and market readiness. Test and commit.
-6. **Final QA complete; publication in progress.** Run source, build, distribution, responsive/browser and accessibility checks; inspect rendered desktop/mobile; record exact results in QA_REPORT.md. Push branch and exact Sites source, publish private Site, verify returned deployment status.
+6. **Final QA and owner-private publication — complete.** Run source, build, distribution, responsive/browser and accessibility checks; inspect rendered desktop/mobile; record exact results in QA_REPORT.md. Push branch and exact Sites source, publish private Site, verify returned deployment status.
 
 ## Ordered work and ownership
 
@@ -63,3 +63,17 @@ The owner requested a substantially richer AI decision resource. Acceptance now 
 - Cycle 2 committed as `8552c0b`. Final Git refresh found main had advanced to `1b387c6`; merged the latest source, resolving one home.json formatting conflict in favour of the corrected 2012 fact. New describedby links and whole-site local link/fragment checks added for cycle 3.
 
 - Final refreshed gates: source 61/61, production 50/50, phone 2/2, guides 4/4 (117 total). Production 75 pages and 68 Markdown twins. QA_REPORT.md records browser evidence and limits. All three benchmark cycles implemented and tested. Next: commit release refinement, push exact source, publish owner-private Site, then preserve release receipt.
+
+## Release receipt — 10 October 2026
+
+- Cycle 3 / source integration committed as `e606392129bf732adcc0b134a690a65fdd27b90c`.
+- Exact source pushed to GitHub branch `codex/mrwallcover-atelier-2026` and the registered Sites source repository.
+- Sites archive helper completed and owner-private publication returned **succeeded**.
+- Published source: `e606392129bf732adcc0b134a690a65fdd27b90c`.
+- Site: https://mr-wallcover-atelier.dorinburcus.chatgpt.site
+- AI resource: https://mr-wallcover-atelier.dorinburcus.chatgpt.site/wallcovering-installation-ai-crawler/
+- Deployment: `appgdep_6aca8bd88b4481919e8321e711cf5434`.
+- Saved version: `appgprj_6aca85d3e31881919def66e8160e0fbe~appgver_bae9421c75f881918ad5a3fb6ab29afa`.
+- Draft review PR: https://github.com/wr1now/mrwallcover-site/pull/23, targeting current main.
+- Native successful deployment is the remote publication evidence. Local rendered production review is documented in QA_REPORT.md. This receipt is a documentation-only follow-up to the published source.
+- No unblocked implementation work remains in this bounded release. Public-domain publication and additional documentary procurement claims are separate future decisions, not claimed complete here.

@@ -19,7 +19,7 @@
 - [x] Verify browser navigation, enquiry validation, filters, material studio and responsive layouts.
 - [x] Review source fidelity and privacy of all AI claims and records.
 - [x] Update README, architecture, media provenance, benchmark and QA documentation.
-- [ ] Commit the three bounded benchmark improvements, push the branch and deploy the private Sites edition.
+- [x] Commit the three bounded benchmark improvements, push the branch and deploy the private Sites edition. Published source `e606392`; native deployment succeeded. Draft PR #23 is attached for public-site review.
 
 ## Future ideas — outside this release
 - Obtain additional cleared original hotel photography before expanding official press imagery.
