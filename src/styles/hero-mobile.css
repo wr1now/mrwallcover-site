@@ -1,161 +1,40 @@
-/* Homepage hero sizing. Imported by src/components/Hero.astro. */
-
-/*
- * The homepage H1 is a full sentence that defines the firm, so it drops the
- * display size and the 11ch measure that suited the old three-word headline.
- */
-.hero-copy h1 {
-  max-width: 22ch;
-  font-size: var(--text-hero);
-  line-height: 1.08;
+/* The real finished room fills the hero; copy never determines image loading. */
+.atelier-hero { position:relative; isolation:isolate; color:#fffdf8; background:#25261f; min-height:640px; height:min(760px,calc(100svh - 100px)); margin:16px 24px 0; overflow:hidden; }
+.atelier-hero-media,.atelier-hero-media picture,.atelier-hero-media img,.atelier-hero-shade { position:absolute; inset:0; width:100%; height:100%; }
+.atelier-hero-media img { object-fit:cover; object-position:50% 52%; }
+.atelier-hero-shade { background:linear-gradient(90deg,rgba(12,17,12,.80),rgba(12,17,12,.43) 48%,rgba(12,17,12,.06) 78%),linear-gradient(0deg,rgba(12,17,12,.64),transparent 35%); }
+.atelier-hero-content { position:relative; padding:100px 6% 120px; max-width:980px; }
+.atelier-hero h1 { margin:22px 0 24px; font-size:clamp(3.7rem,6.1vw,6.1rem); line-height:.98; letter-spacing:-.04em; color:inherit; max-width:13em; }
+.atelier-hero h1 em { font-weight:500; color:#ead8b5; }
+.atelier-hero-description { max-width:375px; font-size:16px; line-height:1.7; color:#f4f0e8; }
+.atelier-hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:30px; margin-top:34px; }
+.atelier-hero-foot { position:absolute; bottom:28px; left:6%; right:4%; display:flex; justify-content:space-between; align-items:end; gap:25px; }
+.atelier-hero-foot>span { font-size:10px; letter-spacing:.17em; }
+.atelier-hero-foot a { color:#fffdf8; text-decoration:none; font-size:14px; border-top:1px solid #ffffff60; padding-top:13px; min-width:230px; }
+.atelier-hero-foot a span { display:block; font-size:9px; letter-spacing:.18em; margin-bottom:4px; }
+.atelier-hero-foot b { float:right; font-size:20px; font-weight:400; }
+@media(max-width:767px){
+ .atelier-hero { margin:10px 12px 0; min-height:560px; height:calc(100svh - 155px); max-height:720px; }
+ .atelier-hero-media img { object-position:61% 30%; }
+ .atelier-hero-shade { background:linear-gradient(0deg,rgba(12,17,12,.85),rgba(12,17,12,.35) 60%,rgba(12,17,12,.08)); }
+ .atelier-hero-content { position:absolute; bottom:82px; padding:28px 24px 0; }
+ .atelier-hero h1 { font-size:clamp(2.9rem,10.9vw,4.5rem); line-height:1; margin:14px 0 18px; }
+ .atelier-hero-description { max-width:320px; font-size:14px; }
+ .atelier-hero-actions { gap:22px; margin-top:22px; }
+ .atelier-hero-actions .atelier-text-link { font-size:12px; }
+ .atelier-hero-foot { left:24px; right:24px; bottom:20px; }
+ .atelier-hero-foot>span { display:none; }
+ .atelier-hero-foot a { width:100%; font-size:12px; }
+ .atelier-hero-foot a span { display:inline; margin-right:12px; font-size:8px; }
 }
-
-@media (min-width: 1024px) {
-  .hero-copy h1 {
-    font-size: var(--text-hero-desktop);
-  }
+@media(max-width:380px){.atelier-hero-actions{gap:16px}.atelier-hero-content{padding-inline:20px}.atelier-hero-actions .atelier-button{padding-inline:16px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.atelier-hero *{animation:none!important;transition:none!important}}
+/* Keep the display fitting at enlarged default text sizes as well as ordinary phones. */
+@media(max-width:767px){
+ .atelier-hero { height:calc(100svh - var(--header-height) - var(--header-inset-top) - var(--dock-clearance) - 10px); min-height:530px; }
+ .atelier-hero-content { width:100%; max-width:100%; bottom:78px; }
+ .atelier-hero h1 { font-size:clamp(38px,10.9vw,64px); }
+ .atelier-hero-actions { gap:18px; }
+ .atelier-hero-actions .atelier-button { padding:15px 18px; gap:20px; }
 }
-
-@media (max-width: 1023px) {
-  /*
-   * The hero fills the screen below the floating header (its height plus its
-   * top inset) and above the dock (its clearance token, which includes the
-   * safe area), and no more: every hero button stays above the dock. The
-   * photograph gives up height first (object-fit: cover).
-   */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100svh - var(--header-height) - var(--header-inset-top) - var(--dock-clearance));
-  }
-
-  .hero-media {
-    flex: 1 1 0;
-    min-height: 7rem;
-    max-height: 75vw;
-    overflow: hidden;
-  }
-
-  .hero-media picture,
-  .hero-media img {
-    height: 100%;
-  }
-
-  .hero-media img {
-    object-fit: cover;
-    /* The wallpaper and wall lights sit in the top third of the hero photograph; keep them in frame when it crops. */
-    object-position: 50% 18%;
-  }
-
-  .hero-copy {
-    flex: none;
-  }
-}
-
-/* Narrow phones (360px): slimmer padding keeps the first two buttons on one row. */
-@media (max-width: 380px) {
-  .hero-copy .btn {
-    padding-inline: 0.95rem;
-  }
-}
-
-/*
- * Phones up to 900px tall (the 390x844 class): the copy block would otherwise be
- * taller than the space between the header and the dock, pushing the third
- * button under the dock. The eyebrow repeats what the H1 says and gives way
- * with the rule, and the vertical gaps tighten; the H1, lede, photograph and
- * buttons are unchanged. The dock must never cover a hero button.
- */
-@media (max-width: 1023px) and (max-height: 900px) {
-  /*
-   * The photograph only gets what the copy leaves. A slightly smaller H1 and
-   * lede and tighter gaps give the room back to the wallpaper, so the hero
-   * reads as a finished room rather than a strip of bedding.
-   */
-  .hero-copy {
-    padding-top: 1.1rem;
-    padding-bottom: 1.25rem;
-  }
-
-  .hero-copy h1 {
-    font-size: 1.95rem;
-    line-height: 1.07;
-  }
-
-  .hero-copy .lede {
-    font-size: 0.97rem;
-    line-height: 1.45;
-  }
-
-  .hero-copy .eyebrow,
-  .hero-copy .rule {
-    display: none;
-  }
-
-  .hero-copy .lede {
-    margin-top: 0.75rem;
-  }
-
-  .hero-copy .lede + p {
-    margin-top: 0.75rem;
-  }
-
-  .hero-copy .lede + p + div {
-    margin-top: 0.9rem;
-  }
-}
-
-@media (max-width: 1023px) and (max-height: 760px) {
-  .hero-copy {
-    padding-top: 1rem;
-  }
-
-  /* The H1 already says "London wallcovering installer", so the eyebrow and rule give way. */
-  .hero-copy .eyebrow,
-  .hero-copy .rule {
-    display: none;
-  }
-
-  .hero-copy h1 {
-    max-width: none;
-    font-size: 1.7rem;
-  }
-
-  .hero-copy .lede {
-    margin-top: 0.6rem;
-    font-size: 0.95rem;
-    line-height: 1.45;
-  }
-
-  .hero-copy .lede + p {
-    margin-top: 0.6rem;
-  }
-
-  .hero-copy .lede + p + div {
-    margin-top: 0.8rem;
-  }
-}
-
-/*
- * 667px-class phones: the copy is taller than the space, so the photograph sits
- * at its floor; the tighter gaps above buy a slightly taller floor with the
- * buttons still clear of the dock. Not below 661px tall, where the copy already
- * reaches the dock (360x640) and must not lose more room.
- */
-@media (max-width: 1023px) and (max-height: 760px) and (min-height: 661px) {
-  .hero-media {
-    min-height: 8rem;
-  }
-}
-
-/*
- * Short phones (360x640 and similar): the third hero action would sit under the dock
- * (measured 16px under it at 360x640). Hide it there only; "Start your project" still reaches the
- * same form, which offers "I already have the wallpaper". 390x667 and taller keep all three (17px+ clear of the dock).
- */
-@media (max-width: 1023px) and (max-height: 660px) {
-  .hero-copy .hero-third {
-    display: none;
-  }
-}
-
+@media(max-width:767px) and (max-height:700px){.atelier-hero{min-height:430px}.atelier-hero-content{bottom:64px;padding-top:15px}.atelier-hero h1{font-size:clamp(34px,10vw,52px);margin-block:10px 12px}.atelier-hero-description{font-size:12px;line-height:1.6}.atelier-hero-actions{margin-top:14px}.atelier-hero-foot{bottom:14px}}

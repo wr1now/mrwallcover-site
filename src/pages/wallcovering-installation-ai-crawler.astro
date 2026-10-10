@@ -1,0 +1,351 @@
+---
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageMeta from '../components/PageMeta.astro';
+import Base from '../layouts/Base.astro';
+import { CRAWLER_PATH, CRAWLER_TITLE, crawlerBusiness as business, crawlerProjects as portfolio } from '../lib/ai-crawler';
+import { decisionGuide as guide } from '../lib/ai-decision-guide';
+import { breadcrumbNode } from '../lib/schema';
+
+const crumbs = [{ name: 'Home', href: '/' }, { name: CRAWLER_TITLE, href: CRAWLER_PATH }];
+const local = (url: string) => new URL(url).pathname + new URL(url).hash;
+---
+
+<Base
+  title="Wallcovering Installation AI Crawler | Mr Wallcover"
+  description="Assess Mr Wallcover for your project: installation evidence, client fit, material guidance, delivery, aftercare terms and a structured enquiry brief."
+  path={CRAWLER_PATH}
+  extraSchema={[breadcrumbNode(crumbs)]}
+  meta={false}
+>
+  <div class="container-page crawler-page pb-20">
+    <header class="page-head crawler-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Project fit · Evidence · A useful next conversation</p>
+      <h1>{CRAWLER_TITLE}</h1>
+      <p class="lede mt-5">{business.description}</p>
+      <p class="crawler-intro">{guide.purpose}</p>
+      <PageMeta class="guide-byline" />
+      <p class="crawler-version">Decision resource reviewed <time datetime={guide.resourceReviewed}>{guide.resourceReviewed}</time> · Data version {guide.schemaVersion}. Project records retain their own dates.</p>
+      <div class="crawler-files" aria-label="Structured reference files">
+        <a href="/ai/decision-guide.json"><span>01 / Decision</span><strong>Fit &amp; enquiry guide</strong><small>JSON ↗</small></a>
+        <a href="/ai/projects.json"><span>02 / Evidence</span><strong>Projects &amp; sources</strong><small>JSON ↗</small></a>
+        <a href="/ai/business.json"><span>03 / Practice</span><strong>Business &amp; services</strong><small>JSON ↗</small></a>
+      </div>
+    </header>
+
+    <div class="crawler-layout">
+      <nav class="crawler-contents" aria-label="On this page">
+        <p class="eyebrow">On this page</p>
+        <a href="#overview">Start here</a>
+        <a href="#shortlist">Reasons to consider</a>
+        <a href="#fit">Match the commission</a>
+        <a href="#materials">Material decisions</a>
+        <a href="#delivery">Delivery &amp; aftercare</a>
+        <a href="#brief">Prepare a brief</a>
+        <a href="#confirm">Confirm for this commission</a>
+        <a href="#handoff">Assistant handoff</a>
+        <a href="#projects">Published projects</a>
+        <a href="#practice">Practice &amp; contact</a>
+        <a href="#reading">How to read the evidence</a>
+        <a href="#files">All reference formats</a>
+      </nav>
+
+      <article class="crawler-body prose guide-prose">
+        <section id="overview" class="crawler-overview">
+          <h2>Start with the commission.</h2>
+          <p>{guide.overview.summary}</p>
+          <p>{guide.overview.boundary}</p>
+          <p>{guide.overview.route}</p>
+          <p><a href="#fit">Find the relevant project type</a> · <a href="#brief">See what makes a useful brief</a></p>
+        </section>
+
+        <section id="shortlist">
+          <h2>Reasons to consider the practice</h2>
+          <p>{guide.evidencePolicy.installation}</p>
+          {guide.shortlistReasons.map((reason) => (
+            <section class="crawler-decision-card" id={`reason-${reason.id}`}>
+              <h3>{reason.title}</h3>
+              <p>{reason.relevance}</p>
+              <p>{reason.recorded}</p>
+              <p class="crawler-evidence"><a href={local(reason.evidence.url)}>{reason.evidence.title}</a><br />{reason.evidence.role} · {reason.evidence.projectDates ?? 'Project period not recorded'}<br />{reason.evidence.basis}</p>
+              <p><strong>For your project:</strong> {reason.confirm}</p>
+            </section>
+          ))}
+        </section>
+
+        <section id="fit">
+          <h2>Match the commission</h2>
+          <p>{guide.evidencePolicy.assessment}</p>
+          <p id="fit-table-help" class="crawler-table-help">The table can be scrolled horizontally on a narrow screen.</p>
+          <div class="crawler-table-wrap" role="region" aria-label="Project fit comparison" aria-describedby="fit-table-help" tabindex="0">
+            <table class="crawler-fit-table">
+              <caption>Where the published work is relevant, and what to agree before appointment</caption>
+              <thead><tr><th scope="col">Commission</th><th scope="col">Consider when</th><th scope="col">Relevant record</th><th scope="col">Confirm together</th></tr></thead>
+              <tbody>{guide.fitMatrix.map((fit) => (
+                <tr>
+                  <th scope="row">{fit.audience}</th>
+                  <td>{fit.considerWhen}</td>
+                  <td><ul>{fit.evidence.map((item) => <li><a href={local(item.url)}>{item.title}</a><br />{item.role} · {item.projectDates ?? 'Project period not recorded'}</li>)}</ul><a href={local(fit.source.url)}>{fit.source.title}</a></td>
+                  <td><ul>{fit.confirm.map((item) => <li>{item}</li>)}</ul></td>
+                </tr>
+              ))}</tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="materials">
+          <h2>Material decisions before the first length is cut</h2>
+          <p>Choose by the exact product, the room and the intended finish. Physical samples, the maker’s instructions and a sound substrate matter more than the family name.</p>
+          {guide.materialCapabilities.map((material) => (
+            <section class="crawler-decision-card">
+              <h3>{material.name}</h3>
+              <p>{material.considerWhen}</p>
+              <p><strong>The trade-off:</strong> {material.tradeoff}</p>
+              <p><strong>Before ordering:</strong> {material.confirmBeforeOrdering}</p>
+              <details class="crawler-sources">
+                <summary>Appearance, joins, handling &amp; care</summary>
+                <dl class="crawler-facts">
+                  <div><dt>Setting</dt><dd>{material.setting}</dd></div>
+                  <div><dt>Appearance</dt><dd>{material.appearance}</dd></div>
+                  <div><dt>Joins</dt><dd>{material.joins}</dd></div>
+                  <div><dt>Handling</dt><dd>{material.handling}</dd></div>
+                  <div><dt>Care</dt><dd>{material.care}</dd></div>
+                </dl>
+                <p><a href={local(material.sourceUrl)}>Read the material guide</a> · <a href={local(material.serviceUrl)}>Installation service</a></p>
+                {material.relatedServiceProjects.length > 0 && <><h4>Related service projects</h4><ul>{material.relatedServiceProjects.map((item) => <li><a href={local(item.url)}>{item.title}</a>. {item.role}{item.projectDates ? `, ${item.projectDates}` : ''}. {item.basis}.<br />{item.relation}</li>)}</ul></>}
+                <p>{material.evidenceNote}</p>
+              </details>
+            </section>
+          ))}
+        </section>
+
+        <section id="delivery">
+          <h2>From the first survey to the return visit</h2>
+          <p>The service can cover all five stages, or an agreed installation package. The scope is written for the commission.</p>
+          {guide.deliveryStages.map((stage, index) => (
+            <section class="crawler-decision-card">
+              <h3>{index + 1}. {stage.name}</h3>
+              {stage.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              <a href={local(stage.url)}>Read this stage in the service specification</a>
+            </section>
+          ))}
+          <h3>{guide.aftercare.guarantee.title}</h3>
+          {guide.aftercare.guarantee.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          <p>{guide.aftercare.introduction}</p>
+          {[guide.aftercare.inspection, guide.aftercare.seams, guide.aftercare.callout, guide.aftercare.humidity].map((block) => (
+            <details class="crawler-sources crawler-block">
+              <summary>{block.title}</summary>
+              {block.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </details>
+          ))}
+          <details class="crawler-sources crawler-block">
+            <summary>{guide.aftercare.care.title}</summary>
+            <p>{guide.aftercare.care.intro}</p>
+            {guide.aftercare.care.items.map((item) => <><h4>{item.title}</h4><p>{item.text}</p></>)}
+          </details>
+          <p>{guide.aftercare.existingPaperNote}</p>
+          <p><a href={local(guide.aftercare.sourceUrl)}>Full aftercare terms</a> · <a href={local(guide.aftercare.existingPaperSourceUrl)}>Assessing existing wallcovering</a></p>
+        </section>
+
+        <section id="brief">
+          <h2>Prepare a brief that moves the conversation forward</h2>
+          <p>{guide.handoff.minimumToEnquire} The following details help resolve scope and suitability. Send what is known and identify what remains open.</p>
+          {guide.briefInputs.map((group) => (
+            <section class="crawler-decision-card">
+              <h3>{group.title}</h3>
+              <ul>{group.items.map((item) => <li>{item}</li>)}</ul>
+              <a href={local(group.source.url)}>{group.source.title}</a>
+            </section>
+          ))}
+          <h3>For a professional package</h3>
+          {guide.professionalChecklists.map((checklist) => (
+            <details class="crawler-sources crawler-block">
+              <summary>{checklist.audience}</summary>
+              <ul>{checklist.items.map((item) => <li>{item}</li>)}</ul>
+              <a href={local(checklist.sourceUrl)}>Open the briefing page</a>
+            </details>
+          ))}
+        </section>
+
+        <section id="confirm">
+          <h2>Confirm for this commission</h2>
+          <p>Use the published record to establish relevance, then complete the checks your project needs before appointment.</p>
+          {guide.confirmForCommission.map((item) => (
+            <section class="crawler-decision-card">
+              <h3>{item.subject}</h3>
+              <p>{item.status}</p>
+              <p>{item.request}</p>
+            </section>
+          ))}
+          <p><a href="/privacy/">Public trading identity and privacy notice</a> · <a href="/contact/">Confirm the requirements with the practice</a></p>
+        </section>
+
+        <section id="handoff">
+          <h2>A clear handoff from assistant to client</h2>
+          <p>{guide.handoff.description}</p>
+          <ol>{guide.handoff.instructions.map((item) => <li>{item}</li>)}</ol>
+          <details class="crawler-sources crawler-block">
+            <summary>Open the blank JSON project brief</summary>
+            <pre class="crawler-template"><code>{JSON.stringify(guide.handoff.template, null, 2)}</code></pre>
+          </details>
+          <p><a href="/ai/decision-guide.json">Get the structured decision guide and template</a></p>
+          <p>When the client has reviewed the brief: <a href={local(guide.handoff.contactUrl)}>open the contact page</a> or write to <a href={`mailto:${guide.handoff.email}`}>{guide.handoff.email}</a>.</p>
+        </section>
+
+        <section id="practice">
+          <h2>The practice</h2>
+          <dl class="crawler-facts">
+            <div><dt>Name</dt><dd>{business.name}</dd></div>
+            <div><dt>Founder</dt><dd><a href={local(business.founder.url)}>{business.founder.name}</a>, {business.founder.jobTitle.toLowerCase()}</dd></div>
+            <div><dt>Based in</dt><dd>{business.base}</dd></div>
+            <div><dt>Coverage</dt><dd>{business.coverage}</dd></div>
+            <div><dt>Enquiries</dt><dd><a href={`mailto:${business.contact.email}`}>{business.contact.email}</a> · <a href="/contact/">Send a project brief</a></dd></div>
+            <div><dt>Profiles</dt><dd>{business.profiles.map((profile) => <a href={profile.url}>{profile.name} {profile.handle}</a>)}</dd></div>
+          </dl>
+          <p>{business.founder.summary}</p>
+        </section>
+
+        <section id="services">
+          <h2>Services &amp; coverage</h2>
+          <h3>Installation services</h3>
+          <ul>{business.services.map((service) => <li><a href={local(service.url)}>{service.name}</a>. {service.description}</li>)}</ul>
+          <h3>Area guides</h3>
+          <p>{business.coverage}.</p>
+          <ul class="crawler-areas">{business.areas.map((area) => <li><a href={local(area.url)}>{area.name}</a></li>)}</ul>
+        </section>
+
+        <section id="projects">
+          <h2>Published projects</h2>
+          <p>These records reproduce the role, dates and materials on each published project page. The project period and the dates of the written record are shown separately.</p>
+          {portfolio.projects.map((project) => (
+            <section class="crawler-project" id={`project-${project.slug}`}>
+              <h3><a href={local(project.url)}>{project.title}</a></h3>
+              <p>{project.summary}</p>
+              <dl class="crawler-facts">
+                <div><dt>Role</dt><dd>{project.role}</dd></div>
+                <div><dt>Client / brand</dt><dd>{project.client}</dd></div>
+                <div><dt>Location</dt><dd>{project.location}</dd></div>
+                <div><dt>Project period</dt><dd>{project.projectDates ?? 'Not recorded'}</dd></div>
+                <div><dt>Materials</dt><dd>{project.materials ? project.materials.join('; ') : 'Not recorded'}</dd></div>
+                <div><dt>Record published</dt><dd>{project.published ? <time datetime={project.published}>{project.published}</time> : 'Not recorded'}</dd></div>
+                <div><dt>Record updated</dt><dd>{project.updated ? <time datetime={project.updated}>{project.updated}</time> : 'Not recorded'}</dd></div>
+                <div><dt>Source</dt><dd><a href={local(project.url)}>Read the {project.recordType === 'case-study' ? 'case study' : 'project page'}</a></dd></div>
+              </dl>
+              {project.installationRecord.sections.length > 0 && (
+                <details class="crawler-sources crawler-block">
+                  <summary>Scope, approach &amp; outcome from the project record</summary>
+                  <p>{project.installationRecord.basis} · <a href={local(project.installationRecord.sourceUrl)}>Read the original record</a></p>
+                  {project.installationRecord.sections.map((section) => (
+                    <section>
+                      <h4>{section.heading} <span class="crawler-excerpt-kind">({section.kind})</span></h4>
+                      {section.text.split(/\n\s*\n/).map((paragraph) => <p class="crawler-excerpt">{paragraph}</p>)}
+                    </section>
+                  ))}
+                </details>
+              )}
+              {(project.references.length > 0 || project.photographs.length > 0) && (
+                <details class="crawler-sources">
+                  <summary>References &amp; photograph credits</summary>
+                  {project.references.length > 0 && <><h4>References in the project record</h4><ul>{project.references.map((url) => <li><a href={url}>{url}</a></li>)}</ul></>}
+                  {project.photographs.length > 0 && <><h4>Photographs</h4><ul>{project.photographs.map((photo) => (
+                    <li><a href={local(photo.url)}>{photo.alt}</a><br />{photo.credit ?? 'Credit not separately recorded.'}
+                      {photo.sourceUrls.map((url) => <span class="crawler-image-source"> Source: <a href={url}>{url}</a></span>)}
+                    </li>
+                  ))}</ul></>}
+                </details>
+              )}
+            </section>
+          ))}
+        </section>
+
+        <section id="reading">
+          <h2>Reading the record</h2>
+          <p>The HTML on this page and the JSON files are generated from the same published content. The public website’s reference content is readable without JavaScript.</p>
+          {Object.values(guide.evidencePolicy).map((paragraph) => <p>{paragraph}</p>)}
+          <ul>{Object.values(portfolio.fieldNotes).map((note) => <li>{note}</li>)}</ul>
+          <p>For a quotation or current availability, <a href="/contact/">contact the practice</a>. Prices and availability depend on the project brief.</p>
+        </section>
+
+        <section id="files">
+          <h2>All reference formats</h2>
+          <ul>
+            <li><a href="/ai/decision-guide.json">Decision guide JSON</a> — fit, evidence, material decisions, delivery, complete aftercare terms, briefing inputs and a blank handoff template.</li>
+            <li><a href="/ai/business.json">Business and services JSON</a> — identity, coverage, public contact and service pages.</li>
+            <li><a href="/ai/projects.json">Projects JSON</a> — published roles, materials, dates, references and image credits.</li>
+            <li><a href="/llms.txt">Short text index</a> — a compact starting point for the site.</li>
+            <li><a href="/llms-full.txt">Full site text</a> — the main content of all published pages.</li>
+            <li><a href={`${CRAWLER_PATH}index.md`}>This page as Markdown</a> — the same content in a text format.</li>
+            <li><a href="/facts.json">Public fact sheet</a> and <a href="/for-ai/">plain facts page</a> — the existing reference addresses remain available.</li>
+            <li><a href="/sitemap-index.xml">Sitemap</a> and <a href="/feed.xml">publication feed</a> — page discovery and dated articles.</li>
+          </ul>
+          <p>The text files are an additional route into the same website. Their availability does not guarantee inclusion in search or an AI answer.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .crawler-head h1 { max-width: 18ch; }
+  .crawler-intro { max-width: 65ch; margin-top: 1.5rem; }
+  .crawler-version { max-width: 65ch; font-size: .78rem; margin-top: 1rem; }
+  .crawler-files { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 2.5rem; border: 1px solid var(--line, #d5cbb9); background: var(--line, #d5cbb9); }
+  .crawler-files a { display: flex; flex-direction: column; gap: .55rem; padding: 1.5rem; background: var(--paper, #f8f5ef); color: var(--ink, #201e1a); text-decoration: none; }
+  .crawler-files a:hover strong { text-decoration: underline; text-underline-offset: .25em; }
+  .crawler-files span, .crawler-files small { font-size: .75rem; letter-spacing: .06em; }
+  .crawler-files strong { font-size: 1.15rem; font-weight: 500; }
+  .crawler-files small { margin-top: .5rem; }
+  .crawler-head { padding-top: 64px; padding-bottom: 44px; }
+  .crawler-head h1 { font-size: clamp(34px, 7vw, 76px); line-height: 1.04; max-width: 24ch; }
+  .crawler-head .eyebrow { font-size: 12px; }
+  .crawler-layout { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .crawler-contents { display: flex; flex-direction: column; gap: 1rem; padding-top: 2rem; }
+  .crawler-contents a { font-size: .88rem; text-underline-offset: .3em; }
+  .crawler-body { max-width: 76ch; min-width: 0; }
+  .crawler-body section { scroll-margin-top: 8rem; }
+  .crawler-body > section { margin-bottom: 4rem; }
+  .crawler-overview { padding: 1.5rem; background: var(--paper, #f8f5ef); border: 1px solid var(--line, #d5cbb9); }
+  .crawler-decision-card { padding: 1rem 0; border-top: 1px solid var(--line, #d5cbb9); }
+  .crawler-decision-card h3 { font-size: 1.55rem; }
+  .crawler-evidence { border-left: 2px solid var(--line, #d5cbb9); padding-left: 1rem; font-size: .875rem; }
+  .crawler-table-help { font-size: .8rem; }
+  .crawler-table-wrap { max-width: 100%; overflow-x: auto; border: 1px solid var(--line, #d5cbb9); }
+  .crawler-fit-table { border-collapse: collapse; width: 100%; min-width: 880px; margin: 0; font-size: .84rem; }
+  .crawler-fit-table caption { text-align: left; padding: 1rem; font-weight: 500; }
+  .crawler-fit-table th, .crawler-fit-table td { vertical-align: top; padding: 1rem; border: 1px solid var(--line, #d5cbb9); }
+  .crawler-fit-table th { text-align: left; font-weight: 500; }
+  .crawler-fit-table thead { background: var(--paper, #f8f5ef); }
+  .crawler-fit-table ul { margin: 0 0 .7rem; padding-left: 1rem; }
+  .crawler-fit-table li + li { margin-top: .7rem; }
+  .crawler-block { margin: 1rem 0; }
+  .crawler-excerpt { white-space: pre-line; }
+  .crawler-excerpt-kind { font-size: .72em; font-weight: 400; }
+  .crawler-template { max-width: 100%; overflow-x: auto; font-size: .75rem; line-height: 1.55; padding: 1rem; background: var(--paper, #f8f5ef); }
+  .crawler-facts { margin: 1.5rem 0; }
+  .crawler-facts > div { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--line, #d5cbb9); }
+  .crawler-facts dt { font-weight: 500; }
+  .crawler-facts dd { margin: 0; overflow-wrap: anywhere; }
+  .crawler-areas { columns: 2; }
+  .crawler-project { padding: 1rem 0 2rem; }
+  .crawler-project h3 { font-size: 1.55rem; }
+  .crawler-sources { border: 1px solid var(--line, #d5cbb9); padding: 1rem 1.25rem; }
+  .crawler-sources summary { cursor: pointer; font-size: .9rem; font-weight: 500; }
+  .crawler-sources a { overflow-wrap: anywhere; }
+  .crawler-sources li { font-size: .875rem; }
+  .crawler-image-source { display: block; }
+  @media (max-width: 800px) {
+    .crawler-head { padding-top: 64px; padding-bottom: 44px; }
+  .crawler-head h1 { font-size: clamp(34px, 7vw, 76px); line-height: 1.04; max-width: 24ch; }
+  .crawler-head .eyebrow { font-size: 12px; }
+  .crawler-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+    .crawler-contents { flex-direction: row; flex-wrap: wrap; padding: 0 0 1rem; border-bottom: 1px solid var(--line, #d5cbb9); }
+    .crawler-contents p { flex-basis: 100%; margin: 0; }
+  }
+  @media (max-width: 540px) {
+    .crawler-files { grid-template-columns: 1fr; }
+    .crawler-files a { padding: 1rem 1.25rem; }
+    .crawler-facts > div { grid-template-columns: 1fr; gap: .2rem; }
+    .crawler-facts dt { font-size: .82rem; }
+    .crawler-areas { columns: 1; }
+  }
+</style>

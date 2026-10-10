@@ -2,87 +2,240 @@
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Picture from '../../components/Picture.astro';
 import Base from '../../layouts/Base.astro';
-import { hotels, projectHref, projects } from '../../lib/content';
+import { hotels, media, projectHref, projects } from '../../lib/content';
 import { breadcrumbNode } from '../../lib/schema';
 import indexCopy from '../../content/projects.json';
 
+const filters = [
+  { id: 'all', label: 'All projects' },
+  { id: 'hotels', label: 'Hotels' },
+  { id: 'homes-heritage', label: 'Homes & heritage' },
+  { id: 'retail-design', label: 'Retail & design' },
+];
+
+// Classifications follow the published hotel record and the case-study scope.
+// Events at hotel venues are deliberately not hotel installation commissions.
+const homeSlugs = new Set([
+  'trematon-castle', 'pimlico-st-georges-square', 'inverness-terrace', 'north-london-residence',
+]);
+const cards = projects.map((project) => {
+  const isHotel = hotels.some((hotel) => hotel.href === projectHref(project.slug) || hotel.name === project.title);
+  const category = project.group === 'design-weeks' || project.slug === 'house-of-hackney-st-michaels'
+    ? 'retail-design'
+    : isHotel ? 'hotels' : homeSlugs.has(project.slug) ? 'homes-heritage' : undefined;
+  if (!category) throw new Error(`Classify the published scope of project ${project.slug} before adding it to the explorer.`);
+  const image = project.imageId && project.imagePolicy !== 'none' ? media(project.imageId) : null;
+  const preview = Boolean(image && (project.modest || project.imagePolicy === 'modest' || !image.hasFull));
+  const imageWidth = image ? (preview ? image.thumbWidth : image.width) : undefined;
+  const credit = project.imageId ? project.credits?.[project.imageId] || project.caption : null;
+  return {
+    project, category, image, preview, imageWidth, credit,
+    categoryLabel: filters.find((filter) => filter.id === category)!.label,
+    audience: category === 'hotels' ? 'hotel' : category === 'homes-heritage' ? 'homeowner' : 'commercial',
+  };
+});
 const groups = [
-  { id: 'hotels-homes', title: 'Hotels, homes and historic buildings', intro: '', items: projects.filter((p) => !p.group) },
+  { id: 'hotels-homes', title: 'Selected projects', intro: '', items: cards.filter(({ project }) => !project.group) },
   {
     id: 'design-weeks',
-    title: 'Design weeks & fashion',
-    intro: 'Event installations for Calico Wallpaper at London Design Festival and London Fashion Week. Rosewood London and NoMad London appear as the venues of those events, not as hotel fit-outs.',
-    items: projects.filter((p) => p.group === 'design-weeks'),
+    title: 'Retail, design weeks & fashion',
+    intro: 'Specialist installations for Calico Wallpaper, from a Heathrow store to London Design Festival and London Fashion Week. Rosewood London and NoMad London appear as event venues, not as hotel fit-outs.',
+    items: cards.filter(({ project }) => project.group === 'design-weeks'),
   },
-].filter((g) => g.items.length > 0);
-
-const crumbs = [
-  { name: 'Home', href: '/' },
-  { name: 'Work', href: '/projects/' },
-];
+].filter((group) => group.items.length > 0);
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Work', href: '/projects/' }];
 ---
 
-<Base
-  title={indexCopy.index.title}
-  description={indexCopy.index.description}
-  path="/projects/"
-  extraSchema={[breadcrumbNode(crumbs)]}
->
-  <div class="container-page">
-    <header class="page-head">
+<Base title={indexCopy.index.title} description={indexCopy.index.description} path="/projects/" extraSchema={[breadcrumbNode(crumbs)]}>
+  <div class="container-page work-explorer" data-project-explorer>
+    <header class="page-head work-heading">
       <Breadcrumb items={crumbs} />
       <p class="eyebrow">{indexCopy.index.eyebrow}</p>
       <h1>{indexCopy.index.heading}</h1>
-      <p class="lede mt-5">{indexCopy.index.lede}</p>
+      <div class="work-introduction">
+        <p class="lede">{indexCopy.index.lede}</p>
+        <a class="work-record-link" href="#hotels">View the complete hotel record <span aria-hidden="true">↓</span></a>
+      </div>
     </header>
-    <section id="hotels" class="scroll-mt-24 pb-16" aria-labelledby="hotel-list-heading">
-      <h2 id="hotel-list-heading" class="m-0 border-t border-line pt-6 text-[clamp(1.9rem,3.5vw,2.8rem)]">Hotels</h2>
-      <p class="lede mt-4">Hotels on the public record, with the years and the scope where we can state them. The Lanesborough and Moxy London ExCeL are listed by name only.</p>
-      <ul class="hotel-list m-0 mt-8 grid list-none gap-4 p-0">
-        {hotels.map((hotel) => (
-          <li class="border-t border-line pt-4">
-            {hotel.href && !hotel.nameOnly ? (
-              <a class="font-serif text-[1.7rem] leading-none text-inherit no-underline" href={hotel.href}>{hotel.name}</a>
-            ) : (
-              <p class="m-0 font-serif text-[1.7rem] leading-none">{hotel.name}</p>
-            )}
-            {!hotel.nameOnly && (hotel.years || hotel.place || hotel.scope) && (
-              <p class="m-0 mt-2 text-stone">
-                {[hotel.place, hotel.years, hotel.scope].filter(Boolean).join(' · ')}
-              </p>
-            )}
-          </li>
+    <div class="work-controls" data-project-controls hidden>
+      <div class="work-filters" role="group" aria-label="Filter projects by setting">
+        {filters.map((filter) => (
+          <button type="button" data-project-filter={filter.id} data-filter-label={filter.label} aria-pressed={filter.id === 'all' ? 'true' : 'false'} aria-controls="project-results">{filter.label}</button>
         ))}
-      </ul>
-    </section>
-    {
-      groups.map((group) => (
-        <section id={group.id} class="scroll-mt-24 pb-16" aria-labelledby={`${group.id}-heading`}>
-          <h2 id={`${group.id}-heading`} class="m-0 mb-8 border-t border-line pt-6 text-[clamp(1.9rem,3.5vw,2.8rem)]">{group.title}</h2>
-          {group.intro && <p class="lede -mt-4 mb-8">{group.intro}</p>}
-          <div class="grid gap-x-8 gap-y-12 sm:grid-cols-2">
-            {group.items.map((project) => (
-              <a class="project-card" href={projectHref(project.slug)}>
-                {project.imagePolicy === 'none' ? (
-                  <div class="flex min-h-40 items-end border border-line bg-paper p-4">
-                    <p class="m-0 font-serif text-3xl">{project.client}</p>
-                  </div>
+      </div>
+      <p class="work-count" data-project-count role="status" aria-live="polite" aria-atomic="true">Showing {cards.length} projects</p>
+    </div>
+    <div id="project-results">
+      {groups.map((group) => (
+        <section id={group.id} class="work-group" data-project-group aria-labelledby={`${group.id}-heading`}>
+          <div class="work-group-heading">
+            <h2 id={`${group.id}-heading`}>{group.title}</h2>
+            {group.intro && <p>{group.intro}</p>}
+          </div>
+          <div class="work-grid">
+            {group.items.map(({ project, category, categoryLabel, image, imageWidth, preview, credit, audience }) => (
+              <article class="work-item" data-project-card data-project-category={category} data-project-slug={project.slug} data-preview={preview ? 'true' : 'false'}>
+                {image && project.imageId ? (
+                  <figure class="work-figure" style={`max-width:${imageWidth}px`}>
+                    <a class="work-image-link" href={projectHref(project.slug)} aria-label={`View ${project.title}`}>
+                      <Picture id={project.imageId} thumbOnly={preview} sizes={preview ? `(min-width: ${imageWidth! + 48}px) ${imageWidth}px, calc(100vw - 48px)` : '(min-width: 1280px) 36rem, (min-width: 768px) 45vw, 100vw'} />
+                    </a>
+                    {credit && <figcaption>{project.imageId.startsWith('owo-official-') && 'Venue photograph. '}{credit}</figcaption>}
+                  </figure>
                 ) : (
-                  project.imageId && (
-                    <Picture id={project.imageId} sizes="(min-width: 1024px) 36rem, (min-width: 640px) 50vw, 100vw" />
-                  )
+                  <a class="work-text-cover" href={projectHref(project.slug)}>
+                    <span>{project.client}</span>
+                    <small>{project.awaitingPhotos ? 'Project record · photographs to follow' : 'Project record'}</small>
+                  </a>
                 )}
-                <h3>{project.title}</h3>
-                <p class="m-0 text-stone">
-                  {project.role}
-                  {project.dates ? ` · ${project.dates}` : ''}
-                </p>
-                <p class="mt-2 mb-0">{project.summary}</p>
-              </a>
+                <div class="work-meta"><p>{categoryLabel}</p>{project.dates && <p>{project.dates}</p>}</div>
+                <h3><a href={projectHref(project.slug)}>{project.title}</a></h3>
+                <p class="work-role">{project.role}</p>
+                <p class="work-summary">{project.summary}</p>
+                <a class="work-enquire" href={`/contact/?audience=${audience}#enquiry`}>Discuss a similar project<span class="sr-only">: {project.title}</span><span aria-hidden="true">↗</span></a>
+              </article>
             ))}
           </div>
         </section>
-      ))
-    }
+      ))}
+      <div class="work-empty" data-project-empty hidden>
+        <h2>No projects in this selection.</h2>
+        <p>Explore all published projects or <a href="/contact/">tell us about your plans</a>.</p>
+        <button type="button" data-project-reset>Show all projects</button>
+      </div>
+    </div>
+    <details id="hotels" class="hotel-record" data-hotel-record>
+      <summary><span>Complete hotel record</span><span class="hotel-record-count">{hotels.length} named hotels</span></summary>
+      <div class="hotel-record-body">
+        <p class="lede">Hotels on the public record, with the years and the scope where we can state them. The Lanesborough and Moxy London ExCeL are listed by name only.</p>
+        <ul class="hotel-list">
+          {hotels.map((hotel) => (
+            <li>
+              {hotel.href && !hotel.nameOnly ? <a href={hotel.href}>{hotel.name}</a> : <p class="hotel-name">{hotel.name}</p>}
+              {!hotel.nameOnly && (hotel.years || hotel.place || hotel.scope) && <p>{[hotel.place, hotel.years, hotel.scope].filter(Boolean).join(' · ')}</p>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </details>
   </div>
+  <script is:inline data-project-explorer-script>
+    (() => {
+      const root = document.querySelector('[data-project-explorer]');
+      if (!root) return;
+      const controls = root.querySelector('[data-project-controls]');
+      const buttons = [...root.querySelectorAll('[data-project-filter]')];
+      const cards = [...root.querySelectorAll('[data-project-card]')];
+      const groups = [...root.querySelectorAll('[data-project-group]')];
+      const count = root.querySelector('[data-project-count]');
+      const empty = root.querySelector('[data-project-empty]');
+      const reset = root.querySelector('[data-project-reset]');
+      const hotelRecord = root.querySelector('[data-hotel-record]');
+      if (!controls || !buttons.length || !count || !empty || !reset) return;
+      const valid = new Set(buttons.map((button) => button.dataset.projectFilter));
+      const apply = (requested, updateUrl = false) => {
+        const selected = valid.has(requested) ? requested : 'all';
+        let visible = 0;
+        cards.forEach((card) => {
+          card.hidden = selected !== 'all' && card.dataset.projectCategory !== selected;
+          if (!card.hidden) visible += 1;
+        });
+        groups.forEach((group) => {
+          group.hidden = ![...group.querySelectorAll('[data-project-card]')].some((card) => !card.hidden);
+        });
+        buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.projectFilter === selected)));
+        const label = buttons.find((button) => button.dataset.projectFilter === selected).dataset.filterLabel;
+        count.textContent = `Showing ${visible} ${visible === 1 ? 'project' : 'projects'}${selected === 'all' ? '' : ` · ${label}`}`;
+        empty.hidden = visible > 0;
+        if (updateUrl) {
+          const url = new URL(window.location.href);
+          if (selected === 'all') url.searchParams.delete('sector');
+          else url.searchParams.set('sector', selected);
+          if (groups.some((group) => group.hidden && url.hash === `#${group.id}`)) url.hash = '';
+          try { window.history.replaceState(null, '', url); } catch { /* Filters still work if history updates are unavailable. */ }
+        }
+      };
+      const followAnchor = () => {
+        if (window.location.hash === '#hotels' && hotelRecord) hotelRecord.open = true;
+        const target = groups.find((group) => window.location.hash === `#${group.id}`);
+        if (target?.hidden) apply('all', true);
+      };
+      buttons.forEach((button) => button.addEventListener('click', () => apply(button.dataset.projectFilter, true)));
+      reset.addEventListener('click', () => {
+        apply('all', true);
+        buttons[0].focus();
+      });
+      window.addEventListener('popstate', () => {
+        apply(new URL(window.location.href).searchParams.get('sector'));
+        followAnchor();
+      });
+      window.addEventListener('hashchange', followAnchor);
+      apply(new URL(window.location.href).searchParams.get('sector'));
+      followAnchor();
+      controls.hidden = false;
+    })();
+  </script>
 </Base>
+
+<style>
+  .work-explorer { padding-bottom: 6rem; }
+  .work-heading { padding-bottom: 2.5rem; }
+  .work-introduction { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
+  .work-introduction .lede { max-width: 43rem; margin: 1.25rem 0 0; }
+  .work-record-link { display: inline-flex; align-items: center; gap: 1.2rem; min-height: 44px; font-size: .8rem; text-underline-offset: .3rem; color: inherit; flex-shrink: 0; }
+  .work-controls { margin-bottom: 2.5rem; padding: 1.2rem 0; border-block: 1px solid var(--color-line); }
+  .work-filters { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .work-filters button, .work-empty button { border: 1px solid var(--color-line); background: transparent; color: var(--color-ink); border-radius: 2px; min-height: 44px; padding: .7rem 1rem; font: inherit; font-size: .82rem; cursor: pointer; }
+  .work-filters button[aria-pressed="true"] { color: var(--color-ivory); background: #343a30; border-color: #343a30; }
+  .work-filters button:hover { border-color: var(--color-ink); }
+  .work-count { font-size: .78rem; color: var(--color-stone); margin: 1rem 0 0; }
+  .work-group { padding-bottom: 4.5rem; }
+  .work-group-heading { margin-bottom: 2rem; }
+  .work-group h2 { font-size: clamp(2.1rem, 3.5vw, 3.5rem); margin: 0; }
+  .work-group-heading > p { max-width: 48rem; color: var(--color-stone); font-size: .93rem; margin: 1rem 0 0; }
+  .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.8rem 3rem; align-items: start; }
+  .work-item { min-width: 0; }
+  .work-figure { margin: 0; width: 100%; }
+  .work-image-link { display: block; }
+  .work-figure :global(.media-frame), .work-figure :global(picture) { display: block; width: 100%; }
+  .work-figure :global(img) { display: block; width: 100%; height: auto; }
+  .work-item:not([data-preview="true"]) .work-figure :global(img) { aspect-ratio: 4 / 3; object-fit: cover; }
+  .work-figure figcaption { margin-top: .6rem; font-size: .72rem; line-height: 1.6; color: var(--color-stone); }
+  .work-text-cover { display: flex; flex-direction: column; justify-content: end; gap: 1rem; padding: 2rem; min-height: 16rem; border: 1px solid var(--color-line); background: var(--color-paper); color: inherit; text-decoration: none; }
+  .work-text-cover > span { font-family: var(--font-serif); font-size: 2rem; }
+  .work-text-cover small { font-size: .75rem; color: var(--color-stone); }
+  .work-meta { display: flex; flex-wrap: wrap; gap: .5rem 1rem; justify-content: space-between; margin: 1.3rem 0 .6rem; }
+  .work-meta p { margin: 0; font-size: .7rem; letter-spacing: .06em; color: var(--color-stone); }
+  .work-meta p:first-child { text-transform: uppercase; }
+  .work-item h3 { font-size: clamp(1.9rem, 2.8vw, 2.7rem); margin: 0; }
+  .work-item h3 a { color: inherit; text-decoration: none; }
+  .work-item h3 a:hover { text-decoration: underline; text-underline-offset: .2rem; text-decoration-thickness: 1px; }
+  .work-role { font-size: .8rem; margin: .85rem 0 0; color: var(--color-stone); }
+  .work-summary { margin: .7rem 0 0; font-size: .92rem; max-width: 36rem; }
+  .work-enquire { display: inline-flex; align-items: center; gap: 1.2rem; color: inherit; min-height: 44px; font-size: .78rem; margin-top: .8rem; text-underline-offset: .25rem; }
+  .work-empty { padding: 2rem; border: 1px solid var(--color-line); margin-bottom: 3rem; }
+  .work-empty h2 { margin-top: 0; }
+  .hotel-record { border-block: 1px solid var(--color-line); }
+  .hotel-record > summary { cursor: pointer; padding: 1.6rem .4rem; font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.5rem); }
+  .hotel-record-count { display: inline-block; font-family: var(--font-sans); font-size: .8rem; margin-left: 1.5rem; color: var(--color-stone); }
+  .hotel-record-body { padding: 0 .4rem 2rem; }
+  .hotel-record-body > p { margin-top: 0; }
+  .hotel-list { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2rem; }
+  .hotel-list li { border-top: 1px solid var(--color-line); padding-top: 1rem; }
+  .hotel-list a, .hotel-name { display: inline-block; color: inherit; font-family: var(--font-serif); font-size: 1.7rem; line-height: 1.1; margin: 0; }
+  .hotel-list a { text-decoration: none; min-height: 44px; }
+  .hotel-list a:hover { text-decoration: underline; }
+  .hotel-list li > p:not(.hotel-name) { margin: .5rem 0 0; color: var(--color-stone); font-size: .88rem; }
+  /* Keep native hidden authoritative if shared component styles evolve. */
+  [hidden] { display: none !important; }
+  @media (max-width: 767px) {
+    .work-introduction { display: block; }
+    .work-record-link { margin-top: 1rem; }
+    .work-grid, .hotel-list { grid-template-columns: minmax(0, 1fr); }
+    .work-grid { gap: 3rem; }
+    .work-group { padding-bottom: 3rem; }
+    .work-filters { gap: .4rem; }
+    .work-filters button { flex: 1 1 auto; }
+    .hotel-record-count { display: block; margin: .7rem 0 0; }
+  }
+</style>

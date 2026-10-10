@@ -24,7 +24,7 @@ npm run preview
 
 ## Edit the copy
 
-Wording lives in `src/content/`. The pages read those files. You do not need to touch the layout to change a sentence.
+Core business and service wording lives in `src/content/`. The Atelier homepage also contains editorial composition copy in `src/pages/index.astro`; its hero wording is in `src/content/home.json`. AI reference projections are documented in `docs/ai-crawler.md`.
 
 | File | What it holds |
 | --- | --- |
@@ -51,7 +51,7 @@ Case studies live in `src/content/case-studies/`. Each carries `published` and `
 
 Editorial pages (maker installer pages, the trade page, the cost guide, the reviews page) live in `src/content/pages/`. A page with `"draft": true` stays in the repository for review and is never built, never in the sitemap or `llms.txt`, and never linked; `npm run check:dist` proves it. Each draft carries `TODO(Dorin)` markers where a figure, a maker's permission or a claim is still needed. Remove the draft flag only when every marker is resolved.
 
-Photographs are in `public/media/`. Hotel photographs that are not our own are used small, as project cards. Brown’s Hotel photographs and films were taken on site and are shown in full on that project.
+Photographs are in `public/media/`. Third-party photographs retain their recorded rights constraints and credits; the Raffles homepage photograph is explicitly labelled official venue imagery. Brown’s Hotel photographs and films were taken on site and are shown in full on that project.
 
 ## Enquiry form
 
@@ -152,3 +152,20 @@ Google does not use IndexNow. It reads the sitemap, so nothing else is needed fo
 - `/contact/` Quotation
 - `/faq/` Questions
 - `/privacy/` Privacy notice
+
+## Atelier Sites edition — 10 October 2026
+
+This branch contains the hotel-led homepage, project explorer and expanded Wallcovering Installation AI Crawler resource. It was started from the #19–#21 fix stack and now includes main through `1b387c6`, including the owner’s correction that Dorin entered the trade in 2012. `.openai/hosting.json` identifies the separate owner-private Sites edition. The existing custom-domain canonical URLs are preserved for the intended MR WALLCOVER content; public DNS and GitHub main are unchanged.
+
+The crawler page, `/ai/business.json`, `/ai/projects.json`, and `/ai/decision-guide.json` share published content. The guide supports shortlisting and preparing a client-reviewed brief. It is not a booking or submission API. See `docs/ai-crawler.md`, `docs/atelier-media-provenance.md`, `BENCHMARK.md` and `QA_REPORT.md` for provenance and verification.
+
+```bash
+npm ci
+npm run check
+npm run build
+npm run check:dist
+npm run check:phone
+npm run check:guides
+```
+
+No separate lint/typecheck script is configured in this repository. Build and the listed tests are distinct checks and should not be described as a full static typecheck. The Sites edition is built without `SITE_PHONE` unless configured by the owner; email and the existing form remain available. FormSubmit delivery requires its existing active provider configuration; QA does not send synthetic leads.
