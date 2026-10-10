@@ -14,7 +14,7 @@
   "metaTitle": "Calico Wallpaper Mural, Heathrow Terminal 4 | Mr Wallcover",
   "metaDescription": "A bespoke Calico Wallpaper landscape mural hung overnight in a luxury fashion house's airside store at Heathrow Terminal 4, in a live terminal.",
   "group": "design-weeks",
-  "standfirst": "A single painted landscape, printed to the wall, wrapped around a luxury fashion house's airside store between the last departure and the first, with the terminal still running.",
+  "standfirst": "A single painted landscape, printed to the store's exact wall sizes, wraps the walls of a luxury fashion house's airside store, hung overnight while the terminal kept running.",
   "hero": "heathrow-05",
   "gallery": [
     {
@@ -67,13 +67,13 @@
 
 ## The project
 
-The store concept takes its cue from the painted British landscape, and the main walls carry it as a single, continuous Calico mural. A band of warm, earthy pink sits over a drifting grey-white mist, which settles into deep ink-blue ground with flecks of green and violet. A lit cove runs along the top, so the mural reads like a horizon floating around the room.
+The brand's new store concept takes its cue from the painterly British landscape, and in this store the main walls carry it as a single, continuous Calico Wallpaper mural. A band of warm, earthy pink sits over a drifting grey-white mist, which settles into deep ink-blue ground with flecks of green and violet. A lit cove runs along the top, so the mural reads like a horizon floating around the room.
 
 Calico prints murals like this to the exact size of each wall. That makes the work exacting. Every panel has its own place in the picture, so the horizon has to run level and unbroken across each join and around every corner.
 
 ## Working airside, in a live terminal
 
-Airport retail is the most controlled place we work. What that means in practice:
+Airport retail is one of the most tightly controlled places we work. What that means in practice:
 
 - **Security first.** Airside work means vetted operatives with airside passes. Tools and materials are checked through security and accounted for on site. Deliveries follow the airport's logistics and escort procedures.
 - **Overnight working.** In a terminal that never fully closes, the fit-out has to fit around passenger flows. Our photographs of the finished walls were taken between 02:30 and 03:42, with the gate lounges outside empty.

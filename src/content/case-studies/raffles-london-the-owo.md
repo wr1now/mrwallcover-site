@@ -15,7 +15,7 @@
   "metaTitle": null,
   "metaDescription": null,
   "group": null,
-  "standfirst": "Bespoke Vescom wallcoverings to the walls and joinery of the guest rooms at the Old War Office, hung batch by batch so whole corridors read as one.",
+  "standfirst": "Bespoke Vescom wallcoverings for the guest rooms of London's most storied address, the Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.",
   "hero": "owo-official-classic",
   "gallery": [
     {
