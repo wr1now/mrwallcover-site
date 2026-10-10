@@ -16,7 +16,7 @@
   "metaTitle": null,
   "metaDescription": null,
   "group": null,
-  "standfirst": "A complete decorating package for 111 guest rooms across seven storeys: paint, specialist wallcoverings and window film, from a sample room in November 2022 to final touches in August 2024, inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.",
+  "standfirst": "A complete decorating package for 111 guest rooms across seven storeys: paint, specialist wallcoverings and window film, delivered over about two years inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.",
   "hero": "old-bailey-06",
   "gallery": [
     {
