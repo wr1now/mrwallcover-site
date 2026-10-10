@@ -49,15 +49,38 @@ function distance(a: bigint, b: bigint): number {
   return n;
 }
 
+/**
+ * Allowlist by photo number (Dorin's numbered photo labels). tests/fixtures/held-images-cleared.json
+ * maps every number to its held fixture name; only the numbers or ranges under `cleared` may be
+ * published (e.g. "28-40" for the arches case study). Every other held frame stays blocked.
+ */
+interface ClearedList {
+  cleared: Record<string, string>;
+  labels: Record<string, string>;
+}
+
+function clearedHeldNames(list: ClearedList): Set<string> {
+  const numbers = new Set<number>();
+  for (const key of Object.keys(list.cleared)) {
+    const [from, to = from] = key.split('-').map((n) => Number.parseInt(n, 10));
+    for (let n = from; n <= to; n += 1) numbers.add(n);
+  }
+  return new Set([...numbers].map((n) => list.labels[String(n)]).filter(Boolean));
+}
+
 test('no held photograph (owner portraits, unidentified sets) is in the repo, by name or by picture', async () => {
   const files = await walk('public');
   const named = files.filter((f) => HELD_SET_NAMES.test(f));
   assert.deepEqual(named, [], 'held set names must not appear under public/');
 
-  const held = Object.entries(JSON.parse(await readFile('tests/fixtures/held-images.json', 'utf8')) as Record<string, string>).map(
+  const cleared = clearedHeldNames(JSON.parse(await readFile('tests/fixtures/held-images-cleared.json', 'utf8')) as ClearedList);
+  const all = Object.entries(JSON.parse(await readFile('tests/fixtures/held-images.json', 'utf8')) as Record<string, string>).map(
     ([name, hex]) => [name, BigInt(`0x${hex}`)] as const,
   );
-  assert.ok(held.length >= 70, 'the held-image fingerprint list is present');
+  const held = all.filter(([name]) => !cleared.has(name));
+  const clearedRefs = all.filter(([name]) => cleared.has(name));
+  assert.ok(held.length >= 50, 'the held-image fingerprint list is present');
+  assert.ok(cleared.size <= 13 + 40, 'the cleared list only names labelled photo numbers');
 
   // One file per picture is enough: the largest-but-one responsive width, or the plain file.
   const images = files.filter(
@@ -71,7 +94,13 @@ test('no held photograph (owner portraits, unidentified sets) is in the repo, by
     } catch {
       continue;
     }
-    for (const [name, ref] of held) if (distance(h, ref) <= MAX_DISTANCE) hits.push(`${file} ~ ${name}`);
+    // A cleared shot can sit near a held one (two close-ups of the same grasscloth); the file is
+    // the cleared photograph when it is nearer to a cleared frame than to the held frame.
+    const nearestCleared = Math.min(Infinity, ...clearedRefs.map(([, ref]) => distance(h, ref)));
+    for (const [name, ref] of held) {
+      const d = distance(h, ref);
+      if (d <= MAX_DISTANCE && d < nearestCleared) hits.push(`${file} ~ ${name}`);
+    }
   }
   assert.deepEqual(hits, [], 'a held photograph matched an image under public/');
 });
