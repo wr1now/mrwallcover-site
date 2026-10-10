@@ -75,6 +75,23 @@ main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
 .hotel-list a, .hotel-name { font-size:var(--text-h3); }
 @media (max-width:767px) { .atelier-project-grid { grid-template-columns:1fr; gap:2.5rem; } }
 
+/* ---- 9. Films and the light studio, in the open under "On the wall" ---- */
+.home-films-title { margin:3rem 0 1.25rem; }
+.home-films, body .atelier .home-films { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:1.5rem; padding:0; margin:0; }
+.home-films figure { margin:0; }
+.home-films video { width:100%; height:auto; display:block; background:#1c1a17; }
+.home-films figcaption { margin-top:.6rem; color:var(--color-stone); }
+@media (max-width:767px) { .home-films { grid-template-columns:1fr; } }
+.home-studio .studio { border-top:1px solid var(--color-line); }
+/* The light studio: words on the left, the reference photograph on the right, on the shared grid. */
+@media (min-width:1024px) {
+  .home-studio .studio > .container-page { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); column-gap:4rem; align-items:start; }
+  .home-studio .studio > .container-page > * { grid-column:1; }
+  .home-studio .studio > .container-page > [data-studio-fallback] { grid-column:2; grid-row:1 / span 6; margin-top:0; }
+  .home-studio .studio-photo { max-width:30rem; margin-left:auto; }
+  .home-studio .studio > .container-page > [data-studio-controls] { grid-column:1 / -1; }
+}
+
 /* ---- 10. Homepage sizes on the shared scale (audit items 1-4, 7, 9) ----
  * "body" in front lifts each rule just above atelier.css and hero-mobile.css without touching them. */
 /* Labels, eyebrows, credits: 13px. */
@@ -136,3 +153,13 @@ body .atelier .atelier-craft-copy dt { font-size:var(--text-button); }
 .home-proof { content-visibility:auto; contain-intrinsic-size:auto 1360px; }
 .home-studio { content-visibility:auto; contain-intrinsic-size:auto 1000px; }
 @media (min-width:1024px) { .home-studio { contain-intrinsic-size:auto 865px; } }
+
+/* ---- 13. Second-opinion review (Grok) follow-ups ---- */
+/* Films: their own portrait ratio, no letterbox bars, one height across the row. */
+body .atelier .home-films { grid-template-columns:repeat(3, minmax(0, 18rem)); justify-content:start; }
+body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-fit:cover; }
+@media (max-width:767px) {
+  /* Phones: a swipeable row, like the photographs above it. */
+  body .atelier .home-films { grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:62vw; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px; padding-bottom:12px; }
+  body .atelier .home-films figure { scroll-snap-align:start; }
+}
