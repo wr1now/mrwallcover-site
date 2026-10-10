@@ -22,7 +22,7 @@ const crumbs = [
 
 <Base
   title={`${material.name} | Mr Wallcover`}
-  description={material.appearance}
+  description={(material as { metaDescription?: string }).metaDescription ?? material.appearance}
   path={`/materials/${material.slug}/`}
   extraSchema={[breadcrumbNode(crumbs)]}
 >

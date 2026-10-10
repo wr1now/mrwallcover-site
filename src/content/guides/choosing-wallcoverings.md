@@ -13,6 +13,7 @@ authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-10"
 description: "How to choose a wallcovering that still looks right once it is on the wall: traffic, light, cleaning, moisture, sample size and the questions to settle before ordering."
+metaDescription: "How to choose a wallcovering that still looks right on the wall: traffic, light, cleaning, moisture, sample size and what to settle before ordering."
 shortTitle: "Choosing wallcoverings"
 order: 1
 relatedMaterials: ["paper-and-non-woven", "grasscloth-and-weaves", "silk-and-textiles", "contract-vinyl"]

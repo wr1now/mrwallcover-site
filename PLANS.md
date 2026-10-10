@@ -84,11 +84,23 @@ Owner direction: merge PR #23 and verify the homepage, AI crawler and enquiry fo
 
 1. Confirm the exact PR head, clean checkout, main compatibility and CI. Acceptance: mergeable head with required checks passed. **Complete:** head `dddcb5a`, mergeable, build passed.
 2. Mark the existing PR ready and merge it without a history rewrite. Follow the main-branch Pages workflow. Acceptance: merge recorded and matching production deployment succeeds. **Complete:** PR #23 merged as `90fccd184fb96a49ace2635d80ff176ea824cbaf`; production workflow `38079955213` succeeded.
-3. Check HTTPS, homepage assets/navigation, crawler HTML/JSON/Markdown and enquiry browser behavior on the actual public domain. Acceptance: routes and assets resolve, desktop/mobile layouts work, form prefill and validation work, intended provider/return URLs correct. No synthetic lead will be sent; inbox delivery remains unverified unless separately exercised. **Pending.**
-4. Record release proof and QA results. Preserve the private Sites edition and existing DNS. Rollback: revert the merge if a critical production defect cannot be safely fixed forward. **Pending.**
+3. Check HTTPS, homepage assets/navigation, crawler HTML/JSON/Markdown and enquiry browser behavior on the actual public domain. Acceptance: routes and assets resolve, desktop/mobile layouts work, form prefill and validation work, intended provider/return URLs correct. No synthetic lead will be sent; inbox delivery remains unverified unless separately exercised. **Complete within the documented limits:** live routes, desktop/mobile navigation and invalid-input behavior verified; no external enquiry submission made.
+4. Record release proof and QA results. Preserve the private Sites edition and existing DNS. Rollback: revert the merge if a critical production defect cannot be safely fixed forward. **Complete:** release and QA records updated; private Sites edition and DNS unchanged.
 
 Commands: gh pr ready/merge, gh run view/watch, Git fetch/status, live HTTP reads and Chrome interactions. Files: PLANS.md and QA_REPORT.md only unless live verification reveals a defect. No new paid services or credentials are needed.
 
 Live QA identified a hidden confirmation-reference line, a missing reply-method error destination, and missing client-side attachment limits. A scoped follow-up branch `codex/mrwallcover-live-form-checks` corrects these, preserves existing private API limits, restores submit after browser back navigation and caps oversized hero text only on ultra-wide screens. The owner reaffirmed that the photographic hotel homepage must remain intact; all homepage photographs and sections are preserved. Focused enquiry regression tests: 18 passed. Next: full build/checks, browser checks, merge follow-up and verify live deployment.
 
 Follow-up release gate: 70 source + 50 built-output + 2 phone + 4 guide tests pass (126 total), production/review builds succeed, case-study dates and whitespace pass. Added a tested fix for first/final-step controls. README and QA_REPORT.md document provider limits and real verification boundaries. Next: push scoped follow-up, require CI, merge, confirm deployment and recheck live form/photographic homepage.
+
+
+### Public release receipt — 2026-10-10 19:39 UTC
+
+- PR #23 merged and deployed, followed by corrective PR #25: https://github.com/wr1now/mrwallcover-site/pull/25.
+- Follow-up implementation `08f2d6474408c123ddab9bbf10a88c3f1cad8cf0`; merge `1970b5a98705cb35a58f52c2dc80ebc24a206fa9`.
+- Matching production workflow https://github.com/wr1now/mrwallcover-site/actions/runs/38080570164 succeeded, including build and deployment.
+- Post-deployment HTTP receipt: `docs/live-release-qa-2026-10-10.json`. All 11 target routes returned 200; updated attachment help, reply error target, CAPTCHA configuration and production return URL confirmed in delivered HTML.
+- Public browser: hotel/source prefill, invalid email, reply method, all four optional steps and corrected boundary controls verified; no inspected console warnings/errors. Mobile homepage and AI resource have no horizontal document overflow at 390px; mobile menu opens and reaches the AI page. The AI comparison table scrolls inside its own container.
+- Hotel homepage photographs and all existing sections retained. Browser capture was briefly interrupted by a tool timeout, then recovered in a fresh normal-view tab. The live homepage screenshot `mrwallcover-live-home.jpg` and AI screenshot `mrwallcover-live-ai-crawler.jpg` were saved in the Codex visualization folder; the public homepage was left open.
+- Known limits: Chrome prevented automated attachment selection because extension file-URL access is disabled; validator tests passed. No CAPTCHA completion or delivery to the business inbox was attempted.
+- Temporary production preview server stopped. The bounded public release is complete; email delivery and native picker testing remain explicitly unverified checks, not false passes.

@@ -13,6 +13,7 @@ authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-09"
 description: "What to do when a wallcovering bubbles, lifts or marks: what to photograph and record, what not to touch, how to clean each material, and when an inspection is needed."
+metaDescription: "What to do when a wallcovering bubbles, lifts or marks: what to record, what not to touch, how to clean each material and when to call for an inspection."
 shortTitle: "Problems and aftercare"
 order: 10
 relatedMaterials: ["grasscloth-and-weaves", "silk-and-textiles", "contract-vinyl", "hand-painted"]

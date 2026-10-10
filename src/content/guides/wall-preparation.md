@@ -13,6 +13,7 @@ authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-10"
 description: "How to tell whether a wall is ready for wallcovering: old coatings, dryness, soundness, filling and sanding, lining paper, priming and what needs a site inspection."
+metaDescription: "How to tell if a wall is ready for wallcovering: old coatings, dryness, soundness, filling and sanding, lining paper, priming and when to inspect."
 shortTitle: "Wall preparation"
 order: 3
 relatedMaterials: ["silk-and-textiles", "paper-and-non-woven", "contract-vinyl"]

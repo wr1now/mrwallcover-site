@@ -13,6 +13,7 @@ authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-10"
 description: "How a scenic or hand-painted paper is set out: elevations, the focal point, panel sequence, doors and corners, finished dimensions and when the survey has to happen."
+metaDescription: "How a scenic or hand-painted paper is set out: elevations, the focal point, panel sequence, doors and corners, finished sizes and when to survey."
 shortTitle: "Hand-painted papers and murals"
 order: 6
 relatedMaterials: ["hand-painted", "murals"]

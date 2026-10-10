@@ -19,11 +19,12 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href:
 const related = guides.filter((item) => data.relatedGuides.includes(item.frontmatter.slug));
 const relatedMaterials = materials.items.filter((item) => data.relatedMaterials.includes(item.slug));
 const faq = data.faq ?? [];
-const article = guideArticleNode({ url, headline: data.title, description: data.description, published: data.published, updated: data.updated });
+const metaDescription = data.metaDescription ?? data.description;
+const article = guideArticleNode({ url, headline: data.title, description: metaDescription, published: data.published, updated: data.updated });
 // FAQPage only when the questions are rendered on the page below; drafts carry no Article so the review build cannot be mistaken for publication.
 const extraSchema = [breadcrumbNode(crumbs), ...(data.draft ? [] : [article, ...(faq.length ? [guideFaqNode(faq)] : [])])];
 ---
-<Base title={`${data.shortTitle} | Mr Wallcover`} description={data.description} path={path} author={data.author} ogType="article" extraSchema={extraSchema} updated={data.updated} meta={false}>
+<Base title={`${data.shortTitle} | Mr Wallcover`} description={metaDescription} path={path} author={data.author} ogType="article" extraSchema={extraSchema} updated={data.updated} meta={false}>
   <div class="container-page pb-20">
     <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
