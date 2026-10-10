@@ -13,6 +13,7 @@
  *   professional pages carry.
  */
 import Breadcrumb from '../components/Breadcrumb.astro';
+import BuyerFaq from '../components/BuyerFaq.astro';
 import FaqList from '../components/FaqList.astro';
 import PageMeta from '../components/PageMeta.astro';
 import Base from '../layouts/Base.astro';
@@ -20,6 +21,7 @@ import { SITE_URL } from '../config';
 import professionals from '../content/professionals.json';
 import { editorialPages, linkedProjects, projectHref } from '../lib/content';
 import type { EditorialPageData } from '../lib/content';
+import type { BuyerAnswer } from '../lib/ai-layer-data';
 import { guides, guideHref } from '../lib/guides';
 import { breadcrumbNode, faqNode, singleServiceNode } from '../lib/schema';
 
@@ -51,6 +53,12 @@ const intake = page.intake;
 const relatedGuide = intake?.guide ? guides.find((guide) => guide.frontmatter.slug === intake.guide) : undefined;
 if (intake?.guide && !relatedGuide) throw new Error(`editorial page "${page.path}" names a guide that does not exist: ${intake.guide}`);
 const cta = page.cta ?? { label: 'Request a quotation', href: '/contact/' };
+// Pages under /professionals/ show their questions the way /professionals/<slug>/ does: the shared
+// BuyerFaq block, headed "Questions buyers ask", above "Other ways we can help". Other editorial pages keep FaqList.
+const professionalPage = page.parent.href === '/professionals/';
+const buyerFaq = professionalPage
+  ? page.faq.map((item) => ({ id: item.id, question: item.question, answer: item.paragraphs.join(' ') }) as unknown as BuyerAnswer)
+  : [];
 ---
 
 <Base
@@ -129,6 +137,7 @@ const cta = page.cta ?? { label: 'Request a quotation', href: '/contact/' };
         </section>
       )
     }
+    {buyerFaq.length > 0 && <div class="prose guide-prose"><BuyerFaq items={buyerFaq} eyebrow="Questions" /></div>}
     {
       page.otherProfessionals && (
         <section class="guide-related pb-12">
@@ -145,5 +154,5 @@ const cta = page.cta ?? { label: 'Request a quotation', href: '/contact/' };
       )
     }
   </div>
-  {page.faq.length > 0 && <FaqList items={page.faq} eyebrow="Questions" heading={`Asked about ${page.title}`} />}
+  {!professionalPage && page.faq.length > 0 && <FaqList items={page.faq} eyebrow="Questions" heading={`Asked about ${page.title}`} />}
 </Base>
