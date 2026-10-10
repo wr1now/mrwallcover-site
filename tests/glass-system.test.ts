@@ -183,8 +183,8 @@ test('home hero offers responsive original-photo derivatives for the full-width 
   const source = html.match(/<div class="atelier-hero-media">[\s\S]*?<source type="image\/webp" srcset="([^"]+)" sizes="([^"]+)"/);
   assert.ok(source, 'hero webp source');
   for (const width of [640, 960, 1440, 2000, 2560]) assert.match(source![1], new RegExp(` ${width}w`));
-  // The hero box less its side margins (src/lib/hero-sizes.ts); the same sizes go on the preload.
-  assert.equal(source![2], '(max-width: 767px) calc(100vw - 24px), calc(100vw - 48px)');
+  // src/lib/hero-sizes.ts: the phone hero box, 100vw from 768px; the same sizes go on the preload.
+  assert.equal(source![2], '(max-width: 767px) calc(100vw - 24px), 100vw');
   assert.ok(html.includes(`imagesizes="${source![2]}"`), 'preload uses the same sizes');
 });
 
