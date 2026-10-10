@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import '../styles/atelier.css';
+import hero from '../content/hero.json';
 import { ANALYTICS_SRC, BRAND_NAME, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
 import { CONTACT_PAYLOAD } from '../lib/phone';
 import Footer from '../components/Footer.astro';
@@ -7,7 +9,6 @@ import Header from '../components/Header.astro';
 import MobileDock from '../components/MobileDock.astro';
 import PageMeta from '../components/PageMeta.astro';
 import { businessNode, founderNode, jsonLd, webPageNode, websiteNode } from '../lib/schema';
-import { hero as heroImage } from '../lib/content';
 
 interface Props {
   title: string;
@@ -55,9 +56,7 @@ const schema = jsonLd([
   webPageNode({ url: canonical, name: title, description, image, imageCredit }),
   ...extraSchema,
 ]);
-/* Preload exactly the image the homepage hero renders (same AVIF set, same sizes), and nothing else. */
-const heroPreloadSet = (heroImage.avif ?? heroImage.sources).map((s) => `${s.src} ${s.width}w`).join(', ');
-const heroPreloadType = heroImage.avif ? 'image/avif' : 'image/webp';
+const heroSrcset = hero.sources.map(source => `${source.src} ${source.width}w`).join(', ');
 ---
 
 <!doctype html>
@@ -90,7 +89,9 @@ const heroPreloadType = heroImage.avif ? 'image/avif' : 'image/webp';
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
     {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
-    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
+    <link rel="describedby" type="text/plain" href="/llms.txt" title="Public content index" />
+    <link rel="describedby" type="application/json" href="/ai/business.json" title="Business facts" />
+    <link rel="describedby" type="application/json" href="/ai/decision-guide.json" title="Project fit and enquiry guide" />
     <link rel="alternate" type="application/atom+xml" href="/feed.xml" title={`${BRAND_NAME}: guides and case studies`} />
     {/* The Markdown twin scripts/build-ai-layer.mjs writes next to every published page after the build. Noindex pages have none. */}
     {!noindex && <link rel="alternate" type="text/markdown" href={`${canonical}index.md`} title="Markdown version" />}
@@ -120,9 +121,9 @@ const heroPreloadType = heroImage.avif ? 'image/avif' : 'image/webp';
         <link
           rel="preload"
           as="image"
-          type={heroPreloadType}
-          imagesrcset={heroPreloadSet}
-          imagesizes={heroImage.sizes ?? '(min-width: 1024px) 60vw, 100vw'}
+          href={hero.sources[1].src}
+          imagesrcset={heroSrcset}
+          imagesizes="100vw"
           fetchpriority="high"
         />
       )

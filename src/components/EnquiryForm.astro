@@ -1,5 +1,6 @@
 ---
 import { LEAD_API_URL, FORM_ENDPOINT, FORM_PROVIDER, PUBLIC_EMAIL, SITE_URL } from '../config';
+import { attachmentLimits } from '../lib/enquiry-attachments';
 
 interface Props {
   variant?: 'enquiry' | 'aftercare';
@@ -8,6 +9,7 @@ interface Props {
 const { variant = 'enquiry' } = Astro.props;
 const isFormSubmit = !LEAD_API_URL && FORM_PROVIDER === 'formsubmit' && FORM_ENDPOINT.length > 0;
 const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().join('')) : '';
+const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDER).description;
 ---
 
 <form
@@ -168,7 +170,7 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
         <input id="name" name="name" type="text" autocomplete="name" />
         <p class="form-error" data-error="name"></p>
       </div>
-      <fieldset>
+      <fieldset id="field-replyBy">
         <legend>Reply by</legend>
         <div class="mt-2 flex flex-wrap gap-4">
           <label class="inline-flex min-h-12 items-center gap-2"><input type="radio" name="replyBy" value="email" /> Email</label>
@@ -191,10 +193,11 @@ const encodedEndpoint = isFormSubmit ? btoa(FORM_ENDPOINT.split('').reverse().jo
         <textarea id="message" name="message"></textarea>
         <p class="form-error" data-error="message"></p>
       </div>
-      <div class="field">
+      <div class="field" id="field-attachment">
         <label for="photos">Photographs or a PDF, if you have them</label>
-        <input id="photos" name="attachment" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif,.pdf,application/pdf" multiple />
-        <p class="form-note m-0 text-stone">Phone photographs and drawings help. JPEG, PNG, WebP, HEIC and PDF. Up to 8 files. You do not have to attach anything to write to us. If a file will not send, email {PUBLIC_EMAIL}.</p>
+        <input id="photos" name="attachment" type="file" aria-describedby="attachment-help attachment-error" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif,.pdf,application/pdf" multiple />
+        <p id="attachment-help" class="form-note m-0 text-stone">Phone photographs and drawings help. JPEG, PNG, WebP, HEIC, HEIF and PDF. {attachmentHelp} You do not have to attach anything to write to us. If a file will not send, email {PUBLIC_EMAIL}.</p>
+        <p id="attachment-error" class="form-error" data-error="attachment" aria-live="polite"></p>
         <ul class="file-list" data-file-list></ul>
       </div>
       <label class="inline-flex min-h-12 items-center gap-2">

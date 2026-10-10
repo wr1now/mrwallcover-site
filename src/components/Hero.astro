@@ -1,27 +1,11 @@
 ---
 import { altFor, hero } from '../lib/content';
 import '../styles/hero-mobile.css';
-
-/* Phones and tablets: the photograph is full width. From 1024px it sits in the 60vw media column. */
-const heroSizes = hero.sizes ?? '(min-width: 1024px) 60vw, 100vw';
-const srcset = hero.sources.map((source) => `${source.src} ${source.width}w`).join(', ');
-const avifSrcset = (hero.avif ?? []).map((source) => `${source.src} ${source.width}w`).join(', ');
-const alt = altFor(hero.id);
+const srcset = hero.sources.map(source => `${source.src} ${source.width}w`).join(', ');
 ---
-
-<div class="hero-media">
+<div class="atelier-hero-media">
   <picture>
-    {avifSrcset && <source type="image/avif" srcset={avifSrcset} sizes={heroSizes} />}
-    <source type="image/webp" srcset={srcset} sizes={heroSizes} />
-    <img
-      src={hero.fallback}
-      alt={alt}
-      width={hero.width}
-      height={hero.height}
-      sizes={heroSizes}
-      fetchpriority="high"
-      loading="eager"
-      decoding="sync"
-    />
+    <source type="image/webp" srcset={srcset} sizes="100vw" />
+    <img src={hero.fallback} alt={altFor(hero.id)} width={hero.width} height={hero.height} sizes="100vw" fetchpriority="high" decoding="sync" />
   </picture>
 </div>
