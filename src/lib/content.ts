@@ -95,8 +95,6 @@ const CASE_STUDY_ORDER = [
   'biltmore-mayfair',
   'house-of-hackney-st-michaels',
   'penny-morrison-showroom',
-  'scp-showroom-pimlico',
-  'tea-house-jaillon-studio',
   'pimlico-st-georges-square',
   'inverness-terrace',
   'north-london-residence',
