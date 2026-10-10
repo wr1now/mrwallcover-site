@@ -16,8 +16,21 @@
   "metaDescription": null,
   "group": null,
   "standfirst": "Guest room and suite wallpapering, 2016 to 2019, inside one of the City's great Beaux-Arts buildings.",
-  "hero": null,
-  "gallery": [],
+  "hero": "four-seasons-ten-trinity-commons-01",
+  "gallery": [
+    {
+      "id": "four-seasons-ten-trinity-commons-01",
+      "credit": "Ten Trinity Square at night, from Trinity Square Gardens. A view of the building, not of our work. Photography: The wub / Wikimedia Commons (CC BY-SA 4.0)."
+    },
+    {
+      "id": "four-seasons-ten-trinity-commons-02",
+      "credit": "Ten Trinity Square from Trinity Square, 2026. A view of the building, not of our work. Photography: APK / Wikimedia Commons (CC BY 4.0)."
+    },
+    {
+      "id": "four-seasons-ten-trinity-commons-03",
+      "credit": "The front of Ten Trinity Square on Tower Hill, 2015. A view of the building, not of our work. Photography: Jim Linwood from London / Wikimedia Commons (CC BY 2.0)."
+    }
+  ],
   "published": "2026-10-09",
   "updated": "2026-10-10"
 }
@@ -34,7 +47,7 @@
 
 ## The building
 
-Few addresses in London speak so eloquently of trade and empire. Designed by Sir Edwin Cooper, Ten Trinity Square was opened by the Prime Minister, David Lloyd George, in 1922 as the headquarters of the Port of London Authority. In 1946 it hosted a reception marking the inaugural meeting of the General Assembly of the United Nations, an occasion held in the building's ballroom.
+Few addresses in London speak so eloquently of trade and empire. Designed by Sir Edwin Cooper, Ten Trinity Square was opened by the Prime Minister, David Lloyd George, in 1922 as the headquarters of the Port of London Authority. In 1946 it hosted a reception marking the inaugural meeting of the General Assembly of the United Nations, an occasion held in the building's ballroom. The building also appeared in the 2012 James Bond film [*Skyfall*](https://www.telegraph.co.uk/finance/property/luxury-homes/11354656/Ten-Trinity-Square-a-home-in-one-of-Londons-greatest-buildings.html).
 
 Acquired by Reignwood Group in 2010, the Grade II*-listed building underwent a seven-year restoration and conversion, led architecturally by Aukett Swanke, before opening as a Four Seasons hotel and private residences in 2017. It stands a short walk from the Tower of London and Tower Bridge, the neighbourhood whose name the hotel took in 2024.
 
@@ -62,3 +75,11 @@ To paper the guest rooms and suites: premium finishes, among them Phillip Jeffri
 ## Outcome
 
 Guest room and suite wallpapering from 2016 to 2019 on one of London's most significant hotel conversions, through the opening in 2017 and the rooms that followed. Quiet, tailored walls that let Sir Edwin Cooper's architecture take the applause.
+
+## Photographs on this page
+
+These are photographs of the building by other photographers, credited below. They show the building, not our work.
+
+- Ten Trinity Square at night, from Trinity Square Gardens: photograph by The wub, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_London,_at_night.jpg). Resized for the web.
+- Ten Trinity Square from Trinity Square, 2026: photograph by APK, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:10_Trinity_Square_in_2026.jpg). Resized for the web.
+- The front of Ten Trinity Square on Tower Hill, 2015: photograph by Jim Linwood from London, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_Tower_Hill_-_City_Of_London._(16459952029).jpg). Resized for the web.

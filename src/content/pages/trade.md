@@ -50,7 +50,7 @@ Main contractors, hotel FF&E and project teams, fit-out firms and the designers 
 
 ## How we price
 
-From a site survey or from drawings. Openings come out of the area; pattern repeat and wastage go in. Access, protection and making good are written into the scope, not discovered at the end. We say what has been allowed for. TODO(Dorin): confirm whether to state a typical allowance for demanding repeats (the services page already says "often in the region of 20%").
+From a site survey or from drawings. Openings come out of the area; pattern repeat and wastage go in. Access, protection and making good are written into the scope, not discovered at the end. We say what has been allowed for. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey.
 
 ## Programme and night work
 

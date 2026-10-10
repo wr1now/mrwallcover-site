@@ -11,7 +11,7 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-09"
+updated: "2026-10-10"
 description: "What a wallcovering package needs to be priced, programmed and handed over: scope, measurement basis, substrate handover, programme, changes, snagging and spares."
 shortTitle: "Developer package"
 order: 9
@@ -30,7 +30,7 @@ List every area with its material reference, drawing revision, quantity basis an
 
 ## Measurement basis: what is being priced?
 
-State whether areas are measured net of openings, whether returns, reveals and joinery faces are measured separately, and whether the contractor or the client confirms the purchase quantity. The labour measure and the order quantity are different numbers: the order has to cover full drops, the repeat and the batch. Where the repeat is demanding, the allowance is often in the region of 20%. See the [quantities page](/advice/quantities/).
+State whether areas are measured net of openings, whether returns, reveals and joinery faces are measured separately, and whether the contractor or the client confirms the purchase quantity. The labour measure and the order quantity are different numbers: the order has to cover full drops, the repeat and the batch. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey. See the [quantities page](/advice/quantities/).
 
 ## Substrate handover: when is a wall "ready"?
 
