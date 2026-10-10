@@ -12,7 +12,7 @@
     "Omexco (Belgium)"
   ],
   "modest": false,
-  "metaTitle": null,
+  "metaTitle": "Four Seasons Hotel London, Ten Trinity Square | Mr Wallcover",
   "metaDescription": null,
   "group": null,
   "standfirst": "Guest room and suite wallpapering, 2016 to 2019, inside one of the City's great Beaux-Arts buildings.",

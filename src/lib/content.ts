@@ -168,7 +168,7 @@ function fromCaseStudy(cs: CaseStudyData, base?: Project): Project {
   return {
     slug: cs.slug,
     title: cs.title,
-    metaTitle: cs.metaTitle ?? (`${cs.title} | Case Study | Mr Wallcover`.length <= 65 ? `${cs.title} | Case Study | Mr Wallcover` : `${cs.title} | Mr Wallcover`),
+    metaTitle: cs.metaTitle ?? (`${cs.title} | Case Study | Mr Wallcover`.length <= 60 ? `${cs.title} | Case Study | Mr Wallcover` : `${cs.title} | Mr Wallcover`),
     description,
     role: cs.role,
     client: cs.client,
@@ -235,7 +235,8 @@ export const videos = videosJson;
 export function videoById(id: string) {
   const video = videos.find((item) => item.id === id);
   if (!video) throw new Error(`Missing video ${id}`);
-  return { ...video, alt: altFor(video.altKey) };
+  /* videos.json carries a description of what each film actually shows; it wins over the older alts.json entry. */
+  return { ...video, alt: (video as { alt?: string }).alt ?? altFor(video.altKey) };
 }
 
 export const faqItems = faq.items as FaqItem[];
