@@ -6,7 +6,8 @@
  *
  * Compares this branch with origin/main and exits 1 when anything published would be lost:
  *  (a) a URL in main's sitemap is missing from this build's sitemap;
- *  (b) a case study disappears, is unpublished (draft), or its gallery frame count drops;
+ *  (b) a case study disappears, is unpublished (draft), or its gallery frame count drops; a project
+ *      record in src/content/projects.json disappears, or its gallery or film count drops;
  *  (c) a file under public/media (or an image at the top of public/) is deleted without a
  *      replacement: the same base name or slot (base name minus a -800 / -1600w / -preview size
  *      suffix), in any format, with pixel dimensions at least as large. Reorders are allowed;
@@ -104,6 +105,36 @@ for (const name of baseStudies) {
   if (pFrames < bFrames) fail('b', `${slug}: gallery frames dropped from ${bFrames} to ${pFrames}`);
   if (!b.draft && p.draft) fail('b', `${slug}: published on main, set to draft here`);
 }
+
+// (b2) The project records in src/content/projects.json carry their own gallery and film lists
+// (they feed /projects/, the project pages and the AI layer). A record may not disappear, and its
+// gallery or film count may not drop. Reorders and swaps of the same count are allowed.
+const projectsFile = 'src/content/projects.json';
+const projectItems = (text) => {
+  const data = JSON.parse(text);
+  return new Map((Array.isArray(data) ? data : data.items ?? []).map((item) => [item.slug, item]));
+};
+const baseProjects = projectItems(gitText('show', `${baseRef}:${projectsFile}`));
+const prProjects = projectItems(readFileSync(path.join(root, projectsFile), 'utf8'));
+report.projects = {};
+for (const [slug, b] of baseProjects) {
+  const p = prProjects.get(slug);
+  const bG = (b.gallery ?? []).length, bV = (b.videos ?? []).length;
+  if (!p) {
+    fail('b', `${projectsFile}: project record removed: ${slug}`);
+    report.projects[slug] = { gallery: { base: bG, pr: null } };
+    continue;
+  }
+  const pG = (p.gallery ?? []).length, pV = (p.videos ?? []).length;
+  report.projects[slug] = { gallery: { base: bG, pr: pG }, videos: { base: bV, pr: pV } };
+  if (pG < bG) fail('b', `${projectsFile}: ${slug} gallery entries dropped from ${bG} to ${pG}`);
+  if (pV < bV) fail('b', `${projectsFile}: ${slug} films dropped from ${bV} to ${pV}`);
+}
+const sum = (m, k) => [...m.values()].reduce((n, item) => n + (item[k] ?? []).length, 0);
+report.counts.base.projectRecords = baseProjects.size;
+report.counts.pr.projectRecords = prProjects.size;
+report.counts.base.projectGalleryEntries = sum(baseProjects, 'gallery');
+report.counts.pr.projectGalleryEntries = sum(prProjects, 'gallery');
 
 // (c) Media files: deleted only with an equal-or-larger replacement of the same shot.
 const MEDIA = /^public\/(media\/.+|[^/]+\.(jpe?g|png|webp|avif|gif|svg))$/i;
@@ -277,6 +308,7 @@ else {
 if (jsonOut) writeFileSync(jsonOut, JSON.stringify(report, null, 2));
 console.log(`homepage: sections ${homePr?.sections}, headings ${homePr?.headings}, case studies linked ${homePr?.projectLinks}, photographs ${homePr?.images} (1b387c6: ${homeBaseline.sections}/${homeBaseline.headings}/${homeBaseline.projectLinks}/${homeBaseline.images})`);
 console.log(`no-loss: pages ${report.counts.base.pages} -> ${report.counts.pr.pages}; media ${report.counts.base.mediaFiles} -> ${report.counts.pr.mediaFiles}; markdown twins ${report.counts.base.markdownTwins} -> ${report.counts.pr.markdownTwins}; JSON-LD nodes ${ldBase.nodes} -> ${ldPr.nodes}, properties ${ldBase.props} -> ${ldPr.props}`);
+console.log(`projects.json: records ${report.counts.base.projectRecords} -> ${report.counts.pr.projectRecords}; gallery entries ${report.counts.base.projectGalleryEntries} -> ${report.counts.pr.projectGalleryEntries}`);
 if (failures.length) {
   console.error(`NO-LOSS GUARD FAILED (${failures.length}):\n- ${failures.join('\n- ')}`);
   process.exit(1);

@@ -6,6 +6,7 @@ import { areaHref, areas, caseStudyBySlug, media, ogImageFor, projectAliases, pr
 import { SITE_URL } from '../../config';
 import { breadcrumbNode, caseStudyArticleNode, projectNode, videoNode } from '../../lib/schema';
 import type { Project } from '../../lib/types';
+import method from '../../content/method.json';
 import retired from '../../content/retired-projects.json';
 
 export function getStaticPaths() {
@@ -141,6 +142,20 @@ const schemaNodes = study
             </div>
           </section>
         )}
+        <section class="mt-14 border-t border-line pt-10" aria-labelledby="method-heading">
+          <p class="eyebrow">{method.eyebrow}</p>
+          <h2 id="method-heading" class="m-0 max-w-xl text-[clamp(2rem,3vw,2.7rem)]">{method.title}</h2>
+          <p class="lede mt-4 max-w-2xl">{method.text}</p>
+          <ol class="method-list mt-8 grid md:grid-cols-2" style="list-style:none;padding:0;margin-left:0;column-gap:2.5rem;row-gap:1.5rem">
+            {method.items.map((item, index) => (
+              <li style="padding-top:0.25rem">
+                <p class="eyebrow m-0">{String(index + 1).padStart(2, '0')}</p>
+                <h3 style="margin:0.25rem 0 0.5rem;font-size:1.25rem;line-height:1.4">{item.title}</h3>
+                <p class="m-0">{item.text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
         {films.length > 0 && (
           <section class="mt-14">
             <h2 class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On site</h2>

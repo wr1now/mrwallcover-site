@@ -13,7 +13,7 @@
   "metaTitle": "St George's Square exterior | Mr Wallcover",
   "metaDescription": "Full exterior on St George's Square, Pimlico, in 2024: scaffolding supplied and managed, masonry and render painting, windows and entrance ironwork.",
   "group": null,
-  "standfirst": "A full exterior on St George's Square: scaffold supplied and managed by the practice, then masonry and render repairs and painting, windows, and the entrance ironwork.",
+  "standfirst": "A full exterior on St George's Square in 2024: scaffold supplied and managed by the practice, masonry and render repairs, painting, windows and the entrance ironwork.",
   "hero": "pimlico-st-georges-square-exterior-11",
   "gallery": [
     { "id": "pimlico-st-georges-square-exterior-11", "credit": null },

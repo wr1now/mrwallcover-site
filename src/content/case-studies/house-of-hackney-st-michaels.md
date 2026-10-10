@@ -15,7 +15,7 @@
   "metaTitle": "House of Hackney showroom | Mr Wallcover",
   "metaDescription": "Preparation, decorating and House of Hackney wallpapers at St Michael's Clergy House, Shoreditch, before the showroom opened in March 2022.",
   "group": null,
-  "standfirst": "Preparation and making good of the 1856 clergy house, then decorating and hanging House of Hackney's own wallpapers through the concept rooms, bedroom and tiled cloakrooms.",
+  "standfirst": "Preparation and making good of the 1856 clergy house, then decorating and hanging House of Hackney's own papers through the concept rooms, bedroom and tiled cloakrooms, ready for the public opening on 26 March 2022.",
   "hero": "hoh-official-01",
   "gallery": [
     { "id": "hoh-official-01", "credit": "Photography: House of Hackney" },
@@ -36,7 +36,7 @@
     { "id": "house-of-hackney-st-michaels-03", "credit": "Before" }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-09"
+  "updated": "2026-10-10"
 }
 ---
 
