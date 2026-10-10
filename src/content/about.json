@@ -1,17 +1,17 @@
 {
   "title": "Dorin Burcus, Founder | Mr Wallcover",
-  "description": "Dorin Burcus, founder of Mr Wallcover, has worked in the trade since 2014, from labourer to wallcovering packages in London's prime hotels.",
+  "description": "Dorin Burcus, founder of Mr Wallcover, has worked in the trade since 2012, from labourer to wallcovering packages in London's prime hotels.",
   "eyebrow": "About",
   "heading": "Dorin Burcus",
   "role": "Founder",
   "paragraphs": [
-    "Dorin Burcus is the founder of Mr Wallcover. He has worked in the trade since 2014. He started as a labourer and went on to run wallcovering packages in prime hotels.",
+    "Dorin Burcus is the founder of Mr Wallcover. He has worked in the trade since 2012. He started as a labourer and went on to run wallcovering packages in prime hotels.",
     "The earliest dated commission on this site is Four Seasons Hotel London at Ten Trinity Square, 2016 to 2019, guest room and suite wallpapering. Later public work includes The OWO on Whitehall, Brown's Hotel in Mayfair, hotels in Holborn and at Silverstone, and The Lanesborough.",
     "The practice is based in London and covers London and the surrounding areas, working UK-wide for selected projects. Services are built around the building and the people who have to keep using it, so that disruption stays small.",
     "What you see on this site is public. Private clients are not named."
   ],
   "_founderSummary": "Sentences /for-ai/ quotes about the founder. They must appear word for word inside `paragraphs` above (tests/content-guards.test.ts checks); change the paragraph first, then these.",
-  "founderSummary": "He has worked in the trade since 2014. He started as a labourer and went on to run wallcovering packages in prime hotels.",
+  "founderSummary": "He has worked in the trade since 2012. He started as a labourer and went on to run wallcovering packages in prime hotels.",
   "publicRecord": "What you see on this site is public. Private clients are not named.",
   "image": "browns-hotel-mayfair-04",
   "imageCaption": "Scenic wallcovering at Brown's Hotel, Mayfair. Photographed on site.",
