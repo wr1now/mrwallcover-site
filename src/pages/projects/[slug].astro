@@ -6,6 +6,7 @@ import { areaHref, areas, caseStudyBySlug, media, ogImageFor, projectAliases, pr
 import { SITE_URL } from '../../config';
 import { breadcrumbNode, caseStudyArticleNode, projectNode } from '../../lib/schema';
 import type { Project } from '../../lib/types';
+import method from '../../content/method.json';
 
 export function getStaticPaths() {
   return [
@@ -131,6 +132,20 @@ const schemaNodes = study
             </div>
           </section>
         )}
+        <section class="mt-14 border-t border-line pt-10" aria-labelledby="method-heading">
+          <p class="eyebrow">{method.eyebrow}</p>
+          <h2 id="method-heading" class="m-0 max-w-xl text-[clamp(2rem,3vw,2.7rem)]">{method.title}</h2>
+          <p class="lede mt-4 max-w-2xl">{method.text}</p>
+          <ol class="method-list mt-8 grid gap-x-10 gap-y-6 md:grid-cols-2">
+            {method.items.map((item, index) => (
+              <li>
+                <p class="eyebrow m-0">{String(index + 1).padStart(2, '0')}</p>
+                <h3 class="mt-1 mb-2 text-xl">{item.title}</h3>
+                <p class="m-0">{item.text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
         {films.length > 0 && (
           <section class="mt-14">
             <h2 class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On site</h2>

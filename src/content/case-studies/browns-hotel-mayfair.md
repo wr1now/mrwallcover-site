@@ -14,7 +14,7 @@
   "metaTitle": null,
   "metaDescription": null,
   "group": null,
-  "standfirst": "A full decorating package for London's oldest hotel, delivered while it never stopped welcoming guests.",
+  "standfirst": "Two years as main decorating contractor inside London's oldest hotel, room by room, while it never stopped taking guests.",
   "hero": "browns-hotel-mayfair-09",
   "gallery": [
     {
@@ -56,18 +56,10 @@
     {
       "id": "browns-hotel-mayfair-01",
       "credit": null
-    },
-    {
-      "id": "browns-hotel-mayfair-07",
-      "credit": null
-    },
-    {
-      "id": "browns-hotel-mayfair-08",
-      "credit": null
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-09"
+  "updated": "2026-10-10"
 }
 ---
 

@@ -1004,3 +1004,13 @@ main:focus {
   object-fit: cover;
 }
 
+
+/* Case-study method block: the practice's standards, listed after every article. */
+.method-list {
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+}
+.method-list li {
+  padding-top: 0.25rem;
+}

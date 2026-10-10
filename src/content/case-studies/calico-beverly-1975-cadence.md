@@ -14,7 +14,7 @@
   "metaTitle": "BEVERLY 1975 x Calico: Cadence, LDF 2026 | Mr Wallcover",
   "metaDescription": "Cadence in Oxblood by Calico Wallpaper, hung in a day for BEVERLY 1975 at The Lavery, Cromwell Place, Brompton Design District 2026.",
   "group": "design-weeks",
-  "standfirst": "A feature wall for New York homewares shop BEVERLY 1975's first London presentation.",
+  "standfirst": "A feature wall of Calico's Cadence, in Oxblood, hung in a single day on site for BEVERLY 1975's first London presentation at The Lavery.",
   "hero": "beverly-08",
   "gallery": [
     {
