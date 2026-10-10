@@ -285,6 +285,11 @@ export function guideArticleNode(opts: { url: string; headline: string; descript
   };
 }
 
+/** FAQPage for a page's visible buyer-questions block (src/components/BuyerFaq.astro). Only call it when that block is rendered. */
+export function buyerFaqNode(items: { question: string; answer: string }[]) {
+  return guideFaqNode(items.map((item) => ({ q: item.question, a: item.answer })));
+}
+
 /** FAQPage for a guide's visible question-and-answer block. Only call it when that block is rendered. */
 export function guideFaqNode(items: { q: string; a: string }[]) {
   return {

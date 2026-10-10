@@ -6,7 +6,7 @@
   "client": "Calico Wallpaper (Brooklyn, New York), for BEVERLY 1975 CONCIERGE",
   "location": "The Lavery, Cromwell Place, South Kensington",
   "years": "2026",
-  "role": "Feature-wall installation",
+  "role": "Wallcovering installation (feature wall)",
   "wallcoverings": [
     "Calico Wallpaper – Cadence by Athena Calderone, Oxblood"
   ],

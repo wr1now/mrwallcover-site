@@ -22,21 +22,21 @@
       "id": "trade-insurance",
       "question": "What insurance and site cards does Mr Wallcover hold?",
       "paragraphs": [
-        "TODO(Dorin): public liability limit, employers' liability, professional indemnity if held, insurer, and CSCS or other site cards. Certificates on request is acceptable only if the limits are stated here."
+        "Public liability, employers' liability and professional indemnity details are available on request, as are site card and accreditation details."
       ]
     },
     {
       "id": "trade-nights",
       "question": "Can you work nights or around guests?",
       "paragraphs": [
-        "Yes. Most of our hotel work has been in live buildings, floor by floor or room by room around the house's bookings, and the Heathrow mural was hung overnight in a live terminal. TODO(Dorin): state any limits on night work and the notice you need."
+        "Yes. Most of our hotel work has been in live buildings, floor by floor or room by room around the house's bookings, and the Heathrow mural was hung overnight in a live terminal. Night shifts, out-of-hours and weekend work are offered, including in live hotels."
       ]
     }
   ]
 }
 ---
 
-DRAFT. Not built, not in the sitemap, not linked. Remove `"draft": true` only after every TODO(Dorin) below is resolved. The public professionals page stays as it is until then.
+DRAFT. Not built, not in the sitemap, not linked. Dorin answered the insurance, site-card, RAMS, night-work, capacity, contract and reference slots on 10 Oct 2026; insurance limits and payment terms are deliberately not published. Remove `"draft": true` only after every TODO(Dorin) below is resolved. The public professionals page stays as it is until then.
 
 ## Who this page is for
 
@@ -54,13 +54,16 @@ From a site survey or from drawings. Openings come out of the area; pattern repe
 
 ## Programme and night work
 
-Hotel work moves floor by floor or room by room around guests. Delivery of free-issue goods is timed to the hang; paper is not left in corridors. A project leader is on site every day, and on a longer commission senior oversight agrees a forward plan each week. TODO(Dorin): night-work terms and notice.
+Hotel work moves floor by floor or room by room around guests. Delivery of free-issue goods is timed to the hang; paper is not left in corridors. A project leader is on site every day, and on a longer commission senior oversight agrees a forward plan each week. Night shifts, out-of-hours and weekend work are offered, including in live hotels.
+
+The core team is six wallpaper hangers and six decorators, scaling to 25–35 people on large projects. At Hyde London City there were 25 people on site, in coordinated task teams covering preparation, filling, sanding, painting and hanging. Lead times depend on the project; when a client or contractor needs support quickly, the team can sometimes mobilise within two to three days.
 
 ## Documents
 
-- Method statements and risk assessments: TODO(Dorin): confirm these are issued for every package, and whether a sample is available on request.
-- Insurance: TODO(Dorin): limits and insurer. Do not publish this page without them.
-- Site cards and accreditations: TODO(Dorin): CSCS and any scheme memberships, with dates.
+- Method statements and risk assessments: issued for every package. Dorin Burcus personally supervises the site.
+- Insurance: public liability, employers' liability and professional indemnity details are available on request.
+- Site cards and accreditations: details are available on request.
+- Contracts: registered for VAT and CIS, with experience of JCT contracts as a specialist package contractor.
 - Capability statement: TODO(Dorin): a one-page PDF to download. Do not link a file that does not yet exist.
 
 ## The sample-room process
@@ -69,4 +72,4 @@ Sample room first, then the hang, then snagging, then the return visit about fou
 
 ## References
 
-TODO(Dorin): named project contacts who have agreed to take a call, with role and project. None are published until each has given permission.
+Mr Wallcover's work is recommended by major main contractors. Referees are not named on this site.

@@ -1,0 +1,23 @@
+---
+/**
+ * A visible "questions buyers ask" block, read from src/data/buyer-answers.json
+ * through src/lib/ai-layer-data.ts. The page that renders it adds the matching
+ * FAQPage node (buyerFaqNode) to its one JSON-LD graph, so the schema always
+ * describes exactly the questions shown here.
+ */
+import type { BuyerAnswer } from '../lib/ai-layer-data';
+interface Props { items: BuyerAnswer[]; heading?: string; intro?: string }
+const { items, heading = 'Questions buyers ask', intro } = Astro.props;
+---
+{items.length > 0 && (
+  <section class="guide-faq" aria-labelledby="questions">
+    <h2 id="questions">{heading}</h2>
+    {intro && <p>{intro}</p>}
+    {items.map((item) => (
+      <div class="guide-faq-item" id={item.id}>
+        <h3>{item.question}</h3>
+        <p>{item.answer}</p>
+      </div>
+    ))}
+  </section>
+)}

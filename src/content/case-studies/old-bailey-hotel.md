@@ -132,7 +132,7 @@ One team, one standard, from the first sample room to handover: the complete dec
 
 ## Our approach
 
-**Sample room first.** Our record starts in November 2022 with a finished sample room: Timorous Beasties' Tropical Clouded Leopard set behind the bed as a shaped headboard panel. Agreeing the finish, the setting out and the detailing in one room first meant that the next 109 could be repeated with confidence.
+**Sample room first.** Our record starts in November 2022 with a finished sample room: Timorous Beasties' Tropical Clouded Leopard set behind the bed as a shaped headboard panel. Agreeing the finish, the setting out and the detailing in one room first meant that the next 110 could be repeated with confidence.
 
 **Preparation.** A building of this age moves and varies from room to room. New and old surfaces were filled, made good and primed so that the paint and wallcoverings sit on a sound, even base. Our photographs show walls taken back to a smooth finish before a single drop was hung.
 

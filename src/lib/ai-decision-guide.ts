@@ -60,7 +60,8 @@ const fitMatrix = [
   },
   {
     id: 'homes', audience: 'Homeowners & private residences',
-    considerWhen: 'A single room or a larger home needs careful preparation, protection and specialist wallpaper installation.',
+    // Dorin's Q10 answer (10 Oct 2026): approved exception to Codex ownership, this sentence only.
+    considerWhen: 'We focus on whole residences and hotel packages, and will take on one- or two-room commissions.',
     evidence: [evidence('north-london-residence'), evidence('trematon-castle')],
     source: page('Residential installation and preparation', '/services/'),
     confirm: ['Rooms, access and household arrangements', 'Wall condition and preparation responsibility', 'Privacy and permission for any project photographs'],

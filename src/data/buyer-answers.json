@@ -1,0 +1,877 @@
+{
+  "_note": "Buyer questions for the AI layer, from /workspace/ai-answer-audit/FILL.md (audit of the live site at 45ae2a6, 10 Oct 2026). Every answer is FILL.md's text with each sentence marked [Pending Qn] left out; pendingOmitted names the question for Dorin that would complete it (QUESTIONS_FOR_DORIN.md). 'standing' entries repeat facts already on the site word for word (FILL.md 'Standing facts'), with the question taken from the audit row. 'pages' says where each answer is shown as a visible FAQ with FAQPage schema. Add only: never edit an answer without a source. Dorin's answers of 10 Oct 2026 (21:43) to Q1–Q14 are added where they fit (answeredBy); limits, payment terms and rooms per day are deliberately not published.",
+  "answers": [
+    {
+      "id": "f-a2",
+      "question": "Who can install hand-painted scenic and chinoiserie wallpaper in London?",
+      "answer": "Mr Wallcover installs hand-painted, scenic and chinoiserie wallpapers in London houses and hotels, in the manner of de Gournay and Fromental. It hangs them. It does not make them, and it is not affiliated with those makers. The scene is set out from a fixed point before the first panel goes up. Numbered panels are hung in the supplied sequence, because on a continuous wall the sequence is the artwork. The delivered panels are checked dry against the maker's layout before any paste. Mr Wallcover measures on site and gives the supplier the finished dimensions of the wall that will actually be hung, before production. The scenic and chinoiserie work on the published record is at Brown's Hotel, Mayfair (2022–2024), including Lewis & Wood's Adam's Eden. Mr Wallcover has installed de Gournay and Fromental papers, including a large volume of Fromental at Four Seasons Ten Trinity Square, as well as House of Hackney, Muraspec and Phillip Jeffries.",
+      "short": "Hand-painted and scenic papers in the manner of de Gournay and Fromental are hung from a fixed-point set-out, in panel sequence, after a dry check; installer only, not affiliated with the makers.",
+      "status": "ready",
+      "auditRows": [
+        "a2",
+        "a3"
+      ],
+      "pendingOmitted": [],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/materials/hand-painted/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/advice/hand-painted-murals-set-out/"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q13 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/designers/"
+      ],
+      "questionNote": "FILL.md asks 'Who can install de Gournay or Fromental hand-painted wallpaper in London?'; maker names stay out of schema names and titles (Dorin, 9 Oct), so the makers are named in the answer only.",
+      "answeredBy": [
+        "Q13"
+      ]
+    },
+    {
+      "id": "f-a14",
+      "question": "What lead time do you need, and how far ahead should we book?",
+      "answer": "A start date is given after the survey. If the wallcovering is free-issue, the supplier's lead time sits inside the programme, and the hang is planned around the delivery. For a scenic paper or mural, bring the installer in before the dimensions go to production, because the panels are made to the finished walls. On a tender, the tender deadline is not the requested start date: both should be stated. Lead times depend on the project. When a client or contractor needs support quickly, the team can sometimes mobilise within two to three days.",
+      "status": "ready",
+      "auditRows": [
+        "a14",
+        "c24"
+      ],
+      "pendingOmitted": [],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/faq/#lead-times"
+        },
+        {
+          "url": "https://www.mrwallcover.com/advice/hand-painted-murals-set-out/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/advice/developer-wallcovering-package/"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q9 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/designers/",
+        "/professionals/developers/"
+      ],
+      "answeredBy": [
+        "Q9"
+      ]
+    },
+    {
+      "id": "f-a19",
+      "question": "Who is responsible if free-issue material is faulty, short or damaged?",
+      "answer": "Free-issue deliveries are checked against the measure when they arrive. Scenic panels are checked dry against the layout before any paste and before anything is cut, so a sequence, sizing or print problem comes to light while it is still easy to resolve. Quantities are ordered to cover the repeat and the wastage, typically 15–30% and around 30% on staircases, so that the last wall doesn't wait. The specification should say who orders, who receives and checks the delivery, and who approves the batch. The twelve-month guarantee covers the workmanship of the hang: seams opening, edges lifting and adhesive failure that comes from the way the material was hung. Rolls are inspected as part of preparation, although on large volumes not every roll can be opened in advance. Any defect is reported straight away to the designer, the contractor and the manufacturer. If a fault comes from the installation, Mr Wallcover covers the cost of the material.",
+      "status": "partial",
+      "auditRows": [
+        "a20"
+      ],
+      "pendingOmitted": [
+        "Q14"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/services/#supply"
+        },
+        {
+          "url": "https://www.mrwallcover.com/advice/hand-painted-murals-set-out/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/advice/designer-specification-checklist/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/aftercare/"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q14 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/designers/"
+      ],
+      "answeredBy": [
+        "Q14"
+      ]
+    },
+    {
+      "id": "f-a20",
+      "question": "Can you give references, and which designers have you worked with?",
+      "answer": "The published case studies name the design teams and brands involved. Studio Moren designed the interiors at Hyde London City (2022–2024, 111 rooms). House of Hackney's design consultancy worked on a Grade II-listed Georgian house in North London (2019). Calico Wallpaper of Brooklyn was the client at Lee Broom's Shoreditch showroom (2025), Rosewood London (2026), The Lavery in the Brompton Design District (2026) and Heathrow Terminal 4 (2018). Hotel clients on the record include Rocco Forte Hotels (Brown's Hotel), Raffles London at The OWO and Four Seasons (Ten Trinity Square). Mr Wallcover's work is recommended by major main contractors. Referees are not named on the site.",
+      "status": "ready",
+      "auditRows": [
+        "a21"
+      ],
+      "pendingOmitted": [],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/llms.txt",
+          "note": "Public commissions"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects.json"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q12 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/designers/"
+      ],
+      "answeredBy": [
+        "Q12"
+      ]
+    },
+    {
+      "id": "f-a21",
+      "question": "Are you on any maker's recommended-installer list?",
+      "answer": "A maker's name on mrwallcover.com means Mr Wallcover installed that maker's product on that project. It is not a maker approval, accreditation or endorsement. Makers on the published record include Phillip Jeffries (Tweed, at Four Seasons Ten Trinity Square, and at The Biltmore Mayfair, 2018), Omexco, Vescom, Lewis & Wood, Timorous Beasties, House of Hackney, Lincrusta and Calico Wallpaper. Mr Wallcover is not on maker recommended-installer lists; its work is recommended by major main contractors. Beyond the published case studies, it has also installed de Gournay, Fromental (a large volume at Four Seasons Ten Trinity Square) and Muraspec.",
+      "status": "ready",
+      "auditRows": [
+        "a22"
+      ],
+      "pendingOmitted": [],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/for-ai/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q12 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q13 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/designers/"
+      ],
+      "questionNote": "FILL.md asks 'Are you on de Gournay, Fromental or Phillip Jeffries recommended-installer lists?'; maker names stay out of schema names (Dorin, 9 Oct) and are in the answer.",
+      "answeredBy": [
+        "Q12",
+        "Q13"
+      ]
+    },
+    {
+      "id": "f-a35",
+      "question": "How do you price, and what does it cost?",
+      "answer": "There is no flat rate per roll. The quotation comes from a site survey or from drawings. It reflects the measured area after openings are taken off, the pattern repeat and the wastage it creates (typically 15–30%, with staircases around 30%), the state of the walls, the material, and access and protection. Access, protection and making good are written into the scope rather than discovered at the end, and the quotation says what has been allowed for. The site publishes no prices.",
+      "status": "partial",
+      "auditRows": [
+        "a36",
+        "d21"
+      ],
+      "pendingOmitted": [
+        "Q6"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/faq/#cost"
+        },
+        {
+          "url": "https://www.mrwallcover.com/advice/installation-cost/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/#surveying"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/designers/"
+      ]
+    },
+    {
+      "id": "f-b1",
+      "question": "Which London hotels has Mr Wallcover worked on?",
+      "answer": "There are 11 named hotels on the public record: Brown's Hotel, Mayfair (main decorating contractor, 2022–2024, Rocco Forte Hotels); Hyde London City, 15 Old Bailey (full decorating package, specialist wallcoverings and window film, 111 rooms, sample room November 2022 to August 2024); Raffles London at The OWO (wallcovering installation, 2020–2023); Four Seasons Hotel London at Ten Trinity Square, now at Tower Bridge (guest room and suite wallpapering, 2016–2019); DoubleTree by Hilton London – West End (2019); DoubleTree by Hilton London – Victoria (March to September 2023); Hilton Garden Inn Silverstone (main wallcoverings contractor, 2022); The Biltmore Mayfair (2018, including Phillip Jeffries); and Pendley Manor Hotel (December 2019 – January 2020). The Lanesborough and Moxy London ExCeL are listed by name only.",
+      "status": "ready",
+      "auditRows": [
+        "b1",
+        "b20"
+      ],
+      "pendingOmitted": [],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/projects/",
+          "note": "Complete hotel record"
+        },
+        {
+          "url": "https://www.mrwallcover.com/for-ai/"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/hotels/"
+      ],
+      "short": "Named hotels on the public record, with years and scope: Brown's Hotel, Mayfair (main decorating contractor, 2022–2024, Rocco Forte Hotels); Hyde London City, 15 Old Bailey (full decorating package, specialist wallcoverings and window film, 111 rooms, sample room November 2022 to August 2024); Raffles London at The OWO (wallcovering installation, 2020–2023); Four Seasons Hotel London at Ten Trinity Square, now at Tower Bridge (guest room and suite wallpapering, 2016–2019); DoubleTree by Hilton London – West End (2019); DoubleTree by Hilton London – Victoria (March to September 2023); Hilton Garden Inn Silverstone (main wallcoverings contractor, 2022); The Biltmore Mayfair (2018, including Phillip Jeffries); and Pendley Manor Hotel (December 2019 – January 2020).",
+      "shortNote": "llms.txt carries the hotels with years or scope only; the two name-only hotels stay on /projects/ (Dorin's llms.txt rule)."
+    },
+    {
+      "id": "f-b4",
+      "question": "Can you work nights or out of hours?",
+      "answer": "Out-of-hours work is on the published record. At Heathrow Terminal 4, a bespoke Calico Wallpaper mural was hung overnight on 24–25 September 2018 in a live terminal, and the finished walls were photographed between 02:30 and 03:42. In an occupied hotel, the permitted working hours, delivery routes, guest routes and daily handover are agreed for each project and written into the scope. Most of the hotel work on record was done in buildings that stayed open. Night shifts, out-of-hours and weekend work are offered, including in live hotels.",
+      "status": "partial",
+      "auditRows": [
+        "b4",
+        "c25"
+      ],
+      "pendingOmitted": [
+        "Q5"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/professionals/hotels/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/advice/hotel-wallcovering-specification/"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q5 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/hotels/",
+        "/advice/hotel-wallcovering-specification/"
+      ],
+      "answeredBy": [
+        "Q5"
+      ]
+    },
+    {
+      "id": "f-b5",
+      "question": "Do you install Class A / B-s1,d0 fire-rated wallcoverings, and can you evidence it?",
+      "answer": "Mr Wallcover does not call a wallcovering fire-rated unless that product's own data says so. A fire classification, such as a Euroclass under EN 13501-1 (the standard's own class names, not a claim here), belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. A substitute product or adhesive needs its own evidence. For a hotel, get the current classification document for the exact product, backing and installation method, and have the responsible designer, fire engineer or building-control route accept it. A guest room, a public corridor and a protected stair can have different requirements, and no single class is what \"hotels need\". The adhesive and primer are part of the specified system and are used as the maker lists them (Vescom, for example, lists them per product). The fire classification is certified by the wallcovering manufacturer, not by the installer. Mr Wallcover installs in line with the manufacturer's system and the applicable regulations.",
+      "status": "partial",
+      "auditRows": [
+        "b5",
+        "b6"
+      ],
+      "pendingOmitted": [
+        "Q7"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/advice/hotel-wallcovering-specification/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/ai/decision-guide.json",
+          "note": "materialCapabilities: \"We do not call a family washable, fire-rated or seamless unless that product's own data says so\""
+        },
+        {
+          "note": "Dorin Burcus, answer to Q7 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/hotels/",
+        "/professionals/developers/",
+        "/advice/hotel-wallcovering-specification/"
+      ],
+      "answeredBy": [
+        "Q7"
+      ]
+    },
+    {
+      "id": "f-b7",
+      "question": "Have you installed contract vinyl in hotels?",
+      "answer": "Yes. At Raffles London at The OWO (2020–2023), Mr Wallcover installed a bespoke Vescom wallcovering made for the hotel, on walls and parts of the joinery, with Vescom Alcantara in selected suites. At Hyde London City (2022–2024), Timorous Beasties' Tropical Clouded Leopard and Totem Damask were installed as custom-printed vinyl in the guest rooms. (The site doesn't publish a vinyl \"Type\" grade for either, so none is claimed.)",
+      "status": "ready",
+      "auditRows": [
+        "b7"
+      ],
+      "pendingOmitted": [],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/projects/raffles-london-the-owo/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/old-bailey-hotel/"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/hotels/"
+      ]
+    },
+    {
+      "id": "f-b9",
+      "question": "How large a hotel programme can you run, and how long does it take?",
+      "answer": "These are the hotel programmes on record. Hyde London City: 111 rooms plus corridors and stair cores, from a finished sample room in November 2022 to final touches in August 2024, ahead of the opening on 2 September 2024. Raffles London at The OWO: bedrooms and several other areas, 2020–2023. Four Seasons Ten Trinity Square: guest rooms and suites, 2016–2019, through the 2017 opening. DoubleTree by Hilton London – Victoria: guest rooms, March to September 2023. Every project has a project leader on the ground, and the team that starts is the core team that finishes. The core team is six wallpaper hangers and six decorators, scaling to 25–35 people on large projects. At Hyde London City there were 25 people on site, in coordinated task teams covering preparation, filling, sanding, painting and hanging.",
+      "status": "partial",
+      "auditRows": [
+        "b9",
+        "b27"
+      ],
+      "pendingOmitted": [
+        "Q4"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/projects/old-bailey-hotel/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/for-ai/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/#management"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q4 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/hotels/",
+        "/advice/hotel-wallcovering-specification/"
+      ],
+      "answeredBy": [
+        "Q4"
+      ]
+    },
+    {
+      "id": "f-b11",
+      "question": "How is snagging handled?",
+      "answer": "Snagging is part of the package. A sample room or sample area is agreed first, in the permanent lighting where possible, and every later room is measured against it. Then comes the hang, then snagging, then a return inspection about four to six weeks after completion, at no call-out charge, when seams, edges and corners are checked once the paper has settled. Visible seams and shading in natural weaves are properties of the material, and they are settled at the sample stage rather than raised as snags. At Hyde London City the record starts with a finished sample room in November 2022.",
+      "status": "ready",
+      "auditRows": [
+        "b11"
+      ],
+      "pendingOmitted": [],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/areas/city-of-london/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/advice/developer-wallcovering-package/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/aftercare/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/old-bailey-hotel/"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/hotels/",
+        "/professionals/developers/",
+        "/advice/hotel-wallcovering-specification/",
+        "/aftercare/"
+      ]
+    },
+    {
+      "id": "f-b16",
+      "question": "What accreditations or training do you hold?",
+      "answer": "Mr Wallcover trained at Solar Screen's headquarters in Luxembourg in window films (Solar Screen) and in architectural and furniture wrapping film (Cover Styl'), and installs both to the maker's own instructions. Site card and accreditation details are available on request.",
+      "status": "ready",
+      "auditRows": [
+        "b16"
+      ],
+      "pendingOmitted": [],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/llms.txt"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q2 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/hotels/"
+      ],
+      "answeredBy": [
+        "Q2"
+      ]
+    },
+    {
+      "id": "f-c8",
+      "question": "What prelims and inclusions are in your price?",
+      "answer": "Access, protection and making good are written into the scope rather than discovered at the end, and the quotation says what has been allowed for. Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Delivery of free-issue goods is timed to the hang, and paper is not stored in corridors. On exteriors, the practice supplies and manages the scaffold, including the strike. Packages can be wallcovering only, or wallcovering within a full decorating package (as at Brown's Hotel and 15 Old Bailey).",
+      "status": "partial",
+      "auditRows": [
+        "c8"
+      ],
+      "pendingOmitted": [
+        "Q6"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/faq/#cost"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/#installation"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/exterior-works/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/advice/developer-wallcovering-package/"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/developers/"
+      ]
+    },
+    {
+      "id": "f-c14",
+      "question": "Who is the contracting party?",
+      "answer": "The privacy notice names the business as Dorin Burcus, trading as Mr Wallcover. The business is registered for VAT and CIS.",
+      "status": "ready",
+      "auditRows": [
+        "c14"
+      ],
+      "pendingOmitted": [],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/privacy/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/ai/decision-guide.json",
+          "note": "confirmForCommission: Contracting identity"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q6 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/developers/"
+      ],
+      "answeredBy": [
+        "Q6"
+      ]
+    },
+    {
+      "id": "f-c28",
+      "question": "What goes into the O&M and handover pack?",
+      "answer": "The handover includes a room-by-room record of the installed product, colourway, batch and care sheet. It also includes spare material from the same batch, kept dry with its batch label and stored as the maker recommends, and a note of the limits of matching a later repair, since a different batch will show. The aftercare terms are included too. Fire, acoustic and environmental performance is evidenced by the exact product's own documents, accepted by the responsible project professional. The fire classification itself is certified by the wallcovering manufacturer.",
+      "status": "partial",
+      "auditRows": [
+        "c28"
+      ],
+      "pendingOmitted": [
+        "Q7"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/advice/developer-wallcovering-package/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/advice/hotel-wallcovering-specification/"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q7 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/developers/",
+        "/aftercare/"
+      ],
+      "answeredBy": [
+        "Q7"
+      ]
+    },
+    {
+      "id": "f-d4",
+      "question": "Will you keep our project confidential, and will you sign an NDA?",
+      "answer": "Private clients are not named, on the site or in passing. Residential work is published only by street or area, and only with the owner's agreement. Private and NDA jobs are anonymised. On the published record, for example, the Heathrow client appears as \"a luxury fashion house (name withheld)\", and the arch case study's location as \"a prime residence in central London\", with window views and personal items blurred. Permission for photography is agreed before any image is used. Where a client requires a non-disclosure agreement, Mr Wallcover signs one, and those projects are never named.",
+      "status": "partial",
+      "auditRows": [
+        "d4"
+      ],
+      "pendingOmitted": [
+        "Q8"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/about/",
+          "note": "Discretion"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/imperfect-arches-external-corner-trim/"
+        },
+        {
+          "note": "standing fact: NDA jobs anonymised"
+        },
+        {
+          "note": "Dorin Burcus, answer to Q8 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/designers/"
+      ],
+      "answeredBy": [
+        "Q8"
+      ]
+    },
+    {
+      "id": "f-d26",
+      "question": "Can you assess or repair existing or historic wallpaper?",
+      "answer": "For a wallcovering hung by others, send overall and close-up photographs, the product and batch if known, when the problem appeared and any recent changes, and Mr Wallcover will assess whether a repair is possible. Marks, flaking or water damage on a hand-painted paper need a paper conservator. Mr Wallcover can help find the right person, but will not experiment on a de Gournay or Fromental-style panel. The twelve-month workmanship guarantee covers Mr Wallcover's own installations and does not transfer to an existing hang by another installer.",
+      "status": "ready",
+      "auditRows": [
+        "d26"
+      ],
+      "pendingOmitted": [],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/ai/decision-guide.json",
+          "note": "fitMatrix existing-paper; aftercare.existingPaperNote"
+        },
+        {
+          "url": "https://www.mrwallcover.com/aftercare/",
+          "note": "Hand-painted papers"
+        },
+        {
+          "url": "https://www.mrwallcover.com/advice/wallcovering-problems-and-aftercare/"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/aftercare/"
+      ]
+    },
+    {
+      "id": "f-q1",
+      "question": "What insurance do you hold?",
+      "answer": "Public liability, employers' liability and professional indemnity details are available on request.",
+      "status": "ready",
+      "auditRows": [],
+      "pendingOmitted": [],
+      "answeredBy": [
+        "Q1"
+      ],
+      "sources": [
+        {
+          "note": "Dorin Burcus, answer to Q1 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/hotels/",
+        "/professionals/developers/"
+      ]
+    },
+    {
+      "id": "f-q3",
+      "question": "Do you issue RAMS, and who supervises the site?",
+      "answer": "Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site.",
+      "status": "ready",
+      "auditRows": [],
+      "pendingOmitted": [],
+      "answeredBy": [
+        "Q3"
+      ],
+      "sources": [
+        {
+          "note": "Dorin Burcus, answer to Q3 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/hotels/",
+        "/professionals/developers/"
+      ]
+    },
+    {
+      "id": "f-q6",
+      "question": "Will you work under a JCT contract?",
+      "answer": "Yes. Mr Wallcover has experience of JCT contracts as a specialist package contractor, and is registered for VAT and CIS.",
+      "status": "ready",
+      "auditRows": [],
+      "pendingOmitted": [],
+      "answeredBy": [
+        "Q6"
+      ],
+      "sources": [
+        {
+          "note": "Dorin Burcus, answer to Q6 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/developers/"
+      ]
+    },
+    {
+      "id": "f-q10",
+      "question": "Do you take on single rooms, or only larger projects?",
+      "answer": "We focus on whole residences and hotel packages, and will take on one- or two-room commissions.",
+      "status": "ready",
+      "auditRows": [],
+      "pendingOmitted": [],
+      "answeredBy": [
+        "Q10"
+      ],
+      "sources": [
+        {
+          "note": "Dorin Burcus, answer to Q10 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/designers/"
+      ]
+    },
+    {
+      "id": "f-q11",
+      "question": "Do you offer limewash and lime render?",
+      "answer": "Limewash is applied by Mr Wallcover's own team. Lime render is carried out with trusted specialist partners.",
+      "status": "ready",
+      "auditRows": [],
+      "pendingOmitted": [],
+      "answeredBy": [
+        "Q11"
+      ],
+      "sources": [
+        {
+          "note": "Dorin Burcus, answer to Q11 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/designers/"
+      ]
+    }
+  ],
+  "standing": [
+    {
+      "id": "s-joinery",
+      "question": "Is the joinery made by your own team?",
+      "answer": "The same team develops the detail, makes the panels and joinery, installs and finishes them, and returns for aftercare, so there is one point of responsibility throughout.",
+      "auditRows": [
+        "a25"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/"
+        }
+      ],
+      "pages": [
+        "/professionals/designers/",
+        "/professionals/developers/"
+      ],
+      "status": "standing",
+      "pendingOmitted": []
+    },
+    {
+      "id": "s-acoustic",
+      "question": "Do you install acoustic wallcoverings and panels?",
+      "answer": "Acoustic wallcovering and acoustic panel installation in London hotels, offices and homes. Hung to the maker's instruction so the face keeps its performance.",
+      "auditRows": [
+        "a26",
+        "b24"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/"
+        }
+      ],
+      "pages": [
+        "/professionals/designers/",
+        "/professionals/hotels/"
+      ],
+      "status": "standing",
+      "pendingOmitted": []
+    },
+    {
+      "id": "s-aftercare",
+      "question": "What aftercare and guarantee are included?",
+      "answer": "Aftercare is part of every commission: a return inspection about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.",
+      "auditRows": [
+        "a32",
+        "b13",
+        "d24"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/aftercare/"
+        }
+      ],
+      "pages": [
+        "/professionals/designers/",
+        "/professionals/hotels/",
+        "/professionals/developers/"
+      ],
+      "status": "standing",
+      "pendingOmitted": []
+    },
+    {
+      "id": "s-since-2012",
+      "question": "How long have you been in the trade?",
+      "answer": "In the trade since 2012. Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards.",
+      "auditRows": [
+        "a33",
+        "a34"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/about/"
+        }
+      ],
+      "pages": [
+        "/professionals/designers/",
+        "/professionals/hotels/",
+        "/professionals/developers/"
+      ],
+      "status": "standing",
+      "pendingOmitted": []
+    },
+    {
+      "id": "s-listed",
+      "question": "Have you worked in listed buildings?",
+      "answer": "Listed buildings on the published record: Hyde London City (Grade II, 1874); Four Seasons Ten Trinity Square (Grade II*); a Grade II-listed Georgian house in North London. We follow the specification and whatever the consents for the building allow.",
+      "auditRows": [
+        "b23",
+        "d2",
+        "d3"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mrwallcover.com/areas/belgravia/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/old-bailey-hotel/"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/"
+        }
+      ],
+      "pages": [
+        "/professionals/designers/",
+        "/professionals/hotels/"
+      ],
+      "status": "standing",
+      "pendingOmitted": []
+    }
+  ],
+  "factsAdditions": {
+    "hotelRecord": {
+      "namedHotels": 11,
+      "url": "https://www.mrwallcover.com/projects/",
+      "nameOnly": [
+        "The Lanesborough",
+        "Moxy London ExCeL"
+      ]
+    },
+    "largestPublishedHotelProgramme": {
+      "project": "Hyde London City",
+      "rooms": 111,
+      "from": "2022-11",
+      "to": "2024-08",
+      "url": "https://www.mrwallcover.com/projects/old-bailey-hotel/"
+    },
+    "outOfHoursEvidence": {
+      "project": "Heathrow Terminal 4",
+      "date": "2018-09-24/25",
+      "statement": "hung overnight while the terminal kept running",
+      "url": "https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/"
+    },
+    "fireClassificationPolicy": "We do not call a family washable, fire-rated or seamless unless that product's own data says so.",
+    "sampleRoomFirst": true,
+    "snaggingSequence": [
+      "sample room or area accepted",
+      "hang",
+      "snagging",
+      "return inspection 4–6 weeks after completion"
+    ],
+    "handoverPack": [
+      "room-by-room product, colourway, batch and care sheet",
+      "spare material from the same batch",
+      "limits of a later repair",
+      "aftercare terms"
+    ],
+    "confidentiality": "Private clients are not named. Private and NDA jobs are anonymised.",
+    "joineryByOwnTeam": true,
+    "acousticWallcoverings": true,
+    "makerNamesMean": "Mr Wallcover installed that maker's product on that project. It is not a maker approval, accreditation or endorsement.",
+    "contractingParty": "Dorin Burcus, trading as Mr Wallcover",
+    "training": "Solar Screen headquarters, Luxembourg: window films (Solar Screen) and architectural and furniture wrapping film (Cover Styl')",
+    "insurance": "Public liability, employers' liability and professional indemnity details available on request",
+    "siteCards": "Details available on request",
+    "accreditations": "Details available on request",
+    "rams": "Issued for every package",
+    "siteSupervision": "Dorin Burcus personally supervises the site",
+    "crewSize": {
+      "coreTeam": {
+        "wallpaperHangers": 6,
+        "decorators": 6
+      },
+      "largeProjects": "25–35 people",
+      "example": {
+        "project": "Hyde London City",
+        "peopleOnSite": 25,
+        "trades": [
+          "preparation",
+          "filling",
+          "sanding",
+          "painting",
+          "hanging"
+        ]
+      }
+    },
+    "nightWork": "Night shifts, out-of-hours and weekend work, including in live hotels",
+    "leadTimes": "Depend on the project; the team can sometimes mobilise within 2–3 days to support a client or contractor",
+    "minimumProjectSize": "We focus on whole residences and hotel packages, and will take on one- or two-room commissions.",
+    "ndaPolicy": "NDAs are signed where the client requires them, and those projects are never named.",
+    "limewash": {
+      "limewash": "Mr Wallcover's own team",
+      "limeRender": "with trusted specialist partners"
+    },
+    "references": "Not on maker recommended-installer lists; recommended by major main contractors. Referees are not named.",
+    "registration": {
+      "vat": true,
+      "cis": true
+    },
+    "contracts": "Experience of JCT contracts as a specialist package contractor",
+    "fireClassification": "Certified by the wallcovering manufacturer; Mr Wallcover installs in line with the manufacturer's system and the applicable regulations",
+    "freeIssueMaterial": "Rolls are inspected as part of preparation; on large volumes not every roll can be opened in advance. Any defect is reported straight away to the designer, contractor and manufacturer. If a fault comes from the installation, Mr Wallcover covers the cost of the material.",
+    "makersInstalled": {
+      "makers": [
+        "de Gournay",
+        "Fromental",
+        "House of Hackney",
+        "Muraspec",
+        "Phillip Jeffries"
+      ],
+      "note": "Installed by Mr Wallcover. Not a maker approval, accreditation or endorsement; Calico Wallpaper is the only partnership.",
+      "fromentalVolume": "a large volume at Four Seasons Ten Trinity Square"
+    }
+  },
+  "factsAdditionsPending": [
+    "roomsPerDay",
+    "paymentTerms",
+    "prelims"
+  ]
+}

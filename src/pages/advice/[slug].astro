@@ -6,6 +6,7 @@ import GuideCard from '../../components/GuideCard.astro';
 import { guides, guideHref } from '../../lib/guides';
 import { materials } from '../../lib/content';
 import { breadcrumbNode, guideArticleNode, guideFaqNode } from '../../lib/schema';
+import { buyerFaqFor } from '../../lib/ai-layer-data';
 import { SITE_URL } from '../../config';
 export function getStaticPaths() {
   return guides.map((guide) => ({ params: { slug: guide.frontmatter.slug }, props: { guide } }));
@@ -18,7 +19,8 @@ const url = `${SITE_URL}${path}`;
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href: '/advice/' }, { name: data.shortTitle, href: path }];
 const related = guides.filter((item) => data.relatedGuides.includes(item.frontmatter.slug));
 const relatedMaterials = materials.items.filter((item) => data.relatedMaterials.includes(item.slug));
-const faq = data.faq ?? [];
+// The guide's own questions first, then any buyer questions placed on this guide (src/data/buyer-answers.json): one list, one FAQPage.
+const faq: { q: string; a: string; id?: string }[] = [...(data.faq ?? []), ...buyerFaqFor(path).map((item) => ({ q: item.question, a: item.answer, id: item.id }))];
 const metaDescription = data.metaDescription ?? data.description;
 const article = guideArticleNode({ url, headline: data.title, description: metaDescription, published: data.published, updated: data.updated });
 // FAQPage only when the questions are rendered on the page below; drafts carry no Article so the review build cannot be mistaken for publication.
@@ -40,7 +42,7 @@ const extraSchema = [breadcrumbNode(crumbs), ...(data.draft ? [] : [article, ...
       </aside>
       <article class="prose guide-prose">
         <Content />
-        {faq.length > 0 && <section class="guide-faq" aria-labelledby="questions"><h2 id="questions">Questions people ask</h2>{faq.map((item) => <div class="guide-faq-item"><h3>{item.q}</h3><p>{item.a}</p></div>)}</section>}
+        {faq.length > 0 && <section class="guide-faq" aria-labelledby="questions"><h2 id="questions">Questions people ask</h2>{faq.map((item) => <div class="guide-faq-item" id={item.id}><h3>{item.q}</h3><p>{item.a}</p></div>)}</section>}
         {data.sources.length > 0 && <aside class="guide-sources"><h2>Further reading</h2><ul>{data.sources.map((source) => <li><a href={source.url}>{source.label}</a></li>)}</ul></aside>}
         <div class="guide-next"><p class="eyebrow">Your next step</p><h2>Bring it back to your room.</h2><p>Send the material reference and what you already know. A photograph and a short note are enough to start.</p><a class="btn btn-solid-ink" href={data.ctaHref}>{data.ctaLabel}</a></div>
       </article>
