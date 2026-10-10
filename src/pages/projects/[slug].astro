@@ -146,9 +146,9 @@ const schemaNodes = study
           <p class="eyebrow">{method.eyebrow}</p>
           <h2 id="method-heading" class="m-0 max-w-xl text-[clamp(2rem,3vw,2.7rem)]">{method.title}</h2>
           <p class="lede mt-4 max-w-2xl">{method.text}</p>
-          <ol class="method-list mt-8 grid gap-x-10 gap-y-6 md:grid-cols-2">
+          <ol class="method-list mt-8 ml-0 list-none p-0 grid gap-x-10 gap-y-6 md:grid-cols-2">
             {method.items.map((item, index) => (
-              <li>
+              <li class="pt-1">
                 <p class="eyebrow m-0">{String(index + 1).padStart(2, '0')}</p>
                 <h3 class="mt-1 mb-2 text-xl">{item.title}</h3>
                 <p class="m-0">{item.text}</p>
