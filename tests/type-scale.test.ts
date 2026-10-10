@@ -15,7 +15,10 @@ import puppeteer, { type Browser } from 'puppeteer-core';
 import sharp from 'sharp';
 
 const DIST = 'dist';
-const PAGES = ['/', '/projects/', '/projects/calico-lee-broom-overture/', '/about/', '/faq/'];
+const PAGES = ['/', '/projects/', '/projects/calico-lee-broom-overture/', '/about/', '/faq/',
+  // Pages from #30-#32: buyer FAQs, the hotel guide, aftercare, the AI page and the three ads pages.
+  '/professionals/hotels/', '/advice/hotel-wallcovering-specification/', '/aftercare/', '/for-ai/',
+  '/services/heritage-listed-buildings/', '/materials/specified-papers/', '/professionals/fit-out-contractors/'];
 const SIZES: [number, number][] = [[1280, 800], [1440, 900], [1920, 1080], [390, 844], [360, 640]];
 const TYPES: Record<string, string> = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.avif': 'image/avif', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.png': 'image/png', '.woff2': 'font/woff2', '.json': 'application/json', '.mp4': 'video/mp4', '.xml': 'application/xml', '.txt': 'text/plain' };
 
@@ -40,7 +43,7 @@ before(async () => {
 });
 after(async () => { await browser?.close(); server?.close(); });
 
-test('type floors: 14px text, 13px labels and credits, 16px paragraphs, on five pages at five widths', async () => {
+test('type floors: 14px text, 13px labels and credits, 16px paragraphs, on twelve pages at five widths', async () => {
   const problems: string[] = [];
   for (const path of PAGES) for (const [width, height] of SIZES) {
     const page = await browser.newPage();
@@ -68,7 +71,9 @@ test('type floors: 14px text, 13px labels and credits, 16px paragraphs, on five 
         const paragraph = ['P', 'LI', 'DD'].includes(el.tagName) && !label && !/caption/.test(classes) && el.tagName !== 'FIGCAPTION' && text.length > 80;
         // The hero description keeps the hero's frozen layout; on phones it sits at the 14px floor (main's size).
         const heroLede = el.matches('.atelier-hero-description') && innerWidth < 768;
-        if (paragraph && !heroLede && size < 16 - 0.01) out.push(`paragraph under 16px: ${where}`);
+        // Form helper notes (enquiry stack, Codex-owned) are notes, not reading text: the 14px floor applies.
+        const formNote = el.matches('.form-note, form p.text-sm, .text-sm.text-stone') ;
+        if (paragraph && !heroLede && !formNote && size < 16 - 0.01) out.push(`paragraph under 16px: ${where}`);
       }
       return out;
     });

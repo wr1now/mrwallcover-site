@@ -47,7 +47,7 @@ jobs:
           SITE_PHONE: ${{ secrets.SITE_PHONE }}
         run: npm run check:dist
       - name: Type floors and hero contrast (computed styles in Chrome)
-        # Five pages at five widths: no text under 14px (13px for labels and credits), paragraphs 16px+,
+        # Twelve pages (home, projects, a case study, about, faq, and the #30-#32 pages) at five widths: no text under 14px (13px for labels and credits), paragraphs 16px+,
         # and the hero words at 4.5:1 or better against the photograph. ubuntu-latest ships Google Chrome.
         env:
           CHROME_PATH: /usr/bin/google-chrome
