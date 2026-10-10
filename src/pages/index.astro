@@ -27,7 +27,7 @@ const calicoLabel = (project: (typeof projects)[number]) =>
 const showcase = [
   { slug: 'browns-hotel-mayfair', name: 'Brown’s Hotel', place: 'Mayfair', image: 'browns-hotel-mayfair-10', credit: '' },
   { slug: 'raffles-london-the-owo', name: 'Raffles London at The OWO', place: 'Whitehall', image: 'owo-official-junior-suite', credit: 'Image: Raffles London at The OWO (official)' },
-  { slug: 'four-seasons-ten-trinity-square', name: 'Four Seasons, Ten Trinity Square', place: 'City of London', image: 'four-seasons-ten-trinity-commons-01', credit: 'Photography: The wub / Wikimedia Commons (CC BY-SA 4.0). The building, not our work.' },
+  { slug: 'four-seasons-ten-trinity-square', name: 'Four Seasons, Ten Trinity Square', place: 'Private Residences, City of London', image: 'fs-residences-01' },
   { slug: 'old-bailey-hotel', name: 'Hyde London City', place: 'Old Bailey', image: 'old-bailey-06', credit: '' },
   { slug: 'heathrow-terminal-4-calico', name: 'Calico Wallpaper at Heathrow', place: 'Terminal 4', image: 'heathrow-05', credit: '' },
   { slug: 'trematon-castle', name: 'The Castle of Trematon', place: 'Cornwall', image: 'trematon-01', credit: '' },
@@ -100,7 +100,7 @@ const hotelNames = [
         {home.proof.images.map((id) => <figure><Picture id={id} sizes="(min-width: 768px) 18rem, 78vw" /></figure>)}
       </div>
       <h3 class="home-films-title">On location: short films from Brown’s Hotel</h3>
-      <div class="atelier-film-grid home-films" data-films>{home.proof.videos.map(id => { const film = videoById(id); return <figure><video controls playsinline preload="none" data-poster={film.poster} width={film.width} height={film.height} src={film.src} aria-label={film.alt} /><figcaption class="caption">{film.caption}</figcaption></figure>; })}</div>
+      <div class="atelier-film-grid home-films" data-films role="region" aria-label="Short films from Brown’s Hotel" tabindex="0">{home.proof.videos.map(id => { const film = videoById(id); return <figure><video controls playsinline preload="none" data-poster={film.poster} width={film.width} height={film.height} src={film.src} aria-label={film.alt} /><figcaption class="caption">{film.caption}</figcaption></figure>; })}</div>
     </section>
     <div class="home-studio"><MaterialStudio /></div>
 
