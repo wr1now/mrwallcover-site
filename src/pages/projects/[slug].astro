@@ -4,7 +4,7 @@ import Picture from '../../components/Picture.astro';
 import Base from '../../layouts/Base.astro';
 import { areaHref, areas, caseStudyBySlug, media, ogImageFor, projectAliases, projectHref, projects, specialismHref, specialisms, videoById } from '../../lib/content';
 import { SITE_URL } from '../../config';
-import { breadcrumbNode, caseStudyArticleNode, projectNode } from '../../lib/schema';
+import { breadcrumbNode, caseStudyArticleNode, projectNode, videoNode } from '../../lib/schema';
 import type { Project } from '../../lib/types';
 
 export function getStaticPaths() {
@@ -90,6 +90,7 @@ const schemaNodes = study
   extraSchema={[
     schemaNodes,
     breadcrumbNode(crumbs),
+    ...films.map((film) => videoNode(film, pageUrl)),
   ]}
 >
   <div class="container-page">

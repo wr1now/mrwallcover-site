@@ -333,3 +333,30 @@ export function caseStudyArticleNode(opts: {
     ...(opts.mentions?.length ? { mentions: opts.mentions.map((name) => ({ '@type': 'Thing', name })) } : {}),
   };
 }
+
+/**
+ * VideoObject for one of the site's own films (src/content/videos.json).
+ * uploadDate is the date the file was first committed to the repository
+ * (git log --diff-filter=A), because the MP4s carry no creation_time tag;
+ * duration is measured with ffprobe and rounded to the second the caption
+ * states. Never the build time, never an invented date.
+ */
+export function videoNode(film: { id: string; name: string; caption: string; src: string; poster: string; uploadDate: string; duration?: string; width: number; height: number }, pageUrl: string) {
+  return {
+    '@type': 'VideoObject',
+    '@id': `${SITE_URL}${film.src}#video`,
+    name: film.name,
+    description: film.caption,
+    thumbnailUrl: [new URL(film.poster, SITE_URL).href],
+    contentUrl: new URL(film.src, SITE_URL).href,
+    uploadDate: film.uploadDate,
+    ...(film.duration ? { duration: film.duration } : {}),
+    width: film.width,
+    height: film.height,
+    inLanguage: 'en-GB',
+    isFamilyFriendly: true,
+    publisher: { '@id': BUSINESS_ID },
+    creator: { '@id': BUSINESS_ID },
+    mainEntityOfPage: pageUrl,
+  };
+}

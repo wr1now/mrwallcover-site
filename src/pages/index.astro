@@ -8,7 +8,8 @@ import Picture from '../components/Picture.astro';
 import Base from '../layouts/Base.astro';
 import { faq, faqItems, home, projectHref, projects, videoById } from '../lib/content';
 import { phoneAvailable } from '../lib/phone';
-import { faqNode } from '../lib/schema';
+import { faqNode, videoNode } from '../lib/schema';
+import { SITE_URL } from '../config';
 
 const lead = projects.find((project) => project.slug === home.featured.leadSlug);
 const featured = projects.filter((project) => project.featured && project.slug !== home.featured.leadSlug);
@@ -20,7 +21,7 @@ const others = projects.filter((project) => !project.featured);
   description={facts.description}
   path="/"
   preloadHero={true}
-  extraSchema={[faqNode(faqItems)]}
+  extraSchema={[faqNode(faqItems), ...home.proof.videos.map((id) => videoNode(videoById(id), `${SITE_URL}/`))]}
 >
   <section class="hero on-dark">
     <Hero />
