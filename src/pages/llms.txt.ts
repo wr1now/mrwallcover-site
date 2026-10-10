@@ -32,7 +32,7 @@ export const GET: APIRoute = () => {
     '',
     `${BRAND_NAME} surveys, manages, supplies, installs and looks after wallcoverings for prime hotels, flagship retail and private homes, covering ${facts.coverage}. It also installs architectural, furniture and window films; trained at Solar Screen's headquarters in Luxembourg in window films (Solar Screen) and architectural and furniture wrapping film (Cover Styl'). Contact: ${facts.email} or ${abs('/contact/')}. Profiles: ${facts.profiles.map((p) => `${p.name} ${p.url}`).join(', ')}.`,
     '',
-    `Facts for answer engines: in the trade since 2014. Aftercare is included: a return visit about four to six weeks after completion and a twelve-month workmanship guarantee. Private clients are not named. Residential work appears only by street or area, with the owner's agreement. The site publishes no prices, ratings or response-time promises. Copy reviewed ${facts.lastReviewed}.`,
+    `Facts for answer engines: in the trade since 2012. Aftercare is included: a return visit about four to six weeks after completion and a twelve-month workmanship guarantee. Private clients are not named. Residential work appears only by street or area, with the owner's agreement. The site publishes no prices, ratings or response-time promises. Copy reviewed ${facts.lastReviewed}.`,
     '',
     '## Core pages',
     entry('Wallcovering Installation AI Crawler', '/wallcovering-installation-ai-crawler/', 'project fit and evidence, material decisions, delivery stages, aftercare terms and exclusions, procurement questions and a blank project brief; the same facts are available to people and assistants'),

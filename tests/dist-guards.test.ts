@@ -62,7 +62,9 @@ test('claims decided by Dorin on 9 October 2026 hold in the built site', async (
   // 2) Four Seasons: 2016–2019, guest room and suite wallpapering; no "main contractor 2014" wording.
   assert.doesNotMatch(everything, /main contractor 2014|2014 to 2019|2014–2019|main wallcovering installation contractor/i);
   assert.match(html, /Four Seasons Hotel London at Ten Trinity Square, 2016 to 2019, guest room and suite wallpapering/);
-  assert.match(html, /in the trade since 2014/i);
+  assert.match(html, /in the trade since 2012/i);
+  // Dorin started in the trade in 2012 (his correction, 10 Oct 2026); no 2014 start wording anywhere.
+  assert.doesNotMatch(everything, /since 2014|in the trade since 2014|Since 2014/i);
   // 3) The OWO: 2020–2023 everywhere.
   assert.doesNotMatch(everything, /2020–2022|2020 to 2022|2020 and 2022/);
   const owo = await readFile('dist/projects/raffles-london-the-owo/index.html', 'utf8');

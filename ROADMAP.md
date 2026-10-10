@@ -12,13 +12,13 @@
 - [x] Cycle 1: clear enquiry routes for existing wallpaper, material selection and designer specifications; helpful first-brief checklist.
 - [x] Cycle 2: photo-first project explorer with sector filtering and no-script access.
 - [x] Repair material studio loading, failure, close and reopen lifecycle.
-- [ ] Cycle 3: explicit machine discovery links and complete cross-format integrity checks.
+- [x] Cycle 3: explicit machine discovery links and complete cross-format integrity checks.
 
 ## Testing, reliability and release
-- [ ] Complete source, production, phone-privacy and guide checks.
-- [ ] Verify browser navigation, enquiry validation, filters, material studio and responsive layouts.
-- [ ] Review source fidelity and privacy of all AI claims and records.
-- [ ] Update README, architecture, media provenance, benchmark and QA documentation.
+- [x] Complete source, production, phone-privacy and guide checks.
+- [x] Verify browser navigation, enquiry validation, filters, material studio and responsive layouts.
+- [x] Review source fidelity and privacy of all AI claims and records.
+- [x] Update README, architecture, media provenance, benchmark and QA documentation.
 - [ ] Commit the three bounded benchmark improvements, push the branch and deploy the private Sites edition.
 
 ## Future ideas — outside this release

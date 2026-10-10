@@ -155,7 +155,7 @@ Google does not use IndexNow. It reads the sitemap, so nothing else is needed fo
 
 ## Atelier Sites edition — 10 October 2026
 
-This branch contains the hotel-led homepage, project explorer and expanded Wallcovering Installation AI Crawler resource. It is based on the pending #19–#21 fix stack, not a claim that those changes have reached the live domain. `.openai/hosting.json` identifies the separate owner-private Sites edition. The existing custom-domain canonical URLs are preserved for the intended MR WALLCOVER content; public DNS and GitHub main are unchanged.
+This branch contains the hotel-led homepage, project explorer and expanded Wallcovering Installation AI Crawler resource. It was started from the #19–#21 fix stack and now includes main through `1b387c6`, including the owner’s correction that Dorin entered the trade in 2012. `.openai/hosting.json` identifies the separate owner-private Sites edition. The existing custom-domain canonical URLs are preserved for the intended MR WALLCOVER content; public DNS and GitHub main are unchanged.
 
 The crawler page, `/ai/business.json`, `/ai/projects.json`, and `/ai/decision-guide.json` share published content. The guide supports shortlisting and preparing a client-reviewed brief. It is not a booking or submission API. See `docs/ai-crawler.md`, `docs/atelier-media-provenance.md`, `BENCHMARK.md` and `QA_REPORT.md` for provenance and verification.
 

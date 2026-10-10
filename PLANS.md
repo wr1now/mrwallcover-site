@@ -8,7 +8,7 @@ Create a complete, elegant Sites edition of MR WALLCOVER using the real WR1 webs
 
 ## Constraints and assumptions
 
-- Baseline is `f83b60c`, the top of the existing #19/#20/#21 fix stack, isolated from all existing worktrees. Public main is `5cb4fa1`; pending fixes are not described as deployed.
+- Baseline is `f83b60c`, the top of the existing #19/#20/#21 fix stack, isolated from all existing worktrees. At the initial audit public main was `5cb4fa1`. Final refresh found #19–#22 merged: main `1b387c6` is now integrated, including the 2012 trade-start correction.
 - Preserve existing case studies, services, material guidance, forms, source records, phone privacy, draft exclusions and legal pages.
 - Real site photography only; retain image credits and distinguish contextual venue photography from installation evidence.
 - New Sites publication is private by default. Domain/DNS and public main are separate release surfaces and remain under their existing configuration.
@@ -21,8 +21,8 @@ Create a complete, elegant Sites edition of MR WALLCOVER using the real WR1 webs
 2. **Core design and AI resource — complete.** Create a visually distinct hotel-led homepage, coherent navigation and a crawler resource with structured services/projects. Preserve all existing published routes and functional enquiry paths.
 3. **Benchmark cycle 1 — complete.** Compare installation competitors; close obvious presentation/service discovery gaps. Test and commit.
 4. **Benchmark cycle 2 — complete.** Compare premium design portfolios; add a focused differentiated browsing improvement. Test and commit.
-5. **Benchmark cycle 3 — pending.** Compare authoritative crawler/accessibility guidance; harden discoverability and market readiness. Test and commit.
-6. **Final QA and publication — pending.** Run source, build, distribution, responsive/browser and accessibility checks; inspect rendered desktop/mobile; record exact results in QA_REPORT.md. Push branch and exact Sites source, publish private Site, verify returned deployment status.
+5. **Benchmark cycle 3 — complete.** Compare authoritative crawler/accessibility guidance; harden discoverability and market readiness. Test and commit.
+6. **Final QA complete; publication in progress.** Run source, build, distribution, responsive/browser and accessibility checks; inspect rendered desktop/mobile; record exact results in QA_REPORT.md. Push branch and exact Sites source, publish private Site, verify returned deployment status.
 
 ## Ordered work and ownership
 
@@ -59,3 +59,7 @@ The owner requested a substantially richer AI decision resource. Acceptance now 
 - Next: finish cycle-2 checks/commit, machine-discovery refinement for cycle 3, final browser QA and private publication.
 
 - Cycle 1 committed as `abeb10d`. Cycle 2: 6 focused filter/classification tests passed; production build included all 16 projects; browser filter counts and reset verified.
+
+- Cycle 2 committed as `8552c0b`. Final Git refresh found main had advanced to `1b387c6`; merged the latest source, resolving one home.json formatting conflict in favour of the corrected 2012 fact. New describedby links and whole-site local link/fragment checks added for cycle 3.
+
+- Final refreshed gates: source 61/61, production 50/50, phone 2/2, guides 4/4 (117 total). Production 75 pages and 68 Markdown twins. QA_REPORT.md records browser evidence and limits. All three benchmark cycles implemented and tested. Next: commit release refinement, push exact source, publish owner-private Site, then preserve release receipt.
