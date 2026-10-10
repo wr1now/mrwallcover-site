@@ -7,6 +7,7 @@ import Header from '../components/Header.astro';
 import MobileDock from '../components/MobileDock.astro';
 import PageMeta from '../components/PageMeta.astro';
 import { businessNode, founderNode, jsonLd, webPageNode, websiteNode } from '../lib/schema';
+import { hero as heroImage } from '../lib/content';
 
 interface Props {
   title: string;
@@ -54,8 +55,9 @@ const schema = jsonLd([
   webPageNode({ url: canonical, name: title, description, image, imageCredit }),
   ...extraSchema,
 ]);
-const heroSrcset =
-  '/media/hero/corridor-640.webp 640w, /media/hero/corridor-960.webp 960w, /media/hero/corridor-1280.webp 1280w, /media/hero/corridor-1920.webp 1920w';
+/* Preload exactly the image the homepage hero renders (same AVIF set, same sizes), and nothing else. */
+const heroPreloadSet = (heroImage.avif ?? heroImage.sources).map((s) => `${s.src} ${s.width}w`).join(', ');
+const heroPreloadType = heroImage.avif ? 'image/avif' : 'image/webp';
 ---
 
 <!doctype html>
@@ -118,9 +120,9 @@ const heroSrcset =
         <link
           rel="preload"
           as="image"
-          href="/media/hero/corridor-960.webp"
-          imagesrcset={heroSrcset}
-          imagesizes="100vw"
+          type={heroPreloadType}
+          imagesrcset={heroPreloadSet}
+          imagesizes={heroImage.sizes ?? '(min-width: 1024px) 60vw, 100vw'}
           fetchpriority="high"
         />
       )

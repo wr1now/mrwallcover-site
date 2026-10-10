@@ -144,7 +144,7 @@ const others = projects.filter((project) => !project.featured);
           featured.map((project) => (
             <a class="project-card" href={projectHref(project.slug)}>
               {project.imageId && (
-                <Picture id={project.imageId} thumbOnly sizes="(min-width: 768px) 20rem, 100vw" />
+                <Picture id={project.imageId} sizes="(min-width: 1280px) 584px, (min-width: 768px) calc(50vw - 3rem), 100vw" />
               )}
               <h3>{project.title}</h3>
               <p class="m-0 text-stone">{project.role}{project.dates ? ` · ${project.dates}` : ''}</p>

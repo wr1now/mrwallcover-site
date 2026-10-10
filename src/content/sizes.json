@@ -253,939 +253,1880 @@
     "hasFull": true
   },
   "trematon-01": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-01-preview.webp",
+    "width": 2400,
+    "height": 3200,
+    "src": "/media/img/r/trematon-01-2400.webp",
     "jpg": "/media/img/thumbs/trematon-01-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-01-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-01-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2400
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-03": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/trematon-03-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/trematon-03-1600.webp",
     "jpg": "/media/img/thumbs/trematon-03-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-03-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-03-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/trematon-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-04": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-04-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-04-1600.webp",
     "jpg": "/media/img/thumbs/trematon-04-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-04-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-04-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-04",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-05": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-05-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-05-1600.webp",
     "jpg": "/media/img/thumbs/trematon-05-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-05-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-05-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-05",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-06": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-06-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-06-1600.webp",
     "jpg": "/media/img/thumbs/trematon-06-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-06-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-06-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-06",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-07": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-07-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-07-1600.webp",
     "jpg": "/media/img/thumbs/trematon-07-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-07-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-07-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-07",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-08": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/trematon-08-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/trematon-08-1600.webp",
     "jpg": "/media/img/thumbs/trematon-08-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-08-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-08-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/trematon-08",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-09": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/trematon-09-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/trematon-09-1600.webp",
     "jpg": "/media/img/thumbs/trematon-09-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-09-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-09-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/trematon-09",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-10": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-10-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-10-1600.webp",
     "jpg": "/media/img/thumbs/trematon-10-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-10-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-10-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-10",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-11": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-11-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-11-1600.webp",
     "jpg": "/media/img/thumbs/trematon-11-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-11-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-11-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-11",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-12": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/trematon-12-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/trematon-12-1600.webp",
     "jpg": "/media/img/thumbs/trematon-12-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-12-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-12-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/trematon-12",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-13": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/trematon-13-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/trematon-13-1600.webp",
     "jpg": "/media/img/thumbs/trematon-13-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-13-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-13-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/trematon-13",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-14": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-14-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-14-1600.webp",
     "jpg": "/media/img/thumbs/trematon-14-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-14-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-14-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-14",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-15": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-15-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-15-1600.webp",
     "jpg": "/media/img/thumbs/trematon-15-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-15-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-15-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-15",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-16": {
-    "width": 360,
-    "height": 360,
-    "src": "/media/img/thumbs/trematon-16-preview.webp",
+    "width": 1600,
+    "height": 1600,
+    "src": "/media/img/r/trematon-16-1600.webp",
     "jpg": "/media/img/thumbs/trematon-16-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-16-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-16-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-16",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-17": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-17-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-17-1600.webp",
     "jpg": "/media/img/thumbs/trematon-17-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-17-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-17-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-17",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-18": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-18-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-18-1600.webp",
     "jpg": "/media/img/thumbs/trematon-18-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-18-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-18-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-18",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-19": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-19-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-19-1600.webp",
     "jpg": "/media/img/thumbs/trematon-19-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-19-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-19-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-19",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-20": {
-    "width": 360,
-    "height": 450,
-    "src": "/media/img/thumbs/trematon-20-preview.webp",
+    "width": 1600,
+    "height": 2000,
+    "src": "/media/img/r/trematon-20-1600.webp",
     "jpg": "/media/img/thumbs/trematon-20-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-20-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-20-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 450,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-20",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-21": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/trematon-21-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/trematon-21-1600.webp",
     "jpg": "/media/img/thumbs/trematon-21-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-21-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-21-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/trematon-21",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-23": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-23-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-23-1600.webp",
     "jpg": "/media/img/thumbs/trematon-23-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-23-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-23-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-23",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-24": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/trematon-24-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/trematon-24-1600.webp",
     "jpg": "/media/img/thumbs/trematon-24-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-24-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-24-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/trematon-24",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-25": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/trematon-25-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/trematon-25-1600.webp",
     "jpg": "/media/img/thumbs/trematon-25-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-25-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-25-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/trematon-25",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "trematon-26": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/trematon-26-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/trematon-26-1600.webp",
     "jpg": "/media/img/thumbs/trematon-26-preview.jpg",
     "thumb": "/media/img/thumbs/trematon-26-preview.webp",
     "thumbJpg": "/media/img/thumbs/trematon-26-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/trematon-26",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-01": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/old-bailey-01-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/old-bailey-01-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-01-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-01-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-01-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/old-bailey-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-02": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/old-bailey-02-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/old-bailey-02-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-02-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-02-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-02-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/old-bailey-02",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-03": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-03-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-03-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-03-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-03-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-03-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-04": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-04-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-04-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-04-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-04-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-04-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-04",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-05": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-05-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-05-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-05-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-05-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-05-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-05",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-06": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/old-bailey-06-preview.webp",
+    "width": 2400,
+    "height": 1800,
+    "src": "/media/img/r/old-bailey-06-2400.webp",
     "jpg": "/media/img/thumbs/old-bailey-06-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-06-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-06-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/old-bailey-06",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2400
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-07": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/old-bailey-07-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/old-bailey-07-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-07-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-07-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-07-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/old-bailey-07",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-08": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-08-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-08-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-08-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-08-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-08-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-08",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-09": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/old-bailey-09-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/old-bailey-09-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-09-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-09-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-09-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/old-bailey-09",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-10": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-10-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-10-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-10-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-10-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-10-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-10",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-11": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-11-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-11-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-11-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-11-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-11-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-11",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-12": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-12-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-12-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-12-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-12-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-12-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-12",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-13": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-13-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-13-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-13-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-13-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-13-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-13",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-14": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/old-bailey-14-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/old-bailey-14-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-14-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-14-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-14-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/old-bailey-14",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-15": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-15-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-15-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-15-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-15-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-15-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-15",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-16": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-16-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-16-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-16-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-16-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-16-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-16",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-17": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/old-bailey-17-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/old-bailey-17-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-17-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-17-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-17-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/old-bailey-17",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-18": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-18-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-18-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-18-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-18-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-18-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-18",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "old-bailey-19": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/old-bailey-19-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/old-bailey-19-1600.webp",
     "jpg": "/media/img/thumbs/old-bailey-19-preview.jpg",
     "thumb": "/media/img/thumbs/old-bailey-19-preview.webp",
     "thumbJpg": "/media/img/thumbs/old-bailey-19-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/old-bailey-19",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-01": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/north-london-residence-01-preview.webp",
+    "width": 2400,
+    "height": 3200,
+    "src": "/media/img/r/north-london-residence-01-2400.webp",
     "jpg": "/media/img/thumbs/north-london-residence-01-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-01-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-01-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2400
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-02": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/north-london-residence-02-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/north-london-residence-02-1600.webp",
     "jpg": "/media/img/thumbs/north-london-residence-02-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-02-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-02-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-02",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-03": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/north-london-residence-03-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/north-london-residence-03-1600.webp",
     "jpg": "/media/img/thumbs/north-london-residence-03-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-03-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-03-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-04": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/north-london-residence-04-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/north-london-residence-04-1600.webp",
     "jpg": "/media/img/thumbs/north-london-residence-04-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-04-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-04-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-04",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-05": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/north-london-residence-05-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/north-london-residence-05-1600.webp",
     "jpg": "/media/img/thumbs/north-london-residence-05-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-05-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-05-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-05",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-06": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/north-london-residence-06-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/north-london-residence-06-1600.webp",
     "jpg": "/media/img/thumbs/north-london-residence-06-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-06-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-06-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-06",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-07": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/north-london-residence-07-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/north-london-residence-07-1600.webp",
     "jpg": "/media/img/thumbs/north-london-residence-07-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-07-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-07-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-07",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-08": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/north-london-residence-08-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/north-london-residence-08-1600.webp",
     "jpg": "/media/img/thumbs/north-london-residence-08-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-08-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-08-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-08",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-09": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/north-london-residence-09-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/north-london-residence-09-1600.webp",
     "jpg": "/media/img/thumbs/north-london-residence-09-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-09-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-09-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-09",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-10": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/north-london-residence-10-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/north-london-residence-10-1600.webp",
     "jpg": "/media/img/thumbs/north-london-residence-10-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-10-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-10-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-10",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-11": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/north-london-residence-11-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/north-london-residence-11-1600.webp",
     "jpg": "/media/img/thumbs/north-london-residence-11-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-11-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-11-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-11",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "north-london-residence-12": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/north-london-residence-12-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/north-london-residence-12-1600.webp",
     "jpg": "/media/img/thumbs/north-london-residence-12-preview.jpg",
     "thumb": "/media/img/thumbs/north-london-residence-12-preview.webp",
     "thumbJpg": "/media/img/thumbs/north-london-residence-12-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/north-london-residence-12",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "lee-broom-01": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/lee-broom-01-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/lee-broom-01-1600.webp",
     "jpg": "/media/img/thumbs/lee-broom-01-preview.jpg",
     "thumb": "/media/img/thumbs/lee-broom-01-preview.webp",
     "thumbJpg": "/media/img/thumbs/lee-broom-01-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/lee-broom-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "lee-broom-03": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/lee-broom-03-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/lee-broom-03-1600.webp",
     "jpg": "/media/img/thumbs/lee-broom-03-preview.jpg",
     "thumb": "/media/img/thumbs/lee-broom-03-preview.webp",
     "thumbJpg": "/media/img/thumbs/lee-broom-03-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/lee-broom-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "lee-broom-04": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/lee-broom-04-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/lee-broom-04-1600.webp",
     "jpg": "/media/img/thumbs/lee-broom-04-preview.jpg",
     "thumb": "/media/img/thumbs/lee-broom-04-preview.webp",
     "thumbJpg": "/media/img/thumbs/lee-broom-04-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/lee-broom-04",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "lee-broom-05": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/lee-broom-05-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/lee-broom-05-1600.webp",
     "jpg": "/media/img/thumbs/lee-broom-05-preview.jpg",
     "thumb": "/media/img/thumbs/lee-broom-05-preview.webp",
     "thumbJpg": "/media/img/thumbs/lee-broom-05-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/lee-broom-05",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "lee-broom-06": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/lee-broom-06-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/lee-broom-06-1600.webp",
     "jpg": "/media/img/thumbs/lee-broom-06-preview.jpg",
     "thumb": "/media/img/thumbs/lee-broom-06-preview.webp",
     "thumbJpg": "/media/img/thumbs/lee-broom-06-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/lee-broom-06",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "lee-broom-07": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/lee-broom-07-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/lee-broom-07-1600.webp",
     "jpg": "/media/img/thumbs/lee-broom-07-preview.jpg",
     "thumb": "/media/img/thumbs/lee-broom-07-preview.webp",
     "thumbJpg": "/media/img/thumbs/lee-broom-07-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/lee-broom-07",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "lee-broom-08": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/lee-broom-08-preview.webp",
+    "width": 2400,
+    "height": 1800,
+    "src": "/media/img/r/lee-broom-08-2400.webp",
     "jpg": "/media/img/thumbs/lee-broom-08-preview.jpg",
     "thumb": "/media/img/thumbs/lee-broom-08-preview.webp",
     "thumbJpg": "/media/img/thumbs/lee-broom-08-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/lee-broom-08",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2400
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "lee-broom-09": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/lee-broom-09-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/lee-broom-09-1600.webp",
     "jpg": "/media/img/thumbs/lee-broom-09-preview.jpg",
     "thumb": "/media/img/thumbs/lee-broom-09-preview.webp",
     "thumbJpg": "/media/img/thumbs/lee-broom-09-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/lee-broom-09",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "lee-broom-10": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/lee-broom-10-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/lee-broom-10-1600.webp",
     "jpg": "/media/img/thumbs/lee-broom-10-preview.jpg",
     "thumb": "/media/img/thumbs/lee-broom-10-preview.webp",
     "thumbJpg": "/media/img/thumbs/lee-broom-10-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/lee-broom-10",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "lee-broom-11": {
-    "width": 638,
-    "height": 360,
-    "src": "/media/img/thumbs/lee-broom-11-preview.webp",
+    "width": 1600,
+    "height": 900,
+    "src": "/media/img/r/lee-broom-11-1600.webp",
     "jpg": "/media/img/thumbs/lee-broom-11-preview.jpg",
     "thumb": "/media/img/thumbs/lee-broom-11-preview.webp",
     "thumbJpg": "/media/img/thumbs/lee-broom-11-preview.jpg",
     "thumbWidth": 638,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 638,
+    "variants": {
+      "base": "/media/img/r/lee-broom-11",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "beverly-03": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/beverly-03-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/beverly-03-1600.webp",
     "jpg": "/media/img/thumbs/beverly-03-preview.jpg",
     "thumb": "/media/img/thumbs/beverly-03-preview.webp",
     "thumbJpg": "/media/img/thumbs/beverly-03-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/beverly-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "beverly-04": {
-    "width": 360,
-    "height": 640,
-    "src": "/media/img/thumbs/beverly-04-preview.webp",
+    "width": 1080,
+    "height": 1920,
+    "src": "/media/img/r/beverly-04-1080.webp",
     "jpg": "/media/img/thumbs/beverly-04-preview.jpg",
     "thumb": "/media/img/thumbs/beverly-04-preview.webp",
     "thumbJpg": "/media/img/thumbs/beverly-04-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 640,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/beverly-04",
+      "widths": [
+        480,
+        800,
+        1080
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "beverly-05": {
-    "width": 323,
-    "height": 576,
-    "src": "/media/img/thumbs/beverly-05-preview.webp",
+    "width": 1600,
+    "height": 2844,
+    "src": "/media/img/r/beverly-05-1600.webp",
     "jpg": "/media/img/thumbs/beverly-05-preview.jpg",
     "thumb": "/media/img/thumbs/beverly-05-preview.webp",
     "thumbJpg": "/media/img/thumbs/beverly-05-preview.jpg",
     "thumbWidth": 323,
     "thumbHeight": 576,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 323,
+    "variants": {
+      "base": "/media/img/r/beverly-05",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "beverly-06": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/beverly-06-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/beverly-06-1600.webp",
     "jpg": "/media/img/thumbs/beverly-06-preview.jpg",
     "thumb": "/media/img/thumbs/beverly-06-preview.webp",
     "thumbJpg": "/media/img/thumbs/beverly-06-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/beverly-06",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "beverly-07": {
-    "width": 640,
-    "height": 360,
-    "src": "/media/img/thumbs/beverly-07-preview.webp",
+    "width": 1600,
+    "height": 900,
+    "src": "/media/img/r/beverly-07-1600.webp",
     "jpg": "/media/img/thumbs/beverly-07-preview.jpg",
     "thumb": "/media/img/thumbs/beverly-07-preview.webp",
     "thumbJpg": "/media/img/thumbs/beverly-07-preview.jpg",
     "thumbWidth": 640,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 640,
+    "variants": {
+      "base": "/media/img/r/beverly-07",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "beverly-08": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/beverly-08-preview.webp",
+    "width": 2400,
+    "height": 1800,
+    "src": "/media/img/r/beverly-08-2400.webp",
     "jpg": "/media/img/thumbs/beverly-08-preview.jpg",
     "thumb": "/media/img/thumbs/beverly-08-preview.webp",
     "thumbJpg": "/media/img/thumbs/beverly-08-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/beverly-08",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2400
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "ahluwalia-estuary-01": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/ahluwalia-estuary-01-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/ahluwalia-estuary-01-1600.webp",
     "jpg": "/media/img/thumbs/ahluwalia-estuary-01-preview.jpg",
     "thumb": "/media/img/thumbs/ahluwalia-estuary-01-preview.webp",
     "thumbJpg": "/media/img/thumbs/ahluwalia-estuary-01-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/ahluwalia-estuary-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "ahluwalia-estuary-02": {
-    "width": 638,
-    "height": 360,
-    "src": "/media/img/thumbs/ahluwalia-estuary-02-preview.webp",
+    "width": 1600,
+    "height": 900,
+    "src": "/media/img/r/ahluwalia-estuary-02-1600.webp",
     "jpg": "/media/img/thumbs/ahluwalia-estuary-02-preview.jpg",
     "thumb": "/media/img/thumbs/ahluwalia-estuary-02-preview.webp",
     "thumbJpg": "/media/img/thumbs/ahluwalia-estuary-02-preview.jpg",
     "thumbWidth": 638,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 638,
+    "variants": {
+      "base": "/media/img/r/ahluwalia-estuary-02",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "ahluwalia-estuary-03": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/ahluwalia-estuary-03-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/ahluwalia-estuary-03-1600.webp",
     "jpg": "/media/img/thumbs/ahluwalia-estuary-03-preview.jpg",
     "thumb": "/media/img/thumbs/ahluwalia-estuary-03-preview.webp",
     "thumbJpg": "/media/img/thumbs/ahluwalia-estuary-03-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/ahluwalia-estuary-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "ahluwalia-estuary-06": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/ahluwalia-estuary-06-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/ahluwalia-estuary-06-1600.webp",
     "jpg": "/media/img/thumbs/ahluwalia-estuary-06-preview.jpg",
     "thumb": "/media/img/thumbs/ahluwalia-estuary-06-preview.webp",
     "thumbJpg": "/media/img/thumbs/ahluwalia-estuary-06-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/ahluwalia-estuary-06",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "ahluwalia-estuary-07": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/ahluwalia-estuary-07-preview.webp",
+    "width": 2400,
+    "height": 1800,
+    "src": "/media/img/r/ahluwalia-estuary-07-2400.webp",
     "jpg": "/media/img/thumbs/ahluwalia-estuary-07-preview.jpg",
     "thumb": "/media/img/thumbs/ahluwalia-estuary-07-preview.webp",
     "thumbJpg": "/media/img/thumbs/ahluwalia-estuary-07-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/ahluwalia-estuary-07",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2400
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "nomad-01": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/nomad-01-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/nomad-01-1600.webp",
     "jpg": "/media/img/thumbs/nomad-01-preview.jpg",
     "thumb": "/media/img/thumbs/nomad-01-preview.webp",
     "thumbJpg": "/media/img/thumbs/nomad-01-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/nomad-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "heathrow-01": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/heathrow-01-preview.webp",
+    "width": 1600,
+    "height": 2133,
+    "src": "/media/img/r/heathrow-01-1600.webp",
     "jpg": "/media/img/thumbs/heathrow-01-preview.jpg",
     "thumb": "/media/img/thumbs/heathrow-01-preview.webp",
     "thumbJpg": "/media/img/thumbs/heathrow-01-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/heathrow-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "heathrow-02": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/heathrow-02-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/heathrow-02-1600.webp",
     "jpg": "/media/img/thumbs/heathrow-02-preview.jpg",
     "thumb": "/media/img/thumbs/heathrow-02-preview.webp",
     "thumbJpg": "/media/img/thumbs/heathrow-02-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/heathrow-02",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "heathrow-03": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/heathrow-03-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/heathrow-03-1600.webp",
     "jpg": "/media/img/thumbs/heathrow-03-preview.jpg",
     "thumb": "/media/img/thumbs/heathrow-03-preview.webp",
     "thumbJpg": "/media/img/thumbs/heathrow-03-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/heathrow-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "heathrow-04": {
-    "width": 480,
-    "height": 360,
-    "src": "/media/img/thumbs/heathrow-04-preview.webp",
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/heathrow-04-1600.webp",
     "jpg": "/media/img/thumbs/heathrow-04-preview.jpg",
     "thumb": "/media/img/thumbs/heathrow-04-preview.webp",
     "thumbJpg": "/media/img/thumbs/heathrow-04-preview.jpg",
     "thumbWidth": 480,
     "thumbHeight": 360,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 480,
+    "variants": {
+      "base": "/media/img/r/heathrow-04",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "heathrow-05": {
-    "width": 360,
-    "height": 480,
-    "src": "/media/img/thumbs/heathrow-05-preview.webp",
+    "width": 2400,
+    "height": 3200,
+    "src": "/media/img/r/heathrow-05-2400.webp",
     "jpg": "/media/img/thumbs/heathrow-05-preview.jpg",
     "thumb": "/media/img/thumbs/heathrow-05-preview.webp",
     "thumbJpg": "/media/img/thumbs/heathrow-05-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 480,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/heathrow-05",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2400
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "heathrow-06": {
-    "width": 360,
-    "height": 290,
-    "src": "/media/img/thumbs/heathrow-06-preview.webp",
+    "width": 1600,
+    "height": 1289,
+    "src": "/media/img/r/heathrow-06-1600.webp",
     "jpg": "/media/img/thumbs/heathrow-06-preview.jpg",
     "thumb": "/media/img/thumbs/heathrow-06-preview.webp",
     "thumbJpg": "/media/img/thumbs/heathrow-06-preview.jpg",
     "thumbWidth": 360,
     "thumbHeight": 290,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 360,
+    "variants": {
+      "base": "/media/img/r/heathrow-06",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "heathrow-07": {
-    "width": 300,
-    "height": 230,
-    "src": "/media/img/thumbs/heathrow-07-preview.webp",
+    "width": 1600,
+    "height": 1226,
+    "src": "/media/img/r/heathrow-07-1600.webp",
     "jpg": "/media/img/thumbs/heathrow-07-preview.jpg",
     "thumb": "/media/img/thumbs/heathrow-07-preview.webp",
     "thumbJpg": "/media/img/thumbs/heathrow-07-preview.jpg",
     "thumbWidth": 300,
     "thumbHeight": 230,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 300,
+    "variants": {
+      "base": "/media/img/r/heathrow-07",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "heathrow-08": {
-    "width": 280,
-    "height": 200,
-    "src": "/media/img/thumbs/heathrow-08-preview.webp",
+    "width": 1600,
+    "height": 1142,
+    "src": "/media/img/r/heathrow-08-1600.webp",
     "jpg": "/media/img/thumbs/heathrow-08-preview.jpg",
     "thumb": "/media/img/thumbs/heathrow-08-preview.webp",
     "thumbJpg": "/media/img/thumbs/heathrow-08-preview.jpg",
     "thumbWidth": 280,
     "thumbHeight": 200,
-    "hasFull": false
+    "hasFull": true,
+    "modestWidth": 280,
+    "variants": {
+      "base": "/media/img/r/heathrow-08",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    },
+    "source": "own iPhone original (Apple Photos), metadata stripped"
   },
   "pimlico-st-georges-square-exterior-01": {
     "width": 1350,

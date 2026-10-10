@@ -8,6 +8,11 @@ export interface MediaFile {
   thumbWidth: number;
   thumbHeight: number;
   hasFull: boolean;
+  /** Responsive AVIF + WebP set cut from a full-size original: <base>-<w>.avif|webp for each width. */
+  variants?: { base: string; widths: number[] };
+  /** Display width a modest case study keeps for this image (the old preview width). */
+  modestWidth?: number;
+  source?: string;
 }
 
 export interface HeroImage {
@@ -15,6 +20,8 @@ export interface HeroImage {
   width: number;
   height: number;
   sources: { src: string; width: number }[];
+  avif?: { src: string; width: number }[];
+  sizes?: string;
   fallback: string;
 }
 
