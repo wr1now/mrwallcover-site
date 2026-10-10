@@ -30,7 +30,9 @@ test('every indexable page has a title of 60 characters or fewer and a descripti
 
 test('each Brown\'s film has a complete VideoObject with a real upload date and measured duration', async () => {
   const films = JSON.parse(await readFile('src/content/videos.json', 'utf8')) as { id: string; src: string; uploadDate: string; duration: string }[];
-  for (const page of ['dist/index.html', 'dist/projects/browns-hotel-mayfair/index.html']) {
+  // The films' own page carries the full markup. The home page shows the same films but leaves the
+  // VideoObjects off: 2.5 KB of JSON-LD there cost the mobile Lighthouse score two points.
+  for (const page of ['dist/projects/browns-hotel-mayfair/index.html']) {
     const html = await readFile(page, 'utf8');
     const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap((m) => JSON.parse(m[1])['@graph']);
     const videos = graph.filter((node: Record<string, unknown>) => node['@type'] === 'VideoObject');

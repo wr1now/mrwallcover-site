@@ -5,8 +5,7 @@ import Picture from '../components/Picture.astro';
 import MaterialStudio from '../components/MaterialStudio.astro';
 import Base from '../layouts/Base.astro';
 import { home, faqItems, projects, projectHref, videoById } from '../lib/content';
-import { AWARD_TEXT, AWARD_URL, faqNode, videoNode } from '../lib/schema';
-import { SITE_URL } from '../config';
+import { AWARD_TEXT, AWARD_URL, faqNode } from '../lib/schema';
 import '../styles/atelier.css';
 const selection = [
   { slug: 'raffles-london-the-owo', label: 'Raffles London at The OWO', type: 'Hospitality', image: 'owo-official-classic', credit: 'Venue photograph · Raffles London at The OWO (official)' },
@@ -20,7 +19,7 @@ const hotelNames = [
   {name: 'Hyde London City', place: 'OLD BAILEY', href: '/projects/old-bailey-hotel/'},
 ];
 ---
-<Base title={home.title} description={facts.description} path="/" preloadHero extraSchema={[faqNode(faqItems), ...home.proof.videos.map((id) => videoNode(videoById(id), `${SITE_URL}/`))]} image="/media/atelier/browns-bedroom-2000.jpg" imageAlt="Our completed wallcovering installation at Brown's Hotel, Mayfair.">
+<Base title={home.title} description={facts.description} path="/" preloadHero extraSchema={[faqNode(faqItems)]} image="/media/atelier/browns-bedroom-2000.jpg" imageAlt="Our completed wallcovering installation at Brown's Hotel, Mayfair.">
   <div class="atelier">
     <section class="atelier-hero" aria-labelledby="hero-heading">
       <Hero />
