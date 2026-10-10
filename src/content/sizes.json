@@ -2556,5 +2556,227 @@
     "thumbWidth": 800,
     "thumbHeight": 600,
     "hasFull": true
+  },
+  "arch-trim-01": {
+    "width": 2400,
+    "height": 1600,
+    "src": "/media/img/r/arch-trim-01-2400.webp",
+    "jpg": "/media/img/r/arch-trim-01-1600.jpg",
+    "thumb": "/media/img/r/arch-trim-01-800.webp",
+    "thumbJpg": "/media/img/r/arch-trim-01-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/arch-trim-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2000,
+        2400
+      ]
+    }
+  },
+  "arch-trim-02": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/arch-trim-02-1600.webp",
+    "jpg": "/media/img/r/arch-trim-02-1600.jpg",
+    "thumb": "/media/img/r/arch-trim-02-800.webp",
+    "thumbJpg": "/media/img/r/arch-trim-02-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/arch-trim-02",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "arch-trim-03": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/arch-trim-03-1600.webp",
+    "jpg": "/media/img/r/arch-trim-03-1600.jpg",
+    "thumb": "/media/img/r/arch-trim-03-800.webp",
+    "thumbJpg": "/media/img/r/arch-trim-03-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/arch-trim-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "arch-trim-04": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/arch-trim-04-1600.webp",
+    "jpg": "/media/img/r/arch-trim-04-1600.jpg",
+    "thumb": "/media/img/r/arch-trim-04-800.webp",
+    "thumbJpg": "/media/img/r/arch-trim-04-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/arch-trim-04",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "arch-trim-05": {
+    "width": 1600,
+    "height": 2400,
+    "src": "/media/img/r/arch-trim-05-1600.webp",
+    "jpg": "/media/img/r/arch-trim-05-1600.jpg",
+    "thumb": "/media/img/r/arch-trim-05-800.webp",
+    "thumbJpg": "/media/img/r/arch-trim-05-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1200,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/arch-trim-05",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "arch-trim-06": {
+    "width": 1600,
+    "height": 2400,
+    "src": "/media/img/r/arch-trim-06-1600.webp",
+    "jpg": "/media/img/r/arch-trim-06-1600.jpg",
+    "thumb": "/media/img/r/arch-trim-06-800.webp",
+    "thumbJpg": "/media/img/r/arch-trim-06-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1200,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/arch-trim-06",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "arch-trim-07": {
+    "width": 1600,
+    "height": 2400,
+    "src": "/media/img/r/arch-trim-07-1600.webp",
+    "jpg": "/media/img/r/arch-trim-07-1600.jpg",
+    "thumb": "/media/img/r/arch-trim-07-800.webp",
+    "thumbJpg": "/media/img/r/arch-trim-07-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1200,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/arch-trim-07",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "arch-trim-08": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/arch-trim-08-1600.webp",
+    "jpg": "/media/img/r/arch-trim-08-1600.jpg",
+    "thumb": "/media/img/r/arch-trim-08-800.webp",
+    "thumbJpg": "/media/img/r/arch-trim-08-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/arch-trim-08",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "arch-trim-09": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/arch-trim-09-1600.webp",
+    "jpg": "/media/img/r/arch-trim-09-1600.jpg",
+    "thumb": "/media/img/r/arch-trim-09-800.webp",
+    "thumbJpg": "/media/img/r/arch-trim-09-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/arch-trim-09",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "arch-trim-10": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/arch-trim-10-1600.webp",
+    "jpg": "/media/img/r/arch-trim-10-1600.jpg",
+    "thumb": "/media/img/r/arch-trim-10-800.webp",
+    "thumbJpg": "/media/img/r/arch-trim-10-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/arch-trim-10",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "arch-trim-11": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/arch-trim-11-1600.webp",
+    "jpg": "/media/img/r/arch-trim-11-1600.jpg",
+    "thumb": "/media/img/r/arch-trim-11-800.webp",
+    "thumbJpg": "/media/img/r/arch-trim-11-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/arch-trim-11",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
   }
 }
