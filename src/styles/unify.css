@@ -129,3 +129,10 @@ body .atelier .atelier-craft-copy dt { font-size:var(--text-button); }
 
 /* ---- 11. Paragraph rhythm: prose paragraphs are spaced even where a utility zeroes their margin ---- */
 .prose > p + p, .prose > ul + p, .prose > p + ul { margin-top:1rem; }
+
+/* ---- 12. Below the first screen, the browser lays out (and so lazy-loads) only what is near the viewport,
+ *          so the showcase and the photo strips never compete with the hero photograph for bandwidth. ---- */
+.home-showcase-strip { content-visibility:auto; contain-intrinsic-size:auto 590px; }
+.home-proof { content-visibility:auto; contain-intrinsic-size:auto 1360px; }
+.home-studio { content-visibility:auto; contain-intrinsic-size:auto 1000px; }
+@media (min-width:1024px) { .home-studio { contain-intrinsic-size:auto 865px; } }

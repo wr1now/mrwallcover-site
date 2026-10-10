@@ -70,7 +70,7 @@ const hotelNames = [
       <ul class="home-showcase-strip" role="list">
         {showcase.map((item) => (
           <li class="home-showcase-item">
-            <a class="home-showcase-image" href={projectHref(item.slug)} tabindex="-1" aria-hidden="true"><Picture id={item.image} sizes="(min-width: 1024px) 34vw, (min-width: 768px) 48vw, 84vw" /></a>
+            <a class="home-showcase-image" href={projectHref(item.slug)} tabindex="-1" aria-hidden="true"><Picture id={item.image} sizes="(min-width: 1024px) 34vw, (min-width: 768px) 48vw, 80vw" /></a>
             <p class="home-showcase-place">{item.place}</p>
             <h3><a href={projectHref(item.slug)}>{item.name}</a></h3>
             {item.credit && <p class="home-showcase-credit">{item.credit}</p>}
