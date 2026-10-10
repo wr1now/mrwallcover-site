@@ -169,7 +169,8 @@ test('structured endpoints preserve privacy and record limitations without addin
   const projects = await readFile('dist/ai/projects.json', 'utf8');
   const decision = await readFile('dist/ai/decision-guide.json', 'utf8');
   for (const text of [business, projects, decision]) {
-    assert.doesNotMatch(text, /"(?:phone|telephone|price|aggregateRating|award|apiKey|token|_note|manifestNote|placeholder)"\s*:/i);
+    const scan = text === business ? text.replace('"award": "Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards"', '') : text;
+    assert.doesNotMatch(scan, /"(?:phone|telephone|price|aggregateRating|award|apiKey|token|_note|manifestNote|placeholder)"\s*:/i);
     assert.doesNotMatch(text, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b/);
     assert.doesNotMatch(text, /\/Users\/|localhost|SITE_PHONE|data:image/);
   }

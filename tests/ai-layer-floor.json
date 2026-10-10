@@ -1,0 +1,75 @@
+{
+  "_note": "No-loss floor for the AI-crawling layer (tests/ai-layer-data.test.ts). Every URL here must stay built, every robots group must keep 'Allow: /', and no count may fall below these numbers (from scripts/ai-fact-counts.mjs). Raise a number when the layer grows; never lower one.",
+  "urls": [
+    "/for-ai/",
+    "/for-ai/index.md",
+    "/llms.txt",
+    "/llms-full.txt",
+    "/facts.json",
+    "/.well-known/facts.json",
+    "/projects.json",
+    "/feed.xml",
+    "/robots.txt",
+    "/sitemap-index.xml",
+    "/sitemap.xml",
+    "/ai/business.json",
+    "/ai/projects.json",
+    "/ai/decision-guide.json",
+    "/wallcovering-installation-ai-crawler/",
+    "/wallcovering-installation-ai-crawler/index.md",
+    "/projects/calico-lee-broom-overture/",
+    "/projects/calico-lee-broom-overture/index.md"
+  ],
+  "robotsAllowed": [
+    "*",
+    "Googlebot",
+    "Bingbot",
+    "Applebot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "GPTBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "ClaudeBot"
+  ],
+  "counts": {
+    "json": {
+      "/facts.json": 21,
+      "/.well-known/facts.json": 246,
+      "/projects.json": 631,
+      "/ai/business.json": 97,
+      "/ai/projects.json": 1112,
+      "/ai/decision-guide.json": 504
+    },
+    "text": {
+      "/llms.txt": {
+        "lines": 106,
+        "links": 91
+      },
+      "/llms-full.txt": {
+        "lines": 3797,
+        "links": 1186
+      },
+      "/for-ai/index.md": {
+        "lines": 225,
+        "links": 99
+      }
+    },
+    "jsonLd": {
+      "forAi": 116,
+      "allPages": 4274
+    },
+    "pages": {
+      "html": 75,
+      "published": 68,
+      "twins": 68
+    },
+    "images": {
+      "distMediaFiles": 504
+    }
+  }
+}
