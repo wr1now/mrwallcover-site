@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
+import './case-study-arch.test.ts';
 
 async function htmlFiles(directory: string): Promise<string[]> {
  const entries=await readdir(directory,{withFileTypes:true});

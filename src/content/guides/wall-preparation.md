@@ -42,7 +42,7 @@ Fresh plaster, new filler and recent repairs need time and the right conditions 
 
 ## Is it smooth enough for this material?
 
-Smooth enough depends on the covering. A textured grasscloth forgives small undulations that a silk or a plain vinyl will show in raking light. Where the specification includes it, preparation means stripping old paper, sanding with dust extraction, and making good cracks and uneven surfaces before anything decorative goes up. Period walls can take days of filling and sanding before they are true. At [Brown's Hotel](/projects/browns-hotel-mayfair/), the hours spent filling and priming decided everything that followed on wide-width printed papers.
+Smooth enough depends on the covering. A textured grasscloth forgives small undulations that a silk or a plain vinyl will show in raking light. Where the specification includes it, preparation means stripping old paper, sanding with dust extraction, and making good cracks and uneven surfaces before anything decorative goes up. Period walls can take days of filling and sanding before they are true. At [Brown's Hotel](/projects/browns-hotel-mayfair/), the hours spent filling and priming decided everything that followed on wide-width printed papers. An external edge that will not come true, such as an old arch, can be given a true line with a corner profile instead: our [imperfect arches case study](/projects/imperfect-arches-external-corner-trim/) shows how.
 
 ## What is lining paper for, and does this wall need it?
 
