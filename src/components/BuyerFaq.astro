@@ -6,11 +6,13 @@
  * describes exactly the questions shown here.
  */
 import type { BuyerAnswer } from '../lib/ai-layer-data';
-interface Props { items: BuyerAnswer[]; heading?: string; intro?: string }
-const { items, heading = 'Questions buyers ask', intro } = Astro.props;
+/** eyebrow: optional small label above the heading, in the site's .eyebrow style (the professional pages pass "Questions"). */
+interface Props { items: BuyerAnswer[]; heading?: string; intro?: string; eyebrow?: string }
+const { items, heading = 'Questions buyers ask', intro, eyebrow } = Astro.props;
 ---
 {items.length > 0 && (
   <section class="guide-faq" aria-labelledby="questions">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
     <h2 id="questions">{heading}</h2>
     {intro && <p>{intro}</p>}
     {items.map((item) => (

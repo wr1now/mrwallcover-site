@@ -46,6 +46,12 @@ jobs:
         env:
           SITE_PHONE: ${{ secrets.SITE_PHONE }}
         run: npm run check:dist
+      - name: Type floors and hero contrast (computed styles in Chrome)
+        # Twelve pages (home, projects, a case study, about, faq, and the #30-#32 pages) at five widths: no text under 14px (13px for labels and credits), paragraphs 16px+,
+        # and the hero words at 4.5:1 or better against the photograph. ubuntu-latest ships Google Chrome.
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: npm run check:type
       - name: Build origin/main as the no-loss baseline
         # Dorin's rule: nothing on the site may be lost. Main's own build is the baseline, never a hand-kept list.
         if: github.event_name == 'pull_request'

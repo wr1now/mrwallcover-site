@@ -74,8 +74,31 @@
   --text-hero-desktop: clamp(2.6rem, 3.3vw, 3.4rem); /* homepage sentence on desktop, unchanged from PR #12 */
   --text-body: 1.0625rem; /* 17px */
   --text-lede: 1.125rem; /* 18px */
-  --text-eyebrow: 0.75rem; /* 12px, never smaller */
+  --text-eyebrow: 0.8125rem; /* 13px, never smaller (was 12px; raised 10 Oct 2026 for legibility) */
   --text-small: 0.9rem;
+  /* One scale for the homepage and the inner pages (home visual unification and laptop audit, 10 Oct 2026).
+     Floors: 14px for any text, 13px for uppercase labels, eyebrows and credits only. */
+  --text-h1: clamp(2.75rem, 1.5rem + 3.4vw, 5.25rem); /* page titles, 44px -> 84px (the homepage hero keeps its own display size) */
+  --text-h2: clamp(2.25rem, 1.4rem + 2.4vw, 3.75rem); /* section titles, 36px -> 60px */
+  --text-h2-feature: clamp(2.75rem, 1.6rem + 4vw, 5.5rem); /* the homepage closing call to action only */
+  --text-h3: clamp(1.5rem, 1.25rem + 0.7vw, 2rem); /* card and list titles, 24px -> 32px */
+  --text-h4: 1.375rem; /* small card titles and FAQ questions, 22px, serif */
+  --text-meta: 0.875rem; /* 14px: captions, dates, meta lines, small links */
+  --text-label: 0.8125rem; /* 13px: uppercase labels, eyebrows, credits. The floor. */
+  --text-nav: 0.875rem; /* 14px: header links */
+  --text-button: 0.9375rem; /* 15px: every button */
+  --tracking-label: 0.14em;
+  --leading-tight: 1.1;
+  --space-section: clamp(4.5rem, 2.5rem + 5vw, 7.5rem); /* vertical rhythm between sections */
+  --measure-copy: 38rem; /* about 65-70 characters at 17px Outfit */
+  --measure-h1: min(66rem, 100%); /* page titles run to two or three lines */
+  /* One button system: primary (ink or ivory on dark), secondary (ink line), ghost (ivory line on dark). */
+  --button-height: 56px;
+  --button-radius: 2px;
+  --button-pad: 1.4rem;
+  /* One card system. */
+  --card-ratio: 4 / 3;
+  --card-gap: 2.5rem 1.5rem;
   --tracking-eyebrow: 0.12em;
   --tracking-display: -0.02em;
   --leading-body: 1.65;
