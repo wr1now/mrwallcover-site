@@ -1,0 +1,83 @@
+/*
+ * One design system for the homepage and the inner pages (laptop visual audit, 10 Oct 2026).
+ * Unlayered and loaded after global.css and atelier.css, so these shared rules win over the
+ * component layer and the Tailwind utilities. Every size, colour and spacing comes from tokens.css.
+ * Classes and markup are unchanged; only sizes, colours and spacing are set here.
+ */
+
+/* ---- 1. Type scale: H1-H4 are the same on every page ---- */
+main h1:not(#hero-heading), .page-head h1 { font-size:var(--text-h1); line-height:1.02; letter-spacing:-.03em; }
+main h2:not(.sr-only), .atelier h2 { font-size:var(--text-h2); line-height:1.04; letter-spacing:-.03em; }
+.atelier .atelier-contact h2 { font-size:var(--text-h2-feature); }
+main h3, .atelier h3 { font-size:var(--text-h3); line-height:var(--leading-tight); }
+main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
+/* A card's own title is an h3-sized title whatever its tag. */
+.project-card h2, .project-card h3, .card-link h3, .work-item h3 { font-size:var(--text-h3); }
+/* FAQ questions: the serif, on the homepage and on /faq/ alike. */
+.faq summary h3, .faq summary h2, .atelier .faq summary h3, main .faq summary h3, main .faq summary h2:not(.sr-only), .atelier-questions details h3 { margin:0; font-family:var(--font-serif); font-weight:500; font-size:var(--text-h4); line-height:1.25; letter-spacing:-.01em; }
+
+/* ---- 2. Labels, eyebrows, captions ---- */
+.eyebrow, .atelier-kicker { font-size:var(--text-label); letter-spacing:var(--tracking-label); line-height:1.5; }
+.caption, figcaption { font-size:var(--text-meta); }
+.site-footer .eyebrow { font-size:var(--text-label); }
+
+/* ---- 3. Header: links 14px, the action is the primary button ---- */
+.site-header .nav-link, .site-header .menu-toggle, .site-header .header-mobile .nav-link { font-size:var(--text-nav); }
+
+/* The mobile dock: 14px like the header links. */
+.dock a, .dock .dock-phone { font-size:var(--text-meta); }
+
+/* ---- 10. Homepage sizes on the shared scale (audit items 1-4, 7, 9) ----
+ * "body" in front lifts each rule just above atelier.css and hero-mobile.css without touching them. */
+/* Labels, eyebrows, credits: 13px. */
+body .atelier-kicker, body .atelier-hotel-band small, body .atelier-intro dt, body .home-pillars, body .atelier-service-number,
+body .atelier-credit, body .atelier-project-meta > span, body .home-showcase-place, body .home-showcase-credit,
+body .atelier-hero-foot > span, body .atelier-hero-foot a span, body .atelier-materials-image > span, body .atelier-craft-image > p {
+  font-size:var(--text-label); letter-spacing:var(--tracking-label); line-height:1.5;
+}
+body .atelier-hotel-band small { margin-top:8px; }
+/* Links, routes and meta lines: 14-15px. */
+body .atelier-hero-foot a, body .atelier-hero-award a, body .atelier-ai-note, body .atelier-ai-note a { font-size:var(--text-meta); }
+body .atelier-material-links a, body .atelier-enquiry-routes a, body .home-partner-line, body .atelier-text-link { font-size:var(--text-button); }
+body .atelier-contact-email { font-size:1rem; }
+/* Card and list copy: 16px. */
+body .home-card p, body .atelier-service li p, body .atelier-intro dd, body .atelier-craft dd, body .home-process p, body .home-needs-grid p, body .home-record ul {
+  font-size:1rem; line-height:1.6;
+}
+/* Long-form paragraphs: the inner pages' 17px. */
+body .atelier-intro-bottom p, body .home-proof-text, body .home-more-text, body .atelier-craft-copy > p, body .atelier-materials-copy > p,
+body .home-calico-text, body .home-aftercare-inner > p, body .atelier-project > p, body .home-showcase-head p {
+  font-size:var(--text-body); line-height:1.7; max-width:var(--measure-copy);
+}
+body .atelier .atelier-contact > p:not(.atelier-kicker) { margin:25px auto 28px; max-width:var(--measure-copy); }
+/* Hero: the same photograph, crop and composition. Small type reaches the floors with its line boxes held at
+ * the old heights, and the two actions stay on one row on phones, so nothing in the hero moves. */
+body .atelier .atelier-hero-actions .atelier-button { font-size:var(--text-button); }
+body .atelier .atelier-hero-award { line-height:20px; }
+@media (max-width:767px) {
+  body .atelier .atelier-hero-actions { gap:8px; }
+  body .atelier .atelier-hero-actions .atelier-button { font-size:var(--text-meta); min-height:52px; padding-inline:16px; gap:10px; }
+  body .atelier-hero-foot a { font-size:var(--text-meta); }
+  /* The hero description keeps main's 14px on phones: 16px would add a line and lift the whole hero. */
+  body .atelier .atelier-hero .atelier-hero-description { font-size:var(--text-meta); }
+}
+@media (max-width:420px) {
+  body .atelier .atelier-hero-actions .atelier-button span { display:none; }
+}
+@media (max-width:380px) {
+  body .atelier .atelier-hero-actions .atelier-button { padding-inline:12px; }
+}
+
+/* Second pass: the few atelier.css rules that carry a :not() or a parent class. */
+body .atelier .atelier-kicker, body .atelier .atelier-project-meta .atelier-kicker,
+body .atelier .atelier-project > p.atelier-credit, body .atelier .atelier-project-meta > span { font-size:var(--text-label); }
+body .atelier .atelier-hotel-band .home-partner-line, body .atelier .atelier-hotel-band .home-partner-line a { font-size:var(--text-button); }
+body .atelier .atelier-film-grid .caption, body .atelier .home-films figcaption { font-size:var(--text-meta); line-height:1.6; }
+body .atelier .atelier-craft-copy > p:not(.atelier-kicker), body .atelier .atelier-materials-copy > p:not(.atelier-kicker),
+body .atelier .atelier-service > div > p, body .atelier .home-aftercare-inner p { font-size:var(--text-body); line-height:1.7; }
+body .atelier .atelier-materials-copy > p:not(.atelier-kicker) { max-width:var(--measure-copy); }
+body .atelier .atelier-craft-copy dd { font-size:1rem; }
+body .atelier .atelier-craft-copy dt { font-size:var(--text-button); }
+
+/* ---- 11. Paragraph rhythm: prose paragraphs are spaced even where a utility zeroes their margin ---- */
+.prose > p + p, .prose > ul + p, .prose > p + ul { margin-top:1rem; }

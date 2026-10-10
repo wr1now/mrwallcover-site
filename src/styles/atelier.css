@@ -263,15 +263,8 @@
 /* -- Hero: photograph, crop and layout unchanged. The labels are lifted to the 13px floor with
  *    their line boxes held at the old heights, so nothing in the hero moves. -- */
 .atelier .atelier-hero .atelier-kicker { line-height:16px; margin-bottom:22px; }
-.site-header .nav-link, .site-header .header-action { font-size:var(--text-label); }
 @media(max-width:767px){
   .atelier .atelier-hero .atelier-kicker { line-height:14.4px; margin-bottom:16px; }
-  .atelier .atelier-hero-actions .atelier-text-link, .atelier .atelier-hero-actions .atelier-button, .atelier .atelier-hero-foot a { font-size:var(--text-label); }
 }
-/* The hero sentence keeps its own sizes from hero-mobile.css (16px on desktop, 14px on phones), so the
- * hero copy sits exactly where it did; only the short-screen 12px step is lifted to the 13px floor. */
-@media(max-width:767px) and (max-height:700px){
-  .atelier .atelier-hero .atelier-hero-description { font-size:var(--text-label); line-height:1.5; }
-}
-.atelier .atelier-hero-actions .atelier-button, .atelier .atelier-hero-actions .atelier-text-link { font-size:var(--text-label); }
+/* Hero type sizes, buttons and the deeper shade are in unify.css (section 8 and 10). */
 @media(prefers-reduced-motion:reduce){ .home-card-image img, .home-showcase-image img { transition:none; } }

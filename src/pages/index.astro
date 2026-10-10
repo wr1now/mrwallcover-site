@@ -7,7 +7,7 @@ import Base from '../layouts/Base.astro';
 import { home, faqItems, projects, projectHref, videoById } from '../lib/content';
 import { AWARD_TEXT, AWARD_URL, faqNode } from '../lib/schema';
 import '../styles/atelier.css';
-// The hero's award rule is inlined in <head>. Every other homepage rule, the restored sections
+// The hero's one extra rule (home-hero.css) is inlined in <head>. Every other homepage rule, the restored sections
 // and the showcase included, is in atelier.css, so the page is styled by one sheet before first paint.
 import homeHeroCss from '../styles/home-hero.css?raw';
 const selection = [
@@ -22,7 +22,7 @@ const alsoOnRecord = projects.filter((project) => !project.featured && !shownSlu
 const calicoProjects = projects.filter((project) => project.group === 'design-weeks');
 const calicoLabel = (project: (typeof projects)[number]) =>
   project.slug === 'heathrow-terminal-4-calico' ? 'Calico Wallpaper at Heathrow Terminal 4' : project.title.replace(/: '?([^']+)'? at .*$/, ': $1');
-// Top-of-page showcase: one large finished-room photograph per hotel and landmark commission.
+// Top-of-page showcase: one large finished-room photograph per hotel and historic commission.
 // Our own photographs first; a credited venue image only where we have no finished-room photo of our own.
 const showcase = [
   { slug: 'browns-hotel-mayfair', name: 'Brown’s Hotel', place: 'Mayfair', image: 'browns-hotel-mayfair-10', credit: '' },
@@ -64,7 +64,7 @@ const hotelNames = [
 
     <section class="home-showcase" aria-labelledby="showcase-heading">
       <div class="home-showcase-head">
-        <p class="atelier-kicker">Hotels and landmark commissions</p>
+        <p class="atelier-kicker">Hotels and historic commissions</p>
         <h2 id="showcase-heading">Rooms we have <em>finished.</em></h2>
       </div>
       <ul class="home-showcase-strip" role="list">
