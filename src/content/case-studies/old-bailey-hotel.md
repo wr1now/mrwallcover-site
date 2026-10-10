@@ -16,7 +16,7 @@
   "metaTitle": null,
   "metaDescription": null,
   "group": null,
-  "standfirst": "A complete decorating package for 110 rooms, from a sample room in November 2022 to final touches in August 2024, inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.",
+  "standfirst": "A complete decorating package for 111 guest rooms across seven storeys, from a sample room in November 2022 to final touches in August 2024, inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.",
   "hero": "old-bailey-06",
   "gallery": [
     {
@@ -108,7 +108,7 @@
 - **Building:** 15 Old Bailey, City of London. Grade II listed, completed 1874
 - **Opened:** 2 September 2024 as Hyde London City
 - **Duration:** about two years on site (our photographs run from a sample room in November 2022 to final touches in August 2024)
-- **Rooms:** 110
+- **Rooms:** 111 guest rooms across seven storeys
 - **Interior design:** Studio Moren
 - **Our package:** full decoration, specialist wallcoverings and window film
 - **Wallcoverings:** Timorous Beasties Tropical Clouded Leopard and Totem Damask (custom-printed vinyl), and House of Hackney LIMERENCE
@@ -128,7 +128,7 @@ The interiors were designed by Studio Moren. For the bedrooms they selected two 
 
 ## The brief
 
-One team, one standard, from the first sample room to handover: the complete decorating package across 110 rooms and the circulation spaces, the specialist wallcoverings that give each room its character, and the window film to the glazing.
+One team, one standard, from the first sample room to handover: the complete decorating package for 111 guest rooms across seven storeys and the circulation spaces, the specialist wallcoverings that give each room its character, and the window film to the glazing.
 
 ## Our approach
 
