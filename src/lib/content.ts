@@ -251,6 +251,8 @@ export interface LandingPage {
   paragraphs: string[];
   projects: string[];
   imageId: string | null;
+  /** Visible caption under the page image: says where the photograph was taken, with a [label](href) link to the project. */
+  imageCaption?: string;
   faq: FaqItem[];
   serviceType?: string;
   links?: { label: string; href: string }[];
