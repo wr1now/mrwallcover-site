@@ -183,7 +183,9 @@ test('home hero offers responsive original-photo derivatives for the full-width 
   const source = html.match(/<div class="atelier-hero-media">[\s\S]*?<source type="image\/webp" srcset="([^"]+)" sizes="([^"]+)"/);
   assert.ok(source, 'hero webp source');
   for (const width of [640, 960, 1440, 2000, 2560]) assert.match(source![1], new RegExp(` ${width}w`));
-  assert.equal(source![2], '100vw');
+  // The hero box less its side margins (src/lib/hero-sizes.ts); the same sizes go on the preload.
+  assert.equal(source![2], '(max-width: 767px) calc(100vw - 24px), calc(100vw - 48px)');
+  assert.ok(html.includes(`imagesizes="${source![2]}"`), 'preload uses the same sizes');
 });
 
 test('home films: a finished room first, the mid-works film last, each with a visible description of what it shows', async () => {

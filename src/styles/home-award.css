@@ -1,0 +1,12 @@
+/*
+ * The named line from facts.json (full name and organiser, src/data/facts.json) sits under the
+ * hero description from 1024px up. On phones and tablets it would push the
+ * bottom-anchored hero copy up into the header, so it is hidden there; the
+ * same line is on the About page. Global, so the page markup carries no scope attributes.
+ */
+.atelier-hero-award { max-width: 420px; margin: 16px 0 0; font-size: 13px; line-height: 1.55; color: #ead8b5; }
+.atelier-hero-award a { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.atelier-hero-award a:hover { color: #fffdf8; }
+@media (max-width: 1023px) {
+  .atelier-hero-award { display: none; }
+}
