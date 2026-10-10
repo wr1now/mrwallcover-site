@@ -1,0 +1,28 @@
+{
+  "_note": "Source map for the AI-crawling layer facts (src/lib/ai-layer-data.ts). Each output field names the repository file and the place in it the value is read from. tests/ai-layer-data.test.ts checks every /projects.json value against these files. Add a field here before adding it to the data.",
+  "outputs": ["/projects.json", "/.well-known/facts.json", "/for-ai/ (and /for-ai/index.md, llms-full.txt)", "/llms.txt (Public commissions notes, Key facts)", "/for-ai/ JSON-LD ItemList"],
+  "projects": {
+    "slug, title, url, markdownUrl, recordType, client, role, area (location), years, summary, published, updated": "src/content/case-studies/<slug>.md frontmatter, through src/lib/content.ts projects",
+    "makersAndProducts": "src/content/case-studies/<slug>.md frontmatter wallcoverings (exactly as /for-ai/ already prints them)",
+    "venue": "At a glance: first of Venue, Hotel, Building, House; otherwise the title",
+    "scope": "At a glance: first of Scope, Our work, Our package, Our role (nested items kept)",
+    "dates": "At a glance: first of Years on site, Works, Installed, Dates, When, Duration, Years",
+    "partners": "At a glance: first of In partnership with, Designer, Interior design, Scheme, Exhibitor, Event",
+    "productsAsWritten": "At a glance: first of Wallcoverings, Wallpaper, Product, Collection, Window film",
+    "techniques, method": "the case study's bold-lead method paragraphs (**Step.** text)",
+    "preparation": "the method paragraphs whose lead mentions preparation, strip-out or priming",
+    "atAGlance": "the whole At a glance list, label by label, Markdown syntax removed"
+  },
+  "site": {
+    "since": "src/content/team.json members[dorin-burcus].since (2012); the About page and about.json say the same",
+    "wastage": "src/content/services.json pillars[surveying] sentence with 15–30% (the same sentence is in faq.json, the installation-cost guide, areas.json and trade.md)",
+    "award": "src/data/facts.json award (added by PR #24): copied unchanged by /facts.json; awardText is line + name + organiser, printed exactly as the About page and schema print it",
+    "services.workflow": "src/content/services.json pillars (title, paragraphs)",
+    "services.installation": "src/content/specialisms.json items (name, description)",
+    "areas": "src/data/facts.json place and coverage; src/content/areas.json items",
+    "enquiryRoutes": "src/content/contact.json lede, direct, directNoPhone; src/data/facts.json email; src/lib/phone.ts (phone and WhatsApp exist only when SITE_PHONE is set at build)"
+  },
+  "notUsed": {
+    "/workspace/mrwallcover-site/pro-photos/PHOTO_JOB_LABELS.json": "labels photographs for projects not yet published with them; none of its jobs adds a fact to a published case study today"
+  }
+}
