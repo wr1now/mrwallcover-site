@@ -5,6 +5,11 @@ import facts from '../data/facts.json';
 import type { FaqItem } from './types';
 
 const BRAND_NAME = facts.brand;
+
+/** The one award, exactly as the trophy names it (src/data/facts.json). */
+export const AWARD_TEXT = `${facts.award.line}: ${facts.award.name.replace(/, 2021$/, '')}, ${facts.award.organiser}`;
+export const AWARD_SCHEMA = `${facts.award.name}, ${facts.award.organiser}`;
+export const AWARD_URL = facts.award.url;
 const PUBLIC_EMAIL = facts.email;
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;
@@ -101,6 +106,7 @@ export function businessNode() {
     description: facts.description,
     email: PUBLIC_EMAIL,
     founder: { '@id': FOUNDER_ID },
+    award: AWARD_SCHEMA,
     address: {
       '@type': 'PostalAddress',
       addressLocality: facts.place,

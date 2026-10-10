@@ -57,8 +57,21 @@ test('claims decided by Dorin on 9 October 2026 hold in the built site', async (
   const llms = await readFile('dist/llms.txt', 'utf8');
   const sitemap = await readFile('dist/sitemap-0.xml', 'utf8');
   const everything = `${html}\n${llms}\n${sitemap}`;
-  // 1) No award until its name is supplied.
-  assert.doesNotMatch(everything, /award-winning|2021 award|award \(2021\)|\baward\b/i);
+  // 1) The only award is the named one: "Award-winning (2021): Most Outstanding for Wallcovering Installation,
+  //    BUILD Magazine 2021 Design & Build Awards" (schema: "...Installation, 2021, BUILD Magazine 2021 Design & Build Awards").
+  //    Strip exactly those strings, the award photo link and the hero-award class; nothing else may mention an award.
+  const AWARD_LINE = 'Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design &amp; Build Awards';
+  const AWARD_SCHEMA = 'Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design &amp; Build Awards';
+  assert.ok((await readFile('dist/index.html', 'utf8')).includes(AWARD_LINE), 'home hero names the award in full');
+  assert.ok((await readFile('dist/about/index.html', 'utf8')).includes(AWARD_LINE), 'About names the award in full');
+  const stripped = everything
+    .split(AWARD_LINE).join('')
+    .split(AWARD_LINE.replace(/&amp;/g, '&')).join('')
+    .split(AWARD_SCHEMA.replace(/&amp;/g, '&')).join('')
+    .replace(/https:\/\/web\.archive\.org\/web\/20220625070338\/https:\/\/www\.renovart\.co\.uk\/wp-content\/uploads\/2022\/06\/renovart-award\.jpeg/g, '')
+    .replace(/hero-award/g, '')
+    .replace(/"award":/g, '');
+  assert.doesNotMatch(stripped, /award-winning|2021 award|award \(2021\)|\baward\b/i);
   // 2) Four Seasons: 2016–2019, guest room and suite wallpapering; no "main contractor 2014" wording.
   assert.doesNotMatch(everything, /main contractor 2014|2014 to 2019|2014–2019|main wallcovering installation contractor/i);
   assert.match(html, /Four Seasons Hotel London at Ten Trinity Square, 2016 to 2019, guest room and suite wallpapering/);
@@ -211,7 +224,9 @@ test('the fact-sheet sentence appears identically in the footer, the JSON-LD and
   assert.equal(business.description, sentence, 'schema');
   assert.deepEqual(business.founder, { '@id': 'https://www.mrwallcover.com/about/#dorin' });
   assert.deepEqual(business.sameAs, ['https://www.instagram.com/mrwallcover/']);
-  for (const key of ['award', 'aggregateRating', 'memberOf', 'hasCredential', 'legalName', 'telephone', 'foundingDate']) {
+  // The award is the named one only (facts.award); the other credentials stay out.
+  assert.equal(business.award, 'Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards', 'award');
+  for (const key of ['aggregateRating', 'memberOf', 'hasCredential', 'legalName', 'telephone', 'foundingDate']) {
     assert.equal(key in business, false, key);
   }
   const person = graph['@graph'].find((node) => node['@id'] === 'https://www.mrwallcover.com/about/#dorin')!;

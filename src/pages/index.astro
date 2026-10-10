@@ -8,7 +8,7 @@ import Picture from '../components/Picture.astro';
 import Base from '../layouts/Base.astro';
 import { faq, faqItems, home, projectHref, projects, videoById } from '../lib/content';
 import { phoneAvailable } from '../lib/phone';
-import { faqNode, videoNode } from '../lib/schema';
+import { AWARD_TEXT, AWARD_URL, faqNode, videoNode } from '../lib/schema';
 import { SITE_URL } from '../config';
 
 const lead = projects.find((project) => project.slug === home.featured.leadSlug);
@@ -31,7 +31,7 @@ const others = projects.filter((project) => !project.featured);
       <!-- The H1 defines the firm for people and for answer engines. The literary voice follows in the lede. -->
       <h1>{home.hero.titleLead} <em>{home.hero.titleEm}</em></h1>
       <p class="lede mt-5">{home.hero.lede}</p>
-      <p class="mt-5 mb-0 text-gold"><a class="trusted-link" href="/projects/#design-weeks">Work delivered in partnership with Calico Wallpaper</a></p>
+      <p class="mt-5 mb-0 text-gold"><a class="trusted-link" href="/projects/#design-weeks">Work delivered in partnership with Calico Wallpaper</a><span class="hero-award"><br /><a class="trusted-link" href={AWARD_URL} rel="noopener">{AWARD_TEXT}</a></span></p>
       <div class="mt-6 flex flex-wrap gap-3">
         <a class="btn btn-solid" href="/contact/">Start your project</a>
         <a class="btn btn-ghost" href="/projects/">Explore our work</a>

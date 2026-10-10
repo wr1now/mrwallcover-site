@@ -159,3 +159,14 @@
   }
 }
 
+
+/*
+ * The award line (full name and organiser, src/data/facts.json) wraps to two or
+ * three lines on phones and would push the hero buttons under the dock, so the
+ * hero shows it from 1024px up. Phones read the same line on the About page.
+ */
+@media (max-width: 1023px) {
+  .hero-copy .hero-award {
+    display: none;
+  }
+}

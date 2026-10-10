@@ -1,5 +1,5 @@
 {
-  "_note": "The one fact sheet. The footer, src/lib/schema.ts, src/pages/llms.txt.ts and src/config.ts read from here. Paste the description unchanged into every outside profile. No phone number, company details, prize name or price goes in this file.",
+  "_note": "The one fact sheet. The footer, src/lib/schema.ts, src/pages/llms.txt.ts and src/config.ts read from here. Paste the description unchanged into every outside profile. No phone number, company details or price goes in this file. The one award is the named entry under award, read off the trophy photograph; add no other.",
   "brand": "Mr Wallcover",
   "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus. Survey, supply, installation and aftercare for hotels, retail and homes.",
   "founder": {
@@ -19,5 +19,12 @@
       "handle": "@mrwallcover",
       "url": "https://www.instagram.com/mrwallcover/"
     }
-  ]
+  ],
+  "_award": "Read off the trophy photograph published in June 2022 and archived by the Wayback Machine (url). The trophy reads: BUILD 2021 Design & Build Awards, Most Outstanding for Wallcovering Installation, 2021, @MrWallcover. Print the line exactly as text; never shorten it to an unnamed award.",
+  "award": {
+    "line": "Award-winning (2021)",
+    "name": "Most Outstanding for Wallcovering Installation, 2021",
+    "organiser": "BUILD Magazine 2021 Design & Build Awards",
+    "url": "https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg"
+  }
 }
