@@ -7,6 +7,7 @@
 
 /* ---- 1. Type scale: H1-H4 are the same on every page ---- */
 main h1:not(#hero-heading), .page-head h1 { font-size:var(--text-h1); line-height:1.02; letter-spacing:-.03em; }
+.page-head h1 { max-width:var(--measure-h1); }
 main h2:not(.sr-only), .atelier h2 { font-size:var(--text-h2); line-height:1.04; letter-spacing:-.03em; }
 .atelier .atelier-contact h2 { font-size:var(--text-h2-feature); }
 main h3, .atelier h3 { font-size:var(--text-h3); line-height:var(--leading-tight); }
