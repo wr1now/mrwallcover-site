@@ -174,6 +174,8 @@ body .atelier .atelier-craft-copy dt { font-size:var(--text-button); }
 @media (min-width:1024px) { .home-studio { contain-intrinsic-size:auto 865px; } }
 
 /* ---- 13. Second-opinion review (Grok) follow-ups ---- */
+/* Breadcrumbs: the current page name never competes with the title; one line, trimmed. */
+.crumbs [aria-current="page"] { display:inline-block; max-width:min(36rem, 60vw); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; vertical-align:bottom; }
 /* Films: their own portrait ratio, no letterbox bars, one height across the row. */
 body .atelier .home-films { grid-template-columns:repeat(3, minmax(0, 18rem)); justify-content:start; }
 body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-fit:cover; }
