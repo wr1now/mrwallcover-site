@@ -65,7 +65,7 @@ function segments(text: string) {
     {
       page.imageId && (
         <figure class="m-0 md:col-span-4 md:col-start-9">
-          <Picture id={page.imageId} thumbOnly sizes="(min-width: 768px) 22rem, 100vw" />
+          <Picture id={page.imageId} sizes="(min-width: 768px) 22rem, calc(100vw - 2.5rem)" />
           {page.imageCaption && (
             <figcaption class="caption mt-3">{segments(page.imageCaption).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</figcaption>
           )}

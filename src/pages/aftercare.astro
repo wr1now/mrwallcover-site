@@ -4,7 +4,9 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import Picture from '../components/Picture.astro';
 import Base from '../layouts/Base.astro';
 import { aftercare } from '../lib/content';
-import { breadcrumbNode, serviceNodes } from '../lib/schema';
+import BuyerFaq from '../components/BuyerFaq.astro';
+import { buyerFaqFor } from '../lib/ai-layer-data';
+import { breadcrumbNode, buyerFaqNode, serviceNodes } from '../lib/schema';
 
 const crumbs = [
   { name: 'Home', href: '/' },
@@ -12,6 +14,8 @@ const crumbs = [
 ];
 
 const blocks = [aftercare.inspection, aftercare.seams, aftercare.callout, aftercare.humidity];
+// The visible questions below and the FAQPage node are read from the same list.
+const faq = buyerFaqFor('/aftercare/');
 ---
 
 <Base
@@ -26,6 +30,7 @@ const blocks = [aftercare.inspection, aftercare.seams, aftercare.callout, afterc
       },
     ]),
     breadcrumbNode(crumbs),
+    ...(faq.length ? [buyerFaqNode(faq)] : []),
   ]}
 >
   <div class="container-page">
@@ -74,6 +79,16 @@ const blocks = [aftercare.inspection, aftercare.seams, aftercare.callout, afterc
       </div>
     </div>
   </section>
+
+  {faq.length > 0 && (
+    <section class="border-t border-line">
+      <div class="container-page py-14 md:py-20">
+        <div class="prose guide-prose">
+          <BuyerFaq items={faq} />
+        </div>
+      </div>
+    </section>
+  )}
 
   <section id="support" class="border-t border-line">
     <div class="container-page py-14 md:py-20">

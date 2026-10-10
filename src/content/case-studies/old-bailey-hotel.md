@@ -16,7 +16,7 @@
   "metaTitle": null,
   "metaDescription": null,
   "group": null,
-  "standfirst": "A complete decorating package for 111 guest rooms across seven storeys, from a sample room in November 2022 to final touches in August 2024, inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.",
+  "standfirst": "A complete decorating package for 111 guest rooms across seven storeys: paint, specialist wallcoverings and window film, from a sample room in November 2022 to final touches in August 2024, inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.",
   "hero": "old-bailey-06",
   "gallery": [
     {
@@ -132,7 +132,7 @@ One team, one standard, from the first sample room to handover: the complete dec
 
 ## Our approach
 
-**Sample room first.** Our record starts in November 2022 with a finished sample room: Timorous Beasties' Tropical Clouded Leopard set behind the bed as a shaped headboard panel. Agreeing the finish, the setting out and the detailing in one room first meant that the next 109 could be repeated with confidence.
+**Sample room first.** Our record starts in November 2022 with a finished sample room: Timorous Beasties' Tropical Clouded Leopard set behind the bed as a shaped headboard panel. Agreeing the finish, the setting out and the detailing in one room first meant that the next 110 could be repeated with confidence.
 
 **Preparation.** A building of this age moves and varies from room to room. New and old surfaces were filled, made good and primed so that the paint and wallcoverings sit on a sound, even base. Our photographs show walls taken back to a smooth finish before a single drop was hung.
 
@@ -154,3 +154,7 @@ One team, one standard, from the first sample room to handover: the complete dec
 ## Outcome
 
 On 2 September 2024 the first hotel in London to be lit by electricity reopened as a hotel, 150 years after it was built. Guests walk into bedrooms dressed in Timorous Beasties' leopards and kaleidoscopic damasks, a suite wrapped in House of Hackney palms, and corridors and stairs finished to match, all of it delivered by our team.
+
+## Notes and sources
+
+1. 111 guest rooms across seven storeys, Grade II-listed Spiers & Pond building of 1874, opened 2 September 2024, Studio Moren: Ennismore, "Hyde London City has officially opened its doors", 2 September 2024: https://ennismore.com/stories/hyde-london-city-has-officially-opened-its-doors/ and the Ennismore press release: https://ennismore.com/wp-content/uploads/sites/9/2024/09/Hyde-London-City-Hotel-Now-Open.pdf

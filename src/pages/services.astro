@@ -2,7 +2,7 @@
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Picture from '../components/Picture.astro';
 import Base from '../layouts/Base.astro';
-import { areaHref, areas, services, specialismHref, specialisms } from '../lib/content';
+import { areaHref, areas, editorialPages, services, specialismHref, specialisms } from '../lib/content';
 import { breadcrumbNode, serviceNodes, singleServiceNode } from '../lib/schema';
 import { SITE_URL } from '../config';
 
@@ -10,6 +10,8 @@ const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services/' },
 ];
+// Published editorial pages that live under /services/ (e.g. heritage and listed buildings).
+const serviceEditorials = editorialPages.map((mod) => mod.frontmatter).filter((fm) => fm.path.startsWith('/services/'));
 ---
 
 <Base
@@ -117,6 +119,24 @@ const crumbs = [
       </div>
     </div>
   </section>
+  {
+    serviceEditorials.length > 0 && (
+      <section class="border-t border-line" aria-labelledby="heritage-heading">
+        <div class="container-page py-14 md:py-20">
+          <p class="eyebrow">Heritage</p>
+          <h2 id="heritage-heading" class="m-0 text-[clamp(2rem,4vw,3rem)]">Listed and heritage buildings.</h2>
+          <div class="mt-8 grid gap-8 md:grid-cols-2">
+            {serviceEditorials.map((fm) => (
+              <article class="border-t border-line pt-4">
+                <h3 class="m-0 text-[1.8rem]"><a href={fm.path}>{fm.title}</a></h3>
+                <p class="mt-3 mb-0 text-stone">{fm.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
   <section class="border-t border-line" aria-labelledby="areas-heading">
     <div class="container-page py-14 md:py-20">
       <p class="eyebrow">Where we work</p>

@@ -23,6 +23,7 @@ import { SITE_URL } from '../config';
 import facts from '../data/facts.json';
 import contactJson from '../content/contact.json';
 import teamJson from '../content/team.json';
+import buyerJson from '../data/buyer-answers.json';
 import { areaHref, areas, caseStudies, projectHref, projects, services, specialismHref, specialisms } from './content';
 import { phoneAvailable } from './phone';
 
@@ -192,3 +193,35 @@ export const projectsIndex = {
   count: projectFacts.length,
   projects: projectFacts,
 };
+
+/**
+ * Buyer questions (src/data/buyer-answers.json, from the AI answer audit's FILL.md).
+ * Each answer is FILL.md's sourced text with every [Pending Qn] sentence left out;
+ * the standing entries repeat facts already on the site word for word. `pages`
+ * names where each one is shown as a visible FAQ with FAQPage schema.
+ */
+export interface BuyerAnswer {
+  id: string;
+  question: string;
+  answer: string;
+  short?: string;
+  shortNote?: string;
+  questionNote?: string;
+  status: string;
+  auditRows: string[];
+  pendingOmitted: string[];
+  sources: { url?: string; note?: string }[];
+  pages: string[];
+}
+export const buyerAnswers: BuyerAnswer[] = [...buyerJson.answers, ...buyerJson.standing];
+for (const item of buyerAnswers) {
+  if (/\[Pending|Pending Q\d/.test(`${item.question} ${item.answer} ${item.short ?? ''}`)) throw new Error(`buyer-answers.json ${item.id} still carries a [Pending] sentence`);
+}
+if (AWARD && !buyerAnswers.some((item) => item.answer.includes(AWARD.text))) throw new Error('buyer-answers.json must quote the award exactly as facts.json prints it');
+/** The FILL.md questions only (not the standing repeats), in audit order: the /for-ai/ and llms.txt list. */
+export const buyerQuestions = buyerJson.answers as BuyerAnswer[];
+/** The answers shown on one page, in file order. */
+export const buyerFaqFor = (path: string): BuyerAnswer[] => buyerAnswers.filter((item) => item.pages.includes(path));
+/** FILL.md's proposed /.well-known/facts.json keys (add only). */
+export const BUYER_FACTS = buyerJson.factsAdditions as Record<string, unknown>;
+export const BUYER_FACTS_PENDING = buyerJson.factsAdditionsPending as string[];

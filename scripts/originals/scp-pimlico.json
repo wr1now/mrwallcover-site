@@ -1,0 +1,80 @@
+{
+  "caseStudy": "scp-showroom-pimlico",
+  "note": "Photographs #45-49 in Dorin's numbered photo labels (photographer JRH, Nikon D810, September 2019): the SCP showroom in Pimlico, a short-term commercial showroom. Location given only as Pimlico, London. The street seen through the shop window is blurred in #45 and #49.",
+  "credit": null,
+  "images": {
+    "scp-pimlico-01": {
+      "photo": 47,
+      "file": "sep2019_jrh/_jrh4833_comp1xx_vjh3f_hires.tif",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2000,
+        2400
+      ],
+      "alt": "Finished showroom room: walls in a deep blue gradient mural that fades to white at the top, around a green velvet sofa under a brass pendant."
+    },
+    "scp-pimlico-02": {
+      "photo": 49,
+      "file": "sep2019_jrh/_jrh4937_stch1_vjh2f_hires.tif",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "Showroom wall in a gilded marbled wallcovering, a flush door papered in so it almost disappears, beside the shop window.",
+      "redact": [
+        [
+          0.735,
+          0.09,
+          1.0,
+          0.69
+        ]
+      ]
+    },
+    "scp-pimlico-03": {
+      "photo": 48,
+      "file": "sep2019_jrh/_jrh4867_ie_vjh6f_hires.tif",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "The blue gradient mural behind a low walnut sideboard and a linear light, the colour deepening smoothly to the floor."
+    },
+    "scp-pimlico-04": {
+      "photo": 46,
+      "file": "sep2019_jrh/_jrh4592_ie1_vjh2f_hires.tif",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "Close view of the gilded marbled wallcovering, gold veining over pale grey, crossed by the arc of a floor lamp."
+    },
+    "scp-pimlico-05": {
+      "photo": 45,
+      "file": "sep2019_jrh/_jrh4550_ie1_stich1_ie_vjh4f_hires.tif",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "Panorama of the marbled showroom wall, the gilded pattern running unbroken across the full length of the room.",
+      "redact": [
+        [
+          0.85,
+          0.12,
+          1.0,
+          1.0
+        ]
+      ]
+    }
+  }
+}

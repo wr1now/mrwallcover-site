@@ -11,8 +11,9 @@ import Base from '../layouts/Base.astro';
 import facts from '../data/facts.json';
 import { about, areaHref, areas, caseStudies, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
 import { publishedGuides, guideHref } from '../lib/guides';
-import { breadcrumbNode } from '../lib/schema';
-import { AWARD, PROJECTS_INDEX_URL, SINCE_TEXT, WASTAGE, enquiryRoutes, projectFacts } from '../lib/ai-layer-data';
+import BuyerFaq from '../components/BuyerFaq.astro';
+import { breadcrumbNode, buyerFaqNode } from '../lib/schema';
+import { AWARD, PROJECTS_INDEX_URL, SINCE_TEXT, WASTAGE, buyerFaqFor, enquiryRoutes, projectFacts } from '../lib/ai-layer-data';
 
 const path = '/for-ai/';
 const crumbs = [
@@ -61,13 +62,16 @@ const projectListNode = {
 };
 
 const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.frontmatter.order);
+
+/** Buyer questions from the AI answer audit (src/data/buyer-answers.json); the visible list and the FAQPage node read the same items. */
+const faq = buyerFaqFor(path);
 ---
 
 <Base
   title="Mr Wallcover in plain facts | For AI assistants"
   description={`What ${facts.brand} does, where it works, who runs it, the services, and the published projects behind each claim. Written for people and for answer engines.`}
   path={path}
-  extraSchema={[breadcrumbNode(crumbs), projectListNode]}
+  extraSchema={[breadcrumbNode(crumbs), projectListNode, ...(faq.length ? [buyerFaqNode(faq)] : [])]}
   meta={false}
 >
   <div class="container-page pb-20">
@@ -174,6 +178,11 @@ const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.fr
       <ul>
         {guideList.map((guide) => <li><a href={guideHref(guide.frontmatter.slug)}>{guide.frontmatter.title}</a>: {guide.frontmatter.description}</li>)}
       </ul>
+
+      <BuyerFaq
+        items={faq}
+        intro="The questions designers, hotel teams, main contractors and private owners ask before they commission an installer, answered only from the published record. Where a question has more to it than the site can yet state, the answer stops at what is on the record. The same answers are in /llms.txt and /.well-known/facts.json."
+      />
 
       <h2 id="enquire">How to enquire</h2>
       <p>

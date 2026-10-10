@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { HERO_SIZES } from '../lib/hero-sizes';
 import '../styles/atelier.css';
 import hero from '../content/hero.json';
 import { ANALYTICS_SRC, BRAND_NAME, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
@@ -123,12 +124,14 @@ const heroSrcset = hero.sources.map(source => `${source.src} ${source.width}w`).
           as="image"
           href={hero.sources[1].src}
           imagesrcset={heroSrcset}
-          imagesizes="100vw"
+          imagesizes={HERO_SIZES}
           fetchpriority="high"
         />
       )
     }
     <script type="application/ld+json" set:html={schema} />
+    <!-- Page-specific critical CSS (the homepage inlines its own rules here, before first paint). -->
+    <slot name="head" />
     <!-- Cookie-free analytics placeholder. No script loads, and the site sets no cookies, unless PUBLIC_ANALYTICS_SRC is set at build time. -->
     {ANALYTICS_SRC && <script is:inline defer src={ANALYTICS_SRC}></script>}
   </head>
