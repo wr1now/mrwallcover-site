@@ -28,26 +28,6 @@
     {
       "id": "heathrow-07",
       "credit": null
-    },
-    {
-      "id": "heathrow-08",
-      "credit": null
-    },
-    {
-      "id": "heathrow-04",
-      "credit": null
-    },
-    {
-      "id": "heathrow-03",
-      "credit": null
-    },
-    {
-      "id": "heathrow-02",
-      "credit": null
-    },
-    {
-      "id": "heathrow-01",
-      "credit": null
     }
   ],
   "published": "2026-10-09",
