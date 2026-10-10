@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import './ads-pages.test.ts';
 
 async function htmlFiles(dir: string): Promise<string[]> {
   const out: string[] = [];
