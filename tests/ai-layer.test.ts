@@ -333,6 +333,8 @@ test('robots.txt names every required crawler with the same Disallow lines as th
     assert.deepEqual(group!.rules, star!.rules, `${bot} must carry exactly the default rules`);
   }
   assert.match(robots, /^Sitemap: https:\/\/www\.mrwallcover\.com\/sitemap-index\.xml$/m);
+  assert.match(robots, /^Sitemap: https:\/\/www\.mrwallcover\.com\/sitemap\.xml$/m);
+  assert.equal(await readFile('dist/sitemap.xml', 'utf8'), await readFile('dist/sitemap-index.xml', 'utf8'), '/sitemap.xml is a copy of the sitemap index');
   assert.match(robots, /AI-training controls[\s\S]*GPTBot[\s\S]*Google-Extended[\s\S]*Applebot-Extended[\s\S]*ClaudeBot/, 'comment naming the training controls');
   assert.doesNotMatch(robots, /Disallow: \/\s*$/m, 'nothing is blocked site-wide');
 });
