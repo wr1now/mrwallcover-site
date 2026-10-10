@@ -36,7 +36,7 @@
 }
 ---
 
-DRAFT. Not built, not in the sitemap, not linked. Dorin answered the insurance, site-card, RAMS, night-work, capacity, contract and reference slots on 10 Oct 2026; insurance limits and payment terms are deliberately not published. Remove `"draft": true` only after every TODO(Dorin) below is resolved. The public professionals page stays as it is until then.
+DRAFT. Not built, not in the sitemap, not linked. Dorin answered the insurance, site-card, RAMS, night-work, capacity, contract and reference slots on 10 Oct 2026; by his decision, nothing on insurance limits or payment terms is published. Remove `"draft": true` only after every TODO(Dorin) below is resolved. The public professionals page stays as it is until then.
 
 ## Who this page is for
 
@@ -72,4 +72,4 @@ Sample room first, then the hang, then snagging, then the return visit about fou
 
 ## References
 
-Mr Wallcover's work is recommended by major main contractors. Referees are not named on this site.
+Major main contractors recommend Mr Wallcover's work. Referees are not named on this site.

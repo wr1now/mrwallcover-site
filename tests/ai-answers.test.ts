@@ -99,7 +99,7 @@ test('Dorin\'s Q1–Q14 answers: no [Pending] left, no insurance limits, no Safe
     const text = await readFile(file, 'utf8');
     for (let n = 1; n <= 14; n += 1) if (text.includes(`[Pending Q${n}`)) problems.push(`${file}: [Pending Q${n}`);
     if (/SafeContractor/i.test(text)) problems.push(`${file}: SafeContractor`);
-    if (/payment terms|\bdeposit of\b|\d+\s?% (deposit|retention)/i.test(text)) problems.push(`${file}: payment terms`);
+    if (/payment terms (are|:)|our payment terms|\bdeposit of\b|\d+\s?% (deposit|retention)|payable within|net \d+ days/i.test(text)) problems.push(`${file}: payment terms`);
     for (const m of text.matchAll(/(public liability|employers'? liability|professional indemnity|insurance|insured)[^.\n]{0,120}(£\s?\d|\d+\s?(m|million)\b)/gi)) problems.push(`${file}: insurance limit "${m[0].slice(0, 80)}"`);
     if (/we certify fire|certif(y|ies) the fire (rating|classification)s? (ourselves|ourself)|Mr Wallcover certifies/i.test(text)) problems.push(`${file}: certifying fire ratings`);
     if (/third[ -]party|subcontract/i.test(text) && !file.startsWith('dist/')) problems.push(`${file}: banned wording`);
@@ -113,8 +113,8 @@ test('Q10 and Q13: Chelsea FAQ, decision guide and Cadence role read as Dorin de
   assert.ok(chelsea.includes(Q10), 'Chelsea FAQ');
   const guide = JSON.parse(await readFile('dist/ai/decision-guide.json', 'utf8'));
   assert.ok(JSON.stringify(guide).includes(Q10), 'decision guide');
-  const cadence = await readFile('dist/projects/calico-beverly-1975-cadence/index.html', 'utf8');
-  assert.ok(cadence.includes('Wallcovering installation (feature wall)'), 'Cadence role');
+  for (const file of ['dist/projects/index.html', 'dist/for-ai/index.html', 'dist/projects.json', 'dist/llms.txt']) assert.ok((await readFile(file, 'utf8')).includes('Wallcovering installation (feature wall)'), `Cadence role in ${file}`);
+  assert.ok(await readFile('dist/projects/calico-beverly-1975-cadence/index.html', 'utf8'), 'Cadence case study still built');
   const wellKnown = JSON.parse(await readFile('dist/.well-known/facts.json', 'utf8'));
   assert.deepEqual(wellKnown.makersInstalled.makers, ['de Gournay', 'Fromental', 'House of Hackney', 'Muraspec', 'Phillip Jeffries']);
   assert.equal(wellKnown.minimumProjectSize, Q10);

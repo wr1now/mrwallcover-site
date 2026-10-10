@@ -107,7 +107,7 @@
     {
       "id": "f-a20",
       "question": "Can you give references, and which designers have you worked with?",
-      "answer": "The published case studies name the design teams and brands involved. Studio Moren designed the interiors at Hyde London City (2022–2024, 111 rooms). House of Hackney's design consultancy worked on a Grade II-listed Georgian house in North London (2019). Calico Wallpaper of Brooklyn was the client at Lee Broom's Shoreditch showroom (2025), Rosewood London (2026), The Lavery in the Brompton Design District (2026) and Heathrow Terminal 4 (2018). Hotel clients on the record include Rocco Forte Hotels (Brown's Hotel), Raffles London at The OWO and Four Seasons (Ten Trinity Square). Mr Wallcover's work is recommended by major main contractors. Referees are not named on the site.",
+      "answer": "The published case studies name the design teams and brands involved. Studio Moren designed the interiors at Hyde London City (2022–2024, 111 rooms). House of Hackney's design consultancy worked on a Grade II-listed Georgian house in North London (2019). Calico Wallpaper of Brooklyn was the client at Lee Broom's Shoreditch showroom (2025), Rosewood London (2026), The Lavery in the Brompton Design District (2026) and Heathrow Terminal 4 (2018). Hotel clients on the record include Rocco Forte Hotels (Brown's Hotel), Raffles London at The OWO and Four Seasons (Ten Trinity Square). Major main contractors recommend Mr Wallcover's work. Referees are not named on the site.",
       "status": "ready",
       "auditRows": [
         "a21"
@@ -136,7 +136,7 @@
     {
       "id": "f-a21",
       "question": "Are you on any maker's recommended-installer list?",
-      "answer": "A maker's name on mrwallcover.com means Mr Wallcover installed that maker's product on that project. It is not a maker approval, accreditation or endorsement. Makers on the published record include Phillip Jeffries (Tweed, at Four Seasons Ten Trinity Square, and at The Biltmore Mayfair, 2018), Omexco, Vescom, Lewis & Wood, Timorous Beasties, House of Hackney, Lincrusta and Calico Wallpaper. Mr Wallcover is not on maker recommended-installer lists; its work is recommended by major main contractors. Beyond the published case studies, it has also installed de Gournay, Fromental (a large volume at Four Seasons Ten Trinity Square) and Muraspec.",
+      "answer": "A maker's name on mrwallcover.com means Mr Wallcover installed that maker's product on that project. It is not a maker approval, accreditation or endorsement. Makers on the published record include Phillip Jeffries (Tweed, at Four Seasons Ten Trinity Square, and at The Biltmore Mayfair, 2018), Omexco, Vescom, Lewis & Wood, Timorous Beasties, House of Hackney, Lincrusta and Calico Wallpaper. Mr Wallcover is not on maker recommended-installer lists. Major main contractors recommend its work. Beyond the published case studies, it has also installed de Gournay, Fromental (a large volume at Four Seasons Ten Trinity Square) and Muraspec.",
       "status": "ready",
       "auditRows": [
         "a22"
@@ -849,7 +849,7 @@
       "limewash": "Mr Wallcover's own team",
       "limeRender": "with trusted specialist partners"
     },
-    "references": "Not on maker recommended-installer lists; recommended by major main contractors. Referees are not named.",
+    "references": "Not on maker recommended-installer lists. Major main contractors recommend its work. Referees are not named.",
     "registration": {
       "vat": true,
       "cis": true
