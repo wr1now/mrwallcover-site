@@ -3,7 +3,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import Picture from '../components/Picture.astro';
 import Base from '../layouts/Base.astro';
 import { about } from '../lib/content';
-import { breadcrumbNode } from '../lib/schema';
+import { AWARD_TEXT, AWARD_URL, breadcrumbNode } from '../lib/schema';
 
 const crumbs = [
   { name: 'Home', href: '/' },
@@ -30,6 +30,7 @@ const crumbs = [
         <p class="m-0">
           {about.disciplines.title} <a href="/services/">Read the services.</a>
         </p>
+        <p class="m-0"><a href={AWARD_URL} rel="noopener">{AWARD_TEXT}</a>.</p>
       </div>
       <figure class="m-0 md:col-span-5 md:col-start-8">
         <Picture id={about.image} sizes="(min-width: 768px) 28rem, 100vw" />

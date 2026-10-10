@@ -23,6 +23,7 @@
         "browns-hotel-mayfair"
       ],
       "imageId": "browns-hotel-mayfair-10",
+      "imageCaption": "Our work in Mayfair: a finished guest room at [Brown's Hotel](/projects/browns-hotel-mayfair/), Albemarle Street, W1.",
       "faq": [
         {
           "id": "mayfair-hotel",
@@ -52,7 +53,8 @@
         "Private clients are not named. Residential work appears only by street or area, with the owner's agreement. If you would like to see comparable rooms, ask, and we will arrange what discretion allows."
       ],
       "projects": [],
-      "imageId": "browns-hotel-mayfair-10",
+      "imageId": "pimlico-st-georges-square-exterior-11",
+      "imageCaption": "No Belgravia commission is on the public record yet. Our nearest in SW1: the finished stucco entrance at [St George's Square, Pimlico](/projects/pimlico-st-georges-square/).",
       "faq": [
         {
           "id": "belgravia-listed",
@@ -83,7 +85,8 @@
         "Aftercare is included. About four to six weeks after completion we come back to check seams, edges and corners once the paper has settled, and the workmanship carries a twelve-month guarantee."
       ],
       "projects": [],
-      "imageId": "browns-hotel-mayfair-09",
+      "imageId": "beverly-06",
+      "imageCaption": "No Chelsea commission is on the public record yet. Our nearest, in the Royal Borough of Kensington and Chelsea: the finished Cadence wall at [The Lavery, Cromwell Place](/projects/calico-beverly-1975-cadence/), SW7.",
       "faq": [
         {
           "id": "chelsea-single-room",
@@ -113,8 +116,11 @@
         "We hang silk, grasscloth and other natural weaves, fabric walling, vinyl, hand-painted papers in the manner of de Gournay and Fromental, murals and acoustic wallcoverings. Paper can be hung to joinery where the drawings show it.",
         "Private clients are not named. Residential work appears only by street or area, with the owner's agreement. The public record of our work is on the projects page."
       ],
-      "projects": ["calico-beverly-1975-cadence"],
-      "imageId": "browns-hotel-mayfair-04",
+      "projects": [
+        "calico-beverly-1975-cadence"
+      ],
+      "imageId": "beverly-08",
+      "imageCaption": "Our work in South Kensington: Calico Wallpaper Cadence behind BEVERLY 1975's tables at [The Lavery, Cromwell Place](/projects/calico-beverly-1975-cadence/), during Brompton Design District.",
       "faq": [
         {
           "id": "kensington-materials",
@@ -148,7 +154,8 @@
         "four-seasons-ten-trinity",
         "old-bailey-hotel"
       ],
-      "imageId": "browns-hotel-mayfair-03",
+      "imageId": "old-bailey-12",
+      "imageCaption": "Our work in the City: a suite bedroom in House of Hackney Limerence at [Hyde London City, 15 Old Bailey](/projects/old-bailey-hotel/), EC4M.",
       "faq": [
         {
           "id": "city-main-contractor",
@@ -181,7 +188,8 @@
       "projects": [
         "hilton-silverstone"
       ],
-      "imageId": "browns-hotel-mayfair-11",
+      "imageId": "trematon-15",
+      "imageCaption": "No Cotswolds commission is on the public record yet. Country-house work outside London: a finished bedroom at [Trematon Castle](/projects/trematon-castle/), Cornwall.",
       "faq": [
         {
           "id": "cotswolds-travel",

@@ -13,6 +13,7 @@ authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-10"
 description: "Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include."
+metaDescription: "Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, material, access and protection, and what a quote should cover."
 shortTitle: "Installation cost"
 order: 5
 relatedMaterials: ["paper-and-non-woven", "hand-painted", "contract-vinyl"]

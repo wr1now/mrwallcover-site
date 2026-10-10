@@ -13,6 +13,7 @@ authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-09"
 description: "What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, light, lining, free-issue responsibilities and change control."
+metaDescription: "What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, lining, free-issue roles and change control."
 shortTitle: "Designer checklist"
 order: 8
 relatedMaterials: ["silk-and-textiles", "hand-painted", "grasscloth-and-weaves", "acoustic"]

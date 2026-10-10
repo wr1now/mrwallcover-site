@@ -5,6 +5,11 @@ import facts from '../data/facts.json';
 import type { FaqItem } from './types';
 
 const BRAND_NAME = facts.brand;
+
+/** The one award, exactly as the trophy names it (src/data/facts.json). */
+export const AWARD_TEXT = `${facts.award.line}: ${facts.award.name.replace(/, 2021$/, '')}, ${facts.award.organiser}`;
+export const AWARD_SCHEMA = `${facts.award.name}, ${facts.award.organiser}`;
+export const AWARD_URL = facts.award.url;
 const PUBLIC_EMAIL = facts.email;
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;
@@ -101,6 +106,7 @@ export function businessNode() {
     description: facts.description,
     email: PUBLIC_EMAIL,
     founder: { '@id': FOUNDER_ID },
+    award: AWARD_SCHEMA,
     address: {
       '@type': 'PostalAddress',
       addressLocality: facts.place,
@@ -331,5 +337,32 @@ export function caseStudyArticleNode(opts: {
       ...(opts.dates ? { temporalCoverage: opts.dates.replace('–', '/') } : {}),
     },
     ...(opts.mentions?.length ? { mentions: opts.mentions.map((name) => ({ '@type': 'Thing', name })) } : {}),
+  };
+}
+
+/**
+ * VideoObject for one of the site's own films (src/content/videos.json).
+ * uploadDate is the date the file was first committed to the repository
+ * (git log --diff-filter=A), because the MP4s carry no creation_time tag;
+ * duration is measured with ffprobe and rounded to the second the caption
+ * states. Never the build time, never an invented date.
+ */
+export function videoNode(film: { id: string; name: string; caption: string; src: string; poster: string; uploadDate: string; duration?: string; width: number; height: number }, pageUrl: string) {
+  return {
+    '@type': 'VideoObject',
+    '@id': `${SITE_URL}${film.src}#video`,
+    name: film.name,
+    description: film.caption,
+    thumbnailUrl: [new URL(film.poster, SITE_URL).href],
+    contentUrl: new URL(film.src, SITE_URL).href,
+    uploadDate: film.uploadDate,
+    ...(film.duration ? { duration: film.duration } : {}),
+    width: film.width,
+    height: film.height,
+    inLanguage: 'en-GB',
+    isFamilyFriendly: true,
+    publisher: { '@id': BUSINESS_ID },
+    creator: { '@id': BUSINESS_ID },
+    mainEntityOfPage: pageUrl,
   };
 }

@@ -267,7 +267,10 @@ test('/facts.json carries only allowlisted public fields from the fact sheet, no
     if (key in source) assert.ok(allow.includes(key), `${key} is in facts.json but not allowlisted`);
     assert.doesNotMatch(key, /^_/, `${key} is a private note`);
   }
-  assert.doesNotMatch(raw, /phone|telephone|\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b|Ltd|Limited|award|licen[cs]e|price|rating/i);
+  // The named award (facts.award) is the one permitted mention; nothing else may claim an award.
+  assert.deepEqual(data.award, source.award);
+  const withoutAward = JSON.stringify({ ...data, award: undefined });
+  assert.doesNotMatch(withoutAward, /phone|telephone|\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b|Ltd|Limited|award|licen[cs]e|price|rating/i);
   assert.equal(data.brand, source.brand);
   assert.equal(data.description, source.description);
   assert.equal(data.email, source.email);
@@ -447,7 +450,9 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
     const serialised = JSON.stringify(graph);
     // copyrightNotice is banned: a printed photo credit is a credit, not a copyright claim.
     for (const banned of ['aggregateRating', 'reviewRating', '"review"', '"reviews"', '"offers"', 'priceRange', '"price"', 'priceCurrency', 'SearchAction', 'potentialAction', 'telephone', '"award"', 'copyrightNotice']) {
-      if (serialised.includes(banned)) problems.push(`${page.pathname}: schema contains ${banned}`);
+      // The business node may carry the one named award (facts.award); any other "award" is a problem.
+      const check = banned === '"award"' ? serialised.split('"award":"Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards"').join('') : serialised;
+      if (check.includes(banned)) problems.push(`${page.pathname}: schema contains ${banned}`);
     }
     const business = graph.find((node) => node['@id'] === `${SITE}/#business`);
     if (!business) problems.push(`${page.pathname}: no business node`);
