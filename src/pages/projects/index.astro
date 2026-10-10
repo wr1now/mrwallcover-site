@@ -17,6 +17,7 @@ const filters = [
 // Events at hotel venues are deliberately not hotel installation commissions.
 const homeSlugs = new Set([
   'trematon-castle', 'pimlico-st-georges-square', 'inverness-terrace', 'north-london-residence',
+  'imperfect-arches-external-corner-trim',
 ]);
 const cards = projects.map((project) => {
   const isHotel = hotels.some((hotel) => hotel.href === projectHref(project.slug) || hotel.name === project.title);

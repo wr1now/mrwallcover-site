@@ -45,6 +45,11 @@ const crumbs = [
             {pillar.paragraphs.map((paragraph) => (
               <p class="m-0">{paragraph}</p>
             ))}
+            {pillar.id === 'installation' && (
+              <p class="m-0">
+                Specialist detailing: <a href="/projects/imperfect-arches-external-corner-trim/">how we finish an imperfect arch with a bespoke external-corner trim</a>
+              </p>
+            )}
             {pillar.id === 'aftercare' && (
               <p class="m-0">
                 <a href="/aftercare/">The aftercare page</a>
