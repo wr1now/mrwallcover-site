@@ -1,0 +1,81 @@
+{
+  "verifiedAt": "2026-10-10T19:39:36.674407+00:00",
+  "codeCommit": "1970b5a98705cb35a58f52c2dc80ebc24a206fa9",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 52958,
+      "hotelHeroPreserved": true
+    },
+    {
+      "path": "/contact/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 31032,
+      "attachmentLimitVisible": true,
+      "replyErrorTarget": true,
+      "returnToPublicThanks": true,
+      "captchaEnabled": true
+    },
+    {
+      "path": "/thank-you/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 21081,
+      "receiptUsesHiddenAttribute": true
+    },
+    {
+      "path": "/wallcovering-installation-ai-crawler/",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 231535
+    },
+    {
+      "path": "/ai/business.json",
+      "status": 200,
+      "type": "application/json",
+      "bytes": 10114,
+      "jsonValid": true
+    },
+    {
+      "path": "/ai/projects.json",
+      "status": 200,
+      "type": "application/json",
+      "bytes": 106417,
+      "jsonValid": true
+    },
+    {
+      "path": "/ai/decision-guide.json",
+      "status": 200,
+      "type": "application/json",
+      "bytes": 47212,
+      "jsonValid": true
+    },
+    {
+      "path": "/wallcovering-installation-ai-crawler/index.md",
+      "status": 200,
+      "type": "text/markdown",
+      "bytes": 131237
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "type": "text/plain",
+      "bytes": 19399
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "type": "text/plain",
+      "bytes": 1376
+    },
+    {
+      "path": "/sitemap-0.xml",
+      "status": 200,
+      "type": "application/xml",
+      "bytes": 6157
+    }
+  ]
+}
