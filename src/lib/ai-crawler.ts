@@ -81,6 +81,7 @@ export const crawlerBusiness = {
   name: facts.brand,
   description: facts.description,
   lastReviewed: facts.lastReviewed,
+  award: `${facts.award.line}: ${facts.award.name.replace(/, 2021$/, '')}, ${facts.award.organiser}`,
   founder: {
     name: facts.founder.name,
     jobTitle: facts.founder.jobTitle,

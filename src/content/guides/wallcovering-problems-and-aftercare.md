@@ -11,7 +11,7 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-09"
+updated: "2026-10-10"
 description: "What to do when a wallcovering bubbles, lifts or marks: what to photograph and record, what not to touch, how to clean each material, and when an inspection is needed."
 metaDescription: "What to do when a wallcovering bubbles, lifts or marks: what to record, what not to touch, how to clean each material and when to call for an inspection."
 shortTitle: "Problems and aftercare"
@@ -44,7 +44,7 @@ That is enough for a first assessment, and it is what the [aftercare page](/afte
 
 ## Why not just fix it?
 
-Cutting a bubble and injecting adhesive, or pressing a lifted edge back with whatever glue is to hand, can turn a small, invisible repair into a visible one and makes the cause harder to find afterwards. A household PVA worked into a lifting seam can stain the face, and a seam roller run over grasscloth or silk crushes the fibre into a shiny line. A bubble that appeared with the heating season may be the paper easing as it dries and may settle; a bubble over a cold, soft patch is a damp problem that no repair will hold. An edge lifting at every seam along one wall points to the substrate or the adhesive; one edge behind a door points to a knock.
+Cutting a bubble and injecting adhesive, or pressing a lifted edge back with whatever glue is to hand, can turn a small, invisible repair into a visible one and makes the cause harder to find afterwards. A household PVA worked into a lifting seam can stain the face, and a seam roller run over grasscloth or silk crushes the fibre into a shiny line. A bubble that appeared with the heating season may be the paper easing as it dries and may settle; a bubble over a cold, soft patch is a damp problem that no repair will hold. An edge lifting at every seam along one wall points to the substrate or the adhesive; one edge behind a door points to a knock. On an exposed external corner or arch that keeps taking knocks, the lasting answer is usually a protective edge profile rather than more adhesive; our [imperfect arches case study](/projects/imperfect-arches-external-corner-trim/) shows the detail.
 
 ## Is it a fault, or the material?
 
