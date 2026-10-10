@@ -20,6 +20,10 @@
     "label": "Journal"
   },
   {
+    "href": "/about/",
+    "label": "About"
+  },
+  {
     "href": "/wallcovering-installation-ai-crawler/",
     "label": "AI Crawler"
   }
