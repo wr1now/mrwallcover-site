@@ -20,8 +20,6 @@ export interface HeroImage {
   width: number;
   height: number;
   sources: { src: string; width: number }[];
-  avif?: { src: string; width: number }[];
-  sizes?: string;
   fallback: string;
 }
 
