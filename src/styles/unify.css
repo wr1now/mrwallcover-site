@@ -62,6 +62,19 @@ main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
   .site-header { padding-inline:calc(var(--gutter) - var(--header-inset-side) - 1px); }
 }
 
+/* ---- 6. One card system: 4:3 photographs, one gap, titles at h3, meta at 13-14px ---- */
+.atelier-project-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:3.5rem 2rem; align-items:start; }
+.atelier-project-1, .atelier-project-2, .atelier-project-3 { margin:0; max-width:none; }
+.atelier-project-image img, .atelier-project-2 .atelier-project-image img { aspect-ratio:var(--card-ratio); object-fit:cover; width:100%; height:auto; }
+.home-card img, .work-item:not([data-preview="true"]) .work-figure img { aspect-ratio:var(--card-ratio); object-fit:cover; }
+.atelier-project > p, .home-card > p, .work-summary { font-size:var(--text-body); line-height:1.6; }
+.work-role, .hotel-list li > p:not(.hotel-name) { font-size:1rem; }
+.work-meta p, .atelier-project-meta > span, .atelier-credit, .home-showcase-credit { font-size:var(--text-label); }
+.work-figure figcaption, .work-text-cover small, .work-count, .hotel-record-count { font-size:var(--text-meta); }
+.work-group-heading > p { font-size:var(--text-body); }
+.hotel-list a, .hotel-name { font-size:var(--text-h3); }
+@media (max-width:767px) { .atelier-project-grid { grid-template-columns:1fr; gap:2.5rem; } }
+
 /* ---- 10. Homepage sizes on the shared scale (audit items 1-4, 7, 9) ----
  * "body" in front lifts each rule just above atelier.css and hero-mobile.css without touching them. */
 /* Labels, eyebrows, credits: 13px. */
