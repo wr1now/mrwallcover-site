@@ -2,8 +2,6 @@ import assert from 'node:assert/strict';
 import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { test } from 'node:test';
-// The held-photograph guard runs with `npm run check` through this import (package.json is not edited here).
-import './held-images.test.ts';
 
 async function filesUnder(dir: string): Promise<string[]> {
   const entries = await readdir(dir, { withFileTypes: true });

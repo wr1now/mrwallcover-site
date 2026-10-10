@@ -29,7 +29,7 @@ interface Props {
 const { project, redirectTo } = Astro.props;
 const study = project.caseStudy ? caseStudyBySlug(project.slug) : undefined;
 /* Modest (preview-only) heroes are shown at their own pixel width, never stretched past it. */
-const modestHeroWidth = project.modest && project.imageId ? (media(project.imageId).modestWidth ?? media(project.imageId).thumbWidth) : 360;
+const modestHeroWidth = project.modest && project.imageId ? media(project.imageId).thumbWidth : 360;
 const StudyContent = study?.Content;
 const redirectUrl = redirectTo ? new URL(redirectTo, SITE_URL).href : null;
 const crumbs = [

@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { contactDetailsFrom, contactPayloadFrom } from '../src/lib/phone.ts';
+// Privacy guard for held photographs (owner portraits, unidentified sets): runs with `npm run check` via this import.
+import './held-images.test.ts';
 
 // 07700 900000 is in Ofcom's reserved drama range. It is not a real number.
 const FAKE = '07700 900000';
