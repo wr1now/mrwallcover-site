@@ -2,13 +2,34 @@
 /**
  * Editorial pages from src/content/pages/*.md. A page is built only when its
  * frontmatter does not say `"draft": true`; see editorialPages in lib/content.ts.
+ *
+ * Optional frontmatter, all add-only (pages without it render as before):
+ * - updated: ISO date; prints the PageMeta author and "Last updated" line.
+ * - service: { name, serviceType }; adds a Service node for the page.
+ * - cta: { label, href }; replaces the default "Request a quotation" button.
+ * - intake: { heading, items, download, downloadLabel, guide }; lays the page
+ *   out like /professionals/<slug>/ (body beside a "What to send" panel).
+ * - otherProfessionals: true; adds the "Other ways we can help" row that the
+ *   professional pages carry.
  */
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FaqList from '../components/FaqList.astro';
+import PageMeta from '../components/PageMeta.astro';
 import Base from '../layouts/Base.astro';
+import { SITE_URL } from '../config';
+import professionals from '../content/professionals.json';
 import { editorialPages, linkedProjects, projectHref } from '../lib/content';
 import type { EditorialPageData } from '../lib/content';
-import { breadcrumbNode, faqNode } from '../lib/schema';
+import { guides, guideHref } from '../lib/guides';
+import { breadcrumbNode, faqNode, singleServiceNode } from '../lib/schema';
+
+interface PageExtras {
+  updated?: string;
+  service?: { name: string; serviceType?: string };
+  cta?: { label: string; href: string };
+  intake?: { heading: string; items: string[]; download?: string; downloadLabel?: string; guide?: string };
+  otherProfessionals?: boolean;
+}
 
 export function getStaticPaths() {
   return editorialPages.map((mod) => ({
@@ -18,35 +39,81 @@ export function getStaticPaths() {
 }
 
 interface Props {
-  page: EditorialPageData;
+  page: EditorialPageData & PageExtras;
   Content: any;
 }
 
 const { page, Content } = Astro.props;
 const crumbs = [{ name: 'Home', href: '/' }, page.parent, { name: page.title, href: page.path }];
 const linked = linkedProjects(page.projects, `editorial page "${page.path}"`);
+const url = new URL(page.path, SITE_URL).href;
+const intake = page.intake;
+const relatedGuide = intake?.guide ? guides.find((guide) => guide.frontmatter.slug === intake.guide) : undefined;
+if (intake?.guide && !relatedGuide) throw new Error(`editorial page "${page.path}" names a guide that does not exist: ${intake.guide}`);
+const cta = page.cta ?? { label: 'Request a quotation', href: '/contact/' };
 ---
 
 <Base
   title={page.metaTitle}
   description={page.description}
   path={page.path}
-  extraSchema={[...(page.faq.length ? [faqNode(page.faq)] : []), breadcrumbNode(crumbs)]}
+  updated={page.updated}
+  meta={!page.updated}
+  extraSchema={[
+    ...(page.service
+      ? [singleServiceNode({ name: page.service.name, description: page.description, url, serviceType: page.service.serviceType ?? page.service.name })]
+      : []),
+    ...(page.faq.length ? [faqNode(page.faq)] : []),
+    breadcrumbNode(crumbs),
+  ]}
 >
   <div class="container-page">
-    <header class="page-head">
+    <header class:list={['page-head', intake && 'guide-head']}>
       <Breadcrumb items={crumbs} />
       <p class="eyebrow">{page.eyebrow}</p>
       <h1>{page.heading}</h1>
+      {page.updated && <PageMeta updated={page.updated} class="guide-byline" />}
       <p class="lede mt-5">{page.lede}</p>
       <div class="mt-6 flex flex-wrap gap-3">
-        <a class="btn btn-solid-ink" href="/contact/">Request a quotation</a>
+        <a class="btn btn-solid-ink" href={cta.href}>{cta.label}</a>
         <a class="btn btn-line" href="/projects/">See the work</a>
       </div>
     </header>
-    <article class="prose max-w-3xl pb-12">
-      <Content />
-    </article>
+    {
+      intake ? (
+        <div class="grid gap-10 pb-12 md:grid-cols-12">
+          <article class="prose guide-prose md:col-span-7">
+            <Content />
+          </article>
+          <aside class="professional-intake md:col-span-4 md:col-start-9">
+            <p class="eyebrow">A useful starting point</p>
+            <h2>{intake.heading}</h2>
+            <ul>
+              {intake.items.map((line) => (
+                <li>{line}</li>
+              ))}
+            </ul>
+            {intake.download && (
+              <>
+                <a class="btn btn-line mt-5" href={`/downloads/${intake.download}`} download>
+                  {intake.downloadLabel}
+                </a>
+                <p class="text-sm text-stone">CSV · opens in Excel or Numbers. Leave unknown items blank. This is a planning schedule, not an ordering calculation.</p>
+              </>
+            )}
+            {relatedGuide && (
+              <p class="mt-6">
+                <a href={guideHref(relatedGuide.frontmatter.slug)}>{relatedGuide.frontmatter.shortTitle}: read the guide</a>
+              </p>
+            )}
+          </aside>
+        </div>
+      ) : (
+        <article class="prose guide-prose max-w-3xl pb-12">
+          <Content />
+        </article>
+      )
+    }
     {
       linked.length > 0 && (
         <section class="border-t border-line py-12" aria-labelledby="record-heading">
@@ -59,6 +126,21 @@ const linked = linkedProjects(page.projects, `editorial page "${page.path}"`);
               </li>
             ))}
           </ul>
+        </section>
+      )
+    }
+    {
+      page.otherProfessionals && (
+        <section class="guide-related pb-12">
+          <h2>Other ways we can help</h2>
+          <div class="flex flex-wrap gap-3">
+            {professionals.map((other) => (
+              <a class="btn btn-line" href={`/professionals/${other.slug}/`}>
+                {other.name}
+              </a>
+            ))}
+            <a class="btn btn-line" href="/projects/">Explore our work</a>
+          </div>
         </section>
       )
     }
