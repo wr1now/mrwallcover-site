@@ -213,7 +213,7 @@
 .home-calico ul { list-style:none; margin:30px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0 40px; border-top:1px solid #bcb39f; max-width:980px; }
 .home-calico li a { display:flex; justify-content:space-between; gap:16px; min-height:44px; align-items:center; padding:14px 0; border-bottom:1px solid #c9bfad; color:#303329; text-decoration:none; }
 .home-aftercare { background:var(--atelier-olive); color:#f4f0e8; margin:0 24px; }
-.home-aftercare-inner { max-width:1380px; margin:auto; padding-inline:6%; }
+.home-aftercare-inner { max-width:var(--content-max); margin:auto; padding-inline:var(--gutter); }
 .home-aftercare h2 { color:#fffdf8; max-width:820px; }
 .home-aftercare p:not(.atelier-kicker) { margin:24px 0 18px; color:#e4e0d5; }
 .home-needs-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:24px; margin-top:44px; }
@@ -223,10 +223,10 @@
 .home-needs-grid a:hover h3 { text-decoration:underline; text-underline-offset:4px; }
 
 /* -- Showcase: large finished-room photographs, full bleed, straight under the hero -- */
-.home-showcase { padding:56px 0 64px; }
-.home-showcase-head { max-width:1380px; margin:0 auto 32px; padding-inline:6%; }
+.home-showcase { --showcase-edge:max(var(--gutter), calc((100% - var(--content-max)) / 2 + var(--gutter))); padding:56px 0 64px; }
+.home-showcase-head { max-width:var(--content-max); margin:0 auto 32px; padding-inline:var(--gutter); }
 .home-showcase-head h2 { margin:0; }
-.home-showcase-strip { list-style:none; margin:0; padding:0 24px 16px; display:grid; grid-auto-flow:column; grid-auto-columns:minmax(320px,34vw); gap:24px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:24px; overscroll-behavior-x:contain; }
+.home-showcase-strip { list-style:none; margin:0; padding:0 var(--showcase-edge) 16px; display:grid; grid-auto-flow:column; grid-auto-columns:minmax(320px,34vw); gap:24px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:var(--showcase-edge); overscroll-behavior-x:contain; }
 .home-showcase-item { scroll-snap-align:start; margin:0; }
 .home-showcase-image { display:block; overflow:hidden; background:var(--color-media-fill); }
 .home-showcase-image .media-frame, .home-showcase-image picture { display:block; }
@@ -255,10 +255,9 @@
   .home-facts { grid-template-columns:1fr; gap:16px; }
   .home-more-grid, .home-process ol, .home-needs-grid, .home-record ul, .home-calico ul { grid-template-columns:1fr; }
   .home-aftercare { margin:0 12px; }
-  .home-aftercare-inner { padding-inline:24px; }
   .home-showcase { padding:44px 0 48px; }
-  .home-showcase-head { padding-inline:24px; margin-bottom:24px; }
-  .home-showcase-strip { padding-inline:12px; scroll-padding-inline:12px; gap:14px; grid-auto-columns:84vw; }
+  .home-showcase-head { margin-bottom:24px; }
+  .home-showcase-strip { gap:14px; grid-auto-columns:84vw; }
 }
 /* -- Hero: photograph, crop and layout unchanged. The labels are lifted to the 13px floor with
  *    their line boxes held at the old heights, so nothing in the hero moves. -- */

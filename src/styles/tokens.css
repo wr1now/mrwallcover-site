@@ -93,7 +93,7 @@
   --measure-copy: 38rem; /* about 65-70 characters at 17px Outfit */
   --measure-h1: min(66rem, 100%); /* page titles run to two or three lines */
   /* One button system: primary (ink or ivory on dark), secondary (ink line), ghost (ivory line on dark). */
-  --button-height: 52px;
+  --button-height: 56px;
   --button-radius: 2px;
   --button-pad: 1.4rem;
   /* One card system. */

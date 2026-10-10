@@ -27,6 +27,41 @@ main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
 /* The mobile dock: 14px like the header links. */
 .dock a, .dock .dock-phone { font-size:var(--text-meta); }
 
+/* ---- 4. One button system ----
+ * Primary: ink fill (ivory fill on a photograph). Secondary: ink line. Ghost: ivory line on a photograph.
+ * Same height, padding, radius and type everywhere, so "Start your project" looks the same in the header,
+ * the hero, the closing call to action and the enquiry form. */
+.btn, .atelier-button, .site-header .header-action, .work-filters button, .work-empty button {
+  min-height:var(--button-height); padding:0 var(--button-pad); border-radius:var(--button-radius);
+  font-family:var(--font-sans); font-size:var(--text-button); font-weight:500; letter-spacing:.01em; line-height:1.2;
+  gap:.9rem;
+}
+.site-header .header-action { min-height:calc(var(--header-height) - 14px); padding-inline:1.1rem; }
+.btn span[aria-hidden], .atelier-button span { font-size:1.15em; line-height:1; }
+.btn-solid-ink, .atelier-button.ink, .work-filters button[aria-pressed="true"] { background:var(--color-ink); border-color:var(--color-ink); color:var(--color-ivory); }
+.btn-solid, .atelier-button.cream { background:var(--color-ivory); border-color:var(--color-ivory); color:var(--color-ink); }
+.btn-line, .work-filters button, .work-empty button { background:transparent; border:1px solid var(--color-ink); color:var(--color-ink); }
+.work-filters button[aria-pressed="true"] { color:var(--color-ivory); background:var(--color-ink); }
+.btn-ghost, .atelier-button.ghost { background:transparent; border:1px solid color-mix(in srgb, var(--color-ivory) 72%, transparent); color:var(--color-ivory); }
+.atelier-button.ghost:hover, .btn-ghost:hover { background:color-mix(in srgb, var(--color-ivory) 12%, transparent); }
+.atelier-text-link, .work-enquire, .work-record-link { font-size:var(--text-button); }
+
+/* ---- 5. One container: the logo, the homepage sections, the inner pages and the footer share one edge ---- */
+.atelier-section, .atelier-hotel-band, .atelier-ai-note, .home-showcase-head {
+  max-width:var(--content-max); margin-inline:auto; padding-inline:var(--gutter); box-sizing:border-box;
+}
+@media (min-width:1024px) {
+  /* The header bar spans the content column; its padding puts the wordmark on the content edge. */
+  .site-header {
+    width:min(var(--content-max), calc(100% - var(--header-inset-side) * 2));
+    max-width:none;
+    padding-inline:calc(var(--gutter) - 1px - max(0px, var(--header-inset-side) - max(0px, (100vw - var(--content-max)) / 2)));
+  }
+}
+@media (max-width:1023px) {
+  .site-header { padding-inline:calc(var(--gutter) - var(--header-inset-side) - 1px); }
+}
+
 /* ---- 10. Homepage sizes on the shared scale (audit items 1-4, 7, 9) ----
  * "body" in front lifts each rule just above atelier.css and hero-mobile.css without touching them. */
 /* Labels, eyebrows, credits: 13px. */
