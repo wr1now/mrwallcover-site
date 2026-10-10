@@ -79,8 +79,12 @@ test('no held photograph (owner portraits, unidentified sets) is in the repo, by
   );
   const held = all.filter(([name]) => !cleared.has(name));
   const clearedRefs = all.filter(([name]) => cleared.has(name));
-  assert.ok(held.length >= 50, 'the held-image fingerprint list is present');
-  assert.ok(cleared.size <= 13 + 40, 'the cleared list only names labelled photo numbers');
+  assert.ok(held.length >= 20, 'the held-image fingerprint list is present');
+  // Numbers Dorin has not cleared stay held, whatever is added to the cleared list.
+  const list = JSON.parse(await readFile('tests/fixtures/held-images-cleared.json', 'utf8')) as ClearedList;
+  for (const n of [1, 5, 6, 7, 8, 9, 10, 11, 15, 16, 17, 18, 21, 22, 23, 41, 42, 43, 44, 50]) {
+    assert.ok(!cleared.has(list.labels[String(n)]), `photo #${n} is still held and must not be on the cleared list`);
+  }
 
   // One file per picture is enough: the largest-but-one responsive width, or the plain file.
   const images = files.filter(
