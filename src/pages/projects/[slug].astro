@@ -6,6 +6,7 @@ import { areaHref, areas, caseStudyBySlug, media, ogImageFor, projectAliases, pr
 import { SITE_URL } from '../../config';
 import { breadcrumbNode, caseStudyArticleNode, projectNode, videoNode } from '../../lib/schema';
 import type { Project } from '../../lib/types';
+import retired from '../../content/retired-projects.json';
 
 export function getStaticPaths() {
   return [
@@ -18,6 +19,14 @@ export function getStaticPaths() {
       params: { slug: oldSlug },
       props: { project: projects.find((p) => p.slug === newSlug)!, redirectTo: projectHref(newSlug) },
     })),
+    // Retired project URLs (once published, now not a page): back to the work index.
+    ...retired.items
+      .filter((item) => !projects.some((p) => p.slug === item.slug))
+      .map((item) => ({
+        params: { slug: item.slug },
+        // Only the title is shown on a redirect stub; the rest keeps the page's frontmatter happy.
+        props: { project: { ...projects[0], slug: item.slug, title: 'Our work', caseStudy: false, videos: [] } as Project, redirectTo: item.redirectTo },
+      })),
   ];
 }
 

@@ -7,11 +7,22 @@ import Base from '../layouts/Base.astro';
 import { home, faqItems, projects, projectHref, videoById } from '../lib/content';
 import { AWARD_TEXT, AWARD_URL, faqNode } from '../lib/schema';
 import '../styles/atelier.css';
+// Inlined, not linked: a second render-blocking stylesheet cost the mobile first paint. The hero's
+// one rule goes in <head>; the restored sections' rules sit at the end of <main>, below the fold.
+import homeHeroCss from '../styles/home-hero.css?raw';
+import homeRestoreCss from '../styles/home-restore.css?raw';
 const selection = [
   { slug: 'raffles-london-the-owo', label: 'Raffles London at The OWO', type: 'Hospitality', image: 'owo-official-classic', credit: 'Venue photograph · Raffles London at The OWO (official)' },
   { slug: 'trematon-castle', label: 'The Castle of Trematon', type: 'Historic interiors', image: 'trematon-01', credit: '' },
   { slug: 'calico-beverly-1975-cadence', label: 'Calico × BEVERLY 1975', type: 'Design & culture', image: 'beverly-08', credit: '' },
 ].map(item => ({...item, project: projects.find(p => p.slug === item.slug)!}));
+// Restored from 1b387c6 (the homepage before #23): every published case study stays on the homepage.
+const shownSlugs = new Set(['browns-hotel-mayfair', ...selection.map((item) => item.slug)]);
+const moreWork = projects.filter((project) => project.featured && !shownSlugs.has(project.slug));
+const alsoOnRecord = projects.filter((project) => !project.featured && !shownSlugs.has(project.slug));
+const calicoProjects = projects.filter((project) => project.group === 'design-weeks');
+const calicoLabel = (project: (typeof projects)[number]) =>
+  project.slug === 'heathrow-terminal-4-calico' ? 'Calico Wallpaper at Heathrow Terminal 4' : project.title.replace(/: '?([^']+)'? at .*$/, ': $1');
 const hotelNames = [
   {name: "Brown’s Hotel", place: 'MAYFAIR', href: '/projects/browns-hotel-mayfair/'},
   {name: 'Raffles London', place: 'THE OWO', href: '/projects/raffles-london-the-owo/'},
@@ -20,6 +31,7 @@ const hotelNames = [
 ];
 ---
 <Base title={home.title} description={facts.description} path="/" preloadHero extraSchema={[faqNode(faqItems)]} image="/media/atelier/browns-bedroom-2000.jpg" imageAlt="Our completed wallcovering installation at Brown's Hotel, Mayfair.">
+  <style is:inline slot="head" set:html={homeHeroCss}></style>
   <div class="atelier">
     <section class="atelier-hero" aria-labelledby="hero-heading">
       <Hero />
@@ -43,12 +55,22 @@ const hotelNames = [
     <section class="atelier-hotel-band" aria-label="Selected hotel projects">
       <p class="atelier-kicker">OUR WORK HAS A PLACE<br />IN EXTRAORDINARY ADDRESSES</p>
       <div>{hotelNames.map(hotel => <a href={hotel.href}><span>{hotel.name}</span><small>{hotel.place}</small></a>)}</div>
+      <p class="home-partner-line"><a href="#calico-heading">Work delivered in partnership with Calico Wallpaper</a></p>
     </section>
 
     <section class="atelier-intro atelier-section" aria-labelledby="intro-heading">
       <p class="atelier-kicker">01 / THE PRACTICE</p>
       <div><h2 id="intro-heading">A beautiful wall begins<br />long before <em>the first drop.</em></h2>
         <div class="atelier-intro-bottom"><p>From the first survey to the last carefully matched seam, we bring care to every stage. Silk, grasscloth, hand-painted paper and bespoke murals. Wallcoverings, hung properly. By people who understand the material.</p><div><p>{facts.description}</p><a class="atelier-text-link" href="/about/">Meet the practice <span aria-hidden="true">↗</span></a></div></div>
+        <dl class="home-facts">{home.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
+        <p class="home-pillars">{home.pillars.join(' · ')}</p>
+      </div>
+    </section>
+
+    <section class="atelier-section home-proof" aria-labelledby="proof-heading">
+      <div class="atelier-section-head"><div><p class="atelier-kicker">{home.proof.eyebrow}</p><h2 id="proof-heading">{home.proof.title}</h2></div><p class="home-proof-text">{home.proof.text}</p></div>
+      <div class="home-proof-strip" role="region" tabindex="0" aria-label="Photographs from Brown's Hotel">
+        {home.proof.images.map((id) => <figure><Picture id={id} sizes="(min-width: 768px) 18rem, 78vw" /></figure>)}
       </div>
     </section>
 
@@ -74,6 +96,19 @@ const hotelNames = [
           {item.credit && <p class="atelier-credit">{item.credit}</p>}
         </article>)}
       </div>
+      <div class="home-more">
+        <p class="atelier-kicker">{home.featured.eyebrow} · More commissions</p>
+        <h3 class="home-more-title">{home.featured.title}</h3>
+        <p class="home-more-text">{home.featured.text}</p>
+        <div class="home-more-grid">
+          {moreWork.map((project) => <article class="home-card" data-project-slug={project.slug}>
+            {project.imageId && <a class="home-card-image" href={projectHref(project.slug)} tabindex="-1" aria-hidden="true"><Picture id={project.imageId} sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 100vw" /></a>}
+            <h4><a href={projectHref(project.slug)}>{project.title}</a></h4>
+            <p>{project.role}{project.dates ? ` · ${project.dates}` : ''}</p>
+          </article>)}
+        </div>
+        {alsoOnRecord.length > 0 && <div class="home-record"><p class="atelier-kicker">Also on the record</p><ul>{alsoOnRecord.map((project) => <li><a href={projectHref(project.slug)}>{project.title}</a><span>. {project.summary}</span></li>)}</ul></div>}
+      </div>
     </section>
 
     <section class="atelier-craft" aria-labelledby="craft-heading">
@@ -89,9 +124,31 @@ const hotelNames = [
       <ol>{home.serviceCards.map((service, i) => <li><a href={service.href}><span class="atelier-service-number">0{i+1}</span><div><h3>{service.title}</h3><p>{service.text}</p></div><span aria-hidden="true">↗</span></a></li>)}</ol>
     </section>
 
+    <section class="atelier-section home-process" aria-labelledby="process-heading">
+      <p class="atelier-kicker">{home.process.eyebrow}</p>
+      <h2 id="process-heading">{home.process.title}</h2>
+      <ol>{home.process.steps.map((step) => <li><span class="atelier-service-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol>
+    </section>
+
     <section class="atelier-materials" aria-labelledby="materials-heading">
       <div class="atelier-materials-copy"><p class="atelier-kicker">05 / A FEEL FOR MATERIAL</p><h2 id="materials-heading">Find the character<br /><em>of your room.</em></h2><p>Soft texture. Quiet depth. A whole landscape on a wall. Explore the material families and what they ask of the room.</p><div class="atelier-material-links"><a href="/services/silk-wallcovering-installation/">Silk <span aria-hidden="true">↗</span></a><a href="/services/grasscloth-installation/">Grasscloth <span aria-hidden="true">↗</span></a><a href="/materials/">All materials <span aria-hidden="true">↗</span></a></div></div>
       <div class="atelier-materials-image"><Picture id="browns-hotel-mayfair-06" sizes="(min-width: 768px) 50vw, 100vw" /><span>ADAM’S EDEN · LEWIS & WOOD · BROWN’S HOTEL</span></div>
+    </section>
+
+    <section class="atelier-section home-calico" aria-labelledby="calico-heading">
+      <p class="atelier-kicker">{home.partners.eyebrow}</p>
+      <h2 id="calico-heading">{home.partners.title}</h2>
+      <p class="home-calico-text">{home.partners.text}</p>
+      <ul>{calicoProjects.map((project) => <li data-project-slug={project.slug}><a href={projectHref(project.slug)}>{calicoLabel(project)} <span aria-hidden="true">↗</span></a></li>)}</ul>
+    </section>
+
+    <section class="home-aftercare" aria-labelledby="aftercare-heading">
+      <div class="home-aftercare-inner">
+        <p class="atelier-kicker light">{home.aftercare.eyebrow}</p>
+        <h2 id="aftercare-heading">{home.aftercare.title}</h2>
+        <p>{home.aftercare.text}</p>
+        <a class="atelier-text-link light" href={home.aftercare.href}>{home.aftercare.label} <span aria-hidden="true">↗</span></a>
+      </div>
     </section>
 
     <section class="atelier-section atelier-questions" aria-labelledby="questions-heading">
@@ -99,25 +156,38 @@ const hotelNames = [
       <div class="faq">{faqItems.map(item => <details id={item.id}><summary><h3>{item.question}</h3><span class="plus" aria-hidden="true"></span></summary><div class="prose pb-5">{item.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div></details>)}</div>
     </section>
 
-    <section class="atelier-contact" aria-labelledby="contact-heading"><p class="atelier-kicker">YOUR NEXT ROOM</p><h2 id="contact-heading">Let’s make it<br /><em>something remarkable.</em></h2><p>A hotel, a home, a single wall. Tell us what you have in mind.</p><nav class="atelier-enquiry-routes" aria-label="Start with your project"><a href="/contact/?intent=install#enquiry">Wallpaper already chosen <span aria-hidden="true">↗</span></a><a href="/contact/?intent=source#enquiry">Help choosing a wallcovering <span aria-hidden="true">↗</span></a><a href="/contact/?audience=designer#enquiry">A designer’s specification <span aria-hidden="true">↗</span></a></nav><a class="atelier-button ink" href="/contact/">Start your project <span aria-hidden="true">↗</span></a><a class="atelier-contact-email" href={`mailto:${facts.email}`}>{facts.email}</a></section>
+    <section class="atelier-section home-needs" aria-labelledby="needs-heading">
+      <p class="atelier-kicker">What do you need?</p>
+      <h2 id="needs-heading">Five ways to begin.</h2>
+      <div class="home-needs-grid">
+        <a href="/contact/?intent=install#enquiry"><h3>I already have the wallpaper</h3><p>Installation, with the product you have bought. Measurements can wait.</p></a>
+        <a href="/contact/?intent=source#enquiry"><h3>Help me choose and install it</h3><p>A material family, a sample in the room, then the hang.</p></a>
+        <a href="/professionals/#designers"><h3>I am specifying a project</h3><p>Send the room schedule, drawings and the specification. Unknowns can stay blank.</p></a>
+        <a href="/professionals/"><h3>A hotel or contractor package</h3><p>Access, programme and who supplies the material.</p></a>
+        <a href="/aftercare/#support"><h3>Aftercare or a repair</h3><p>A separate note for existing work. A photograph tells us whether it is the hang or the building.</p></a>
+      </div>
+    </section>
 
-    <details class="atelier-explore-studio atelier-films"><summary>On location: short films from Brown’s Hotel <span aria-hidden="true">+</span></summary><div class="atelier-film-grid">{home.proof.videos.map(id => { const film = videoById(id); return <figure><video controls playsinline preload="none" poster={film.poster} width={film.width} height={film.height} src={film.src} aria-label={film.alt} /><figcaption class="caption">{film.caption}</figcaption></figure>; })}</div></details>
+    <section class="atelier-contact" aria-labelledby="contact-heading"><p class="atelier-kicker">YOUR NEXT ROOM</p><h2 id="contact-heading">Let’s make it<br /><em>something remarkable.</em></h2><p>Hotels, prime residences and specified schemes. Tell us what you have in mind.</p><nav class="atelier-enquiry-routes" aria-label="Start with your project"><a href="/contact/?intent=install#enquiry">Wallpaper already chosen <span aria-hidden="true">↗</span></a><a href="/contact/?intent=source#enquiry">Help choosing a wallcovering <span aria-hidden="true">↗</span></a><a href="/contact/?audience=designer#enquiry">A designer’s specification <span aria-hidden="true">↗</span></a></nav><a class="atelier-button ink" href="/contact/">Start your project <span aria-hidden="true">↗</span></a><a class="atelier-contact-email" href={`mailto:${facts.email}`}>{facts.email}</a></section>
+
+    <details class="atelier-explore-studio atelier-films"><summary>On location: short films from Brown’s Hotel <span aria-hidden="true">+</span></summary><div class="atelier-film-grid">{home.proof.videos.map(id => { const film = videoById(id); return <figure><video controls playsinline preload="none" data-poster={film.poster} width={film.width} height={film.height} src={film.src} aria-label={film.alt} /><figcaption class="caption">{film.caption}</figcaption></figure>; })}</div></details>
     <details class="atelier-explore-studio"><summary>Explore how light changes a material <span aria-hidden="true">+</span></summary><MaterialStudio /></details>
+    <style is:inline set:html={homeRestoreCss}></style>
     <div class="atelier-ai-note"><p>Looking for structured business and project information?</p><a href="/wallcovering-installation-ai-crawler/">Wallcovering Installation AI Crawler <span aria-hidden="true">↗</span></a></div>
   </div>
 </Base>
 
-<style is:global>
-  /*
-   * The named line from facts.json (full name and organiser, src/data/facts.json) sits under the
-   * hero description from 1024px up. On phones and tablets it would push the
-   * bottom-anchored hero copy up into the header, so it is hidden there; the
-   * same line is on the About page. Global, so the page markup carries no scope attributes.
-   */
-  .atelier-hero-award { max-width: 420px; margin: 16px 0 0; font-size: 13px; line-height: 1.55; color: #ead8b5; }
-  .atelier-hero-award a { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-  .atelier-hero-award a:hover { color: #fffdf8; }
-  @media (max-width: 1023px) {
-    .atelier-hero-award { display: none; }
-  }
-</style>
+
+<script is:inline>
+  // Film posters load only when the films are opened, so they never compete with the hero.
+  document.querySelectorAll('details.atelier-films').forEach((details) => {
+    details.addEventListener('toggle', () => {
+      if (!details.open) return;
+      details.querySelectorAll('video[data-poster]').forEach((video) => {
+        video.poster = video.dataset.poster;
+        video.removeAttribute('data-poster');
+      });
+    }, { once: true });
+  });
+</script>
+

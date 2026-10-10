@@ -1,11 +1,13 @@
 ---
 import { altFor, hero } from '../lib/content';
+import { HERO_SIZES } from '../lib/hero-sizes';
 import '../styles/hero-mobile.css';
 const srcset = hero.sources.map(source => `${source.src} ${source.width}w`).join(', ');
+const sizes = HERO_SIZES;
 ---
 <div class="atelier-hero-media">
   <picture>
-    <source type="image/webp" srcset={srcset} sizes="100vw" />
-    <img src={hero.fallback} alt={altFor(hero.id)} width={hero.width} height={hero.height} sizes="100vw" fetchpriority="high" decoding="sync" />
+    <source type="image/webp" srcset={srcset} sizes={sizes} />
+    <img src={hero.fallback} alt={altFor(hero.id)} width={hero.width} height={hero.height} sizes={sizes} fetchpriority="high" decoding="sync" />
   </picture>
 </div>
