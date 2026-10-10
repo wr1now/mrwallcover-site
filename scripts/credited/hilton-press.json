@@ -1,0 +1,18 @@
+{
+  "credit": "Photography: Hilton",
+  "note": "Hilton newsroom press-release image of the hotel, not a photograph of Mr Wallcover's work; no reuse licence stated on the page; permission not confirmed",
+  "images": {
+    "hilton-garden-inn-silverstone-press-01": {
+      "file": "Hilton-Garden-Inn-Silverstone-Exterior.jpg",
+      "image": "https://stories.hilton.com/emea/uploads/sites/2/2023/07/Hilton-Garden-Inn-Silverstone-Exterior.jpg",
+      "page": "https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack",
+      "alt": "Hilton Garden Inn Silverstone from outside: a six-storey hotel clad in grey and buff panels, with V-shaped columns along the entrance."
+    },
+    "hilton-garden-inn-silverstone-press-02": {
+      "file": "Hilton-Garden-Inn-Silverstone-Guest-Room.jpg",
+      "image": "https://stories.hilton.com/emea/uploads/sites/2/2023/07/Hilton-Garden-Inn-Silverstone-Guest-Room.jpg",
+      "page": "https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack",
+      "alt": "A guest room at Hilton Garden Inn Silverstone, with pale walls, a white bed and a glazed balcony door looking out towards the circuit."
+    }
+  }
+}
