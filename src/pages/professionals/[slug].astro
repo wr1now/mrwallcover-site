@@ -6,6 +6,7 @@ import { guides, guideHref } from '../../lib/guides';
 import BuyerFaq from '../../components/BuyerFaq.astro';
 import { buyerFaqFor } from '../../lib/ai-layer-data';
 import { breadcrumbNode, buyerFaqNode } from '../../lib/schema';
+import { editorialPages } from '../../lib/content';
 export function getStaticPaths() { return professionals.map((item) => ({ params: { slug: item.slug }, props: { item } })); }
 const { item } = Astro.props;
 const path = `/professionals/${item.slug}/`;
@@ -13,6 +14,8 @@ const related = guides.find((guide) => guide.frontmatter.slug === item.guide);
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'For professionals', href: '/professionals/' }, { name: item.name, href: path }];
 // The visible questions below and the FAQPage node are read from the same list.
 const faq = buyerFaqFor(path);
+// Published editorial pages under /professionals/ (e.g. fit-out contractors) join the "Other ways we can help" row.
+const professionalEditorials = editorialPages.map((mod) => mod.frontmatter).filter((fm) => fm.path.startsWith('/professionals/'));
 ---
 <Base title={`${item.name} | Mr Wallcover`} description={item.description} path={path} extraSchema={[breadcrumbNode(crumbs), ...(faq.length ? [buyerFaqNode(faq)] : [])]}>
   <div class="container-page pb-20">
@@ -22,6 +25,6 @@ const faq = buyerFaqFor(path);
       <aside class="professional-intake md:col-span-4 md:col-start-9"><p class="eyebrow">A useful starting point</p><h2>What to send</h2><ul>{item.checklist.map((line) => <li>{line}</li>)}</ul><a class="btn btn-line mt-5" href={`/downloads/${item.download}`} download>{item.downloadLabel}</a><p class="text-sm text-stone">CSV · opens in Excel or Numbers. Leave unknown items blank. This is a planning schedule, not an ordering calculation.</p>{related && <p class="mt-6"><a href={guideHref(related.frontmatter.slug)}>{related.frontmatter.shortTitle}: read the guide</a></p>}</aside>
     </div>
     {faq.length > 0 && <div class="prose guide-prose"><BuyerFaq items={faq} /></div>}
-    <section class="guide-related"><h2>Other ways we can help</h2><div class="flex flex-wrap gap-3">{professionals.filter((other) => other.slug !== item.slug).map((other) => <a class="btn btn-line" href={`/professionals/${other.slug}/`}>{other.name}</a>)}<a class="btn btn-line" href="/projects/">Explore our work</a></div></section>
+    <section class="guide-related"><h2>Other ways we can help</h2><div class="flex flex-wrap gap-3">{professionals.filter((other) => other.slug !== item.slug).map((other) => <a class="btn btn-line" href={`/professionals/${other.slug}/`}>{other.name}</a>)}{professionalEditorials.map((fm) => <a class="btn btn-line" href={fm.path}>{fm.title}</a>)}<a class="btn btn-line" href="/projects/">Explore our work</a></div></section>
   </div>
 </Base>

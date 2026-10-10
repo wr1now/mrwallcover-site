@@ -150,3 +150,20 @@ test('the heritage page links its case studies and the fit-out page carries the 
     /available on request/,
   ]) assert.match(fitout, fact, String(fact));
 });
+
+test('every professional page lists fit-out contractors under "Other ways we can help", and all four share "Questions buyers ask"', async () => {
+  for (const slug of ['designers', 'developers', 'hotels']) {
+    const html = await readFile(`dist/professionals/${slug}/index.html`, 'utf8');
+    const row = html.match(/<h2>Other ways we can help<\/h2>([\s\S]*?)<\/section>/);
+    assert.ok(row, `${slug}: "Other ways we can help" row`);
+    assert.ok(row![1].includes('href="/professionals/fit-out-contractors/"'), `${slug}: links fit-out contractors`);
+    for (const other of ['designers', 'developers', 'hotels'].filter((s) => s !== slug)) {
+      assert.ok(row![1].includes(`href="/professionals/${other}/"`), `${slug}: still links ${other}`);
+    }
+  }
+  for (const slug of ['designers', 'developers', 'hotels', 'fit-out-contractors']) {
+    const html = await readFile(`dist/professionals/${slug}/index.html`, 'utf8');
+    assert.match(html, /<h2 id="questions">Questions buyers ask<\/h2>/, `${slug}: "Questions buyers ask"`);
+    assert.doesNotMatch(html, /Asked about/, `${slug}: no "Asked about" heading`);
+  }
+});
