@@ -642,5 +642,105 @@
   "arch-trim-11": {
     "alt": "Round wall mirrors with gold radiating frames against a pale wallcovering.",
     "manifestNote": "own photograph, photo #40, imperfect-arches-external-corner-trim"
+  },
+  "fs-residences-01": {
+    "alt": "Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.",
+    "manifestNote": "own photograph, photo #2, four-seasons-ten-trinity-square"
+  },
+  "fs-residences-02": {
+    "alt": "The same entrance hall seen along its length: the banded wallcovering runs the full wall under a lit cove ceiling, past the mirror and bench to the front door.",
+    "manifestNote": "own photograph, photo #12, four-seasons-ten-trinity-square"
+  },
+  "fs-residences-03": {
+    "alt": "Close detail of the entrance-hall wallcovering: soft horizontal bands of charcoal, silver and ochre, laid with no visible seam.",
+    "manifestNote": "own photograph, photo #3, four-seasons-ten-trinity-square"
+  },
+  "fs-residences-04": {
+    "alt": "Finished dining room in a private residence: a round table and gold armchairs under a cloud of glass discs, with a black sideboard, a round clock and walnut shelving beyond.",
+    "manifestNote": "own photograph, photo #13, four-seasons-ten-trinity-square"
+  },
+  "fs-residences-05": {
+    "alt": "Finished living room in the same residence: a pale sofa, a blue rug and walnut bookshelves, with a brass-framed screen dividing it from the dining room.",
+    "manifestNote": "own photograph, photo #14, four-seasons-ten-trinity-square"
+  },
+  "fs-residences-06": {
+    "alt": "Close detail of a woven grasscloth wallcovering turning an external corner, the weave running straight and tight to the edge.",
+    "manifestNote": "own photograph, photo #4, four-seasons-ten-trinity-square"
+  },
+  "fs-residences-07": {
+    "alt": "A residents’ lift lobby: walls in a warm, banded veneer-effect finish, bronze lift doors and a glazed screen, with the stair rail in the foreground.",
+    "manifestNote": "own photograph, photo #19, four-seasons-ten-trinity-square, identifying detail blurred"
+  },
+  "fs-residences-08": {
+    "alt": "The banded lobby walls turning a corner towards a pair of glazed doors, with bronze lift doors on the right.",
+    "manifestNote": "own photograph, photo #20, four-seasons-ten-trinity-square, identifying detail blurred"
+  },
+  "fs-residences-09": {
+    "alt": "A pale lift lobby seen between two stone-effect walls: bronze lift doors either side and a glazed door at the far end.",
+    "manifestNote": "own photograph, photo #24, four-seasons-ten-trinity-square, identifying detail blurred"
+  },
+  "fs-residences-10": {
+    "alt": "The same lobby from the top of the steps: matched stone-effect walls, bronze lift doors and a glazed door at the end of the corridor.",
+    "manifestNote": "own photograph, photo #25, four-seasons-ten-trinity-square, identifying detail blurred"
+  },
+  "fs-residences-11": {
+    "alt": "A corner of the lobby: an antiqued mirror panel between two crystal wall lights on the stone-effect walls.",
+    "manifestNote": "own photograph, photo #26, four-seasons-ten-trinity-square"
+  },
+  "fs-residences-12": {
+    "alt": "The lobby beside the stair: stone-effect walls, a bronze lift door, a ventilation grille and the antiqued mirror beyond.",
+    "manifestNote": "own photograph, photo #27, four-seasons-ten-trinity-square, identifying detail blurred"
+  },
+  "tea-house-01": {
+    "alt": "The finished tea room: a bold green-and-gold feather wallpaper on every wall, hung behind arched mirrors, patchwork armchairs and round walnut tables set for tea.",
+    "manifestNote": "own photograph, photo #62, tea-house-jaillon-studio"
+  },
+  "tea-house-02": {
+    "alt": "The feather wallpaper behind three arched mirrors, the large-scale pattern running unbroken around them above the tables and armchairs.",
+    "manifestNote": "own photograph, photo #63, tea-house-jaillon-studio, identifying detail blurred"
+  },
+  "tea-house-03": {
+    "alt": "Two arched mirrors set into the feather wallpaper above a table laid for tea and a feather-print armchair.",
+    "manifestNote": "own photograph, photo #60, tea-house-jaillon-studio"
+  },
+  "tea-house-04": {
+    "alt": "An arched mirror framed by the feather wallpaper, the pattern centred on the mirror and matched across the drops.",
+    "manifestNote": "own photograph, photo #59, tea-house-jaillon-studio"
+  },
+  "tea-house-05": {
+    "alt": "Close view of the feather wallpaper beside a mirror, its gold quills crisp to the frame, above a table with a teacup and pastry.",
+    "manifestNote": "own photograph, photo #61, tea-house-jaillon-studio"
+  },
+  "tea-house-06": {
+    "alt": "The garden room: a panoramic scenic wallpaper of a swan lake and flowering hydrangeas, with gilt-framed mirrors, two armchairs and a tea table.",
+    "manifestNote": "own photograph, photo #64, tea-house-jaillon-studio, identifying detail blurred"
+  },
+  "tea-house-07": {
+    "alt": "Detail of the scenic swan-lake wallpaper behind a tea table, its hydrangeas and swans running beneath a gilt frame.",
+    "manifestNote": "own photograph, photo #67, tea-house-jaillon-studio"
+  },
+  "tea-house-08": {
+    "alt": "The tea counter: the feather wallpaper above a tiled bar, with an espresso machine, a silver cake stand and pink velvet stools.",
+    "manifestNote": "own photograph, photo #66, tea-house-jaillon-studio"
+  },
+  "scp-pimlico-01": {
+    "alt": "Finished showroom room: walls in a deep blue gradient mural that fades to white at the top, around a green velvet sofa under a brass pendant.",
+    "manifestNote": "own photograph, photo #47, scp-showroom-pimlico"
+  },
+  "scp-pimlico-02": {
+    "alt": "Showroom wall in a gilded marbled wallcovering, a flush door papered in so it almost disappears, beside the shop window.",
+    "manifestNote": "own photograph, photo #49, scp-showroom-pimlico, identifying detail blurred"
+  },
+  "scp-pimlico-03": {
+    "alt": "The blue gradient mural behind a low walnut sideboard and a linear light, the colour deepening smoothly to the floor.",
+    "manifestNote": "own photograph, photo #48, scp-showroom-pimlico"
+  },
+  "scp-pimlico-04": {
+    "alt": "Close view of the gilded marbled wallcovering, gold veining over pale grey, crossed by the arc of a floor lamp.",
+    "manifestNote": "own photograph, photo #46, scp-showroom-pimlico"
+  },
+  "scp-pimlico-05": {
+    "alt": "Panorama of the marbled showroom wall, the gilded pattern running unbroken across the full length of the room.",
+    "manifestNote": "own photograph, photo #45, scp-showroom-pimlico, identifying detail blurred"
   }
 }

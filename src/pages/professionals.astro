@@ -2,8 +2,11 @@
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Base from '../layouts/Base.astro';
 import professionals from '../content/professionals.json';
+import { editorialPages } from '../lib/content';
 import { breadcrumbNode } from '../lib/schema';
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'For professionals', href: '/professionals/' }];
+// Published editorial pages under /professionals/ (e.g. fit-out contractors) sit beside the audience pages.
+const professionalEditorials = editorialPages.map((mod) => mod.frontmatter).filter((fm) => fm.path.startsWith('/professionals/'));
 ---
 <Base title="For Designers, Developers & Hotels | Mr Wallcover" description="Wallcovering specification and installation routes for designers, property developers, contractors and hotel operators." path="/professionals/" extraSchema={[breadcrumbNode(crumbs)]}>
   <div class="container-page pb-20">
@@ -15,6 +18,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'For professionals', href: 
     </header>
     <div class="grid gap-6 md:grid-cols-3">
       {professionals.map((item) => <section class="guide-card" id={item.slug === 'developers' ? 'commercial' : item.slug}><p class="eyebrow">{item.name}</p><h2><a href={`/professionals/${item.slug}/`}>{item.heading}</a></h2><p>{item.intro}</p><a class="guide-read" href={`/professionals/${item.slug}/`}>Explore this service ↗</a></section>)}
+      {professionalEditorials.map((fm) => <section class="guide-card" id={fm.path.split('/')[2]}><p class="eyebrow">{fm.title}</p><h2><a href={fm.path}>{fm.heading}</a></h2><p>{fm.lede}</p><a class="guide-read" href={fm.path}>Explore this service ↗</a></section>)}
     </div>
     <section class="guide-next"><p class="eyebrow">Already have a complete brief?</p><h2>Send the work in front of you.</h2><p>A schedule, drawings and a short note are enough to begin. Include who is supplying the material and any date the tender needs.</p><a class="btn btn-solid-ink" href="/contact/?audience=commercial&intent=install">Start a professional enquiry</a></section>
   </div>

@@ -19,9 +19,11 @@ const homeSlugs = new Set([
   'trematon-castle', 'pimlico-st-georges-square', 'inverness-terrace', 'north-london-residence',
   'imperfect-arches-external-corner-trim',
 ]);
+// Commercial interiors outside the hotel record: a designer's tea house and a short-term showroom.
+const retailSlugs = new Set(['tea-house-jaillon-studio', 'scp-showroom-pimlico']);
 const cards = projects.map((project) => {
   const isHotel = hotels.some((hotel) => hotel.href === projectHref(project.slug) || hotel.name === project.title);
-  const category = project.group === 'design-weeks' || project.slug === 'house-of-hackney-st-michaels'
+  const category = project.group === 'design-weeks' || project.slug === 'house-of-hackney-st-michaels' || retailSlugs.has(project.slug)
     ? 'retail-design'
     : isHotel ? 'hotels' : homeSlugs.has(project.slug) ? 'homes-heritage' : undefined;
   if (!category) throw new Error(`Classify the published scope of project ${project.slug} before adding it to the explorer.`);

@@ -3,13 +3,15 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import MaterialFinder from '../../components/MaterialFinder.astro';
 import MaterialStudio from '../../components/MaterialStudio.astro';
 import Base from '../../layouts/Base.astro';
-import { materials, specialismHref, specialisms } from '../../lib/content';
+import { editorialPages, materials, specialismHref, specialisms } from '../../lib/content';
 import { breadcrumbNode } from '../../lib/schema';
 
 const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'Materials', href: '/materials/' },
 ];
+// Published editorial pages under /materials/ (e.g. specified papers we install).
+const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((fm) => fm.path.startsWith('/materials/'));
 ---
 
 <Base title={materials.title} description={materials.description} path="/materials/" extraSchema={[breadcrumbNode(crumbs)]}>
@@ -38,6 +40,22 @@ const crumbs = [
         );
       })}
     </ul>
+    {
+      materialEditorials.length > 0 && (
+        <section class="mt-16 border-t border-line pt-10" aria-labelledby="makers-heading">
+          <p class="eyebrow">Makers</p>
+          <h2 id="makers-heading" class="m-0 text-[2rem]">Papers we have installed, by maker.</h2>
+          <ul class="m-0 mt-6 grid list-none gap-8 p-0 md:grid-cols-2">
+            {materialEditorials.map((fm) => (
+              <li class="border-t border-line pt-4">
+                <h3 class="m-0 text-[1.8rem]"><a href={fm.path}>{fm.title}</a></h3>
+                <p class="mt-3 mb-0 text-stone">{fm.description}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
     <section class="mt-16 border-t border-line pt-10" aria-labelledby="compare-heading">
       <p data-shortlist-status role="status"></p>
       <button type="button" class="btn btn-line mb-5" data-shortlist-clear>Clear shortlist</button>

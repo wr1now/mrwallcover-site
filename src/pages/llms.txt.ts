@@ -15,7 +15,7 @@ import { SITE_URL } from '../config';
 import facts from '../data/facts.json';
 import professionals from '../content/professionals.json';
 import { areaHref, areas, editorialPages, faqItems, materials, projectHref, projects, specialismHref, specialisms } from '../lib/content';
-import { AWARD, FOUNDER_SUMMARY, SINCE_TEXT, WASTAGE, enquiryRoutes, projectFacts, serviceFacts } from '../lib/ai-layer-data';
+import { AWARD, FOUNDER_SUMMARY, SINCE_TEXT, WASTAGE, buyerQuestions, enquiryRoutes, projectFacts, serviceFacts } from '../lib/ai-layer-data';
 
 /** Sourced specifics appended to each Public commissions note (src/lib/ai-layer-data.ts). */
 const factsBySlug = new Map(projectFacts.map((item) => [item.slug, item]));
@@ -99,6 +99,10 @@ export const GET: APIRoute = () => {
     '',
     '## Frequently asked',
     ...faqItems.map((f) => entry(f.question, `/faq/#${f.id}`, f.paragraphs[0])),
+    '',
+    // One line per buyer question (src/data/buyer-answers.json): the short form where the audit gives one, otherwise the answer.
+    '## Buyer questions',
+    ...buyerQuestions.map((q) => entry(q.question, `/for-ai/#${q.id}`, q.short ?? q.answer)),
     '',
     '## Optional',
     entry('Project decision guide JSON', '/ai/decision-guide.json', 'conditional project fit, company-reported installation evidence, material guidance, complete aftercare terms and an unsent briefing template'),
