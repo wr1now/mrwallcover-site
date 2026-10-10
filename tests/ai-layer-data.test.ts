@@ -143,7 +143,8 @@ test('/.well-known/facts.json keeps every /facts.json field and adds the sourced
   const projects = await json<{ projects: { url: string }[] }>('dist/projects.json');
   assert.deepEqual(known.projects.items.map((p: { url: string }) => p.url), projects.projects.map((p) => p.url));
   const facts = await json<{ award?: unknown }>('src/data/facts.json');
-  assert.equal('award' in known, 'award' in facts, 'the award appears exactly when the fact sheet carries it');
+  assert.equal('awardText' in known, 'award' in facts, 'the award line appears exactly when the fact sheet carries it');
+  if ('award' in facts) assert.equal(known.awardText, 'Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards');
 });
 
 test('the AI layer carries no forbidden, private or unpublished terms and no phone number', async () => {

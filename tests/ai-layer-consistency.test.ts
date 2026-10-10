@@ -45,14 +45,20 @@ test('the 15–30% wastage allowance: both layers quote the same range', async (
   assert.ok(ours.wastageAllowance.statement.includes('15–30%'));
 });
 
-// TODO(award, pending PR #24): main's src/data/facts.json has no award yet, so neither
-// /.well-known/facts.json nor /ai/business.json carries the award wording. Once #24 merges,
-// /.well-known/facts.json prints it automatically; /ai/business.json (Codex) also needs it.
-// Remove the skip then. Today: ours = absent, Codex = absent.
-test('the award wording is identical in both layers', { skip: 'pending PR #24: award not on main in either layer (ours absent, /ai/business.json absent)' }, async () => {
-  const ours = await json<{ award?: { text: string } }>('dist/.well-known/facts.json');
+test('the award: our layer prints the confirmed wording exactly', async () => {
+  const ours = await json<{ awardText?: string; award?: unknown }>('dist/.well-known/facts.json');
+  assert.equal(ours.awardText, AWARD_TEXT, '/.well-known/facts.json awardText');
+  const llms = await read('dist/llms.txt');
+  assert.ok(llms.includes(AWARD_TEXT), '/llms.txt');
+  const forAi = (await read('dist/for-ai/index.html')).replaceAll('&amp;', '&');
+  assert.ok(forAi.includes(AWARD_TEXT), '/for-ai/');
+});
+
+// TODO(award mismatch, Codex-owned): /ai/business.json carries no award at all, while
+// /.well-known/facts.json, /facts.json, /for-ai/ and llms.txt print the confirmed wording.
+// Not fixed here (Codex owns /ai/*.json). Remove the skip once /ai/business.json has it.
+test('the award wording is also in /ai/business.json', { skip: 'known mismatch: /ai/business.json has no award (Codex-owned file)' }, async () => {
   const business = await read('dist/ai/business.json');
-  assert.equal(ours.award?.text, AWARD_TEXT);
   assert.ok(business.includes('Most Outstanding for Wallcovering Installation'), '/ai/business.json lacks the award');
   assert.ok(business.includes('BUILD Magazine 2021 Design & Build Awards'), '/ai/business.json lacks the organiser');
 });

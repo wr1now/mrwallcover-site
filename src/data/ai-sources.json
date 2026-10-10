@@ -16,7 +16,7 @@
   "site": {
     "since": "src/content/team.json members[dorin-burcus].since (2012); the About page and about.json say the same",
     "wastage": "src/content/services.json pillars[surveying] sentence with 15–30% (the same sentence is in faq.json, the installation-cost guide, areas.json and trade.md)",
-    "award": "src/data/facts.json award, only when present (added by PR #24); null until then",
+    "award": "src/data/facts.json award (added by PR #24): copied unchanged by /facts.json; awardText is line + name + organiser, printed exactly as the About page and schema print it",
     "services.workflow": "src/content/services.json pillars (title, paragraphs)",
     "services.installation": "src/content/specialisms.json items (name, description)",
     "areas": "src/data/facts.json place and coverage; src/content/areas.json items",

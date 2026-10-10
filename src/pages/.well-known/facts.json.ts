@@ -30,7 +30,8 @@ export function wellKnownFacts() {
     sameAs: base.url,
     inTradeSince: SINCE_YEAR,
     inTradeSinceText: SINCE_TEXT,
-    ...(AWARD ? { award: AWARD } : {}),
+    // facts.award (when the fact sheet has it) is already copied above, unchanged; this is the printed line.
+    ...(AWARD ? { awardText: AWARD.text } : {}),
     services: serviceFacts,
     areasServed: areaFacts,
     enquiryRoutes,

@@ -38,8 +38,8 @@
   ],
   "counts": {
     "json": {
-      "/facts.json": 17,
-      "/.well-known/facts.json": 241,
+      "/facts.json": 21,
+      "/.well-known/facts.json": 246,
       "/projects.json": 631,
       "/ai/business.json": 96,
       "/ai/projects.json": 1112,
@@ -47,21 +47,21 @@
     },
     "text": {
       "/llms.txt": {
-        "lines": 105,
-        "links": 90
+        "lines": 106,
+        "links": 91
       },
       "/llms-full.txt": {
-        "lines": 3788,
-        "links": 1178
+        "lines": 3797,
+        "links": 1186
       },
       "/for-ai/index.md": {
-        "lines": 224,
+        "lines": 225,
         "links": 99
       }
     },
     "jsonLd": {
       "forAi": 116,
-      "allPages": 4271
+      "allPages": 4274
     },
     "pages": {
       "html": 75,
