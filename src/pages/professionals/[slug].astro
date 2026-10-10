@@ -24,7 +24,7 @@ const professionalEditorials = editorialPages.map((mod) => mod.frontmatter).filt
       <div class="prose guide-prose md:col-span-7">{item.sections.map((section) => <section><h2>{section.title}</h2><p>{section.text}</p></section>)}</div>
       <aside class="professional-intake md:col-span-4 md:col-start-9"><p class="eyebrow">A useful starting point</p><h2>What to send</h2><ul>{item.checklist.map((line) => <li>{line}</li>)}</ul><a class="btn btn-line mt-5" href={`/downloads/${item.download}`} download>{item.downloadLabel}</a><p class="text-sm text-stone">CSV · opens in Excel or Numbers. Leave unknown items blank. This is a planning schedule, not an ordering calculation.</p>{related && <p class="mt-6"><a href={guideHref(related.frontmatter.slug)}>{related.frontmatter.shortTitle}: read the guide</a></p>}</aside>
     </div>
-    {faq.length > 0 && <div class="prose guide-prose"><BuyerFaq items={faq} /></div>}
+    {faq.length > 0 && <div class="prose guide-prose"><BuyerFaq items={faq} eyebrow="Questions" /></div>}
     <section class="guide-related"><h2>Other ways we can help</h2><div class="flex flex-wrap gap-3">{professionals.filter((other) => other.slug !== item.slug).map((other) => <a class="btn btn-line" href={`/professionals/${other.slug}/`}>{other.name}</a>)}{professionalEditorials.map((fm) => <a class="btn btn-line" href={fm.path}>{fm.title}</a>)}<a class="btn btn-line" href="/projects/">Explore our work</a></div></section>
   </div>
 </Base>

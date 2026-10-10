@@ -151,7 +151,7 @@ test('the heritage page links its case studies and the fit-out page carries the 
   ]) assert.match(fitout, fact, String(fact));
 });
 
-test('every professional page lists fit-out contractors under "Other ways we can help", and all four share "Questions buyers ask"', async () => {
+test('every professional page lists fit-out contractors under "Other ways we can help", and all four share the "Questions" eyebrow and "Questions buyers ask"', async () => {
   for (const slug of ['designers', 'developers', 'hotels']) {
     const html = await readFile(`dist/professionals/${slug}/index.html`, 'utf8');
     const row = html.match(/<h2>Other ways we can help<\/h2>([\s\S]*?)<\/section>/);
@@ -163,7 +163,7 @@ test('every professional page lists fit-out contractors under "Other ways we can
   }
   for (const slug of ['designers', 'developers', 'hotels', 'fit-out-contractors']) {
     const html = await readFile(`dist/professionals/${slug}/index.html`, 'utf8');
-    assert.match(html, /<h2 id="questions">Questions buyers ask<\/h2>/, `${slug}: "Questions buyers ask"`);
+    assert.match(html, /<p class="eyebrow">Questions<\/p>\s*<h2 id="questions">Questions buyers ask<\/h2>/, `${slug}: "Questions" eyebrow above "Questions buyers ask"`);
     assert.doesNotMatch(html, /Asked about/, `${slug}: no "Asked about" heading`);
   }
 });
