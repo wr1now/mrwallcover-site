@@ -15,11 +15,11 @@ const { items } = Astro.props;
   <ol class="crumbs">
     {
       items.map((item, index) => (
-        <li>
+        <li class:list={{ 'crumb-current': index === items.length - 1 }}>
           {index < items.length - 1 ? (
             <a href={item.href}>{item.name}</a>
           ) : (
-            <span aria-current="page">{item.name}</span>
+            <span aria-current="page" title={item.name}>{item.name}</span>
           )}
           {index < items.length - 1 && <span aria-hidden="true"> / </span>}
         </li>
@@ -28,4 +28,21 @@ const { items } = Astro.props;
   </ol>
 </nav>
 
-<style>span[aria-hidden="true"] { margin-left: 0.5rem; }</style>
+<style>
+  span[aria-hidden='true'] {
+    margin-left: 0.5rem;
+  }
+  /* A long page name (e.g. Four Seasons Hotel London at Ten Trinity Square) stays on the crumb line
+     and ends in an ellipsis on a phone, instead of wrapping onto a line of its own. The full name is
+     the page's h1 and the title attribute. It only drops to its own line if under 8rem is left. */
+  .crumb-current {
+    flex: 1 1 8rem;
+    min-width: 0;
+  }
+  .crumb-current span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+</style>

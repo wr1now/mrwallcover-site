@@ -1,7 +1,13 @@
 {
   "_note": "Photo numbers from Dorin's numbered photo labels (PHOTO_JOB_LABELS.json) -> held fixture name. A number listed in cleared may be published; every other held frame stays blocked.",
   "cleared": {
-    "28-40": "Imperfect arches case study (PR #27), cleared by Dorin 10 Oct 2026"
+    "28-40": "Imperfect arches case study (PR #27), cleared by Dorin 10 Oct 2026",
+    "2-4": "Four Seasons Private Residences, Ten Trinity Square (award step 1b), cleared by Dorin 10 Oct 2026",
+    "12-14": "Four Seasons Private Residences, Ten Trinity Square (award step 1b), cleared by Dorin 10 Oct 2026",
+    "19-20": "Four Seasons Private Residences, Ten Trinity Square (award step 1b), cleared by Dorin 10 Oct 2026",
+    "24-27": "Four Seasons Private Residences, Ten Trinity Square (award step 1b), cleared by Dorin 10 Oct 2026",
+    "45-49": "SCP showroom, Pimlico (award step 1b), cleared by Dorin 10 Oct 2026",
+    "51-67": "Tea house for Jaillon Studio, West London (award step 1b), cleared by Dorin 10 Oct 2026"
   },
   "labels": {
     "1": "unidentified-2018-01-chinoiserie-dining/01--mg-8013.jpg",
@@ -71,5 +77,6 @@
     "65": "unidentified-2021-07-cafe-feather-wallpaper/15-img-3666.jpg",
     "66": "unidentified-2021-07-cafe-feather-wallpaper/16-img-3667.jpg",
     "67": "unidentified-2021-07-cafe-feather-wallpaper/17-img-3671.jpg"
-  }
+  },
+  "_still_held": "1, 5-11, 15-18, 21-23, 41-44 and 50 stay held (not cleared)."
 }

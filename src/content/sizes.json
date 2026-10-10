@@ -2778,5 +2778,511 @@
         1600
       ]
     }
+  },
+  "fs-residences-01": {
+    "width": 2400,
+    "height": 1600,
+    "src": "/media/img/r/fs-residences-01-2400.webp",
+    "jpg": "/media/img/r/fs-residences-01-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-01-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-01-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2000,
+        2400
+      ]
+    }
+  },
+  "fs-residences-02": {
+    "width": 1600,
+    "height": 2400,
+    "src": "/media/img/r/fs-residences-02-1600.webp",
+    "jpg": "/media/img/r/fs-residences-02-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-02-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-02-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1200,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-02",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "fs-residences-03": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/fs-residences-03-1600.webp",
+    "jpg": "/media/img/r/fs-residences-03-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-03-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-03-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "fs-residences-04": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/fs-residences-04-1600.webp",
+    "jpg": "/media/img/r/fs-residences-04-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-04-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-04-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-04",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "fs-residences-05": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/fs-residences-05-1600.webp",
+    "jpg": "/media/img/r/fs-residences-05-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-05-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-05-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-05",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "fs-residences-06": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/fs-residences-06-1600.webp",
+    "jpg": "/media/img/r/fs-residences-06-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-06-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-06-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-06",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "fs-residences-07": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/fs-residences-07-1600.webp",
+    "jpg": "/media/img/r/fs-residences-07-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-07-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-07-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-07",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "fs-residences-08": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/fs-residences-08-1600.webp",
+    "jpg": "/media/img/r/fs-residences-08-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-08-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-08-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-08",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "fs-residences-09": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/fs-residences-09-1600.webp",
+    "jpg": "/media/img/r/fs-residences-09-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-09-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-09-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-09",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "fs-residences-10": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/fs-residences-10-1600.webp",
+    "jpg": "/media/img/r/fs-residences-10-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-10-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-10-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-10",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "fs-residences-11": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/fs-residences-11-1600.webp",
+    "jpg": "/media/img/r/fs-residences-11-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-11-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-11-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-11",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "fs-residences-12": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/fs-residences-12-1600.webp",
+    "jpg": "/media/img/r/fs-residences-12-1600.jpg",
+    "thumb": "/media/img/r/fs-residences-12-800.webp",
+    "thumbJpg": "/media/img/r/fs-residences-12-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/fs-residences-12",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "tea-house-01": {
+    "width": 2400,
+    "height": 1600,
+    "src": "/media/img/r/tea-house-01-2400.webp",
+    "jpg": "/media/img/r/tea-house-01-1600.jpg",
+    "thumb": "/media/img/r/tea-house-01-800.webp",
+    "thumbJpg": "/media/img/r/tea-house-01-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/tea-house-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2000,
+        2400
+      ]
+    }
+  },
+  "tea-house-02": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/tea-house-02-1600.webp",
+    "jpg": "/media/img/r/tea-house-02-1600.jpg",
+    "thumb": "/media/img/r/tea-house-02-800.webp",
+    "thumbJpg": "/media/img/r/tea-house-02-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/tea-house-02",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "tea-house-03": {
+    "width": 1600,
+    "height": 2379,
+    "src": "/media/img/r/tea-house-03-1600.webp",
+    "jpg": "/media/img/r/tea-house-03-1600.jpg",
+    "thumb": "/media/img/r/tea-house-03-800.webp",
+    "thumbJpg": "/media/img/r/tea-house-03-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1189,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/tea-house-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "tea-house-04": {
+    "width": 1600,
+    "height": 2400,
+    "src": "/media/img/r/tea-house-04-1600.webp",
+    "jpg": "/media/img/r/tea-house-04-1600.jpg",
+    "thumb": "/media/img/r/tea-house-04-800.webp",
+    "thumbJpg": "/media/img/r/tea-house-04-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1200,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/tea-house-04",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "tea-house-05": {
+    "width": 1600,
+    "height": 2400,
+    "src": "/media/img/r/tea-house-05-1600.webp",
+    "jpg": "/media/img/r/tea-house-05-1600.jpg",
+    "thumb": "/media/img/r/tea-house-05-800.webp",
+    "thumbJpg": "/media/img/r/tea-house-05-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1200,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/tea-house-05",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "tea-house-06": {
+    "width": 1600,
+    "height": 1067,
+    "src": "/media/img/r/tea-house-06-1600.webp",
+    "jpg": "/media/img/r/tea-house-06-1600.jpg",
+    "thumb": "/media/img/r/tea-house-06-800.webp",
+    "thumbJpg": "/media/img/r/tea-house-06-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/tea-house-06",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "tea-house-07": {
+    "width": 1600,
+    "height": 2322,
+    "src": "/media/img/r/tea-house-07-1600.webp",
+    "jpg": "/media/img/r/tea-house-07-1600.jpg",
+    "thumb": "/media/img/r/tea-house-07-800.webp",
+    "thumbJpg": "/media/img/r/tea-house-07-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1161,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/tea-house-07",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "tea-house-08": {
+    "width": 1600,
+    "height": 2286,
+    "src": "/media/img/r/tea-house-08-1600.webp",
+    "jpg": "/media/img/r/tea-house-08-1600.jpg",
+    "thumb": "/media/img/r/tea-house-08-800.webp",
+    "thumbJpg": "/media/img/r/tea-house-08-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1143,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/tea-house-08",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "scp-pimlico-01": {
+    "width": 2400,
+    "height": 1602,
+    "src": "/media/img/r/scp-pimlico-01-2400.webp",
+    "jpg": "/media/img/r/scp-pimlico-01-1600.jpg",
+    "thumb": "/media/img/r/scp-pimlico-01-800.webp",
+    "thumbJpg": "/media/img/r/scp-pimlico-01-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 534,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/scp-pimlico-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2000,
+        2400
+      ]
+    }
+  },
+  "scp-pimlico-02": {
+    "width": 1600,
+    "height": 1228,
+    "src": "/media/img/r/scp-pimlico-02-1600.webp",
+    "jpg": "/media/img/r/scp-pimlico-02-1600.jpg",
+    "thumb": "/media/img/r/scp-pimlico-02-800.webp",
+    "thumbJpg": "/media/img/r/scp-pimlico-02-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 614,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/scp-pimlico-02",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "scp-pimlico-03": {
+    "width": 1600,
+    "height": 1068,
+    "src": "/media/img/r/scp-pimlico-03-1600.webp",
+    "jpg": "/media/img/r/scp-pimlico-03-1600.jpg",
+    "thumb": "/media/img/r/scp-pimlico-03-800.webp",
+    "thumbJpg": "/media/img/r/scp-pimlico-03-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 534,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/scp-pimlico-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "scp-pimlico-04": {
+    "width": 1600,
+    "height": 1068,
+    "src": "/media/img/r/scp-pimlico-04-1600.webp",
+    "jpg": "/media/img/r/scp-pimlico-04-1600.jpg",
+    "thumb": "/media/img/r/scp-pimlico-04-800.webp",
+    "thumbJpg": "/media/img/r/scp-pimlico-04-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 534,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/scp-pimlico-04",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "scp-pimlico-05": {
+    "width": 1600,
+    "height": 646,
+    "src": "/media/img/r/scp-pimlico-05-1600.webp",
+    "jpg": "/media/img/r/scp-pimlico-05-1600.jpg",
+    "thumb": "/media/img/r/scp-pimlico-05-800.webp",
+    "thumbJpg": "/media/img/r/scp-pimlico-05-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 323,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/scp-pimlico-05",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
   }
 }
