@@ -20,7 +20,7 @@ Create a complete, elegant Sites edition of MR WALLCOVER using the real WR1 webs
 1. **Audit and source selection — complete.** Inspect live site, Git state, pending changes and asset provenance. Evidence: live HTTPS 200; repository/stack identified; current AI files exist; local originals located.
 2. **Core design and AI resource — complete.** Create a visually distinct hotel-led homepage, coherent navigation and a crawler resource with structured services/projects. Preserve all existing published routes and functional enquiry paths.
 3. **Benchmark cycle 1 — complete.** Compare installation competitors; close obvious presentation/service discovery gaps. Test and commit.
-4. **Benchmark cycle 2 — implementation complete, validation in progress.** Compare premium design portfolios; add a focused differentiated browsing improvement. Test and commit.
+4. **Benchmark cycle 2 — complete.** Compare premium design portfolios; add a focused differentiated browsing improvement. Test and commit.
 5. **Benchmark cycle 3 — pending.** Compare authoritative crawler/accessibility guidance; harden discoverability and market readiness. Test and commit.
 6. **Final QA and publication — pending.** Run source, build, distribution, responsive/browser and accessibility checks; inspect rendered desktop/mobile; record exact results in QA_REPORT.md. Push branch and exact Sites source, publish private Site, verify returned deployment status.
 
@@ -57,3 +57,5 @@ The owner requested a substantially richer AI decision resource. Acceptance now 
 - Material studio: real browser opens, changes family, closes and reopens; 8 regression tests cover failure and cleanup.
 - Narrow 320px layout at enlarged 24px root text revealed header overflow; corrected. Final screenshots pending.
 - Next: finish cycle-2 checks/commit, machine-discovery refinement for cycle 3, final browser QA and private publication.
+
+- Cycle 1 committed as `abeb10d`. Cycle 2: 6 focused filter/classification tests passed; production build included all 16 projects; browser filter counts and reset verified.
