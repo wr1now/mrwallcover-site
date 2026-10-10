@@ -177,7 +177,12 @@ const htmlMain = (t) => (t.match(/<main[\s\S]*?<\/main>/) ?? [t])[0];
 const htmlMeasures = (t) => ({ listItems: (htmlMain(t).match(/<li[\s>]/g) ?? []).length, links: (htmlMain(t).match(/<a\s[^>]*href=/g) ?? []).length });
 function measure(dir, file) {
   const t = read(dir, file);
-  if (file.endsWith('.json')) { const d = JSON.parse(t); return { jsonLeaves: leaves(d), largestList: maxArray(d) }; }
+  if (file.endsWith('.json')) {
+    const d = JSON.parse(t);
+    // Top-level lists by name (e.g. /ai/projects.json "projects", the 16-project dataset).
+    const entries = Object.fromEntries(Object.entries(d && !Array.isArray(d) ? d : {}).filter(([, v]) => Array.isArray(v)).map(([k, v]) => [`entries.${k}`, v.length]));
+    return { jsonLeaves: leaves(d), largestList: maxArray(d), ...(Array.isArray(d) ? { entries: d.length } : entries) };
+  }
   if (file.endsWith('.xml')) return { items: (t.match(/<item[\s>]|<entry[\s>]/g) ?? []).length };
   if (file.endsWith('.html')) return htmlMeasures(t);
   return textMeasures(t);
