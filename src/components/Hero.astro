@@ -2,19 +2,21 @@
 import { altFor, hero } from '../lib/content';
 import '../styles/hero-mobile.css';
 
+/* Phones and tablets: the photograph is full width. From 1024px it sits in the 60vw media column. */
+const heroSizes = '(min-width: 1024px) 60vw, 100vw';
 const srcset = hero.sources.map((source) => `${source.src} ${source.width}w`).join(', ');
 const alt = altFor(hero.id);
 ---
 
 <div class="hero-media">
   <picture>
-    <source type="image/webp" srcset={srcset} sizes="100vw" />
+    <source type="image/webp" srcset={srcset} sizes={heroSizes} />
     <img
       src={hero.fallback}
       alt={alt}
       width={hero.width}
       height={hero.height}
-      sizes="100vw"
+      sizes={heroSizes}
       fetchpriority="high"
       decoding="sync"
     />

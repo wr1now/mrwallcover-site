@@ -11,7 +11,7 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-09"
+updated: "2026-10-10"
 description: "Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include."
 shortTitle: "Installation cost"
 order: 5
@@ -37,7 +37,7 @@ We measure on site, or from drawings when the programme needs it. Skirting, corn
 
 ## Why does the pattern repeat cost money?
 
-A large or demanding repeat wastes material at the top of every drop, and a half-drop match wastes more. Where the repeat is demanding, the allowance is often in the region of 20%. The repeat also changes the time: each drop is matched by eye, and a room set out around its focal points takes longer than a plain paper run from a corner. At [Brown's Hotel](/projects/browns-hotel-mayfair/), Adam's Eden carries a 108.5 cm half-drop repeat, and every room was set out from its chimneypiece, doorcase or bed wall so the pattern met the cornice with composure.
+A large or demanding repeat wastes material at the top of every drop, and a half-drop match wastes more. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey. The repeat also changes the time: each drop is matched by eye, and a room set out around its focal points takes longer than a plain paper run from a corner. At [Brown's Hotel](/projects/browns-hotel-mayfair/), Adam's Eden carries a 108.5 cm half-drop repeat, and every room was set out from its chimneypiece, doorcase or bed wall so the pattern met the cornice with composure.
 
 ## What preparation is included?
 

@@ -203,7 +203,7 @@ function yamlString(value) {
 export async function readPage(file) {
   const html = await readFile(file, 'utf8');
   if (/<meta name="robots" content="noindex">/.test(html) || /http-equiv="refresh"/.test(html)) return null;
-  const main = html.match(/<main id="main">([\s\S]*?)<\/main>/)?.[1];
+  const main = html.match(/<main id="main"[^>]*>([\s\S]*?)<\/main>/)?.[1];
   if (!main) throw new Error(`${file}: no <main id="main">`);
   const canonical = html.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
   if (!canonical) throw new Error(`${file}: no canonical`);
@@ -256,6 +256,10 @@ export async function build(distDir = dist) {
     full.push('', toMarkdown(page.main, { demote: 1 }));
   }
   await writeFile(path.join(distDir, 'llms-full.txt'), full.join('\n'));
+
+  // /sitemap.xml is the address crawlers and people try first. @astrojs/sitemap only writes
+  // sitemap-index.xml, so serve an identical copy of the index at the conventional path too.
+  await writeFile(path.join(distDir, 'sitemap.xml'), await readFile(path.join(distDir, 'sitemap-index.xml'), 'utf8'));
   return { pages: pages.length, twins };
 }
 

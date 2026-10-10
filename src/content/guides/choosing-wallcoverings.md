@@ -11,7 +11,7 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-09"
+updated: "2026-10-10"
 description: "How to choose a wallcovering that still looks right once it is on the wall: traffic, light, cleaning, moisture, sample size and the questions to settle before ordering."
 shortTitle: "Choosing wallcoverings"
 order: 1
@@ -19,7 +19,7 @@ relatedMaterials: ["paper-and-non-woven", "grasscloth-and-weaves", "silk-and-tex
 relatedGuides: ["grasscloth-seams-and-variation", "wall-preparation", "installation-cost"]
 ctaLabel: "Discuss my room"
 ctaHref: "/contact/?audience=homeowner&intent=advice"
-sources: [{"label": "Zoffany: wallpaper FAQs", "url": "https://zoffany.sandersondesigngroup.com/product-faqs/wallpaper-faqs/"}]
+sources: [{"label": "Zoffany: wallpaper FAQs", "url": "https://www.zoffany.design/faqs"}]
 ---
 
 Will this wallpaper suit the room? That depends less on the photograph you fell for than on four things the photograph cannot show: how much the wall gets touched, how the light crosses it, how it will be cleaned, and whether moisture reaches it. Settle those first, then choose between the samples that pass. A sample is a small piece of a much bigger decision, because you are choosing how an entire wall looks in daylight, under lamps and beside everything already in the room.
@@ -42,7 +42,7 @@ Decide this before you order, not after the first mark. Many papers are not wash
 
 ## Will moisture reach it?
 
-Separate decorative walls from walls exposed to splashes, steam, grease or heat. A rarely used cloakroom and a bathroom with daily steam are very different rooms. Ordinary decorative wallpaper should not be assumed to work in a direct wet zone, and wallpaper should never be used to hide a damp problem. Draw the line physically, not by label: inside a shower or bath enclosure, and the splash zone behind a basin, sink or hob, are not places for decorative paper. [Zoffany](https://zoffany.sandersondesigngroup.com/product-faqs/wallpaper-faqs/), for one, would never recommend paper "in an area which would come directly into contact with water splashes, i.e., behind a sink or shower". A dry cloakroom wall outside that line can take paper if the wall is dry and the product's sheet allows it. Extraction helps the room; it does not make a wet wall dry. If a wall feels cold or soft, or a stain has spread, investigate the cause before you choose a finish for it.
+Separate decorative walls from walls exposed to splashes, steam, grease or heat. A rarely used cloakroom and a bathroom with daily steam are very different rooms. Ordinary decorative wallpaper should not be assumed to work in a direct wet zone, and wallpaper should never be used to hide a damp problem. Draw the line physically, not by label: inside a shower or bath enclosure, and the splash zone behind a basin, sink or hob, are not places for decorative paper. [Zoffany](https://www.zoffany.design/faqs), for one, would never recommend paper "in an area which would come directly into contact with water splashes, i.e., behind a sink or shower". A dry cloakroom wall outside that line can take paper if the wall is dry and the product's sheet allows it. Extraction helps the room; it does not make a wet wall dry. If a wall feels cold or soft, or a stain has spread, investigate the cause before you choose a finish for it.
 
 ## Do you want an even surface or a natural one?
 

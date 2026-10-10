@@ -147,3 +147,15 @@
     min-height: 8rem;
   }
 }
+
+/*
+ * Short phones (360x640 and similar): the third hero action would sit under the dock
+ * (measured 16px under it at 360x640). Hide it there only; "Start your project" still reaches the
+ * same form, which offers "I already have the wallpaper". 390x667 and taller keep all three (17px+ clear of the dock).
+ */
+@media (max-width: 1023px) and (max-height: 660px) {
+  .hero-copy .hero-third {
+    display: none;
+  }
+}
+

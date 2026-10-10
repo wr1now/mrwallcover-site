@@ -6,7 +6,8 @@
     "width": 720,
     "height": 1280,
     "altKey": "video-01",
-    "caption": "Smoothing a length in a Brown's corridor."
+    "caption": "Silent film, 6 seconds. A slow pan around a finished guest room: the desk and mirror, the bed, then two armchairs by the curtained windows.",
+    "alt": "Silent 6-second film panning around a finished guest room at Brown's Hotel, Mayfair: a desk and mirror, the bed, and two armchairs by curtained windows."
   },
   {
     "id": "browns-hotel-mayfair-video-02",
@@ -15,7 +16,8 @@
     "width": 720,
     "height": 1280,
     "altKey": "video-02",
-    "caption": "A dark ground with a pale botanical trail."
+    "caption": "Silent film, 15 seconds. A walk through a finished room papered in a cream wallcovering with a white botanical trail, past the bed, a sofa under a mirror, the window and the desk.",
+    "alt": "Silent 15-second film walking through a finished room at Brown's Hotel, Mayfair, papered in a cream wallcovering with a white botanical trail: the bed, a sofa under a mirror, the window and the desk."
   },
   {
     "id": "browns-hotel-mayfair-video-03",
@@ -24,6 +26,7 @@
     "width": 720,
     "height": 1280,
     "altKey": "video-03",
-    "caption": "A bedroom doorway, the paper already hung."
+    "caption": "Silent film, 7 seconds. A bedroom during the works, hung in a sage wallcovering with a white leaf pattern, with the floor protected and a laser level and stepladders in the room.",
+    "alt": "Silent 7-second film of a bedroom at Brown's Hotel, Mayfair, during the works: sage wallcovering with a white leaf pattern on the walls, the floor protected, a laser level and stepladders in the room."
   }
 ]

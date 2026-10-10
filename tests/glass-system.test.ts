@@ -135,3 +135,61 @@ test('every page: html.js-nav is set before first paint, with a load-time fallba
   const header = await readFile(new URL('../src/components/Header.astro', import.meta.url), 'utf8');
   assert.match(header, /setAttribute\('data-nav-ready'/);
 });
+
+test('skip link lands focus on <main>, and every "Start" link has the accessible name "Start your project"', async () => {
+  const html = await readFile('dist/index.html', 'utf8');
+  assert.match(html, /<a[^>]+href="#main"/, 'skip link present');
+  assert.match(html, /<main id="main" tabindex="-1"/, 'main is focusable from the skip link');
+  const starts = [...html.matchAll(/<a[^>]*href="\/contact\/"[^>]*>([\s\S]*?)<\/a>/g)].map((m) => m[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
+  assert.ok(starts.length > 0);
+  assert.equal(starts.filter((text) => /^start$/i.test(text)).length, 0, `bare "Start" link text: ${JSON.stringify(starts)}`);
+});
+
+test('preview-only case-study heroes are never stretched past their own pixel width', async () => {
+  const sizes = JSON.parse(await readFile('src/content/sizes.json', 'utf8')) as Record<string, { thumbWidth: number }>;
+  for (const [slug, id] of [['old-bailey-hotel', 'old-bailey-06'], ['heathrow-terminal-4-calico', 'heathrow-05'], ['north-london-residence', 'north-london-residence-01']] as const) {
+    const html = await readFile(`dist/projects/${slug}/index.html`, 'utf8');
+    assert.match(html, new RegExp(`class="[^"]*modest-hero[^"]*"[^>]*style="max-width:${sizes[id].thumbWidth}px"`), slug);
+  }
+});
+
+test('Calico case studies open their galleries on the finished frame used as the hero', async () => {
+  for (const slug of ['calico-ahluwalia-estuary-rosewood', 'heathrow-terminal-4-calico', 'calico-lee-broom-overture', 'calico-beverly-1975-cadence']) {
+    const text = await readFile(`src/content/case-studies/${slug}.md`, 'utf8');
+    const data = JSON.parse(text.split('---')[1]) as { hero: string; gallery: { id: string }[] };
+    assert.equal(data.gallery[0].id, data.hero, slug);
+  }
+});
+
+test('every published page title is 60 characters or fewer', async () => {
+  const long: string[] = [];
+  async function walk(dir: string): Promise<void> {
+    for (const entry of await readdir(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) await walk(full);
+      else if (entry.name === 'index.html') {
+        const title = (await readFile(full, 'utf8')).match(/<title>([^<]*)<\/title>/)?.[1] ?? '';
+        const text = title.replace(/&amp;/g, '&').replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"');
+        if (text.length > 60) long.push(`${full}: ${text.length} ${text}`);
+      }
+    }
+  }
+  await walk('dist');
+  assert.deepEqual(long, []);
+});
+
+test('home hero offers 800/1200/1600/2000w and sizes it to the 60vw desktop column', async () => {
+  const html = await readFile('dist/index.html', 'utf8');
+  const source = html.match(/<div class="hero-media">[\s\S]*?<source type="image\/webp" srcset="([^"]+)" sizes="([^"]+)"/);
+  assert.ok(source, 'hero webp source');
+  for (const width of [800, 1200, 1600, 2000]) assert.match(source![1], new RegExp(` ${width}w`));
+  assert.equal(source![2], '(min-width: 1024px) 60vw, 100vw');
+});
+
+test('home films: a finished room first, the mid-works film last, each with a visible description of what it shows', async () => {
+  const html = await readFile('dist/index.html', 'utf8');
+  const posters = [...html.matchAll(/poster="\/media\/video\/(browns-hotel-mayfair-video-\d+)-poster\.jpg"/g)].map((m) => m[1]);
+  assert.deepEqual(posters, ['browns-hotel-mayfair-video-02', 'browns-hotel-mayfair-video-01', 'browns-hotel-mayfair-video-03']);
+  const captions = [...html.matchAll(/<figcaption class="caption">(Silent film[^<]*)<\/figcaption>/g)];
+  assert.equal(captions.length, 3);
+});

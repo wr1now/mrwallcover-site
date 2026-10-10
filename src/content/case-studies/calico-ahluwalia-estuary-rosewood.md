@@ -18,15 +18,19 @@
   "hero": "ahluwalia-estuary-07",
   "gallery": [
     {
-      "id": "ahluwalia-estuary-06",
-      "credit": null
-    },
-    {
       "id": "ahluwalia-estuary-07",
       "credit": null
     },
     {
+      "id": "nomad-01",
+      "credit": null
+    },
+    {
       "id": "ahluwalia-estuary-01",
+      "credit": null
+    },
+    {
+      "id": "ahluwalia-estuary-06",
       "credit": null
     },
     {
@@ -35,10 +39,6 @@
     },
     {
       "id": "ahluwalia-estuary-03",
-      "credit": null
-    },
-    {
-      "id": "nomad-01",
       "credit": null
     }
   ],

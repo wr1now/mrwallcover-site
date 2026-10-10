@@ -132,7 +132,7 @@ const heroSrcset =
   <body class:list={[path === '/' && 'is-home']}>
     <a class="skip-link" href="#main">Skip to content</a>
     <Header path={Astro.url.pathname} />
-    <main id="main">
+    <main id="main" tabindex="-1">
       {reviewBuild && <div class="review-banner" role="note">Content review preview · Guide drafts await technical review.</div>}
       <slot />
       {meta && !noindex && (

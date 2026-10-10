@@ -982,3 +982,25 @@ article h3 a {
   .guide-layout { display: block; }
   .guide-prose { max-width: none; }
 }
+
+/* The skip link moves focus to <main tabindex="-1">; the target itself needs no ring (focus continues from there). */
+main:focus {
+  outline: none;
+}
+
+/*
+ * Material studio fallback photograph (a portrait door shot): held at its own
+ * 3:4 ratio and capped at 28rem, so it is never stretched across the full
+ * container and the srcset candidate always covers the rendered width.
+ */
+.studio-photo {
+  max-width: 28rem;
+}
+
+.studio-photo .media-frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
