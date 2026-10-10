@@ -113,7 +113,7 @@ test('nothing from the art-direction preview ships, and the phone hero keeps its
     assert.doesNotMatch(text, /glass-variants\.preview/);
   }
   const everything = `${css}\n${hero}`;
-  assert.match(everything, /min-height:calc\(100svh - var\(--header-height\) - var\(--header-inset-top\) - var\(--dock-clearance\)\)/, 'phone hero fits between header and dock');
+  assert.match(everything, /100svh - var\(--header-height\) - var\(--header-inset-top\) - var\(--dock-clearance\)/, 'phone hero accounts for header and dock');
   assert.doesNotMatch(everything, /--dock-clearance\) \+ [\d.]+rem\)/, 'no allowance for a hero row below the fold');
   assert.match(everything, /padding-bottom:var\(--dock-clearance\)/, 'body clearance');
 });
@@ -121,9 +121,9 @@ test('nothing from the art-direction preview ships, and the phone hero keeps its
 test('mobile hero keeps the wallpaper in frame: phone object-position set, desktop untouched', async () => {
   const { readFile } = await import('node:fs/promises');
   const css = await readFile(new URL('../src/styles/hero-mobile.css', import.meta.url), 'utf8');
-  const phone = css.slice(css.indexOf('@media (max-width: 1023px) {'));
-  assert.match(phone.slice(0, phone.indexOf('\n}\n')), /object-position:\s*50% 18%/);
-  assert.equal(/@media \(min-width: 1024px\)[^}]*object-position/.test(css), false);
+  assert.match(css, /object-position:\s*61% 30%/);
+  assert.match(css, /object-position:\s*50% 52%/);
+  assert.match(css, /width:100%; max-width:100%/, 'copy is bounded at enlarged default text sizes');
 });
 
 test('every page: html.js-nav is set before first paint, with a load-time fallback if the Header script never confirms', async () => {
@@ -178,12 +178,12 @@ test('every published page title is 60 characters or fewer', async () => {
   assert.deepEqual(long, []);
 });
 
-test('home hero offers 800/1200/1600/2000w and sizes it to the 60vw desktop column', async () => {
+test('home hero offers responsive original-photo derivatives for the full-width composition', async () => {
   const html = await readFile('dist/index.html', 'utf8');
-  const source = html.match(/<div class="hero-media">[\s\S]*?<source type="image\/webp" srcset="([^"]+)" sizes="([^"]+)"/);
+  const source = html.match(/<div class="atelier-hero-media">[\s\S]*?<source type="image\/webp" srcset="([^"]+)" sizes="([^"]+)"/);
   assert.ok(source, 'hero webp source');
-  for (const width of [800, 1200, 1600, 2000]) assert.match(source![1], new RegExp(` ${width}w`));
-  assert.equal(source![2], '(min-width: 1024px) 60vw, 100vw');
+  for (const width of [640, 960, 1440, 2000, 2560]) assert.match(source![1], new RegExp(` ${width}w`));
+  assert.equal(source![2], '100vw');
 });
 
 test('home films: a finished room first, the mid-works film last, each with a visible description of what it shows', async () => {

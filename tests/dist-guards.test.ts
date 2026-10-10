@@ -203,11 +203,12 @@ test('no internal-drafting or defensive phrasing reaches the public pages', asyn
   assert.doesNotMatch(html, /From specification<br>to the finished room/);
 });
 
-test('the homepage H1 and meta description define the firm', async () => {
+test('the homepage combines a concise creative H1 with the canonical business description', async () => {
   const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { description: string };
   const home = await readFile('dist/index.html', 'utf8');
-  const h1 = home.match(/<h1>([\s\S]*?)<\/h1>/)![1].replace(/<[^>]+>/g, '');
-  assert.match(h1, /^Mr Wallcover is a London specialist wallcovering installer, founded by Dorin Burcus\.$/);
+  const h1 = home.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)![1].replace(/<[^>]+>/g, '');
+  assert.match(h1, /^Extraordinary rooms\.Impeccably finished\.$/);
+  assert.ok(home.includes(facts.description), 'the business identity stays visible in the page');
   assert.equal(home.match(/<meta name="description" content="([^"]*)"/)![1], facts.description);
   assert.equal(home.match(/<meta property="og:description" content="([^"]*)"/)![1], facts.description);
   assert.match(home, /Wallcoverings, hung properly\./);

@@ -1,24 +1,28 @@
 {
   "id": "browns-hotel-mayfair-09",
-  "width": 2000,
-  "height": 1500,
+  "width": 2560,
+  "height": 1920,
   "sources": [
     {
-      "src": "/media/img/thumbs/browns-hotel-mayfair-09-800.webp",
-      "width": 800
+      "src": "/media/atelier/browns-bedroom-640.webp",
+      "width": 640
     },
     {
-      "src": "/media/img/browns-hotel-mayfair-09-1200.webp",
-      "width": 1200
+      "src": "/media/atelier/browns-bedroom-960.webp",
+      "width": 960
     },
     {
-      "src": "/media/img/browns-hotel-mayfair-09-1600.webp",
-      "width": 1600
+      "src": "/media/atelier/browns-bedroom-1440.webp",
+      "width": 1440
     },
     {
-      "src": "/media/img/browns-hotel-mayfair-09.webp",
+      "src": "/media/atelier/browns-bedroom-2000.webp",
       "width": 2000
+    },
+    {
+      "src": "/media/atelier/browns-bedroom-2560.webp",
+      "width": 2560
     }
   ],
-  "fallback": "/media/img/thumbs/browns-hotel-mayfair-09-800.jpg"
+  "fallback": "/media/atelier/browns-bedroom-2000.jpg"
 }
