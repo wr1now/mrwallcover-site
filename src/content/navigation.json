@@ -1,26 +1,26 @@
 [
   {
+    "href": "/projects/",
+    "label": "Projects"
+  },
+  {
     "href": "/services/",
-    "label": "Services"
+    "label": "Expertise"
   },
   {
     "href": "/materials/",
     "label": "Materials"
   },
   {
-    "href": "/projects/",
-    "label": "Projects"
-  },
-  {
     "href": "/professionals/",
-    "label": "For Professionals"
+    "label": "For designers"
   },
   {
     "href": "/advice/",
-    "label": "Guide"
+    "label": "Journal"
   },
   {
-    "href": "/about/",
-    "label": "About"
+    "href": "/wallcovering-installation-ai-crawler/",
+    "label": "AI Crawler"
   }
 ]

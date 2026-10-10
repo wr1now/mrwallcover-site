@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import '../styles/atelier.css';
+import hero from '../content/hero.json';
 import { ANALYTICS_SRC, BRAND_NAME, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
 import { CONTACT_PAYLOAD } from '../lib/phone';
 import Footer from '../components/Footer.astro';
@@ -54,8 +56,7 @@ const schema = jsonLd([
   webPageNode({ url: canonical, name: title, description, image, imageCredit }),
   ...extraSchema,
 ]);
-const heroSrcset =
-  '/media/hero/corridor-640.webp 640w, /media/hero/corridor-960.webp 960w, /media/hero/corridor-1280.webp 1280w, /media/hero/corridor-1920.webp 1920w';
+const heroSrcset = hero.sources.map(source => `${source.src} ${source.width}w`).join(', ');
 ---
 
 <!doctype html>
@@ -118,7 +119,7 @@ const heroSrcset =
         <link
           rel="preload"
           as="image"
-          href="/media/hero/corridor-960.webp"
+          href={hero.sources[1].src}
           imagesrcset={heroSrcset}
           imagesizes="100vw"
           fetchpriority="high"
