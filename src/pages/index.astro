@@ -9,7 +9,7 @@ import { AWARD_TEXT, AWARD_URL, faqNode } from '../lib/schema';
 import '../styles/atelier.css';
 // Inlined, not linked: a second render-blocking stylesheet cost the mobile first paint. The hero's
 // one rule goes in <head>; the restored sections' rules sit at the end of <main>, below the fold.
-import homeAwardCss from '../styles/home-award.css?raw';
+import homeHeroCss from '../styles/home-hero.css?raw';
 import homeRestoreCss from '../styles/home-restore.css?raw';
 const selection = [
   { slug: 'raffles-london-the-owo', label: 'Raffles London at The OWO', type: 'Hospitality', image: 'owo-official-classic', credit: 'Venue photograph · Raffles London at The OWO (official)' },
@@ -31,7 +31,7 @@ const hotelNames = [
 ];
 ---
 <Base title={home.title} description={facts.description} path="/" preloadHero extraSchema={[faqNode(faqItems)]} image="/media/atelier/browns-bedroom-2000.jpg" imageAlt="Our completed wallcovering installation at Brown's Hotel, Mayfair.">
-  <style is:inline slot="head" set:html={homeAwardCss}></style>
+  <style is:inline slot="head" set:html={homeHeroCss}></style>
   <div class="atelier">
     <section class="atelier-hero" aria-labelledby="hero-heading">
       <Hero />

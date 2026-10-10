@@ -34,3 +34,14 @@ test('only the hero photograph loads eagerly; every other homepage image is lazy
   assert.match(eager[0], /fetchpriority="high"/);
   assert.doesNotMatch(main, /<video[^>]*\sposter=/, 'film posters wait until the films are opened');
 });
+
+test('retired project URLs land on /projects/: a meta-refresh stub where the name may be built, the 404 fallback otherwise', async () => {
+  const stub = await readFile('dist/projects/the-lanesborough/index.html', 'utf8');
+  assert.match(stub, /<meta http-equiv="refresh" content="0; url=\/projects\/">/);
+  assert.match(stub, /<meta name="robots" content="noindex">/);
+  const notFound = await readFile('dist/404.html', 'utf8');
+  assert.ok(notFound.includes("location.replace('/projects/')"), '404 sends unknown /projects/ URLs to the work index');
+  assert.ok(notFound.includes('/^\\/projects\\/[a-z0-9-]+\\/?$/'), 'only single-segment /projects/ URLs');
+  const sitemap = await readFile('dist/sitemap-0.xml', 'utf8');
+  assert.doesNotMatch(sitemap, /the-lanesborough|biltmore-mayfair/);
+});
