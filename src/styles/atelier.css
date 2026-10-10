@@ -122,3 +122,156 @@
 .atelier-enquiry-routes{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;margin:0 auto 30px;max-width:900px}.atelier-enquiry-routes a{display:inline-flex;align-items:center;gap:14px;min-height:44px;color:#343a30;font-size:13px;text-underline-offset:5px}
 @media(max-width:767px){.site-header{padding-inline:10px}.site-header-row{gap:8px}.site-header .header-start{min-width:44px;padding-inline:4px}.site-header .menu-toggle{font-size:13px;padding-inline:6px;gap:8px}.site-header .header-mobile{gap:4px}.atelier h2{font-size:clamp(40px,10.5vw,60px)}.atelier-contact h2{font-size:clamp(44px,11vw,66px)}}
 @media(max-width:360px){.site-header .wordmark{font-size:23px}.atelier-hero-actions{gap:6px}.atelier-hero-actions .atelier-button{padding:12px;font-size:11px;gap:10px}.atelier-hero-actions .atelier-text-link{font-size:11px;gap:6px}.atelier-hero-content{padding-inline:16px}.atelier-hero-foot{left:16px;right:16px}.atelier-hero-description{font-size:13px}}
+
+/* ======================================================================================
+ * Homepage visual unification (10 Oct 2026).
+ * One type scale from tokens.css for the atelier sections (#23) and the restored sections
+ * (#29), which used to be styled apart: section titles --text-h2, card titles --text-h3 or
+ * --text-h4, body --text-body (17px), lede --text-lede (18px), captions, credits, dates,
+ * buttons and links --text-meta (14px), uppercase labels --text-label (13px). Nothing on the
+ * homepage is set below 13px. Section rhythm is --space-section; copy runs to --measure-copy.
+ * The hero photograph, its crop and its layout are unchanged (hero-mobile.css is untouched);
+ * only its small uppercase labels are lifted to the 13px floor.
+ * ==================================================================================== */
+
+/* -- Labels, buttons, links -- */
+.atelier-kicker, .atelier-project-meta .atelier-kicker { font-size:var(--text-label); letter-spacing:var(--tracking-label); line-height:1.5; }
+.atelier-kicker { margin-bottom:18px; }
+.atelier-button, .atelier-text-link, .atelier-enquiry-routes a { font-size:var(--text-meta); letter-spacing:.01em; }
+.atelier-hero-foot>span, .atelier-hero-foot a span { font-size:var(--text-label); letter-spacing:var(--tracking-label); }
+
+/* -- Headings -- */
+.atelier h2, .atelier-intro h2, .atelier-craft-copy h2 { font-size:var(--text-h2); line-height:1.04; letter-spacing:-.03em; }
+.atelier-contact h2 { font-size:var(--text-h2-feature); }
+.atelier-project-meta h3, .atelier-service li h3, .home-showcase h3, .home-process h3 { font-size:var(--text-h3); line-height:var(--leading-tight); }
+.home-card h4, .home-needs-grid h3 { font-size:var(--text-h4); line-height:1.15; }
+.home-more-title { font-size:var(--text-h3); line-height:var(--leading-tight); }
+.atelier-questions details h3 { font-size:var(--text-body); }
+
+/* -- Body copy: 17px, one measure -- */
+.atelier-intro-bottom p, .atelier-craft-copy>p:not(.atelier-kicker), .atelier-service>div>p:not(.atelier-kicker),
+.atelier-materials-copy>p:not(.atelier-kicker), .home-proof-text, .home-more-text, .home-calico-text,
+.home-aftercare p:not(.atelier-kicker), .atelier-questions details p {
+  font-size:var(--text-body); line-height:var(--leading-body); max-width:var(--measure-copy);
+}
+.atelier-contact>p:not(.atelier-kicker) { font-size:var(--text-lede); line-height:var(--leading-lede); }
+.atelier-project>p, .atelier-service li p, .home-process p, .home-needs-grid p, .home-card p, .atelier-craft-copy dd, .home-record ul { font-size:16px; line-height:1.6; }
+.atelier-craft-copy dt { font-size:var(--text-body); }
+
+/* -- Captions, credits, dates, small print: 14px -- */
+.atelier-project>p.atelier-credit, .home-showcase-credit, .atelier-project-meta>span, .atelier-film-grid .caption,
+.atelier-contact-email, .atelier-ai-note, .atelier-explore-studio>summary, .atelier-material-links a, .home-calico li a, .home-partner-line {
+  font-size:var(--text-meta);
+}
+.atelier-craft-image>p, .atelier-materials-image>span { font-size:var(--text-label); letter-spacing:var(--tracking-label); }
+.atelier-service-number { font-size:var(--text-label); }
+
+/* -- Hotel band -- */
+.atelier-hotel-band>p { font-size:var(--text-label); }
+.atelier-hotel-band a>span { font-size:clamp(1.375rem, 1.1rem + .7vw, 1.75rem); }
+.atelier-hotel-band small { font-size:var(--text-label); letter-spacing:.1em; }
+
+/* -- Section rhythm and alignment -- */
+.atelier-section { padding-block:var(--space-section); }
+.atelier-intro { padding-block:var(--space-section); }
+.home-aftercare-inner { padding-block:var(--space-section); }
+.atelier-section-head { margin-bottom:40px; }
+.atelier-section-head>p, .home-proof-text { max-width:var(--measure-copy); }
+
+/* -- Restored sections (from 1b387c6, #29), on the same scale -- */
+.atelier-hotel-band .home-partner-line { grid-column:1 / -1; margin:6px 0 0; text-align:center; }
+.home-partner-line a { color:#65573f; text-decoration:underline; text-underline-offset:5px; }
+.home-facts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:44px 0 0; padding:26px 0 0; border-top:1px solid #d5cebf; }
+.home-facts dt { font-size:var(--text-label); letter-spacing:var(--tracking-label); text-transform:uppercase; color:#65573f; }
+.home-facts dd { margin:8px 0 0; font-family:var(--font-serif); font-size:var(--text-h4); line-height:1.2; color:#292a23; }
+.home-pillars { margin:22px 0 0; font-size:var(--text-label); letter-spacing:var(--tracking-label); text-transform:uppercase; color:#65573f; }
+.home-proof-text { margin:0; color:var(--atelier-muted); }
+.home-proof-strip { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(240px,20rem); gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px; }
+.home-proof-strip figure { margin:0; scroll-snap-align:start; }
+.home-proof-strip img { width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; display:block; }
+.home-more { margin-top:var(--space-section); border-top:1px solid #d5cebf; padding-top:40px; }
+.home-more-title { margin:0; max-width:720px; }
+.home-more-text { margin:16px 0 0; color:var(--atelier-muted); }
+.home-more-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:40px 24px; margin-top:40px; }
+.home-card { margin:0; }
+.home-card-image { display:block; overflow:hidden; background:var(--color-media-fill); }
+.home-card-image img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block; transition:transform 600ms ease; }
+.home-card-image:hover img { transform:scale(1.03); }
+.home-card h4 { margin:16px 0 0; font-family:var(--font-serif); font-weight:500; }
+.home-card h4 a { color:inherit; text-decoration:none; }
+.home-card p { margin:6px 0 0; color:var(--atelier-muted); }
+.home-record { margin-top:44px; border-top:1px solid #d5cebf; padding-top:22px; }
+.home-record ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:12px 32px; }
+.home-record a { color:#292a23; text-decoration:underline; text-underline-offset:4px; }
+.home-record span { color:var(--atelier-muted); }
+.home-process h2, .home-calico h2, .home-needs h2 { max-width:900px; }
+.home-process ol { list-style:none; padding:0; margin:48px 0 0; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:28px; }
+.home-process li { border-top:1px solid #d5cebf; padding-top:18px; }
+.home-process h3 { margin:10px 0 10px; }
+.home-process p { margin:0; color:var(--atelier-muted); }
+.home-calico-text { margin:22px 0 0; color:var(--atelier-muted); }
+.home-calico ul { list-style:none; margin:30px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0 40px; border-top:1px solid #bcb39f; max-width:980px; }
+.home-calico li a { display:flex; justify-content:space-between; gap:16px; min-height:44px; align-items:center; padding:14px 0; border-bottom:1px solid #c9bfad; color:#303329; text-decoration:none; }
+.home-aftercare { background:var(--atelier-olive); color:#f4f0e8; margin:0 24px; }
+.home-aftercare-inner { max-width:1380px; margin:auto; padding-inline:6%; }
+.home-aftercare h2 { color:#fffdf8; max-width:820px; }
+.home-aftercare p:not(.atelier-kicker) { margin:24px 0 18px; color:#e4e0d5; }
+.home-needs-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:24px; margin-top:44px; }
+.home-needs-grid a { display:block; border-top:1px solid #a99b82; padding:18px 0 4px; color:inherit; text-decoration:none; }
+.home-needs-grid h3 { margin:0 0 8px; }
+.home-needs-grid p { margin:0; color:var(--atelier-muted); }
+.home-needs-grid a:hover h3 { text-decoration:underline; text-underline-offset:4px; }
+
+/* -- Showcase: large finished-room photographs, full bleed, straight under the hero -- */
+.home-showcase { padding:56px 0 64px; }
+.home-showcase-head { max-width:1380px; margin:0 auto 32px; padding-inline:6%; }
+.home-showcase-head h2 { margin:0; }
+.home-showcase-strip { list-style:none; margin:0; padding:0 24px 16px; display:grid; grid-auto-flow:column; grid-auto-columns:minmax(320px,34vw); gap:24px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:24px; overscroll-behavior-x:contain; }
+.home-showcase-item { scroll-snap-align:start; margin:0; }
+.home-showcase-image { display:block; overflow:hidden; background:var(--color-media-fill); }
+.home-showcase-image .media-frame, .home-showcase-image picture { display:block; }
+.home-showcase-image img { display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; transition:transform 600ms ease; }
+.home-showcase-image:hover img { transform:scale(1.025); }
+.home-showcase-place { margin:18px 0 6px; font-size:var(--text-label); letter-spacing:var(--tracking-label); text-transform:uppercase; color:#65573f; }
+.home-showcase h3 { margin:0; font-weight:500; }
+.home-showcase h3 a { color:inherit; text-decoration:none; }
+.home-showcase h3 a:hover { text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:1px; }
+.home-showcase-credit { margin:8px 0 0; color:var(--atelier-muted); line-height:1.5; max-width:34ch; }
+
+@media(max-width:1023px){
+  .home-more-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .home-process ol, .home-needs-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .home-showcase-strip { grid-auto-columns:minmax(300px,48vw); }
+}
+@media(max-width:767px){
+  .atelier-kicker { font-size:var(--text-label); margin-bottom:14px; }
+  .atelier h2 { font-size:var(--text-h2); }
+  .atelier-contact h2 { font-size:var(--text-h2-feature); }
+  .atelier-project-meta h3 { font-size:var(--text-h3); }
+  .atelier-project-meta>span { font-size:var(--text-meta); }
+  .atelier-hotel-band small { font-size:var(--text-label); }
+  .atelier-intro-bottom p { font-size:var(--text-body); }
+  .site-header .header-mobile .nav-link { font-size:14px; }
+  .home-facts { grid-template-columns:1fr; gap:16px; }
+  .home-more-grid, .home-process ol, .home-needs-grid, .home-record ul, .home-calico ul { grid-template-columns:1fr; }
+  .home-aftercare { margin:0 12px; }
+  .home-aftercare-inner { padding-inline:24px; }
+  .home-showcase { padding:44px 0 48px; }
+  .home-showcase-head { padding-inline:24px; margin-bottom:24px; }
+  .home-showcase-strip { padding-inline:12px; scroll-padding-inline:12px; gap:14px; grid-auto-columns:84vw; }
+}
+/* -- Hero: photograph, crop and layout unchanged. The labels are lifted to the 13px floor with
+ *    their line boxes held at the old heights, so nothing in the hero moves. -- */
+.atelier .atelier-hero .atelier-kicker { line-height:16px; margin-bottom:22px; }
+.site-header .nav-link, .site-header .header-action { font-size:var(--text-label); }
+@media(max-width:767px){
+  .atelier .atelier-hero .atelier-kicker { line-height:14.4px; margin-bottom:16px; }
+  .atelier .atelier-hero-actions .atelier-text-link, .atelier .atelier-hero-actions .atelier-button, .atelier .atelier-hero-foot a { font-size:var(--text-label); }
+}
+/* The hero sentence keeps its own sizes from hero-mobile.css (16px on desktop, 14px on phones), so the
+ * hero copy sits exactly where it did; only the short-screen 12px step is lifted to the 13px floor. */
+@media(max-width:767px) and (max-height:700px){
+  .atelier .atelier-hero .atelier-hero-description { font-size:var(--text-label); line-height:1.5; }
+}
+.atelier .atelier-hero-actions .atelier-button, .atelier .atelier-hero-actions .atelier-text-link { font-size:var(--text-label); }
+@media(prefers-reduced-motion:reduce){ .home-card-image img, .home-showcase-image img { transition:none; } }
