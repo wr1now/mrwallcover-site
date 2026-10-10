@@ -77,7 +77,7 @@ test('/for-ai/ states the facts from facts.json, links every published case stud
   // No endorsement wording, no phone, no draft route.
   assert.doesNotMatch(html, /approved by|accredited by|endorsed by|recommended by/i);
   assert.doesNotMatch(html, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b/);
-  assert.doesNotMatch(html, /penny-morrison|biltmore-mayfair|doubletree-victoria/);
+  assert.doesNotMatch(html, /penny-morrison|biltmore-mayfair/);
   // Every published case study and guide is linked; every draft is not.
   for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
     const text = await readFile(`src/content/case-studies/${name}`, 'utf8');
