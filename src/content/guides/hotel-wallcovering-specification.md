@@ -13,6 +13,7 @@ authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-09"
 description: "Specifying wallcoverings for an occupied hotel: cleaning and durability, the sample room, batch control, phasing around guests, product documents, spares and handover."
+metaDescription: "Specifying wallcoverings for an occupied hotel: cleaning and durability, the sample room, batch control, phasing around guests, spares and handover."
 shortTitle: "Hotel wallcoverings"
 order: 7
 relatedMaterials: ["contract-vinyl", "acoustic", "grasscloth-and-weaves"]

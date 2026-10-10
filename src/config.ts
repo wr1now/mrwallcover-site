@@ -6,8 +6,9 @@
  * The phone number is not in the repository. It is read from the SITE_PHONE
  * environment variable at build time; see src/lib/phone.ts.
  *
- * No award line is published anywhere on the site until the award's name is
- * supplied (approved by Dorin, 9 October 2026). Do not add one here.
+ * The one award line is built from facts.award in src/data/facts.json, with
+ * its full name and organiser (rule of 9 October 2026: never an unnamed award).
+ * Do not add one here.
  */
 import facts from './data/facts.json';
 
