@@ -55,7 +55,7 @@ Photographs are in `public/media/`. Third-party photographs retain their recorde
 
 ## Enquiry form
 
-The public site posts to FormSubmit, which forwards the note to `info@mrwallcover.com`. The endpoint in `src/config.ts` is FormSubmit’s alias, not a mailto link. The visitor chooses email or phone. There is no four-second wait.
+The public site posts to FormSubmit, which forwards the note to `info@mrwallcover.com`. The endpoint in `src/config.ts` is FormSubmit’s alias, not a mailto link. The visitor chooses email or phone. There is no four-second wait. Attachments are optional: JPEG, PNG, WebP, HEIC, HEIF or PDF, up to eight files and 10 MB combined on FormSubmit. The optional private API retains its separate 12 MiB/file and 36 MiB total limits. Browser selection checks give feedback before submission; upload content inspection remains the receiving provider’s responsibility.
 
 A private lead store exists for when you run it yourself. It is off in the GitHub Pages build. Nothing on Pages can save a lead to disk.
 
