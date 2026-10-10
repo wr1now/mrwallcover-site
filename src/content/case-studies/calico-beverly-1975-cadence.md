@@ -15,18 +15,18 @@
   "metaDescription": "Cadence in Oxblood by Calico Wallpaper, hung in a day for BEVERLY 1975 at The Lavery, Cromwell Place, Brompton Design District 2026.",
   "group": "design-weeks",
   "standfirst": "A feature wall for New York homewares shop BEVERLY 1975's first London presentation.",
-  "hero": "beverly-06",
+  "hero": "beverly-08",
   "gallery": [
-    {
-      "id": "beverly-06",
-      "credit": null
-    },
     {
       "id": "beverly-08",
       "credit": null
     },
     {
-      "id": "beverly-04",
+      "id": "beverly-06",
+      "credit": null
+    },
+    {
+      "id": "beverly-07",
       "credit": null
     },
     {
@@ -34,7 +34,7 @@
       "credit": null
     },
     {
-      "id": "beverly-07",
+      "id": "beverly-04",
       "credit": null
     },
     {
@@ -43,7 +43,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-09"
+  "updated": "2026-10-10"
 }
 ---
 

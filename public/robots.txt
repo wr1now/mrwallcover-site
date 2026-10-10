@@ -64,3 +64,4 @@ Allow: /
 Disallow: /thank-you/
 
 Sitemap: https://www.mrwallcover.com/sitemap-index.xml
+Sitemap: https://www.mrwallcover.com/sitemap.xml

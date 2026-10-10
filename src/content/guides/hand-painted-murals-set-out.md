@@ -11,7 +11,7 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-09"
+updated: "2026-10-10"
 description: "How a scenic or hand-painted paper is set out: elevations, the focal point, panel sequence, doors and corners, finished dimensions and when the survey has to happen."
 shortTitle: "Hand-painted papers and murals"
 order: 6
@@ -19,7 +19,7 @@ relatedMaterials: ["hand-painted", "murals"]
 relatedGuides: ["designer-specification-checklist", "wall-preparation", "installation-cost"]
 ctaLabel: "Discuss a scenic layout"
 ctaHref: "/contact/?audience=designer&intent=install"
-sources: [{"label": "de Gournay: wallpaper hanging instructions (2026)", "url": "https://degournay.com/uploads/technical/document/2026_Hanging_Instructions-After-2025.pdf"}, {"label": "Rebel Walls: bespoke wallpaper", "url": "https://rebelwalls.com/uk/bespoke-wallpaper"}, {"label": "Rebel Walls: how to measure for a custom mural", "url": "https://rebelwalls.com/en-ca/how-to-measure-for-wallpaper"}]
+sources: [{"label": "de Gournay: wallpaper hanging instructions (2026)", "url": "https://degournay.com/uploads/technical/document/2026_Hanging_Instructions-After-2025.pdf"}, {"label": "Rebel Walls: custom wallpaper", "url": "https://rebelwalls.com/uk/custom-wallpaper"}, {"label": "Rebel Walls: how to measure for a custom mural", "url": "https://rebelwalls.com/en-ca/how-to-measure-for-wallpaper"}]
 ---
 
 When should a scenic paper be planned? Before it is ordered, and before the room's dimensions are final. A hand-painted or panoramic paper is a composition, not a repeating pattern: the panels are made to the elevations, and the question is not whether they cover the wall but what remains visible once the doors, the corners and the furniture are taken into account. Change the plan after production and the remedies are cropping or re-ordering; a hand-painted set cannot be stretched to make up the difference.
@@ -44,7 +44,7 @@ Every interruption removes part of the picture. Decide where the loss is least p
 
 Not a hand-painted or hand-printed set. Its panels are made at a fixed width, numbered and hung in sequence. If the wall and the set disagree, the choices are to crop a designed edge, add panels or plain ground that the studio actually offers, or change the wall; pulling the image to fit is not one of them. On the wall, forcing a pasted panel to close a gap is a fault: [de Gournay](https://degournay.com/uploads/technical/document/2026_Hanging_Instructions-After-2025.pdf) warns that it "stretches the wallcovering and upon drying will lead to shrinkage".
 
-Some digital prints can be adjusted, and then only in the file, before printing. A made-to-measure digital mural is printed to the dimensions you supply: [Rebel Walls](https://rebelwalls.com/uk/bespoke-wallpaper), for example, prints to the measurements ordered, lets you crop the image in its editor and accepts only high-resolution images, and [asks for 10 cm](https://rebelwalls.com/en-ca/how-to-measure-for-wallpaper) to be added to the width and height for trimming. Whether a particular image can be scaled, and by how much, depends on its resolution and the supplier, so ask them to confirm it. Keep the proportions: a scene scaled up loses the detail you chose it for, and one distorted to a new shape looks wrong at once.
+Some digital prints can be adjusted, and then only in the file, before printing. A made-to-measure digital mural is printed to the dimensions you supply: [Rebel Walls](https://rebelwalls.com/uk/custom-wallpaper), for example, prints to the measurements ordered, lets you crop the image in its editor and accepts only high-resolution images, and [asks for 10 cm](https://rebelwalls.com/en-ca/how-to-measure-for-wallpaper) to be added to the width and height for trimming. Whether a particular image can be scaled, and by how much, depends on its resolution and the supplier, so ask them to confirm it. Keep the proportions: a scene scaled up loses the detail you chose it for, and one distorted to a new shape looks wrong at once.
 
 ## Should the dimensions be the finished dimensions?
 

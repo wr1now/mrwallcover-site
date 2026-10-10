@@ -48,7 +48,7 @@
       ],
       "materialKey": "Grasscloth and natural weaves",
       "projects": [],
-      "imageId": "browns-hotel-mayfair-08",
+      "imageId": null,
       "faq": [
         {
           "id": "gc-seams",
@@ -187,7 +187,7 @@
     {
       "slug": "acoustic-wallcovering-installation",
       "name": "Acoustic wallcovering installation",
-      "title": "Acoustic Wallcovering & Panel Installer London | Mr Wallcover",
+      "title": "Acoustic Wallcoverings & Panels, London | Mr Wallcover",
       "description": "Acoustic wallcovering and acoustic panel installation in London hotels, offices and homes. Hung to the maker's instruction so the face keeps its performance.",
       "heading": "Acoustic wallcovering installation",
       "lede": "Acoustic wallcoverings and panels for hotels, offices, restaurants and homes.",
@@ -212,7 +212,7 @@
     {
       "slug": "architectural-film-wrapping",
       "name": "Architectural & furniture film wrapping",
-      "title": "Architectural & Furniture Film Wrapping London | Mr Wallcover",
+      "title": "Architectural & Furniture Wrapping, London | Mr Wallcover",
       "description": "Architectural and furniture film wrapping in London: doors, joinery, lift interiors, reception desks and furniture refinished in place. Survey to aftercare.",
       "heading": "Architectural & furniture film wrapping",
       "lede": "Self-adhesive architectural films that refinish doors, joinery, lifts, counters and furniture in place, without stripping out or replacing them.",
@@ -315,7 +315,7 @@
     {
       "slug": "joinery-wallcoverings-and-panels",
       "name": "Joinery wallcoverings & bespoke panels",
-      "title": "Wallcoverings on Joinery & Bespoke Panels London | Mr Wallcover",
+      "title": "Wallcoverings on Joinery & Panels, London | Mr Wallcover",
       "description": "Wallcoverings on doors, wardrobes and panelling, film-wrapped panels, and bespoke wall panels and joinery in London. Design to install, as one managed package.",
       "heading": "Joinery, panels and the finish between them",
       "lede": "Wallcoverings carried onto doors, wardrobes, panelling and bespoke furniture. Panels wrapped in specialist architectural film. Bespoke wall panels and joinery made to achieve a specific finish, from design through manufacture to install.",
@@ -333,7 +333,7 @@
         "raffles-london-the-owo",
         "trematon-castle"
       ],
-      "imageId": "lee-broom-01",
+      "imageId": null,
       "faq": [
         {
           "id": "jp-doors",
@@ -393,7 +393,7 @@
         "pimlico-st-georges-square",
         "inverness-terrace"
       ],
-      "imageId": "pimlico-st-georges-square-exterior-01",
+      "imageId": "pimlico-st-georges-square-exterior-11",
       "faq": [
         {
           "id": "ex-scaffold",

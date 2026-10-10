@@ -77,7 +77,7 @@ test('/for-ai/ states the facts from facts.json, links every published case stud
   // No endorsement wording, no phone, no draft route.
   assert.doesNotMatch(html, /approved by|accredited by|endorsed by|recommended by/i);
   assert.doesNotMatch(html, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b/);
-  assert.doesNotMatch(html, /penny-morrison|biltmore-mayfair|doubletree-victoria/);
+  assert.doesNotMatch(html, /penny-morrison|biltmore-mayfair/);
   // Every published case study and guide is linked; every draft is not.
   for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
     const text = await readFile(`src/content/case-studies/${name}`, 'utf8');
@@ -333,6 +333,8 @@ test('robots.txt names every required crawler with the same Disallow lines as th
     assert.deepEqual(group!.rules, star!.rules, `${bot} must carry exactly the default rules`);
   }
   assert.match(robots, /^Sitemap: https:\/\/www\.mrwallcover\.com\/sitemap-index\.xml$/m);
+  assert.match(robots, /^Sitemap: https:\/\/www\.mrwallcover\.com\/sitemap\.xml$/m);
+  assert.equal(await readFile('dist/sitemap.xml', 'utf8'), await readFile('dist/sitemap-index.xml', 'utf8'), '/sitemap.xml is a copy of the sitemap index');
   assert.match(robots, /AI-training controls[\s\S]*GPTBot[\s\S]*Google-Extended[\s\S]*Applebot-Extended[\s\S]*ClaudeBot/, 'comment naming the training controls');
   assert.doesNotMatch(robots, /Disallow: \/\s*$/m, 'nothing is blocked site-wide');
 });
@@ -522,7 +524,7 @@ test('every published page shows one author and date line: the page\'s own date 
   }
   const problems: string[] = [];
   for (const page of await publishedPages()) {
-    const main = page.html.match(/<main id="main">([\s\S]*?)<\/main>/)![1];
+    const main = page.html.match(/<main id="main"[^>]*>([\s\S]*?)<\/main>/)![1];
     const stamps = [...main.matchAll(/By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · (Last updated|Last reviewed) <time datetime="(\d{4}-\d{2}-\d{2})" data-page-updated="(updated|reviewed)">(\d{1,2} [A-Z][a-z]+ \d{4})<\/time>/g)];
     if (stamps.length !== 1) {
       problems.push(`${page.pathname}: ${stamps.length} author/date lines`);

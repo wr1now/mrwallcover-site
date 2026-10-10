@@ -5,7 +5,8 @@
  * the source metadata.
  *
  * The manifest (scripts/credited/<name>.json) records, per image id: the original image URL,
- * the page it was published on, the alt text, and the credit for the whole set. The credit
+ * the page it was published on, the alt text, and the credit for the whole set. A frame may
+ * carry its own credit, licence and licenceUrl (Wikimedia Commons photographs differ per image). The credit
  * must also be set on the case-study gallery entry and in docs/asset-rights.md.
  *
  *   node scripts/import-credited.mjs <manifest.json> [source-dir]
@@ -46,8 +47,10 @@ async function original(frame, sourceDir) {
 
 async function encode(id, input) {
   const image = sharp(input).rotate();
-  await image.clone().resize({ width: 1800, withoutEnlargement: true }).webp({ quality: 78 }).toFile(path.join(imgOut, `${id}.webp`));
-  await image.clone().resize({ width: 1800, withoutEnlargement: true }).jpeg({ quality: 80, mozjpeg: true }).toFile(path.join(imgOut, `${id}.jpg`));
+  // Long side at most 2400px and width at most 1800px, so a tall portrait does not come out 2700px high.
+  const full = { width: 1800, height: 2400, fit: 'inside', withoutEnlargement: true };
+  await image.clone().resize(full).webp({ quality: 78 }).toFile(path.join(imgOut, `${id}.webp`));
+  await image.clone().resize(full).jpeg({ quality: 80, mozjpeg: true }).toFile(path.join(imgOut, `${id}.jpg`));
   await image.clone().resize({ width: 800, withoutEnlargement: true }).webp({ quality: 74 }).toFile(path.join(thumbOut, `${id}-800.webp`));
   await image.clone().resize({ width: 800, withoutEnlargement: true }).jpeg({ quality: 76, mozjpeg: true }).toFile(path.join(thumbOut, `${id}-800.jpg`));
   return image;
@@ -100,7 +103,7 @@ for (const [id, frame] of Object.entries(manifest.images)) {
     thumbHeight: thumb.height,
     hasFull: true,
     alt: frame.alt,
-    manifestNote: `${manifest.note}; credit ${manifest.credit}; source ${frame.page}`,
+    manifestNote: `${frame.note ?? manifest.note}; credit ${frame.credit ?? manifest.credit}${frame.licence ? `; licence ${frame.licence} ${frame.licenceUrl}` : ''}; source ${frame.page}`,
     placeholder: `data:image/webp;base64,${blur.toString('base64')}`,
   };
   console.log(id, full.width, full.height);

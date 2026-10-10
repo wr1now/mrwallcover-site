@@ -13,10 +13,27 @@
   "metaDescription": null,
   "group": null,
   "standfirst": "Main wallcoverings contractor for the only hotel on the Silverstone Circuit.",
-  "hero": null,
-  "gallery": [],
+  "hero": "hilton-garden-inn-silverstone-press-01",
+  "gallery": [
+    {
+      "id": "hilton-garden-inn-silverstone-press-01",
+      "credit": "Hilton Garden Inn Silverstone from outside. A view of the building, not of our work. Photography: Hilton."
+    },
+    {
+      "id": "hilton-garden-inn-silverstone-press-02",
+      "credit": "A guest room as published by Hilton. A view of the hotel, not of our work. Photography: Hilton."
+    },
+    {
+      "id": "silverstone-circuit-commons-01",
+      "credit": "The circuit during the 2022 British Grand Prix. A view of the venue, not of our work. Photography: fuji.tim / Wikimedia Commons (CC BY-SA 2.0)."
+    },
+    {
+      "id": "silverstone-circuit-commons-02",
+      "credit": "A car on the circuit during the 2022 British Grand Prix weekend. A view of the venue, not of our work. Photography: Jen Ross / Wikimedia Commons (CC BY 2.0)."
+    }
+  ],
   "published": "2026-10-09",
-  "updated": "2026-10-09"
+  "updated": "2026-10-10"
 }
 ---
 
@@ -50,3 +67,12 @@ To act as main wallcoverings contractor on a new-build, 197-room hotel due to op
 ## Outcome
 
 A trackside hotel that opened in time for the 2022 British Grand Prix, its rooms finished to one consistent standard. Wallcovering on this scale is rarely noticed when it is done well, and that is precisely the point.
+
+## Photographs on this page
+
+These are photographs of the hotel and the circuit by other photographers, credited below. They show the venue, not our work.
+
+- Hilton Garden Inn Silverstone from outside: photograph published by Hilton in its [July 2023 press release](https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack).
+- A guest room: photograph published by Hilton in its [July 2023 press release](https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack).
+- The circuit during the 2022 British Grand Prix: photograph by fuji.tim, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ferrari%27s_Charles_Leclerc_battles_for_the_podium_with_Mercedes%27_Lewis_Hamilton_at_the_2022_British_Grand_Prix_at_Silverstone._(52196620083).jpg). Resized for the web.
+- A car on the circuit during the 2022 British Grand Prix weekend: photograph by Jen Ross, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2022_British_Grand_Prix_(52382657159).jpg). Resized for the web.
