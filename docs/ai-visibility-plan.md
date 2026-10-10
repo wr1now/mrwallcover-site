@@ -206,7 +206,7 @@ Assistants match a business by its name, place, founder and a description that s
 | Name | Mr Wallcover | Always this spelling. On first mention anywhere, add "London" and "founded by Dorin Burcus". |
 | One-line description | One sentence in the fact sheet, which the home page description now uses | Check the sentence in the fact sheet, then reuse it unchanged everywhere |
 | Legal identity | "Dorin Burcus, trading as Mr Wallcover", on the privacy page only | Decision 1, then state it on the About page and in the structured data |
-| Trading since | Not stated. "In the trade since 2014" describes you, not the name. | Add the year the name was first used |
+| Trading since | Not stated. "In the trade since 2012" describes you, not the name. | Add the year the name was first used |
 | Location | "London" | A service-area business: no public street address, a list of boroughs for listings |
 | Phone | Read from a build secret since 18:13. Click-to-reveal for people, hidden from machines | Decision 2 |
 | Outside profiles | Instagram only | Add each profile from workstream 2 as it goes live |
