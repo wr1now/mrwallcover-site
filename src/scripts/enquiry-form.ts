@@ -1,3 +1,4 @@
+import { validateAttachments } from '../lib/enquiry-attachments.ts';
 import { preferencesFromJSON, preferenceSummary, PREFERENCE_KEY } from '../lib/material-advice.ts';
 import { emptyEnquiry, PROFESSIONAL_AUDIENCES, makeReference, sanitiseEvent, validateEnquiry, type EnquiryFields } from '../lib/enquiry.ts';
 
@@ -128,6 +129,14 @@ export function bindEnquiryForm(form: HTMLFormElement) {
   let idempotencyKey = '';
   let sending = false;
 
+  // A visitor can return from the provider's CAPTCHA with the page restored from the back/forward cache.
+  window.addEventListener('pageshow', (event) => {
+    if (!event.persisted) return;
+    sending = false;
+    const submit = form.querySelector<HTMLButtonElement>('[type="submit"]');
+    if (submit) submit.disabled = false;
+  });
+
   const showStep = (index: number) => {
     stepIndex = index;
     steps.forEach((step, i) => {
@@ -135,6 +144,10 @@ export function bindEnquiryForm(form: HTMLFormElement) {
     });
     const label = form.querySelector<HTMLElement>('[data-step-label]');
     if (label) label.textContent = `Step ${index + 1} of ${steps.length}`;
+    const back = form.querySelector<HTMLButtonElement>('[data-step-back]');
+    const next = form.querySelector<HTMLButtonElement>('[data-step-next]');
+    if (back) back.disabled = index === 0;
+    if (next) next.hidden = index === steps.length - 1;
     track('project_step_complete', { step: index + 1, intent: intent?.value || '' });
   };
 
@@ -198,9 +211,25 @@ export function bindEnquiryForm(form: HTMLFormElement) {
 
   const fileInput = form.querySelector<HTMLInputElement>('input[type="file"]');
   const fileList = form.querySelector<HTMLElement>('[data-file-list]');
+  const attachmentProvider = form.dataset.leadApi ? 'lead-api' : form.dataset.provider || '';
+  const attachmentError = () => validateAttachments([...(fileInput?.files || [])], attachmentProvider);
+  const showAttachmentError = () => {
+    const error = attachmentError();
+    const slot = form.querySelector<HTMLElement>('[data-error="attachment"]');
+    if (slot) slot.textContent = error || '';
+    if (error) fileInput?.setAttribute('aria-invalid', 'true');
+    else fileInput?.removeAttribute('aria-invalid');
+    const summary = form.querySelector<HTMLElement>('[data-error-summary]');
+    if (summary && !summary.hidden) {
+      const result = validateEnquiry(readForm(form));
+      clearInvalid(form);
+      showErrors(form, { ...(!result.ok ? result.errors : {}), ...(error ? { attachment: error } : {}) });
+    }
+  };
   const renderFiles = () => {
     if (!fileInput || !fileList) return;
     const files = [...(fileInput.files || [])];
+    showAttachmentError();
     fileList.innerHTML = '';
     files.forEach((file, index) => {
       const row = document.createElement('li');
@@ -227,13 +256,15 @@ export function bindEnquiryForm(form: HTMLFormElement) {
     if (shortlist) shortlist.value = form.dataset.variant === 'aftercare' ? '' : shortlistValue();
     const fields = readForm(form);
     const validated = validateEnquiry(fields);
+    const uploadError = attachmentError();
     clearInvalid(form);
-    if (!validated.ok) {
+    if (!validated.ok || uploadError) {
       event.preventDefault();
-      if (validated.spam) return;
-      showErrors(form, validated.errors);
+      if (!validated.ok && validated.spam) return;
+      showErrors(form, { ...(!validated.ok ? validated.errors : {}), ...(uploadError ? { attachment: uploadError } : {}) });
       return;
     }
+    showErrors(form, {});
     if (!idempotencyKey) idempotencyKey = crypto.randomUUID();
     const keyField = form.querySelector<HTMLInputElement>('[name="idempotencyKey"]');
     if (keyField) keyField.value = idempotencyKey;

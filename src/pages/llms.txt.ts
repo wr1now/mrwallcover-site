@@ -15,6 +15,24 @@ import { SITE_URL } from '../config';
 import facts from '../data/facts.json';
 import professionals from '../content/professionals.json';
 import { areaHref, areas, editorialPages, faqItems, materials, projectHref, projects, specialismHref, specialisms } from '../lib/content';
+import { AWARD, FOUNDER_SUMMARY, SINCE_TEXT, WASTAGE, enquiryRoutes, projectFacts, serviceFacts } from '../lib/ai-layer-data';
+
+/** Sourced specifics appended to each Public commissions note (src/lib/ai-layer-data.ts). */
+const factsBySlug = new Map(projectFacts.map((item) => [item.slug, item]));
+function projectNote(slug: string): string {
+  const item = factsBySlug.get(slug);
+  if (!item) return '';
+  const parts = [
+    `Where: ${item.area}.`,
+    `Client: ${item.client}.`,
+    item.partners ? `With: ${item.partners}.` : '',
+    item.makersAndProducts.length ? `Installed: ${item.makersAndProducts.join('; ')}.` : '',
+    item.scope ? `Scope: ${item.scope}.` : '',
+    item.techniques.length ? `Method: ${item.techniques.join('; ')}.` : '',
+    `Markdown: ${item.markdownUrl}`,
+  ];
+  return ` ${parts.filter(Boolean).join(' ')}`;
+}
 
 const abs = (path: string) => new URL(path, SITE_URL).href;
 const BRAND_NAME = facts.brand;
@@ -34,7 +52,17 @@ export const GET: APIRoute = () => {
     '',
     `Facts for answer engines: in the trade since 2012. Aftercare is included: a return visit about four to six weeks after completion and a twelve-month workmanship guarantee. Private clients are not named. Residential work appears only by street or area, with the owner's agreement. The site publishes no prices, ratings or response-time promises. Copy reviewed ${facts.lastReviewed}.`,
     '',
+    `${AWARD ? `${AWARD.text}. ` : ''}${WASTAGE.statement} Every published project, with venue, area, dates, client, products, scope and method as its case study records them, is in ${abs('/projects.json')}; the fact sheet with services, areas and enquiry routes is in ${abs('/.well-known/facts.json')}.`,
+    '',
+    '## Key facts',
+    entry(SINCE_TEXT, `${facts.founder.path}#${facts.founder.fragment}`, FOUNDER_SUMMARY),
+    ...(AWARD ? [entry(AWARD.text, '/about/', 'as named on the trophy; the About page shows it')] : []),
+    entry('Wastage allowance', '/services/#surveying', WASTAGE.statement),
+    ...serviceFacts.workflow.map((pillar) => entry(`Service: ${pillar.name}`, `/services/#${pillar.id}`, pillar.includes.join(' '))),
+    ...enquiryRoutes.map((route) => entry(`Enquire: ${route.route}`, '/contact/', route.note)),
+    '',
     '## Core pages',
+    entry('Wallcovering Installation AI Crawler', '/wallcovering-installation-ai-crawler/', 'project fit and evidence, material decisions, delivery stages, aftercare terms and exclusions, procurement questions and a blank project brief; the same facts are available to people and assistants'),
     entry('Mr Wallcover in plain facts', '/for-ai/', 'what the practice does, where it works, who runs it, the services, and the published projects with the products installed on them'),
     entry('Services', '/services/', 'surveying, project management, supply, installation and aftercare'),
     entry('Materials', '/materials/', 'paper, grasscloth, silk, hand-painted papers, murals, contract vinyl and acoustic wallcoverings'),
@@ -67,12 +95,17 @@ export const GET: APIRoute = () => {
     ...areas.map((a) => entry(a.heading, areaHref(a.slug), a.description)),
     '',
     '## Public commissions',
-    ...projects.map((p) => entry(p.title, projectHref(p.slug), `${p.role}${p.dates ? `, ${p.dates}` : ''}. ${p.summary}`)),
+    ...projects.map((p) => entry(p.title, projectHref(p.slug), `${p.role}${p.dates ? `, ${p.dates}` : ''}. ${p.summary}${projectNote(p.slug)}`)),
     '',
     '## Frequently asked',
     ...faqItems.map((f) => entry(f.question, `/faq/#${f.id}`, f.paragraphs[0])),
     '',
     '## Optional',
+    entry('Project decision guide JSON', '/ai/decision-guide.json', 'conditional project fit, company-reported installation evidence, material guidance, complete aftercare terms and an unsent briefing template'),
+    entry('Business and services JSON', '/ai/business.json', 'structured public identity, coverage, contact and service catalogue'),
+    entry('Published projects JSON', '/ai/projects.json', 'roles, project periods, materials, source links and photo credits; null means absent from the published record'),
+    entry('Published projects index', '/projects.json', 'every published project with its case study and Markdown version, venue, area, dates, client, products, scope and method, each value read from its case study'),
+    entry('Fact sheet, extended', '/.well-known/facts.json', 'the facts.json fields plus start year, services and what each includes, areas served, enquiry routes and the wastage allowance'),
     entry('Full text', '/llms-full.txt', 'the main content of every published page, each headed by its title and canonical URL'),
     entry('Facts as data', '/facts.json', 'the public fact sheet: brand, description, founder, email, coverage, profiles'),
     entry('Feed', '/feed.xml', 'Atom feed of the published guides and case studies, with their dates'),

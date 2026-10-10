@@ -47,154 +47,249 @@ function weaveTexture(THREE: typeof import('three'), preset: Preset) {
   return texture;
 }
 
-export async function startStudio(root: HTMLElement) {
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.effects === 'reduced';
-  const fallback = root.querySelector<HTMLElement>('[data-studio-fallback]');
-  const stage = root.querySelector<HTMLElement>('[data-studio-stage]');
-  const note = root.querySelector<HTMLElement>('[data-studio-note]');
-  const status = root.querySelector<HTMLElement>('[data-studio-status]');
-  if (!stage) return;
-  let THREE: typeof import('three');
-  try {
-    THREE = await import('three');
-  } catch {
-    if (status) status.textContent = 'The 3D view did not load. The photograph is still here, and the rest of the site is unaffected.';
-    return;
-  }
-  let renderer: import('three').WebGLRenderer;
-  try {
-    renderer = new THREE.WebGLRenderer({ antialias: !reduce, alpha: false, powerPreference: 'low-power' });
-  } catch {
-    if (status) status.textContent = 'WebGL is not available. Use the photograph and the material notes instead.';
-    return;
-  }
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
-  renderer.setSize(stage.clientWidth || 640, 420);
-  stage.replaceChildren(renderer.domElement);
-  if (fallback) fallback.hidden = true;
-
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x141210);
-  const camera = new THREE.PerspectiveCamera(38, (stage.clientWidth || 640) / 420, 0.1, 20);
-  const wallMaterial = new THREE.MeshStandardMaterial({ color: PRESETS[0].color, roughness: 0.94, metalness: 0 });
-  const wallA = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 1.4), wallMaterial);
-  const wallB = new THREE.Mesh(new THREE.PlaneGeometry(1.2, 1.4), wallMaterial);
-  wallA.position.set(-0.15, 0.7, 0);
-  wallB.position.set(-0.95, 0.7, 0.55);
-  wallB.rotation.y = Math.PI / 2;
-  const floor = new THREE.Mesh(new THREE.PlaneGeometry(3, 3), new THREE.MeshStandardMaterial({ color: 0x2a2622, roughness: 1 }));
-  floor.rotation.x = -Math.PI / 2;
-  scene.add(wallA, wallB, floor);
-  const ambient = new THREE.AmbientLight(0xf4f0e8, 0.35);
-  const sun = new THREE.DirectionalLight(0xf4f7ff, 1.25);
-  sun.position.set(1.4, 1.6, 1.2);
-  scene.add(ambient, sun);
-
-  let preset = PRESETS[0];
-  let close = false;
-  let warm = false;
-  let angle = 40;
-
-  const apply = () => {
-    wallMaterial.color.setHex(preset.color);
-    wallMaterial.roughness = preset.roughness;
-    wallMaterial.metalness = preset.metalness;
-    const map = weaveTexture(THREE, preset);
-    if (wallMaterial.map) wallMaterial.map.dispose();
-    wallMaterial.map = map;
-    wallMaterial.needsUpdate = true;
-    const radians = (angle * Math.PI) / 180;
-    sun.position.set(Math.cos(radians) * 1.8, 1.5, Math.sin(radians) * 1.8);
-    sun.color.setHex(warm ? 0xffe2b8 : 0xf2f6ff);
-    camera.position.set(close ? 0.15 : 1.35, close ? 0.95 : 1.15, close ? 0.55 : 1.7);
-    camera.lookAt(close ? 0.05 : -0.2, 0.8, 0.15);
-    if (note) note.textContent = `${preset.label}. ${preset.note}`;
-    renderer.render(scene, camera);
-  };
-
-  const onResize = () => {
-    const width = stage.clientWidth || 640;
-    camera.aspect = width / 420;
-    camera.updateProjectionMatrix();
-    renderer.setSize(width, 420);
-    renderer.render(scene, camera);
-  };
-  window.addEventListener('resize', onResize);
-
-  root.querySelectorAll<HTMLButtonElement>('[data-preset]').forEach((button) => {
-    button.addEventListener('click', () => {
-      preset = PRESETS.find((item) => item.key === button.dataset.preset) || PRESETS[0];
-      root.querySelectorAll('[data-preset]').forEach((item) => item.setAttribute('aria-pressed', item === button ? 'true' : 'false'));
-      apply();
-    });
-  });
-  root.querySelector<HTMLInputElement>('[data-light]')?.addEventListener('input', (event) => {
-    angle = Number((event.target as HTMLInputElement).value);
-    apply();
-  });
-  root.querySelector('[data-daylight]')?.addEventListener('click', () => {
-    warm = false;
-    apply();
-  });
-  root.querySelector('[data-warm]')?.addEventListener('click', () => {
-    warm = true;
-    apply();
-  });
-  root.querySelector('[data-overview]')?.addEventListener('click', () => {
-    close = false;
-    apply();
-  });
-  root.querySelector('[data-closeup]')?.addEventListener('click', () => {
-    close = true;
-    apply();
-  });
-  root.querySelector('[data-reset-studio]')?.addEventListener('click', () => {
-    preset = PRESETS[0];
-    close = false;
-    warm = false;
-    angle = 40;
-    const slider = root.querySelector<HTMLInputElement>('[data-light]');
-    if (slider) slider.value = '40';
-    apply();
-  });
-
-  let visible = true;
-  const observer = new IntersectionObserver((entries) => {
-    visible = entries.some((entry) => entry.isIntersecting);
-  });
-  observer.observe(root);
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible' && visible) renderer.render(scene, camera);
-  });
-
-  apply();
-  root.querySelector('[data-preset="paper"]')?.setAttribute('aria-pressed', 'true');
-
-  root.querySelector('[data-close-studio]')?.addEventListener('click', () => {
-    observer.disconnect();
-    window.removeEventListener('resize', onResize);
-    wallMaterial.map?.dispose();
-    wallMaterial.dispose();
-    wallA.geometry.dispose();
-    wallB.geometry.dispose();
-    floor.geometry.dispose();
-    (floor.material as import('three').Material).dispose();
-    renderer.dispose();
-    stage.replaceChildren();
-    if (fallback) fallback.hidden = false;
-    root.querySelector<HTMLElement>('[data-studio-controls]')!.hidden = true;
-    root.querySelector<HTMLElement>('[data-open-studio]')!.hidden = false;
-  });
+export interface StudioSession {
+  dispose(): void;
 }
 
-export function mountStudio() {
-  const root = document.querySelector<HTMLElement>('[data-studio]');
-  const open = root?.querySelector<HTMLButtonElement>('[data-open-studio]');
-  open?.addEventListener('click', async () => {
-    if (!root) return;
+type StudioStarter = (root: HTMLElement, signal: AbortSignal) => Promise<StudioSession | null>;
+type ThreeLoader = () => Promise<typeof import('three')>;
+
+class StudioError extends Error {
+  readonly reason: 'load' | 'webgl' | 'render';
+  constructor(reason: 'load' | 'webgl' | 'render') {
+    super(reason);
+    this.reason = reason;
+  }
+}
+
+/** One opening owns one renderer, its resources and all of its event listeners. */
+export async function startStudio(
+  root: HTMLElement,
+  signal: AbortSignal,
+  loadThree: ThreeLoader = () => import('three'),
+): Promise<StudioSession | null> {
+  const stage = root.querySelector<HTMLElement>('[data-studio-stage]');
+  const note = root.querySelector<HTMLElement>('[data-studio-note]');
+  if (!stage) throw new StudioError('render');
+  if (signal.aborted) return null;
+  let THREE: typeof import('three');
+  try {
+    THREE = await loadThree();
+  } catch {
+    throw new StudioError('load');
+  }
+  if (signal.aborted) return null;
+
+  const doc = root.ownerDocument;
+  const host = doc.defaultView;
+  if (!host) throw new StudioError('render');
+  const reduce = host.matchMedia('(prefers-reduced-motion: reduce)').matches || doc.documentElement.dataset.effects === 'reduced';
+  const events = new AbortController();
+  const disposers: Array<() => void> = [];
+  let disposed = false;
+  const dispose = () => {
+    if (disposed) return;
+    disposed = true;
+    events.abort();
+    signal.removeEventListener('abort', dispose);
+    // Finish releasing resources even if a lost graphics context rejects one cleanup.
+    for (const release of disposers.reverse()) {
+      try { release(); } catch { /* Other resources still need releasing. */ }
+    }
+  };
+  signal.addEventListener('abort', dispose, { once: true });
+  const own = <T extends { dispose(): void }>(resource: T): T => {
+    disposers.push(() => resource.dispose());
+    return resource;
+  };
+
+  try {
+    let renderer: import('three').WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: !reduce, alpha: false, powerPreference: 'low-power' });
+    } catch {
+      throw new StudioError('webgl');
+    }
+    disposers.push(() => {
+      renderer.domElement.remove();
+      renderer.dispose();
+      renderer.forceContextLoss();
+    });
+    renderer.setPixelRatio(Math.min(host.devicePixelRatio || 1, 1.5));
+    renderer.setSize(stage.clientWidth || 640, 420);
+    stage.replaceChildren(renderer.domElement);
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x141210);
+    const camera = new THREE.PerspectiveCamera(38, (stage.clientWidth || 640) / 420, 0.1, 20);
+    const wallMaterial = own(new THREE.MeshStandardMaterial({ color: PRESETS[0].color, roughness: 0.94, metalness: 0 }));
+    const wallA = new THREE.Mesh(own(new THREE.PlaneGeometry(1.6, 1.4)), wallMaterial);
+    const wallB = new THREE.Mesh(own(new THREE.PlaneGeometry(1.2, 1.4)), wallMaterial);
+    wallA.position.set(-0.15, 0.7, 0);
+    wallB.position.set(-0.95, 0.7, 0.55);
+    wallB.rotation.y = Math.PI / 2;
+    const floor = new THREE.Mesh(own(new THREE.PlaneGeometry(3, 3)), own(new THREE.MeshStandardMaterial({ color: 0x2a2622, roughness: 1 })));
+    floor.rotation.x = -Math.PI / 2;
+    scene.add(wallA, wallB, floor);
+    const ambient = new THREE.AmbientLight(0xf4f0e8, 0.35);
+    const sun = new THREE.DirectionalLight(0xf4f7ff, 1.25);
+    sun.position.set(1.4, 1.6, 1.2);
+    scene.add(ambient, sun);
+
+    let preset = PRESETS[0];
+    let close = false;
+    let warm = false;
+    let angle = 40;
+    let visible = true;
+    disposers.push(() => wallMaterial.map?.dispose());
+    const render = () => {
+      if (!disposed && visible && doc.visibilityState === 'visible') renderer.render(scene, camera);
+    };
+    const presetButtons = root.querySelectorAll<HTMLButtonElement>('[data-preset]');
+    const syncPreset = () => presetButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.preset === preset.key)));
+    const slider = root.querySelector<HTMLInputElement>('[data-light]');
+    if (slider) slider.value = '40';
+
+    const apply = () => {
+      wallMaterial.color.setHex(preset.color);
+      wallMaterial.roughness = preset.roughness;
+      wallMaterial.metalness = preset.metalness;
+      const map = weaveTexture(THREE, preset);
+      wallMaterial.map?.dispose();
+      wallMaterial.map = map;
+      wallMaterial.needsUpdate = true;
+      const radians = (angle * Math.PI) / 180;
+      sun.position.set(Math.cos(radians) * 1.8, 1.5, Math.sin(radians) * 1.8);
+      sun.color.setHex(warm ? 0xffe2b8 : 0xf2f6ff);
+      camera.position.set(close ? 0.15 : 1.35, close ? 0.95 : 1.15, close ? 0.55 : 1.7);
+      camera.lookAt(close ? 0.05 : -0.2, 0.8, 0.15);
+      if (note) note.textContent = `${preset.label}. ${preset.note}`;
+      syncPreset();
+      render();
+    };
+    const onResize = () => {
+      const width = stage.clientWidth;
+      if (!width || disposed) return;
+      camera.aspect = width / 420;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, 420);
+      render();
+    };
+    const listen = (target: EventTarget | null, name: string, handler: EventListener) => {
+      target?.addEventListener(name, handler, { signal: events.signal });
+    };
+    listen(host, 'resize', onResize);
+    presetButtons.forEach(button => listen(button, 'click', () => {
+      preset = PRESETS.find(item => item.key === button.dataset.preset) || PRESETS[0];
+      apply();
+    }));
+    listen(slider, 'input', () => {
+      angle = Number(slider?.value ?? 40);
+      apply();
+    });
+    listen(root.querySelector('[data-daylight]'), 'click', () => { warm = false; apply(); });
+    listen(root.querySelector('[data-warm]'), 'click', () => { warm = true; apply(); });
+    listen(root.querySelector('[data-overview]'), 'click', () => { close = false; apply(); });
+    listen(root.querySelector('[data-closeup]'), 'click', () => { close = true; apply(); });
+    listen(root.querySelector('[data-reset-studio]'), 'click', () => {
+      preset = PRESETS[0];
+      close = false;
+      warm = false;
+      angle = 40;
+      if (slider) slider.value = '40';
+      apply();
+    });
+    const observer = new IntersectionObserver(entries => {
+      visible = entries.some(entry => entry.isIntersecting);
+      if (visible) onResize();
+    });
+    disposers.push(() => observer.disconnect());
+    observer.observe(root);
+    listen(doc, 'visibilitychange', render);
+    apply();
+    return { dispose };
+  } catch (error) {
+    dispose();
+    throw error instanceof StudioError ? error : new StudioError('render');
+  }
+}
+
+const mounts = new WeakMap<HTMLElement, () => void>();
+
+/** Own the opening lifecycle, including cancellation while the 3D module loads. */
+export function mountStudio(
+  root: HTMLElement | null = document.querySelector<HTMLElement>('[data-studio]'),
+  initialize: StudioStarter = startStudio,
+): () => void {
+  if (!root) return () => {};
+  mounts.get(root)?.();
+  const open = root.querySelector<HTMLButtonElement>('[data-open-studio]');
+  const close = root.querySelector<HTMLButtonElement>('[data-close-studio]');
+  const controls = root.querySelector<HTMLElement>('[data-studio-controls]');
+  const fallback = root.querySelector<HTMLElement>('[data-studio-fallback]');
+  const stage = root.querySelector<HTMLElement>('[data-studio-stage]');
+  const status = root.querySelector<HTMLElement>('[data-studio-status]');
+  if (!open || !close || !controls || !stage) return () => {};
+  const inputs = Array.from(controls.querySelectorAll<HTMLButtonElement | HTMLInputElement>('button, input')).filter(input => input !== close);
+  const events = new AbortController();
+  type Opening = { abort: AbortController; session?: StudioSession };
+  let current: Opening | null = null;
+  const finish = (message = '', focus = false) => {
+    const previous = current;
+    current = null;
+    previous?.abort.abort();
+    previous?.session?.dispose();
+    stage.replaceChildren();
+    if (fallback) fallback.hidden = false;
+    controls.hidden = true;
+    open.hidden = false;
+    open.disabled = false;
+    inputs.forEach(input => { input.disabled = false; });
+    root.removeAttribute('aria-busy');
+    if (status) status.textContent = message;
+    if (focus) open.focus();
+  };
+  open.addEventListener('click', async () => {
+    if (current) return;
+    const request: Opening = { abort: new AbortController() };
+    current = request;
     open.hidden = true;
-    const controls = root.querySelector<HTMLElement>('[data-studio-controls]');
-    if (controls) controls.hidden = false;
-    await startStudio(root);
-  });
+    controls.hidden = false;
+    inputs.forEach(input => { input.disabled = true; });
+    root.setAttribute('aria-busy', 'true');
+    if (status) status.textContent = 'Loading the material light studio…';
+    close.focus();
+    try {
+      const session = await initialize(root, request.abort.signal);
+      if (current !== request || request.abort.signal.aborted) {
+        session?.dispose();
+        return;
+      }
+      if (!session) { finish('', true); return; }
+      request.session = session;
+      if (fallback) fallback.hidden = true;
+      inputs.forEach(input => { input.disabled = false; });
+      root.removeAttribute('aria-busy');
+      if (status) status.textContent = '';
+      root.querySelector<HTMLButtonElement>('[data-preset="paper"]')?.focus();
+    } catch (error) {
+      if (current !== request) return;
+      const message = error instanceof StudioError && error.reason === 'webgl'
+        ? 'WebGL is not available. The photograph remains available. You can try opening the studio again.'
+        : 'The 3D view did not load. The photograph remains available. You can try opening the studio again.';
+      finish(message, true);
+    }
+  }, { signal: events.signal });
+  close.addEventListener('click', () => finish('', true), { signal: events.signal });
+  root.ownerDocument.defaultView?.addEventListener('pagehide', () => finish(), { signal: events.signal });
+  let unmounted = false;
+  const unmount = () => {
+    if (unmounted) return;
+    unmounted = true;
+    events.abort();
+    finish();
+    if (mounts.get(root) === unmount) mounts.delete(root);
+  };
+  mounts.set(root, unmount);
+  return unmount;
 }

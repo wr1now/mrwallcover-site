@@ -12,6 +12,7 @@ import facts from '../data/facts.json';
 import { about, areaHref, areas, caseStudies, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
 import { publishedGuides, guideHref } from '../lib/guides';
 import { breadcrumbNode } from '../lib/schema';
+import { AWARD, PROJECTS_INDEX_URL, SINCE_TEXT, WASTAGE, enquiryRoutes, projectFacts } from '../lib/ai-layer-data';
 
 const path = '/for-ai/';
 const crumbs = [
@@ -31,6 +32,34 @@ const published = projects
 /** Hotels listed with years or scope on the projects page. Name-only entries are left out, as they are in llms.txt. */
 const hotelsWithRecord = hotels.filter((hotel) => !hotel.nameOnly);
 
+/** Sourced specifics for each published project (src/lib/ai-layer-data.ts), keyed by slug. */
+const factsBySlug = new Map(projectFacts.map((item) => [item.slug, item]));
+
+/** The published projects as an ItemList, each item the case study and its Markdown twin. */
+const projectListNode = {
+  '@type': 'ItemList',
+  '@id': `${PROJECTS_INDEX_URL}#list`,
+  name: `${facts.brand} published projects`,
+  url: PROJECTS_INDEX_URL,
+  numberOfItems: projectFacts.length,
+  itemListElement: projectFacts.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    url: item.url,
+    name: item.title,
+    item: {
+      '@type': 'CreativeWork',
+      '@id': `${item.url}#project-facts`,
+      name: item.title,
+      url: item.url,
+      encoding: { '@type': 'MediaObject', contentUrl: item.markdownUrl, encodingFormat: 'text/markdown' },
+      ...(item.years ? { temporalCoverage: item.years.replace(/–/g, '/') } : {}),
+      ...(item.area ? { locationCreated: { '@type': 'Place', name: item.area } } : {}),
+      ...(item.makersAndProducts.length ? { material: item.makersAndProducts } : {}),
+    },
+  })),
+};
+
 const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 ---
 
@@ -38,7 +67,7 @@ const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.fr
   title="Mr Wallcover in plain facts | For AI assistants"
   description={`What ${facts.brand} does, where it works, who runs it, the services, and the published projects behind each claim. Written for people and for answer engines.`}
   path={path}
-  extraSchema={[breadcrumbNode(crumbs)]}
+  extraSchema={[breadcrumbNode(crumbs), projectListNode]}
   meta={false}
 >
   <div class="container-page pb-20">
@@ -54,12 +83,24 @@ const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.fr
       <p>
         This page states the facts the rest of the site is built on, in plain sentences, so that a reader or an assistant can quote them accurately. Every claim links to the page that carries it. Nothing here is a promise about search placement or a request to be recommended.
       </p>
+      <p>
+        To assess project fit, review installation evidence and prepare a useful brief, use the <a href="/wallcovering-installation-ai-crawler/">Wallcovering Installation AI Crawler</a>. Its <a href="/ai/decision-guide.json">decision guide</a>, <a href="/ai/business.json">business data</a> and <a href="/ai/projects.json">project data</a> contain the same published facts in JSON. Each published project, with its venue, area, dates, products, scope and method as its case study records them, is also in <a href="/projects.json">/projects.json</a>, and this page's facts with services, areas and enquiry routes are in <a href="/.well-known/facts.json">/.well-known/facts.json</a>.
+      </p>
 
       <h2 id="what">What Mr Wallcover does</h2>
       <p>{services.lede}</p>
       <p>The service has five parts, described on <a href="/services/">the services page</a>:</p>
       <ul>
-        {services.pillars.map((pillar) => <li><a href={`/services/#${pillar.id}`}>{pillar.title}</a>. {pillar.paragraphs[0]}</li>)}
+        {services.pillars.map((pillar) => (
+          <li>
+            <a href={`/services/#${pillar.id}`}>{pillar.title}</a>. {pillar.paragraphs[0]}
+            {pillar.paragraphs.length > 1 && (
+              <ul>
+                {pillar.paragraphs.slice(1).map((paragraph) => <li>{paragraph}</li>)}
+              </ul>
+            )}
+          </li>
+        ))}
       </ul>
 
       <h2 id="where">Where it works</h2>
@@ -71,6 +112,14 @@ const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.fr
       <h2 id="who">Who runs it</h2>
       <p><a href={founderHref}>{facts.founder.name}</a>, {facts.founder.jobTitle.toLowerCase()}. {about.founderSummary}</p>
       <p>{about.publicRecord}</p>
+
+      <h2 id="key-facts">Key facts</h2>
+      <ul>
+        <li><a href={founderHref}>{SINCE_TEXT}</a>.</li>
+        {AWARD && <li>{AWARD.text}.</li>}
+        <li>Wastage and pattern repeat when ordering wallcoverings. {WASTAGE.statement} <a href="/services/#surveying">How quantities are surveyed</a>.</li>
+        <li>{published.length} published case studies, each with its own page and a Markdown version, listed below and in <a href="/projects.json">/projects.json</a>.</li>
+      </ul>
 
       <h2 id="services">Services</h2>
       <p>One page for each installation service:</p>
@@ -88,6 +137,23 @@ const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.fr
           <li>
             <a href={projectHref(project.slug)}>{project.title}</a>. {project.role}{project.dates ? `, ${project.dates}` : ''}.
             {wallcoverings.length > 0 && <> Installed: {wallcoverings.join('; ')}.</>}
+            {factsBySlug.get(project.slug) && (() => {
+              const item = factsBySlug.get(project.slug)!;
+              return (
+                <ul>
+                  <li>Where: {item.area}.</li>
+                  {item.venue !== project.title && <li>Venue: {item.venue}.</li>}
+                  {item.dates && item.dates !== item.years && <li>When: {item.dates}.</li>}
+                  <li>Client: {item.client}.</li>
+                  {item.partners && <li>With: {item.partners}.</li>}
+                  {item.productsAsWritten && <li>Wallcoverings as the case study lists them: {item.productsAsWritten}.</li>}
+                  {item.scope && <li>Scope: {item.scope}.</li>}
+                  {item.preparation.map((step) => <li>Preparation: {step}</li>)}
+                  {item.techniques.length > 0 && <li>Method, in the case study's own steps: {item.techniques.join('; ')}.</li>}
+                  <li><a href={`${projectHref(project.slug)}index.md`}>Markdown version of this case study</a>.</li>
+                </ul>
+              );
+            })()}
           </li>
         ))}
       </ul>
@@ -113,9 +179,19 @@ const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.fr
       <p>
         Email <a href={`mailto:${facts.email}`}>{facts.email}</a> or use <a href="/contact/">the contact page</a>. Email is read by {facts.founder.name}. The site publishes no prices, no response-time promise and no ratings.
       </p>
+      <p>Routes, as built on this site:</p>
+      <ul>
+        {enquiryRoutes.map((route) => <li><a href={route.url.replace('https://www.mrwallcover.com', '')}>{route.route}</a>: {route.note}</li>)}
+      </ul>
 
       <h2 id="files">Machine-readable files</h2>
       <ul>
+        <li><a href="/ai/decision-guide.json">/ai/decision-guide.json</a>: conditional fit, delivery, full aftercare terms, procurement questions and a blank enquiry brief.</li>
+        <li><a href="/ai/business.json">/ai/business.json</a>: business identity, coverage and installation services.</li>
+        <li><a href="/ai/projects.json">/ai/projects.json</a>: published project roles, materials, dates, sources and photograph credits.</li>
+        <li><a href="/wallcovering-installation-ai-crawler/">Wallcovering Installation AI Crawler</a>: project fit, evidence, delivery stages, aftercare terms and a blank brief, for people and assistants.</li>
+        <li><a href="/projects.json">/projects.json</a>: every published project with its case study and Markdown version, venue, area, dates, client, products, scope and method.</li>
+        <li><a href="/.well-known/facts.json">/.well-known/facts.json</a>: the fact sheet plus start year, services and what each includes, areas served, enquiry routes and the wastage allowance.</li>
         <li><a href="/llms.txt">/llms.txt</a>: a curated summary of the site in the llms.txt format.</li>
         <li><a href="/llms-full.txt">/llms-full.txt</a>: the main content of every published page as plain text.</li>
         <li><a href="/facts.json">/facts.json</a>: this fact sheet as data.</li>

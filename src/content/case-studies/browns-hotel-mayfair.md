@@ -56,6 +56,14 @@
     {
       "id": "browns-hotel-mayfair-01",
       "credit": null
+    },
+    {
+      "id": "browns-hotel-mayfair-07",
+      "credit": null
+    },
+    {
+      "id": "browns-hotel-mayfair-08",
+      "credit": null
     }
   ],
   "published": "2026-10-09",

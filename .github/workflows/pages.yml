@@ -46,6 +46,19 @@ jobs:
         env:
           SITE_PHONE: ${{ secrets.SITE_PHONE }}
         run: npm run check:dist
+      - name: Build origin/main as the no-loss baseline
+        # Dorin's rule: nothing on the site may be lost. Main's own build is the baseline, never a hand-kept list.
+        if: github.event_name == 'pull_request'
+        env:
+          SITE_PHONE: ${{ secrets.SITE_PHONE }}
+        run: |
+          git worktree add --detach ../mw-main-base origin/main
+          cd ../mw-main-base
+          npm ci
+          npm run build
+      - name: No-loss guard (sitemap, galleries, media, Lee Broom and project cards, AI layer)
+        if: github.event_name == 'pull_request'
+        run: npm run check:no-loss
       - name: Check both phone builds
         run: npm run check:phone
       - name: Build editorial review
