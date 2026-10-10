@@ -160,3 +160,36 @@ test('Calico case studies open their galleries on the finished frame used as the
     assert.equal(data.gallery[0].id, data.hero, slug);
   }
 });
+
+test('every published page title is 60 characters or fewer', async () => {
+  const long: string[] = [];
+  async function walk(dir: string): Promise<void> {
+    for (const entry of await readdir(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) await walk(full);
+      else if (entry.name === 'index.html') {
+        const title = (await readFile(full, 'utf8')).match(/<title>([^<]*)<\/title>/)?.[1] ?? '';
+        const text = title.replace(/&amp;/g, '&').replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"');
+        if (text.length > 60) long.push(`${full}: ${text.length} ${text}`);
+      }
+    }
+  }
+  await walk('dist');
+  assert.deepEqual(long, []);
+});
+
+test('home hero offers 800/1200/1600/2000w and sizes it to the 60vw desktop column', async () => {
+  const html = await readFile('dist/index.html', 'utf8');
+  const source = html.match(/<div class="hero-media">[\s\S]*?<source type="image\/webp" srcset="([^"]+)" sizes="([^"]+)"/);
+  assert.ok(source, 'hero webp source');
+  for (const width of [800, 1200, 1600, 2000]) assert.match(source![1], new RegExp(` ${width}w`));
+  assert.equal(source![2], '(min-width: 1024px) 60vw, 100vw');
+});
+
+test('home films: a finished room first, the mid-works film last, each with a visible description of what it shows', async () => {
+  const html = await readFile('dist/index.html', 'utf8');
+  const posters = [...html.matchAll(/poster="\/media\/video\/(browns-hotel-mayfair-video-\d+)-poster\.jpg"/g)].map((m) => m[1]);
+  assert.deepEqual(posters, ['browns-hotel-mayfair-video-02', 'browns-hotel-mayfair-video-01', 'browns-hotel-mayfair-video-03']);
+  const captions = [...html.matchAll(/<figcaption class="caption">(Silent film[^<]*)<\/figcaption>/g)];
+  assert.equal(captions.length, 3);
+});
