@@ -13,6 +13,7 @@ authorHref: "/about/#dorin"
 published: "2026-10-09"
 updated: "2026-10-10"
 description: "What a wallcovering package needs to be priced, programmed and handed over: scope, measurement basis, substrate handover, programme, changes, snagging and spares."
+metaDescription: "What a wallcovering package needs to be priced, programmed and handed over: scope, measurement, substrate handover, changes, snagging and spares."
 shortTitle: "Developer package"
 order: 9
 relatedMaterials: ["contract-vinyl", "acoustic", "paper-and-non-woven"]

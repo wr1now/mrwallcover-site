@@ -78,14 +78,26 @@ test('privacy notice keeps Dorin Burcus trading as Mr Wallcover', async () => {
   assert.doesNotMatch(privacy, /PRIMEST|CLAUDI LTD|Renovart/i);
 });
 
-test('Search Console token stays in config and no award line exists in source', async () => {
+test('Search Console token stays in config, and the only award is the named one in the fact sheet', async () => {
   const config = await readFile('src/config.ts', 'utf8');
   assert.match(config, /98zhpiyda4qDA6fYcKJ-zC6pItC6-LZKqqEugO5-fKo/);
   assert.doesNotMatch(config, /Award-winning|AWARD/);
   assert.match(config, /from '\.\/data\/facts\.json'/);
-  for (const file of ['src/content/about.json', 'src/content/home.json', 'src/pages/index.astro', 'src/pages/about.astro']) {
+  // No hand-written award text in content files: the line comes only from facts.award (rule of 9 October 2026, named 10 October 2026).
+  for (const file of ['src/content/about.json', 'src/content/home.json']) {
     assert.doesNotMatch(await readFile(file, 'utf8'), /award/i, `${file} must not mention an award`);
   }
+  for (const file of ['src/pages/index.astro', 'src/pages/about.astro']) {
+    const text = (await readFile(file, 'utf8')).replace(/AWARD_TEXT|AWARD_URL|hero-award/g, '');
+    assert.doesNotMatch(text, /award/i, `${file} prints the award only through AWARD_TEXT`);
+  }
+  const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8'));
+  assert.deepEqual(facts.award, {
+    line: 'Award-winning (2021)',
+    name: 'Most Outstanding for Wallcovering Installation, 2021',
+    organiser: 'BUILD Magazine 2021 Design & Build Awards',
+    url: 'https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg',
+  });
 });
 
 const REQUIRED_OPENING = 'Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus';
@@ -107,8 +119,10 @@ test('the fact sheet holds one description sentence of 160 characters or fewer, 
   assert.ok(facts.description.length <= 160, `description is ${facts.description.length} characters`);
   assert.doesNotMatch(facts.description, /["'&<>]/, 'keep the sentence free of characters that HTML or JSON would escape');
   assert.ok(facts.profiles.some((profile) => profile.url === 'https://www.instagram.com/mrwallcover/'));
-  const blob = JSON.stringify(facts);
-  assert.doesNotMatch(blob, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|Ltd|Limited|Companies House|award/i);
+  // The named award (facts.award, with its note) is checked on its own above; nothing else in the sheet may claim one.
+  const { award: _award, _award: _awardNote, ...rest } = facts as Record<string, unknown>;
+  const blob = JSON.stringify(rest);
+  assert.doesNotMatch(blob.replace(/The one award is the named entry under award, read off the trophy photograph; add no other\./, ''), /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|Ltd|Limited|Companies House|award/i);
   // The site-wide review date: a real ISO date, never before the 9 October 2026 review and never in the future.
   const reviewed = (facts as { lastReviewed?: string }).lastReviewed ?? '';
   assert.match(reviewed, /^\d{4}-\d{2}-\d{2}$/, 'facts.lastReviewed must be an ISO date');

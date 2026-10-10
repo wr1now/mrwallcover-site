@@ -8,6 +8,8 @@ export interface GuideData {
   shortTitle: string;
   slug: string;
   description: string;
+  /** Optional search snippet (70-160 characters) when the visible description is longer. */
+  metaDescription?: string;
   category: 'choosing' | 'preparing' | 'planning' | 'caring';
   audience: string;
   order: number;
