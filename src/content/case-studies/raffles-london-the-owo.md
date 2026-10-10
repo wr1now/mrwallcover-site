@@ -44,7 +44,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-09"
+  "updated": "2026-10-10"
 }
 ---
 
@@ -61,6 +61,8 @@
 
 Designed by William Young and completed in 1906 to the Edwardian Baroque, the Old War Office rose on Whitehall from 26,000 tons of Portland stone and some 25 million bricks. Young died before it was finished; his son Clyde Young and Sir John Taylor completed the design.
 
+The building stands on Whitehall. It looks over the Royal Horse Guards and sits a short walk from Downing Street, Buckingham Palace and St James's Park.
+
 For almost six decades it was the seat of Britain's military administration. Lord Haldane, Lord Kitchener, David Lloyd George and Winston Churchill all held office here as Secretary of State for War, and Douglas Haig served at the War Office as Director of Military Training and then Director of Staff Duties. In October 1914 a young T. E. Lawrence joined its Geographical Section. In 1960 John Profumo arrived as Secretary of State for War; his affair with Christine Keeler, and his resignation in 1963, nearly toppled the government.
 
 Its secrets run deeper still. Britain's Secret Service Bureau, the forerunner of MI5 and MI6, was created in meetings at the War Office in 1909. Ian Fleming, a wartime naval intelligence officer, would have known the building, and its air of espionage helped inspire James Bond; the building has since appeared as MI6 in Bond films. After a comprehensive eight-year restoration under the Hinduja Group and ONEX Holding, the building opened on 29 September 2023 as The OWO, home to Raffles London, the brand's first hotel in the United Kingdom.
@@ -70,6 +72,8 @@ Its secrets run deeper still. Britain's Secret Service Bureau, the forerunner of
 To install the hotel's wallcoverings in the bedrooms and several other areas: a bespoke Vescom wallcovering created for the hotel, and Vescom Alcantara in some of the suites, applied to walls and, in places, to joinery. The rooms, designed by the late Thierry Despont, call for a calm, light-filled backdrop to Edwardian proportions.
 
 ## Our approach
+
+**Scope, room by room.** Our method is to follow the survey with an estimate and a scope of works by room. Once agreed, that scope is the template for the job: openings come out of the measure, and pattern repeat and wastage go in.
 
 **Preparation and priming.** Plain and finely textured wallcoverings forgive nothing. Every wall was prepared and primed to a true, even surface before installation, so that the light falling through tall Whitehall windows reveals texture, not substrate.
 

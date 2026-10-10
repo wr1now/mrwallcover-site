@@ -4,10 +4,10 @@
   "path": "/services/timorous-beasties-installer/",
   "title": "Timorous Beasties installation",
   "metaTitle": "Timorous Beasties Wallpaper Installer London | Mr Wallcover",
-  "description": "Installation of Timorous Beasties custom-printed vinyl wallpaper by Mr Wallcover across the 110 bedrooms of Hyde London City, the former Old Bailey Hotel.",
+  "description": "Timorous Beasties custom-printed vinyl, hung by Mr Wallcover in the 111 guest rooms across seven storeys of Hyde London City, the former Old Bailey Hotel.",
   "eyebrow": "Services",
   "heading": "Timorous Beasties installation in London",
-  "lede": "Mr Wallcover hung Timorous Beasties' Tropical Clouded Leopard and Totem Damask, custom-printed as vinyl, through the 110 bedrooms of Hyde London City. This page says what the product is, how it hangs, and what the case study records.",
+  "lede": "Mr Wallcover hung Timorous Beasties' Tropical Clouded Leopard and Totem Damask, custom-printed as vinyl, through the 111 guest rooms across seven storeys of Hyde London City. This page says what the product is, how it hangs, and what the case study records.",
   "parent": { "name": "Services", "href": "/services/" },
   "projects": ["old-bailey-hotel"],
   "faq": [
@@ -52,7 +52,7 @@ TODO(Dorin): link the maker's hanging instructions for printed vinyl. Describe t
 
 ## On the public record
 
-Hyde London City, the former Old Bailey Hotel, 110 rooms, about two years on site from a sample room in November 2022 to final touches in August 2024. The case study linked below is the record.
+Hyde London City, the former Old Bailey Hotel, 111 guest rooms across seven storeys, about two years on site from a sample room in November 2022 to final touches in August 2024. The case study linked below is the record.
 
 ## Photographs
 

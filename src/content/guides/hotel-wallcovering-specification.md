@@ -35,7 +35,7 @@ Agree the housekeeping method before the product is chosen, then confirm the exa
 
 ## Why insist on a sample room?
 
-A sample room settles appearance, seam position, the junction with joinery and skirting, and the cleaning test, before the same work is repeated across a floor. At 15 Old Bailey the programme ran from a sample room in November 2022 to final touches in August 2024, across 110 rooms. Record who accepts the sample room and on what basis, and keep that acceptance with the project record. Everything that follows is measured against it.
+A sample room settles appearance, seam position, the junction with joinery and skirting, and the cleaning test, before the same work is repeated across a floor. At 15 Old Bailey the programme ran from a sample room in November 2022 to final touches in August 2024, across 111 guest rooms across seven storeys. Record who accepts the sample room and on what basis, and keep that acceptance with the project record. Everything that follows is measured against it.
 
 ## How is batch and shading consistency kept across a floor?
 
