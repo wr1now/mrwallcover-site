@@ -275,6 +275,46 @@
       display: none !important;
     }
   }
+
+  /* WhatsApp and booking actions (rendered only when SITE_PHONE / BOOKING_URL are set at build time). */
+  .wa-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+  }
+  .wa-glyph {
+    width: 1.15em;
+    height: 1.15em;
+    flex: none;
+  }
+  .wa-link.wa-icon {
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+  .wa-link.wa-icon .wa-glyph {
+    width: 22px;
+    height: 22px;
+  }
+  .dock .wa-link {
+    gap: 2px;
+  }
+  .dock .wa-glyph {
+    width: 18px;
+    height: 18px;
+  }
+  /* The header has room for "Book a call" only from 1280px; below that the CTA would wrap. */
+  .primary-nav .header-book {
+    display: none;
+  }
+  @media (min-width: 1280px) {
+    .primary-nav .header-book {
+      display: inline-flex;
+    }
+  }
+  .dock .dock-phone + a {
+    border-left: 1px solid var(--glass-dock-border);
+  }
 }
 
 @keyframes menu-in {

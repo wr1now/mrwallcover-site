@@ -21,7 +21,8 @@ export interface ContactDetails {
   w: string;
 }
 
-const WHATSAPP_MESSAGE = "Hello, I'd like to ask about wallcovering.";
+/** Pre-filled first line of a WhatsApp chat (Dorin, 11 October 2026). */
+export const WHATSAPP_MESSAGE = "Hello Mr Wallcover, I'd like to discuss a project:";
 
 export function contactDetailsFrom(raw: string | undefined): ContactDetails | null {
   const trimmed = (raw ?? '').trim();
@@ -38,7 +39,8 @@ export function contactDetailsFrom(raw: string | undefined): ContactDetails | nu
   return {
     t: e164,
     d: display,
-    w: `https://wa.me/${e164.slice(1)}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
+    // encodeURIComponent leaves the apostrophe as it is; encode it too, so the whole message is percent-encoded.
+    w: `https://wa.me/${e164.slice(1)}?text=${encodeURIComponent(WHATSAPP_MESSAGE).replace(/'/g, '%27')}`,
   };
 }
 
