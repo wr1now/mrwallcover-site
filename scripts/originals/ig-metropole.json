@@ -92,19 +92,10 @@
         "Vescom"
       ],
       "caption": null
-    },
-    "metropole-08": {
-      "file": "hilton-london-metropole/2019-11-27_B5XtSRtFedQ_06.jpg",
-      "post": "B5XtSRtFedQ",
-      "date": "2019-11-27",
-      "url": "https://www.instagram.com/p/B5XtSRtFedQ/",
-      "width": 1440,
-      "height": 1440,
-      "alt": "Close-up of the Vescom panel wallcovering, Hilton London Metropole.",
-      "brands": [
-        "Vescom"
-      ],
-      "caption": null
     }
-  }
+  },
+  "droppedSoft": {
+    "metropole-08": "hilton-london-metropole/2019-11-27_B5XtSRtFedQ_06.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
 }

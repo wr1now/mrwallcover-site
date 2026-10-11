@@ -24,17 +24,6 @@
       "brands": [],
       "caption": null
     },
-    "huntsman-03": {
-      "file": "huntsman-savile-row/2019-03-12_Bu67_JRh8SI_02.jpg",
-      "post": "Bu67_JRh8SI",
-      "date": "2019-03-12",
-      "url": "https://www.instagram.com/p/Bu67_JRh8SI/",
-      "width": 1080,
-      "height": 1079,
-      "alt": "Close-up of the Huntsman tweed-print paper with a printed batch label.",
-      "brands": [],
-      "caption": null
-    },
     "huntsman-04": {
       "file": "huntsman-savile-row/2019-03-12_Bu67_JRh8SI_03.jpg",
       "post": "Bu67_JRh8SI",
@@ -145,5 +134,9 @@
       "brands": [],
       "caption": null
     }
-  }
+  },
+  "droppedSoft": {
+    "huntsman-03": "huntsman-savile-row/2019-03-12_Bu67_JRh8SI_02.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
 }

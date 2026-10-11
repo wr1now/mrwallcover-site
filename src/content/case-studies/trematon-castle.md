@@ -137,15 +137,7 @@
       "credit": null
     },
     {
-      "id": "trematon-ig-05",
-      "credit": null
-    },
-    {
       "id": "trematon-ig-06",
-      "credit": null
-    },
-    {
-      "id": "trematon-ig-07",
       "credit": null
     },
     {
@@ -154,10 +146,6 @@
     },
     {
       "id": "trematon-ig-09",
-      "credit": null
-    },
-    {
-      "id": "trematon-ig-10",
       "credit": null
     },
     {
@@ -178,10 +166,6 @@
     },
     {
       "id": "trematon-ig-15",
-      "credit": null
-    },
-    {
-      "id": "trematon-ig-16",
       "credit": null
     },
     {
@@ -230,6 +214,10 @@
     },
     {
       "id": "trematon-ig-28",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-29",
       "credit": null
     }
   ],
@@ -289,7 +277,7 @@ Other House of Hackney designs that the press records at Trematon, but which we 
 
 ## More from site
 
-The later photographs on this page are our own, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), between June 2019 and November 2021: the house and the castle walls, rooms during strip-out, finished bedrooms and bathrooms, the caravan papered and fitted out to a House of Hackney design in May 2021, and the Lincrusta going up the curved stair walls in November 2021 ([CWksjiaKBnq](https://www.instagram.com/p/CWksjiaKBnq/)).
+The later photographs on this page are our own, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), between June 2019 and November 2021: the house and the castle walls, rooms during strip-out, finished bedrooms and bathrooms, the caravan papered and fitted out to a House of Hackney design in May 2021, and the Lincrusta going up the curved stair walls in November 2021 ([CWksjiaKBnq](https://www.instagram.com/p/CWksjiaKBnq/)), set out panel by panel with a laser line ([CW5IdnPKgTP](https://www.instagram.com/p/CW5IdnPKgTP/)).
 
 ## Outcome
 

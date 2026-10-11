@@ -41,19 +41,6 @@
       ],
       "caption": null
     },
-    "oxygen-o2-04": {
-      "file": "the-o2-oxygen-freejumping/2018-09-22_BoCE7LPnvqA_04.jpg",
-      "post": "BoCE7LPnvqA",
-      "date": "2018-09-22",
-      "url": "https://www.instagram.com/p/BoCE7LPnvqA/",
-      "width": 1080,
-      "height": 1080,
-      "alt": "Dark corridor with lit benches and digital wallcoverings, Oxygen Freejumping, The O2.",
-      "brands": [
-        "Muraspec"
-      ],
-      "caption": null
-    },
     "oxygen-o2-05": {
       "file": "the-o2-oxygen-freejumping/2018-09-22_BoCE7LPnvqA_05.jpg",
       "post": "BoCE7LPnvqA",
@@ -80,5 +67,9 @@
       ],
       "caption": null
     }
-  }
+  },
+  "droppedSoft": {
+    "oxygen-o2-04": "the-o2-oxygen-freejumping/2018-09-22_BoCE7LPnvqA_04.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
 }

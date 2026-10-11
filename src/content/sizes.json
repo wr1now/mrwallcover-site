@@ -3380,25 +3380,6 @@
       ]
     }
   },
-  "biltmore-06": {
-    "width": 1080,
-    "height": 1080,
-    "src": "/media/img/r/biltmore-06-1080.webp",
-    "jpg": "/media/img/r/biltmore-06-1080.jpg",
-    "thumb": "/media/img/r/biltmore-06-800.webp",
-    "thumbJpg": "/media/img/r/biltmore-06-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/biltmore-06",
-      "widths": [
-        480,
-        800,
-        1080
-      ]
-    }
-  },
   "biltmore-07": {
     "width": 1080,
     "height": 1080,
@@ -3695,25 +3676,6 @@
       ]
     }
   },
-  "everyman-02": {
-    "width": 1024,
-    "height": 1024,
-    "src": "/media/img/r/everyman-02-1024.webp",
-    "jpg": "/media/img/r/everyman-02-1024.jpg",
-    "thumb": "/media/img/r/everyman-02-800.webp",
-    "thumbJpg": "/media/img/r/everyman-02-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/everyman-02",
-      "widths": [
-        480,
-        800,
-        1024
-      ]
-    }
-  },
   "everyman-03": {
     "width": 1080,
     "height": 1079,
@@ -3980,24 +3942,6 @@
       ]
     }
   },
-  "fs-ig-07": {
-    "width": 761,
-    "height": 761,
-    "src": "/media/img/r/fs-ig-07-761.webp",
-    "jpg": "/media/img/r/fs-ig-07-761.jpg",
-    "thumb": "/media/img/r/fs-ig-07-761.webp",
-    "thumbJpg": "/media/img/r/fs-ig-07-761.jpg",
-    "thumbWidth": 761,
-    "thumbHeight": 761,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/fs-ig-07",
-      "widths": [
-        480,
-        761
-      ]
-    }
-  },
   "fs-ig-03": {
     "width": 1080,
     "height": 1080,
@@ -4010,25 +3954,6 @@
     "hasFull": true,
     "variants": {
       "base": "/media/img/r/fs-ig-03",
-      "widths": [
-        480,
-        800,
-        1080
-      ]
-    }
-  },
-  "fs-ig-04": {
-    "width": 1080,
-    "height": 565,
-    "src": "/media/img/r/fs-ig-04-1080.webp",
-    "jpg": "/media/img/r/fs-ig-04-1080.jpg",
-    "thumb": "/media/img/r/fs-ig-04-800.webp",
-    "thumbJpg": "/media/img/r/fs-ig-04-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 419,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/fs-ig-04",
       "widths": [
         480,
         800,
@@ -4671,26 +4596,6 @@
       ]
     }
   },
-  "fs-ig-40": {
-    "width": 1440,
-    "height": 1440,
-    "src": "/media/img/r/fs-ig-40-1440.webp",
-    "jpg": "/media/img/r/fs-ig-40-1440.jpg",
-    "thumb": "/media/img/r/fs-ig-40-800.webp",
-    "thumbJpg": "/media/img/r/fs-ig-40-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/fs-ig-40",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
   "fs-ig-38": {
     "width": 1440,
     "height": 1440,
@@ -4723,26 +4628,6 @@
     "hasFull": true,
     "variants": {
       "base": "/media/img/r/fs-ig-41",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
-  "fs-ig-42": {
-    "width": 1440,
-    "height": 1440,
-    "src": "/media/img/r/fs-ig-42-1440.webp",
-    "jpg": "/media/img/r/fs-ig-42-1440.jpg",
-    "thumb": "/media/img/r/fs-ig-42-800.webp",
-    "thumbJpg": "/media/img/r/fs-ig-42-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/fs-ig-42",
       "widths": [
         480,
         800,
@@ -4803,26 +4688,6 @@
     "hasFull": true,
     "variants": {
       "base": "/media/img/r/fs-ig-44",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
-  "fs-ig-47": {
-    "width": 1440,
-    "height": 1440,
-    "src": "/media/img/r/fs-ig-47-1440.webp",
-    "jpg": "/media/img/r/fs-ig-47-1440.jpg",
-    "thumb": "/media/img/r/fs-ig-47-800.webp",
-    "thumbJpg": "/media/img/r/fs-ig-47-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/fs-ig-47",
       "widths": [
         480,
         800,
@@ -5062,25 +4927,6 @@
     "hasFull": true,
     "variants": {
       "base": "/media/img/r/huntsman-02",
-      "widths": [
-        480,
-        800,
-        1080
-      ]
-    }
-  },
-  "huntsman-03": {
-    "width": 1080,
-    "height": 1079,
-    "src": "/media/img/r/huntsman-03-1080.webp",
-    "jpg": "/media/img/r/huntsman-03-1080.jpg",
-    "thumb": "/media/img/r/huntsman-03-800.webp",
-    "thumbJpg": "/media/img/r/huntsman-03-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 799,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/huntsman-03",
       "widths": [
         480,
         800,
@@ -5367,26 +5213,6 @@
     "hasFull": true,
     "variants": {
       "base": "/media/img/r/little-venice-03",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
-  "masterpiece-03": {
-    "width": 1440,
-    "height": 1440,
-    "src": "/media/img/r/masterpiece-03-1440.webp",
-    "jpg": "/media/img/r/masterpiece-03-1440.jpg",
-    "thumb": "/media/img/r/masterpiece-03-800.webp",
-    "thumbJpg": "/media/img/r/masterpiece-03-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/masterpiece-03",
       "widths": [
         480,
         800,
@@ -5715,26 +5541,6 @@
       ]
     }
   },
-  "metropole-08": {
-    "width": 1440,
-    "height": 1440,
-    "src": "/media/img/r/metropole-08-1440.webp",
-    "jpg": "/media/img/r/metropole-08-1440.jpg",
-    "thumb": "/media/img/r/metropole-08-800.webp",
-    "thumbJpg": "/media/img/r/metropole-08-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/metropole-08",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
   "metropole-07": {
     "width": 1440,
     "height": 1440,
@@ -5870,25 +5676,6 @@
         800,
         1200,
         1440
-      ]
-    }
-  },
-  "oxygen-o2-04": {
-    "width": 1080,
-    "height": 1080,
-    "src": "/media/img/r/oxygen-o2-04-1080.webp",
-    "jpg": "/media/img/r/oxygen-o2-04-1080.jpg",
-    "thumb": "/media/img/r/oxygen-o2-04-800.webp",
-    "thumbJpg": "/media/img/r/oxygen-o2-04-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/oxygen-o2-04",
-      "widths": [
-        480,
-        800,
-        1080
       ]
     }
   },
@@ -6129,26 +5916,6 @@
       ]
     }
   },
-  "pendley-manor-10": {
-    "width": 1440,
-    "height": 1440,
-    "src": "/media/img/r/pendley-manor-10-1440.webp",
-    "jpg": "/media/img/r/pendley-manor-10-1440.jpg",
-    "thumb": "/media/img/r/pendley-manor-10-800.webp",
-    "thumbJpg": "/media/img/r/pendley-manor-10-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/pendley-manor-10",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
   "pendley-manor-14": {
     "width": 1200,
     "height": 1200,
@@ -6306,26 +6073,6 @@
       ]
     }
   },
-  "trematon-ig-05": {
-    "width": 1440,
-    "height": 1440,
-    "src": "/media/img/r/trematon-ig-05-1440.webp",
-    "jpg": "/media/img/r/trematon-ig-05-1440.jpg",
-    "thumb": "/media/img/r/trematon-ig-05-800.webp",
-    "thumbJpg": "/media/img/r/trematon-ig-05-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/trematon-ig-05",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
   "trematon-ig-04": {
     "width": 1440,
     "height": 1440,
@@ -6363,44 +6110,6 @@
         800,
         1200,
         1440
-      ]
-    }
-  },
-  "trematon-ig-07": {
-    "width": 1440,
-    "height": 1440,
-    "src": "/media/img/r/trematon-ig-07-1440.webp",
-    "jpg": "/media/img/r/trematon-ig-07-1440.jpg",
-    "thumb": "/media/img/r/trematon-ig-07-800.webp",
-    "thumbJpg": "/media/img/r/trematon-ig-07-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/trematon-ig-07",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
-  "trematon-ig-10": {
-    "width": 734,
-    "height": 734,
-    "src": "/media/img/r/trematon-ig-10-734.webp",
-    "jpg": "/media/img/r/trematon-ig-10-734.jpg",
-    "thumb": "/media/img/r/trematon-ig-10-734.webp",
-    "thumbJpg": "/media/img/r/trematon-ig-10-734.jpg",
-    "thumbWidth": 734,
-    "thumbHeight": 734,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/trematon-ig-10",
-      "widths": [
-        480,
-        734
       ]
     }
   },
@@ -6541,26 +6250,6 @@
         800,
         1200,
         1440
-      ]
-    }
-  },
-  "trematon-ig-16": {
-    "width": 1438,
-    "height": 1436,
-    "src": "/media/img/r/trematon-ig-16-1438.webp",
-    "jpg": "/media/img/r/trematon-ig-16-1438.jpg",
-    "thumb": "/media/img/r/trematon-ig-16-800.webp",
-    "thumbJpg": "/media/img/r/trematon-ig-16-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 799,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/trematon-ig-16",
-      "widths": [
-        480,
-        800,
-        1200,
-        1438
       ]
     }
   },
@@ -6824,24 +6513,6 @@
       ]
     }
   },
-  "hilton-city-airport-02": {
-    "width": 596,
-    "height": 312,
-    "src": "/media/img/r/hilton-city-airport-02-596.webp",
-    "jpg": "/media/img/r/hilton-city-airport-02-596.jpg",
-    "thumb": "/media/img/r/hilton-city-airport-02-596.webp",
-    "thumbJpg": "/media/img/r/hilton-city-airport-02-596.jpg",
-    "thumbWidth": 596,
-    "thumbHeight": 312,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/hilton-city-airport-02",
-      "widths": [
-        480,
-        596
-      ]
-    }
-  },
   "curio-westminster-01": {
     "width": 1440,
     "height": 1440,
@@ -6854,46 +6525,6 @@
     "hasFull": true,
     "variants": {
       "base": "/media/img/r/curio-westminster-01",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
-  "hilton-city-airport-01": {
-    "width": 1440,
-    "height": 756,
-    "src": "/media/img/r/hilton-city-airport-01-1440.webp",
-    "jpg": "/media/img/r/hilton-city-airport-01-1440.jpg",
-    "thumb": "/media/img/r/hilton-city-airport-01-800.webp",
-    "thumbJpg": "/media/img/r/hilton-city-airport-01-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 420,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/hilton-city-airport-01",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
-  "hilton-city-airport-03": {
-    "width": 1440,
-    "height": 756,
-    "src": "/media/img/r/hilton-city-airport-03-1440.webp",
-    "jpg": "/media/img/r/hilton-city-airport-03-1440.jpg",
-    "thumb": "/media/img/r/hilton-city-airport-03-800.webp",
-    "thumbJpg": "/media/img/r/hilton-city-airport-03-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 420,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/hilton-city-airport-03",
       "widths": [
         480,
         800,
@@ -7755,6 +7386,26 @@
         480,
         800,
         1080
+      ]
+    }
+  },
+  "trematon-ig-29": {
+    "width": 1440,
+    "height": 1800,
+    "src": "/media/img/r/trematon-ig-29-1440.webp",
+    "jpg": "/media/img/r/trematon-ig-29-1440.jpg",
+    "thumb": "/media/img/r/trematon-ig-29-800.webp",
+    "thumbJpg": "/media/img/r/trematon-ig-29-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1000,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/trematon-ig-29",
+      "widths": [
+        480,
+        800,
+        1200,
+        1440
       ]
     }
   }

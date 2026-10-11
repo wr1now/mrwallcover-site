@@ -35,10 +35,6 @@
       "credit": null
     },
     {
-      "id": "metropole-08",
-      "credit": null
-    },
-    {
       "id": "metropole-01",
       "credit": null
     },

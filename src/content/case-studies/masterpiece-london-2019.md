@@ -26,10 +26,6 @@
       "credit": null
     },
     {
-      "id": "masterpiece-03",
-      "credit": null
-    },
-    {
       "id": "masterpiece-01",
       "credit": null
     }
