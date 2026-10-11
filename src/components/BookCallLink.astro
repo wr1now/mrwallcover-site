@@ -1,0 +1,27 @@
+---
+/**
+ * "Book a 20-minute call": links to BOOKING_URL (src/config.ts), the Google
+ * Calendar booking page. Rendered only when BOOKING_URL is set; with it empty
+ * nothing is printed, so there is never a dead link. No tracking parameters.
+ */
+import { BOOKING_URL } from '../config';
+
+interface Props {
+  class?: string;
+  /** Wrap the link in a paragraph with this class (footer and contact column). */
+  wrap?: string;
+  /** Accessible name; it must contain the visible text. */
+  label?: string;
+}
+
+const { class: cls, wrap, label = 'Book a 20-minute call (opens Google Calendar in a new tab)' } = Astro.props;
+---
+
+{BOOKING_URL && wrap && (
+  <p class={wrap}>
+    <a href={BOOKING_URL} data-book class:list={['book-link', cls]} aria-label={label} target="_blank" rel="noopener noreferrer"><slot><span class="book-label">Book a <span class="whitespace-nowrap">20-minute</span> call</span></slot></a>
+  </p>
+)}
+{BOOKING_URL && !wrap && (
+  <a href={BOOKING_URL} data-book class:list={['book-link', cls]} aria-label={label} target="_blank" rel="noopener noreferrer"><slot><span class="book-label">Book a <span class="whitespace-nowrap">20-minute</span> call</span></slot></a>
+)}
