@@ -1,0 +1,128 @@
+---
+/**
+ * /details/: the finish up close. Ten of our own photographs (all records in src/content/alts.json say
+ * "own photograph" or "own photo"; none credited elsewhere), each a sharp frame already published on its
+ * case study or as maker evidence, grouped by what a client inspects first: seams, internal corners,
+ * edges and joins. Every frame links to the page it comes from. ImageObjects carry the five licence
+ * fields through the one helper in src/lib/schema.ts.
+ */
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Picture from '../components/Picture.astro';
+import Base from '../layouts/Base.astro';
+import { SITE_URL } from '../config';
+import { media, projectHref } from '../lib/content';
+import { breadcrumbNode, imageObject } from '../lib/schema';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Projects', href: '/projects/' },
+  { name: 'Details', href: '/details/' },
+];
+
+type Frame = { id: string; caption: string; href: string; place: string };
+const groups: { id: string; title: string; text: string; frames: Frame[] }[] = [
+  {
+    id: 'seams',
+    title: 'Seams',
+    text: 'Where one drop meets the next. On a tonal or plain ground there is no motif to hide a join, so each seam is butted and rolled until it disappears at normal viewing distance.',
+    frames: [
+      { id: 'beverly-05', caption: 'A seam in Cadence Oxblood: a tonal ground, with no motif to hide the join.', href: projectHref('calico-beverly-1975-cadence'), place: 'Calico Wallpaper × BEVERLY 1975, The Lavery' },
+      { id: 'fs-residences-03', caption: 'Banded entrance-hall wallcovering in charcoal, silver and ochre, laid with no visible seam.', href: projectHref('four-seasons-ten-trinity-square'), place: 'Four Seasons Private Residences, Ten Trinity Square' },
+    ],
+  },
+  {
+    id: 'internal-corners',
+    title: 'Internal corners',
+    text: 'A corner is where a pattern most often breaks. The paper is carried into the corner and the design is kept continuous across it, so the eye reads one wall, not two.',
+    frames: [
+      { id: 'heathrow-05', caption: 'A Calico Wallpaper landscape mural wrapped round an internal corner, full height.', href: projectHref('heathrow-terminal-4-calico'), place: 'Calico Wallpaper at Heathrow Terminal 4' },
+      { id: 'fs-ig-10', caption: 'Fromental silk turning into a corner with the pattern matched across it.', href: projectHref('four-seasons-ten-trinity-square'), place: 'Four Seasons Hotel London at Ten Trinity Square' },
+    ],
+  },
+  {
+    id: 'edges',
+    title: 'Edges',
+    text: 'External corners, arches and shadow gaps leave the cut edge on show. The line has to be straight, tight and even along its whole length; where a wall is not true, a bespoke trim makes the edge read as one line.',
+    frames: [
+      { id: 'arch-trim-01', caption: 'A wallcovered arch, its curved outer edge finished as one crisp, even line.', href: projectHref('imperfect-arches-external-corner-trim'), place: 'A prime residence in central London' },
+      { id: 'arch-trim-09', caption: 'Woven wallcovering on two neighbouring surfaces, each edge cut clean either side of a narrow shadow gap.', href: projectHref('imperfect-arches-external-corner-trim'), place: 'A prime residence in central London' },
+      { id: 'fs-residences-06', caption: 'Woven grasscloth turning an external corner, the weave straight and tight to the edge.', href: projectHref('four-seasons-ten-trinity-square'), place: 'Four Seasons Private Residences, Ten Trinity Square' },
+    ],
+  },
+  {
+    id: 'joins',
+    title: 'Joins',
+    text: 'Where the wallcovering meets something else: a door frame, joinery, a skirting or a switch plate. The cut follows the fitting exactly, with no gap and no overlap.',
+    frames: [
+      { id: 'mercedes-amg-02', caption: 'Black matt Muraspec walls meeting a brushed stainless-steel door trim.', href: projectHref('mercedes-amg-showroom-london'), place: 'Mercedes-AMG showroom, London' },
+      { id: 'brand-fermoie-01', caption: 'Fermoie linen carried over the walls, joinery and skirting, photographed during the installation.', href: '/materials/#maker-fermoie', place: 'A private project, London' },
+      { id: 'novotel-02', caption: 'Timber-grain wallcovering cut close round a light switch.', href: projectHref('novotel-london-canary-wharf'), place: 'Novotel London Canary Wharf' },
+    ],
+  },
+];
+
+const pageUrl = new URL('/details/', SITE_URL).href;
+const gallery = {
+  '@type': 'ImageGallery',
+  '@id': `${pageUrl}#gallery`,
+  name: 'Details: seams, internal corners, edges and joins',
+  url: pageUrl,
+  image: groups.flatMap((group) => group.frames.map((frame) => imageObject(new URL(media(frame.id).jpg, SITE_URL).href))),
+};
+---
+
+<Base
+  title="Details: Seams, Corners, Edges and Joins | Mr Wallcover"
+  description="The finish up close: seams, internal corners, edges and joins on our own installations, each photograph linked to the project it comes from."
+  path="/details/"
+  extraSchema={[breadcrumbNode(crumbs), gallery]}
+>
+  <div class="container-page pb-20">
+    <header class="page-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Details</p>
+      <h1>Seams, corners, edges and joins, up close</h1>
+      <p class="lede mt-5">A wallcovering is judged at the seam, in the corner and along the edge. These are our own photographs of those places, taken on finished and in-progress installations, each linked to the project it comes from.</p>
+    </header>
+
+    <nav class="details-jump" aria-label="Details on this page">
+      <ul>{groups.map((group) => <li><a href={`#${group.id}`}>{group.title}</a></li>)}</ul>
+    </nav>
+
+    {groups.map((group) => (
+      <section class="details-group" aria-labelledby={`${group.id}-heading`} id={group.id}>
+        <div class="details-intro">
+          <h2 id={`${group.id}-heading`}>{group.title}</h2>
+          <p>{group.text}</p>
+        </div>
+        <ul class="details-grid">
+          {group.frames.map((frame) => (
+            <li>
+              <figure>
+                <Picture id={frame.id} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" />
+                <figcaption>{frame.caption} <a href={frame.href}>{frame.place}</a></figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <p class="details-next">The method behind these finishes is in the <a href="/advice/">Wallcovering Guide</a>; for a room of your own, <a href="/contact/?intent=install">send us the drawings or a photograph</a>.</p>
+  </div>
+</Base>
+
+<style is:global>
+  .details-jump ul { list-style:none; margin:0 0 2.5rem; padding:0; display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; }
+  .details-jump a { display:inline-flex; align-items:center; min-height:44px; }
+  .details-group { padding:2.5rem 0; border-top:1px solid var(--color-line); }
+  .details-intro { max-width:44rem; }
+  .details-intro h2 { margin:0; }
+  .details-intro p { margin:.75rem 0 0; }
+  .details-grid { list-style:none; margin:1.75rem 0 0; padding:0; display:grid; gap:1.5rem; grid-template-columns:repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); }
+  .details-grid figure { margin:0; }
+  .details-grid .media-frame, .details-grid img { display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; }
+  .details-grid figcaption { margin-top:.75rem; line-height:1.55; }
+  .details-grid figcaption a { display:inline-block; margin-top:.25rem; }
+  .details-next { margin-top:2rem; max-width:44rem; }
+</style>
