@@ -9,6 +9,7 @@ import { AWARD_TEXT, AWARD_URL, faqNode } from '../lib/schema';
 import { caseStudyCount, programmeFigures, teamFacts, trustMakers } from '../lib/trust';
 import { publishedGuides, guideHref } from '../lib/guides';
 import sizes from '../content/sizes.json';
+import approvedQuotes from '../data/approved-quotes.json';
 import '../styles/atelier.css';
 // The hero's one extra rule (home-hero.css) is inlined in <head>. Every other homepage rule, the restored sections
 // and the showcase included, is in atelier.css, so the page is styled by one sheet before first paint.
@@ -223,6 +224,15 @@ const hotelNames = [
       <h2 id="calico-heading">{home.partners.title}</h2>
       <p class="home-calico-text">{home.partners.text}</p>
       <ul>{calicoProjects.map((project) => <li data-project-slug={project.slug}><a href={projectHref(project.slug)}>{calicoLabel(project)} <span aria-hidden="true">↗</span></a></li>)}</ul>
+      {/* Testimonials: only the approved lines in src/data/approved-quotes.json (Dorin, 11 Oct 2026), exact wording, Calico Wallpaper attribution only. */}
+      <div class="home-praise" role="group" aria-label="In Calico Wallpaper's own words">
+        {approvedQuotes.quotes.map((item) => (
+          <figure class="home-praise-quote">
+            <blockquote><p>“{item.quote}”</p></blockquote>
+            <figcaption>{item.href ? <a href={item.href}>{item.attribution}</a> : item.attribution}</figcaption>
+          </figure>
+        ))}
+      </div>
     </section>
 
     <section class="home-aftercare" aria-labelledby="aftercare-heading">

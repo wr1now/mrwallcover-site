@@ -82,8 +82,30 @@ test('claims decided by Dorin on 9 October 2026 hold in the built site', async (
   assert.doesNotMatch(everything, /2020–2022|2020 to 2022|2020 and 2022/);
   const owo = await readFile('dist/projects/raffles-london-the-owo/index.html', 'utf8');
   assert.match(owo, /2020–2023/);
-  // 4) No Calico praise quotes; the partnership line stays.
-  assert.doesNotMatch(everything, /Gorgeous! Thank you so much|for your hard work|In Calico's words|Client praise/i);
+  // 4) Calico praise: removed on 9 Oct, restored by Dorin on 11 Oct 2026 (src/data/approved-quotes.json). Only the exact
+  //    approved wording may appear, and only attributed to Calico Wallpaper: any personal name or other attribution fails.
+  //    The partnership line stays.
+  const approved = JSON.parse(await readFile('src/data/approved-quotes.json', 'utf8')) as { quotes: { quote: string; attribution: string }[] };
+  const ATTRIBUTION = /^Calico Wallpaper(?:, on the Beverly 1975 installation)?(?!\s*[,;:(—–-]|\s+(?:by|from|per)\b)/;
+  for (const item of approved.quotes) assert.match(item.attribution, /^Calico Wallpaper(?:, on the Beverly 1975 installation)?$/, `approved attribution: ${item.attribution}`);
+  for (const bad of ['Jane Smith, Calico Wallpaper', 'Calico Wallpaper, Jane Smith', 'Calico Wallpaper (Jane Smith)', 'Calico Wallpaper — Jane Smith', 'Calico Wallpaper - Jane Smith', 'Calico Wallpaper: Jane Smith']) {
+    assert.doesNotMatch(bad, ATTRIBUTION, `the guard must reject "${bad}"`);
+  }
+  const praiseText = everything.replace(/<[^>]+>/g, ' ').replace(/&quot;|&#34;|&#39;|[“”"]/g, ' ').replace(/\s+/g, ' ');
+  for (const hit of praiseText.matchAll(/Gorgeous|hard work|Thank you so much/gi)) {
+    // The approved quote must cover the hit itself, so a reworded line next to an approved one still fails.
+    const at = hit.index!;
+    const quote = approved.quotes.find((item) => {
+      const start = praiseText.lastIndexOf(item.quote, at);
+      return start >= 0 && start + item.quote.length > at;
+    });
+    assert.ok(quote, `Calico praise altered: "${praiseText.slice(Math.max(0, at - 60), at + 80)}"`);
+    const end = praiseText.lastIndexOf(quote!.quote, at) + quote!.quote.length;
+    const after = praiseText.slice(end, end + 160).replace(/^[\s—–-]+/, '');
+    assert.match(after, ATTRIBUTION, `Calico praise must be attributed to Calico Wallpaper only: "${after.slice(0, 80)}"`);
+    assert.ok(after.startsWith(quote!.attribution), `attribution changed: "${after.slice(0, 80)}"`);
+  }
+  assert.doesNotMatch(everything, /In Calico's words|Client praise/i);
   assert.match(html, /Delivered in partnership with/);
   assert.doesNotMatch(everything, /Trusted by Calico/i);
   // 5) North London residence is live, with no press links and no owner name.

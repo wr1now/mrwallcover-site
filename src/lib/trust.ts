@@ -4,7 +4,8 @@
  * - Case-study count: the published case studies (drafts are already filtered out), never typed in.
  * - Programme figures: facts.json programmeFigures entries that carry a short 'figure' label
  *   (the five Instagram-sourced figures Dorin approved; each links to its case study).
- * - Makers: six makers whose installs are documented on /materials/ (makers-installed.json),
+ * - Makers: the seven makers Dorin confirmed as installed (Timorous Beasties added 11 Oct 2026, evidenced by Hyde London City),
+ *   whose installs are documented on /materials/ (makers-installed.json),
  *   each linked to its anchor there.
  * - Team: the About page's own sentences (about.json howWeWork and founderSummary), quoted as written.
  */
@@ -24,6 +25,7 @@ export const trustMakers = [
   { name: 'Phillip Jeffries', href: '/materials/#maker-phillip-jeffries' },
   { name: 'Muraspec', href: '/materials/#maker-muraspec' },
   { name: 'Calico Wallpaper', href: '/materials/#maker-calico-wallpaper' },
+  { name: 'Timorous Beasties', href: '/materials/#maker-timorous-beasties' },
 ];
 
 const items = about.howWeWork.items;
