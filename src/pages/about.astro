@@ -32,10 +32,16 @@ const crumbs = [
         </p>
         <p class="m-0"><a href={AWARD_URL} rel="noopener">{AWARD_TEXT}</a>.</p>
       </div>
-      <figure class="m-0 md:col-span-5 md:col-start-8">
-        <Picture id={about.image} sizes="(min-width: 768px) 28rem, 100vw" />
-        <figcaption class="caption">{about.imageCaption}</figcaption>
-      </figure>
+      <div class="grid gap-10 md:col-span-5 md:col-start-8">
+        <figure class="founder-portrait m-0">
+          <Picture id={about.portrait} sizes="(min-width: 768px) 28rem, 100vw" />
+          <figcaption class="caption">{about.portraitCaption}</figcaption>
+        </figure>
+        <figure class="m-0">
+          <Picture id={about.image} sizes="(min-width: 768px) 28rem, 100vw" />
+          <figcaption class="caption">{about.imageCaption}</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 
