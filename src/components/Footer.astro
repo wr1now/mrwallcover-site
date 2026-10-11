@@ -2,7 +2,18 @@
 import facts from '../data/facts.json';
 import PhoneReveal from './PhoneReveal.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
-import { areaHref, areas, home } from '../lib/content';
+import { areaHref, areas, editorialPages, home, materials, specialismHref, specialisms } from '../lib/content';
+
+/** Every service and material page, generated from content so a new page joins the footer by itself. */
+const servicePages = [
+  ...specialisms.map((item) => ({ href: specialismHref(item.slug), label: item.name })),
+  ...editorialPages.filter((mod) => mod.frontmatter.path.startsWith('/services/')).map((mod) => ({ href: mod.frontmatter.path, label: mod.frontmatter.title })),
+];
+const materialPages = [
+  ...materials.items.map((item) => ({ href: `/materials/${item.slug}/`, label: item.name })),
+  ...editorialPages.filter((mod) => mod.frontmatter.path.startsWith('/materials/')).map((mod) => ({ href: mod.frontmatter.path, label: mod.frontmatter.title })),
+];
+const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase());
 
 const BRAND_NAME = facts.brand;
 const FOUNDER_NAME = facts.founder.name;
@@ -64,6 +75,20 @@ const PUBLIC_EMAIL = facts.email;
       }
     </div>
   </div>
+  <nav class="container-page mt-10 grid gap-6 md:grid-cols-2" aria-label="Services and materials">
+    <div>
+      <p class="eyebrow">Services</p>
+      <ul class="m-0 flex list-none flex-wrap gap-x-3 gap-y-1 p-0 text-sm">
+        {servicePages.map((page) => <li><a href={page.href}>{sentence(page.label)}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">Materials</p>
+      <ul class="m-0 flex list-none flex-wrap gap-x-3 gap-y-1 p-0 text-sm">
+        {materialPages.map((page) => <li><a href={page.href}>{sentence(page.label)}</a></li>)}
+      </ul>
+    </div>
+  </nav>
   <div class="container-page mt-10 flex flex-wrap items-center justify-between gap-4 text-sm text-stone">
     <p class="m-0">© {new Date().getFullYear()} {BRAND_NAME}. {FOUNDER_NAME}, founder. {facts.place}.</p>
     {/* Opaque glass, no blur, no transitions. A user-requested preference, so localStorage holds it (the only thing the site stores). */}

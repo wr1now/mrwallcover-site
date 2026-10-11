@@ -333,8 +333,10 @@ test('each case-study Article carries its frontmatter dates and Dorin as author;
     articles += 1;
   }
   assert.ok(articles >= 10);
+  // Every other page now carries a content date from scripts/sitemap-lastmod.mjs (git or frontmatter), never the
+  // build time; tests/sitemap.test.ts checks every URL. Here: a date only, from the page's own sources.
   for (const [pagePath, lastmod] of lastmods) {
-    if (!pagePath.startsWith('/projects/') || pagePath === '/projects/') assert.equal(lastmod, undefined, `${pagePath} must not carry a build-time lastmod`);
+    assert.match(lastmod ?? '', /^\d{4}-\d{2}-\d{2}T00:00:00\.000Z$/, `${pagePath} lastmod must be a content date (midnight), not a build timestamp`);
   }
 });
 
@@ -406,7 +408,7 @@ test('each published guide carries an Article with the founder as author, the bu
     assert.equal(article.author['@id'], 'https://www.mrwallcover.com/about/#dorin', `${slug} author`);
     assert.equal(article.author.name, 'Dorin Burcus');
     // The publisher is the business node by @id, with its type, name, url and logo repeated inline for readers that do not follow @id.
-    assert.deepEqual(article.publisher, { '@type': 'Organization', '@id': 'https://www.mrwallcover.com/#business', name: 'Mr Wallcover', url: 'https://www.mrwallcover.com', logo: 'https://www.mrwallcover.com/apple-touch-icon.png' }, `${slug} publisher`);
+    assert.deepEqual(article.publisher, { '@type': 'Organization', '@id': 'https://www.mrwallcover.com/#business', name: 'Mr Wallcover', url: 'https://www.mrwallcover.com', logo: 'https://www.mrwallcover.com/logo-512.png' }, `${slug} publisher`);
     assert.ok(Array.isArray(article.image) && article.image.length > 0 && article.image.every((img: any) => img['@type'] === 'ImageObject' && img.creditText), `${slug} Article image`);
     assert.equal(article.mainEntityOfPage['@id'], `https://www.mrwallcover.com/advice/${slug}/#webpage`);
     assert.ok(graph['@graph'].some((node) => node['@type'] === 'BreadcrumbList'), `${slug} breadcrumbs`);
