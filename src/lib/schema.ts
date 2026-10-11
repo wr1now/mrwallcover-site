@@ -115,6 +115,7 @@ export function mediaIdFor(url: string): string | undefined {
 
 const CREDIT = /credit\s+(?:Photography|Photograph|Photo|Image|Images)\s*:\s*([^;]+)/i;
 const LICENCE = /licen[cs]e\s+CC\s+[A-Z-]+\s+[\d.]+\s+(https?:\/\/[^\s;]+)/i;
+const TERMS = /(?:^|;\s*)terms\s+(https?:\/\/[^\s;]+)/i;
 
 /** The credit holder as the record writes it, e.g. "The wub / Wikimedia Commons (CC BY-SA 4.0)". */
 export function creditFor(id: string): string | undefined {
@@ -125,11 +126,14 @@ function fromCredit(holder: string, note: string): ImageRights {
   const commons = /Wikimedia Commons/i.test(holder);
   const name = holder.replace(/\s*\/\s*Wikimedia Commons.*$/i, '').replace(/\s*\(official\)\s*$/i, '').trim();
   const licence = note.match(LICENCE)?.[1];
+  // An official hotel or brand photograph records the owner's terms page ("terms <url>"):
+  // that page is where its use is governed, so it is both the license and where to ask.
+  const terms = note.match(TERMS)?.[1];
   return {
     creator: { '@type': commons ? 'Person' : 'Organization', name },
     copyrightNotice: `© ${name}`,
-    license: licence ?? IMAGE_USE_URL,
-    acquireLicensePage: IMAGE_USE_URL,
+    license: licence ?? terms ?? IMAGE_USE_URL,
+    acquireLicensePage: terms ?? IMAGE_USE_URL,
     creditText: holder.replace(/\s*\(official\)\s*$/i, ''),
     basis: 'credit',
   };
