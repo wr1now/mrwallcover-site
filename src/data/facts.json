@@ -26,5 +26,33 @@
     "name": "Most Outstanding for Wallcovering Installation, 2021",
     "organiser": "BUILD Magazine 2021 Design & Build Awards",
     "url": "https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg"
-  }
+  },
+  "_programmeFigures": "Programme figures Dorin cleared on 11 Oct 2026, each from a caption on our own Instagram (@mrwallcover) and cited in docs/sources.md. Add no figure that is not on Dorin's list.",
+  "programmeFigures": [
+    {
+      "fact": "Raffles London at The OWO: chosen in 2021 to install about 17,500 m² of wallcoverings in 18 months",
+      "url": "https://www.mrwallcover.com/projects/raffles-london-the-owo/",
+      "source": "https://www.instagram.com/p/CPFPOA5FBZ4/"
+    },
+    {
+      "fact": "Four Seasons Hotel London at Ten Trinity Square: about 5,000 m² of wallcoverings, completed in 2019",
+      "url": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+      "source": "https://www.instagram.com/p/BxBEIajB-d5/"
+    },
+    {
+      "fact": "The Biltmore Mayfair (then the Millennium Hotel, Grosvenor Square): a guest-room programme of more than 15,000 m² in 2018",
+      "url": "https://www.mrwallcover.com/projects/biltmore-mayfair/",
+      "source": "https://www.instagram.com/p/BkBSc6AHX7U/"
+    },
+    {
+      "fact": "Pendley Manor Hotel: 30 rooms in 30 days, with 20 different wallpapers",
+      "url": "https://www.mrwallcover.com/projects/pendley-manor-hotel/",
+      "source": "https://www.instagram.com/p/B60Ncb2FWZS/"
+    },
+    {
+      "fact": "DoubleTree by Hilton London – West End: 30 rooms on two floors in 2019, while the hotel stayed open",
+      "url": "https://www.mrwallcover.com/projects/doubletree-west-end/",
+      "source": "https://www.instagram.com/p/B0GpM3Vlmkh/"
+    }
+  ]
 }

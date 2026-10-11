@@ -122,6 +122,7 @@ const faq = buyerFaqFor(path);
         <li><a href={founderHref}>{SINCE_TEXT}</a>.</li>
         {AWARD && <li>{AWARD.text}.</li>}
         <li>Wastage and pattern repeat when ordering wallcoverings. {WASTAGE.statement} <a href="/services/#surveying">How quantities are surveyed</a>.</li>
+        {facts.programmeFigures.map((figure) => <li><a href={figure.url.replace('https://www.mrwallcover.com', '')}>{figure.fact}</a> (source: <a href={figure.source} rel="noopener">our Instagram post</a>).</li>)}
         <li>{published.length} published case studies, each with its own page and a Markdown version, listed below and in <a href="/projects.json">/projects.json</a>.</li>
       </ul>
 
