@@ -123,7 +123,7 @@ test('Q10 and Q13: Chelsea FAQ, decision guide and Cadence role read as Dorin de
   for (const file of ['dist/projects/index.html', 'dist/for-ai/index.html', 'dist/projects.json', 'dist/llms.txt']) assert.ok((await readFile(file, 'utf8')).includes('Wallcovering installation (feature wall)'), `Cadence role in ${file}`);
   assert.ok(await readFile('dist/projects/calico-beverly-1975-cadence/index.html', 'utf8'), 'Cadence case study still built');
   const wellKnown = JSON.parse(await readFile('dist/.well-known/facts.json', 'utf8'));
-  assert.deepEqual(wellKnown.makersInstalled.makers, ['de Gournay', 'Fromental', 'House of Hackney', 'Muraspec', 'Phillip Jeffries']);
+  assert.deepEqual(wellKnown.makersInstalled.makers, ['de Gournay', 'Fromental', 'House of Hackney', 'Muraspec', 'Phillip Jeffries', 'Timorous Beasties']);
   assert.equal(wellKnown.minimumProjectSize, Q10);
   for (const key of ['paymentTerms', 'roomsPerDay']) assert.ok(!(key in wellKnown), key);
 });

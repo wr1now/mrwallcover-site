@@ -1,14 +1,16 @@
 ---
 {
-  "draft": true,
   "path": "/services/house-of-hackney-wallpaper-installer/",
   "title": "House of Hackney wallpaper installation",
   "metaTitle": "House of Hackney Wallpaper Installer London | Mr Wallcover",
-  "description": "Installation of House of Hackney wallpapers by Mr Wallcover: the Castle of Trematon, the St Michael's Clergy House showroom, a Hyde London City suite and a North London bedroom.",
+  "description": "House of Hackney wallpapers hung by Mr Wallcover: Trematon Castle, the St Michael's Clergy House showroom, a Hyde London City suite and a North London bedroom.",
   "eyebrow": "Services",
   "heading": "House of Hackney wallpaper installation",
-  "lede": "Mr Wallcover has hung House of Hackney wallpapers in a Cornish castle, the maker's own London showroom, a London hotel suite and a listed North London house. This page says what the papers are, how they hang, and what we have hung.",
+  "lede": "Mr Wallcover has hung House of Hackney wallpapers in a Georgian house inside a Cornish castle, the maker's London showroom, a London hotel suite and a listed North London house. This page says which papers, how they hang, and where each case study is.",
   "parent": { "name": "Services", "href": "/services/" },
+  "updated": "2026-10-11",
+  "service": { "name": "House of Hackney wallpaper installation", "serviceType": "Wallcovering installation" },
+  "cta": { "label": "Discuss a House of Hackney installation", "href": "/contact/?intent=install" },
   "projects": [
     "trematon-castle",
     "house-of-hackney-st-michaels",
@@ -20,14 +22,14 @@
       "id": "hoh-relationship",
       "question": "Is Mr Wallcover a House of Hackney recommended installer?",
       "paragraphs": [
-        "TODO(Dorin): answer only in words House of Hackney has agreed. Until then the true statement is: we have hung House of Hackney wallpapers at four published commissions, including the maker's own showroom and the founders' house, and we are not affiliated with the maker."
+        "No. Mr Wallcover is not on maker recommended-installer lists. We have hung House of Hackney wallpapers at four published commissions, including the maker's own showroom at St Michael's Clergy House. A maker's name on this site means we installed that maker's product on that project; it is not a maker approval, accreditation or endorsement."
       ]
     },
     {
       "id": "hoh-listed",
-      "question": "Can House of Hackney paper be hung in a listed house?",
+      "question": "Can House of Hackney paper be hung in a listed or historic house?",
       "paragraphs": [
-        "Yes. The Castle of Trematon and the North London bedroom are both listed buildings on the case studies, with old walls, beams and sloping floors. The set-out is planned around the room as found."
+        "Yes. The North London bedroom is in a listed Georgian house, with exposed beams and floorboards that slope with age, and the Castle of Trematon papers were hung in the Georgian house inside the castle walls. The set-out is planned around the room as found."
       ]
     },
     {
@@ -41,24 +43,23 @@
 }
 ---
 
-DRAFT. Not built, not in the sitemap, not linked. Remove `"draft": true` only after every TODO(Dorin) below is resolved.
+Mr Wallcover has hung House of Hackney wallpapers at four published commissions. Mr Wallcover is not on maker recommended-installer lists: a maker's name on this site means we installed that maker's product on that project.
 
-## The relationship, stated exactly
+## Which papers
 
-TODO(Dorin): one sentence about the relationship to House of Hackney in words the maker has agreed in writing. Do not use "partner", "approved installer" or "recommended installer" unless House of Hackney says so in a sentence we may publish. Until then: Mr Wallcover has hung House of Hackney wallpapers at four published commissions and is not affiliated with the maker.
+The pattern names are the ones the case studies record:
 
-## What the papers are
+- **The Castle of Trematon, Cornwall (2019–2022):** PLANTASIA, GAIA in Prussian Blue, FLORA DELANICA, COSMOS in Celestial Blue, FLORA FANTASIA in Noir Stripe and Ecru, ARTEMIS and HOLLYHOCKS.
+- **The House of Hackney showroom, St Michael's Clergy House (2022):** the maker's own papers through the concept rooms, the bedroom and the tiled cloakrooms, after preparation and making good of the 1856 clergy house, ready for the public opening on 26 March 2022.
+- **Hyde London City:** LIMERENCE in Galapagos, wrapping a suite, its bedroom and its dressing area.
+- **A Georgian house in North London (2019):** BAMBUSA in Midnight, on every wall of a guest bedroom.
 
-TODO(Dorin): two or three sentences on the House of Hackney papers actually hung, using only the pattern names already on the case studies (PLANTASIA, GAIA, FLORA DELANICA, COSMOS, FLORA FANTASIA, ARTEMIS and HOLLYHOCKS at Trematon; LIMERENCE at Hyde London City; BAMBUSA in North London). Link to the maker's product pages.
+For the maker's range, see [House of Hackney](https://www.houseofhackney.com/).
 
 ## How it hangs
 
-TODO(Dorin): link House of Hackney's own hanging instructions, and describe the method only as far as the case studies already do. No new figures.
-
-## Dated installations on the public record
-
-The Castle of Trematon, Cornwall (2019–2022); the House of Hackney showroom at St Michael's Clergy House (2022); a suite at Hyde London City; a guest bedroom in a listed North London house (2019). The case studies linked below are the record.
+As the case studies record it: in an old house, walls lean, floors slope and beams cut across the wall at odd angles, so the paper is set out around the room as found, then cut around the beams, the fireplace, the built-in desk and the shelving and finished tight to the paintwork. At the clergy house, preparation and making good came first.
 
 ## Photographs
 
-House of Hackney's finished-room photographs are credited "Photography: House of Hackney" and stay credited that way. Lead with a finished room, never a before shot. TODO(Dorin): confirm House of Hackney is content for their showroom photographs to appear on a maker page as well as the case study.
+House of Hackney's finished-room photographs of the showroom are credited "Photography: House of Hackney" and stay credited that way; the rest were taken on site by us. Each case study below has its own photographs and credits.

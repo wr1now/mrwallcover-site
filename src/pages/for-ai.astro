@@ -9,7 +9,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import PageMeta from '../components/PageMeta.astro';
 import Base from '../layouts/Base.astro';
 import facts from '../data/facts.json';
-import { about, areaHref, media, areas, caseStudies, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
+import { about, areaHref, media, areas, caseStudies, editorialPages, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
 import { publishedGuides, guideHref } from '../lib/guides';
 import BuyerFaq from '../components/BuyerFaq.astro';
 import { breadcrumbNode, buyerFaqNode } from '../lib/schema';
@@ -133,6 +133,14 @@ const faq = buyerFaqFor(path);
         {specialisms.map((item) => <li><a href={specialismHref(item.slug)}>{item.name}</a>: {item.description}</li>)}
       </ul>
       <p>Aftercare is part of every commission. The terms are on <a href="/aftercare/">the aftercare page</a>.</p>
+
+      <h2 id="maker-pages">Maker pages, trade, cost and reviews</h2>
+      <p>Pages on specific makers' products, on working with main contractors, on how a job is priced, and the reviews page (client and maker words, published exactly as written). A maker's name on this site means Mr Wallcover installed that maker's product on that project; it is not a maker approval, accreditation or endorsement.</p>
+      <ul>
+        {editorialPages
+          .filter((mod) => /installer\/$|^\/trade\/$|^\/advice\/cost\/$|^\/reviews\/$/.test(mod.frontmatter.path))
+          .map((mod) => <li><a href={mod.frontmatter.path}>{mod.frontmatter.title}</a>: {mod.frontmatter.description}</li>)}
+      </ul>
 
       <h2 id="projects">Published projects, and the products installed on them</h2>
       <p>

@@ -10,7 +10,6 @@
   "wallcoverings": [
     "Penny Morrison's own papers"
   ],
-  "draft": true,
   "modest": false,
   "awaitingPhotos": false,
   "metaTitle": "Penny Morrison showroom | Mr Wallcover",
@@ -31,7 +30,7 @@
     { "id": "penny-morrison-showroom-10", "credit": null }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-09"
+  "updated": "2026-10-11"
 }
 ---
 

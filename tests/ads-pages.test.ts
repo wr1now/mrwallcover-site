@@ -110,9 +110,9 @@ for (const page of PAGES) {
   });
 }
 
-test('the specified-papers page names the five makers Dorin confirmed and Calico as the partnership', async () => {
+test('the specified-papers page names the six makers Dorin confirmed (Timorous Beasties added 11 Oct 2026) and Calico as the partnership', async () => {
   const text = visibleText(await readFile('dist/materials/specified-papers/index.html', 'utf8'));
-  for (const maker of ['de Gournay', 'Fromental', 'House of Hackney', 'Muraspec', 'Phillip Jeffries']) assert.ok(text.includes(maker), maker);
+  for (const maker of ['de Gournay', 'Fromental', 'House of Hackney', 'Muraspec', 'Phillip Jeffries', 'Timorous Beasties']) assert.ok(text.includes(maker), maker);
   assert.match(text, /Work delivered in partnership with Calico Wallpaper/);
   assert.match(text, /Fromental\.[^.]*large volume at Four Seasons Hotel London at Ten Trinity Square/);
 });

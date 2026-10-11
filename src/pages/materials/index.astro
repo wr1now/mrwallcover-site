@@ -75,6 +75,7 @@ const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((
             ) : (
               <p class="mt-1 mb-0 text-stone">Installed at {item.where}, {item.year}. <a href={item.source} rel="noopener">Our post</a>.</p>
             )}
+            {(item as { page?: string }).page && <p class="mt-1 mb-0"><a href={(item as { page?: string }).page}>How we install {item.brand}</a></p>}
           </li>
         ))}
       </ul>
