@@ -1,5 +1,5 @@
 {
-  "_note": "Makers installed, each shown with a real install photograph of ours (11 Oct 2026, @mrwallcover Instagram pack db42922). Brand-only folders stay unnamed as projects. The unsure list, Koroseal (held) and Morris & Co (photo identity unclear) are left out. A maker named here means Mr Wallcover installed that maker's product; it is not an approval, accreditation or endorsement.",
+  "_note": "Makers installed, each shown with a real install photograph of ours (11 Oct 2026, @mrwallcover Instagram pack db42922). Brand-only folders stay unnamed as projects. The unsure list, Koroseal (held) and Morris & Co (photo identity unclear) are left out. A maker named here means Mr Wallcover installed that maker's product; it is not an approval, accreditation or endorsement. 11 Oct 2026 soft-image sweep: Lizzo left out (its only install photograph is 811px on the short side, too small for card use; the other Lizzo frames show packaging or an unrelated room); Muraspec's card now uses mercedes-amg-02 (the Four Seasons lobby frame was soft and dropped).",
   "items": [
     {
       "brand": "Anaglypta",
@@ -181,16 +181,8 @@
       ]
     },
     {
-      "brand": "Lizzo",
-      "image": "brand-lizzo-01",
-      "where": "a private project, London",
-      "year": "2018",
-      "source": "https://www.instagram.com/p/BlrORM0njXz/",
-      "projects": []
-    },
-    {
       "brand": "Muraspec",
-      "image": "fs-ig-47",
+      "image": "mercedes-amg-02",
       "where": "",
       "projects": [
         "/projects/everyman-liverpool/",

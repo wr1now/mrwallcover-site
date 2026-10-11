@@ -212,19 +212,6 @@
       ],
       "caption": null
     },
-    "brand-lizzo-01": {
-      "file": "unnamed-project-london/2018-07-26_BlrORM0njXz_01.jpg",
-      "post": "BlrORM0njXz",
-      "date": "2018-07-26",
-      "url": "https://www.instagram.com/p/BlrORM0njXz/",
-      "width": 811,
-      "height": 811,
-      "alt": "Lizzo floral mural framed on a wall in blue and gold, a private project, London.",
-      "brands": [
-        "Lizzo"
-      ],
-      "caption": null
-    },
     "brand-omexco-01": {
       "file": "unnamed-project-london/2017-10-09_BaCaL9JAVaV_06.jpg",
       "post": "BaCaL9JAVaV",
@@ -421,5 +408,9 @@
       "caption": null
     }
   },
-  "note": "brand-elitis-01 first drawn from unnamed-project-chelsea (Bdub9FQgGZO) and replaced: tests/held-images.test.ts matched it to a held photograph."
+  "note": "brand-elitis-01 first drawn from unnamed-project-chelsea (Bdub9FQgGZO) and replaced: tests/held-images.test.ts matched it to a held photograph.",
+  "droppedSoft": {
+    "brand-lizzo-01": "unnamed-project-london/2018-07-26_BlrORM0njXz_01.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
 }

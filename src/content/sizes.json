@@ -7022,25 +7022,6 @@
       ]
     }
   },
-  "brand-lizzo-01": {
-    "width": 811,
-    "height": 811,
-    "src": "/media/img/r/brand-lizzo-01-811.webp",
-    "jpg": "/media/img/r/brand-lizzo-01-811.jpg",
-    "thumb": "/media/img/r/brand-lizzo-01-800.webp",
-    "thumbJpg": "/media/img/r/brand-lizzo-01-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/brand-lizzo-01",
-      "widths": [
-        480,
-        800,
-        811
-      ]
-    }
-  },
   "brand-kelly-hoppen-01": {
     "width": 1080,
     "height": 1080,
