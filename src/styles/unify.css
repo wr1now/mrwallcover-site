@@ -156,6 +156,11 @@ body .atelier .atelier-hero-award { line-height:20px; }
   body .atelier .atelier-hero-actions .atelier-button { padding-inline:12px; }
 }
 
+/* /reviews/: approved quotes (src/data/approved-quotes.json) set apart from the running text. */
+body .reviews-quote { margin:2.25rem 0; padding-left:1.25rem; border-left:2px solid var(--color-line); }
+body .reviews-quote blockquote { margin:0; }
+body .reviews-quote figcaption { font-size:var(--text-meta); }
+
 /* Second pass: the few atelier.css rules that carry a :not() or a parent class. */
 body .atelier .atelier-kicker, body .atelier .atelier-project-meta .atelier-kicker,
 body .atelier .atelier-project > p.atelier-credit, body .atelier .atelier-project-meta > span { font-size:var(--text-label); }

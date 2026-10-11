@@ -1,0 +1,15 @@
+{
+  "note": "Client praise cleared for publication. Wording exactly as on the homepage before the 9 Oct 2026 claim fixes (commit b28e7c0); attributed to Calico Wallpaper only, never to a person. Approved by Dorin Burcus, 11 Oct 2026. tests/dist-guards.test.ts fails the build if a quote is altered or attributed to anyone else.",
+  "approvedBy": "Dorin Burcus, 11 Oct 2026",
+  "quotes": [
+    {
+      "quote": "Gorgeous! Thank you so much!",
+      "attribution": "Calico Wallpaper, on the Beverly 1975 installation",
+      "href": "/projects/calico-beverly-1975-cadence/"
+    },
+    {
+      "quote": "Thank you for the update Dorin and for your hard work!",
+      "attribution": "Calico Wallpaper"
+    }
+  ]
+}
