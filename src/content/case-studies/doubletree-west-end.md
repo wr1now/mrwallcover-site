@@ -14,7 +14,7 @@
   "metaTitle": "DoubleTree West End | Mr Wallcover",
   "metaDescription": "Guest room wallcoverings at DoubleTree by Hilton London – West End, Southampton Row, in 2019. Formerly the Bonnington Hotel.",
   "group": null,
-  "standfirst": "Guest room wallcoverings at the Holborn hotel in 2019. The building was previously the Bonnington Hotel.",
+  "standfirst": "Guest room wallcoverings at the Holborn hotel, the former Bonnington, through the main works of 2019.",
   "hero": "doubletree-west-end-commons-01",
   "gallery": [
     {

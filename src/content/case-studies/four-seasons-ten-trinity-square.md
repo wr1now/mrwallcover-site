@@ -15,7 +15,7 @@
   "metaTitle": "Four Seasons Hotel London, Ten Trinity Square | Mr Wallcover",
   "metaDescription": null,
   "group": null,
-  "standfirst": "Guest room and suite wallpapering, 2016 to 2019, inside one of the City's great Beaux-Arts buildings, and the walls of the Four Seasons Private Residences upstairs.",
+  "standfirst": "Three years of guest room and suite wallpapering, 2016 to 2019, through the opening of one of the City's great Beaux-Arts conversions, and the walls of the Four Seasons Private Residences upstairs.",
   "hero": "fs-residences-01",
   "gallery": [
     {

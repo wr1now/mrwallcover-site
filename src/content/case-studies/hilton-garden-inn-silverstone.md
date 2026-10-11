@@ -12,7 +12,7 @@
   "metaTitle": null,
   "metaDescription": null,
   "group": null,
-  "standfirst": "Main wallcoverings contractor for the only hotel on the Silverstone Circuit.",
+  "standfirst": "Main wallcoverings contractor for the only hotel on the Silverstone Circuit, its rooms finished to one standard in time for the 2022 British Grand Prix.",
   "hero": "hilton-garden-inn-silverstone-press-01",
   "gallery": [
     {
@@ -33,7 +33,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-11"
 }
 ---
 

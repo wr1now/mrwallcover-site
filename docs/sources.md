@@ -16,3 +16,12 @@ Published facts on mrwallcover.com that come from outside sources, with the sour
 
 - **What:** the answers in src/data/buyer-answers.json, shown on /for-ai/, the three /professionals/ pages, the hotel guide and /aftercare/, in /llms.txt (Buyer questions) and in /.well-known/facts.json.
 - **Source:** the audit's FILL.md, where every sentence carries a link to the page of mrwallcover.com it comes from (kept per answer in `sources`). Sentences that wait for Dorin ([Pending Qn]) are left out; `pendingOmitted` records which of QUESTIONS_FOR_DORIN.md would complete each answer. The standing entries quote the site word for word.
+
+## Owner-confirmed claims (PR #35, 11 Oct 2026)
+
+Each sentence below is published on the strength of the owner's own knowledge of the job. Source for all four: **Dorin Burcus, owner, confirmed 11 Oct 2026** (review of PR #35, 08:53 BST).
+
+- **Hilton Garden Inn Silverstone:** "its rooms finished to one standard in time for the 2022 British Grand Prix". Used in src/content/case-studies/hilton-garden-inn-silverstone.md (standfirst). Source: Dorin Burcus, owner, confirmed 11 Oct 2026.
+- **Ahluwalia / Calico, Estuary:** "hung in a single day" before the show. Used in src/content/case-studies/calico-ahluwalia-estuary-rosewood.md (standfirst; the wording is main's). Source: Dorin Burcus, owner, confirmed 11 Oct 2026.
+- **About, Dorin Burcus:** "run wallcovering packages in prime London hotels". Used in src/content/about.json (founder paragraph and founderSummary, so also on /for-ai/ and the AI crawler summary). Source: Dorin Burcus, owner, confirmed 11 Oct 2026.
+- **Standards block on every case study:** "The people who start are the people who finish." Used in src/content/method.json (item "One team, then the return visit"). Source: Dorin Burcus, owner, confirmed 11 Oct 2026.

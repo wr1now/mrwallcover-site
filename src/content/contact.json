@@ -3,11 +3,11 @@
   "description": "Request a quotation from Mr Wallcover, London specialist wallcovering installer. Use the enquiry form or email info@mrwallcover.com.",
   "eyebrow": "Contact",
   "heading": "Start your project.",
-  "lede": "A short note is enough. Choose email or phone for the reply, not both. Photographs and PDFs are optional.",
+  "lede": "A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether to reply by email or by phone, not both. Photographs, drawings and PDFs help, and are optional.",
   "photoNote": "Phone photographs, labels and drawings help. You can send them with the note or by email.",
   "submit": "Start your project",
   "mailtoStatus": "Your email application should open with this enquiry. If it does not, write to us at the address below.",
-  "direct": "Or write directly. The phone is answered by Dorin Burcus; the number is shown on request.",
+  "direct": "Or go direct. The phone is answered by Dorin Burcus himself; the number is shown on request.",
   "directNoPhone": "Or write directly. Email is read by Dorin Burcus.",
   "spamNote": "This form is protected against spam. After you press send you may be asked to tick a short check before the message reaches us."
 }

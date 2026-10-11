@@ -13,7 +13,7 @@
   "metaTitle": "Inverness Terrace exterior | Mr Wallcover",
   "metaDescription": "Full scaffolded exterior, front and rear, at a Victorian stucco terrace of flats on Inverness Terrace, Bayswater, in 2018.",
   "group": null,
-  "standfirst": "A full exterior on Inverness Terrace in 2018: scaffolded front and rear, stucco and render repairs, windows, balconies and the rear brickwork.",
+  "standfirst": "A full scaffolded exterior on Inverness Terrace in 2018: stucco and render repairs, windows, balconies and the rear brickwork, front and back.",
   "hero": "inverness-terrace-exterior-10",
   "gallery": [
     { "id": "inverness-terrace-exterior-10", "credit": null },
@@ -28,7 +28,7 @@
     { "id": "inverness-terrace-exterior-04", "credit": null }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-09"
+  "updated": "2026-10-10"
 }
 ---
 
