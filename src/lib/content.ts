@@ -236,6 +236,33 @@ export function linkedProjects(slugs: string[], owner: string): Project[] {
   });
 }
 
+/**
+ * Every published hotel case study, in the order of src/content/hotels.json: a hotel whose
+ * href points at /projects/<slug>/, or (where the roll-call carries no href) a published
+ * case study whose client is that hotel. Hotels without a case study are not linked.
+ */
+export function hotelCaseStudySlugs(): string[] {
+  const out: string[] = [];
+  for (const hotel of hotels) {
+    const fromHref = (hotel.href ?? '').match(/^\/projects\/([a-z0-9-]+)\/$/)?.[1];
+    const slug = fromHref ?? caseStudies.find((mod) => mod.frontmatter.client === hotel.name || mod.frontmatter.title === hotel.name)?.frontmatter.slug;
+    if (slug && projectBySlug(slug) && !out.includes(slug)) out.push(slug);
+  }
+  return out;
+}
+
+/** A landing page's project list: its own list first, then any automatic additions, each project once. */
+export function landingProjectSlugs(page: LandingPage): string[] {
+  const extra = page.autoProjects === 'hotels' ? hotelCaseStudySlugs() : [];
+  const seen = new Set<string>();
+  return [...page.projects, ...extra].filter((slug) => {
+    const resolved = projectBySlug(slug)?.slug ?? slug;
+    if (seen.has(resolved)) return false;
+    seen.add(resolved);
+    return true;
+  });
+}
+
 export function projectHref(slug: string): string {
   return `/projects/${slug}/`;
 }
@@ -267,6 +294,8 @@ export interface LandingPage {
   serviceType?: string;
   links?: { label: string; href: string }[];
   materialKey?: string;
+  /** "hotels": also list every published hotel case study (src/content/hotels.json), so a new hotel case study attaches itself. */
+  autoProjects?: 'hotels';
 }
 
 export const areasIndex = areasJson.index;

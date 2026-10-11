@@ -2,7 +2,7 @@
 import Breadcrumb from './Breadcrumb.astro';
 import FaqList from './FaqList.astro';
 import Picture from './Picture.astro';
-import { areaHref, areas, linkedProjects, projectHref, specialismHref, specialisms } from '../lib/content';
+import { areaHref, areas, landingProjectSlugs, linkedProjects, projectHref, specialismHref, specialisms } from '../lib/content';
 import type { LandingPage } from '../lib/content';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const { page, crumbs, eyebrow, kind } = Astro.props;
-const linked = linkedProjects(page.projects, `${kind} page "${page.slug}"`);
+const linked = linkedProjects(landingProjectSlugs(page), `${kind} page "${page.slug}"`);
 const otherAreas = areas.filter((a) => a.slug !== page.slug);
 const otherSpecialisms = specialisms.filter((s) => s.slug !== page.slug);
 

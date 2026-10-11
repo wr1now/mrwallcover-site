@@ -153,7 +153,8 @@
             "We can. At Brown's Hotel and at Hyde London City, the Old Bailey Hotel, Mr Wallcover was the main decorating contractor. Elsewhere we have carried the wallcovering package alone."
           ]
         }
-      ]
+      ],
+      "autoProjects": "hotels"
     },
     {
       "slug": "mural-installation",
@@ -171,7 +172,11 @@
       "projects": [
         "trematon-castle",
         "calico-lee-broom-overture",
-        "calico-ahluwalia-estuary-rosewood"
+        "calico-ahluwalia-estuary-rosewood",
+        "heathrow-terminal-4-calico",
+        "everyman-liverpool",
+        "scp-showroom-pimlico",
+        "tea-house-jaillon-studio"
       ],
       "imageId": "browns-hotel-mayfair-04",
       "faq": [
