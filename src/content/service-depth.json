@@ -1,5 +1,5 @@
 {
-  "_note": "Further H2 sections for service pages, kept apart from specialisms.json (src/lib/content.ts merges them by slug). Every sentence restates a fact already published on the site: case studies, the guides, materials.json, method.json, Dorin's buyer answers (src/data/buyer-answers.json) or the facts.json programme figures. No new claims. An optional title replaces the page's <title> where the original ran over 60 characters (the brand rule for titles); nothing else on the page changes.",
+  "_note": "Further H2 sections for service pages, kept apart from specialisms.json (src/lib/content.ts merges them by slug). Every sentence restates a fact already published on the site: case studies, the guides, materials.json, method.json, Dorin's buyer answers (src/data/buyer-answers.json) or the facts.json programme figures. No new claims, except an owner statement recorded in docs/sources.md (the room scan and 3D preview, Dorin Burcus, 11 Oct 2026). An optional title replaces the page's <title> where the original ran over 60 characters (the brand rule for titles); nothing else on the page changes.",
   "items": {
     "hand-painted-wallpaper-installation": {
       "sections": [
@@ -8,6 +8,13 @@
           "paragraphs": [
             "A hand-painted or panoramic paper is a composition, not a repeating pattern. The panels are made to the elevations, so the plan comes before production: each wall is drawn with its finished width and height and the position of every door, window, socket, radiator, cornice and piece of joinery, and the focal point is agreed. That is often the bed, the chimneypiece or the dining table rather than the middle of the wall.",
             "We measure on site, take out the openings and give the supplier the finished dimensions of the wall that will actually be hung. If the room is still being built or re-plastered, bring the installer and the maker in before the dimensions go to production: skirting height, cornice depth and a new lining all change the finished wall. The [scenic set-out guide](/advice/hand-painted-murals-set-out/) explains each step."
+          ]
+        },
+        {
+          "heading": "Room scan and 3D preview",
+          "paragraphs": [
+            "For hand-painted and other specialist papers, we 3D-scan the room before the hang and keep the scan with the job record. It captures the walls, the openings, the joinery and the ceiling height as the room stands.",
+            "On request, we build a 3D preview of that same room with the chosen paper in place, rebuilt from the scan to the room's real proportions. You can look round it on screen, or open it in augmented reality (AR) on an iPhone or iPad, before the panels are cut. The preview is for deciding on the design, not a measured survey: the dimensions sent to the maker still come from our measure on site, and colour is approved from a physical sample in the room's own light. [Specified papers](/materials/specified-papers/#room-scan-and-3d-preview) has more."
           ]
         },
         {

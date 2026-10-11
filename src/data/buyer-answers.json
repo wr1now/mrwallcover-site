@@ -711,6 +711,28 @@
         "/professionals/designers/",
         "/services/exterior-works/"
       ]
+    },
+    {
+      "id": "f-room-preview",
+      "question": "Can I see the room with the paper before it goes up?",
+      "answer": "Yes, on request. For specialist papers, such as de Gournay, Fromental and Phillip Jeffries, Mr Wallcover 3D-scans the room before the hang and keeps the scan for the record. From that scan it can build a 3D preview of the same room with the chosen paper in place, which you can look round on screen or open in augmented reality (AR) on an iPhone or iPad. The preview is for deciding on the design. It is not a measured survey: dimensions still come from the measure on site, and colour is approved from a physical sample in the room's own light.",
+      "short": "On request: a 3D preview of your room, rebuilt from a scan, with the chosen paper in place and viewable in AR on iPhone or iPad. Specialist papers are scanned for the record.",
+      "status": "ready",
+      "auditRows": [],
+      "pendingOmitted": [],
+      "sources": [
+        {
+          "note": "Dorin Burcus, 11 Oct 2026"
+        },
+        {
+          "url": "https://www.mrwallcover.com/materials/specified-papers/"
+        }
+      ],
+      "pages": [
+        "/for-ai/",
+        "/professionals/designers/",
+        "/services/hand-painted-wallpaper-installation/"
+      ]
     }
   ],
   "standing": [
