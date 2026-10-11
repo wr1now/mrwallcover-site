@@ -42,7 +42,7 @@ test('the built site keeps private names and the verification token out of the w
   const exterior = await readFile('dist/services/exterior-works/index.html', 'utf8');
   assert.match(exterior, /pimlico-st-georges-square/);
   assert.match(exterior, /inverness-terrace/);
-  assert.doesNotMatch(exterior, /penny-morrison-showroom/);
+  assert.match(exterior, /penny-morrison-showroom/, 'the showroom is back on exterior works since it left draft (11 Oct 2026)');
   assert.match(exterior, /all the internal works plus the full exterior/i);
   assert.doesNotMatch(exterior, /House of Hackney|Lanesborough|Chesham|hackney/i);
   // No phone number in clear, whatever SITE_PHONE was at build time. The number only ever ships inside the reversed payload.
@@ -90,15 +90,12 @@ test('claims decided by Dorin on 9 October 2026 hold in the built site', async (
   const northLondon = await readFile('dist/projects/north-london-residence/index.html', 'utf8');
   assert.match(northLondon, /BAMBUSA/);
   assert.doesNotMatch(everything, /Kate Moss|thesun\.co\.uk|As seen in the press|house-of-kate-moss|celebrated North London/i);
-  // 6) Penny Morrison showroom is a draft: no route, no link, nowhere in the sitemap or llms.txt.
-  let built = true;
-  try {
-    await stat('dist/projects/penny-morrison-showroom/index.html');
-  } catch {
-    built = false;
-  }
-  assert.equal(built, false, 'the Penny Morrison route must not be built');
-  assert.doesNotMatch(everything, /penny-morrison-showroom|Penny Morrison|9 Langton Street/);
+  // 6) Penny Morrison showroom: a draft from Dorin's 9 Oct decisions until he asked for it to be published on 11 Oct 2026,
+  //    with the 9 Langton Street showroom address named (a commercial showroom). Built, in the sitemap and llms.txt.
+  const showroom = await readFile('dist/projects/penny-morrison-showroom/index.html', 'utf8');
+  assert.match(showroom, /9 Langton Street/);
+  assert.match(sitemap, /\/projects\/penny-morrison-showroom\//);
+  assert.match(llms, /\/projects\/penny-morrison-showroom\//);
   // 7) The approved privacy sentence replaces "Private houses are not shown".
   assert.doesNotMatch(everything, /Private houses are not shown|Private houses are not named/i);
   assert.match(html, /Private clients are not named\. Residential work appears only by street or area, with the owner(?:'|&#39;|’)s agreement\./);
@@ -113,7 +110,7 @@ test('every project an area or service page lists resolves to a built page, is l
     if (fm.draft) drafts.add(fm.slug);
     else if (fm.replaces) aliases.set(fm.replaces, fm.slug);
   }
-  assert.ok(drafts.has('penny-morrison-showroom'), 'this guard expects the showroom to be a draft; update it if that changes');
+  assert.equal(drafts.has('penny-morrison-showroom'), false, 'the showroom is published (Dorin, 11 Oct 2026)');
   type Landing = { slug: string; projects: string[] };
   const areas = (JSON.parse(await readFile('src/content/areas.json', 'utf8')) as { items: Landing[] }).items;
   const specialisms = (JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as { items: Landing[] }).items;
@@ -151,9 +148,10 @@ test('every project an area or service page lists resolves to a built page, is l
   }
   assert.deepEqual(problems, []);
   assert.ok(checked >= 15, `only ${checked} listed projects checked`);
-  // Decisions of 9 October 2026: Kensington cites the published Lavery case study; Chelsea cites nothing while the showroom is a draft.
+  // Decisions of 9 October 2026: Kensington cites the published Lavery case study. Chelsea cited nothing while the showroom
+  // was a draft; it cites the showroom since it was published (Dorin, 11 Oct 2026).
   assert.deepEqual(areas.find((a) => a.slug === 'kensington')?.projects, ['calico-beverly-1975-cadence']);
-  assert.deepEqual(areas.find((a) => a.slug === 'chelsea')?.projects, []);
+  assert.deepEqual(areas.find((a) => a.slug === 'chelsea')?.projects, ['penny-morrison-showroom']);
   const kensington = await readFile('dist/areas/kensington/index.html', 'utf8');
   assert.match(kensington, /On the public record/);
   assert.match(kensington, /href="\/projects\/calico-beverly-1975-cadence\/"/);

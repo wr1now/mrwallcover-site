@@ -8,6 +8,7 @@
   "heading": "How much does wallpaper installation cost?",
   "lede": "Every job is quoted after a survey, because the price depends on the room, the paper and the building rather than on a rate per roll. Mr Wallcover publishes no price list. This page says what moves the figure, so a quotation can be read and compared.",
   "parent": { "name": "Advice", "href": "/advice/" },
+  "published": "2026-10-11",
   "updated": "2026-10-11",
   "cta": { "label": "Request a quotation", "href": "/contact/?intent=install" },
   "projects": [],

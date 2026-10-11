@@ -3,7 +3,7 @@
   "path": "/services/house-of-hackney-wallpaper-installer/",
   "title": "House of Hackney wallpaper installation",
   "metaTitle": "House of Hackney Wallpaper Installer London | Mr Wallcover",
-  "description": "House of Hackney wallpapers hung by Mr Wallcover: the Castle of Trematon, the St Michael's Clergy House showroom, a Hyde London City suite and a North London bedroom.",
+  "description": "House of Hackney wallpapers hung by Mr Wallcover: Trematon Castle, the St Michael's Clergy House showroom, a Hyde London City suite and a North London bedroom.",
   "eyebrow": "Services",
   "heading": "House of Hackney wallpaper installation",
   "lede": "Mr Wallcover has hung House of Hackney wallpapers in a Georgian house inside a Cornish castle, the maker's London showroom, a London hotel suite and a listed North London house. This page says which papers, how they hang, and where each case study is.",

@@ -5,6 +5,7 @@
  *
  * Optional frontmatter, all add-only (pages without it render as before):
  * - updated: ISO date; prints the PageMeta author and "Last updated" line.
+ * - published: ISO date; with updated, a page under /advice/ also gets an Article node.
  * - service: { name, serviceType }; adds a Service node for the page.
  * - cta: { label, href }; replaces the default "Request a quotation" button.
  * - intake: { heading, items, download, downloadLabel, guide }; lays the page
@@ -23,10 +24,11 @@ import { editorialPages, linkedProjects, projectHref } from '../lib/content';
 import type { EditorialPageData } from '../lib/content';
 import type { BuyerAnswer } from '../lib/ai-layer-data';
 import { guides, guideHref } from '../lib/guides';
-import { breadcrumbNode, faqNode, singleServiceNode } from '../lib/schema';
+import { breadcrumbNode, faqNode, guideArticleNode, singleServiceNode } from '../lib/schema';
 
 interface PageExtras {
   updated?: string;
+  published?: string;
   service?: { name: string; serviceType?: string };
   cta?: { label: string; href: string };
   intake?: { heading: string; items: string[]; download?: string; downloadLabel?: string; guide?: string };
@@ -70,6 +72,10 @@ const buyerFaq = professionalPage
   extraSchema={[
     ...(page.service
       ? [singleServiceNode({ name: page.service.name, description: page.description, url, serviceType: page.service.serviceType ?? page.service.name })]
+      : []),
+    // Editorial pages under /advice/ are articles like the guides beside them (dated, authored).
+    ...(page.path.startsWith('/advice/') && page.updated
+      ? [guideArticleNode({ url, headline: page.heading, description: page.description, published: page.published ?? page.updated, updated: page.updated })]
       : []),
     ...(page.faq.length ? [faqNode(page.faq)] : []),
     breadcrumbNode(crumbs),
