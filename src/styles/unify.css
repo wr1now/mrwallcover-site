@@ -184,3 +184,8 @@ body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-f
   body .atelier .home-films { grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:62vw; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px; padding-bottom:12px; }
   body .atelier .home-films figure { scroll-snap-align:start; }
 }
+
+/* /reviews/: approved quotes (src/data/approved-quotes.json) set apart from the running text. */
+body .reviews-quote { margin:2.25rem 0; padding-left:1.25rem; border-left:2px solid var(--color-line); }
+body .reviews-quote blockquote { margin:0; }
+body .reviews-quote figcaption { font-size:var(--text-meta); }
