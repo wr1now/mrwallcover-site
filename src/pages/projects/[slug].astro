@@ -168,11 +168,11 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
         {films.length > 0 && (
           <section class="mt-14">
             <h2 class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On site</h2>
-            <div class="mt-6 grid gap-6 md:grid-cols-3">
+            <div class="mt-6 grid gap-6 md:grid-cols-3" data-films>
               {films.map((film) => (
                 <figure class="m-0">
                   <div class="video-frame">
-                    <video controls playsinline preload="none" poster={film.poster} width={film.width} height={film.height} aria-label={film.alt}>
+                    <video controls playsinline preload="none" data-poster={film.poster} width={film.width} height={film.height} aria-label={film.alt}>
                       <source src={film.src} type="video/mp4" />
                     </video>
                   </div>
@@ -180,6 +180,21 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
                 </figure>
               ))}
             </div>
+            <script is:inline>
+              // Film posters load only when the films come near the viewport (or are touched), as on the homepage, so they never compete with the lead image.
+              (() => {
+                if (window.__filmPosters) return;
+                window.__filmPosters = true;
+                document.querySelectorAll('[data-films]').forEach((grid) => {
+                  const load = () => grid.querySelectorAll('video[data-poster]').forEach((video) => { video.poster = video.dataset.poster; video.removeAttribute('data-poster'); });
+                  grid.addEventListener('pointerdown', load, { once: true });
+                  grid.addEventListener('focusin', load, { once: true });
+                  if (!('IntersectionObserver' in window)) return load();
+                  const io = new IntersectionObserver((entries) => { if (entries.some((e) => e.isIntersecting)) { load(); io.disconnect(); } }, { rootMargin: '300px 0px' });
+                  io.observe(grid);
+                });
+              })();
+            </script>
           </section>
         )}
         <nav class="mt-14 grid gap-10 border-t border-line pt-10 md:grid-cols-3" aria-label="Related pages">
@@ -265,7 +280,7 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
           {films.length > 0 && (
             <div class="mt-14">
               <h2 class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On site</h2>
-              <div class="mt-6 grid gap-6 md:grid-cols-3">
+              <div class="mt-6 grid gap-6 md:grid-cols-3" data-films>
                 {films.map((film) => (
                   <figure class="m-0">
                     <div class="video-frame">
@@ -273,7 +288,7 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
                         controls
                         playsinline
                         preload="none"
-                        poster={film.poster}
+                        data-poster={film.poster}
                         width={film.width}
                         height={film.height}
                         aria-label={film.alt}
@@ -285,6 +300,21 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
                   </figure>
                 ))}
               </div>
+              <script is:inline>
+                // Film posters load only when the films come near the viewport (or are touched), as on the homepage, so they never compete with the lead image.
+                (() => {
+                  if (window.__filmPosters) return;
+                  window.__filmPosters = true;
+                  document.querySelectorAll('[data-films]').forEach((grid) => {
+                    const load = () => grid.querySelectorAll('video[data-poster]').forEach((video) => { video.poster = video.dataset.poster; video.removeAttribute('data-poster'); });
+                    grid.addEventListener('pointerdown', load, { once: true });
+                    grid.addEventListener('focusin', load, { once: true });
+                    if (!('IntersectionObserver' in window)) return load();
+                    const io = new IntersectionObserver((entries) => { if (entries.some((e) => e.isIntersecting)) { load(); io.disconnect(); } }, { rootMargin: '300px 0px' });
+                    io.observe(grid);
+                  });
+                })();
+              </script>
             </div>
           )}
         </div>
