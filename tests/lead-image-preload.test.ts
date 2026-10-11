@@ -57,3 +57,4 @@ test("Brown's lead image has 480 and 640 widths in AVIF and WebP, the earlier wi
   assert.equal(posters.length, 3, 'all three films keep their posters');
   for (const p of posters) assert.ok(existsSync(`dist${p}`), `${p} is built`);
 });
+await import('./quote-checklist.test.ts');

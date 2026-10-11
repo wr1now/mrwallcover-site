@@ -6,7 +6,7 @@ import { test } from 'node:test';
 /**
  * Glass Atelier (stage 5) guards on the built site: the tokens and the glass
  * system reach the shipped CSS with their fallbacks, the header toggle is a
- * real disclosure, the dock stays within four actions, and nothing from the
+ * real disclosure, the dock stays within five actions (four, plus the booking button when BOOKING_URL is set), and nothing from the
  * stage 4 art-direction preview ships.
  */
 async function builtCss(): Promise<string> {
@@ -63,7 +63,7 @@ test('the three Glass variants ship with the @supports fallback, the reduced-eff
   assert.match(css, /\.hero\{[^}]*min-height:calc\(100svh - var\(--header-height\) - var\(--header-inset-top\)\)/, 'desktop hero height follows the header tokens');
 });
 
-test('every page: the header is one Glass element with a real disclosure toggle, the dock has at most four actions, the toggle is applied before first paint', async () => {
+test('every page: the header is one Glass element with a real disclosure toggle, the dock has at most five actions, the toggle is applied before first paint', async () => {
   const files = await (async function walk(dir: string): Promise<string[]> {
     const entries = await readdir(dir, { withFileTypes: true });
     const out: string[] = [];
@@ -95,7 +95,7 @@ test('every page: the header is one Glass element with a real disclosure toggle,
     assert.ok(dockClass.includes('glass-opaque') && dockClass.includes('glass-champagne') && dockClass.includes('dock'), `${file}: dock is opaque champagne: ${dockClass}`);
     const dockInner = html.slice(dockTag!.index! + dockTag![0].length).match(/^([\s\S]*?)<\/nav>/)![1];
     const actions = dockInner.match(/<(a|button)\b/g)?.length ?? 0;
-    assert.ok(actions >= 2 && actions <= 4, `${file}: ${actions} dock actions`);
+    assert.ok(actions >= 2 && actions <= 5, `${file}: ${actions} dock actions`);
     assert.match(dockInner, /^\s*<a class="dock-primary" href="\/contact\/">/, `${file}: Start first`);
     assert.match(html, /data-effects-toggle aria-pressed="false">Reduce visual effects<\/button>/, `${file}: footer toggle`);
     assert.match(html, /<head>[\s\S]*mwEffects === ['"]reduced['"][\s\S]*<\/head>/, `${file}: preference applied in <head>`);

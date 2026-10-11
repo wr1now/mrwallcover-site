@@ -1,0 +1,103 @@
+{
+  "_note": "On the record for each material page: a paragraph from the published case studies, the makers from makers-installed.json (each shown with its own install photograph there) and the case studies that carry the family. A maker named here means we installed its product; it is not an endorsement. Acoustic has no published project yet, so it has no entry.",
+  "items": {
+    "paper-and-non-woven": {
+      "makers": [
+        "House of Hackney",
+        "Cole & Son",
+        "Anaglypta",
+        "Lincrusta"
+      ],
+      "projects": [
+        "trematon-castle",
+        "north-london-residence",
+        "pendley-manor-hotel",
+        "house-of-hackney-st-michaels"
+      ],
+      "paragraphs": [
+        "Printed papers make up most of our residential record. At the [Castle of Trematon](/projects/trematon-castle/), between 2019 and 2022, we hung seven House of Hackney papers through the Georgian house, with lining, papered ceilings and pattern-matched full-height drops. In [a listed Georgian house in North London](/projects/north-london-residence/), House of Hackney's BAMBUSA in Midnight went on every wall of a guest bedroom with sloping floors, each drop plumbed so the bamboo reads upright.",
+        "Relief papers belong to the same family: Anaglypta on the high ceilings at [Pendley Manor Hotel](/projects/pendley-manor-hotel/), hung first and painted afterwards, beside Cole & Son's Petroushka velvet flock, and Lincrusta relief at Trematon, aligned to a laser line. The [choosing guide](/advice/choosing-wallcoverings/) compares paper with the other families."
+      ]
+    },
+    "grasscloth-and-weaves": {
+      "makers": [
+        "Phillip Jeffries",
+        "Omexco"
+      ],
+      "projects": [
+        "four-seasons-ten-trinity-square",
+        "biltmore-mayfair"
+      ],
+      "paragraphs": [
+        "At [Four Seasons Hotel London at Ten Trinity Square](/projects/four-seasons-ten-trinity-square/) we hung Phillip Jeffries Tweed and Omexco between 2016 and 2019, with shading on the natural textiles checked continuously so the walls read as a single surface. At [The Biltmore Mayfair](/projects/biltmore-mayfair/), the 2018 guest-room programme of more than 15,000 m² included a Phillip Jeffries schedule.",
+        "The [grasscloth guide](/advice/grasscloth-seams-and-variation/) explains what is normal and what is a fault, and [grasscloth installation](/services/grasscloth-installation/) explains how we set out and shade a room."
+      ]
+    },
+    "silk-and-textiles": {
+      "makers": [
+        "Fromental",
+        "Dedar"
+      ],
+      "projects": [
+        "four-seasons-ten-trinity-square",
+        "raffles-london-the-owo"
+      ],
+      "paragraphs": [
+        "At [Four Seasons Hotel London at Ten Trinity Square](/projects/four-seasons-ten-trinity-square/), the hotel wallcoverings of 2019, about 5,000 m², included Fromental silks and Dedar. At [Raffles London at The OWO](/projects/raffles-london-the-owo/), selected suites have Vescom Alcantara.",
+        "Silk shows the wall beneath it in side light, so preparation comes first; see [wall preparation](/advice/wall-preparation/) and [silk wallcovering installation](/services/silk-wallcovering-installation/)."
+      ]
+    },
+    "hand-painted": {
+      "makers": [
+        "de Gournay",
+        "Fromental"
+      ],
+      "projects": [
+        "browns-hotel-mayfair",
+        "tea-house-jaillon-studio"
+      ],
+      "paragraphs": [
+        "At [Brown's Hotel, Mayfair](/projects/browns-hotel-mayfair/) the scheme includes scenic and chinoiserie wallcoverings, among them Lewis & Wood's Adam's Eden. At a [tea house in West London](/projects/tea-house-jaillon-studio/) for Jaillon Studio, the garden room is a panoramic scenic paper of a swan lake and flowering hydrangeas. We have also installed de Gournay and Fromental papers, including a large volume of Fromental at Four Seasons Ten Trinity Square.",
+        "The [scenic set-out guide](/advice/hand-painted-murals-set-out/) covers elevations, panel sequence and finished dimensions, and [hand-painted wallpaper installation](/services/hand-painted-wallpaper-installation/) explains how we hang them."
+      ]
+    },
+    "murals": {
+      "makers": [
+        "Calico Wallpaper",
+        "Muraspec"
+      ],
+      "projects": [
+        "calico-lee-broom-overture",
+        "calico-ahluwalia-estuary-rosewood",
+        "heathrow-terminal-4-calico",
+        "everyman-liverpool",
+        "oxygen-freejumping-the-o2",
+        "scp-showroom-pimlico"
+      ],
+      "paragraphs": [
+        "Our published murals include Calico Wallpaper's Overture for [Lee Broom](/projects/calico-lee-broom-overture/) (2025), Estuary for [Ahluwalia at Rosewood London](/projects/calico-ahluwalia-estuary-rosewood/) (2026) and a painted landscape at [Heathrow Terminal 4](/projects/heathrow-terminal-4-calico/), hung overnight in 2018. Muraspec's extra-wide digital prints went up at the [Everyman cinema in Liverpool](/projects/everyman-liverpool/) and at [Oxygen Freejumping, The O2](/projects/oxygen-freejumping-the-o2/), and a blue gradient mural at the [SCP showroom in Pimlico](/projects/scp-showroom-pimlico/).",
+        "[Mural installation](/services/mural-installation/) explains the survey and the sequence."
+      ]
+    },
+    "contract-vinyl": {
+      "makers": [
+        "Vescom",
+        "Muraspec",
+        "Tektura",
+        "Timorous Beasties"
+      ],
+      "projects": [
+        "raffles-london-the-owo",
+        "old-bailey-hotel",
+        "hilton-london-metropole",
+        "mercedes-amg-showroom-london",
+        "doubletree-west-end",
+        "novotel-london-canary-wharf"
+      ],
+      "paragraphs": [
+        "At [Raffles London at The OWO](/projects/raffles-london-the-owo/), a bespoke Vescom wallcovering made for the hotel went onto walls and parts of the joinery. At [Hyde London City](/projects/old-bailey-hotel/), Timorous Beasties' Tropical Clouded Leopard and Totem Damask went into the guest rooms as custom-printed vinyl. At [Hilton London Metropole](/projects/hilton-london-metropole/), a jet-black embossed Muraspec and Vescom on conference-room panels; at the [Mercedes-AMG showroom](/projects/mercedes-amg-showroom-london/), black matt Muraspec; at [DoubleTree by Hilton London – West End](/projects/doubletree-west-end/), Tektura wide vinyl in 2017.",
+        "At [Novotel London Canary Wharf](/projects/novotel-london-canary-wharf/), concrete-effect and timber-grain wallcoverings we installed in 2016 were photographed six years on, in 2022. The [hotel specification guide](/advice/hotel-wallcovering-specification/) covers cleaning, batches and documentation."
+      ]
+    }
+  }
+}

@@ -27,6 +27,10 @@ main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
 
 /* The mobile dock: 14px like the header links. */
 .dock a, .dock .dock-phone { font-size:var(--text-meta); }
+/* With the booking cell the dock shares its width by content: every cell is at least as wide as its longest word, so "Book a 20-minute call" sits in full on three 14px lines. */
+.dock:has(.dock-book) { display:flex; }
+.dock:has(.dock-book) > * { flex:1 1 0; min-width:min-content; }
+.dock a.dock-book { text-align:center; padding-inline:4px; }
 
 /* ---- 4. One button system ----
  * Primary: ink fill (ivory fill on a photograph). Secondary: ink line. Ghost: ivory line on a photograph.
@@ -184,3 +188,6 @@ body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-f
   body .atelier .home-films { grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:62vw; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px; padding-bottom:12px; }
   body .atelier .home-films figure { scroll-snap-align:start; }
 }
+
+/* The case-study "At a glance" box: its heading is an eyebrow label, not a section title (src/components/CaseStudyGlance.astro). */
+main .glance-box h2 { font-family:var(--font-sans, inherit); font-size:var(--text-eyebrow); font-weight:500; line-height:1.4; letter-spacing:var(--tracking-eyebrow); text-transform:uppercase; color:var(--color-ink); }

@@ -8,9 +8,12 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import EnquiryForm from '../components/EnquiryForm.astro';
 import PhoneReveal from '../components/PhoneReveal.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
+import BookCallLink from '../components/BookCallLink.astro';
 import Base from '../layouts/Base.astro';
 import { contact } from '../lib/content';
+import quoteChecklist from '../content/quote-checklist.json';
 import { phoneAvailable } from '../lib/phone';
+import { BOOKING_URL } from '../config';
 import { breadcrumbNode } from '../lib/schema';
 
 const crumbs = [
@@ -34,6 +37,15 @@ const crumbs = [
     </header>
     <div class="grid gap-12 md:grid-cols-12">
       <div id="enquiry" class="scroll-mt-24 md:col-span-7">
+        <section class="quote-checklist mb-10" aria-labelledby="quote-checklist-heading" data-quote-checklist>
+          <h2 id="quote-checklist-heading" class="font-serif text-[2rem]">{quoteChecklist.heading}</h2>
+          <p>{quoteChecklist.intro}</p>
+          <ul class="quote-checklist-list">
+            {quoteChecklist.items.map((item) => (
+              <li><strong>{item.lead}</strong> {item.text}{item.href && <> <a href={item.href}>{item.linkText}</a>.</>}</li>
+            ))}
+          </ul>
+        </section>
         <EnquiryForm />
       </div>
       <aside class="md:col-span-4 md:col-start-9">
@@ -47,7 +59,13 @@ const crumbs = [
         <p class:list={['m-0', !phoneAvailable && 'mt-6']}>
           <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
         </p>
-        <WhatsAppLink wrap="m-0" />
+        {(phoneAvailable || BOOKING_URL) && (
+          <div class="contact-quick mt-4 mb-4 flex flex-wrap gap-3">
+            <WhatsAppLink class="btn btn-line" />
+            <BookCallLink class="btn btn-line" />
+          </div>
+        )}
+        {BOOKING_URL && <p class="booking-hours mt-0 mb-4 text-sm text-stone">Calls Mon–Fri, 9am–5pm UK.</p>}
         <p class="m-0">
           <a href={INSTAGRAM_URL}>Instagram {INSTAGRAM_HANDLE}</a>
         </p>

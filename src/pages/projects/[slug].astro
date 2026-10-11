@@ -1,9 +1,10 @@
 ---
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import CaseStudyGlance from '../../components/CaseStudyGlance.astro';
 import Picture from '../../components/Picture.astro';
 import { pictureSources } from '../../lib/picture';
 import Base from '../../layouts/Base.astro';
-import { areaHref, areas, caseStudyBySlug, media, ogImageFor, projectAliases, projectHref, projects, specialismHref, specialisms, videoById } from '../../lib/content';
+import { areaHref, areas, caseStudyBySlug, landingProjectSlugs, media, ogImageFor, projectAliases, projectHref, projects, specialismHref, specialisms, videoById } from '../../lib/content';
 import { SITE_URL } from '../../config';
 import { breadcrumbNode, caseStudyArticleNode, projectNode, videoNode } from '../../lib/schema';
 import type { Project } from '../../lib/types';
@@ -53,7 +54,7 @@ const ogImage = project.imagePolicy === 'none' ? undefined : ogImageFor(project.
 const pageUrl = new URL(projectHref(project.slug), SITE_URL).href;
 const galleryAbs = project.gallery.map((id) => ({ url: new URL(media(id).jpg, SITE_URL).href, credit: project.credits?.[id] ?? null }));
 const relatedAreas = areas.filter((a) => a.projects.some((slug) => (projectAliases[slug] ?? slug) === project.slug));
-const relatedServices = specialisms.filter((s) => s.projects.some((slug) => (projectAliases[slug] ?? slug) === project.slug));
+const relatedServices = specialisms.filter((s) => landingProjectSlugs(s).some((slug) => (projectAliases[slug] ?? slug) === project.slug));
 const otherStudies = projects.filter((p) => p.caseStudy && p.slug !== project.slug);
 const schemaNodes = study
   ? caseStudyArticleNode({
@@ -132,6 +133,7 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
             {project.credits?.[project.imageId] && <figcaption class="caption">{project.credits[project.imageId]}</figcaption>}
           </figure>
         )}
+        {study && <CaseStudyGlance study={{ slug: project.slug, client: study.frontmatter.client, role: study.frontmatter.role, years: study.frontmatter.years, wallcoverings: study.frontmatter.wallcoverings ?? [] }} />}
         <article class="prose case-study">
           <StudyContent />
         </article>

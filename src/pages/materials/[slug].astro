@@ -4,6 +4,9 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import Base from '../../layouts/Base.astro';
 import { materials, projectHref, projects, specialismHref, specialisms } from '../../lib/content';
 import { breadcrumbNode } from '../../lib/schema';
+import Picture from '../../components/Picture.astro';
+import materialDepthJson from '../../content/material-depth.json';
+import makersInstalled from '../../content/makers-installed.json';
 
 export function getStaticPaths() {
   return materials.items.map((material) => ({ params: { slug: material.slug }, props: { material } }));
@@ -12,7 +15,32 @@ export function getStaticPaths() {
 const { material } = Astro.props;
 const service = specialisms.find((entry) => entry.slug === material.specialism);
 const relatedGuides = guides.filter((guide) => material.decision.relatedGuides.includes(guide.frontmatter.slug));
-const related = projects.filter((project) => project.caseStudy).slice(0, 3);
+// On the record (src/content/material-depth.json): the family's own case studies first, then the original three, so no link is lost.
+const depth = (materialDepthJson.items as Record<string, { makers: string[]; projects: string[]; paragraphs: string[] }>)[material.slug];
+const ownProjects = (depth?.projects ?? []).map((slug) => {
+  const project = projects.find((entry) => entry.slug === slug && entry.caseStudy);
+  if (!project) throw new Error(`material-depth.json: ${material.slug} names "${slug}", which is not a published case study`);
+  return project;
+});
+const related = [...ownProjects, ...projects.filter((project) => project.caseStudy).slice(0, 3).filter((project) => !ownProjects.includes(project))];
+const makers = (depth?.makers ?? []).map((brand) => {
+  const item = makersInstalled.items.find((entry) => entry.brand === brand);
+  if (!item) throw new Error(`material-depth.json: ${material.slug} names maker "${brand}", which is not in makers-installed.json`);
+  return item;
+});
+/** Split a paragraph into text and [label](href) link segments, as LandingBody does. Content is our own JSON. */
+function segments(text: string) {
+  const parts: { text: string; href?: string }[] = [];
+  let last = 0;
+  for (const m of text.matchAll(/\[([^\]]+)\]\(([^)\s]+)\)/g)) {
+    if (m.index! > last) parts.push({ text: text.slice(last, m.index) });
+    parts.push({ text: m[1], href: m[2] });
+    last = m.index! + m[0].length;
+  }
+  if (last < text.length) parts.push({ text: text.slice(last) });
+  return parts;
+}
+const projectTitle = (href: string) => projects.find((entry) => projectHref(entry.slug) === href)?.title ?? (href === '/about/' ? 'About' : href);
 const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'Materials', href: '/materials/' },
@@ -21,7 +49,7 @@ const crumbs = [
 ---
 
 <Base
-  title={`${material.name} | Mr Wallcover`}
+  title={material.metaTitle ?? `${material.name} | Mr Wallcover`}
   description={(material as { metaDescription?: string }).metaDescription ?? material.appearance}
   path={`/materials/${material.slug}/`}
   extraSchema={[breadcrumbNode(crumbs)]}
@@ -44,6 +72,8 @@ const crumbs = [
         <p>{material.handling}</p>
         <h2>Care</h2>
         <p>{material.care}</p>
+        {depth && <h2>On the record</h2>}
+        {depth?.paragraphs.map((paragraph) => <p>{segments(paragraph).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</p>)}
         <p>Digital colour is a guide. Order a cutting or a sample before you commit to a room. We can install material you have already bought, or source a family and install it. Either way, the next step is a short note about the room.</p>
       </div>
       <aside class="md:col-span-4 md:col-start-9">
@@ -62,6 +92,28 @@ const crumbs = [
         </ul>
       </aside>
     </div>
+    {
+      makers.length > 0 && (
+        <section class="mt-16 border-t border-line pt-10" aria-labelledby="family-makers-heading">
+          <p class="eyebrow">Makers installed</p>
+          <h2 id="family-makers-heading" class="m-0 text-[2rem]">{material.name}: makers we have hung</h2>
+          <p class="mt-4 mb-0 max-w-3xl text-stone">Each in our own photograph of its product on the wall. A maker named here means Mr Wallcover installed that maker's product; it is not an approval, accreditation or endorsement.</p>
+          <ul class="m-0 mt-8 grid list-none gap-8 p-0 sm:grid-cols-2 lg:grid-cols-4">
+            {makers.map((item) => (
+              <li class="border-t border-line pt-4">
+                <Picture id={item.image} sizes="(min-width: 1024px) 18rem, (min-width: 640px) 45vw, 100vw" />
+                <h3 class="mt-3 mb-0 text-[1.4rem]">{item.brand}</h3>
+                {item.projects.length > 0 ? (
+                  <p class="mt-1 mb-0 text-stone">Installed at {item.projects.map((href, i) => <>{i > 0 && ' · '}<a href={href}>{projectTitle(href)}</a></>)}.</p>
+                ) : (
+                  <p class="mt-1 mb-0 text-stone">Installed at {item.where}, {item.year}. <a href={item.source} rel="noopener">Our post</a>.</p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
   </div>
 </Base>
 

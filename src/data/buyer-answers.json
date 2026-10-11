@@ -28,7 +28,8 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/designers/"
+        "/professionals/designers/",
+        "/services/hand-painted-wallpaper-installation/"
       ],
       "questionNote": "FILL.md asks 'Who can install de Gournay or Fromental hand-painted wallpaper in London?'; maker names stay out of schema names and titles (Dorin, 9 Oct), so the makers are named in the answer only.",
       "answeredBy": [
@@ -62,7 +63,10 @@
       "pages": [
         "/for-ai/",
         "/professionals/designers/",
-        "/professionals/developers/"
+        "/professionals/developers/",
+        "/services/hand-painted-wallpaper-installation/",
+        "/services/mural-installation/",
+        "/services/commercial-wallcovering-installation/"
       ],
       "answeredBy": [
         "Q9"
@@ -98,7 +102,12 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/designers/"
+        "/professionals/designers/",
+        "/services/grasscloth-installation/",
+        "/services/silk-wallcovering-installation/",
+        "/services/mural-installation/",
+        "/services/fabric-walling/",
+        "/services/acoustic-wallcovering-installation/"
       ],
       "answeredBy": [
         "Q14"
@@ -158,7 +167,8 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/designers/"
+        "/professionals/designers/",
+        "/services/hand-painted-wallpaper-installation/"
       ],
       "questionNote": "FILL.md asks 'Are you on de Gournay, Fromental or Phillip Jeffries recommended-installer lists?'; maker names stay out of schema names (Dorin, 9 Oct) and are in the answer.",
       "answeredBy": [
@@ -191,7 +201,17 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/designers/"
+        "/professionals/designers/",
+        "/services/hand-painted-wallpaper-installation/",
+        "/services/grasscloth-installation/",
+        "/services/silk-wallcovering-installation/",
+        "/services/mural-installation/",
+        "/services/fabric-walling/",
+        "/services/acoustic-wallcovering-installation/",
+        "/services/architectural-film-wrapping/",
+        "/services/window-film/",
+        "/services/joinery-wallcoverings-and-panels/",
+        "/services/commercial-wallcovering-installation/"
       ]
     },
     {
@@ -249,7 +269,10 @@
       "pages": [
         "/for-ai/",
         "/professionals/hotels/",
-        "/advice/hotel-wallcovering-specification/"
+        "/advice/hotel-wallcovering-specification/",
+        "/services/hotel-wallcovering-installation/",
+        "/services/mural-installation/",
+        "/services/commercial-wallcovering-installation/"
       ],
       "answeredBy": [
         "Q5"
@@ -283,7 +306,9 @@
         "/for-ai/",
         "/professionals/hotels/",
         "/professionals/developers/",
-        "/advice/hotel-wallcovering-specification/"
+        "/advice/hotel-wallcovering-specification/",
+        "/services/hotel-wallcovering-installation/",
+        "/advice/hotel-fire-safety-and-compliance/"
       ],
       "answeredBy": [
         "Q7"
@@ -308,7 +333,8 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/hotels/"
+        "/professionals/hotels/",
+        "/services/hotel-wallcovering-installation/"
       ]
     },
     {
@@ -340,7 +366,8 @@
       "pages": [
         "/for-ai/",
         "/professionals/hotels/",
-        "/advice/hotel-wallcovering-specification/"
+        "/advice/hotel-wallcovering-specification/",
+        "/services/hotel-wallcovering-installation/"
       ],
       "answeredBy": [
         "Q4"
@@ -374,7 +401,9 @@
         "/professionals/hotels/",
         "/professionals/developers/",
         "/advice/hotel-wallcovering-specification/",
-        "/aftercare/"
+        "/aftercare/",
+        "/services/hotel-wallcovering-installation/",
+        "/services/grasscloth-installation/"
       ]
     },
     {
@@ -399,7 +428,9 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/hotels/"
+        "/professionals/hotels/",
+        "/services/architectural-film-wrapping/",
+        "/services/window-film/"
       ],
       "answeredBy": [
         "Q2"
@@ -432,7 +463,8 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/developers/"
+        "/professionals/developers/",
+        "/services/exterior-works/"
       ]
     },
     {
@@ -489,7 +521,8 @@
       "pages": [
         "/for-ai/",
         "/professionals/developers/",
-        "/aftercare/"
+        "/aftercare/",
+        "/services/acoustic-wallcovering-installation/"
       ],
       "answeredBy": [
         "Q7"
@@ -559,7 +592,8 @@
       ],
       "pages": [
         "/for-ai/",
-        "/aftercare/"
+        "/aftercare/",
+        "/services/hand-painted-wallpaper-installation/"
       ]
     },
     {
@@ -580,7 +614,10 @@
       "pages": [
         "/for-ai/",
         "/professionals/hotels/",
-        "/professionals/developers/"
+        "/professionals/developers/",
+        "/services/hotel-wallcovering-installation/",
+        "/services/commercial-wallcovering-installation/",
+        "/advice/hotel-fire-safety-and-compliance/"
       ]
     },
     {
@@ -601,7 +638,13 @@
       "pages": [
         "/for-ai/",
         "/professionals/hotels/",
-        "/professionals/developers/"
+        "/professionals/developers/",
+        "/services/hotel-wallcovering-installation/",
+        "/services/architectural-film-wrapping/",
+        "/services/window-film/",
+        "/services/joinery-wallcoverings-and-panels/",
+        "/services/exterior-works/",
+        "/advice/hotel-fire-safety-and-compliance/"
       ]
     },
     {
@@ -621,7 +664,8 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/developers/"
+        "/professionals/developers/",
+        "/services/commercial-wallcovering-installation/"
       ]
     },
     {
@@ -641,7 +685,10 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/designers/"
+        "/professionals/designers/",
+        "/services/silk-wallcovering-installation/",
+        "/services/fabric-walling/",
+        "/services/joinery-wallcoverings-and-panels/"
       ]
     },
     {
@@ -661,7 +708,8 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/designers/"
+        "/professionals/designers/",
+        "/services/exterior-works/"
       ]
     }
   ],
@@ -722,7 +770,11 @@
       "pages": [
         "/professionals/designers/",
         "/professionals/hotels/",
-        "/professionals/developers/"
+        "/professionals/developers/",
+        "/services/grasscloth-installation/",
+        "/services/silk-wallcovering-installation/",
+        "/services/fabric-walling/",
+        "/services/acoustic-wallcovering-installation/"
       ],
       "status": "standing",
       "pendingOmitted": []

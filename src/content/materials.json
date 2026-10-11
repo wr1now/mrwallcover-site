@@ -8,6 +8,7 @@
     {
       "slug": "paper-and-non-woven",
       "name": "Paper and non-woven",
+      "metaTitle": "Paper and non-woven wallpaper installation | Mr Wallcover",
       "studio": "paper",
       "setting": "Homes and hotels",
       "specialism": null,
@@ -28,6 +29,7 @@
     {
       "slug": "grasscloth-and-weaves",
       "name": "Grasscloth and natural weaves",
+      "metaTitle": "Grasscloth and natural weave installation | Mr Wallcover",
       "studio": "grasscloth",
       "setting": "Rooms where variation is wanted",
       "specialism": "grasscloth-installation",
@@ -48,6 +50,7 @@
     {
       "slug": "silk-and-textiles",
       "name": "Silk and textiles",
+      "metaTitle": "Silk and textile wallcovering installation | Mr Wallcover",
       "studio": "silk",
       "setting": "Rooms where light is part of the finish",
       "specialism": "silk-wallcovering-installation",
@@ -69,6 +72,7 @@
     {
       "slug": "hand-painted",
       "name": "Hand-painted scenic papers",
+      "metaTitle": "Hand-painted scenic wallpaper installation | Mr Wallcover",
       "studio": "scenic",
       "setting": "Suites and drawing rooms",
       "specialism": "hand-painted-wallpaper-installation",
@@ -90,6 +94,7 @@
     {
       "slug": "murals",
       "name": "Murals",
+      "metaTitle": "Mural wallpaper installation in London | Mr Wallcover",
       "studio": "scenic",
       "setting": "A single wall or a room with a scene",
       "specialism": "mural-installation",
@@ -109,6 +114,7 @@
     {
       "slug": "contract-vinyl",
       "name": "Contract vinyl",
+      "metaTitle": "Contract vinyl wallcovering installation | Mr Wallcover",
       "studio": "vinyl",
       "setting": "Busy hotel rooms and corridors",
       "specialism": "hotel-wallcovering-installation",
@@ -129,6 +135,7 @@
     {
       "slug": "acoustic",
       "name": "Acoustic wallcoverings",
+      "metaTitle": "Acoustic wallcovering installation in London | Mr Wallcover",
       "studio": "acoustic",
       "setting": "Rooms where sound was part of the specification",
       "specialism": "acoustic-wallcovering-installation",
