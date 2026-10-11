@@ -47,3 +47,4 @@ test('the heritage and specified-papers pages are linked from (almost) every pag
     assert.ok(inlinks >= sitemapPaths.length - 1, `${target} has ${inlinks} inlinks`);
   }
 });
+await import('./area-pages.test.ts');
