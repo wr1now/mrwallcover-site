@@ -72,3 +72,22 @@ test('every service page has a title of 60 characters or fewer and a description
     assert.ok(description.length <= 160, `${page.slug} description is ${description.length} characters`);
   }
 });
+
+test('material pages show their record, their makers with install photographs, and lose none of the original selected work', () => {
+  const depth = JSON.parse(readFileSync('src/content/material-depth.json', 'utf8')).items as Record<string, { makers: string[]; projects: string[]; paragraphs: string[] }>;
+  for (const [slug, entry] of Object.entries(depth)) {
+    const h = html(`/materials/${slug}/`);
+    assert.ok(h.includes('>On the record</h2>'), `${slug} record heading`);
+    for (const m of entry.paragraphs.join(' ').matchAll(/\]\((\/[^)\s]*)\)/g)) assert.ok(existsSync(`dist${m[1].split('#')[0]}index.html`), `${slug} links ${m[1]}`);
+    const section = h.slice(h.indexOf('id="family-makers-heading"'));
+    for (const brand of entry.makers) assert.ok(decode(section).includes(`>${brand}</h3>`), `${slug} shows ${brand}`);
+    assert.ok((section.match(/<picture/g) ?? []).length >= entry.makers.length, `${slug}: a photograph for every maker`);
+    for (const p of entry.projects) assert.ok(h.includes(`href="/projects/${p}/"`), `${slug} links ${p}`);
+  }
+  // The original first three case studies stay in "Selected work" on every material page.
+  for (const m of JSON.parse(readFileSync('src/content/materials.json', 'utf8')).items as { slug: string }[]) {
+    const base = readFileSync(`dist/materials/${m.slug}/index.html`, 'utf8');
+    const aside = base.slice(base.indexOf('Selected work'));
+    assert.ok((aside.match(/href="\/projects\//g) ?? []).length >= 3, `${m.slug} keeps at least three selected projects`);
+  }
+});
