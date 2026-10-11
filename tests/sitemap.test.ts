@@ -88,3 +88,4 @@ test('the schema logo is the 512 px render of the logo mark', () => {
   assert.match(home, /"logo":"https:\/\/www\.mrwallcover\.com\/logo-512\.png"/);
   assert.doesNotMatch(home, /"streetAddress"|"postalCode"|"telephone"/, 'no street, postcode or phone in schema');
 });
+await import('./hotel-fire-guide.test.ts');
