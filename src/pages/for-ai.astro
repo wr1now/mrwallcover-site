@@ -134,11 +134,11 @@ const faq = buyerFaqFor(path);
       </ul>
       <p>Aftercare is part of every commission. The terms are on <a href="/aftercare/">the aftercare page</a>.</p>
 
-      <h2 id="maker-pages">Maker pages, trade and cost</h2>
-      <p>Pages on specific makers' products, on working with main contractors, and on how a job is priced. A maker's name on this site means Mr Wallcover installed that maker's product on that project; it is not a maker approval, accreditation or endorsement.</p>
+      <h2 id="maker-pages">Maker pages, trade, cost and reviews</h2>
+      <p>Pages on specific makers' products, on working with main contractors, on how a job is priced, and the reviews page (client and maker words, published exactly as written). A maker's name on this site means Mr Wallcover installed that maker's product on that project; it is not a maker approval, accreditation or endorsement.</p>
       <ul>
         {editorialPages
-          .filter((mod) => /installer\/$|^\/trade\/$|^\/advice\/cost\/$/.test(mod.frontmatter.path))
+          .filter((mod) => /installer\/$|^\/trade\/$|^\/advice\/cost\/$|^\/reviews\/$/.test(mod.frontmatter.path))
           .map((mod) => <li><a href={mod.frontmatter.path}>{mod.frontmatter.title}</a>: {mod.frontmatter.description}</li>)}
       </ul>
 
