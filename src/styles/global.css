@@ -447,6 +447,51 @@
     margin: 0;
   }
 
+  /* The standard "At a glance" box on case studies (src/components/CaseStudyGlance.astro). */
+  .glance-box {
+    margin: 0 0 2.5rem;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .glance-box h2 {
+    font-family: inherit;
+    font-size: var(--text-eyebrow);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-ink);
+  }
+
+  .glance-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.5rem;
+    margin: 1rem 0 0;
+  }
+
+  @media (min-width: 1024px) {
+    .glance-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+
+  .glance-list div {
+    display: grid;
+    gap: 0.2rem;
+    align-content: start;
+  }
+
+  .glance-list dt {
+    font-size: var(--text-eyebrow);
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-brass);
+  }
+
+  .glance-list dd {
+    margin: 0;
+  }
+
   .field label {
     display: block;
     margin-bottom: 0.35rem;
