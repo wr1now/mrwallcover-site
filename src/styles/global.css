@@ -184,6 +184,12 @@
     opacity: 1;
   }
 
+  /* The page's lead image (fetchpriority=high) paints as soon as it decodes: no fade, so it is not held back as the LCP. */
+  .js .media-frame img[fetchpriority='high'] {
+    opacity: 1;
+    transition: none;
+  }
+
   .proof-strip {
     display: flex;
     gap: 0.75rem;

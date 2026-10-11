@@ -44,3 +44,6 @@ test('all local page links, downloads and fragments resolve in the release',asyn
  }
  assert.deepEqual(problems,[]);
 });
+
+// SEO fix pack C: case-study hero and font preloads.
+await import('./lead-image-preload.test.ts');
