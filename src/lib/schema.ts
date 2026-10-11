@@ -124,6 +124,8 @@ export function mediaIdFor(url: string): string | undefined {
 const SOURCE = /\bsource\s+(https?:\/\/[^\s;]+)/i;
 const CREDIT = /credit\s+(?:Photography|Photograph|Photo|Image|Images)\s*:\s*([^;]+)/i;
 const LICENCE = /licen[cs]e\s+CC\s+[A-Z-]+\s+[\d.]+\s+(https?:\/\/[^\s;]+)/i;
+const TERMS = /(?:^|;\s*)terms\s+(https?:\/\/[^\s;]+)/i;
+const OWNER_URL = /(?:^|;\s*)owner\s+(https?:\/\/[^\s;]+)/i;
 
 /** The credit holder as the record writes it, e.g. "The wub / Wikimedia Commons (CC BY-SA 4.0)". */
 export function creditFor(id: string): string | undefined {
@@ -136,13 +138,18 @@ function fromCredit(holder: string, note: string): ImageRights {
   const licence = note.match(LICENCE)?.[1];
   // An organisation's url is the site its credited source page lives on (e.g. houseofhackney.com,
   // stories.hilton.com), only when the record gives that source. A Wikimedia author has no recorded page.
+  // An official hotel or brand photograph may record the owner's own page ("owner <url>"), which wins.
   const source = note.match(SOURCE)?.[1];
-  const url = !commons && source ? new URL(source).origin + '/' : undefined;
+  const ownerUrl = note.match(OWNER_URL)?.[1];
+  const url = commons ? undefined : ownerUrl ?? (source ? new URL(source).origin + '/' : undefined);
+  // It may also record the owner's terms page ("terms <url>"): that page is where its use is
+  // governed, so it is both the license and where to ask.
+  const terms = note.match(TERMS)?.[1];
   return {
     creator: { '@type': commons ? 'Person' : 'Organization', name, ...(url ? { url } : {}) },
     copyrightNotice: `© ${name}`,
-    license: licence ?? IMAGE_USE_URL,
-    acquireLicensePage: IMAGE_USE_URL,
+    license: licence ?? terms ?? IMAGE_USE_URL,
+    acquireLicensePage: terms ?? IMAGE_USE_URL,
     creditText: `Photo: ${holder.replace(/\s*\(official\)\s*$/i, '')}`,
     basis: 'credit',
   };
@@ -356,6 +363,7 @@ export function founderNode() {
     name: facts.founder.name,
     jobTitle: facts.founder.jobTitle,
     url: FOUNDER_URL,
+    image: imageObject(`${SITE_URL}${facts.founder.image}`),
     worksFor: { '@id': BUSINESS_ID },
   };
 }

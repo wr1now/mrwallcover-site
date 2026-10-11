@@ -111,6 +111,7 @@ const CASE_STUDY_ORDER = [
   'oxygen-freejumping-the-o2',
   'masterpiece-london-2019',
   'private-residence-little-venice',
+  'jumeirah-carlton-tower',
 ];
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
