@@ -267,3 +267,42 @@
 }
 /* Hero type sizes, buttons and the deeper shade are in unify.css (section 8 and 10). */
 @media(prefers-reduced-motion:reduce){ .home-card-image img, .home-showcase-image img { transition:none; } }
+
+/* Homepage trust signals (claude/home-trust): proof strip under the hero, the team block, the
+   step-by-step process photographs and the guides list. Text-only strip, so it costs no image bytes. */
+.home-trust { background:#efe9de; border-bottom:1px solid #ddd3c2; padding:30px clamp(20px,5vw,72px) 26px; }
+.atelier .home-trust-title { font-family:var(--font-sans); font-size:16px; font-weight:500; letter-spacing:0; line-height:1.4; margin:0 0 16px; color:#292a23; }
+.home-trust-strip { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:10px; }
+.home-trust-strip li { margin:0; }
+.home-trust-strip a { display:flex; flex-direction:column; gap:4px; height:100%; min-height:44px; padding:12px 14px; background:#f7f3ec; border:1px solid #ddd3c2; color:#292a23; text-decoration:none; transition:border-color 160ms ease; }
+.home-trust-strip a:hover, .home-trust-strip a:focus-visible { border-color:#8c7b5e; }
+.home-trust-strip .home-trust-wide { grid-column:span 2; }
+.home-trust-label { font-family:var(--font-sans); font-size:13.5px; letter-spacing:.06em; text-transform:uppercase; color:#5b4f3a; line-height:1.35; }
+.home-trust-value { font-family:var(--font-serif); font-size:21px; line-height:1.2; }
+.home-trust-value.home-trust-small { font-family:var(--font-sans); font-size:16px; line-height:1.4; }
+.home-trust-makers { margin:16px 0 0; font-size:16px; line-height:1.7; color:#292a23; }
+.home-trust-makers .home-trust-label { margin-right:10px; }
+.home-trust-makers a { color:#292a23; text-decoration:underline; text-decoration-color:#a99b82; text-underline-offset:3px; display:inline-block; min-height:24px; }
+@media (max-width:639px) { .home-trust-strip { grid-template-columns:1fr 1fr; } .home-trust-strip .home-trust-wide { grid-column:1 / -1; } .home-trust-value { font-size:19px; } }
+
+.home-team-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:clamp(24px,4vw,64px); margin:28px 0 22px; }
+.home-team-lead { font-family:var(--font-serif); font-size:clamp(20px,2vw,26px); line-height:1.45; margin:0; color:#292a23; }
+.home-team-facts { list-style:none; margin:0; padding:0; display:grid; gap:14px; }
+.home-team-facts li { font-size:16px; line-height:1.7; color:#3d3a33; padding-left:18px; border-left:2px solid #c8b99c; }
+@media (max-width:767px) { .home-team-grid { grid-template-columns:1fr; } }
+
+.atelier .home-steps-title { font-size:clamp(1.6rem,2.2vw,2.1rem); margin:48px 0 18px; }
+.home-steps { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:16px; }
+.home-steps li { margin:0; display:flex; flex-direction:column; }
+.home-steps figure { margin:0 0 12px; aspect-ratio:4 / 5; overflow:hidden; background:#e7e0d3; }
+.home-steps figure .media-frame, .home-steps figure picture, .home-steps figure img { display:block; width:100%; height:100%; }
+.home-steps figure img { object-fit:cover; }
+.home-steps-label { font-size:13.5px; letter-spacing:.1em; text-transform:uppercase; color:#5b4f3a; margin:0 0 6px; }
+.home-steps-text { font-size:16px; line-height:1.6; color:#3d3a33; margin:0 0 10px; }
+.home-steps a { margin-top:auto; font-size:15px; color:#292a23; text-decoration:underline; text-decoration-color:#a99b82; text-underline-offset:3px; min-height:44px; display:inline-flex; align-items:center; gap:8px; }
+@media (max-width:1023px) { .home-steps { grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:minmax(240px,62vw); overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px; } .home-steps li { scroll-snap-align:start; } }
+
+.home-guides { margin-top:28px; }
+.home-guides-label { font-size:13.5px; letter-spacing:.1em; text-transform:uppercase; color:#5b4f3a; margin:0 0 8px; }
+.home-guides ul { list-style:none; margin:0; padding:0; display:grid; gap:2px; }
+.home-guides a { display:inline-flex; align-items:center; min-height:40px; font-size:16px; color:#292a23; text-decoration:underline; text-decoration-color:#a99b82; text-underline-offset:3px; }
