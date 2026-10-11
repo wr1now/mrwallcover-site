@@ -5,12 +5,17 @@ import MaterialStudio from '../../components/MaterialStudio.astro';
 import Base from '../../layouts/Base.astro';
 import { editorialPages, materials, specialismHref, specialisms } from '../../lib/content';
 import { breadcrumbNode } from '../../lib/schema';
+import Picture from '../../components/Picture.astro';
+import makersInstalled from '../../content/makers-installed.json';
+import { caseStudies } from '../../lib/content';
 
 const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'Materials', href: '/materials/' },
 ];
 // Published editorial pages under /materials/ (e.g. specified papers we install).
+const projectTitle = (href: string) => (href === '/about/' ? 'our About page' : caseStudies.find((c) => `/projects/${c.frontmatter.slug}/` === href)?.frontmatter.title ?? href);
+const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
 const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((fm) => fm.path.startsWith('/materials/'));
 ---
 
@@ -56,6 +61,24 @@ const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((
         </section>
       )
     }
+    <section class="mt-16 border-t border-line pt-10" aria-labelledby="installed-heading" id="makers-installed">
+      <p class="eyebrow">Makers installed</p>
+      <h2 id="installed-heading" class="m-0 text-[2rem]">Makers we have installed, in our own photographs.</h2>
+      <p class="mt-4 mb-0 max-w-3xl text-stone">Each maker below is shown with one of our photographs of its product on the wall, linked to the project where the project is public. Private projects are named only by area. A maker named here means Mr Wallcover installed that maker's product; it is not an approval, accreditation or endorsement.</p>
+      <ul class="m-0 mt-8 grid list-none gap-8 p-0 sm:grid-cols-2 lg:grid-cols-4">
+        {makersInstalled.items.map((item) => (
+          <li class="border-t border-line pt-4" id={makerId(item.brand)}>
+            <Picture id={item.image} sizes="(min-width: 1024px) 18rem, (min-width: 640px) 45vw, 100vw" />
+            <h3 class="mt-3 mb-0 text-[1.4rem]">{item.brand}</h3>
+            {item.projects.length > 0 ? (
+              <p class="mt-1 mb-0 text-stone">Installed at {item.projects.map((href, i) => <>{i > 0 && ' · '}<a href={href}>{projectTitle(href)}</a></>)}.</p>
+            ) : (
+              <p class="mt-1 mb-0 text-stone">Installed at {item.where}, {item.year}. <a href={item.source} rel="noopener">Our post</a>.</p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
     <section class="mt-16 border-t border-line pt-10" aria-labelledby="compare-heading">
       <p data-shortlist-status role="status"></p>
       <button type="button" class="btn btn-line mb-5" data-shortlist-clear>Clear shortlist</button>
