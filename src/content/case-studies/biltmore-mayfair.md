@@ -24,10 +24,6 @@
       "credit": null
     },
     {
-      "id": "biltmore-06",
-      "credit": null
-    },
-    {
       "id": "biltmore-03",
       "credit": null
     },

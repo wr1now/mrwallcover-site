@@ -67,19 +67,6 @@
       ],
       "caption": null
     },
-    "biltmore-06": {
-      "file": "biltmore-mayfair/2018-06-14_BkBSc6AHX7U_06.jpg",
-      "post": "BkBSc6AHX7U",
-      "date": "2018-06-14",
-      "url": "https://www.instagram.com/p/BkBSc6AHX7U/",
-      "width": 1080,
-      "height": 1080,
-      "alt": "Hotel bedroom with textured wallcovering behind the bed and dark furniture, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.",
-      "brands": [
-        "Phillip Jeffries"
-      ],
-      "caption": null
-    },
     "biltmore-07": {
       "file": "biltmore-mayfair/2018-06-14_BkBSc6AHX7U_07.jpg",
       "post": "BkBSc6AHX7U",
@@ -106,5 +93,9 @@
       ],
       "caption": null
     }
-  }
+  },
+  "droppedSoft": {
+    "biltmore-06": "biltmore-mayfair/2018-06-14_BkBSc6AHX7U_06.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
 }

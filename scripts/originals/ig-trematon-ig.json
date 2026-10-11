@@ -46,17 +46,6 @@
       "brands": [],
       "caption": null
     },
-    "trematon-ig-05": {
-      "file": "trematon-castle/2019-06-05_ByWEjVOl4KJ_06.jpg",
-      "post": "ByWEjVOl4KJ",
-      "date": "2019-06-05",
-      "url": "https://www.instagram.com/p/ByWEjVOl4KJ/",
-      "width": 1440,
-      "height": 1440,
-      "alt": "Antique textile panel on a white wall at Trematon Castle.",
-      "brands": [],
-      "caption": null
-    },
     "trematon-ig-06": {
       "file": "trematon-castle/2019-06-05_ByWEjVOl4KJ_07.jpg",
       "post": "ByWEjVOl4KJ",
@@ -65,17 +54,6 @@
       "width": 1440,
       "height": 1440,
       "alt": "Stone arched gateway at Trematon Castle.",
-      "brands": [],
-      "caption": null
-    },
-    "trematon-ig-07": {
-      "file": "trematon-castle/2019-06-05_ByWEjVOl4KJ_10.jpg",
-      "post": "ByWEjVOl4KJ",
-      "date": "2019-06-05",
-      "url": "https://www.instagram.com/p/ByWEjVOl4KJ/",
-      "width": 1440,
-      "height": 1440,
-      "alt": "Room at Trematon Castle with a mobile scaffold tower during preparation.",
       "brands": [],
       "caption": null
     },
@@ -98,19 +76,6 @@
       "width": 1440,
       "height": 1440,
       "alt": "Ceiling and wall prepared with lining paper at Trematon Castle.",
-      "brands": [
-        "House of Hackney"
-      ],
-      "caption": null
-    },
-    "trematon-ig-10": {
-      "file": "trematon-castle/2020-07-28_CDLTToAFxvj_02.jpg",
-      "post": "CDLTToAFxvj",
-      "date": "2020-07-28",
-      "url": "https://www.instagram.com/p/CDLTToAFxvj/",
-      "width": 734,
-      "height": 734,
-      "alt": "Trematon Castle room with dark floral wallpaper and green-painted joinery.",
       "brands": [
         "House of Hackney"
       ],
@@ -168,17 +133,6 @@
       "width": 1440,
       "height": 1439,
       "alt": "Close-up of grey-green leaf-pattern wallpaper in an arch, the Castle of Trematon, Cornwall.",
-      "brands": [],
-      "caption": null
-    },
-    "trematon-ig-16": {
-      "file": "trematon-castle/2021-04-18_CNziQp5FSx__02.jpg",
-      "post": "CNziQp5FSx_",
-      "date": "2021-04-18",
-      "url": "https://www.instagram.com/p/CNziQp5FSx_/",
-      "width": 1438,
-      "height": 1436,
-      "alt": "Attic room with dark leaf wallpaper between exposed timbers, Trematon Castle.",
       "brands": [],
       "caption": null
     },
@@ -323,6 +277,26 @@
         "Lincrusta"
       ],
       "caption": null
+    },
+    "trematon-ig-29": {
+      "file": "trematon-castle/2021-11-30_CW5IdnPKgTP_01.jpg",
+      "post": "CW5IdnPKgTP",
+      "date": "2021-11-30",
+      "url": "https://www.instagram.com/p/CW5IdnPKgTP/",
+      "width": 1440,
+      "height": 1800,
+      "alt": "A length of Lincrusta relief panel offered up to the wall with a green laser line for setting out, Trematon Castle, November 2021.",
+      "brands": [
+        "Lincrusta"
+      ],
+      "caption": null
     }
-  }
+  },
+  "droppedSoft": {
+    "trematon-ig-16": "trematon-castle/2021-04-18_CNziQp5FSx__02.jpg",
+    "trematon-ig-05": "trematon-castle/2019-06-05_ByWEjVOl4KJ_06.jpg",
+    "trematon-ig-07": "trematon-castle/2019-06-05_ByWEjVOl4KJ_10.jpg",
+    "trematon-ig-10": "trematon-castle/2020-07-28_CDLTToAFxvj_02.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
 }

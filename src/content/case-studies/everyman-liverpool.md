@@ -58,10 +58,6 @@
       "credit": null
     },
     {
-      "id": "everyman-02",
-      "credit": null
-    },
-    {
       "id": "everyman-03",
       "credit": null
     },

@@ -64,10 +64,6 @@
     {
       "id": "huntsman-01",
       "credit": null
-    },
-    {
-      "id": "huntsman-03",
-      "credit": null
     }
   ],
   "published": "2026-10-11",

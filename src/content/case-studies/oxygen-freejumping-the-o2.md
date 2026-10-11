@@ -30,10 +30,6 @@
       "credit": null
     },
     {
-      "id": "oxygen-o2-04",
-      "credit": null
-    },
-    {
       "id": "oxygen-o2-05",
       "credit": null
     },

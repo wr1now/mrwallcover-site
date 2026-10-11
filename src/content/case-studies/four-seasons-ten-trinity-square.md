@@ -84,19 +84,11 @@
       "credit": null
     },
     {
-      "id": "fs-ig-04",
-      "credit": null
-    },
-    {
       "id": "fs-ig-05",
       "credit": null
     },
     {
       "id": "fs-ig-06",
-      "credit": null
-    },
-    {
-      "id": "fs-ig-07",
       "credit": null
     },
     {
@@ -228,15 +220,7 @@
       "credit": null
     },
     {
-      "id": "fs-ig-40",
-      "credit": null
-    },
-    {
       "id": "fs-ig-41",
-      "credit": null
-    },
-    {
-      "id": "fs-ig-42",
       "credit": null
     },
     {
@@ -253,10 +237,6 @@
     },
     {
       "id": "fs-ig-46",
-      "credit": null
-    },
-    {
-      "id": "fs-ig-47",
       "credit": null
     },
     {
@@ -347,7 +327,7 @@ Guest room and suite wallpapering from 2016 to 2019 on one of London's most sign
 
 The first twelve photographs are our own, of finished work in the private residences and residents' lift lobbies (April and May 2019). Nothing in them identifies a residence or its owner.
 
-The next forty-nine are our own photographs of the hotel's lift lobbies, corridors and wallcoverings, December 2017 to September 2019, first posted on our Instagram. A few of those posts do not name the hotel; they show the same lift lobbies, balustrades and doors as the posts that do.
+The next forty-four are our own photographs of the hotel's lift lobbies, corridors and wallcoverings, December 2017 to September 2019, first posted on our Instagram. A few of those posts do not name the hotel; they show the same lift lobbies, balustrades and doors as the posts that do.
 
 The last three are photographs of the building by other photographers, credited below. They show the building, not our work.
 

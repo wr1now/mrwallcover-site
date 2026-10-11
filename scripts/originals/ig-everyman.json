@@ -15,19 +15,6 @@
       ],
       "caption": null
     },
-    "everyman-02": {
-      "file": "everyman-cinema-liverpool/2018-10-24_BpT508uHLMu_03.jpg",
-      "post": "BpT508uHLMu",
-      "date": "2018-10-24",
-      "url": "https://www.instagram.com/p/BpT508uHLMu/",
-      "width": 1024,
-      "height": 1024,
-      "alt": "Installation of a large digital-print mural at the Everyman cinema, Liverpool.",
-      "brands": [
-        "Muraspec"
-      ],
-      "caption": null
-    },
     "everyman-03": {
       "file": "everyman-cinema-liverpool/2018-10-24_BpT508uHLMu_04.jpg",
       "post": "BpT508uHLMu",
@@ -170,5 +157,9 @@
       "brands": [],
       "caption": null
     }
-  }
+  },
+  "droppedSoft": {
+    "everyman-02": "everyman-cinema-liverpool/2018-10-24_BpT508uHLMu_03.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
 }
