@@ -96,7 +96,18 @@
     "thumbJpg": "/media/img/thumbs/browns-hotel-mayfair-09-800.jpg",
     "thumbWidth": 800,
     "thumbHeight": 600,
-    "hasFull": true
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/browns-hotel-mayfair-09",
+      "widths": [
+        480,
+        640,
+        800,
+        1200,
+        1600,
+        2000
+      ]
+    }
   },
   "browns-hotel-mayfair-10": {
     "width": 1500,
