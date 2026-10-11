@@ -6842,25 +6842,6 @@
       ]
     }
   },
-  "marylebone-01": {
-    "width": 894,
-    "height": 894,
-    "src": "/media/img/r/marylebone-01-894.webp",
-    "jpg": "/media/img/r/marylebone-01-894.jpg",
-    "thumb": "/media/img/r/marylebone-01-800.webp",
-    "thumbJpg": "/media/img/r/marylebone-01-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 800,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/marylebone-01",
-      "widths": [
-        480,
-        800,
-        894
-      ]
-    }
-  },
   "curio-westminster-01": {
     "width": 1440,
     "height": 1440,
