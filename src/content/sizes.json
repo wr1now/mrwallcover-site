@@ -7390,6 +7390,132 @@
       ]
     }
   },
+  "carlton-tower-official-superior": {
+    "width": 1920,
+    "height": 1280,
+    "src": "/media/img/r/carlton-tower-official-superior-1920.webp",
+    "jpg": "/media/img/r/carlton-tower-official-superior-1920.jpg",
+    "thumb": "/media/img/r/carlton-tower-official-superior-800.webp",
+    "thumbJpg": "/media/img/r/carlton-tower-official-superior-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/carlton-tower-official-superior",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        1920
+      ]
+    }
+  },
+  "carlton-tower-official-junior-suite": {
+    "width": 1920,
+    "height": 1280,
+    "src": "/media/img/r/carlton-tower-official-junior-suite-1920.webp",
+    "jpg": "/media/img/r/carlton-tower-official-junior-suite-1920.jpg",
+    "thumb": "/media/img/r/carlton-tower-official-junior-suite-800.webp",
+    "thumbJpg": "/media/img/r/carlton-tower-official-junior-suite-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/carlton-tower-official-junior-suite",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        1920
+      ]
+    }
+  },
+  "carlton-tower-official-garden-suite": {
+    "width": 1920,
+    "height": 1280,
+    "src": "/media/img/r/carlton-tower-official-garden-suite-1920.webp",
+    "jpg": "/media/img/r/carlton-tower-official-garden-suite-1920.jpg",
+    "thumb": "/media/img/r/carlton-tower-official-garden-suite-800.webp",
+    "thumbJpg": "/media/img/r/carlton-tower-official-garden-suite-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/carlton-tower-official-garden-suite",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        1920
+      ]
+    }
+  },
+  "carlton-tower-official-executive-suite": {
+    "width": 1920,
+    "height": 1280,
+    "src": "/media/img/r/carlton-tower-official-executive-suite-1920.webp",
+    "jpg": "/media/img/r/carlton-tower-official-executive-suite-1920.jpg",
+    "thumb": "/media/img/r/carlton-tower-official-executive-suite-800.webp",
+    "thumbJpg": "/media/img/r/carlton-tower-official-executive-suite-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/carlton-tower-official-executive-suite",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        1920
+      ]
+    }
+  },
+  "carlton-tower-official-luxury-suite-bedroom": {
+    "width": 1920,
+    "height": 1280,
+    "src": "/media/img/r/carlton-tower-official-luxury-suite-bedroom-1920.webp",
+    "jpg": "/media/img/r/carlton-tower-official-luxury-suite-bedroom-1920.jpg",
+    "thumb": "/media/img/r/carlton-tower-official-luxury-suite-bedroom-800.webp",
+    "thumbJpg": "/media/img/r/carlton-tower-official-luxury-suite-bedroom-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/carlton-tower-official-luxury-suite-bedroom",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        1920
+      ]
+    }
+  },
+  "carlton-tower-official-royal-suite": {
+    "width": 1920,
+    "height": 1280,
+    "src": "/media/img/r/carlton-tower-official-royal-suite-1920.webp",
+    "jpg": "/media/img/r/carlton-tower-official-royal-suite-1920.jpg",
+    "thumb": "/media/img/r/carlton-tower-official-royal-suite-800.webp",
+    "thumbJpg": "/media/img/r/carlton-tower-official-royal-suite-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 533,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/carlton-tower-official-royal-suite",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        1920
+      ]
+    }
+  },
   "dorin-burcus-portrait": {
     "width": 1149,
     "height": 1369,
