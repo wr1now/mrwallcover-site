@@ -6,7 +6,9 @@
     "name": "Dorin Burcus",
     "jobTitle": "Founder",
     "path": "/about/",
-    "fragment": "dorin"
+    "fragment": "dorin",
+    "_image": "Dorin's own portrait (media id dorin-burcus-portrait, © Mr Wallcover, cleared by Dorin 11 Oct 2026). Path of the largest JPEG cut, never upscaled; must match src/content/sizes.json.",
+    "image": "/media/img/r/dorin-burcus-portrait-1149.jpg"
   },
   "email": "info@mrwallcover.com",
   "place": "London",
