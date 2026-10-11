@@ -87,7 +87,7 @@ Huntsman was founded by Henry Huntsman in 1849 and has been at 11 Savile Row sin
 
 ## A tweed on the wall
 
-A tweed is a check, and a check on a wall shows every fault. The lines of the pattern have to run plumb from ceiling to skirting and level around the room, and they have to meet at every joint and corner, or the eye goes straight to the break. The rolls carry batch labels, and a single batch keeps the print consistent across a room.
+A tweed is a check, and a check on a wall shows every fault. The lines of the pattern have to run to a true vertical from ceiling to skirting, set by the laser, and level around the room, and they have to meet at every joint and corner, or the eye goes straight to the break. The rolls carry batch labels, and a single batch keeps the print consistent across a room.
 
 ## The display boards
 

@@ -64,7 +64,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-11"
 }
 ---
 
@@ -95,7 +95,7 @@ House of Hackney's design consultancy drew up the scheme. Rather than lighten th
 
 Our team hung the BAMBUSA wallpaper. A room like this is unforgiving to paper:
 
-- **No straight lines.** In an old house, walls lean, floors slope and beams cut across the wall at odd angles. The bamboo stems are strong verticals, so each drop had to be plumbed and set out with care. That way the forest reads as upright, even though the room around it is not.
+- **No straight lines.** In an old house, walls lean, floors slope and beams cut across the wall at odd angles. The bamboo stems are strong verticals, so each drop was set out with care to a laser level. The plumb line is the traditional method; the laser gives the same true vertical across the whole room at once, sloping floor and all. That way the forest reads as upright, even though the room around it is not.
 - **Working around period joinery.** The paper is cut around the beams, the fireplace, the built-in desk and the shelving, then finished tight to the dark-blue paintwork.
 - **Matching the drama.** Midnight is a deep ground. Joins have to be precise and edges clean, because any gap or lifted seam shows against the dark colour.
 

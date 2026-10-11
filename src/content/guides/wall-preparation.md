@@ -11,7 +11,7 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-10"
+updated: "2026-10-11"
 description: "How to tell whether a wall is ready for wallcovering: old coatings, dryness, soundness, filling and sanding, lining paper, priming and what needs a site inspection."
 metaDescription: "How to tell if a wall is ready for wallcovering: old coatings, dryness, soundness, filling and sanding, lining paper, priming and when to inspect."
 shortTitle: "Wall preparation"
@@ -26,6 +26,8 @@ faq:
     a: "Not reliably. Old paper, and the backing left after stripping, can let go under the pull of a drying wallcovering, and any joint or texture beneath shows through a fine finish. Where the specification includes preparation, the old covering is stripped and the wall made good first."
   - q: "Does wallpaper need lining paper?"
     a: "Lining paper is a plain paper hung before the finish to give it an even, consistently absorbent surface: it evens out porosity, bridges hairline cracks and fine filler lines, and keeps the joints of the finish off anything beneath. It does not hold a failing coating, cure damp or straighten a wall that is out of true. Whether it is needed depends on the maker: de Gournay asks for all walls to be lined, Farrow & Ball recommends horizontal cross-lining, and most contract vinyls are hung without. We follow the specification for the product rather than a house rule."
+  - q: "Which wallpaper paste do you use?"
+    a: "The one the maker's instruction names for that product and substrate, together with its primer. Whether it is pasted on the wall or on the paper is set by the product. Where the project has a fire requirement, the adhesive is part of what was tested, so a substitute needs its own evidence."
   - q: "How do you know a wall is dry enough?"
     a: "By a moisture reading, not by the calendar. New plaster, fresh filler and any wall with a history of damp are checked before they are covered, and the cause of any damp is investigated rather than hidden behind a new finish."
 ---
@@ -55,6 +57,16 @@ Whether it is needed is the maker's call. [de Gournay](https://degournay.com/upl
 A primer or size controls suction so the adhesive dries at the right rate, and on vinyl and contract products it is what lets the covering be stripped cleanly years later. The right primer and adhesive are a pairing chosen for the wallcovering and the substrate together, and the product's instruction names them. [de Gournay](https://degournay.com/uploads/technical/document/2026_Hanging_Instructions-After-2025.pdf) says new plaster and very absorbent surfaces "must be properly sized", warns against oil-based primers that stay flexible, and says not to prime over its lining paper. [Farrow & Ball](https://www.farrow-ball.com/how-to-guide/wallpaper/preparing-wallpaper) asks for newly plastered walls to be "carefully sized". [Zoffany](https://www.zoffany.design/faqs) does not recommend thinning its paste "unless you're sizing a porous wall". Phillip Jeffries asks for "a hard, acrylic, pigmented, wall-protecting primer" made for wallcovering installation under its grasscloths ([Grandview Grass instructions](https://api.phillipjeffries.com/files/instructions/Grandview%20Grass%20Hanging%20Instructions.pdf)). Vescom, whose bespoke wallcovering we installed at [Raffles London at The OWO](/projects/raffles-london-the-owo/), specifies its own Primer/Sealer, diluted or neat depending on the substrate, and its own adhesives on its [adhesives and accessories page](https://vescom.com/en/adhesives-accessories); that applies to Vescom wallcoverings, not to a residential paper or silk.
 
 What none of them asks for is neat PVA brushed on as a universal sealer. It is the common shortcut, and it fails in a known way: it dries to a sealed, slick film that a water-based paste cannot soak into or grip, so the paper slides, dries slowly and can let go at the seams. Size or prime as the product's instruction says. There is no single sealer or adhesive that solves every situation.
+
+## Which finishes need the truest wall?
+
+The ones that show the light. A smooth, reflective or very dark surface hides nothing. On the black matt Muraspec at the [Mercedes-AMG showroom](/projects/mercedes-amg-showroom-london/), the joints disappear only because the walls beneath were flat and the edges were cut clean: the preparation decided the result. A scenic paper is usually smooth and lit from the side, so the wall behind it has to be sound and true, and a textile wall lit from a window needs a truer substrate than one lit from the front. That is why the light in the room is part of the specification, and why the [designer checklist](/advice/designer-specification-checklist/) asks for it.
+
+## Who chooses the paste, and how is it used?
+
+The maker does. The adhesive is chosen with the primer for the wallcovering and the substrate together, and the product's own hanging instruction names it; we use what it names rather than a house favourite. Whether a product is pasted on the wall or on the paper is set by the product too, and it changes the labour, which is why the [installation cost guide](/advice/installation-cost/) asks for a product code rather than a description. Where a lining is specified under a scenic paper, de Gournay asks for it to be hung with the same adhesive as the panels.
+
+How the paste is handled matters as much as which one. Natural weaves and silks are hung with clean hands and an adhesive that suits the backing, and paste is kept off the face: on grasscloth it leaves a dark line, a velvet flock such as the one at [Pendley Manor](/projects/pendley-manor-hotel/) cannot be wiped clean of it, and a mark on black matt cannot be wiped away at all. A pasted scenic panel is never stretched to close a gap, because it shrinks back as it dries, and on a [digital mural](/projects/everyman-liverpool/) a drop stretched as it is pasted breaks the picture at the joint. On a hotel or any project with a fire requirement, the adhesive is part of the build-up that was tested, so a substitute needs its own evidence; the [hotel fire safety guide](/advice/hotel-fire-safety-and-compliance/) explains why.
 
 ## What needs a site inspection?
 
