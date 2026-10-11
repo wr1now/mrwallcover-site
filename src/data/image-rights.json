@@ -30,6 +30,7 @@
   "unrecorded": {
     "source": "docs/asset-rights.md and the manifest notes record no maker for these: the tea-house set ('the tea-house set's photographer is not recorded'), old-bailey-hotel-01 ('source unknown') and four contextual exteriors (manifest notes 'exterior', 'exterior / Wix home hero', 'exterior (Bonnington Hotel facade)', 'likely hotel marketing photo'). They are not Mr Wallcover's photographs and no owner is named until the record names one.",
     "creator": { "@type": "Person", "name": "Photographer not recorded" },
+    "creditText": "Photographer not recorded",
     "copyrightNotice": "© The photographer (name not recorded); not Mr Wallcover",
     "patterns": [
       "^tea-house-\\d+$",

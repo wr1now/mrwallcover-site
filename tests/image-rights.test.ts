@@ -24,3 +24,23 @@ test('image-rights.json never lists a credited photograph as ours, and every ima
     assert.ok(credited || /^own\b/i.test(note) || named.some((r) => r.test(id)), `${id} has no maker on record (note: "${note}")`);
   }
 });
+
+test('image-rights.json gives every named or unrecorded maker a typed, named creator and a neutral creditText', async () => {
+  const rights = await readJson<{ unrecorded: { creator: { '@type': string; name: string }; creditText?: string }; photographers: { creator: { '@type': string; name: string } }[]; owner: { name: string } }>('src/data/image-rights.json');
+  for (const creator of [rights.unrecorded.creator, ...rights.photographers.map((p) => p.creator)]) {
+    assert.ok(['Person', 'Organization'].includes(creator['@type']), `creator ${creator.name} needs @type Person or Organization`);
+    assert.ok(creator.name?.trim().length > 1, 'every creator has a name');
+  }
+  assert.ok(rights.unrecorded.creditText?.trim(), 'the unrecorded set needs a creditText');
+  assert.doesNotMatch(rights.unrecorded.creditText!, new RegExp(rights.owner.name), 'an unrecorded photograph is never credited to us');
+});
+
+test('the single ImageObject helper always emits creditText and checks the creator', async () => {
+  const src = await readFile('src/lib/schema.ts', 'utf8');
+  const helper = src.slice(src.indexOf('export function imageObject('), src.indexOf('export function offerCatalogNode('));
+  assert.match(helper, /creditText: r\.creditText,/, 'imageObject() emits creditText unconditionally');
+  assert.match(helper, /\['creator', 'creditText', 'copyrightNotice', 'license', 'acquireLicensePage'\]/, 'imageObject() refuses a node missing any of the five fields');
+  assert.match(helper, /creator\['@type'\] !== 'Person' && node\.creator\['@type'\] !== 'Organization'/, 'imageObject() refuses an untyped creator');
+  assert.match(src, /^\s+creditText: string;$/m, 'ImageRights.creditText is required, not optional');
+  assert.equal((src.match(/'@type': 'ImageObject'/g) ?? []).length, 1, 'one ImageObject builder only');
+});
