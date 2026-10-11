@@ -60,6 +60,8 @@ For the maker's range, see [House of Hackney](https://www.houseofhackney.com/).
 
 As the case studies record it: in an old house, walls lean, floors slope and beams cut across the wall at odd angles, so the paper is set out around the room as found, then cut around the beams, the fireplace, the built-in desk and the shelving and finished tight to the paintwork. At the clergy house, preparation and making good came first.
 
+For specialist papers we also 3D-scan the room for the record and, on request, build a 3D preview of the room with the paper in place, viewable in AR on an iPhone or iPad: see [room scan and 3D preview](/materials/specified-papers/#room-scan-and-3d-preview).
+
 ## Photographs
 
 House of Hackney's finished-room photographs of the showroom are credited "Photography: House of Hackney" and stay credited that way; the rest were taken on site by us. Each case study below has its own photographs and credits.

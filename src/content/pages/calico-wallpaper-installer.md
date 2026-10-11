@@ -58,6 +58,8 @@ Product names are as the case studies record them. For the maker's own range and
 
 The method is the one the case studies record. At Heathrow the landscape is a single picture: every panel has its own place, so the horizon has to run level and unbroken across each join and around every internal corner, and the walls were hung overnight while the terminal kept running. At Lee Broom's showroom the work began with a survey and a bespoke panel layout. For Calico's London Design Festival dinner and for the Rosewood runway, panels were papered on freestanding theatrical flats in a workshop and delivered finished.
 
+For specialist papers we also 3D-scan the room for the record and, on request, build a 3D preview of the room with the paper in place, viewable in AR on an iPhone or iPad: see [room scan and 3D preview](/materials/specified-papers/#room-scan-and-3d-preview).
+
 ## Dated installations on the public record
 
 Heathrow Terminal 4 (2018), Lee Broom's Shoreditch showroom (2025), The Lavery in the Brompton Design District (2026) and Rosewood London (2026). Each case study below has the photographs, the dates and the credits.

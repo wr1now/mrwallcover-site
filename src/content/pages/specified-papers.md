@@ -11,7 +11,7 @@
     "name": "Materials",
     "href": "/materials/"
   },
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "service": {
     "name": "Specified wallpaper installation",
     "serviceType": "Wallcovering installation"
@@ -78,6 +78,14 @@
 ## Calico Wallpaper
 
 Work delivered in partnership with Calico Wallpaper. The Brooklyn studio's murals are on our record at [Lee Broom's Shoreditch showroom](/projects/calico-lee-broom-overture/), [BEVERLY 1975's Cadence at The Lavery](/projects/calico-beverly-1975-cadence/), [Ahluwalia's Estuary at Rosewood London](/projects/calico-ahluwalia-estuary-rosewood/) and, overnight in a live terminal, [airside at Heathrow Terminal 4](/projects/heathrow-terminal-4-calico/).
+
+## Room scan and 3D preview
+
+For specialist papers, such as de Gournay, Fromental and Phillip Jeffries, we 3D-scan the room before the hang and keep the scan with the job record. It captures the room as it stands: the walls, the openings, the joinery and the ceiling height, before any paper goes up.
+
+On request, we build a 3D preview of that same room with the chosen paper in place. The model is rebuilt from the scan to the room's real proportions, so you can look round it on screen, or open it in augmented reality (AR) on an iPhone or iPad, before anything is cut. For a private residence in Chelsea, we scanned a room, rebuilt it as a clean, measured 3D model with the chosen finishes in place, and supplied it as an AR file the client could open on an iPhone or iPad.
+
+The preview is for deciding on the design. It is not a measured survey: panel and drop dimensions still come from our measure on site. Colour is approved from a physical sample in the room's own light, because a screen is not a colour standard.
 
 ## What a specified paper needs from us
 
