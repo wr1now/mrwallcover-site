@@ -59,6 +59,7 @@ export const GET: APIRoute = () => {
     '',
     '## Key facts',
     entry(SINCE_TEXT, `${facts.founder.path}#${facts.founder.fragment}`, FOUNDER_SUMMARY),
+    entry('Founder portrait', facts.founder.image, `${FOUNDER_NAME}, founder of ${BRAND_NAME}; photograph © ${BRAND_NAME}, reuse terms at ${abs('/image-use/')}`),
     ...(AWARD ? [entry(AWARD.text, '/about/', 'as named on the trophy; the About page shows it')] : []),
     entry('Wastage allowance', '/services/#surveying', WASTAGE.statement),
     entry(`${caseStudyCount} published case studies`, '/projects/', 'every case study names the venue, the dates, the products and the scope; counted from the published pages'),

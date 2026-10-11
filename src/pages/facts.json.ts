@@ -27,6 +27,7 @@ export function publicFacts() {
         name: facts.founder.name,
         jobTitle: facts.founder.jobTitle,
         url: `${SITE_URL}${facts.founder.path}#${facts.founder.fragment}`,
+        image: `${SITE_URL}${facts.founder.image}`,
       };
     } else {
       out[field] = source[field];

@@ -9,7 +9,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import PageMeta from '../components/PageMeta.astro';
 import Base from '../layouts/Base.astro';
 import facts from '../data/facts.json';
-import { about, areaHref, areas, caseStudies, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
+import { about, areaHref, media, areas, caseStudies, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
 import { publishedGuides, guideHref } from '../lib/guides';
 import BuyerFaq from '../components/BuyerFaq.astro';
 import { breadcrumbNode, buyerFaqNode } from '../lib/schema';
@@ -118,6 +118,7 @@ const faq = buyerFaqFor(path);
 
       <h2 id="who">Who runs it</h2>
       <p><a href={founderHref}>{facts.founder.name}</a>, {facts.founder.jobTitle.toLowerCase()}. {about.founderSummary}</p>
+      <p>Portrait: <a href={facts.founder.image}>{media(about.portrait).alt}</a> (© Mr Wallcover; reuse terms on <a href="/image-use/">the image use page</a>).</p>
       <p>{about.publicRecord}</p>
 
       <h2 id="key-facts">Key facts</h2>

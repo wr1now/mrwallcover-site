@@ -13,6 +13,9 @@
   "_founderSummary": "Sentences /for-ai/ quotes about the founder. They must appear word for word inside `paragraphs` above (tests/content-guards.test.ts checks); change the paragraph first, then these.",
   "founderSummary": "He has worked in the trade since 2012, starting as a labourer and going on to run wallcovering packages in prime London hotels.",
   "publicRecord": "What you see on this site is public. Private clients are not named.",
+  "_portrait": "Dorin's own portrait, supplied and cleared by Dorin on 11 Oct 2026 (docs/asset-rights.md, 'Founder portrait'). Shown beside the founder text; also the founder's image in the Person schema, facts.json and /for-ai/.",
+  "portrait": "dorin-burcus-portrait",
+  "portraitCaption": "Dorin Burcus, founder of Mr Wallcover.",
   "image": "browns-hotel-mayfair-04",
   "imageCaption": "Scenic wallcovering at Brown's Hotel, Mayfair. Photographed on site.",
   "values": {
