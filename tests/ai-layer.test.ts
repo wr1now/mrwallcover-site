@@ -255,7 +255,7 @@ test('/facts.json carries only allowlisted public fields from the fact sheet, no
     place: string;
     coverage: string;
     lastReviewed: string;
-    founder: { name: string; jobTitle: string; path: string; fragment: string };
+    founder: { name: string; jobTitle: string; path: string; fragment: string; image: string };
     profiles: { name: string; url: string }[];
   };
   const raw = await readFile('dist/facts.json', 'utf8');
@@ -277,7 +277,7 @@ test('/facts.json carries only allowlisted public fields from the fact sheet, no
   assert.equal(data.place, source.place);
   assert.equal(data.coverage, source.coverage);
   assert.equal(data.lastReviewed, source.lastReviewed);
-  assert.deepEqual(data.founder, { name: source.founder.name, jobTitle: source.founder.jobTitle, url: `${SITE}${source.founder.path}#${source.founder.fragment}` });
+  assert.deepEqual(data.founder, { name: source.founder.name, jobTitle: source.founder.jobTitle, url: `${SITE}${source.founder.path}#${source.founder.fragment}`, image: `${SITE}${source.founder.image}` });
   assert.deepEqual(data.profiles, source.profiles);
   assert.equal(data.website, SITE);
   assert.equal(data.isBasedOn, `${SITE}/for-ai/`);
@@ -292,6 +292,16 @@ test('/facts.json carries only allowlisted public fields from the fact sheet, no
   assert.deepEqual(business.sameAs, source.profiles.map((profile) => profile.url));
   const person = graph['@graph'].find((node) => node['@id'] === (data.founder as { url: string }).url)!;
   assert.equal(person.name, source.founder.name);
+  // The founder's portrait is the Person's image, with Dorin as creator and the full image-licence fields.
+  assert.equal(person.image.contentUrl, (data.founder as { image: string }).image);
+  assert.equal(person.image.creator.name, source.founder.name);
+  assert.equal(person.image.creditText, `${source.founder.name} / ${source.brand}`);
+  assert.equal(person.image.copyrightNotice, `© ${source.brand}`);
+  assert.equal(person.image.license, `${SITE}/image-use/`);
+  assert.equal(person.image.acquireLicensePage, `${SITE}/image-use/`);
+  const about = await readFile('dist/about/index.html', 'utf8');
+  assert.match(about, /alt="Dorin Burcus, founder of Mr Wallcover"/);
+  assert.match(about, /dorin-burcus-portrait-1149\.avif 1149w/);
   // Listed where readers look for it.
   assert.match(await readFile('dist/llms.txt', 'utf8'), /\(https:\/\/www\.mrwallcover\.com\/facts\.json\)/);
   assert.match(await readFile('dist/for-ai/index.html', 'utf8'), /href="\/facts\.json"/);

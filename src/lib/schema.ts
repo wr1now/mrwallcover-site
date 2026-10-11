@@ -356,6 +356,7 @@ export function founderNode() {
     name: facts.founder.name,
     jobTitle: facts.founder.jobTitle,
     url: FOUNDER_URL,
+    image: imageObject(`${SITE_URL}${facts.founder.image}`),
     worksFor: { '@id': BUSINESS_ID },
   };
 }
