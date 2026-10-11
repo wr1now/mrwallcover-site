@@ -59,10 +59,6 @@
       "credit": null
     },
     {
-      "id": "pendley-manor-10",
-      "credit": null
-    },
-    {
       "id": "pendley-manor-11",
       "credit": null
     },

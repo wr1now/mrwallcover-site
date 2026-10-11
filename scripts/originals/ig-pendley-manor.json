@@ -117,17 +117,6 @@
       "brands": [],
       "caption": null
     },
-    "pendley-manor-10": {
-      "file": "pendley-manor/2020-01-11_B7MVOOclH7K_02.jpg",
-      "post": "B7MVOOclH7K",
-      "date": "2020-01-11",
-      "url": "https://www.instagram.com/p/B7MVOOclH7K/",
-      "width": 1440,
-      "height": 1440,
-      "alt": "Close-up of red velvet flock damask wallpaper, Pendley Manor Hotel, Tring.",
-      "brands": [],
-      "caption": null
-    },
     "pendley-manor-11": {
       "file": "pendley-manor/2020-01-11_B7MVOOclH7K_05.jpg",
       "post": "B7MVOOclH7K",
@@ -194,5 +183,9 @@
       "brands": [],
       "caption": null
     }
-  }
+  },
+  "droppedSoft": {
+    "pendley-manor-10": "pendley-manor/2020-01-11_B7MVOOclH7K_02.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
 }

@@ -24,17 +24,6 @@
       "brands": [],
       "caption": null
     },
-    "masterpiece-03": {
-      "file": "masterpiece-london-2019/2019-06-26_BzLSNUKFouL_02.jpg",
-      "post": "BzLSNUKFouL",
-      "date": "2019-06-26",
-      "url": "https://www.instagram.com/p/BzLSNUKFouL/",
-      "width": 1440,
-      "height": 1440,
-      "alt": "Close-up of a hand-crafted wallcovering in teal, red and gold, Masterpiece London 2019.",
-      "brands": [],
-      "caption": null
-    },
     "masterpiece-04": {
       "file": "masterpiece-london-2019/2019-06-26_BzLSNUKFouL_04.jpg",
       "post": "BzLSNUKFouL",
@@ -46,5 +35,9 @@
       "brands": [],
       "caption": null
     }
-  }
+  },
+  "droppedSoft": {
+    "masterpiece-03": "masterpiece-london-2019/2019-06-26_BzLSNUKFouL_02.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
 }

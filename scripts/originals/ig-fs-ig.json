@@ -41,19 +41,6 @@
       ],
       "caption": null
     },
-    "fs-ig-04": {
-      "file": "four-seasons-ten-trinity-square/2018-01-18_BeGLih3AeOC_01.jpg",
-      "post": "BeGLih3AeOC",
-      "date": "2018-01-18",
-      "url": "https://www.instagram.com/p/BeGLih3AeOC/",
-      "width": 1080,
-      "height": 565,
-      "alt": "Empty hotel space with pale wallcovering and a stepladder during installation, Four Seasons Hotel London at Ten Trinity Square.",
-      "brands": [
-        "Fromental"
-      ],
-      "caption": null
-    },
     "fs-ig-05": {
       "file": "four-seasons-ten-trinity-square/2018-02-09_Be9IxzPgxVj_01.jpg",
       "post": "Be9IxzPgxVj",
@@ -73,19 +60,6 @@
       "width": 1080,
       "height": 1080,
       "alt": "Close-up of a lustrous Dedar wallcovering with horizontal sheen, Four Seasons Hotel London at Ten Trinity Square.",
-      "brands": [
-        "Dedar"
-      ],
-      "caption": null
-    },
-    "fs-ig-07": {
-      "file": "four-seasons-ten-trinity-square/2018-04-11_Bhcbk64HTp9_02.jpg",
-      "post": "Bhcbk64HTp9",
-      "date": "2018-04-11",
-      "url": "https://www.instagram.com/p/Bhcbk64HTp9/",
-      "width": 761,
-      "height": 761,
-      "alt": "Dark horizontal-striated wallcovering catching warm light, Four Seasons Hotel London at Ten Trinity Square.",
       "brands": [
         "Dedar"
       ],
@@ -546,22 +520,6 @@
       ],
       "caption": null
     },
-    "fs-ig-40": {
-      "file": "four-seasons-ten-trinity-square/2019-05-03_BxBEZpKBbZs_08.jpg",
-      "post": "BxBEZpKBbZs",
-      "date": "2019-05-03",
-      "url": "https://www.instagram.com/p/BxBEZpKBbZs/",
-      "width": 1440,
-      "height": 1440,
-      "alt": "Detail of a crisp wallcovering edge against a dark door frame, Four Seasons Hotel London at Ten Trinity Square.",
-      "brands": [
-        "Dedar",
-        "Fromental",
-        "Tektura",
-        "Vescom"
-      ],
-      "caption": null
-    },
     "fs-ig-41": {
       "file": "four-seasons-ten-trinity-square/2019-05-03_BxBEZpKBbZs_09.jpg",
       "post": "BxBEZpKBbZs",
@@ -570,22 +528,6 @@
       "width": 1440,
       "height": 1440,
       "alt": "Teal fabric-wrapped wall with two framed artworks, Four Seasons Hotel London at Ten Trinity Square.",
-      "brands": [
-        "Dedar",
-        "Fromental",
-        "Tektura",
-        "Vescom"
-      ],
-      "caption": null
-    },
-    "fs-ig-42": {
-      "file": "four-seasons-ten-trinity-square/2019-05-03_BxBEZpKBbZs_10.jpg",
-      "post": "BxBEZpKBbZs",
-      "date": "2019-05-03",
-      "url": "https://www.instagram.com/p/BxBEZpKBbZs/",
-      "width": 1440,
-      "height": 1440,
-      "alt": "Close-up of a fine woven fabric wallcovering, Four Seasons Hotel London at Ten Trinity Square.",
       "brands": [
         "Dedar",
         "Fromental",
@@ -646,19 +588,6 @@
       ],
       "caption": null
     },
-    "fs-ig-47": {
-      "file": "four-seasons-ten-trinity-square/2019-09-12_B2U12SXFLHE_01.jpg",
-      "post": "B2U12SXFLHE",
-      "date": "2019-09-12",
-      "url": "https://www.instagram.com/p/B2U12SXFLHE/",
-      "width": 1440,
-      "height": 1440,
-      "alt": "Lift lobby finished in a Muraspec wallcovering with warm downlighting, Four Seasons Hotel London at Ten Trinity Square.",
-      "brands": [
-        "Muraspec"
-      ],
-      "caption": null
-    },
     "fs-ig-48": {
       "file": "four-seasons-ten-trinity-square/2019-09-12_B2U2Ry8F0rE_01.jpg",
       "post": "B2U2Ry8F0rE",
@@ -685,5 +614,13 @@
       ],
       "caption": null
     }
-  }
+  },
+  "droppedSoft": {
+    "fs-ig-40": "four-seasons-ten-trinity-square/2019-05-03_BxBEZpKBbZs_08.jpg",
+    "fs-ig-42": "four-seasons-ten-trinity-square/2019-05-03_BxBEZpKBbZs_10.jpg",
+    "fs-ig-47": "four-seasons-ten-trinity-square/2019-09-12_B2U12SXFLHE_01.jpg",
+    "fs-ig-04": "four-seasons-ten-trinity-square/2018-01-18_BeGLih3AeOC_01.jpg",
+    "fs-ig-07": "four-seasons-ten-trinity-square/2018-04-11_Bhcbk64HTp9_02.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
 }
