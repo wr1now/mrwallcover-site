@@ -4,7 +4,7 @@
   "slug": "everyman-liverpool",
   "replaces": null,
   "client": "Everyman cinema",
-  "location": "Liverpool",
+  "location": "Metquarter, Liverpool",
   "years": "2018",
   "role": "Installation of bespoke large-format digital wallcoverings",
   "wallcoverings": [
@@ -80,10 +80,15 @@ In October to December 2018 we installed bespoke digital wallcoverings at the Ev
 ## At a glance
 
 - **Client:** Everyman cinema, Liverpool
+- **Where:** Metquarter, Victoria Street, Liverpool
 - **When:** October to December 2018
 - **Scope:** installation of bespoke large-format digital prints
 - **Wallcovering:** Muraspec digital print, extra-wide
 - **Imagery:** black-and-white film stills and colour street scenes
+
+## The venue
+
+Everyman's Liverpool cinema at the Metquarter opened on 18 December 2018: four screens in 18,000 sq ft, with a bar, a Spielburger kitchen and food and drink served to the seats ([Place North West, 15 November 2018](https://www.placenorthwest.co.uk/everyman-to-open-before-christmas/)). Our installation ran from October to December 2018, in the weeks before the opening.
 
 ## A picture, not a pattern
 
