@@ -65,7 +65,8 @@
         "/professionals/designers/",
         "/professionals/developers/",
         "/services/hand-painted-wallpaper-installation/",
-        "/services/mural-installation/"
+        "/services/mural-installation/",
+        "/services/commercial-wallcovering-installation/"
       ],
       "answeredBy": [
         "Q9"
@@ -209,7 +210,8 @@
         "/services/acoustic-wallcovering-installation/",
         "/services/architectural-film-wrapping/",
         "/services/window-film/",
-        "/services/joinery-wallcoverings-and-panels/"
+        "/services/joinery-wallcoverings-and-panels/",
+        "/services/commercial-wallcovering-installation/"
       ]
     },
     {
@@ -269,7 +271,8 @@
         "/professionals/hotels/",
         "/advice/hotel-wallcovering-specification/",
         "/services/hotel-wallcovering-installation/",
-        "/services/mural-installation/"
+        "/services/mural-installation/",
+        "/services/commercial-wallcovering-installation/"
       ],
       "answeredBy": [
         "Q5"
@@ -611,7 +614,8 @@
         "/for-ai/",
         "/professionals/hotels/",
         "/professionals/developers/",
-        "/services/hotel-wallcovering-installation/"
+        "/services/hotel-wallcovering-installation/",
+        "/services/commercial-wallcovering-installation/"
       ]
     },
     {
@@ -657,7 +661,8 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/developers/"
+        "/professionals/developers/",
+        "/services/commercial-wallcovering-installation/"
       ]
     },
     {

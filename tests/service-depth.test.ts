@@ -91,3 +91,24 @@ test('material pages show their record, their makers with install photographs, a
     assert.ok((aside.match(/href="\/projects\//g) ?? []).length >= 3, `${m.slug} keeps at least three selected projects`);
   }
 });
+
+test('the commercial service page is built from published showroom, retail and venue case studies, and is listed everywhere services are', () => {
+  const extra = (JSON.parse(readFileSync('src/content/specialisms.json', 'utf8')).items as { slug: string; name: string; projects: string[] }[]).filter((s) => s.slug === 'commercial-wallcovering-installation');
+  assert.equal(extra.length, 1, 'the commercial service exists');
+  for (const page of extra) {
+    const path = `/services/${page.slug}/`;
+    const h = html(path);
+    assert.ok(page.projects.length >= 6, `${page.slug} has at least six projects`);
+    for (const p of page.projects) {
+      assert.ok(existsSync(`dist/projects/${p}/index.html`), `${p} is built`);
+      assert.ok(h.includes(`href="/projects/${p}/"`), `${path} links ${p}`);
+      assert.match(readFileSync(`dist/projects/${p}/index.html`, 'utf8'), new RegExp(`href="${path}"`), `${p} links back to ${path}`);
+    }
+    for (const where of ['/services/', '/llms.txt', '/for-ai/', '/sitemap-0.xml']) {
+      const file = where.endsWith('/') ? `dist${where}index.html` : `dist${where}`;
+      assert.ok(readFileSync(file, 'utf8').includes(path), `${where} lists ${path}`);
+    }
+    const graph = [...readFileSync('dist/index.html', 'utf8').matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => m[1]).join(' ');
+    assert.ok(graph.includes(`${path}#service`), `the home OfferCatalog offers ${path}`);
+  }
+});
