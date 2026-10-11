@@ -48,6 +48,8 @@ Two Timorous Beasties designs, produced as custom-printed vinyl wallpaper: Totem
 
 As the case study records it: a sample room first, with the headboard panel shaped and set out behind the bed, then the finish, the setting out and the detailing repeated across the bedrooms.
 
+For specialist papers we also 3D-scan the room for the record and, on request, build a 3D preview of the room with the paper in place, viewable in AR on an iPhone or iPad: see [room scan and 3D preview](/materials/specified-papers/#room-scan-and-3d-preview).
+
 ## On the public record
 
 Hyde London City, the former Old Bailey Hotel: 111 guest rooms across seven storeys, in a Grade II-listed Victorian building, about two years on site from a finished sample room in November 2022. The case study below is the record, with its photographs.
