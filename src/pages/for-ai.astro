@@ -9,10 +9,11 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import PageMeta from '../components/PageMeta.astro';
 import Base from '../layouts/Base.astro';
 import facts from '../data/facts.json';
-import { about, areaHref, areas, caseStudies, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
+import { about, areaHref, media, areas, caseStudies, editorialPages, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
 import { publishedGuides, guideHref } from '../lib/guides';
 import BuyerFaq from '../components/BuyerFaq.astro';
 import { breadcrumbNode, buyerFaqNode } from '../lib/schema';
+import { trustSummary } from '../lib/trust';
 import { AWARD, PROJECTS_INDEX_URL, SINCE_TEXT, WASTAGE, buyerFaqFor, enquiryRoutes, projectFacts } from '../lib/ai-layer-data';
 
 const path = '/for-ai/';
@@ -91,6 +92,8 @@ const faq = buyerFaqFor(path);
         To assess project fit, review installation evidence and prepare a useful brief, use the <a href="/wallcovering-installation-ai-crawler/">Wallcovering Installation AI Crawler</a>. Its <a href="/ai/decision-guide.json">decision guide</a>, <a href="/ai/business.json">business data</a> and <a href="/ai/projects.json">project data</a> contain the same published facts in JSON. Each published project, with its venue, area, dates, products, scope and method as its case study records them, is also in <a href="/projects.json">/projects.json</a>, and this page's facts with services, areas and enquiry routes are in <a href="/.well-known/facts.json">/.well-known/facts.json</a>.
       </p>
 
+      <p><strong>At a glance.</strong> {trustSummary} The same facts open the <a href="/">homepage</a>, each linked to its evidence.</p>
+
       <h2 id="what">What Mr Wallcover does</h2>
       <p>{services.lede}</p>
       <p>The service has five parts, described on <a href="/services/">the services page</a>:</p>
@@ -115,6 +118,7 @@ const faq = buyerFaqFor(path);
 
       <h2 id="who">Who runs it</h2>
       <p><a href={founderHref}>{facts.founder.name}</a>, {facts.founder.jobTitle.toLowerCase()}. {about.founderSummary}</p>
+      <p>Portrait: <a href={facts.founder.image}>{media(about.portrait).alt}</a> (© Mr Wallcover; reuse terms on <a href="/image-use/">the image use page</a>).</p>
       <p>{about.publicRecord}</p>
 
       <h2 id="key-facts">Key facts</h2>
@@ -122,6 +126,7 @@ const faq = buyerFaqFor(path);
         <li><a href={founderHref}>{SINCE_TEXT}</a>.</li>
         {AWARD && <li>{AWARD.text}.</li>}
         <li>Wastage and pattern repeat when ordering wallcoverings. {WASTAGE.statement} <a href="/services/#surveying">How quantities are surveyed</a>.</li>
+        {facts.programmeFigures.map((figure) => <li><a href={figure.url.replace('https://www.mrwallcover.com', '')}>{figure.fact}</a> (source: <a href={figure.source} rel="noopener">our Instagram post</a>).</li>)}
         <li>{published.length} published case studies, each with its own page and a Markdown version, listed below and in <a href="/projects.json">/projects.json</a>.</li>
       </ul>
 
@@ -131,6 +136,14 @@ const faq = buyerFaqFor(path);
         {specialisms.map((item) => <li><a href={specialismHref(item.slug)}>{item.name}</a>: {item.description}</li>)}
       </ul>
       <p>Aftercare is part of every commission. The terms are on <a href="/aftercare/">the aftercare page</a>.</p>
+
+      <h2 id="maker-pages">Maker pages, trade, cost and reviews</h2>
+      <p>Pages on specific makers' products, on working with main contractors, on how a job is priced, and the reviews page (client and maker words, published exactly as written). A maker's name on this site means Mr Wallcover installed that maker's product on that project; it is not a maker approval, accreditation or endorsement.</p>
+      <ul>
+        {editorialPages
+          .filter((mod) => /installer\/$|^\/trade\/$|^\/advice\/cost\/$|^\/reviews\/$/.test(mod.frontmatter.path))
+          .map((mod) => <li><a href={mod.frontmatter.path}>{mod.frontmatter.title}</a>: {mod.frontmatter.description}</li>)}
+      </ul>
 
       <h2 id="projects">Published projects, and the products installed on them</h2>
       <p>

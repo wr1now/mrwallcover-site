@@ -91,8 +91,11 @@ test('llms.txt lists every buyer question; /.well-known/facts.json carries them 
   for (const key of ['inTradeSince', 'awardText', 'services', 'areasServed', 'enquiryRoutes', 'wastageAllowance', 'projects']) assert.ok(key in wellKnown, `${key} kept`);
 });
 
+// The accreditation scheme Dorin keeps private (owner decision, 11 Oct 2026 20:58), matched with or without a space.
+const ACCREDITATION_SCHEME = new RegExp(['safe', 'contractor'].join('\\s*'), 'i');
+
 // Dorin's answers to QUESTIONS_FOR_DORIN.md Q1–Q14 (10 Oct 2026, 21:43).
-test('Dorin\'s Q1–Q14 answers: no [Pending] left, no insurance limits, no SafeContractor, no payment terms, no certifying of fire ratings', async () => {
+test('Dorin\'s Q1–Q14 answers: no [Pending] left, no insurance limits, no accreditation-scheme name, no payment terms, no certifying of fire ratings', async () => {
   for (const item of all) {
     for (const q of (item as Answer & { answeredBy?: string[] }).answeredBy ?? []) assert.ok(/^Q(1[0-4]|[1-9])$/.test(q), `${item.id} answeredBy ${q}`);
   }
@@ -102,7 +105,9 @@ test('Dorin\'s Q1–Q14 answers: no [Pending] left, no insurance limits, no Safe
   for (const file of files) {
     const text = await readFile(file, 'utf8');
     for (let n = 1; n <= 14; n += 1) if (text.includes(`[Pending Q${n}`)) problems.push(`${file}: [Pending Q${n}`);
-    if (/SafeContractor/i.test(text)) problems.push(`${file}: SafeContractor`);
+    // The contractor-accreditation scheme is never named publicly (Dorin Burcus, 11 Oct 2026 20:58: not as held, not as
+    // planned). The pattern is assembled from pieces so this public repo carries no literal of the name.
+    if (ACCREDITATION_SCHEME.test(text)) problems.push(`${file}: accreditation scheme named`);
     if (/payment terms (are|:)|our payment terms|\bdeposit of\b|\d+\s?% (deposit|retention)|payable within|net \d+ days/i.test(text)) problems.push(`${file}: payment terms`);
     for (const m of text.matchAll(/(public liability|employers'? liability|professional indemnity|insurance|insured)[^.\n]{0,120}(£\s?\d|\d+\s?(m|million)\b)/gi)) problems.push(`${file}: insurance limit "${m[0].slice(0, 80)}"`);
     if (/we certify fire|certif(y|ies) the fire (rating|classification)s? (ourselves|ourself)|Mr Wallcover certifies/i.test(text)) problems.push(`${file}: certifying fire ratings`);
@@ -120,7 +125,10 @@ test('Q10 and Q13: Chelsea FAQ, decision guide and Cadence role read as Dorin de
   for (const file of ['dist/projects/index.html', 'dist/for-ai/index.html', 'dist/projects.json', 'dist/llms.txt']) assert.ok((await readFile(file, 'utf8')).includes('Wallcovering installation (feature wall)'), `Cadence role in ${file}`);
   assert.ok(await readFile('dist/projects/calico-beverly-1975-cadence/index.html', 'utf8'), 'Cadence case study still built');
   const wellKnown = JSON.parse(await readFile('dist/.well-known/facts.json', 'utf8'));
-  assert.deepEqual(wellKnown.makersInstalled.makers, ['de Gournay', 'Fromental', 'House of Hackney', 'Muraspec', 'Phillip Jeffries']);
+  assert.deepEqual(wellKnown.makersInstalled.makers, ['de Gournay', 'Fromental', 'House of Hackney', 'Muraspec', 'Phillip Jeffries', 'Timorous Beasties']);
   assert.equal(wellKnown.minimumProjectSize, Q10);
   for (const key of ['paymentTerms', 'roomsPerDay']) assert.ok(!(key in wellKnown), key);
 });
+
+// SEO fix pack D: service and material page depth.
+await import('./service-depth.test.ts');

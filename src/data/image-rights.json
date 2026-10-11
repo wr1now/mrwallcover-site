@@ -1,0 +1,55 @@
+{
+  "_note": "Who made each photograph the site's schema describes. Read by src/lib/image-rights.ts. The credit for a third-party image comes from its manifestNote ('credit Photography: ...' / 'credit Image: ...') in src/content/alts.json or src/content/credited-media.json, the same line printed beside it on the page; this file only records what those notes cannot: whose own photographs are Dorin's personally, photographs whose maker is named only in docs/asset-rights.md, photographs whose maker is not recorded, and site files outside the media library. Never list a credited image here as ours.",
+  "imageUsePath": "/image-use/",
+  "owner": {
+    "name": "Mr Wallcover",
+    "url": "https://www.mrwallcover.com/",
+    "copyrightNotice": "© Mr Wallcover"
+  },
+  "dorin": {
+    "source": "docs/asset-rights.md, 'Own iPhone originals': Dorin Burcus's own iPhone photographs (Calico event installs, the north London residence, the Old Bailey hotel and Trematon Castle); and docs/asset-rights.md, 'Founder portrait': Dorin's own portrait (dorin-burcus-portrait), supplied and cleared by Dorin on 11 October 2026 for the About page.",
+    "patterns": [
+      "^ahluwalia-estuary-\\d+$",
+      "^lee-broom-\\d+$",
+      "^beverly-\\d+$",
+      "^heathrow-\\d+$",
+      "^nomad-\\d+$",
+      "^north-london-residence-\\d+$",
+      "^old-bailey-\\d+$",
+      "^trematon-\\d+$",
+      "^dorin-burcus-portrait$"
+    ]
+  },
+  "photographers": [
+    {
+      "pattern": "^scp-pimlico-\\d+$",
+      "creator": { "@type": "Person", "name": "JRH" },
+      "copyrightNotice": "© JRH",
+      "source": "docs/asset-rights.md: 'the SCP set is by a professional photographer credited only as JRH'; scripts/originals/scp-pimlico.json (photographer JRH, Nikon D810, September 2019)."
+    }
+  ],
+  "unrecorded": {
+    "source": "docs/asset-rights.md and the manifest notes record no maker for these: the tea-house set ('the tea-house set's photographer is not recorded'), old-bailey-hotel-01 ('source unknown') and four contextual exteriors (manifest notes 'exterior', 'exterior / Wix home hero', 'exterior (Bonnington Hotel facade)', 'likely hotel marketing photo'). They are not Mr Wallcover's photographs and no owner is named until the record names one.",
+    "creator": { "@type": "Person", "name": "Photographer not recorded" },
+    "creditText": "Photographer not recorded",
+    "copyrightNotice": "© The photographer (name not recorded); not Mr Wallcover",
+    "patterns": [
+      "^tea-house-\\d+$",
+      "^old-bailey-hotel-01$",
+      "^owo-whitehall-01$",
+      "^four-seasons-ten-trinity-01$",
+      "^hilton-holborn-01$",
+      "^hilton-silverstone-01$"
+    ]
+  },
+  "files": [
+    {
+      "prefix": "/og.jpg",
+      "source": "scripts/prepare-media.mjs: our own Brown's Hotel photograph (browns-hotel-mayfair-09, 'own site photo') with the brand panel."
+    },
+    {
+      "prefix": "/media/atelier/",
+      "source": "docs/atelier-media-provenance.md: owner-supplied project photographs from the practice's own archive."
+    }
+  ]
+}

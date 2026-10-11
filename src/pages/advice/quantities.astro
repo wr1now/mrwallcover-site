@@ -27,6 +27,19 @@ const crumbs = [
     <form class="grid max-w-3xl gap-5" data-quantity aria-labelledby="calculator-heading">
       <h2 id="calculator-heading" class="m-0 text-[1.6rem]">Roll calculator</h2>
       <p class="m-0 text-stone">Free match and simple straight match only. Doors and windows are not deducted. Half-drop, murals, stairs and bespoke panel sets are refused, because they need a surveyed set-out.</p>
+      <p class="m-0 text-stone">Beside the drop count it gives the typical ordering allowance: 15–30% over the net wall area, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. For half-drop and stairs that allowance is the only figure given. Extra rolls for pattern matching are confirmed at survey.</p>
+      <noscript><p class="m-0">The calculator needs JavaScript to work out the figures. The worked example below shows the same method by hand.</p></noscript>
+      <fieldset class="quantity-measure" data-measure>
+        <legend>Measure by</legend>
+        <label><input type="radio" name="measure" value="walls" checked /> Individual walls</label>
+        <label><input type="radio" name="measure" value="room" /> Whole room (length, width and height)</label>
+      </fieldset>
+      <div data-room class="grid gap-5 md:grid-cols-3" hidden>
+        <div class="field"><label>Room length, metres <input name="roomLength" type="number" min="0" step="0.01" value="4" /></label></div>
+        <div class="field"><label>Room width, metres <input name="roomWidth" type="number" min="0" step="0.01" value="3.5" /></label></div>
+        <div class="field"><label>Room height, metres <input name="roomHeight" type="number" min="0" step="0.01" value="2.7" /></label></div>
+        <p class="m-0 text-stone md:col-span-3">The room is papered as one run round its perimeter. Doors, windows and fitted joinery are not deducted.</p>
+      </div>
       <div data-walls class="grid gap-5">
         <div class="grid gap-5 md:grid-cols-2">
           <div class="field"><label>Width, metres <input name="width" type="number" min="0" step="0.01" value="5" /></label></div>
@@ -53,7 +66,8 @@ const crumbs = [
         <div class="field"><label>Pattern repeat, metres <input name="repeat" type="number" min="0" step="0.01" value="0.64" /></label></div>
       </div>
       <button class="btn btn-solid-ink" type="submit">Calculate</button>
-      <p data-quantity-output role="status" hidden></p>
+      <div class="quantity-output" data-quantity-output role="status" aria-live="polite" hidden></div>
+      <p class="m-0 text-stone">For a surveyed figure, <a href="/contact/?intent=install">send us the room</a>: a photograph, these dimensions and the product reference are enough to start.</p>
     </form>
 
     <div class="guide-layout">
@@ -61,6 +75,7 @@ const crumbs = [
         <nav aria-label="On this page"><p class="eyebrow">In this guide</p><ol>
           <li><a href="#drops">Why width decides the number of drops</a></li>
           <li><a href="#repeat">How the pattern repeat changes the cut length</a></li>
+          <li><a href="#allowance">How much extra to allow</a></li>
           <li><a href="#openings">Do doors and windows save a drop?</a></li>
           <li><a href="#batch">Why order everything from one batch</a></li>
           <li><a href="#limits">When the calculator stops being reliable</a></li>
@@ -71,11 +86,15 @@ const crumbs = [
         <h2 id="drops">Why width decides the number of drops</h2>
         <p>A drop is one full-height length of paper. Divide the wall width by the usable width of the roll and round up: that is the number of drops. Each drop is cut to the wall height plus a trimming allowance at the top and bottom, and a roll yields only as many whole drops as fit into its length. Round the drops up, the drops per roll down and the rolls up. Offcuts shorter than a drop are rarely usable on the same wall.</p>
         <p>Take a simple wall, as an illustration rather than an order: 5.00 metres wide and 2.70 metres high, with a free-match paper on a roll labelled 10.05 metres long and 0.53 metres wide. Allow 50 millimetres for trimming at the top and 50 at the bottom, so each cut length is 2.80 metres. The width needs 10 drops: 5.00 ÷ 0.53 is 9.43, so nine full widths cover 4.77 metres and the tenth drop is a strip about 0.23 metres wide that still uses a full 2.80-metre length. Each roll yields 3 drops, because 10.05 ÷ 2.80 is 3.59 and the remainder is too short for a fourth. Ten drops at three per roll is 4 rolls.</p>
-        <p>Dividing the wall area by the roll area gives a different answer. The wall is 13.5 square metres and the roll about 5.33, so 13.5 ÷ 5.33 is 2.53, which rounds up to 3 rolls: one short, because the area method counts the offcuts and the narrow last strip as if they could be used. Enter the figures above and the calculator gives 4. The example assumes a plumb, square wall, the usable dimensions on the label, a free match, no defects and no spare; a real order adds a spare from the same batch.</p>
+        <p>Dividing the wall area by the roll area gives a different answer. The wall is 13.5 square metres and the roll about 5.33, so 13.5 ÷ 5.33 is 2.53, which rounds up to 3 rolls: one short, because the area method counts the offcuts and the narrow last strip as if they could be used. Enter the figures above and the calculator gives 4. The example assumes a truly vertical, square wall, the usable dimensions on the label, a free match, no defects and no spare; a real order adds a spare from the same batch.</p>
 
         <h2 id="repeat">How the pattern repeat changes the cut length</h2>
         <p>A patterned paper has to be cut so the design lines up across the seam. With a straight match, every drop starts at the same point in the pattern, so the cut length rounds up to a whole number of repeats. On a 2.40-metre wall with the same 0.10-metre trim, a plain paper needs a 2.50-metre cut, and a 10.05-metre roll gives four drops with 5 centimetres to spare. With a 0.64-metre straight-match repeat, the cut rounds up to four repeats, 2.56 metres, and the same roll gives only three, because 10.05 ÷ 2.56 is 3.93. The repeat has cost a drop on every roll, which is why it is counted as a length and not added as a percentage. The calculator applies that rounding for straight match.</p>
         <p>A half-drop match offsets alternate drops by half a repeat, and large or irregular designs may need the pattern to sit at a particular height, above a dado or centred on a chimney breast. Those decisions change the waste in ways a single percentage cannot predict, which is why the calculator refuses half-drop rather than guessing. On the <a href="/services/">services page</a> we describe how a survey sets out the room and allows for the repeat.</p>
+
+        <h2 id="allowance">How much extra to allow</h2>
+        <p>The drop count is the floor, not the order. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey. The calculator shows that range over the net wall area beside the drop count, so you can see both figures; where the drop count is higher, the drop count wins.</p>
+        <p>Take the wall from the first example again: 13.5 square metres of wall on a roll of about 5.33 square metres. With a 15% allowance that is 2.91, so 3 rolls; with 30% it is 3.29, so 4 rolls. The drop count was 4, which is why the order follows the drops and the allowance is a check on it, not a substitute. Add the spare from the same batch on top.</p>
 
         <h2 id="openings">Do doors and windows save a drop?</h2>
         <p>Usually less than people hope. The drops either side of a window still run full height, and the short pieces above and below it must keep the correct pattern relationship with their neighbours. Only a wide opening, or a plain paper where any offcut will do, reliably saves material. The calculator leaves openings in for that reason. A survey takes them out where it is safe to.</p>
@@ -95,3 +114,12 @@ const crumbs = [
 <script>
   import '../../scripts/quantity-ui';
 </script>
+
+<style is:global>
+  .quantity-measure { margin:0; padding:0; border:0; display:flex; flex-wrap:wrap; gap:.5rem 1.75rem; }
+  .quantity-measure legend { padding:0; margin-bottom:.5rem; font-weight:500; }
+  .quantity-measure label { display:inline-flex; align-items:center; gap:.5rem; min-height:44px; }
+  .quantity-output { border-left:2px solid var(--color-line); padding:.25rem 0 .25rem 1.25rem; }
+  .quantity-output p { margin:0 0 .6rem; }
+  .quantity-output p:last-child { margin-bottom:0; color:var(--color-stone); }
+</style>

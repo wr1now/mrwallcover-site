@@ -1,25 +1,34 @@
 ---
 /**
- * WhatsApp link. Rendered only when SITE_PHONE was set at build time. The
+ * "WhatsApp us". Rendered only when SITE_PHONE was set at build time. The
  * href starts as /contact/ and is replaced by the inline script in Base.astro
- * once the page loads, so the number is never printed in the HTML.
+ * once the page loads, so the number is never printed in the HTML: it lives
+ * only in the reversed payload, exactly like the phone reveal. The chat opens
+ * with the message in src/lib/phone.ts.
+ *
+ * icon: glyph only (the desktop header, beside "Start your project");
+ * otherwise the glyph and the visible text (default "WhatsApp us").
  */
 import { phoneAvailable } from '../lib/phone';
+import WhatsAppGlyph from './WhatsAppGlyph.astro';
 
 interface Props {
   class?: string;
   /** Wrap the link in a paragraph with this class (footer and contact column). */
   wrap?: string;
+  /** Glyph only, with the accessible label (desktop header). */
+  icon?: boolean;
 }
 
-const { class: cls, wrap } = Astro.props;
+const { class: cls, wrap, icon = false } = Astro.props;
+const label = 'WhatsApp us (opens WhatsApp)';
 ---
 
 {phoneAvailable && wrap && (
   <p class={wrap}>
-    <a href="/contact/" data-wa class={cls}><slot>WhatsApp</slot></a>
+    <a href="/contact/" data-wa class:list={['wa-link', cls]} aria-label={label} target="_blank" rel="noopener"><WhatsAppGlyph /><span><slot>WhatsApp us</slot></span></a>
   </p>
 )}
 {phoneAvailable && !wrap && (
-  <a href="/contact/" data-wa class={cls}><slot>WhatsApp</slot></a>
+  <a href="/contact/" data-wa class:list={['wa-link', icon && 'wa-icon', cls]} aria-label={label} target="_blank" rel="noopener"><WhatsAppGlyph />{!icon && <span><slot>WhatsApp us</slot></span>}</a>
 )}

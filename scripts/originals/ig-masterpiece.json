@@ -1,0 +1,43 @@
+{
+  "caseStudy": "masterpiece-london-2019",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder masterpiece-london-2019",
+  "images": {
+    "masterpiece-01": {
+      "file": "masterpiece-london-2019/2019-06-21_By-zBigFOAR_01.jpg",
+      "post": "By-zBigFOAR",
+      "date": "2019-06-21",
+      "url": "https://www.instagram.com/p/By-zBigFOAR/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Laser levels, knives and tools laid out for the installation at Masterpiece London 2019.",
+      "brands": [],
+      "caption": null
+    },
+    "masterpiece-02": {
+      "file": "masterpiece-london-2019/2019-06-26_BzLSNUKFouL_01.jpg",
+      "post": "BzLSNUKFouL",
+      "date": "2019-06-26",
+      "url": "https://www.instagram.com/p/BzLSNUKFouL/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Bespoke hand-crafted wallcovering with sweeping gold outlines, Masterpiece London 2019.",
+      "brands": [],
+      "caption": null
+    },
+    "masterpiece-04": {
+      "file": "masterpiece-london-2019/2019-06-26_BzLSNUKFouL_04.jpg",
+      "post": "BzLSNUKFouL",
+      "date": "2019-06-26",
+      "url": "https://www.instagram.com/p/BzLSNUKFouL/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Bold abstract hand-crafted wallcovering on a stand at Masterpiece London 2019.",
+      "brands": [],
+      "caption": null
+    }
+  },
+  "droppedSoft": {
+    "masterpiece-03": "masterpiece-london-2019/2019-06-26_BzLSNUKFouL_02.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
+}

@@ -10,7 +10,7 @@ import type { APIRoute } from 'astro';
 import { SITE_URL } from '../config';
 import facts from '../data/facts.json';
 
-export const PUBLIC_FACT_FIELDS = ['brand', 'description', 'founder', 'email', 'place', 'coverage', 'profiles', 'lastReviewed', 'award'] as const;
+export const PUBLIC_FACT_FIELDS = ['brand', 'description', 'founder', 'email', 'place', 'coverage', 'profiles', 'lastReviewed', 'award', 'programmeFigures'] as const;
 
 export function publicFacts() {
   const source = facts as Record<string, unknown>;
@@ -27,6 +27,7 @@ export function publicFacts() {
         name: facts.founder.name,
         jobTitle: facts.founder.jobTitle,
         url: `${SITE_URL}${facts.founder.path}#${facts.founder.fragment}`,
+        image: `${SITE_URL}${facts.founder.image}`,
       };
     } else {
       out[field] = source[field];

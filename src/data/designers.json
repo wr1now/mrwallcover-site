@@ -1,0 +1,49 @@
+{
+  "_note": "'Designers we work with': real, sourced collaborations only. Each entry links to its evidence: a published case study, or the @mrwallcover Instagram post where no case study exists (Posner Interiors, Diane Hill). Names cleared by Dorin for /about/ (Jaillon Studio, Posner Interiors, Diane Hill); Calico Wallpaper is the one partnership; House of Hackney and Lee Broom are on published case studies. Sources in docs/sources.md, 'Designers we work with'.",
+  "eyebrow": "Designers we work with",
+  "title": "Designers, artists and makers we have worked alongside.",
+  "items": [
+    {
+      "name": "Jaillon Studio",
+      "role": "Interior designers, Paris",
+      "work": "A tea house in West London, 2021, and a private home in Little Venice, 2019.",
+      "links": [
+        { "label": "Tea house", "href": "/projects/tea-house-jaillon-studio/" },
+        { "label": "Little Venice", "href": "/projects/private-residence-little-venice/" }
+      ]
+    },
+    {
+      "name": "Posner Interiors",
+      "role": "Interior designers, London",
+      "work": "A private home near Sloane Square, January 2020, in papers by Cole & Son and Little Greene.",
+      "links": [{ "label": "Our post, 28 January 2020", "href": "https://www.instagram.com/p/B73YYaSlpPv/" }]
+    },
+    {
+      "name": "Diane Hill",
+      "role": "Artist",
+      "work": "Blossom hand-painted over Phillip Jeffries silk after we had hung it, in a dining room in Kensington, 2019.",
+      "links": [{ "label": "Our post, 30 October 2019", "href": "https://www.instagram.com/p/B4Puc1-FUT9/" }]
+    },
+    {
+      "name": "Calico Wallpaper",
+      "role": "Makers, New York",
+      "work": "Work delivered in partnership with Calico Wallpaper: design-week installations in London and a store at Heathrow Terminal 4.",
+      "links": [{ "label": "The Calico projects", "href": "/projects/#design-weeks" }]
+    },
+    {
+      "name": "House of Hackney",
+      "role": "Makers, London",
+      "work": "Their showroom at St Michael's Clergy House, and the PLANTASIA mural at the Castle of Trematon.",
+      "links": [
+        { "label": "Showroom", "href": "/projects/house-of-hackney-st-michaels/" },
+        { "label": "Trematon", "href": "/projects/trematon-castle/" }
+      ]
+    },
+    {
+      "name": "Lee Broom",
+      "role": "Designer, London",
+      "work": "Overture, with Calico Wallpaper, at the Lee Broom Shoreditch showroom.",
+      "links": [{ "label": "Overture", "href": "/projects/calico-lee-broom-overture/" }]
+    }
+  ]
+}

@@ -6,13 +6,16 @@
   "role": "Founder",
   "paragraphs": [
     "Dorin Burcus founded Mr Wallcover. He has worked in the trade since 2012, starting as a labourer and going on to run wallcovering packages in prime London hotels.",
-    "The earliest commission dated on this site is Four Seasons Hotel London at Ten Trinity Square, 2016 to 2019, guest room and suite wallpapering. Since then the public work includes The OWO on Whitehall, Brown's Hotel in Mayfair, hotels in Holborn and at Silverstone, and The Lanesborough.",
+    "The earliest commissions dated on this site are Four Seasons Hotel London at Ten Trinity Square, 2016 to 2019, guest room and suite wallpapering, and Novotel London Canary Wharf in 2016. Since then the public work includes The OWO on Whitehall, Brown's Hotel in Mayfair, hotels in Holborn and at Silverstone, and The Lanesborough.",
     "The practice is based in London, covers London and the surrounding areas, and works UK-wide for selected projects. Every job is planned around the building and the people who have to keep using it, so that the disruption stays small and the finish does not.",
     "What you see on this site is public. Private clients are not named."
   ],
   "_founderSummary": "Sentences /for-ai/ quotes about the founder. They must appear word for word inside `paragraphs` above (tests/content-guards.test.ts checks); change the paragraph first, then these.",
   "founderSummary": "He has worked in the trade since 2012, starting as a labourer and going on to run wallcovering packages in prime London hotels.",
   "publicRecord": "What you see on this site is public. Private clients are not named.",
+  "_portrait": "Dorin's own portrait, supplied and cleared by Dorin on 11 Oct 2026 (docs/asset-rights.md, 'Founder portrait'). Shown beside the founder text; also the founder's image in the Person schema, facts.json and /for-ai/.",
+  "portrait": "dorin-burcus-portrait",
+  "portraitCaption": "Dorin Burcus, founder of Mr Wallcover.",
   "image": "browns-hotel-mayfair-04",
   "imageCaption": "Scenic wallcovering at Brown's Hotel, Mayfair. Photographed on site.",
   "values": {
@@ -36,5 +39,294 @@
   "disciplines": {
     "title": "The work, in order.",
     "text": "Surveying, management, supply, installation and aftercare. Premium wallcoverings for prime residential work and for the hotel industry. The services page is the longer version."
+  },
+  "_record": "Added 11 Oct 2026 from the @mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922, instagram/ 192a6ad). Every project named here has its own photographs on the site (a case study or a roll-call photograph), except Jumeirah Carlton Tower, which Dorin allowed in the timeline text only. Figures: only the five Dorin cleared, each cited in docs/sources.md.",
+  "howWeWork": {
+    "eyebrow": "How we work",
+    "title": "The people who start are the people who finish.",
+    "intro": "Mr Wallcover is a highly organised specialist team, and the same people see a job through from the first day to the final handover.",
+    "items": [
+      "A core team of six wallpaper hangers and six decorators who work together every day, scaling to 25–35 skilled tradespeople for large hotel programmes.",
+      "Risk assessments and method statements (RAMS) on every job, with Dorin Burcus supervising on site.",
+      "Nights and weekends when the building needs it. We have finished hotel floors while guests stayed on the other floors, and worked night shifts in an operational Belgravia restaurant so it could trade undisturbed by day.",
+      "Clean, protected and discreet: dust-screen systems, floor protection, and respect for occupied homes and live hotels.",
+      "3D scanning of spaces, so drops, pattern repeats and setting-out are resolved before a roll is opened.",
+      "Registered for VAT and CIS, with experience of JCT contracts, working alongside quantity surveyors, contracts managers and design teams.",
+      "Surveying, sourcing, management, installation and aftercare: one accountable team for the whole wallcovering package."
+    ]
+  },
+  "hotels": {
+    "eyebrow": "Hotels",
+    "title": "Hotel work, often finished while the hotel stays open.",
+    "items": [
+      {
+        "name": "Raffles London at The OWO",
+        "href": "/projects/raffles-london-the-owo/",
+        "text": "Whitehall: chosen in 2021 to install about 17,500 m² of wallcoverings in 18 months."
+      },
+      {
+        "name": "Four Seasons Hotel London at Ten Trinity Square",
+        "href": "/projects/four-seasons-ten-trinity-square/",
+        "text": "About 5,000 m² of Fromental, Dedar, Vescom, Tektura and Muraspec, including lift lobbies and hand-dyed silk feature walls, completed in 2019."
+      },
+      {
+        "name": "The Biltmore Mayfair",
+        "href": "/projects/biltmore-mayfair/",
+        "text": "Grosvenor Square, then the Millennium Hotel: a guest-room programme of more than 15,000 m² in 2018."
+      },
+      {
+        "name": "Brown's Hotel",
+        "href": "/projects/browns-hotel-mayfair/",
+        "text": "Mayfair: main decorating contractor from 2022 to 2024, rooms refurbished in stages while the hotel stayed open."
+      },
+      {
+        "name": "Hyde London City",
+        "href": "/projects/old-bailey-hotel/",
+        "text": "15 Old Bailey: decorating and specialist wallcoverings."
+      },
+      {
+        "name": "DoubleTree by Hilton London – West End",
+        "href": "/projects/doubletree-west-end/",
+        "text": "Holborn: 30 rooms and corridors on two floors in 2019, while the hotel stayed open."
+      },
+      {
+        "name": "Pendley Manor Hotel",
+        "href": "/projects/pendley-manor-hotel/",
+        "text": "Tring: 30 rooms in 30 days, with Anaglypta ceilings, lining throughout and 20 different wallpapers, including Cole & Son velvet flock."
+      },
+      {
+        "name": "Hilton London Metropole",
+        "href": "/projects/hilton-london-metropole/",
+        "text": "Paddington: jet-black Muraspec, and Vescom on the wall panels of a conference room, 2019."
+      },
+      {
+        "name": "Novotel London Canary Wharf",
+        "href": "/projects/novotel-london-canary-wharf/",
+        "text": "Wallcoverings in 2016, photographed on a return visit in 2022."
+      },
+      {
+        "name": "DoubleTree by Hilton London – Victoria",
+        "href": "/projects/doubletree-victoria/",
+        "text": "Guest room wallcoverings, 2023."
+      },
+      {
+        "name": "Hilton Garden Inn Silverstone",
+        "href": "/projects/hilton-garden-inn-silverstone/",
+        "text": "Wallcoverings, 2022."
+      },
+      {
+        "name": "Jumeirah Carlton Tower",
+        "href": "/projects/jumeirah-carlton-tower/",
+        "text": "Knightsbridge: eight months of wallcovering installation on the hotel's renovation, finished at the end of 2020."
+      }
+    ]
+  },
+  "interiors": {
+    "eyebrow": "Showrooms, brands and interiors",
+    "title": "Showrooms, flagships and private homes.",
+    "items": [
+      {
+        "name": "House of Hackney",
+        "href": "/projects/house-of-hackney-st-michaels/",
+        "text": "The St Michael's Clergy House flagship in Shoreditch, the earlier Shoreditch showroom, and the founders' home, Trematon Castle in Cornwall, including Lincrusta on the curved stair walls."
+      },
+      {
+        "name": "Huntsman, Savile Row",
+        "href": "/projects/huntsman-savile-row/",
+        "text": "A bespoke wallpaper printed as the house's signature tweed, 2018 to 2019."
+      },
+      {
+        "name": "Mercedes-AMG showroom, London",
+        "href": "/projects/mercedes-amg-showroom-london/",
+        "text": "Black matt Muraspec wallcovering with brushed-steel trims, 2019."
+      },
+      {
+        "name": "Everyman cinema, Liverpool",
+        "href": "/projects/everyman-liverpool/",
+        "text": "Bespoke large-format digital prints of classic film and music imagery, 2018."
+      },
+      {
+        "name": "Oxygen Freejumping, The O2",
+        "href": "/projects/oxygen-freejumping-the-o2/",
+        "text": "Fine-line geometric digital wallcoverings, joined by overlap and splice, 2018."
+      },
+      {
+        "name": "Masterpiece London 2019",
+        "href": "/projects/masterpiece-london-2019/",
+        "text": "A bespoke hand-crafted wallcovering on a stand at the art fair."
+      },
+      {
+        "name": "Calico Wallpaper",
+        "href": "/projects/calico-lee-broom-overture/",
+        "text": "Event installations and showroom work."
+      },
+      {
+        "name": "Private residence, Little Venice",
+        "href": "/projects/private-residence-little-venice/",
+        "text": "House of Hackney wallpaper in a home designed by Jaillon Studio, 2019."
+      }
+    ]
+  },
+  "rollCall": {
+    "eyebrow": "Also on our record",
+    "title": "More of the work, in our own photographs.",
+    "intro": "Smaller jobs and early stages, each shown with our own photographs from Instagram.",
+    "items": [
+      {
+        "name": "The Marylebone",
+        "place": "Marylebone",
+        "years": "2020",
+        "text": "Rooms and communal areas in a heavy-texture oblique-line wallpaper.",
+        "images": [
+          "marylebone-02"
+        ],
+        "href": "",
+        "source": "https://www.instagram.com/p/B80WqY1l96C/"
+      },
+      {
+        "name": "The Westminster London, Curio Collection by Hilton",
+        "place": "Westminster",
+        "years": "2021",
+        "text": "Getting the hotel ready for its reopening after lockdown.",
+        "images": [
+          "curio-westminster-01",
+          "curio-westminster-02"
+        ],
+        "href": "",
+        "source": "https://www.instagram.com/p/CL4j518lzE7/"
+      },
+      {
+        "name": "DoubleTree by Hilton London – Victoria",
+        "place": "Victoria",
+        "years": "2023",
+        "text": "The hotel as the 2023 project began.",
+        "images": [
+          "doubletree-victoria-ig-01",
+          "doubletree-victoria-ig-02"
+        ],
+        "href": "/projects/doubletree-victoria/",
+        "source": "https://www.instagram.com/p/CpnQ-kFo0J_/"
+      },
+      {
+        "name": "An office on Jermyn Street",
+        "place": "St James's",
+        "years": "2018",
+        "text": "Vescom Chandra, a silk-look wallcovering.",
+        "images": [
+          "jermyn-street-office-03",
+          "jermyn-street-office-01",
+          "jermyn-street-office-02"
+        ],
+        "href": "",
+        "source": "https://www.instagram.com/p/BrlESE1g3Q6/"
+      },
+      {
+        "name": "A tea house in West London, for Jaillon Studio",
+        "place": "West London",
+        "years": "2020–2021",
+        "text": "Papiers de Paris scenic paper for the garden room.",
+        "images": [
+          "tea-house-ig-01"
+        ],
+        "href": "/projects/tea-house-jaillon-studio/",
+        "source": "https://www.instagram.com/p/CJY2uwJFTo-/"
+      },
+      {
+        "name": "Adam Reed salon",
+        "place": "London",
+        "years": "2020",
+        "text": "House of Hackney's Gaia wallpaper for the salon.",
+        "images": [
+          "adam-reed-01"
+        ],
+        "href": "",
+        "source": "https://www.instagram.com/p/B8J-pOll0VU/"
+      },
+      {
+        "name": "250 City Road",
+        "place": "Islington",
+        "years": "2021",
+        "text": "A completed project at the apartments development.",
+        "images": [
+          "city-road-250-01"
+        ],
+        "href": "",
+        "source": "https://www.instagram.com/p/CPFNkQCFulC/"
+      },
+      {
+        "name": "DoubleTree by Hilton London Hyde Park",
+        "place": "Bayswater",
+        "years": "2017",
+        "text": "Tektura wide vinyl in a guest bathroom.",
+        "images": [
+          "doubletree-hyde-park-01"
+        ],
+        "href": "",
+        "source": "https://www.instagram.com/p/BdNt2noATWY/"
+      },
+      {
+        "name": "Silverstone",
+        "place": "Northamptonshire",
+        "years": "2022",
+        "text": "The start of the Hilton Garden Inn Silverstone project.",
+        "images": [
+          "silverstone-ig-01"
+        ],
+        "href": "/projects/hilton-garden-inn-silverstone/",
+        "source": "https://www.instagram.com/p/CZxXOZAKhx1/"
+      }
+    ],
+    "_sweep": "11 Oct 2026: the new Hilton at London City Airport entry was removed with its three photographs (sources 756px, 312px and 756px on the short side, too small for card use); no name-only entry is allowed."
+  },
+  "timeline": {
+    "eyebrow": "A short timeline",
+    "title": "From 2012 to now.",
+    "items": [
+      {
+        "year": "2012",
+        "text": "Dorin Burcus enters the trade on London sites, starting as a labourer."
+      },
+      {
+        "year": "2016",
+        "text": "Four Seasons Hotel London at Ten Trinity Square begins, running to 2019. Novotel London Canary Wharf."
+      },
+      {
+        "year": "2017",
+        "text": "Our Instagram record, @mrwallcover, begins in October. First work at DoubleTree by Hilton London – West End, and at DoubleTree Hyde Park."
+      },
+      {
+        "year": "2018",
+        "text": "A guest-room programme of more than 15,000 m² at the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair. Huntsman, Savile Row begins. Oxygen Freejumping at The O2; the Everyman cinema, Liverpool; an office on Jermyn Street."
+      },
+      {
+        "year": "2019",
+        "text": "About 5,000 m² completed at Four Seasons Ten Trinity Square. Huntsman completed. DoubleTree West End: 30 rooms on two floors while the hotel stayed open. Trematon Castle begins. Masterpiece London; the House of Hackney Shoreditch showroom; a Mercedes-AMG showroom; Hilton London Metropole; a Little Venice home for Jaillon Studio."
+      },
+      {
+        "year": "2020",
+        "text": "Pendley Manor: 30 rooms in 30 days. The Marylebone; the Adam Reed salon. Jumeirah Carlton Tower: 8 months, finished at the end of 2020."
+      },
+      {
+        "year": "2021",
+        "text": "Chosen to install about 17,500 m² of wallcoverings in 18 months at The OWO. The Westminster London, Curio Collection by Hilton; 250 City Road; the tea house for Jaillon Studio."
+      },
+      {
+        "year": "2022",
+        "text": "Brown's Hotel, Mayfair, begins. Hilton Garden Inn Silverstone. The House of Hackney flagship at St Michael's Clergy House opens."
+      },
+      {
+        "year": "2023",
+        "text": "DoubleTree by Hilton London – Victoria."
+      },
+      {
+        "year": "2024–2026",
+        "text": "Exterior works in Pimlico; Calico event installations."
+      }
+    ]
+  },
+  "collaborators": {
+    "eyebrow": "Who we work with",
+    "title": "Designers, owners and main contractors.",
+    "text": "We work for interior designers and architects, hotel owners and operators, and main contractors delivering large projects, on anything from a single hand-painted panel to a 17,500 m² hotel programme. Designers and artists we have worked alongside include Jaillon Studio (Catherine Jaillon), Posner Interiors and the artist Diane Hill."
   }
 }

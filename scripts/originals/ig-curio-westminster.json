@@ -1,0 +1,28 @@
+{
+  "caseStudy": "about-roll-call",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder curio-the-westminster",
+  "images": {
+    "curio-westminster-01": {
+      "file": "curio-the-westminster/2021-03-01_CL4j518lzE7_01.jpg",
+      "post": "CL4j518lzE7",
+      "date": "2021-03-01",
+      "url": "https://www.instagram.com/p/CL4j518lzE7/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Hoarding reading 'Curio, The Westminster London' outside the hotel before its reopening, 2021.",
+      "brands": [],
+      "caption": null
+    },
+    "curio-westminster-02": {
+      "file": "curio-the-westminster/2021-03-01_CL4kRdQlYGJ_01.jpg",
+      "post": "CL4kRdQlYGJ",
+      "date": "2021-03-01",
+      "url": "https://www.instagram.com/p/CL4kRdQlYGJ/",
+      "width": 1440,
+      "height": 1193,
+      "alt": "Hoarding outside The Westminster London, Curio Collection by Hilton, during the works in 2021.",
+      "brands": [],
+      "caption": null
+    }
+  }
+}

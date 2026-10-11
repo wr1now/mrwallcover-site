@@ -77,7 +77,7 @@ test('/for-ai/ states the facts from facts.json, links every published case stud
   // No endorsement wording, no phone, no draft route.
   assert.doesNotMatch(html, /approved by|accredited by|endorsed by|recommended by/i);
   assert.doesNotMatch(html, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b/);
-  assert.doesNotMatch(html, /penny-morrison|biltmore-mayfair/);
+  // The Penny Morrison showroom left draft on 11 Oct 2026 (Dorin); it is linked like every other published case study.
   // Every published case study and guide is linked; every draft is not.
   for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
     const text = await readFile(`src/content/case-studies/${name}`, 'utf8');
@@ -173,16 +173,16 @@ test('every published page has a Markdown twin it links to, and its URL and main
     // Twins and llms-full carry no scripts, no navigation chrome and no breadcrumb trail.
     // Only <main> is extracted: no HTML chrome, no skip link, no footer copyright line, no breadcrumb trail.
     if (/<script|<nav|<style|<\/?div/.test(twin)) problems.push(`${page.pathname}: twin contains HTML chrome`);
-    if (/Skip to content|©|Home \/ /.test(twin)) problems.push(`${page.pathname}: twin contains header, footer or breadcrumb text`);
+    if (/Skip to content|©\s*\d{4}|Home \/ /.test(twin)) problems.push(`${page.pathname}: twin contains header, footer or breadcrumb text`);
   }
   assert.deepEqual(problems, []);
-  assert.doesNotMatch(full, /<script|<nav|<style|<\/?div|Skip to content|©|Home \/ /);
+  assert.doesNotMatch(full, /<script|<nav|<style|<\/?div|Skip to content|©\s*\d{4}|Home \/ /);
   const pageCount = full.match(/^URL: https:\/\/www\.mrwallcover\.com\//gm)?.length ?? 0;
   assert.equal(pageCount, pages.length, 'llms-full lists exactly the published pages');
   // Noindex pages, redirect stubs and drafts: no twin, not in llms-full.
   const allTwins = (await filesUnder('dist', (name) => name === 'index.md')).map((file) => file.replace(/^dist/, '').replace(/index\.md$/, ''));
   assert.deepEqual(allTwins.sort(), pages.map((page) => page.pathname).sort(), 'exactly one twin per published page');
-  for (const pathname of ['/thank-you/', '/search/', '/404/', '/projects/owo-whitehall/', '/projects/penny-morrison-showroom/', '/projects/biltmore-mayfair/', '/trade/', '/advice/cost/']) {
+  for (const pathname of ['/thank-you/', '/search/', '/404/', '/projects/owo-whitehall/']) {
     assert.equal(allTwins.includes(pathname), false, `${pathname} must have no twin`);
     assert.equal(full.includes(`${SITE}${pathname}`), false, `${pathname} must not be in llms-full.txt`);
   }
@@ -228,7 +228,8 @@ test('no draft URL appears in the sitemap, llms.txt, llms-full.txt or the feed',
   for (const name of (await readdir('src/content/guides')).filter((entry) => entry.endsWith('.md'))) {
     if (/^draft: true$/m.test(await readFile(`src/content/guides/${name}`, 'utf8'))) drafts.push(`/advice/${name.slice(0, -3)}/`);
   }
-  assert.ok(drafts.length >= 3, `${drafts.length} drafts found; the showroom case study and the editorial scaffolds are expected to be drafts`);
+  // /reviews/ left draft on 11 Oct 2026 (Dorin cleared the Calico Wallpaper lines); zero drafts is allowed.
+  assert.ok(drafts.length >= 0);
   const outputs = Object.fromEntries(await Promise.all(['sitemap-0.xml', 'llms.txt', 'llms-full.txt', 'feed.xml'].map(async (name) => [name, await readFile(`dist/${name}`, 'utf8')])));
   const problems: string[] = [];
   for (const draft of drafts) {
@@ -255,7 +256,7 @@ test('/facts.json carries only allowlisted public fields from the fact sheet, no
     place: string;
     coverage: string;
     lastReviewed: string;
-    founder: { name: string; jobTitle: string; path: string; fragment: string };
+    founder: { name: string; jobTitle: string; path: string; fragment: string; image: string };
     profiles: { name: string; url: string }[];
   };
   const raw = await readFile('dist/facts.json', 'utf8');
@@ -277,7 +278,7 @@ test('/facts.json carries only allowlisted public fields from the fact sheet, no
   assert.equal(data.place, source.place);
   assert.equal(data.coverage, source.coverage);
   assert.equal(data.lastReviewed, source.lastReviewed);
-  assert.deepEqual(data.founder, { name: source.founder.name, jobTitle: source.founder.jobTitle, url: `${SITE}${source.founder.path}#${source.founder.fragment}` });
+  assert.deepEqual(data.founder, { name: source.founder.name, jobTitle: source.founder.jobTitle, url: `${SITE}${source.founder.path}#${source.founder.fragment}`, image: `${SITE}${source.founder.image}` });
   assert.deepEqual(data.profiles, source.profiles);
   assert.equal(data.website, SITE);
   assert.equal(data.isBasedOn, `${SITE}/for-ai/`);
@@ -292,6 +293,16 @@ test('/facts.json carries only allowlisted public fields from the fact sheet, no
   assert.deepEqual(business.sameAs, source.profiles.map((profile) => profile.url));
   const person = graph['@graph'].find((node) => node['@id'] === (data.founder as { url: string }).url)!;
   assert.equal(person.name, source.founder.name);
+  // The founder's portrait is the Person's image, with Dorin as creator and the full image-licence fields.
+  assert.equal(person.image.contentUrl, (data.founder as { image: string }).image);
+  assert.equal(person.image.creator.name, source.founder.name);
+  assert.equal(person.image.creditText, `${source.founder.name} / ${source.brand}`);
+  assert.equal(person.image.copyrightNotice, `© ${source.brand}`);
+  assert.equal(person.image.license, `${SITE}/image-use/`);
+  assert.equal(person.image.acquireLicensePage, `${SITE}/image-use/`);
+  const about = await readFile('dist/about/index.html', 'utf8');
+  assert.match(about, /alt="Dorin Burcus, founder of Mr Wallcover"/);
+  assert.match(about, /dorin-burcus-portrait-1149\.avif 1149w/);
   // Listed where readers look for it.
   assert.match(await readFile('dist/llms.txt', 'utf8'), /\(https:\/\/www\.mrwallcover\.com\/facts\.json\)/);
   assert.match(await readFile('dist/for-ai/index.html', 'utf8'), /href="\/facts\.json"/);
@@ -448,8 +459,9 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
     const graph = graphOf(page.html);
     const types = graph.map((node) => (Array.isArray(node['@type']) ? node['@type'].join('+') : node['@type']));
     const serialised = JSON.stringify(graph);
-    // copyrightNotice is banned: a printed photo credit is a credit, not a copyright claim.
-    for (const banned of ['aggregateRating', 'reviewRating', '"review"', '"reviews"', '"offers"', 'priceRange', '"price"', 'priceCurrency', 'SearchAction', 'potentialAction', 'telephone', '"award"', 'copyrightNotice']) {
+    // copyrightNotice is allowed only as set by imageObject() in src/lib/schema.ts: '© Mr Wallcover' on our own
+    // photographs, the credited owner's name on credited ones (checked below and in tests/image-metadata.test.ts).
+    for (const banned of ['aggregateRating', 'reviewRating', '"review"', '"reviews"', '"offers"', 'priceRange', '"price"', 'priceCurrency', 'SearchAction', 'potentialAction', 'telephone', '"award"']) {
       // The business node may carry the one named award (facts.award); any other "award" is a problem.
       const check = banned === '"award"' ? serialised.split('"award":"Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards"').join('') : serialised;
       if (check.includes(banned)) problems.push(`${page.pathname}: schema contains ${banned}`);
@@ -496,7 +508,9 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
       if (!credit) continue;
       creditedImages += 1;
       const holder = credit.replace(/^(Photography|Image):\s*/, '').replace(/\s*\(official\)$/, '');
-      if (!match[2].includes(`"creditText":"${holder}"`)) problems.push(`${page.pathname}: ${match[1]} lacks creditText "${holder}"`);
+      // creditText reads "Photo: <holder>" (src/lib/schema.ts imageRights), the holder exactly as credited.
+      if (!match[2].includes(`"creditText":"Photo: ${holder}"`)) problems.push(`${page.pathname}: ${match[1]} lacks creditText "Photo: ${holder}"`);
+      if (/"name":"(Mr Wallcover|Dorin Burcus)"/.test(match[2])) problems.push(`${page.pathname}: credited ${match[1]} is claimed as ours`);
       if (!page.html.includes(credit)) problems.push(`${page.pathname}: credit "${credit}" is in schema but not printed on the page`);
     }
     for (const slug of drafts) if (serialised.includes(`/projects/${slug}/`)) problems.push(`${page.pathname}: schema mentions draft ${slug}`);
@@ -504,8 +518,10 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
   assert.deepEqual(problems, []);
   assert.ok(creditedImages >= 10, `${creditedImages} credited ImageObjects checked`);
   const hoh = await readFile('dist/projects/house-of-hackney-st-michaels/index.html', 'utf8');
-  assert.match(hoh, /"creditText":"House of Hackney"/);
-  assert.doesNotMatch(hoh, /copyrightNotice/);
+  assert.match(hoh, /"creditText":"Photo: House of Hackney"/);
+  // The creator's url is the site its credited source page lives on (manifestNote "source https://www.houseofhackney.com/...").
+  assert.match(hoh, /"creditText":"Photo: House of Hackney","creator":\{"@type":"Organization","name":"House of Hackney","url":"https:\/\/www\.houseofhackney\.com\/"\},"copyrightNotice":"© House of Hackney"/);
+  assert.doesNotMatch(hoh, /"creditText":"Photo: House of Hackney","creator":\{"@type":"Organization",(?:"@id":"[^"]*",)?"name":"Mr Wallcover"/);
   // Specialism pages each carry their Service; the business node is the HomeAndConstructionBusiness already in use.
   for (const item of specialisms) assert.match(await readFile(`dist/services/${item.slug}/index.html`, 'utf8'), /"@type":"Service"/);
   const home = graphOf(await readFile('dist/index.html', 'utf8'));

@@ -11,7 +11,7 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-10"
+updated: "2026-10-11"
 description: "How to choose a wallcovering that still looks right once it is on the wall: traffic, light, cleaning, moisture, sample size and the questions to settle before ordering."
 metaDescription: "How to choose a wallcovering that still looks right on the wall: traffic, light, cleaning, moisture, sample size and what to settle before ordering."
 shortTitle: "Choosing wallcoverings"
@@ -51,7 +51,7 @@ Some clients want a very uniform wall. Others want the movement and character of
 
 ## Room by room
 
-**Hallways and stairs.** Look at where bags, hands and furniture meet the wall. Cleanability and the chance of a local repair matter most here. Stairs add installation questions too: access, changing wall heights and where the pattern should sit as the wall climbs. The drops stay plumb while the stair rises, so the motif steps up the wall rather than following the handrail; that is geometry, not a fault, and it is why a flat-wall calculation is not a stair quantity.
+**Hallways and stairs.** Look at where bags, hands and furniture meet the wall. Cleanability and the chance of a local repair matter most here. Stairs add installation questions too: access, changing wall heights and where the pattern should sit as the wall climbs. The drops stay on a true vertical, set by laser, while the stair rises, so the motif steps up the wall rather than following the handrail; that is geometry, not a fault, and it is why a flat-wall calculation is not a stair quantity.
 
 **Kitchens and dining rooms.** Keep the decorative wall away from the hob and the sink, and check the exact product's suitability for the positions that will take splashes.
 

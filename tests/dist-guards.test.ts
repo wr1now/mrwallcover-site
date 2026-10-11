@@ -18,7 +18,7 @@ test('the built site keeps private names and the verification token out of the w
   const files = await htmlFiles('dist');
   assert.ok(files.length > 10);
   const html = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
-  for (const banned of ['CLAUDI', 'Landmark', 'Samantha', 'Koroseal', 'Admiralty', 'Metropole', 'Canary Wharf', 'subcontract', 'third party', 'third-party', 'Threadneedle', 'Mulberry', 'Aethos']) {
+  for (const banned of ['CLAUDI', 'Landmark', 'Samantha', 'Koroseal', 'Admiralty', 'Marriott', 'subcontract', 'third party', 'third-party', 'Threadneedle', 'Mulberry', 'Aethos']) {
     assert.equal(html.toLowerCase().includes(banned.toLowerCase()), false, banned);
   }
   // The two private residential buildings: street only, never a house number or a full postcode.
@@ -42,9 +42,10 @@ test('the built site keeps private names and the verification token out of the w
   const exterior = await readFile('dist/services/exterior-works/index.html', 'utf8');
   assert.match(exterior, /pimlico-st-georges-square/);
   assert.match(exterior, /inverness-terrace/);
-  assert.doesNotMatch(exterior, /penny-morrison-showroom/);
+  assert.match(exterior, /penny-morrison-showroom/, 'the showroom is back on exterior works since it left draft (11 Oct 2026)');
   assert.match(exterior, /all the internal works plus the full exterior/i);
-  assert.doesNotMatch(exterior, /House of Hackney|Lanesborough|Chesham|hackney/i);
+  // The page's own copy only: site navigation lists every service page, including the House of Hackney installer page (published 11 Oct 2026).
+  assert.doesNotMatch(exterior.replace(/<nav\b[\s\S]*?<\/nav>/gi, ''), /House of Hackney|Lanesborough|Chesham|hackney/i);
   // No phone number in clear, whatever SITE_PHONE was at build time. The number only ever ships inside the reversed payload.
   assert.doesNotMatch(html, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|wa\.me/);
   assert.doesNotMatch(html, /loadedAt/);
@@ -82,23 +83,42 @@ test('claims decided by Dorin on 9 October 2026 hold in the built site', async (
   assert.doesNotMatch(everything, /2020–2022|2020 to 2022|2020 and 2022/);
   const owo = await readFile('dist/projects/raffles-london-the-owo/index.html', 'utf8');
   assert.match(owo, /2020–2023/);
-  // 4) No Calico praise quotes; the partnership line stays.
-  assert.doesNotMatch(everything, /Gorgeous! Thank you so much|for your hard work|In Calico's words|Client praise/i);
+  // 4) Calico praise: removed on 9 Oct, restored by Dorin on 11 Oct 2026 (src/data/approved-quotes.json). Only the exact
+  //    approved wording may appear, and only attributed to Calico Wallpaper: any personal name or other attribution fails.
+  //    The partnership line stays.
+  const approved = JSON.parse(await readFile('src/data/approved-quotes.json', 'utf8')) as { quotes: { quote: string; attribution: string }[] };
+  const ATTRIBUTION = /^Calico Wallpaper(?:, on the Beverly 1975 installation)?(?!\s*[,;:(—–-]|\s+(?:by|from|per)\b)/;
+  for (const item of approved.quotes) assert.match(item.attribution, /^Calico Wallpaper(?:, on the Beverly 1975 installation)?$/, `approved attribution: ${item.attribution}`);
+  for (const bad of ['Jane Smith, Calico Wallpaper', 'Calico Wallpaper, Jane Smith', 'Calico Wallpaper (Jane Smith)', 'Calico Wallpaper — Jane Smith', 'Calico Wallpaper - Jane Smith', 'Calico Wallpaper: Jane Smith']) {
+    assert.doesNotMatch(bad, ATTRIBUTION, `the guard must reject "${bad}"`);
+  }
+  const praiseText = everything.replace(/<[^>]+>/g, ' ').replace(/&quot;|&#34;|&#39;|[“”"]/g, ' ').replace(/\s+/g, ' ');
+  for (const hit of praiseText.matchAll(/Gorgeous|hard work|Thank you so much/gi)) {
+    // The approved quote must cover the hit itself, so a reworded line next to an approved one still fails.
+    const at = hit.index!;
+    const quote = approved.quotes.find((item) => {
+      const start = praiseText.lastIndexOf(item.quote, at);
+      return start >= 0 && start + item.quote.length > at;
+    });
+    assert.ok(quote, `Calico praise altered: "${praiseText.slice(Math.max(0, at - 60), at + 80)}"`);
+    const end = praiseText.lastIndexOf(quote!.quote, at) + quote!.quote.length;
+    const after = praiseText.slice(end, end + 160).replace(/^[\s—–-]+/, '');
+    assert.match(after, ATTRIBUTION, `Calico praise must be attributed to Calico Wallpaper only: "${after.slice(0, 80)}"`);
+    assert.ok(after.startsWith(quote!.attribution), `attribution changed: "${after.slice(0, 80)}"`);
+  }
+  assert.doesNotMatch(everything, /In Calico's words|Client praise/i);
   assert.match(html, /Delivered in partnership with/);
   assert.doesNotMatch(everything, /Trusted by Calico/i);
   // 5) North London residence is live, with no press links and no owner name.
   const northLondon = await readFile('dist/projects/north-london-residence/index.html', 'utf8');
   assert.match(northLondon, /BAMBUSA/);
   assert.doesNotMatch(everything, /Kate Moss|thesun\.co\.uk|As seen in the press|house-of-kate-moss|celebrated North London/i);
-  // 6) Penny Morrison showroom is a draft: no route, no link, nowhere in the sitemap or llms.txt.
-  let built = true;
-  try {
-    await stat('dist/projects/penny-morrison-showroom/index.html');
-  } catch {
-    built = false;
-  }
-  assert.equal(built, false, 'the Penny Morrison route must not be built');
-  assert.doesNotMatch(everything, /penny-morrison-showroom|Penny Morrison|9 Langton Street/);
+  // 6) Penny Morrison showroom: a draft from Dorin's 9 Oct decisions until he asked for it to be published on 11 Oct 2026,
+  //    with the 9 Langton Street showroom address named (a commercial showroom). Built, in the sitemap and llms.txt.
+  const showroom = await readFile('dist/projects/penny-morrison-showroom/index.html', 'utf8');
+  assert.match(showroom, /9 Langton Street/);
+  assert.match(sitemap, /\/projects\/penny-morrison-showroom\//);
+  assert.match(llms, /\/projects\/penny-morrison-showroom\//);
   // 7) The approved privacy sentence replaces "Private houses are not shown".
   assert.doesNotMatch(everything, /Private houses are not shown|Private houses are not named/i);
   assert.match(html, /Private clients are not named\. Residential work appears only by street or area, with the owner(?:'|&#39;|’)s agreement\./);
@@ -113,7 +133,7 @@ test('every project an area or service page lists resolves to a built page, is l
     if (fm.draft) drafts.add(fm.slug);
     else if (fm.replaces) aliases.set(fm.replaces, fm.slug);
   }
-  assert.ok(drafts.has('penny-morrison-showroom'), 'this guard expects the showroom to be a draft; update it if that changes');
+  assert.equal(drafts.has('penny-morrison-showroom'), false, 'the showroom is published (Dorin, 11 Oct 2026)');
   type Landing = { slug: string; projects: string[] };
   const areas = (JSON.parse(await readFile('src/content/areas.json', 'utf8')) as { items: Landing[] }).items;
   const specialisms = (JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as { items: Landing[] }).items;
@@ -151,9 +171,10 @@ test('every project an area or service page lists resolves to a built page, is l
   }
   assert.deepEqual(problems, []);
   assert.ok(checked >= 15, `only ${checked} listed projects checked`);
-  // Decisions of 9 October 2026: Kensington cites the published Lavery case study; Chelsea cites nothing while the showroom is a draft.
+  // Decisions of 9 October 2026: Kensington cites the published Lavery case study. Chelsea cited nothing while the showroom
+  // was a draft; it cites the showroom since it was published (Dorin, 11 Oct 2026).
   assert.deepEqual(areas.find((a) => a.slug === 'kensington')?.projects, ['calico-beverly-1975-cadence']);
-  assert.deepEqual(areas.find((a) => a.slug === 'chelsea')?.projects, []);
+  assert.deepEqual(areas.find((a) => a.slug === 'chelsea')?.projects, ['penny-morrison-showroom']);
   const kensington = await readFile('dist/areas/kensington/index.html', 'utf8');
   assert.match(kensington, /On the public record/);
   assert.match(kensington, /href="\/projects\/calico-beverly-1975-cadence\/"/);
@@ -313,8 +334,10 @@ test('each case-study Article carries its frontmatter dates and Dorin as author;
     articles += 1;
   }
   assert.ok(articles >= 10);
+  // Every other page now carries a content date from scripts/sitemap-lastmod.mjs (git or frontmatter), never the
+  // build time; tests/sitemap.test.ts checks every URL. Here: a date only, from the page's own sources.
   for (const [pagePath, lastmod] of lastmods) {
-    if (!pagePath.startsWith('/projects/') || pagePath === '/projects/') assert.equal(lastmod, undefined, `${pagePath} must not carry a build-time lastmod`);
+    assert.match(lastmod ?? '', /^\d{4}-\d{2}-\d{2}T00:00:00\.000Z$/, `${pagePath} lastmod must be a content date (midnight), not a build timestamp`);
   }
 });
 
@@ -385,7 +408,9 @@ test('each published guide carries an Article with the founder as author, the bu
     assert.equal(article.dateModified, updated, `${slug} dateModified`);
     assert.equal(article.author['@id'], 'https://www.mrwallcover.com/about/#dorin', `${slug} author`);
     assert.equal(article.author.name, 'Dorin Burcus');
-    assert.deepEqual(article.publisher, { '@id': 'https://www.mrwallcover.com/#business' }, `${slug} publisher`);
+    // The publisher is the business node by @id, with its type, name, url and logo repeated inline for readers that do not follow @id.
+    assert.deepEqual(article.publisher, { '@type': 'Organization', '@id': 'https://www.mrwallcover.com/#business', name: 'Mr Wallcover', url: 'https://www.mrwallcover.com', logo: 'https://www.mrwallcover.com/logo-512.png' }, `${slug} publisher`);
+    assert.ok(Array.isArray(article.image) && article.image.length > 0 && article.image.every((img: any) => img['@type'] === 'ImageObject' && img.creditText), `${slug} Article image`);
     assert.equal(article.mainEntityOfPage['@id'], `https://www.mrwallcover.com/advice/${slug}/#webpage`);
     assert.ok(graph['@graph'].some((node) => node['@type'] === 'BreadcrumbList'), `${slug} breadcrumbs`);
     // FAQPage only where the page shows the questions.

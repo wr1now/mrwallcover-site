@@ -90,6 +90,23 @@ const faq = buyerFaqFor('/aftercare/');
     </section>
   )}
 
+  <section id="guarantees" class="border-t border-line" aria-labelledby="guarantees-heading">
+    <div class="container-page py-14 md:py-20">
+      <p class="eyebrow">{aftercare.assurance.eyebrow}</p>
+      <h2 id="guarantees-heading" class="m-0 max-w-xl text-[clamp(2rem,3vw,2.8rem)]">{aftercare.assurance.title}</h2>
+      <p class="lede mt-4 max-w-3xl">{aftercare.assurance.intro}</p>
+      <dl class="mt-8 grid gap-x-10 gap-y-6 md:grid-cols-2" style="margin-left:0">
+        {aftercare.assurance.items.map((item) => (
+          <div class="border-t border-line pt-4">
+            <dt style="font-weight:500">{item.title}</dt>
+            <dd class="m-0 mt-2">{item.text}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-8 mb-0"><a href="#guarantee-band">The twelve-month workmanship guarantee</a> · <a href="/professionals/developers/">Working with main contractors</a></p>
+    </div>
+  </section>
+
   <section id="support" class="border-t border-line">
     <div class="container-page py-14 md:py-20">
       <p class="eyebrow">Support</p>
@@ -101,7 +118,7 @@ const faq = buyerFaqFor('/aftercare/');
     </div>
   </section>
 
-  <section class="band-dark on-dark">
+  <section id="guarantee-band" class="band-dark on-dark">
     <div class="container-page py-16 md:py-20">
       <h2 class="m-0 max-w-xl text-[clamp(2rem,3vw,2.8rem)]">{aftercare.guarantee.title}</h2>
       <div class="prose mt-6">

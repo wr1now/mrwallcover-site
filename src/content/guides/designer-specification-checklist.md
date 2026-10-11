@@ -11,7 +11,7 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-09"
+updated: "2026-10-11"
 description: "What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, light, lining, free-issue responsibilities and change control."
 metaDescription: "What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, lining, free-issue roles and change control."
 shortTitle: "Designer checklist"
@@ -54,6 +54,14 @@ What should a wallcovering specification contain? Enough for the installer to se
 - Who orders, who receives and checks the delivery, and who approves the batch. On many hotel and flagship jobs the material is free-issue from the designer, the brand or the client; we manage delivery and check it against the measure.
 - Who signs off wall readiness and the set-out before cutting starts.
 - Who decides whether a substitution is acceptable, and what evidence it needs.
+
+## Lead times and site readiness
+
+- The order date as well as the hang date. For free-issue material the supplier's lead time sits inside the programme, and the hang is planned around the delivery.
+- For a scenic paper or a mural, the installer's site measure before the dimensions go to production. The panels are made to the finished walls, so a new lining, skirting or cornice changes them.
+- Who receives the delivery and checks it against the measure, and when scenic panels will be checked dry against the maker's layout, before any paste and before anything is cut.
+- The wall-readiness standard for each room: dry to a reading, filled and sanded, lined or not, with filling, lining and drying time in the programme rather than found on the day the material arrives.
+- The set-out for any pronounced pattern agreed on the elevation before cutting starts; our [set-out and pattern matching guide](/advice/set-out-and-pattern-matching/) shows what that decides.
 
 ## Change control
 

@@ -1,0 +1,13 @@
+{
+  "_note": "The hotel-group strip (src/components/HotelGroups.astro): plain-text group names, NO logos, each linked to our published case studies at that group's hotels. A group appears only if it has a published case study, and only where the repo itself ties the hotel to the group (the 'source' of each entry). Rosewood is left out: the published Rosewood London job was for Calico Wallpaper and Ahluwalia, with Rosewood as the venue, not the client.",
+  "heading": "Hotel groups on our record",
+  "intro": "Hotels from these groups where we have installed, each linked to its case study. No endorsement by any group is implied.",
+  "items": [
+    { "name": "Hilton", "projects": ["hilton-garden-inn-silverstone", "hilton-london-metropole", "doubletree-west-end", "doubletree-victoria"], "source": "case-study clients: 'Hilton (Hilton Garden Inn)', 'Hilton London Metropole', 'DoubleTree by Hilton London – West End', 'DoubleTree by Hilton London – Victoria'" },
+    { "name": "Four Seasons", "projects": ["four-seasons-ten-trinity-square"], "source": "four-seasons-ten-trinity-square client: 'Four Seasons Hotels and Resorts'" },
+    { "name": "Jumeirah", "projects": ["jumeirah-carlton-tower"], "source": "jumeirah-carlton-tower client: 'Jumeirah Carlton Tower'; docs/sources.md (Jumeirah Group release)" },
+    { "name": "Ennismore", "projects": ["old-bailey-hotel"], "source": "old-bailey-hotel: opened as Hyde London City; docs/sources.md (Ennismore press release and story, 2 Sept 2024)" },
+    { "name": "Raffles (Accor)", "projects": ["raffles-london-the-owo"], "source": "raffles-london-the-owo client: 'operated by Raffles, Accor'" },
+    { "name": "Rocco Forte Hotels", "projects": ["browns-hotel-mayfair"], "source": "browns-hotel-mayfair client: 'Rocco Forte Hotels'" }
+  ]
+}

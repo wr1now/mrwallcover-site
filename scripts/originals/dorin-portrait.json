@@ -1,0 +1,13 @@
+{
+  "caseStudy": "about",
+  "note": "Dorin Burcus's own portrait for the About page founder section, supplied and cleared by Dorin on 11 October 2026 (1149x1369 PNG, dorin-portrait/dorin-burcus-portrait.png on his Mac). Not one of the held _owner-portraits-dorin frames (difference-hash distance 107+ from every held fixture). Never upscaled: the largest cut is the source width.",
+  "credit": null,
+  "images": {
+    "dorin-burcus-portrait": {
+      "photo": "portrait",
+      "file": "dorin-burcus-portrait.png",
+      "widths": [400, 640, 800, 1149],
+      "alt": "Dorin Burcus, founder of Mr Wallcover"
+    }
+  }
+}

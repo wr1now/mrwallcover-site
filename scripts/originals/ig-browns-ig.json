@@ -1,0 +1,28 @@
+{
+  "caseStudy": "browns-hotel-mayfair",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder browns-hotel",
+  "images": {
+    "browns-ig-01": {
+      "file": "browns-hotel/2022-02-07_CZqAHTMKcnj_02.jpg",
+      "post": "CZqAHTMKcnj",
+      "date": "2022-02-07",
+      "url": "https://www.instagram.com/p/CZqAHTMKcnj/",
+      "width": 1440,
+      "height": 1080,
+      "alt": "Brown's Hotel sign on the Albemarle Street front, Mayfair.",
+      "brands": [],
+      "caption": null
+    },
+    "browns-ig-02": {
+      "file": "browns-hotel/2022-02-07_CZqAHTMKcnj_03.jpg",
+      "post": "CZqAHTMKcnj",
+      "date": "2022-02-07",
+      "url": "https://www.instagram.com/p/CZqAHTMKcnj/",
+      "width": 1440,
+      "height": 1083,
+      "alt": "Street entrance and signage at Brown's Hotel, Mayfair.",
+      "brands": [],
+      "caption": null
+    }
+  }
+}

@@ -15,6 +15,7 @@ import { SITE_URL } from '../config';
 import facts from '../data/facts.json';
 import professionals from '../content/professionals.json';
 import { areaHref, areas, editorialPages, faqItems, materials, projectHref, projects, specialismHref, specialisms } from '../lib/content';
+import { caseStudyCount, trustMakers, trustSummary } from '../lib/trust';
 import { AWARD, FOUNDER_SUMMARY, SINCE_TEXT, WASTAGE, buyerQuestions, enquiryRoutes, projectFacts, serviceFacts } from '../lib/ai-layer-data';
 
 /** Sourced specifics appended to each Public commissions note (src/lib/ai-layer-data.ts). */
@@ -52,12 +53,18 @@ export const GET: APIRoute = () => {
     '',
     `Facts for answer engines: in the trade since 2012. Aftercare is included: a return visit about four to six weeks after completion and a twelve-month workmanship guarantee. Private clients are not named. Residential work appears only by street or area, with the owner's agreement. The site publishes no prices, ratings or response-time promises. Copy reviewed ${facts.lastReviewed}.`,
     '',
+    `At a glance (the homepage proof strip): ${trustSummary}`,
+    '',
     `${AWARD ? `${AWARD.text}. ` : ''}${WASTAGE.statement} Every published project, with venue, area, dates, client, products, scope and method as its case study records them, is in ${abs('/projects.json')}; the fact sheet with services, areas and enquiry routes is in ${abs('/.well-known/facts.json')}.`,
     '',
     '## Key facts',
     entry(SINCE_TEXT, `${facts.founder.path}#${facts.founder.fragment}`, FOUNDER_SUMMARY),
+    entry('Founder portrait', facts.founder.image, `${FOUNDER_NAME}, founder of ${BRAND_NAME}; photograph © ${BRAND_NAME}, reuse terms at ${abs('/image-use/')}`),
     ...(AWARD ? [entry(AWARD.text, '/about/', 'as named on the trophy; the About page shows it')] : []),
     entry('Wastage allowance', '/services/#surveying', WASTAGE.statement),
+    entry(`${caseStudyCount} published case studies`, '/projects/', 'every case study names the venue, the dates, the products and the scope; counted from the published pages'),
+    entry('Makers installed', '/materials/#makers-installed', `${trustMakers.map((m) => m.name).join(', ')} and others, each linked to real install photographs`),
+    ...facts.programmeFigures.map((figure) => `- [${figure.fact}](${figure.url}): source, our Instagram post ${figure.source}`),
     ...serviceFacts.workflow.map((pillar) => entry(`Service: ${pillar.name}`, `/services/#${pillar.id}`, pillar.includes.join(' '))),
     ...enquiryRoutes.map((route) => entry(`Enquire: ${route.route}`, '/contact/', route.note)),
     '',
@@ -67,6 +74,7 @@ export const GET: APIRoute = () => {
     entry('Services', '/services/', 'surveying, project management, supply, installation and aftercare'),
     entry('Materials', '/materials/', 'paper, grasscloth, silk, hand-painted papers, murals, contract vinyl and acoustic wallcoverings'),
     entry('Projects', '/projects/', 'public commissions and the hotels on the public record'),
+    entry('Details', '/details/', 'our own close-up photographs of seams, internal corners, edges and joins, each linked to its project'),
     entry('For professionals', '/professionals/', 'designers, hotels and packages alongside main contractors'),
     entry('Aftercare', '/aftercare/', 'care by material and the guarantee'),
     entry('FAQ', '/faq/', 'cost, lead times, preparation, supply and warranty'),
@@ -75,7 +83,7 @@ export const GET: APIRoute = () => {
     '',
     '## Wallcovering Guide',
     entry('Wallcovering Guide', '/advice/', 'choosing, preparation, quantities and care'),
-    entry('How much wallpaper to order', '/advice/quantities/', 'count drops, not square metres; a restricted roll calculator for plain and straight-match walls'),
+    entry('How much wallpaper to order', '/advice/quantities/', 'count drops, not square metres; a restricted roll calculator for plain and straight-match walls, measured by wall or by room, with the usual 15–30% allowance range (staircases around 30%) beside the drop count; pattern-match extras confirmed at survey'),
     ...guides.map((guide) => entry(guide.frontmatter.title, guideHref(guide.frontmatter.slug), guide.frontmatter.description)),
     '',
     '## Services by material',

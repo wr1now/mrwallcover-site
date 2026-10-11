@@ -1,0 +1,24 @@
+---
+/**
+ * The hotel-group strip: plain-text names linked to our case studies at each group's hotels
+ * (src/content/hotel-groups.json). No logos. Only groups with a published case study; the build
+ * fails if a listed project is not published.
+ */
+import groups from '../content/hotel-groups.json';
+import { linkedProjects, projectHref } from '../lib/content';
+
+const rows = groups.items.map((group) => ({ name: group.name, projects: linkedProjects(group.projects, `hotel-groups.json "${group.name}"`) }));
+---
+
+<section class="hotel-groups border-t border-line py-12" aria-labelledby="hotel-groups-heading" data-hotel-groups>
+  <h2 id="hotel-groups-heading" class="m-0 text-[clamp(2rem,3vw,2.7rem)]">{groups.heading}</h2>
+  <p class="mt-4 max-w-2xl text-stone">{groups.intro}</p>
+  <ul class="hotel-groups-list mt-6 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
+    {rows.map((group) => (
+      <li>
+        <p class="hotel-group-name m-0">{group.name}</p>
+        <p class="m-0 mt-1">{group.projects.map((project, i) => <>{i > 0 && ' · '}<a href={projectHref(project.slug)}>{project.title}</a></>)}</p>
+      </li>
+    ))}
+  </ul>
+</section>

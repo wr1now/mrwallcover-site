@@ -101,6 +101,34 @@
     {
       "id": "hoh-official-12",
       "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-shoreditch-2019-01",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-02",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-03",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-04",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-05",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-06",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-07",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
     }
   ],
   "published": "2026-10-09",
@@ -125,3 +153,5 @@ The survey was in October 2021. Making good and decorating ran from January 2022
 Pattern names are not stated here. The papers are House of Hackney's own, hung through the rooms as specified for the showroom. This commission was internal works only.
 
 The finished-room photographs marked "Photography: House of Hackney" are House of Hackney's own, from their website. The others were taken on site by us; the two marked "Before" show rooms as found, before the works began.
+
+The last seven photographs are from an earlier job for the same client: House of Hackney's previous showroom in Shoreditch, which we worked on in 2019. They are our own photographs, posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 19 August 2019, and each is captioned as the earlier showroom. They are not St Michael's Clergy House.

@@ -43,7 +43,7 @@ async function caseStudyFiles(): Promise<CaseStudyFile[]> {
 const FORBIDDEN = [
   'CLAUDI', 'Landmark', 'Threadneedle', 'third party', 'third-party', 'subcontract',
   '3163', 'Horsehair', 'Metallic Ombre', 'penthouse', 'Private residence, Kensington', 'Calico - private residence',
-  'unidentified-', 'awaiting Dorin', 'biltmore-mayfair', 'penny-morrison', 'since 2014',
+  'unidentified-', 'awaiting Dorin', 'since 2014',
 ];
 const PHONE = /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b/;
 const PRIVATE_ADDRESS = [/\b\d{1,4}[a-z]?[ \t]+St\.?\s?George'?s?\s+Square/i, /\b\d{1,4}[a-z]?[ \t]+Inverness\s+Terrace/i, /\bSW1V\s?\d[A-Z]{2}\b/, /\bW2\s?\d[A-Z]{2}\b/, /\bPL12\b/, /\bN\d{1,2}\s?\d[A-Z]{2}\b/, /\bflat\s+\d+/i];

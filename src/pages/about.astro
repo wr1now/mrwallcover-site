@@ -9,6 +9,7 @@ const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about/' },
 ];
+import DesignersStrip from '../components/DesignersStrip.astro';
 ---
 
 <Base
@@ -32,10 +33,16 @@ const crumbs = [
         </p>
         <p class="m-0"><a href={AWARD_URL} rel="noopener">{AWARD_TEXT}</a>.</p>
       </div>
-      <figure class="m-0 md:col-span-5 md:col-start-8">
-        <Picture id={about.image} sizes="(min-width: 768px) 28rem, 100vw" />
-        <figcaption class="caption">{about.imageCaption}</figcaption>
-      </figure>
+      <div class="grid gap-10 md:col-span-5 md:col-start-8">
+        <figure class="founder-portrait m-0">
+          <Picture id={about.portrait} sizes="(min-width: 768px) 28rem, 100vw" />
+          <figcaption class="caption">{about.portraitCaption}</figcaption>
+        </figure>
+        <figure class="m-0">
+          <Picture id={about.image} sizes="(min-width: 768px) 28rem, 100vw" />
+          <figcaption class="caption">{about.imageCaption}</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 
@@ -53,6 +60,89 @@ const crumbs = [
           ))
         }
       </div>
+    </div>
+  </section>
+
+  <section class="border-t border-line" aria-labelledby="how-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">{about.howWeWork.eyebrow}</p>
+      <h2 id="how-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{about.howWeWork.title}</h2>
+      <div class="prose mt-6 max-w-3xl">
+        <p class="m-0">{about.howWeWork.intro}</p>
+        <ul class="mt-4">{about.howWeWork.items.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  {
+    [about.hotels, about.interiors].map((group, index) => (
+      <section class="border-t border-line" aria-labelledby={`record-${index}-heading`}>
+        <div class="container-page py-16 md:py-24">
+          <p class="eyebrow">{group.eyebrow}</p>
+          <h2 id={`record-${index}-heading`} class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{group.title}</h2>
+          <ul class="mt-10 grid list-none gap-8 p-0 md:grid-cols-2">
+            {group.items.map((item) => (
+              <li class="border-t border-line pt-4">
+                <h3 class="m-0 text-[1.6rem]"><a href={item.href}>{item.name}</a></h3>
+                <p class="mt-2 mb-0 text-stone">{item.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    ))
+  }
+
+  <section class="border-t border-line" aria-labelledby="roll-call-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">{about.rollCall.eyebrow}</p>
+      <h2 id="roll-call-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{about.rollCall.title}</h2>
+      <p class="mt-4 mb-0 max-w-2xl text-stone">{about.rollCall.intro}</p>
+      <div class="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          about.rollCall.items.map((item) => (
+            <article class="border-t border-line pt-4">
+              <figure class="m-0">
+                <Picture id={item.images[0]} sizes="(min-width: 1024px) 24rem, (min-width: 640px) 45vw, 100vw" />
+                {item.images.length > 1 && (
+                  <div class="mt-2 grid grid-cols-2 gap-2">
+                    {item.images.slice(1).map((id) => <Picture id={id} sizes="(min-width: 1024px) 12rem, 45vw" />)}
+                  </div>
+                )}
+              </figure>
+              <h3 class="mt-4 mb-0 text-[1.5rem]">{item.href ? <a href={item.href}>{item.name}</a> : item.name}</h3>
+              <p class="mt-1 mb-0 text-brass">{item.place}, {item.years}</p>
+              <p class="mt-2 mb-0 text-stone">{item.text} <a href={item.source} rel="noopener">Our post</a>.</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-line" aria-labelledby="timeline-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">{about.timeline.eyebrow}</p>
+      <h2 id="timeline-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{about.timeline.title}</h2>
+      <dl class="mt-10 grid max-w-4xl gap-6">
+        {
+          about.timeline.items.map((item) => (
+            <div class="grid gap-2 border-t border-line pt-4 md:grid-cols-[8rem_1fr]">
+              <dt class="m-0 text-brass">{item.year}</dt>
+              <dd class="m-0 text-stone">{item.text}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="border-t border-line" aria-labelledby="collaborators-heading">
+    <div class="container-page py-16 md:py-24">
+      <p class="eyebrow">{about.collaborators.eyebrow}</p>
+      <h2 id="collaborators-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{about.collaborators.title}</h2>
+      <p class="mt-6 mb-0 max-w-3xl text-stone">{about.collaborators.text} <a href="/contact/">Talk to us about your project.</a></p>
+      <DesignersStrip headingLevel="h3" />
     </div>
   </section>
 </Base>

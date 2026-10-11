@@ -1,0 +1,45 @@
+{
+  "caseStudy": "about-roll-call",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder office-jermyn-street",
+  "images": {
+    "jermyn-street-office-01": {
+      "file": "office-jermyn-street/2018-12-19_BrlESE1g3Q6_01.jpg",
+      "post": "BrlESE1g3Q6",
+      "date": "2018-12-19",
+      "url": "https://www.instagram.com/p/BrlESE1g3Q6/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Close-up of a Vescom Chandra silk-look wallcovering in an office on Jermyn Street, St James's.",
+      "brands": [
+        "Vescom"
+      ],
+      "caption": null
+    },
+    "jermyn-street-office-02": {
+      "file": "office-jermyn-street/2018-12-19_BrlESE1g3Q6_02.jpg",
+      "post": "BrlESE1g3Q6",
+      "date": "2018-12-19",
+      "url": "https://www.instagram.com/p/BrlESE1g3Q6/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Close-up of a pale silk-texture Vescom wallcovering, office on Jermyn Street, St James's.",
+      "brands": [
+        "Vescom"
+      ],
+      "caption": null
+    },
+    "jermyn-street-office-03": {
+      "file": "office-jermyn-street/2018-12-19_BrlESE1g3Q6_03.jpg",
+      "post": "BrlESE1g3Q6",
+      "date": "2018-12-19",
+      "url": "https://www.instagram.com/p/BrlESE1g3Q6/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Office wall finished in a grey silk-look Vescom wallcovering, Jermyn Street, St James's.",
+      "brands": [
+        "Vescom"
+      ],
+      "caption": null
+    }
+  }
+}

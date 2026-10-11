@@ -6,7 +6,7 @@
   "description": "Makers whose papers Mr Wallcover has installed, from hand-painted scenic papers to contract wallcoverings, each linked to the case study that records it.",
   "eyebrow": "Materials",
   "heading": "Specified papers we install",
-  "lede": "Mr Wallcover has installed papers by de Gournay, Fromental, House of Hackney, Muraspec and Phillip Jeffries, along with the makers named on our published case studies below. Installed means we hung that maker's product on a project. It is not a maker approval or endorsement, and we are not on makers' installer lists. The one partnership is Calico Wallpaper: work delivered in partnership with Calico Wallpaper.",
+  "lede": "Mr Wallcover has installed papers by de Gournay, Fromental, House of Hackney, Muraspec, Phillip Jeffries and Timorous Beasties, along with the makers named on our published case studies below. Installed means we hung that maker's product on a project. It is not a maker approval or endorsement, and we are not on makers' installer lists. The one partnership is Calico Wallpaper: work delivered in partnership with Calico Wallpaper.",
   "parent": {
     "name": "Materials",
     "href": "/materials/"

@@ -17,10 +17,16 @@ const filters = [
 // Events at hotel venues are deliberately not hotel installation commissions.
 const homeSlugs = new Set([
   'trematon-castle', 'pimlico-st-georges-square', 'inverness-terrace', 'north-london-residence',
-  'imperfect-arches-external-corner-trim',
+  'imperfect-arches-external-corner-trim', 'private-residence-little-venice',
 ]);
 // Commercial interiors outside the hotel record: a designer's tea house and a short-term showroom.
-const retailSlugs = new Set(['tea-house-jaillon-studio', 'scp-showroom-pimlico']);
+const retailSlugs = new Set([
+  'tea-house-jaillon-studio', 'scp-showroom-pimlico',
+  // The Penny Morrison showroom at 9 Langton Street: a commercial showroom (published 11 Oct 2026).
+  'penny-morrison-showroom',
+  // From the Instagram photo pack, 11 Oct 2026: a tailor, a car showroom, a cinema, a leisure venue and an art-fair stand.
+  'huntsman-savile-row', 'mercedes-amg-showroom-london', 'everyman-liverpool', 'oxygen-freejumping-the-o2', 'masterpiece-london-2019',
+]);
 const cards = projects.map((project) => {
   const isHotel = hotels.some((hotel) => hotel.href === projectHref(project.slug) || hotel.name === project.title);
   const category = project.group === 'design-weeks' || project.slug === 'house-of-hackney-st-michaels' || retailSlugs.has(project.slug)
@@ -47,6 +53,8 @@ const groups = [
   },
 ].filter((group) => group.items.length > 0);
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Work', href: '/projects/' }];
+import makersInstalled from '../../content/makers-installed.json';
+const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
 ---
 
 <Base title={indexCopy.index.title} description={indexCopy.index.description} path="/projects/" extraSchema={[breadcrumbNode(crumbs)]}>
@@ -121,6 +129,11 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Work', href: '/projects/' 
         </ul>
       </div>
     </details>
+    <section class="hotel-record" aria-labelledby="makers-heading">
+      <h2 id="makers-heading" class="m-0 text-[1.6rem]">Makers on our projects</h2>
+      <p class="lede">Wallcovering makers we have installed, each shown with our own photograph on <a href="/materials/#makers-installed">the Materials page</a>. A maker named here is not an endorsement.</p>
+      <p class="m-0">{makersInstalled.items.map((item, i) => <>{i > 0 && ' · '}<a href={`/materials/#${makerId(item.brand)}`}>{item.brand}</a></>)}</p>
+    </section>
   </div>
   <script is:inline data-project-explorer-script>
     (() => {

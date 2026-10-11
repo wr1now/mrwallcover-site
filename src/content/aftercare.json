@@ -74,5 +74,28 @@
       "It does not cover building movement, damp, leaks, or a substrate that fails. It does not cover damage by later trades, impact, furniture, or cleaning the material cannot take.",
       "Some people call this a warranty. It is the same promise: twelve months on our workmanship, and a clear line where the building takes over from the hang."
     ]
+  },
+  "assurance": {
+    "eyebrow": "Guarantees and paperwork",
+    "title": "What stands behind the work.",
+    "intro": "The paperwork a designer, contractor or owner asks for before work starts, and what happens if something goes wrong. Details are sent on request; none of it is a sales term.",
+    "items": [
+      {
+        "title": "Insurance",
+        "text": "Public liability, employers' liability and professional indemnity details are available on request."
+      },
+      {
+        "title": "Site cards and accreditations",
+        "text": "Site card and accreditation details are available on request, sent with the RAMS before work starts."
+      },
+      {
+        "title": "RAMS on every job",
+        "text": "Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site."
+      },
+      {
+        "title": "If the installation is at fault",
+        "text": "If a fault comes from the installation, Mr Wallcover covers the cost of the material, on top of the twelve-month workmanship guarantee below."
+      }
+    ]
   }
 }

@@ -1,0 +1,18 @@
+{
+  "caseStudy": "about-roll-call",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder the-marylebone",
+  "images": {
+    "marylebone-02": {
+      "file": "the-marylebone/2020-08-08_CDoRo1uFuLL_01.jpg",
+      "post": "CDoRo1uFuLL",
+      "date": "2020-08-08",
+      "url": "https://www.instagram.com/p/CDoRo1uFuLL/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "The front of The Marylebone hotel, London, with its name above the entrance.",
+      "brands": [],
+      "caption": null
+    }
+  },
+  "note": "marylebone-01 (texture close-up, post B80WqY1l96C) left out: tests/held-images.test.ts matched it to a held photograph by picture."
+}

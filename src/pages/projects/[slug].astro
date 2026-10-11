@@ -1,8 +1,10 @@
 ---
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import CaseStudyGlance from '../../components/CaseStudyGlance.astro';
 import Picture from '../../components/Picture.astro';
+import { pictureSources } from '../../lib/picture';
 import Base from '../../layouts/Base.astro';
-import { areaHref, areas, caseStudyBySlug, media, ogImageFor, projectAliases, projectHref, projects, specialismHref, specialisms, videoById } from '../../lib/content';
+import { areaHref, areas, caseStudyBySlug, landingProjectSlugs, media, ogImageFor, projectAliases, projectHref, projects, specialismHref, specialisms, videoById } from '../../lib/content';
 import { SITE_URL } from '../../config';
 import { breadcrumbNode, caseStudyArticleNode, projectNode, videoNode } from '../../lib/schema';
 import type { Project } from '../../lib/types';
@@ -52,7 +54,7 @@ const ogImage = project.imagePolicy === 'none' ? undefined : ogImageFor(project.
 const pageUrl = new URL(projectHref(project.slug), SITE_URL).href;
 const galleryAbs = project.gallery.map((id) => ({ url: new URL(media(id).jpg, SITE_URL).href, credit: project.credits?.[id] ?? null }));
 const relatedAreas = areas.filter((a) => a.projects.some((slug) => (projectAliases[slug] ?? slug) === project.slug));
-const relatedServices = specialisms.filter((s) => s.projects.some((slug) => (projectAliases[slug] ?? slug) === project.slug));
+const relatedServices = specialisms.filter((s) => landingProjectSlugs(s).some((slug) => (projectAliases[slug] ?? slug) === project.slug));
 const otherStudies = projects.filter((p) => p.caseStudy && p.slug !== project.slug);
 const schemaNodes = study
   ? caseStudyArticleNode({
@@ -74,6 +76,9 @@ const schemaNodes = study
       dates: project.dates,
       image: ogImage ? new URL(ogImage, SITE_URL).href : undefined,
     });
+/* The hero's sizes, shared by the <picture> and its preload so both pick the same file. */
+const heroSizes = project.modest ? `(min-width: ${modestHeroWidth + 40}px) ${modestHeroWidth}px, 100vw` : '(min-width: 768px) 72rem, 100vw';
+const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictureSources(project.imageId, project.modest)[0], sizes: heroSizes } : undefined;
 ---
 
 {redirectUrl ? (
@@ -89,6 +94,8 @@ const schemaNodes = study
   </html>
 ) : (
 <Base
+  preloadImage={heroPreload}
+  preloadFonts
   title={project.metaTitle}
   description={project.description}
   path={projectHref(project.slug)}
@@ -122,10 +129,11 @@ const schemaNodes = study
       <div class="pb-12">
         {project.imageId && (
           <figure class:list={['m-0 mb-10 case-study-hero', project.modest && 'modest-hero']} style={project.modest ? `max-width:${modestHeroWidth}px` : undefined}>
-            <Picture id={project.imageId} loading="eager" fetchpriority="high" thumbOnly={project.modest} sizes={project.modest ? `(min-width: ${modestHeroWidth + 40}px) ${modestHeroWidth}px, 100vw` : '(min-width: 768px) 72rem, 100vw'} />
+            <Picture id={project.imageId} loading="eager" fetchpriority="high" thumbOnly={project.modest} sizes={heroSizes} />
             {project.credits?.[project.imageId] && <figcaption class="caption">{project.credits[project.imageId]}</figcaption>}
           </figure>
         )}
+        {study && <CaseStudyGlance study={{ slug: project.slug, client: study.frontmatter.client, role: study.frontmatter.role, years: study.frontmatter.years, wallcoverings: study.frontmatter.wallcoverings ?? [] }} />}
         <article class="prose case-study">
           <StudyContent />
         </article>
@@ -155,15 +163,16 @@ const schemaNodes = study
               </li>
             ))}
           </ol>
+          <p class="mt-8 mb-0"><a href="/details/">See the finish up close: seams, internal corners, edges and joins from our own installations</a></p>
         </section>
         {films.length > 0 && (
           <section class="mt-14">
             <h2 class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On site</h2>
-            <div class="mt-6 grid gap-6 md:grid-cols-3">
+            <div class="mt-6 grid gap-6 md:grid-cols-3" data-films>
               {films.map((film) => (
                 <figure class="m-0">
                   <div class="video-frame">
-                    <video controls playsinline preload="none" poster={film.poster} width={film.width} height={film.height} aria-label={film.alt}>
+                    <video controls playsinline preload="none" data-poster={film.poster} width={film.width} height={film.height} aria-label={film.alt}>
                       <source src={film.src} type="video/mp4" />
                     </video>
                   </div>
@@ -171,6 +180,21 @@ const schemaNodes = study
                 </figure>
               ))}
             </div>
+            <script is:inline>
+              // Film posters load only when the films come near the viewport (or are touched), as on the homepage, so they never compete with the lead image.
+              (() => {
+                if (window.__filmPosters) return;
+                window.__filmPosters = true;
+                document.querySelectorAll('[data-films]').forEach((grid) => {
+                  const load = () => grid.querySelectorAll('video[data-poster]').forEach((video) => { video.poster = video.dataset.poster; video.removeAttribute('data-poster'); });
+                  grid.addEventListener('pointerdown', load, { once: true });
+                  grid.addEventListener('focusin', load, { once: true });
+                  if (!('IntersectionObserver' in window)) return load();
+                  const io = new IntersectionObserver((entries) => { if (entries.some((e) => e.isIntersecting)) { load(); io.disconnect(); } }, { rootMargin: '300px 0px' });
+                  io.observe(grid);
+                });
+              })();
+            </script>
           </section>
         )}
         <nav class="mt-14 grid gap-10 border-t border-line pt-10 md:grid-cols-3" aria-label="Related pages">
@@ -256,7 +280,7 @@ const schemaNodes = study
           {films.length > 0 && (
             <div class="mt-14">
               <h2 class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On site</h2>
-              <div class="mt-6 grid gap-6 md:grid-cols-3">
+              <div class="mt-6 grid gap-6 md:grid-cols-3" data-films>
                 {films.map((film) => (
                   <figure class="m-0">
                     <div class="video-frame">
@@ -264,7 +288,7 @@ const schemaNodes = study
                         controls
                         playsinline
                         preload="none"
-                        poster={film.poster}
+                        data-poster={film.poster}
                         width={film.width}
                         height={film.height}
                         aria-label={film.alt}
@@ -276,6 +300,21 @@ const schemaNodes = study
                   </figure>
                 ))}
               </div>
+              <script is:inline>
+                // Film posters load only when the films come near the viewport (or are touched), as on the homepage, so they never compete with the lead image.
+                (() => {
+                  if (window.__filmPosters) return;
+                  window.__filmPosters = true;
+                  document.querySelectorAll('[data-films]').forEach((grid) => {
+                    const load = () => grid.querySelectorAll('video[data-poster]').forEach((video) => { video.poster = video.dataset.poster; video.removeAttribute('data-poster'); });
+                    grid.addEventListener('pointerdown', load, { once: true });
+                    grid.addEventListener('focusin', load, { once: true });
+                    if (!('IntersectionObserver' in window)) return load();
+                    const io = new IntersectionObserver((entries) => { if (entries.some((e) => e.isIntersecting)) { load(); io.disconnect(); } }, { rootMargin: '300px 0px' });
+                    io.observe(grid);
+                  });
+                })();
+              </script>
             </div>
           )}
         </div>
