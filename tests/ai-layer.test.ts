@@ -173,10 +173,10 @@ test('every published page has a Markdown twin it links to, and its URL and main
     // Twins and llms-full carry no scripts, no navigation chrome and no breadcrumb trail.
     // Only <main> is extracted: no HTML chrome, no skip link, no footer copyright line, no breadcrumb trail.
     if (/<script|<nav|<style|<\/?div/.test(twin)) problems.push(`${page.pathname}: twin contains HTML chrome`);
-    if (/Skip to content|©|Home \/ /.test(twin)) problems.push(`${page.pathname}: twin contains header, footer or breadcrumb text`);
+    if (/Skip to content|©\s*\d{4}|Home \/ /.test(twin)) problems.push(`${page.pathname}: twin contains header, footer or breadcrumb text`);
   }
   assert.deepEqual(problems, []);
-  assert.doesNotMatch(full, /<script|<nav|<style|<\/?div|Skip to content|©|Home \/ /);
+  assert.doesNotMatch(full, /<script|<nav|<style|<\/?div|Skip to content|©\s*\d{4}|Home \/ /);
   const pageCount = full.match(/^URL: https:\/\/www\.mrwallcover\.com\//gm)?.length ?? 0;
   assert.equal(pageCount, pages.length, 'llms-full lists exactly the published pages');
   // Noindex pages, redirect stubs and drafts: no twin, not in llms-full.
@@ -448,8 +448,9 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
     const graph = graphOf(page.html);
     const types = graph.map((node) => (Array.isArray(node['@type']) ? node['@type'].join('+') : node['@type']));
     const serialised = JSON.stringify(graph);
-    // copyrightNotice is banned: a printed photo credit is a credit, not a copyright claim.
-    for (const banned of ['aggregateRating', 'reviewRating', '"review"', '"reviews"', '"offers"', 'priceRange', '"price"', 'priceCurrency', 'SearchAction', 'potentialAction', 'telephone', '"award"', 'copyrightNotice']) {
+    // copyrightNotice is allowed only as set by imageObject() in src/lib/schema.ts: '© Mr Wallcover' on our own
+    // photographs, the credited owner's name on credited ones (checked below and in tests/image-metadata.test.ts).
+    for (const banned of ['aggregateRating', 'reviewRating', '"review"', '"reviews"', '"offers"', 'priceRange', '"price"', 'priceCurrency', 'SearchAction', 'potentialAction', 'telephone', '"award"']) {
       // The business node may carry the one named award (facts.award); any other "award" is a problem.
       const check = banned === '"award"' ? serialised.split('"award":"Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards"').join('') : serialised;
       if (check.includes(banned)) problems.push(`${page.pathname}: schema contains ${banned}`);
@@ -497,6 +498,7 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
       creditedImages += 1;
       const holder = credit.replace(/^(Photography|Image):\s*/, '').replace(/\s*\(official\)$/, '');
       if (!match[2].includes(`"creditText":"${holder}"`)) problems.push(`${page.pathname}: ${match[1]} lacks creditText "${holder}"`);
+      if (/"name":"(Mr Wallcover|Dorin Burcus)"/.test(match[2])) problems.push(`${page.pathname}: credited ${match[1]} is claimed as ours`);
       if (!page.html.includes(credit)) problems.push(`${page.pathname}: credit "${credit}" is in schema but not printed on the page`);
     }
     for (const slug of drafts) if (serialised.includes(`/projects/${slug}/`)) problems.push(`${page.pathname}: schema mentions draft ${slug}`);
@@ -505,7 +507,8 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
   assert.ok(creditedImages >= 10, `${creditedImages} credited ImageObjects checked`);
   const hoh = await readFile('dist/projects/house-of-hackney-st-michaels/index.html', 'utf8');
   assert.match(hoh, /"creditText":"House of Hackney"/);
-  assert.doesNotMatch(hoh, /copyrightNotice/);
+  assert.match(hoh, /"creditText":"House of Hackney","creator":\{"@type":"Organization","name":"House of Hackney"\},"copyrightNotice":"© House of Hackney"/);
+  assert.doesNotMatch(hoh, /"creditText":"House of Hackney","creator":\{"@type":"Organization","name":"Mr Wallcover"/);
   // Specialism pages each carry their Service; the business node is the HomeAndConstructionBusiness already in use.
   for (const item of specialisms) assert.match(await readFile(`dist/services/${item.slug}/index.html`, 'utf8'), /"@type":"Service"/);
   const home = graphOf(await readFile('dist/index.html', 'utf8'));
