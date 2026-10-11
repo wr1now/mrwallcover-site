@@ -72,12 +72,14 @@ for (const [id, frame] of Object.entries(manifest.images)) {
   const { buffer, width, height } = await upright(frame.file, frame.redact);
   const widths = frame.widths.filter((w) => w <= width);
   for (const w of widths) {
-    const resized = sharp(buffer).resize({ width: w });
+    const resized = sharp(buffer).resize({ width: w, withoutEnlargement: true });
     await resized.clone().avif({ quality: 52, effort: 6 }).toFile(path.join(outDir, `${id}-${w}.avif`));
     await resized.clone().webp({ quality: 76 }).toFile(path.join(outDir, `${id}-${w}.webp`));
   }
-  for (const w of [800, 1600]) {
-    await sharp(buffer).resize({ width: w }).jpeg({ quality: 80, mozjpeg: true }).toFile(path.join(outDir, `${id}-${w}.jpg`));
+  // Never upscale: a source narrower than 1600px gets its JPEG at its own width instead.
+  const jpgWidths = [...new Set([800, 1600].map((w) => Math.min(w, width)))];
+  for (const w of jpgWidths) {
+    await sharp(buffer).resize({ width: w, withoutEnlargement: true }).jpeg({ quality: 80, mozjpeg: true }).toFile(path.join(outDir, `${id}-${w}.jpg`));
   }
   const top = widths.at(-1);
   const h = Math.round((height * top) / width);
@@ -86,7 +88,7 @@ for (const [id, frame] of Object.entries(manifest.images)) {
     width: top,
     height: h,
     src: `/media/img/r/${id}-${top}.webp`,
-    jpg: `/media/img/r/${id}-1600.jpg`,
+    jpg: `/media/img/r/${id}-${jpgWidths.at(-1)}.jpg`,
     thumb: `/media/img/r/${id}-800.webp`,
     thumbJpg: `/media/img/r/${id}-800.jpg`,
     thumbWidth: 800,

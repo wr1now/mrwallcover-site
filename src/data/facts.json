@@ -6,7 +6,9 @@
     "name": "Dorin Burcus",
     "jobTitle": "Founder",
     "path": "/about/",
-    "fragment": "dorin"
+    "fragment": "dorin",
+    "_image": "Dorin's own portrait (media id dorin-burcus-portrait, © Mr Wallcover, cleared by Dorin 11 Oct 2026). Path of the largest JPEG cut, never upscaled; must match src/content/sizes.json.",
+    "image": "/media/img/r/dorin-burcus-portrait-1149.jpg"
   },
   "email": "info@mrwallcover.com",
   "place": "London",
@@ -55,6 +57,11 @@
       "fact": "DoubleTree by Hilton London – West End: 30 rooms on two floors in 2019, while the hotel stayed open",
       "url": "https://www.mrwallcover.com/projects/doubletree-west-end/",
       "source": "https://www.instagram.com/p/B0GpM3Vlmkh/"
+    },
+    {
+      "fact": "Jumeirah Carlton Tower, Knightsbridge: wallcovering installation on the hotel's renovation for 8 months, completed at the end of 2020",
+      "url": "https://www.mrwallcover.com/projects/jumeirah-carlton-tower/",
+      "source": "https://www.instagram.com/p/CJtvVheldiT/"
     }
   ]
 }

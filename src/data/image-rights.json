@@ -7,7 +7,7 @@
     "copyrightNotice": "© Mr Wallcover"
   },
   "dorin": {
-    "source": "docs/asset-rights.md, 'Own iPhone originals': Dorin Burcus's own iPhone photographs (Calico event installs, the north London residence, the Old Bailey hotel and Trematon Castle).",
+    "source": "docs/asset-rights.md, 'Own iPhone originals': Dorin Burcus's own iPhone photographs (Calico event installs, the north London residence, the Old Bailey hotel and Trematon Castle); and docs/asset-rights.md, 'Founder portrait': Dorin's own portrait (dorin-burcus-portrait), supplied and cleared by Dorin on 11 October 2026 for the About page.",
     "patterns": [
       "^ahluwalia-estuary-\\d+$",
       "^lee-broom-\\d+$",
@@ -16,7 +16,8 @@
       "^nomad-\\d+$",
       "^north-london-residence-\\d+$",
       "^old-bailey-\\d+$",
-      "^trematon-\\d+$"
+      "^trematon-\\d+$",
+      "^dorin-burcus-portrait$"
     ]
   },
   "photographers": [
