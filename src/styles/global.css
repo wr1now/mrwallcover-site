@@ -367,6 +367,24 @@
     color: var(--color-ivory);
   }
 
+  /* "What to send for a fast quote" above the enquiry form (src/content/quote-checklist.json). */
+  .quote-checklist-list {
+    display: grid;
+    gap: 0.6rem;
+    margin: 1rem 0 0;
+    padding-left: 1.2rem;
+    list-style: disc;
+  }
+
+  .quote-checklist-list li::marker {
+    color: var(--color-brass);
+  }
+
+  .quote-checklist a {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
   .faq details {
     border-top: 1px solid var(--color-line);
   }
