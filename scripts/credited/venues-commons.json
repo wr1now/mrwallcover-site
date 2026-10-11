@@ -89,6 +89,39 @@
       "licence": "CC BY 2.0",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "taken": "2022-07-02"
+    },
+    "browns-hotel-commons-01": {
+      "file": "Browns Hotel Londres.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Browns_Hotel_Londres.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "page": "https://commons.wikimedia.org/wiki/File:Browns_Hotel_Londres.jpg",
+      "alt": "The front of Brown's Hotel on Albemarle Street, Mayfair: white stucco above a columned entrance porch, with flags over the door.",
+      "credit": "Photography: CVB / Wikimedia Commons (CC BY-SA 4.0)",
+      "author": "CVB",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "taken": "2019-03-05"
+    },
+    "owo-commons-01": {
+      "file": "Raffles London at The OWO - geograph.org.uk - 8323031.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Raffles_London_at_The_OWO_-_geograph.org.uk_-_8323031.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "page": "https://commons.wikimedia.org/wiki/File:Raffles_London_at_The_OWO_-_geograph.org.uk_-_8323031.jpg",
+      "alt": "The Old War Office on Whitehall, now Raffles London at The OWO: the Portland stone façade and its corner domes, seen from the street.",
+      "credit": "Photography: Colin Smith / Wikimedia Commons (CC BY-SA 2.0)",
+      "author": "Colin Smith",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "taken": "2026-05-12"
+    },
+    "old-bailey-commons-01": {
+      "file": "London EC1, 15 OLD BAILEY, CHURCH OF ST SEPULCHRE 20060725 001.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/23/London_EC1%2C_15_OLD_BAILEY%2C_CHURCH_OF_ST_SEPULCHRE_20060725_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "page": "https://commons.wikimedia.org/wiki/File:London_EC1,_15_OLD_BAILEY,_CHURCH_OF_ST_SEPULCHRE_20060725_001.jpg",
+      "alt": "15 Old Bailey, now Hyde London City: the carved stone corner building with its turret, beside the tower of St Sepulchre-without-Newgate.",
+      "credit": "Photography: Tilman2007 / Wikimedia Commons (CC BY-SA 4.0)",
+      "author": "Tilman2007",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "taken": "2006-07-25"
     }
   }
 }

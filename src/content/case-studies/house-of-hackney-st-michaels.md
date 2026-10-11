@@ -18,25 +18,93 @@
   "standfirst": "Preparation and making good of the 1856 clergy house, then decorating and hanging House of Hackney's own papers through the concept rooms, bedroom and tiled cloakrooms, ready for the public opening on 26 March 2022.",
   "hero": "hoh-official-01",
   "gallery": [
-    { "id": "hoh-official-01", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-02", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-03", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-04", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-05", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-06", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-07", "credit": "Photography: House of Hackney" },
-    { "id": "house-of-hackney-st-michaels-05", "credit": null },
-    { "id": "house-of-hackney-st-michaels-06", "credit": null },
-    { "id": "house-of-hackney-st-michaels-08", "credit": null },
-    { "id": "house-of-hackney-st-michaels-09", "credit": null },
-    { "id": "house-of-hackney-st-michaels-11", "credit": null },
-    { "id": "house-of-hackney-st-michaels-10", "credit": null },
-    { "id": "house-of-hackney-st-michaels-04", "credit": null },
-    { "id": "house-of-hackney-st-michaels-01", "credit": "Before" },
-    { "id": "house-of-hackney-st-michaels-03", "credit": "Before" }
+    {
+      "id": "hoh-official-01",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-02",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-03",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-04",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-05",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-06",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-07",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "house-of-hackney-st-michaels-05",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-06",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-08",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-09",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-11",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-10",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-04",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-01",
+      "credit": "Before"
+    },
+    {
+      "id": "house-of-hackney-st-michaels-03",
+      "credit": "Before"
+    },
+    {
+      "id": "hoh-official-08",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-09",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-10",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-11",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-12",
+      "credit": "Photography: House of Hackney"
+    }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-11"
 }
 ---
 

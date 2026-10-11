@@ -11,9 +11,9 @@ import '../styles/atelier.css';
 // and the showcase included, is in atelier.css, so the page is styled by one sheet before first paint.
 import homeHeroCss from '../styles/home-hero.css?raw';
 const selection = [
-  { slug: 'raffles-london-the-owo', label: 'Raffles London at The OWO', type: 'Hospitality', image: 'owo-official-classic', credit: 'Venue photograph · Raffles London at The OWO (official)' },
-  { slug: 'trematon-castle', label: 'The Castle of Trematon', type: 'Historic interiors', image: 'trematon-01', credit: '' },
-  { slug: 'calico-beverly-1975-cadence', label: 'Calico × BEVERLY 1975', type: 'Design & culture', image: 'beverly-08', credit: '' },
+  { slug: 'raffles-london-the-owo', label: 'Raffles London at The OWO', type: 'Hospitality · Whitehall', image: 'owo-official-classic', credit: 'Venue photograph · Raffles London at The OWO (official)', hideDates: false },
+  { slug: 'trematon-castle', label: 'The Castle of Trematon', type: 'Cornwall', image: 'hoh-trematon-kitchen-05', credit: 'Photography: House of Hackney', hideDates: true },
+  { slug: 'house-of-hackney-st-michaels', label: 'House of Hackney, St Michael’s', type: 'Showroom · Shoreditch', image: 'hoh-official-01', credit: 'Photography: House of Hackney' },
 ].map(item => ({...item, project: projects.find(p => p.slug === item.slug)!}));
 // Restored from 1b387c6 (the homepage before #23): every published case study stays on the homepage.
 const shownSlugs = new Set(['browns-hotel-mayfair', ...selection.map((item) => item.slug)]);
@@ -22,7 +22,7 @@ const alsoOnRecord = projects.filter((project) => !project.featured && !shownSlu
 const calicoProjects = projects.filter((project) => project.group === 'design-weeks');
 const calicoLabel = (project: (typeof projects)[number]) =>
   project.slug === 'heathrow-terminal-4-calico' ? 'Calico Wallpaper at Heathrow Terminal 4' : project.title.replace(/: '?([^']+)'? at .*$/, ': $1');
-// Top-of-page showcase: one large finished-room photograph per hotel and historic commission.
+// Top-of-page showcase: one large finished-room photograph per hotel, house and showroom commission.
 // Our own photographs first; a credited venue image only where we have no finished-room photo of our own.
 const showcase = [
   { slug: 'browns-hotel-mayfair', name: 'Brown’s Hotel', place: 'Mayfair', image: 'browns-hotel-mayfair-10', credit: '' },
@@ -33,11 +33,13 @@ const showcase = [
   { slug: 'trematon-castle', name: 'The Castle of Trematon', place: 'Cornwall', image: 'trematon-01', credit: '' },
   { slug: 'house-of-hackney-st-michaels', name: 'House of Hackney', place: 'St Michael’s Clergy House', image: 'house-of-hackney-st-michaels-06', credit: '' },
 ].filter((item) => projects.some((p) => p.slug === item.slug));
+// The four buildings themselves. Openly licensed Wikimedia Commons photographs; author and licence printed under each
+// (docs/asset-rights.md). They show the buildings, not our work.
 const hotelNames = [
-  {name: "Brown’s Hotel", place: 'MAYFAIR', href: '/projects/browns-hotel-mayfair/'},
-  {name: 'Raffles London', place: 'THE OWO', href: '/projects/raffles-london-the-owo/'},
-  {name: 'Four Seasons', place: 'TEN TRINITY SQUARE', href: '/projects/four-seasons-ten-trinity-square/'},
-  {name: 'Hyde London City', place: 'OLD BAILEY', href: '/projects/old-bailey-hotel/'},
+  {name: "Brown’s Hotel", place: 'MAYFAIR', href: '/projects/browns-hotel-mayfair/', image: 'browns-hotel-commons-01', credit: 'Photo: CVB, CC BY-SA 4.0'},
+  {name: 'Raffles London', place: 'THE OWO', href: '/projects/raffles-london-the-owo/', image: 'owo-commons-01', credit: 'Photo: Colin Smith, CC BY-SA 2.0'},
+  {name: 'Four Seasons', place: 'TEN TRINITY SQUARE', href: '/projects/four-seasons-ten-trinity-square/', image: 'four-seasons-ten-trinity-commons-02', credit: 'Photo: APK, CC BY 4.0'},
+  {name: 'Hyde London City', place: 'OLD BAILEY', href: '/projects/old-bailey-hotel/', image: 'old-bailey-commons-01', credit: 'Photo: Tilman2007, CC BY-SA 4.0'},
 ];
 ---
 <Base title={home.title} description={facts.description} path="/" preloadHero extraSchema={[faqNode(faqItems)]} image="/media/atelier/browns-bedroom-2000.jpg" imageAlt="Our completed wallcovering installation at Brown's Hotel, Mayfair.">
@@ -64,7 +66,7 @@ const hotelNames = [
 
     <section class="home-showcase" aria-labelledby="showcase-heading">
       <div class="home-showcase-head">
-        <p class="atelier-kicker">Hotels and historic commissions</p>
+        <p class="atelier-kicker">Hotels, houses and showrooms</p>
         <h2 id="showcase-heading">Rooms we have <em>finished.</em></h2>
       </div>
       <ul class="home-showcase-strip" role="list">
@@ -81,17 +83,18 @@ const hotelNames = [
 
     <section class="atelier-hotel-band" aria-label="Selected hotel projects">
       <p class="atelier-kicker">OUR WORK HAS A PLACE<br />IN EXTRAORDINARY ADDRESSES</p>
-      <div>{hotelNames.map(hotel => <a href={hotel.href}><span>{hotel.name}</span><small>{hotel.place}</small></a>)}</div>
+      <ul class="hotel-band-grid" role="list">{hotelNames.map(hotel => <li class="hotel-band-item">
+        <a href={hotel.href}><span class="hotel-band-photo"><Picture id={hotel.image} sizes="(min-width: 1024px) 22vw, 46vw" /></span><span class="hotel-band-name">{hotel.name}</span><small>{hotel.place}</small></a>
+        <p class="hotel-band-credit">{hotel.credit.split(', ')[0]}, <span class="nowrap">{hotel.credit.split(', ')[1]}</span></p>
+      </li>)}</ul>
       <p class="home-partner-line"><a href="#calico-heading">Work delivered in partnership with Calico Wallpaper</a></p>
     </section>
 
-    <section class="atelier-intro atelier-section" aria-labelledby="intro-heading">
-      <p class="atelier-kicker">THE PRACTICE</p>
-      <div><h2 id="intro-heading">A beautiful wall begins<br />long before <em>the first drop.</em></h2>
-        <div class="atelier-intro-bottom"><p>From the first survey to the last carefully matched seam, we bring care to every stage. Silk, grasscloth, hand-painted paper and bespoke murals. Wallcoverings, hung properly. By people who understand the material.</p><div><p>{facts.description}</p><a class="atelier-text-link" href="/about/">Meet the practice <span aria-hidden="true">↗</span></a></div></div>
-        <dl class="home-facts">{home.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
-        <p class="home-pillars">{home.pillars.join(' · ')}</p>
-      </div>
+    <section class="atelier-intro atelier-section intro-balanced" aria-labelledby="intro-heading">
+      <div class="intro-head"><p class="atelier-kicker">THE PRACTICE</p><h2 id="intro-heading">A beautiful wall begins<br />long before <em>the first drop.</em></h2></div>
+      <div class="atelier-intro-bottom intro-copy"><p>From the first survey to the last carefully matched seam, we bring care to every stage. Silk, grasscloth, hand-painted paper and bespoke murals. Wallcoverings, hung properly. By people who understand the material.</p><p>{facts.description}</p><a class="atelier-text-link" href="/about/">Meet the practice <span aria-hidden="true">↗</span></a></div>
+      <dl class="home-facts intro-facts">{home.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
+      <p class="home-pillars intro-pillars">{home.pillars.join(' · ')}</p>
     </section>
 
     <section class="atelier-section home-proof" aria-labelledby="proof-heading">
@@ -118,10 +121,10 @@ const hotelNames = [
         </article>
         {selection.map((item, i) => <article class:list={['atelier-project', `atelier-project-${i + 1}`]}>
           <a class="atelier-project-image" href={projectHref(item.slug)}>
-            <Picture id={item.project.imageId ?? item.image} thumbOnly={item.type !== 'Hospitality'} sizes="(min-width: 768px) 36vw, 100vw" />
+            <Picture id={item.image} sizes="(min-width: 768px) 46vw, 100vw" />
             <span class="atelier-project-arrow" aria-hidden="true">↗</span>
           </a>
-          <div class="atelier-project-meta"><div><p class="atelier-kicker">{item.type}</p><h3><a href={projectHref(item.slug)}>{item.label}</a></h3></div><span>{item.project.dates}</span></div>
+          <div class="atelier-project-meta"><div><p class="atelier-kicker">{item.type}</p><h3><a href={projectHref(item.slug)}>{item.label}</a></h3></div>{!item.hideDates && <span>{item.project.dates}</span>}</div>
           <p>{item.project.role}</p>
           {item.credit && <p class="atelier-credit">{item.credit}</p>}
         </article>)}

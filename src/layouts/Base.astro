@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { HERO_SIZES } from '../lib/hero-sizes';
 import '../styles/atelier.css';
 import '../styles/unify.css';
+import '../styles/flow.css';
 import hero from '../content/hero.json';
 import { ANALYTICS_SRC, BRAND_NAME, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
 import { CONTACT_PAYLOAD } from '../lib/phone';
@@ -178,6 +179,9 @@ const heroSrcset = hero.sources.map(source => `${source.src} ${source.width}w`).
       document.querySelectorAll('img.media-img').forEach((img) => {
         if (img.complete && img.naturalWidth > 0) img.classList.add('is-ready');
       });
+    </script>
+      <script>
+      import '../scripts/flow.ts';
     </script>
   </body>
 </html>

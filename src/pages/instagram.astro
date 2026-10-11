@@ -1,0 +1,70 @@
+---
+/**
+ * The live @mrwallcover Instagram feed, behind a click.
+ *
+ * Instagram's profile embed is a frame served by instagram.com (Meta) that can set cookies. This site sets
+ * none and says so on /privacy/, so nothing from Instagram loads until the visitor presses the button. Without
+ * JavaScript the page is a plain link to the profile.
+ */
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Base from '../layouts/Base.astro';
+import facts from '../data/facts.json';
+import { breadcrumbNode } from '../lib/schema';
+
+const instagram = facts.profiles.find((profile) => profile.name === 'Instagram')!;
+const embedUrl = `${instagram.url.replace(/\/$/, '')}/embed/`;
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Instagram', href: '/instagram/' },
+];
+---
+
+<Base
+  title="Instagram | Mr Wallcover"
+  description={`The ${instagram.handle} Instagram feed: rooms as they are finished, and the work on site, posted by Mr Wallcover.`}
+  path="/instagram/"
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page py-16">
+    <header class="page-head instagram-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Instagram</p>
+      <h1 class="m-0">From site, <em>as it happens.</em></h1>
+      <p class="lede mt-5">Rooms as they are finished, details close up, and the work on site, posted by the team on {instagram.handle}.</p>
+    </header>
+
+    <section class="instagram-feed" aria-labelledby="instagram-feed-heading" data-instagram data-embed={embedUrl}>
+      <h2 id="instagram-feed-heading" class="sr-only">The {instagram.handle} feed</h2>
+      <div class="instagram-consent" data-instagram-consent>
+        <p class="instagram-consent-title">The live feed comes from Instagram.</p>
+        <p class="instagram-consent-text">Showing it connects to Instagram (Meta), which may set its own cookies. Nothing from Instagram loads until you choose to see it.</p>
+        <div class="instagram-actions">
+          <button type="button" class="btn btn-solid-ink" data-instagram-load hidden>Show the live feed</button>
+          <a class="btn btn-line" href={instagram.url} rel="noopener">Open {instagram.handle} on Instagram <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="instagram-frame" data-instagram-frame hidden></div>
+    </section>
+  </div>
+</Base>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-instagram]');
+  const button = root?.querySelector<HTMLButtonElement>('[data-instagram-load]');
+  const frameHost = root?.querySelector<HTMLElement>('[data-instagram-frame]');
+  if (root && button && frameHost) {
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      const frame = document.createElement('iframe');
+      frame.src = root.dataset.embed ?? '';
+      frame.title = 'The @mrwallcover Instagram feed';
+      frame.loading = 'lazy';
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      frame.setAttribute('allowtransparency', 'true');
+      frameHost.replaceChildren(frame);
+      frameHost.hidden = false;
+      button.hidden = true;
+      frame.focus();
+    });
+  }
+</script>

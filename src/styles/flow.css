@@ -1,0 +1,206 @@
+/*
+ * Reading rhythm, symmetry and scroll flow (11 October 2026). Loaded last by Base.astro, after unify.css.
+ *
+ *  1. Paragraph spacing inside .prose, where a paragraph also carries the m-0 utility (Services, About).
+ *  2. Balanced headings and ragged-right body text that does not end on a single word.
+ *  3. Case studies: the head, hero and article share one centred reading column.
+ *  4. Home: the practice block on two equal columns; the address band with the buildings; an even 2 x 2
+ *     commissions grid; rows of steps whose headings and text line up; orphan cards centred.
+ *  5. Scroll flow: sections rise into place as they enter the viewport (src/scripts/flow.ts adds
+ *     html.flow-on and [data-flow]); large photographs drift slightly against the scroll.
+ *     Off with prefers-reduced-motion, with the footer's "Reduce visual effects", without JavaScript, and in print.
+ */
+
+/* 1. Paragraph rhythm. Same layer as the m-0 utility, higher specificity, so it wins only inside .prose. */
+@layer utilities {
+  .prose > p + p,
+  .prose > p + ul,
+  .prose > ul + p,
+  .prose > p + ol,
+  .prose > ol + p {
+    margin-top: 1.05rem;
+  }
+}
+
+/* 2. Wrapping. */
+h1, h2, h3, .lede, .eyebrow, .atelier-kicker, figcaption, .caption { text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
+
+/* 3. Case studies: one centred column for the head, the hero and the article; galleries stay full width. */
+.page-head[data-case-study-head],
+.prose.case-study,
+.case-study-hero {
+  margin-inline: auto;
+}
+.page-head[data-case-study-head] { max-width: 44rem; }
+.page-head[data-case-study-head] h1,
+.page-head[data-case-study-head] .lede { max-width: none; }
+.case-study-hero.modest-hero { margin-inline: auto; }
+.case-study-gallery-heading { text-align: center; }
+
+/* 4a. Home: the practice on two equal columns, facts and pillars across the full width under them. */
+body .atelier .atelier-intro.intro-balanced {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(32px, 6vw, 96px);
+  row-gap: 44px;
+  align-items: start;
+}
+body .atelier .intro-balanced .intro-head .atelier-kicker { padding-top: 0; margin: 0 0 18px; }
+body .atelier .intro-balanced .intro-head h2 { margin: 0; }
+body .atelier .intro-balanced .atelier-intro-bottom.intro-copy { display: block; margin: 0; max-width: 34rem; }
+body .atelier .intro-balanced .intro-copy p + p { margin-top: 1rem; }
+body .atelier .intro-balanced .intro-copy .atelier-text-link { margin-top: 22px; }
+body .atelier .intro-balanced .intro-facts,
+body .atelier .intro-balanced .intro-pillars { grid-column: 1 / -1; margin-top: 0; }
+body .atelier .intro-balanced .intro-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; text-align: center; }
+body .atelier .intro-balanced .intro-facts dd { max-width: 22rem; margin-inline: auto; }
+body .atelier .intro-balanced .intro-pillars { text-align: center; }
+@media (max-width: 900px) {
+  body .atelier .atelier-intro.intro-balanced { grid-template-columns: 1fr; row-gap: 28px; }
+  body .atelier .intro-balanced .intro-facts { grid-template-columns: 1fr; gap: 14px; text-align: left; }
+  body .atelier .intro-balanced .intro-facts dd { margin-inline: 0; }
+  body .atelier .intro-balanced .intro-pillars { text-align: left; }
+}
+
+/* 4b. The address band: kicker centred above four equal photographs of the buildings. */
+body .atelier .atelier-hotel-band { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+body .atelier .atelier-hotel-band > .atelier-kicker { align-self: auto; text-align: center; }
+.hotel-band-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); }
+.hotel-band-item { margin: 0; }
+.hotel-band-item > a { display: block; padding: 0; color: inherit; text-decoration: none; }
+.hotel-band-photo { display: block; overflow: hidden; aspect-ratio: 3 / 4; background: var(--color-media-fill, #e7e1d6); }
+.hotel-band-photo .media-frame,
+.hotel-band-photo picture { display: block; width: 100%; height: 100%; }
+.hotel-band-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 900ms cubic-bezier(.2, .65, .25, 1); }
+.hotel-band-item > a:hover .hotel-band-photo img,
+.hotel-band-item > a:focus-visible .hotel-band-photo img { transform: scale(1.04); }
+body .atelier .atelier-hotel-band .hotel-band-name { display: block; margin-top: 18px; font-family: var(--font-serif); font-size: clamp(1.375rem, 1.1rem + .7vw, 1.75rem); line-height: 1.1; }
+body .atelier .atelier-hotel-band .hotel-band-item small { display: block; margin-top: 8px; }
+.hotel-band-credit { margin: 8px 0 0; font-size: 13px; line-height: 1.4; letter-spacing: .02em; color: var(--atelier-muted, #6b6457); }
+@media (max-width: 1023px) {
+  .hotel-band-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; }
+}
+
+/* 4c. Selected commissions: an even 2 x 2 grid, one image proportion, tops aligned. */
+body .atelier .atelier-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px clamp(24px, 3vw, 40px); align-items: start; }
+body .atelier .atelier-project,
+body .atelier .atelier-project-1,
+body .atelier .atelier-project-2,
+body .atelier .atelier-project-3 { margin: 0; max-width: none; }
+body .atelier .atelier-project-image .media-frame,
+body .atelier .atelier-project-image picture { display: block; }
+body .atelier .atelier-project-image img,
+body .atelier .atelier-project-lead .atelier-project-image img,
+body .atelier .atelier-project-2 .atelier-project-image img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+@media (max-width: 767px) {
+  body .atelier .atelier-project-grid { grid-template-columns: 1fr; gap: 44px; }
+}
+
+/* 4d. Rows of steps and routes: number, heading and text line up across the row. */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 900px) {
+    body .atelier .home-process ol { grid-template-rows: auto auto 1fr; }
+    body .atelier .home-process ol > li { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 12px; align-content: start; }
+    body .atelier .home-process ol > li > * { margin: 0; }
+    body .atelier .home-needs-grid { grid-template-rows: auto 1fr; }
+    body .atelier .home-needs-grid > a { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 10px; align-content: start; }
+    body .atelier .home-needs-grid > a > * { margin: 0; }
+  }
+}
+
+/* 4e. Card grids: the last row is centred instead of leaving one card alone on the left. */
+@media (min-width: 640px) {
+  body .atelier .home-more-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px 24px; }
+  body .atelier .home-more-grid > .home-card { flex: 0 1 calc((100% - 3 * 24px) / 4); min-width: 0; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  body .atelier .home-more-grid > .home-card { flex-basis: calc((100% - 24px) / 2); }
+}
+
+/* 4f. The Calico list uses the full width, two equal columns. */
+body .atelier .home-calico ul { max-width: none; }
+
+/* 5. Scroll flow. Hidden states only exist under html.flow-on, which the script adds when motion is allowed. */
+html.flow-on [data-flow] {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  transition:
+    opacity 900ms cubic-bezier(.2, .65, .25, 1),
+    transform 1100ms cubic-bezier(.2, .65, .25, 1);
+  transition-delay: calc(var(--flow-i, 0) * 90ms);
+  will-change: opacity, transform;
+}
+html.flow-on [data-flow].is-in { opacity: 1; transform: none; will-change: auto; }
+/* Photographs settle from a slight zoom as they arrive. */
+html.flow-on [data-flow]:not(.is-in) img { transform: scale(1.06); }
+:where(html.flow-on [data-flow]) img { transition: transform 1600ms cubic-bezier(.2, .65, .25, 1); }
+
+/* A thin progress line along the top edge, and a slow drift on the two large photographs. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    html:not([data-effects="reduced"]) body::after {
+      content: "";
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 2px;
+      background: var(--color-brass, #8a6d3b);
+      transform-origin: 0 50%;
+      transform: scaleX(0);
+      animation: flow-progress linear both;
+      animation-timeline: scroll(root);
+      z-index: 70;
+      pointer-events: none;
+    }
+    html:not([data-effects="reduced"]) .atelier-craft-image img,
+    html:not([data-effects="reduced"]) .atelier-materials-image img {
+      animation: flow-drift linear both;
+      animation-timeline: view();
+      animation-range: cover;
+    }
+  }
+}
+@keyframes flow-progress { to { transform: scaleX(1); } }
+@keyframes flow-drift { from { transform: translateY(-5%) scale(1.12); } to { transform: translateY(5%) scale(1.12); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html.flow-on [data-flow], html.flow-on [data-flow] img { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+html[data-effects="reduced"] [data-flow],
+html[data-effects="reduced"] [data-flow] img { opacity: 1 !important; transform: none !important; transition: none !important; }
+@media print {
+  [data-flow], [data-flow] img { opacity: 1 !important; transform: none !important; }
+  body::after { display: none !important; }
+}
+
+/* 4g. Films: three equal columns across the full width, not three narrow ones and a gap. */
+body .atelier .home-films { grid-template-columns: repeat(3, minmax(0, 1fr)); justify-content: stretch; gap: clamp(16px, 2vw, 28px); }
+@media (max-width: 767px) { body .atelier .home-films { grid-template-columns: 1fr; } }
+
+/* 4h. Wide dark aftercare band: content centred on the band, one measure for the paragraph. */
+body .atelier .home-aftercare-inner { text-align: center; margin-inline: auto; }
+body .atelier .home-aftercare-inner > * { margin-inline: auto; }
+body .atelier .home-aftercare-inner > p:not(.atelier-kicker) { max-width: 38rem; }
+body .atelier .home-aftercare-inner .atelier-text-link { display: inline-flex; }
+
+
+/* 4j. Case-study galleries: an odd last photograph is centred on the row, not left alone at the left. */
+@media (min-width: 640px) {
+  section[aria-labelledby="gallery-heading"] > .grid > figure:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - .5rem);
+  }
+}
+
+/* Instagram page. */
+.instagram-head .lede { max-width: 36rem; }
+.instagram-consent { max-width: 40rem; padding: 32px 0 8px; border-top: 1px solid var(--color-line, #d8d1c4); }
+.instagram-consent-title { margin: 0; font-family: var(--font-serif); font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); line-height: 1.15; }
+.instagram-consent-text { margin: 12px 0 0; color: var(--color-stone, #5d574c); }
+.instagram-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
+.instagram-frame { margin-top: 40px; }
+.instagram-frame iframe { display: block; width: 100%; max-width: 760px; height: min(1180px, 160vh); margin-inline: auto; border: 0; background: #fff; border-radius: 4px; }
+@media (max-width: 640px) { .instagram-frame iframe { height: 1040px; } }
+
+/* Credits under the buildings: the licence never breaks across lines. */
+.hotel-band-credit .nowrap { white-space: nowrap; }

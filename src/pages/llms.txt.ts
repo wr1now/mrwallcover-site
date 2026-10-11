@@ -114,6 +114,7 @@ export const GET: APIRoute = () => {
     entry('Facts as data', '/facts.json', 'the public fact sheet: brand, description, founder, email, coverage, profiles'),
     entry('Feed', '/feed.xml', 'Atom feed of the published guides and case studies, with their dates'),
     entry('Sitemap', '/sitemap-index.xml', 'every published page'),
+    entry('Instagram', '/instagram/', 'the @mrwallcover Instagram feed, shown only after the visitor chooses to load it'),
     entry('Accessibility', '/accessibility/', 'how the site is built for keyboard, mobile and reduced-motion use'),
     entry('Privacy', '/privacy/', 'how enquiry details are handled; no cookies and no analytics by default'),
     '',

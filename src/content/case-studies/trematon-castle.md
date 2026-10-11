@@ -17,43 +17,47 @@
     "House of Hackney – HOLLYHOCKS",
     "Lincrusta heritage relief wallcovering"
   ],
-  "modest": true,
+  "modest": false,
   "metaTitle": null,
   "metaDescription": null,
   "group": null,
   "standfirst": "Nearly three years inside a Norman castle's Georgian heart, hanging the prints of the house that made maximalism modern.",
-  "hero": "trematon-01",
+  "hero": "hoh-trematon-kitchen-05",
   "gallery": [
     {
-      "id": "trematon-01",
-      "credit": null
+      "id": "hoh-trematon-kitchen-05",
+      "credit": "Photography: House of Hackney"
     },
     {
-      "id": "trematon-03",
-      "credit": null
+      "id": "hoh-trematon-hollyhocks-02",
+      "credit": "Photography: House of Hackney"
     },
     {
-      "id": "trematon-11",
-      "credit": null
+      "id": "hoh-trematon-kitchen-08",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-trematon-hollyhocks-01",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-trematon-kitchen-02",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-trematon-hollyhocks-04",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-trematon-kitchen-06",
+      "credit": "Photography: House of Hackney"
     },
     {
       "id": "trematon-16",
       "credit": null
     },
     {
-      "id": "trematon-13",
-      "credit": null
-    },
-    {
-      "id": "trematon-18",
-      "credit": null
-    },
-    {
-      "id": "trematon-06",
-      "credit": null
-    },
-    {
-      "id": "trematon-07",
+      "id": "trematon-23",
       "credit": null
     },
     {
@@ -65,11 +69,11 @@
       "credit": null
     },
     {
-      "id": "trematon-10",
+      "id": "trematon-13",
       "credit": null
     },
     {
-      "id": "trematon-12",
+      "id": "trematon-10",
       "credit": null
     },
     {
@@ -81,6 +85,14 @@
       "credit": null
     },
     {
+      "id": "trematon-06",
+      "credit": null
+    },
+    {
+      "id": "trematon-07",
+      "credit": null
+    },
+    {
       "id": "trematon-17",
       "credit": null
     },
@@ -89,11 +101,11 @@
       "credit": null
     },
     {
-      "id": "trematon-21",
+      "id": "trematon-01",
       "credit": null
     },
     {
-      "id": "trematon-23",
+      "id": "trematon-11",
       "credit": null
     },
     {
@@ -101,11 +113,23 @@
       "credit": null
     },
     {
-      "id": "trematon-25",
+      "id": "trematon-03",
       "credit": null
     },
     {
-      "id": "trematon-26",
+      "id": "trematon-12",
+      "credit": null
+    },
+    {
+      "id": "trematon-21",
+      "credit": null
+    },
+    {
+      "id": "trematon-18",
+      "credit": null
+    },
+    {
+      "id": "trematon-20",
       "credit": null
     },
     {
@@ -117,12 +141,16 @@
       "credit": null
     },
     {
-      "id": "trematon-20",
+      "id": "trematon-25",
+      "credit": null
+    },
+    {
+      "id": "trematon-26",
       "credit": null
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-11"
 }
 ---
 
