@@ -128,6 +128,50 @@
         "Hotel work moves floor by floor or room by room around guests. Delivery of free-issue goods is timed to the hang, and paper is not left in corridors. A project leader is on site every day, and on a longer commission senior oversight agrees a forward plan each week.",
         "Where Mr Wallcover is appointed as main decorating contractor, the package can include fine painting, French polishing and other specialist finishes, as it did at Brown's Hotel, Mayfair, from 2022 to 2024."
       ],
+      "sections": [
+        {
+          "heading": "How a hotel package runs",
+          "paragraphs": [
+            "Every package starts with a survey and a scope of works written room by room, before any paper is ordered. A sample room or sample area is then agreed, in the permanent lighting where possible, and every later room is measured against it. At [Hyde London City](/projects/old-bailey-hotel/) the record starts with a finished sample room in November 2022.",
+            "After the sample come the hang, snagging and a return inspection about four to six weeks after completion, when seams, edges and corners are checked once the paper has settled. The workmanship is guaranteed for twelve months. Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site."
+          ]
+        },
+        {
+          "heading": "Live hotels and the programme",
+          "paragraphs": [
+            "Most of our hotel work has been done in buildings that stayed open. The rooms that can be released together, the permitted working hours, the delivery routes and the daily handover are agreed for each project and written into the scope. At [DoubleTree by Hilton London – West End](/projects/doubletree-west-end/) we papered 30 rooms on two floors in 2019 while the hotel stayed open; at [Pendley Manor Hotel](/projects/pendley-manor-hotel/), 30 rooms in 30 days, with 20 different wallpapers.",
+            "The core team is six wallpaper hangers and six decorators, scaling to 25–35 people on large projects; at Hyde London City there were 25 people on site, in coordinated task teams. The people who start are the people who finish."
+          ]
+        },
+        {
+          "heading": "Programmes on the record",
+          "paragraphs": [
+            "In 2021 we were chosen at [Raffles London at The OWO](/projects/raffles-london-the-owo/) to install about 17,500 m² of wallcoverings in 18 months. At [Four Seasons Hotel London at Ten Trinity Square](/projects/four-seasons-ten-trinity-square/), about 5,000 m², completed in 2019. At [The Biltmore Mayfair](/projects/biltmore-mayfair/), then the Millennium Hotel, Grosvenor Square, a guest-room programme of more than 15,000 m² in 2018. At [Jumeirah Carlton Tower](/projects/jumeirah-carlton-tower/), Knightsbridge, eight months of wallcovering installation on the hotel's renovation, completed at the end of 2020.",
+            "Hyde London City ran from the sample room in November 2022 to final touches in August 2024: 111 guest rooms across seven storeys, plus corridors and stair cores, ahead of the opening on 2 September 2024."
+          ]
+        },
+        {
+          "heading": "Materials and makers we have hung in hotels",
+          "paragraphs": [
+            "[Contract vinyl](/materials/contract-vinyl/) is the usual specification where wear and cleaning come first. At The OWO the install was a bespoke Vescom wallcovering made for the hotel, on walls and parts of the joinery, with Vescom Alcantara in selected suites. At Hyde London City, Timorous Beasties' Tropical Clouded Leopard and Totem Damask went into the guest rooms as custom-printed vinyl.",
+            "Natural weaves and textiles still have a place where the finish matters more than wipeability: Phillip Jeffries Tweed and Omexco at Four Seasons Ten Trinity Square, and Phillip Jeffries at The Biltmore Mayfair. At [Brown's Hotel](/projects/browns-hotel-mayfair/) the scheme includes scenic and chinoiserie papers, among them Lewis & Wood's Adam's Eden; at Pendley Manor, Anaglypta on the high ceilings and Cole & Son velvet flock damasks; at [Hilton London Metropole](/projects/hilton-london-metropole/), Muraspec. A maker named here means we installed that maker's product; it is not an approval or an endorsement."
+          ]
+        },
+        {
+          "heading": "Batches, shading and the handover pack",
+          "paragraphs": [
+            "Each run of rooms is ordered from one batch, every delivery is checked against the measure, and rolls are allocated to rooms before cutting, so that no room mixes batches and a corridor reads as one surface. At The OWO, batches were checked and managed so that corridors of rooms read as one; at Four Seasons, shading on the natural textiles was checked continuously.",
+            "A fire classification belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. It is certified by the wallcovering manufacturer, not by the installer, and we install in line with the manufacturer's system. The hotel keeps a room-by-room record of the installed product, colourway, batch and care sheet, with spare material from the same batch. The [hotel specification guide](/advice/hotel-wallcovering-specification/) sets this out in full."
+          ]
+        },
+        {
+          "heading": "What the quotation includes",
+          "paragraphs": [
+            "There is no flat rate per roll. The quotation comes from a site survey or from drawings, and reflects the measured area after openings are taken off, the pattern repeat and the wastage it creates, the state of the walls, the material, and access and protection. Access, protection and making good are written into the scope rather than discovered at the end. The [installation cost guide](/advice/installation-cost/) explains each item.",
+            "Packages can be wallcovering only, or wallcovering within a full decorating package, as at Brown's Hotel and 15 Old Bailey. We have experience of JCT contracts as a specialist package contractor, are registered for VAT and CIS, and send insurance details on request. Hotel operators can see what to send on the [hotels and operators page](/professionals/hotels/)."
+          ]
+        }
+      ],
       "materialKey": "Vinyl and contract wallcoverings",
       "projects": [
         "owo-whitehall",
@@ -153,7 +197,8 @@
             "We can. At Brown's Hotel and at Hyde London City, the Old Bailey Hotel, Mr Wallcover was the main decorating contractor. Elsewhere we have carried the wallcovering package alone."
           ]
         }
-      ]
+      ],
+      "autoProjects": "hotels"
     },
     {
       "slug": "mural-installation",
@@ -171,7 +216,11 @@
       "projects": [
         "trematon-castle",
         "calico-lee-broom-overture",
-        "calico-ahluwalia-estuary-rosewood"
+        "calico-ahluwalia-estuary-rosewood",
+        "heathrow-terminal-4-calico",
+        "everyman-liverpool",
+        "scp-showroom-pimlico",
+        "tea-house-jaillon-studio"
       ],
       "imageId": "browns-hotel-mayfair-04",
       "faq": [
@@ -421,6 +470,89 @@
           "question": "Can the interior be done with the exterior?",
           "paragraphs": [
             "Yes. One commission can be all the internal works plus the full exterior: decorating and wallpapering inside, then the front elevation, with one survey and one programme covering both."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "commercial-wallcovering-installation",
+      "name": "Commercial and showroom wallcovering installation",
+      "title": "Commercial Wallcovering Installer London | Mr Wallcover",
+      "description": "Wallcoverings for London showrooms, shops, venues and launches: Huntsman on Savile Row, Mercedes-AMG, SCP, House of Hackney and Calico Wallpaper.",
+      "heading": "Commercial and showroom wallcovering installation",
+      "lede": "Showrooms, flagship shops, venues, fairs and launches, where the wall is seen close up, under bright light, and the opening date does not move.",
+      "serviceType": "Commercial wallcovering installation",
+      "paragraphs": [
+        "Commercial walls are judged at arm's length by customers and visitors, often under showroom lighting that shows every joint. The finishes on our commercial record are among the least forgiving there are: black matt vinyl, a tweed check, a colour gradient and gilded marbling.",
+        "The work runs the way every commission does: a survey and a scope of works, preparation that decides the finish, protection and containment, and the same team from the first length to the return visit. We can install material you have already bought, or source a family and install it."
+      ],
+      "sections": [
+        {
+          "heading": "Showrooms and flagship stores",
+          "paragraphs": [
+            "At [Huntsman, Savile Row](/projects/huntsman-savile-row/), from April 2018 to March 2019, we hung a bespoke wallpaper printed as the house's trademark tweed, and covered freestanding display boards in the same print so a suit can stand in front of its own cloth. A check on a wall shows every fault, so the lines run plumb from ceiling to skirting and meet at every joint and corner.",
+            "At the [Mercedes-AMG showroom](/projects/mercedes-amg-showroom-london/) in London, in September 2019, we supplied and fitted black matt Muraspec, finished with brushed stainless-steel trims at the doors and above the skirtings. At the [SCP showroom in Pimlico](/projects/scp-showroom-pimlico/), a short-term showroom in 2019, one room has a deep blue gradient mural and the other a gilded marbled wallcovering, with a flush door papered in.",
+            "For [House of Hackney](/projects/house-of-hackney-st-michaels/), we made good and decorated the 1856 St Michael's Clergy House in Shoreditch and hung the brand's own papers through the concept rooms, ready for the public opening on 26 March 2022, after working on its previous Shoreditch showroom in 2019. At [Lee Broom's Shoreditch showroom](/projects/calico-lee-broom-overture/), we surveyed for Calico Wallpaper's layout and installed Overture for London Design Festival 2025."
+          ]
+        },
+        {
+          "heading": "Retail in controlled places",
+          "paragraphs": [
+            "At [Heathrow Terminal 4](/projects/heathrow-terminal-4-calico/), a bespoke Calico Wallpaper landscape was hung overnight on 24–25 September 2018 in a luxury fashion house's airside store, while the terminal kept running. Airside work means vetted operatives with airside passes, tools and materials checked through security, and deliveries that follow the airport's logistics and escort procedures."
+          ]
+        },
+        {
+          "heading": "Venues and leisure",
+          "paragraphs": [
+            "At the [Everyman cinema in Liverpool](/projects/everyman-liverpool/), from October to December 2018, before the opening on 18 December, we hung Muraspec's extra-wide digital prints of classic film and music imagery as single pictures from floor to ceiling, on walls prepared and lined first. At [Oxygen Freejumping, The O2](/projects/oxygen-freejumping-the-o2/), in September 2018, a fine-line geometric Muraspec print on wide vinyl was joined by overlap and splice so the lines run unbroken."
+          ]
+        },
+        {
+          "heading": "Fairs, launches and design weeks",
+          "paragraphs": [
+            "Event walls are hung to a date that cannot move. At [Masterpiece London](/projects/masterpiece-london-2019/) in June 2019 we installed a bespoke hand-crafted wallcovering on a fair stand, set out with laser levels so the outlines run from one panel to the next. For BEVERLY 1975's first London presentation, at [The Lavery](/projects/calico-beverly-1975-cadence/) in the Brompton Design District, Calico's Cadence went up as a feature wall in a single day on 8 September 2026. For Ahluwalia's show at Rosewood London, the [Estuary mural](/projects/calico-ahluwalia-estuary-rosewood/) was installed in a single day, the day before."
+          ]
+        },
+        {
+          "heading": "Finishes that show everything",
+          "paragraphs": [
+            "On a dark matt finish the joints disappear only if the walls beneath are flat and the edges are cut clean, so preparation decides the result, and hands, paste and tools are kept off the face because a mark on black matt cannot be wiped away. A gradient has no pattern to hide a join, so its panels are hung in order and butted exactly. Where a wallcovering meets a trim, it is cut to the trim on one continuous line, so the trim reads as a frame rather than a cover strip."
+          ]
+        },
+        {
+          "heading": "Contracts and the quotation",
+          "paragraphs": [
+            "There is no flat rate per roll. The quotation comes from a site survey or from drawings and reflects the measured area, the repeat and wastage, the state of the walls, the material, and access and protection, which are written into the scope rather than discovered at the end. The [installation cost guide](/advice/installation-cost/) explains each item.",
+            "Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site. We have experience of JCT contracts as a specialist package contractor, are registered for VAT and CIS, and send insurance details on request. Hotel work has its own page: [hotel wallcovering installation](/services/hotel-wallcovering-installation/)."
+          ]
+        }
+      ],
+      "projects": [
+        "huntsman-savile-row",
+        "mercedes-amg-showroom-london",
+        "scp-showroom-pimlico",
+        "house-of-hackney-st-michaels",
+        "calico-lee-broom-overture",
+        "heathrow-terminal-4-calico",
+        "everyman-liverpool",
+        "oxygen-freejumping-the-o2",
+        "masterpiece-london-2019",
+        "calico-beverly-1975-cadence"
+      ],
+      "imageId": "huntsman-07",
+      "faq": [
+        {
+          "id": "commercial-dates",
+          "question": "Can you work to a fixed opening or event date?",
+          "paragraphs": [
+            "Yes. The House of Hackney showroom was ready for its public opening on 26 March 2022, the Everyman cinema in Liverpool for its opening on 18 December 2018, and Calico Wallpaper's Estuary mural at Rosewood London was installed in a single day, the day before the show."
+          ]
+        },
+        {
+          "id": "commercial-supply",
+          "question": "Can you supply the wallcovering as well as install it?",
+          "paragraphs": [
+            "Yes. At the Mercedes-AMG showroom we supplied and fitted the black matt Muraspec. We can also install material you have already bought."
           ]
         }
       ]
