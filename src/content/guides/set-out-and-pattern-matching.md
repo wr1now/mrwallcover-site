@@ -12,8 +12,8 @@ authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-11"
 updated: "2026-10-11"
-description: "Where the first drop goes and why: setting out from a focal point, plumbing in a room that is not square, matching across joints and corners, balancing the end panels, hanging murals in order, and joining wide vinyl by overlap and splice."
-metaDescription: "Wallpaper set-out and pattern matching: start from a focal point, plumb every drop, match across corners, balance end panels, overlap and splice."
+description: "Where the first drop goes and why: setting out from a focal point, setting a true vertical with a laser in a room that is not square, matching across joints and corners, balancing the end panels, hanging murals in order, and joining wide vinyl by overlap and splice."
+metaDescription: "Wallpaper set-out and pattern matching: start from a focal point, laser-set every drop, match across corners, balance end panels, overlap and splice."
 shortTitle: "Set-out and pattern matching"
 order: 13
 relatedMaterials: ["paper-and-non-woven", "murals", "contract-vinyl"]
@@ -25,7 +25,7 @@ faq:
   - q: "Where should the first drop of wallpaper go?"
     a: "Where the eye goes first, not in the nearest corner. We set out from the room's focal point (a chimney breast, a doorcase, a bed wall or a mirror) so the pattern sits centred on it, then work outwards. At Brown's Hotel each room was set out from its chimneypieces, doorcases and bed walls."
   - q: "What happens when the walls are not straight?"
-    a: "Each drop is plumbed rather than lined up with the wall or the floor. In an old house with sloping floors, the bamboo drops in a guest bedroom were plumbed one by one so the design reads upright even though the room is not."
+    a: "Each drop is set to a laser line rather than lined up with the wall or the floor. In an old house with sloping floors, the bamboo drops in a guest bedroom were set to the laser one by one so the design reads upright even though the room is not."
   - q: "What is overlap and splice?"
     a: "A way of joining wide vinyl: the two edges are hung overlapping, then cut through both layers at once and the offcuts removed, so the edges meet exactly. At The O2 it kept every fine line of a geometric design continuous across the joints."
 ---
@@ -40,7 +40,7 @@ For a natural weave, the seams land where the wall widths, doors and windows put
 
 ## How do you keep a pattern straight in a crooked room?
 
-By working to a true vertical, not to the walls. In a [North London house](/projects/north-london-residence/) with beams, a built-in desk and old sloping floors, each drop of a bamboo design was plumbed and set out with care, so the stems read as upright even though the room around them is not. Where a design has no repeat to fall back on, or a relief panel must stand dead upright, the line comes from a laser: at [Masterpiece London](/projects/masterpiece-london-2019/) a hand-crafted design with no repeat was set out with laser levels so its outlines run from one panel to the next, and at the [Castle of Trematon](/projects/trematon-castle/) Lincrusta panels were laid out on the table, then hung to a laser line.
+By working to a true vertical, not to the walls. We set out every wall with a laser level; the plumb line is the traditional method, and the laser gives the same true vertical across a whole room at once, including on sloping floors. In a [North London house](/projects/north-london-residence/) with beams, a built-in desk and old sloping floors, each drop of a bamboo design was set out with care to the laser line, so the stems read as upright even though the room around them is not. Where a design has no repeat to fall back on, or a relief panel must stand dead upright, the laser carries the line from panel to panel: at [Masterpiece London](/projects/masterpiece-london-2019/) a hand-crafted design with no repeat was set out with laser levels so its outlines run from one panel to the next, and at the [Castle of Trematon](/projects/trematon-castle/) Lincrusta panels were laid out on the table, then hung to a laser line.
 
 ## What does a pattern match involve?
 
@@ -50,7 +50,7 @@ The match has to hold everywhere, not only across flat joints. At Trematon, patt
 
 ## What about checks, stripes and geometrics?
 
-They show every fault. At [Huntsman, Savile Row](/projects/huntsman-savile-row/), the house's tweed was printed as a wallpaper; a check on a wall has to run plumb from ceiling to skirting and level around the room, and meet at every joint and corner, or the eye goes straight to the break. The same discipline carried onto freestanding display boards, each wrapped with the pattern square on every face.
+They show every fault. At [Huntsman, Savile Row](/projects/huntsman-savile-row/), the house's tweed was printed as a wallpaper; a check on a wall has to run to a true vertical from ceiling to skirting, set by the laser, and level around the room, and meet at every joint and corner, or the eye goes straight to the break. The same discipline carried onto freestanding display boards, each wrapped with the pattern square on every face.
 
 ## How are murals and gradients hung?
 
