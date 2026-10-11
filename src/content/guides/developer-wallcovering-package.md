@@ -11,7 +11,7 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-10"
+updated: "2026-10-11"
 description: "What a wallcovering package needs to be priced, programmed and handed over: scope, measurement basis, substrate handover, programme, changes, snagging and spares."
 metaDescription: "What a wallcovering package needs to be priced, programmed and handed over: scope, measurement, substrate handover, changes, snagging and spares."
 shortTitle: "Developer package"
@@ -40,6 +40,14 @@ Define ready for the specified product: sound, dry to a stated reading, filled a
 ## Programme: what has to finish first?
 
 Sequence wallcovering after wet trades, first-fix joinery and ceiling finishes, and before second-fix items that would damage a finished wall. Show target dates per area, the working hours and access rules, and whether the building is occupied. Delivery of free-issue goods is timed to the hang and paper is not stored in corridors; where the site is a working hotel, the [hotel specification guide](/advice/hotel-wallcovering-specification/) covers room release and phasing. A tender deadline is not the requested start date.
+
+## Lead times: when should the installer be involved?
+
+Earlier than the start date. A start date is given after the survey, and lead times depend on the project; when a client or contractor needs support quickly, the team can sometimes mobilise within two to three days. If the wallcovering is free-issue, the supplier's lead time sits inside the programme and the hang is planned around the delivery, so put the order date on the schedule as well as the hang date. For a scenic paper or a mural, bring the installer in before the dimensions go to production, because the panels are made to the finished walls; skirting height, cornice depth and a new lining all change them. On a tender, state both the tender deadline and the requested start date.
+
+## Site readiness: what has to be true on the day?
+
+Agree a short list for each area before the hang is booked: wet trades finished and the walls dry to the agreed reading; filling, lining and drying time already in the programme rather than discovered on the day the material arrives; and first-fix joinery and ceiling finishes complete. Free-issue deliveries are checked against the measure when they arrive, and scenic panels are checked dry against the maker's layout before any paste and before anything is cut, so a sequence, sizing or print problem comes to light while it is still easy to resolve. Our [set-out and pattern matching guide](/advice/set-out-and-pattern-matching/) explains why a pronounced pattern needs its set-out agreed before cutting starts.
 
 ## Changes: how are substitutions and variations handled?
 

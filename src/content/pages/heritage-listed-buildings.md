@@ -46,7 +46,7 @@
       "id": "heritage-walls",
       "question": "Can wallpaper be hung on old, uneven walls?",
       "paragraphs": [
-        "Old walls are surveyed before they are priced: old lime plaster, uneven walls, tall stair halls and rooms that were not built square all change the preparation. At Trematon, every wall was a little out of true and every ceiling a little out of level; rooms were taken back to bare plaster and lined before the hand-printed papers went up. Damp, movement and historic fabric need the product's own instructions and, often, the specifier's decision first."
+        "Old walls are surveyed before they are priced: old lime plaster, uneven walls, tall stair halls and rooms that were not built square all change the preparation. At Trematon, every wall was a little out of true and every ceiling a little out of level; rooms were taken back to bare plaster and lined before the hand-printed papers went up, and several ceilings were papered too; our guide to [papering ceilings and staircases](/advice/papered-ceilings-and-staircases/) covers that work. Damp, movement and historic fabric need the product's own instructions and, often, the specifier's decision first."
       ]
     }
   ]
