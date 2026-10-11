@@ -75,6 +75,21 @@ function segments(text: string) {
   </div>
 
   {
+    page.sections && page.sections.length > 0 && (
+      <div class="landing-sections prose border-t border-line pt-12 pb-4">
+        {page.sections.map((section) => (
+          <section class="mb-10">
+            <h2 class="mb-4 text-[clamp(2rem,3vw,2.7rem)]">{section.heading}</h2>
+            {section.paragraphs.map((paragraph) => (
+              <p>{segments(paragraph).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</p>
+            ))}
+          </section>
+        ))}
+      </div>
+    )
+  }
+
+  {
     linked.length > 0 && (
       <section class="border-t border-line py-12" aria-labelledby="record-heading">
         <h2 id="record-heading" class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On the public record</h2>

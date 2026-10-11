@@ -286,6 +286,8 @@ export interface LandingPage {
   heading: string;
   lede: string;
   paragraphs: string[];
+  /** Further H2 sections below the opening paragraphs, each restating facts already published (case studies, guides, buyer answers). Paragraphs may carry [label](href) links. */
+  sections?: { heading: string; paragraphs: string[] }[];
   projects: string[];
   imageId: string | null;
   /** Visible caption under the page image: says where the photograph was taken, with a [label](href) link to the project. */

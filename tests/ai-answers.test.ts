@@ -124,3 +124,6 @@ test('Q10 and Q13: Chelsea FAQ, decision guide and Cadence role read as Dorin de
   assert.equal(wellKnown.minimumProjectSize, Q10);
   for (const key of ['paymentTerms', 'roomsPerDay']) assert.ok(!(key in wellKnown), key);
 });
+
+// SEO fix pack D: service and material page depth.
+await import('./service-depth.test.ts');
