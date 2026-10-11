@@ -1,0 +1,28 @@
+{
+  "caseStudy": "about-roll-call",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder the-marylebone",
+  "images": {
+    "marylebone-01": {
+      "file": "the-marylebone/2020-02-21_B80WqY1l96C_01.jpg",
+      "post": "B80WqY1l96C",
+      "date": "2020-02-21",
+      "url": "https://www.instagram.com/p/B80WqY1l96C/",
+      "width": 894,
+      "height": 894,
+      "alt": "Close-up of the heavy-texture oblique-line wallpaper hung at The Marylebone hotel, London.",
+      "brands": [],
+      "caption": null
+    },
+    "marylebone-02": {
+      "file": "the-marylebone/2020-08-08_CDoRo1uFuLL_01.jpg",
+      "post": "CDoRo1uFuLL",
+      "date": "2020-08-08",
+      "url": "https://www.instagram.com/p/CDoRo1uFuLL/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "The front of The Marylebone hotel, London, with its name above the entrance.",
+      "brands": [],
+      "caption": null
+    }
+  }
+}

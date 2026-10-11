@@ -1,0 +1,28 @@
+{
+  "caseStudy": "about-roll-call",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder doubletree-london-victoria",
+  "images": {
+    "doubletree-victoria-ig-01": {
+      "file": "doubletree-london-victoria/2023-03-10_CpnQ-kFo0J__01.jpg",
+      "post": "CpnQ-kFo0J_",
+      "date": "2023-03-10",
+      "url": "https://www.instagram.com/p/CpnQ-kFo0J_/",
+      "width": 1440,
+      "height": 1791,
+      "alt": "The front of DoubleTree by Hilton London Victoria, 2023.",
+      "brands": [],
+      "caption": null
+    },
+    "doubletree-victoria-ig-02": {
+      "file": "doubletree-london-victoria/2023-03-10_CpnUyCLInn1_03.jpg",
+      "post": "CpnUyCLInn1",
+      "date": "2023-03-10",
+      "url": "https://www.instagram.com/p/CpnUyCLInn1/",
+      "width": 1440,
+      "height": 1605,
+      "alt": "DoubleTree by Hilton London Victoria from the street, with our 'Hilton Victoria London' caption over the photograph, 2023.",
+      "brands": [],
+      "caption": null
+    }
+  }
+}
