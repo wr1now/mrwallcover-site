@@ -2,6 +2,7 @@
 import facts from '../data/facts.json';
 import PhoneReveal from './PhoneReveal.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
+import BookCallLink from './BookCallLink.astro';
 import { areaHref, areas, editorialPages, home, materials, specialismHref, specialisms } from '../lib/content';
 
 /** Every service and material page, generated from content so a new page joins the footer by itself. */
@@ -66,6 +67,7 @@ const PUBLIC_EMAIL = facts.email;
         <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
       </p>
       <WhatsAppLink wrap="m-0" />
+      <BookCallLink wrap="m-0" />
       {
         facts.profiles.map((profile) => (
           <p class="m-0">

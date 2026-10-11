@@ -48,3 +48,4 @@ test('all local page links, downloads and fragments resolve in the release',asyn
 
 // SEO fix pack C: case-study hero and font preloads.
 await import('./lead-image-preload.test.ts');
+import './whatsapp-booking.test.ts';
