@@ -1,5 +1,5 @@
 /**
- * Homepage trust signals, from data only. The proof strip, the "Dorin Burcus and the team" block,
+ * Homepage trust signals, from data only. The proof strip, the "Dorin Burcus" founder block,
  * llms.txt and /for-ai/ all read this module, so the three cannot drift apart.
  * - Case-study count: the published case studies (drafts are already filtered out), never typed in.
  * - Programme figures: facts.json programmeFigures entries that carry a short 'figure' label
