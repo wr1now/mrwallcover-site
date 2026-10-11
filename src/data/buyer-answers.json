@@ -206,7 +206,10 @@
         "/services/silk-wallcovering-installation/",
         "/services/mural-installation/",
         "/services/fabric-walling/",
-        "/services/acoustic-wallcovering-installation/"
+        "/services/acoustic-wallcovering-installation/",
+        "/services/architectural-film-wrapping/",
+        "/services/window-film/",
+        "/services/joinery-wallcoverings-and-panels/"
       ]
     },
     {
@@ -421,7 +424,9 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/hotels/"
+        "/professionals/hotels/",
+        "/services/architectural-film-wrapping/",
+        "/services/window-film/"
       ],
       "answeredBy": [
         "Q2"
@@ -454,7 +459,8 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/developers/"
+        "/professionals/developers/",
+        "/services/exterior-works/"
       ]
     },
     {
@@ -627,7 +633,11 @@
         "/for-ai/",
         "/professionals/hotels/",
         "/professionals/developers/",
-        "/services/hotel-wallcovering-installation/"
+        "/services/hotel-wallcovering-installation/",
+        "/services/architectural-film-wrapping/",
+        "/services/window-film/",
+        "/services/joinery-wallcoverings-and-panels/",
+        "/services/exterior-works/"
       ]
     },
     {
@@ -669,7 +679,8 @@
         "/for-ai/",
         "/professionals/designers/",
         "/services/silk-wallcovering-installation/",
-        "/services/fabric-walling/"
+        "/services/fabric-walling/",
+        "/services/joinery-wallcoverings-and-panels/"
       ]
     },
     {
@@ -689,7 +700,8 @@
       ],
       "pages": [
         "/for-ai/",
-        "/professionals/designers/"
+        "/professionals/designers/",
+        "/services/exterior-works/"
       ]
     }
   ],
