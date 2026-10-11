@@ -1,0 +1,34 @@
+---
+/** 'Designers we work with': src/data/designers.json, each name linked to its evidence. No logos, no endorsement claims. */
+import designers from '../data/designers.json';
+interface Props { headingLevel?: 'h2' | 'h3'; id?: string }
+const { headingLevel = 'h2', id = 'designers-heading' } = Astro.props;
+const Heading = headingLevel;
+const external = (href: string) => /^https?:/.test(href);
+---
+<section class="designers-strip" aria-labelledby={id}>
+  <p class="eyebrow">{designers.eyebrow}</p>
+  <Heading id={id} class="designers-title">{designers.title}</Heading>
+  <ul class="designers-list">
+    {designers.items.map((item) => (
+      <li>
+        <p class="designers-name">{item.name}</p>
+        <p class="designers-role">{item.role}</p>
+        <p class="designers-work">{item.work}</p>
+        <p class="designers-links">{item.links.map((link, i) => <>{i > 0 && ' · '}<a href={link.href} rel={external(link.href) ? 'noopener' : undefined}>{link.label}</a></>)}</p>
+      </li>
+    ))}
+  </ul>
+</section>
+<style is:global>
+  .designers-strip { margin-top:3rem; }
+  .designers-title { margin:0; max-width:40rem; font-size:clamp(1.6rem, 2.6vw, 2.2rem); line-height:1.15; }
+  .designers-list { list-style:none; margin:1.75rem 0 0; padding:0; display:grid; gap:1.5rem 2.5rem; grid-template-columns:repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); }
+  .designers-list li { border-top:1px solid var(--color-line); padding-top:1rem; }
+  .designers-list p { margin:0; }
+  .designers-name { font-family:var(--font-serif); font-size:1.35rem; line-height:1.25; }
+  .designers-role { margin-top:.2rem !important; font-size:var(--text-meta, .875rem); color:var(--color-stone); }
+  .designers-work { margin-top:.6rem !important; }
+  .designers-links { margin-top:.5rem !important; }
+  .designers-links a { display:inline-block; min-height:24px; }
+</style>

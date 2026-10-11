@@ -127,3 +127,71 @@ export function estimateRolls(input: EstimateInput): EstimateResult {
     assumptions: [...new Set(assumptions)],
   };
 }
+
+/**
+ * A whole room measured as length × width × height becomes one continuous run of wall (the perimeter),
+ * because paper carries on round internal corners. Doors and windows are still not deducted.
+ */
+export function roomWalls(lengthM: number, widthM: number, heightM: number): WallInput[] {
+  return [{ widthM: Math.round((lengthM + widthM) * 2 * 1000) / 1000, heightM }];
+}
+
+export interface AllowanceInput {
+  walls: WallInput[];
+  rollWidthM: number;
+  rollLengthM: number;
+  match: MatchType;
+}
+
+export type AllowanceResult =
+  | {
+      ok: true;
+      netAreaM2: number;
+      rollAreaM2: number;
+      minPct: number;
+      maxPct: number;
+      minRolls: number;
+      maxRolls: number;
+      note: string;
+    }
+  | { ok: false; reason: string };
+
+/**
+ * The ordering allowance Mr Wallcover quotes (src/content/guides/installation-cost.md, buyer-answers.json):
+ * typically 15–30% over the net wall area, depending on the pattern repeat and the layout, with staircases at the
+ * high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey.
+ * Murals and panel sets are ordered by panel, not by roll, so they get no figure.
+ */
+export const ALLOWANCE = { minPct: 15, maxPct: 30, stairPct: 30 } as const;
+
+export function allowanceRange(input: AllowanceInput): AllowanceResult {
+  if (input.match === 'mural' || input.match === 'panel') {
+    return { ok: false, reason: 'Murals and panel sets are ordered by panel from the elevations, not by roll, so no allowance figure is given.' };
+  }
+  if (!input.walls.length) return { ok: false, reason: 'Add at least one wall.' };
+  if (invalid(input.rollWidthM) || invalid(input.rollLengthM)) {
+    return { ok: false, reason: 'Enter a usable roll width and roll length greater than zero.' };
+  }
+  if (input.walls.some((wall) => invalid(wall.widthM) || invalid(wall.heightM))) {
+    return { ok: false, reason: 'Each wall needs a width and a height greater than zero.' };
+  }
+  const netAreaM2 = Math.round(input.walls.reduce((sum, wall) => sum + wall.widthM * wall.heightM, 0) * 100) / 100;
+  const rollAreaM2 = Math.round(input.rollWidthM * input.rollLengthM * 1000) / 1000;
+  const stair = input.match === 'stair';
+  const minPct = stair ? ALLOWANCE.stairPct : ALLOWANCE.minPct;
+  const maxPct = stair ? ALLOWANCE.stairPct : ALLOWANCE.maxPct;
+  // Integer arithmetic in square centimetres, so 13.5 m² × 1.15 never rounds the wrong way.
+  const rolls = (pct: number) => Math.ceil((Math.round(netAreaM2 * 10000) * (100 + pct)) / (Math.round(rollAreaM2 * 10000) * 100));
+  return {
+    ok: true,
+    netAreaM2,
+    rollAreaM2,
+    minPct,
+    maxPct,
+    minRolls: rolls(minPct),
+    maxRolls: rolls(maxPct),
+    note: stair
+      ? 'Staircases sit at the high end, around 30%, because of the angles.'
+      : 'Typically 15–30%, depending on the pattern repeat and the layout.',
+  };
+}

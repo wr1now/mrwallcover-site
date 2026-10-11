@@ -9,6 +9,7 @@ const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about/' },
 ];
+import DesignersStrip from '../components/DesignersStrip.astro';
 ---
 
 <Base
@@ -141,6 +142,7 @@ const crumbs = [
       <p class="eyebrow">{about.collaborators.eyebrow}</p>
       <h2 id="collaborators-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{about.collaborators.title}</h2>
       <p class="mt-6 mb-0 max-w-3xl text-stone">{about.collaborators.text} <a href="/contact/">Talk to us about your project.</a></p>
+      <DesignersStrip headingLevel="h3" />
     </div>
   </section>
 </Base>

@@ -97,3 +97,33 @@ test('the calculator opens with the worked example, and the page copy states the
   assert.match(page, /calculator gives 4\./);
   assert.doesNotMatch(page, /10-metre roll|0\.5 metres wide/, 'the old exact-fit example is gone');
 });
+
+test('allowance range: net area plus 15–30% (the guide example, 5.00 × 2.70 m on a 0.53 × 10.05 m roll, gives 3–4 rolls)', async () => {
+  const { allowanceRange } = await import('../src/lib/quantity.ts');
+  const result = allowanceRange({ match: 'free', rollWidthM: 0.53, rollLengthM: 10.05, walls: [{ widthM: 5, heightM: 2.7 }] });
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  assert.equal(result.netAreaM2, 13.5);
+  assert.deepEqual([result.minPct, result.maxPct, result.minRolls, result.maxRolls], [15, 30, 3, 4]);
+});
+
+test('allowance range: staircases at around 30%; murals and panel sets get no figure', async () => {
+  const { allowanceRange } = await import('../src/lib/quantity.ts');
+  const stair = allowanceRange({ match: 'stair', rollWidthM: 0.53, rollLengthM: 10.05, walls: [{ widthM: 5, heightM: 2.7 }] });
+  assert.equal(stair.ok, true);
+  if (stair.ok) assert.deepEqual([stair.minPct, stair.maxPct, stair.minRolls, stair.maxRolls], [30, 30, 4, 4]);
+  for (const match of ['mural', 'panel'] as const) {
+    const result = allowanceRange({ match, rollWidthM: 0.53, rollLengthM: 10.05, walls: [{ widthM: 5, heightM: 2.7 }] });
+    assert.equal(result.ok, false);
+  }
+  const bad = allowanceRange({ match: 'free', rollWidthM: 0, rollLengthM: 10, walls: [{ widthM: 5, heightM: 2.7 }] });
+  assert.equal(bad.ok, false);
+});
+
+test('a room becomes one run of wall round its perimeter', async () => {
+  const { roomWalls, estimateRolls } = await import('../src/lib/quantity.ts');
+  assert.deepEqual(roomWalls(4, 3, 2.5), [{ widthM: 14, heightM: 2.5 }]);
+  const result = estimateRolls({ ...roll, match: 'free', walls: roomWalls(4, 3, 2.4) });
+  assert.equal(result.ok, true);
+  if (result.ok) assert.equal(result.rolls, 7); // 14 m ÷ 0.52 = 27 drops, 4 per roll
+});
