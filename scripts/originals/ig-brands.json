@@ -1,0 +1,425 @@
+{
+  "caseStudy": "materials-makers",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), brand evidence; brand-only folders stay unnamed as projects",
+  "images": {
+    "brand-andrew-martin-01": {
+      "file": "private-residence-london/2018-02-28_BfwPR8zgKN0_01.jpg",
+      "post": "BfwPR8zgKN0",
+      "date": "2018-02-28",
+      "url": "https://www.instagram.com/p/BfwPR8zgKN0/",
+      "width": 1080,
+      "height": 1079,
+      "alt": "Close-up of Andrew Martin library bookshelf trompe-l'oeil wallpaper, a private residence, London.",
+      "brands": [
+        "Andrew Martin"
+      ],
+      "caption": null
+    },
+    "brand-arte-01": {
+      "file": "unnamed-project-london/2017-12-27_BdNtIUtAtKR_01.jpg",
+      "post": "BdNtIUtAtKR",
+      "date": "2017-12-27",
+      "url": "https://www.instagram.com/p/BdNtIUtAtKR/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Corridor with Arte grey linear wallcovering, a private project, London.",
+      "brands": [
+        "Arte"
+      ],
+      "caption": null
+    },
+    "brand-barneby-gates-01": {
+      "file": "unnamed-project-london/2018-02-20_BfatDoPAhNB_01.jpg",
+      "post": "BfatDoPAhNB",
+      "date": "2018-02-20",
+      "url": "https://www.instagram.com/p/BfatDoPAhNB/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Barneby Gates wallpaper in a bathroom with a mirror, a private project, London.",
+      "brands": [
+        "Barneby Gates"
+      ],
+      "caption": null
+    },
+    "brand-bernard-thorp-01": {
+      "file": "unnamed-project-kensington/2019-08-23_B1gT66IlmF5_01.jpg",
+      "post": "B1gT66IlmF5",
+      "date": "2019-08-23",
+      "url": "https://www.instagram.com/p/B1gT66IlmF5/",
+      "width": 1440,
+      "height": 1080,
+      "alt": "Crystal chandelier in a room lined with Bernard Thorp charcoal Savoy silk, Kensington.",
+      "brands": [
+        "Bernard Thorp"
+      ],
+      "caption": null
+    },
+    "brand-calico-wallpaper-01": {
+      "file": "unnamed-project-london/2019-09-12_B2Uz7Dcl2_j_01.jpg",
+      "post": "B2Uz7Dcl2_j",
+      "date": "2019-09-12",
+      "url": "https://www.instagram.com/p/B2Uz7Dcl2_j/",
+      "width": 1440,
+      "height": 1439,
+      "alt": "Room with a deep blue Calico gradient wallpaper, a yellow sideboard and a daybed, a private project, London.",
+      "brands": [
+        "Calico Wallpaper"
+      ],
+      "caption": null
+    },
+    "brand-celerie-kemble-01": {
+      "file": "unnamed-project-south-kensington/2018-03-01_BfzCYuBgjSb_06.jpg",
+      "post": "BfzCYuBgjSb",
+      "date": "2018-03-01",
+      "url": "https://www.instagram.com/p/BfzCYuBgjSb/",
+      "width": 1080,
+      "height": 1079,
+      "alt": "Pale floral Celerie Kemble for Schumacher grasscloth on the wall of a private project, South Kensington.",
+      "brands": [
+        "Celerie Kemble"
+      ],
+      "caption": null
+    },
+    "brand-chilewich-01": {
+      "file": "unnamed-project-london/2018-03-13_BgR498OAKT7_01.jpg",
+      "post": "BgR498OAKT7",
+      "date": "2018-03-13",
+      "url": "https://www.instagram.com/p/BgR498OAKT7/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Close-up of a Chilewich woven backless wall textile, a private project, London.",
+      "brands": [
+        "Chilewich"
+      ],
+      "caption": null
+    },
+    "brand-christopher-farr-cloth-01": {
+      "file": "unnamed-project-london/2019-09-27_B27gA7Flo7y_01.jpg",
+      "post": "B27gA7Flo7y",
+      "date": "2019-09-27",
+      "url": "https://www.instagram.com/p/B27gA7Flo7y/",
+      "width": 1440,
+      "height": 1800,
+      "alt": "Bathroom with a Christopher Farr Cloth raffia wallpaper by Kate Blee above a basin, a private project, London.",
+      "brands": [
+        "Christopher Farr Cloth"
+      ],
+      "caption": null
+    },
+    "brand-eijffinger-01": {
+      "file": "unnamed-project-london/2019-08-16_B1OBBTolcYg_01.jpg",
+      "post": "B1OBBTolcYg",
+      "date": "2019-08-16",
+      "url": "https://www.instagram.com/p/B1OBBTolcYg/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Living room with fireplace, TV and Eijffinger wallpaper, a private project, London.",
+      "brands": [
+        "Eijffinger"
+      ],
+      "caption": null
+    },
+    "brand-elitis-01": {
+      "file": "private-residence-mayfair/2018-03-21_BglmE0vgCj9_03.jpg",
+      "post": "BglmE0vgCj9",
+      "date": "2018-03-21",
+      "url": "https://www.instagram.com/p/BglmE0vgCj9/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Cinema room walls in a dark Elitis acoustic wallcovering, private residence, Mayfair.",
+      "brands": [
+        "Elitis"
+      ],
+      "caption": null
+    },
+    "brand-fermoie-01": {
+      "file": "unnamed-project-london/2021-06-26_CQmafWXF-Q7_01.jpg",
+      "post": "CQmafWXF-Q7",
+      "date": "2021-06-26",
+      "url": "https://www.instagram.com/p/CQmafWXF-Q7/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Fermoie linen applied to walls, joinery and skirting, a private project, London.",
+      "brands": [
+        "Fermoie"
+      ],
+      "caption": null
+    },
+    "brand-glamora-01": {
+      "file": "private-residence-belgravia/2020-01-29_B76IQn3FDtg_02.jpg",
+      "post": "B76IQn3FDtg",
+      "date": "2020-01-29",
+      "url": "https://www.instagram.com/p/B76IQn3FDtg/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Bathroom papered in a grey stone-effect Glamora wet-system wallcovering before fitting, private residence, Belgravia.",
+      "brands": [
+        "Glamora"
+      ],
+      "caption": null
+    },
+    "brand-gucci-01": {
+      "file": "unnamed-project-covent-garden/2019-09-27_B27e8vpFbY1_02.jpg",
+      "post": "B27e8vpFbY1",
+      "date": "2019-09-27",
+      "url": "https://www.instagram.com/p/B27e8vpFbY1/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Close-up of Gucci cats wallpaper in navy and red, a private project, Covent Garden.",
+      "brands": [
+        "Gucci"
+      ],
+      "caption": null
+    },
+    "brand-harlequin-01": {
+      "file": "private-residence-soho/2018-03-27_Bg0dDlUgILu_01.jpg",
+      "post": "Bg0dDlUgILu",
+      "date": "2018-03-27",
+      "url": "https://www.instagram.com/p/Bg0dDlUgILu/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Collage of Harlequin, Romo and Zoffany textured feature walls, private residence, Soho.",
+      "brands": [
+        "Harlequin",
+        "Romo",
+        "Zoffany"
+      ],
+      "caption": null
+    },
+    "brand-hermes-01": {
+      "file": "unnamed-project-knightsbridge/2018-02-12_BfGl02NAXNp_01.jpg",
+      "post": "BfGl02NAXNp",
+      "date": "2018-02-12",
+      "url": "https://www.instagram.com/p/BfGl02NAXNp/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Collage of a Hermès pattern wallpaper, Knightsbridge.",
+      "brands": [
+        "Hermès"
+      ],
+      "caption": null
+    },
+    "brand-kelly-hoppen-01": {
+      "file": "unnamed-project-chelsea/2018-01-09_Bdub1dVA8ul_01.jpg",
+      "post": "Bdub1dVA8ul",
+      "date": "2018-01-09",
+      "url": "https://www.instagram.com/p/Bdub1dVA8ul/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Kelly Hoppen patterned wallpaper on a Chelsea wall beside a door.",
+      "brands": [
+        "Kelly Hoppen"
+      ],
+      "caption": null
+    },
+    "brand-lizzo-01": {
+      "file": "unnamed-project-london/2018-07-26_BlrORM0njXz_01.jpg",
+      "post": "BlrORM0njXz",
+      "date": "2018-07-26",
+      "url": "https://www.instagram.com/p/BlrORM0njXz/",
+      "width": 811,
+      "height": 811,
+      "alt": "Lizzo floral mural framed on a wall in blue and gold, a private project, London.",
+      "brands": [
+        "Lizzo"
+      ],
+      "caption": null
+    },
+    "brand-omexco-01": {
+      "file": "unnamed-project-london/2017-10-09_BaCaL9JAVaV_06.jpg",
+      "post": "BaCaL9JAVaV",
+      "date": "2017-10-09",
+      "url": "https://www.instagram.com/p/BaCaL9JAVaV/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Close-up of a pale check Omexco wallcovering, a private project, London.",
+      "brands": [
+        "Omexco"
+      ],
+      "caption": null
+    },
+    "brand-osborne-little-01": {
+      "file": "unnamed-project-chelsea/2018-12-22_Brs8kF0A3Ry_01.jpg",
+      "post": "Brs8kF0A3Ry",
+      "date": "2018-12-22",
+      "url": "https://www.instagram.com/p/Brs8kF0A3Ry/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Close-up of a black-and-white illustrated Osborne & Little bird wallpaper, a private project, Chelsea.",
+      "brands": [
+        "Osborne & Little"
+      ],
+      "caption": null
+    },
+    "brand-ralph-lauren-home-01": {
+      "file": "unnamed-project-chelsea/2018-03-06_Bf_VErVATsL_01.jpg",
+      "post": "Bf_VErVATsL",
+      "date": "2018-03-06",
+      "url": "https://www.instagram.com/p/Bf_VErVATsL/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Ralph Lauren rose-and-branch wallpaper in grey and white, Chelsea.",
+      "brands": [
+        "Ralph Lauren Home"
+      ],
+      "caption": null
+    },
+    "brand-roberto-cavalli-home-01": {
+      "file": "private-residence-south-bank-penthouse/2020-01-22_B7nPadkl-or_02.jpg",
+      "post": "B7nPadkl-or",
+      "date": "2020-01-22",
+      "url": "https://www.instagram.com/p/B7nPadkl-or/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Close-up of black embossed Roberto Cavalli wallpaper with a metallic logo, a private residence, South Bank.",
+      "brands": [
+        "Roberto Cavalli Home"
+      ],
+      "caption": null
+    },
+    "brand-sahco-01": {
+      "file": "unnamed-project-chelsea/2018-01-09_BducVIvggXY_01.jpg",
+      "post": "BducVIvggXY",
+      "date": "2018-01-09",
+      "url": "https://www.instagram.com/p/BducVIvggXY/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Close-up of a Sahco fine fabric wallcovering, a private project, Chelsea.",
+      "brands": [
+        "Sahco"
+      ],
+      "caption": null
+    },
+    "brand-schumacher-01": {
+      "file": "private-residence-south-kensington/2018-03-28_Bg4IZSZAIQy_08.jpg",
+      "post": "Bg4IZSZAIQy",
+      "date": "2018-03-28",
+      "url": "https://www.instagram.com/p/Bg4IZSZAIQy/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Living room with chandelier and bird-pattern Schumacher wallpaper, South Kensington.",
+      "brands": [
+        "Schumacher"
+      ],
+      "caption": null
+    },
+    "brand-soane-britain-01": {
+      "file": "unnamed-project-london/2021-07-02_CQ1ZMbWFHer_01.jpg",
+      "post": "CQ1ZMbWFHer",
+      "date": "2021-07-02",
+      "url": "https://www.instagram.com/p/CQ1ZMbWFHer/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Soane Britain wallpaper with a dark green vertical leaf trail, a private project, London.",
+      "brands": [
+        "Soane Britain"
+      ],
+      "caption": null
+    },
+    "brand-thibaut-01": {
+      "file": "unnamed-project-london/2017-10-09_BaCSZQwAnzo_06.jpg",
+      "post": "BaCSZQwAnzo",
+      "date": "2017-10-09",
+      "url": "https://www.instagram.com/p/BaCSZQwAnzo/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Black-and-white geometric Thibaut wallpaper, a private project, London.",
+      "brands": [
+        "Thibaut"
+      ],
+      "caption": null
+    },
+    "brand-timorous-beasties-01": {
+      "file": "unnamed-project-shoreditch/2019-11-27_B5XtrKBlCHp_01.jpg",
+      "post": "B5XtrKBlCHp",
+      "date": "2019-11-27",
+      "url": "https://www.instagram.com/p/B5XtrKBlCHp/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Timorous Beasties birds-and-bees wallpaper with colourful birds on blue-grey, a private project, Shoreditch.",
+      "brands": [
+        "Timorous Beasties"
+      ],
+      "caption": null
+    },
+    "brand-today-interiors-zaniah-01": {
+      "file": "unnamed-project-westminster/2021-04-25_COGgYVIl5up_01.jpg",
+      "post": "COGgYVIl5up",
+      "date": "2021-04-25",
+      "url": "https://www.instagram.com/p/COGgYVIl5up/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Scaffold platform in a glazed atrium during installation of Today Interiors Zaniah mica, Westminster.",
+      "brands": [
+        "Today Interiors (Zaniah)"
+      ],
+      "caption": null
+    },
+    "brand-versace-home-01": {
+      "file": "private-residence-london/2018-03-08_BgE3W2Jgv3z_01.jpg",
+      "post": "BgE3W2Jgv3z",
+      "date": "2018-03-08",
+      "url": "https://www.instagram.com/p/BgE3W2Jgv3z/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Versace Medusa motif on a grey wallpaper, a private residence, London.",
+      "brands": [
+        "Versace Home"
+      ],
+      "caption": null
+    },
+    "brand-wall-deco-01": {
+      "file": "private-residence-london/2018-01-14_Bd79-CEALLQ_01.jpg",
+      "post": "Bd79-CEALLQ",
+      "date": "2018-01-14",
+      "url": "https://www.instagram.com/p/Bd79-CEALLQ/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Wall&decò wet-system bathroom mural of a large white flower on teal, a private residence, London.",
+      "brands": [
+        "Wall&decò"
+      ],
+      "caption": null
+    },
+    "brand-woodchip-magnolia-01": {
+      "file": "wine-bar-london/2019-08-30_B1yKHuFF8Xt_01.jpg",
+      "post": "B1yKHuFF8Xt",
+      "date": "2019-08-30",
+      "url": "https://www.instagram.com/p/B1yKHuFF8Xt/",
+      "width": 1440,
+      "height": 1439,
+      "alt": "Wine bar wall with a bespoke Woodchip & Magnolia print of trees and birds, a wine bar, London.",
+      "brands": [
+        "Woodchip & Magnolia"
+      ],
+      "caption": null
+    },
+    "brand-zoffany-01": {
+      "file": "private-residence-soho/2018-03-17_BgbJzaZgdvm_01.jpg",
+      "post": "BgbJzaZgdvm",
+      "date": "2018-03-17",
+      "url": "https://www.instagram.com/p/BgbJzaZgdvm/",
+      "width": 1080,
+      "height": 1079,
+      "alt": "Close-up of a Zoffany textured wallpaper, Soho.",
+      "brands": [
+        "Zoffany"
+      ],
+      "caption": null
+    },
+    "brand-de-gournay-01": {
+      "file": "private-residence-london/2018-04-11_BhcaLpanOEf_01.jpg",
+      "post": "BhcaLpanOEf",
+      "date": "2018-04-11",
+      "url": "https://www.instagram.com/p/BhcaLpanOEf/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "de Gournay hand-painted wallpaper with brass wall lights, a private residence, London.",
+      "brands": [
+        "de Gournay"
+      ],
+      "caption": null
+    }
+  },
+  "note": "brand-elitis-01 first drawn from unnamed-project-chelsea (Bdub9FQgGZO) and replaced: tests/held-images.test.ts matched it to a held photograph."
+}
