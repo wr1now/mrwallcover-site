@@ -74,6 +74,13 @@ export const AREAS_SERVED = [
  *
  * Anything else throws, so the build fails rather than publish an image without
  * a known maker, and a credited image can never be given the Mr Wallcover creator.
+ *
+ * creditText (Google's fifth image-licence field) always matches the creator:
+ * "Mr Wallcover" for our photographs, "Dorin Burcus / Mr Wallcover" for Dorin's own,
+ * "Photo: <holder exactly as credited>" for a credited photograph (a Wikimedia
+ * Commons image keeps its author and licence, e.g. "Photo: The wub / Wikimedia
+ * Commons (CC BY-SA 4.0)"), "Photo: JRH" for the SCP set, and the neutral
+ * "Photographer not recorded" where the record names no maker. Never ours unless ours.
  */
 
 type Creator = { '@type': 'Person' | 'Organization'; name: string; url?: string; '@id'?: string };
@@ -82,13 +89,14 @@ export interface ImageRights {
   copyrightNotice: string;
   license: string;
   acquireLicensePage: string;
-  creditText?: string;
+  creditText: string;
   /** Why: which record decided it. */
   basis: 'credit' | 'own' | 'dorin' | 'photographer' | 'unrecorded' | 'file';
 }
 
 export const IMAGE_USE_URL = new URL(rights.imageUsePath, SITE_URL).href;
-const OWNER: Creator = { '@type': 'Organization', name: rights.owner.name, url: rights.owner.url };
+/** Our own creator node carries the business @id, so Google reads it as the same Organization as the site's business node (logo, email, sameAs). */
+const OWNER: Creator = { '@type': 'Organization', '@id': BUSINESS_ID, name: rights.owner.name, url: rights.owner.url };
 const DORIN: Creator = { '@type': 'Person', '@id': `${SITE_URL}${facts.founder.path}#${facts.founder.fragment}`, name: facts.founder.name, url: `${SITE_URL}${facts.founder.path}` };
 
 type Entry = { manifestNote?: string; src?: string; jpg?: string; thumb?: string; thumbJpg?: string };
@@ -113,6 +121,7 @@ export function mediaIdFor(url: string): string | undefined {
   return m && ids.has(m[1]) ? m[1] : undefined;
 }
 
+const SOURCE = /\bsource\s+(https?:\/\/[^\s;]+)/i;
 const CREDIT = /credit\s+(?:Photography|Photograph|Photo|Image|Images)\s*:\s*([^;]+)/i;
 const LICENCE = /licen[cs]e\s+CC\s+[A-Z-]+\s+[\d.]+\s+(https?:\/\/[^\s;]+)/i;
 
@@ -125,12 +134,16 @@ function fromCredit(holder: string, note: string): ImageRights {
   const commons = /Wikimedia Commons/i.test(holder);
   const name = holder.replace(/\s*\/\s*Wikimedia Commons.*$/i, '').replace(/\s*\(official\)\s*$/i, '').trim();
   const licence = note.match(LICENCE)?.[1];
+  // An organisation's url is the site its credited source page lives on (e.g. houseofhackney.com,
+  // stories.hilton.com), only when the record gives that source. A Wikimedia author has no recorded page.
+  const source = note.match(SOURCE)?.[1];
+  const url = !commons && source ? new URL(source).origin + '/' : undefined;
   return {
-    creator: { '@type': commons ? 'Person' : 'Organization', name },
+    creator: { '@type': commons ? 'Person' : 'Organization', name, ...(url ? { url } : {}) },
     copyrightNotice: `© ${name}`,
     license: licence ?? IMAGE_USE_URL,
     acquireLicensePage: IMAGE_USE_URL,
-    creditText: holder.replace(/\s*\(official\)\s*$/i, ''),
+    creditText: `Photo: ${holder.replace(/\s*\(official\)\s*$/i, '')}`,
     basis: 'credit',
   };
 }
@@ -140,6 +153,7 @@ const ours = (creator: Creator, basis: ImageRights['basis']): ImageRights => ({
   copyrightNotice: rights.owner.copyrightNotice,
   license: IMAGE_USE_URL,
   acquireLicensePage: IMAGE_USE_URL,
+  creditText: creator === DORIN ? `${facts.founder.name} / ${rights.owner.name}` : rights.owner.name,
   basis,
 });
 
@@ -160,9 +174,9 @@ export function imageRights(url: string): ImageRights {
   else {
     const named = rights.photographers.find((p) => new RegExp(p.pattern).test(id));
     if (named) {
-      result = { creator: named.creator as Creator, copyrightNotice: named.copyrightNotice, license: IMAGE_USE_URL, acquireLicensePage: IMAGE_USE_URL, basis: 'photographer' };
+      result = { creator: named.creator as Creator, copyrightNotice: named.copyrightNotice, license: IMAGE_USE_URL, acquireLicensePage: IMAGE_USE_URL, creditText: `Photo: ${named.creator.name}`, basis: 'photographer' };
     } else if (matches(rights.unrecorded.patterns, id)) {
-      result = { creator: rights.unrecorded.creator as Creator, copyrightNotice: rights.unrecorded.copyrightNotice, license: IMAGE_USE_URL, acquireLicensePage: IMAGE_USE_URL, basis: 'unrecorded' };
+      result = { creator: rights.unrecorded.creator as Creator, copyrightNotice: rights.unrecorded.copyrightNotice, license: IMAGE_USE_URL, acquireLicensePage: IMAGE_USE_URL, creditText: rights.unrecorded.creditText, basis: 'unrecorded' };
     } else if (/^own\b/i.test(note)) {
       result = ours(matches(rights.dorin.patterns, id) ? DORIN : OWNER, matches(rights.dorin.patterns, id) ? 'dorin' : 'own');
     } else {
@@ -170,7 +184,7 @@ export function imageRights(url: string): ImageRights {
     }
   }
   // Guard: a credited image (or one whose maker is someone else) may never be claimed as ours.
-  const claimsOurs = result.creator.name === rights.owner.name || result.creator.name === facts.founder.name || result.copyrightNotice === rights.owner.copyrightNotice;
+  const claimsOurs = result.creator.name === rights.owner.name || result.creator.name === facts.founder.name || result.copyrightNotice === rights.owner.copyrightNotice || result.creditText.includes(rights.owner.name);
   if (claimsOurs && (holder || result.basis === 'photographer' || result.basis === 'unrecorded')) {
     throw new Error(`image-rights: ${id} is credited to "${holder ?? result.creator.name}" but would be given the Mr Wallcover creator`);
   }
@@ -178,9 +192,10 @@ export function imageRights(url: string): ImageRights {
 }
 
 /**
- * The one ImageObject helper. Every photograph the schema describes gets the four
- * image-metadata fields (creator, copyrightNotice, license, acquireLicensePage) from
- * imageRights() above, plus creditText when the record carries a credit. A plain
+ * The one ImageObject helper. Every photograph the schema describes gets all five
+ * Google image-licence fields (creator, creditText, copyrightNotice, license,
+ * acquireLicensePage) from imageRights() above, plus contentUrl (Google's preferred
+ * image URL; url is kept as before). A plain
  * caption such as "Before" passed as `credit` is not a credit and adds nothing. A
  * credit printed on the page must match the record, so the two cannot drift apart.
  */
@@ -193,14 +208,18 @@ export function imageObject(url: string, credit?: string | null) {
   const node = {
     '@type': 'ImageObject',
     url,
-    ...(r.creditText ? { creditText: r.creditText } : {}),
+    contentUrl: url,
+    creditText: r.creditText,
     creator: r.creator,
     copyrightNotice: r.copyrightNotice,
     license: r.license,
     acquireLicensePage: r.acquireLicensePage,
   };
-  for (const key of ['creator', 'copyrightNotice', 'license', 'acquireLicensePage'] as const) {
+  for (const key of ['creator', 'creditText', 'copyrightNotice', 'license', 'acquireLicensePage'] as const) {
     if (!node[key]) throw new Error(`ImageObject for ${url} is missing ${key}`);
+  }
+  if ((node.creator['@type'] !== 'Person' && node.creator['@type'] !== 'Organization') || !node.creator.name?.trim()) {
+    throw new Error(`ImageObject for ${url} needs a creator with @type Person or Organization and a name`);
   }
   return node;
 }
@@ -244,9 +263,11 @@ export function businessNode() {
     email: PUBLIC_EMAIL,
     founder: { '@id': FOUNDER_ID },
     award: AWARD_SCHEMA,
+    // Locality, region and country only (src/data/facts.json). Never a street, postcode or the private address.
     address: {
       '@type': 'PostalAddress',
       addressLocality: facts.place,
+      addressRegion: facts.region,
       addressCountry: 'GB',
     },
     areaServed: AREAS_SERVED,
@@ -399,6 +420,14 @@ export function projectNode(opts: { url: string; name: string; description: stri
 }
 
 /**
+ * An Article's publisher: the business node by @id, with its type, name, url and logo
+ * repeated inline so a reader that does not follow @id still sees a complete publisher.
+ */
+function publisherRef() {
+  return { '@type': 'Organization', '@id': BUSINESS_ID, name: BRAND_NAME, url: SITE_URL, logo: `${SITE_URL}/apple-touch-icon.png` };
+}
+
+/**
  * Advice-guide Article. The founder's Person node is the author; the business
  * is the publisher. Dates come from the guide's frontmatter, never the build.
  */
@@ -418,7 +447,8 @@ export function guideArticleNode(opts: { url: string; headline: string; descript
     datePublished: opts.published,
     dateModified: opts.updated,
     author: { '@type': 'Person', '@id': FOUNDER_ID, name: facts.founder.name, url: FOUNDER_URL },
-    publisher: { '@id': BUSINESS_ID },
+    publisher: publisherRef(),
+    image: [imageObject(`${SITE_URL}/og.jpg`)],
   };
 }
 
@@ -468,7 +498,7 @@ export function caseStudyArticleNode(opts: {
     datePublished: opts.published,
     dateModified: opts.updated,
     author: { '@type': 'Person', '@id': FOUNDER_ID, name: facts.founder.name, url: FOUNDER_URL },
-    publisher: { '@id': BUSINESS_ID },
+    publisher: publisherRef(),
     ...(opts.images.length ? { image: opts.images.map((img) => imageObject(img.url, img.credit)) } : {}),
     about: {
       '@type': 'CreativeWork',

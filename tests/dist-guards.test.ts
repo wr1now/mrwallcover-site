@@ -385,7 +385,9 @@ test('each published guide carries an Article with the founder as author, the bu
     assert.equal(article.dateModified, updated, `${slug} dateModified`);
     assert.equal(article.author['@id'], 'https://www.mrwallcover.com/about/#dorin', `${slug} author`);
     assert.equal(article.author.name, 'Dorin Burcus');
-    assert.deepEqual(article.publisher, { '@id': 'https://www.mrwallcover.com/#business' }, `${slug} publisher`);
+    // The publisher is the business node by @id, with its type, name, url and logo repeated inline for readers that do not follow @id.
+    assert.deepEqual(article.publisher, { '@type': 'Organization', '@id': 'https://www.mrwallcover.com/#business', name: 'Mr Wallcover', url: 'https://www.mrwallcover.com', logo: 'https://www.mrwallcover.com/apple-touch-icon.png' }, `${slug} publisher`);
+    assert.ok(Array.isArray(article.image) && article.image.length > 0 && article.image.every((img: any) => img['@type'] === 'ImageObject' && img.creditText), `${slug} Article image`);
     assert.equal(article.mainEntityOfPage['@id'], `https://www.mrwallcover.com/advice/${slug}/#webpage`);
     assert.ok(graph['@graph'].some((node) => node['@type'] === 'BreadcrumbList'), `${slug} breadcrumbs`);
     // FAQPage only where the page shows the questions.
