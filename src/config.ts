@@ -11,6 +11,7 @@
  * Do not add one here.
  */
 import facts from './data/facts.json';
+import { resolveBookingUrl } from './lib/booking';
 
 export const SITE_URL = 'https://www.mrwallcover.com';
 export const BRAND_NAME: string = facts.brand;
@@ -42,6 +43,18 @@ function resolveProvider(): FormProvider {
  */
 export const FORM_PROVIDER: FormProvider = resolveProvider();
 export const FORM_ENDPOINT: string = import.meta.env.PUBLIC_FORM_ENDPOINT || endpointFromFile;
+
+/**
+ * "Book a 20-minute call" target: the Google Calendar booking page, supplied by
+ * the Website agent. Set it to '' to hide the button; empty means no booking button is rendered anywhere (no dead
+ * link). Put the real https:// URL in bookingFromFile. The BOOKING_URL environment
+ * variable overrides it for one build (tests and screenshots use a dummy value
+ * that is never committed). See src/lib/booking.ts.
+ */
+// Google Calendar appointment schedule 'Mr Wallcover: 20-minute project call', Mon–Fri 09:00–17:00 UK (supplied 11 Oct 2026).
+const bookingFromFile = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk';
+export const BOOKING_URL: string = resolveBookingUrl(bookingFromFile);
+
 
 /**
  * Cookie-free analytics placeholder.
