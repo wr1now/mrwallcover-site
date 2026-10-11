@@ -38,3 +38,4 @@ test('the lead image is exempt from the fade-in, so it paints as soon as it deco
   const css = readdirSync('dist/_astro').filter((f) => f.endsWith('.css')).map((f) => readFileSync(`dist/_astro/${f}`, 'utf8')).join('\n');
   assert.match(css, /\.js \.media-frame img\[fetchpriority=(?:'|")?high(?:'|")?\]\{opacity:1;transition:none\}/);
 });
+await import('./quote-checklist.test.ts');
