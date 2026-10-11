@@ -58,6 +58,7 @@ export const GET: APIRoute = () => {
     entry(SINCE_TEXT, `${facts.founder.path}#${facts.founder.fragment}`, FOUNDER_SUMMARY),
     ...(AWARD ? [entry(AWARD.text, '/about/', 'as named on the trophy; the About page shows it')] : []),
     entry('Wastage allowance', '/services/#surveying', WASTAGE.statement),
+    ...facts.programmeFigures.map((figure) => `- [${figure.fact}](${figure.url}): source, our Instagram post ${figure.source}`),
     ...serviceFacts.workflow.map((pillar) => entry(`Service: ${pillar.name}`, `/services/#${pillar.id}`, pillar.includes.join(' '))),
     ...enquiryRoutes.map((route) => entry(`Enquire: ${route.route}`, '/contact/', route.note)),
     '',

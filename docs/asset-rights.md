@@ -70,3 +70,9 @@ Not found or not used:
 - Left out on purpose: #51–55 (square edits of the same tea-house scenes), #56–57 (garden entrance and street terrace, which would locate the venue; #57 shows a passer-by), #58 (the venue's name sign), #65 (near-duplicate of #64).
 - Still held, never to be published without Dorin's OK: #1, #5–11, #15–18, #21–23, #41–44 and #50 (`tests/held-images.test.ts`).
 - Rights to confirm: the SCP set is by a professional photographer credited only as JRH, and the tea-house set's photographer is not recorded. Both sets came to Dorin from the jobs; credit lines can be added once the photographers are named.
+
+## Instagram photo pack (11 Oct 2026)
+
+- **What:** 196 photographs from our own Instagram, @mrwallcover, exported web-ready (EXIF/GPS stripped) into wr1now/mrwallcover-ops `ig-pack/` (db42922). Per-set manifests with the source post and date: `scripts/originals/ig-*.json`; encoded by `scripts/import-ig-pack.mjs`.
+- **Rights:** our own photographs (manifestNote `own photograph, Instagram @mrwallcover post <code>, <date>, <page>`), so the schema names Mr Wallcover as creator with © Mr Wallcover and /image-use/ (src/lib/schema.ts imageRights).
+- **Left out:** anything flagged in the manifest. That covers the @fmcdphotography set (a professional photographer's work, credited in the caption; it would be credited to fmcdphotography as creator and copyright holder, not us, if it is ever used), the probable SCP/Calico showroom shots (rights unclear), five Trematon posts that look professionally shot or reposted, the award trophy photograph, every OWO post, and the tea-house images showing the Alan Turing artwork (they would locate the tea house). marylebone-01 was dropped because tests/held-images.test.ts matched it to a held photograph.
