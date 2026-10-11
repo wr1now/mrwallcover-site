@@ -4,7 +4,7 @@
   "slug": "huntsman-savile-row",
   "replaces": null,
   "client": "Huntsman",
-  "location": "Savile Row, Mayfair, London W1",
+  "location": "11 Savile Row, Mayfair, London W1",
   "years": "2018–2019",
   "role": "Bespoke printed wallpaper installation and display boards",
   "wallcoverings": [
@@ -76,14 +76,18 @@ Huntsman is one of the great bespoke tailors of Savile Row. The wallpaper here i
 ## At a glance
 
 - **Client:** Huntsman, Savile Row
-- **Where:** Savile Row, Mayfair, London
+- **Where:** 11 Savile Row, Mayfair, London
 - **When:** April 2018 to March 2019
 - **Scope:** installation of a bespoke printed wallpaper, and display boards covered in the same print
 - **Wallcovering:** a bespoke print of the Huntsman tweed
 
+## The house
+
+Huntsman was founded by Henry Huntsman in 1849 and has been at 11 Savile Row since 1919. The stags' heads in the front shop were left there by a customer in 1921, and the whole bespoke process still takes place on the premises, with the cutting room and workshops at its heart ([Huntsman: 11 Savile Row](https://www.h-huntsman.com/heritage/11-savile-row/)).
+
 ## A tweed on the wall
 
-A tweed is a check, and a check on a wall shows every fault. The lines of the pattern have to run plumb from ceiling to skirting and level around the room, and they have to meet at every joint and corner, or the eye goes straight to the break. The rolls carry batch labels, as one photograph shows, and a single batch keeps the print consistent across a room.
+A tweed is a check, and a check on a wall shows every fault. The lines of the pattern have to run plumb from ceiling to skirting and level around the room, and they have to meet at every joint and corner, or the eye goes straight to the break. The rolls carry batch labels, and a single batch keeps the print consistent across a room.
 
 ## The display boards
 
