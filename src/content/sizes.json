@@ -7389,5 +7389,25 @@
         1440
       ]
     }
+  },
+  "dorin-burcus-portrait": {
+    "width": 1149,
+    "height": 1369,
+    "src": "/media/img/r/dorin-burcus-portrait-1149.webp",
+    "jpg": "/media/img/r/dorin-burcus-portrait-1149.jpg",
+    "thumb": "/media/img/r/dorin-burcus-portrait-800.webp",
+    "thumbJpg": "/media/img/r/dorin-burcus-portrait-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 953,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/dorin-burcus-portrait",
+      "widths": [
+        400,
+        640,
+        800,
+        1149
+      ]
+    }
   }
 }
