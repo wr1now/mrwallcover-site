@@ -11,7 +11,7 @@
     "name": "Services",
     "href": "/services/"
   },
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "service": {
     "name": "Heritage and listed-building wallcovering installation",
     "serviceType": "Wallcovering installation"
@@ -66,7 +66,7 @@
 
 ## Old walls, prepared for the paper
 
-The survey covers the state of the walls as well as the measure, so the preparation is in the scope from the start. In a historic house that can mean old lime plaster, walls out of plumb, tall stair halls and rooms that were never square. Our guide to [wall preparation](/advice/wall-preparation/) sets out how the substrate, lining and primer are decided, and where the maker's instructions and the specifier take precedence.
+The survey covers the state of the walls as well as the measure, so the preparation is in the scope from the start. In a historic house that can mean old lime plaster, walls that lean out of true, tall stair halls and rooms that were never square. Our guide to [wall preparation](/advice/wall-preparation/) sets out how the substrate, lining and primer are decided, and where the maker's instructions and the specifier take precedence.
 
 ## Limewash and lime render
 
