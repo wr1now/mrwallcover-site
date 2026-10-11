@@ -1,6 +1,7 @@
 // Full-page screenshots that wait for every image to load AND decode, so no
 // lazy-load blur placeholder is ever captured mid-load.
 // Usage: NODE_PATH=<dir with playwright> node scripts/qa/screens.cjs <outDir> <name>=<url> ...
+// SCREENS_VIEWPORT=1 also saves <name>-<w>-viewport.png: the first screen, after every image has decoded.
 const { chromium } = require('playwright');
 (async () => {
   const [outDir, ...jobs] = process.argv.slice(2);
@@ -21,6 +22,7 @@ const { chromium } = require('playwright');
       await p.waitForLoadState('networkidle');
       const pending = await p.evaluate(() => [...document.images].filter((i) => !i.complete || !i.naturalWidth).map((i) => i.currentSrc || i.src));
       if (pending.length) { console.error(`${name}@${w}: ${pending.length} images not loaded`, pending.slice(0, 3)); process.exitCode = 1; }
+      if (process.env.SCREENS_VIEWPORT) await p.screenshot({ path: `${outDir}/${name}-${w}-viewport.png` });
       await p.screenshot({ path: `${outDir}/${name}-${w}.png`, fullPage: true });
       await p.close();
       console.log(`${name}@${w} ok`);
