@@ -1,6 +1,7 @@
 import aboutJson from '../content/about.json';
 import areasJson from '../content/areas.json';
 import specialismsJson from '../content/specialisms.json';
+import serviceDepthJson from '../content/service-depth.json';
 import contactJson from '../content/contact.json';
 import aftercareJson from '../content/aftercare.json';
 import altsJson from '../content/alts.json';
@@ -302,7 +303,17 @@ export interface LandingPage {
 
 export const areasIndex = areasJson.index;
 export const areas = areasJson.items as LandingPage[];
-export const specialisms = specialismsJson.items as LandingPage[];
+// Sections for a service page live in specialisms.json or, kept apart, in service-depth.json (by slug); a page carries one or the other.
+const serviceDepth = serviceDepthJson.items as Record<string, { title?: string; sections: NonNullable<LandingPage['sections']> }>;
+export const specialisms = (specialismsJson.items as LandingPage[]).map((page) => {
+  const extra = serviceDepth[page.slug];
+  if (!extra) return page;
+  if (page.sections) throw new Error(`service "${page.slug}" has sections in both specialisms.json and service-depth.json`);
+  return { ...page, ...(extra.title ? { title: extra.title } : {}), sections: extra.sections };
+});
+for (const slug of Object.keys(serviceDepth)) {
+  if (!specialismsJson.items.some((page: { slug: string }) => page.slug === slug)) throw new Error(`service-depth.json names "${slug}", which is not a service`);
+}
 
 export function areaHref(slug: string): string {
   return `/areas/${slug}/`;
