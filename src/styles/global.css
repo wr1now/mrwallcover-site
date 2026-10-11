@@ -1073,3 +1073,7 @@ main:focus {
   object-fit: cover;
 }
 
+
+/* Hotel-group strip (src/components/HotelGroups.astro): plain-text names, no logos. */
+.hotel-group-name { font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.2; }
+.hotel-groups a { text-decoration: underline; text-underline-offset: 0.18em; }
