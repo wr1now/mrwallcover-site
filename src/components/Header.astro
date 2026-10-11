@@ -24,6 +24,8 @@
  */
 import Glass from './Glass.astro';
 import PhoneReveal from './PhoneReveal.astro';
+import WhatsAppLink from './WhatsAppLink.astro';
+import BookCallLink from './BookCallLink.astro';
 import { navigation } from '../lib/content';
 
 interface Props {
@@ -52,6 +54,8 @@ function isCurrent(href: string) {
         ))
       }
       <PhoneReveal class="nav-link reveal-phone" label="Phone" />
+      <BookCallLink class="nav-link header-book" />
+      <WhatsAppLink class="nav-link" icon />
       <a class="btn btn-solid-ink header-action" href="/contact/">Start your project <span aria-hidden="true">↗</span></a>
     </nav>
     <div class="header-mobile">
