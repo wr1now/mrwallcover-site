@@ -112,3 +112,4 @@ test('the commercial service page is built from published showroom, retail and v
     assert.ok(graph.includes(`${path}#service`), `the home OfferCatalog offers ${path}`);
   }
 });
+await import('./case-study-glance.test.ts');

@@ -19,6 +19,7 @@
  * Codex's /ai/*.json resources are built separately (src/lib/ai-crawler.ts) and
  * are not touched from here; tests/ai-layer-consistency.test.ts compares the two.
  */
+import { glanceRows } from './glance';
 import { SITE_URL } from '../config';
 import facts from '../data/facts.json';
 import contactJson from '../content/contact.json';
@@ -120,6 +121,8 @@ export const projectFacts = projects.map((project) => {
     techniques: steps.map((s) => s.step),
     method: steps,
     atAGlance: glance,
+    /** The standard seven-field box shown on the case study (src/lib/glance.ts); null where the page records nothing. */
+    standardGlance: study ? glanceRows({ slug: project.slug, client: study.client, role: study.role, years: study.years, wallcoverings: study.wallcoverings ?? [] }) : null,
     summary: project.summary,
     published: project.published ?? null,
     updated: project.updated ?? null,
@@ -188,6 +191,7 @@ export const projectsIndex = {
     source: 'Every value is read from the published case study at url (also available as Markdown at markdownUrl): its frontmatter, its At a glance list and its method paragraphs. Nothing is added that the page does not say.',
     makersAndProducts: 'A maker or product named here was installed on that project. It is not a maker approval, accreditation or endorsement.',
     nulls: 'null or an empty list means the case study does not record it.',
+    standardGlance: 'The seven-field At a glance box shown on each case study, in a fixed order (Client, Designer, Main contractor, Maker and paper, Area or rooms, Scope, Year). An area or room figure appears only where Dorin approved it (facts.json programmeFigures). A null value means the page does not record it.',
     privacy: 'Private homes appear by street or area only, as on their pages. Private clients are not named.',
   },
   count: projectFacts.length,
