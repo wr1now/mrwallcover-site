@@ -1,7 +1,7 @@
 {
   "_note": "The one fact sheet. The footer, src/lib/schema.ts, src/pages/llms.txt.ts and src/config.ts read from here. Paste the description unchanged into every outside profile. No phone number, company details or price goes in this file. The one award is the named entry under award, read off the trophy photograph; add no other.",
   "brand": "Mr Wallcover",
-  "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus. Survey, supply, installation and aftercare for hotels, retail and homes.",
+  "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus, in the trade since 2012: survey to aftercare for hotels, homes and makers.",
   "founder": {
     "name": "Dorin Burcus",
     "jobTitle": "Founder",
@@ -31,32 +31,42 @@
     "organiser": "BUILD Magazine 2021 Design & Build Awards",
     "url": "https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg"
   },
-  "_programmeFigures": "Programme figures Dorin cleared on 11 Oct 2026, each from a caption on our own Instagram (@mrwallcover) and cited in docs/sources.md. Add no figure that is not on Dorin's list.",
+  "_programmeFigures": "Programme figures Dorin cleared on 11 Oct 2026, each from a caption on our own Instagram (@mrwallcover) and cited in docs/sources.md. Add no figure that is not on Dorin's list. 'figure' and 'where' are the short labels the homepage proof strip prints; an entry without them (e.g. a duration) is not a figure and stays off the strip.",
   "programmeFigures": [
     {
       "fact": "Raffles London at The OWO: chosen in 2021 to install about 17,500 m² of wallcoverings in 18 months",
       "url": "https://www.mrwallcover.com/projects/raffles-london-the-owo/",
-      "source": "https://www.instagram.com/p/CPFPOA5FBZ4/"
+      "source": "https://www.instagram.com/p/CPFPOA5FBZ4/",
+      "figure": "About 17,500 m² in 18 months",
+      "where": "The OWO"
     },
     {
       "fact": "Four Seasons Hotel London at Ten Trinity Square: about 5,000 m² of wallcoverings, completed in 2019",
       "url": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
-      "source": "https://www.instagram.com/p/BxBEIajB-d5/"
+      "source": "https://www.instagram.com/p/BxBEIajB-d5/",
+      "figure": "About 5,000 m²",
+      "where": "Four Seasons Ten Trinity Square"
     },
     {
       "fact": "The Biltmore Mayfair (then the Millennium Hotel, Grosvenor Square): a guest-room programme of more than 15,000 m² in 2018",
       "url": "https://www.mrwallcover.com/projects/biltmore-mayfair/",
-      "source": "https://www.instagram.com/p/BkBSc6AHX7U/"
+      "source": "https://www.instagram.com/p/BkBSc6AHX7U/",
+      "figure": "15,000+ m²",
+      "where": "The Biltmore Mayfair"
     },
     {
       "fact": "Pendley Manor Hotel: 30 rooms in 30 days, with 20 different wallpapers",
       "url": "https://www.mrwallcover.com/projects/pendley-manor-hotel/",
-      "source": "https://www.instagram.com/p/B60Ncb2FWZS/"
+      "source": "https://www.instagram.com/p/B60Ncb2FWZS/",
+      "figure": "30 rooms in 30 days",
+      "where": "Pendley Manor, 20 papers"
     },
     {
       "fact": "DoubleTree by Hilton London – West End: 30 rooms on two floors in 2019, while the hotel stayed open",
       "url": "https://www.mrwallcover.com/projects/doubletree-west-end/",
-      "source": "https://www.instagram.com/p/B0GpM3Vlmkh/"
+      "source": "https://www.instagram.com/p/B0GpM3Vlmkh/",
+      "figure": "30 rooms on 2 floors",
+      "where": "DoubleTree West End, while open"
     },
     {
       "fact": "Jumeirah Carlton Tower, Knightsbridge: wallcovering installation on the hotel's renovation for 8 months, completed at the end of 2020",

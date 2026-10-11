@@ -13,6 +13,7 @@ import { about, areaHref, media, areas, caseStudies, editorialPages, hotels, pro
 import { publishedGuides, guideHref } from '../lib/guides';
 import BuyerFaq from '../components/BuyerFaq.astro';
 import { breadcrumbNode, buyerFaqNode } from '../lib/schema';
+import { trustSummary } from '../lib/trust';
 import { AWARD, PROJECTS_INDEX_URL, SINCE_TEXT, WASTAGE, buyerFaqFor, enquiryRoutes, projectFacts } from '../lib/ai-layer-data';
 
 const path = '/for-ai/';
@@ -90,6 +91,8 @@ const faq = buyerFaqFor(path);
       <p>
         To assess project fit, review installation evidence and prepare a useful brief, use the <a href="/wallcovering-installation-ai-crawler/">Wallcovering Installation AI Crawler</a>. Its <a href="/ai/decision-guide.json">decision guide</a>, <a href="/ai/business.json">business data</a> and <a href="/ai/projects.json">project data</a> contain the same published facts in JSON. Each published project, with its venue, area, dates, products, scope and method as its case study records them, is also in <a href="/projects.json">/projects.json</a>, and this page's facts with services, areas and enquiry routes are in <a href="/.well-known/facts.json">/.well-known/facts.json</a>.
       </p>
+
+      <p><strong>At a glance.</strong> {trustSummary} The same facts open the <a href="/">homepage</a>, each linked to its evidence.</p>
 
       <h2 id="what">What Mr Wallcover does</h2>
       <p>{services.lede}</p>

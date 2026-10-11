@@ -6,6 +6,10 @@ import MaterialStudio from '../components/MaterialStudio.astro';
 import Base from '../layouts/Base.astro';
 import { home, faqItems, projects, projectHref, videoById } from '../lib/content';
 import { AWARD_TEXT, AWARD_URL, faqNode } from '../lib/schema';
+import { caseStudyCount, programmeFigures, teamFacts, trustMakers } from '../lib/trust';
+import { publishedGuides, guideHref } from '../lib/guides';
+import sizes from '../content/sizes.json';
+import approvedQuotes from '../data/approved-quotes.json';
 import '../styles/atelier.css';
 // The hero's one extra rule (home-hero.css) is inlined in <head>. Every other homepage rule, the restored sections
 // and the showcase included, is in atelier.css, so the page is styled by one sheet before first paint.
@@ -33,6 +37,19 @@ const showcase = [
   { slug: 'trematon-castle', name: 'The Castle of Trematon', place: 'Cornwall', image: 'trematon-01', credit: '' },
   { slug: 'house-of-hackney-st-michaels', name: 'House of Hackney', place: 'St Michael’s Clergy House', image: 'house-of-hackney-st-michaels-06', credit: '' },
 ].filter((item) => projects.some((p) => p.slug === item.slug));
+// "How we work" in photographs: our own process photographs already in the media library, each linked to the guide that explains that step.
+const processPhotos = [
+  { step: 'Survey', image: 'masterpiece-01', text: 'Laser levels, tape and blades: the room measured and set out before a roll is opened.', href: '/advice/installation-cost/#how-is-the-area-measured', guide: 'How the area is measured' },
+  { step: 'Preparation', image: 'ahluwalia-estuary-03', text: 'The surface sanded smooth, because raking light shows every flaw under a fine paper.', href: '/advice/wall-preparation/#is-it-smooth-enough-for-this-material', guide: 'Is the wall smooth enough?' },
+  { step: 'Lining', image: 'trematon-24', text: 'An atrium at Trematon Castle stripped back and lined before any paper went up.', href: '/advice/wall-preparation/#what-is-lining-paper-for-and-does-this-wall-need-it', guide: 'What lining paper is for' },
+  { step: 'Hanging', image: 'lee-broom-07', text: 'A full drop of a panelled design hung to the plumb line, before trimming at the skirting.', href: '/advice/hand-painted-murals-set-out/#how-does-the-panel-sequence-work', guide: 'How the panel sequence works' },
+  { step: 'Seams', image: 'beverly-05', text: 'A seam in a deep oxblood paper, checked by hand so the joint disappears.', href: '/advice/grasscloth-seams-and-variation/#what-is-normal-and-what-is-a-fault', guide: 'What is normal at a seam' },
+];
+// Dorin's cleared portrait arrives with the About portrait PR (claude/about-portrait). The team block shows it as soon as
+// that media entry exists, and stays text-only until then, so no image is duplicated or invented here.
+const PORTRAIT_ID = 'dorin-burcus-portrait';
+const hasPortrait = PORTRAIT_ID in (sizes as Record<string, unknown>);
+const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 const hotelNames = [
   {name: "Brown’s Hotel", place: 'MAYFAIR', href: '/projects/browns-hotel-mayfair/'},
   {name: 'Raffles London', place: 'THE OWO', href: '/projects/raffles-london-the-owo/'},
@@ -60,6 +77,17 @@ const hotelNames = [
         <span>LONDON & SELECTED UK PROJECTS</span>
         <a href="/projects/browns-hotel-mayfair/"><span>ON LOCATION</span> Brown’s Hotel, Mayfair <b aria-hidden="true">↗</b></a>
       </div>
+    </section>
+
+    <section class="home-trust" aria-labelledby="trust-heading">
+      <h2 id="trust-heading" class="home-trust-title">London wallcovering installers, since 2012.</h2>
+      <ul class="home-trust-strip" role="list">
+        <li><a href="/about/#dorin"><span class="home-trust-label">In the trade</span><span class="home-trust-value">Since 2012</span></a></li>
+        <li><a href="/projects/"><span class="home-trust-label">On the record</span><span class="home-trust-value">{caseStudyCount} case studies</span></a></li>
+        <li class="home-trust-wide"><a href={AWARD_URL} rel="noopener"><span class="home-trust-label">Recognised</span><span class="home-trust-value home-trust-small">{AWARD_TEXT}</span></a></li>
+        {programmeFigures.map((item, i) => <li class={i === programmeFigures.length - 1 ? 'home-trust-wide' : undefined}><a href={item.href}><span class="home-trust-label">{item.where}</span><span class="home-trust-value">{item.figure}</span></a></li>)}
+      </ul>
+      <p class="home-trust-makers"><span class="home-trust-label">Makers we install</span> {trustMakers.map((maker, i) => <><a href={maker.href}>{maker.name}</a>{i < trustMakers.length - 1 ? ' · ' : ''}</>)} <a class="home-trust-more" href="/materials/#makers-installed">and more</a></p>
     </section>
 
     <section class="home-showcase" aria-labelledby="showcase-heading">
@@ -92,6 +120,21 @@ const hotelNames = [
         <dl class="home-facts">{home.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
         <p class="home-pillars">{home.pillars.join(' · ')}</p>
       </div>
+    </section>
+
+    <section class="atelier-section home-team" aria-labelledby="founder-heading">
+      <p class="atelier-kicker">The people on site</p>
+      <h2 id="founder-heading">Dorin Burcus</h2>
+      <div class:list={['home-team-grid', hasPortrait && 'home-team-with-portrait']}>
+        {hasPortrait && <figure class="home-team-portrait"><Picture id={PORTRAIT_ID} sizes="(min-width: 768px) 22rem, 70vw" /></figure>}
+        <p class="home-team-lead">{facts.founder.name} founded Mr Wallcover. {teamFacts.founder}</p>
+        <ul class="home-team-facts" role="list">
+          <li>{teamFacts.supervision}</li>
+          <li>{teamFacts.team}</li>
+          <li>{teamFacts.hours}</li>
+        </ul>
+      </div>
+      <a class="atelier-text-link" href="/about/#dorin">More about Dorin and how we work <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="atelier-section home-proof" aria-labelledby="proof-heading">
@@ -158,6 +201,17 @@ const hotelNames = [
       <p class="atelier-kicker">{home.process.eyebrow}</p>
       <h2 id="process-heading">{home.process.title}</h2>
       <ol>{home.process.steps.map((step) => <li><span class="atelier-service-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol>
+      <h3 class="home-steps-title">On site, step by step</h3>
+      <ol class="home-steps" role="list">
+        {processPhotos.map((item) => (
+          <li>
+            <figure><Picture id={item.image} sizes="(min-width: 1024px) 18vw, (min-width: 640px) 40vw, 78vw" /></figure>
+            <p class="home-steps-label">{item.step}</p>
+            <p class="home-steps-text">{item.text}</p>
+            <a href={item.href}>{item.guide} <span aria-hidden="true">↗</span></a>
+          </li>
+        ))}
+      </ol>
     </section>
 
     <section class="atelier-materials" aria-labelledby="materials-heading">
@@ -170,6 +224,15 @@ const hotelNames = [
       <h2 id="calico-heading">{home.partners.title}</h2>
       <p class="home-calico-text">{home.partners.text}</p>
       <ul>{calicoProjects.map((project) => <li data-project-slug={project.slug}><a href={projectHref(project.slug)}>{calicoLabel(project)} <span aria-hidden="true">↗</span></a></li>)}</ul>
+      {/* Testimonials: only the approved lines in src/data/approved-quotes.json (Dorin, 11 Oct 2026), exact wording, Calico Wallpaper attribution only. */}
+      <div class="home-praise" role="group" aria-label="In Calico Wallpaper's own words">
+        {approvedQuotes.quotes.map((item) => (
+          <figure class="home-praise-quote">
+            <blockquote><p>“{item.quote}”</p></blockquote>
+            <figcaption>{item.href ? <a href={item.href}>{item.attribution}</a> : item.attribution}</figcaption>
+          </figure>
+        ))}
+      </div>
     </section>
 
     <section class="home-aftercare" aria-labelledby="aftercare-heading">
@@ -182,7 +245,8 @@ const hotelNames = [
     </section>
 
     <section class="atelier-section atelier-questions" aria-labelledby="questions-heading">
-      <div><p class="atelier-kicker">BEFORE WE BEGIN</p><h2 id="questions-heading">A few good<br /><em>questions.</em></h2><a class="atelier-text-link" href="/advice/">The Wallcovering Guide <span aria-hidden="true">↗</span></a></div>
+      <div><p class="atelier-kicker">BEFORE WE BEGIN</p><h2 id="questions-heading">A few good<br /><em>questions.</em></h2><p class="home-faq-links"><a class="atelier-text-link" href="/advice/">The Wallcovering Guide <span aria-hidden="true">↗</span></a><a class="atelier-text-link" href="/faq/">All questions answered <span aria-hidden="true">↗</span></a></p>
+        <nav class="home-guides" aria-label="Wallcovering guides"><p class="home-guides-label">The guides</p><ul role="list">{guideList.map((guide) => <li><a href={guideHref(guide.frontmatter.slug)}>{guide.frontmatter.title}</a></li>)}</ul></nav></div>
       <div class="faq">{faqItems.map(item => <details id={item.id}><summary><h3>{item.question}</h3><span class="plus" aria-hidden="true"></span></summary><div class="prose pb-5">{item.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div></details>)}</div>
     </section>
 
