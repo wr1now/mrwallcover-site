@@ -309,3 +309,6 @@
 .home-guides a { display:inline-flex; align-items:center; min-height:40px; font-size:16px; color:#292a23; text-decoration:underline; text-decoration-color:#a99b82; text-underline-offset:3px; }
 
 .home-faq-links { display:flex; flex-wrap:wrap; gap:4px 28px; }
+.home-team-with-portrait { grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1.2fr); }
+.home-team-portrait { margin:0; }
+@media (max-width:767px) { .home-team-with-portrait { grid-template-columns:1fr; } .home-team-portrait { max-width:22rem; } }

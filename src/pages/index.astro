@@ -8,6 +8,7 @@ import { home, faqItems, projects, projectHref, videoById } from '../lib/content
 import { AWARD_TEXT, AWARD_URL, faqNode } from '../lib/schema';
 import { caseStudyCount, programmeFigures, teamFacts, trustMakers } from '../lib/trust';
 import { publishedGuides, guideHref } from '../lib/guides';
+import sizes from '../content/sizes.json';
 import '../styles/atelier.css';
 // The hero's one extra rule (home-hero.css) is inlined in <head>. Every other homepage rule, the restored sections
 // and the showcase included, is in atelier.css, so the page is styled by one sheet before first paint.
@@ -43,6 +44,10 @@ const processPhotos = [
   { step: 'Hanging', image: 'lee-broom-07', text: 'A full drop of a panelled design hung to the plumb line, before trimming at the skirting.', href: '/advice/hand-painted-murals-set-out/#how-does-the-panel-sequence-work', guide: 'How the panel sequence works' },
   { step: 'Seams', image: 'beverly-05', text: 'A seam in a deep oxblood paper, checked by hand so the joint disappears.', href: '/advice/grasscloth-seams-and-variation/#what-is-normal-and-what-is-a-fault', guide: 'What is normal at a seam' },
 ];
+// Dorin's cleared portrait arrives with the About portrait PR (claude/about-portrait). The team block shows it as soon as
+// that media entry exists, and stays text-only until then, so no image is duplicated or invented here.
+const PORTRAIT_ID = 'dorin-burcus-portrait';
+const hasPortrait = PORTRAIT_ID in (sizes as Record<string, unknown>);
 const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 const hotelNames = [
   {name: "Brown’s Hotel", place: 'MAYFAIR', href: '/projects/browns-hotel-mayfair/'},
@@ -119,7 +124,8 @@ const hotelNames = [
     <section class="atelier-section home-team" aria-labelledby="team-heading">
       <p class="atelier-kicker">The people on site</p>
       <h2 id="team-heading">Dorin Burcus and the team.</h2>
-      <div class="home-team-grid">
+      <div class:list={['home-team-grid', hasPortrait && 'home-team-with-portrait']}>
+        {hasPortrait && <figure class="home-team-portrait"><Picture id={PORTRAIT_ID} sizes="(min-width: 768px) 22rem, 70vw" /></figure>}
         <p class="home-team-lead">{facts.founder.name} founded Mr Wallcover. {teamFacts.founder}</p>
         <ul class="home-team-facts" role="list">
           <li>{teamFacts.supervision}</li>
