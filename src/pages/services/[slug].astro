@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import { ogImageFor, specialismHref, specialisms } from '../../lib/content';
 import type { LandingPage } from '../../lib/content';
 import { breadcrumbNode, faqNode, singleServiceNode } from '../../lib/schema';
+import { buyerFaqFor } from '../../lib/ai-layer-data';
 import { SITE_URL } from '../../config';
 
 export function getStaticPaths() {
@@ -22,6 +23,8 @@ const crumbs = [
   { name: page.name, href: path },
 ];
 const url = new URL(path, SITE_URL).href;
+// The page's own questions first, then any buyer questions placed on it (src/data/buyer-answers.json `pages`): one visible list, one FAQPage.
+const withBuyer = { ...page, faq: [...page.faq, ...buyerFaqFor(path).map((item) => ({ id: item.id, question: item.question, paragraphs: [item.answer] }))] };
 ---
 
 <Base
@@ -32,9 +35,9 @@ const url = new URL(path, SITE_URL).href;
   imageAlt={page.heading}
   extraSchema={[
     singleServiceNode({ name: page.name, description: page.description, url, serviceType: page.serviceType ?? page.name }),
-    faqNode(page.faq),
+    faqNode(withBuyer.faq),
     breadcrumbNode(crumbs),
   ]}
 >
-  <LandingBody page={page} crumbs={crumbs} eyebrow="Services" kind="specialism" />
+  <LandingBody page={withBuyer} crumbs={crumbs} eyebrow="Services" kind="specialism" />
 </Base>

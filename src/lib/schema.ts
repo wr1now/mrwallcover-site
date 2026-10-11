@@ -17,6 +17,7 @@ export const AWARD_URL = facts.award.url;
 const PUBLIC_EMAIL = facts.email;
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;
+export const LOGO_URL = `${SITE_URL}/logo-512.png`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 /** The founder's Person node. Lives on the About page; referenced from the business and every case-study Article. */
 export const FOUNDER_ID = `${SITE_URL}${facts.founder.path}#${facts.founder.fragment}`;
@@ -265,7 +266,8 @@ export function businessNode() {
     name: BRAND_NAME,
     url: SITE_URL,
     image: `${SITE_URL}/og.jpg`,
-    logo: `${SITE_URL}/apple-touch-icon.png`,
+    // 512 x 512 render of the site's logo mark (src/pages/logo-512.png.ts); Google asks for 112 px or more.
+    logo: LOGO_URL,
     description: facts.description,
     email: PUBLIC_EMAIL,
     founder: { '@id': FOUNDER_ID },
@@ -432,7 +434,7 @@ export function projectNode(opts: { url: string; name: string; description: stri
  * repeated inline so a reader that does not follow @id still sees a complete publisher.
  */
 function publisherRef() {
-  return { '@type': 'Organization', '@id': BUSINESS_ID, name: BRAND_NAME, url: SITE_URL, logo: `${SITE_URL}/apple-touch-icon.png` };
+  return { '@type': 'Organization', '@id': BUSINESS_ID, name: BRAND_NAME, url: SITE_URL, logo: LOGO_URL };
 }
 
 /**
