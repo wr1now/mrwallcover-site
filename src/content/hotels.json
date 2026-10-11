@@ -116,6 +116,15 @@
       "years": "",
       "scope": "",
       "href": ""
+    },
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "Jumeirah Carlton Tower",
+      "place": "Knightsbridge",
+      "years": "2020",
+      "scope": "Wallcovering installation",
+      "href": "/projects/jumeirah-carlton-tower/"
     }
   ]
 }
