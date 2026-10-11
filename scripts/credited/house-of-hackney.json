@@ -1,0 +1,48 @@
+{
+  "credit": "Photography: House of Hackney",
+  "note": "client photograph from houseofhackney.com, finished showroom interiors",
+  "images": {
+    "hoh-official-01": {
+      "file": "SMC_TRANFORMATION_04.jpg",
+      "image": "https://www.houseofhackney.com/cdn/shop/files/SMC_TRANFORMATION_04.jpg",
+      "page": "https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels",
+      "alt": "Finished room at the House of Hackney showroom, St Michael's Clergy House, with dark floral wallpaper, matching curtains and low floral sofas."
+    },
+    "hoh-official-02": {
+      "file": "apothecary.jpg",
+      "image": "https://www.houseofhackney.com/cdn/shop/files/apothecary.jpg",
+      "page": "https://www.houseofhackney.com/pages/london-showroom",
+      "alt": "Green-and-gold floral wallpaper above timber panelling in a finished room at the House of Hackney showroom, with glass tables and low stools."
+    },
+    "hoh-official-03": {
+      "file": "WEB_SMC_DEC_26_02.jpg",
+      "image": "https://www.houseofhackney.com/cdn/shop/files/WEB_SMC_DEC_26_02.jpg",
+      "page": "https://www.houseofhackney.com/pages/london-showroom",
+      "alt": "Large-scale floral wallpaper behind two pedestal basins at the House of Hackney showroom."
+    },
+    "hoh-official-04": {
+      "file": "apothecary2.jpg",
+      "image": "https://www.houseofhackney.com/cdn/shop/files/apothecary2.jpg",
+      "page": "https://www.houseofhackney.com/pages/london-showroom",
+      "alt": "Floral wallpaper around a fireplace and a timber bookcase in a finished room at the House of Hackney showroom."
+    },
+    "hoh-official-05": {
+      "file": "WEB_SMC_DEC_26_01.jpg",
+      "image": "https://www.houseofhackney.com/cdn/shop/files/WEB_SMC_DEC_26_01.jpg",
+      "page": "https://www.houseofhackney.com/pages/london-showroom",
+      "alt": "Panelled wall with floral and striped wallpaper behind a striped sofa at the House of Hackney showroom."
+    },
+    "hoh-official-06": {
+      "file": "OUR_SERVICES_03.jpg",
+      "image": "https://www.houseofhackney.com/cdn/shop/files/OUR_SERVICES_03.jpg",
+      "page": "https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels",
+      "alt": "Finished room at the House of Hackney showroom, with patterned wallpaper below the dado, a fireplace and printed armchairs."
+    },
+    "hoh-official-07": {
+      "file": "SMC_TRANFORMATION_03.jpg",
+      "image": "https://www.houseofhackney.com/cdn/shop/files/SMC_TRANFORMATION_03.jpg",
+      "page": "https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels",
+      "alt": "Stained glass doors and patterned wall at the House of Hackney showroom in St Michael's Clergy House."
+    }
+  }
+}

@@ -1,11 +1,12 @@
 {
   "title": "Mr Wallcover | Wallpaper Installer London",
-  "description": "London wallpaper installer for prime hotels, flagship retail and private homes. Surveying, management, supply, installation and aftercare.",
+  "_description": "The meta description is the fact-sheet sentence in src/data/facts.json.",
   "hero": {
-    "eyebrow": "Wallpaper installer, London",
-    "title": "Wallcoverings, hung properly.",
-    "lede": "Mr Wallcover surveys, manages, supplies and installs wallcoverings for prime hotels, flagship retail and private homes. Aftercare is part of the commission, not an extra.",
-    "image": "browns-hotel-mayfair-02"
+    "eyebrow": "The art of the finish",
+    "titleLead": "Extraordinary rooms.",
+    "titleEm": "Impeccably finished.",
+    "lede": "Specialist wallcovering installation for remarkable hotels, considered homes and ambitious spaces.",
+    "image": "browns-hotel-mayfair-09"
   },
   "proof": {
     "eyebrow": "Brown's Hotel, Mayfair",
@@ -14,27 +15,42 @@
     "images": [
       "browns-hotel-mayfair-09",
       "browns-hotel-mayfair-04",
-      "browns-hotel-mayfair-08",
+      "browns-hotel-mayfair-01",
       "browns-hotel-mayfair-10",
       "browns-hotel-mayfair-03",
       "browns-hotel-mayfair-06"
     ],
     "videos": [
-      "browns-hotel-mayfair-video-01",
       "browns-hotel-mayfair-video-02",
+      "browns-hotel-mayfair-video-01",
       "browns-hotel-mayfair-video-03"
     ]
   },
-  "promise": "Premium wallcoverings services",
-  "pillars": ["Surveying", "Management", "Supply", "Install", "Aftercare"],
+  "promise": "Specialist wallcovering services, from first selection to the final detail.",
+  "pillars": [
+    "Surveying",
+    "Management",
+    "Supply",
+    "Install",
+    "Aftercare"
+  ],
   "intro": {
     "title": "A London practice for rooms that are meant to last.",
     "text": "The work is hotel corridors and bedrooms, flagship shops, and private houses. We cover London and the surrounding areas, and work UK-wide for selected projects."
   },
   "facts": [
-    { "label": "In the trade", "value": "Since 2014" },
-    { "label": "Coverage", "value": "London and the surrounding areas; UK-wide for selected projects" },
-    { "label": "The work", "value": "Hotels, retail and homes" }
+    {
+      "label": "In the trade",
+      "value": "Since 2012"
+    },
+    {
+      "label": "Coverage",
+      "value": "London and the surrounding areas; UK-wide for selected projects"
+    },
+    {
+      "label": "The work",
+      "value": "Hotels, retail and homes"
+    }
   ],
   "servicesIntro": {
     "eyebrow": "The five parts",
@@ -71,9 +87,9 @@
   "featured": {
     "eyebrow": "Selected work",
     "title": "Hotels, a flagship, and the rooms between.",
-    "text": "Private houses are not shown. These are commissions already on the public record.",
+    "text": "Commissions already on the public record. Private clients are not named. Residential work appears only by street or area, with the owner's agreement.",
     "leadSlug": "browns-hotel-mayfair",
-    "leadImage": "browns-hotel-mayfair-07"
+    "leadImage": "browns-hotel-mayfair-09"
   },
   "process": {
     "eyebrow": "How we work",
@@ -106,19 +122,10 @@
       }
     ]
   },
-  "praise": {
-    "eyebrow": "Client praise",
-    "title": "Two lines from Calico Wallpaper.",
-    "items": [
-      {
-        "quote": "Gorgeous! Thank you so much!",
-        "attribution": "Calico Wallpaper, on the Beverly 1975 installation"
-      },
-      {
-        "quote": "Thank you for the update Dorin and for your hard work!",
-        "attribution": "Calico Wallpaper"
-      }
-    ]
+  "partners": {
+    "eyebrow": "Calico Wallpaper",
+    "title": "Work delivered in partnership with Calico Wallpaper.",
+    "text": "Calico Wallpaper murals and papers installed for public events and stores in London, each with its own case study."
   },
   "aftercare": {
     "eyebrow": "Aftercare",
@@ -130,6 +137,7 @@
   "cta": {
     "eyebrow": "A quotation",
     "title": "Tell us the building, the material and the date.",
-    "text": "A hotel floor, a house, a shop, or a paper that needs looking after. Call, send a note, or use WhatsApp."
+    "text": "A hotel floor, a house, a shop, or a paper that needs looking after. Call, send a note, or use WhatsApp.",
+    "textNoPhone": "A hotel floor, a house, a shop, or a paper that needs looking after. Send a note; a short one is enough."
   }
 }

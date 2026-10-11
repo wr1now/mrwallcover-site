@@ -1,0 +1,9 @@
+{
+  "_note": "Project URLs that were once published and are no longer a page. Each gets the same noindex meta-refresh stub as a renamed case study, pointing at /projects/. The Lanesborough was reduced to name only in #7 (it stays in the hotel record on /projects/). The other three retired URLs are not listed: two are drafts, whose routes the guards forbid building (ai-layer.test.ts, dist-guards.test.ts), and one name may not appear in the source or the built site. For those, /404/ sends every unknown /projects/ URL to /projects/.",
+  "items": [
+    {
+      "slug": "the-lanesborough",
+      "redirectTo": "/projects/"
+    }
+  ]
+}

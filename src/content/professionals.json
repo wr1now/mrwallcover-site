@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "designers",
+    "audience": "designer",
+    "name": "Designers & architects",
+    "heading": "Your specification. Considered down to the last return.",
+    "description": "Wallcovering installation and coordination for interior designers and architects: material references, elevations, panel layout and preparation.",
+    "intro": "Bring the material, elevations and design intent together before installation begins. Pattern placement, natural panel variation and the junctions with joinery all deserve a decision before the first length is cut.",
+    "cta": "Submit a designer brief",
+    "download": "wallcovering-specification-schedule.csv",
+    "downloadLabel": "Download a specification schedule",
+    "guide": "designer-specification-checklist",
+    "sections": [
+      {
+        "title": "Protect the design intent",
+        "text": "Send the material codes and colourways, along with elevations where the pattern or scene needs a particular position. Mark the focal point and any finish detail that matters to the room."
+      },
+      {
+        "title": "Resolve the material questions early",
+        "text": "Confirm what has been sampled, what remains provisional and who supplies the material. An agreed sample area can help settle panel layout and appearance before the work is repeated."
+      },
+      {
+        "title": "Connect the drawing to the wall",
+        "text": "Preparation, finished dimensions and the sequence of adjoining work affect the installation. Include what is known about the substrate, joinery and lighting, and identify anything still to be confirmed."
+      }
+    ],
+    "checklist": [
+      "Product codes, colourways and sample status",
+      "Room schedule and current elevations",
+      "Focal points, panel expectations and junction details",
+      "Supply and quantity responsibilities",
+      "Location, programme and outstanding questions"
+    ]
+  },
+  {
+    "slug": "developers",
+    "audience": "developer",
+    "name": "Developers & main contractors",
+    "heading": "Wallcovering packages planned around the site.",
+    "description": "Plan a wallcovering package with scope, drawing revisions, wall readiness, supply responsibilities, programme and handover.",
+    "intro": "A reliable package starts with the scope and the sequence. Bring drawings, material delivery and wall readiness into the same conversation before booking the installation across rooms or floors.",
+    "cta": "Send drawings and schedule",
+    "download": "wallcovering-package-schedule.csv",
+    "downloadLabel": "Download a package schedule",
+    "guide": "developer-wallcovering-package",
+    "sections": [
+      {
+        "title": "Define the package",
+        "text": "Identify the rooms and areas, material references, drawing revisions and supply responsibilities. Include preparation and access in the scope so quotations can be compared on the same basis."
+      },
+      {
+        "title": "Coordinate the programme",
+        "text": "Show target dates and the work that must finish first. Record who checks wall readiness, how changes are approved and how completed walls will be protected from following trades."
+      },
+      {
+        "title": "Agree the handover",
+        "text": "Set out any sample-area approval, snagging and documentation requirements. Product performance needs the exact supporting documents and acceptance by the responsible project professional."
+      }
+    ],
+    "checklist": [
+      "Room/area schedule and drawing revisions",
+      "Material specification and supply responsibility",
+      "Substrate information and preparation scope",
+      "Programme, access rules and tender deadline",
+      "Sample approval, protection and handover requirements"
+    ]
+  },
+  {
+    "slug": "hotels",
+    "audience": "hotel",
+    "name": "Hotels & operators",
+    "heading": "Considered finishes. A programme that respects the building.",
+    "description": "Wallcovering works for hotels and occupied interiors, with phasing, access, cleaning requirements and maintenance considered together.",
+    "intro": "A guest room, a corridor and a reception area have different demands. Plan the finish around how each space is used, how it is maintained and when it can be released for work.",
+    "cta": "Discuss a phased project",
+    "download": "wallcovering-package-schedule.csv",
+    "downloadLabel": "Download a room and phase schedule",
+    "guide": "hotel-wallcovering-specification",
+    "sections": [
+      {
+        "title": "Plan around occupation",
+        "text": "Identify which rooms can be released together, permitted working hours and the routes used for deliveries. Include guest access, protection and daily handover expectations."
+      },
+      {
+        "title": "Choose for the actual use",
+        "text": "Agree appearance and maintenance requirements together. Confirm the exact cleaning instructions and the project performance documents for each proposed product."
+      },
+      {
+        "title": "Keep a usable record",
+        "text": "A room-by-room record of the installed product, batch and care information helps future maintenance. Discuss spare material and the limits of matching a later repair before handover."
+      }
+    ],
+    "checklist": [
+      "Room types, floor/phase schedule and occupancy",
+      "Material codes and care requirements",
+      "Working hours, deliveries and access limits",
+      "Supply arrangements and sample-area approval",
+      "Handover, spare material and maintenance priorities"
+    ]
+  }
+]

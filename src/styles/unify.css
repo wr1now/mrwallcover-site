@@ -1,0 +1,186 @@
+/*
+ * One design system for the homepage and the inner pages (laptop visual audit, 10 Oct 2026).
+ * Unlayered and loaded after global.css and atelier.css, so these shared rules win over the
+ * component layer and the Tailwind utilities. Every size, colour and spacing comes from tokens.css.
+ * Classes and markup are unchanged; only sizes, colours and spacing are set here.
+ */
+
+/* ---- 1. Type scale: H1-H4 are the same on every page ---- */
+main h1:not(#hero-heading), .page-head h1 { font-size:var(--text-h1); line-height:1.02; letter-spacing:-.03em; }
+.page-head h1 { max-width:var(--measure-h1); }
+main h2:not(.sr-only), .atelier h2 { font-size:var(--text-h2); line-height:1.04; letter-spacing:-.03em; }
+.atelier .atelier-contact h2 { font-size:var(--text-h2-feature); }
+main h3, .atelier h3 { font-size:var(--text-h3); line-height:var(--leading-tight); }
+main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
+/* A card's own title is an h3-sized title whatever its tag. */
+.project-card h2, .project-card h3, .card-link h3, .work-item h3 { font-size:var(--text-h3); }
+/* FAQ questions: the serif, on the homepage and on /faq/ alike. */
+.faq summary h3, .faq summary h2, .atelier .faq summary h3, main .faq summary h3, main .faq summary h2:not(.sr-only), .atelier-questions details h3 { margin:0; font-family:var(--font-serif); font-weight:500; font-size:var(--text-h4); line-height:1.25; letter-spacing:-.01em; }
+
+/* ---- 2. Labels, eyebrows, captions ---- */
+.eyebrow, .atelier-kicker { font-size:var(--text-label); letter-spacing:var(--tracking-label); line-height:1.5; }
+.caption, figcaption { font-size:var(--text-meta); }
+.site-footer .eyebrow { font-size:var(--text-label); }
+
+/* ---- 3. Header: links 14px, the action is the primary button ---- */
+.site-header .nav-link, .site-header .menu-toggle, .site-header .header-mobile .nav-link { font-size:var(--text-nav); }
+
+/* The mobile dock: 14px like the header links. */
+.dock a, .dock .dock-phone { font-size:var(--text-meta); }
+
+/* ---- 4. One button system ----
+ * Primary: ink fill (ivory fill on a photograph). Secondary: ink line. Ghost: ivory line on a photograph.
+ * Same height, padding, radius and type everywhere, so "Start your project" looks the same in the header,
+ * the hero, the closing call to action and the enquiry form. */
+.btn, .atelier-button, .site-header .header-action, .work-filters button, .work-empty button {
+  min-height:var(--button-height); padding:0 var(--button-pad); border-radius:var(--button-radius);
+  font-family:var(--font-sans); font-size:var(--text-button); font-weight:500; letter-spacing:.01em; line-height:1.2;
+  gap:.9rem;
+}
+.site-header .header-action { min-height:calc(var(--header-height) - 14px); padding-inline:1.1rem; }
+.btn span[aria-hidden], .atelier-button span { font-size:1.15em; line-height:1; }
+.btn-solid-ink, .atelier-button.ink, .work-filters button[aria-pressed="true"] { background:var(--color-ink); border-color:var(--color-ink); color:var(--color-ivory); }
+.btn-solid, .atelier-button.cream { background:var(--color-ivory); border-color:var(--color-ivory); color:var(--color-ink); }
+.btn-line, .work-filters button, .work-empty button { background:transparent; border:1px solid var(--color-ink); color:var(--color-ink); }
+.work-filters button[aria-pressed="true"] { color:var(--color-ivory); background:var(--color-ink); }
+.btn-ghost, .atelier-button.ghost { background:transparent; border:1px solid color-mix(in srgb, var(--color-ivory) 72%, transparent); color:var(--color-ivory); }
+.atelier-button.ghost:hover, .btn-ghost:hover { background:color-mix(in srgb, var(--color-ivory) 12%, transparent); }
+.atelier-text-link, .work-enquire, .work-record-link { font-size:var(--text-button); }
+
+/* ---- 5. One container: the logo, the homepage sections, the inner pages and the footer share one edge ---- */
+.atelier-section, .atelier-hotel-band, .atelier-ai-note, .home-showcase-head {
+  max-width:var(--content-max); margin-inline:auto; padding-inline:var(--gutter); box-sizing:border-box;
+}
+@media (min-width:1024px) {
+  /* The header bar spans the content column; its padding puts the wordmark on the content edge. */
+  .site-header {
+    width:min(var(--content-max), calc(100% - var(--header-inset-side) * 2));
+    max-width:none;
+    padding-inline:calc(var(--gutter) - 1px - max(0px, var(--header-inset-side) - max(0px, (100vw - var(--content-max)) / 2)));
+  }
+}
+@media (max-width:1023px) {
+  .site-header { padding-inline:calc(var(--gutter) - var(--header-inset-side) - 1px); }
+}
+
+/* ---- 6. One card system: 4:3 photographs, one gap, titles at h3, meta at 13-14px ---- */
+.atelier-project-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:3.5rem 2rem; align-items:start; }
+.atelier-project-1, .atelier-project-2, .atelier-project-3 { margin:0; max-width:none; }
+.atelier-project-image img, .atelier-project-2 .atelier-project-image img { aspect-ratio:var(--card-ratio); object-fit:cover; width:100%; height:auto; }
+.home-card img, .work-item:not([data-preview="true"]) .work-figure img { aspect-ratio:var(--card-ratio); object-fit:cover; }
+.atelier-project > p, .home-card > p, .work-summary { font-size:var(--text-body); line-height:1.6; }
+.work-role, .hotel-list li > p:not(.hotel-name) { font-size:1rem; }
+.work-meta p, .atelier-project-meta > span, .atelier-credit, .home-showcase-credit { font-size:var(--text-label); }
+.work-figure figcaption, .work-text-cover small, .work-count, .hotel-record-count { font-size:var(--text-meta); }
+.work-group-heading > p { font-size:var(--text-body); }
+.hotel-list a, .hotel-name { font-size:var(--text-h3); }
+@media (max-width:767px) { .atelier-project-grid { grid-template-columns:1fr; gap:2.5rem; } }
+
+/* ---- 7. Captions on photographs sit on a scrim ---- */
+.atelier-materials-image > span, .atelier-craft-image > p {
+  background:linear-gradient(0deg, rgba(20,18,16,.86) 0%, rgba(20,18,16,.62) 55%, rgba(20,18,16,0) 100%);
+  padding-top:64px; text-shadow:0 1px 2px rgba(0,0,0,.45); color:#fff;
+}
+
+/* ---- 8. Hero: the same photograph and crop, a deeper shade under the words ---- */
+.atelier .atelier-hero-shade {
+  background:
+    linear-gradient(90deg, rgba(12,17,12,.9) 0%, rgba(12,17,12,.74) 38%, rgba(12,17,12,.32) 62%, rgba(12,17,12,.06) 82%),
+    linear-gradient(0deg, rgba(12,17,12,.72), transparent 40%);
+}
+@media (max-width:767px) {
+  .atelier .atelier-hero-shade { background:linear-gradient(0deg, rgba(12,17,12,.92) 0%, rgba(12,17,12,.72) 45%, rgba(12,17,12,.42) 72%, rgba(12,17,12,.18)); }
+}
+.atelier .atelier-hero-content .atelier-kicker.light { color:#efe3c8; text-shadow:0 1px 2px rgba(0,0,0,.5); }
+.atelier .atelier-hero-description, .atelier .atelier-hero-award, .atelier .atelier-hero-award a { text-shadow:0 1px 2px rgba(0,0,0,.45); }
+
+/* ---- 9. Films and the light studio, in the open under "On the wall" ---- */
+.home-films-title { margin:3rem 0 1.25rem; }
+.home-films, body .atelier .home-films { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:1.5rem; padding:0; margin:0; }
+.home-films figure { margin:0; }
+.home-films video { width:100%; height:auto; display:block; background:#1c1a17; }
+.home-films figcaption { margin-top:.6rem; color:var(--color-stone); }
+@media (max-width:767px) { .home-films { grid-template-columns:1fr; } }
+.home-studio .studio { border-top:1px solid var(--color-line); }
+/* The light studio: words on the left, the reference photograph on the right, on the shared grid. */
+@media (min-width:1024px) {
+  .home-studio .studio > .container-page { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); column-gap:4rem; align-items:start; }
+  .home-studio .studio > .container-page > * { grid-column:1; }
+  .home-studio .studio > .container-page > [data-studio-fallback] { grid-column:2; grid-row:1 / span 6; margin-top:0; }
+  .home-studio .studio-photo { max-width:30rem; margin-left:auto; }
+  .home-studio .studio > .container-page > [data-studio-controls] { grid-column:1 / -1; }
+}
+
+/* ---- 10. Homepage sizes on the shared scale (audit items 1-4, 7, 9) ----
+ * "body" in front lifts each rule just above atelier.css and hero-mobile.css without touching them. */
+/* Labels, eyebrows, credits: 13px. */
+body .atelier-kicker, body .atelier-hotel-band small, body .atelier-intro dt, body .home-pillars, body .atelier-service-number,
+body .atelier-credit, body .atelier-project-meta > span, body .home-showcase-place, body .home-showcase-credit,
+body .atelier-hero-foot > span, body .atelier-hero-foot a span, body .atelier-materials-image > span, body .atelier-craft-image > p {
+  font-size:var(--text-label); letter-spacing:var(--tracking-label); line-height:1.5;
+}
+body .atelier-hotel-band small { margin-top:8px; }
+/* Links, routes and meta lines: 14-15px. */
+body .atelier-hero-foot a, body .atelier-hero-award a, body .atelier-ai-note, body .atelier-ai-note a { font-size:var(--text-meta); }
+body .atelier-material-links a, body .atelier-enquiry-routes a, body .home-partner-line, body .atelier-text-link { font-size:var(--text-button); }
+body .atelier-contact-email { font-size:1rem; }
+/* Card and list copy: 16px. */
+body .home-card p, body .atelier-service li p, body .atelier-intro dd, body .atelier-craft dd, body .home-process p, body .home-needs-grid p, body .home-record ul {
+  font-size:1rem; line-height:1.6;
+}
+/* Long-form paragraphs: the inner pages' 17px. */
+body .atelier-intro-bottom p, body .home-proof-text, body .home-more-text, body .atelier-craft-copy > p, body .atelier-materials-copy > p,
+body .home-calico-text, body .home-aftercare-inner > p, body .atelier-project > p, body .home-showcase-head p {
+  font-size:var(--text-body); line-height:1.7; max-width:var(--measure-copy);
+}
+body .atelier .atelier-contact > p:not(.atelier-kicker) { margin:25px auto 28px; max-width:var(--measure-copy); }
+/* Hero: the same photograph, crop and composition. Small type reaches the floors with its line boxes held at
+ * the old heights, and the two actions stay on one row on phones, so nothing in the hero moves. */
+body .atelier .atelier-hero-actions .atelier-button { font-size:var(--text-button); }
+body .atelier .atelier-hero-award { line-height:20px; }
+@media (max-width:767px) {
+  body .atelier .atelier-hero-actions { gap:8px; }
+  body .atelier .atelier-hero-actions .atelier-button { font-size:var(--text-meta); min-height:52px; padding-inline:16px; gap:10px; }
+  body .atelier-hero-foot a { font-size:var(--text-meta); }
+  /* The hero description keeps main's 14px on phones: 16px would add a line and lift the whole hero. */
+  body .atelier .atelier-hero .atelier-hero-description { font-size:var(--text-meta); }
+}
+@media (max-width:420px) {
+  body .atelier .atelier-hero-actions .atelier-button span { display:none; }
+}
+@media (max-width:380px) {
+  body .atelier .atelier-hero-actions .atelier-button { padding-inline:12px; }
+}
+
+/* Second pass: the few atelier.css rules that carry a :not() or a parent class. */
+body .atelier .atelier-kicker, body .atelier .atelier-project-meta .atelier-kicker,
+body .atelier .atelier-project > p.atelier-credit, body .atelier .atelier-project-meta > span { font-size:var(--text-label); }
+body .atelier .atelier-hotel-band .home-partner-line, body .atelier .atelier-hotel-band .home-partner-line a { font-size:var(--text-button); }
+body .atelier .atelier-film-grid .caption, body .atelier .home-films figcaption { font-size:var(--text-meta); line-height:1.6; }
+body .atelier .atelier-craft-copy > p:not(.atelier-kicker), body .atelier .atelier-materials-copy > p:not(.atelier-kicker),
+body .atelier .atelier-service > div > p, body .atelier .home-aftercare-inner p { font-size:var(--text-body); line-height:1.7; }
+body .atelier .atelier-materials-copy > p:not(.atelier-kicker) { max-width:var(--measure-copy); }
+body .atelier .atelier-craft-copy dd { font-size:1rem; }
+body .atelier .atelier-craft-copy dt { font-size:var(--text-button); }
+
+/* ---- 11. Paragraph rhythm: prose paragraphs are spaced even where a utility zeroes their margin ---- */
+.prose > p + p, .prose > ul + p, .prose > p + ul { margin-top:1rem; }
+
+/* ---- 12. Below the first screen, the browser lays out (and so lazy-loads) only what is near the viewport,
+ *          so the showcase and the photo strips never compete with the hero photograph for bandwidth. ---- */
+.home-showcase-strip { content-visibility:auto; contain-intrinsic-size:auto 590px; }
+.home-proof { content-visibility:auto; contain-intrinsic-size:auto 1360px; }
+.home-studio { content-visibility:auto; contain-intrinsic-size:auto 1000px; }
+@media (min-width:1024px) { .home-studio { contain-intrinsic-size:auto 865px; } }
+
+/* ---- 13. Second-opinion review (Grok) follow-ups ---- */
+/* Breadcrumbs: the current page name never competes with the title; one line, trimmed. */
+.crumbs [aria-current="page"] { display:inline-block; max-width:min(36rem, 60vw); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; vertical-align:bottom; }
+/* Films: their own portrait ratio, no letterbox bars, one height across the row. */
+body .atelier .home-films { grid-template-columns:repeat(3, minmax(0, 18rem)); justify-content:start; }
+body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-fit:cover; }
+@media (max-width:767px) {
+  /* Phones: a swipeable row, like the photographs above it. */
+  body .atelier .home-films { grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:62vw; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px; padding-bottom:12px; }
+  body .atelier .home-films figure { scroll-snap-align:start; }
+}

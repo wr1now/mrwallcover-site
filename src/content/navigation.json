@@ -1,7 +1,30 @@
 [
-  { "href": "/projects/", "label": "Work" },
-  { "href": "/services/", "label": "Services" },
-  { "href": "/aftercare/", "label": "Aftercare" },
-  { "href": "/about/", "label": "About" },
-  { "href": "/contact/", "label": "Contact" }
+  {
+    "href": "/projects/",
+    "label": "Projects"
+  },
+  {
+    "href": "/services/",
+    "label": "Expertise"
+  },
+  {
+    "href": "/materials/",
+    "label": "Materials"
+  },
+  {
+    "href": "/professionals/",
+    "label": "For designers"
+  },
+  {
+    "href": "/advice/",
+    "label": "Journal"
+  },
+  {
+    "href": "/about/",
+    "label": "About"
+  },
+  {
+    "href": "/wallcovering-installation-ai-crawler/",
+    "label": "AI Crawler"
+  }
 ]

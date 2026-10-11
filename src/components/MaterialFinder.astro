@@ -1,0 +1,59 @@
+---
+import { materials } from '../lib/content';
+import { preferenceOptions } from '../lib/material-advice';
+const labels = { use: 'Where will it go?', look: 'What appeals to you?', cleaning: 'How will it be cared for?', panels: 'What do you expect from the joints?', light: 'What is the light like?' };
+---
+<section class="material-finder" id="material-finder" aria-labelledby="finder-title">
+  <p class="eyebrow">A starting point for your room</p>
+  <h2 id="finder-title">Which families suit your room?</h2>
+  <p class="lede">A few practical choices narrow the families worth comparing. The final choice still needs a physical sample and the product's own instructions.</p>
+  <form data-material-finder hidden>
+    <div class="grid gap-5 md:grid-cols-2">
+      {Object.entries(preferenceOptions).map(([key, options]) => <div class="field"><label for={`finder-${key}`}>{labels[key as keyof typeof labels]}</label><select id={`finder-${key}`} name={key}>{Object.entries(options).map(([value, label]) => <option value={value} selected={value === 'unsure'}>{label}</option>)}</select></div>)}
+    </div>
+    <div class="mt-5 flex flex-wrap gap-3"><button type="submit" class="btn btn-solid-ink">Show me what to compare</button><button type="reset" class="btn btn-line">Clear my choices</button></div>
+    <p class="text-sm text-stone">Your choices stay in this browser session and can be included when you send an enquiry.</p>
+  </form>
+  <noscript><p>Explore the material families below, or <a href="/contact/?intent=advice">ask about your room</a>.</p></noscript>
+  <div data-material-results hidden>
+    <h3 tabindex="-1" data-material-result-heading class="mt-8 text-[2rem]">Families to compare</h3>
+    <p data-material-explanation role="status"></p>
+    <p data-material-light hidden>Strong side lighting can emphasise texture, joints and the surface underneath. Review a sample in that light.</p>
+    <p data-material-commercial hidden>For a commercial specification, confirm the exact product's required performance documents and installation conditions with the responsible project professional.</p>
+    {materials.items.map((item) => <article class="material-result" data-material-result={item.slug} hidden><h3><a href={`/materials/${item.slug}/`}>{item.name}</a></h3><p>{item.decision.considerWhen}</p><p><strong>Consider this:</strong> {item.decision.tradeoff}</p><button class="btn btn-line" type="button" data-shortlist={item.slug} aria-pressed="false">Save to shortlist</button></article>)}
+    <a class="btn btn-solid-ink mt-4" href="/contact/?intent=source">Discuss these choices</a>
+  </div>
+</section>
+<script>
+  import { defaultPreferences, parsePreferences, preferencesFromJSON, PREFERENCE_KEY, recommendFamilies } from '../lib/material-advice';
+  const form = document.querySelector<HTMLFormElement>('[data-material-finder]');
+  if (form) {
+    form.hidden = false;
+    const results = document.querySelector<HTMLElement>('[data-material-results]')!;
+    const render = (preferences: typeof defaultPreferences, focus: boolean) => {
+      const result = recommendFamilies(preferences);
+      results.hidden = false;
+      results.querySelector('[data-material-result-heading]')!.textContent = result.slugs.length ? 'Families to compare' : 'Check this wall before choosing';
+      results.querySelector('[data-material-explanation]')!.textContent = result.explanation;
+      results.querySelectorAll<HTMLElement>('[data-material-result]').forEach((card) => { card.hidden = !result.slugs.includes(card.dataset.materialResult!); });
+      results.querySelector<HTMLElement>('[data-material-light]')!.hidden = preferences.light !== 'side';
+      results.querySelector<HTMLElement>('[data-material-commercial]')!.hidden = preferences.use !== 'commercial';
+      if (focus) results.querySelector<HTMLElement>('[data-material-result-heading]')!.focus();
+    };
+    try {
+      const saved = preferencesFromJSON(sessionStorage.getItem(PREFERENCE_KEY) || '');
+      if (saved) { Object.entries(saved).forEach(([key, value]) => { (form.elements.namedItem(key) as HTMLSelectElement).value = value; }); render(saved, false); }
+    } catch { /* Browsing still works without storage. */ }
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const preferences = parsePreferences(Object.fromEntries(new FormData(form)));
+      if (!preferences) return;
+      try { sessionStorage.setItem(PREFERENCE_KEY, JSON.stringify(preferences)); } catch { /* Optional persistence. */ }
+      render(preferences, true);
+    });
+    form.addEventListener('reset', () => {
+      try { sessionStorage.removeItem(PREFERENCE_KEY); } catch { /* Optional persistence. */ }
+      results.hidden = true;
+    });
+  }
+</script>

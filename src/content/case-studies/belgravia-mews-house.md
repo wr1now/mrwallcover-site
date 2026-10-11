@@ -15,7 +15,9 @@
   "draft": true,
   "standfirst": "Wallcovering for a private mews house in a cobbled Belgravia mews, within the Belgravia Conservation Area.",
   "hero": null,
-  "gallery": []
+  "gallery": [],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 

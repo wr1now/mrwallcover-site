@@ -1,0 +1,11 @@
+{
+  "caseStudy": "about-roll-call",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder hilton-london-city-airport",
+  "images": {},
+  "droppedSoft": {
+    "hilton-city-airport-01": "hilton-london-city-airport/2020-09-25_CFkkCy-l-RQ_01.jpg",
+    "hilton-city-airport-02": "hilton-london-city-airport/2020-09-25_CFkkCy-l-RQ_02.jpg",
+    "hilton-city-airport-03": "hilton-london-city-airport/2020-09-25_CFkkCy-l-RQ_03.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
+}

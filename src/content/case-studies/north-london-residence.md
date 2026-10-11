@@ -1,6 +1,6 @@
 ---
 {
-  "title": "A celebrated North London home",
+  "title": "A Georgian house in North London",
   "slug": "north-london-residence",
   "replaces": null,
   "client": "Private client, with House of Hackney",
@@ -11,7 +11,7 @@
     "House of Hackney – BAMBUSA, Midnight"
   ],
   "modest": true,
-  "standfirst": "House of Hackney's BAMBUSA in Midnight, hung in a historic guest bedroom of a listed Georgian house in North London.",
+  "standfirst": "House of Hackney's BAMBUSA in Midnight, hung on every wall of a historic guest bedroom in a listed Georgian house in North London, to the designer's scheme.",
   "hero": "north-london-residence-01",
   "gallery": [
     {
@@ -62,7 +62,9 @@
       "id": "north-london-residence-12",
       "credit": null
     }
-  ]
+  ],
+  "published": "2026-10-09",
+  "updated": "2026-10-10"
 }
 ---
 
@@ -102,8 +104,3 @@ Our photographs from April 2019 show the room complete: BAMBUSA on every wall, t
 ## Materials
 
 - House of Hackney – [BAMBUSA Wallpaper, Midnight](https://www.houseofhackney.com/products/bambusa-wallpaper-midnight): all walls
-
-## As seen in the press
-
-- House of Hackney: [“House of Kate Moss”](https://www.houseofhackney.com/blogs/stories/house-of-kate-moss)
-- *The Sun*, 12 May 2019: [“Kate Moss reveals tropical bedroom with posh lamps and serpents in London mansion”](https://www.thesun.co.uk/tvandshowbiz/9054814/kate-moss-bedroom-makeover/)

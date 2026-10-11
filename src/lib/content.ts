@@ -12,8 +12,11 @@ import privacyJson from '../content/privacy.json';
 import projectsJson from '../content/projects.json';
 import servicesJson from '../content/services.json';
 import sizesJson from '../content/sizes.json';
+import creditedMediaJson from '../content/credited-media.json';
 import teamJson from '../content/team.json';
 import videosJson from '../content/videos.json';
+import hotelsJson from '../content/hotels.json';
+import materialsJson from '../content/materials.json';
 import type { FaqItem, HeroImage, MediaFile, Project } from './types';
 
 export const home = homeJson;
@@ -25,9 +28,13 @@ export const privacy = privacyJson;
 export const services = servicesJson;
 export const navigation = navigationJson;
 export const team = teamJson;
+export const hotels = hotelsJson.items.filter((item) => item.publish);
+export const materials = materialsJson;
 
-const alts = altsJson as Record<string, { alt: string; manifestNote: string }>;
-const sizes = sizesJson as Record<string, MediaFile>;
+/** Credited client/press photographs carry their own sizes, alt and note (scripts/import-credited.mjs). */
+const credited = creditedMediaJson as Record<string, MediaFile & { alt: string; manifestNote: string }>;
+const alts = { ...altsJson, ...credited } as Record<string, { alt: string; manifestNote: string }>;
+const sizes = { ...sizesJson, ...credited } as Record<string, MediaFile>;
 
 export const hero = heroJson as HeroImage;
 
@@ -59,8 +66,14 @@ interface CaseStudyData {
   metaTitle?: string | null;
   metaDescription?: string | null;
   group?: string | null;
-  /** Draft case studies are kept in the repo for review but never built or listed. */
+  /** Draft case studies stay in the repo for review and are never built or listed. */
   draft?: boolean;
+  /** Interior photographs are not in the repo. The page shows a labelled placeholder. */
+  awaitingPhotos?: boolean;
+  /** ISO date the page first entered the repository. Stamped by scripts/stamp-case-study-dates.mjs, never by the build. */
+  published: string;
+  /** ISO date of the last change to the file. Stamped by the same script. */
+  updated: string;
 }
 
 type CaseStudyModule = { frontmatter: CaseStudyData; Content: any };
@@ -77,12 +90,36 @@ const CASE_STUDY_ORDER = [
   'four-seasons-ten-trinity-square',
   'trematon-castle',
   'old-bailey-hotel',
+  'doubletree-west-end',
+  'doubletree-victoria',
+  'biltmore-mayfair',
+  'house-of-hackney-st-michaels',
+  'penny-morrison-showroom',
+  'pimlico-st-georges-square',
+  'inverness-terrace',
   'north-london-residence',
   'calico-ahluwalia-estuary-rosewood',
   'calico-beverly-1975-cadence',
   'calico-lee-broom-overture',
   'hilton-garden-inn-silverstone',
+  'pendley-manor-hotel',
+  'hilton-london-metropole',
+  'novotel-london-canary-wharf',
+  'huntsman-savile-row',
+  'mercedes-amg-showroom-london',
+  'everyman-liverpool',
+  'oxygen-freejumping-the-o2',
+  'masterpiece-london-2019',
+  'private-residence-little-venice',
 ];
+
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+for (const mod of Object.values(caseStudyModules)) {
+  const { slug, published, updated } = mod.frontmatter;
+  if (!ISO_DATE.test(published ?? '') || !ISO_DATE.test(updated ?? '')) {
+    throw new Error(`Case study ${slug} lacks ISO published/updated dates. Run: node scripts/stamp-case-study-dates.mjs`);
+  }
+}
 
 export const caseStudies = Object.values(caseStudyModules)
   .filter((mod) => !mod.frontmatter.draft)
@@ -90,6 +127,40 @@ export const caseStudies = Object.values(caseStudyModules)
     (a, b) =>
       (CASE_STUDY_ORDER.indexOf(a.frontmatter.slug) + 1 || 99) - (CASE_STUDY_ORDER.indexOf(b.frontmatter.slug) + 1 || 99),
   );
+
+/**
+ * Editorial pages (maker installer pages, the trade page, the cost guide, the
+ * reviews page) in src/content/pages/*.md. Same draft rule as case studies:
+ * `"draft": true` keeps a page in the repo for review and out of the build,
+ * the sitemap, llms.txt and every link.
+ */
+export interface EditorialPageData {
+  /** Site path the page is served at, with leading and trailing slash. */
+  path: string;
+  title: string;
+  metaTitle: string;
+  description: string;
+  eyebrow: string;
+  heading: string;
+  lede: string;
+  /** Breadcrumb parent, e.g. Services or Advice. */
+  parent: { name: string; href: string };
+  /** Case-study slugs this page may cite. */
+  projects: string[];
+  faq: FaqItem[];
+  draft?: boolean;
+}
+
+type EditorialPageModule = { frontmatter: EditorialPageData; Content: any };
+
+const editorialModules = import.meta.glob<EditorialPageModule>('../content/pages/*.md', { eager: true });
+
+for (const mod of Object.values(editorialModules)) {
+  const { path, title } = mod.frontmatter;
+  if (!/^\/[a-z0-9-]+(\/[a-z0-9-]+)*\/$/.test(path ?? '')) throw new Error(`Editorial page "${title}" needs a path like /trade/ or /services/x/`);
+}
+
+export const editorialPages = Object.values(editorialModules).filter((mod) => !mod.frontmatter.draft);
 
 export function caseStudyBySlug(slug: string): CaseStudyModule | undefined {
   return caseStudies.find((mod) => mod.frontmatter.slug === slug);
@@ -106,7 +177,7 @@ function fromCaseStudy(cs: CaseStudyData, base?: Project): Project {
   return {
     slug: cs.slug,
     title: cs.title,
-    metaTitle: cs.metaTitle ?? (`${cs.title} | Case Study | Mr Wallcover`.length <= 65 ? `${cs.title} | Case Study | Mr Wallcover` : `${cs.title} | Mr Wallcover`),
+    metaTitle: cs.metaTitle ?? (`${cs.title} | Case Study | Mr Wallcover`.length <= 60 ? `${cs.title} | Case Study | Mr Wallcover` : `${cs.title} | Mr Wallcover`),
     description,
     role: cs.role,
     client: cs.client,
@@ -122,8 +193,11 @@ function fromCaseStudy(cs: CaseStudyData, base?: Project): Project {
     featured: base?.featured ?? true,
     caseStudy: true,
     modest: Boolean(cs.modest),
+    awaitingPhotos: Boolean(cs.awaitingPhotos),
     group: cs.group ?? undefined,
     credits: Object.fromEntries(cs.gallery.filter((g) => g.credit).map((g) => [g.id, g.credit as string])),
+    published: cs.published,
+    updated: cs.updated,
   };
 }
 
@@ -142,6 +216,25 @@ export function projectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === target);
 }
 
+/**
+ * Resolve the project slugs an area, service or editorial page lists, in
+ * order. Published case studies and their old aliases resolve; a slug that
+ * does not (a typo, or a case study that has gone to draft) fails the build
+ * with the page named, so a link to a route that is not built can never be
+ * silently dropped.
+ */
+export function linkedProjects(slugs: string[], owner: string): Project[] {
+  return slugs.map((slug) => {
+    const project = projectBySlug(slug);
+    if (!project) {
+      throw new Error(
+        `${owner} lists project "${slug}", which is not a published case study or project. Remove it from the list, or publish the case study (remove its draft flag).`,
+      );
+    }
+    return project;
+  });
+}
+
 export function projectHref(slug: string): string {
   return `/projects/${slug}/`;
 }
@@ -151,7 +244,8 @@ export const videos = videosJson;
 export function videoById(id: string) {
   const video = videos.find((item) => item.id === id);
   if (!video) throw new Error(`Missing video ${id}`);
-  return { ...video, alt: altFor(video.altKey) };
+  /* videos.json carries a description of what each film actually shows; it wins over the older alts.json entry. */
+  return { ...video, alt: (video as { alt?: string }).alt ?? altFor(video.altKey) };
 }
 
 export const faqItems = faq.items as FaqItem[];
@@ -166,6 +260,8 @@ export interface LandingPage {
   paragraphs: string[];
   projects: string[];
   imageId: string | null;
+  /** Visible caption under the page image: says where the photograph was taken, with a [label](href) link to the project. */
+  imageCaption?: string;
   faq: FaqItem[];
   serviceType?: string;
   links?: { label: string; href: string }[];

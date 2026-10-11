@@ -1,0 +1,61 @@
+{
+  "caseStudy": "novotel-london-canary-wharf",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder novotel-canary-wharf",
+  "images": {
+    "novotel-01": {
+      "file": "novotel-canary-wharf/2022-01-29_CZVUfE5KWNA_01.jpg",
+      "post": "CZVUfE5KWNA",
+      "date": "2022-01-29",
+      "url": "https://www.instagram.com/p/CZVUfE5KWNA/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Hotel corridor with concrete-effect wallcovering, Novotel London Canary Wharf.",
+      "brands": [],
+      "caption": null
+    },
+    "novotel-02": {
+      "file": "novotel-canary-wharf/2022-01-29_CZVUfE5KWNA_02.jpg",
+      "post": "CZVUfE5KWNA",
+      "date": "2022-01-29",
+      "url": "https://www.instagram.com/p/CZVUfE5KWNA/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Close-up of a timber-grain wallcovering beside a light switch, Novotel London Canary Wharf.",
+      "brands": [],
+      "caption": null
+    },
+    "novotel-03": {
+      "file": "novotel-canary-wharf/2022-01-29_CZVUfE5KWNA_07.jpg",
+      "post": "CZVUfE5KWNA",
+      "date": "2022-01-29",
+      "url": "https://www.instagram.com/p/CZVUfE5KWNA/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Hotel room with concrete-effect wallcovering on a column, sofa and city view, Novotel London Canary Wharf.",
+      "brands": [],
+      "caption": null
+    },
+    "novotel-04": {
+      "file": "novotel-canary-wharf/2022-01-29_CZVUfE5KWNA_08.jpg",
+      "post": "CZVUfE5KWNA",
+      "date": "2022-01-29",
+      "url": "https://www.instagram.com/p/CZVUfE5KWNA/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Guest room with textured wallcovering, sofa and bed, Novotel London Canary Wharf.",
+      "brands": [],
+      "caption": null
+    },
+    "novotel-05": {
+      "file": "novotel-canary-wharf/2022-01-29_CZVUfE5KWNA_09.jpg",
+      "post": "CZVUfE5KWNA",
+      "date": "2022-01-29",
+      "url": "https://www.instagram.com/p/CZVUfE5KWNA/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Hotel room seen past a wallcovered column, Novotel London Canary Wharf.",
+      "brands": [],
+      "caption": null
+    }
+  }
+}

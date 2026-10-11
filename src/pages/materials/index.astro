@@ -1,0 +1,105 @@
+---
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import MaterialFinder from '../../components/MaterialFinder.astro';
+import MaterialStudio from '../../components/MaterialStudio.astro';
+import Base from '../../layouts/Base.astro';
+import { editorialPages, materials, specialismHref, specialisms } from '../../lib/content';
+import { breadcrumbNode } from '../../lib/schema';
+import Picture from '../../components/Picture.astro';
+import makersInstalled from '../../content/makers-installed.json';
+import { caseStudies } from '../../lib/content';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Materials', href: '/materials/' },
+];
+// Published editorial pages under /materials/ (e.g. specified papers we install).
+const projectTitle = (href: string) => (href === '/about/' ? 'our About page' : caseStudies.find((c) => `/projects/${c.frontmatter.slug}/` === href)?.frontmatter.title ?? href);
+const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
+const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((fm) => fm.path.startsWith('/materials/'));
+---
+
+<Base title={materials.title} description={materials.description} path="/materials/" extraSchema={[breadcrumbNode(crumbs)]}>
+  <div class="container-page">
+    <header class="page-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">{materials.eyebrow}</p>
+      <h1>{materials.heading}</h1>
+      <p class="lede mt-5">{materials.lede}</p>
+      <p class="m-0 mt-4 text-stone">Saved materials stay on this device. There is no account. If you send an enquiry from this browser, the shortlist is attached.</p>
+    </header>
+    <MaterialFinder />
+    <ul class="m-0 grid list-none gap-8 p-0 md:grid-cols-2">
+      {materials.items.map((item) => {
+        const service = specialisms.find((entry) => entry.slug === item.specialism);
+        return (
+          <li class="border-t border-line pt-4">
+            <h2 class="m-0 text-[1.8rem]"><a href={`/materials/${item.slug}/`}>{item.name}</a></h2>
+            <p class="mt-3 mb-0 text-stone">{item.appearance}</p>
+            <p class="mt-3 mb-0">{item.joins}</p>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <button class="btn btn-line" type="button" data-shortlist={item.slug} aria-pressed="false">Save to shortlist</button>
+              {service && <a class="btn btn-line" href={specialismHref(service.slug)}>Installation</a>}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+    {
+      materialEditorials.length > 0 && (
+        <section class="mt-16 border-t border-line pt-10" aria-labelledby="makers-heading">
+          <p class="eyebrow">Makers</p>
+          <h2 id="makers-heading" class="m-0 text-[2rem]">Papers we have installed, by maker.</h2>
+          <ul class="m-0 mt-6 grid list-none gap-8 p-0 md:grid-cols-2">
+            {materialEditorials.map((fm) => (
+              <li class="border-t border-line pt-4">
+                <h3 class="m-0 text-[1.8rem]"><a href={fm.path}>{fm.title}</a></h3>
+                <p class="mt-3 mb-0 text-stone">{fm.description}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+    <section class="mt-16 border-t border-line pt-10" aria-labelledby="installed-heading" id="makers-installed">
+      <p class="eyebrow">Makers installed</p>
+      <h2 id="installed-heading" class="m-0 text-[2rem]">Makers we have installed, in our own photographs.</h2>
+      <p class="mt-4 mb-0 max-w-3xl text-stone">Each maker below is shown with one of our photographs of its product on the wall, linked to the project where the project is public. Private projects are named only by area. A maker named here means Mr Wallcover installed that maker's product; it is not an approval, accreditation or endorsement.</p>
+      <ul class="m-0 mt-8 grid list-none gap-8 p-0 sm:grid-cols-2 lg:grid-cols-4">
+        {makersInstalled.items.map((item) => (
+          <li class="border-t border-line pt-4" id={makerId(item.brand)}>
+            <Picture id={item.image} sizes="(min-width: 1024px) 18rem, (min-width: 640px) 45vw, 100vw" />
+            <h3 class="mt-3 mb-0 text-[1.4rem]">{item.brand}</h3>
+            {item.projects.length > 0 ? (
+              <p class="mt-1 mb-0 text-stone">Installed at {item.projects.map((href, i) => <>{i > 0 && ' · '}<a href={href}>{projectTitle(href)}</a></>)}.</p>
+            ) : (
+              <p class="mt-1 mb-0 text-stone">Installed at {item.where}, {item.year}. <a href={item.source} rel="noopener">Our post</a>.</p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+    <section class="mt-16 border-t border-line pt-10" aria-labelledby="compare-heading">
+      <p data-shortlist-status role="status"></p>
+      <button type="button" class="btn btn-line mb-5" data-shortlist-clear>Clear shortlist</button>
+      <h2 id="compare-heading" class="m-0 text-[2rem]">Compare the shortlist <span data-shortlist-count>0</span></h2>
+      <p data-compare-empty class="lede mt-4">Save two or more families to compare joins, care and where they belong.</p>
+      <div class="mt-6 grid gap-6">
+        {materials.items.map((item) => (
+          <article data-compare-row={item.slug} hidden class="border-t border-line pt-4">
+            <h3 class="m-0 text-[1.6rem]">{item.name}</h3>
+            <p class="m-0 mt-2"><strong>Setting.</strong> {item.setting}</p>
+            <p class="m-0 mt-2"><strong>Joins.</strong> {item.joins}</p>
+            <p class="m-0 mt-2"><strong>Care.</strong> {item.care}</p>
+          </article>
+        ))}
+      </div>
+      <p class="mt-8"><a class="btn btn-solid-ink" href="/contact/?intent=source">Discuss this shortlist</a></p>
+    </section>
+  </div>
+  <MaterialStudio />
+</Base>
+
+<script>
+  import '../../scripts/shortlist';
+</script>

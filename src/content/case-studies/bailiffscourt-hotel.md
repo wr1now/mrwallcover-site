@@ -15,7 +15,9 @@
   "draft": true,
   "standfirst": "Wallcovering work at Bailiffscourt, the medieval-style manor house built for Lord Moyne on the Sussex coast, now a country house hotel.",
   "hero": null,
-  "gallery": []
+  "gallery": [],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 

@@ -1,0 +1,75 @@
+{
+  "caseStudy": "imperfect-arches-external-corner-trim",
+  "note": "Photographs #28-40 in Dorin's numbered photo labels (Sony A7 III, May 2019). Only these numbers may appear on this case study. #32 and #33 are left out: framed fingerprint artworks and family photographs are personal items. Window views and framed photographs are blurred where they appear (redact boxes are fractions of the upright image).",
+  "credit": null,
+  "images": {
+    "arch-trim-01": {
+      "photo": 28,
+      "file": "IMG_4013.JPG",
+      "widths": [480, 800, 1200, 1600, 2000, 2400],
+      "alt": "A wallcovered arch seen from below, its curved outer edge finished as one crisp, even line, framing a room with a decorative plaster ceiling and a chandelier."
+    },
+    "arch-trim-02": {
+      "photo": 34,
+      "file": "IMG_4042.JPG",
+      "widths": [480, 800, 1200, 1600],
+      "redact": [[0.11, 0.21, 0.355, 0.555], [0.0, 0.66, 0.05, 0.785], [0.855, 0.765, 0.915, 0.845]],
+      "alt": "Finished bedroom with a pale textured wallcovering, geometric panelling with brass inlay behind the bed, and a crystal chandelier."
+    },
+    "arch-trim-03": {
+      "photo": 37,
+      "file": "IMG_4045.JPG",
+      "widths": [480, 800, 1200, 1600],
+      "redact": [[0.175, 0.34, 0.4, 0.57]],
+      "alt": "Finished drawing room with pale textured walls, a gold geometric pendant, a buttoned leather ottoman and velvet seating in green and magenta."
+    },
+    "arch-trim-04": {
+      "photo": 38,
+      "file": "IMG_4048.JPG",
+      "widths": [480, 800, 1200, 1600],
+      "alt": "The drawing room towards its joinery wall, with a pale wallcovering behind a group of round wall mirrors and a green velvet sofa."
+    },
+    "arch-trim-05": {
+      "photo": 39,
+      "file": "IMG_4049.JPG",
+      "widths": [480, 800, 1200, 1600],
+      "alt": "Upright view of the drawing room: pale textured walls beneath an ornate plaster cornice and ceiling rose."
+    },
+    "arch-trim-06": {
+      "photo": 30,
+      "file": "IMG_4033.JPG",
+      "widths": [480, 800, 1200, 1600],
+      "alt": "A cloakroom lined in a fine horizontal-weave wallcovering, with a black marble basin and a backlit mirror."
+    },
+    "arch-trim-07": {
+      "photo": 35,
+      "file": "IMG_4043.JPG",
+      "widths": [480, 800, 1200, 1600],
+      "alt": "A round brass mirror above a glass-topped chest of drawers, against a pale textured wallcovering."
+    },
+    "arch-trim-08": {
+      "photo": 29,
+      "file": "IMG_4015.JPG",
+      "widths": [480, 800, 1200, 1600],
+      "alt": "Close detail of a finished external edge: a fine woven wallcovering runs straight and tight to a crisp corner line."
+    },
+    "arch-trim-09": {
+      "photo": 31,
+      "file": "IMG_4034.JPG",
+      "widths": [480, 800, 1200, 1600],
+      "alt": "Close detail of a woven wallcovering on two neighbouring surfaces, each edge cut clean either side of a narrow shadow gap."
+    },
+    "arch-trim-10": {
+      "photo": 36,
+      "file": "IMG_4044.JPG",
+      "widths": [480, 800, 1200, 1600],
+      "alt": "Close detail of a textured wallcovering cut neatly around a wall-mounted lighting control."
+    },
+    "arch-trim-11": {
+      "photo": 40,
+      "file": "IMG_4050.JPG",
+      "widths": [480, 800, 1200, 1600],
+      "alt": "Round wall mirrors with gold radiating frames against a pale wallcovering."
+    }
+  }
+}

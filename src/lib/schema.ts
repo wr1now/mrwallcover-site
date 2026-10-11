@@ -1,26 +1,236 @@
-import {
-  BRAND_NAME,
-  COVERAGE,
-  FOUNDER_NAME,
-  INSTAGRAM_URL,
-  PUBLIC_EMAIL,
-  SITE_URL,
-} from '../config';
+import { SITE_URL } from '../config';
+import areasJson from '../content/areas.json';
+import specialismsJson from '../content/specialisms.json';
+import facts from '../data/facts.json';
+import altsJson from '../content/alts.json';
+import creditedMediaJson from '../content/credited-media.json';
+import sizesJson from '../content/sizes.json';
+import rights from '../data/image-rights.json';
 import type { FaqItem } from './types';
+
+const BRAND_NAME = facts.brand;
+
+/** The one award, exactly as the trophy names it (src/data/facts.json). */
+export const AWARD_TEXT = `${facts.award.line}: ${facts.award.name.replace(/, 2021$/, '')}, ${facts.award.organiser}`;
+export const AWARD_SCHEMA = `${facts.award.name}, ${facts.award.organiser}`;
+export const AWARD_URL = facts.award.url;
+const PUBLIC_EMAIL = facts.email;
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
+/** The founder's Person node. Lives on the About page; referenced from the business and every case-study Article. */
+export const FOUNDER_ID = `${SITE_URL}${facts.founder.path}#${facts.founder.fragment}`;
+export const FOUNDER_URL = `${SITE_URL}${facts.founder.path}`;
 
 /**
- * Coverage: London and the surrounding areas; UK-wide for selected projects.
- * The phone number is deliberately not published in schema (Dorin's request:
- * no openly visible number). Add telephone back here if that changes.
+ * The fact-sheet coverage line is written "<local>; <national>", today
+ * "London and the surrounding areas; UK-wide for selected projects". The two
+ * halves become the AdministrativeArea name and the Country description, so
+ * the schema carries the same wording as /for-ai/, llms.txt and facts.json.
+ */
+const coverageParts = facts.coverage.split('; ');
+if (coverageParts.length !== 2 || coverageParts.some((part) => !part.trim())) {
+  throw new Error(`facts.coverage must read "<local area>; <national reach>", got "${facts.coverage}"`);
+}
+const [COVERAGE_LOCAL, COVERAGE_NATIONAL] = coverageParts;
+
+/**
+ * Coverage, matching what the site shows: the fact-sheet line split as
+ * above, and one Place per area page in src/content/areas.json, named
+ * exactly as areas.json names the area and as its page heading reads
+ * ("the City of London", "the Cotswolds"), never a rewritten string.
+ * No invented offices. The phone number is deliberately not published in
+ * schema (Dorin's request: no openly visible number). Add telephone back
+ * here if that changes.
  */
 export const AREAS_SERVED = [
-  { '@type': 'City', name: 'London' },
-  { '@type': 'AdministrativeArea', name: 'Greater London and the surrounding areas' },
-  { '@type': 'Country', name: 'United Kingdom', description: 'Selected projects' },
+  { '@type': 'City', name: facts.place },
+  { '@type': 'AdministrativeArea', name: COVERAGE_LOCAL },
+  { '@type': 'Country', name: 'United Kingdom', description: COVERAGE_NATIONAL },
+  ...(areasJson.items as { slug: string; name: string }[]).map((area) => ({
+    '@type': 'Place',
+    name: area.name,
+    url: `${SITE_URL}/areas/${area.slug}/`,
+  })),
 ];
+
+/**
+ * Who made each photograph, for the schema.org ImageObject fields Google reads as
+ * image metadata: creator, copyrightNotice, license and acquireLicensePage.
+ *
+ * Driven by the data, never by guesswork:
+ * - A credited photograph carries a credit in its manifestNote
+ *   (src/content/alts.json, src/content/credited-media.json), the same credit the
+ *   page prints beside it: "credit Photography: House of Hackney", "credit Image:
+ *   Raffles London at The OWO (official)", "credit Photography: The wub / Wikimedia
+ *   Commons (CC BY-SA 4.0)". The creator and copyright notice name that holder
+ *   exactly. A Creative Commons image keeps its own licence URL from the note.
+ * - src/data/image-rights.json records what the notes cannot: Dorin's own iPhone
+ *   photographs (creator Person Dorin Burcus), sets whose photographer is named
+ *   only in docs/asset-rights.md (JRH), sets whose maker is not recorded, and
+ *   site files outside the media library (/og.jpg, /media/atelier/).
+ * - A manifestNote that starts "own" (own photo, own photograph, own site photo)
+ *   is ours: creator Mr Wallcover, "© Mr Wallcover".
+ *
+ * Anything else throws, so the build fails rather than publish an image without
+ * a known maker, and a credited image can never be given the Mr Wallcover creator.
+ */
+
+type Creator = { '@type': 'Person' | 'Organization'; name: string; url?: string; '@id'?: string };
+export interface ImageRights {
+  creator: Creator;
+  copyrightNotice: string;
+  license: string;
+  acquireLicensePage: string;
+  creditText?: string;
+  /** Why: which record decided it. */
+  basis: 'credit' | 'own' | 'dorin' | 'photographer' | 'unrecorded' | 'file';
+}
+
+export const IMAGE_USE_URL = new URL(rights.imageUsePath, SITE_URL).href;
+const OWNER: Creator = { '@type': 'Organization', name: rights.owner.name, url: rights.owner.url };
+const DORIN: Creator = { '@type': 'Person', '@id': `${SITE_URL}${facts.founder.path}#${facts.founder.fragment}`, name: facts.founder.name, url: `${SITE_URL}${facts.founder.path}` };
+
+type Entry = { manifestNote?: string; src?: string; jpg?: string; thumb?: string; thumbJpg?: string };
+const notes: Record<string, string> = {};
+for (const [id, entry] of Object.entries({ ...(altsJson as Record<string, Entry>), ...(creditedMediaJson as Record<string, Entry>) })) {
+  if (entry && typeof entry === 'object' && entry.manifestNote) notes[id] = entry.manifestNote;
+}
+
+/** Every URL path the media library can produce for an image, back to its id. */
+const byPath = new Map<string, string>();
+for (const [id, entry] of Object.entries({ ...(sizesJson as Record<string, Entry>), ...(creditedMediaJson as Record<string, Entry>) })) {
+  for (const key of ['src', 'jpg', 'thumb', 'thumbJpg'] as const) if (entry?.[key]) byPath.set(entry[key] as string, id);
+}
+const ids = new Set([...byPath.values()]);
+
+export function mediaIdFor(url: string): string | undefined {
+  const path = new URL(url, SITE_URL).pathname;
+  const exact = byPath.get(path);
+  if (exact) return exact;
+  // Responsive variants: /media/img/r/<id>-<width>.<ext>
+  const m = path.match(/^\/media\/img\/(?:r\/|thumbs\/)?([a-z0-9-]+?)(?:-(?:\d+|preview))?\.(?:jpe?g|webp|avif|png)$/);
+  return m && ids.has(m[1]) ? m[1] : undefined;
+}
+
+const CREDIT = /credit\s+(?:Photography|Photograph|Photo|Image|Images)\s*:\s*([^;]+)/i;
+const LICENCE = /licen[cs]e\s+CC\s+[A-Z-]+\s+[\d.]+\s+(https?:\/\/[^\s;]+)/i;
+
+/** The credit holder as the record writes it, e.g. "The wub / Wikimedia Commons (CC BY-SA 4.0)". */
+export function creditFor(id: string): string | undefined {
+  return notes[id]?.match(CREDIT)?.[1].trim().replace(/\.$/, '');
+}
+
+function fromCredit(holder: string, note: string): ImageRights {
+  const commons = /Wikimedia Commons/i.test(holder);
+  const name = holder.replace(/\s*\/\s*Wikimedia Commons.*$/i, '').replace(/\s*\(official\)\s*$/i, '').trim();
+  const licence = note.match(LICENCE)?.[1];
+  return {
+    creator: { '@type': commons ? 'Person' : 'Organization', name },
+    copyrightNotice: `© ${name}`,
+    license: licence ?? IMAGE_USE_URL,
+    acquireLicensePage: IMAGE_USE_URL,
+    creditText: holder.replace(/\s*\(official\)\s*$/i, ''),
+    basis: 'credit',
+  };
+}
+
+const ours = (creator: Creator, basis: ImageRights['basis']): ImageRights => ({
+  creator,
+  copyrightNotice: rights.owner.copyrightNotice,
+  license: IMAGE_USE_URL,
+  acquireLicensePage: IMAGE_USE_URL,
+  basis,
+});
+
+const matches = (patterns: string[], id: string) => patterns.some((p) => new RegExp(p).test(id));
+
+export function imageRights(url: string): ImageRights {
+  const path = new URL(url, SITE_URL).pathname;
+  const id = mediaIdFor(url);
+  if (!id) {
+    const file = rights.files.find((f) => path.startsWith(f.prefix));
+    if (file) return ours(OWNER, 'file');
+    throw new Error(`image-rights: ${path} is not in the media library or src/data/image-rights.json, so its maker is unknown`);
+  }
+  const note = notes[id] ?? '';
+  const holder = creditFor(id);
+  let result: ImageRights;
+  if (holder) result = fromCredit(holder, note);
+  else {
+    const named = rights.photographers.find((p) => new RegExp(p.pattern).test(id));
+    if (named) {
+      result = { creator: named.creator as Creator, copyrightNotice: named.copyrightNotice, license: IMAGE_USE_URL, acquireLicensePage: IMAGE_USE_URL, basis: 'photographer' };
+    } else if (matches(rights.unrecorded.patterns, id)) {
+      result = { creator: rights.unrecorded.creator as Creator, copyrightNotice: rights.unrecorded.copyrightNotice, license: IMAGE_USE_URL, acquireLicensePage: IMAGE_USE_URL, basis: 'unrecorded' };
+    } else if (/^own\b/i.test(note)) {
+      result = ours(matches(rights.dorin.patterns, id) ? DORIN : OWNER, matches(rights.dorin.patterns, id) ? 'dorin' : 'own');
+    } else {
+      throw new Error(`image-rights: ${id} has no credit, is not marked "own" and is not listed in src/data/image-rights.json (note: "${note}")`);
+    }
+  }
+  // Guard: a credited image (or one whose maker is someone else) may never be claimed as ours.
+  const claimsOurs = result.creator.name === rights.owner.name || result.creator.name === facts.founder.name || result.copyrightNotice === rights.owner.copyrightNotice;
+  if (claimsOurs && (holder || result.basis === 'photographer' || result.basis === 'unrecorded')) {
+    throw new Error(`image-rights: ${id} is credited to "${holder ?? result.creator.name}" but would be given the Mr Wallcover creator`);
+  }
+  return result;
+}
+
+/**
+ * The one ImageObject helper. Every photograph the schema describes gets the four
+ * image-metadata fields (creator, copyrightNotice, license, acquireLicensePage) from
+ * imageRights() above, plus creditText when the record carries a credit. A plain
+ * caption such as "Before" passed as `credit` is not a credit and adds nothing. A
+ * credit printed on the page must match the record, so the two cannot drift apart.
+ */
+export function imageObject(url: string, credit?: string | null) {
+  const r = imageRights(url);
+  const printed = credit && /\b(?:Photography|Photograph|Photo|Image|Images)\s*:/i.test(credit);
+  if (printed && r.basis !== 'credit') {
+    throw new Error(`image-rights: ${url} is printed with a credit ("${credit}") but its record has none; add the credit to its manifestNote`);
+  }
+  const node = {
+    '@type': 'ImageObject',
+    url,
+    ...(r.creditText ? { creditText: r.creditText } : {}),
+    creator: r.creator,
+    copyrightNotice: r.copyrightNotice,
+    license: r.license,
+    acquireLicensePage: r.acquireLicensePage,
+  };
+  for (const key of ['creator', 'copyrightNotice', 'license', 'acquireLicensePage'] as const) {
+    if (!node[key]) throw new Error(`ImageObject for ${url} is missing ${key}`);
+  }
+  return node;
+}
+
+/**
+ * The services the business offers, one per built /services/<slug>/ page.
+ * Names, @ids and service types match the Service node each page emits.
+ * No prices: the site publishes none.
+ */
+export function offerCatalogNode() {
+  return {
+    '@type': 'OfferCatalog',
+    name: `${BRAND_NAME} services`,
+    itemListElement: (specialismsJson.items as { slug: string; name: string; serviceType?: string }[]).map((item) => {
+      const url = `${SITE_URL}/services/${item.slug}/`;
+      return {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          '@id': `${url}#service`,
+          name: item.name,
+          // Same fallback as src/pages/services/[slug].astro, so the catalogue and the page agree.
+          serviceType: item.serviceType ?? item.name,
+          url,
+          provider: { '@id': BUSINESS_ID },
+        },
+      };
+    }),
+  };
+}
 
 export function businessNode() {
   return {
@@ -30,17 +240,13 @@ export function businessNode() {
     url: SITE_URL,
     image: `${SITE_URL}/og.jpg`,
     logo: `${SITE_URL}/apple-touch-icon.png`,
-    description:
-      `London wallcovering installation practice for prime hotels, flagship retail and private homes: surveying, management, supply, installation and aftercare. ${COVERAGE}.`,
+    description: facts.description,
     email: PUBLIC_EMAIL,
-    founder: {
-      '@type': 'Person',
-      name: FOUNDER_NAME,
-      jobTitle: 'Founder',
-    },
+    founder: { '@id': FOUNDER_ID },
+    award: AWARD_SCHEMA,
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'London',
+      addressLocality: facts.place,
       addressCountry: 'GB',
     },
     areaServed: AREAS_SERVED,
@@ -61,7 +267,9 @@ export function businessNode() {
       'Architectural and furniture film wrapping',
       'Window film installation',
     ],
-    sameAs: [INSTAGRAM_URL],
+    /** Only profiles that exist. Add each new one to src/data/facts.json as it goes live. */
+    sameAs: facts.profiles.map((profile) => profile.url),
+    hasOfferCatalog: offerCatalogNode(),
     contactPoint: {
       '@type': 'ContactPoint',
       email: PUBLIC_EMAIL,
@@ -119,6 +327,18 @@ export function jsonLd(nodes: object[]): string {
   }).replace(/</g, '\\u003c');
 }
 
+/** Dorin Burcus as a Person node, anchored on the About page. */
+export function founderNode() {
+  return {
+    '@type': 'Person',
+    '@id': FOUNDER_ID,
+    name: facts.founder.name,
+    jobTitle: facts.founder.jobTitle,
+    url: FOUNDER_URL,
+    worksFor: { '@id': BUSINESS_ID },
+  };
+}
+
 export function websiteNode() {
   return {
     '@type': 'WebSite',
@@ -130,7 +350,7 @@ export function websiteNode() {
   };
 }
 
-export function webPageNode(opts: { url: string; name: string; description: string; image?: string; type?: string }) {
+export function webPageNode(opts: { url: string; name: string; description: string; image?: string; imageCredit?: string | null; type?: string }) {
   return {
     '@type': opts.type ?? 'WebPage',
     '@id': `${opts.url}#webpage`,
@@ -140,7 +360,7 @@ export function webPageNode(opts: { url: string; name: string; description: stri
     inLanguage: 'en-GB',
     isPartOf: { '@id': WEBSITE_ID },
     about: { '@id': BUSINESS_ID },
-    ...(opts.image ? { primaryImageOfPage: { '@type': 'ImageObject', url: opts.image } } : {}),
+    ...(opts.image ? { primaryImageOfPage: imageObject(opts.image, opts.imageCredit) } : {}),
   };
 }
 
@@ -178,16 +398,15 @@ export function projectNode(opts: { url: string; name: string; description: stri
   };
 }
 
-/** Case-study article about a completed commission. Facts only from the page itself. */
-export function caseStudyArticleNode(opts: {
-  url: string;
-  headline: string;
-  description: string;
-  images: string[];
-  location: string;
-  dates?: string | null;
-  mentions?: string[];
-}) {
+/**
+ * Advice-guide Article. The founder's Person node is the author; the business
+ * is the publisher. Dates come from the guide's frontmatter, never the build.
+ */
+export function guideArticleNode(opts: { url: string; headline: string; description: string; published: string; updated: string }) {
+  const iso = /^\d{4}-\d{2}-\d{2}$/;
+  if (!iso.test(opts.published) || !iso.test(opts.updated)) {
+    throw new Error(`Guide ${opts.url} needs ISO published and updated dates in its frontmatter`);
+  }
   return {
     '@type': 'Article',
     '@id': `${opts.url}#article`,
@@ -196,9 +415,61 @@ export function caseStudyArticleNode(opts: {
     url: opts.url,
     mainEntityOfPage: { '@id': `${opts.url}#webpage` },
     inLanguage: 'en-GB',
-    author: { '@id': BUSINESS_ID },
+    datePublished: opts.published,
+    dateModified: opts.updated,
+    author: { '@type': 'Person', '@id': FOUNDER_ID, name: facts.founder.name, url: FOUNDER_URL },
     publisher: { '@id': BUSINESS_ID },
-    ...(opts.images.length ? { image: opts.images } : {}),
+  };
+}
+
+/** FAQPage for a page's visible buyer-questions block (src/components/BuyerFaq.astro). Only call it when that block is rendered. */
+export function buyerFaqNode(items: { question: string; answer: string }[]) {
+  return guideFaqNode(items.map((item) => ({ q: item.question, a: item.answer })));
+}
+
+/** FAQPage for a guide's visible question-and-answer block. Only call it when that block is rendered. */
+export function guideFaqNode(items: { q: string; a: string }[]) {
+  return {
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  };
+}
+
+/** Case-study article about a completed commission. Facts only from the page itself. */
+export function caseStudyArticleNode(opts: {
+  url: string;
+  headline: string;
+  description: string;
+  /** Absolute image URLs with the credit printed beside each on the page, if any. */
+  images: { url: string; credit?: string | null }[];
+  location: string;
+  dates?: string | null;
+  mentions?: string[];
+  /** ISO dates from the case-study frontmatter (stamped from git by scripts/stamp-case-study-dates.mjs). Required, never the build time. */
+  published: string;
+  updated: string;
+}) {
+  const iso = /^\d{4}-\d{2}-\d{2}$/;
+  if (!iso.test(opts.published) || !iso.test(opts.updated)) {
+    throw new Error(`Case study ${opts.url} needs ISO published and updated dates in its frontmatter`);
+  }
+  return {
+    '@type': 'Article',
+    '@id': `${opts.url}#article`,
+    headline: opts.headline,
+    description: opts.description,
+    url: opts.url,
+    mainEntityOfPage: { '@id': `${opts.url}#webpage` },
+    inLanguage: 'en-GB',
+    datePublished: opts.published,
+    dateModified: opts.updated,
+    author: { '@type': 'Person', '@id': FOUNDER_ID, name: facts.founder.name, url: FOUNDER_URL },
+    publisher: { '@id': BUSINESS_ID },
+    ...(opts.images.length ? { image: opts.images.map((img) => imageObject(img.url, img.credit)) } : {}),
     about: {
       '@type': 'CreativeWork',
       '@id': `${opts.url}#project`,
@@ -208,5 +479,32 @@ export function caseStudyArticleNode(opts: {
       ...(opts.dates ? { temporalCoverage: opts.dates.replace('–', '/') } : {}),
     },
     ...(opts.mentions?.length ? { mentions: opts.mentions.map((name) => ({ '@type': 'Thing', name })) } : {}),
+  };
+}
+
+/**
+ * VideoObject for one of the site's own films (src/content/videos.json).
+ * uploadDate is the date the file was first committed to the repository
+ * (git log --diff-filter=A), because the MP4s carry no creation_time tag;
+ * duration is measured with ffprobe and rounded to the second the caption
+ * states. Never the build time, never an invented date.
+ */
+export function videoNode(film: { id: string; name: string; caption: string; src: string; poster: string; uploadDate: string; duration?: string; width: number; height: number }, pageUrl: string) {
+  return {
+    '@type': 'VideoObject',
+    '@id': `${SITE_URL}${film.src}#video`,
+    name: film.name,
+    description: film.caption,
+    thumbnailUrl: [new URL(film.poster, SITE_URL).href],
+    contentUrl: new URL(film.src, SITE_URL).href,
+    uploadDate: film.uploadDate,
+    ...(film.duration ? { duration: film.duration } : {}),
+    width: film.width,
+    height: film.height,
+    inLanguage: 'en-GB',
+    isFamilyFriendly: true,
+    publisher: { '@id': BUSINESS_ID },
+    creator: { '@id': BUSINESS_ID },
+    mainEntityOfPage: pageUrl,
   };
 }

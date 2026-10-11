@@ -21,6 +21,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Full history: the case-study date check compares each file's `updated` with its last commit date.
+          fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -28,8 +31,53 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
+      - name: Check case-study dates against git
+        # Fails when a case study was edited without re-running scripts/stamp-case-study-dates.mjs.
+        run: node scripts/stamp-case-study-dates.mjs --check
+      - name: Check
+        run: npm run check
       - name: Build
+        env:
+          # Build-time only. The phone number is never in the repository.
+          # When the secret is absent, the site builds without phone or WhatsApp controls.
+          SITE_PHONE: ${{ secrets.SITE_PHONE }}
         run: npm run build
+      - name: Check built site
+        env:
+          SITE_PHONE: ${{ secrets.SITE_PHONE }}
+        run: npm run check:dist
+      - name: Type floors and hero contrast (computed styles in Chrome)
+        # Twelve pages (home, projects, a case study, about, faq, and the #30-#32 pages) at five widths: no text under 14px (13px for labels and credits), paragraphs 16px+,
+        # and the hero words at 4.5:1 or better against the photograph. ubuntu-latest ships Google Chrome.
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: npm run check:type
+      - name: Build origin/main as the no-loss baseline
+        # Dorin's rule: nothing on the site may be lost. Main's own build is the baseline, never a hand-kept list.
+        if: github.event_name == 'pull_request'
+        env:
+          SITE_PHONE: ${{ secrets.SITE_PHONE }}
+        run: |
+          git worktree add --detach ../mw-main-base origin/main
+          cd ../mw-main-base
+          npm ci
+          npm run build
+      - name: No-loss guard (sitemap, galleries, media, Lee Broom and project cards, AI layer)
+        if: github.event_name == 'pull_request'
+        run: npm run check:no-loss
+      - name: Check both phone builds
+        run: npm run check:phone
+      - name: Build editorial review
+        run: npm run build:review
+      - name: Check guide publication boundaries
+        run: npm run check:guides
+      - name: Upload editorial review
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: wallcovering-content-review
+          path: dist-review
+          retention-days: 7
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

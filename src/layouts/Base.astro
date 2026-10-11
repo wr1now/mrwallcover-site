@@ -1,10 +1,16 @@
 ---
 import '../styles/global.css';
-import { ANALYTICS_SRC, BRAND_NAME, CONTACT_PAYLOAD, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
+import { HERO_SIZES } from '../lib/hero-sizes';
+import '../styles/atelier.css';
+import '../styles/unify.css';
+import hero from '../content/hero.json';
+import { ANALYTICS_SRC, BRAND_NAME, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
+import { CONTACT_PAYLOAD } from '../lib/phone';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import MobileDock from '../components/MobileDock.astro';
-import { businessNode, jsonLd, webPageNode, websiteNode } from '../lib/schema';
+import PageMeta from '../components/PageMeta.astro';
+import { businessNode, founderNode, jsonLd, webPageNode, websiteNode } from '../lib/schema';
 
 interface Props {
   title: string;
@@ -16,30 +22,43 @@ interface Props {
   /** Site-relative JPEG for social cards. Defaults to /og.jpg. */
   image?: string;
   imageAlt?: string;
+  /** Credit printed beside the page's lead image, e.g. "Photography: House of Hackney". Goes into the WebPage ImageObject. */
+  imageCredit?: string | null;
   ogType?: 'website' | 'article';
+  author?: string;
+  /** ISO date of the page's last content change when the page knows it (guides, case studies). Otherwise the site-wide review date is shown. */
+  updated?: string;
+  /** Set false when the page renders its own PageMeta line in its header. */
+  meta?: boolean;
 }
 
 const {
   title,
   description,
   path,
-  noindex = false,
+  noindex: requestedNoindex = false,
   extraSchema = [],
   preloadHero = false,
   image: imagePath,
   imageAlt = "Corridor at Brown's Hotel, Mayfair, for Mr Wallcover.",
+  imageCredit = null,
   ogType = 'website',
+  author = 'Dorin Burcus',
+  updated,
+  meta = true,
 } = Astro.props;
+const reviewBuild = import.meta.env.MW_CONTENT_PREVIEW === '1';
+const noindex = requestedNoindex || reviewBuild;
 const canonical = new URL(path, SITE_URL).href;
 const image = new URL(imagePath ?? '/og.jpg', SITE_URL).href;
 const schema = jsonLd([
   businessNode(),
+  founderNode(),
   websiteNode(),
-  webPageNode({ url: canonical, name: title, description, image }),
+  webPageNode({ url: canonical, name: title, description, image, imageCredit }),
   ...extraSchema,
 ]);
-const heroSrcset =
-  '/media/hero/corridor-640.webp 640w, /media/hero/corridor-960.webp 960w, /media/hero/corridor-1280.webp 1280w, /media/hero/corridor-1920.webp 1920w';
+const heroSrcset = hero.sources.map(source => `${source.src} ${source.width}w`).join(', ');
 ---
 
 <!doctype html>
@@ -48,17 +67,38 @@ const heroSrcset =
     <meta charset="utf-8" />
     <script is:inline>
       document.documentElement.classList.add('js');
+      /*
+       * Mobile menu: collapse the no-JS in-flow link list before first paint, so the page does not
+       * jump when the Header script loads (it was a 0.6+ layout shift on every phone page). If that
+       * script never confirms (blocked or failed module), the load handler restores the in-flow links.
+       */
+      document.documentElement.classList.add('js-nav');
+      window.addEventListener('load', function () {
+        if (!document.documentElement.hasAttribute('data-nav-ready')) document.documentElement.classList.remove('js-nav');
+      });
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      /* The footer's "Reduce visual effects" preference, applied before first paint. "plain" is the value an earlier toggle stored. */
+      try {
+        var mwEffects = localStorage.getItem('mw-effects');
+        if (mwEffects === 'reduced' || mwEffects === 'plain') document.documentElement.dataset.effects = 'reduced';
+      } catch (e) {}
+    </script>
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
     {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
-    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
+    <link rel="describedby" type="text/plain" href="/llms.txt" title="Public content index" />
+    <link rel="describedby" type="application/json" href="/ai/business.json" title="Business facts" />
+    <link rel="describedby" type="application/json" href="/ai/decision-guide.json" title="Project fit and enquiry guide" />
+    <link rel="alternate" type="application/atom+xml" href="/feed.xml" title={`${BRAND_NAME}: guides and case studies`} />
+    {/* The Markdown twin scripts/build-ai-layer.mjs writes next to every published page after the build. Noindex pages have none. */}
+    {!noindex && <link rel="alternate" type="text/markdown" href={`${canonical}index.md`} title="Markdown version" />}
     <meta name="theme-color" content="#141210" />
-    <meta name="author" content="Dorin Burcus" />
+    <meta name="author" content={author} />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     {GOOGLE_SITE_VERIFICATION && <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />}
     <meta property="og:type" content={ogType} />
@@ -83,43 +123,53 @@ const heroSrcset =
         <link
           rel="preload"
           as="image"
-          href="/media/hero/corridor-960.webp"
+          href={hero.sources[1].src}
           imagesrcset={heroSrcset}
-          imagesizes="100vw"
+          imagesizes={HERO_SIZES}
           fetchpriority="high"
         />
       )
     }
     <script type="application/ld+json" set:html={schema} />
+    <!-- Page-specific critical CSS (the homepage inlines its own rules here, before first paint). -->
+    <slot name="head" />
     <!-- Cookie-free analytics placeholder. No script loads, and the site sets no cookies, unless PUBLIC_ANALYTICS_SRC is set at build time. -->
     {ANALYTICS_SRC && <script is:inline defer src={ANALYTICS_SRC}></script>}
   </head>
-  <body>
+  <body class:list={[path === '/' && 'is-home']}>
     <a class="skip-link" href="#main">Skip to content</a>
     <Header path={Astro.url.pathname} />
-    <main id="main">
+    <main id="main" tabindex="-1">
+      {reviewBuild && <div class="review-banner" role="note">Content review preview · Guide drafts await technical review.</div>}
       <slot />
+      {meta && !noindex && (
+        <div class="container-page page-meta-wrap">
+          <PageMeta updated={updated} />
+        </div>
+      )}
     </main>
     <Footer />
     <MobileDock />
-    <script is:inline define:vars={{ payload: CONTACT_PAYLOAD }}>
-      (function () {
-        let c;
-        try { c = JSON.parse(atob(payload).split('').reverse().join('')); } catch (e) { return; }
-        document.querySelectorAll('a[data-wa]').forEach((a) => { a.href = c.w; a.rel = 'noopener'; });
-        document.addEventListener('click', (event) => {
-          const btn = event.target.closest && event.target.closest('[data-phone-reveal]');
-          if (!btn) return;
-          event.preventDefault();
-          const a = document.createElement('a');
-          a.href = 'tel:' + c.t;
-          a.textContent = (btn.getAttribute('data-prefix') || '') + c.d;
-          a.className = btn.className;
-          btn.replaceWith(a);
-          a.focus();
-        });
-      })();
-    </script>
+    {CONTACT_PAYLOAD && (
+      <script is:inline define:vars={{ payload: CONTACT_PAYLOAD }}>
+        (function () {
+          let c;
+          try { c = JSON.parse(atob(payload).split('').reverse().join('')); } catch (e) { return; }
+          document.querySelectorAll('a[data-wa]').forEach((a) => { a.href = c.w; a.rel = 'noopener'; });
+          document.addEventListener('click', (event) => {
+            const btn = event.target.closest && event.target.closest('[data-phone-reveal]');
+            if (!btn) return;
+            event.preventDefault();
+            const a = document.createElement('a');
+            a.href = 'tel:' + c.t;
+            a.textContent = (btn.getAttribute('data-prefix') || '') + c.d;
+            a.className = btn.className;
+            btn.replaceWith(a);
+            a.focus();
+          });
+        })();
+      </script>
+    )}
     <script is:inline>
       function markReady(img) {
         if (img && img.classList && img.classList.contains('media-img')) img.classList.add('is-ready');

@@ -1,0 +1,45 @@
+/* The real finished room fills the hero; copy never determines image loading. */
+.atelier-hero { position:relative; isolation:isolate; color:#fffdf8; background:#25261f; min-height:640px; height:min(760px,calc(100svh - 100px)); margin:16px 24px 0; overflow:hidden; }
+.atelier-hero-media,.atelier-hero-media picture,.atelier-hero-media img,.atelier-hero-shade { position:absolute; inset:0; width:100%; height:100%; }
+.atelier-hero-media img { object-fit:cover; object-position:50% 52%; }
+.atelier-hero-shade { background:linear-gradient(90deg,rgba(12,17,12,.80),rgba(12,17,12,.43) 48%,rgba(12,17,12,.06) 78%),linear-gradient(0deg,rgba(12,17,12,.64),transparent 35%); }
+.atelier-hero-content { position:relative; padding:100px 6% 120px; max-width:980px; }
+.atelier-hero h1 { margin:22px 0 24px; font-size:clamp(3.7rem,6.1vw,6.1rem); line-height:.98; letter-spacing:-.04em; color:inherit; max-width:13em; }
+.atelier-hero h1 em { font-weight:500; color:#ead8b5; }
+.atelier-hero-description { max-width:375px; font-size:16px; line-height:1.7; color:#f4f0e8; }
+.atelier-hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:30px; margin-top:34px; }
+.atelier-hero-foot { position:absolute; bottom:28px; left:6%; right:4%; display:flex; justify-content:space-between; align-items:end; gap:25px; }
+.atelier-hero-foot>span { font-size:10px; letter-spacing:.17em; }
+.atelier-hero-foot a { color:#fffdf8; text-decoration:none; font-size:14px; border-top:1px solid #ffffff60; padding-top:13px; min-width:230px; }
+.atelier-hero-foot a span { display:block; font-size:9px; letter-spacing:.18em; margin-bottom:4px; }
+.atelier-hero-foot b { float:right; font-size:20px; font-weight:400; }
+/* Keep the copy inside the photograph on wide screens with enlarged text settings. */
+@media(min-width:1800px){
+ .atelier-hero-content { max-width:1200px; padding-inline:112px; }
+ .atelier-hero h1 { font-size:clamp(88px,6.1vw,112px); }
+}
+@media(max-width:767px){
+ .atelier-hero { margin:10px 12px 0; min-height:560px; height:calc(100svh - 155px); max-height:720px; }
+ .atelier-hero-media img { object-position:61% 30%; }
+ .atelier-hero-shade { background:linear-gradient(0deg,rgba(12,17,12,.85),rgba(12,17,12,.35) 60%,rgba(12,17,12,.08)); }
+ .atelier-hero-content { position:absolute; bottom:82px; padding:28px 24px 0; }
+ .atelier-hero h1 { font-size:clamp(2.9rem,10.9vw,4.5rem); line-height:1; margin:14px 0 18px; }
+ .atelier-hero-description { max-width:320px; font-size:14px; }
+ .atelier-hero-actions { gap:22px; margin-top:22px; }
+ .atelier-hero-actions .atelier-text-link { font-size:12px; }
+ .atelier-hero-foot { left:24px; right:24px; bottom:20px; }
+ .atelier-hero-foot>span { display:none; }
+ .atelier-hero-foot a { width:100%; font-size:12px; }
+ .atelier-hero-foot a span { display:inline; margin-right:12px; font-size:8px; }
+}
+@media(max-width:380px){.atelier-hero-actions{gap:16px}.atelier-hero-content{padding-inline:20px}.atelier-hero-actions .atelier-button{padding-inline:16px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.atelier-hero *{animation:none!important;transition:none!important}}
+/* Keep the display fitting at enlarged default text sizes as well as ordinary phones. */
+@media(max-width:767px){
+ .atelier-hero { height:calc(100svh - var(--header-height) - var(--header-inset-top) - var(--dock-clearance) - 10px); min-height:530px; }
+ .atelier-hero-content { width:100%; max-width:100%; bottom:78px; }
+ .atelier-hero h1 { font-size:clamp(38px,10.9vw,64px); }
+ .atelier-hero-actions { gap:18px; }
+ .atelier-hero-actions .atelier-button { padding:15px 18px; gap:20px; }
+}
+@media(max-width:767px) and (max-height:700px){.atelier-hero{min-height:430px}.atelier-hero-content{bottom:64px;padding-top:15px}.atelier-hero h1{font-size:clamp(34px,10vw,52px);margin-block:10px 12px}.atelier-hero-description{font-size:12px;line-height:1.6}.atelier-hero-actions{margin-top:14px}.atelier-hero-foot{bottom:14px}}

@@ -1,0 +1,113 @@
+{
+  "caseStudy": "tea-house-jaillon-studio",
+  "note": "Photographs #59-64, 66 and 67 in Dorin's numbered photo labels (Canon 6D, July 2021): a tea house in West London, for Jaillon Studio (Paris). Location given only as West London. #51-55 (square edits of the same scenes), #56-57 (garden and street exteriors), #58 (venue sign) and #65 (near-duplicate of #64) are left out. A reflection of the photographer and a passer-by are blurred.",
+  "credit": null,
+  "images": {
+    "tea-house-01": {
+      "photo": 62,
+      "file": "jul2021/img_3661.jpg",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2000,
+        2400
+      ],
+      "alt": "The finished tea room: a bold green-and-gold feather wallpaper on every wall, hung behind arched mirrors, patchwork armchairs and round walnut tables set for tea."
+    },
+    "tea-house-02": {
+      "photo": 63,
+      "file": "jul2021/img_3662.jpg",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "The feather wallpaper behind three arched mirrors, the large-scale pattern running unbroken around them above the tables and armchairs.",
+      "redact": [
+        [
+          0.19,
+          0.285,
+          0.255,
+          0.505
+        ]
+      ]
+    },
+    "tea-house-03": {
+      "photo": 60,
+      "file": "jul2021/img_3657.jpg",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "Two arched mirrors set into the feather wallpaper above a table laid for tea and a feather-print armchair."
+    },
+    "tea-house-04": {
+      "photo": 59,
+      "file": "jul2021/img_3654.jpg",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "An arched mirror framed by the feather wallpaper, the pattern centred on the mirror and matched across the drops."
+    },
+    "tea-house-05": {
+      "photo": 61,
+      "file": "jul2021/img_3659.jpg",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "Close view of the feather wallpaper beside a mirror, its gold quills crisp to the frame, above a table with a teacup and pastry."
+    },
+    "tea-house-06": {
+      "photo": 64,
+      "file": "jul2021/img_3664.jpg",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "The garden room: a panoramic scenic wallpaper of a swan lake and flowering hydrangeas, with gilt-framed mirrors, two armchairs and a tea table.",
+      "redact": [
+        [
+          0.635,
+          0.0,
+          0.755,
+          0.105
+        ]
+      ]
+    },
+    "tea-house-07": {
+      "photo": 67,
+      "file": "jul2021/img_3671.jpg",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "Detail of the scenic swan-lake wallpaper behind a tea table, its hydrangeas and swans running beneath a gilt frame."
+    },
+    "tea-house-08": {
+      "photo": 66,
+      "file": "jul2021/img_3667.jpg",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "The tea counter: the feather wallpaper above a tiled bar, with an espresso machine, a silver cake stand and pink velvet stools."
+    }
+  }
+}

@@ -8,6 +8,11 @@ export interface MediaFile {
   thumbWidth: number;
   thumbHeight: number;
   hasFull: boolean;
+  /** Responsive AVIF + WebP set cut from a full-size original: <base>-<w>.avif|webp for each width. */
+  variants?: { base: string; widths: number[] };
+  /** Display width a modest case study keeps for this image (the old preview width). */
+  modestWidth?: number;
+  source?: string;
 }
 
 export interface HeroImage {
@@ -39,9 +44,14 @@ export interface Project {
   caseStudy?: boolean;
   /** Preview-size photographs: displayed small and never upscaled. */
   modest?: boolean;
+  /** Room photographs are not published. Show a labelled placeholder, not a fake picture. */
+  awaitingPhotos?: boolean;
   /** Listing group on /projects, e.g. 'design-weeks'. */
   group?: string;
   credits?: Record<string, string>;
+  /** ISO dates for case-study pages, from frontmatter data (never the build time). */
+  published?: string;
+  updated?: string;
 }
 
 export interface FaqItem {

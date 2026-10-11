@@ -10,6 +10,8 @@ interface Props {
 }
 
 const { items, heading, lede, eyebrow, titleLevel = 'h2' } = Astro.props;
+// Questions sit one level under the list's title: h2 on /faq/ (title is the h1), h3 elsewhere.
+const Question = titleLevel === 'h1' ? 'h2' : 'h3';
 ---
 
 <section class="faq" aria-labelledby="faq-heading">
@@ -37,7 +39,7 @@ const { items, heading, lede, eyebrow, titleLevel = 'h2' } = Astro.props;
           items.map((item) => (
             <details id={item.id}>
               <summary>
-                <h3>{item.question}</h3>
+                <Question>{item.question}</Question>
                 <span class="plus" aria-hidden="true"></span>
               </summary>
               <div class="prose pb-5">

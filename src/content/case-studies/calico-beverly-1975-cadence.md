@@ -6,7 +6,7 @@
   "client": "Calico Wallpaper (Brooklyn, New York), for BEVERLY 1975 CONCIERGE",
   "location": "The Lavery, Cromwell Place, South Kensington",
   "years": "2026",
-  "role": "Feature-wall installation",
+  "role": "Wallcovering installation (feature wall)",
   "wallcoverings": [
     "Calico Wallpaper – Cadence by Athena Calderone, Oxblood"
   ],
@@ -14,23 +14,15 @@
   "metaTitle": "BEVERLY 1975 x Calico: Cadence, LDF 2026 | Mr Wallcover",
   "metaDescription": "Cadence in Oxblood by Calico Wallpaper, hung in a day for BEVERLY 1975 at The Lavery, Cromwell Place, Brompton Design District 2026.",
   "group": "design-weeks",
-  "standfirst": "A feature wall for New York homewares shop BEVERLY 1975's first London presentation.",
-  "hero": "beverly-06",
+  "standfirst": "A feature wall of Calico's Cadence, in Oxblood, hung in a single day on site for New York homewares shop BEVERLY 1975's first London presentation, at The Lavery.",
+  "hero": "beverly-08",
   "gallery": [
-    {
-      "id": "beverly-06",
-      "credit": null
-    },
     {
       "id": "beverly-08",
       "credit": null
     },
     {
-      "id": "beverly-04",
-      "credit": null
-    },
-    {
-      "id": "beverly-05",
+      "id": "beverly-06",
       "credit": null
     },
     {
@@ -38,10 +30,20 @@
       "credit": null
     },
     {
+      "id": "beverly-05",
+      "credit": null
+    },
+    {
+      "id": "beverly-04",
+      "credit": null
+    },
+    {
       "id": "beverly-03",
       "credit": null
     }
-  ]
+  ],
+  "published": "2026-10-09",
+  "updated": "2026-10-10"
 }
 ---
 
@@ -67,10 +69,6 @@ For its first London appearance, BEVERLY 1975 built its space around its signatu
 - **Prepared for a perfect finish.** Cadence's quiet, layered texture shows every imperfection in the wall beneath, so preparation came first.
 - **Seams that disappear.** With a tonal, painterly ground there is no motif to hide a join in. Every seam was butted and rolled to vanish.
 - **One day, ready for styling.** The wall was finished in a single day, leaving the space clear for the BEVERLY team to style before the opening.
-
-## In Calico's words
-
-> "Gorgeous! Thank you so much!" (Calico Wallpaper)
 
 ## Links and press
 

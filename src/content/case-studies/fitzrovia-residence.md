@@ -15,7 +15,9 @@
   "draft": true,
   "standfirst": "Decorating and wallcovering for a private residence in Fitzrovia, carried out with the client's builder and colour consultant.",
   "hero": null,
-  "gallery": []
+  "gallery": [],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 

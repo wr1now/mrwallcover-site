@@ -1,0 +1,58 @@
+{
+  "_note": "The one fact sheet. The footer, src/lib/schema.ts, src/pages/llms.txt.ts and src/config.ts read from here. Paste the description unchanged into every outside profile. No phone number, company details or price goes in this file. The one award is the named entry under award, read off the trophy photograph; add no other.",
+  "brand": "Mr Wallcover",
+  "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus. Survey, supply, installation and aftercare for hotels, retail and homes.",
+  "founder": {
+    "name": "Dorin Burcus",
+    "jobTitle": "Founder",
+    "path": "/about/",
+    "fragment": "dorin"
+  },
+  "email": "info@mrwallcover.com",
+  "place": "London",
+  "coverage": "London and the surrounding areas; UK-wide for selected projects",
+  "_lastReviewed": "ISO date of the last site-wide copy review. Pages without a date of their own (guides and case studies carry theirs) show this as 'Last reviewed'. Move it forward when the copy is reviewed again; never backdate it.",
+  "lastReviewed": "2026-10-09",
+  "profiles": [
+    {
+      "name": "Instagram",
+      "handle": "@mrwallcover",
+      "url": "https://www.instagram.com/mrwallcover/"
+    }
+  ],
+  "_award": "Read off the trophy photograph published in June 2022 and archived by the Wayback Machine (url). The trophy reads: BUILD 2021 Design & Build Awards, Most Outstanding for Wallcovering Installation, 2021, @MrWallcover. Print the line exactly as text; never shorten it to an unnamed award.",
+  "award": {
+    "line": "Award-winning (2021)",
+    "name": "Most Outstanding for Wallcovering Installation, 2021",
+    "organiser": "BUILD Magazine 2021 Design & Build Awards",
+    "url": "https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg"
+  },
+  "_programmeFigures": "Programme figures Dorin cleared on 11 Oct 2026, each from a caption on our own Instagram (@mrwallcover) and cited in docs/sources.md. Add no figure that is not on Dorin's list.",
+  "programmeFigures": [
+    {
+      "fact": "Raffles London at The OWO: chosen in 2021 to install about 17,500 m² of wallcoverings in 18 months",
+      "url": "https://www.mrwallcover.com/projects/raffles-london-the-owo/",
+      "source": "https://www.instagram.com/p/CPFPOA5FBZ4/"
+    },
+    {
+      "fact": "Four Seasons Hotel London at Ten Trinity Square: about 5,000 m² of wallcoverings, completed in 2019",
+      "url": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+      "source": "https://www.instagram.com/p/BxBEIajB-d5/"
+    },
+    {
+      "fact": "The Biltmore Mayfair (then the Millennium Hotel, Grosvenor Square): a guest-room programme of more than 15,000 m² in 2018",
+      "url": "https://www.mrwallcover.com/projects/biltmore-mayfair/",
+      "source": "https://www.instagram.com/p/BkBSc6AHX7U/"
+    },
+    {
+      "fact": "Pendley Manor Hotel: 30 rooms in 30 days, with 20 different wallpapers",
+      "url": "https://www.mrwallcover.com/projects/pendley-manor-hotel/",
+      "source": "https://www.instagram.com/p/B60Ncb2FWZS/"
+    },
+    {
+      "fact": "DoubleTree by Hilton London – West End: 30 rooms on two floors in 2019, while the hotel stayed open",
+      "url": "https://www.mrwallcover.com/projects/doubletree-west-end/",
+      "source": "https://www.instagram.com/p/B0GpM3Vlmkh/"
+    }
+  ]
+}

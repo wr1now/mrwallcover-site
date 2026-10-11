@@ -4,8 +4,10 @@ import Picture from '../../components/Picture.astro';
 import Base from '../../layouts/Base.astro';
 import { areaHref, areas, caseStudyBySlug, media, ogImageFor, projectAliases, projectHref, projects, specialismHref, specialisms, videoById } from '../../lib/content';
 import { SITE_URL } from '../../config';
-import { breadcrumbNode, caseStudyArticleNode, projectNode } from '../../lib/schema';
+import { breadcrumbNode, caseStudyArticleNode, projectNode, videoNode } from '../../lib/schema';
 import type { Project } from '../../lib/types';
+import method from '../../content/method.json';
+import retired from '../../content/retired-projects.json';
 
 export function getStaticPaths() {
   return [
@@ -18,6 +20,14 @@ export function getStaticPaths() {
       params: { slug: oldSlug },
       props: { project: projects.find((p) => p.slug === newSlug)!, redirectTo: projectHref(newSlug) },
     })),
+    // Retired project URLs (once published, now not a page): back to the work index.
+    ...retired.items
+      .filter((item) => !projects.some((p) => p.slug === item.slug))
+      .map((item) => ({
+        params: { slug: item.slug },
+        // Only the title is shown on a redirect stub; the rest keeps the page's frontmatter happy.
+        props: { project: { ...projects[0], slug: item.slug, title: 'Our work', caseStudy: false, videos: [] } as Project, redirectTo: item.redirectTo },
+      })),
   ];
 }
 
@@ -28,6 +38,8 @@ interface Props {
 
 const { project, redirectTo } = Astro.props;
 const study = project.caseStudy ? caseStudyBySlug(project.slug) : undefined;
+/* Modest (preview-only) heroes are shown at their own pixel width, never stretched past it. */
+const modestHeroWidth = project.modest && project.imageId ? media(project.imageId).thumbWidth : 360;
 const StudyContent = study?.Content;
 const redirectUrl = redirectTo ? new URL(redirectTo, SITE_URL).href : null;
 const crumbs = [
@@ -38,7 +50,7 @@ const crumbs = [
 const films = project.videos.map((id) => videoById(id));
 const ogImage = project.imagePolicy === 'none' ? undefined : ogImageFor(project.imageId);
 const pageUrl = new URL(projectHref(project.slug), SITE_URL).href;
-const galleryAbs = project.gallery.map((id) => new URL(media(id).jpg, SITE_URL).href);
+const galleryAbs = project.gallery.map((id) => ({ url: new URL(media(id).jpg, SITE_URL).href, credit: project.credits?.[id] ?? null }));
 const relatedAreas = areas.filter((a) => a.projects.some((slug) => (projectAliases[slug] ?? slug) === project.slug));
 const relatedServices = specialisms.filter((s) => s.projects.some((slug) => (projectAliases[slug] ?? slug) === project.slug));
 const otherStudies = projects.filter((p) => p.caseStudy && p.slug !== project.slug);
@@ -51,6 +63,8 @@ const schemaNodes = study
       location: project.location,
       dates: project.dates,
       mentions: study.frontmatter.wallcoverings,
+      published: study.frontmatter.published,
+      updated: study.frontmatter.updated,
     })
   : projectNode({
       url: pageUrl,
@@ -80,10 +94,13 @@ const schemaNodes = study
   path={projectHref(project.slug)}
   image={ogImage}
   imageAlt={project.imageId ? media(project.imageId).alt : undefined}
+  imageCredit={project.imageId ? project.credits?.[project.imageId] : undefined}
+  updated={study?.frontmatter.updated}
   ogType="article"
   extraSchema={[
     schemaNodes,
     breadcrumbNode(crumbs),
+    ...films.map((film) => videoNode(film, pageUrl)),
   ]}
 >
   <div class="container-page">
@@ -93,11 +110,19 @@ const schemaNodes = study
       <h1>{project.title}</h1>
       <p class="lede mt-5">{project.summary}</p>
     </header>
+    {project.awaitingPhotos && (
+      <figure class="photo-awaiting">
+        <div class="photo-awaiting-frame">
+          <p>Interior photographs to follow</p>
+        </div>
+        <figcaption class="caption">This panel stands in for the interior photographs, which will follow once they are cleared. It is not a photograph of the hotel or of the finished rooms.</figcaption>
+      </figure>
+    )}
     {StudyContent ? (
       <div class="pb-12">
         {project.imageId && (
-          <figure class:list={['m-0 mb-10', project.modest && 'modest-hero']}>
-            <Picture id={project.imageId} loading="eager" fetchpriority="high" thumbOnly={project.modest} sizes={project.modest ? '(min-width: 480px) 360px, 100vw' : '(min-width: 768px) 72rem, 100vw'} />
+          <figure class:list={['m-0 mb-10', project.modest && 'modest-hero']} style={project.modest ? `max-width:${modestHeroWidth}px` : undefined}>
+            <Picture id={project.imageId} loading="eager" fetchpriority="high" thumbOnly={project.modest} sizes={project.modest ? `(min-width: ${modestHeroWidth + 40}px) ${modestHeroWidth}px, 100vw` : '(min-width: 768px) 72rem, 100vw'} />
             {project.credits?.[project.imageId] && <figcaption class="caption">{project.credits[project.imageId]}</figcaption>}
           </figure>
         )}
@@ -117,6 +142,20 @@ const schemaNodes = study
             </div>
           </section>
         )}
+        <section class="mt-14 border-t border-line pt-10" aria-labelledby="method-heading">
+          <p class="eyebrow">{method.eyebrow}</p>
+          <h2 id="method-heading" class="m-0 max-w-xl text-[clamp(2rem,3vw,2.7rem)]">{method.title}</h2>
+          <p class="lede mt-4 max-w-2xl">{method.text}</p>
+          <ol class="method-list mt-8 grid md:grid-cols-2" style="list-style:none;padding:0;margin-left:0;column-gap:2.5rem;row-gap:1.5rem">
+            {method.items.map((item, index) => (
+              <li style="padding-top:0.25rem">
+                <p class="eyebrow m-0">{String(index + 1).padStart(2, '0')}</p>
+                <h3 style="margin:0.25rem 0 0.5rem;font-size:1.25rem;line-height:1.4">{item.title}</h3>
+                <p class="m-0">{item.text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
         {films.length > 0 && (
           <section class="mt-14">
             <h2 class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On site</h2>

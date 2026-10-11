@@ -1,0 +1,235 @@
+{
+  "caseStudy": "four-seasons-ten-trinity-square",
+  "note": "Photographs #2-4, 12-14, 19, 20 and 24-27 in Dorin's numbered photo labels (Sony A7 III, April-May 2019): the Four Seasons Private Residences at Ten Trinity Square. No residence is identified: no flat or floor numbers, owners or views. The lift-lobby floor indicators and wall signs are blurred.",
+  "credit": null,
+  "images": {
+    "fs-residences-01": {
+      "photo": 2,
+      "file": "apr2019/IMG_3619.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600,
+        2000,
+        2400
+      ],
+      "alt": "Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench."
+    },
+    "fs-residences-02": {
+      "photo": 12,
+      "file": "apr2019/IMG_3629.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "The same entrance hall seen along its length: the banded wallcovering runs the full wall under a lit cove ceiling, past the mirror and bench to the front door."
+    },
+    "fs-residences-03": {
+      "photo": 3,
+      "file": "apr2019/IMG_3620.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "Close detail of the entrance-hall wallcovering: soft horizontal bands of charcoal, silver and ochre, laid with no visible seam."
+    },
+    "fs-residences-04": {
+      "photo": 13,
+      "file": "apr2019/IMG_3630.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "Finished dining room in a private residence: a round table and gold armchairs under a cloud of glass discs, with a black sideboard, a round clock and walnut shelving beyond."
+    },
+    "fs-residences-05": {
+      "photo": 14,
+      "file": "apr2019/IMG_3631.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "Finished living room in the same residence: a pale sofa, a blue rug and walnut bookshelves, with a brass-framed screen dividing it from the dining room."
+    },
+    "fs-residences-06": {
+      "photo": 4,
+      "file": "apr2019/IMG_3621.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "Close detail of a woven grasscloth wallcovering turning an external corner, the weave running straight and tight to the edge."
+    },
+    "fs-residences-07": {
+      "photo": 19,
+      "file": "apr2019/IMG_3637.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "A residents’ lift lobby: walls in a warm, banded veneer-effect finish, bronze lift doors and a glazed screen, with the stair rail in the foreground.",
+      "redact": [
+        [
+          0.44,
+          0.315,
+          0.5,
+          0.355
+        ],
+        [
+          0.55,
+          0.39,
+          0.585,
+          0.45
+        ],
+        [
+          0.09,
+          0.665,
+          0.125,
+          0.745
+        ]
+      ]
+    },
+    "fs-residences-08": {
+      "photo": 20,
+      "file": "apr2019/IMG_3638.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "The banded lobby walls turning a corner towards a pair of glazed doors, with bronze lift doors on the right.",
+      "redact": [
+        [
+          0.835,
+          0.195,
+          0.905,
+          0.235
+        ],
+        [
+          0.265,
+          0.565,
+          0.305,
+          0.605
+        ]
+      ]
+    },
+    "fs-residences-09": {
+      "photo": 24,
+      "file": "may2019/IMG_3749.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "A pale lift lobby seen between two stone-effect walls: bronze lift doors either side and a glazed door at the far end.",
+      "redact": [
+        [
+          0.71,
+          0.195,
+          0.76,
+          0.23
+        ],
+        [
+          0.35,
+          0.305,
+          0.405,
+          0.355
+        ],
+        [
+          0.805,
+          0.245,
+          0.845,
+          0.335
+        ]
+      ]
+    },
+    "fs-residences-10": {
+      "photo": 25,
+      "file": "may2019/IMG_3750.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "The same lobby from the top of the steps: matched stone-effect walls, bronze lift doors and a glazed door at the end of the corridor.",
+      "redact": [
+        [
+          0.22,
+          0.21,
+          0.28,
+          0.25
+        ],
+        [
+          0.72,
+          0.24,
+          0.775,
+          0.275
+        ],
+        [
+          0.335,
+          0.355,
+          0.37,
+          0.445
+        ],
+        [
+          0.845,
+          0.245,
+          0.885,
+          0.315
+        ]
+      ]
+    },
+    "fs-residences-11": {
+      "photo": 26,
+      "file": "may2019/IMG_3751.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "A corner of the lobby: an antiqued mirror panel between two crystal wall lights on the stone-effect walls."
+    },
+    "fs-residences-12": {
+      "photo": 27,
+      "file": "may2019/IMG_3752.JPG",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "alt": "The lobby beside the stair: stone-effect walls, a bronze lift door, a ventilation grille and the antiqued mirror beyond.",
+      "redact": [
+        [
+          0.425,
+          0.21,
+          0.48,
+          0.24
+        ],
+        [
+          0.54,
+          0.295,
+          0.57,
+          0.365
+        ]
+      ]
+    }
+  }
+}

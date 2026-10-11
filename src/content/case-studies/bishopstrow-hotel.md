@@ -15,7 +15,9 @@
   "draft": true,
   "standfirst": "Wallcovering work at Bishopstrow, a Grade II-listed Georgian country house hotel near Warminster, during its room-by-room refurbishment.",
   "hero": null,
-  "gallery": []
+  "gallery": [],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 

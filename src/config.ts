@@ -1,39 +1,28 @@
 /**
  * Public site configuration.
- * Change the email address here. It is the address shown on the site,
- * used as the form fallback, and published in JSON-LD.
+ * Business facts (brand, founder, email, coverage, profiles, the one-line
+ * description) live in src/data/facts.json and are re-exported here.
  *
- * Award name will be added later. Until then the public line is only
- * "Award-winning", with the year. Do not invent a title.
+ * The phone number is not in the repository. It is read from the SITE_PHONE
+ * environment variable at build time; see src/lib/phone.ts.
+ *
+ * The one award line is built from facts.award in src/data/facts.json, with
+ * its full name and organiser (rule of 9 October 2026: never an unnamed award).
+ * Do not add one here.
  */
+import facts from './data/facts.json';
 
 export const SITE_URL = 'https://www.mrwallcover.com';
-export const BRAND_NAME = 'Mr Wallcover';
-export const FOUNDER_NAME = 'Dorin Burcus';
-export const PUBLIC_EMAIL = 'info@mrwallcover.com';
-export const PHONE_DISPLAY = '07450 843246';
-export const PHONE_TEL = '+447450843246';
-export const WHATSAPP_URL =
-  'https://wa.me/447450843246?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20wallcovering.';
-/**
- * The phone number is never printed in the HTML. It is shipped reversed and
- * base64-encoded, and revealed on click by the script in Base.astro.
- * WhatsApp links are filled in the same way after the page loads.
- */
-export const CONTACT_PAYLOAD = btoa(
-  JSON.stringify({ t: PHONE_TEL, d: PHONE_DISPLAY, w: WHATSAPP_URL }).split('').reverse().join(''),
-);
+export const BRAND_NAME: string = facts.brand;
+export const FOUNDER_NAME: string = facts.founder.name;
+export const PUBLIC_EMAIL: string = facts.email;
 
 /** Coverage line used across the site and in schema descriptions. */
-export const COVERAGE = 'London and the surrounding areas; UK-wide for selected projects';
+export const COVERAGE: string = facts.coverage;
 
-export const INSTAGRAM_URL = 'https://www.instagram.com/mrwallcover/';
-export const INSTAGRAM_HANDLE = '@mrwallcover';
-
-export const AWARD = {
-  label: 'Award-winning',
-  year: 2021,
-} as const;
+const instagram = facts.profiles.find((profile) => profile.name === 'Instagram');
+export const INSTAGRAM_URL: string = instagram?.url ?? '';
+export const INSTAGRAM_HANDLE: string = instagram?.handle ?? '';
 
 export type FormProvider = 'mailto' | 'netlify' | 'formspree' | 'formsubmit';
 
@@ -63,8 +52,16 @@ export const FORM_ENDPOINT: string = import.meta.env.PUBLIC_FORM_ENDPOINT || end
 export const ANALYTICS_SRC: string = import.meta.env.PUBLIC_ANALYTICS_SRC || '';
 
 /**
+ * Optional private enquiry API. Empty on the static GitHub Pages build.
+ * Set PUBLIC_LEAD_API to the origin of `npm run lead-api` (no trailing slash)
+ * only after that process is actually running. See docs/architecture.md.
+ */
+export const LEAD_API_URL: string = import.meta.env.PUBLIC_LEAD_API || '';
+
+/**
  * Google Search Console HTML-tag verification (URL-prefix property).
  * Paste only the content value Google gives you, e.g. 'AbC123...'.
  * Empty means no tag is printed. Domain (DNS TXT) verification needs no change here.
  */
-export const GOOGLE_SITE_VERIFICATION: string = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION || '';
+export const GOOGLE_SITE_VERIFICATION: string =
+  import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION || '98zhpiyda4qDA6fYcKJ-zC6pItC6-LZKqqEugO5-fKo';

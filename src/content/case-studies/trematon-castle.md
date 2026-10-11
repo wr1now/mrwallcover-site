@@ -3,8 +3,8 @@
   "title": "Castle of Trematon, Cornwall",
   "slug": "trematon-castle",
   "replaces": null,
-  "client": "The new owners of Trematon Castle, the founders of House of Hackney",
-  "location": "Castle of Trematon, near Saltash, Cornwall PL12",
+  "client": "Trematon Castle",
+  "location": "Castle of Trematon, near Saltash, Cornwall",
   "years": "2019–2022",
   "role": "Wallcovering installation contractor across the Georgian house and estate",
   "wallcoverings": [
@@ -119,14 +119,116 @@
     {
       "id": "trematon-20",
       "credit": null
+    },
+    {
+      "id": "trematon-ig-01",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-02",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-03",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-04",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-06",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-08",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-09",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-11",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-12",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-13",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-14",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-15",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-17",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-18",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-19",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-20",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-21",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-22",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-23",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-24",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-25",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-26",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-27",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-28",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-29",
+      "credit": null
     }
-  ]
+  ],
+  "published": "2026-10-09",
+  "updated": "2026-10-11"
 }
 ---
 
 ## At a glance
 
-- **Client:** The new owners of Trematon Castle, the founders of [House of Hackney](https://www.houseofhackney.com/)
+- **Client:** Trematon Castle
 - **Location:** Castle of Trematon, above the Lynher and Tamar near Saltash, Cornwall
 - **Years:** 2019–2022. Our own site photographs run from **24 April 2019 to 7 January 2022**
 - **Role:** Wallcovering installation across the house and estate
@@ -137,11 +239,11 @@
 
 Trematon is one of Cornwall's oldest fortifications: a Norman motte-and-bailey, built in 1068 and granted to the Duchy of Cornwall in 1337. The Duchy still owns it today. A 13th-century gatehouse still guards the bailey. Within the walls, an 11,000 sq ft Georgian manor with nine bedrooms was added in the early 1800s, its windows looking out over nine acres of gardens and the estuary beyond.
 
-In 2018, after a chance visit to the gardens, House of Hackney's founders took over from the landscape designers Isabel and Julian Bannerman as the castle's custodians. They found a house of beautiful proportions that, in the founders' words, needed "a lot of restoration": paint stripped back to make "a blank canvas", then a multi-year, foundational renovation. Trematon became the brand's "spiritual home", the setting of its own campaigns and the namesake of its TREMATONIA print.
+The house has beautiful proportions, and it needed a lot of restoration: paint stripped back to a blank canvas, then a multi-year, foundational renovation. Trematon is also the setting of House of Hackney's campaigns and gives its name to the TREMATONIA print.
 
 ## The brief
 
-To hang House of Hackney's own wallpapers across the Georgian house. That meant large-scale murals, densely drawn florals and ceiling-to-ceiling "print drenching", in a house where every wall is a little out of true and every ceiling a little out of level, and where the client is also the designer of the paper.
+To hang House of Hackney wallpapers across the Georgian house. That meant large-scale murals, densely drawn florals and ceiling-to-ceiling "print drenching", in a house where every wall is a little out of true and every ceiling a little out of level.
 
 ## Our approach
 
@@ -171,7 +273,11 @@ To hang House of Hackney's own wallpapers across the Georgian house. That meant 
 
 Other House of Hackney designs that the press records at Trematon, but which we have **not** matched to our photos: [FLORALIA](https://www.houseofhackney.com/products/floralia-wallpaper-ecru) (bedroom, per AD), [GALANTHI](https://www.houseofhackney.com/products/galanthi-wallpaper-viridis) (guest bedroom, per AD) and [PHANTASIA – Selenite Orange](https://www.houseofhackney.com/products/phantasia-wallpaper-selenite-orange) (powder room, per AD). The brand's [TREMATONIA](https://www.houseofhackney.com/products/trematonia-wallpaper-ecru) print is named after the castle; we have not seen it in our photos.
 
-*Since we completed, the founders have refreshed some rooms with newer House of Hackney designs. Today's interiors will not all match our photographs.*
+*Since we completed, some rooms have been refreshed with newer House of Hackney designs. Today's interiors will not all match our photographs.*
+
+## More from site
+
+The later photographs on this page are our own, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), between June 2019 and November 2021: the house and the castle walls, rooms during strip-out, finished bedrooms and bathrooms, the caravan papered and fitted out to a House of Hackney design in May 2021, and the Lincrusta going up the curved stair walls in November 2021 ([CWksjiaKBnq](https://www.instagram.com/p/CWksjiaKBnq/)), set out panel by panel with a laser line ([CW5IdnPKgTP](https://www.instagram.com/p/CW5IdnPKgTP/)).
 
 ## Outcome
 

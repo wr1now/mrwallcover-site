@@ -3,6 +3,7 @@ import { PUBLIC_EMAIL } from '../config';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Base from '../layouts/Base.astro';
 import { privacy } from '../lib/content';
+import { phoneAvailable } from '../lib/phone';
 import { breadcrumbNode } from '../lib/schema';
 
 const crumbs = [
@@ -34,8 +35,12 @@ const crumbs = [
                 <p class="m-0">
                   {paragraph.includes('email address published') ? (
                     <>
-                      For any privacy request, write to <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>, or call
-                      the telephone number on the <a href="/contact/">contact page</a>.
+                      For any privacy request, write to <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
+                      {phoneAvailable ? (
+                        <>, or call the telephone number on the <a href="/contact/">contact page</a>.</>
+                      ) : (
+                        <>, or use the form on the <a href="/contact/">contact page</a>.</>
+                      )}
                     </>
                   ) : paragraph.includes('ico.org.uk') ? (
                     <>

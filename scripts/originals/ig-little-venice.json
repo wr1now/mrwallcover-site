@@ -1,0 +1,58 @@
+{
+  "caseStudy": "private-residence-little-venice",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder jaillon-studio-little-venice",
+  "images": {
+    "little-venice-01": {
+      "file": "jaillon-studio-little-venice/2019-07-22_B0O1YqbF4Vp_01.jpg",
+      "post": "B0O1YqbF4Vp",
+      "date": "2019-07-22",
+      "url": "https://www.instagram.com/p/B0O1YqbF4Vp/",
+      "width": 960,
+      "height": 960,
+      "alt": "Living room in a private residence in Little Venice: a pink floral House of Hackney wallpaper, a red sofa and bookshelves.",
+      "brands": [
+        "House of Hackney"
+      ],
+      "caption": null
+    },
+    "little-venice-02": {
+      "file": "jaillon-studio-little-venice/2019-07-22_B0O1YqbF4Vp_02.jpg",
+      "post": "B0O1YqbF4Vp",
+      "date": "2019-07-22",
+      "url": "https://www.instagram.com/p/B0O1YqbF4Vp/",
+      "width": 960,
+      "height": 960,
+      "alt": "Living room with a pink floral House of Hackney wallpaper and a flower arrangement, a private residence in Little Venice designed by Jaillon Studio.",
+      "brands": [
+        "House of Hackney"
+      ],
+      "caption": null
+    },
+    "little-venice-03": {
+      "file": "jaillon-studio-little-venice/2019-07-22_B0O1YqbF4Vp_03.jpg",
+      "post": "B0O1YqbF4Vp",
+      "date": "2019-07-22",
+      "url": "https://www.instagram.com/p/B0O1YqbF4Vp/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Floral-papered sitting room with a red velvet sofa and full bookcases, a private residence in Little Venice.",
+      "brands": [
+        "House of Hackney"
+      ],
+      "caption": null
+    },
+    "little-venice-04": {
+      "file": "jaillon-studio-little-venice/2019-07-22_B0O1YqbF4Vp_04.jpg",
+      "post": "B0O1YqbF4Vp",
+      "date": "2019-07-22",
+      "url": "https://www.instagram.com/p/B0O1YqbF4Vp/",
+      "width": 960,
+      "height": 960,
+      "alt": "Collage of a private residence in Little Venice: floral wallpaper, a white kitchen and a red sofa.",
+      "brands": [
+        "House of Hackney"
+      ],
+      "caption": null
+    }
+  }
+}

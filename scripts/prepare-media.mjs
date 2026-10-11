@@ -72,7 +72,7 @@ for (const id of modest) {
   };
 }
 
-const heroSource = path.join(source, 'img/browns-hotel-mayfair-02.jpg');
+const heroSource = path.join(source, 'img/browns-hotel-mayfair-09.jpg');
 const heroWidths = [640, 960, 1280, 1920];
 for (const width of heroWidths) {
   await sharp(heroSource)
@@ -87,9 +87,9 @@ await sharp(heroSource)
   .jpeg({ quality: 76, mozjpeg: true })
   .toFile(path.join(heroOut, 'corridor-1280.jpg'));
 
-const heroFull = await measure(path.join(source, 'img/browns-hotel-mayfair-02.webp'));
+const heroFull = await measure(path.join(source, 'img/browns-hotel-mayfair-09.webp'));
 const hero = {
-  id: 'browns-hotel-mayfair-02',
+  id: 'browns-hotel-mayfair-09',
   width: heroFull.width,
   height: heroFull.height,
   sources: await Promise.all(

@@ -15,7 +15,9 @@
   "draft": true,
   "standfirst": "Wallcovering work at Motcombs, the Belgravia restaurant and bar on Motcomb Street, during its 2021 refurbishment.",
   "hero": null,
-  "gallery": []
+  "gallery": [],
+  "published": "2026-10-09",
+  "updated": "2026-10-09"
 }
 ---
 
