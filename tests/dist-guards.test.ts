@@ -44,7 +44,8 @@ test('the built site keeps private names and the verification token out of the w
   assert.match(exterior, /inverness-terrace/);
   assert.match(exterior, /penny-morrison-showroom/, 'the showroom is back on exterior works since it left draft (11 Oct 2026)');
   assert.match(exterior, /all the internal works plus the full exterior/i);
-  assert.doesNotMatch(exterior, /House of Hackney|Lanesborough|Chesham|hackney/i);
+  // The page's own copy only: site navigation lists every service page, including the House of Hackney installer page (published 11 Oct 2026).
+  assert.doesNotMatch(exterior.replace(/<nav\b[\s\S]*?<\/nav>/gi, ''), /House of Hackney|Lanesborough|Chesham|hackney/i);
   // No phone number in clear, whatever SITE_PHONE was at build time. The number only ever ships inside the reversed payload.
   assert.doesNotMatch(html, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|wa\.me/);
   assert.doesNotMatch(html, /loadedAt/);
