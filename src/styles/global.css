@@ -1077,3 +1077,16 @@ main:focus {
 /* Hotel-group strip (src/components/HotelGroups.astro): plain-text names, no logos. */
 .hotel-group-name { font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.2; }
 .hotel-groups a { text-decoration: underline; text-underline-offset: 0.18em; }
+
+/* FAQ groups (/faq/): a short index, then one heading per group. */
+.faq-groups-nav ul { list-style: none; margin: 0 0 2.5rem; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.faq-groups-nav a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.faq-group { margin-top: 3.5rem; }
+.faq-group-heading { margin: 0 0 1rem; font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1.1; scroll-margin-top: 7rem; }
+.faq-group-lede { margin: 0 0 1.25rem; color: var(--color-stone); max-width: 40rem; }
+.faq .prose a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; }
+
+/* Tables in guides: readable on a phone (scroll sideways inside the table, never the page). */
+.guide-prose table { display: block; overflow-x: auto; max-width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .95rem; line-height: 1.5; }
+.guide-prose th, .guide-prose td { text-align: left; vertical-align: top; padding: .65rem .9rem .65rem 0; border-bottom: 1px solid var(--color-line); min-width: 9rem; }
+.guide-prose th { font-weight: 500; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--color-stone); }

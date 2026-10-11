@@ -1,17 +1,23 @@
 ---
 import type { FaqItem } from '../lib/types';
+import type { FaqGroup } from '../lib/content';
 
 interface Props {
   items: FaqItem[];
+  /** Further groups, each with its own heading, rendered after the core list (only /faq/ passes these). */
+  groups?: FaqGroup[];
+  coreHeading?: string;
   heading?: string;
   lede?: string;
   eyebrow?: string;
   titleLevel?: 'h1' | 'h2';
 }
 
-const { items, heading, lede, eyebrow, titleLevel = 'h2' } = Astro.props;
-// Questions sit one level under the list's title: h2 on /faq/ (title is the h1), h3 elsewhere.
-const Question = titleLevel === 'h1' ? 'h2' : 'h3';
+const { items, groups = [], coreHeading, heading, lede, eyebrow, titleLevel = 'h2' } = Astro.props;
+// Questions sit one level under their heading. With groups, /faq/ has h1 > group h2 > question h3.
+const grouped = groups.length > 0;
+const Question = titleLevel === 'h1' && !grouped ? 'h2' : 'h3';
+const GroupHeading = titleLevel === 'h1' ? 'h2' : 'h3';
 ---
 
 <section class="faq" aria-labelledby="faq-heading">
@@ -35,6 +41,15 @@ const Question = titleLevel === 'h1' ? 'h2' : 'h3';
         {lede && <p class="lede mt-4">{lede}</p>}
       </div>
       <div class="lg:col-span-8">
+        {grouped && (
+          <nav class="faq-groups-nav" aria-label="Question groups">
+            <ul>
+              <li><a href="#faq-core">{coreHeading ?? 'Booking, cost and aftercare'}</a></li>
+              {groups.map((group) => <li><a href={`#${group.id}`}>{group.heading}</a></li>)}
+            </ul>
+          </nav>
+        )}
+        {grouped && <GroupHeading id="faq-core" class="faq-group-heading">{coreHeading ?? 'Booking, cost and aftercare'}</GroupHeading>}
         {
           items.map((item) => (
             <details id={item.id}>
@@ -48,6 +63,27 @@ const Question = titleLevel === 'h1' ? 'h2' : 'h3';
                 ))}
               </div>
             </details>
+          ))
+        }
+        {
+          groups.map((group) => (
+            <section class="faq-group" aria-labelledby={group.id}>
+              <GroupHeading id={group.id} class="faq-group-heading">{group.heading}</GroupHeading>
+              {group.lede && <p class="faq-group-lede">{group.lede}</p>}
+              {group.items.map((item) => (
+                <details id={item.id}>
+                  <summary>
+                    <Question>{item.question}</Question>
+                    <span class="plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="prose pb-5">
+                    {item.paragraphs.map((paragraph) => (
+                      <p class="m-0" set:html={paragraph} />
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </section>
           ))
         }
       </div>

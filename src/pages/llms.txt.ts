@@ -14,7 +14,7 @@ import type { APIRoute } from 'astro';
 import { SITE_URL } from '../config';
 import facts from '../data/facts.json';
 import professionals from '../content/professionals.json';
-import { areaHref, areas, editorialPages, faqItems, materials, projectHref, projects, specialismHref, specialisms } from '../lib/content';
+import { allFaqItems, areaHref, areas, editorialPages, materials, projectHref, projects, specialismHref, specialisms } from '../lib/content';
 import { caseStudyCount, trustMakers, trustSummary } from '../lib/trust';
 import { AWARD, FOUNDER_SUMMARY, SINCE_TEXT, WASTAGE, buyerQuestions, enquiryRoutes, projectFacts, serviceFacts } from '../lib/ai-layer-data';
 
@@ -106,7 +106,7 @@ export const GET: APIRoute = () => {
     ...projects.map((p) => entry(p.title, projectHref(p.slug), `${p.role}${p.dates ? `, ${p.dates}` : ''}. ${p.summary}${projectNote(p.slug)}`)),
     '',
     '## Frequently asked',
-    ...faqItems.map((f) => entry(f.question, `/faq/#${f.id}`, f.paragraphs[0])),
+    ...allFaqItems.map((f) => entry(f.question, `/faq/#${f.id}`, f.paragraphs[0].replace(/<[^>]+>/g, ''))),
     '',
     // One line per buyer question (src/data/buyer-answers.json): the short form where the audit gives one, otherwise the answer.
     '## Buyer questions',

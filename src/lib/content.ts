@@ -278,6 +278,11 @@ export function videoById(id: string) {
 }
 
 export const faqItems = faq.items as FaqItem[];
+/** Further question groups shown on /faq/ only (the homepage keeps the six core questions above). */
+export interface FaqGroup { id: string; heading: string; lede?: string; items: FaqItem[] }
+export const faqGroups = ((faq as { groups?: FaqGroup[] }).groups ?? []) as FaqGroup[];
+/** Every question on /faq/, in page order: the core list, then each group. */
+export const allFaqItems: FaqItem[] = [...faqItems, ...faqGroups.flatMap((group) => group.items)];
 
 export interface LandingPage {
   slug: string;

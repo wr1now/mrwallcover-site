@@ -332,7 +332,8 @@ export function faqNode(items: FaqItem[]) {
       name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.paragraphs.join(' '),
+        // Group answers may carry inline links; the schema answer is plain text.
+        text: item.paragraphs.join(' ').replace(/<[^>]+>/g, ''),
       },
     })),
   };
