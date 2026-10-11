@@ -3,12 +3,13 @@ import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 
-// Google Search Console "Image metadata": every ImageObject must carry creator,
+// Google Search Console "Image metadata": every ImageObject must carry all five of Google's
+// image-licence fields: creator (typed Person or Organization, named), creditText,
 // copyrightNotice, license and acquireLicensePage. Credited (third-party) photographs
 // must name their credited owner, never Mr Wallcover. See src/lib/schema.ts (imageRights).
 const SITE = 'https://www.mrwallcover.com';
 const IMAGE_USE = `${SITE}/image-use/`;
-const REQUIRED = ['creator', 'copyrightNotice', 'license', 'acquireLicensePage'] as const;
+const REQUIRED = ['creator', 'creditText', 'copyrightNotice', 'license', 'acquireLicensePage'] as const;
 const OURS = new Set(['Mr Wallcover', 'Dorin Burcus']);
 
 type Node = Record<string, unknown>;
@@ -63,7 +64,7 @@ async function creditIndex() {
   return { byPath, holders, terms };
 }
 
-test('every ImageObject in the built JSON-LD carries all four image-metadata fields', async () => {
+test('every ImageObject in the built JSON-LD carries all five image-licence fields', async () => {
   const objs = await imageObjects();
   const { byPath, terms } = await creditIndex();
   assert.ok(objs.length >= 262, `expected at least 262 ImageObjects, found ${objs.length}`);
@@ -79,6 +80,30 @@ test('every ImageObject in the built JSON-LD carries all four image-metadata fie
     assert.ok(node.license === (ownerTerms ?? IMAGE_USE) || /^https:\/\/creativecommons\.org\/licenses\//.test(String(node.license)), `${page}: license of ${node.url} is ${node.license}`);
     if (ownerTerms) assert.ok(!OURS.has(String(creator.name)), `${page}: ${node.url} is an official owner photograph and must not name us as creator`);
     if (OURS.has(String(creator.name))) assert.equal(node.copyrightNotice, '© Mr Wallcover', `${page}: our photo ${node.url}`);
+    assert.equal(node.contentUrl, node.url, `${page}: contentUrl of ${node.url}`);
+    // creditText matches the creator, and only our own photographs are credited to us.
+    const credit = String(node.creditText);
+    if (creator.name === 'Mr Wallcover') assert.equal(credit, 'Mr Wallcover', `${page}: creditText of our photo ${node.url}`);
+    else if (creator.name === 'Dorin Burcus') assert.equal(credit, 'Dorin Burcus / Mr Wallcover', `${page}: creditText of Dorin's photo ${node.url}`);
+    else if (creator.name === 'Photographer not recorded') assert.equal(credit, 'Photographer not recorded', `${page}: creditText of ${node.url}`);
+    else {
+      assert.ok(credit.startsWith(`Photo: ${creator.name}`), `${page}: creditText "${credit}" of ${node.url} must credit ${creator.name}`);
+      assert.doesNotMatch(credit, /Mr Wallcover/, `${page}: credited image ${node.url} is credited to us`);
+    }
+  }
+});
+
+test('every creator in the built JSON-LD is a typed, named Person or Organization', async () => {
+  for (const { page, node } of await imageObjects()) {
+    const creator = node.creator as Node;
+    assert.ok(creator && typeof creator === 'object' && !Array.isArray(creator), `${page}: creator of ${node.url} must be one node`);
+    assert.ok(['Person', 'Organization'].includes(String(creator['@type'])), `${page}: creator of ${node.url} has @type ${creator['@type']}`);
+    assert.ok(typeof creator.name === 'string' && creator.name.trim().length > 1, `${page}: creator of ${node.url} has no name`);
+    if (creator.name === 'Mr Wallcover') {
+      assert.equal(creator['@id'], `${SITE}/#business`, `${page}: our creator node carries the business @id`);
+      assert.equal(creator.url, `${SITE}/`, `${page}: our creator url`);
+    }
+    if (creator.name === 'Dorin Burcus') assert.equal(creator.url, `${SITE}/about/`, `${page}: Dorin's creator url`);
   }
 });
 
@@ -128,4 +153,18 @@ test('/image-use/ is published with one H1, an answer-first opening, author, dat
   assert.match(await readFile('dist/llms.txt', 'utf8'), /\(https:\/\/www\.mrwallcover\.com\/image-use\/\)/);
   assert.match(await readFile('dist/llms-full.txt', 'utf8'), /https:\/\/www\.mrwallcover\.com\/image-use\//);
   assert.match(await readFile('dist/index.html', 'utf8'), /<footer[\s\S]*href="\/image-use\/"/, 'footer link');
+});
+
+test('the official Jumeirah Carlton Tower photographs are credited to the hotel, under its terms', async () => {
+  const objs = (await imageObjects()).filter(({ page, node }) => page.includes('jumeirah-carlton-tower') && /carlton-tower-official-/.test(String(node.url)));
+  const unique = new Map(objs.map(({ node }) => [String(node.url), node]));
+  assert.equal(unique.size, 6, 'six official Jumeirah frames on the Carlton Tower case study');
+  for (const node of unique.values()) {
+    assert.deepEqual(node.creator, { '@type': 'Organization', name: 'Jumeirah Carlton Tower', url: 'https://www.jumeirah.com/en/stay/london/jumeirah-carlton-tower' });
+    assert.equal(node.creditText, 'Photo: Jumeirah Carlton Tower');
+    assert.equal(node.copyrightNotice, '© Jumeirah Carlton Tower');
+    assert.equal(node.license, 'https://mediahub.jumeirah.com/terms-of-use/');
+    assert.equal(node.acquireLicensePage, 'https://mediahub.jumeirah.com/terms-of-use/');
+    assert.equal(node.contentUrl, node.url);
+  }
 });

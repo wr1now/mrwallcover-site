@@ -497,7 +497,8 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
       if (!credit) continue;
       creditedImages += 1;
       const holder = credit.replace(/^(Photography|Image):\s*/, '').replace(/\s*\(official\)$/, '');
-      if (!match[2].includes(`"creditText":"${holder}"`)) problems.push(`${page.pathname}: ${match[1]} lacks creditText "${holder}"`);
+      // creditText reads "Photo: <holder>" (src/lib/schema.ts imageRights), the holder exactly as credited.
+      if (!match[2].includes(`"creditText":"Photo: ${holder}"`)) problems.push(`${page.pathname}: ${match[1]} lacks creditText "Photo: ${holder}"`);
       if (/"name":"(Mr Wallcover|Dorin Burcus)"/.test(match[2])) problems.push(`${page.pathname}: credited ${match[1]} is claimed as ours`);
       if (!page.html.includes(credit)) problems.push(`${page.pathname}: credit "${credit}" is in schema but not printed on the page`);
     }
@@ -506,9 +507,10 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
   assert.deepEqual(problems, []);
   assert.ok(creditedImages >= 10, `${creditedImages} credited ImageObjects checked`);
   const hoh = await readFile('dist/projects/house-of-hackney-st-michaels/index.html', 'utf8');
-  assert.match(hoh, /"creditText":"House of Hackney"/);
-  assert.match(hoh, /"creditText":"House of Hackney","creator":\{"@type":"Organization","name":"House of Hackney"\},"copyrightNotice":"© House of Hackney"/);
-  assert.doesNotMatch(hoh, /"creditText":"House of Hackney","creator":\{"@type":"Organization","name":"Mr Wallcover"/);
+  assert.match(hoh, /"creditText":"Photo: House of Hackney"/);
+  // The creator's url is the site its credited source page lives on (manifestNote "source https://www.houseofhackney.com/...").
+  assert.match(hoh, /"creditText":"Photo: House of Hackney","creator":\{"@type":"Organization","name":"House of Hackney","url":"https:\/\/www\.houseofhackney\.com\/"\},"copyrightNotice":"© House of Hackney"/);
+  assert.doesNotMatch(hoh, /"creditText":"Photo: House of Hackney","creator":\{"@type":"Organization",(?:"@id":"[^"]*",)?"name":"Mr Wallcover"/);
   // Specialism pages each carry their Service; the business node is the HomeAndConstructionBusiness already in use.
   for (const item of specialisms) assert.match(await readFile(`dist/services/${item.slug}/index.html`, 'utf8'), /"@type":"Service"/);
   const home = graphOf(await readFile('dist/index.html', 'utf8'));

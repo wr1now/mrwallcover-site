@@ -9,7 +9,8 @@
  * writing sizes.json, alts.json and placeholders.json. Re-encoding drops any remaining metadata.
  *
  * The manifestNote carries "credit Photograph: <hotel>" and "terms <url>", so src/lib/schema.ts
- * gives every frame the hotel as creator and copyright holder, and the hotel's terms page as
+ * gives every frame the hotel as creator and copyright holder (with "owner <url>", the
+ * hotel's own page, as the creator url), and the hotel's terms page as
  * license and acquireLicensePage. The same credit must be set on the case-study gallery entry
  * and in docs/asset-rights.md.
  *
@@ -66,7 +67,7 @@ for (const [id, frame] of Object.entries(manifest.images)) {
   };
   alts[id] = {
     alt: frame.alt,
-    manifestNote: `${manifest.note}; credit ${frame.credit ?? manifest.credit}; terms ${manifest.terms}; source ${manifest.page}; image ${frame.image}; downloaded ${manifest.downloaded}; ${manifest.caseStudy}`,
+    manifestNote: `${manifest.note}; credit ${frame.credit ?? manifest.credit}${manifest.ownerUrl ? `; owner ${manifest.ownerUrl}` : ''}; terms ${manifest.terms}; source ${manifest.page}; image ${frame.image}; downloaded ${manifest.downloaded}; ${manifest.caseStudy}`,
   };
   const tiny = await sharp(buffer).resize(24).webp({ quality: 40 }).toBuffer();
   placeholders[id] = `data:image/webp;base64,${tiny.toString('base64')}`;
