@@ -16,6 +16,9 @@ const EXPECTED_SLUGS = [
   'wallcovering-problems-and-aftercare',
   // Added 11 Oct 2026 (competitor-analysis follow-up d): the hotel fire-safety and compliance guide.
   'hotel-fire-safety-and-compliance',
+  // Added 11 Oct 2026 (competitor-technical follow-up): technique guides built only from our own records (docs/sources.md).
+  'papered-ceilings-and-staircases',
+  'set-out-and-pattern-matching',
 ];
 
 const slugs = (await readdir('src/content/guides')).filter((file) => file.endsWith('.md')).map((file) => file.slice(0, -3)).sort();
@@ -25,7 +28,7 @@ function frontmatter(source: string): Record<string, string> {
   return Object.fromEntries([...block.matchAll(/^([a-zA-Z]+): "?([^"\n]*)"?$/gm)].map((match) => [match[1], match[2]]));
 }
 
-test('the guide set is the nine 27.6 slugs plus the hotel fire-safety guide, each with an author and ISO dates', async () => {
+test('the guide set is the nine 27.6 slugs plus the hotel fire-safety and two technique guides, each with an author and ISO dates', async () => {
   assert.deepEqual(slugs, [...EXPECTED_SLUGS].sort());
   for (const slug of slugs) {
     const fm = frontmatter(await readFile(`src/content/guides/${slug}.md`, 'utf8'));
@@ -84,4 +87,20 @@ test('local content links and downloads resolve in the corresponding build', asy
       }
     }
   }
+});
+
+test('technique guides (11 Oct 2026): built from our own record, linked from the AI layer, no competitor names or unconfirmed techniques', async () => {
+  const forAi = await readFile('dist/for-ai/index.html', 'utf8');
+  const barred = /kill[- ]point|open time|Wells Interiors|Hamiltons|Jouffre|Tapetenmeister|Maruni|Jegal|Nakamura|TP Decorating|Heritage Wallpaper|Wallpaper Installation Sydney/i;
+  const scheme = new RegExp(['safe', 'contractor'].join('[\\s_-]*'), 'i');
+  for (const slug of ['papered-ceilings-and-staircases', 'set-out-and-pattern-matching']) {
+    assert.ok(forAi.includes(`href="/advice/${slug}/"`), `${slug} missing from /for-ai/`);
+    const source = await readFile(`src/content/guides/${slug}.md`, 'utf8');
+    assert.doesNotMatch(source, barred, slug);
+    assert.doesNotMatch(source, scheme, slug);
+    const html = await readFile(`dist/advice/${slug}/index.html`, 'utf8');
+    assert.doesNotMatch(html, barred, slug);
+  }
+  const sources = await readFile('docs/sources.md', 'utf8');
+  assert.match(sources, /## Technique guides and technique additions/);
 });
