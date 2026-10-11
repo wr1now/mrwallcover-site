@@ -8,9 +8,11 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import EnquiryForm from '../components/EnquiryForm.astro';
 import PhoneReveal from '../components/PhoneReveal.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
+import BookCallLink from '../components/BookCallLink.astro';
 import Base from '../layouts/Base.astro';
 import { contact } from '../lib/content';
 import { phoneAvailable } from '../lib/phone';
+import { BOOKING_URL } from '../config';
 import { breadcrumbNode } from '../lib/schema';
 
 const crumbs = [
@@ -47,7 +49,13 @@ const crumbs = [
         <p class:list={['m-0', !phoneAvailable && 'mt-6']}>
           <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
         </p>
-        <WhatsAppLink wrap="m-0" />
+        {(phoneAvailable || BOOKING_URL) && (
+          <div class="contact-quick mt-4 mb-4 flex flex-wrap gap-3">
+            <WhatsAppLink class="btn btn-line" />
+            <BookCallLink class="btn btn-line" />
+          </div>
+        )}
+        {BOOKING_URL && <p class="booking-hours mt-0 mb-4 text-sm text-stone">Calls Mon–Fri, 9am–5pm UK.</p>}
         <p class="m-0">
           <a href={INSTAGRAM_URL}>Instagram {INSTAGRAM_HANDLE}</a>
         </p>
