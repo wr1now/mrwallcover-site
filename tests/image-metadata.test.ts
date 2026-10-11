@@ -53,20 +53,31 @@ async function creditIndex() {
     const holder = e?.manifestNote?.match(/credit\s+(?:Photography|Photograph|Photo|Image|Images)\s*:\s*([^;]+)/i)?.[1].trim();
     if (holder) holders.set(id, holder.replace(/\s*\/\s*Wikimedia Commons.*$/i, '').replace(/\s*\(official\)\s*$/i, '').trim());
   }
-  return { byPath, holders };
+  // An official hotel or brand photograph records its owner's terms page ("terms <url>"):
+  // that page is its license and acquireLicensePage instead of /image-use/.
+  const terms = new Map<string, string>();
+  for (const [id, e] of Object.entries({ ...alts, ...credited })) {
+    const url = e?.manifestNote?.match(/(?:^|;\s*)terms\s+(https?:\/\/[^\s;]+)/i)?.[1];
+    if (url) terms.set(id, url);
+  }
+  return { byPath, holders, terms };
 }
 
 test('every ImageObject in the built JSON-LD carries all four image-metadata fields', async () => {
   const objs = await imageObjects();
+  const { byPath, terms } = await creditIndex();
   assert.ok(objs.length >= 262, `expected at least 262 ImageObjects, found ${objs.length}`);
   for (const { page, node } of objs) {
+    const id = byPath.get(new URL(String(node.url)).pathname) ?? String(node.url).match(/\/media\/img\/(?:r\/|thumbs\/)?([a-z0-9-]+?)(?:-\d+)?\.(?:jpe?g|webp|avif|png)$/)?.[1];
+    const ownerTerms = id ? terms.get(id) : undefined;
     for (const key of REQUIRED) assert.ok(node[key], `${page}: ImageObject ${node.url} is missing ${key}`);
     const creator = node.creator as Node;
     assert.ok(creator['@type'] === 'Person' || creator['@type'] === 'Organization', `${page}: creator of ${node.url} needs a Person or Organization type`);
     assert.ok(typeof creator.name === 'string' && creator.name.length > 1, `${page}: creator of ${node.url} needs a name`);
     assert.match(String(node.copyrightNotice), /^©\s\S/, `${page}: copyrightNotice of ${node.url}`);
-    assert.equal(node.acquireLicensePage, IMAGE_USE, `${page}: acquireLicensePage of ${node.url}`);
-    assert.ok(node.license === IMAGE_USE || /^https:\/\/creativecommons\.org\/licenses\//.test(String(node.license)), `${page}: license of ${node.url} is ${node.license}`);
+    assert.equal(node.acquireLicensePage, ownerTerms ?? IMAGE_USE, `${page}: acquireLicensePage of ${node.url}`);
+    assert.ok(node.license === (ownerTerms ?? IMAGE_USE) || /^https:\/\/creativecommons\.org\/licenses\//.test(String(node.license)), `${page}: license of ${node.url} is ${node.license}`);
+    if (ownerTerms) assert.ok(!OURS.has(String(creator.name)), `${page}: ${node.url} is an official owner photograph and must not name us as creator`);
     if (OURS.has(String(creator.name))) assert.equal(node.copyrightNotice, '© Mr Wallcover', `${page}: our photo ${node.url}`);
   }
 });
