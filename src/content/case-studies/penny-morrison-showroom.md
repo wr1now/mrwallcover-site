@@ -30,7 +30,7 @@
     { "id": "penny-morrison-showroom-10", "credit": null }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-09"
+  "updated": "2026-10-11"
 }
 ---
 
