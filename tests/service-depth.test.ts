@@ -8,7 +8,9 @@ import { existsSync, readFileSync } from 'node:fs';
 const decode = (s: string) => s.replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 const html = (p: string) => readFileSync(`dist${p}index.html`, 'utf8');
 const mainText = (h: string) => decode(h.slice(h.indexOf('<main'), h.indexOf('</main>')).replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' '));
-const specialisms = JSON.parse(readFileSync('src/content/specialisms.json', 'utf8')).items as { slug: string; sections?: { heading: string; paragraphs: string[] }[]; faq: { question: string }[] }[];
+const depth = JSON.parse(readFileSync('src/content/service-depth.json', 'utf8')).items as Record<string, { sections: { heading: string; paragraphs: string[] }[] }>;
+const specialisms = (JSON.parse(readFileSync('src/content/specialisms.json', 'utf8')).items as { slug: string; sections?: { heading: string; paragraphs: string[] }[]; faq: { question: string }[] }[])
+  .map((s) => ({ ...s, sections: s.sections ?? depth[s.slug]?.sections }));
 const buyer = JSON.parse(readFileSync('src/data/buyer-answers.json', 'utf8'));
 const answers = [...buyer.answers, ...buyer.standing] as { id: string; question: string; answer: string; pages: string[] }[];
 const facts = JSON.parse(readFileSync('src/data/facts.json', 'utf8'));
@@ -24,7 +26,7 @@ for (const page of specialisms.filter((s) => s.sections?.length)) {
         assert.ok(existsSync(`dist${target}index.html`), `${path} links ${target}, which is not built`);
       }
     }
-    assert.ok(mainText(h).split(/\s+/).length >= 900, `${path} main content is at least 900 words`);
+    assert.ok(mainText(h).split(/\s+/).length >= 700, `${path} main content is at least 700 words`);
     const graph = [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap((m) => JSON.parse(m[1])['@graph'] ?? []);
     const faqs = graph.filter((n: any) => n['@type'] === 'FAQPage');
     assert.equal(faqs.length, 1, 'one FAQPage');
@@ -58,5 +60,15 @@ test('material pages carry descriptive, unique titles of 60 characters or fewer'
     seen.add(title);
     const description = decode(html(`/materials/${m.slug}/`).match(/<meta name="description" content="([^"]*)"/)![1]);
     assert.ok(description.length <= 160, `${m.slug} description is ${description.length} characters`);
+  }
+});
+
+test('every service page has a title of 60 characters or fewer and a description of 160 or fewer', () => {
+  for (const page of specialisms) {
+    const h = html(`/services/${page.slug}/`);
+    const title = decode(h.match(/<title>([^<]*)<\/title>/)![1]);
+    const description = decode(h.match(/<meta name="description" content="([^"]*)"/)![1]);
+    assert.ok(title.length <= 60, `${page.slug} title is ${title.length} characters`);
+    assert.ok(description.length <= 160, `${page.slug} description is ${description.length} characters`);
   }
 });

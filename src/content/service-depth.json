@@ -1,0 +1,236 @@
+{
+  "_note": "Further H2 sections for service pages, kept apart from specialisms.json (src/lib/content.ts merges them by slug). Every sentence restates a fact already published on the site: case studies, the guides, materials.json, method.json, Dorin's buyer answers (src/data/buyer-answers.json) or the facts.json programme figures. No new claims. An optional title replaces the page's <title> where the original ran over 60 characters (the brand rule for titles); nothing else on the page changes.",
+  "items": {
+    "hand-painted-wallpaper-installation": {
+      "sections": [
+        {
+          "heading": "Planned before the panels are made",
+          "paragraphs": [
+            "A hand-painted or panoramic paper is a composition, not a repeating pattern. The panels are made to the elevations, so the plan comes before production: each wall is drawn with its finished width and height and the position of every door, window, socket, radiator, cornice and piece of joinery, and the focal point is agreed. That is often the bed, the chimneypiece or the dining table rather than the middle of the wall.",
+            "We measure on site, take out the openings and give the supplier the finished dimensions of the wall that will actually be hung. If the room is still being built or re-plastered, bring the installer and the maker in before the dimensions go to production: skirting height, cornice depth and a new lining all change the finished wall. The [scenic set-out guide](/advice/hand-painted-murals-set-out/) explains each step."
+          ]
+        },
+        {
+          "heading": "The sequence is the artwork",
+          "paragraphs": [
+            "Scenic papers arrive as numbered panels, hung in the supplied order. On a continuous wall the sequence is not changed to move a motif; only a break in the wall, such as a door or a window, gives the chance to alter it. The delivered panels are checked dry against the maker's layout before any paste and before anything is cut, while a sequence or sizing problem is still easy to resolve.",
+            "A hand-painted set cannot be stretched to fit. Its panels are made at a fixed width, and forcing a pasted panel to close a gap stretches it and leads to shrinkage as it dries. Where a door, a window or a corner takes part of the picture, we agree where the loss is least painful: behind a door that stands open, above a window, or in a corner that furniture hides."
+          ]
+        },
+        {
+          "heading": "The wall beneath a scenic paper",
+          "paragraphs": [
+            "A scenic paper is usually smooth and lit from the side, so the wall has to be sound and true. Some papers are hung over a lining and some are specified without one; de Gournay's instructions, for example, ask for every wall to be lined with plain white lining paper. Where a lining is used, its joints never coincide with the joints of the panels, and it is dry before the panels go on.",
+            "New plaster and very absorbent walls are sized as the maker's instruction says, never sealed with neat PVA. Filling, lining and drying time are planned into the programme rather than discovered on the day the panels arrive. The [wall preparation guide](/advice/wall-preparation/) sets out what is checked."
+          ]
+        },
+        {
+          "heading": "Scenic and chinoiserie papers on the record",
+          "paragraphs": [
+            "At [Brown's Hotel, Mayfair](/projects/browns-hotel-mayfair/), where we were main decorating contractor from 2022 to 2024, the scheme includes scenic and chinoiserie wallcoverings, among them Lewis & Wood's Adam's Eden, designed by Adam Calkin. At a [tea house in West London](/projects/tea-house-jaillon-studio/) designed by Jaillon Studio, the garden room is a panoramic scenic paper of a swan lake and flowering hydrangeas, hung for the reopening in 2021.",
+            "Beyond the published case studies, we have installed de Gournay and Fromental papers, including a large volume of Fromental at Four Seasons Ten Trinity Square, and de Gournay in a private residence in London in 2018. We hang these papers. We do not make them, and we are not affiliated with any maker."
+          ]
+        },
+        {
+          "heading": "Existing and historic papers",
+          "paragraphs": [
+            "For a paper hung by others, send overall and close-up photographs, the product and batch if known, when the problem appeared and any recent changes, and we will say whether a repair is possible. Marks, flaking or water damage on a hand-painted paper need a paper conservator. We can help find the right person, but we will not experiment on a hand-painted panel.",
+            "Our twelve-month workmanship guarantee covers our own installations; it does not transfer to an existing hang by another installer."
+          ]
+        },
+        {
+          "heading": "What the quotation includes",
+          "paragraphs": [
+            "There is no flat rate per roll, and a roll count will not price a scenic paper. The quotation comes from a site survey or from drawings, and reflects the elevations and panel layout, the state of the walls and any lining, access and protection. Preparation is described separately, with what is included and what depends on inspection. The [installation cost guide](/advice/installation-cost/) explains each item.",
+            "We focus on whole residences and hotel packages, and will take on one- or two-room commissions. The [hand-painted papers](/materials/hand-painted/) material page describes what the family needs."
+          ]
+        }
+      ]
+    },
+    "grasscloth-installation": {
+      "sections": [
+        {
+          "heading": "Why the panels differ",
+          "paragraphs": [
+            "Grasscloth is woven from natural fibres, such as sisal, raffia, arrowroot and jute, dyed and laid on a paper backing. Dye takes unevenly on natural fibre, so colour shifts along a roll and between rolls, and once hung each drop reads as a panel with its own tone. Light crossing the wall exaggerates the difference. That is the reason to look at a whole installed wall, not only a sample, before committing a room to it.",
+            "Printed and vinyl imitations remove the variation. If a uniform wall is what you want, compare one; the [choosing guide](/advice/choosing-wallcoverings/) covers that decision."
+          ]
+        },
+        {
+          "heading": "What is normal, and what is a fault",
+          "paragraphs": [
+            "Normal: a visible seam line, a step in tone between neighbouring drops, and a slightly different texture from one panel to the next.",
+            "Not normal, and never excused by shading: an open joint, a lifted seam, a dark line or dull patch from adhesive or water on the face, a shiny line where a seam roller has crushed the fibre, drops from two batches on one wall, a narrow sliver at the end of a wall that could have been balanced, or a crease, bubble or tear. Those are installation or handling problems, to be reported rather than lived with. The [grasscloth guide](/advice/grasscloth-seams-and-variation/) explains the difference in detail."
+          ]
+        },
+        {
+          "heading": "Set-out and shading",
+          "paragraphs": [
+            "Seams land where the wall widths, doors and windows put them, so on a prominent wall the set-out usually starts from the visual centre, the chimney breast or the bed wall, and the end panels are balanced so that neither is a sliver. The direction of the weave is agreed before the first length is cut.",
+            "The cut drops are shaded dry, one wall at a time; we hang three and stop to look. Whether alternate drops are reversed is decided by the product's own instruction and a trial on the wall, never by habit. The face is kept free of adhesive and smoothed with a plastic smoother, not a seam roller."
+          ]
+        },
+        {
+          "heading": "One batch to a room",
+          "paragraphs": [
+            "Variation between batches is larger than variation within one. The whole room is ordered, with a spare, from one batch number, and lengths from the same roll are kept together on the same wall where the room allows. Quantities allow for that, and for the fact that offcuts rarely blend; the [quantities guide](/advice/quantities/) explains why drops, not square metres, decide the order."
+          ]
+        },
+        {
+          "heading": "Phillip Jeffries and natural weaves on the record",
+          "paragraphs": [
+            "At [Four Seasons Hotel London at Ten Trinity Square](/projects/four-seasons-ten-trinity-square/) we hung Phillip Jeffries Tweed and Omexco between 2016 and 2019, and shading on the natural textiles was checked continuously so the walls read as a single surface. At [The Biltmore Mayfair](/projects/biltmore-mayfair/), then the Millennium Hotel, Grosvenor Square, the 2018 guest-room programme of more than 15,000 m² included a Phillip Jeffries schedule.",
+            "A maker named here means we installed that maker's product on that project. It is not a stockist claim, an approval or an endorsement."
+          ]
+        },
+        {
+          "heading": "Will it suit the room?",
+          "paragraphs": [
+            "Natural grasscloth is a dry-dust surface. Moisture stains it, adhesive on the face marks it, and it is not suited to frequent wiping or splashes. In a busy hall or beside a kitchen, a textured vinyl may be the better answer if cleaning matters more than natural fibre.",
+            "The wall beneath needs to be sound, true and evenly porous, and lined where the maker specifies it. A survey decides that before anything is ordered; see [wall preparation](/advice/wall-preparation/) and the [grasscloth and natural weaves](/materials/grasscloth-and-weaves/) material page."
+          ]
+        }
+      ]
+    },
+    "silk-wallcovering-installation": {
+      "sections": [
+        {
+          "heading": "Why silk is unforgiving",
+          "paragraphs": [
+            "Silk has a cloth face with a sheen that changes as you move. It marks quickly: adhesive on the face, or a ridge at a seam, shows in raking light and cannot be wiped away. Its care is the maker's note, usually dry. It is not a corridor vinyl, and it is specified for rooms where light is part of the finish."
+          ]
+        },
+        {
+          "heading": "The wall decides the finish",
+          "paragraphs": [
+            "A textured grasscloth forgives small undulations that a silk will show. Where the specification includes it, preparation means stripping old paper, sanding with dust extraction, and making good cracks and uneven surfaces before anything decorative goes up. Period walls can take days of filling and sanding before they are true.",
+            "Fresh plaster and filler need time to dry, and a moisture reading, not a calendar date, is the proof. Whether the wall is lined is the maker's call; where a lining is used, its joints never coincide with the joints of the silk, and it is dry first. The primer or size is the one the product's instruction names. The [wall preparation guide](/advice/wall-preparation/) covers each check."
+          ]
+        },
+        {
+          "heading": "Seams, light and set-out",
+          "paragraphs": [
+            "Seams are planned so the light from the windows does not catch a ridge. Pattern is set out from the room's focal points, such as chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure. Deliveries are checked against the measure, and batches and shading are managed so that a room reads as one surface.",
+            "Silk is hung with clean hands and an adhesive that suits the cloth, and floors, furniture and finished joinery are protected as part of the hang."
+          ]
+        },
+        {
+          "heading": "Silks and textiles on the record",
+          "paragraphs": [
+            "At [Four Seasons Hotel London at Ten Trinity Square](/projects/four-seasons-ten-trinity-square/), the hotel wallcoverings of 2019, about 5,000 m², included Fromental silks, alongside Dedar, Vescom, Tektura and Muraspec. At [Raffles London at The OWO](/projects/raffles-london-the-owo/), selected suites have Vescom Alcantara.",
+            "Before a silk is ordered, see the sample in the room's own light and confirm the preparation and care it needs; the [silk and textiles](/materials/silk-and-textiles/) material page has the checklist."
+          ]
+        },
+        {
+          "heading": "What the quotation includes",
+          "paragraphs": [
+            "There is no flat rate per roll. The quotation comes from a site survey or from drawings, and reflects the measured area after openings are taken off, the pattern repeat and the wastage it creates, the state of the walls, lining where it is specified, and access and protection. The [installation cost guide](/advice/installation-cost/) explains each item. We focus on whole residences and hotel packages, and will take on one- or two-room commissions."
+          ]
+        }
+      ]
+    },
+    "mural-installation": {
+      "sections": [
+        {
+          "heading": "Measured to the wall that will be hung",
+          "paragraphs": [
+            "A bespoke mural is printed or painted to the dimensions you supply, so we measure on site, take out the openings and give the supplier the finished dimensions of the wall that will actually be hung. For [Lee Broom's Shoreditch showroom](/projects/calico-lee-broom-overture/), we surveyed in July 2025 for Calico Wallpaper's panel layout and installed on 9 September 2025. At [Heathrow Terminal 4](/projects/heathrow-terminal-4-calico/), Calico's painted landscape was printed to the store's exact wall sizes and wrapped continuously around the corners.",
+            "Bring the installer in before the dimensions go to production. A digital print can sometimes be adjusted in the file before printing; a hand-made set cannot be stretched once it exists. The [scenic set-out guide](/advice/hand-painted-murals-set-out/) explains why."
+          ]
+        },
+        {
+          "heading": "A picture, not a pattern",
+          "paragraphs": [
+            "A mural is one image cut into drops or panels, and each piece has its own place in the picture. Panels are checked against the supplier's layout before hanging, then hung in sequence and matched across every joint. At the [Everyman cinema in Liverpool](/projects/everyman-liverpool/), Muraspec's extra-wide film and music prints were hung as single pictures from floor to ceiling, from the top of the wall down. At Heathrow the horizon had to run level and unbroken across each join and around every corner.",
+            "A gradient has no pattern to hide a join: at the [SCP showroom in Pimlico](/projects/scp-showroom-pimlico/) the blue mural was hung in order and butted exactly, so the fade lined up from panel to panel. Wide vinyl can be overlapped and cut through both layers at once, as at [Oxygen Freejumping, The O2](/projects/oxygen-freejumping-the-o2/), so fine lines run unbroken across the joint."
+          ]
+        },
+        {
+          "heading": "Preparing the wall",
+          "paragraphs": [
+            "A large print shows every bump beneath it. At Everyman the walls were prepared and lined before the murals went up, with scaffold towers and platforms for the tallest walls. Some murals are specified with a lining paper and some without; we follow the specification, and we say at the survey if the wall needs work first."
+          ]
+        },
+        {
+          "heading": "Fixed dates and live venues",
+          "paragraphs": [
+            "Event murals are hung to a date that does not move. For Ahluwalia and Calico Wallpaper, the [Estuary mural at Rosewood London](/projects/calico-ahluwalia-estuary-rosewood/) was installed in a single day, on 18 September 2026, the day before the show. At Heathrow, the mural was hung overnight on 24–25 September 2018 in a live terminal, by vetted operatives with airside passes, and the finished walls were photographed between 02:30 and 03:42.",
+            "At Everyman, the installation ran from October to December 2018, in the weeks before the cinema opened on 18 December."
+          ]
+        },
+        {
+          "heading": "Murals on the record",
+          "paragraphs": [
+            "Our published murals include Calico Wallpaper's Overture for Lee Broom (2025), Estuary for Ahluwalia (2026) and the Heathrow landscape (2018); Muraspec digital prints at Everyman Liverpool and The O2 (2018); the SCP gradient mural (2019); the panoramic scenic paper at a [tea house in West London](/projects/tea-house-jaillon-studio/) for Jaillon Studio (2021); and large-scale mural setting-out at the [Castle of Trematon](/projects/trematon-castle/) between 2019 and 2022.",
+            "A roll calculator will not price a mural. The quotation follows the panel count, the sequence, the substrate and the access the wall needs; the [murals](/materials/murals/) material page lists what to confirm before ordering."
+          ]
+        }
+      ]
+    },
+    "fabric-walling": {
+      "title": "Fabric Walling & Textile Wallcovering, London | Mr Wallcover",
+      "sections": [
+        {
+          "heading": "Paper-backed textiles and other fabrics",
+          "paragraphs": [
+            "Paper-backed textiles are hung like a wallcovering. Other fabrics have their own method, and we follow the maker's instruction and the designer's specification. Wider goods need more hands and careful handling, especially at corners and openings, and that is planned in the scope.",
+            "A textile face marks easily: it is hung with clean hands and an adhesive that suits the backing, and adhesive is kept off the face. The set-out is planned so the joins fall where they are least seen."
+          ]
+        },
+        {
+          "heading": "Edges, joinery and panels",
+          "paragraphs": [
+            "Fabric walling needs care at the edges and wherever it meets joinery, skirtings and reveals. On panelled walls each panel is its own small wall. At [Hilton London Metropole](/projects/hilton-london-metropole/) the wall panels of a large conference room were covered panel by panel, wrapped so the wallcovering runs the same way on every one and the edges meet on a clean line. At [Huntsman, Savile Row](/projects/huntsman-savile-row/), freestanding display boards were covered in the house's printed tweed, with the pattern square on every edge and face."
+          ]
+        },
+        {
+          "heading": "Textiles on the record",
+          "paragraphs": [
+            "At [Four Seasons Hotel London at Ten Trinity Square](/projects/four-seasons-ten-trinity-square/), the wallcoverings included Phillip Jeffries Tweed, Fromental silks and Dedar. At [Raffles London at The OWO](/projects/raffles-london-the-owo/), selected suites have Vescom Alcantara. A maker named here means we installed that maker's product; it is not an approval or an endorsement."
+          ]
+        },
+        {
+          "heading": "Preparation and light",
+          "paragraphs": [
+            "A textile wall shows what is beneath it in side light, so the wall is made sound, dry and true first, and lined where the maker requires it. Care follows the maker's note, usually dry. The [wall preparation guide](/advice/wall-preparation/) and the [silk and textiles](/materials/silk-and-textiles/) material page explain what is checked."
+          ]
+        },
+        {
+          "heading": "What the quotation includes",
+          "paragraphs": [
+            "The quotation comes from a site survey or from drawings: the measured area, the width of the goods and the wastage they create, the state of the walls, lining where specified, and access and protection. Aftercare is included, with a return visit once the room has settled and a twelve-month guarantee on the workmanship. The [installation cost guide](/advice/installation-cost/) explains each item."
+          ]
+        }
+      ]
+    },
+    "acoustic-wallcovering-installation": {
+      "sections": [
+        {
+          "heading": "Installed as the system was specified",
+          "paragraphs": [
+            "An acoustic wallcovering is a textured face over an acoustic construction, or an acoustic panel. Its performance belongs to the system, so adhesive, trimming, edges and cuts follow the instruction for that system, and nothing is changed on site that would alter what was specified.",
+            "We do not claim that a decorative finish carries an acoustic rating. A decorative texture is not evidence of acoustic performance."
+          ]
+        },
+        {
+          "heading": "Evidence and handover",
+          "paragraphs": [
+            "Acoustic performance, like fire and environmental performance, is evidenced by the exact product's own documents, accepted by the responsible project professional. Before ordering, obtain the system data and the installation detail, and confirm the project's acceptance. The handover then records the installed product, colourway and batch room by room, with spare material from the same batch. The [designer specification checklist](/advice/designer-specification-checklist/) lists the fields."
+          ]
+        },
+        {
+          "heading": "Junctions with other finishes",
+          "paragraphs": [
+            "Acoustic finishes often sit beside other wallcoverings and joinery in the same room, so the set-out and every junction are planned at the survey, with trims and edges agreed before the run starts. In a hotel or office that stays open, the work is contained and moves around the building's use, as on our [hotel programmes](/services/hotel-wallcovering-installation/)."
+          ]
+        },
+        {
+          "heading": "What the quotation includes",
+          "paragraphs": [
+            "The quotation comes from a site survey or from drawings, and reflects the measured area, the system's own installation requirements, the state of the walls, and access and protection. Aftercare and the twelve-month workmanship guarantee apply as with any other material. The [acoustic wallcoverings](/materials/acoustic/) material page and the [developer package guide](/advice/developer-wallcovering-package/) cover the specification side."
+          ]
+        }
+      ]
+    }
+  }
+}
