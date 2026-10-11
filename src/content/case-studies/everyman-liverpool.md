@@ -14,7 +14,7 @@
   "group": null,
   "standfirst": "Bespoke extra-wide digital prints of classic film and music imagery for the Everyman cinema in Liverpool, hung floor to ceiling as single pictures across the walls.",
   "metaTitle": "Everyman cinema, Liverpool | Mr Wallcover",
-  "metaDescription": "Bespoke large-format digital wallcoverings of classic film and music imagery, installed at the Everyman cinema in Liverpool in autumn 2018. Muraspec digital print.",
+  "metaDescription": "Bespoke large-format digital wallcoverings of classic film and music imagery, installed at the Everyman cinema, Liverpool, in autumn 2018. Muraspec print.",
   "hero": "everyman-11",
   "gallery": [
     {

@@ -14,7 +14,7 @@
   "group": null,
   "standfirst": "Supply and fit of black matt Muraspec wallcoverings through one of the newest Mercedes showrooms in London, finished with brushed stainless-steel trims at the doors and skirtings.",
   "metaTitle": "Mercedes-AMG showroom, London | Mr Wallcover",
-  "metaDescription": "Black matt Muraspec wallcoverings supplied and installed at a Mercedes-AMG showroom in London in 2019, with brushed stainless-steel trims at doors and skirtings.",
+  "metaDescription": "Black matt Muraspec wallcoverings supplied and installed at a Mercedes-AMG showroom in London in 2019, with brushed-steel trims at doors and skirtings.",
   "hero": "mercedes-amg-06",
   "gallery": [
     {
