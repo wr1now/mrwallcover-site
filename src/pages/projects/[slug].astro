@@ -1,5 +1,6 @@
 ---
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import CaseStudyGlance from '../../components/CaseStudyGlance.astro';
 import Picture from '../../components/Picture.astro';
 import { pictureSources } from '../../lib/picture';
 import Base from '../../layouts/Base.astro';
@@ -132,6 +133,7 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
             {project.credits?.[project.imageId] && <figcaption class="caption">{project.credits[project.imageId]}</figcaption>}
           </figure>
         )}
+        {study && <CaseStudyGlance study={{ slug: project.slug, client: study.frontmatter.client, role: study.frontmatter.role, years: study.frontmatter.years, wallcoverings: study.frontmatter.wallcoverings ?? [] }} />}
         <article class="prose case-study">
           <StudyContent />
         </article>

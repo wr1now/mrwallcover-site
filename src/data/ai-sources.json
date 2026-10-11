@@ -18,7 +18,8 @@
     "productsAsWritten": "At a glance: first of Wallcoverings, Wallpaper, Product, Collection, Window film",
     "techniques, method": "the case study's bold-lead method paragraphs (**Step.** text)",
     "preparation": "the method paragraphs whose lead mentions preparation, strip-out or priming",
-    "atAGlance": "the whole At a glance list, label by label, Markdown syntax removed"
+    "atAGlance": "the whole At a glance list, label by label, Markdown syntax removed",
+    "standardGlance": "src/lib/glance.ts: Client, Scope and Year from the case study frontmatter (client, role, years); Designer, Main contractor, Maker and paper overrides and Year overrides from src/content/case-study-glance.json (each stated on that page); Area or rooms only from src/data/facts.json programmeFigures (Dorin-approved), matched by URL; null where not recorded"
   },
   "site": {
     "since": "src/content/team.json members[dorin-burcus].since (2012); the About page and about.json say the same",
