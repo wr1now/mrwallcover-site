@@ -91,8 +91,11 @@ test('llms.txt lists every buyer question; /.well-known/facts.json carries them 
   for (const key of ['inTradeSince', 'awardText', 'services', 'areasServed', 'enquiryRoutes', 'wastageAllowance', 'projects']) assert.ok(key in wellKnown, `${key} kept`);
 });
 
+// The accreditation scheme Dorin keeps private (owner decision, 11 Oct 2026 20:58), matched with or without a space.
+const ACCREDITATION_SCHEME = new RegExp(['safe', 'contractor'].join('\\s*'), 'i');
+
 // Dorin's answers to QUESTIONS_FOR_DORIN.md Q1–Q14 (10 Oct 2026, 21:43).
-test('Dorin\'s Q1–Q14 answers: no [Pending] left, no insurance limits, no SafeContractor, no payment terms, no certifying of fire ratings', async () => {
+test('Dorin\'s Q1–Q14 answers: no [Pending] left, no insurance limits, no accreditation-scheme name, no payment terms, no certifying of fire ratings', async () => {
   for (const item of all) {
     for (const q of (item as Answer & { answeredBy?: string[] }).answeredBy ?? []) assert.ok(/^Q(1[0-4]|[1-9])$/.test(q), `${item.id} answeredBy ${q}`);
   }
@@ -102,10 +105,9 @@ test('Dorin\'s Q1–Q14 answers: no [Pending] left, no insurance limits, no Safe
   for (const file of files) {
     const text = await readFile(file, 'utf8');
     for (let n = 1; n <= 14; n += 1) if (text.includes(`[Pending Q${n}`)) problems.push(`${file}: [Pending Q${n}`);
-    // SafeContractor: Dorin's 10 Oct answers kept it off the site; on 11 Oct he asked for one plain line on /aftercare/
-    // (via the Website agent). Only that exact sentence may appear; any other mention, such as a membership claim, still fails.
-    const SAFECONTRACTOR_PLANNED = 'SafeContractor membership is planned; it is not held yet.';
-    if (/SafeContractor/i.test(text.split(SAFECONTRACTOR_PLANNED).join(''))) problems.push(`${file}: SafeContractor`);
+    // The contractor-accreditation scheme is never named publicly (Dorin Burcus, 11 Oct 2026 20:58: not as held, not as
+    // planned). The pattern is assembled from pieces so this public repo carries no literal of the name.
+    if (ACCREDITATION_SCHEME.test(text)) problems.push(`${file}: accreditation scheme named`);
     if (/payment terms (are|:)|our payment terms|\bdeposit of\b|\d+\s?% (deposit|retention)|payable within|net \d+ days/i.test(text)) problems.push(`${file}: payment terms`);
     for (const m of text.matchAll(/(public liability|employers'? liability|professional indemnity|insurance|insured)[^.\n]{0,120}(£\s?\d|\d+\s?(m|million)\b)/gi)) problems.push(`${file}: insurance limit "${m[0].slice(0, 80)}"`);
     if (/we certify fire|certif(y|ies) the fire (rating|classification)s? (ourselves|ourself)|Mr Wallcover certifies/i.test(text)) problems.push(`${file}: certifying fire ratings`);
