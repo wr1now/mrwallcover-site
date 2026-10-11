@@ -17,10 +17,14 @@ const filters = [
 // Events at hotel venues are deliberately not hotel installation commissions.
 const homeSlugs = new Set([
   'trematon-castle', 'pimlico-st-georges-square', 'inverness-terrace', 'north-london-residence',
-  'imperfect-arches-external-corner-trim',
+  'imperfect-arches-external-corner-trim', 'private-residence-little-venice',
 ]);
 // Commercial interiors outside the hotel record: a designer's tea house and a short-term showroom.
-const retailSlugs = new Set(['tea-house-jaillon-studio', 'scp-showroom-pimlico']);
+const retailSlugs = new Set([
+  'tea-house-jaillon-studio', 'scp-showroom-pimlico',
+  // From the Instagram photo pack, 11 Oct 2026: a tailor, a car showroom, a cinema, a leisure venue and an art-fair stand.
+  'huntsman-savile-row', 'mercedes-amg-showroom-london', 'everyman-liverpool', 'oxygen-freejumping-the-o2', 'masterpiece-london-2019',
+]);
 const cards = projects.map((project) => {
   const isHotel = hotels.some((hotel) => hotel.href === projectHref(project.slug) || hotel.name === project.title);
   const category = project.group === 'design-weeks' || project.slug === 'house-of-hackney-st-michaels' || retailSlugs.has(project.slug)

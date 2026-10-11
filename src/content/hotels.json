@@ -70,7 +70,7 @@
       "place": "Grosvenor Square",
       "years": "2018",
       "scope": "Wallcoverings, including Phillip Jeffries",
-      "href": ""
+      "href": "/projects/biltmore-mayfair/"
     },
     {
       "publish": true,
@@ -79,7 +79,25 @@
       "place": "Tring",
       "years": "December 2019 – January 2020",
       "scope": "Wallpapering, including damask and patterned papers",
-      "href": ""
+      "href": "/projects/pendley-manor-hotel/"
+    },
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "Hilton London Metropole",
+      "place": "Paddington",
+      "years": "2019",
+      "scope": "Wallcoverings, including conference-room wall panels",
+      "href": "/projects/hilton-london-metropole/"
+    },
+    {
+      "publish": true,
+      "nameOnly": false,
+      "name": "Novotel London Canary Wharf",
+      "place": "Canary Wharf",
+      "years": "2016",
+      "scope": "Wallcovering installation",
+      "href": "/projects/novotel-london-canary-wharf/"
     },
     {
       "publish": true,

@@ -18,22 +18,98 @@
   "standfirst": "Preparation and making good of the 1856 clergy house, then decorating and hanging House of Hackney's own papers through the concept rooms, bedroom and tiled cloakrooms, ready for the public opening on 26 March 2022.",
   "hero": "hoh-official-01",
   "gallery": [
-    { "id": "hoh-official-01", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-02", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-03", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-04", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-05", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-06", "credit": "Photography: House of Hackney" },
-    { "id": "hoh-official-07", "credit": "Photography: House of Hackney" },
-    { "id": "house-of-hackney-st-michaels-05", "credit": null },
-    { "id": "house-of-hackney-st-michaels-06", "credit": null },
-    { "id": "house-of-hackney-st-michaels-08", "credit": null },
-    { "id": "house-of-hackney-st-michaels-09", "credit": null },
-    { "id": "house-of-hackney-st-michaels-11", "credit": null },
-    { "id": "house-of-hackney-st-michaels-10", "credit": null },
-    { "id": "house-of-hackney-st-michaels-04", "credit": null },
-    { "id": "house-of-hackney-st-michaels-01", "credit": "Before" },
-    { "id": "house-of-hackney-st-michaels-03", "credit": "Before" }
+    {
+      "id": "hoh-official-01",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-02",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-03",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-04",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-05",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-06",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "hoh-official-07",
+      "credit": "Photography: House of Hackney"
+    },
+    {
+      "id": "house-of-hackney-st-michaels-05",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-06",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-08",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-09",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-11",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-10",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-04",
+      "credit": null
+    },
+    {
+      "id": "house-of-hackney-st-michaels-01",
+      "credit": "Before"
+    },
+    {
+      "id": "house-of-hackney-st-michaels-03",
+      "credit": "Before"
+    },
+    {
+      "id": "hoh-shoreditch-2019-01",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-02",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-03",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-04",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-05",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-06",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    },
+    {
+      "id": "hoh-shoreditch-2019-07",
+      "credit": "The earlier House of Hackney showroom in Shoreditch, August 2019."
+    }
   ],
   "published": "2026-10-09",
   "updated": "2026-10-10"
@@ -57,3 +133,5 @@ The survey was in October 2021. Making good and decorating ran from January 2022
 Pattern names are not stated here. The papers are House of Hackney's own, hung through the rooms as specified for the showroom. This commission was internal works only.
 
 The finished-room photographs marked "Photography: House of Hackney" are House of Hackney's own, from their website. The others were taken on site by us; the two marked "Before" show rooms as found, before the works began.
+
+The last seven photographs are from an earlier job for the same client: House of Hackney's previous showroom in Shoreditch, which we worked on in 2019. They are our own photographs, posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 19 August 2019, and each is captioned as the earlier showroom. They are not St Michael's Clergy House.

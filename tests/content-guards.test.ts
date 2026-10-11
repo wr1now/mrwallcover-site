@@ -204,7 +204,9 @@ test('held hotels stay out of the public content module', async () => {
   assert.match(hotels, /The Lanesborough/);
   assert.match(hotels, /Pendley Manor Hotel/);
   assert.match(hotels, /Moxy London ExCeL/);
-  assert.doesNotMatch(hotels, /Admiralty|Metropole|Canary Wharf|Koroseal|Landmark|Threadneedle/);
+  // Metropole and Novotel Canary Wharf were cleared by Dorin on 11 Oct 2026; the held Marriott stays out.
+  assert.doesNotMatch(hotels, /Admiralty|Marriott|Koroseal|Landmark|Threadneedle/);
+  assert.equal((JSON.parse(held).items as { name: string }[]).some((item) => /Metropole/.test(item.name)), false);
   const hotelItems = JSON.parse(hotels).items as { name: string; nameOnly: boolean; years: string; scope: string }[];
   const moxy = hotelItems.find((item) => item.name === 'Moxy London ExCeL');
   assert.equal(moxy?.nameOnly, true);

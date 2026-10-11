@@ -119,6 +119,118 @@
     {
       "id": "trematon-20",
       "credit": null
+    },
+    {
+      "id": "trematon-ig-01",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-02",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-03",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-04",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-05",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-06",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-07",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-08",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-09",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-10",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-11",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-12",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-13",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-14",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-15",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-16",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-17",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-18",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-19",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-20",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-21",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-22",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-23",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-24",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-25",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-26",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-27",
+      "credit": null
+    },
+    {
+      "id": "trematon-ig-28",
+      "credit": null
     }
   ],
   "published": "2026-10-09",
@@ -174,6 +286,10 @@ To hang House of Hackney wallpapers across the Georgian house. That meant large-
 Other House of Hackney designs that the press records at Trematon, but which we have **not** matched to our photos: [FLORALIA](https://www.houseofhackney.com/products/floralia-wallpaper-ecru) (bedroom, per AD), [GALANTHI](https://www.houseofhackney.com/products/galanthi-wallpaper-viridis) (guest bedroom, per AD) and [PHANTASIA – Selenite Orange](https://www.houseofhackney.com/products/phantasia-wallpaper-selenite-orange) (powder room, per AD). The brand's [TREMATONIA](https://www.houseofhackney.com/products/trematonia-wallpaper-ecru) print is named after the castle; we have not seen it in our photos.
 
 *Since we completed, some rooms have been refreshed with newer House of Hackney designs. Today's interiors will not all match our photographs.*
+
+## More from site
+
+The later photographs on this page are our own, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), between June 2019 and November 2021: the house and the castle walls, rooms during strip-out, finished bedrooms and bathrooms, the caravan papered and fitted out to a House of Hackney design in May 2021, and the Lincrusta going up the curved stair walls in November 2021 ([CWksjiaKBnq](https://www.instagram.com/p/CWksjiaKBnq/)).
 
 ## Outcome
 

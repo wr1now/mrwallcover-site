@@ -77,7 +77,7 @@ test('/for-ai/ states the facts from facts.json, links every published case stud
   // No endorsement wording, no phone, no draft route.
   assert.doesNotMatch(html, /approved by|accredited by|endorsed by|recommended by/i);
   assert.doesNotMatch(html, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b/);
-  assert.doesNotMatch(html, /penny-morrison|biltmore-mayfair/);
+  assert.doesNotMatch(html, /penny-morrison/);
   // Every published case study and guide is linked; every draft is not.
   for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
     const text = await readFile(`src/content/case-studies/${name}`, 'utf8');
@@ -182,7 +182,7 @@ test('every published page has a Markdown twin it links to, and its URL and main
   // Noindex pages, redirect stubs and drafts: no twin, not in llms-full.
   const allTwins = (await filesUnder('dist', (name) => name === 'index.md')).map((file) => file.replace(/^dist/, '').replace(/index\.md$/, ''));
   assert.deepEqual(allTwins.sort(), pages.map((page) => page.pathname).sort(), 'exactly one twin per published page');
-  for (const pathname of ['/thank-you/', '/search/', '/404/', '/projects/owo-whitehall/', '/projects/penny-morrison-showroom/', '/projects/biltmore-mayfair/', '/trade/', '/advice/cost/']) {
+  for (const pathname of ['/thank-you/', '/search/', '/404/', '/projects/owo-whitehall/', '/projects/penny-morrison-showroom/', '/trade/', '/advice/cost/']) {
     assert.equal(allTwins.includes(pathname), false, `${pathname} must have no twin`);
     assert.equal(full.includes(`${SITE}${pathname}`), false, `${pathname} must not be in llms-full.txt`);
   }

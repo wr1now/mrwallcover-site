@@ -1,0 +1,80 @@
+{
+  "caseStudy": "mercedes-amg-showroom-london",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder mercedes-amg-showroom",
+  "images": {
+    "mercedes-amg-01": {
+      "file": "mercedes-amg-showroom/2019-09-07_B2HM9AWlG3w_01.jpg",
+      "post": "B2HM9AWlG3w",
+      "date": "2019-09-07",
+      "url": "https://www.instagram.com/p/B2HM9AWlG3w/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Collage from the works at the Mercedes-AMG showroom, London: black matt walls, AMG signage and our installers at work.",
+      "brands": [
+        "Muraspec"
+      ],
+      "caption": null
+    },
+    "mercedes-amg-02": {
+      "file": "mercedes-amg-showroom/2019-09-13_B2V9cZklfv9_01.jpg",
+      "post": "B2V9cZklfv9",
+      "date": "2019-09-13",
+      "url": "https://www.instagram.com/p/B2V9cZklfv9/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Black matt Muraspec walls around a door with a brushed stainless-steel trim, Mercedes-AMG showroom, London.",
+      "brands": [
+        "Muraspec"
+      ],
+      "caption": null
+    },
+    "mercedes-amg-03": {
+      "file": "mercedes-amg-showroom/2019-09-13_B2V9cZklfv9_02.jpg",
+      "post": "B2V9cZklfv9",
+      "date": "2019-09-13",
+      "url": "https://www.instagram.com/p/B2V9cZklfv9/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Two doors set in black matt wallcovering with narrow brushed-steel trims, Mercedes-AMG showroom, London.",
+      "brands": [
+        "Muraspec"
+      ],
+      "caption": null
+    },
+    "mercedes-amg-04": {
+      "file": "mercedes-amg-showroom/2019-09-13_B2V9cZklfv9_03.jpg",
+      "post": "B2V9cZklfv9",
+      "date": "2019-09-13",
+      "url": "https://www.instagram.com/p/B2V9cZklfv9/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Corridor of black matt wallcovering with steel-trimmed doors and skirting, Mercedes-AMG showroom, London.",
+      "brands": [
+        "Muraspec"
+      ],
+      "caption": null
+    },
+    "mercedes-amg-05": {
+      "file": "mercedes-amg-showroom/2021-05-20_CPG8PCrlWNc_01.jpg",
+      "post": "CPG8PCrlWNc",
+      "date": "2021-05-20",
+      "url": "https://www.instagram.com/p/CPG8PCrlWNc/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Mercedes-AMG showroom entrance, London, with illuminated AMG branding against the black matt walls.",
+      "brands": [],
+      "caption": null
+    },
+    "mercedes-amg-06": {
+      "file": "mercedes-amg-showroom/2021-05-20_CPG8Ru6lLRB_01.jpg",
+      "post": "CPG8Ru6lLRB",
+      "date": "2021-05-20",
+      "url": "https://www.instagram.com/p/CPG8Ru6lLRB/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Curved staircase beside walls finished in black matt wallcovering, Mercedes-AMG showroom, London.",
+      "brands": [],
+      "caption": null
+    }
+  }
+}
