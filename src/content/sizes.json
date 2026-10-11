@@ -6513,24 +6513,6 @@
       ]
     }
   },
-  "hilton-city-airport-02": {
-    "width": 596,
-    "height": 312,
-    "src": "/media/img/r/hilton-city-airport-02-596.webp",
-    "jpg": "/media/img/r/hilton-city-airport-02-596.jpg",
-    "thumb": "/media/img/r/hilton-city-airport-02-596.webp",
-    "thumbJpg": "/media/img/r/hilton-city-airport-02-596.jpg",
-    "thumbWidth": 596,
-    "thumbHeight": 312,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/hilton-city-airport-02",
-      "widths": [
-        480,
-        596
-      ]
-    }
-  },
   "curio-westminster-01": {
     "width": 1440,
     "height": 1440,
@@ -6543,46 +6525,6 @@
     "hasFull": true,
     "variants": {
       "base": "/media/img/r/curio-westminster-01",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
-  "hilton-city-airport-01": {
-    "width": 1440,
-    "height": 756,
-    "src": "/media/img/r/hilton-city-airport-01-1440.webp",
-    "jpg": "/media/img/r/hilton-city-airport-01-1440.jpg",
-    "thumb": "/media/img/r/hilton-city-airport-01-800.webp",
-    "thumbJpg": "/media/img/r/hilton-city-airport-01-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 420,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/hilton-city-airport-01",
-      "widths": [
-        480,
-        800,
-        1200,
-        1440
-      ]
-    }
-  },
-  "hilton-city-airport-03": {
-    "width": 1440,
-    "height": 756,
-    "src": "/media/img/r/hilton-city-airport-03-1440.webp",
-    "jpg": "/media/img/r/hilton-city-airport-03-1440.jpg",
-    "thumb": "/media/img/r/hilton-city-airport-03-800.webp",
-    "thumbJpg": "/media/img/r/hilton-city-airport-03-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 420,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/hilton-city-airport-03",
       "widths": [
         480,
         800,

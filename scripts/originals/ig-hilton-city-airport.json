@@ -1,45 +1,11 @@
 {
   "caseStudy": "about-roll-call",
   "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folder hilton-london-city-airport",
-  "images": {
-    "hilton-city-airport-01": {
-      "file": "hilton-london-city-airport/2020-09-25_CFkkCy-l-RQ_01.jpg",
-      "post": "CFkkCy-l-RQ",
-      "date": "2020-09-25",
-      "url": "https://www.instagram.com/p/CFkkCy-l-RQ/",
-      "width": 1440,
-      "height": 756,
-      "alt": "The new Hilton hotel at London City Airport, seen from outside, 2020.",
-      "brands": [
-        "Vescom"
-      ],
-      "caption": null
-    },
-    "hilton-city-airport-02": {
-      "file": "hilton-london-city-airport/2020-09-25_CFkkCy-l-RQ_02.jpg",
-      "post": "CFkkCy-l-RQ",
-      "date": "2020-09-25",
-      "url": "https://www.instagram.com/p/CFkkCy-l-RQ/",
-      "width": 596,
-      "height": 312,
-      "alt": "Close-up of a white Vescom Xorel wallcovering with a fine linear weave, new Hilton hotel at London City Airport.",
-      "brands": [
-        "Vescom"
-      ],
-      "caption": null
-    },
-    "hilton-city-airport-03": {
-      "file": "hilton-london-city-airport/2020-09-25_CFkkCy-l-RQ_03.jpg",
-      "post": "CFkkCy-l-RQ",
-      "date": "2020-09-25",
-      "url": "https://www.instagram.com/p/CFkkCy-l-RQ/",
-      "width": 1440,
-      "height": 756,
-      "alt": "White Vescom Xorel textile wallcovering on the wall, new Hilton hotel at London City Airport.",
-      "brands": [
-        "Vescom"
-      ],
-      "caption": null
-    }
-  }
+  "images": {},
+  "droppedSoft": {
+    "hilton-city-airport-01": "hilton-london-city-airport/2020-09-25_CFkkCy-l-RQ_01.jpg",
+    "hilton-city-airport-02": "hilton-london-city-airport/2020-09-25_CFkkCy-l-RQ_02.jpg",
+    "hilton-city-airport-03": "hilton-london-city-airport/2020-09-25_CFkkCy-l-RQ_03.jpg"
+  },
+  "droppedSoftNote": "Dropped 11 Oct 2026 in the soft-image sweep (source too small or soft for the award no-soft-image goal); never on main."
 }

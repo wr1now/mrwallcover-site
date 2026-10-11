@@ -188,19 +188,6 @@
         "source": "https://www.instagram.com/p/CL4j518lzE7/"
       },
       {
-        "name": "A new Hilton hotel at London City Airport",
-        "place": "Royal Docks",
-        "years": "2020",
-        "text": "Vescom Xorel on a paper-backed wall system.",
-        "images": [
-          "hilton-city-airport-01",
-          "hilton-city-airport-02",
-          "hilton-city-airport-03"
-        ],
-        "href": "",
-        "source": "https://www.instagram.com/p/CFkkCy-l-RQ/"
-      },
-      {
         "name": "DoubleTree by Hilton London – Victoria",
         "place": "Victoria",
         "years": "2023",
@@ -280,7 +267,8 @@
         "href": "/projects/hilton-garden-inn-silverstone/",
         "source": "https://www.instagram.com/p/CZxXOZAKhx1/"
       }
-    ]
+    ],
+    "_sweep": "11 Oct 2026: the new Hilton at London City Airport entry was removed with its three photographs (sources 756px, 312px and 756px on the short side, too small for card use); no name-only entry is allowed."
   },
   "timeline": {
     "eyebrow": "A short timeline",
@@ -308,7 +296,7 @@
       },
       {
         "year": "2020",
-        "text": "Pendley Manor: 30 rooms in 30 days. The Marylebone; the Adam Reed salon; a new Hilton hotel at London City Airport. Jumeirah Carlton Tower: 8 months, finished at the end of 2020."
+        "text": "Pendley Manor: 30 rooms in 30 days. The Marylebone; the Adam Reed salon. Jumeirah Carlton Tower: 8 months, finished at the end of 2020."
       },
       {
         "year": "2021",
