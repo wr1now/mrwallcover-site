@@ -2,6 +2,7 @@
 import Breadcrumb from './Breadcrumb.astro';
 import FaqList from './FaqList.astro';
 import Picture from './Picture.astro';
+import HotelGroups from './HotelGroups.astro';
 import { areaHref, areas, landingProjectSlugs, linkedProjects, projectHref, specialismHref, specialisms } from '../lib/content';
 import type { LandingPage } from '../lib/content';
 
@@ -104,6 +105,7 @@ function segments(text: string) {
       </section>
     )
   }
+  {page.autoProjects === 'hotels' && <HotelGroups />}
 </div>
 
 <FaqList items={page.faq} eyebrow="Questions" heading={`Asked about ${page.name.replace(/^the /, '')}`} />

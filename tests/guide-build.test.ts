@@ -3,7 +3,7 @@ import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { test } from 'node:test';
 
-/** The nine Markdown guides from section 27.6 of the build brief; guide 4 is the /advice/quantities/ calculator page. */
+/** The nine Markdown guides from section 27.6 of the build brief, plus the hotel fire-safety guide; guide 4 is the /advice/quantities/ calculator page. */
 const EXPECTED_SLUGS = [
   'choosing-wallcoverings',
   'grasscloth-seams-and-variation',
@@ -14,6 +14,8 @@ const EXPECTED_SLUGS = [
   'designer-specification-checklist',
   'developer-wallcovering-package',
   'wallcovering-problems-and-aftercare',
+  // Added 11 Oct 2026 (competitor-analysis follow-up d): the hotel fire-safety and compliance guide.
+  'hotel-fire-safety-and-compliance',
 ];
 
 const slugs = (await readdir('src/content/guides')).filter((file) => file.endsWith('.md')).map((file) => file.slice(0, -3)).sort();
@@ -23,7 +25,7 @@ function frontmatter(source: string): Record<string, string> {
   return Object.fromEntries([...block.matchAll(/^([a-zA-Z]+): "?([^"\n]*)"?$/gm)].map((match) => [match[1], match[2]]));
 }
 
-test('the guide set is the nine 27.6 slugs, each with an author and ISO dates', async () => {
+test('the guide set is the nine 27.6 slugs plus the hotel fire-safety guide, each with an author and ISO dates', async () => {
   assert.deepEqual(slugs, [...EXPECTED_SLUGS].sort());
   for (const slug of slugs) {
     const fm = frontmatter(await readFile(`src/content/guides/${slug}.md`, 'utf8'));

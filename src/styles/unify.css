@@ -193,3 +193,6 @@ body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-f
   body .atelier .home-films { grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:62vw; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px; padding-bottom:12px; }
   body .atelier .home-films figure { scroll-snap-align:start; }
 }
+
+/* The case-study "At a glance" box: its heading is an eyebrow label, not a section title (src/components/CaseStudyGlance.astro). */
+main .glance-box h2 { font-family:var(--font-sans, inherit); font-size:var(--text-eyebrow); font-weight:500; line-height:1.4; letter-spacing:var(--tracking-eyebrow); text-transform:uppercase; color:var(--color-ink); }

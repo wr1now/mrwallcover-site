@@ -1,0 +1,25 @@
+---
+/**
+ * The standard "At a glance" box (src/lib/glance.ts): seven fields, always in the same order.
+ * A field the case study does not record shows a dash, with "Not recorded" for screen readers.
+ */
+import { glanceRows, type GlanceSource } from '../lib/glance';
+
+interface Props {
+  study: GlanceSource;
+}
+
+const rows = glanceRows(Astro.props.study);
+---
+
+<section class="glance-box" aria-labelledby="glance-heading" data-glance>
+  <h2 id="glance-heading" class="eyebrow m-0">At a glance</h2>
+  <dl class="glance-list">
+    {rows.map((row) => (
+      <div>
+        <dt>{row.label}</dt>
+        <dd>{row.value ?? <><span aria-hidden="true">–</span><span class="sr-only">Not recorded</span></>}</dd>
+      </div>
+    ))}
+  </dl>
+</section>
