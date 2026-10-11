@@ -27,8 +27,9 @@ const BANNED = [
   /\bSamantha\b/,
   /Koroseal/i,
   /Admiralty/i,
-  /Metropole/i,
-  /Canary Wharf/i,
+  // Hilton London Metropole and Novotel London Canary Wharf were cleared by Dorin on 11 Oct 2026 (Instagram photo pack);
+  // the held Canary Wharf hotel stays out by name.
+  /Marriott/i,
   /subcontract/i,
   /third[\s-]party/i,
   /Threadneedle/i,

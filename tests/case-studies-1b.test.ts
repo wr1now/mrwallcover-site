@@ -27,7 +27,9 @@ test('the tea house is credited to Jaillon Studio, located only as West London, 
   const html = await page('tea-house-jaillon-studio');
   assert.match(html, /<img[^>]*tea-house-01[^>]*loading="eager"|<img[^>]*loading="eager"[^>]*tea-house-01/);
   assert.match(html, /href="https:\/\/www\.jaillonstudio\.com\/"/);
-  const words = text(html) + (await twin('tea-house-jaillon-studio'));
+  // The "Related pages" nav lists every published project by title, including the separate
+  // "Private residence, Little Venice" (11 Oct 2026); the tea house's own copy is what must stay West London.
+  const words = text(html.replace(/<nav\b[\s\S]*?<\/nav>/g, '')) + (await twin('tea-house-jaillon-studio'));
   assert.match(words, /West London/);
   assert.doesNotMatch(words, /Little Venice|Maida Vale|Warrington|Turing|Paddington|W9\b|NW8\b/i);
   assert.doesNotMatch(words, SOURCE_NAMES);

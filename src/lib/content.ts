@@ -102,6 +102,15 @@ const CASE_STUDY_ORDER = [
   'calico-beverly-1975-cadence',
   'calico-lee-broom-overture',
   'hilton-garden-inn-silverstone',
+  'pendley-manor-hotel',
+  'hilton-london-metropole',
+  'novotel-london-canary-wharf',
+  'huntsman-savile-row',
+  'mercedes-amg-showroom-london',
+  'everyman-liverpool',
+  'oxygen-freejumping-the-o2',
+  'masterpiece-london-2019',
+  'private-residence-little-venice',
 ];
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;

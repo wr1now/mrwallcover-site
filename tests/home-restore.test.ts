@@ -43,5 +43,7 @@ test('retired project URLs land on /projects/: a meta-refresh stub where the nam
   assert.ok(notFound.includes("location.replace('/projects/')"), '404 sends unknown /projects/ URLs to the work index');
   assert.ok(notFound.includes('/^\\/projects\\/[a-z0-9-]+\\/?$/'), 'only single-segment /projects/ URLs');
   const sitemap = await readFile('dist/sitemap-0.xml', 'utf8');
-  assert.doesNotMatch(sitemap, /the-lanesborough|biltmore-mayfair/);
+  assert.doesNotMatch(sitemap, /the-lanesborough/);
+  // The Biltmore Mayfair was published with its own photographs on 11 Oct 2026.
+  assert.match(sitemap, /\/projects\/biltmore-mayfair\//);
 });

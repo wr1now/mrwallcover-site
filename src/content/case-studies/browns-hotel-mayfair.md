@@ -64,10 +64,18 @@
     {
       "id": "browns-hotel-mayfair-08",
       "credit": null
+    },
+    {
+      "id": "browns-ig-01",
+      "credit": null
+    },
+    {
+      "id": "browns-ig-02",
+      "credit": null
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-11"
 }
 ---
 
@@ -110,3 +118,5 @@ To act as main decorating contractor across a sequence of rooms and suites: prep
 ## Outcome
 
 Rooms that feel as though they have always been this way: Adam Calkin's garden climbing beneath freshly finished plasterwork, and calm, tailored bedrooms. All of it delivered on time, in a hotel that never closed its doors.
+
+The last two photographs, of the hotel's sign and street entrance, are our own, posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 7 February 2022, the day we started this project at Brown's ([CZqAHTMKcnj](https://www.instagram.com/p/CZqAHTMKcnj/)).

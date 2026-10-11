@@ -1,12 +1,6 @@
 {
-  "note": "Unpublished hotel credits. publish is false. Pages must not import this file. Confirm with Dorin before any of these names appear on the site. Do not add shipping labels or other people's company names.",
+  "note": "Unpublished hotel credits. publish is false. Pages must not import this file. Confirm with Dorin before any of these names appear on the site. Do not add shipping labels or other people's company names. Hilton London Metropole left this list on 11 October 2026: Dorin cleared it for publication with its own photographs (case study hilton-london-metropole).",
   "items": [
-    {
-      "publish": false,
-      "slug": "hilton-london-metropole",
-      "name": "Hilton London Metropole",
-      "reason": "Held. A credit may be possible later. Do not publish photographs of delivery labels."
-    },
     {
       "publish": false,
       "slug": "waldorf-astoria-admiralty-arch",

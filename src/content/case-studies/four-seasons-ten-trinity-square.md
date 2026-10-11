@@ -9,7 +9,12 @@
   "role": "Guest room, suite and private residence wallpapering",
   "wallcoverings": [
     "Phillip Jeffries – Tweed",
-    "Omexco (Belgium)"
+    "Omexco (Belgium)",
+    "Fromental",
+    "Dedar",
+    "Vescom",
+    "Tektura",
+    "Muraspec"
   ],
   "modest": false,
   "metaTitle": "Four Seasons Hotel London, Ten Trinity Square | Mr Wallcover",
@@ -67,6 +72,182 @@
       "credit": null
     },
     {
+      "id": "fs-ig-01",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-02",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-03",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-05",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-06",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-08",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-09",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-10",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-11",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-12",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-13",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-14",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-15",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-16",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-17",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-18",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-19",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-20",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-21",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-22",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-23",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-24",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-25",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-26",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-27",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-28",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-29",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-30",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-31",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-32",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-33",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-34",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-35",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-36",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-37",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-38",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-39",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-41",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-43",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-44",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-45",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-46",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-48",
+      "credit": null
+    },
+    {
+      "id": "fs-ig-49",
+      "credit": null
+    },
+    {
       "id": "four-seasons-ten-trinity-commons-01",
       "credit": "Ten Trinity Square at night, from Trinity Square Gardens. A view of the building, not of our work. Photography: The wub / Wikimedia Commons (CC BY-SA 4.0)."
     },
@@ -80,7 +261,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-11"
 }
 ---
 
@@ -92,7 +273,8 @@
 - **Role:** Guest room and suite wallpapering, and wallcoverings in the Four Seasons Private Residences
 - **Wallcoverings:** [Phillip Jeffries](https://www.phillipjeffries.com/) Tweed; [Omexco](https://www.omexco.com/)
 - **Scope:** Survey, wall preparation and priming, setting out, installation with full pattern and seam control
-- **Photographs:** our own, of finished private residences and residents' lift lobbies in the building, April and May 2019. We do not identify any residence: no flat or floor numbers, no owners, no views, and lift floor indicators and signs are blurred.
+- **Photographs:** our own, of finished private residences and residents' lift lobbies in the building, April and May 2019. We do not identify any residence: no flat or floor numbers, no owners, no views, and lift floor indicators and signs are blurred. Then our own photographs of the hotel's lift lobbies, corridors and wallcoverings, December 2017 to September 2019, first posted on our Instagram
+- **Hotel wallcoverings, 2019:** about 5,000 m², including Fromental silks, Dedar, Vescom, Tektura and Muraspec
 
 ## The building
 
@@ -128,6 +310,10 @@ The same building holds the Four Seasons Private Residences, and our work at Ten
 
 **Residents' lift lobbies.** Warm, banded veneer- and stone-effect walls around the lift cores, matched from panel to panel so the figure flows around corners and past the lift doors.
 
+## The hotel, 2017 to 2019
+
+Our own photographs from the hotel floors, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), record the scale of the work. In May 2019 our team completed the installation of about 5,000 m² of wallcoverings at Four Seasons Hotel London, in Fromental, Vescom, Tektura and Dedar ([BxBEIajB-d5](https://www.instagram.com/p/BxBEIajB-d5/)). The silks were Fromental's, including hand-dyed silk feature walls ([BwS1XkFhWv6](https://www.instagram.com/p/BwS1XkFhWv6/)); several lift lobbies were finished in Dedar ([B2U2Ry8F0rE](https://www.instagram.com/p/B2U2Ry8F0rE/)) and others in Muraspec ([B2U12SXFLHE](https://www.instagram.com/p/B2U12SXFLHE/)). Phillip Jeffries' tweed-like fabric appears in our posts from December 2017 ([BdNs0wagJs9](https://www.instagram.com/p/BdNs0wagJs9/)).
+
 ## Materials
 
 - **[Phillip Jeffries Tweed](https://www.phillipjeffries.com/shop/CARD-TW-LINEN):** a tailored textile wallcovering with the soft, flecked texture of classic suiting. Phillip Jeffries also offers a [Vinyl Tweed](https://www.phillipjeffries.com/shop/CARD-N-TWEED); the exact Tweed reference used at Ten Trinity Square is not recorded here.
@@ -140,6 +326,8 @@ Guest room and suite wallpapering from 2016 to 2019 on one of London's most sign
 ## Photographs on this page
 
 The first twelve photographs are our own, of finished work in the private residences and residents' lift lobbies (April and May 2019). Nothing in them identifies a residence or its owner.
+
+The next forty-four are our own photographs of the hotel's lift lobbies, corridors and wallcoverings, December 2017 to September 2019, first posted on our Instagram. A few of those posts do not name the hotel; they show the same lift lobbies, balustrades and doors as the posts that do.
 
 The last three are photographs of the building by other photographers, credited below. They show the building, not our work.
 
