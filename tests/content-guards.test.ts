@@ -152,7 +152,7 @@ test('draft case studies are filtered out before they are built', async () => {
   assert.match(content, /!\s*mod\.frontmatter\.draft/);
 });
 
-test('the six Workstream 4 scaffolds exist as drafts on the same mechanism, with TODO(Dorin) markers and no invented figures', async () => {
+test('the six Workstream 4 pages exist on the same mechanism; any still a draft keeps its TODO(Dorin) markers, and none carries an invented figure', async () => {
   const content = await readFile('src/lib/content.ts', 'utf8');
   assert.match(content, /editorialModules\)\.filter\(\(mod\) => !mod\.frontmatter\.draft\)/);
   const names = (await readdir('src/content/pages')).filter((entry) => entry.endsWith('.md')).sort();
@@ -219,21 +219,21 @@ test('held hotels stay out of the public content module', async () => {
   assert.match(held, /Waldorf Astoria London Admiralty Arch/);
 });
 
-test('exterior works lists only the two cleared projects while the showroom case study is a draft', async () => {
+test('exterior works lists the two cleared projects and the Penny Morrison showroom, published 11 Oct 2026', async () => {
   const data = JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as {
     items: { slug: string; projects: string[]; paragraphs: string[]; lede: string }[];
   };
   const page = data.items.find((item) => item.slug === 'exterior-works');
   assert.ok(page);
-  // The Penny Morrison showroom returns to this list only when its case study leaves draft (client confirmation in writing).
-  assert.deepEqual(page.projects, ['pimlico-st-georges-square', 'inverness-terrace']);
+  // The Penny Morrison showroom returned to this list when its case study left draft (Dorin, 11 Oct 2026: publish it, address named).
+  assert.deepEqual(page.projects, ['pimlico-st-georges-square', 'inverness-terrace', 'penny-morrison-showroom']);
   const blob = JSON.stringify(page);
   assert.match(blob, /all the internal works plus the full exterior/i);
   assert.match(blob, /scaffolding supplied and managed/i);
-  assert.doesNotMatch(blob, /House of Hackney|Lanesborough|Chesham|Threadneedle|Mulberry|Aethos|Penny Morrison|penny-morrison/i);
+  assert.doesNotMatch(blob, /House of Hackney|Lanesborough|Chesham|Threadneedle|Mulberry|Aethos/i);
   const showroom = await readFile('src/content/case-studies/penny-morrison-showroom.md', 'utf8');
-  assert.match(showroom, /"draft": true/);
-  assert.match(showroom, /9 Langton Street/, 'the showroom address stays in the draft source (commercial, approved)');
+  assert.doesNotMatch(showroom, /"draft": true/);
+  assert.match(showroom, /9 Langton Street/, 'the showroom address is named (commercial, approved by Dorin)');
   const services = await readFile('src/pages/services.astro', 'utf8');
   assert.match(services, /exterior-works/);
   const hackney = await readFile('src/content/case-studies/house-of-hackney-st-michaels.md', 'utf8');
