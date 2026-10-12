@@ -19,6 +19,9 @@ const EXPECTED_SLUGS = [
   // Added 11 Oct 2026 (competitor-technical follow-up): technique guides built only from our own records (docs/sources.md).
   'papered-ceilings-and-staircases',
   'set-out-and-pattern-matching',
+  // Added 12 Oct 2026 (manufacturer-technical follow-up): owner-confirmed method guides (docs/sources.md).
+  'bathrooms-showers-and-wet-rooms',
+  'double-cutting-and-lining',
 ];
 
 const slugs = (await readdir('src/content/guides')).filter((file) => file.endsWith('.md')).map((file) => file.slice(0, -3)).sort();
@@ -28,7 +31,7 @@ function frontmatter(source: string): Record<string, string> {
   return Object.fromEntries([...block.matchAll(/^([a-zA-Z]+): "?([^"\n]*)"?$/gm)].map((match) => [match[1], match[2]]));
 }
 
-test('the guide set is the nine 27.6 slugs plus the hotel fire-safety and two technique guides, each with an author and ISO dates', async () => {
+test('the guide set is the nine 27.6 slugs plus the hotel fire-safety, two technique and two method guides, each with an author and ISO dates', async () => {
   assert.deepEqual(slugs, [...EXPECTED_SLUGS].sort());
   for (const slug of slugs) {
     const fm = frontmatter(await readFile(`src/content/guides/${slug}.md`, 'utf8'));
@@ -93,7 +96,7 @@ test('technique guides (11 Oct 2026): built from our own record, linked from the
   const forAi = await readFile('dist/for-ai/index.html', 'utf8');
   const barred = /kill[- ]point|open time|Wells Interiors|Hamiltons|Jouffre|Tapetenmeister|Maruni|Jegal|Nakamura|TP Decorating|Heritage Wallpaper|Wallpaper Installation Sydney/i;
   const scheme = new RegExp(['safe', 'contractor'].join('[\\s_-]*'), 'i');
-  for (const slug of ['papered-ceilings-and-staircases', 'set-out-and-pattern-matching']) {
+  for (const slug of ['papered-ceilings-and-staircases', 'set-out-and-pattern-matching', 'bathrooms-showers-and-wet-rooms', 'double-cutting-and-lining']) {
     assert.ok(forAi.includes(`href="/advice/${slug}/"`), `${slug} missing from /for-ai/`);
     const source = await readFile(`src/content/guides/${slug}.md`, 'utf8');
     assert.doesNotMatch(source, barred, slug);

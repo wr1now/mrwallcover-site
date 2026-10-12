@@ -1,0 +1,123 @@
+{
+  "caseStudy": "wet-room case studies (lotus mural shower, marble shower, Belgravia stone-effect bathroom); brand-wall-deco-01 and brand-glamora-01 are already imported (materials-makers) and are reused as they are",
+  "source": "@mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922), folders private-residence-london and private-residence-belgravia",
+  "images": {
+    "wet-marble-02": {
+      "file": "private-residence-london/2019-03-06_BurClR3hSUV_02.jpg",
+      "post": "BurClR3hSUV",
+      "date": "2019-03-06",
+      "url": "https://www.instagram.com/p/BurClR3hSUV/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "A finished marble-effect wet-system shower room seen through a doorway from a room papered in a large palm-leaf design, a private residence, London.",
+      "brands": [
+        "Wall&decò"
+      ],
+      "caption": null
+    },
+    "wet-marble-01": {
+      "file": "private-residence-london/2019-03-06_BurClR3hSUV_01.jpg",
+      "post": "BurClR3hSUV",
+      "date": "2019-03-06",
+      "url": "https://www.instagram.com/p/BurClR3hSUV/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Marble-effect Wall&decò wet-system wallcovering, finished, in a shower room, a private residence, London.",
+      "brands": [
+        "Wall&decò"
+      ],
+      "caption": null
+    },
+    "wet-marble-07": {
+      "file": "private-residence-london/2019-03-06_BurClR3hSUV_07.jpg",
+      "post": "BurClR3hSUV",
+      "date": "2019-03-06",
+      "url": "https://www.instagram.com/p/BurClR3hSUV/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "The shower wall before preparation: new plywood boards screwed in place, a recessed niche tanked at its edges and a concealed-cistern frame.",
+      "brands": [
+        "Wall&decò"
+      ],
+      "caption": null
+    },
+    "wet-marble-06": {
+      "file": "private-residence-london/2019-03-06_BurClR3hSUV_06.jpg",
+      "post": "BurClR3hSUV",
+      "date": "2019-03-06",
+      "url": "https://www.instagram.com/p/BurClR3hSUV/",
+      "width": 1080,
+      "height": 1080,
+      "alt": "The same shower wall after preparation: a smooth white base with the niche and flush-plate box masked, beside a herringbone tiled wall.",
+      "brands": [
+        "Wall&decò"
+      ],
+      "caption": null
+    },
+    "wet-marble-05": {
+      "file": "private-residence-london/2019-03-06_BurClR3hSUV_05.jpg",
+      "post": "BurClR3hSUV",
+      "date": "2019-03-06",
+      "url": "https://www.instagram.com/p/BurClR3hSUV/",
+      "width": 1080,
+      "height": 1079,
+      "alt": "The prepared shower wall masked at every edge, niche, pipe and fitting before the wet system goes on.",
+      "brands": [
+        "Wall&decò"
+      ],
+      "caption": null
+    },
+    "wet-glamora-03": {
+      "file": "private-residence-belgravia/2020-01-29_B76IQn3FDtg_03.jpg",
+      "post": "B76IQn3FDtg",
+      "date": "2020-01-29",
+      "url": "https://www.instagram.com/p/B76IQn3FDtg/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Grey stone-effect Glamora waterproof wallcovering wrapped into a bathroom window reveal beside a marble sill, a private residence, Belgravia.",
+      "brands": [
+        "Glamora"
+      ],
+      "caption": null
+    },
+    "wet-glamora-05": {
+      "file": "private-residence-belgravia/2020-01-29_B76IQn3FDtg_05.jpg",
+      "post": "B76IQn3FDtg",
+      "date": "2020-01-29",
+      "url": "https://www.instagram.com/p/B76IQn3FDtg/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Stone-effect Glamora wallcovering below a marble capping, with marble skirting and a window, in a bathroom before the sanitaryware went in, Belgravia.",
+      "brands": [
+        "Glamora"
+      ],
+      "caption": null
+    },
+    "wet-glamora-01": {
+      "file": "private-residence-belgravia/2020-01-29_B76IQn3FDtg_01.jpg",
+      "post": "B76IQn3FDtg",
+      "date": "2020-01-29",
+      "url": "https://www.instagram.com/p/B76IQn3FDtg/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "Close-up of the silver-grey textured surface of a Glamora stone-effect waterproof wallcovering.",
+      "brands": [
+        "Glamora"
+      ],
+      "caption": null
+    },
+    "wet-glamora-04": {
+      "file": "private-residence-belgravia/2020-01-29_B76IQn3FDtg_04.jpg",
+      "post": "B76IQn3FDtg",
+      "date": "2020-01-29",
+      "url": "https://www.instagram.com/p/B76IQn3FDtg/",
+      "width": 1440,
+      "height": 1440,
+      "alt": "The Glamora sample book held beside the installed stone-effect wallcovering in a Belgravia bathroom.",
+      "brands": [
+        "Glamora"
+      ],
+      "caption": null
+    }
+  }
+}

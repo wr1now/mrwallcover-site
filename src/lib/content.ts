@@ -113,6 +113,9 @@ const CASE_STUDY_ORDER = [
   'masterpiece-london-2019',
   'private-residence-little-venice',
   'jumeirah-carlton-tower',
+  'wet-room-marble-shower-london',
+  'wet-room-lotus-mural-shower-london',
+  'wet-room-stone-effect-bathroom-belgravia',
 ];
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;

@@ -7546,5 +7546,180 @@
         1149
       ]
     }
+  },
+  "wet-marble-06": {
+    "width": 1080,
+    "height": 1080,
+    "src": "/media/img/r/wet-marble-06-1080.webp",
+    "jpg": "/media/img/r/wet-marble-06-1080.jpg",
+    "thumb": "/media/img/r/wet-marble-06-800.webp",
+    "thumbJpg": "/media/img/r/wet-marble-06-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 800,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/wet-marble-06",
+      "widths": [
+        480,
+        800,
+        1080
+      ]
+    }
+  },
+  "wet-marble-07": {
+    "width": 1080,
+    "height": 1080,
+    "src": "/media/img/r/wet-marble-07-1080.webp",
+    "jpg": "/media/img/r/wet-marble-07-1080.jpg",
+    "thumb": "/media/img/r/wet-marble-07-800.webp",
+    "thumbJpg": "/media/img/r/wet-marble-07-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 800,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/wet-marble-07",
+      "widths": [
+        480,
+        800,
+        1080
+      ]
+    }
+  },
+  "wet-marble-01": {
+    "width": 1080,
+    "height": 1080,
+    "src": "/media/img/r/wet-marble-01-1080.webp",
+    "jpg": "/media/img/r/wet-marble-01-1080.jpg",
+    "thumb": "/media/img/r/wet-marble-01-800.webp",
+    "thumbJpg": "/media/img/r/wet-marble-01-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 800,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/wet-marble-01",
+      "widths": [
+        480,
+        800,
+        1080
+      ]
+    }
+  },
+  "wet-marble-05": {
+    "width": 1080,
+    "height": 1079,
+    "src": "/media/img/r/wet-marble-05-1080.webp",
+    "jpg": "/media/img/r/wet-marble-05-1080.jpg",
+    "thumb": "/media/img/r/wet-marble-05-800.webp",
+    "thumbJpg": "/media/img/r/wet-marble-05-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 799,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/wet-marble-05",
+      "widths": [
+        480,
+        800,
+        1080
+      ]
+    }
+  },
+  "wet-marble-02": {
+    "width": 1080,
+    "height": 1080,
+    "src": "/media/img/r/wet-marble-02-1080.webp",
+    "jpg": "/media/img/r/wet-marble-02-1080.jpg",
+    "thumb": "/media/img/r/wet-marble-02-800.webp",
+    "thumbJpg": "/media/img/r/wet-marble-02-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 800,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/wet-marble-02",
+      "widths": [
+        480,
+        800,
+        1080
+      ]
+    }
+  },
+  "wet-glamora-03": {
+    "width": 1440,
+    "height": 1440,
+    "src": "/media/img/r/wet-glamora-03-1440.webp",
+    "jpg": "/media/img/r/wet-glamora-03-1440.jpg",
+    "thumb": "/media/img/r/wet-glamora-03-800.webp",
+    "thumbJpg": "/media/img/r/wet-glamora-03-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 800,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/wet-glamora-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1440
+      ]
+    }
+  },
+  "wet-glamora-04": {
+    "width": 1440,
+    "height": 1440,
+    "src": "/media/img/r/wet-glamora-04-1440.webp",
+    "jpg": "/media/img/r/wet-glamora-04-1440.jpg",
+    "thumb": "/media/img/r/wet-glamora-04-800.webp",
+    "thumbJpg": "/media/img/r/wet-glamora-04-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 800,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/wet-glamora-04",
+      "widths": [
+        480,
+        800,
+        1200,
+        1440
+      ]
+    }
+  },
+  "wet-glamora-01": {
+    "width": 1440,
+    "height": 1440,
+    "src": "/media/img/r/wet-glamora-01-1440.webp",
+    "jpg": "/media/img/r/wet-glamora-01-1440.jpg",
+    "thumb": "/media/img/r/wet-glamora-01-800.webp",
+    "thumbJpg": "/media/img/r/wet-glamora-01-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 800,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/wet-glamora-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1440
+      ]
+    }
+  },
+  "wet-glamora-05": {
+    "width": 1440,
+    "height": 1440,
+    "src": "/media/img/r/wet-glamora-05-1440.webp",
+    "jpg": "/media/img/r/wet-glamora-05-1440.jpg",
+    "thumb": "/media/img/r/wet-glamora-05-800.webp",
+    "thumbJpg": "/media/img/r/wet-glamora-05-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 800,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/wet-glamora-05",
+      "widths": [
+        480,
+        800,
+        1200,
+        1440
+      ]
+    }
   }
 }
