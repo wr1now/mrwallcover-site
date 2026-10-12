@@ -466,7 +466,9 @@ test('every media file the built pages point to exists', async () => {
   const missing = new Set<string>();
   for (const file of files) {
     const html = await readFile(file, 'utf8');
-    for (const match of html.matchAll(/\/media\/[^"'\s,)?#]+/g)) {
+    // Site-relative media only: a /media/ path inside another site's URL (e.g. https://www.farrow-ball.com/media/…)
+    // is preceded by its hostname and is not ours to serve.
+    for (const match of html.matchAll(/(?<![\w.-])\/media\/[^"'\s,)?#]+/g)) {
       const asset = path.join('dist', match[0]);
       try {
         await stat(asset);
