@@ -19,6 +19,9 @@ const EXPECTED_SLUGS = [
   // Added 11 Oct 2026 (competitor-technical follow-up): technique guides built only from our own records (docs/sources.md).
   'papered-ceilings-and-staircases',
   'set-out-and-pattern-matching',
+  // Added 11 Oct 2026 (FAQ extension): lining, primers and adhesives by maker, and dust, damp and protection on site (docs/sources.md).
+  'lining-primers-adhesives',
+  'dust-damp-protection',
 ];
 
 const slugs = (await readdir('src/content/guides')).filter((file) => file.endsWith('.md')).map((file) => file.slice(0, -3)).sort();
@@ -28,7 +31,7 @@ function frontmatter(source: string): Record<string, string> {
   return Object.fromEntries([...block.matchAll(/^([a-zA-Z]+): "?([^"\n]*)"?$/gm)].map((match) => [match[1], match[2]]));
 }
 
-test('the guide set is the nine 27.6 slugs plus the hotel fire-safety and two technique guides, each with an author and ISO dates', async () => {
+test('the guide set is the nine 27.6 slugs plus the hotel fire-safety, two technique and two preparation guides, each with an author and ISO dates', async () => {
   assert.deepEqual(slugs, [...EXPECTED_SLUGS].sort());
   for (const slug of slugs) {
     const fm = frontmatter(await readFile(`src/content/guides/${slug}.md`, 'utf8'));

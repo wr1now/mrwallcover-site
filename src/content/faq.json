@@ -1,9 +1,10 @@
 {
   "title": "Wallcovering FAQ | Mr Wallcover",
-  "description": "What London wallcovering installation costs, how lead times work, who supplies the paper, how walls are prepared, and what the aftercare guarantee covers.",
+  "description": "London wallcovering FAQ: cost, lead times, supply and aftercare, then lining paper, primers, adhesives, damp, drying and dust control.",
   "eyebrow": "Questions",
   "heading": "Before you book the hang.",
-  "lede": "The questions that decide a quotation: cost, time, preparation, who buys the paper, and what happens after we leave.",
+  "lede": "The questions that decide a quotation: cost, time, preparation, who buys the paper, and what happens after we leave. Then the technical ones: lining, primers, paste, damp and dust.",
+  "coreHeading": "Booking, cost and aftercare",
   "items": [
     {
       "id": "cost",
@@ -51,6 +52,308 @@
       "paragraphs": [
         "Silk, grasscloth and other natural weaves, fabric walling, vinyl and contract wallcoverings, hand-painted papers in the manner of de Gournay and Fromental, murals, and acoustic wallcoverings and panels. We also hang to joinery when that is specified.",
         "London and the surrounding areas; UK-wide for selected projects. The practice is based in London, and most of the work is in central London."
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "lining",
+      "heading": "Lining paper",
+      "lede": "When a maker requires lining or only recommends it, which grade or liner to use, who makes it, and how it goes up.",
+      "items": [
+        {
+          "id": "lining-required-or-recommended",
+          "question": "When is lining paper required, and when is it only recommended?",
+          "paragraphs": [
+            "When the maker of the wallcovering says so: the product's own instruction decides. de Gournay says all walls should be lined, Fromental's guide for its non-woven-backed silks says the walls need to be lined, and Timorous Beasties (for its standard widths) and Lewis & Wood ask for cross-lining with at least 1000 grade paper.",
+            "Others recommend it for the best finish. Farrow & Ball, Sanderson, Zoffany and Harlequin advise cross-lining; Cole & Son asks for it if necessary and recommends lining under highly metallic papers; Fromental calls lining not mandatory for its printed rolls.",
+            "Phillip Jeffries says lining is not a necessity with most of its collections, though it tends to be mandatory under a metallic sheen, and Vescom's specification has no lining step at all. <a href=\"/advice/lining-primers-adhesives/#which-makers-ask-for-lining-and-which-only-recommend-it\">See each maker's own wording</a>."
+          ]
+        },
+        {
+          "id": "lining-grade-or-weight",
+          "question": "Which grade or weight of lining paper should be used?",
+          "paragraphs": [
+            "The grade the maker of the finish names. de Gournay asks for 1000 or 1200, Farrow & Ball for 1200–1400, Cole & Son for 800 or 1000, and Fromental, Timorous Beasties and Lewis & Wood for at least 1000.",
+            "A grade is a thickness class, and a higher number covers more. Erfurt MAV describes its Professional grades by the wall each suits: 800 for new plaster, 1000 for older plaster in good condition, 1200 and 1400 for minor and larger cracks, and 1700 up to Supercover 2500 for damaged plaster.",
+            "Non-woven and reinforced liners are specified by weight instead, in grams per square metre: Erfurt's flat Variovlies grades from about 120 to 200, Wallrock Fibreliner 150 or 210, Arte's Protecno 150. <a href=\"/advice/lining-primers-adhesives/#what-do-lining-grades-and-weights-mean\">Lining grades and weights explained</a>."
+          ]
+        },
+        {
+          "id": "paper-or-non-woven-liner",
+          "question": "Should the liner be paper or non-woven?",
+          "paragraphs": [
+            "Whichever suits the finish and its instruction. Most makers of papers and scenics name a graded lining paper, and de Gournay adds that the liner must be water-absorbent, warning that many problem-solving liner papers are not.",
+            "A paper liner is pasted and soaked, and grows as it does: by up to 10 mm, in Anaglypta's figures. A non-woven liner is hung dry into paste on the wall. Erfurt says its dimensional stability allows that, and lists no soaking, crack cover and easy removal among its benefits.",
+            "Erfurt also rates its own non-wovens separately for being papered over, from recommended (V 130, V 150 and V 180) to limited suitability (the M grades and V 200 S). <a href=\"/advice/lining-primers-adhesives/#paper-or-non-woven-liner-what-is-the-difference\">Paper and non-woven liners compared</a>."
+          ]
+        },
+        {
+          "id": "fromental-non-woven-silk-lining",
+          "question": "What do you line Fromental's non-woven-backed silks with?",
+          "paragraphs": [
+            "For Fromental's non-woven-backed silks, we line the wall with Erfurt's 100 cm wide non-woven lining. That is our own practice and standard for those silks, not a Fromental rule.",
+            "Fromental's archived installation guide for those silks asks for the walls to be sized and lined with 1000 grade lining paper (blank stock in the USA), clean and white because the silks are slightly translucent, and it names no brand of liner.",
+            "Fromental's current website says installation details come from its sales representative, and on a live order that instruction comes first. <a href=\"/advice/lining-primers-adhesives/#what-do-we-line-fromentals-non-woven-backed-silks-with\">Fromental's silks: lining, size and paste</a>."
+          ]
+        },
+        {
+          "id": "who-makes-lining-paper",
+          "question": "Who makes lining paper?",
+          "paragraphs": [
+            "The lining ranges UK decorators' merchants list come mainly from the Erfurt group. Erfurt MAV, in Gainsborough, is the UK business formed when MAV joined Erfurt & Sohn in 2005: its range runs from Professional Lining Paper 800 to Supercover 2500, plus the Wallrock Fibreliner reinforced liners, and Anaglypta, at the same Gainsborough address, sells lining grades from 1000 to Supercover 2500. In Germany, Erfurt & Sohn makes Makulatur lining papers and the Variovlies non-wovens, several in 1.00 m rolls.",
+            "Other makers publish their own liners: Arte (Protecno, a 150 g/m² non-woven) and Marburg (PATENT VLIES), and Sanderson Design Group sells 1000 and 1400 grade lining paper under its own name. de Gournay sells lining paper itself.",
+            "Brewers stocks Wallrock and MAV lining beside its own Albany range, and Wallpaper Direct, Screwfix and Toolstation list Wallrock and Anaglypta. <a href=\"/advice/lining-primers-adhesives/#who-makes-lining-paper-and-what-do-they-sell\">The lining makers, products and widths</a>."
+          ]
+        },
+        {
+          "id": "what-is-cross-lining",
+          "question": "What is cross-lining?",
+          "paragraphs": [
+            "Hanging the lining horizontally, so its joints run across the joints of the wallpaper and can never sit beneath them. Farrow & Ball, Cole & Son, Little Greene and the Sanderson Design Group brands recommend it, and Anaglypta's label says lining should ideally run at 90° to the final wallcovering.",
+            "It is not the only way to keep joints apart. de Gournay says cross-lining is not necessary so long as the lining joints do not meet the joints of its panels, and Fromental allows lining either way. Under double-cut papers makers disagree: Timorous Beasties advises against cross-lining because the blade can slice the lining and split the seams, while Lewis & Wood cross-lines under its double-cut wide-width paper.",
+            "Either way, the lining is butt-jointed and dry before the finish goes on: at least 12 hours for Farrow & Ball, normally 24 hours for Wallrock Fibreliner. <a href=\"/advice/lining-primers-adhesives/#what-is-cross-lining-and-when-is-it-left-out\">Cross-lining and drying times</a>."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "priming",
+      "heading": "Primers and sizing",
+      "lede": "What a size or a primer does, which one each kind of wallcovering asks for, and where neither should go.",
+      "items": [
+        {
+          "id": "why-prime-and-with-what",
+          "question": "Why prime or size a wall, and with what?",
+          "paragraphs": [
+            "To control how fast the wall draws water out of the paste, and on many wallcoverings to protect the wall when the covering is stripped later. We prime the walls with a good primer before hanging, where the product's instruction allows it; the maker's instruction comes first.",
+            "A size is thinned paste. Henkel, which makes Metylan, says paste is right where only absorbency needs regulating, a strengthening wallpaper primer where more is needed, and primers from paint systems not at all. Anaglypta's quick test: flick water on the wall, and if it soaks in, size it.",
+            "The instruction names the product: Phillip Jeffries asks for a hard, acrylic, pigmented primer made for wallcovering, Vescom for its own Primer/Sealer, de Gournay and Farrow & Ball for absorbent walls to be sized. <a href=\"/advice/lining-primers-adhesives/#when-is-a-size-enough-and-when-does-the-wall-need-a-primer\">Size or primer, maker by maker</a>."
+          ]
+        },
+        {
+          "id": "prime-over-lining-paper",
+          "question": "Do you prime over lining paper?",
+          "paragraphs": [
+            "Not where the maker forbids it, and de Gournay does: its instructions say not to use a primer on top of the lining paper. In very dry rooms, where the lining may be too absorbent, it sizes the lining with paste instead, to slow the drying of the panels.",
+            "Other instructions treat the liner differently: under its metal-leaf papers, Maya Romanoff has its non-woven liner painted with a tinted flat paint where the seams will fall. The finish's own instruction decides what, if anything, goes on the liner, and the lining is dry before anything does. <a href=\"/advice/lining-primers-adhesives/#which-primers-do-makers-ask-for-and-which-do-they-rule-out\">What makers rule out</a>."
+          ]
+        },
+        {
+          "id": "size-or-primer-new-plaster",
+          "question": "Is a size enough on new plaster?",
+          "paragraphs": [
+            "Where the maker of the wallcovering says so. de Gournay says new plaster and very absorbent surfaces must be properly sized, Farrow & Ball sizes them with its paste and leaves it at least an hour, and Cole & Son asks for two or three weeks' drying, or a size if the room must be decorated sooner.",
+            "New plaster is also strongly alkaline: Zinsser notes a pH of 12.0 or more in many cases. Its Gardz sealer is rated alkali-resistant to pH 12.5, goes on plaster cured for at least 24 hours and takes wallpaper after three hours.",
+            "Dryness is still a moisture reading, not a date: <a href=\"/advice/wall-preparation/\">wall preparation</a> explains how it is checked, and the guide gives <a href=\"/advice/lining-primers-adhesives/#when-is-a-size-enough-and-when-does-the-wall-need-a-primer\">the sizing figures each paste maker prints</a>."
+          ]
+        },
+        {
+          "id": "pigmented-or-tinted-primer",
+          "question": "When is a pigmented or tinted primer needed?",
+          "paragraphs": [
+            "When the instruction asks for one, which is common under naturals, wood veneers and vinyls. Phillip Jeffries asks for a hard, acrylic, pigmented wallcovering primer and never a paint primer, Thibaut for a universal pre-wallcovering primer on all surfaces, and Calico for a wallpaper-specific primer.",
+            "Colour matters under dark and translucent finishes. Timorous Beasties asks for a tinted primer that coordinates with a dark wallpaper, and no white lining under it; Maya Romanoff's primer is tinted close to the product's colour; Dedar recommends a surface painted the colour of the wallcovering. Under silk the opposite applies: Fromental wants the surface clean and white, because its silks are slightly translucent.",
+            "A clear sealer does not change the colour of the wall: Rust-Oleum's data sheet for Zinsser Gardz says translucent wallcoverings may need an additional coat of an opaque primer. <a href=\"/advice/lining-primers-adhesives/#which-primers-do-makers-ask-for-and-which-do-they-rule-out\">Pigmented and tinted primers by maker</a>."
+          ]
+        },
+        {
+          "id": "pva-as-a-size",
+          "question": "Can PVA be used to size or seal a wall?",
+          "paragraphs": [
+            "Diluted and inside a maker's system, yes; neat, as a universal sealer, none of the makers in the guide asks for it. Fromental's size is PVA based and thinned more on more absorbent walls, Erfurt MAV dilutes its Wallrock PVA sealer one part to three of water, and Muraspec sells a PVA primer for use with its Murabond adhesives.",
+            "Bartoline's own data sheet for its PVA thins it one part to four for sealing porous surfaces and does not list wallpaper among its uses. <a href=\"/advice/wall-preparation/\">Wall preparation</a> explains how neat PVA fails under paste, and the guide gives <a href=\"/advice/lining-primers-adhesives/#when-is-a-size-enough-and-when-does-the-wall-need-a-primer\">each maker's dilution</a>."
+          ]
+        },
+        {
+          "id": "primer-under-contract-wallcoverings",
+          "question": "Which primer goes under a contract wallcovering?",
+          "paragraphs": [
+            "The one in that maker's system. Vescom's specification primes normally absorbent plaster with its Primer/Sealer, one part to three parts water, and highly absorbent surfaces neat, each left about five hours, on a wall of at least 10 °C with building moisture no higher than 6%. Used neat, Vescom says, its primer makes the wallcovering easier to remove later.",
+            "On sealed surfaces Vescom uses its 3000 adhesive instead of a primer, and Muraspec its Murabond Sealed Surface Adhesive. On new plasterboard, British Gypsum says vinyl and other low-permeability wallcoverings should not go straight onto board treated with its Drywall Sealer, because they restrict the drying of water-based adhesives. <a href=\"/advice/lining-primers-adhesives/#which-primers-do-makers-ask-for-and-which-do-they-rule-out\">Primers and what makers rule out</a>."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adhesives",
+      "heading": "Adhesives and paste",
+      "lede": "Which paste suits which wallcovering, whether it goes on the wall or the paper, how long a paper soaks, and why the paste belongs to the specification.",
+      "items": [
+        {
+          "id": "paste-for-each-wallcovering",
+          "question": "Which paste suits which wallcovering?",
+          "paragraphs": [
+            "The one the maker names for that product. In broad terms, papers take a ready-mixed starch tub paste or the maker's own; textiles and heavier backings a heavy-duty or speciality paste; naturals and silks a clear adhesive; and some products a clay adhesive or a maker's own system.",
+            "Where makers name UK pastes, they are specific. de Gournay gives Albany Super Smooth and Bartoline Extra Strong Professional as alternatives to its own, Fromental names Murabond 'black top' and Albany Yellow top for its non-woven-backed silk, Cole & Son and Little Greene ask for their own pastes, and Lincrusta for Lincrusta Adhesive only.",
+            "The paste's own data sheet matters too: Farrow & Ball asks for pH 7 to 12, because acidic pastes can damage its papers. <a href=\"/advice/lining-primers-adhesives/#which-paste-suits-which-wallcovering\">Paste types and named UK pastes</a>."
+          ]
+        },
+        {
+          "id": "paste-the-wall-or-the-paper",
+          "question": "Do you paste the wall or the paper?",
+          "paragraphs": [
+            "Whichever the product's label says. Most non-wovens go on a pasted wall: Cole & Son says most of its papers are non-woven paste-the-wall products, and Iksel says to apply adhesive only to the wall. Most paper-backed papers, and Phillip Jeffries' naturals and silks, are pasted on the back.",
+            "The backing alone does not settle it. House of Hackney's traditional non-woven is pasted on the back and its woven-backed digital prints on the wall; Fromental's non-woven-backed silk goes onto a pasted wall after its back has been sponged; Omexco's sheet for some naturals soaks their backs with water before they go onto a pasted wall.",
+            "Either way the paste is rolled evenly and kept light at the seams: Pierre Frey warns that excess paste can spill out on the face and stain it. <a href=\"/advice/lining-primers-adhesives/#paste-the-wall-or-the-paper-and-how-long-does-it-soak\">Paste the wall or the paper, by maker</a>."
+          ]
+        },
+        {
+          "id": "how-long-paper-soaks",
+          "question": "How long does wallpaper soak after pasting?",
+          "paragraphs": [
+            "As long as its maker says, anything from a minute to an hour. Farrow & Ball's papers soak for 10 minutes, until pliable; Timorous Beasties' for 5–8 minutes; Calico's for about 5; Thibaut's grasscloth is booked for 2 to 5 minutes; Fromental's non-woven-backed silk has its back sponged and left 1–2 minutes; Omexco's sheet for some naturals soaks the back with water for at least an hour.",
+            "Lining paper soaks too: Erfurt MAV gives 6–8 minutes for its 800 grade, rising to 10–12 for the heaviest grades. Non-woven liners and Wallrock Fibreliner need none.",
+            "Too short and the backing has not relaxed and expanded; too long and a laminated product can come apart, which is why de Gournay's Yellow Lid papers are hung within 10 minutes of pasting and Thibaut warns against over-soaking. <a href=\"/advice/lining-primers-adhesives/#paste-the-wall-or-the-paper-and-how-long-does-it-soak\">Soak times by maker</a>."
+          ]
+        },
+        {
+          "id": "ready-mixed-or-powder-paste",
+          "question": "Does it matter whether paste is ready-mixed or powder?",
+          "paragraphs": [
+            "Yes, and many makers say which. de Gournay says to use only ready-mixed adhesives and to avoid cellulose, self-mix or very liquid ones; Fromental's guide for its printed rolls rules out self-mix pastes, and Cole & Son asks for no packet mixes.",
+            "Powder pastes have their place where a maker names them: Erfurt's data sheets name Henkel's Metylan and Pufas pastes for its Variovlies non-wovens, and Pierre Frey names Metylan pastes by backing and width. For heavier lining papers Erfurt MAV recommends ready-mixed, and Anaglypta says ready-mixed pastes have the wet tack that many dry flake types lack. <a href=\"/advice/lining-primers-adhesives/#which-paste-suits-which-wallcovering\">Paste types compared</a>."
+          ]
+        },
+        {
+          "id": "can-paste-be-diluted",
+          "question": "Can wallpaper paste be watered down?",
+          "paragraphs": [
+            "Only as far as its maker allows, and the tub pastes named for fine papers are not. de Gournay says not to water ready-mixed adhesives down unless absolutely necessary, Fromental says not to dilute the paste, and Phillip Jeffries says not to add water under its silks because it can pull the backing away from the face.",
+            "Where dilution is allowed it is measured: Vescom permits at most 4% water in its 1000 adhesive and 6% in its 2000, and none in its 2500 or 3000. Thinning paste to make a size is a separate job, done to the paste maker's ratio, such as Little Greene's 10–15% added water or the equal mix of paste and water on the Albany Super Smooth label. <a href=\"/advice/lining-primers-adhesives/#which-paste-suits-which-wallcovering\">Paste and dilution by maker</a>."
+          ]
+        },
+        {
+          "id": "adhesive-and-fire-classification",
+          "question": "Why does the adhesive matter for fire performance?",
+          "paragraphs": [
+            "Because a fire classification covers the wallcovering, the adhesive and the substrate as they were tested, not the roll alone. Arte's classification report for its natural wallcoverings, for example, gives B-s1,d0 for a field of application of starch glue at 200 g/m² on substrates of at least 1350 kg/m³ classified A2-s1,d0 or A1.",
+            "Outside that field of application the report does not cover the wall, so a substitute paste, liner or substrate needs its own evidence. Liners carry their own classes: Erfurt's data sheets range from B-s1,d0 to D-s1,d0, and Erfurt MAV says its class E Thermal Liner should not be used on projects where Building Regulations apply, such as new builds and extensions.",
+            "The hotel guide explains <a href=\"/advice/hotel-fire-safety-and-compliance/\">who certifies a wallcovering's fire performance</a>, and this guide covers <a href=\"/advice/lining-primers-adhesives/#why-is-the-adhesive-part-of-the-fire-tested-build-up\">the adhesive and liner in the build-up</a>."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "damp",
+      "heading": "Damp, drying and room conditions",
+      "lede": "What the makers ask of the room before the paper goes up, and what to do when a wall is wet.",
+      "items": [
+        {
+          "id": "room-temperature-humidity",
+          "question": "What temperature and humidity do you need for hanging?",
+          "paragraphs": [
+            "The range in the maker's instruction for the product, and the ranges differ. Erfurt's data sheet for its non-woven papers gives +18 to +25 °C at 30–60% relative humidity, Fromental asks for 18–25 °C at 40–60% for its linen and specialist fabric papers, and Farrow & Ball says not to hang below 10 °C or above 25 °C.",
+            "Muraspec and Vescom, both contract makers, set a minimum instead: Muraspec asks for the site to be heated to at least 12 °C, with good ventilation while the paper is hung and dries, and Vescom for a wall surface of at least 10 °C. Where two products share a room, both instructions have to be met.",
+            "The makers' figures are set side by side in our <a href=\"/advice/dust-damp-protection/#what-temperature-and-humidity-does-a-room-need-for-hanging\">guide to dust, damp and protection</a>."
+          ]
+        },
+        {
+          "id": "rolls-acclimatise",
+          "question": "Why do the rolls need to sit in the room before hanging?",
+          "paragraphs": [
+            "So the paper is in the same condition as the room before it is cut. Fromental's linen guide asks for the wallpaper to be stored at normal room temperature and humidity for at least three days before installation, in a weather-tight building with the heating and ventilation already running normally.",
+            "An earlier Fromental guide for its bespoke silks asked for the rolls to be kept in the room itself for at least three days, and for the room's conditions to stay the same before, during and for at least three days after the hang. By that rule, a room heated for the first time on the morning of the hang is not ready.",
+            "Paper and textile move with the moisture in a room, which is also why our return visit waits for the room to settle; the <a href=\"/aftercare/\">aftercare page</a> explains. More on <a href=\"/advice/dust-damp-protection/#why-do-the-rolls-wait-in-the-room-before-they-are-hung\">why the rolls wait in the room</a>."
+          ]
+        },
+        {
+          "id": "damp-wall-papering",
+          "question": "Can you paper a damp wall?",
+          "paragraphs": [
+            "No. Sanderson advises never hanging wallpaper over a damp wall, Fromental wants walls free from damp, moisture ingress or condensation, and Muraspec and Vescom want the surface dry in depth. Historic England notes that wet paper and paste can feed mould, and the government's damp and mould guidance that mould can be hidden on the back of wallpaper.",
+            "The cause of the damp is investigated first, and the wall is papered when a moisture reading says it is dry, not when it looks or feels dry. Historic England warns that forced drying can leave the surface dry while the bulk of the wall is still wet.",
+            "See <a href=\"/advice/wall-preparation/#is-it-dry\">is the wall dry?</a> in our wall preparation guide, and <a href=\"/advice/dust-damp-protection/#why-is-a-damp-wall-not-papered\">why a damp wall is not papered</a>."
+          ]
+        },
+        {
+          "id": "new-plaster-drying",
+          "question": "How long does new plaster need before it is papered?",
+          "paragraphs": [
+            "Until it is dry, which is not a fixed number of days. British Gypsum says its Thistle plasters must be thoroughly dry before decorating and allows a coat of permeable paint in the meantime; its data sheet gives no drying time in days. In the cold it asks for backgrounds to stay at 2 °C or above until dry, and says to allow for longer drying and setting times.",
+            "Dry plaster still needs preparing before paper goes on: Cole & Son says never to hang over new plaster or unprimed walls, and de Gournay that new plaster must be properly sized. A moisture reading, not the date, says when the wall is ready.",
+            "The guide explains <a href=\"/advice/dust-damp-protection/#how-long-does-new-plaster-need-to-dry\">how long new plaster needs</a>, and our lining, primers and adhesives guide covers <a href=\"/advice/lining-primers-adhesives/\">sizing and priming</a>."
+          ]
+        },
+        {
+          "id": "dehumidifier-when",
+          "question": "When do you use a dehumidifier?",
+          "paragraphs": [
+            "In damp areas we run a dehumidifier and an air purifier with a HEPA filter. The dehumidifier takes water out of the room's air; it is not a cure for whatever let the water in.",
+            "There are two kinds. Meaco, a UK maker of both, says a compressor (refrigerant) machine suits rooms above about 10 °C and a desiccant machine colder ones, and that a desiccant's outflow is about 10–12 °C warmer than the room. Historic England asks for either kind to be controlled by a humidistat when old buildings are dried, and advises against aggressive dehumidifiers.",
+            "Warm air is still heat on a drying paper, so do not aim either kind at fresh seams. Our guide compares <a href=\"/advice/dust-damp-protection/#when-is-a-dehumidifier-used-and-which-kind\">the two kinds of dehumidifier</a>."
+          ]
+        },
+        {
+          "id": "dehumidifier-damp-cure",
+          "question": "Will a dehumidifier fix damp?",
+          "paragraphs": [
+            "No. It dries the air in the room; it does not stop water reaching the wall. A leak, a building defect or condensation has to be found and dealt with first, and the government's damp and mould guidance says the underlying causes have to be tackled, because removing surface mould alone will not stop it coming back.",
+            "Historic England's advice for older homes is to resolve the cause, not just the symptoms. Once that is done, a dehumidifier helps the room and then the wall dry out, and the moisture reading says when the wall is ready for paper.",
+            "The guide explains <a href=\"/advice/dust-damp-protection/#will-a-dehumidifier-fix-damp\">why a dehumidifier does not fix damp</a>."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "protection",
+      "heading": "Dust, air and protection",
+      "lede": "How dust is kept where it is made, what an air purifier does and does not do, and how the rest of the house or hotel is protected.",
+      "items": [
+        {
+          "id": "hepa-purifier-why",
+          "question": "Why run a HEPA air purifier?",
+          "paragraphs": [
+            "Because it cleans the air that passes through it. In damp areas we run an air purifier with a HEPA filter alongside the dehumidifier. The Department for Education says air cleaning units can help to reduce airborne contaminants, fungal spores among them, and the government's damp and mould guidance warns that removing wallpaper can release a significant amount of mould spores.",
+            "It does not fix damp: the US Environmental Protection Agency says portable air cleaners do not address the cause of mould, which is a water or moisture problem, and the DfE that air cleaning units are not a substitute for ventilation. A particle filter does not remove smells either; the EPA says gases need an activated carbon filter or another filter made for them.",
+            "On the label, H13 and H14 are classes under BS EN 1822-1: NHS England gives at least 99.95% and 99.995% at the particle size filters find hardest. The guide has more on <a href=\"/advice/dust-damp-protection/#what-does-a-hepa-air-purifier-do-and-what-does-it-not-do\">what a HEPA purifier does and does not do</a>."
+          ]
+        },
+        {
+          "id": "zipwall-walls",
+          "question": "What are ZipWall temporary walls?",
+          "paragraphs": [
+            "Floor-to-ceiling dust screens held up by spring-loaded poles. We put up ZipWall temporary walls to contain dust. ZipWall, the American company that makes the system, describes telescopic poles that hold plastic sheeting, or its reusable fabric panels, against the ceiling, with access through zips or a magnetic door that closes itself.",
+            "On its UK site ZipWall gives working heights up to 3.12 m, 3.6 m or 6.1 m depending on the pole, with poles 3–3.7 m apart, closer where the air moves, and it describes the pole head as non-skid and non-marking. These descriptions are ZipWall's own.",
+            "Our guide covers <a href=\"/advice/dust-damp-protection/#what-are-zipwall-temporary-walls\">ZipWall temporary walls</a> and what ZipWall says about <a href=\"/advice/dust-damp-protection/#is-the-sheeting-flame-retardant\">its sheeting</a>."
+          ]
+        },
+        {
+          "id": "dust-contained",
+          "question": "How do you keep dust out of the rest of the house or hotel?",
+          "paragraphs": [
+            "By enclosing the work, taking the dust at the tool and cleaning up without raising it again. We put up ZipWall temporary walls to contain dust, and HSE lists enclosing the work with sheeting or temporary screens among its dust controls. Where preparation is in our scope, sanding is done with dust extraction.",
+            "HSE asks for extraction through a unit of the right class, H, M or L, rather than a general commercial vacuum, and says a HEPA filter in a general commercial vacuum is not enough. For clearing up it advises against dry sweeping, pointing to an H or M class vacuum for fine dust. ZipWall makes a sticky mat for the barrier's doorway to stop dust being tracked out.",
+            "The guide explains <a href=\"/advice/dust-damp-protection/#how-is-sanding-dust-kept-in-one-room-or-corridor\">how sanding dust is kept in one room or corridor</a>."
+          ]
+        },
+        {
+          "id": "floors-furniture",
+          "question": "How do you protect floors and furniture?",
+          "paragraphs": [
+            "As part of the hang, not as an extra: protection of floors, furniture and finished joinery belongs in the scope, and in an occupied home or a working hotel the work has to be contained and tidied daily. At <a href=\"/projects/pendley-manor-hotel/\">Pendley Manor</a> the floors were protected throughout, as the photographs on that page show.",
+            "HSE notes that protective coverings, and the tape that holds them, can add substantially to a site's fire load, and advises flame-retardant coverings certified to LPS 1207 or an equivalent such as Certifire TS63. It also says at least one fire escape stair must be kept free of protective coverings.",
+            "Read <a href=\"/advice/dust-damp-protection/#how-are-floors-furniture-and-finished-rooms-protected\">how floors, furniture and finished rooms are protected</a>, and what a quotation should include in our <a href=\"/advice/installation-cost/#what-about-access-protection-and-the-awkward-parts\">cost guide</a>."
+          ]
+        },
+        {
+          "id": "sheeting-flame-retardant",
+          "question": "Is the dust-barrier sheeting flame-retardant?",
+          "paragraphs": [
+            "Not necessarily: it depends on the sheet. ZipWall describes its Commercial ZipDoor as 4 mil flame-retardant plastic sheeting, and its standard ZipDoor and its own 3-mil dust-barrier sheeting as not flame-retardant. Its FAQs and door pages name no fire test standard, and it says its poles take sheeting from 1 mil to about 10 mil, including many fire-rated plastics.",
+            "On UK sites, HSE advises flexible protective coverings that are flame-retardant to LPS 1207 or an equivalent such as Certifire TS63, and the Fire Protection Association's Joint Code requires them where it applies. The certification belongs to the sheeting, not the poles, and the Joint Code asks every party to check with its insurer on each project.",
+            "See <a href=\"/advice/dust-damp-protection/#is-the-sheeting-flame-retardant\">the sheeting section</a> of the guide; the wallcovering's own fire classification is covered in the <a href=\"/advice/hotel-fire-safety-and-compliance/\">hotel fire safety guide</a>."
+          ]
+        },
+        {
+          "id": "occupied-buildings",
+          "question": "Can you work while the house or hotel is occupied?",
+          "paragraphs": [
+            "Yes. Most of the hotel work on our record was done in buildings that stayed open. At the <a href=\"/projects/doubletree-west-end/\">DoubleTree by Hilton London – West End</a>, levels 5 and 6, 30 rooms and their corridors, were completed in July 2019 while the hotel stayed open, with guests on the other floors.",
+            "Dust stays on the work side behind a sealed barrier, with a door that closes behind each person and extraction at the tool. Smell is a gas, so a HEPA filter alone will not remove it; for gases the US EPA points to an activated carbon filter, and it names removing the source and ventilating as the most effective ways to improve indoor air.",
+            "In a partly occupied building, HSE asks for the site's emergency plan to cover the people outside the work area. The guide covers <a href=\"/advice/dust-damp-protection/#can-the-work-go-ahead-while-the-house-or-hotel-is-occupied\">working in an occupied house or hotel</a>, and the hotel specification guide covers <a href=\"/advice/hotel-wallcovering-specification/#how-is-the-work-phased-around-guests\">phasing around guests</a>."
+          ]
+        }
       ]
     }
   ]
