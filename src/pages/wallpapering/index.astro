@@ -1,0 +1,70 @@
+---
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import GuideCard from '../../components/GuideCard.astro';
+import WallpaperingNav from '../../components/WallpaperingNav.astro';
+import Base from '../../layouts/Base.astro';
+import { publishedGuides } from '../../lib/guides';
+import { wallpapering } from '../../lib/materials';
+import { breadcrumbNode } from '../../lib/schema';
+import '../../styles/wallpapering.css';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Wallpapering', href: '/wallpapering/' },
+];
+// The guides that are about hanging, in the order a room is planned.
+const hangingSlugs = ['set-out-and-pattern-matching', 'wall-preparation', 'papered-ceilings-and-staircases', 'hand-painted-murals-set-out', 'grasscloth-seams-and-variation', 'wallcovering-problems-and-aftercare'];
+const hanging = hangingSlugs.map((slug) => {
+  const guide = publishedGuides.find((item) => item.frontmatter.slug === slug);
+  if (!guide) throw new Error(`Wallpapering hub links to a guide that is not published: ${slug}`);
+  return guide.frontmatter;
+});
+---
+
+<Base
+  title="Wallpapering guide: rolls, walls and paste | Mr Wallcover"
+  description="Work out how many rolls to order, how to prepare each kind of wall, and which lining paper, primer and paste to use, with every maker's data sheet."
+  path="/wallpapering/"
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page pb-20">
+    <header class="page-head guide-intro">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Wallpapering</p>
+      <h1>From the roll count<br /><em>to the paste.</em></h1>
+      <p class="lede mt-5">Four tools for planning a papered room: a calculator for rolls and materials, a guide to preparing each kind of wall, the lining papers, primers and pastes with their data sheets, and our hanging guides. The wallpaper maker's instruction always comes first.</p>
+    </header>
+    <WallpaperingNav current="hub" />
+
+    <div class="guide-tools wp-tools">
+      <a href="/advice/quantities/"><span class="eyebrow">Plan</span><strong>Work out the rolls</strong><span>Rolls, cutting plan and materials ↗</span></a>
+      <a href="/wallpapering/preparation/"><span class="eyebrow">Prepare</span><strong>Prepare the wall</strong><span>Wall types and conditions ↗</span></a>
+      <a href="/wallpapering/lining-and-adhesives/"><span class="eyebrow">Specify</span><strong>Lining, primers and paste</strong><span>Products, grades and data sheets ↗</span></a>
+      <a href="#hanging-guides"><span class="eyebrow">Hang</span><strong>Hanging guides</strong><span>Set-out, ceilings, stairs and murals ↓</span></a>
+    </div>
+
+    <section class="wp-section" aria-labelledby="house-rules">
+      <h2 id="house-rules">How we choose the materials</h2>
+      <ul class="wp-rules">
+        {wallpapering.houseRules.map((rule) => <li><strong>{rule.title}</strong><p>{rule.text}</p></li>)}
+      </ul>
+      <p class="wp-note">{wallpapering.independence}</p>
+    </section>
+
+    <section class="wp-section guide-library" id="hanging-guides" aria-labelledby="hanging-guides-heading">
+      <h2 id="hanging-guides-heading">Hanging guides</h2>
+      <p>How the first drop is placed, what changes overhead and on a stair, and what to expect from natural and hand-painted papers.</p>
+      <div class="guide-grid">{hanging.map((guide) => <GuideCard guide={guide} />)}</div>
+    </section>
+
+    <section class="guide-next mt-16">
+      <p class="eyebrow">Your next step</p>
+      <h2>Send the walls, and we will check the order.</h2>
+      <p>A photograph, the measurements you have and the product reference are enough to start. Where the wall needs it, we see it first.</p>
+      <div class="flex flex-wrap gap-3">
+        <a class="btn btn-solid-ink" href="/contact/?intent=install">Send us your measurements</a>
+        <a class="btn btn-line" href="/contact/?intent=prepare">Discuss wall preparation</a>
+      </div>
+    </section>
+  </div>
+</Base>

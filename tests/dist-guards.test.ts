@@ -466,7 +466,8 @@ test('every media file the built pages point to exists', async () => {
   const missing = new Set<string>();
   for (const file of files) {
     const html = await readFile(file, 'utf8');
-    for (const match of html.matchAll(/\/media\/[^"'\s,)?#]+/g)) {
+    // Root-relative or on our own host; another site's /media/ path (a maker's data sheet) is not ours to check.
+    for (const match of html.matchAll(/(?:(?<![\w.-])|(?<=https:\/\/www\.mrwallcover\.com))\/media\/[^"'\s,)?#]+/g)) {
       const asset = path.join('dist', match[0]);
       try {
         await stat(asset);

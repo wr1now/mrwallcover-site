@@ -1,0 +1,158 @@
+---
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import WallpaperingNav from '../../components/WallpaperingNav.astro';
+import Base from '../../layouts/Base.astro';
+import { formatGuideDate } from '../../lib/guides';
+import { HOUSE_LINING_PASTE, isConfirmed, ladderLabel, liningGrades, makers, product, products, wallpapering } from '../../lib/materials';
+import { breadcrumbNode } from '../../lib/schema';
+import '../../styles/wallpapering.css';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Wallpapering', href: '/wallpapering/' },
+  { name: 'Lining & adhesives', href: '/wallpapering/lining-and-adhesives/' },
+];
+// Only figures re-checked on the date shown reach the public tables.
+const primers = products.filter((item) => ['primer', 'stain-block', 'alkali-primer'].includes(item.kind) && isConfirmed(item));
+const linings = liningGrades.filter(isConfirmed);
+const housePaste = product(HOUSE_LINING_PASTE);
+const makerPastes = products.filter((item) => item.kind === 'paste' && isConfirmed(item));
+const makerRules = makers.filter(isConfirmed);
+const source = (item: { dataSheet?: string | null; page?: string }) => (item.dataSheet ? { href: item.dataSheet, label: 'Data sheet' } : item.page ? { href: item.page, label: "Maker's page" } : null);
+const checked = (iso: string | null) => (iso ? formatGuideDate(iso) : 'Not yet checked');
+const liningNeed: Record<string, string> = {
+  'all-walls': 'Line every wall',
+  recommended: 'Recommended',
+  'if-needed': 'Where the wall needs it',
+  optional: 'Optional',
+  'some-products': 'For some products',
+  'not-stated': 'Not stated',
+};
+---
+
+<Base
+  title="Lining papers, pastes and primers | Mr Wallcover"
+  description="The lining papers, primers and pastes we use, the paste strength ladder, and what each wallpaper maker asks for, with data sheet links and dates."
+  path="/wallpapering/lining-and-adhesives/"
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page pb-20">
+    <header class="page-head guide-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Wallpapering / lining and adhesives</p>
+      <h1>Lining papers, pastes and primers</h1>
+      <p class="lede mt-5">The products we use when the wallpaper maker is silent, the paste ladder behind our one-step-stronger rule, and what each maker asks for. Every figure is copied from the maker's own data sheet or page, with the date we checked it.</p>
+      <p class="mt-4 mb-0 text-stone">{wallpapering.independence}</p>
+    </header>
+    <WallpaperingNav current="lining" />
+
+    <section class="wp-section" aria-labelledby="primers">
+      <h2 id="primers">Primers</h2>
+      <p>Gardz on almost every wall; a stain block or an alkali-resisting primer first when the wall calls for one. A primer the wallpaper maker names replaces them.</p>
+      <table class="wp-table">
+        <thead><tr><th scope="col">Product</th><th scope="col">Used for</th><th scope="col">Coverage, as printed</th><th scope="col">Sizes</th><th scope="col">Source</th></tr></thead>
+        <tbody>
+          {primers.map((item) => {
+            const src = source(item);
+            return (
+              <tr>
+                <th scope="row">{item.name}<small>{item.what}</small></th>
+                <td data-label="Used for">{item.for}</td>
+                <td data-label="Coverage, as printed"><q>{item.coverage?.printed}</q>{item.coverage?.conflict && <small>{item.coverage.conflict}</small>}</td>
+                <td data-label="Sizes">{item.packs?.printed ?? 'Not stated'}</td>
+                <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>Checked {checked(item.checked)}</small></td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="wp-section" aria-labelledby="lining">
+      <h2 id="lining">Lining paper</h2>
+      <p>Erfurt lining paper, the grade chosen for the wall, unless the wallpaper maker names a grade. The heavier the grade, the more it covers; it never holds a failing surface or straightens a wall. Every roll on a job is the same grade, so the same thickness and the same white.</p>
+      <table class="wp-table">
+        <thead><tr><th scope="col">Grade</th><th scope="col">For, in Erfurt's words</th><th scope="col">Rolls, as printed</th><th scope="col">Soak</th><th scope="col">Source</th></tr></thead>
+        <tbody>
+          {linings.map((item) => (
+            <tr>
+              <th scope="row">{item.grade}</th>
+              <td data-label="For, in Erfurt's words"><q>{item.wall}</q></td>
+              <td data-label="Rolls, as printed">{item.rolls?.map((roll) => <span style="display:block">{roll.printed}</span>)}</td>
+              <td data-label="Soak">{item.soak}</td>
+              <td data-label="Source">{item.page && <a href={item.page}>Maker's page</a>}<small>Checked {checked(item.checked)}</small></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="wp-section" aria-labelledby="pastes">
+      <h2 id="pastes">Pastes, and why the lining paste is stronger</h2>
+      <p>No maker publishes one scale of paste strength, so we keep our own four steps. The paste under the lining is always at least one step stronger than the paste on the wallpaper: a weaker one is softened by the wallpaper's wet paste, and the lining lets go in large bubbles. Where nothing stronger exists, we check the combination before anything is ordered. Where the wallpaper maker says otherwise, the maker wins.</p>
+      <ol class="wp-ladder" aria-label="Our paste ladder, lightest first">
+        {wallpapering.ladder.map((step) => <li>{step.label}<span>Step {step.step}</span></li>)}
+      </ol>
+      <table class="wp-table">
+        <thead><tr><th scope="col">Paste</th><th scope="col">Step</th><th scope="col">In the maker's words</th><th scope="col">Coverage, as printed</th><th scope="col">Source</th></tr></thead>
+        <tbody>
+          <tr>
+            <th scope="row">{housePaste.name}<small>Our lining paste</small></th>
+            <td data-label="Step">{housePaste.step ? ladderLabel(housePaste.step) : ''}</td>
+            <td data-label="In the maker's words">{housePaste.stepBasis}</td>
+            <td data-label="Coverage, as printed"><q>{housePaste.coverage?.printed}</q><small>{housePaste.packs?.printed}</small></td>
+            <td data-label="Source">{source(housePaste) && <a href={source(housePaste)!.href}>{source(housePaste)!.label}</a>}<small>Checked {checked(housePaste.checked)}</small></td>
+          </tr>
+          {makerPastes.map((item) => {
+            const src = source(item);
+            return (
+              <tr>
+                <th scope="row">{item.name}<small>{item.for}</small></th>
+                <td data-label="Step">{item.step && item.stepStatus !== 'proposed' ? ladderLabel(item.step) : 'By the maker’s instruction'}</td>
+                <td data-label="In the maker's words">{item.stepBasis}{item.quotes?.[0] && <small><q>{item.quotes[0]}</q></small>}</td>
+                <td data-label="Coverage, as printed">{item.coverage ? <q>{item.coverage.printed}</q> : 'Not printed'}{item.packs?.printed && <small>{item.packs.printed}</small>}</td>
+                <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>Checked {checked(item.checked)}</small></td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="wp-section" aria-labelledby="woven">
+      <h2 id="woven">Woven wallcoverings: grasscloth, silk and textiles</h2>
+      <p>Natural and woven faces are hung with the paste their maker names, and the paste never touches the face: on grasscloth it leaves a dark line, and on silk it cannot be wiped away. Cole &amp; Son asks for its ready-mixed starch paste on its silks and grasscloths and warns against heavy-duty pastes; Fromental asks for a good-quality pre-mixed wallcovering adhesive on its grasscloth. Because those makers ask for lighter pastes on the face, the lining underneath is hung one step stronger, as our rule requires.</p>
+    </section>
+
+    <section class="wp-section" aria-labelledby="makers">
+      <h2 id="makers">What the wallpaper makers ask for</h2>
+      <p>These are the makers' own instructions, which come before our house standard. They change; the product's current hanging instruction is the one that counts.</p>
+      <table class="wp-table">
+        <thead><tr><th scope="col">Maker</th><th scope="col">Lining</th><th scope="col">Paste</th><th scope="col">Also</th><th scope="col">Source</th></tr></thead>
+        <tbody>
+          {makerRules.map((rule) => (
+            <tr>
+              <th scope="row">{rule.name}</th>
+              <td data-label="Lining">{liningNeed[rule.lining.need] ?? rule.lining.need}{rule.lining.printed && <small><q>{rule.lining.printed}</q></small>}</td>
+              <td data-label="Paste">
+                {rule.liningPastePrinted ? <q>{rule.liningPastePrinted}</q> : rule.pastePrinted && rule.pasteStatus !== 'unconfirmed' ? <q>{rule.pastePrinted}</q> : rule.paste ? product(rule.paste).name : 'Not stated'}
+              </td>
+              <td data-label="Also">{rule.notes?.length ? rule.notes.map((note) => <span style="display:block">{note}</span>) : '—'}</td>
+              <td data-label="Source"><a href={rule.source}>Hanging instructions</a><small>Checked {checked(rule.checked)}</small></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-next mt-16">
+      <p class="eyebrow">Your next step</p>
+      <h2>Tell us the paper, and we will check the build-up.</h2>
+      <p>Send the product reference. We read the maker's current instruction and confirm the primer, the lining and both pastes before anything is ordered.</p>
+      <div class="flex flex-wrap gap-3">
+        <a class="btn btn-solid-ink" href="/contact/?intent=prepare">Discuss wall preparation</a>
+        <a class="btn btn-line" href="/wallpapering/preparation/">Preparation by wall type</a>
+      </div>
+    </section>
+  </div>
+</Base>
