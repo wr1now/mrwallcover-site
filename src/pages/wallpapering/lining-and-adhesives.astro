@@ -125,7 +125,7 @@ const liningNeed: Record<string, string> = {
                   <td data-label="Step">{item.step && item.stepStatus === 'owner' ? ladderLabel(item.step) : 'By the maker\u2019s instruction'}</td>
                   <td data-label="In the maker's words">{item.stepBasis}{item.quotes?.[0] && <small><q>{item.quotes[0]}</q></small>}</td>
                   <td data-label="Coverage, as printed">{item.coverage ? quoted(item.coverage.printed) : 'Not printed'}{item.packs?.printed && <small>{item.packs.printed}</small>}</td>
-                  <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>Checked {checked(item.checked)}</small></td>
+                  <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>{item.availability ?? `Checked ${checked(item.checked)}`}</small></td>
                 </tr>
               );
             })}
@@ -138,7 +138,7 @@ const liningNeed: Record<string, string> = {
       <h2 id="vov">{wallpapering.vov.title}</h2>
       <p>{wallpapering.vov.text}</p>
       <table class="wp-table">
-        <thead><tr><th scope="col">Adhesive</th><th scope="col">For, in the maker's words</th><th scope="col">Sizes</th><th scope="col">Source</th></tr></thead>
+        <thead><tr><th scope="col">Adhesive</th><th scope="col">For, in the maker's words</th><th scope="col">Coverage, as printed</th><th scope="col">Sizes</th><th scope="col">Source</th></tr></thead>
         <tbody>
           {vovAdhesives.filter(isConfirmed).map((item) => {
             const src = source(item);
@@ -146,8 +146,9 @@ const liningNeed: Record<string, string> = {
               <tr>
                 <th scope="row">{item.name}<small>{item.maker}</small></th>
                 <td data-label="For, in the maker's words">{item.for}<small>{item.stepBasis}</small></td>
+                <td data-label="Coverage, as printed">{item.coverage ? quoted(item.coverage.printed) : 'Not printed'}</td>
                 <td data-label="Sizes">{item.packs?.printed ?? 'Not stated'}</td>
-                <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>Checked {checked(item.checked)}</small></td>
+                <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>{item.availability ?? `Checked ${checked(item.checked)}`}</small></td>
               </tr>
             );
           })}

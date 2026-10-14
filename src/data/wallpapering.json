@@ -1190,19 +1190,86 @@
       "id": "murabond-sealed-surface",
       "kind": "vov",
       "role": "maker-named",
-      "name": "Murabond Sealed Surface",
+      "name": "Murabond Sealed Surface Adhesive (vinyl-over-vinyl use)",
       "maker": "Muraspec",
       "step": null,
       "stepStatus": "unplaced",
-      "stepBasis": "\"Sealed Surface\"",
+      "stepBasis": "Muraspec does not call it VOV; it is sold for sealed, non-absorbent surfaces. Label: \"ready mixed\", \"DO NOT DILUTE\".",
       "for": "\"Recommended when hanging any Muraspec wallcovering on to non-absorbent surfaces.\"",
-      "coverage": null,
+      "coverage": {
+        "printed": "Coverage 6/7 m² per kg approx.",
+        "min": 6,
+        "max": 7,
+        "unit": "m2/kg"
+      },
       "packs": {
-        "printed": "5kg",
+        "printed": "5kg (SEALEDSUR5KG)",
+        "sizes": [
+          5
+        ],
+        "unit": "kg",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.muraspec.com/wp-content/uploads/2026/05/Muraspec-UK-Hanging-Instructions-May-26.pdf",
+      "page": "https://www.muraspec.com/product/sealedsur5kg/",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "tekfix",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Tekfix",
+      "maker": "Tektura",
+      "step": null,
+      "stepStatus": "unplaced",
+      "stepBasis": "No grade word; Tektura names each Tekfix by its use.",
+      "for": "\"Use with paper-backed vinyl & lightweight fibre wallcovering\"",
+      "coverage": {
+        "printed": "32m2 coverage per tub",
+        "perUnit": 32,
+        "unit": "m2/tub"
+      },
+      "packs": {
+        "printed": "5kg tub",
+        "sizes": [
+          5
+        ],
+        "unit": "kg",
         "status": "confirmed"
       },
       "dataSheet": null,
-      "page": "https://www.muraspec.com/product/sealedsur5kg/",
+      "page": "https://web.archive.org/web/20190920035253/https://www.tektura.com/accessories/adhesives-and-primers",
+      "availability": "From Tektura's own page, archived 20 September 2019; tektura.com no longer lists adhesives, so check availability.",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "tekfix-65",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Tekfix 65",
+      "maker": "Tektura",
+      "step": null,
+      "stepStatus": "unplaced",
+      "stepBasis": "No grade word; the 10 kg size of Tekfix.",
+      "for": "The same use as Tekfix: paper-backed vinyl and lightweight fibre wallcovering.",
+      "coverage": {
+        "printed": "65m2 coverage per tub",
+        "perUnit": 65,
+        "unit": "m2/tub"
+      },
+      "packs": {
+        "printed": "10kg tub",
+        "sizes": [
+          10
+        ],
+        "unit": "kg",
+        "status": "confirmed"
+      },
+      "dataSheet": null,
+      "page": "https://web.archive.org/web/20190920035253/https://www.tektura.com/accessories/adhesives-and-primers",
+      "availability": "From Tektura's own page, archived 20 September 2019; tektura.com no longer lists adhesives, so check availability.",
       "checked": "2026-10-14",
       "status": "confirmed"
     },
@@ -1214,31 +1281,55 @@
       "maker": "Tektura",
       "step": null,
       "stepStatus": "unplaced",
-      "stepBasis": "\"Plus\". Tektura publishes no data sheet for it.",
-      "for": "\"Generally Tekfix Plus, though depends on substrate\", on almost every Tektura data sheet",
-      "coverage": null,
-      "packs": null,
+      "stepBasis": "No grade word; Tektura names each Tekfix by its use.",
+      "for": "\"Use with fabric backed vinyl & textile wallcovering\"",
+      "coverage": {
+        "printed": "25m2 coverage per tub",
+        "perUnit": 25,
+        "unit": "m2/tub"
+      },
+      "packs": {
+        "printed": "5kg tub",
+        "sizes": [
+          5
+        ],
+        "unit": "kg",
+        "status": "confirmed"
+      },
       "dataSheet": null,
-      "page": "https://tekturawebsite.s3.eu-west-2.amazonaws.com/uploads/design/161/tektura-digital-hanging-instructions.pdf",
+      "page": "https://web.archive.org/web/20190920035253/https://www.tektura.com/accessories/adhesives-and-primers",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "availability": "From Tektura's own page, archived 20 September 2019; tektura.com no longer lists adhesives, so check availability."
     },
     {
       "id": "tekfix-vov",
       "kind": "vov",
       "role": "maker-named",
-      "name": "Tekfix VOV",
+      "name": "Tekfix Vinyl over Vinyl (Tekfix VOV)",
       "maker": "Tektura",
       "step": null,
       "stepStatus": "unplaced",
-      "stepBasis": "\"VOV\". Tektura publishes no data sheet for it.",
-      "for": "\"Non Porous Surfaces (glass, gloss paint etc)\" and \"Existing Vinyl\"; also round right-angled corners",
-      "coverage": null,
-      "packs": null,
-      "dataSheet": null,
-      "page": "https://tekturawebsite.s3.eu-west-2.amazonaws.com/uploads/design/161/tektura-digital-hanging-instructions.pdf",
+      "stepBasis": "Safety sheet: \"Vinyl over Vinyl Adhesive\". \"Ready to use / Do not dilute\".",
+      "for": "\"Use with Tekwrite or fab-back vinyl over nonporous surfaces eg vinyl, metal, laminate\"",
+      "coverage": {
+        "printed": "25m2 per tub",
+        "perUnit": 25,
+        "unit": "m2/tub"
+      },
+      "packs": {
+        "printed": "5kg tub",
+        "sizes": [
+          5
+        ],
+        "unit": "kg",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://web.archive.org/web/20161101225804/http://www.tektura.com:80/download/10415",
+      "page": "https://web.archive.org/web/20220707173337/https://www.tektura.com/accessory/tekfix-vinyl-over-vinyl-1",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "availability": "From Tektura's own page, archived 7 July 2022; its current hanging sheets still name Tekfix VOV, but tektura.com no longer lists adhesives, so check availability."
     },
     {
       "id": "tekfix-strippable",
@@ -1248,14 +1339,26 @@
       "maker": "Tektura",
       "step": null,
       "stepStatus": "unplaced",
-      "stepBasis": "\"Strippable\". Tektura publishes no data sheet for it.",
-      "for": "\"for fabric-backed vinyls only, use Tekfix Strippable adhesive applied directly onto the unprimed plasterboard\"",
-      "coverage": null,
-      "packs": null,
+      "stepBasis": "No grade word; Tektura names each Tekfix by its use.",
+      "for": "\"Use with fabric-backed vinyl on unprimed plasterboard\"",
+      "coverage": {
+        "printed": "25m2 coverage per tub",
+        "perUnit": 25,
+        "unit": "m2/tub"
+      },
+      "packs": {
+        "printed": "5kg tubs",
+        "sizes": [
+          5
+        ],
+        "unit": "kg",
+        "status": "confirmed"
+      },
       "dataSheet": null,
-      "page": "https://tekturawebsite.s3.eu-west-2.amazonaws.com/uploads/design/161/tektura-digital-hanging-instructions.pdf",
+      "page": "https://web.archive.org/web/20190920035253/https://www.tektura.com/accessories/adhesives-and-primers",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "availability": "From Tektura's own page, archived 20 September 2019; tektura.com no longer lists adhesives, so check availability."
     },
     {
       "id": "beeline-overlap-repair",

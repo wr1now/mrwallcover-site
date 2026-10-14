@@ -55,6 +55,8 @@ export interface Product {
   quotes?: string[];
   dataSheet?: string | null;
   page?: string;
+  /** When the maker no longer lists it: where the figures come from, and what to check. */
+  availability?: string;
   checked: string | null;
   status: 'confirmed' | 'unconfirmed';
 }
@@ -344,11 +346,18 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
   // A sealed surface (gloss paint, an old vinyl) takes a VOV adhesive instead of a water-based paste.
   if (option.vov) {
     const named = vovAdhesives.find((item) => rule && item.maker && rule.name && item.maker.includes(rule.name) && isConfirmed(item));
+    // An amount only from a coverage the maker prints today, per kilogram (Muraspec's label); never from an archived page.
+    const cover = named?.coverage;
+    const kg = named && !named.availability && cover?.unit === 'm2/kg' && cover.min && cover.max && area > 0 ? { min: round2(area / cover.max), max: round2(area / cover.min) } : null;
     lines.push({
       role: 'paste',
       name: named ? named.name : 'A vinyl-over-vinyl adhesive (VOV) made for sealed surfaces',
-      amount: null,
-      note: named ? `${rule!.name}\u2019s adhesive for a sealed surface. We confirm the amount from its instructions.` : 'A water-based paste cannot soak into a sealed surface. We choose the VOV adhesive with the wallpaper maker\u2019s instruction.',
+      amount: kg ? `${formatNumber(kg.min)}–${formatNumber(kg.max)} kg${named!.packs?.sizes ? `: ${packLine(packsFor(kg.max, named!.packs.sizes), 'kg')}` : ''}` : null,
+      note: named
+        ? kg
+          ? `${rule!.name}\u2019s adhesive for a sealed surface. The label: "${cover!.printed}"`
+          : `${rule!.name}\u2019s adhesive for a sealed surface.${named.availability ? ` ${named.availability}` : ' We confirm the amount from its instructions.'}`
+        : 'A water-based paste cannot soak into a sealed surface. We choose the VOV adhesive with the wallpaper maker\u2019s instruction.',
       source: named ? sourceOf(named) : null,
       sourceLabel: named ? (named.dataSheet ? 'Data sheet' : "Maker's page") : undefined,
     });

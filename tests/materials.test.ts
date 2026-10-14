@@ -119,6 +119,10 @@ test('the ladder reads Light, Medium, Heavy, Extra-heavy (owner, 14 Oct 2026); a
   assert.deepEqual(generic.lines.map((line) => line.name), ['A vinyl-over-vinyl adhesive (VOV) made for sealed surfaces']);
   assert.equal(generic.checks.length, 1, 'a sealed wall is checked with us');
   const muraspec = materialsFor(input, result, { condition: 'sealed', makerId: 'muraspec' });
-  assert.equal(muraspec.lines[0].name, 'Murabond Sealed Surface');
-  assert.equal(materialsFor(input, result, { condition: 'sealed', makerId: 'tektura' }).lines[0].name, 'Tekfix VOV');
+  assert.equal(muraspec.lines[0].name, 'Murabond Sealed Surface Adhesive (vinyl-over-vinyl use)');
+  assert.equal(muraspec.lines[0].amount, '1.43–1.67 kg: 1 × 5 kg', '10 m² at the label\'s 6/7 m² per kg');
+  const tektura = materialsFor(input, result, { condition: 'sealed', makerId: 'tektura' }).lines[0];
+  assert.equal(tektura.name, 'Tekfix Vinyl over Vinyl (Tekfix VOV)');
+  assert.equal(tektura.amount, null, 'no amount from an archived page');
+  assert.match(tektura.note ?? '', /check availability/);
 });
