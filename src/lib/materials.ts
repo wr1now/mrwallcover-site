@@ -6,6 +6,7 @@
  * A product whose status is not 'confirmed' is listed for reference but never used in a sum.
  */
 import data from '../data/wallpapering.json' with { type: 'json' };
+import { liningPlan, type PlanResult, type QuantityInput } from './quantity.ts';
 
 export type ProductKind = 'primer' | 'stain-block' | 'alkali-primer' | 'lining' | 'lining-paste' | 'paste';
 
@@ -67,6 +68,7 @@ export interface MakerRule {
   paste?: string;
   pastePrinted?: string;
   pasteStep?: number;
+  pasteName?: string;
   pasteStatus?: string;
   primerPrinted?: string;
   noOffcutInfill?: boolean;
@@ -231,4 +233,137 @@ export function liningPaste(wallpaperPasteStep: number | null, makerId?: string,
         ? `${house.name} is ${step}. The wallpaper paste must be at least one step lighter, so it cannot soften the lining.`
         : `${house.name} is ${step}, at least one step stronger than the wallpaper paste, so the wallpaper's paste cannot soften the lining.`,
   };
+}
+
+/* ---------- the materials list under a calculator result ---------- */
+
+
+export interface MaterialLine {
+  role: 'primer' | 'treatment' | 'lining' | 'lining-paste' | 'paste';
+  name: string;
+  amount: string | null;
+  note?: string;
+  source?: string | null;
+}
+
+export interface MaterialsList {
+  lines: MaterialLine[];
+  /** Reasons to have Mr Wallcover check the wall or the paste before anything is ordered. */
+  checks: string[];
+  /** What was assumed because the visitor did not say. */
+  assumed: string[];
+}
+
+export interface MaterialsOptions {
+  /** The wall-condition answer (conditionQuestion option id). */
+  condition?: string;
+  /** The wallpaper maker, when it has rules in the dataset. */
+  makerId?: string;
+}
+
+const formatNumber = (value: number) => (Number.isInteger(value) ? String(value) : String(Math.round(value * 100) / 100));
+const packLine = (packs: number[], unit: string) => {
+  const counts = new Map<number, number>();
+  for (const size of packs) counts.set(size, (counts.get(size) ?? 0) + 1);
+  return [...counts].map(([size, count]) => `${count} × ${formatNumber(size)} ${unit}`).join(' + ');
+};
+const sourceOf = (item: Product) => item.dataSheet ?? item.page ?? null;
+
+/** The lining grade: the maker's grade when it names one, otherwise the grade for the wall (owner, 14 Oct 2026). */
+function liningGrade(conditionGrade: number | null, rule?: MakerRule): { grade: number; check?: string } | null {
+  const makerWants = rule && ['all-walls', 'recommended'].includes(rule.lining.need);
+  if (!conditionGrade && !makerWants) return null;
+  const grades = rule?.lining.grades ?? [];
+  if (!grades.length) return { grade: conditionGrade ?? 1000 };
+  const wanted = conditionGrade ?? 0;
+  const fit = [...grades].sort((a, b) => a - b).find((grade) => grade >= wanted);
+  if (fit) return { grade: fit };
+  return { grade: Math.max(...grades), check: `${rule!.name} asks for ${grades.join(' or ')} grade lining, lighter than this wall needs.` };
+}
+
+export function materialsFor(input: QuantityInput, result: PlanResult, options: MaterialsOptions = {}): MaterialsList {
+  const lines: MaterialLine[] = [];
+  const checks: string[] = [];
+  const assumed: string[] = [];
+  const option = wallpapering.conditionQuestion.options.find((item) => item.id === options.condition) ?? wallpapering.conditionQuestion.options[0];
+  if (!options.condition) assumed.push(`The walls are ${option.label.toLowerCase()}.`);
+  if (option.check) checks.push(`The walls are "${option.label.toLowerCase()}", so we should see them before anything is ordered.`);
+  const rule = options.makerId ? maker(options.makerId) : undefined;
+  const area = result.areaM2;
+
+  // Primer and treatments: the maker's primer when it names one; otherwise the house primers for the wall.
+  for (const id of option.primers) {
+    const item = product(id);
+    const litres = primerLitres(area, item);
+    const sizes = item.packs?.sizes ?? [];
+    const coats = item.coverage?.coats ?? 1;
+    lines.push({
+      role: item.kind === 'primer' ? 'primer' : 'treatment',
+      name: item.name,
+      amount: litres ? `${litres.min === litres.max ? formatNumber(litres.max) : `${formatNumber(litres.min)}–${formatNumber(litres.max)}`} litres${sizes.length ? `: ${packLine(packsFor(litres.max, sizes), 'L')}` : ''}` : null,
+      note: litres ? `${coats === 1 ? 'One coat' : `${coats} coats`}. The data sheet: "${item.coverage!.printed}"` : 'Quantity from its data sheet once the area is confirmed.',
+      source: sourceOf(item),
+    });
+  }
+
+  // Lining paper, hung across by default (owner), every roll the same grade.
+  const graded = liningGrade(option.lining, rule);
+  let lined = false;
+  if (graded) {
+    if (graded.check) checks.push(graded.check);
+    const paper = liningGrades.find((item) => item.grade === graded.grade && isConfirmed(item));
+    const roll = paper?.rolls?.[0];
+    const plan = roll ? liningPlan(input, roll.widthCm, roll.lengthM * 100, 'across') : null;
+    const doubles = paper?.rolls?.[1];
+    const planDouble = doubles ? liningPlan(input, doubles.widthCm, doubles.lengthM * 100, 'across') : null;
+    if (paper && roll && plan) {
+      lined = true;
+      lines.push({
+        role: 'lining',
+        name: paper.name,
+        amount: `${plan.rolls} × ${roll.lengthM} m rolls${planDouble && doubles ? `, or ${planDouble.rolls} × ${doubles.lengthM} m` : ''}`,
+        note: `Hung across, ${plan.pieces} courses. Every roll the same grade, so the same thickness and the same white.${rule && ['all-walls', 'recommended'].includes(rule.lining.need) ? ` ${rule.name} asks for lining.` : ''}`,
+        source: sourceOf(paper),
+      });
+    }
+  }
+
+  // Wallpaper paste: the maker's own, with its printed quantity when there is one.
+  const pasteProduct = rule?.paste ? product(rule.paste) : null;
+  const pasteStep: number | null = pasteProduct?.step ?? rule?.pasteStep ?? null;
+  const pasteName = pasteProduct?.name ?? rule?.pasteName ?? 'The paste the wallpaper maker names';
+  let pasteAmount: string | null = null;
+  if (pasteProduct?.coverage?.unit === 'kg/roll' && pasteProduct.coverage.perUnit && isConfirmed(pasteProduct)) {
+    const kg = pasteProduct.coverage.perUnit * result.working.count;
+    pasteAmount = `${formatNumber(kg)} kg${pasteProduct.packs?.sizes ? `: ${packLine(packsFor(kg, pasteProduct.packs.sizes), 'kg')}` : ''}`;
+  }
+  const fb = rule as (MakerRule & { pasteCoverage?: { perUnit: number } }) | undefined;
+  if (!pasteAmount && fb?.pasteCoverage?.perUnit) {
+    const tubes = Math.ceil(result.working.count / fb.pasteCoverage.perUnit);
+    pasteAmount = `${tubes} ${tubes === 1 ? 'tube' : 'tubes'}`;
+  }
+  lines.push({
+    role: 'paste',
+    name: pasteName,
+    amount: pasteAmount,
+    note: pasteAmount ? `"${pasteProduct?.coverage?.printed ?? 'Each tube can be used to hang five rolls of wallpaper.'}"` : 'We confirm the paste from the maker’s hanging instruction for the product.',
+    source: pasteProduct ? sourceOf(pasteProduct) : rule?.source ?? null,
+  });
+
+  // Lining paste: at least one step stronger than the wallpaper paste, unless the maker says otherwise.
+  if (lined) {
+    const decision = liningPaste(pasteStep, rule?.id, pasteName);
+    if (!decision.ok) checks.push(decision.reason);
+    else {
+      const kg = decision.paste ? pasteKg(area, decision.paste) : null;
+      lines.push({
+        role: 'lining-paste',
+        name: decision.pasteName,
+        amount: kg && decision.paste?.packs?.sizes ? `${formatNumber(kg)} kg: ${packLine(packsFor(kg, decision.paste.packs.sizes), 'kg')}` : kg ? `${formatNumber(kg)} kg` : null,
+        note: decision.note,
+        source: decision.paste ? sourceOf(decision.paste) : rule?.source ?? null,
+      });
+    }
+  }
+  return { lines, checks, assumed };
 }

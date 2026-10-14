@@ -535,7 +535,8 @@
       "checked": "2026-10-14",
       "status": "confirmed",
       "pastePrinted": "Red Lidded Paste (type II) for non-woven papers that do not absorb much water; Yellow Lidded Paste (type I) for papers that require soaking.",
-      "pages": "Lining and primer: page 2. Pastes: page 4."
+      "pages": "Lining and primer: page 2. Pastes: page 4.",
+      "pasteName": "de Gournay Red or Yellow Lidded Paste, as its instructions give for the paper"
     },
     {
       "id": "cole-and-son",
@@ -583,7 +584,8 @@
         "printed": "Each tube can be used to hang five rolls of wallpaper.",
         "perUnit": 5,
         "unit": "rolls/tube"
-      }
+      },
+      "pasteName": "Farrow & Ball wallpaper paste"
     },
     {
       "id": "fromental",
@@ -603,7 +605,8 @@
       ],
       "source": "https://fromental.com/pages/how-to-install-fromental-printed-wallpaper-rolls-pre-trimmed",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "pasteName": "A premium light-grade tub adhesive, as Fromental asks"
     },
     {
       "id": "fromental-grasscloth",
@@ -620,7 +623,8 @@
       ],
       "source": "https://fromental.com/pages/fromental-shop-how-to-install-grasscloth-wallpaper",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "pasteName": "A good-quality pre-mixed wallcovering adhesive, as Fromental asks"
     },
     {
       "id": "graham-and-brown",
@@ -656,7 +660,8 @@
       ],
       "source": "https://www.muraspec.com/wp-content/uploads/2024/05/Muraspec-UK-Hanging-Instructions-Feb-24.pdf",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "pasteName": "Murabond, in the grade Muraspec’s leaflet gives for the design"
     },
     {
       "id": "phillip-jeffries",
@@ -680,7 +685,8 @@
       "status": "confirmed",
       "notesSource": "https://www.phillipjeffries.com/terms",
       "pasteStatus": "unconfirmed",
-      "pasteStepStatus": "owner"
+      "pasteStepStatus": "owner",
+      "pasteName": "A clear, heavy-duty, pre-mixed vinyl adhesive, as Phillip Jeffries asks"
     },
     {
       "id": "timorous-beasties",
@@ -696,7 +702,8 @@
       "pastePrinted": "a good quality prepared ‘Tub’ adhesive, containing a fungicide.",
       "source": "https://www.timorousbeasties.com/mediaLibrary/other/english/129405.pdf",
       "checked": "2026-10-14",
-      "status": "unconfirmed"
+      "status": "unconfirmed",
+      "pasteName": "A good-quality prepared tub adhesive with a fungicide, as Timorous Beasties asks"
     },
     {
       "id": "schumacher",
