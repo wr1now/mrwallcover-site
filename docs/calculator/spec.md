@@ -1,6 +1,6 @@
 # Wallpaper calculator: the maths
 
-Status: **draft, not yet signed off**, 14 October 2026. The owner is waiting for Grok's review of other companies' calculators before signing off, in case anything is missing.
+Status: **draft for the owner's sign-off**, 14 October 2026. Revised after Grok's review of eleven other calculators (private repo, calculator-inputs/2026-10-14-calculator-research, commit 055c4d6).
 Rules marked *(owner)* were confirmed by the owner on diagrams on 14 October 2026. Figures marked *(data sheet)* are copied from the maker's sheet, with the source in `src/data/wallpapering.json`.
 
 The calculator gives an **order quantity**. It is not a set-out: half-drop papers and murals are still set out on site. It never shows an installation price.
@@ -36,6 +36,7 @@ A made-to-measure mural gets its order size (section 7.5) **and** the request bu
 | Input | Default | Notes |
 | --- | --- | --- |
 | Units | centimetres | Metres, inches and feet are converted on entry. The engine works in whole millimetres. |
+| Height to paper | — | From the top of the skirting to where the paper stops: the ceiling, the cornice or the picture rail *(owner)*. |
 | Usable roll width `w` | 53 cm | Nominal width less any overlap or selvedge the maker prints. |
 | Roll length `L` | 1005 cm | |
 | Pattern repeat `R` | 0 (none) | |
@@ -142,7 +143,7 @@ The engine cuts every piece from rolls, in this order, and records where each cu
 
 1. **Start of a roll.** The first cut on a new roll starts one full repeat in (`R`), the worst case for finding the pattern start *(owner)*. Free match starts at 0.
 2. **Next cut on the same roll.** It starts at the next point on the roll where the pattern matches the phase that piece needs. It needs only its own length, so the last drop on a roll is never rounded up.
-3. **Full drops** are cut in order along the current roll. When the next one doesn't fit, a new roll is opened, and what is left of the old roll becomes an offcut.
+3. **Full drops** are cut in order along the current roll. When the next one doesn't fit, it is cut from an earlier offcut if one is long enough and the pattern lines up *(owner)*; otherwise a new roll is opened, and what is left of the old roll becomes an offcut.
 4. **Short drops, part-drops and niche backs** are cut from offcuts when the pattern lines up *(owner)*. Longest piece first; each goes to the offcut it fits with the least left over. If no offcut fits, it is cut from the current roll, or a new one.
 5. **Offset matches** (half-drop, ⅓, ¼): the engine works the plan both ways and keeps the one with fewer rolls *(owner)*:
    - **in drop order:** drops 1, 2, 3 … cut in turn along the roll
@@ -151,7 +152,7 @@ The engine cuts every piece from rolls, in this order, and records where each cu
    If both need the same number of rolls, it keeps drop order.
 6. **Maker override, no offcut infill.** Some makers say pieces must be cut and hung in the sequence they come off the roll (Muraspec: "do not in-fill with off cuts or out of sequence drops"; Phillip Jeffries vinyl: apply material above doors and windows as it comes off the roll). For those products, every piece is cut in drop order and offcuts are not reused.
 
-`rolls used` = the number of rolls the plan opens. `drops per roll` (shown on the result) = the full drops that fit on a new roll.
+`rolls used` = the number of rolls the plan opens. `drops per roll` (shown on the result) = the full drops that fit on a new roll. The plan says what was allowed at the start of each roll, for example "65 cm allowed at the start of each roll to find the pattern" *(owner)*.
 
 ### The owner's example, cut
 
@@ -166,11 +167,20 @@ Roll 2: [65 lost][drop 4: 275][50][drop 5: 275][ offcut 335 ]
 
 Every result says: **order every roll, the spare included, from one batch**, and check the batch number on every roll before anything is cut.
 
+The result opens with three lines *(owner)*, so the spare is never missed:
+
+```
+Working rolls: 2      (the cutting plan)
+Spare roll:    1      (same batch, for a damaged length or a later repair)
+Order:         3 rolls
+```
+
 ### 7.1 Rolls
 
 ```
-order = rolls used
-spare = 1 roll, on its own line
+working rolls = rolls used
+spare         = 1 roll
+order         = working rolls + spare
 ```
 
 ### 7.2 US double rolls
@@ -183,7 +193,7 @@ A bolt is cut like a roll, with the bolt length as `L` (for example Phillip Jeff
 
 ### 7.4 Sold by the metre or yard (wide-width contract)
 
-The plan is cut from one continuous length (one pattern-start loss), split into pieces no longer than the maker's roll (for example Muraspec: 130 cm × 30 m, "Per linear metre").
+Where the maker publishes its own ordering rule for paper sold by length, that rule is used (maker first). Otherwise the plan is cut from one continuous length (one pattern-start loss), split into pieces no longer than the maker's roll (for example Muraspec: 130 cm × 30 m, "Per linear metre").
 
 ```
 length = where the last cut ends
@@ -263,7 +273,8 @@ The owner's ladder *(owner)*:
 
 ## 9. Lines on every result
 
-- the roll count first, then "How we worked it out" with the cutting plan, then materials, then the spare on its own line
+- working rolls, spare roll and order at the top, then "How we worked it out" with the cutting plan, then materials
+- a **close-call warning** *(owner)* when 1–5 cm more height, or 1–5 cm more width, would add a working roll: "4 cm more height would make this 3 working rolls. Measure twice." The engine re-runs the plan at each extra centimetre and reports the smallest change.
 - "Order every roll, including the spare, from one batch"
 - "Hang the first three drops, then stop and check the shade and the match in daylight" (Phillip Jeffries accepts no claims once more than 3 strips are cut and hung)
 - "This is an order quantity, not a set-out"
@@ -284,7 +295,7 @@ Every row is a test in `tests/quantity.test.ts`. Sizes in cm. "Spare" is always 
 | 4 | Straight, 64 repeat | wall 400 × 240; roll 52 × 1000; repeat 64 | 8 drops; cut 256; 3 per roll (64 + 256 + 256 + 250 = 826, a 4th starts at 832 and ends at 1082); 3 rolls |
 | 5 | Half-drop, owner's wall | as row 1, half-drop | 5 drops; drop order: roll 1 cuts at 65, 357.5, 650; 2 rolls |
 | 6 | Half-drop, phase by phase wins | wall 300 × 280; roll 52 × 1000; repeat 52 half-drop | 6 drops of 290. Drop order: 2 per roll, 3 rolls. Phase by phase: 3 per roll (52, 364, 676), **2 rolls** |
-| 7 | Half-drop, drop order wins | wall 300 × 280; roll 52 × 1000; repeat 65 half-drop | 6 drops of 290. Drop order: cuts at 65, 357.5, 650, **2 rolls**. Phase by phase: 3 rolls |
+| 7 | Half-drop, both ways tie | wall 300 × 280; roll 52 × 1000; repeat 65 half-drop | 6 drops of 290. Drop order: cuts at 65, 357.5, 650 on each roll, **2 rolls**. Phase by phase: also 2, because roll 1's offcut takes a drop at 682.5. A tie keeps drop order |
 | 8 | ⅓ drop | wall 300 × 250; roll 52 × 1005; repeat 63, ⅓ drop | 6 drops of 260; roll 1 cuts at 63, 336, 609; 2 rolls |
 | 9 | Whole room, one run | room 400 × 350, height 270; roll 53 × 1005; free | run 1500; 29 drops; 3 per roll; 10 rolls |
 | 10 | Two walls entered separately | walls 110 × 240 and 110 × 240; roll 52 × 1000; free | 3 + 3 = 6 drops (one run would be 5); 2 rolls |
@@ -305,14 +316,16 @@ Every row is a test in `tests/quantity.test.ts`. Sizes in cm. "Spare" is always 
 | 25 | Paste rule, no step above | wallpaper paste step 4 | "no stronger lining paste": Have Mr Wallcover check this |
 | 26 | Paste rule, maker override | de Gournay | lining paste = the wallpaper paste, with the note that the maker's instruction replaces the house rule |
 | 27 | No price | any result | contains no "£" |
+| 28 | Walls of two heights share rolls | wall 230 × 265 and wall 110 × 120; roll 55 × 1000; repeat 65 | 5 drops of 275 and 2 of 130. Roll 2 carries drops 4–5, then both 130 cm drops at 715 and 845. **2 rolls** |
+| 29 | Close call | as row 1, height 272 | 2 working rolls, and "4 cm more height would make this 3 working rolls". At height 275 it says 1 cm. At 276 the plan needs 3 |
 
-Rows 6, 7 and 13 were worked by hand and checked against a scratch model of the cutting rules on 14 October 2026.
+Rows 6, 7, 13, 28 and 29 were worked by hand and checked against a scratch model of the cutting rules on 14 October 2026.
 
 ---
 
 ## 11. Still to confirm
 
-1. **Grok's review of other calculators**: anything it finds that this spec misses is added before sign-off.
+1. **Sets:** where a maker sells only in sets (for example a pair of rolls), the order and the spare are rounded to whole sets. To confirm.
 2. **Calibration:** 5–10 real past jobs with the rolls actually used, before launch.
 3. **Wallpaper pastes** Mr Wallcover uses for paper, vinyl and non-woven, and which step each sits on.
 4. **Stain block and alkali-resisting primer:** which products, so their data sheets can be added.
