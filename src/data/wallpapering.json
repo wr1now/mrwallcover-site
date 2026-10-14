@@ -1131,12 +1131,12 @@
     },
     {
       "id": "vescom-3000",
-      "kind": "paste",
+      "kind": "vov",
       "role": "maker-named",
       "name": "Vescom 3000",
       "maker": "Vescom",
-      "step": 4,
-      "stepStatus": "owner",
+      "step": null,
+      "stepStatus": "unplaced",
       "stepBasis": "No grade word; chosen for \"non-porous (not breathing) substrates\"",
       "for": "\"vinyl and textile wallcovering on non-porous (not breathing) substrates\"",
       "coverage": {

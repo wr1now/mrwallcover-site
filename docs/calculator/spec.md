@@ -268,10 +268,10 @@ The owner's ladder *(owner)*:
 | 4 | Extra-heavy (the owner also says "special heavyweight") |
 
 - **Lining paste:** Wallrock Power Adhesive *(owner)*, step 4. "1Kg per 5m2" *(maker's page)*, so `kg = area ÷ 5`, in 5 kg and 10 kg tubs. Not for thermal or insulating liners, which take Wallrock Thermal Liner Adhesive (out of scope for the calculator: routed to a check).
-- **Wallpaper paste:** the one the wallpaper maker names. Until the owner sends the pastes Mr Wallcover uses, the maker's own paste is shown, with its step.
+- **Wallpaper paste:** the one the wallpaper maker names, with its step. Where the maker gives none, the hub says woven goods (grasscloth, fabric, hessian, linen) go up with a Medium-grade paste *(owner)*; the calculator does not ask for the wallcovering type.
 - **Rule:** the lining paste must be at least one step above the wallpaper paste. If the wallpaper paste is already step 4, there is no step above, and the result says so and shows "Have Mr Wallcover check this".
 - **Maker override** *(owner)*: when the maker says the lining goes up with the same paste as the wallpaper (de Gournay), the maker wins, and the result says that the maker's instruction replaces the house rule.
-- **VOV (vinyl-over-vinyl)** *(owner)*: on a sealed, non-porous surface (gloss paint, an existing vinyl) the paper goes up with a VOV adhesive, chosen for the surface and not stepped on the ladder. The calculator's wall question has an answer for it ("Gloss paint or old vinyl"); the result names the maker's own VOV adhesive where there is one (Muraspec: Murabond Sealed Surface; Tektura: Tekfix VOV), otherwise a VOV adhesive chosen with the maker's instruction, and always offers "Have Mr Wallcover check this".
+- **VOV (vinyl-over-vinyl)** *(owner)*: on a sealed, non-porous surface (gloss paint, an existing vinyl) the paper goes up with a VOV adhesive, chosen for the surface and not stepped on the ladder. The calculator's wall question has an answer for it ("Gloss paint or old vinyl"); the result names the maker's own VOV adhesive where there is one (Muraspec: Murabond Sealed Surface; Tektura: Tekfix VOV; Vescom: Vescom 3000), otherwise a VOV adhesive chosen with the maker's instruction, and always offers "Have Mr Wallcover check this".
 - **Wallpaper paste quantity:** from the maker's printed coverage (for example Cole & Son: "1 kilo of paste per standard roll"). Where nothing is printed, the result names the paste and gives no quantity.
 
 ---

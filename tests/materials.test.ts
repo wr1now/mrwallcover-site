@@ -93,7 +93,7 @@ test('the house pastes (owner, 14 Oct 2026): every one is on the ladder with a s
   const tektura = liningPaste(null, 'tektura');
   assert.equal(tektura.ok, false);
   if (!tektura.ok) assert.match(tektura.reason, /Tekfix/);
-  assert.equal(liningPaste(4).ok, false, 'PRO-732, 111, PRO-555 and Vescom 3000 sit at the top step');
+  assert.equal(liningPaste(4).ok, false, 'PRO-732, 111, PRO-555 and the Vescom 2000 + 3000 mix sit at the top step');
   assert.match(maker('vescom')!.pastePrinted ?? '', /Use only Vescom adhesive/);
   // Names the owner keeps off the site, as SHA-256 fingerprints so this public test does not publish them.
   const unnamed = new Set(['3a68ef6f0d873650a9a1f74ce6f76b91ebc18601978e9ae5f454d411ba51526c', '928f634e7bf43f6d70f3e079a6c29cf84c5b6bdc0491bb72303dff58a760ba70']);
@@ -107,8 +107,10 @@ test('the ladder reads Light, Medium, Heavy, Extra-heavy (owner, 14 Oct 2026); a
   assert.deepEqual(wallpapering.ladder.map((step) => step.label), ['Light', 'Medium', 'Heavy', 'Extra-heavy']);
   assert.equal(wallpapering.ladder[3].alt, 'special heavyweight');
   assert.equal(ladderLabel(2), 'Medium');
-  assert.deepEqual(vovAdhesives.map((item) => item.id).sort(), ['beeline-overlap-repair', 'murabond-sealed-surface', 'tekfix-vov']);
+  assert.deepEqual(vovAdhesives.map((item) => item.id).sort(), ['beeline-overlap-repair', 'murabond-sealed-surface', 'tekfix-vov', 'vescom-3000']);
   for (const item of vovAdhesives) assert.equal(item.step, null, `${item.id} is not on the ladder`);
+  const page = await (await import('node:fs/promises')).readFile('src/pages/wallpapering/lining-and-adhesives.astro', 'utf8');
+  assert.match(page, /we hang grasscloth, fabric, hessian and linen with a Medium-grade paste/, 'woven goods default to Medium on the hub (owner, 14 Oct 2026)');
   const input = { paper: { widthCm: 53, lengthCm: 1005, match: 'free' as const }, walls: [{ widthCm: 400, heightCm: 250 }] };
   const result = calculate(input);
   assert.ok(result.ok && result.kind === 'plan');
