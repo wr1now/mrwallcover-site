@@ -34,6 +34,8 @@ const el = <K extends keyof HTMLElementTagNameMap>(tag: K, text?: string, classN
   return node;
 };
 const fmt = (cm: number) => (Number.isInteger(cm) ? String(cm) : cm.toFixed(1).replace(/\.0$/, ''));
+const fmtM = (m: number) => String(Math.round(m * 100) / 100);
+const BESPOKE_LABEL: Record<string, string> = { stairs: 'a stairwell', slope: 'a sloping wall or ceiling', curved: 'a curved wall', ceiling: 'the ceiling' };
 
 const form = document.querySelector<HTMLFormElement>('[data-quantity]');
 const output = document.querySelector<HTMLElement>('[data-quantity-output]');
@@ -57,6 +59,8 @@ if (form && output) {
   const measure = () => (form.querySelector<HTMLInputElement>('[name="measure"]:checked')?.value ?? 'wall') as 'wall' | 'walls' | 'room';
   const formatOption = () => formatSelect.selectedOptions[0];
   const soldKind = () => formatOption()?.dataset.sold ?? 'roll';
+  // The wall question counts as answered only once the visitor changes it (or a shared link carries it).
+  let conditionAnswered = false;
 
   /* ---------- step 1: the paper ---------- */
 
@@ -247,7 +251,7 @@ if (form && output) {
       if (input.walls.some((wall) => tooSmall(wall.widthCm) || tooSmall(wall.heightCm))) problems.push('Enter the wall in centimetres: 2.7 m is 270 cm.');
     }
     if (tooSmall(paper.widthCm) && !['mural', 'panel-set'].includes(kind)) problems.push('Enter the roll width in centimetres: 0.53 m is 53 cm.');
-    return { input, problems, makerId, condition: value('condition'), link: value('link') };
+    return { input, problems, makerId, condition: conditionAnswered ? value('condition') : '', link: value('link') };
   };
 
   /* ---------- sharing ---------- */
@@ -268,7 +272,7 @@ if (form && output) {
     if (openings.length) q.set('o', openings.join(';'));
     const returns = [...returnsBox.querySelectorAll<HTMLElement>('[data-return]')].map((row) => `${(row.querySelector('[name="r-wall"]') as HTMLSelectElement).value}:${(row.querySelector('[name="r-depth"]') as HTMLInputElement).value}`);
     if (returns.length) q.set('rt', returns.join(';'));
-    if (value('condition') !== wallpapering.conditionQuestion.options[0].id) q.set('c', value('condition'));
+    if (conditionAnswered) q.set('c', value('condition'));
     const bespoke = [...form.querySelectorAll<HTMLInputElement>('[name="bespoke"]:checked')].map((box) => box.value);
     if (bespoke.length) q.set('b', bespoke.join(','));
     if (value('trimTop') !== '5') q.set('tt', value('trimTop'));
@@ -317,7 +321,10 @@ if (form && output) {
       const [wall, depth] = item.split(':');
       addReturn({ 'r-wall': wall, 'r-depth': depth });
     }
-    set('condition', q.get('c'));
+    if (q.get('c')) {
+      set('condition', q.get('c'));
+      conditionAnswered = true;
+    }
     for (const v of (q.get('b') ?? '').split(',').filter(Boolean)) {
       const box = form.querySelector<HTMLInputElement>(`[name="bespoke"][value="${v}"]`);
       if (box) box.checked = true;
@@ -337,7 +344,7 @@ if (form && output) {
     const rule = state.makerId ? maker(state.makerId) : undefined;
     const kind = soldKind();
     lines.push(`Wallpaper: ${rule ? rule.name : 'maker not given'}${state.link ? ` (${state.link})` : ''}.`);
-    if (!['mural', 'panel-set'].includes(kind)) lines.push(`Roll: ${fmt(paper.widthCm)} cm usable width × ${fmt(paper.lengthCm / 100)} m, ${MATCH_LABEL[paper.match]}${paper.repeatCm ? `, repeat ${fmt(paper.repeatCm)} cm` : ''}.`);
+    if (!['mural', 'panel-set'].includes(kind)) lines.push(`Roll: ${fmt(paper.widthCm)} cm usable width × ${fmtM(paper.lengthCm / 100)} m, ${MATCH_LABEL[paper.match]}${paper.repeatCm ? `, repeat ${fmt(paper.repeatCm)} cm` : ''}.`);
     else lines.push(`Format: ${formatOption().textContent}.`);
     if (state.input.room) lines.push(`Room: ${fmt(state.input.room.lengthCm)} × ${fmt(state.input.room.widthCm)} cm, height to paper ${fmt(state.input.room.heightCm)} cm.`);
     state.input.walls?.forEach((wall, index) => lines.push(`Wall${(state.input.walls?.length ?? 0) > 1 ? ` ${index + 1}` : ''}: ${fmt(wall.widthCm)} cm wide, height to paper ${fmt(wall.heightCm)} cm.`));
@@ -348,7 +355,7 @@ if (form && output) {
     });
     const option = wallpapering.conditionQuestion.options.find((item) => item.id === state.condition);
     if (option) lines.push(`The walls now: ${option.label.toLowerCase()}.`);
-    if (state.input.bespoke?.length) lines.push(`Also: ${state.input.bespoke.join(', ')}.`);
+    if (state.input.bespoke?.length) lines.push(`Also: ${state.input.bespoke.map((item) => BESPOKE_LABEL[item] ?? item).join(', ')}.`);
     return lines;
   };
 
@@ -396,7 +403,9 @@ if (form && output) {
 
   const planSentences = (r: PlanResult): string[] => {
     const sentences: string[] = [];
-    sentences.push(`${r.drops} ${r.drops === 1 ? 'drop' : 'drops'} across the ${measure() === 'room' ? 'room, counted as one run of ' + fmt(r.runs[0].widthCm) + ' cm' : r.runs.length > 1 ? 'walls, each rounded up' : 'wall'}${r.shortPieces ? `: ${r.fullDrops} full height and ${r.shortPieces} shorter ${r.shortPieces === 1 ? 'piece' : 'pieces'} for the openings` : ''}.`);
+    sentences.push(`${r.drops} ${r.drops === 1 ? 'drop' : 'drops'} across the ${measure() === 'room' ? 'room, counted as one run of ' + fmt(r.runs[0].widthCm) + ' cm' : r.runs.length > 1 ? 'walls, each rounded up' : 'wall'}.`);
+    const over = r.drops - r.fullDrops;
+    if (r.shortPieces) sentences.push(`${over ? `${over} of them ${over === 1 ? 'sits' : 'sit'} over an opening and ${over === 1 ? 'is' : 'are'} cut as shorter pieces. ` : ''}With any reveals and niche backs, that is ${r.fullDrops} full-height ${r.fullDrops === 1 ? 'drop' : 'drops'} and ${r.shortPieces} shorter ${r.shortPieces === 1 ? 'piece' : 'pieces'}, cut from offcuts where the pattern lines up.`);
     sentences.push(`Each drop is cut at ${fmt(r.dropLengthCm)} cm, including ${fmt(r.trimTopCm)} cm at the top and ${fmt(r.trimBottomCm)} cm at the bottom.`);
     if (r.match === 'straight') sentences.push(`The straight match moves the start of the next drop on by ${fmt(r.cutPitchCm)} cm.`);
     if (['half', 'third', 'quarter'].includes(r.match)) {
@@ -412,12 +421,30 @@ if (form && output) {
   const rollList = (r: PlanResult) => {
     const list = el('ol', undefined, 'qc-plan');
     const unit = r.working.unit.one === 'metre' || r.working.unit.one === 'yard' ? 'Piece' : r.working.unit.one[0].toUpperCase() + r.working.unit.one.slice(1);
+    // Rolls cut the same way, one after another, share a line: "Rolls 1 to 9: drops 1 to 27, three on each…".
+    const shape = (roll: PlanResult['rolls'][number]) => roll.cuts.every((cut) => cut.kind === 'full' && cut.wall === roll.cuts[0].wall) ? `${roll.cuts.map((cut) => `${cut.lengthCm}@${cut.atCm}`).join(',')}|${roll.leftoverCm}` : null;
+    const groups: PlanResult['rolls'][] = [];
     for (const roll of r.rolls) {
-      const parts = roll.cuts.map((cut) => {
-        const what = cut.kind === 'full' ? `drop ${cut.drop}${r.runs.length > 1 ? ` of wall ${cut.wall}` : ''}` : `${KIND_LABEL[cut.kind]}${r.runs.length > 1 ? ` on wall ${cut.wall}` : ''}`;
-        return `${what} (${fmt(cut.lengthCm)} cm) at ${fmt(cut.atCm)} cm`;
-      });
-      list.append(el('li', `${unit} ${roll.roll}: ${parts.join(', ')}. ${fmt(roll.leftoverCm)} cm left.`));
+      const last = groups[groups.length - 1];
+      if (last && shape(roll) !== null && shape(roll) === shape(last[0])) last.push(roll);
+      else groups.push([roll]);
+    }
+    for (const group of groups) {
+      const roll = group[0];
+      if (group.length > 2) {
+        const first = group[0].cuts[0].drop;
+        const final = group[group.length - 1].cuts[group[group.length - 1].cuts.length - 1].drop;
+        const at = roll.cuts.map((cut) => fmt(cut.atCm));
+        list.append(el('li', `${unit}s ${roll.roll} to ${group[group.length - 1].roll}: drops ${first} to ${final}, ${roll.cuts.length} on each (${fmt(roll.cuts[0].lengthCm)} cm), cut at ${at.slice(0, -1).join(', ')}${at.length > 1 ? ' and ' : ''}${at[at.length - 1]} cm. ${fmt(roll.leftoverCm)} cm left on each.`));
+        continue;
+      }
+      for (const single of group) {
+        const parts = single.cuts.map((cut) => {
+          const what = cut.kind === 'full' ? `drop ${cut.drop}${r.runs.length > 1 ? ` of wall ${cut.wall}` : ''}` : `${KIND_LABEL[cut.kind]}${r.runs.length > 1 ? ` on wall ${cut.wall}` : ''}`;
+          return `${what} (${fmt(cut.lengthCm)} cm) at ${fmt(cut.atCm)} cm`;
+        });
+        list.append(el('li', `${unit} ${single.roll}: ${parts.join(', ')}. ${fmt(single.leftoverCm)} cm left.`));
+      }
     }
     return list;
   };
@@ -427,11 +454,11 @@ if (form && output) {
     const row = (label: string, count: string, note: string, cls?: string) => {
       const div = el('div', undefined, cls);
       const dd = el('dd');
-      dd.append(el('strong', count), note);
+      dd.append(el('strong', count), el('span', note, 'qc-note'));
       div.append(el('dt', label), dd);
       dl.append(div);
     };
-    const what = r.working.unit.one === 'metre' || r.working.unit.one === 'yard' ? `The plan uses ${fmt((r.usedCm ?? 0) / (r.working.unit.one === 'metre' ? 100 : 91.44))} ${r.working.unit.many}.` : `These cover the ${r.drops} ${r.drops === 1 ? 'drop' : 'drops'} in the plan.`;
+    const what = r.working.unit.one === 'metre' || r.working.unit.one === 'yard' ? `The plan uses ${fmtM((r.usedCm ?? 0) / (r.working.unit.one === 'metre' ? 100 : 91.44))} ${r.working.unit.many}.` : `These cover the ${r.drops} ${r.drops === 1 ? 'drop' : 'drops'} in the plan.`;
     row('Working', plural(r.working), what);
     row('Spare', plural(r.spare), r.working.unit.one === 'metre' || r.working.unit.one === 'yard' ? 'One more drop, kept for a damaged length or a later repair, from the same batch.' : 'From the same batch, kept for a damaged length or a later repair.');
     row('Order', plural(r.order), r.singleRollsPriced ? `US papers are priced by the single roll: that is ${r.singleRollsPriced} single rolls.` : 'Everything from one batch.', 'qc-total');
@@ -453,10 +480,10 @@ if (form && output) {
       const dl = el('dl', undefined, 'qc-order');
       const div = el('div', undefined, 'qc-total');
       const dd = el('dd');
-      dd.append(el('strong', `${fmt(result.areaM2)} m²`), `${fmt(result.widthCm)} × ${fmt(result.heightCm)} cm, including the ${fmt(result.marginCm)} cm margin the maker asks for.`);
+      dd.append(el('strong', `${fmtM(result.areaM2)} m²`), el('span', `${fmt(result.widthCm)} × ${fmt(result.heightCm)} cm, including the ${fmt(result.marginCm)} cm margin the maker asks for.`, 'qc-note'));
       div.append(el('dt', 'Order'), dd);
       dl.append(div);
-      output.append(dl, el('p', 'A mural is made to the measurements you send the maker, so we check the wall and the set-out before you order.'), actions(state, `Mural: ${fmt(result.widthCm)} × ${fmt(result.heightCm)} cm, ${fmt(result.areaM2)} m².`, 'mural'));
+      output.append(dl, el('p', 'A mural is made to the measurements you send the maker, so we check the wall and the set-out before you order.'), actions(state, `Mural: ${fmt(result.widthCm)} × ${fmt(result.heightCm)} cm, ${fmtM(result.areaM2)} m².`, 'mural'));
       track('calculator_complete', { outcome: 'mural', mode: measure(), sold: 'mural' });
       return;
     }
@@ -484,7 +511,7 @@ if (form && output) {
       li.append(el('strong', line.name), line.amount ? `: ${line.amount}` : '');
       if (line.note) li.append(el('span', line.note));
       if (line.source) {
-        const a = el('a', line.source.endsWith('.pdf') ? 'Data sheet' : "Maker's page");
+        const a = el('a', line.sourceLabel ?? "Maker's page");
         a.href = line.source;
         a.rel = 'noopener';
         const span = el('span');
@@ -536,6 +563,7 @@ if (form && output) {
     syncMatch();
   });
   form.querySelector('[name="match"]')!.addEventListener('change', syncMatch);
+  form.querySelector('[name="condition"]')!.addEventListener('change', () => (conditionAnswered = true));
   form.querySelector('[name="link"]')!.addEventListener('change', readLink);
   form.querySelectorAll('[name="measure"]').forEach((radio) => radio.addEventListener('change', syncMeasure));
   addWall.addEventListener('click', () => addWallRow().querySelector('input')?.focus());

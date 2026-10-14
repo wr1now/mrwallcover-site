@@ -154,8 +154,8 @@ export function primerLitres(areaM2: number, item: Product, coats = item.coverag
 }
 
 /**
- * The fewest containers that hold at least `amount`, from the sizes the maker prints.
- * Ties go to fewer containers, then less left over.
+ * Containers that hold at least `amount`, from the sizes the maker prints: the least left over first,
+ * then the fewest containers.
  */
 export function packsFor(amount: number, sizes: number[]): number[] {
   if (!(amount > 0) || !sizes.length) return [];
@@ -170,7 +170,8 @@ export function packsFor(amount: number, sizes: number[]): number[] {
   const search = (remaining: number, from: number, picked: number[]) => {
     if (remaining <= 0) {
       const total = picked.reduce((a, b) => a + b, 0);
-      if (!best || picked.length < best.length || (picked.length === best.length && total < best.reduce((a, b) => a + b, 0))) best = [...picked];
+      const bestTotal = best ? best.reduce((a, b) => a + b, 0) : Infinity;
+      if (!best || total < bestTotal || (total === bestTotal && picked.length < best.length)) best = [...picked];
       return;
     }
     if (picked.length >= 4) return;
@@ -244,6 +245,7 @@ export interface MaterialLine {
   amount: string | null;
   note?: string;
   source?: string | null;
+  sourceLabel?: string;
 }
 
 export interface MaterialsList {
@@ -303,6 +305,7 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
       amount: litres ? `${litres.min === litres.max ? formatNumber(litres.max) : `${formatNumber(litres.min)}–${formatNumber(litres.max)}`} litres${sizes.length ? `: ${packLine(packsFor(litres.max, sizes), 'L')}` : ''}` : null,
       note: litres ? `${coats === 1 ? 'One coat' : `${coats} coats`}. The data sheet: "${item.coverage!.printed}"` : 'Quantity from its data sheet once the area is confirmed.',
       source: sourceOf(item),
+      sourceLabel: item.dataSheet ? 'Data sheet' : "Maker's page",
     });
   }
 
@@ -324,6 +327,7 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
         amount: `${plan.rolls} × ${roll.lengthM} m rolls${planDouble && doubles ? `, or ${planDouble.rolls} × ${doubles.lengthM} m` : ''}`,
         note: `Hung across, ${plan.pieces} courses. Every roll the same grade, so the same thickness and the same white.${rule && ['all-walls', 'recommended'].includes(rule.lining.need) ? ` ${rule.name} asks for lining.` : ''}`,
         source: sourceOf(paper),
+        sourceLabel: "Maker's page",
       });
     }
   }
@@ -348,6 +352,7 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
     amount: pasteAmount,
     note: pasteAmount ? `"${pasteProduct?.coverage?.printed ?? 'Each tube can be used to hang five rolls of wallpaper.'}"` : 'We confirm the paste from the maker’s hanging instruction for the product.',
     source: pasteProduct ? sourceOf(pasteProduct) : rule?.source ?? null,
+    sourceLabel: pasteProduct ? (pasteProduct.dataSheet ? 'Data sheet' : "Maker's page") : "Maker's instructions",
   });
 
   // Lining paste: at least one step stronger than the wallpaper paste, unless the maker says otherwise.
@@ -362,6 +367,7 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
         amount: kg && decision.paste?.packs?.sizes ? `${formatNumber(kg)} kg: ${packLine(packsFor(kg, decision.paste.packs.sizes), 'kg')}` : kg ? `${formatNumber(kg)} kg` : null,
         note: decision.note,
         source: decision.paste ? sourceOf(decision.paste) : rule?.source ?? null,
+        sourceLabel: decision.paste ? (decision.paste.dataSheet ? 'Data sheet' : "Maker's page") : "Maker's instructions",
       });
     }
   }
