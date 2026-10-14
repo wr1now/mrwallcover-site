@@ -95,7 +95,7 @@ export interface Condition {
   name: string;
   treatment: string;
   products: string[];
-  /** The surface is sealed: a VOV (vinyl-over-vinyl) adhesive, outside the ladder (owner, 14 Oct 2026). */
+  /** The surface is sealed: a vinyl-over-vinyl adhesive (VOV), outside the ladder (owner, 14 Oct 2026). */
   vov?: boolean;
   lining: string;
   inspect: boolean;
@@ -124,7 +124,7 @@ export const wallpapering = data as unknown as {
 };
 
 export const products = wallpapering.products;
-/** VOV (vinyl-over-vinyl) adhesives: for sealed surfaces, overlaps and borders; not on the ladder. */
+/** Vinyl-over-vinyl adhesives (VOV): for sealed surfaces, overlaps and borders; not on the ladder. The owner's label is "Vinyl-over-vinyl adhesive (VOV)". */
 export const vovAdhesives = products.filter((item) => item.kind === 'vov');
 export const makers = wallpapering.makers;
 
@@ -346,7 +346,7 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
     const named = vovAdhesives.find((item) => rule && item.maker && rule.name && item.maker.includes(rule.name) && isConfirmed(item));
     lines.push({
       role: 'paste',
-      name: named ? named.name : 'A VOV (vinyl-over-vinyl) adhesive made for sealed surfaces',
+      name: named ? named.name : 'A vinyl-over-vinyl adhesive (VOV) made for sealed surfaces',
       amount: null,
       note: named ? `${rule!.name}\u2019s adhesive for a sealed surface. We confirm the amount from its instructions.` : 'A water-based paste cannot soak into a sealed surface. We choose the VOV adhesive with the wallpaper maker\u2019s instruction.',
       source: named ? sourceOf(named) : null,

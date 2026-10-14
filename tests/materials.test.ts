@@ -116,7 +116,7 @@ test('the ladder reads Light, Medium, Heavy, Extra-heavy (owner, 14 Oct 2026); a
   assert.ok(result.ok && result.kind === 'plan');
   if (!result.ok || result.kind !== 'plan') return;
   const generic = materialsFor(input, result, { condition: 'sealed' });
-  assert.deepEqual(generic.lines.map((line) => line.name), ['A VOV (vinyl-over-vinyl) adhesive made for sealed surfaces']);
+  assert.deepEqual(generic.lines.map((line) => line.name), ['A vinyl-over-vinyl adhesive (VOV) made for sealed surfaces']);
   assert.equal(generic.checks.length, 1, 'a sealed wall is checked with us');
   const muraspec = materialsFor(input, result, { condition: 'sealed', makerId: 'muraspec' });
   assert.equal(muraspec.lines[0].name, 'Murabond Sealed Surface');

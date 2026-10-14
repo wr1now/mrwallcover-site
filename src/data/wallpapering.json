@@ -1629,7 +1629,7 @@
     {
       "id": "sealed",
       "name": "Sealed or non-porous: gloss paint, an existing vinyl",
-      "treatment": "Cleaned and keyed. A water-based paste cannot soak into a sealed surface, so the paper goes up with a VOV (vinyl-over-vinyl) adhesive made for it, as the wallpaper maker allows.",
+      "treatment": "Cleaned and keyed. A water-based paste cannot soak into a sealed surface, so the paper goes up with a vinyl-over-vinyl adhesive (VOV) made for it, as the wallpaper maker allows.",
       "products": [],
       "vov": true,
       "lining": "Only with an adhesive the lining maker accepts on a sealed surface.",
@@ -1794,8 +1794,8 @@
     "note": "The owner's tested pastes. Each product is added only with its own data sheet or maker's page. Pastes Mr Wallcover does not use are never named on the site, for or against."
   },
   "vov": {
-    "title": "VOV: vinyl-over-vinyl adhesive",
-    "text": "A VOV (vinyl-over-vinyl) adhesive is made to hold on sealed, non-porous surfaces, such as gloss paint or an existing vinyl, and to stick overlaps and borders. Many makers make one. It is chosen for the surface, not stepped on the ladder, and the wallpaper maker's instruction still comes first.",
+    "title": "Vinyl-over-vinyl adhesive (VOV)",
+    "text": "A vinyl-over-vinyl adhesive (VOV) is made to hold on sealed, non-porous surfaces, such as gloss paint or an existing vinyl, and to stick overlaps and borders. Many makers make one. It is chosen for the surface, not stepped on the ladder, and the wallpaper maker's instruction still comes first.",
     "status": "owner",
     "date": "2026-10-14"
   }
