@@ -14,6 +14,13 @@ async function htmlFiles(dir: string): Promise<string[]> {
   return out;
 }
 
+test('pastes we do not use are never named, for or against (owner, 14 Oct 2026)', async () => {
+  // We only list pastes we have tested on our own jobs. Others are left unnamed rather than criticised.
+  const files = await htmlFiles('dist');
+  const text = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n').toLowerCase();
+  for (const name of ['solvite', 'wickes']) assert.equal(text.includes(name), false, name);
+});
+
 test('the built site keeps private names and the verification token out of the wrong places', async () => {
   const files = await htmlFiles('dist');
   assert.ok(files.length > 10);

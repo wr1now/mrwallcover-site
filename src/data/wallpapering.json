@@ -33,6 +33,11 @@
       "text": "Walls are primed with Zinsser Gardz. Where lining is needed, it is Erfurt lining paper, hung with Wallrock Power Adhesive."
     },
     {
+      "id": "tested-pastes",
+      "title": "We hang only with pastes we have tested",
+      "text": "We hang with the paste the wallpaper maker names, or one of the pastes listed here, which we have tested on our own jobs. Some other pastes we have tried let joints open and the top and bottom edges lift as the paper dried. It is easy to put right, but a client should never have to see it."
+    },
+    {
       "id": "lining-paste-stronger",
       "title": "The lining paste is always at least one step stronger",
       "text": "The paste under the lining must be at least one step stronger than the paste on the wallpaper. If it is weaker, the wet paste of the wallpaper softens the lining paste beneath, and the lining lets go of the wall in large bubbles. Where no stronger paste exists for the combination, we check it before anything is ordered. When the wallpaper maker says the lining goes up with the same paste as the wallpaper, as de Gournay does, the maker's instruction wins."
@@ -944,5 +949,18 @@
         "check": true
       }
     ]
+  },
+  "housePasteMakers": {
+    "status": "owner",
+    "date": "2026-10-14",
+    "makers": [
+      "Vescom",
+      "Tektura",
+      "Muraspec",
+      "Beeline",
+      "Albany",
+      "Roman"
+    ],
+    "note": "The owner's tested pastes. Each product is added only with its own data sheet or maker's page. Pastes Mr Wallcover does not use are never named on the site, for or against."
   }
 }
