@@ -1,6 +1,6 @@
 # Wallpaper calculator: the maths
 
-Status: **draft for the owner's sign-off**, 14 October 2026. Revised after Grok's review of eleven other calculators (private repo, calculator-inputs/2026-10-14-calculator-research, commit 055c4d6).
+Status: **signed off by the owner**, 14 October 2026. Revised after Grok's review of eleven other calculators (private repo, calculator-inputs/2026-10-14-calculator-research, commit 055c4d6).
 Rules marked *(owner)* were confirmed by the owner on diagrams on 14 October 2026. Figures marked *(data sheet)* are copied from the maker's sheet, with the source in `src/data/wallpapering.json`.
 
 The calculator gives an **order quantity**. It is not a set-out: half-drop papers and murals are still set out on site. It never shows an installation price.
@@ -183,6 +183,10 @@ spare         = 1 roll
 order         = working rolls + spare
 ```
 
+### 7.1a Sets
+
+Where the maker sells only in sets (for example a pair of rolls), working rolls are rounded up to whole sets and the spare is one set *(owner)*.
+
 ### 7.2 US double rolls
 
 The product's double-roll width and length are used in the cutting plan. US papers are priced by the single roll and packed in double rolls (Thibaut FAQ; Wallcoverings Association), so the result reads "N double rolls (2N single rolls as priced)". The spare is 1 double roll.
@@ -242,7 +246,7 @@ area = Σ (run × height)
 ### 8.3 Lining paper
 
 - **Brand:** Erfurt *(owner)*. Grade by wall condition, from Erfurt MAV's own grade pages (800 new plaster … 2000 severely damaged). If the wallpaper maker names a grade, the maker's grade wins (for example de Gournay: 1000 or 1200; Cole & Son: 800 or 1000).
-- **Hung across** (cross-lined) by default, because the owner says lining is usually cross-lined and most makers who mention it ask for that. Hung vertically when the maker asks for it; the engine counts both ways. The default is confirmed at sign-off.
+- **Hung across** (cross-lined) by default, because the owner says lining is usually cross-lined and most makers who mention it ask for that. Hung vertically when the maker asks for it; the engine counts both ways. Across is the default *(owner)*.
 - **Rolls:** counted like the wallpaper, as horizontal courses, so no waste percentage is invented:
   ```
   courses per wall = ceil(height ÷ lining width)
@@ -325,7 +329,5 @@ Rows 6, 7, 13, 28 and 29 were worked by hand and checked against a scratch model
 
 ## 11. Still to confirm
 
-1. **Sets:** where a maker sells only in sets (for example a pair of rolls), the order and the spare are rounded to whole sets. To confirm.
-2. **Calibration:** 5–10 real past jobs with the rolls actually used, before launch.
-3. **Wallpaper pastes** Mr Wallcover uses for paper, vinyl and non-woven, and which step each sits on.
-4. **Stain block and alkali-resisting primer:** which products, so their data sheets can be added.
+1. **Calibration:** 5–10 real past jobs with the rolls actually used, before launch.
+2. **Wallpaper pastes:** the owner's tested makers are Vescom, Tektura, Muraspec, Beeline, Albany and Roman. Each product goes on the ladder once its data sheet is checked and the owner confirms its step.
