@@ -1,6 +1,6 @@
 # Wallpaper calculator: the maths
 
-Status: **signed off by the owner**, 14 October 2026. Revised after Grok's review of eleven other calculators (private repo, calculator-inputs/2026-10-14-calculator-research, commit 055c4d6).
+Status: **signed off by the owner**, 14 October 2026. Revised after a review of eleven other calculators, operated on 14 October 2026 (kept in the owner's private research archive).
 Rules marked *(owner)* were confirmed by the owner on diagrams on 14 October 2026. Figures marked *(data sheet)* are copied from the maker's sheet, with the source in `src/data/wallpapering.json`.
 
 The calculator gives an **order quantity**. It is not a set-out: half-drop papers and murals are still set out on site. It never shows an installation price.

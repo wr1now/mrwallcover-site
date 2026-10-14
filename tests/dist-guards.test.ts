@@ -14,6 +14,22 @@ async function htmlFiles(dir: string): Promise<string[]> {
   return out;
 }
 
+test('the private research archive is never referenced from the built site, scripts included', async () => {
+  const files = await (async function walk(dir: string): Promise<string[]> {
+    const out: string[] = [];
+    for (const entry of await readdir(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) out.push(...(await walk(full)));
+      else if (/\.(html|js|json|txt|md|xml)$/.test(entry.name)) out.push(full);
+    }
+    return out;
+  })('dist');
+  for (const file of files) {
+    const text = await readFile(file, 'utf8');
+    for (const term of ['mrwallcover-private', 'calculator-inputs', 'Grok']) assert.equal(text.includes(term), false, `${file}: ${term}`);
+  }
+});
+
 test('pastes we do not use are never named, for or against (owner, 14 Oct 2026)', async () => {
   // We only list pastes we have tested on our own jobs. Others are left unnamed rather than criticised.
   const files = await htmlFiles('dist');
