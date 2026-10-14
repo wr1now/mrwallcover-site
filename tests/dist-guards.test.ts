@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { test } from 'node:test';
@@ -30,11 +31,13 @@ test('the private research archive is never referenced from the built site, scri
   }
 });
 
-test('pastes we do not use are never named, for or against (owner, 14 Oct 2026)', async () => {
-  // We only list pastes we have tested on our own jobs. Others are left unnamed rather than criticised.
+test('names the owner keeps off the site never appear in it (owner, 14 Oct 2026)', async () => {
+  // Kept as SHA-256 fingerprints so this public test does not publish the names it guards against.
+  const unnamed = new Set(['3a68ef6f0d873650a9a1f74ce6f76b91ebc18601978e9ae5f454d411ba51526c', '928f634e7bf43f6d70f3e079a6c29cf84c5b6bdc0491bb72303dff58a760ba70']);
   const files = await htmlFiles('dist');
   const text = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n').toLowerCase();
-  for (const name of ['solvite', 'wickes']) assert.equal(text.includes(name), false, name);
+  const found = [...new Set(text.match(/[a-z][a-z0-9-]{2,}/g) ?? [])].filter((word) => unnamed.has(createHash('sha256').update(word).digest('hex')));
+  assert.deepEqual(found.length, 0);
 });
 
 test('the built site keeps private names and the verification token out of the wrong places', async () => {

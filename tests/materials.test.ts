@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { test } from 'node:test';
 import { HOUSE_LINING_PASTE, liningPaste, packsFor, pasteKg, primerLitres, product, products, makers } from '../src/lib/materials.ts';
 
@@ -94,6 +95,8 @@ test('the house pastes (owner, 14 Oct 2026): every one is on the ladder with a s
   if (!tektura.ok) assert.match(tektura.reason, /Tekfix/);
   assert.equal(liningPaste(4).ok, false, 'PRO-732, 111, PRO-555 and Vescom 3000 sit at the top step');
   assert.match(maker('vescom')!.pastePrinted ?? '', /Use only Vescom adhesive/);
-  const text = JSON.stringify(products).toLowerCase();
-  for (const name of ['solvite', 'wickes']) assert.equal(text.includes(name), false, name);
+  // Names the owner keeps off the site, as SHA-256 fingerprints so this public test does not publish them.
+  const unnamed = new Set(['3a68ef6f0d873650a9a1f74ce6f76b91ebc18601978e9ae5f454d411ba51526c', '928f634e7bf43f6d70f3e079a6c29cf84c5b6bdc0491bb72303dff58a760ba70']);
+  const words = JSON.stringify(products).toLowerCase().match(/[a-z][a-z0-9-]{2,}/g) ?? [];
+  assert.equal(words.some((word) => unnamed.has(createHash('sha256').update(word).digest('hex'))), false);
 });
