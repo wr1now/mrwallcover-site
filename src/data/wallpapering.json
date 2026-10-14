@@ -1,5 +1,5 @@
 {
-  "_note": "One materials dataset for the quantity calculator (/advice/quantities/) and the Wallpapering hub (/wallpapering/). Every figure is copied as printed from the maker's own data sheet or product page, with the URL and the date it was checked. A row whose figure was not re-opened on the date shown has status 'unconfirmed' and is never used in a calculation. Sources: Grok research 14 Oct 2026 (private repo calculator-inputs/2026-10-14-lining-papers, commit fba64c7), re-checked by the calculator session. House rules and the paste ladder are the owner's decisions of 14 Oct 2026 (docs/calculator/spec.md). Ladder steps marked stepStatus 'proposed' wait for the owner. No maker pays to appear; there are no affiliate links.",
+  "_note": "One materials dataset for the quantity calculator (/advice/quantities/) and the Wallpapering hub (/wallpapering/). Every figure is copied as printed from the maker's own data sheet or product page, with the URL and the date it was checked. A row whose figure was not re-opened on the date shown has status 'unconfirmed' and is never used in a calculation. Sources: Grok research 14 Oct 2026 (private repo calculator-inputs/2026-10-14-lining-papers, commit fba64c7), re-checked by the calculator session, and cross-checked against the research session's reconciliation (calculator-inputs/2026-10-14-reconciliation/RECONCILIATION.md, section 4). House rules and the paste ladder are the owner's decisions of 14 Oct 2026 (docs/calculator/spec.md). Ladder steps marked stepStatus 'proposed' wait for the owner. No maker pays to appear; there are no affiliate links.",
   "checked": "2026-10-14",
   "independence": "No maker pays to appear here, and there are no affiliate links.",
   "prepStatus": "approved by the owner on 14 Oct 2026: the wall-type and condition tables, the wall-condition question and the ladder steps marked 'owner'. Bartoline Professional is not yet placed on the ladder.",
@@ -366,10 +366,11 @@
       "coverage": {
         "printed": "A coverage rate of 1Kg per 5m2 (2.2lb per 53ft2) is suitable for most products.",
         "perUnit": 5,
-        "unit": "m2/kg"
+        "unit": "m2/kg",
+        "note": "anaglypta.co.uk says embossed or very heavy wallcoverings can take up to 100% more. The maker prints no area per tub."
       },
       "packs": {
-        "printed": "5KG and 10KG, on the tub labels in the product photograph and on the Wallrock brochure; the page text names no pack size",
+        "printed": "5KG and 10KG, on the tub labels in the maker's product photograph and the Wallrock brochure, and in retailers' listings; the page text names no pack size",
         "sizes": [
           5,
           10
@@ -384,7 +385,8 @@
       "page": "https://www.erfurtmav.com/erfurt-mav-wallpaper-products/accessories/wallrock-power-adhesive",
       "dataSheet": null,
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "notFor": "Not recommended for Wallrock Thermal Liners, Insulators Range, Cosy Liner KV300 or Sound Insulation."
     },
     {
       "id": "cole-and-son-paste",

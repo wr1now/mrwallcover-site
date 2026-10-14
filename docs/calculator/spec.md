@@ -232,13 +232,14 @@ area = Σ (run × height)
 ### 8.3 Lining paper
 
 - **Brand:** Erfurt *(owner)*. Grade by wall condition, from Erfurt MAV's own grade pages (800 new plaster … 2000 severely damaged). If the wallpaper maker names a grade, the maker's grade wins (for example de Gournay: 1000 or 1200; Cole & Son: 800 or 1000).
-- **Hung across** (cross-lined) by default, because most makers who mention it ask for that.
+- **Hung across** (cross-lined) by default, because the owner says lining is usually cross-lined and most makers who mention it ask for that. Hung vertically when the maker asks for it; the engine counts both ways. The default is confirmed at sign-off.
 - **Rolls:** counted like the wallpaper, as horizontal courses, so no waste percentage is invented:
   ```
   courses per wall = ceil(height ÷ lining width)
   each course      = wall width + t
   rolls            = cutting plan of all courses (free match)
   ```
+  Hung vertically, it is counted like a free-match wallpaper: `ceil(run ÷ lining width)` strips of `height + t`.
   No spare roll is added for lining. The batch does not matter, but **every lining roll must be the same product and grade, so the same thickness and the same shade of white** *(owner)*. The result says so.
 
 ### 8.4 Pastes, and the one-grade-stronger rule
@@ -252,7 +253,7 @@ The owner's ladder *(owner)*:
 | 3 | heavy |
 | 4 | extra-strong |
 
-- **Lining paste:** Wallrock Power Adhesive *(owner)*, step 4. "1Kg per 5m2" *(data sheet)*, so `kg = area ÷ 5`, in 5 kg and 10 kg tubs.
+- **Lining paste:** Wallrock Power Adhesive *(owner)*, step 4. "1Kg per 5m2" *(maker's page)*, so `kg = area ÷ 5`, in 5 kg and 10 kg tubs. Not for thermal or insulating liners, which take Wallrock Thermal Liner Adhesive (out of scope for the calculator: routed to a check).
 - **Wallpaper paste:** the one the wallpaper maker names. Until the owner sends the pastes Mr Wallcover uses, the maker's own paste is shown, with its step.
 - **Rule:** the lining paste must be at least one step above the wallpaper paste. If the wallpaper paste is already step 4, there is no step above, and the result says so and shows "Have Mr Wallcover check this".
 - **Maker override** *(owner)*: when the maker says the lining goes up with the same paste as the wallpaper (de Gournay), the maker wins, and the result says that the maker's instruction replaces the house rule.
