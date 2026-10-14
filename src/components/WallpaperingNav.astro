@@ -1,12 +1,12 @@
 ---
 /** The four parts of the Wallpapering hub, shown at the top of each part. */
 interface Props {
-  current: 'hub' | 'calculator' | 'preparation' | 'lining';
+  current: 'hub' | 'calculator' | 'guide' | 'preparation' | 'lining';
 }
 const { current } = Astro.props;
 const parts = [
   { id: 'hub', href: '/wallpapering/', label: 'Wallpapering' },
-  { id: 'calculator', href: '/advice/quantities/', label: 'Calculator' },
+  { id: 'calculator', href: '/calculator/', label: 'Calculator' },
   { id: 'preparation', href: '/wallpapering/preparation/', label: 'Preparation' },
   { id: 'lining', href: '/wallpapering/lining-and-adhesives/', label: 'Lining & adhesives' },
   { id: 'guides', href: '/wallpapering/#hanging-guides', label: 'Hanging guides' },

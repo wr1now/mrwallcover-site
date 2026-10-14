@@ -244,15 +244,21 @@ test('the ordering allowance the site quotes elsewhere is unchanged: 13.5 m² on
   assert.equal(allowanceRange({ match: 'mural', rollWidthM: 0.53, rollLengthM: 10.05, walls: [{ widthM: 5, heightM: 2.7 }] }).ok, false);
 });
 
-test('the page opens on the worked example in centimetres, and its copy states the result the calculator gives', async () => {
-  const page = await readFile('src/pages/advice/quantities.astro', 'utf8');
-  const value = (name: string) => Number(page.match(new RegExp(`name="${name}"[^>]*value="([0-9.]+)"`))![1]);
+test('/calculator/ opens on the worked example in centimetres; the guide at /advice/quantities/ states the result it gives and points to the calculator', async () => {
+  const calculator = await readFile('src/pages/calculator.astro', 'utf8');
+  const guide = await readFile('src/pages/advice/quantities.astro', 'utf8');
+  const value = (name: string) => Number(calculator.match(new RegExp(`name="${name}"[^>]*value="([0-9.]+)"`))![1]);
   const r = plan(calculate({ paper: { widthCm: value('rollWidth'), lengthCm: value('rollLength') * 100, match: 'free' }, walls: [wall(value('width'), value('height'))] }));
   assert.deepEqual([value('width'), value('height'), value('rollWidth'), value('rollLength')], [500, 270, 53, 10.05]);
   assert.equal(r.working.count, 4);
-  assert.match(page, /Ten drops at three per roll is 4 rolls/);
-  assert.match(page, /calculator gives 4, plus the spare/);
-  assert.match(page, /65 \+ 325 \+ 325 \+ 275 is 990 cm/, 'the owner\'s example is explained on the page');
-  assert.doesNotMatch(page, /refuses half-drop|10-metre roll|0\.5 metres wide/);
-  assert.doesNotMatch(page, /£/);
+  assert.match(guide, /Ten drops at three per roll is 4 rolls/);
+  assert.match(guide, /<a href="\/calculator\/">calculator<\/a> and it gives 4, plus the spare/);
+  assert.match(guide, /65 \+ 325 \+ 325 \+ 275 is 990 cm/, 'the owner\'s example is explained on the guide');
+  assert.match(guide, /href="\/calculator\/">Open the calculator/);
+  assert.match(guide, /location\.replace\('\/calculator\/' \+ q/, 'an old link carrying a calculation is forwarded');
+  assert.doesNotMatch(guide, /data-quantity/, 'the form lives on /calculator/ only');
+  for (const page of [calculator, guide]) {
+    assert.doesNotMatch(page, /refuses half-drop|10-metre roll|0\.5 metres wide/);
+    assert.doesNotMatch(page, /£/);
+  }
 });

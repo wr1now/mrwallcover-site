@@ -1,5 +1,5 @@
 {
-  "_note": "One materials dataset for the quantity calculator (/advice/quantities/) and the Wallpapering hub (/wallpapering/). Every figure is copied as printed from the maker's own data sheet or page, with the URL and the date it was checked. A row whose figure was not re-checked on the date shown has status 'unconfirmed' and is never used in a calculation or shown on the hub. House rules and the paste ladder are Mr Wallcover's own (docs/calculator/spec.md). No maker pays to appear; there are no affiliate links.",
+  "_note": "One materials dataset for the quantity calculator (/calculator/) and the Wallpapering hub (/wallpapering/). Every figure is copied as printed from the maker's own data sheet or page, with the URL and the date it was checked. A row whose figure was not re-checked on the date shown has status 'unconfirmed' and is never used in a calculation or shown on the hub. House rules and the paste ladder are Mr Wallcover's own (docs/calculator/spec.md). No maker pays to appear; there are no affiliate links.",
   "checked": "2026-10-14",
   "independence": "No maker pays to appear here, and there are no affiliate links.",
   "prepStatus": "Approved by Mr Wallcover, 14 October 2026.",

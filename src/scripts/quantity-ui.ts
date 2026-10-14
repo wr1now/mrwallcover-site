@@ -3,8 +3,8 @@ import { maker, materialsFor, wallpapering } from '../lib/materials';
 import { calculate, closeCall, plural, type Bespoke, type Match, type OpeningInput, type PlanResult, type QuantityInput, type QuantityResult, type SoldBy } from '../lib/quantity';
 
 /**
- * The calculator on /advice/quantities/ (spec: docs/calculator/spec.md). Without JavaScript the guide below
- * still reads. With it, three steps give working rolls, a spare on its own line, the order, the cutting plan
+ * The calculator on /calculator/ (spec: docs/calculator/spec.md). Without JavaScript the page points to the
+ * guide at /advice/quantities/. With it, three steps give working rolls, a spare on its own line, the order, the cutting plan
  * and the materials. Inputs can be shared as a link and printed; nothing is stored except, when the visitor
  * follows "Send us your measurements", a plain-text brief in this tab for the enquiry form.
  */

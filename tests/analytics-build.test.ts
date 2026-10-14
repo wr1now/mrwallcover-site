@@ -25,7 +25,7 @@ async function build(on: boolean) {
   }
   await run(path.join('node_modules', '.bin', 'astro'), ['build', '--outDir', dir], { env, maxBuffer: 64 * 1024 * 1024 });
   const read = (file: string) => readFile(path.join(dir, file), 'utf8');
-  return { dir, home: await read('index.html'), calculator: await read('advice/quantities/index.html'), privacy: await read('privacy/index.html'), llms: await read('llms.txt') };
+  return { dir, home: await read('index.html'), calculator: await read('calculator/index.html'), privacy: await read('privacy/index.html'), llms: await read('llms.txt') };
 }
 
 test('analytics on: Umami loads on the live host only, honours Do Not Track, ignores query and hash, and passes only the three calculator events', async () => {
