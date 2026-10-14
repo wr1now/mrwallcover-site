@@ -17,6 +17,7 @@
     "check:dist": "node --experimental-strip-types --test tests/dist-guards.test.ts tests/ai-layer.test.ts tests/glass-system.test.ts tests/ai-crawler.test.ts tests/atelier.test.ts tests/discovery-integrity.test.ts tests/seo-step2.test.ts tests/lee-broom.test.ts tests/ai-layer-data.test.ts tests/ai-layer-consistency.test.ts tests/home-restore.test.ts tests/ai-answers.test.ts tests/private-terms.test.ts tests/image-metadata.test.ts tests/sitemap.test.ts tests/laser-setout.test.ts",
     "check:type": "node --experimental-strip-types --test tests/type-scale.test.ts",
     "check:phone": "node --experimental-strip-types --test tests/phone-build.test.ts",
+    "check:analytics": "node --experimental-strip-types --test tests/analytics-build.test.ts",
     "lead-api": "LEAD_API_ENABLED=1 node --experimental-strip-types server/index.ts",
     "build:review": "npm run prebuild && MW_CONTENT_PREVIEW=1 astro build --outDir dist-review",
     "preview:review": "astro preview --outDir dist-review",
