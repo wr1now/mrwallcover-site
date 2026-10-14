@@ -86,7 +86,7 @@ function isCurrent(href: string) {
   const header = document.querySelector<HTMLElement>('[data-site-header]');
   const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
   const panel = document.querySelector<HTMLElement>('[data-mobile-menu]');
-  const desktop = window.matchMedia('(min-width: 1024px)');
+  const desktop = window.matchMedia('(min-width: 1280px)');
   const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
   let open = false;
 
