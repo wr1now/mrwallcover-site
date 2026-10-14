@@ -345,7 +345,7 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
 
   // A sealed surface (gloss paint, an old vinyl) takes a VOV adhesive instead of a water-based paste.
   if (option.vov) {
-    checks.push('An existing wallcovering usually has to come off first: Muraspec and Vescom ask for it, and one wallcovering maker warns that hanging vinyl over an existing wallcovering voids its fire rating.');
+    checks.push('An old wallcovering has to come off first: hanging vinyl over it voids the makers\u2019 fire rating certification. Check the wallpaper maker\u2019s guide.');
     const named = vovAdhesives.find((item) => rule && item.maker && rule.name && item.maker.includes(rule.name) && isConfirmed(item));
     // An amount only from a coverage the maker prints today, per kilogram (Muraspec's label); never from an archived page.
     const cover = named?.coverage;
