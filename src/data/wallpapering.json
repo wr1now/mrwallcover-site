@@ -85,50 +85,71 @@
       "status": "confirmed"
     },
     {
-      "id": "stain-block",
+      "id": "zinsser-bin",
       "kind": "stain-block",
       "role": "house",
-      "name": "Stain-blocking primer-sealer",
-      "maker": null,
-      "what": "Product to be confirmed by Mr Wallcover",
-      "for": "Water, smoke and nicotine stains, once the cause has been dealt with. The Gardz data sheet says: \"Seal stains with a Zinsser stain killing primer-sealer.\"",
-      "coverage": null,
-      "dataSheet": null,
-      "checked": null,
-      "status": "unconfirmed",
-      "candidates": [
-        {
-          "name": "Zinsser B-I-N",
-          "note": "Neither its page nor its data sheet says it can go under a wallcovering."
-        },
-        {
-          "name": "Zinsser Cover Stain",
-          "note": "Neither its page nor its data sheet says it can go under a wallcovering."
-        }
-      ]
+      "name": "Zinsser B-I-N",
+      "maker": "Zinsser, made and sold in the UK by Tor Coatings Ltd",
+      "what": "Stain-blocking primer-sealer",
+      "for": "Water, smoke and nicotine stains, once the cause has been dealt with. Used under wallpaper as Mr Wallcover's practice: its data sheet does not mention wallcoverings as a topcoat.",
+      "coverage": {
+        "printed": "Approx. 12.5m2 / litre smooth, painted, non- porous surfaces.",
+        "min": 12.5,
+        "max": 12.5,
+        "unit": "m2/l",
+        "coats": 1
+      },
+      "packs": {
+        "printed": "500ml (White only), 1L, 2.5L, 5L (White only), 10L (White only)",
+        "sizes": [
+          0.5,
+          1,
+          2.5,
+          5,
+          10
+        ],
+        "unit": "l",
+        "status": "confirmed",
+        "source": "https://zinsseruk.com/products/b-i-n"
+      },
+      "dataSheet": "https://zinsseruk.builtbybeluga.com/media/pages/products/b-i-n/fae7be925c-1760364227/b-i-n-tds.pdf",
+      "page": "https://zinsseruk.com/products/b-i-n",
+      "checked": "2026-10-14",
+      "status": "confirmed",
+      "ownerChoice": "2026-10-14"
     },
     {
-      "id": "alkali-primer",
+      "id": "dulux-trade-alkali",
       "kind": "alkali-primer",
       "role": "house",
-      "name": "Alkali-resisting primer",
-      "maker": null,
-      "what": "Product to be confirmed by Mr Wallcover",
-      "for": "New cement render and blockwork.",
-      "coverage": null,
-      "dataSheet": null,
-      "checked": null,
-      "status": "unconfirmed",
-      "candidates": [
-        {
-          "name": "Dulux Trade Alkali Resisting Primer",
-          "note": "Data sheet: masonry surfaces that may contain alkalis; 5L; up to 9 m² per litre."
-        },
-        {
-          "name": "Johnstone's Trade Alkali Resisting Primer",
-          "note": "Data sheet names render and blockwork; 2.5L and 5L; 9–11 m² per litre."
-        }
-      ]
+      "name": "Dulux Trade Alkali Resisting Primer",
+      "maker": "Dulux Trade (AkzoNobel)",
+      "what": "Alkali-resisting primer",
+      "for": "New cement render and blockwork. Its data sheet: \"Interior and exterior masonry surfaces that may contain alkalis.\" It does not mention wallcoverings; using it under wallpaper is Mr Wallcover's practice.",
+      "coverage": {
+        "printed": "practical coverage which can be achieved under normal conditions is up to 9m² per litre.",
+        "min": 9,
+        "max": 9,
+        "unit": "m2/l",
+        "coats": 1
+      },
+      "packs": {
+        "printed": "Pack Size 5L.",
+        "sizes": [
+          5
+        ],
+        "unit": "l",
+        "status": "confirmed"
+      },
+      "quotes": [
+        "Brush only.",
+        "Touch dry 6-10 hours, recoat 16-24 hours."
+      ],
+      "dataSheet": "https://msp.images.akzonobel.com/prd/dh/eukddc/documents/66/f4/e6/9b/dt_301_alkali_resisting_primer_pdf.pdf",
+      "page": "https://www.duluxtradepaintexpert.co.uk/en/products/dulux-trade-alkali-resisting-primer",
+      "checked": "2026-10-14",
+      "status": "confirmed",
+      "ownerChoice": "2026-10-14"
     },
     {
       "id": "erfurt-mav-800",
@@ -742,7 +763,7 @@
       "id": "render-block",
       "name": "Cement render and blockwork",
       "treatment": "Alkaline, and often too rough to paper directly: skimmed or heavily lined first.",
-      "primer": "alkali-primer",
+      "primer": "dulux-trade-alkali",
       "lining": 1700,
       "inspect": "Always."
     },
@@ -797,7 +818,7 @@
       "name": "Stains: water, smoke or nicotine",
       "treatment": "The cause of a water stain is fixed first. Stains are then sealed with a stain-blocking primer, then primed.",
       "products": [
-        "stain-block",
+        "zinsser-bin",
         "zinsser-gardz"
       ],
       "lining": "As the wall needs.",
@@ -809,7 +830,7 @@
       "treatment": "New plaster: left to dry, then Gardz (rated to pH 12.5 on its data sheet). Cement render and blockwork: an alkali-resisting primer.",
       "products": [
         "zinsser-gardz",
-        "alkali-primer"
+        "dulux-trade-alkali"
       ],
       "lining": "As the wall needs.",
       "inspect": false
@@ -895,7 +916,7 @@
         "id": "stains",
         "label": "Stains or damp marks",
         "primers": [
-          "stain-block",
+          "zinsser-bin",
           "zinsser-gardz"
         ],
         "lining": null,
@@ -905,7 +926,7 @@
         "id": "render",
         "label": "Cement render or blockwork",
         "primers": [
-          "alkali-primer"
+          "dulux-trade-alkali"
         ],
         "lining": 1700,
         "check": true
