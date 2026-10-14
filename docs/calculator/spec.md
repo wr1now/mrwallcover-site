@@ -1,6 +1,6 @@
 # Wallpaper calculator: the maths
 
-Status: **draft for the owner's sign-off**, 14 October 2026.
+Status: **draft, not yet signed off**, 14 October 2026. The owner is waiting for Grok's review of other companies' calculators before signing off, in case anything is missing.
 Rules marked *(owner)* were confirmed by the owner on diagrams on 14 October 2026. Figures marked *(data sheet)* are copied from the maker's sheet, with the source in `src/data/wallpapering.json`.
 
 The calculator gives an **order quantity**. It is not a set-out: half-drop papers and murals are still set out on site. It never shows an installation price.
@@ -23,7 +23,7 @@ It gives **no count**, and sends the visitor to "Send us your measurements", for
 - stairs and stairwells
 - sloping ceilings and walls
 - curved walls
-- papered ceilings
+- papered ceilings *(owner)*
 - scenic and panel sets (ordered by panel from the elevations)
 - any drop that will not fit on one roll after the pattern-start loss
 
@@ -188,7 +188,7 @@ The plan is cut from one continuous length (one pattern-start loss), split into 
 ```
 length = where the last cut ends
 order  = ceil(length ÷ unit) metres or yards, raised to the maker's minimum
-spare  = one more drop, rounded up to whole units, on its own line   ← to confirm
+spare  = one more drop, rounded up to whole units, on its own line   (owner)
 ```
 
 ### 7.5 Made-to-measure murals (per m²) *(owner)*
@@ -239,7 +239,7 @@ area = Σ (run × height)
   each course      = wall width + t
   rolls            = cutting plan of all courses (free match)
   ```
-  No spare roll is added for lining.
+  No spare roll is added for lining. The batch does not matter, but **every lining roll must be the same product and grade, so the same thickness and the same shade of white** *(owner)*. The result says so.
 
 ### 8.4 Pastes, and the one-grade-stronger rule
 
@@ -291,7 +291,7 @@ Every row is a test in `tests/quantity.test.ts`. Sizes in cm. "Spare" is always 
 | 12 | Door saves a roll | wall 350 × 270; roll 53 × 1005; free; door 80 × 198 | 7 strips: 6 full + 1 short of 82 cut from roll 1's offcut (at 840); **2 rolls** (3 without the door) |
 | 13 | Window with reveals | wall 400 × 265; roll 55 × 1000; repeat 65; window 120 wide × 135, sill 90, depth 20, sides + head | 8 strips: 6 full + 2 over the window. Pieces: 2 part-drops of 130, 2 above of 70, 2 below of 100. Rolls 1–2: 3 full each, 10 cm offcuts. Roll 3: 130 at 65, 130 at 195, 100 at 370, 100 at 500, 70 at 650, 70 at 780. **3 rolls** |
 | 14 | Niche | wall 300 × 250; roll 53 × 1005; free; niche 60 × 80, 100 below the ceiling, 70 above the floor, depth 15 | 5 full + 1 over the niche. Pieces: part-drops 150 + 150, above 125, below 95, back 90 + 90. **3 rolls** (2 without the niche) |
-| 15 | No offcut infill (Muraspec type) | wall 600 × 270; usable width 125; per linear metre; door 130 × 200 | 4 full + 1 short of 80, cut in drop order; length 1200 cm; **12 m** + spare 3 m (one drop, to confirm) |
+| 15 | No offcut infill (Muraspec type) | wall 600 × 270; usable width 125; per linear metre; door 130 × 200 | 4 full + 1 short of 80, cut in drop order; length 1200 cm; **12 m** + spare 3 m (one drop) |
 | 16 | US double roll | wall 400 × 240; double roll 20.5 in × 33 ft (52.07 × 1005.84); free | 8 drops; 4 per roll; **2 double rolls (4 single rolls as priced)** + 1 spare double roll |
 | 17 | Bolt | wall 300 × 260; 36 in × 8 yd bolt (91.44 × 731.52); free | 4 drops of 270; 2 per bolt; **2 bolts** + 1 spare bolt |
 | 18 | Mural per m² | wall 350 × 260; maker margin 10 | order 360 × 270 = **9.72 m²**, then the request button |
@@ -311,7 +311,7 @@ Rows 6, 7 and 13 were worked by hand and checked against a scratch model of the 
 
 ## 11. Still to confirm
 
-1. **Spare for paper sold by length** (7.4): one extra drop, rounded up to whole metres or yards?
+1. **Grok's review of other calculators**: anything it finds that this spec misses is added before sign-off.
 2. **Calibration:** 5–10 real past jobs with the rolls actually used, before launch.
 3. **Wallpaper pastes** Mr Wallcover uses for paper, vinyl and non-woven, and which step each sits on.
 4. **Stain block and alkali-resisting primer:** which products, so their data sheets can be added.
