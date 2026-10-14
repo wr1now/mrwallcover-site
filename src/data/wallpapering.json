@@ -2,7 +2,7 @@
   "_note": "One materials dataset for the quantity calculator (/advice/quantities/) and the Wallpapering hub (/wallpapering/). Every figure is copied as printed from the maker's own data sheet or product page, with the URL and the date it was checked. A row whose figure was not re-opened on the date shown has status 'unconfirmed' and is never used in a calculation. Sources: Grok research 14 Oct 2026 (private repo calculator-inputs/2026-10-14-lining-papers, commit fba64c7), re-checked by the calculator session. House rules and the paste ladder are the owner's decisions of 14 Oct 2026 (docs/calculator/spec.md). Ladder steps marked stepStatus 'proposed' wait for the owner. No maker pays to appear; there are no affiliate links.",
   "checked": "2026-10-14",
   "independence": "No maker pays to appear here, and there are no affiliate links.",
-  "prepStatus": "proposed: the wall-type and condition tables, the wall-condition question and the ladder steps marked 'proposed' wait for the owner's approval",
+  "prepStatus": "approved by the owner on 14 Oct 2026: the wall-type and condition tables, the wall-condition question and the ladder steps marked 'owner'. Bartoline Professional is not yet placed on the ladder.",
   "ladder": [
     {
       "step": 1,
@@ -393,7 +393,7 @@
       "name": "Cole & Son Wallcovering Paste",
       "maker": "Cole & Son",
       "step": 2,
-      "stepStatus": "proposed",
+      "stepStatus": "owner",
       "stepBasis": "The maker's words: a specially prepared ready-mixed starch based paste. It asks for no heavy-duty paste.",
       "for": "Cole & Son non-woven, silk and grasscloth wallpapers.",
       "coverage": {
@@ -426,7 +426,7 @@
       "name": "Murabond Light",
       "maker": "Muraspec",
       "step": 1,
-      "stepStatus": "proposed",
+      "stepStatus": "owner",
       "stepBasis": "Muraspec names three adhesives: Light, Standard and Heavy.",
       "for": "The Muraspec designs its hanging leaflet marks Light.",
       "coverage": null,
@@ -441,7 +441,7 @@
       "name": "Murabond Heavy",
       "maker": "Muraspec",
       "step": 3,
-      "stepStatus": "proposed",
+      "stepStatus": "owner",
       "stepBasis": "Muraspec names three adhesives: Light, Standard and Heavy.",
       "for": "Lining paper under Muraspec wallcoverings, and the designs the leaflet marks Heavy.",
       "coverage": null,
@@ -459,7 +459,7 @@
       "name": "Roman PRO-880 Ultra Clear Strippable Wallcovering Adhesive",
       "maker": "Roman Decorating Products",
       "step": 3,
-      "stepStatus": "proposed",
+      "stepStatus": "owner",
       "stepBasis": "The data sheet's words: clear, strippable, non-staining; used undiluted for Type II and Type III wallcoverings.",
       "for": "Named by Schumacher for paper, non-woven and metallic papers.",
       "coverage": {
@@ -672,7 +672,8 @@
       "checked": "2026-10-14",
       "status": "confirmed",
       "notesSource": "https://www.phillipjeffries.com/terms",
-      "pasteStatus": "unconfirmed"
+      "pasteStatus": "unconfirmed",
+      "pasteStepStatus": "owner"
     },
     {
       "id": "timorous-beasties",
@@ -873,7 +874,7 @@
     }
   ],
   "conditionQuestion": {
-    "status": "proposed",
+    "status": "owner",
     "label": "What are the walls like now?",
     "options": [
       {
