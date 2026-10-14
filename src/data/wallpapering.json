@@ -435,11 +435,16 @@
       "step": 1,
       "stepStatus": "owner",
       "stepBasis": "Muraspec names three adhesives: Light, Standard and Heavy.",
-      "for": "The Muraspec designs its hanging leaflet marks Light.",
+      "for": "\"To be used when hanging any Muraspec paper backed vinyl wallcovering.\"",
       "coverage": null,
-      "page": "https://www.muraspec.com/wp-content/uploads/2024/05/Muraspec-UK-Hanging-Instructions-Feb-24.pdf",
+      "page": "https://www.muraspec.com/product/light10kg/",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "packs": {
+        "printed": "10kg, 5kg",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.muraspec.com/wp-content/uploads/2024/05/Muraspec-UK-Hanging-Instructions-Feb-24.pdf"
     },
     {
       "id": "murabond-heavy",
@@ -450,25 +455,30 @@
       "step": 3,
       "stepStatus": "owner",
       "stepBasis": "Muraspec names three adhesives: Light, Standard and Heavy.",
-      "for": "Lining paper under Muraspec wallcoverings, and the designs the leaflet marks Heavy.",
+      "for": "\"To be used when hanging any Muraspec fabric backed wallcovering.\" Muraspec’s leaflet: \"Murabond Heavy Adhesive must be used when hanging Lining Paper.\"",
       "coverage": null,
       "quotes": [
         "Murabond Heavy Adhesive must be used when hanging Lining Paper. Dilute the adhesive to the minimum required to obtain a workable consistency."
       ],
-      "page": "https://www.muraspec.com/wp-content/uploads/2024/05/Muraspec-UK-Hanging-Instructions-Feb-24.pdf",
+      "page": "https://www.muraspec.com/product/heavy10kg/",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "packs": {
+        "printed": "10kg, 5kg",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.muraspec.com/wp-content/uploads/2024/05/Muraspec-UK-Hanging-Instructions-Feb-24.pdf"
     },
     {
       "id": "roman-pro-880",
       "kind": "paste",
-      "role": "maker-named",
+      "role": "house",
       "name": "Roman PRO-880 Ultra Clear Strippable Wallcovering Adhesive",
       "maker": "Roman Decorating Products",
-      "step": 3,
+      "step": 2,
       "stepStatus": "owner",
-      "stepBasis": "The data sheet's words: clear, strippable, non-staining; used undiluted for Type II and Type III wallcoverings.",
-      "for": "Named by Schumacher for paper, non-woven and metallic papers.",
+      "stepBasis": "\"Premium clear, strippable wallcovering adhesive\"; \"Maximum wet-tack\"",
+      "for": "\"Undiluted PRO-880 will hang Type II and Type III wallcoverings, and may be diluted for use with lightweight and pre-pasted wallcoverings.\"",
       "coverage": {
         "printed": "Up to approx. 330 square feet per gallon.",
         "perUnit": 330,
@@ -477,17 +487,21 @@
       "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/PRO-880_TDS_060623_1.pdf?v=1720691123",
       "page": "https://romandecoratingproducts.com/products/pro-880-ultra-clear-strippable-wallcovering-adhesive",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "packs": {
+        "printed": "32 Ounce, 1 Gallon, 5 Gallon",
+        "status": "confirmed"
+      }
     },
     {
       "id": "bartoline-professional",
       "kind": "paste",
-      "role": "maker-named",
+      "role": "reference",
       "name": "Bartoline Ready Mixed Wallcovering Adhesive Professional",
       "maker": "Bartoline",
       "step": null,
       "stepStatus": "proposed",
-      "stepBasis": "The data sheet's title is Professional. Its place on the ladder is for Mr Wallcover to set.",
+      "stepBasis": "Not one of Mr Wallcover's tested pastes. Kept because de Gournay names Bartoline Extra Strong Professional as an alternative for its Red Lidded Paste.",
       "for": "Ready-mixed wallcovering adhesive.",
       "coverage": {
         "printed": "covers approximately 5 square metres per Kilo.",
@@ -507,6 +521,738 @@
       },
       "dataSheet": "https://bartoline.co.uk/wp-content/uploads/2018/08/BARTOLINE-Ready-Mixed-Wallcovering-Adhesive-Professional-TDS.pdf",
       "page": "https://bartoline.co.uk/product_items/ready-mixed-adhesive-professional/",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "beeline-vinyl-light",
+      "kind": "paste",
+      "role": "house",
+      "name": "Beeline Vinyl / Light Grade Ready Mixed Adhesive (yellow lid)",
+      "maker": "Ciret Ltd (Beeline)",
+      "step": 1,
+      "stepStatus": "owner",
+      "stepBasis": "\"Vinyl / Light Grade\"",
+      "for": "\"Formulated for all weights of vinyl wallcoverings.\"",
+      "coverage": {
+        "printed": "4.5 kg label: \"9 ROLLS\"",
+        "unit": "printed"
+      },
+      "packs": {
+        "printed": "9kg, 4.5kg",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.ciret.co.uk/fileadmin/user_upload/Ciret-UK/PDF_s/21-B09-vinyl-rm-wall_adhesive-2.pdf",
+      "page": "https://www.ciret.co.uk/beeline/product/hbdrln45-vinyl-light-grade-ready-mixed-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "beeline-powder",
+      "kind": "paste",
+      "role": "house",
+      "name": "Beeline Powder Wallpaper Adhesive (all purpose)",
+      "maker": "Ciret Ltd (Beeline)",
+      "step": 2,
+      "stepStatus": "owner",
+      "stepBasis": "No grade printed. \"Super strong bond and excellent slip to assist pattern matching\"",
+      "for": "\"Suitable for all standard retail wallpapers including heavyweight, washable, vinyl, and blown vinyl.\"",
+      "coverage": {
+        "printed": "\"20 rolls / 36 pint (+ 50%)\" and \"5 rolls /6 pints\"",
+        "unit": "printed"
+      },
+      "packs": {
+        "printed": "20-roll and 5-roll packs",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.ciret.co.uk/fileadmin/user_upload/Ciret-UK/images/products/import-images/62-B02-allpurp-wallpaper-adhesive-2.pdf",
+      "page": "https://www.ciret.co.uk/beeline/product/hbdpfn0f-powder-wallpaper-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "beeline-ready-to-use",
+      "kind": "paste",
+      "role": "house",
+      "name": "Beeline Ready To Use Adhesive (white lid)",
+      "maker": "Ciret Ltd (Beeline)",
+      "step": 2,
+      "stepStatus": "owner",
+      "stepBasis": "No grade printed. \"Contains additional PVA for a strong bond.\"",
+      "for": "\"suitable for hanging all wallpapers\". The label adds: \"This adhesive is not recommended for use with textile wallpapers.\"",
+      "coverage": {
+        "printed": "\"Approximately 5 square metres per kg.\"",
+        "unit": "m2/kg",
+        "perUnit": 5
+      },
+      "packs": {
+        "printed": "2.5kg, 5kg, 10kg",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.ciret.co.uk/fileadmin/user_upload/Ciret-UK/PDF_s/20-B42-readytouse-wallpaper-2.pdf",
+      "page": "https://www.ciret.co.uk/beeline/product/hbdrrn50-ready-to-use-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "beeline-tub-paste",
+      "kind": "paste",
+      "role": "house",
+      "name": "Beeline Prepared Tub Paste (green lid)",
+      "maker": "Ciret Ltd (Beeline)",
+      "step": 2,
+      "stepStatus": "owner",
+      "stepBasis": "No grade printed. Label: \"SPECIALITY WALLCOVERINGS\"",
+      "for": "\"Hand printed wallpapers, fine textiles and flock wallpapers\"",
+      "coverage": {
+        "printed": "10 kg label: \"50 METRES²\"",
+        "unit": "printed"
+      },
+      "packs": {
+        "printed": "10kg",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.ciret.co.uk/fileadmin/user_upload/Ciret-UK/images/products/import-images/22-B35-prepared-tub-paste-2.pdf",
+      "page": "https://www.ciret.co.uk/beeline/product/hbdrpna1-prepared-tub-paste",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "beeline-medium",
+      "kind": "paste",
+      "role": "house",
+      "name": "Beeline Medium Grade Ready Mixed Adhesive (red lid)",
+      "maker": "Ciret Ltd (Beeline)",
+      "step": 2,
+      "stepStatus": "owner",
+      "stepBasis": "\"Medium Grade\". \"Contains fire retardant for critical surface spread of flame applications\"",
+      "for": "\"Formulated for hanging a wide range of Wallcoverings including textiles, glass fibre, hessian, paper and fabric-backed contract vinyl Wallcoverings\"",
+      "coverage": {
+        "printed": "\"Approximately 5 square metres per kg.\"",
+        "unit": "m2/kg",
+        "perUnit": 5
+      },
+      "packs": {
+        "printed": "2.5kg, 5kg, 10kg",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.ciret.co.uk/fileadmin/user_upload/Ciret-UK/images/products/import-images/15-B19-med-grade-adhesive-2.pdf",
+      "page": "https://www.ciret.co.uk/beeline/product/hbdrmn25-medium-grade-ready-mixed-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "beeline-heavy",
+      "kind": "paste",
+      "role": "house",
+      "name": "Beeline Heavy Grade Ready Mixed Adhesive (blue lid)",
+      "maker": "Ciret Ltd (Beeline)",
+      "step": 3,
+      "stepStatus": "owner",
+      "stepBasis": "\"Heavy Grade\". \"excellent strong final bond. Contains fire retardant for critical surface spread of flame applications.\"",
+      "for": "\"perfect for speciality wallcoverings\"",
+      "coverage": {
+        "printed": "\"Approximately 5 square meters per kg.\"",
+        "unit": "m2/kg",
+        "perUnit": 5
+      },
+      "packs": {
+        "printed": "5Kg Bucket, 10Kg Bucket",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.ciret.co.uk/fileadmin/user_upload/Ciret-UK/images/products/import-images/BEELINE-Heavy-Grade-Ready-Mixed-Wallcovering-Adhesive-Fire-Retardant-TDS-v2-14-11-17.pdf",
+      "page": "https://www.ciret.co.uk/beeline/product/hbdrhn50-heavy-grade-ready-mixed-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "albany-super-smooth",
+      "kind": "paste",
+      "role": "house",
+      "name": "Albany Super Smooth Wallcovering Adhesive (yellow lid)",
+      "maker": "Brewers (Albany)",
+      "step": 1,
+      "stepStatus": "owner",
+      "stepBasis": "Data sheet heading: \"Light C\". \"contains additional PVA for a strong bond and excellent slip properties\"",
+      "for": "\"all wallpapers including vinyls, embossed papers and blown vinyls\". de Gournay names it as the UK alternative to its Yellow Lidded Paste (type I).",
+      "coverage": {
+        "printed": "\"Approximately 6-8 m²/kg.\"",
+        "unit": "m2/kg",
+        "perUnit": 6
+      },
+      "packs": {
+        "printed": "2.5KG, 5KG, 10KG",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.brewers.co.uk/uploads/datasheets/products/202334.pdf?v=1665669000",
+      "page": "https://www.brewers.co.uk/product/DE051005E",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "albany-speciality",
+      "kind": "paste",
+      "role": "house",
+      "name": "Albany Speciality Wallcovering Adhesive",
+      "maker": "Brewers (Albany)",
+      "step": 2,
+      "stepStatus": "owner",
+      "stepBasis": "Data sheet heading: \"READY MIXED WALLCOVERING ADHESIVE MEDIUM GRADE\"",
+      "for": "\"fabric backed vinyls and textured wallcoverings including; glass fabric, Wallrock, hessians, grasscloth, suedes, flocks, textiles, polystyrene veneers and polystyrene coving\"",
+      "coverage": {
+        "printed": "\"Approximately 5 m²/kg.\"",
+        "unit": "m2/kg",
+        "perUnit": 5
+      },
+      "packs": {
+        "printed": "2.5KG, 5KG, 10KG",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.brewers.co.uk/uploads/datasheets/products/202333.pdf?v=1665668984",
+      "page": "https://www.brewers.co.uk/product/DE050505E",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "albany-concentrated",
+      "kind": "paste",
+      "role": "house",
+      "name": "Albany Concentrated Wallcoverings Adhesive",
+      "maker": "Brewers (Albany)",
+      "step": 2,
+      "stepStatus": "owner",
+      "stepBasis": "No grade printed. \"Liquid adhesive for light and heavyweight wallcoverings.\"",
+      "for": "\"perfect for home use for both light and heavyweight wallcoverings\"",
+      "coverage": {
+        "printed": "\"One packet is sufficient for 6 standard rolls.\"",
+        "unit": "printed"
+      },
+      "packs": {
+        "printed": "500ml",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.brewers.co.uk/uploads/datasheets/hands/202374.pdf?v=1561388185",
+      "page": "https://www.brewers.co.uk/product/DE0561005Q",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-pro-543",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman PRO-543 Universal Wallcovering Adhesive",
+      "maker": "Roman Decorating Products",
+      "step": 1,
+      "stepStatus": "owner",
+      "stepBasis": "\"Excellent adhesion\"; \"Extended open-time and slip\"",
+      "for": "\"Hanging borders, light and medium-weight wallcovering on sealed, painted surfaces\"",
+      "coverage": {
+        "printed": "\"Up to approx. 250 square feet per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 250
+      },
+      "packs": {
+        "printed": "32 Ounce, 1 Gallon",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/PRO-543_TDS_062922.pdf?v=1720688426",
+      "page": "https://romandecoratingproducts.com/products/pro-543-universal-wallcovering-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-universal-wheat",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman Universal Wheat Wallpaper Paste (dry mix)",
+      "maker": "Roman Decorating Products",
+      "step": 1,
+      "stepStatus": "owner",
+      "stepBasis": "\"Wheat paste adhesive ideal for hanging lightweight wallcovering.\"",
+      "for": "Lightweight wallcoverings, pre-pasted papers and wall size.",
+      "coverage": {
+        "printed": "\"Hangs 12-16 single rolls per pound of paste\"",
+        "unit": "printed"
+      },
+      "packs": {
+        "printed": "8 Ounce, 48 Ounce",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/ROMAN_Universal_Wheat_TDS_111424.pdf?v=1756226132",
+      "page": "https://romandecoratingproducts.com/products/universal-wheat-wallpaper-paste",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-teknabond",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman TEKNAbond Multipurpose Wall Size/Adhesive (dry mix)",
+      "maker": "Roman Decorating Products",
+      "step": 1,
+      "stepStatus": "owner",
+      "stepBasis": "\"Multi-Purpose Wall Size/Adhesive\"",
+      "for": "\"Ideal for hanging pre-pasted wallpaper and light to medium weight materials like solid vinyl, grasscloth, string cloth, and more.\"",
+      "coverage": {
+        "printed": "\"Covers between 300 – 400 square feet when hanging wallpaper, and up to 650 square feet when used as a wall size.\"",
+        "unit": "printed"
+      },
+      "packs": {
+        "printed": "8 Ounce",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/ROMAN_TEKNAbond_TDS_111424.pdf?v=1756226132",
+      "page": "https://romandecoratingproducts.com/products/teknabond-multipurpose-dry-mix-wallcovering-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-eco-888",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman ECO-888 Premium Clear Strippable Wallcovering Adhesive",
+      "maker": "Roman Decorating Products",
+      "step": 2,
+      "stepStatus": "owner",
+      "stepBasis": "\"Premium Clear Strippable Adhesive\"; \"Maximum tack\"",
+      "for": "\"For all weights of wallcoverings.\"",
+      "coverage": {
+        "printed": "\"Up to approx. 330 square feet per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 330
+      },
+      "packs": {
+        "printed": "1 Gallon, 5 Gallon",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/ECO-888_TDS_060623.pdf?v=1720176191",
+      "page": "https://romandecoratingproducts.com/products/eco-888-clear-strippable-wallcovering-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-gh-34",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman GH-34 Wheat-Based Paste for Unpasted Wallpaper",
+      "maker": "Roman Decorating Products",
+      "step": 2,
+      "stepStatus": "owner",
+      "stepBasis": "\"Clear, Strippable, Non-Staining Wallcovering Adhesive\"; \"Superior wet tack\"",
+      "for": "\"Ideal for specialty wallcovering such as grasscloth and stringcloth\"",
+      "coverage": {
+        "printed": "\"Up to approx. 180 square feet per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 180
+      },
+      "packs": {
+        "printed": "1 Gallon, 5 Gallon",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/GH-34_TDS_062922.pdf?v=1720681850",
+      "page": "https://romandecoratingproducts.com/products/gh-34-wheat-based-wallpaper-paste",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-234",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman 234 Premium Grade Heavy Duty Clear Wallcovering Adhesive",
+      "maker": "Roman Decorating Products",
+      "step": 3,
+      "stepStatus": "owner",
+      "stepBasis": "\"PREMIUM HEAVY DUTY CLEAR\"",
+      "for": "\"ideal for installing Type I, II and III wallcoverings.\"",
+      "coverage": {
+        "printed": "\"Approximately 280 square feet per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 280
+      },
+      "packs": {
+        "printed": "1 Gallon, 5 Gallon",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/ROMAN-234-TDS.pdf?v=1720677550",
+      "page": "https://romandecoratingproducts.com/products/234-premium-grady-heavy-duty-clear-wallcovering-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-pro-838",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman PRO-838 Heavy Duty Clear Adhesive",
+      "maker": "Roman Decorating Products",
+      "step": 3,
+      "stepStatus": "owner",
+      "stepBasis": "\"Heavy duty, commercial grade clear adhesive designed for contractors.\" The product page says \"Not Strippable\".",
+      "for": "\"For commercial weight (Type II and Type III) wallcoverings\"",
+      "coverage": {
+        "printed": "\"Up to approx. 280 square feet per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 280
+      },
+      "packs": {
+        "printed": "32 Ounce, 1 Gallon, 5 Gallon",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/PRO-838_TDS_062922.pdf?v=1720690357",
+      "page": "https://romandecoratingproducts.com/products/pro-838-heavy-duty-clear-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-780",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman 780 Machinable Heavy Duty Clear Wallcovering Adhesive",
+      "maker": "Roman Decorating Products",
+      "step": 3,
+      "stepStatus": "owner",
+      "stepBasis": "\"MACHINABLE CLEAR\"; \"Dries Clear, Dry Strippable\"",
+      "for": "\"recommended for installing medium to heavy weight wallcoverings\"",
+      "coverage": {
+        "printed": "\"Covers up to 240 square feet per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 240
+      },
+      "packs": {
+        "printed": "1 Gallon, 5 Gallon",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/ROMAN-780-TDS.pdf?v=1720677628",
+      "page": "https://romandecoratingproducts.com/products/780-machinable-heavy-duty-clear-wallcovering-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-785",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman 785 Heavy Duty Clear Strippable",
+      "maker": "Roman Decorating Products",
+      "step": 3,
+      "stepStatus": "owner",
+      "stepBasis": "\"HEAVY DUTY CLEAR STRIPPABLE\"",
+      "for": "\"Ideal for medium weight to heavyweight wallcoverings, including commercial vinyl.\"",
+      "coverage": {
+        "printed": "\"Approximately 280 square feet per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 280
+      },
+      "packs": null,
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/ROMAN-785-TDS.pdf?v=1724840019",
+      "page": null,
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-pro-774",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman PRO-774 Clay Strippable Wallcovering Adhesive",
+      "maker": "Roman Decorating Products",
+      "step": 3,
+      "stepStatus": "owner",
+      "stepBasis": "\"Commercial grade clay adhesive designed to hold the heaviest wallcoverings.\"",
+      "for": "\"Medium to heavy weights of wallcoverings including commercial weight (Type II and Type III) wallcoverings\"",
+      "coverage": {
+        "printed": "\"Up to approx. 200 square feet per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 200
+      },
+      "packs": {
+        "printed": "5 Gallon",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/PRO-774_TDS_060623.pdf?v=1720689781",
+      "page": "https://romandecoratingproducts.com/products/pro-774-clay-strippable-commerical-wallcovering-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-eco-788",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman ECO-788 Clay Strippable Wallcovering Adhesive",
+      "maker": "Roman Decorating Products",
+      "step": 3,
+      "stepStatus": "owner",
+      "stepBasis": "\"Maximum wet tack\"",
+      "for": "\"For use with all types and weights of wallcovering\"",
+      "coverage": {
+        "printed": "\"Up to approx. 200 sq. ft. per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 200
+      },
+      "packs": {
+        "printed": "1 Gallon, 5 Gallon",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/ECO-788_TDS_060623.pdf?v=1720679212",
+      "page": "https://romandecoratingproducts.com/products/eco-788-clay-strippable-wallpaper-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-pro-732",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman PRO-732 Extra-Strength Clay Wallcovering Adhesive",
+      "maker": "Roman Decorating Products",
+      "step": 4,
+      "stepStatus": "owner",
+      "stepBasis": "\"Extra-Strength™ Adhesive\"; \"Commercial grade clay-based\"",
+      "for": "\"Medium to heavyweight (Type II and Type III) wallcoverings\"",
+      "coverage": {
+        "printed": "\"Up to approx. 200 square feet per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 200
+      },
+      "packs": {
+        "printed": "1 Gallon, 5 Gallon",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/PRO-732_TDS_062922.pdf?v=1720689384",
+      "page": "https://romandecoratingproducts.com/products/pro-732-extra-strength-wallpaper-paste",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-111",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman 111 Non-Strippable Heavy Duty Clay Wallcovering Adhesive",
+      "maker": "Roman Decorating Products",
+      "step": 4,
+      "stepStatus": "owner",
+      "stepBasis": "\"HEAVY DUTY CLAY\"; \"strong, permanent bond\"",
+      "for": "\"ideal for commercial Types II and III vinyl wallcoverings\"",
+      "coverage": {
+        "printed": "\"Approximately 280 square feet per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 280
+      },
+      "packs": {
+        "printed": "1 Gallon, 5 Gallon",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/ROMAN-111-TDS.pdf?v=1720677421",
+      "page": "https://romandecoratingproducts.com/products/111-heavy-duty-clay",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "roman-pro-555",
+      "kind": "paste",
+      "role": "house",
+      "name": "Roman PRO-555 Extreme Tack Wallcovering Adhesive",
+      "maker": "Roman Decorating Products",
+      "step": 4,
+      "stepStatus": "owner",
+      "stepBasis": "\"high tack, low moisture adhesive\"",
+      "for": "\"Applying vinyl wallcovering over surfaces where extreme adhesion is required.\" Tektura names it for its P3TEC wall protection.",
+      "coverage": {
+        "printed": "\"Up to approx. 160 square feet per gallon\"",
+        "unit": "sqft/gal",
+        "perUnit": 160
+      },
+      "packs": {
+        "printed": "1 Gallon, 5 Gallon",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://cdn.shopify.com/s/files/1/0625/3677/7867/files/PRO-555_TDS_062922.pdf?v=1720688924",
+      "page": "https://romandecoratingproducts.com/products/pro-555-extreme-tack-wallpaper-adhesive",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "vescom-1000",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Vescom 1000",
+      "maker": "Vescom",
+      "step": 2,
+      "stepStatus": "owner",
+      "stepBasis": "No grade word; chosen by weight: \"up to 370 g/m²\"",
+      "for": "\"vinyl wallcovering that weighs up to 370 g/m²\"",
+      "coverage": {
+        "printed": "\"Coverage: ± 4 m²/kg\"",
+        "unit": "m2/kg",
+        "perUnit": 4
+      },
+      "packs": null,
+      "dataSheet": "https://documents.vescom-cdn.com/f1873/EN%20-%20Algemeen%20verwerkingsvoorschrift%20-%20Vescom%20vinyl%2C%20olefin%20en%20textiel%20wandbekleding%202025.pdf",
+      "page": "https://vescom.com/en/adhesives-accessories/vescom-1000-qr",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "vescom-2000",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Vescom 2000",
+      "maker": "Vescom",
+      "step": 3,
+      "stepStatus": "owner",
+      "stepBasis": "No grade word; chosen by weight: \"heavier than 370 g/m2\"",
+      "for": "\"any textile, olefin and vinyl wallcovering (heavier than 370 g/m2)\"",
+      "coverage": {
+        "printed": "\"Textile: ± 4-5 m²/kg, vinyl: ± 5 m²/kg, olefin 5 m²/kg\"",
+        "unit": "printed"
+      },
+      "packs": null,
+      "dataSheet": "https://documents.vescom-cdn.com/f1873/EN%20-%20Algemeen%20verwerkingsvoorschrift%20-%20Vescom%20vinyl%2C%20olefin%20en%20textiel%20wandbekleding%202025.pdf",
+      "page": "https://vescom.com/en/adhesives-accessories/vescom-2000-qr",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "vescom-2500",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Vescom 2500",
+      "maker": "Vescom",
+      "step": 3,
+      "stepStatus": "owner",
+      "stepBasis": "No grade word",
+      "for": "\"any Wallcovering+Print\"",
+      "coverage": {
+        "printed": "\"Coverage: ± 4-5 m²/kg\"",
+        "unit": "printed"
+      },
+      "packs": null,
+      "dataSheet": "https://documents.vescom-cdn.com/f1873/EN%20-%20Algemeen%20verwerkingsvoorschrift%20-%20Vescom%20vinyl%2C%20olefin%20en%20textiel%20wandbekleding%202025.pdf",
+      "page": "https://vescom.com/en/adhesives-accessories/vescom-2500-qr",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "vescom-3000",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Vescom 3000",
+      "maker": "Vescom",
+      "step": 4,
+      "stepStatus": "owner",
+      "stepBasis": "No grade word; chosen for \"non-porous (not breathing) substrates\"",
+      "for": "\"vinyl and textile wallcovering on non-porous (not breathing) substrates\"",
+      "coverage": {
+        "printed": "\"Textile: ± 5-7 m²/kg, vinyl: ± 4-5 m²/kg\"",
+        "unit": "printed"
+      },
+      "packs": null,
+      "dataSheet": "https://documents.vescom-cdn.com/f1873/EN%20-%20Algemeen%20verwerkingsvoorschrift%20-%20Vescom%20vinyl%2C%20olefin%20en%20textiel%20wandbekleding%202025.pdf",
+      "page": "https://vescom.com/en/adhesives-accessories/vescom-3000-qr",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "vescom-2000-3000",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Vescom 2000 and 3000, mixed 1:1",
+      "maker": "Vescom",
+      "step": 4,
+      "stepStatus": "owner",
+      "stepBasis": "\"1 part Vescom 2000 and 1 part Vescom 3000\"",
+      "for": "\"vinyl and olefin wallcovering weighing 800 g/m² and higher\"",
+      "coverage": null,
+      "packs": null,
+      "dataSheet": "https://documents.vescom-cdn.com/f1873/EN%20-%20Algemeen%20verwerkingsvoorschrift%20-%20Vescom%20vinyl%2C%20olefin%20en%20textiel%20wandbekleding%202025.pdf",
+      "page": null,
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "murabond-standard",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Murabond Standard",
+      "maker": "Muraspec",
+      "step": 2,
+      "stepStatus": "owner",
+      "stepBasis": "\"Standard\"",
+      "for": "\"To be used when hanging any Muraspec paper backed textile or fibre glass wallcovering.\"",
+      "coverage": null,
+      "packs": {
+        "printed": "10kg, 5kg",
+        "status": "confirmed"
+      },
+      "dataSheet": null,
+      "page": "https://www.muraspec.com/product/standard10kg/",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "murabond-sealed-surface",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Murabond Sealed Surface",
+      "maker": "Muraspec",
+      "step": null,
+      "stepStatus": "unplaced",
+      "stepBasis": "\"Sealed Surface\"",
+      "for": "\"Recommended when hanging any Muraspec wallcovering on to non-absorbent surfaces.\"",
+      "coverage": null,
+      "packs": {
+        "printed": "5kg",
+        "status": "confirmed"
+      },
+      "dataSheet": null,
+      "page": "https://www.muraspec.com/product/sealedsur5kg/",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "tekfix-plus",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Tekfix Plus",
+      "maker": "Tektura",
+      "step": null,
+      "stepStatus": "unplaced",
+      "stepBasis": "\"Plus\". Tektura publishes no data sheet for it.",
+      "for": "\"Generally Tekfix Plus, though depends on substrate\", on almost every Tektura data sheet",
+      "coverage": null,
+      "packs": null,
+      "dataSheet": null,
+      "page": "https://tekturawebsite.s3.eu-west-2.amazonaws.com/uploads/design/161/tektura-digital-hanging-instructions.pdf",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "tekfix-vov",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Tekfix VOV",
+      "maker": "Tektura",
+      "step": null,
+      "stepStatus": "unplaced",
+      "stepBasis": "\"VOV\". Tektura publishes no data sheet for it.",
+      "for": "\"Non Porous Surfaces (glass, gloss paint etc)\" and \"Existing Vinyl\"; also round right-angled corners",
+      "coverage": null,
+      "packs": null,
+      "dataSheet": null,
+      "page": "https://tekturawebsite.s3.eu-west-2.amazonaws.com/uploads/design/161/tektura-digital-hanging-instructions.pdf",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "tekfix-strippable",
+      "kind": "paste",
+      "role": "maker-named",
+      "name": "Tekfix Strippable",
+      "maker": "Tektura",
+      "step": null,
+      "stepStatus": "unplaced",
+      "stepBasis": "\"Strippable\". Tektura publishes no data sheet for it.",
+      "for": "\"for fabric-backed vinyls only, use Tekfix Strippable adhesive applied directly onto the unprimed plasterboard\"",
+      "coverage": null,
+      "packs": null,
+      "dataSheet": null,
+      "page": "https://tekturawebsite.s3.eu-west-2.amazonaws.com/uploads/design/161/tektura-digital-hanging-instructions.pdf",
       "checked": "2026-10-14",
       "status": "confirmed"
     }
@@ -656,7 +1402,8 @@
       "noOffcutInfill": true,
       "notes": [
         "Never use material from different batches on one wall.",
-        "Cut and hang in roll sequence; do not in-fill with off cuts or out of sequence drops."
+        "Cut and hang in roll sequence; do not in-fill with off cuts or out of sequence drops.",
+        "On a non-absorbent wall: \"Murabond Sealed Surface must be used and applied one drop at a time\"."
       ],
       "source": "https://www.muraspec.com/wp-content/uploads/2024/05/Muraspec-UK-Hanging-Instructions-Feb-24.pdf",
       "checked": "2026-10-14",
@@ -719,6 +1466,44 @@
       "source": "https://schumacher.com/hanging-instructions",
       "checked": "2026-10-14",
       "status": "unconfirmed"
+    },
+    {
+      "id": "vescom",
+      "name": "Vescom",
+      "lining": {
+        "need": "not-stated",
+        "grades": [],
+        "direction": "not-stated",
+        "printed": null
+      },
+      "pasteName": "Vescom adhesive: 1000, 2000, 2500 or 3000, by the wallcovering's weight and the wall",
+      "pastePrinted": "Use only Vescom adhesive.",
+      "notes": [
+        "Completely remove existing wallcoverings and backing papers.",
+        "Keep adhesive and water off the face."
+      ],
+      "source": "https://documents.vescom-cdn.com/f1873/EN%20-%20Algemeen%20verwerkingsvoorschrift%20-%20Vescom%20vinyl%2C%20olefin%20en%20textiel%20wandbekleding%202025.pdf",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "tektura",
+      "name": "Tektura",
+      "lining": {
+        "need": "not-stated",
+        "grades": [],
+        "direction": "not-stated",
+        "printed": null
+      },
+      "pasteName": "Tekfix Plus, as Tektura asks (Tekfix VOV round right-angled corners)",
+      "pastePrinted": "Generally Tekfix Plus, though depends on substrate.",
+      "liningPaste": "check",
+      "notes": [
+        "Tektura publishes no data sheet for its Tekfix pastes, so a lining under Tektura is checked with us first."
+      ],
+      "source": "https://tekturawebsite.s3.eu-west-2.amazonaws.com/uploads/design/161/tektura-digital-hanging-instructions.pdf",
+      "checked": "2026-10-14",
+      "status": "confirmed"
     }
   ],
   "wallTypes": [

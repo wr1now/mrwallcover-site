@@ -16,10 +16,16 @@ const crumbs = [
 const primers = products.filter((item) => ['primer', 'stain-block', 'alkali-primer'].includes(item.kind) && isConfirmed(item));
 const linings = liningGrades.filter(isConfirmed);
 const housePaste = product(HOUSE_LINING_PASTE);
-const makerPastes = products.filter((item) => item.kind === 'paste' && isConfirmed(item));
+// Only pastes we have tested, or that a maker names for its own papers. One table per maker: our six first.
+const makerPastes = products.filter((item) => item.kind === 'paste' && item.role !== 'reference' && isConfirmed(item));
+const order = ['Ciret Ltd (Beeline)', 'Brewers (Albany)', 'Roman Decorating Products', 'Muraspec', 'Vescom', 'Tektura'];
+const rank = (name: string) => (order.includes(name) ? order.indexOf(name) : order.length);
+const pasteMakers = [...new Set(makerPastes.map((item) => item.maker ?? 'Other'))].sort((a, b) => rank(a) - rank(b));
 const makerRules = makers.filter(isConfirmed);
 const source = (item: { dataSheet?: string | null; page?: string }) => (item.dataSheet ? { href: item.dataSheet, label: 'Data sheet' } : item.page ? { href: item.page, label: "Maker's page" } : null);
 const checked = (iso: string | null) => (iso ? formatGuideDate(iso) : 'Not yet checked');
+// Printed text is shown in quotation marks; text that already quotes the maker keeps its own.
+const quoted = (text: string) => (text.includes('"') ? text : `“${text}”`);
 const liningNeed: Record<string, string> = {
   'all-walls': 'Line every wall',
   recommended: 'Recommended',
@@ -94,29 +100,38 @@ const liningNeed: Record<string, string> = {
         {wallpapering.ladder.map((step) => <li>{step.label}<span>Step {step.step}</span></li>)}
       </ol>
       <table class="wp-table">
+        <caption>Our lining paste</caption>
         <thead><tr><th scope="col">Paste</th><th scope="col">Step</th><th scope="col">In the maker's words</th><th scope="col">Coverage, as printed</th><th scope="col">Source</th></tr></thead>
         <tbody>
           <tr>
-            <th scope="row">{housePaste.name}<small>Our lining paste</small></th>
+            <th scope="row">{housePaste.name}<small>Under our lining paper</small></th>
             <td data-label="Step">{housePaste.step ? ladderLabel(housePaste.step) : ''}</td>
             <td data-label="In the maker's words">{housePaste.stepBasis}</td>
             <td data-label="Coverage, as printed"><q>{housePaste.coverage?.printed}</q><small>{housePaste.packs?.printed}</small></td>
             <td data-label="Source">{source(housePaste) && <a href={source(housePaste)!.href}>{source(housePaste)!.label}</a>}<small>Checked {checked(housePaste.checked)}</small></td>
           </tr>
-          {makerPastes.map((item) => {
-            const src = source(item);
-            return (
-              <tr>
-                <th scope="row">{item.name}<small>{item.for}</small></th>
-                <td data-label="Step">{item.step && item.stepStatus !== 'proposed' ? ladderLabel(item.step) : 'By the maker’s instruction'}</td>
-                <td data-label="In the maker's words">{item.stepBasis}{item.quotes?.[0] && <small><q>{item.quotes[0]}</q></small>}</td>
-                <td data-label="Coverage, as printed">{item.coverage ? <q>{item.coverage.printed}</q> : 'Not printed'}{item.packs?.printed && <small>{item.packs.printed}</small>}</td>
-                <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>Checked {checked(item.checked)}</small></td>
-              </tr>
-            );
-          })}
         </tbody>
       </table>
+      {pasteMakers.map((name) => (
+        <table class="wp-table">
+          <caption>{name}</caption>
+          <thead><tr><th scope="col">Paste</th><th scope="col">Step</th><th scope="col">In the maker's words</th><th scope="col">Coverage, as printed</th><th scope="col">Source</th></tr></thead>
+          <tbody>
+            {makerPastes.filter((item) => (item.maker ?? 'Other') === name).sort((a, b) => (a.step ?? 9) - (b.step ?? 9)).map((item) => {
+              const src = source(item);
+              return (
+                <tr>
+                  <th scope="row">{item.name}<small>{item.for}</small></th>
+                  <td data-label="Step">{item.step && item.stepStatus === 'owner' ? ladderLabel(item.step) : 'By the maker\u2019s instruction'}</td>
+                  <td data-label="In the maker's words">{item.stepBasis}{item.quotes?.[0] && <small><q>{item.quotes[0]}</q></small>}</td>
+                  <td data-label="Coverage, as printed">{item.coverage ? quoted(item.coverage.printed) : 'Not printed'}{item.packs?.printed && <small>{item.packs.printed}</small>}</td>
+                  <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>Checked {checked(item.checked)}</small></td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      ))}
     </section>
 
     <section class="wp-section" aria-labelledby="woven">

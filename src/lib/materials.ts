@@ -37,7 +37,7 @@ export interface LiningRoll {
 export interface Product {
   id: string;
   kind: ProductKind;
-  role: 'house' | 'maker-named';
+  role: 'house' | 'maker-named' | 'reference';
   name: string;
   maker: string | null;
   what?: string;
@@ -48,7 +48,7 @@ export interface Product {
   soak?: string;
   paste?: string;
   step?: number | null;
-  stepStatus?: 'owner' | 'proposed';
+  stepStatus?: 'owner' | 'proposed' | 'unplaced';
   stepBasis?: string;
   coverage?: Coverage | null;
   packs?: Packs;
@@ -210,6 +210,9 @@ export function liningPaste(wallpaperPasteStep: number | null, makerId?: string,
       rule: 'maker-same',
       note: `${rule.name} asks for the lining to be hung with the same paste as the wallpaper. The maker's instruction replaces our house rule here.`,
     };
+  }
+  if (rule?.liningPaste === 'check') {
+    return { ok: false, reason: `${rule.notes?.[0] ?? `${rule.name} gives no lining paste to check against.`} Have Mr Wallcover check this combination before anything is ordered.` };
   }
   if (rule?.liningPaste) {
     const named = product(rule.liningPaste);

@@ -76,3 +76,24 @@ test('the materials list under a result: primer, lining across, the maker\'s pas
   assert.equal(stains.checks.length, 1);
   assert.equal(JSON.stringify([plain, cole, gournay, stains]).includes('£'), false);
 });
+
+test('the house pastes (owner, 14 Oct 2026): every one is on the ladder with a source; Tektura and the top step route the lining to a check', async () => {
+  const { products, liningPaste, maker } = await import('../src/lib/materials.ts');
+  const house = products.filter((item) => item.kind === 'paste' && item.role === 'house');
+  for (const brand of ['Ciret Ltd (Beeline)', 'Brewers (Albany)', 'Roman Decorating Products']) assert.ok(house.some((item) => item.maker === brand), brand);
+  for (const item of house) {
+    assert.ok(item.step && item.step >= 1 && item.step <= 4, `${item.id} has a step`);
+    assert.equal(item.stepStatus, 'owner', item.id);
+    assert.ok(item.page || item.dataSheet, `${item.id} has a source`);
+  }
+  assert.equal(products.find((item) => item.id === 'roman-pro-880')!.step, 2, 'PRO-880 moved to Standard');
+  assert.equal(products.find((item) => item.id === 'beeline-heavy')!.step, 3);
+  assert.equal(products.find((item) => item.id === 'albany-super-smooth')!.step, 1);
+  const tektura = liningPaste(null, 'tektura');
+  assert.equal(tektura.ok, false);
+  if (!tektura.ok) assert.match(tektura.reason, /Tekfix/);
+  assert.equal(liningPaste(4).ok, false, 'PRO-732, 111, PRO-555 and Vescom 3000 sit at the top step');
+  assert.match(maker('vescom')!.pastePrinted ?? '', /Use only Vescom adhesive/);
+  const text = JSON.stringify(products).toLowerCase();
+  for (const name of ['solvite', 'wickes']) assert.equal(text.includes(name), false, name);
+});
