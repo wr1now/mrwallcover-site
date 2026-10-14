@@ -197,16 +197,16 @@ body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-f
 /* The case-study "At a glance" box: its heading is an eyebrow label, not a section title (src/components/CaseStudyGlance.astro). */
 main .glance-box h2 { font-family:var(--font-sans, inherit); font-size:var(--text-eyebrow); font-weight:500; line-height:1.4; letter-spacing:var(--tracking-eyebrow); text-transform:uppercase; color:var(--color-ink); }
 
-/* Header with eight or nine menu links (Wallpapering added 14 Oct 2026; Inspiration planned).
-   Width-tested with SITE_PHONE set: at 1024px the links, WhatsApp and the action fit on one line only
-   with these gaps and sizes; from 1280px "Book a 20-minute call" joins them. The action never wraps. */
+/* Header with eight menu links (Wallpapering added 14 Oct 2026). Width-tested with SITE_PHONE set and links kept
+   at the 14px type floor: at 1024px eight links, WhatsApp and the action fit on one line with 8px gaps; from
+   1280px "Book a 20-minute call" joins them with 12px gaps, and a ninth link (Inspiration) still fits there.
+   Nine links do not fit at 1024-1279px at 14px: when Inspiration is added, that range needs the menu button
+   or shorter labels. The action never wraps. */
 @media (min-width:1024px) and (max-width:1279px) {
-  .site-header .primary-nav { gap:10px; }
-  .site-header .nav-link { font-size:12px; }
+  .site-header .primary-nav { gap:8px; }
   .site-header .header-action { padding-inline:.75rem; white-space:nowrap; }
 }
 @media (min-width:1280px) {
-  .site-header .primary-nav { gap:14px; }
-  .site-header .nav-link { font-size:13px; }
+  .site-header .primary-nav { gap:12px; }
   .site-header .header-action { padding-inline:.9rem; white-space:nowrap; }
 }

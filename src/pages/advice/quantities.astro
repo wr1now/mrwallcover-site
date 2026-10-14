@@ -60,7 +60,7 @@ const conditions = wallpapering.conditionQuestion.options;
           <div class="field">
             <label for="qc-link">Or paste the product link <span class="text-stone">(optional)</span></label>
             <input id="qc-link" name="link" type="url" inputmode="url" autocomplete="off" placeholder="https://" />
-            <p class="qc-hint" data-link-note hidden></p>
+            <p class="qc-hint form-note" data-link-note hidden></p>
           </div>
           <div class="field md:col-span-2">
             <label for="qc-format">Roll</label>
@@ -96,7 +96,7 @@ const conditions = wallpapering.conditionQuestion.options;
             <input id="qc-margin" name="margin" type="number" inputmode="decimal" min="0" step="0.5" value="10" />
           </div>
         </div>
-        <p class="qc-hint">Not sure? Leave the standard roll and free match: the result says what it assumed. The roll size, repeat and match are on the product page or the label.</p>
+        <p class="qc-hint form-note">Not sure? Leave the standard roll and free match: the result says what it assumed. The roll size, repeat and match are on the product page or the label.</p>
       </fieldset>
 
       <fieldset class="qc-step">
@@ -118,7 +118,7 @@ const conditions = wallpapering.conditionQuestion.options;
           <div class="field"><label>Room width, cm <input name="roomWidth" type="number" inputmode="decimal" min="0" step="0.1" value="350" /></label></div>
           <div class="field"><label>Height to paper, cm <input name="roomHeight" type="number" inputmode="decimal" min="0" step="0.1" value="270" /></label></div>
         </div>
-        <p class="qc-hint">Height to paper: from the top of the skirting to where the paper stops, at the ceiling, the cornice or the picture rail. A room is counted as one run round its walls.</p>
+        <p class="qc-hint form-note">Height to paper: from the top of the skirting to where the paper stops, at the ceiling, the cornice or the picture rail. A room is counted as one run round its walls.</p>
       </fieldset>
 
       <details class="qc-step qc-more" data-more>
@@ -143,7 +143,7 @@ const conditions = wallpapering.conditionQuestion.options;
             <p class="m-0 font-medium">Chimney breast and alcove returns</p>
             <div data-returns class="grid gap-4"></div>
             <button class="btn btn-line justify-self-start" type="button" data-add-return>Add a return</button>
-            <p class="qc-hint m-0">Each side of a chimney breast or an alcove is a return. Its depth is added to the width of the wall.</p>
+            <p class="qc-hint form-note m-0">Each side of a chimney breast or an alcove is a return. Its depth is added to the width of the wall.</p>
           </div>
           <fieldset class="quantity-measure">
             <legend>Anything else about the space?</legend>
@@ -211,6 +211,7 @@ const conditions = wallpapering.conditionQuestion.options;
 
         <h2 id="allowance">Why we count drops, not a percentage</h2>
         <p>A percentage added to the area, the usual 15–30%, can be too little for a large repeat and too much for a plain paper, and it hides the point where one more centimetre of height costs a whole roll. The calculator counts the drops instead and tells you when you are within a few centimetres of needing another roll. We still quote the allowance range in conversation, with staircases at the high end, around 30%, because of the angles.</p>
+        <p>Take the wall from the first example again: 13.5 square metres of wall on a roll of about 5.33 square metres. With a 15% allowance that is 2.91, so 3 rolls; with 30% it is 3.29, so 4 rolls. The drop count was 4, which is why the order follows the drops and the allowance is a check on it, not a substitute. Add the spare from the same batch on top.</p>
 
         <h2 id="openings">Do doors and windows save a drop?</h2>
         <p>Usually less than people hope. The drops either side of a window still run full height and are cut round it. Only the drops that sit wholly over a door or window become short pieces, above and below it, and we cut those from the offcuts of the rolls when the pattern lines up. Where the window has reveals, each side needs an extra part-drop to turn into the reveal, and the pieces above turn under into the head. Sometimes that saves a roll; often it does not.</p>
@@ -261,7 +262,7 @@ const conditions = wallpapering.conditionQuestion.options;
   .qc-materials li span { display: block; color: var(--color-stone); font-size: .9rem; }
   .qc-materials a, .qc-result p a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-brass); text-underline-offset: 3px; }
   .qc-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .qc-small { color: var(--color-stone); font-size: .9rem; }
+  .qc-small { color: var(--color-stone); }
   @media print {
     .qc-step, .qc-more, .qc button[type="submit"], .qc-actions, .wp-subnav, .guide-layout, .page-head .lede { display: none !important; }
     .qc-result { border: 0; }
