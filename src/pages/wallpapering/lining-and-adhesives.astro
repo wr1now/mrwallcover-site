@@ -3,7 +3,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import WallpaperingNav from '../../components/WallpaperingNav.astro';
 import Base from '../../layouts/Base.astro';
 import { formatGuideDate } from '../../lib/guides';
-import { HOUSE_LINING_PASTE, isConfirmed, ladderLabel, liningGrades, makers, product, products, wallpapering } from '../../lib/materials';
+import { HOUSE_LINING_PASTE, isConfirmed, ladderLabel, liningGrades, makers, product, products, vovAdhesives, wallpapering } from '../../lib/materials';
 import { breadcrumbNode } from '../../lib/schema';
 import '../../styles/wallpapering.css';
 
@@ -97,7 +97,7 @@ const liningNeed: Record<string, string> = {
       <h2 id="pastes">Pastes, and why the lining paste is stronger</h2>
       <p>No maker publishes one scale of paste strength, so we keep our own four steps. The paste under the lining is always at least one step stronger than the paste on the wallpaper: a weaker one is softened by the wallpaper's wet paste, and the lining lets go in large bubbles. Where nothing stronger exists, we check the combination before anything is ordered. Where the wallpaper maker says otherwise, the maker wins.</p>
       <ol class="wp-ladder" aria-label="Our paste ladder, lightest first">
-        {wallpapering.ladder.map((step) => <li>{step.label}<span>Step {step.step}</span></li>)}
+        {wallpapering.ladder.map((step) => <li>{step.label}{step.alt && <small class="wp-ladder-alt">or {step.alt}</small>}<span>Step {step.step}</span></li>)}
       </ol>
       <table class="wp-table">
         <caption>Our lining paste</caption>
@@ -132,6 +132,27 @@ const liningNeed: Record<string, string> = {
           </tbody>
         </table>
       ))}
+    </section>
+
+    <section class="wp-section" aria-labelledby="vov">
+      <h2 id="vov">{wallpapering.vov.title}</h2>
+      <p>{wallpapering.vov.text}</p>
+      <table class="wp-table">
+        <thead><tr><th scope="col">Adhesive</th><th scope="col">For, in the maker's words</th><th scope="col">Sizes</th><th scope="col">Source</th></tr></thead>
+        <tbody>
+          {vovAdhesives.filter(isConfirmed).map((item) => {
+            const src = source(item);
+            return (
+              <tr>
+                <th scope="row">{item.name}<small>{item.maker}</small></th>
+                <td data-label="For, in the maker's words">{item.for}<small>{item.stepBasis}</small></td>
+                <td data-label="Sizes">{item.packs?.printed ?? 'Not stated'}</td>
+                <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>Checked {checked(item.checked)}</small></td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </section>
 
     <section class="wp-section" aria-labelledby="woven">

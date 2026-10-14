@@ -53,4 +53,5 @@
 .wp-ladder li:nth-child(2) { border-top-color:#c9bba2; }
 .wp-ladder li:nth-child(3) { border-top-color:#a08a63; }
 .wp-ladder li:nth-child(4) { border-top-color:var(--color-brass); }
+.wp-ladder .wp-ladder-alt { display:block; color:var(--color-stone); font-size:.875rem; }
 .wp-ladder span { display:block; color:var(--color-stone); font-size:var(--text-eyebrow); text-transform:uppercase; letter-spacing:var(--tracking-eyebrow); }

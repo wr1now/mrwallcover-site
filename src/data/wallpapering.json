@@ -10,7 +10,7 @@
     },
     {
       "step": 2,
-      "label": "Standard"
+      "label": "Medium"
     },
     {
       "step": 3,
@@ -18,7 +18,8 @@
     },
     {
       "step": 4,
-      "label": "Extra-strong"
+      "label": "Extra-heavy",
+      "alt": "special heavyweight"
     }
   ],
   "houseRules": [
@@ -1187,7 +1188,7 @@
     },
     {
       "id": "murabond-sealed-surface",
-      "kind": "paste",
+      "kind": "vov",
       "role": "maker-named",
       "name": "Murabond Sealed Surface",
       "maker": "Muraspec",
@@ -1224,7 +1225,7 @@
     },
     {
       "id": "tekfix-vov",
-      "kind": "paste",
+      "kind": "vov",
       "role": "maker-named",
       "name": "Tekfix VOV",
       "maker": "Tektura",
@@ -1253,6 +1254,26 @@
       "packs": null,
       "dataSheet": null,
       "page": "https://tekturawebsite.s3.eu-west-2.amazonaws.com/uploads/design/161/tektura-digital-hanging-instructions.pdf",
+      "checked": "2026-10-14",
+      "status": "confirmed"
+    },
+    {
+      "id": "beeline-overlap-repair",
+      "kind": "vov",
+      "role": "house",
+      "name": "Beeline Overlap & Repair Adhesive",
+      "maker": "Ciret Ltd (Beeline)",
+      "step": null,
+      "stepStatus": "unplaced",
+      "stepBasis": "Label: \"VINYL OVER VINYL\"",
+      "for": "\"for adhering overlaps on seams and for applying borders. Ideal for repairs to damaged or torn wallpapers.\"",
+      "coverage": null,
+      "packs": {
+        "printed": "500g, 1kg",
+        "status": "confirmed"
+      },
+      "dataSheet": "https://www.ciret.co.uk/fileadmin/user_upload/Ciret-UK/PDF_s/23-B12-overlap-repair-adhesive-2.pdf",
+      "page": "https://www.ciret.co.uk/beeline/product/hbdrvn02-overlap-repair-adhesive",
       "checked": "2026-10-14",
       "status": "confirmed"
     }
@@ -1606,6 +1627,15 @@
       "inspect": true
     },
     {
+      "id": "sealed",
+      "name": "Sealed or non-porous: gloss paint, an existing vinyl",
+      "treatment": "Cleaned and keyed. A water-based paste cannot soak into a sealed surface, so the paper goes up with a VOV (vinyl-over-vinyl) adhesive made for it, as the wallpaper maker allows.",
+      "products": [],
+      "vov": true,
+      "lining": "Only with an adhesive the lining maker accepts on a sealed surface.",
+      "inspect": true
+    },
+    {
       "id": "damp",
       "name": "Damp: rising, penetrating or condensation",
       "treatment": "The cause is found and fixed first. Nothing is papered over damp.",
@@ -1713,6 +1743,14 @@
         "check": false
       },
       {
+        "id": "sealed",
+        "label": "Gloss paint or old vinyl",
+        "primers": [],
+        "lining": null,
+        "check": true,
+        "vov": true
+      },
+      {
         "id": "stains",
         "label": "Stains or damp marks",
         "primers": [
@@ -1754,5 +1792,11 @@
       "Roman"
     ],
     "note": "The owner's tested pastes. Each product is added only with its own data sheet or maker's page. Pastes Mr Wallcover does not use are never named on the site, for or against."
+  },
+  "vov": {
+    "title": "VOV: vinyl-over-vinyl adhesive",
+    "text": "A VOV (vinyl-over-vinyl) adhesive is made to hold on sealed, non-porous surfaces, such as gloss paint or an existing vinyl, and to stick overlaps and borders. Many makers make one. It is chosen for the surface, not stepped on the ladder, and the wallpaper maker's instruction still comes first.",
+    "status": "owner",
+    "date": "2026-10-14"
   }
 }

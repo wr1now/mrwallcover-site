@@ -100,3 +100,23 @@ test('the house pastes (owner, 14 Oct 2026): every one is on the ladder with a s
   const words = JSON.stringify(products).toLowerCase().match(/[a-z][a-z0-9-]{2,}/g) ?? [];
   assert.equal(words.some((word) => unnamed.has(createHash('sha256').update(word).digest('hex'))), false);
 });
+
+test('the ladder reads Light, Medium, Heavy, Extra-heavy (owner, 14 Oct 2026); a sealed wall gets a VOV adhesive, never a water-based paste', async () => {
+  const { wallpapering, ladderLabel, materialsFor, vovAdhesives } = await import('../src/lib/materials.ts');
+  const { calculate } = await import('../src/lib/quantity.ts');
+  assert.deepEqual(wallpapering.ladder.map((step) => step.label), ['Light', 'Medium', 'Heavy', 'Extra-heavy']);
+  assert.equal(wallpapering.ladder[3].alt, 'special heavyweight');
+  assert.equal(ladderLabel(2), 'Medium');
+  assert.deepEqual(vovAdhesives.map((item) => item.id).sort(), ['beeline-overlap-repair', 'murabond-sealed-surface', 'tekfix-vov']);
+  for (const item of vovAdhesives) assert.equal(item.step, null, `${item.id} is not on the ladder`);
+  const input = { paper: { widthCm: 53, lengthCm: 1005, match: 'free' as const }, walls: [{ widthCm: 400, heightCm: 250 }] };
+  const result = calculate(input);
+  assert.ok(result.ok && result.kind === 'plan');
+  if (!result.ok || result.kind !== 'plan') return;
+  const generic = materialsFor(input, result, { condition: 'sealed' });
+  assert.deepEqual(generic.lines.map((line) => line.name), ['A VOV (vinyl-over-vinyl) adhesive made for sealed surfaces']);
+  assert.equal(generic.checks.length, 1, 'a sealed wall is checked with us');
+  const muraspec = materialsFor(input, result, { condition: 'sealed', makerId: 'muraspec' });
+  assert.equal(muraspec.lines[0].name, 'Murabond Sealed Surface');
+  assert.equal(materialsFor(input, result, { condition: 'sealed', makerId: 'tektura' }).lines[0].name, 'Tekfix VOV');
+});
