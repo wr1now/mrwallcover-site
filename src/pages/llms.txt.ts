@@ -83,7 +83,7 @@ export const GET: APIRoute = () => {
     '',
     '## Wallcovering Guide',
     entry('Wallcovering Guide', '/advice/', 'choosing, preparation, quantities and care'),
-    entry('How much wallpaper to order', '/advice/quantities/', 'count drops, not square metres; a restricted roll calculator for plain and straight-match walls, measured by wall or by room, with the usual 15–30% allowance range (staircases around 30%) beside the drop count; pattern-match extras confirmed at survey'),
+    entry('How much wallpaper to order', '/advice/quantities/', 'count drops, not square metres; a roll calculator that cuts every drop from the rolls (free, straight, half, third and quarter drop; doors, windows, reveals, niches and returns; rooms as one run), shows the cutting plan, working rolls, one spare on its own line and the order, and lists primer, lining and paste from data sheets; stairs, slopes, ceilings and panel sets go to an enquiry; no price'),
     ...guides.map((guide) => entry(guide.frontmatter.title, guideHref(guide.frontmatter.slug), guide.frontmatter.description)),
     '',
     '## Wallpapering',

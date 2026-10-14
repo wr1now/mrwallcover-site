@@ -1,111 +1,227 @@
 ---
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import WallpaperingNav from '../../components/WallpaperingNav.astro';
 import Base from '../../layouts/Base.astro';
 import { guideHref } from '../../lib/guides';
+import { isConfirmed, makers, wallpapering } from '../../lib/materials';
 import { breadcrumbNode } from '../../lib/schema';
+import '../../styles/wallpapering.css';
 
 const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'Wallcovering Guide', href: '/advice/' },
   { name: 'Quantities', href: '/advice/quantities/' },
 ];
+// Roll formats the visitor can pick. Sizes are the common formats, not a product's own figures: the result says so.
+const formats = [
+  { id: 'standard', label: 'Standard roll, 53 cm × 10.05 m', width: 53, length: 10.05, soldBy: 'roll' },
+  { id: 'roll-52', label: 'Roll, 52 cm × 10 m', width: 52, length: 10, soldBy: 'roll' },
+  { id: 'us-double', label: 'US double roll, 20.5 in × 33 ft', width: 52.07, length: 10.0584, soldBy: 'double-roll' },
+  { id: 'us-double-27', label: 'US double roll, 27 in × 27 ft', width: 68.58, length: 8.2296, soldBy: 'double-roll' },
+  { id: 'bolt', label: 'Grasscloth bolt, 36 in × 8 yd', width: 91.44, length: 7.3152, soldBy: 'bolt' },
+  { id: 'length', label: 'Wide contract, sold by the metre (130 cm, 5 cm overlap)', width: 125, length: 30, soldBy: 'length' },
+  { id: 'mural', label: 'Made-to-measure mural, by the m²', width: 0, length: 0, soldBy: 'mural' },
+  { id: 'panel-set', label: 'Scenic or panel set', width: 0, length: 0, soldBy: 'panel-set' },
+  { id: 'custom', label: 'Other: I will type the sizes', width: 0, length: 0, soldBy: 'roll' },
+];
+const makerOptions = makers.filter(isConfirmed).map((rule) => ({ id: rule.id, name: rule.name, noInfill: Boolean(rule.noOffcutInfill) }));
+const conditions = wallpapering.conditionQuestion.options;
 ---
 
 <Base
   title="How much wallpaper should you order? | Mr Wallcover"
-  description="Count drops, not square metres. A roll calculator for free-match and straight-match rectangular walls, and why repeat, batch and spares change the order."
+  description="Count drops, not square metres. A roll calculator with the cutting plan, pattern repeat, half-drop, openings, materials and a spare roll on its own line."
   path="/advice/quantities/"
   extraSchema={[breadcrumbNode(crumbs)]}
 >
   <div class="container-page pb-20">
     <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
-      <p class="eyebrow">The Wallcovering Guide / planning</p>
+      <p class="eyebrow">Wallpapering / calculator</p>
       <h1>How much wallpaper should you order?</h1>
-      <p class="lede mt-5">Count the drops, not the square metres. Wallpaper is cut in full-height lengths, so the number of rolls follows the width of the wall, the height plus trim, the pattern repeat and the usable length of a roll. The calculator below works that out for plain and straight-match rectangular walls. It is not a purchase quantity and it is not a quotation.</p>
+      <p class="lede mt-5">Count the drops, not the square metres. Wallpaper is cut in full-height lengths, so the number of rolls follows the width of the wall, the height plus trim, the pattern repeat and the length of a roll. This calculator cuts every drop from the rolls the way we do, shows you the plan, and adds one spare roll on its own line. It gives a quantity to order, not a set-out, and never a price.</p>
     </header>
-    <form class="grid max-w-3xl gap-5" data-quantity aria-labelledby="calculator-heading">
+    <WallpaperingNav current="calculator" />
+
+    <form class="qc grid gap-8" data-quantity aria-labelledby="calculator-heading" novalidate>
       <h2 id="calculator-heading" class="m-0 text-[1.6rem]">Roll calculator</h2>
-      <p class="m-0 text-stone">Free match and simple straight match only. Doors and windows are not deducted. Half-drop, murals, stairs and bespoke panel sets are refused, because they need a surveyed set-out.</p>
-      <p class="m-0 text-stone">Beside the drop count it gives the typical ordering allowance: 15–30% over the net wall area, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. For half-drop and stairs that allowance is the only figure given. Extra rolls for pattern matching are confirmed at survey.</p>
-      <noscript><p class="m-0">The calculator needs JavaScript to work out the figures. The worked example below shows the same method by hand.</p></noscript>
-      <fieldset class="quantity-measure" data-measure>
-        <legend>Measure by</legend>
-        <label><input type="radio" name="measure" value="walls" checked /> Individual walls</label>
-        <label><input type="radio" name="measure" value="room" /> Whole room (length, width and height)</label>
-      </fieldset>
-      <div data-room class="grid gap-5 md:grid-cols-3" hidden>
-        <div class="field"><label>Room length, metres <input name="roomLength" type="number" min="0" step="0.01" value="4" /></label></div>
-        <div class="field"><label>Room width, metres <input name="roomWidth" type="number" min="0" step="0.01" value="3.5" /></label></div>
-        <div class="field"><label>Room height, metres <input name="roomHeight" type="number" min="0" step="0.01" value="2.7" /></label></div>
-        <p class="m-0 text-stone md:col-span-3">The room is papered as one run round its perimeter. Doors, windows and fitted joinery are not deducted.</p>
-      </div>
-      <div data-walls class="grid gap-5">
+      <noscript><p class="m-0">The calculator needs JavaScript. The worked example below shows the same method by hand, or <a href="/contact/?intent=install">send us your measurements</a>.</p></noscript>
+
+      <fieldset class="qc-step">
+        <legend><span class="eyebrow">1</span> The wallpaper</legend>
         <div class="grid gap-5 md:grid-cols-2">
-          <div class="field"><label>Width, metres <input name="width" type="number" min="0" step="0.01" value="5" /></label></div>
-          <div class="field"><label>Height, metres <input name="height" type="number" min="0" step="0.01" value="2.7" /></label></div>
-        </div>
-      </div>
-      <button class="btn btn-line" type="button" data-add-wall>Add another wall</button>
-      <div class="grid gap-5 md:grid-cols-2">
-        <div class="field"><label>Top and bottom trim, metres <input name="trim" type="number" min="0" step="0.01" value="0.1" /></label></div>
-        <div class="field"><label>Usable roll width, metres <input name="rollWidth" type="number" min="0" step="0.01" value="0.53" /></label></div>
-        <div class="field"><label>Roll length, metres <input name="rollLength" type="number" min="0" step="0.01" value="10.05" /></label></div>
-        <div class="field">
-          <label>Match
-            <select name="match">
-              <option value="free">Free / plain</option>
-              <option value="straight">Straight match</option>
-              <option value="half-drop">Half drop</option>
-              <option value="mural">Mural or panels</option>
-              <option value="stair">Stair or slope</option>
-              <option value="panel">Bespoke set</option>
+          <div class="field">
+            <label for="qc-maker">Maker</label>
+            <select id="qc-maker" name="maker">
+              <option value="">Not sure, or another maker</option>
+              {makerOptions.map((option) => <option value={option.id} data-no-infill={option.noInfill ? 'true' : undefined}>{option.name}</option>)}
             </select>
-          </label>
+          </div>
+          <div class="field">
+            <label for="qc-link">Or paste the product link <span class="text-stone">(optional)</span></label>
+            <input id="qc-link" name="link" type="url" inputmode="url" autocomplete="off" placeholder="https://" />
+            <p class="qc-hint" data-link-note hidden></p>
+          </div>
+          <div class="field md:col-span-2">
+            <label for="qc-format">Roll</label>
+            <select id="qc-format" name="format">
+              {formats.map((format) => <option value={format.id} data-width={format.width} data-length={format.length} data-sold={format.soldBy}>{format.label}</option>)}
+            </select>
+          </div>
+          <div class="field" data-paper-size>
+            <label for="qc-roll-width">Usable width, cm</label>
+            <input id="qc-roll-width" name="rollWidth" type="number" inputmode="decimal" min="0" step="0.01" value="53" />
+          </div>
+          <div class="field" data-paper-size>
+            <label for="qc-roll-length">Roll length, metres</label>
+            <input id="qc-roll-length" name="rollLength" type="number" inputmode="decimal" min="0" step="0.01" value="10.05" />
+          </div>
+          <div class="field" data-paper-size>
+            <label for="qc-match">Pattern match</label>
+            <select id="qc-match" name="match">
+              <option value="free">Free match, or plain</option>
+              <option value="reverse">Reverse hang</option>
+              <option value="straight">Straight match</option>
+              <option value="half">Half-drop</option>
+              <option value="third">Third drop</option>
+              <option value="quarter">Quarter drop</option>
+            </select>
+          </div>
+          <div class="field" data-paper-size data-repeat-field>
+            <label for="qc-repeat">Pattern repeat, cm</label>
+            <input id="qc-repeat" name="repeat" type="number" inputmode="decimal" min="0" step="0.1" value="0" />
+          </div>
+          <div class="field" data-mural-field hidden>
+            <label for="qc-margin">Margin the mural maker asks you to add, cm</label>
+            <input id="qc-margin" name="margin" type="number" inputmode="decimal" min="0" step="0.5" value="10" />
+          </div>
         </div>
-        <div class="field"><label>Pattern repeat, metres <input name="repeat" type="number" min="0" step="0.01" value="0.64" /></label></div>
+        <p class="qc-hint">Not sure? Leave the standard roll and free match: the result says what it assumed. The roll size, repeat and match are on the product page or the label.</p>
+      </fieldset>
+
+      <fieldset class="qc-step">
+        <legend><span class="eyebrow">2</span> The wall or the room</legend>
+        <div class="quantity-measure" role="radiogroup" aria-label="Measure by">
+          <label><input type="radio" name="measure" value="wall" checked /> One wall</label>
+          <label><input type="radio" name="measure" value="walls" /> Several walls</label>
+          <label><input type="radio" name="measure" value="room" /> A whole room</label>
+        </div>
+        <div data-walls class="grid gap-4">
+          <div class="qc-wall grid gap-5 md:grid-cols-2" data-wall>
+            <div class="field"><label>Wall width, cm <input name="width" type="number" inputmode="decimal" min="0" step="0.1" value="500" /></label></div>
+            <div class="field"><label>Height to paper, cm <input name="height" type="number" inputmode="decimal" min="0" step="0.1" value="270" /></label></div>
+          </div>
+        </div>
+        <button class="btn btn-line" type="button" data-add-wall hidden>Add another wall</button>
+        <div data-room class="grid gap-5 md:grid-cols-3" hidden>
+          <div class="field"><label>Room length, cm <input name="roomLength" type="number" inputmode="decimal" min="0" step="0.1" value="400" /></label></div>
+          <div class="field"><label>Room width, cm <input name="roomWidth" type="number" inputmode="decimal" min="0" step="0.1" value="350" /></label></div>
+          <div class="field"><label>Height to paper, cm <input name="roomHeight" type="number" inputmode="decimal" min="0" step="0.1" value="270" /></label></div>
+        </div>
+        <p class="qc-hint">Height to paper: from the top of the skirting to where the paper stops, at the ceiling, the cornice or the picture rail. A room is counted as one run round its walls.</p>
+      </fieldset>
+
+      <details class="qc-step qc-more" data-more>
+        <summary><span class="eyebrow">3</span> Openings, returns and the wall <span class="text-stone">(optional)</span></summary>
+        <div class="grid gap-6 mt-5">
+          <div class="field md:max-w-md">
+            <label for="qc-condition">{wallpapering.conditionQuestion.label}</label>
+            <select id="qc-condition" name="condition">
+              {conditions.map((option) => <option value={option.id}>{option.label}</option>)}
+            </select>
+          </div>
+          <div class="grid gap-3">
+            <p class="m-0 font-medium">Doors, windows and niches</p>
+            <div data-openings class="grid gap-4"></div>
+            <div class="flex flex-wrap gap-3">
+              <button class="btn btn-line" type="button" data-add-opening="window">Add a window</button>
+              <button class="btn btn-line" type="button" data-add-opening="door">Add a door</button>
+              <button class="btn btn-line" type="button" data-add-opening="niche">Add a niche</button>
+            </div>
+          </div>
+          <div class="grid gap-3">
+            <p class="m-0 font-medium">Chimney breast and alcove returns</p>
+            <div data-returns class="grid gap-4"></div>
+            <button class="btn btn-line justify-self-start" type="button" data-add-return>Add a return</button>
+            <p class="qc-hint m-0">Each side of a chimney breast or an alcove is a return. Its depth is added to the width of the wall.</p>
+          </div>
+          <fieldset class="quantity-measure">
+            <legend>Anything else about the space?</legend>
+            <label><input type="checkbox" name="bespoke" value="stairs" /> A stairwell</label>
+            <label><input type="checkbox" name="bespoke" value="slope" /> A sloping wall or ceiling</label>
+            <label><input type="checkbox" name="bespoke" value="curved" /> A curved wall</label>
+            <label><input type="checkbox" name="bespoke" value="ceiling" /> The ceiling</label>
+          </fieldset>
+          <div class="grid gap-5 md:grid-cols-2">
+            <div class="field"><label>Trim at the top, cm <input name="trimTop" type="number" inputmode="decimal" min="0" step="0.5" value="5" /></label></div>
+            <div class="field"><label>Trim at the bottom, cm <input name="trimBottom" type="number" inputmode="decimal" min="0" step="0.5" value="5" /></label></div>
+          </div>
+        </div>
+      </details>
+
+      <div class="flex flex-wrap gap-3">
+        <button class="btn btn-solid-ink" type="submit">Work it out</button>
       </div>
-      <button class="btn btn-solid-ink" type="submit">Calculate</button>
-      <div class="quantity-output" data-quantity-output role="status" aria-live="polite" hidden></div>
-      <p class="m-0 text-stone">For a surveyed figure, <a href="/contact/?intent=install">send us the room</a>: a photograph, these dimensions and the product reference are enough to start.</p>
+      <div class="qc-result" data-quantity-output role="status" aria-live="polite" tabindex="-1" hidden></div>
     </form>
 
-    <div class="guide-layout">
+    <template data-opening-template>
+      <div class="qc-opening grid gap-4 md:grid-cols-3" data-opening>
+        <p class="m-0 md:col-span-3 font-medium" data-opening-title></p>
+        <div class="field" data-opening-wall hidden><label>On wall <select name="o-wall"></select></label></div>
+        <div class="field"><label>Width, cm <input name="o-width" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
+        <div class="field"><label>Height, cm <input name="o-height" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
+        <div class="field" data-from-floor><label><span data-from-floor-label>Sill above the skirting, cm</span> <input name="o-floor" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
+        <div class="field"><label>Reveal depth, cm <input name="o-depth" type="number" inputmode="decimal" min="0" step="0.1" value="0" /></label></div>
+        <div class="field" data-reveals><label>Papered reveals
+          <select name="o-reveals"><option value="none">None</option><option value="sides">Sides</option><option value="sides-head">Sides and head</option></select>
+        </label></div>
+        <button class="btn btn-line md:col-span-3 justify-self-start" type="button" data-remove>Remove</button>
+      </div>
+    </template>
+    <template data-return-template>
+      <div class="qc-return grid gap-4 md:grid-cols-3" data-return>
+        <div class="field" data-return-wall hidden><label>On wall <select name="r-wall"></select></label></div>
+        <div class="field"><label>Return depth, cm <input name="r-depth" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
+        <button class="btn btn-line justify-self-start self-end" type="button" data-remove>Remove</button>
+      </div>
+    </template>
+
+    <div class="guide-layout mt-16">
       <aside class="guide-contents">
         <nav aria-label="On this page"><p class="eyebrow">In this guide</p><ol>
           <li><a href="#drops">Why width decides the number of drops</a></li>
-          <li><a href="#repeat">How the pattern repeat changes the cut length</a></li>
-          <li><a href="#allowance">How much extra to allow</a></li>
+          <li><a href="#repeat">How the pattern repeat changes the cut</a></li>
+          <li><a href="#allowance">Why we count drops, not a percentage</a></li>
           <li><a href="#openings">Do doors and windows save a drop?</a></li>
-          <li><a href="#batch">Why order everything from one batch</a></li>
-          <li><a href="#limits">When the calculator stops being reliable</a></li>
+          <li><a href="#batch">One batch, and one spare</a></li>
+          <li><a href="#limits">When we measure for you</a></li>
         </ol></nav>
-        <a class="btn btn-line mt-5" href="/contact/?intent=install">Ask for a surveyed quantity</a>
+        <a class="btn btn-line mt-5" href="/contact/?intent=install">Send us your measurements</a>
       </aside>
       <article class="prose guide-prose">
         <h2 id="drops">Why width decides the number of drops</h2>
-        <p>A drop is one full-height length of paper. Divide the wall width by the usable width of the roll and round up: that is the number of drops. Each drop is cut to the wall height plus a trimming allowance at the top and bottom, and a roll yields only as many whole drops as fit into its length. Round the drops up, the drops per roll down and the rolls up. Offcuts shorter than a drop are rarely usable on the same wall.</p>
-        <p>Take a simple wall, as an illustration rather than an order: 5.00 metres wide and 2.70 metres high, with a free-match paper on a roll labelled 10.05 metres long and 0.53 metres wide. Allow 50 millimetres for trimming at the top and 50 at the bottom, so each cut length is 2.80 metres. The width needs 10 drops: 5.00 ÷ 0.53 is 9.43, so nine full widths cover 4.77 metres and the tenth drop is a strip about 0.23 metres wide that still uses a full 2.80-metre length. Each roll yields 3 drops, because 10.05 ÷ 2.80 is 3.59 and the remainder is too short for a fourth. Ten drops at three per roll is 4 rolls.</p>
-        <p>Dividing the wall area by the roll area gives a different answer. The wall is 13.5 square metres and the roll about 5.33, so 13.5 ÷ 5.33 is 2.53, which rounds up to 3 rolls: one short, because the area method counts the offcuts and the narrow last strip as if they could be used. Enter the figures above and the calculator gives 4. The example assumes a truly vertical, square wall, the usable dimensions on the label, a free match, no defects and no spare; a real order adds a spare from the same batch.</p>
+        <p>A drop is one full-height length of paper. Divide the wall width by the usable width of the roll and round up: that is the number of drops. Each drop is cut to the height to paper plus a trim of 5 cm at the top and 5 cm at the bottom, and a roll yields only as many whole drops as fit into its length.</p>
+        <p>Take a simple wall: 5.00 metres wide and 2.70 metres high, with a free-match paper on a roll labelled 10.05 metres long and 0.53 metres wide. Each cut length is 2.80 metres. The width needs 10 drops: 5.00 ÷ 0.53 is 9.43, so nine full widths cover 4.77 metres and the tenth drop is a strip about 0.23 metres wide that still uses a full 2.80-metre length. Each roll yields 3 drops, because 10.05 ÷ 2.80 is 3.59 and the remainder is too short for a fourth. Ten drops at three per roll is 4 rolls.</p>
+        <p>Dividing the wall area by the roll area gives a different answer. The wall is 13.5 square metres and the roll about 5.33, so 13.5 ÷ 5.33 is 2.53, which rounds up to 3 rolls: one short, because the area method counts the offcuts and the narrow last strip as if they could be used. Enter the figures above and the calculator gives 4, plus the spare.</p>
 
-        <h2 id="repeat">How the pattern repeat changes the cut length</h2>
-        <p>A patterned paper has to be cut so the design lines up across the seam. With a straight match, every drop starts at the same point in the pattern, so the cut length rounds up to a whole number of repeats. On a 2.40-metre wall with the same 0.10-metre trim, a plain paper needs a 2.50-metre cut, and a 10.05-metre roll gives four drops with 5 centimetres to spare. With a 0.64-metre straight-match repeat, the cut rounds up to four repeats, 2.56 metres, and the same roll gives only three, because 10.05 ÷ 2.56 is 3.93. The repeat has cost a drop on every roll, which is why it is counted as a length and not added as a percentage. The calculator applies that rounding for straight match.</p>
-        <p>A half-drop match offsets alternate drops by half a repeat, and large or irregular designs may need the pattern to sit at a particular height, above a dado or centred on a chimney breast. Those decisions change the waste in ways a single percentage cannot predict, which is why the calculator refuses half-drop rather than guessing. On the <a href="/services/">services page</a> we describe how a survey sets out the room and allows for the repeat.</p>
+        <h2 id="repeat">How the pattern repeat changes the cut</h2>
+        <p>A patterned paper has to be cut so the design lines up across the seam. With a straight match every drop starts at the same point in the pattern, so the next drop on a roll starts a whole number of repeats after the last one. Take a wall 230 cm wide and 265 cm high on a 55 cm by 10 m roll with a 65 cm repeat: each drop is 275 cm, the next starts 325 cm on, and we allow one full repeat at the start of every roll to find the pattern. Three drops fit, because 65 + 325 + 325 + 275 is 990 cm. Five drops need 2 rolls, and the spare makes 3. The last drop on a roll is cut at its own length, not the rounded one.</p>
+        <p>A half-drop moves every other drop down by half a repeat, and a third or quarter drop by a third or a quarter. The calculator works the cutting both ways, drop after drop along the roll, or all the drops of one phase together, and keeps the one that needs fewer rolls. The plan shows which drop comes from which roll. Large or irregular designs may also need the pattern to sit at a particular height, above a dado or centred on a chimney breast; that is set out on site, so the count is an order quantity, not a set-out.</p>
 
-        <h2 id="allowance">How much extra to allow</h2>
-        <p>The drop count is the floor, not the order. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey. The calculator shows that range over the net wall area beside the drop count, so you can see both figures; where the drop count is higher, the drop count wins.</p>
-        <p>Take the wall from the first example again: 13.5 square metres of wall on a roll of about 5.33 square metres. With a 15% allowance that is 2.91, so 3 rolls; with 30% it is 3.29, so 4 rolls. The drop count was 4, which is why the order follows the drops and the allowance is a check on it, not a substitute. Add the spare from the same batch on top.</p>
+        <h2 id="allowance">Why we count drops, not a percentage</h2>
+        <p>A percentage added to the area, the usual 15–30%, can be too little for a large repeat and too much for a plain paper, and it hides the point where one more centimetre of height costs a whole roll. The calculator counts the drops instead and tells you when you are within a few centimetres of needing another roll. We still quote the allowance range in conversation, with staircases at the high end, around 30%, because of the angles.</p>
 
         <h2 id="openings">Do doors and windows save a drop?</h2>
-        <p>Usually less than people hope. The drops either side of a window still run full height, and the short pieces above and below it must keep the correct pattern relationship with their neighbours. Only a wide opening, or a plain paper where any offcut will do, reliably saves material. The calculator leaves openings in for that reason. A survey takes them out where it is safe to.</p>
+        <p>Usually less than people hope. The drops either side of a window still run full height and are cut round it. Only the drops that sit wholly over a door or window become short pieces, above and below it, and we cut those from the offcuts of the rolls when the pattern lines up. Where the window has reveals, each side needs an extra part-drop to turn into the reveal, and the pieces above turn under into the head. Sometimes that saves a roll; often it does not.</p>
 
-        <h2 id="batch">Why order everything from one batch</h2>
-        <p>Rolls from different production batches can differ slightly in colour, and that difference shows most at a seam. Order the whole room, including a spare, from one batch number, and check the batch on delivery before anything is cut. A spare roll kept from the same batch is also the only realistic way to make a later repair blend in.</p>
+        <h2 id="batch">One batch, and one spare</h2>
+        <p>Rolls from different production batches can differ slightly in colour, and that difference shows most at a seam. Order every roll, including the spare, from one batch, and check the batch number on every roll before anything is cut. Hang the first three drops, then stop and check the shade and the match in daylight. A spare roll from the same batch is also the only realistic way to make a later repair blend in.</p>
 
-        <h2 id="limits">When the calculator stops being reliable</h2>
-        <p>Stop trusting a formula when the wall is not a simple rectangle, when the paper is a mural or a set of panels, or when the pattern needs a set-out. Stairwells have sloping lines and changing heights. Hand-painted and panoramic papers are made to the elevations and ordered by panel, not by roll; our guide to <a href={guideHref('hand-painted-murals-set-out')}>setting out hand-painted papers and murals</a> explains what has to be decided first. Designers specifying several rooms can use the <a href={guideHref('designer-specification-checklist')}>specification checklist</a> to record repeat, match and usable width for every product.</p>
-        <p>Whatever the calculator says, the maker's instruction and a surveyed set-out take precedence. Keep the purchase quantity separate from any labour measurement in a quotation: our guide to <a href={guideHref('installation-cost')}>what changes the cost of installation</a> explains the difference.</p>
-        <div class="guide-next"><p class="eyebrow">Your next step</p><h2>Send the wall, and we will count the drops.</h2><p>A photograph, the dimensions you have and the product reference are enough for a first quantity. Where the geometry needs it, we measure on site. Back to <a href="/advice/">the Wallcovering Guide</a>.</p><a class="btn btn-solid-ink" href="/contact/?intent=install">Ask for a surveyed quantity</a></div>
+        <h2 id="limits">When we measure for you</h2>
+        <p>Stairwells, sloping walls and ceilings, curved walls and papered ceilings are set out on site, so the calculator sends them to us instead of guessing. Hand-painted and panoramic papers are made to the elevations and ordered by panel, not by roll; our guide to <a href={guideHref('hand-painted-murals-set-out')}>setting out hand-painted papers and murals</a> explains what has to be decided first. Designers specifying several rooms can use the <a href={guideHref('designer-specification-checklist')}>specification checklist</a> to record repeat, match and usable width for every product.</p>
+        <p>Whatever the calculator says, the maker's instruction and a surveyed set-out take precedence. The materials under the result follow our <a href="/wallpapering/preparation/">preparation tables</a> and the <a href="/wallpapering/lining-and-adhesives/">lining papers, pastes and primers</a> we use. Keep the purchase quantity separate from any labour measurement in a quotation: our guide to <a href={guideHref('installation-cost')}>what changes the cost of installation</a> explains the difference.</p>
+        <div class="guide-next"><p class="eyebrow">Your next step</p><h2>Send the wall, and we will check the order.</h2><p>A photograph, the dimensions you have and the product reference are enough for a first quantity. Where the geometry needs it, we measure on site. Back to <a href="/wallpapering/">Wallpapering</a>.</p><a class="btn btn-solid-ink" href="/contact/?intent=install">Send us your measurements</a></div>
       </article>
     </div>
   </div>
@@ -116,10 +232,35 @@ const crumbs = [
 </script>
 
 <style is:global>
-  .quantity-measure { margin:0; padding:0; border:0; display:flex; flex-wrap:wrap; gap:.5rem 1.75rem; }
-  .quantity-measure legend { padding:0; margin-bottom:.5rem; font-weight:500; }
-  .quantity-measure label { display:inline-flex; align-items:center; gap:.5rem; min-height:44px; }
-  .quantity-output { border-left:2px solid var(--color-line); padding:.25rem 0 .25rem 1.25rem; }
-  .quantity-output p { margin:0 0 .6rem; }
-  .quantity-output p:last-child { margin-bottom:0; color:var(--color-stone); }
+  .qc { max-width: 52rem; }
+  .qc-step { margin: 0; padding: 1.5rem 0 0; border: 0; border-top: 1px solid var(--color-line); display: grid; gap: 1.25rem; }
+  .qc-step > legend, .qc-more > summary { padding: 0; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; }
+  .qc-step legend .eyebrow, .qc-more summary .eyebrow { display: inline; margin-right: .5rem; }
+  .qc-more > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: .25rem; flex-wrap: wrap; }
+  .qc-hint { margin: 0; color: var(--color-stone); font-size: .9rem; }
+  .qc-opening, .qc-return { border-left: 2px solid var(--color-line); padding-left: 1rem; }
+  .quantity-measure { margin: 0; padding: 0; border: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; }
+  .quantity-measure legend { padding: 0; margin-bottom: .5rem; font-weight: 500; }
+  .quantity-measure label { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; }
+  .qc-result { border-top: 2px solid var(--color-ink); padding-top: 1.5rem; display: grid; gap: 1.5rem; }
+  .qc-result:focus { outline: none; }
+  .qc-order { display: grid; gap: .25rem; margin: 0; }
+  .qc-order div { display: grid; grid-template-columns: minmax(8rem, 12rem) 1fr; gap: 1rem; align-items: baseline; padding: .6rem 0; border-bottom: 1px solid var(--color-line); }
+  .qc-order dt { font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-brass); }
+  .qc-order dd { margin: 0; }
+  .qc-order strong { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 500; margin-right: .5rem; }
+  .qc-order .qc-total strong { font-size: 2.4rem; }
+  .qc-warning { margin: 0; padding: .9rem 1rem; background: var(--color-ivory-deep); border-left: 3px solid var(--color-brass); }
+  .qc-result h3 { margin: 0 0 .5rem; font-size: 1.35rem; }
+  .qc-result ul, .qc-result ol { margin: 0; padding-left: 1.2rem; display: grid; gap: .35rem; }
+  .qc-result p { margin: 0; }
+  .qc-plan li { overflow-wrap: anywhere; }
+  .qc-materials li span { display: block; color: var(--color-stone); font-size: .9rem; }
+  .qc-materials a, .qc-result p a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-brass); text-underline-offset: 3px; }
+  .qc-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .qc-small { color: var(--color-stone); font-size: .9rem; }
+  @media print {
+    .qc-step, .qc-more, .qc button[type="submit"], .qc-actions, .wp-subnav, .guide-layout, .page-head .lede { display: none !important; }
+    .qc-result { border: 0; }
+  }
 </style>

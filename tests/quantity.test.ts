@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
+import { readFile } from 'node:fs/promises';
 import { allowanceRange, calculate, closeCall, liningPlan, type PlanResult, type QuantityInput, type QuantityResult } from '../src/lib/quantity.ts';
 
 /** Every row of the test table in docs/calculator/spec.md (signed off by the owner, 14 Oct 2026) is a test here. */
@@ -241,4 +242,17 @@ test('the ordering allowance the site quotes elsewhere is unchanged: 13.5 m² on
   const stair = allowanceRange({ match: 'stair', rollWidthM: 0.53, rollLengthM: 10.05, walls: [{ widthM: 5, heightM: 2.7 }] });
   if (stair.ok) assert.deepEqual([stair.minPct, stair.maxPct, stair.minRolls, stair.maxRolls], [30, 30, 4, 4]);
   assert.equal(allowanceRange({ match: 'mural', rollWidthM: 0.53, rollLengthM: 10.05, walls: [{ widthM: 5, heightM: 2.7 }] }).ok, false);
+});
+
+test('the page opens on the worked example in centimetres, and its copy states the result the calculator gives', async () => {
+  const page = await readFile('src/pages/advice/quantities.astro', 'utf8');
+  const value = (name: string) => Number(page.match(new RegExp(`name="${name}"[^>]*value="([0-9.]+)"`))![1]);
+  const r = plan(calculate({ paper: { widthCm: value('rollWidth'), lengthCm: value('rollLength') * 100, match: 'free' }, walls: [wall(value('width'), value('height'))] }));
+  assert.deepEqual([value('width'), value('height'), value('rollWidth'), value('rollLength')], [500, 270, 53, 10.05]);
+  assert.equal(r.working.count, 4);
+  assert.match(page, /Ten drops at three per roll is 4 rolls/);
+  assert.match(page, /calculator gives 4, plus the spare/);
+  assert.match(page, /65 \+ 325 \+ 325 \+ 275 is 990 cm/, 'the owner\'s example is explained on the page');
+  assert.doesNotMatch(page, /refuses half-drop|10-metre roll|0\.5 metres wide/);
+  assert.doesNotMatch(page, /£/);
 });
