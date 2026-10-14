@@ -57,7 +57,8 @@
         "min": 9,
         "max": 11,
         "unit": "m2/l",
-        "coats": 1
+        "coats": 1,
+        "conflict": "The product page prints \"5 - 10m² per Litre\". The calculator uses the data sheet."
       },
       "quotes": [
         "Pre-Wallcovering Primer– Gardz penetrates, seals, sizes and protects drywall facing paper and skim coat, providing a properly sealed surface for new wallcovering.",
@@ -67,8 +68,16 @@
         "Alkaline resistance: ≤12.5 pH"
       ],
       "packs": {
-        "printed": null,
-        "status": "unconfirmed"
+        "printed": "500ml, 1L, 2.5L, 5L",
+        "sizes": [
+          0.5,
+          1,
+          2.5,
+          5
+        ],
+        "unit": "l",
+        "status": "confirmed",
+        "source": "https://zinsseruk.com/products/gardz"
       },
       "dataSheet": "https://zinsseruk.builtbybeluga.com/media/pages/products/gardz/271667e5f8-1727452047/gardz.pdf",
       "page": "https://zinsseruk.com/products/gardz",
@@ -86,7 +95,17 @@
       "coverage": null,
       "dataSheet": null,
       "checked": null,
-      "status": "unconfirmed"
+      "status": "unconfirmed",
+      "candidates": [
+        {
+          "name": "Zinsser B-I-N",
+          "note": "Neither its page nor its data sheet says it can go under a wallcovering."
+        },
+        {
+          "name": "Zinsser Cover Stain",
+          "note": "Neither its page nor its data sheet says it can go under a wallcovering."
+        }
+      ]
     },
     {
       "id": "alkali-primer",
@@ -99,7 +118,17 @@
       "coverage": null,
       "dataSheet": null,
       "checked": null,
-      "status": "unconfirmed"
+      "status": "unconfirmed",
+      "candidates": [
+        {
+          "name": "Dulux Trade Alkali Resisting Primer",
+          "note": "Data sheet: masonry surfaces that may contain alkalis; 5L; up to 9 m² per litre."
+        },
+        {
+          "name": "Johnstone's Trade Alkali Resisting Primer",
+          "note": "Data sheet names render and blockwork; 2.5L and 5L; 9–11 m² per litre."
+        }
+      ]
     },
     {
       "id": "erfurt-mav-800",
@@ -319,7 +348,7 @@
         "unit": "m2/kg"
       },
       "packs": {
-        "printed": "5kg and 10kg tubs, shown on the Wallrock brochure",
+        "printed": "5KG and 10KG, on the tub labels in the product photograph and on the Wallrock brochure; the page text names no pack size",
         "sizes": [
           5,
           10
@@ -362,7 +391,8 @@
         "status": "confirmed"
       },
       "quotes": [
-        "Please avoid packet mixes or heavy-duty pastes, as these are designed for vinyl and may affect the finish of our handcrafted designs."
+        "Please avoid packet mixes or heavy-duty pastes, as these are designed for vinyl and may affect the finish of our handcrafted designs.",
+        "The hanging instructions page names the same ready-mixed starch based paste as \"Cole & Son Tub Paste\"."
       ],
       "page": "https://cole-and-son.com/pages/frequently-asked-questions",
       "checked": "2026-10-14",
@@ -467,14 +497,17 @@
         "printed": "All walls should be lined with plain white 1000 or 1200 grade paper lining paper."
       },
       "liningPaste": "same-as-paper",
-      "liningPastePrinted": "The lining paper should be hung with the same adhesive as will be used to hang the final panels.",
+      "liningPastePrinted": "The lining paper should be hung with the same adhesive as will be used to hang the final panels (see 'paste' below).",
       "primerPrinted": "Do not use a primer on top of the lining paper.",
       "notes": [
-        "Cross-lining is not needed so long as the joints of the lining do not meet the joints of the panels."
+        "Cross-lining is not needed so long as the joints of the lining do not meet the joints of the panels.",
+        "de Gournay will not accept claims for labour charges or other consequential losses under any circumstances."
       ],
       "source": "https://degournay.com/uploads/technical/document/2026_Hanging_Instructions-After-2025.pdf",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "pastePrinted": "Red Lidded Paste (type II) for non-woven papers that do not absorb much water; Yellow Lidded Paste (type I) for papers that require soaking.",
+      "pages": "Lining and primer: page 2. Pastes: page 4."
     },
     {
       "id": "cole-and-son",
@@ -491,11 +524,13 @@
       "paste": "cole-and-son-paste",
       "notes": [
         "Walls must be primed and if necessary cross line with lining paper.",
-        "We recommend lining walls where highly metallic papers are being installed. If lining paper is being installed it should always be hung horizontally, following manufacturer’s instructions, and be allowed to dry completely."
+        "We recommend lining walls where highly metallic papers are being installed. If lining paper is being installed it should always be hung horizontally, following manufacturer’s instructions, and be allowed to dry completely.",
+        "No claim for hanging costs in excess of one roll will be accepted."
       ],
       "source": "https://cole-and-son.com/pages/frequently-asked-questions",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "notesSource": "https://cole-and-son.com/pages/hanging-instructions"
     },
     {
       "id": "farrow-and-ball",
@@ -515,7 +550,12 @@
       ],
       "source": "https://www.farrow-ball.com/how-to-guide/wallpaper/preparing-wallpaper",
       "checked": "2026-10-14",
-      "status": "confirmed"
+      "status": "confirmed",
+      "pasteCoverage": {
+        "printed": "Each tube can be used to hang five rolls of wallpaper.",
+        "perUnit": 5,
+        "unit": "rolls/tube"
+      }
     },
     {
       "id": "fromental",
@@ -604,11 +644,14 @@
       "noOffcutInfill": true,
       "notes": [
         "Apply material above doors and windows as it comes off the roll; do not skip.",
-        "Stop and inspect after 3 strips: no claims are accepted once more than 3 strips are cut and hung."
+        "…the material should be inspected after three (3) strips are installed.",
+        "No claims will be allowed for more than (3) strips on the wall."
       ],
       "source": "https://www.phillipjeffries.com/hanging-instructions",
       "checked": "2026-10-14",
-      "status": "unconfirmed"
+      "status": "confirmed",
+      "notesSource": "https://www.phillipjeffries.com/terms",
+      "pasteStatus": "unconfirmed"
     },
     {
       "id": "timorous-beasties",
