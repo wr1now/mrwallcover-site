@@ -11,10 +11,10 @@
  */
 import { publishedGuides, guideHref } from '../lib/guides';
 import type { APIRoute } from 'astro';
-import { SITE_URL } from '../config';
+import { ANALYTICS_SRC, SITE_URL } from '../config';
 import facts from '../data/facts.json';
 import professionals from '../content/professionals.json';
-import { areaHref, areas, editorialPages, faqItems, materials, projectHref, projects, specialismHref, specialisms } from '../lib/content';
+import { areaHref, areas, editorialPages, faqItems, materials, privacy, projectHref, projects, specialismHref, specialisms } from '../lib/content';
 import { caseStudyCount, trustMakers, trustSummary } from '../lib/trust';
 import { AWARD, FOUNDER_SUMMARY, SINCE_TEXT, WASTAGE, buyerQuestions, enquiryRoutes, projectFacts, serviceFacts } from '../lib/ai-layer-data';
 
@@ -123,7 +123,7 @@ export const GET: APIRoute = () => {
     entry('Feed', '/feed.xml', 'Atom feed of the published guides and case studies, with their dates'),
     entry('Sitemap', '/sitemap-index.xml', 'every published page'),
     entry('Accessibility', '/accessibility/', 'how the site is built for keyboard, mobile and reduced-motion use'),
-    entry('Privacy', '/privacy/', 'how enquiry details are handled; no cookies and no analytics by default'),
+    entry('Privacy', '/privacy/', ANALYTICS_SRC ? privacy.analyticsOn.llms : 'how enquiry details are handled; no cookies and no analytics by default'),
     '',
   ];
   return new Response(lines.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

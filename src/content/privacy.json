@@ -3,7 +3,7 @@
   "description": "How Mr Wallcover handles personal information sent with a quotation request. No cookies and no analytics on this site by default.",
   "eyebrow": "Privacy",
   "heading": "Privacy notice",
-  "updated": "9 October 2026",
+  "updated": "14 October 2026",
   "sections": [
     {
       "heading": "Who we are",
@@ -39,6 +39,7 @@
       "paragraphs": [
         "This site does not set cookies and does not embed advertising. A shortlist of material names, and a calmer-display preference, can be saved in this browser after you use those controls. They are not sent anywhere unless you include the shortlist in an enquiry. A draft of a project brief keeps the non-sensitive answers in this tab only, and not your name, email, phone or message.",
         "After you use the material finder, its room, appearance, cleaning, panel and lighting choices are kept in this browser session. The enquiry form shows those choices before you send them. You can clear them in the finder or remove them from the enquiry. They are only sent with an enquiry you submit.",
+        "The quantity calculator works in this browser. The measurements you type are not sent to us unless you include them in an enquiry. A link you copy to share a result carries those measurements in the web address.",
         "There is a place in the build for a cookie-free analytics script, such as Plausible, Fathom or Cloudflare Web Analytics. Nothing is loaded unless that script is deliberately switched on. If it is switched on later, this notice will be updated."
       ]
     },
@@ -69,5 +70,12 @@
         "This site is not aimed at children, and we do not knowingly collect their information."
       ]
     }
-  ]
+  ],
+  "analyticsOn": {
+    "_note": "Used instead of the matching lines when the build sets PUBLIC_ANALYTICS_SRC (src/pages/privacy.astro, src/pages/llms.txt.ts).",
+    "description": "How Mr Wallcover handles personal information sent with a quotation request. No cookies; visits are counted with Umami, a cookie-free analytics tool.",
+    "covers": "It also covers the cookie-free visit counts this site keeps with Umami.",
+    "cookies": "This site counts visits with Umami, a cookie-free analytics tool. Umami says it does not use cookies, does not collect personally identifiable information and anonymises the data it collects. It counts the pages visited and the site that sent you there, and three actions on the quantity calculator: a result being shown, “Send us your measurements” and “Have Mr Wallcover check this”. With each action it records only the kind of calculation, such as the match type and the number of rolls, never the measurements you type or your contact details. Web addresses are counted without their query string, so a shared calculation is not recorded. If your browser sends a Do Not Track signal, nothing is counted.",
+    "llms": "how enquiry details are handled; no cookies; cookie-free visit counts with Umami"
+  }
 }

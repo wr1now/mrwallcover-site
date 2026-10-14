@@ -57,12 +57,16 @@ export const BOOKING_URL: string = resolveBookingUrl(bookingFromFile);
 
 
 /**
- * Cookie-free analytics placeholder.
- * Leave empty and the site loads no analytics script and sets no cookies.
- * Set PUBLIC_ANALYTICS_SRC to a cookie-free provider such as Plausible,
- * Fathom or Cloudflare Web Analytics when you want numbers.
+ * Cookie-free analytics (Umami, chosen by the owner on 14 Oct 2026).
+ * Leave PUBLIC_ANALYTICS_SRC empty and the site loads no analytics script and sets no cookies.
+ * To switch it on, set PUBLIC_ANALYTICS_SRC to the Umami script URL (https://cloud.umami.is/script.js)
+ * and PUBLIC_ANALYTICS_WEBSITE_ID to the website ID from the Umami account. The privacy notice
+ * switches to its analytics wording in the same build.
  */
 export const ANALYTICS_SRC: string = import.meta.env.PUBLIC_ANALYTICS_SRC || '';
+export const ANALYTICS_WEBSITE_ID: string = import.meta.env.PUBLIC_ANALYTICS_WEBSITE_ID || '';
+/** Only these events reach the analytics tool. Each carries counts and choices, never measurements or contact details. */
+export const ANALYTICS_EVENTS = ['calculator_complete', 'measurements_click', 'check_click'] as const;
 
 /**
  * Optional private enquiry API. Empty on the static GitHub Pages build.
