@@ -281,7 +281,7 @@
     {
       "id": "f-b5",
       "question": "Do you install Class A / B-s1,d0 fire-rated wallcoverings, and can you evidence it?",
-      "answer": "Mr Wallcover does not call a wallcovering fire-rated unless that product's own data says so. A fire classification, such as a Euroclass under EN 13501-1 (the standard's own class names, not a claim here), belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. A substitute product or adhesive needs its own evidence. For a hotel, get the current classification document for the exact product, backing and installation method, and have the responsible designer, fire engineer or building-control route accept it. A guest room, a public corridor and a protected stair can have different requirements, and no single class is what \"hotels need\". The adhesive and primer are part of the specified system and are used as the maker lists them (Vescom, for example, lists them per product). The fire classification is certified by the wallcovering manufacturer, not by the installer. Mr Wallcover installs in line with the manufacturer's system and the applicable regulations.",
+      "answer": "Mr Wallcover does not call a wallcovering fire-rated unless that product's own data says so. A fire classification, such as a Euroclass under EN 13501-1 (the standard's own class names, not a claim here), belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. A substitute product or adhesive needs its own evidence. For a hotel, get the current classification document for the exact product, backing and installation method, and have the responsible designer, fire engineer or building-control route accept it. A guest room, a public corridor and a protected stair can have different requirements, and no single class is what \"hotels need\". The adhesive and primer are part of the specified system and are used as the maker lists them (Vescom, for example, lists them per product). The fire classification is not certified by the installer: it comes from testing and classification of the product in a stated build-up, and the wallcovering manufacturer declares it. Mr Wallcover installs in line with the manufacturer's system and the applicable regulations.",
       "status": "partial",
       "auditRows": [
         "b5",
@@ -499,7 +499,7 @@
     {
       "id": "f-c28",
       "question": "What goes into the O&M and handover pack?",
-      "answer": "The handover includes a room-by-room record of the installed product, colourway, batch and care sheet. It also includes spare material from the same batch, kept dry with its batch label and stored as the maker recommends, and a note of the limits of matching a later repair, since a different batch will show. The aftercare terms are included too. Fire, acoustic and environmental performance is evidenced by the exact product's own documents, accepted by the responsible project professional. The fire classification itself is certified by the wallcovering manufacturer.",
+      "answer": "The handover includes a room-by-room record of the installed product, colourway, batch and care sheet. It also includes spare material from the same batch, kept dry with its batch label and stored as the maker recommends, and a note of the limits of matching a later repair, since a different batch will show. The aftercare terms are included too. Fire, acoustic and environmental performance is evidenced by the exact product's own documents, accepted by the responsible project professional. The fire classification itself comes from testing and classification of the product in a stated build-up and is declared by the wallcovering manufacturer.",
       "status": "partial",
       "auditRows": [
         "c28"
@@ -907,7 +907,7 @@
       "cis": true
     },
     "contracts": "Experience of JCT contracts as a specialist package contractor",
-    "fireClassification": "Certified by the wallcovering manufacturer; Mr Wallcover installs in line with the manufacturer's system and the applicable regulations",
+    "fireClassification": "Classified by testing of the product in a stated build-up and declared by the wallcovering manufacturer, not certified by the installer; Mr Wallcover installs in line with the manufacturer's system and the applicable regulations",
     "freeIssueMaterial": "Rolls are inspected as part of preparation; on large volumes not every roll can be opened in advance. Any defect is reported straight away to the designer, contractor and manufacturer. If a fault comes from the installation, Mr Wallcover covers the cost of the material.",
     "makersInstalled": {
       "makers": [
