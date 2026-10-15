@@ -1,0 +1,9 @@
+Two separate changes to England's Approved Document B are often run together. They concern different things and take effect on different dates.
+
+**2 March 2025: national classes for reaction to fire removed.** The 2025 amendments, published in September 2024, deleted the national reaction-to-fire classifications from Approved Document B. Those are the British classes based on BS 476 Parts 6 and 7, such as Class 0 and Class 1. From that date the guidance for linings is expressed only in European classes under BS EN 13501-1. The previous edition still applies to work where a building notice, initial notice or full plans application was made before 2 March 2025 and the work started and was sufficiently progressed before that date or within six months of it.
+
+**2 September 2029: national classes for fire resistance to be removed.** A separate set of amendments, also published in 2024, removes the national fire-resistance classifications (BS 476 Parts 20 to 24) in favour of the European fire-resistance classes. These are about walls, floors, doors and other elements resisting fire for a period, not about wallcoverings. They take effect on 2 September 2029, with a similar transitional arrangement.
+
+The consolidated Volume 2 on GOV.UK prints the 2029 changes alongside the current text and marks them as forthcoming. A printed amendment is not necessarily in force: check the date it takes effect. As checked on the date at the top of this page, the 2029 changes were not yet in force.
+
+The 2026 amendments, in force from 30 September 2026, concern stairs and evacuation lifts in blocks of flats and do not change the lining classes.

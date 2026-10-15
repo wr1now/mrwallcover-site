@@ -1,7 +1,7 @@
 ---
-/** The four parts of the Wallpapering hub, shown at the top of each part. */
+/** The parts of the Wallpapering hub, shown at the top of each part. Fire ratings sits here by the owner's choice (15 Oct 2026), not in the header. */
 interface Props {
-  current: 'hub' | 'calculator' | 'guide' | 'preparation' | 'lining';
+  current: 'hub' | 'calculator' | 'guide' | 'preparation' | 'lining' | 'fire';
 }
 const { current } = Astro.props;
 const parts = [
@@ -9,6 +9,7 @@ const parts = [
   { id: 'calculator', href: '/calculator/', label: 'Calculator' },
   { id: 'preparation', href: '/wallpapering/preparation/', label: 'Preparation' },
   { id: 'lining', href: '/wallpapering/lining-and-adhesives/', label: 'Lining & adhesives' },
+  { id: 'fire', href: '/advice/wallcovering-fire-ratings-uk/', label: 'Fire ratings & standards' },
   { id: 'guides', href: '/wallpapering/#hanging-guides', label: 'Hanging guides' },
 ];
 ---

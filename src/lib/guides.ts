@@ -1,3 +1,5 @@
+import fireRatingsPage from '../content/fire-ratings/page.json';
+
 export interface GuideFaq {
   q: string;
   a: string;
@@ -85,5 +87,17 @@ export const quantityCalculatorCard: GuideCardData = {
   order: 4,
 };
 
+/**
+ * The fire-ratings reference is a dedicated page (src/pages/advice/wallcovering-fire-ratings-uk.astro,
+ * built from src/data/fire-ratings/), not a Markdown guide; its card text comes from its own page data.
+ */
+export const fireRatingsCard: GuideCardData = {
+  slug: fireRatingsPage.slug,
+  shortTitle: fireRatingsPage.shortTitle,
+  description: fireRatingsPage.cardDescription,
+  category: 'planning',
+  order: 14,
+};
+
 /** Everything the advice hub lists, in the agreed order. */
-export const hubCards: GuideCardData[] = [...guides.map((guide) => guide.frontmatter), quantityCalculatorCard].sort((a, b) => a.order - b.order);
+export const hubCards: GuideCardData[] = [...guides.map((guide) => guide.frontmatter), quantityCalculatorCard, fireRatingsCard].sort((a, b) => a.order - b.order);

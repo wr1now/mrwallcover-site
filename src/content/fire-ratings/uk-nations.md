@@ -1,0 +1,7 @@
+Building regulations are devolved. The four systems use the same European classes, but their tables, notes and amendment dates differ, and none of them applies in the others. Check the guidance for the place where the building is.
+
+- **Wales** has its own Approved Document B, still based on the 2006 edition with Welsh amendments. Its linings table lists a national class (3, 1 or 0) beside each European class and carries a BS EN 15102 wallcovering note like England's. Wales did not follow England's March 2025 removal of national reaction-to-fire classes; the Welsh Government has said they will move to an appendix at a future revision.
+- **Scotland** uses the building standards technical handbooks. The non-domestic handbook's linings table is arranged by building group and by protected or unprotected zone, and uses European classes only. Its definition of wall and ceiling surfaces leaves out decorative wallpaper and paint: the classification is for the substrate or lining. The same clause advises against building up multiple decorative layers, because they can increase flame spread.
+- **Northern Ireland** uses Technical Booklet E. Its table gives both national and European classes by purpose group, room size and circulation space, and it has no separate wallcovering note.
+
+In Wales and Northern Ireland, where national classes are still printed, the guidance itself says national and European classes do not automatically equate.
