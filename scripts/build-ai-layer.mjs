@@ -62,6 +62,12 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
   let rowsInTable = 0;
   let inTable = false;
   let afterLink = false; // two links side by side get a space between them
+  // Inside a table cell, lists, definition lists and other blocks stay in the cell as inline text
+  // ("; " between items, "Label: value" for dt/dd, " — " before a sub-note span), so a row never
+  // loses its contents to loose blocks printed before it.
+  let inCell = false;
+  const ROWLEVEL = new Set(['table', 'thead', 'tbody', 'tr']);
+  const subNote = (token) => /\b(fr-sub|fr-maker)\b/.test(attr(token, 'class') ?? '');
 
   const flush = () => {
     const text = line.replace(/\s+/g, ' ').trim();
@@ -82,6 +88,28 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
     const closing = token[1] === '/';
     const name = token.match(/^<\/?([a-z0-9-]+)/i)?.[1]?.toLowerCase();
     if (!name) continue;
+    if (inCell && !ROWLEVEL.has(name) && name !== 'th' && name !== 'td') {
+      const hasText = /\S/.test(line);
+      if (!closing && BLOCK.has(name)) {
+        if (name === 'dt') line = `${hasText ? `${line.trimEnd()}; ` : line}**`;
+        else if (name === 'li') line = hasText ? `${line.trimEnd()}; ` : line;
+        else line += ' ';
+        continue;
+      }
+      if (closing && BLOCK.has(name)) {
+        line = name === 'dt' ? `${line.trimEnd()}**: ` : `${line} `;
+        continue;
+      }
+      if (name === 'span' && !closing && /display:\s*block/.test(attr(token, 'style') ?? '')) {
+        line = hasText ? `${line.trimEnd()}; ` : line;
+        continue;
+      }
+      if (name === 'small' || (name === 'span' && (closing || subNote(token)))) {
+        if (!closing && hasText) line = /[(—]\s*$/.test(line) ? line : `${line.replace(/\s+$/, '')} — `;
+        else if (closing) line += ' ';
+        continue;
+      }
+    }
     if (!closing) {
       if (/^h[1-6]$/.test(name)) {
         flush();
@@ -127,6 +155,7 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
         row = [];
       } else if (name === 'th' || name === 'td') {
         line = '';
+        inCell = true;
       } else if (BLOCK.has(name)) {
         flush();
       }
@@ -153,8 +182,9 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
       } else if (name === 'em' || name === 'i') {
         line += '*';
       } else if (name === 'th' || name === 'td') {
-        if (row) row.push(line.replace(/\s+/g, ' ').trim());
+        if (row) row.push(line.replace(/\s+/g, ' ').replace(/\|/g, '\\|').trim());
         line = '';
+        inCell = false;
       } else if (name === 'tr') {
         if (row && row.length) {
           blocks.push({ kind: 'tr', text: `| ${row.join(' | ')} |` });
