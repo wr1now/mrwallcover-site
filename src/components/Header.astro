@@ -2,8 +2,11 @@
 /**
  * Floating inset champagne-glass header (stage 5, step G5).
  *
- * Desktop: wordmark, the navigation items, the phone reveal (only when
- * SITE_PHONE was set at build time) and the "Start your project" action.
+ * Desktop: wordmark, the navigation items, "Contact" (/get-in-touch/), the
+ * WhatsApp glyph (only when SITE_PHONE was set at build time) and the "Start
+ * your project" action. The phone reveal and "Book a 20-minute call" are not
+ * in the bar or the menu (owner, 15 Oct 2026): they live on /get-in-touch/
+ * and /contact/, and the booking link also in the dock and the footer.
  * Phones: wordmark, "Start" and a disclosure button that opens the mobile
  * menu panel below the bar. The panel is a sibling of the header so the bar
  * stays the only glass surface and the panel stays opaque ivory.
@@ -23,9 +26,7 @@
  * shift: the scrollbar width is compensated).
  */
 import Glass from './Glass.astro';
-import PhoneReveal from './PhoneReveal.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
-import BookCallLink from './BookCallLink.astro';
 import { navigation } from '../lib/content';
 
 interface Props {
@@ -53,8 +54,7 @@ function isCurrent(href: string) {
           </a>
         ))
       }
-      <PhoneReveal class="nav-link reveal-phone" label="Phone" />
-      <BookCallLink class="nav-link header-book" />
+      <a class="nav-link" href="/get-in-touch/" aria-current={isCurrent('/get-in-touch/') ? 'page' : undefined}>Contact</a>
       <WhatsAppLink class="nav-link" icon />
       <a class="btn btn-solid-ink header-action" href="/contact/">Start your project <span aria-hidden="true">↗</span></a>
     </nav>
@@ -77,8 +77,8 @@ function isCurrent(href: string) {
         </a>
       ))
     }
+    <a href="/get-in-touch/" aria-current={isCurrent('/get-in-touch/') ? 'page' : undefined}>Contact</a>
     <a href="/contact/">Start your project</a>
-    <PhoneReveal class="reveal-phone menu-reveal" label="Show phone number" prefix="Call " />
   </nav>
 </div>
 

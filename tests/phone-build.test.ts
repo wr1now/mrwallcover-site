@@ -60,6 +60,11 @@ test('without SITE_PHONE no phone or WhatsApp control is rendered and no payload
     assert.doesNotMatch(contact, /contact-quick/);
     assert.match(contact, /Email is read by Dorin Burcus/);
     assert.doesNotMatch(contact, /shown on request/);
+    // /get-in-touch/ ("Contact" in the header): email and the areas, no phone, WhatsApp or call section.
+    const touch = await readFile(path.join(dir, 'get-in-touch', 'index.html'), 'utf8');
+    assert.match(touch, /It is read by Dorin Burcus himself\./);
+    assert.match(touch, /href="mailto:info@mrwallcover\.com"/);
+    assert.doesNotMatch(touch, /answers the phone|A 20-minute call|booking-hours/);
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
@@ -90,17 +95,34 @@ test('with SITE_PHONE the reveal control and WhatsApp link render, and the numbe
     }
     const home = await readFile(path.join(dir, 'index.html'), 'utf8');
     const contact = await readFile(path.join(dir, 'contact', 'index.html'), 'utf8');
+    const touch = await readFile(path.join(dir, 'get-in-touch', 'index.html'), 'utf8');
     assert.match(contact, /shown on request/);
-    // Placements: the mobile dock, the desktop header beside "Start your project", the footer and the contact page.
+    assert.match(touch, /answers the phone himself/);
+    // Placements: the mobile dock, the desktop header beside "Start your project", the footer, the contact page and /get-in-touch/.
     const dock = home.slice(home.indexOf('data-dock')).split('</nav>')[0];
     const nav = home.slice(home.indexOf('class="primary-nav"')).split('</nav>')[0];
+    const menu = home.slice(home.indexOf('class="mobile-links"')).split('</nav>')[0];
     const footer = home.slice(home.indexOf('<footer')).split('</footer>')[0];
     const quick = contact.slice(contact.indexOf('contact-quick')).split('</div>')[0];
-    for (const [name, part] of [['dock', dock], ['header', nav], ['footer', footer], ['contact', quick]] as const) {
+    const ways = touch.slice(touch.indexOf('data-contact-ways')).split('</ul>')[0];
+    for (const [name, part] of [['dock', dock], ['header', nav], ['footer', footer], ['contact', quick], ['get-in-touch', ways]] as const) {
       assert.match(part, /data-wa/, `WhatsApp in the ${name}`);
+    }
+    for (const [name, part] of [['dock', dock], ['footer', footer], ['contact', quick], ['get-in-touch', ways]] as const) {
       assert.ok(part.includes(`href="${BOOKING_FIXTURE}"`), `booking in the ${name}`);
     }
+    // "Book a 20-minute call" left the desktop bar to make room for "Contact" (owner, 15 Oct 2026).
+    assert.ok(!nav.includes('data-book'), 'no booking link in the desktop bar');
+    assert.ok(nav.indexOf('href="/get-in-touch/"') < nav.indexOf('data-wa'), '"Contact" sits before WhatsApp');
     assert.ok(nav.indexOf('data-wa') < nav.indexOf('header-action'), 'WhatsApp sits just before Start your project');
+    assert.match(menu, /<a href="\/get-in-touch\/">Contact<\/a>\s*<a href="\/contact\/">Start your project<\/a>/);
+    // The phone reveal is on the contact pages only: not in the bar, the menu, the dock or the footer.
+    const revealButton = /<button\b[^>]*\bdata-phone-reveal\b/;
+    for (const [name, part] of [['header', nav], ['menu', menu], ['dock', dock], ['footer', footer]] as const) {
+      assert.doesNotMatch(part, revealButton, `no phone reveal in the ${name}`);
+    }
+    assert.doesNotMatch(home, revealButton, 'no phone reveal on the home page');
+    assert.match(contact, revealButton);
     assert.match(quick, /Book a <span class="whitespace-nowrap">20-minute<\/span> call<\/span><\/a>/);
     const book = [...html.matchAll(/<a\b[^>]*\bdata-book\b[^>]*>/g)].map((m) => m[0]);
     for (const a of book) {
@@ -114,7 +136,7 @@ test('with SITE_PHONE the reveal control and WhatsApp link render, and the numbe
     assert.match(contact, /Calls Mon–Fri, 9am–5pm UK\./);
     assert.doesNotMatch(home, /Calls Mon–Fri/, 'the hours line is on the contact page only');
     // The phone reveal is unchanged: still a button, the number still only in the payload.
-    assert.match(home, /<button type="button" class="dock-phone" data-phone-reveal>Phone<\/button>/);
+    assert.match(ways, /<button type="button" class="reveal-phone" data-phone-reveal data-prefix="Call ">Show phone number<\/button>/);
   } finally {
     await rm(dir, { recursive: true, force: true });
   }

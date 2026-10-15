@@ -768,8 +768,7 @@ article h3 a {
 }
 @layer components {
   aside a[data-wa],
-  .site-footer p > a,
-  .site-footer p > .reveal-phone {
+  .site-footer p > a {
     display: inline-flex;
     align-items: center;
     min-height: 44px;

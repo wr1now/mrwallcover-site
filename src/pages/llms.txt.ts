@@ -79,6 +79,7 @@ export const GET: APIRoute = () => {
     entry('Aftercare', '/aftercare/', 'care by material and the guarantee'),
     entry('FAQ', '/faq/', 'cost, lead times, preparation, supply and warranty'),
     entry('About', '/about/', `${FOUNDER_NAME}, founder`),
+    entry('Get in touch', '/get-in-touch/', 'every way to reach the practice directly, and the areas covered'),
     entry('Contact', '/contact/', 'request a quotation'),
     '',
     '## Wallcovering Guide',

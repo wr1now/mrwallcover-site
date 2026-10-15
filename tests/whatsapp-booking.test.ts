@@ -5,7 +5,7 @@ import path from 'node:path';
 
 // The built site (npm run build, no SITE_PHONE): WhatsApp and the booking button follow their
 // build-time inputs. With no phone there is no WhatsApp control; the booking button appears in the
-// dock, the desktop header, the footer and on the contact page only if src/config.ts holds a URL.
+// dock, the footer and on the two contact pages only if src/config.ts holds a URL (not in the desktop bar).
 // Never a dead link, never the number, no tracking. The full on/off builds are in check:phone.
 const files: string[] = [];
 const walk = (dir: string) => { for (const e of readdirSync(dir)) { const f = path.join(dir, e); if (statSync(f).isDirectory()) walk(f); else if (f.endsWith('.html')) files.push(f); } };
@@ -29,7 +29,11 @@ test('dist: booking and WhatsApp render only from their build inputs, with no de
       assert.match(a, /aria-label="Book a 20-minute call \(opens Google Calendar in a new tab\)"/);
       assert.equal(a.replace(/^<a\b[^>]*>/, '').replace(/<[^>]+>/g, ''), 'Book a 20-minute call');
     }
-    for (const part of ['data-dock', 'class="primary-nav"', '<footer']) assert.ok(home.slice(home.indexOf(part)).includes(`href="${fromFile}"`), `booking in ${part}`);
+    for (const part of ['data-dock', '<footer']) assert.ok(home.slice(home.indexOf(part)).includes(`href="${fromFile}"`), `booking in ${part}`);
+    // Not in the desktop bar: "Contact" took its room (owner, 15 Oct 2026).
+    assert.ok(!home.slice(home.indexOf('class="primary-nav"')).split('</nav>')[0].includes('data-book'), 'no booking in the desktop bar');
+    const touch = readFileSync('dist/get-in-touch/index.html', 'utf8');
+    assert.ok(touch.slice(touch.indexOf('data-contact-ways')).includes(`href="${fromFile}"`), 'booking on /get-in-touch/');
   }
   for (const a of all.match(/<a\b[^>]*\bdata-(?:book|wa)\b[^>]*>/g) ?? []) {
     assert.match(a, /target="_blank"/);
