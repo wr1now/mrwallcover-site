@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { test } from 'node:test';
-import { formatClassification, parseClassification } from '../src/lib/fire-classification.ts';
+import { formatClassification, invalidCombination, parseClassification } from '../src/lib/fire-classification.ts';
 import { fireData, gapsFor, jurisdictions, products, sources, validateFireData, type FireData, type Product, type Source } from '../src/lib/fire-ratings.ts';
 
 // The fire-ratings reference (/advice/wallcovering-fire-ratings-uk/): one dataset in src/data/fire-ratings/,
@@ -35,6 +35,14 @@ test('class notations are read only as far as they are printed', () => {
   assert.equal(formatClassification(parseClassification('Euroclass B')), 'B (smoke and droplet subclasses not stated)');
   assert.equal(formatClassification(parseClassification('B-s2')), 'B-s2 (droplet subclass not stated)');
   assert.equal(formatClassification(parseClassification('B-s2,d0')), 'B-s2,d0');
+  // A1 and F carry no subclass; E carries only an optional d2 (Delegated Regulation 2016/364, Table 1).
+  assert.equal(formatClassification(parseClassification('A1')), 'A1 (no smoke or droplet subclass applies)');
+  assert.equal(formatClassification(parseClassification('F')), 'F (no smoke or droplet subclass applies)');
+  assert.equal(formatClassification(parseClassification('E-d2')), 'E-d2 (no smoke subclass applies)');
+  assert.match(formatClassification(parseClassification('E')), /^E \(no smoke subclass applies/);
+  for (const impossible of ['A1-s1,d0', 'F-d0', 'E-s1,d0', 'E-d0']) assert.ok(invalidCombination(parseClassification(impossible)), impossible);
+  for (const fine of ['A1', 'A2-s1,d0', 'B-s3,d2', 'E', 'E-d2', 'Euroclass B']) assert.equal(invalidCombination(parseClassification(fine)), null, fine);
+  assert.equal(parseClassification('Bfl-s1').class, null, 'flooring classes are not read as wall classes');
 });
 
 // A minimal valid dataset, then one fault at a time.
@@ -70,6 +78,7 @@ test('a normalised class may not add a subclass the document never printed', () 
   assert.ok(problemsWith((d) => { d.products[0].classificationRaw = 'B-s2 when adhered'; d.products[0].notation = 'B-s2'; }).some((p) => /normalised droplets d0 does not match/.test(p)));
   assert.ok(problemsWith((d) => { d.products[0].classificationRaw = 'Class 0'; d.products[0].notation = 'Class 0'; }).some((p) => /is not a European class/.test(p)));
   assert.ok(problemsWith((d) => { d.products[0].notation = 'B-s1,d0'; }).some((p) => /is not in the printed line/.test(p)), 'the notation must be copied from the printed line');
+  assert.ok(problemsWith((d) => { d.products[0].classificationRaw = 'A1-s1,d0'; d.products[0].notation = 'A1-s1,d0'; d.products[0].classification = { class: 'A1', smoke: 's1', droplets: 'd0' }; }).some((p) => /not a valid combination/.test(p)));
   assert.deepEqual(problemsWith((d) => { d.products[0].classificationRaw = 'Euroclass B when adhered to a suitable substrate'; d.products[0].notation = 'Euroclass B'; d.products[0].classification = { class: 'B', smoke: null, droplets: null }; }), []);
   // Two documents disagreeing: no single class is shown, and the row must say why.
   const conflicting = (d: FireData) => { d.products[0].classificationRaw = 'Euroclass B (sheet); Euroclass C (web page)'; d.products[0].notation = null; d.products[0].classification = { class: null, smoke: null, droplets: null }; };

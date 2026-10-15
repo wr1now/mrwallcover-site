@@ -36,9 +36,21 @@ export function parseClassification(raw: string): Classification {
   };
 }
 
-/** "B-s2,d0", or "B (smoke and droplet subclasses not stated)". */
+/**
+ * Why a parsed notation cannot exist under BS EN 13501-1, or null when it can: A1 and F carry no
+ * subclass, and E carries no smoke subclass and only d2 for droplets.
+ */
+export function invalidCombination(c: Classification): string | null {
+  if ((c.class === 'A1' || c.class === 'F') && (c.smoke || c.droplets)) return `Class ${c.class} carries no smoke or droplet subclass.`;
+  if (c.class === 'E' && (c.smoke || (c.droplets && c.droplets !== 'd2'))) return 'Class E carries no smoke subclass, and d2 is its only droplet subclass.';
+  return null;
+}
+
+/** "B-s2,d0", "B (smoke and droplet subclasses not stated)", "A1 (no smoke or droplet subclass applies)". */
 export function formatClassification(c: Classification): string {
   if (!c.class) return 'Not stated';
+  if (c.class === 'A1' || c.class === 'F') return `${c.class} (no smoke or droplet subclass applies)`;
+  if (c.class === 'E') return c.droplets === 'd2' ? 'E-d2 (no smoke subclass applies)' : 'E (no smoke subclass applies; d2 is added only if the filter paper ignited)';
   if (c.smoke && c.droplets) return `${c.class}-${c.smoke},${c.droplets}`;
   const missing = [c.smoke ? null : 'smoke', c.droplets ? null : 'droplet'].filter(Boolean);
   const known = [c.smoke, c.droplets].filter(Boolean).join(',');

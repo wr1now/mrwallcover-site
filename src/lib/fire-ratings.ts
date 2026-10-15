@@ -14,9 +14,9 @@ import sourcesData from '../data/fire-ratings/sources.json' with { type: 'json' 
 import standardsData from '../data/fire-ratings/standards.json' with { type: 'json' };
 import regulationsData from '../data/fire-ratings/regulations.json' with { type: 'json' };
 import productsData from '../data/fire-ratings/products.json' with { type: 'json' };
-import { parseClassification, type Classification } from './fire-classification.ts';
+import { invalidCombination, parseClassification, type Classification } from './fire-classification.ts';
 
-export { formatClassification, parseClassification, type Classification } from './fire-classification.ts';
+export { formatClassification, invalidCombination, parseClassification, type Classification } from './fire-classification.ts';
 
 export type SourceType =
   | 'legislation'
@@ -30,7 +30,8 @@ export type SourceType =
   | 'technical_sheet'
   | 'installation_guide'
   | 'brochure'
-  | 'webpage';
+  | 'webpage'
+  | 'international_code';
 
 export type SourceGroup = 'england' | 'wales' | 'scotland' | 'northern-ireland' | 'gb' | 'standards' | 'eu' | 'international' | 'manufacturer';
 
@@ -47,6 +48,8 @@ export interface Source {
   effective: string | null;
   /** Only when the document itself states an expiry. Never inferred. */
   statedExpiry: string | null;
+  /** The validity wording as printed, when the document gives a period rather than a date. */
+  expiryWording?: string;
   url: string;
   /** Our own checking date: when we last opened the source. */
   accessed: string;
@@ -156,6 +159,9 @@ export function source(id: string): Source {
 }
 
 /** Classes A2 to D carry both a smoke and a droplet subclass; A1 and F carry none, and E only an optional d2. */
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const longDate = (iso: string) => `${Number(iso.slice(8, 10))} ${MONTHS[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`;
+
 export const takesSubclasses = (c: Classification) => c.class === 'A2' || c.class === 'B' || c.class === 'C' || c.class === 'D';
 
 export interface Gap {
@@ -169,8 +175,12 @@ export function gapsFor(product: Product, today = FIRE_CHECKED, lookup: (id: str
   const c = product.classification;
   if (takesSubclasses(c) && (!c.smoke || !c.droplets)) gaps.push({ kind: 'subclass-unknown', text: 'The document gives the class without the full smoke and droplet subclasses; treat the missing subclass as unknown.' });
   for (const ev of product.evidence) {
-    const expiry = lookup(ev.sourceId).statedExpiry;
-    if (expiry && ISO.test(expiry) && expiry < today) gaps.push({ kind: 'stated-expiry-passed', text: `The document states an expiry of ${expiry}, which has passed; ask the maker for the current document.` });
+    const s = lookup(ev.sourceId);
+    const expiry = s.statedExpiry;
+    if (expiry && ISO.test(expiry) && expiry < today) {
+      const printed = s.expiryWording ? ` (printed as “${s.expiryWording}”)` : '';
+      gaps.push({ kind: 'stated-expiry-passed', text: `${ev.documentReference ?? s.title} states a validity that ended on ${longDate(expiry)}${printed}; ask the maker for the current document.` });
+    }
   }
   if (!product.testedBuildup.substrate && !product.testedBuildup.adhesive) gaps.push({ kind: 'no-buildup', text: 'The document we read does not name the tested substrate or adhesive.' });
   if (!product.fieldOfApplication) gaps.push({ kind: 'no-field-of-application', text: 'No field of application (permitted variations) is stated in the document we read.' });
@@ -248,6 +258,8 @@ export function validateFireData(data: FireData = fireData, today = new Date().t
     if (p.notation !== null && !squash(p.classificationRaw).includes(squash(p.notation))) problems.push(`${p.id}: notation "${p.notation}" is not in the printed line "${p.classificationRaw}"`);
     const parsed = p.notation === null ? { class: null, smoke: null, droplets: null } : parseClassification(p.notation);
     if (p.notation !== null && !parsed.class) problems.push(`${p.id}: notation "${p.notation}" is not a European class`);
+    const impossible = invalidCombination(parsed);
+    if (impossible) problems.push(`${p.id}: notation "${p.notation}" is not a valid combination: ${impossible}`);
     const c = p.classification;
     if (c.class !== parsed.class) problems.push(`${p.id}: normalised class ${c.class} does not match "${p.notation}"`);
     if (c.smoke !== parsed.smoke) problems.push(`${p.id}: normalised smoke ${c.smoke} does not match "${p.notation}"`);

@@ -9,7 +9,7 @@
       "published": "January 2019",
       "status": "Current",
       "role": "Turns the results of the reaction-to-fire tests into a class (A1 to F) with smoke and droplet subclasses.",
-      "editionNote": "Many declarations and reports still cite EN 13501-1:2007+A1:2009, which BSI shows as withdrawn in January 2019. A document citing the older edition is not automatically invalid; record the edition it cites and ask the maker if in doubt.",
+      "editionNote": "Some older reports and declarations cite EN 13501-1:2007+A1:2009, which BSI shows as withdrawn in January 2019. A document citing the older edition is not automatically invalid; record the edition it cites and ask the maker if in doubt.",
       "sourceIds": [
         "src-bsi-13501-1-landing",
         "src-bsi-13501-1-kn"
@@ -23,7 +23,7 @@
       "published": "January 2023",
       "status": "Current (BSI marks it under review)",
       "role": "The single burning item test: a corner test that measures heat release, lateral flame spread, smoke production and flaming droplets for classes A2 to D.",
-      "editionNote": "Reports from before 2020 cite the 2010+A1:2014 edition.",
+      "editionNote": "BSI shows earlier editions current until these dates: 2002 to October 2010, 2010 to November 2014, 2010+A1:2014 to May 2020, and 2020 to January 2023. A report cites the edition used when the product was tested; record the edition it cites.",
       "sourceIds": [
         "src-bsi-13823-kn"
       ]
@@ -35,7 +35,7 @@
       "latestEdition": "BS EN ISO 11925-2:2026",
       "published": "January 2026",
       "status": "Current",
-      "role": "A small-flame ignitability test used for classes B to E; ignition of the filter paper below the specimen gives the d2 droplet subclass.",
+      "role": "A small-flame ignitability test used for classes B to F; ignition of the filter paper below the specimen gives the d2 droplet subclass.",
       "editionNote": "The 2020 edition was current until January 2026, so almost every report you will see cites 2020 or 2010.",
       "sourceIds": [
         "src-bsi-11925-2-kn"
@@ -48,7 +48,7 @@
       "latestEdition": "BS EN ISO 1182:2020; BS EN ISO 1716:2018",
       "published": "2020; 2018",
       "status": "Current",
-      "role": "Used only for classes A1 and A2. Decorative wallcoverings are rarely tested to them.",
+      "role": "Used only for classes A1 and A2. None of the wallcovering reports we read used them.",
       "editionNote": null,
       "sourceIds": [
         "src-bsi-1182-kn",
@@ -118,7 +118,7 @@
       "latestEdition": "BS 476-6:1989+A1:2009; BS 476-7:1997",
       "published": "1989; 1997",
       "status": "Withdrawn by BSI on 4 March 2025",
-      "role": "The former British national tests behind Class 1 to 4 (Part 7) and the Class 0 definition (Parts 6 and 7).",
+      "role": "The British national tests, now withdrawn by BSI, behind Class 1 to 4 (Part 7) and the fire-propagation route to Class 0 (Parts 6 and 7); Class 0 could also be met by materials of limited combustibility.",
       "editionNote": "Removed from England's Approved Document B from 2 March 2025; still referred to in the Welsh and Northern Irish guidance.",
       "sourceIds": [
         "src-bsi-476-6-kn",
@@ -192,7 +192,7 @@
       "code": "F",
       "label": "lowest",
       "meaning": "Assigned when a product fails to attain class E. It is a class, not a blank: different from “no performance determined” and from an untested product.",
-      "basis": "England's Approved Document B, Appendix B, paragraph B6.",
+      "basis": "BS EN ISO 11925-2: 15-second flame, flame spread more than 150 mm within 20 seconds (Delegated Regulation 2016/364, Table 1); England's Approved Document B, Appendix B, paragraph B6.",
       "sourceIds": [
         "src-adb2-2026-consolidated",
         "src-reg-2016-364-legis"
@@ -284,7 +284,7 @@
     },
     {
       "notation": "Class 0",
-      "reading": "Not a European class. A former British national classification based on BS 476 tests.",
+      "reading": "Not a European class. A British national classification based on BS 476 tests, no longer used in England's Approved Document B but still printed in the Welsh and Northern Irish guidance.",
       "note": "There is no automatic conversion to a European class; see below."
     }
   ]

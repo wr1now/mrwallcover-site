@@ -11,6 +11,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import PageMeta from '../../components/PageMeta.astro';
 import WallpaperingNav from '../../components/WallpaperingNav.astro';
 import Base from '../../layouts/Base.astro';
+import { fireRatingsCard } from '../../lib/guides';
 import { SITE_URL } from '../../config';
 import page from '../../content/fire-ratings/page.json';
 import { Content as ShortAnswer } from '../../content/fire-ratings/short-answer.md';
@@ -93,6 +94,7 @@ const typeLabel: Record<string, string> = {
   installation_guide: 'Installation instructions',
   brochure: 'Brochure',
   webpage: 'Web page',
+  international_code: 'International code',
 };
 const decoderData = JSON.stringify({
   classes: Object.fromEntries(classes.map((c) => [c.code, c.meaning])),
@@ -100,6 +102,14 @@ const decoderData = JSON.stringify({
   droplets: Object.fromEntries(dropletClasses.map((c) => [c.code, c.meaning])),
 });
 const makers = [...new Set(products.map((p) => p.manufacturer))];
+// The Class 0, ASTM and IMO section is prose; its sources are listed beside it.
+const legacySources: [string, string | null][] = [
+  ['src-adb2-2022-edition', 'Appendix B, Table B1 and notes, printed pp. 137–138'],
+  ['src-wales-adb-vol2', 'Appendix A, paragraph 13, p. 199; Table 10 note 3, p. 103'],
+  ['src-ni-tbe-2012', 'paragraph 3.4, p. 74; Table 3.1 note 2, p. 78'],
+  ['src-astm-e84', null],
+  ['src-imo-msc307', 'Annex 1, Part 5'],
+];
 ---
 
 <Base
@@ -114,7 +124,7 @@ const makers = [...new Set(products.map((p) => p.manufacturer))];
   <div class="container-page pb-20">
     <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
-      <p class="eyebrow">The Wallcovering Guide / specifying</p>
+      <p class="eyebrow">The Wallcovering Guide / {fireRatingsCard.category}</p>
       <h1>{page.title}</h1>
       <p class="lede mt-5">{page.description}</p>
       <PageMeta updated={page.updated} class="guide-byline" />
@@ -206,6 +216,7 @@ const makers = [...new Set(products.map((p) => p.manufacturer))];
     <section class="fr-section" aria-labelledby="legacy-and-other-systems">
       <h2 id="legacy-and-other-systems">Class 0, ASTM, IMO and other systems</h2>
       <div class="prose fr-prose"><LegacyText /></div>
+      <p class="fr-cite">Sources: {legacySources.map(([id, where], i) => <>{i > 0 && '; '}<a href={sourceLink(id)}>{label(id)}</a>{where && `, ${where}`}</>)}.</p>
     </section>
 
     <section class="fr-section" aria-labelledby="england">
@@ -264,7 +275,7 @@ const makers = [...new Set(products.map((p) => p.manufacturer))];
               <tr id={`product-${p.id}`}>
                 <th scope="row"><span class="fr-maker">{p.manufacturer}</span>{p.product}{p.reference && <span class="fr-sub">{p.reference}</span>}<span class="fr-sub">{p.scope}</span></th>
                 <td data-label="Construction">{p.construction ?? 'Not stated'}{p.weight && <span class="fr-sub">{p.weight}</span>}</td>
-                <td data-label="Classification as printed"><code>{p.classificationRaw}</code><span class="fr-sub">Read as: {formatClassification(p.classification)}</span>{p.classificationStandardCited && <span class="fr-sub">Cites {p.classificationStandardCited}</span>}</td>
+                <td data-label="Classification as printed"><code>{p.classificationRaw}</code><span class="fr-sub">Read as: {p.notation ? formatClassification(p.classification) : p.conflicts.length ? 'not resolved: the documents disagree (see gaps)' : 'no European class printed'}</span>{p.classificationStandardCited && <span class="fr-sub">Cites {p.classificationStandardCited}</span>}</td>
                 <td data-label="Evidence">
                   <ul class="fr-evidence">
                     {p.evidence.map((ev) => {
@@ -333,7 +344,7 @@ const makers = [...new Set(products.map((p) => p.manufacturer))];
             {sources.filter((s) => s.group === g.id).map((s) => (
               <li id={s.id}>
                 <a href={s.url}>{s.title}</a>
-                <span class="fr-sub">{s.issuer}{s.reference && ` · ${s.reference}`} · {typeLabel[s.type]}{s.issued && ` · issued ${s.issued}`}{s.effective && ` · in force ${formatGuideDate(s.effective)}`}{s.statedExpiry && ` · stated expiry ${formatGuideDate(s.statedExpiry)}`} · checked {formatGuideDate(s.accessed)}{s.status !== 'current' && ` · ${s.status}`}</span>
+                <span class="fr-sub">{s.issuer}{s.reference && ` · ${s.reference}`} · {typeLabel[s.type]}{s.issued && ` · dated ${s.issued}`}{s.effective && (s.effective > page.scope.sourcesChecked ? ` · takes effect ${formatGuideDate(s.effective)}` : ` · in force from ${formatGuideDate(s.effective)}`)}{s.statedExpiry && ` · stated expiry ${formatGuideDate(s.statedExpiry)}`} · checked {formatGuideDate(s.accessed)}{s.status !== 'current' && ` · ${s.status}`}</span>
                 <span class="fr-sub">{s.establishes}{s.limits && ` ${s.limits}`}</span>
               </li>
             ))}
@@ -356,7 +367,7 @@ const makers = [...new Set(products.map((p) => p.manufacturer))];
 </Base>
 
 <script>
-  import { formatClassification, parseClassification } from '../../lib/fire-classification';
+  import { formatClassification, invalidCombination, parseClassification } from '../../lib/fire-classification';
   const form = document.querySelector<HTMLFormElement>('[data-fr-decoder]');
   const out = document.querySelector<HTMLElement>('[data-fr-out]');
   const data = JSON.parse(document.getElementById('fr-decoder-data')?.textContent || '{}') as Record<'classes' | 'smoke' | 'droplets', Record<string, string>>;
@@ -374,11 +385,17 @@ const makers = [...new Set(products.map((p) => p.manufacturer))];
         out.append(p);
       };
       if (!c.class) {
-        add('That is not a European reaction-to-fire class this decoder can read. National classes such as Class 0 and US or marine results are different systems; see below.');
+        add('That is not a European reaction-to-fire class for wall and ceiling products that this decoder can read. National classes such as Class 0, US or marine results, and flooring (fl) or pipe-insulation (L) classes are different; see below.');
+        return;
+      }
+      const impossible = invalidCombination(c);
+      if (impossible) {
+        add(`Not a valid combination under the European classification (Commission Delegated Regulation (EU) 2016/364, Table 1). ${impossible} Check the notation against the document.`);
         return;
       }
       add(`Read as ${formatClassification(c)}.`);
       add(`Class ${c.class}: ${data.classes[c.class]}`);
+      if (c.class === 'A1' || c.class === 'F') add('No smoke or droplet subclass applies to this class.');
       if (c.smoke) add(`${c.smoke}: ${data.smoke[c.smoke]}`);
       if (c.droplets) add(`${c.droplets}: ${data.droplets[c.droplets]}`);
       if (['A2', 'B', 'C', 'D'].includes(c.class) && (!c.smoke || !c.droplets)) add('The document does not state the full subclasses. Treat what is missing as unknown and ask the maker for the declaration of performance or classification report.');

@@ -27,6 +27,20 @@
           "documentReference": "CPR0003, V4 July 2025",
           "testBody": "Centexbel (notified body 0493)",
           "pageRef": "p. 1, Table 2 rows 2 and 4"
+        },
+        {
+          "sourceId": "src-muraspec-dop-cpr0002-2024",
+          "evidenceType": "declaration_of_performance",
+          "documentReference": "CPR0002, V3 September 2024",
+          "testBody": null,
+          "pageRef": "p. 1"
+        },
+        {
+          "sourceId": "src-muraspec-hanging-leaflet-2026-05",
+          "evidenceType": "technical_sheet",
+          "documentReference": "Hanging information leaflet, May 2026",
+          "testBody": null,
+          "pageRef": "p. 1; pp. 2–5 (fabric-backed ranges)"
         }
       ],
       "testedBuildup": {
@@ -37,14 +51,15 @@
       "fieldOfApplication": null,
       "limitations": [
         "The class is declared only for the fibre-cement and Murabond Heavy build-up.",
-        "The certificates listed for these rows carry printed expiry dates of 28 October and 25 November 2027."
+        "The declaration lists a notified-body certificate of conformity for each of these two product types (0493-CPR-W051, woven; 0493-CPR-W052, non-woven), with printed expiry dates of 28 October 2027 and 25 November 2027.",
+        "Muraspec's May 2026 hanging leaflet (p. 1) requires Murabond Sealed Surface adhesive on non-absorbent walls and a coat of Murabond Primer on absorbent walls (diluted 1:3 on uncoated plaster, plasterboard and MDF; 1:1 on emulsion-painted walls). Neither is part of the declared fibre-cement and Murabond Heavy build-up."
       ],
       "conflicts": [
-        "An earlier Muraspec declaration (CPR0002, 2024) declares B-s1,d0 for Type II non-woven fabric-backed vinyl; this 2025 declaration gives B-s2,d0."
+        "Muraspec's earlier declaration CPR0002 (September 2024) declares B-s1,d0 for Type II non-woven fabric-backed vinyl; this 2025 declaration gives B-s2,d0."
       ],
       "unresolved": [
         "The classification report behind the declaration is not published.",
-        "Product pages cite 'CPR0003' without a version, and the number was also used for a different 2024 declaration."
+        "Muraspec has published two documents under the number CPR0003 (version 1, September 2024, BTTG; version 4, July 2025, Centexbel) with different scopes, and whether version 4 replaces version 1 is not stated."
       ],
       "status": "current",
       "evidenceLevel": "declaration_of_performance",
@@ -75,6 +90,27 @@
           "documentReference": "CPR0004, V1 September 2024",
           "testBody": "BTTG (printed with spelling errors and two addresses)",
           "pageRef": "p. 1"
+        },
+        {
+          "sourceId": "src-muraspec-dop-cpr0001-2024",
+          "evidenceType": "declaration_of_performance",
+          "documentReference": "CPR0001, V3 September 2024",
+          "testBody": "Elements Materials Technology Rotterdam BV (notified body 2812)",
+          "pageRef": "p. 1, Table 2"
+        },
+        {
+          "sourceId": "src-muraspec-web-product-13602",
+          "evidenceType": "webpage",
+          "documentReference": "Product page 13602 (Frequency)",
+          "testBody": null,
+          "pageRef": "Product details"
+        },
+        {
+          "sourceId": "src-muraspec-hanging-leaflet-2026-05",
+          "evidenceType": "technical_sheet",
+          "documentReference": "Hanging information leaflet, May 2026",
+          "testBody": null,
+          "pageRef": "p. 1; pp. 2–5 (fabric-backed ranges)"
         }
       ],
       "testedBuildup": {
@@ -85,17 +121,18 @@
       "fieldOfApplication": null,
       "limitations": [
         "The class is declared only for the fibre-cement and Murabond Heavy build-up.",
-        "Only 360 gsm is named."
+        "Only 360 gsm is named.",
+        "Muraspec's May 2026 hanging leaflet (p. 1) requires Murabond Sealed Surface adhesive on non-absorbent walls and a coat of Murabond Primer on absorbent walls (diluted 1:3 on uncoated plaster, plasterboard and MDF; 1:1 on emulsion-painted walls). Neither is part of the declared fibre-cement and Murabond Heavy build-up."
       ],
       "conflicts": [
-        "Another Muraspec declaration (CPR0001, 2024) declares B-s2,d0 for woven fabric-backed vinyl of 360 to 460 gsm, which overlaps this product; the two declarations give different smoke subclasses.",
-        "A product page that cites CPR0004 shows a 460 gsm product, while the declaration names only 360 gsm."
+        "Another Muraspec declaration signed the same day (CPR0001, version 3, 4 September 2024) declares B-s2,d0 for woven fabric-backed vinyl of 360 to 460 gsm, which overlaps this product; the two give different smoke subclasses and neither says it replaces the other.",
+        "Muraspec's product page for Frequency 13602 cites CPR0004 and gives a weight of 460 gsm, while the declaration names only 360 gsm."
       ],
       "unresolved": [
         "Which of the two woven declarations applies to a given roll is not explained.",
         "The laboratory report named in the declaration is not published."
       ],
-      "status": "current",
+      "status": "unclear",
       "evidenceLevel": "declaration_of_performance",
       "checked": "2026-10-15"
     },
@@ -124,6 +161,20 @@
           "documentReference": "CPR0003, V1 September 2024",
           "testBody": "BTTG",
           "pageRef": "p. 1"
+        },
+        {
+          "sourceId": "src-muraspec-dop-0493-cpr0003-2025",
+          "evidenceType": "declaration_of_performance",
+          "documentReference": "CPR0003, V4 July 2025",
+          "testBody": "Centexbel (notified body 0493)",
+          "pageRef": "p. 1, Table 2 row 1"
+        },
+        {
+          "sourceId": "src-muraspec-hanging-leaflet-2026-05",
+          "evidenceType": "technical_sheet",
+          "documentReference": "Hanging information leaflet, May 2026",
+          "testBody": null,
+          "pageRef": "p. 1; pp. 2–5 (fabric-backed ranges)"
         }
       ],
       "testedBuildup": {
@@ -134,13 +185,15 @@
       "fieldOfApplication": null,
       "limitations": [
         "The class is declared only for the fibre-cement and Murabond Heavy build-up.",
-        "Only the two named base weights are covered."
+        "Only the two named base weights are covered.",
+        "Muraspec's 2025 declaration (CPR0003, version 4) lists certificate 0493-CPR-W048 for non-woven Type I, including digital products, with a printed expiry date of 18 October 2027.",
+        "Muraspec's May 2026 hanging leaflet (p. 1) requires Murabond Sealed Surface adhesive on non-absorbent walls and a coat of Murabond Primer on absorbent walls (diluted 1:3 on uncoated plaster, plasterboard and MDF; 1:1 on emulsion-painted walls). Neither is part of the declared fibre-cement and Murabond Heavy build-up."
       ],
       "conflicts": [
-        "The declaration number CPR0003 was reused in 2025 for a different, wider declaration with another notified body."
+        "Muraspec's July 2025 document carries the same number (CPR0003, version 4) with a wider scope and a different notified body (Centexbel 0493 instead of BTTG); whether it replaces this version 1 is not stated."
       ],
       "unresolved": [
-        "Whether newer digital bases (for example 410 gsm or foil bases) fall within this declaration is not stated.",
+        "Muraspec's 2025 declaration CPR0003 (version 4) also lists non-woven Type I fabric-backed vinyl of 270–460 gsm 'including Digital Products' at B-s2,d0; which of the two declarations applies to a given digital product is not stated.",
         "How print coverage, ink or bespoke artwork affects the classification is not stated."
       ],
       "status": "unclear",
@@ -191,9 +244,7 @@
         "The class is declared only for the fibre-cement and Murabond Heavy build-up.",
         "Muraspec's May 2026 hanging leaflet gives a different adhesive (Sealed Surface) for non-absorbent walls, which is outside the declared build-up."
       ],
-      "conflicts": [
-        "Product pages describe these ranges with different construction labels from the declaration."
-      ],
+      "conflicts": [],
       "unresolved": [
         "The laboratory report named in the declaration appears older than the declaration and is not published."
       ],
@@ -226,6 +277,20 @@
           "documentReference": "CPR0003, V4 July 2025",
           "testBody": "Centexbel (notified body 0493)",
           "pageRef": "p. 1, Table 2, last row"
+        },
+        {
+          "sourceId": "src-muraspec-dop-cpr0002-2024",
+          "evidenceType": "declaration_of_performance",
+          "documentReference": "CPR0002, V3 September 2024",
+          "testBody": null,
+          "pageRef": "p. 1"
+        },
+        {
+          "sourceId": "src-muraspec-hanging-leaflet-2026-05",
+          "evidenceType": "technical_sheet",
+          "documentReference": "Hanging information leaflet, May 2026",
+          "testBody": null,
+          "pageRef": "p. 1; pp. 3–4 (Murek and Spectrum paper-backed vinyl: Light adhesive)"
         }
       ],
       "testedBuildup": {
@@ -236,16 +301,18 @@
       "fieldOfApplication": null,
       "limitations": [
         "The class is declared only for the fibre-cement and Murabond Heavy build-up.",
-        "Muraspec's hanging leaflet names a Light adhesive for some paper-backed ranges on absorbent walls; the declaration names only the Heavy adhesive."
+        "Muraspec's hanging leaflet names a Light adhesive for some paper-backed ranges on absorbent walls; the declaration names only the Heavy adhesive.",
+        "The declaration lists a notified-body certificate of conformity, 0493-CPR-W054, with a printed expiry date of 16 January 2028.",
+        "Muraspec's May 2026 hanging leaflet (p. 1) requires Murabond Sealed Surface adhesive on non-absorbent walls and a coat of Murabond Primer on absorbent walls (diluted 1:3 on uncoated plaster, plasterboard and MDF; 1:1 on emulsion-painted walls). Neither is part of the declared fibre-cement and Murabond Heavy build-up."
       ],
       "conflicts": [
-        "An earlier declaration (CPR0002, September 2024) declares B-s1,d0 for paper-backed vinyl; this 2025 declaration gives B-s2,d0 for the same product type."
+        "An earlier declaration (CPR0002, version 3, September 2024) declares B-s1,d0 for paper-backed vinyl (no weight range given); this 2025 declaration gives B-s2,d0 for paper-backed vinyl of 220–300 gsm."
       ],
       "unresolved": [
         "Whether the 2024 declaration has been withdrawn or still applies to some production is not stated.",
         "The classification report is not published."
       ],
-      "status": "unclear",
+      "status": "current",
       "evidenceLevel": "declaration_of_performance",
       "checked": "2026-10-15"
     },
@@ -274,6 +341,27 @@
           "documentReference": "Product page BM-61527103",
           "testBody": null,
           "pageRef": "Description"
+        },
+        {
+          "sourceId": "src-muraspec-web-explainer",
+          "evidenceType": "webpage",
+          "documentReference": "How do fire ratings work?",
+          "testBody": null,
+          "pageRef": null
+        },
+        {
+          "sourceId": "src-muraspec-dop-cpr0001-2021",
+          "evidenceType": "declaration_of_performance",
+          "documentReference": "CPR0001, January 2021",
+          "testBody": null,
+          "pageRef": "p. 1, Table 2"
+        },
+        {
+          "sourceId": "src-muraspec-dop-cpr0001-2024",
+          "evidenceType": "declaration_of_performance",
+          "documentReference": "CPR0001, V3 September 2024",
+          "testBody": "Elements Materials Technology Rotterdam BV (notified body 2812)",
+          "pageRef": "p. 1, Table 2"
         }
       ],
       "testedBuildup": {
@@ -287,12 +375,11 @@
         "A class C product: it would not meet a class B requirement."
       ],
       "conflicts": [
-        "The page cites declaration CPR0001, but no version of CPR0001 lists an acoustic foam vinyl.",
-        "Muraspec's general fire-ratings article describes its wallcoverings as class B; this product's own page states class C."
+        "The page cites declaration CPR0001, but neither version we found (January 2021; version 3, September 2024) lists an acoustic foam vinyl.",
+        "Muraspec's article 'How do fire ratings work?' describes its wallcoverings as class B; this product's own page states class C."
       ],
       "unresolved": [
-        "No declaration covering this product was found.",
-        "The tested substrate and adhesive are not stated."
+        "No declaration covering this product was found."
       ],
       "status": "unclear",
       "evidenceLevel": "webpage",
@@ -302,11 +389,11 @@
       "id": "tektura-geometrics-studio-digital",
       "manufacturer": "Tektura",
       "product": "Tektura Studio digitally printed wallcovering: Geometrics designs",
-      "reference": "Technical specification sheet (2024)",
-      "scope": "The digitally printed Geometrics designs shown on the sheet. The sheet is a combined document that also covers window graphics and acoustic panels; only the wallcovering line is used here.",
+      "reference": "Technical specification sheet (undated; the file name refers to 2024)",
+      "scope": "Geometrics designs printed on the Tektura Studio commercial vinyl described on the sheet. The sheet is a combined document that also covers window graphics and acoustic panels; only the wallcovering line is used here.",
       "construction": "Digitally printed vinyl laminated onto woven or non-woven fabric backing",
       "weight": "From 350 gsm",
-      "classificationRaw": "Euro classification B when adhered to suitable substrate. (UK) Class 0 and 1 to BS476 part 6 and 7 when adhered to a suitable substrate.",
+      "classificationRaw": "Euro classification B when adhered to suitable substrate. (UK) Class 0 and 1 to BS476 part 6 and 7 when adhered to a suitable substrate. Marine fire rated on request",
       "notation": "Euro classification B",
       "classification": {
         "class": "B",
@@ -328,12 +415,14 @@
       "testedBuildup": {
         "substrate": "Not stated (\"a suitable substrate\")",
         "adhesive": null,
-        "other": "The sheet does not say which base material, ink or print process the class refers to."
+        "other": "The sheet says the designs are printed on commercial vinyl on woven or non-woven fabric backing. It does not say which backing, ink or print process the class refers to."
       },
       "fieldOfApplication": null,
       "limitations": [
         "A technical sheet only; no declaration of performance or classification report was found.",
-        "The panel and window-film ratings on the same sheet do not apply to the wallcovering."
+        "The panel and window-film ratings on the same sheet do not apply to the wallcovering.",
+        "The BS 476 Class 0 and Class 1 statement is a British national classification, not a European class, and does not convert to one. England's Approved Document B dropped national reaction-to-fire classes from 2 March 2025 (transitional arrangements apply); the Welsh and Northern Irish guidance still print them.",
+        "The sheet says these designs can also be printed on other Tektura wallcoverings. The fire line does not say it covers those bases, so check the rating of the base actually ordered."
       ],
       "conflicts": [],
       "unresolved": [
@@ -369,6 +458,13 @@
           "documentReference": "Dimity Weave technical specification",
           "testBody": null,
           "pageRef": "Fire rating line"
+        },
+        {
+          "sourceId": "src-tektura-web-dimity-weave",
+          "evidenceType": "webpage",
+          "documentReference": "Dimity Weave product page",
+          "testBody": null,
+          "pageRef": "Fire rating tag"
         }
       ],
       "testedBuildup": {
@@ -378,11 +474,11 @@
       },
       "fieldOfApplication": null,
       "limitations": [
-        "A technical sheet only; no declaration of performance or classification report was found."
+        "A technical sheet only; no declaration of performance or classification report was found.",
+        "The product web page tags it 'Euroclass B' without subclasses."
       ],
       "conflicts": [
-        "Rivulet, with the same weight and backing on its sheet, is printed as B s2 d0; the two are kept separate here.",
-        "The product web page gives only 'Euroclass B'."
+        "Rivulet, with the same weight and backing on its sheet, is printed as B s2 d0; the two are kept separate here."
       ],
       "unresolved": [
         "The tested substrate and adhesive."
@@ -416,6 +512,13 @@
           "documentReference": "Rivulet technical specification",
           "testBody": null,
           "pageRef": "Fire rating line"
+        },
+        {
+          "sourceId": "src-tektura-web-rivulet",
+          "evidenceType": "webpage",
+          "documentReference": "Rivulet product page",
+          "testBody": null,
+          "pageRef": "Fire rating tag"
         }
       ],
       "testedBuildup": {
@@ -425,11 +528,10 @@
       },
       "fieldOfApplication": null,
       "limitations": [
-        "A technical sheet only; no declaration of performance or classification report was found."
+        "A technical sheet only; no declaration of performance or classification report was found.",
+        "The product web page tags it 'Euroclass B' without subclasses."
       ],
-      "conflicts": [
-        "The product web page gives only 'Euroclass B'."
-      ],
+      "conflicts": [],
       "unresolved": [
         "The tested substrate and adhesive."
       ],
@@ -441,7 +543,7 @@
       "id": "tektura-shimmy",
       "manufacturer": "Tektura",
       "product": "Shimmy (PVC-free woven)",
-      "reference": "Technical specification sheet (2025)",
+      "reference": "Technical specification sheet (undated; file uploaded August 2025)",
       "scope": "The Shimmy product named on the sheet.",
       "construction": "Polyethylene and olefin weave on acrylic backing, PVC-free",
       "weight": "375 gsm",
@@ -486,7 +588,7 @@
       "id": "tektura-temple",
       "manufacturer": "Tektura",
       "product": "Temple",
-      "reference": "Technical specification sheet (August 2026) and product web page",
+      "reference": "Technical specification sheet (undated; file uploaded August 2026) and product web page",
       "scope": "The Temple product.",
       "construction": "Vinyl laminated onto polycotton woven backing",
       "weight": "450 gsm",
@@ -539,9 +641,9 @@
       "id": "tektura-tiburon-shagreen",
       "manufacturer": "Tektura",
       "product": "Tiburon Shagreen",
-      "reference": "Technical specification sheet (August 2026)",
+      "reference": "Technical specification sheet (undated; file uploaded August 2026)",
       "scope": "The Tiburon Shagreen product named on the sheet.",
-      "construction": "Embossed vinyl laminated onto polycotton Osnaburg backing",
+      "construction": "Vinyl laminated onto polycotton Osnaburg backing",
       "weight": "475 gsm",
       "classificationRaw": "Euroclass B / Class 0 and 1 to BS476 part 6 and 7 when adhered to a suitable substrate.",
       "notation": "Euroclass B",
@@ -570,7 +672,7 @@
       "fieldOfApplication": null,
       "limitations": [
         "A technical sheet only; no declaration of performance or classification report was found.",
-        "The BS 476 Class 0 and Class 1 statement is a former national classification and does not convert to a European class."
+        "The BS 476 Class 0 and Class 1 statement is a British national classification, not a European class, and does not convert to one. England's Approved Document B dropped national reaction-to-fire classes from 2 March 2025 (transitional arrangements apply); the Welsh and Northern Irish guidance still print them."
       ],
       "conflicts": [],
       "unresolved": [
@@ -614,7 +716,7 @@
           "sourceId": "src-vescom-f16185-dop-01006",
           "evidenceType": "declaration_of_performance",
           "documentReference": "DOP-CPR-01006",
-          "testBody": null,
+          "testBody": "Centexbel (notified product certification body 0493), named in the declaration",
           "pageRef": "p. 1"
         }
       ],
@@ -625,7 +727,9 @@
       },
       "fieldOfApplication": "The tested thickness, mass, colour (white, not embossed), substrate, adhesive and joints only; no wider substrate class is stated.",
       "limitations": [
-        "The field of application is a single colour, texture and adhesive."
+        "The field of application is a single colour, texture and adhesive.",
+        "The declaration gives the intended use as internal walls or partitions of A2-s1,d0 or better, fixed with adhesive.",
+        "The declaration names Centexbel certificate 0493-CPR-W023, which we did not read. It does not cite this Efectis report, so we have not confirmed that the report underlies the declaration."
       ],
       "conflicts": [
         "Filed under printed design names that the report does not cover.",
@@ -668,19 +772,27 @@
           "sourceId": "src-vescom-f103-ce-vinyl",
           "evidenceType": "certificate",
           "documentReference": "0493-CPR-W014",
-          "testBody": "Centexbel (notified body 0493)",
+          "testBody": "Certificate by Centexbel (notified product certification body 0493); tests by CREPIM (annex)",
           "pageRef": "Certificate pp. 1–2"
+        },
+        {
+          "sourceId": "src-vescom-f567-efectis-2012",
+          "evidenceType": "classification_report",
+          "documentReference": "2012-Efectis-R9438d",
+          "testBody": "Efectis Nederland (notified body 1234)",
+          "pageRef": "pp. 2–5"
         }
       ],
       "testedBuildup": {
         "substrate": "Calcium silicate board, 11 mm, 870 kg/m³",
-        "adhesive": "Vescom 2000 at 170 g/m²",
+        "adhesive": "Vescom 2000 at 170 g/m² (CREPIM DO-18-0159, bound with the certificate)",
         "other": "Vertical joints"
       },
       "fieldOfApplication": "Calcium silicate board and other A1 or A2-s1,d0 substrates of over 652.5 kg/m³, excluding plasterboard, with vertical joints (certificate p. 2).",
       "limitations": [
         "Plasterboard is expressly excluded from the certificate’s field of application.",
-        "A family declaration: individual designs can have their own, different results."
+        "A family declaration: individual designs can have their own, different results.",
+        "The declaration gives the intended use as internal walls or partitions of A2-s1,d0 or better, fixed with adhesive."
       ],
       "conflicts": [
         "The 2024 declaration gives 360–850 g/m², while the 2017 declaration and the certificate give 350–800 g/m².",
@@ -697,7 +809,7 @@
       "id": "vescom-colour-choice-protect",
       "manufacturer": "Vescom",
       "product": "Colour Choice+Protect (1126.01 PRO to 1126.75 PRO)",
-      "reference": "Product page and specsheet; linked classification report DO-18-0159",
+      "reference": "Product page and specsheet; Protect family declaration DOP-CPR-01002 and certificate 0493-CPR-W015; linked report DO-18-0159",
       "scope": "75 colourways with the PRO suffix, which carry the Protect film.",
       "construction": "Plain vinyl on woven cotton backing with Vescom Protect film",
       "weight": "About 460 g/m²",
@@ -727,6 +839,20 @@
           "pageRef": "Fire classification"
         },
         {
+          "sourceId": "src-vescom-f2512-dop-01002",
+          "evidenceType": "declaration_of_performance",
+          "documentReference": "DOP-CPR-01002",
+          "testBody": "Centexbel (notified product certification body 0493), named in the declaration",
+          "pageRef": "p. 1"
+        },
+        {
+          "sourceId": "src-vescom-f278-ce-vinyl-protect",
+          "evidenceType": "certificate",
+          "documentReference": "0493-CPR-W015",
+          "testBody": "Centexbel (notified body 0493); classification by MPA Dresden (0767) per annex",
+          "pageRef": "pp. 2–3, 7"
+        },
+        {
           "sourceId": "src-vescom-f18987-ccprotect-crepim",
           "evidenceType": "classification_report",
           "documentReference": "DO-18-0159\\A-R1",
@@ -737,22 +863,22 @@
       "testedBuildup": {
         "substrate": "Calcium silicate board, 11 mm, 870 kg/m³ (in the linked report)",
         "adhesive": "Vescom 2000 at 170 g/m² (in the linked report)",
-        "other": "The linked report tests a different vinyl (Vescom Rainy) with no Protect layer described."
+        "other": "The linked report tests Vescom Rainy, a cotton-backed vinyl of 0.46–0.8 kg/m², with no Protect layer described."
       },
       "fieldOfApplication": "In the linked report: no variation in composition; any colour and pattern; calcium silicate board and A1 or A2-s1,d0 substrates above 652.5 kg/m³, excluding plasterboard.",
       "limitations": [
-        "The specsheet and page give no standard edition, laboratory, report number, substrate or adhesive."
+        "The specsheet and page give the class only. The page also links Vescom's Protect family declaration DOP-CPR-01002 (July 2017: B-s2,d0 for cotton-backed vinyl with Vescom Protect, 370–480 g/m²) and certificate 0493-CPR-W015, stated valid 'latest on July 31st 2023'. The certificate describes a 370 g/m² build-up on calcium silicate with Vescom 2000. The MPA Dresden classification behind it (20180730/01, Pleso + Protect) is limited to the tested 356 g/m² and 0.31 mm and excludes gypsum boards. No Protect test at about 460 g/m² was found.",
+        "Vescom's product page also lists Colour Choice+Protect as B s2 d0."
       ],
       "conflicts": [
-        "The report linked from the product page never names Colour Choice or Protect and describes a vinyl without the Protect laminate.",
-        "Vescom's Protect pages describe Protect products generally as B s1 d0, while this product is listed as B s2 d0."
+        "The report linked from the product page (CREPIM DO-18-0159\\A-R1, 'VESCOM - RAINY') never names Colour Choice or Protect. It describes only a cotton backing and vinyl topcoat, with no variation in composition allowed. It is one of the two reports behind Vescom's non-Protect vinyl family certificate 0493-CPR-W014, not a Protect-specific test."
       ],
       "unresolved": [
-        "Which report supports Colour Choice+Protect specifically.",
+        "Whether Vescom holds a classification of Colour Choice+Protect at about 460 g/m² with the Protect laminate, and whether certificate W015 was renewed after July 2023.",
         "Whether the linked report, printed as valid for five years from August 2018, has been renewed."
       ],
       "status": "unclear",
-      "evidenceLevel": "technical_sheet",
+      "evidenceLevel": "declaration_of_performance",
       "checked": "2026-10-15"
     },
     {
@@ -761,7 +887,7 @@
       "product": "Porak+print (1041)",
       "reference": "Classification report 2024-Efectis-R001444 (January 2025)",
       "scope": "Porak+print as tested, in any colour with or without print.",
-      "construction": "Recycled polyester weave coated on both sides with acrylate, FR treated, 0.35 mm",
+      "construction": "40% recycled polyester weave coated on both sides with acrylate, FR treated, 0.35 mm",
       "weight": "330 g/m²",
       "classificationRaw": "B - s2, d0",
       "notation": "B - s2, d0",
@@ -775,7 +901,7 @@
         "EN 13823",
         "EN ISO 11925-2"
       ],
-      "productStandardCited": null,
+      "productStandardCited": "EN 15102:2019",
       "evidence": [
         {
           "sourceId": "src-vescom-f16802-efectis-porak",
@@ -786,7 +912,7 @@
         }
       ],
       "testedBuildup": {
-        "substrate": "Non-combustible board, class A1 or A2, 870 kg/m³",
+        "substrate": "Non-combustible substrate, class A1 or A2, 870 kg/m³ (board type not named)",
         "adhesive": "Vescom 2500 at 200 g/m² wet",
         "other": "Vertical joints"
       },
@@ -822,7 +948,7 @@
         "EN 13823",
         "EN ISO 11925-2"
       ],
-      "productStandardCited": null,
+      "productStandardCited": "EN 15102:2007+A1:2011",
       "evidence": [
         {
           "sourceId": "src-vescom-f18446-tapetex-69-2341",
@@ -830,6 +956,13 @@
           "documentReference": "22965F version 1",
           "testBody": "Warringtonfire, Ghent",
           "pageRef": "pp. 2–10"
+        },
+        {
+          "sourceId": "src-vescom-f18455-dop-13004",
+          "evidenceType": "declaration_of_performance",
+          "documentReference": "DOP-CPR-13004",
+          "testBody": "Warringtonfire Ghent (notified testing laboratory 1173; the declaration calls 22965F a test report)",
+          "pageRef": "p. 1, points 6–8"
         }
       ],
       "testedBuildup": {
@@ -876,14 +1009,14 @@
           "sourceId": "src-vescom-f2534-dop-13008",
           "evidenceType": "declaration_of_performance",
           "documentReference": "DOP-CPR-13008",
-          "testBody": null,
+          "testBody": "Efectis (notified body 1234, named in the declaration)",
           "pageRef": "p. 1"
         }
       ],
       "testedBuildup": {
         "substrate": null,
         "adhesive": null,
-        "other": "The classification report named in the declaration was not available to read."
+        "other": "The declaration cites report 2022-Efectis-R001208, which was not available to read."
       },
       "fieldOfApplication": null,
       "limitations": [
@@ -905,8 +1038,8 @@
       "scope": "The 14 Moire Sauvage references listed in the declaration. Not other Arte Contract designs, although the certificate groups them in one family.",
       "construction": "Vinyl on non-woven backing, Type II",
       "weight": "About 460 g/m² (as printed on the specification sheet)",
-      "classificationRaw": "B-s2, d0",
-      "notation": "B-s2, d0",
+      "classificationRaw": "B-S2,d0 (declaration of performance); B-s2, d0 (specification sheet)",
+      "notation": "B-S2,d0",
       "classification": {
         "class": "B",
         "smoke": "s2",
@@ -927,7 +1060,7 @@
           "sourceId": "src-centexbel-cocp-0493-cpr-w038",
           "evidenceType": "certificate",
           "documentReference": "0493-CPR-W038",
-          "testBody": "Centexbel (notified body 0493)",
+          "testBody": "CREPIM (four test reports, 12 December 2022 to 25 April 2023); certificate issued by Centexbel (notified body 0493)",
           "pageRef": "p. 1 and annex p. 2"
         },
         {
@@ -935,6 +1068,13 @@
           "evidenceType": "technical_sheet",
           "documentReference": "Specification sheet 47253A",
           "testBody": null,
+          "pageRef": "p. 1"
+        },
+        {
+          "sourceId": "src-arte-us-e84-13-03217",
+          "evidenceType": "test_report",
+          "documentReference": "13-03217",
+          "testBody": "Commercial Testing Company",
           "pageRef": "p. 1"
         }
       ],
@@ -946,15 +1086,17 @@
       "fieldOfApplication": "The certificate covers decorative Type II and Type III FR-treated vinyl on woven or non-woven backing, 451 to 790 g/m², glued on fibre-cement with vertical joints. No other substrate or adhesive is expressly permitted.",
       "limitations": [
         "Nothing read extends the class to plasterboard, plaster, painted walls, lining paper or timber.",
-        "Arte's hanging instructions recommend Arte Clearpro or a dispersion adhesive; the adhesive behind the classification is not stated."
+        "Arte's specification sheet 47253A recommends Arte Clearpro or a good quality dispersion adhesive; the adhesive behind the classification is not stated."
       ],
       "conflicts": [
         "The declaration states System 3, while the certificate it cites is issued under System 1.",
-        "The \"US Class A\" file linked from the product page is a 2013 test of a different product, not Moire Sauvage."
+        "The \"US Class A\" file linked from the product page is a 2013 test of a different product, not Moire Sauvage.",
+        "The declaration says Centexbel performed the type testing; the certificate annex bases the class on four CREPIM test reports."
       ],
       "unresolved": [
         "Which adhesive and board were used in the underlying tests, which are not published.",
-        "Whether the class holds on plasterboard or painted plaster."
+        "Whether the class holds on plasterboard or painted plaster.",
+        "Which UK approved body, if any, supports the UKCA mark on the declaration: the documents it relies on were issued by Centexbel as an EU notified body (0493) under Regulation (EU) 305/2011."
       ],
       "status": "current",
       "evidenceLevel": "declaration_of_performance",
@@ -993,8 +1135,15 @@
           "sourceId": "src-centexbel-report-19-721",
           "evidenceType": "classification_report",
           "documentReference": "19/721",
-          "testBody": "Centexbel (notified body 0493)",
+          "testBody": "Aitex (22AN6585 and 22AN6587, 29 July 2022); report issued by Centexbel (notified body 0493)",
           "pageRef": "pp. 1–3"
+        },
+        {
+          "sourceId": "src-arte-spec-31000",
+          "evidenceType": "technical_sheet",
+          "documentReference": "Specification sheet 31000",
+          "testBody": null,
+          "pageRef": "p. 1"
         }
       ],
       "testedBuildup": {
@@ -1005,14 +1154,16 @@
       "fieldOfApplication": "Starch glue at 200 g/m² on substrates of at least 1,350 kg/m³ classed A2-s1,d0 or A1 (classification report). No other variation is stated.",
       "limitations": [
         "A substrate of at least 1,350 kg/m³ is far denser than standard plasterboard; the report does not mention plasterboard, plaster or painted walls.",
-        "Arte's specification sheet recommends Clearpro or a dispersion adhesive rather than the starch glue in the report."
+        "Arte's specification sheet 31000 recommends Arte Clearpro or a good quality dispersion adhesive rather than the starch glue in the report.",
+        "The declaration says Centexbel performed the type testing; the classification report names Aitex test reports as its basis."
       ],
       "conflicts": [
         "The declaration is dated April 2022, but the current version of the classification report rests on tests dated July 2022."
       ],
       "unresolved": [
         "Whether the 2022 declaration has been checked against the current report.",
-        "Which colourways were tested."
+        "Which colourways were tested.",
+        "Which UK approved body, if any, supports the UKCA mark on the declaration: the documents it relies on were issued by Centexbel as an EU notified body (0493) under Regulation (EU) 305/2011."
       ],
       "status": "current",
       "evidenceLevel": "declaration_of_performance",
@@ -1022,10 +1173,10 @@
       "id": "arte-indienne-type03",
       "manufacturer": "Arte International",
       "product": "Indienne, type 03 vinyl wallpaper (Poona, Agra, Mandu, Bundi, Kerala and Kashmir)",
-      "reference": "References 18300 to 18371 as listed in the declaration",
+      "reference": "References 18300–18303, 18310–18313, 18320–18322, 18330–18333, 18340–18351 and 18360–18371 (39 references, as listed in the declaration)",
       "scope": "The six Indienne designs listed in the declaration. The group report also lists other collections.",
-      "construction": "Vinyl with water-based ink on paper backing",
-      "weight": null,
+      "construction": "Vinyl with water-based ink (backing not stated in the documents read)",
+      "weight": "The group report covers about 250 to 610 g/m²",
       "classificationRaw": "B-s2,d0",
       "notation": "B-s2,d0",
       "classification": {
@@ -1033,7 +1184,7 @@
         "smoke": "s2",
         "droplets": "d0"
       },
-      "classificationStandardCited": "EN 13501-1 (edition not printed in the declaration)",
+      "classificationStandardCited": "EN 13501-1:2019 (report 19/720); no edition in the declaration",
       "testMethodsCited": [
         "EN 13823",
         "EN ISO 11925-2"
@@ -1051,7 +1202,7 @@
           "sourceId": "src-centexbel-report-19-720",
           "evidenceType": "classification_report",
           "documentReference": "19/720",
-          "testBody": "Centexbel (notified body 0493)",
+          "testBody": "Aitex (2024AN2800 and 2019AN2798, both dated 13 January 2025); report issued by Centexbel (notified body 0493)",
           "pageRef": "pp. 1–2"
         }
       ],
@@ -1062,11 +1213,13 @@
       },
       "fieldOfApplication": "Starch glue at 200 g/m² on dense A2-s1,d0 or A1 substrates (classification report).",
       "limitations": [
-        "The field of application does not mention plasterboard, plaster or painted walls."
+        "The field of application does not mention plasterboard, plaster or painted walls.",
+        "The declaration says Centexbel performed the type testing; the classification report names Aitex test reports as its basis."
       ],
       "conflicts": [],
       "unresolved": [
-        "Whether the report re-dated in September 2026 changed the field of application relied on by the April 2026 declaration."
+        "Whether the report re-dated in September 2026 changed the field of application relied on by the April 2026 declaration.",
+        "Which UK approved body, if any, supports the UKCA mark on the declaration: the documents it relies on were issued by Centexbel as an EU notified body (0493) under Regulation (EU) 305/2011."
       ],
       "status": "current",
       "evidenceLevel": "declaration_of_performance",
@@ -1078,8 +1231,8 @@
       "product": "Les Tapisseries: Brocade and Ramage, type 06D textile",
       "reference": "References 97840 to 97842 and 97830 to 97832",
       "scope": "The Brocade and Ramage references in the declaration.",
-      "construction": "Textile on non-woven backing",
-      "weight": null,
+      "construction": "Textile wallcovering (backing not stated in the documents read)",
+      "weight": "The group report covers 580 to 800 g/m²",
       "classificationRaw": "C-s1,d0 (DoP); C - s1, d0 (report)",
       "notation": "C-s1,d0",
       "classification": {
@@ -1087,7 +1240,7 @@
         "smoke": "s1",
         "droplets": "d0"
       },
-      "classificationStandardCited": "EN 13501-1 (edition not printed in the declaration)",
+      "classificationStandardCited": "EN 13501-1:2007+A1:2009 (report 20/1150); no edition in the declaration",
       "testMethodsCited": [],
       "productStandardCited": "EN 15102:2007+A1:2011",
       "evidence": [
@@ -1102,7 +1255,7 @@
           "sourceId": "src-centexbel-report-20-1150",
           "evidenceType": "classification_report",
           "documentReference": "20/1150",
-          "testBody": "Centexbel (notified body 0493)",
+          "testBody": "AITEX (2024AN2468, 23 December 2024; 2026AN1102, 21 May 2026); report issued by Centexbel (notified body 0493)",
           "pageRef": "pp. 1–2"
         }
       ],
@@ -1113,14 +1266,16 @@
       },
       "fieldOfApplication": "Starch glue at 200 g/m² on dense A2-s1,d0 or A1 substrates (classification report).",
       "limitations": [
-        "A class C product: it would not meet a class B requirement."
+        "A class C product: it would not meet a class B requirement.",
+        "The declaration says Centexbel performed the type testing; the classification report names Aitex test reports as its basis."
       ],
       "conflicts": [
         "The declaration cites report 20/1155; the report linked from the product page is numbered 20/1150.",
         "The declaration (April 2026) predates the linked report (August 2026)."
       ],
       "unresolved": [
-        "Whether report 20/1155 exists separately, and whether the declaration has been reissued."
+        "Whether report 20/1155 exists separately, and whether the declaration has been reissued.",
+        "Which UK approved body, if any, supports the UKCA mark on the declaration: the documents it relies on were issued by Centexbel as an EU notified body (0493) under Regulation (EU) 305/2011."
       ],
       "status": "unclear",
       "evidenceLevel": "classification_report",
@@ -1132,8 +1287,8 @@
       "product": "Les Tapisseries: Collines, type 06C textile",
       "reference": "References 97900 to 97902",
       "scope": "The Collines references in the declaration.",
-      "construction": "Textile on non-woven backing",
-      "weight": null,
+      "construction": "Non-woven substrate with fabric (classification report)",
+      "weight": "The group report covers 370 to 1,000 g/m²",
       "classificationRaw": "D - s1, d0 (classification report, June 2026); C-s1,d0 (declaration of performance, April 2026)",
       "notation": null,
       "classification": {
@@ -1149,7 +1304,7 @@
           "sourceId": "src-centexbel-report-18-667",
           "evidenceType": "classification_report",
           "documentReference": "18/667",
-          "testBody": "Centexbel (notified body 0493)",
+          "testBody": "Aitex (2024AN2454, 2026AN0788, 2026AN1098); report issued by Centexbel (notified body 0493)",
           "pageRef": "pp. 1–2"
         },
         {
@@ -1167,13 +1322,15 @@
       },
       "fieldOfApplication": "Starch glue on dense A2-s1,d0 or A1 substrates (classification report).",
       "limitations": [
-        "On either reading this is below class B."
+        "On either reading this is below class B.",
+        "The declaration says Centexbel performed the type testing; the classification report names Aitex test reports as its basis."
       ],
       "conflicts": [
-        "The declaration declares C-s1,d0 and cites report 18/667; the current version of that report, and the product page, give D-s1,d0. We have not chosen between them."
+        "The declaration declares C-s1,d0 and cites report 18/667; the current version of that report gives D-s1,d0. We have not chosen between them."
       ],
       "unresolved": [
-        "Which class is current for Collines; ask Arte for a reissued declaration."
+        "Which class is current for Collines; ask Arte for a reissued declaration.",
+        "Which UK approved body, if any, supports the UKCA mark on the declaration: the documents it relies on were issued by Centexbel as an EU notified body (0493) under Regulation (EU) 305/2011."
       ],
       "status": "unclear",
       "evidenceLevel": "classification_report",
@@ -1184,7 +1341,7 @@
       "manufacturer": "Newmor",
       "product": "Premier vinyl, 460 g/m², non-woven backing",
       "reference": "Classification report 082/BW/22 (September 2022)",
-      "scope": "The Premier non-woven construction as tested (one colour), listed on Newmor’s page as Nonwoven 460gsm.",
+      "scope": "The Premier non-woven construction as tested (one colour).",
       "construction": "Vinyl 370 g/m² on non-woven 90 g/m², about 0.40 mm",
       "weight": "460 g/m²",
       "classificationRaw": "B–s1, d0",
@@ -1207,6 +1364,13 @@
           "documentReference": "082/BW/22",
           "testBody": "CNBOP-PIB (notified body 1438)",
           "pageRef": "pp. 2–5"
+        },
+        {
+          "sourceId": "src-newmor-bttg-27-06093",
+          "evidenceType": "test_report",
+          "documentReference": "27/06093/02/23",
+          "testBody": "BTTG (UKAS testing laboratory 1066)",
+          "pageRef": "p. 9"
         }
       ],
       "testedBuildup": {
@@ -1216,13 +1380,14 @@
       },
       "fieldOfApplication": "Fibre-cement board of at least A2-s1,d0, other substrates of at least A2-s1,d0 excluding paper plasterboard, and all A1 substrates, at no less than 75% of the standard substrate density, with the named adhesive at 200 g/m².",
       "limitations": [
-        "Paper plasterboard is expressly excluded."
+        "Paper plasterboard is expressly excluded.",
+        "The report says it remains valid as long as composition, production and the test and classification methods do not change."
       ],
       "conflicts": [
-        "A separate 2023 test report on a similar 460 g/m² non-woven Premier vinyl gives B-s2,d0."
+        "A separate 2023 BTTG test report (27/06093/02/23) on a sample referenced \"Premier 20oz, Nonwoven-Backed\" gives B, s2, d0, tested on 12 mm calcium silicate board with Newmor Heavy adhesive rather than the 8 mm fibre-cement board and Dixon Turner Heavy adhesive of 082/BW/22. The report states no weight in g/m², so whether it is the same construction is not established."
       ],
       "unresolved": [],
-      "status": "current",
+      "status": "unclear",
       "evidenceLevel": "classification_report",
       "checked": "2026-10-15"
     },
@@ -1263,8 +1428,7 @@
       },
       "fieldOfApplication": null,
       "limitations": [
-        "A test report, not a classification report: it gives s1 only as \"probable\" and s2 as definite.",
-        "No field of application is printed."
+        "A test report, not a classification report: it gives s1 only as \"probable\" and s2 as definite."
       ],
       "conflicts": [],
       "unresolved": [
@@ -1309,7 +1473,7 @@
         "adhesive": "A PVA and starch paste at 200 g/m² (the report names two different grades on different pages)",
         "other": null
       },
-      "fieldOfApplication": "Substrates of at least 1,800 kg/m³, at least 8 mm thick, A2 or better, excluding paper-faced plasterboard; primed and pasted as tested; no variation in thickness, weight or construction.",
+      "fieldOfApplication": "Substrates of at least 1,800 kg/m³, at least 8 mm thick, A2 or better, excluding paper-faced plasterboard; primed with ET Primaseal at 85 g/m² and hung with Dixon Turner Heavy at 200 g/m² (as the field of application states); no variation in thickness, weight, composition or construction.",
       "limitations": [
         "Paper-faced plasterboard is expressly excluded.",
         "The report dates from 2012 and cites the 2007+A1:2009 edition of EN 13501-1; it is not invalid for that reason alone, but ask Newmor whether it remains the current evidence."

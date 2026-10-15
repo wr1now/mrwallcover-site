@@ -70,9 +70,23 @@ test('every product row shows its printed class, a decoded reading, its limitati
     for (const l of p.limitations) assert.ok(rowText.includes(l), `${p.id} limitation: ${l}`);
     for (const g of gapsFor(p)) assert.ok(rowText.includes(g.text), `${p.id} gap: ${g.text}`);
     for (const e of p.evidence) assert.ok(row!.includes(`href="${sources.find((s) => s.id === e.sourceId)!.url.replace(/&/g, '&amp;')}"`), `${p.id} links ${e.sourceId}`);
+    if (!p.notation) assert.match(rowText, /not resolved: the documents disagree|no European class printed/, `${p.id} says why no class is shown`);
     if (p.classification.class && (!p.classification.smoke || !p.classification.droplets) && ['A2', 'B', 'C', 'D'].includes(p.classification.class)) {
       assert.match(rowText, /not stated/, `${p.id} says the missing subclass is not stated`);
     }
+  }
+});
+
+test('the Markdown twin keeps each product’s build-up, evidence and gaps in that product’s own row', () => {
+  const lines = readFileSync(`dist${PATH}index.md`, 'utf8').split('\n');
+  assert.ok(!lines.some((l) => /\|\s*\|\s*\|\s*$/.test(l)), 'no table row ends in empty cells');
+  const flat = (s: string) => s.replace(/\s+/g, ' ');
+  for (const p of products) {
+    const row = lines.find((l) => l.startsWith(`| ${p.manufacturer} ${flat(p.product)}`) && l.includes(flat(p.reference)));
+    assert.ok(row, `${p.id} has a row`);
+    if (p.testedBuildup.substrate) assert.ok(row!.includes(flat(p.testedBuildup.substrate)), `${p.id} substrate in its own row`);
+    for (const e of p.evidence) assert.ok(row!.includes(sources.find((s) => s.id === e.sourceId)!.url), `${p.id} links ${e.sourceId} in its own row`);
+    for (const g of gapsFor(p)) assert.ok(row!.includes(flat(g.text)), `${p.id} gap in its own row: ${g.text}`);
   }
 });
 
@@ -89,4 +103,6 @@ test('reaction to fire is never presented as fire resistance, and nothing claims
   assert.doesNotMatch(text, /\b(30|60|120)[- ]minute (fire )?(rated|rating|resistance) (wallcovering|wallpaper)/i);
   assert.doesNotMatch(text, /(?<!does )\b(we|mr wallcover) (certify|certifies|approve|approves)\b/i);
   assert.match(text, /does not give a wall any number of minutes/);
+  assert.doesNotMatch(text, /in force 2 September 2029/, 'a future date is shown as taking effect, not in force');
+  assert.match(text, /takes effect 2 September 2029/);
 });

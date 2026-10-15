@@ -35,10 +35,10 @@
     {
       "id": "england",
       "name": "England",
-      "document": "Approved Document B, Volume 2 (with Volume 1 for dwellings)",
+      "document": "Approved Document B, Volume 2 (Volume 1 covers dwellings, including blocks of flats and their common areas)",
       "edition": "2019 edition incorporating the 2020, 2022, 2025 and 2026 amendments, printed with the forthcoming 2029 changes",
-      "linings": "Requirement B2; Section 6 and Table 6.1 give minimum European classes by location, with a BS EN 15102 note for wallcoverings in circulation spaces.",
-      "nationalClasses": "National reaction-to-fire classes (BS 476 Parts 6 and 7) removed from the guidance from 2 March 2025, subject to transitional arrangements. National fire-resistance classes are due to be removed from 2 September 2029.",
+      "linings": "Requirement B2; Section 6 and Table 6.1 give minimum European classes by location, with a BS EN 15102 note for wallcoverings in circulation spaces. Volume 1, Table 4.1, sets the same B-s3,d2, with the same note, for the common areas of blocks of flats.",
+      "nationalClasses": "National reaction-to-fire classes (BS 476 Parts 6, 7 and 11) removed from the guidance from 2 March 2025, subject to transitional arrangements. National fire-resistance classes are due to be removed from 2 September 2029.",
       "dates": [
         {
           "label": "2025 amendments in force: national reaction-to-fire classes removed (transitional arrangements apply)",
@@ -59,6 +59,7 @@
       "notes": [],
       "sourceIds": [
         "src-adb2-2026-consolidated",
+        "src-adb1-2026-consolidated",
         "src-adb-2025-amendments",
         "src-adb-2026-amendments",
         "src-adb-2029-amendments"
@@ -68,8 +69,8 @@
       "id": "wales",
       "name": "Wales",
       "document": "Approved Document B, Volume 2 (Welsh edition), with Volume 1 for dwellinghouses",
-      "edition": "2006 edition incorporating the 2010, 2013, 2016, 2017 and 2020 amendments, for use in Wales; an amendment slip in force from 20 December 2025 concerns external walls only",
-      "linings": "Requirement B2; Section 7 and Table 10 give both a national class and a European class for small rooms, other rooms and other circulation spaces. Table 10's note 5 accepts BS EN 15102:2007 wallcoverings of at least C-s3,d2 bonded to an A2-s3,d2 substrate.",
+      "edition": "2006 edition incorporating the 2010, 2013, 2016, 2017 and 2020 amendments, for use in Wales; an amendment slip in force from 20 December 2025 replaces the external-wall guidance and adds fire-service provisions for blocks of flats (wayfinding signage, evacuation alert systems, secure information boxes); it does not change Section 7 or Table 10",
+      "linings": "Requirement B2; Section 7 and Table 10 give both a national class and a European class for small rooms, other rooms, circulation spaces within dwellings, and other circulation spaces including the common areas of blocks of flats (Welsh Volume 2 covers flats). Note 5, on the circulation-space row, accepts BS EN 15102:2007 wallcoverings of at least C-s3,d2 bonded to an A2-s3,d2 substrate.",
       "nationalClasses": "Kept: Table 10 still lists national classes 3, 1 and 0 beside the European classes, and Appendix A still defines Class 0. The Welsh Government has said national classes will move to an appendix at the next revision; no date has been set.",
       "dates": [
         {
@@ -83,7 +84,7 @@
           "kind": "published"
         },
         {
-          "label": "Amendment slip in force: external walls; Table 10 unchanged",
+          "label": "Amendment slip in force: external walls and fire-service provisions for blocks of flats; Table 10 unchanged",
           "date": "2025-12-20",
           "kind": "effective"
         }
@@ -104,8 +105,8 @@
       "name": "Scotland",
       "document": "Building standards technical handbook: non-domestic",
       "edition": "April 2026 handbook (published 9 March 2026), for building warrants submitted on or after 6 April 2026",
-      "linings": "Standard 2.5 and Table 2.4 give European classes by building group (care buildings and hospitals, shops, all other buildings) and by location (rooms up to and over 30 m², unprotected zones, protected zones). Clause 2.5.1 defines wall and ceiling surfaces as the substrate or lining, excluding decorative wallpaper and paint, and advises against building up multiple layers.",
-      "nationalClasses": "Not used for linings: Table 2.4 and Annex 2.E use European classes only. Where the handbook gives a class without subclasses, s3,d2 is deemed included.",
+      "linings": "Standard 2.5 and Table 2.4 give European classes by building group (residential care buildings and hospitals, shops, all other buildings) and by location (rooms up to and over 30 m², unprotected zones, and protected zones and fire-fighting shafts). Clause 2.5.1 defines wall and ceiling surfaces as the substrate or lining material, excluding decorative wallpaper and paints, and says multiple layers can increase flame spread and are not recommended when redecorating.",
+      "nationalClasses": "Not used for linings: reaction-to-fire classification uses European classes only (Annex 2.E, Table 2.20). The handbook still accepts national BS 476 tests for fire resistance (Annex 2.D, clause 2.D.4, BS 476 Parts 20 to 24) and for roof coverings (Annex 2.F, BS 476-3). Where the handbook gives a lining class without subclasses, s3,d2 is deemed included (Annex 2.E).",
       "dates": [
         {
           "label": "April 2026 handbook applies (by building warrant date)",
@@ -114,7 +115,7 @@
         }
       ],
       "notes": [
-        "Because decorative wallpaper is outside the classified surface in Scotland, the verifier looks at the substrate or lining system; the handbook still warns that multiple decorative layers can increase flame spread."
+        "Clause 2.5.1 excludes decorative wallpaper and paints from the classified surface but does not define them; agree with the verifier whether a given wallcovering is treated as decoration or as lining. The handbook warns that multiple decorative layers can increase flame spread."
       ],
       "sourceIds": [
         "src-scot-collection",
