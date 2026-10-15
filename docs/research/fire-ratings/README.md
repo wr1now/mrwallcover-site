@@ -2,7 +2,7 @@
 
 Prepared 15 October 2026 for Mr Wallcover's public reference page "Wallcovering Fire Ratings: British Standards and Commercial Specification". This folder is public (the repository is public): it holds no client information, no competitor names and no copies of paid standards or manufacturer documents.
 
-**Status.** Researched, implemented and checked by an independent AI reviewer, waiting for the owner's review. It is general specification guidance, not professional fire-engineering approval. No human fire engineer has reviewed it.
+**Status.** Researched, implemented, checked by an independent AI reviewer and then by a second, adversarially verified multi-agent review; waiting for the owner's review. It is general specification guidance, not professional fire-engineering approval. No human fire engineer has reviewed it.
 
 ## Where things are
 
@@ -33,6 +33,7 @@ There is one source of truth. The page, its tables, the Markdown twin and `llms.
 3. **Lead verification.** The lead read the rendered pages of England's 2025, 2026 and 2029 amendment booklets, the cover, Section 6, Table 6.1 and Appendix B of the current Volume 2, and Appendix B and Table B1 of the previous edition, before writing the England sections.
 4. **Synthesis.** The lead selected 26 product rows (six each for Muraspec, Tektura and Vescom, five for Arte, three for Newmor) that show genuinely different products, documents and gaps, and rewrote all public wording.
 5. **Independent review.** A separate Sonnet agent, which wrote none of the material, reopened the primary documents for every public regulatory assertion and product row (`verification-report.md`).
+6. **Second review.** Five finder agents, one per dimension (regulations; standards and wording; Muraspec, Arte and Newmor rows; Tektura and Vescom rows; page quality, including the built HTML and Markdown twin), each followed by a separate agent told to refute every finding against the rendered documents, and a final completeness critic. Every confirmed finding was fixed or recorded; `verification-report.md` section 5 lists each one and its resolution.
 
 ## Evidence rules applied
 
@@ -40,8 +41,10 @@ There is one source of truth. The page, its tables, the Markdown twin and `llms.
 - The class is recorded exactly as printed and separately as a notation; a missing smoke or droplet subclass stays unknown.
 - Document type is recorded exactly (declaration of performance, classification report, test report, certificate, technical sheet, web page).
 - Conflicts are shown, not resolved by choosing the strongest claim. Where two documents give different classes, the row shows both and no single class.
-- Issue, effective and stated-expiry dates are kept apart from our checking date. No expiry is invented; a printed period ("five years from") is converted to its end date and says so.
+- Issue, effective and stated-expiry dates are kept apart from our checking date. No expiry is invented; a printed period ("five years from") is converted to its end date, and the page quotes the printed wording beside it.
 - No brand-wide ratings. Window films and acoustic panels in combined documents are kept out of wallcovering rows.
+- Printed fire lines are reproduced in full, as short factual data, so a reader can compare a row with the maker's document. Longer passages are paraphrased.
+- Where a document gives a validity period rather than a date, the gap beside the row quotes the printed wording and names the document.
 
 ## Review and maintenance
 
@@ -49,7 +52,7 @@ There is one source of truth. The page, its tables, the Markdown twin and `llms.
 
 **Proposed cadence: quarterly**, and whenever one of these is due:
 
-- a stated validity date in `sources.json` passes or falls within 90 days (for example certificate 0493-CPR-W038 on 28 July 2029, Centexbel report 19/721 on 28 July 2027, and Muraspec certificates printed with dates from November 2026 to January 2028);
+- a stated validity date in `sources.json` passes or falls within 90 days (for example certificate 0493-CPR-W038 on 28 July 2029, Centexbel report 19/721 on 28 July 2027, and the certificate expiry dates listed in Muraspec's declarations, from November 2026 to January 2028);
 - a regulatory date passes: England's 2029 fire-resistance amendments take effect on 2 September 2029; Wales's promised move of national classes into an appendix; a new Scottish handbook or Northern Irish amendment;
 - a maker publishes a new declaration, report or sheet for a product on the page.
 
