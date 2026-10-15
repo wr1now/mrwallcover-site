@@ -397,6 +397,9 @@ test('/feed.xml is Atom with exactly the published guides and case studies, thei
       title: JSON.parse(text.match(/^title: (".*")$/m)![1]),
     });
   }
+  // The fire-ratings reference is an .astro page dated by its own page.json.
+  const firePage = JSON.parse(await readFile('src/content/fire-ratings/page.json', 'utf8')) as { slug: string; title: string; published: string; updated: string };
+  expected.set(`${SITE}/advice/${firePage.slug}/`, { published: firePage.published, updated: firePage.updated, title: firePage.title });
   for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
     const fm = JSON.parse((await readFile(`src/content/case-studies/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { slug: string; draft?: boolean; published: string; updated: string; title: string };
     if (fm.draft) {
