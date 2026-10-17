@@ -3,25 +3,18 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import WallpaperingNav from '../components/WallpaperingNav.astro';
 import Base from '../layouts/Base.astro';
 import { isConfirmed, makers, wallpapering } from '../lib/materials';
+import { formatGroups, formatLabel, formats, rollFormats } from '../lib/roll-formats';
 import { breadcrumbNode } from '../lib/schema';
 import '../styles/wallpapering.css';
 
 const crumbs = [
   { name: 'Home', href: '/' },
-  { name: 'Calculator', href: '/calculator/' },
+  { name: 'Wallpaper calculator', href: '/calculator/' },
 ];
-// Roll formats the visitor can pick. Sizes are the common formats, not a product's own figures: the result says so.
-const formats = [
-  { id: 'standard', label: 'Standard roll, 53 cm × 10.05 m', width: 53, length: 10.05, soldBy: 'roll' },
-  { id: 'roll-52', label: 'Roll, 52 cm × 10 m', width: 52, length: 10, soldBy: 'roll' },
-  { id: 'us-double', label: 'US double roll, 20.5 in × 33 ft', width: 52.07, length: 10.0584, soldBy: 'double-roll' },
-  { id: 'us-double-27', label: 'US double roll, 27 in × 27 ft', width: 68.58, length: 8.2296, soldBy: 'double-roll' },
-  { id: 'bolt', label: 'Grasscloth bolt, 36 in × 8 yd', width: 91.44, length: 7.3152, soldBy: 'bolt' },
-  { id: 'length', label: 'Wide contract, sold by the metre (130 cm, 5 cm overlap)', width: 125, length: 30, soldBy: 'length' },
-  { id: 'mural', label: 'Made-to-measure mural, by the m²', width: 0, length: 0, soldBy: 'mural' },
-  { id: 'panel-set', label: 'Scenic or panel set', width: 0, length: 0, soldBy: 'panel-set' },
-  { id: 'custom', label: 'Other: I will type the sizes', width: 0, length: 0, soldBy: 'roll' },
-];
+// Roll sizes the visitor can pick, grouped by how the paper is sold. Each preset is a size a maker prints
+// (src/data/roll-formats.json); every group also takes any other size typed in (owner, 17 Oct 2026).
+const groups = formatGroups.map((group) => ({ ...group, presets: formats.filter((format) => format.group === group.id) }));
+const sizeless = (id: string) => id === 'mural' || id === 'panel-set';
 const makerOptions = makers.filter(isConfirmed).map((rule) => ({ id: rule.id, name: rule.name, noInfill: Boolean(rule.noOffcutInfill) }));
 const conditions = wallpapering.conditionQuestion.options;
 ---
@@ -61,18 +54,43 @@ const conditions = wallpapering.conditionQuestion.options;
             <p class="qc-hint form-note" data-link-note hidden></p>
           </div>
           <div class="field md:col-span-2">
-            <label for="qc-format">Roll</label>
+            <label for="qc-format">Roll size</label>
             <select id="qc-format" name="format">
-              {formats.map((format) => <option value={format.id} data-width={format.width} data-length={format.length} data-sold={format.soldBy}>{format.label}</option>)}
+              {groups.map((group) => (
+                <optgroup label={group.label}>
+                  {group.presets.map((format) => (
+                    <option value={format.id} data-group={group.id} data-width={format.width} data-wunit={format.widthUnit} data-length={format.length ?? ''} data-lunit={format.lengthUnit} data-overlap={format.overlapCm ?? 0} data-sets={format.rollsPerSet}>{formatLabel(format)}</option>
+                  ))}
+                  {!sizeless(group.id) && <option value={`other-${group.id}`} data-group={group.id} data-other="true">Another size: type it below</option>}
+                </optgroup>
+              ))}
             </select>
           </div>
           <div class="field" data-paper-size>
-            <label for="qc-roll-width">Usable width, cm</label>
-            <input id="qc-roll-width" name="rollWidth" type="number" inputmode="decimal" min="0" step="0.01" value="53" />
+            <label for="qc-roll-width">Width</label>
+            <div class="qc-unit">
+              <input id="qc-roll-width" name="rollWidth" data-dim="pwidth" type="number" inputmode="decimal" min="0" step="0.01" value="53" list="qc-widths" />
+              <select name="widthUnit" aria-label="Width unit"><option value="cm">cm</option><option value="in">in</option></select>
+            </div>
+            <datalist id="qc-widths" data-cm={rollFormats.widthSuggestions.cm.join(' ')} data-in={rollFormats.widthSuggestions.in.join(' ')}>
+              {rollFormats.widthSuggestions.cm.map((width) => <option value={width} />)}
+            </datalist>
           </div>
           <div class="field" data-paper-size>
-            <label for="qc-roll-length">Roll length, metres</label>
-            <input id="qc-roll-length" name="rollLength" type="number" inputmode="decimal" min="0" step="0.01" value="10.05" />
+            <label for="qc-roll-length">Roll length</label>
+            <div class="qc-unit">
+              <input id="qc-roll-length" name="rollLength" data-dim="plength" type="number" inputmode="decimal" min="0" step="0.01" value="10.05" />
+              <select name="lengthUnit" aria-label="Length unit"><option value="m">m</option><option value="ft">ft</option><option value="yd">yd</option></select>
+            </div>
+          </div>
+          <div class="field" data-overlap-field hidden>
+            <label for="qc-overlap">Overlap at each joint, <span data-u="pwidth">cm</span></label>
+            <input id="qc-overlap" name="overlap" data-dim="pwidth" type="number" inputmode="decimal" min="0" step="0.5" value="0" />
+            <p class="qc-hint form-note">Wide goods are usually overlapped and cut through. Use the overlap on the maker's sheet, or 0 for butt joints.</p>
+          </div>
+          <div class="field" data-set-field hidden>
+            <label for="qc-sets">Rolls in each set</label>
+            <input id="qc-sets" name="rollsPerSet" type="number" inputmode="numeric" min="2" step="1" value="2" />
           </div>
           <div class="field" data-paper-size>
             <label for="qc-match">Pattern match</label>
@@ -86,19 +104,29 @@ const conditions = wallpapering.conditionQuestion.options;
             </select>
           </div>
           <div class="field" data-paper-size data-repeat-field>
-            <label for="qc-repeat">Pattern repeat, cm</label>
-            <input id="qc-repeat" name="repeat" type="number" inputmode="decimal" min="0" step="0.1" value="0" />
+            <label for="qc-repeat">Pattern repeat</label>
+            <div class="qc-unit">
+              <input id="qc-repeat" name="repeat" data-dim="repeat" type="number" inputmode="decimal" min="0" step="0.1" value="0" />
+              <select name="repeatUnit" aria-label="Repeat unit"><option value="cm">cm</option><option value="in">in</option></select>
+            </div>
           </div>
           <div class="field" data-mural-field hidden>
-            <label for="qc-margin">Margin the mural maker asks you to add, cm</label>
-            <input id="qc-margin" name="margin" type="number" inputmode="decimal" min="0" step="0.5" value="10" />
+            <label for="qc-margin">Margin the mural maker asks you to add, <span data-u="small">cm</span></label>
+            <input id="qc-margin" name="margin" data-dim="small" type="number" inputmode="decimal" min="0" step="0.5" value="10" />
           </div>
         </div>
-        <p class="qc-hint form-note">Not sure? Leave the standard roll and free match: the result says what it assumed. The roll size, repeat and match are on the product page or the label.</p>
+        <p class="qc-hint form-note">Not sure? Leave the standard roll and free match: the result says what it assumed. The roll size, repeat and match are on the product page or the label. Any width can be typed, in centimetres or inches.</p>
       </fieldset>
 
       <fieldset class="qc-step">
         <legend><span class="eyebrow">2</span> The wall or the room</legend>
+        <div class="quantity-measure qc-measured" role="radiogroup" aria-label="Measured in">
+          <span class="qc-measured-label">Measured in</span>
+          <label><input type="radio" name="mu" value="cm" checked /> cm</label>
+          <label><input type="radio" name="mu" value="m" /> m</label>
+          <label><input type="radio" name="mu" value="in" /> inches</label>
+          <label><input type="radio" name="mu" value="ft" /> feet</label>
+        </div>
         <div class="quantity-measure" role="radiogroup" aria-label="Measure by">
           <label><input type="radio" name="measure" value="wall" checked /> One wall</label>
           <label><input type="radio" name="measure" value="walls" /> Several walls</label>
@@ -106,15 +134,15 @@ const conditions = wallpapering.conditionQuestion.options;
         </div>
         <div data-walls class="grid gap-4">
           <div class="qc-wall grid gap-5 md:grid-cols-2" data-wall>
-            <div class="field"><label>Wall width, cm <input name="width" type="number" inputmode="decimal" min="0" step="0.1" value="500" /></label></div>
-            <div class="field"><label>Height to paper, cm <input name="height" type="number" inputmode="decimal" min="0" step="0.1" value="270" /></label></div>
+            <div class="field"><label>Wall width, <span data-u="measure">cm</span> <input name="width" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" value="500" /></label></div>
+            <div class="field"><label>Height to paper, <span data-u="measure">cm</span> <input name="height" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" value="270" /></label></div>
           </div>
         </div>
         <button class="btn btn-line" type="button" data-add-wall hidden>Add another wall</button>
         <div data-room class="grid gap-5 md:grid-cols-3" hidden>
-          <div class="field"><label>Room length, cm <input name="roomLength" type="number" inputmode="decimal" min="0" step="0.1" value="400" /></label></div>
-          <div class="field"><label>Room width, cm <input name="roomWidth" type="number" inputmode="decimal" min="0" step="0.1" value="350" /></label></div>
-          <div class="field"><label>Height to paper, cm <input name="roomHeight" type="number" inputmode="decimal" min="0" step="0.1" value="270" /></label></div>
+          <div class="field"><label>Room length, <span data-u="measure">cm</span> <input name="roomLength" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" value="400" /></label></div>
+          <div class="field"><label>Room width, <span data-u="measure">cm</span> <input name="roomWidth" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" value="350" /></label></div>
+          <div class="field"><label>Height to paper, <span data-u="measure">cm</span> <input name="roomHeight" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" value="270" /></label></div>
         </div>
         <p class="qc-hint form-note">Height to paper: from the top of the skirting to where the paper stops, at the ceiling, the cornice or the picture rail. A room is counted as one run round its walls.</p>
       </fieldset>
@@ -151,8 +179,8 @@ const conditions = wallpapering.conditionQuestion.options;
             <label><input type="checkbox" name="bespoke" value="ceiling" /> The ceiling</label>
           </fieldset>
           <div class="grid gap-5 md:grid-cols-2">
-            <div class="field"><label>Trim at the top, cm <input name="trimTop" type="number" inputmode="decimal" min="0" step="0.5" value="5" /></label></div>
-            <div class="field"><label>Trim at the bottom, cm <input name="trimBottom" type="number" inputmode="decimal" min="0" step="0.5" value="5" /></label></div>
+            <div class="field"><label>Trim at the top, <span data-u="small">cm</span> <input name="trimTop" data-dim="small" type="number" inputmode="decimal" min="0" step="0.5" value="5" /></label></div>
+            <div class="field"><label>Trim at the bottom, <span data-u="small">cm</span> <input name="trimBottom" data-dim="small" type="number" inputmode="decimal" min="0" step="0.5" value="5" /></label></div>
           </div>
         </div>
       </details>
@@ -167,10 +195,10 @@ const conditions = wallpapering.conditionQuestion.options;
       <div class="qc-opening grid gap-4 md:grid-cols-3" data-opening>
         <p class="m-0 md:col-span-3 font-medium" data-opening-title></p>
         <div class="field" data-opening-wall hidden><label>On wall <select name="o-wall"></select></label></div>
-        <div class="field"><label>Width, cm <input name="o-width" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
-        <div class="field"><label>Height, cm <input name="o-height" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
-        <div class="field" data-from-floor><label><span data-from-floor-label>Sill above the skirting, cm</span> <input name="o-floor" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
-        <div class="field"><label>Reveal depth, cm <input name="o-depth" type="number" inputmode="decimal" min="0" step="0.1" value="0" /></label></div>
+        <div class="field"><label>Width, <span data-u="measure">cm</span> <input name="o-width" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
+        <div class="field"><label>Height, <span data-u="measure">cm</span> <input name="o-height" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
+        <div class="field" data-from-floor><label><span data-from-floor-label>Sill above the skirting</span>, <span data-u="measure">cm</span> <input name="o-floor" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
+        <div class="field"><label>Reveal depth, <span data-u="small">cm</span> <input name="o-depth" data-dim="small" type="number" inputmode="decimal" min="0" step="0.1" value="0" /></label></div>
         <div class="field" data-reveals><label>Papered reveals
           <select name="o-reveals"><option value="none">None</option><option value="sides">Sides</option><option value="sides-head">Sides and head</option></select>
         </label></div>
@@ -180,7 +208,7 @@ const conditions = wallpapering.conditionQuestion.options;
     <template data-return-template>
       <div class="qc-return grid gap-4 md:grid-cols-3" data-return>
         <div class="field" data-return-wall hidden><label>On wall <select name="r-wall"></select></label></div>
-        <div class="field"><label>Return depth, cm <input name="r-depth" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
+        <div class="field"><label>Return depth, <span data-u="small">cm</span> <input name="r-depth" data-dim="small" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
         <button class="btn btn-line justify-self-start self-end" type="button" data-remove>Remove</button>
       </div>
     </template>
@@ -208,6 +236,12 @@ const conditions = wallpapering.conditionQuestion.options;
   .qc-step legend .eyebrow, .qc-more summary .eyebrow { display: inline-block; margin: 0 .5rem 0 0; vertical-align: middle; font-family: var(--font-sans, inherit); }
   .qc-more > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: .25rem; flex-wrap: wrap; }
   .qc-hint { margin: 0; color: var(--color-stone); font-size: .9rem; }
+  .qc-unit { display: flex; gap: .5rem; }
+  .field .qc-unit input { flex: 1 1 auto; min-width: 0; }
+  .field .qc-unit select { flex: 0 0 auto; width: 5.25rem; }
+  .qc-cm { display: block; margin-top: .3rem; color: var(--color-stone); font-size: .9rem; }
+  .qc-measured { align-items: center; gap: .25rem 1.25rem; }
+  .qc-measured-label { font-weight: 500; flex-basis: 100%; }
   .qc-opening, .qc-return { border-left: 2px solid var(--color-line); padding-left: 1rem; }
   .quantity-measure { margin: 0; padding: 0; border: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; }
   .quantity-measure legend { padding: 0; margin-bottom: .5rem; font-weight: 500; }

@@ -50,6 +50,10 @@
     {
       "prefix": "/media/atelier/",
       "source": "docs/atelier-media-provenance.md: owner-supplied project photographs from the practice's own archive."
+    },
+    {
+      "prefix": "/og-wallcovering-fire-ratings.jpg",
+      "source": "scripts/og/fire-ratings-card.swift: our own typographic share card for the fire-ratings page (site colours and the site's Cormorant Garamond and Outfit fonts, both SIL Open Font Licence); no photograph."
     }
   ]
 }

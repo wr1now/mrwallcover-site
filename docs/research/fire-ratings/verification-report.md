@@ -124,14 +124,14 @@ Status: **fixed** unless stated. "Refuted" means the verifier found the point al
 | SW-10, SW-11, SW-12, SW-13 | Smoke wording; "Many"; BS EN 13823 editions; class F basis. | Corrected as proposed (SW-12 with the verifier's wording). |
 | SW-14 | UL 723 unsourced. | Dropped; ASTM E84 linked. |
 | SW-15 | Legacy section had no source line. | Source line added; the 2006 English edition is described generically and the Welsh and NI documents are linked. |
-| SW-16, PQ-15 | Share image alt names a hotel. | **Open, for the owner.** No neutral image exists in the media library; changing the alt alone would misdescribe the default image. |
+| SW-16, PQ-15 | Share image alt names a hotel. | Owner's decision (17 October 2026): no client image on this page. The media library holds only client photographs, so the page has its own typographic share card in the site's colours and fonts (`public/og-wallcovering-fire-ratings.jpg`, rendered by `scripts/og/fire-ratings-card.swift`), with a plain alt; a build test checks it names no client. |
 | PQ-2, TV-05, collines-read-as | "Read as: Not stated" for conflicting rows. | Fixed before verification. |
 | PQ-3 | Decoder accepted impossible notations. | `invalidCombination`, with tests. |
 | PQ-4 | IMO typed as EU law. | Fixed. |
 | PQ-5 | Checking date shown as issue date; awkward "issued" values. | Fetch dates removed; values normalised; the source library says "dated". |
 | PQ-6 | Unbacked review promise. | Replaced. |
-| PQ-7 | "Class A" pairing in buyer answer f-b5. | Answer now explains that "Class A" alone is not an EN 13501-1 class. **Owner to review**, as f-b5 was the owner's approved wording. |
-| PQ-9 | Hotel guide "in line with … the applicable regulations". | **Open, for the owner** (owner-approved wording). |
+| PQ-7 | "Class A" pairing in buyer answer f-b5. | Answer now explains that "Class A" alone is not an EN 13501-1 class; kept by the owner's decision (17 October 2026). |
+| PQ-9 | Hotel guide "in line with … the applicable regulations". | Owner's decision (17 October 2026): replaced everywhere (hotel guide, f-b5, the facts addition, the hotel service paragraph) with "installs to the wallcovering maker's instructions and the project's fire specification", which makes no compliance promise. |
 | PQ-10, muraspec-expiry-wording | Expiry dates come from the declaration's table. | Reworded; W048 and W054 dates added. |
 | PQ-11 | Long printed lines. | Kept in full as factual data (README); Tiburon and Geometrics caveats added. |
 | PQ-12 | Eyebrow category. | Bound to the hub card's category ("planning"). |

@@ -23,6 +23,13 @@ test('one H1, a self-canonical URL, a short title and an indexable page', () => 
   assert.ok(text.includes(page.title));
 });
 
+test('the share card is the page’s own typographic card and names no client', () => {
+  assert.match(html, /<meta property="og:image" content="https:\/\/www\.mrwallcover\.com\/og-wallcovering-fire-ratings\.jpg"/);
+  const alts = [...html.matchAll(/<meta (?:property|name)="(?:og|twitter):image:alt" content="([^"]*)"/g)].map((m) => decode(m[1]));
+  assert.ok(alts.length > 0, 'share image alt present');
+  for (const alt of alts) assert.doesNotMatch(alt, /hotel|brown|corridor/i, alt);
+});
+
 test('Article, BreadcrumbList and FAQPage match the visible page and the page data', () => {
   const article = graph.find((n) => n['@type'] === 'Article');
   assert.ok(article);
