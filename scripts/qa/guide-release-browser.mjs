@@ -25,5 +25,6 @@ try{
  }
  const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.setViewport({width:390,height:900});await nojs.goto(origin+'/where-to-buy/');assert.ok(await nojs.$eval('main',e=>e.textContent.includes('Order a sample')));assert.equal(await nojs.$eval('.footer-group',e=>e.open),true);await nojs.close();
  const keyboard=await browser.newPage();await keyboard.setViewport({width:390,height:900});await keyboard.goto(origin+'/advice/');await keyboard.focus('.menu-toggle');await keyboard.keyboard.press('Enter');assert.equal(await keyboard.$eval('.menu-toggle',e=>e.getAttribute('aria-expanded')),'true');await keyboard.keyboard.press('Escape');assert.equal(await keyboard.$eval('.menu-toggle',e=>e.getAttribute('aria-expanded')),'false');await keyboard.close();
+ await mkdir('.review-screens',{recursive:true});
  await writeFile('.review-screens/guide-browser-results.json',JSON.stringify(results,null,2));console.log(`Guide browser checks: ${results.length} route/width cases, 8 shared-footer cases, keyboard, disclosure, effects and no-JavaScript passed.`);
 }finally{await browser.close();await server.close();}
