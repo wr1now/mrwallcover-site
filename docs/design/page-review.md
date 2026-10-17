@@ -153,3 +153,15 @@ The shared buyer-question, Guide and FAQ templates now place a relevant framed t
 [Question block before](screens/questions-before-1440.jpg) · [After with relevant right-hand drawings](screens/questions-after-1440.jpg) · [After on mobile](screens/questions-after-390.jpg)
 
 The additional question review covered standard, buyer, Guide and home FAQ layouts at390/1440 (56 question instances). Every drawing remained to the right, buyer answers stayed open and there was no overflow. All196 built-site checks and both typography/contrast checks passed after the question treatment; a final build and64 focused shared-system/FAQ checks passed after the scenic-panel glyph refinement.
+
+## Standalone Guide release — 17 October 2026
+
+Based on main after #66 and #67. The shared design foundation is inherited, not bundled as an unpublished dependency. The Guide’s five stage icons clarify navigation; the existing illustrated guide library stays below. Where to buy is a text-led order checklist, with dated official sources. How we check is a text-led editorial policy: no photograph can prove independent review. Neither new page publishes maker/seller records or technical performance figures. No draft calculator, materials dataset, fire-reference dataset or analytics is included. All preparation/quantity/fire links point to existing published guides.
+
+The policy governs new product/buying-route references and explicitly avoids claiming all older content has had two independent reviews. The private names secret is configured; CI requires it and fails on absence. New routes inherit the editorial template, common actions and footer. Both routes are in the route review and search; the editorial discovery pipeline adds sitemap, llms and Markdown twins.
+
+Verification: source checks 84/84; production build; built-site checks 196/196 plus temporary new-route and phone-enabled browser fixtures; Guide integration/name unit checks 9/9; guide publication checks 5/5; phone builds 2/2. Focused browser review covers 18 route/width cases (360, 390, 768, 1024, 1280, 1440), 8 shared-footer cases, keyboard menu/Escape, native disclosures, reduced effects and no-JavaScript content. The full inherited site audit covers all routes at 390/1440. No-loss passes against a fresh main build: 98 → 100 routes, 3,609 media files retained, 98 → 100 Markdown twins, no JSON-LD reduction. Strict private-name check passes with 64 entries; the list stays private.
+
+Mobile and desktop captures are in [guide-release/](guide-release/), including each new/changed page and the shared footer on home, services, contact and the Timorous Beasties page. Images were inspected for readable hierarchy and navigation; the two editorial pages remain deliberately text-led. No runtime package or animation dependency is added.
+
+Guide uncompressed local transfer inventory on the same production page (HTML and directly referenced CSS/JS): `{"main": {"htmlBytes": 54933, "cssBytes": 92141, "jsBytes": 0, "assetCount": 1}, "release": {"htmlBytes": 62127, "cssBytes": 92141, "jsBytes": 0, "assetCount": 1}}`. This is a static asset comparison, not a field Core Web Vitals claim.

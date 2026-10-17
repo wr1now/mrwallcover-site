@@ -16,6 +16,9 @@
  *   beside the body. Use cleared library media and an existing linked project.
  * - featureDiagram: { kind, caption }; adds an original schematic where it explains the article.
  */
+import GuideNav from '../components/GuideNav.astro';
+import type { GuideStage } from '../lib/guide-stages';
+import '../styles/guide.css';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import BuyerFaq from '../components/BuyerFaq.astro';
 import FaqList from '../components/FaqList.astro';
@@ -36,6 +39,7 @@ import { guides, guideHref } from '../lib/guides';
 import { breadcrumbNode, faqNode, guideArticleNode, singleServiceNode } from '../lib/schema';
 
 interface PageExtras {
+  guideStage?: GuideStage['id'] | 'check';
   updated?: string;
   published?: string;
   service?: { name: string; serviceType?: string };
@@ -106,6 +110,7 @@ const buyerFaq = professionalPage
         <Action variant="secondary" href="/projects/">See the work</Action>
       </div>
     </header>
+    {page.guideStage && <GuideNav current={page.guideStage} />}
     {
       intake ? (
         <div class="grid gap-10 pb-12 md:grid-cols-12">
@@ -119,7 +124,7 @@ const buyerFaq = professionalPage
         </div>
       ) : (
         <div class:list={['editorial-body pb-12', (page.featureMedia || page.featureDiagram) && 'editorial-body-with-media']}>
-          <article class="prose guide-prose max-w-3xl">
+          <article class:list={['prose guide-prose max-w-3xl', page.guideStage && 'guide-stage-page']}>
             <Content />
           </article>
           {page.featureMedia && <EvidenceFigure class="editorial-feature-media" id={page.featureMedia.id} caption={page.featureMedia.caption} credit={page.featureMedia.credit} href={featureProject ? projectHref(featureProject.slug) : undefined} linkLabel={featureProject ? `View the ${featureProject.title} case study` : undefined} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" />}
