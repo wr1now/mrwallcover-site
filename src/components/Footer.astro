@@ -1,7 +1,6 @@
 ---
 import '../styles/footer.css';
 import facts from '../data/facts.json';
-import PhoneReveal from './PhoneReveal.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
 import BookCallLink from './BookCallLink.astro';
 import Action from './Action.astro';
@@ -30,6 +29,7 @@ const installationSlugs = new Set([
 const installation = servicePages.filter((page) => installationSlugs.has(page.href.split('/')[2]));
 const specialistWork = servicePages.filter((page) => !installationSlugs.has(page.href.split('/')[2]));
 const explore = [
+  { href: '/get-in-touch/', label: 'Contact' },
   { href: '/projects/', label: 'Projects' },
   { href: '/projects/#hotels', label: 'Hotels' },
   { href: '/services/', label: 'Services' },
@@ -37,6 +37,13 @@ const explore = [
   { href: '/professionals/', label: 'For professionals' },
   { href: '/trade/', label: 'Trade and contractors' },
   { href: '/advice/', label: 'Wallcovering Guide' },
+  { href: '/where-to-buy/', label: 'Where to buy' },
+  { href: '/how-we-check/', label: 'How we check' },
+  { href: '/wallpapering/', label: 'Wallpapering' },
+  { href: '/calculator/', label: 'Wallpaper calculator' },
+  { href: '/wallpapering/preparation/', label: 'Wall preparation' },
+  { href: '/wallpapering/lining-and-adhesives/', label: 'Lining & adhesives' },
+  { href: '/advice/wallcovering-fire-ratings-uk/', label: 'Fire ratings & standards' },
   { href: '/advice/cost/', label: 'Installation cost' },
   { href: '/aftercare/', label: 'Aftercare' },
   { href: '/about/', label: 'About' },
@@ -76,7 +83,6 @@ const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) =
           {facts.profiles.map((profile) => (
             <li><a href={profile.url}><Icon name="instagram" /><span>{profile.handle ?? profile.name}</span></a></li>
           ))}
-          {phoneAvailable && <li class="footer-phone"><Icon name="phone" /><PhoneReveal class="footer-reveal" /></li>}
         </ul>
       </section>
     </div>
@@ -87,7 +93,7 @@ const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) =
       <details class="footer-group footer-explore" open>
         <summary><span>Explore</span><span class="footer-disclosure" aria-hidden="true"></span></summary>
         <div class="footer-group-content footer-explore-columns">
-          {[explore.slice(0, 6), explore.slice(6)].map((links) => (
+          {[explore.slice(0, Math.ceil(explore.length / 2)), explore.slice(Math.ceil(explore.length / 2))].map((links) => (
             <ul>{links.map((page) => <li><a href={page.href}>{page.label}</a></li>)}</ul>
           ))}
         </div>

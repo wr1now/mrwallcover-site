@@ -257,14 +257,13 @@
     display: none;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     .site-header {
       padding-inline: 1.25rem;
     }
   }
 
-  /* The full menu needs 1280px for its nine links at 14px (owner, 14 Oct 2026). Below that, the bar keeps
-     the menu button and the bottom dock that phones and tablets use. Header.astro's script uses the same query. */
+  /* Desktop navigation starts at 1280px. Keep this breakpoint aligned with Header.astro. */
   @media (min-width: 1280px) {
     .dock {
       display: none !important;

@@ -1,4 +1,5 @@
 ---
+import Action from '../../components/Action.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import WallpaperingNav from '../../components/WallpaperingNav.astro';
 import Base from '../../layouts/Base.astro';
@@ -110,8 +111,8 @@ const lining = (grade: number | null) => {
       <h2>Not sure what your wall is?</h2>
       <p>Send a photograph in daylight and tell us what you know about the wall. We will say what it needs, and whether we should see it first.</p>
       <div class="flex flex-wrap gap-3">
-        <a class="btn btn-solid-ink" href="/contact/?intent=prepare">Discuss wall preparation</a>
-        <a class="btn btn-line" href="/calculator/">Work out the rolls</a>
+        <Action href="/contact/?intent=prepare">Discuss wall preparation</Action>
+        <Action variant="secondary" href="/calculator/">Work out the rolls</Action>
       </div>
     </section>
   </div>

@@ -106,6 +106,13 @@ export function computeLastmod(root) {
     set(`/advice/${fm.slug}/`, fm.updated);
     guideDates.push(fm.updated);
   }
+  // The fire-ratings reference: its own `updated` date (src/content/fire-ratings/page.json), set when the
+  // visible guidance changes. Data rechecks that change nothing on the page do not move it.
+  const fire = JSON.parse(readFileSync(rel('src/content/fire-ratings/page.json'), 'utf8'));
+  if (ISO.test(fire.updated ?? '')) {
+    set(`/advice/${fire.slug}/`, fire.updated);
+    guideDates.push(fire.updated);
+  }
   // Editorial pages.
   for (const name of readdirSync(rel('src/content/pages')).filter((n) => n.endsWith('.md'))) {
     const file = `src/content/pages/${name}`;
@@ -135,6 +142,7 @@ export function computeLastmod(root) {
     '/accessibility/': ['src/pages/accessibility.astro'],
     '/aftercare/': ['src/pages/aftercare.astro', 'src/content/aftercare.json'],
     '/details/': ['src/pages/details.astro'],
+    '/get-in-touch/': ['src/pages/get-in-touch.astro', 'src/content/get-in-touch.json'],
     '/contact/': ['src/pages/contact.astro', 'src/content/contact.json'],
     '/faq/': ['src/pages/faq.astro', 'src/content/faq.json'],
     '/privacy/': ['src/pages/privacy.astro', 'src/content/privacy.json'],
@@ -142,11 +150,11 @@ export function computeLastmod(root) {
     '/for-ai/': ['src/pages/for-ai.astro', 'src/data/facts.json', 'src/data/buyer-answers.json', 'src/lib/ai-layer-data.ts'],
     '/wallcovering-installation-ai-crawler/': ['src/pages/wallcovering-installation-ai-crawler.astro', 'src/lib/ai-crawler.ts', 'src/lib/ai-decision-guide.ts'],
     '/advice/': ['src/pages/advice/index.astro'],
-    '/advice/quantities/': ['src/pages/advice/quantities.astro'],
-    '/calculator/': ['src/pages/calculator.astro', 'src/lib/quantity.ts', 'src/lib/materials.ts', 'src/data/wallpapering.json'],
     '/wallpapering/': ['src/pages/wallpapering/index.astro', 'src/data/wallpapering.json'],
+    '/calculator/': ['src/pages/calculator.astro', 'src/lib/quantity.ts', 'src/lib/materials.ts', 'src/data/wallpapering.json'],
     '/wallpapering/preparation/': ['src/pages/wallpapering/preparation.astro', 'src/data/wallpapering.json'],
     '/wallpapering/lining-and-adhesives/': ['src/pages/wallpapering/lining-and-adhesives.astro', 'src/data/wallpapering.json'],
+    '/advice/quantities/': ['src/pages/advice/quantities.astro'],
     '/areas/': ['src/pages/areas/index.astro', 'src/content/areas.json'],
     '/materials/': ['src/pages/materials/index.astro', 'src/content/materials.json', 'src/content/makers-installed.json'],
     '/professionals/': ['src/pages/professionals.astro', 'src/content/professionals.json'],

@@ -165,6 +165,10 @@ const toCm = (t: number) => Math.round((t * 10) / TICKS) / 10;
 const mod = (a: number, m: number) => ((a % m) + m) % m;
 const bad = (value: unknown) => typeof value !== 'number' || !Number.isFinite(value) || value <= 0;
 const negative = (value: unknown) => value !== undefined && (typeof value !== 'number' || !Number.isFinite(value) || value < 0);
+const validTicks = (cm: number) => Number.isSafeInteger(toT(cm)) && toT(cm) > 0;
+// A browser must be able to check the plan (including the close-call variants) without freezing.
+const MAX_PIECES = 2000;
+const COMPLEX_PLAN = 'These measurements need a larger cutting plan. Send us your measurements so we can check the order.';
 
 export const DEFAULT_TRIM_CM = 5;
 export const PHASES: Record<Match, number> = { free: 1, reverse: 1, straight: 1, half: 2, third: 3, quarter: 4 };
@@ -220,6 +224,7 @@ function piecesFor(run: Run, ctx: Ctx): { pieces: Piece[]; drops: number } | str
   const pieces: Piece[] = [];
   const over = new Set<number>();
   let next = 1;
+  let openingWidth = 0;
   for (const opening of run.openings) {
     const Ow = toT(opening.widthCm);
     const Oh = toT(opening.heightCm);
@@ -228,6 +233,8 @@ function piecesFor(run: Run, ctx: Ctx): { pieces: Piece[]; drops: number } | str
     if (bad(opening.widthCm) || bad(opening.heightCm) || negative(opening.fromFloorCm) || negative(opening.depthCm)) {
       return 'Each door, window or niche needs a width and a height greater than zero.';
     }
+    openingWidth += Ow;
+    if (openingWidth > run.width) return 'The openings are wider than the wall. Check the widths.';
     const A = H - F - Oh;
     if (A < 0) return 'An opening reaches higher than the wall. Check its height and its distance from the floor.';
     const niche = opening.kind === 'niche';
@@ -263,6 +270,7 @@ function piecesFor(run: Run, ctx: Ctx): { pieces: Piece[]; drops: number } | str
       }
     }
     next += k + 1;
+    if (pieces.length > MAX_PIECES) return COMPLEX_PLAN;
   }
   for (let i = 0; i < N; i++) {
     if (!over.has(i)) pieces.push({ kind: 'full', len: H + t, phase: phaseOf(i), cls: i % m, wall: run.wall, drop: i + 1, seq: i * 10 });
@@ -366,18 +374,10 @@ function simulate(pieces: Piece[], L: number, R: number, method: 'drop-order' | 
 
 /** Full drops of one height that fit on a new roll, cut the way the plan cuts them. */
 function capacity(h: number, L: number, R: number, m: number, method: 'drop-order' | 'phase'): number {
-  let cursor = 0;
-  let align: number | null = null;
-  let count = 0;
-  for (let i = 0; i < 1000; i++) {
-    const phase = R && m > 1 && method === 'drop-order' ? ((i % m) * R) / m : 0;
-    const start = align === null ? R : R ? cursor + mod(phase - (align + cursor), R) : cursor;
-    if (start + h > L) break;
-    if (align === null) align = R ? mod(phase - start, R) : 0;
-    cursor = start + h;
-    count++;
-  }
-  return count;
+  if (R + h > L) return 0;
+  const phaseStep = R && m > 1 && method === 'drop-order' ? R / m : 0;
+  const pitch = h + (R ? mod(phaseStep - h, R) : 0);
+  return 1 + Math.floor((L - R - h) / pitch);
 }
 
 /* ---------- the calculation ---------- */
@@ -388,7 +388,9 @@ function runsOf(input: QuantityInput): Run[] | string {
     if (bad(room.lengthCm) || bad(room.widthCm) || bad(room.heightCm)) return 'Enter the room length, width and height in centimetres.';
     const returns = (room.returnsCm ?? []).reduce((sum, depth) => sum + depth, 0);
     if ((room.returnsCm ?? []).some((depth) => negative(depth))) return 'A return depth cannot be negative.';
-    return [{ width: toT(2 * (room.lengthCm + room.widthCm) + returns), height: toT(room.heightCm), openings: room.openings ?? [], wall: 1 }];
+    const widthCm = 2 * (room.lengthCm + room.widthCm) + returns;
+    if (!validTicks(widthCm) || !validTicks(room.heightCm)) return 'Check the room dimensions. Enter finite measurements greater than zero.';
+    return [{ width: toT(widthCm), height: toT(room.heightCm), openings: room.openings ?? [], wall: 1 }];
   }
   const walls = input.walls ?? [];
   if (!walls.length) return 'Add at least one wall.';
@@ -397,6 +399,7 @@ function runsOf(input: QuantityInput): Run[] | string {
     if (bad(wall.widthCm) || bad(wall.heightCm)) return 'Each wall needs a width and a height greater than zero.';
     if ((wall.returnsCm ?? []).some((depth) => negative(depth))) return 'A return depth cannot be negative.';
     const returns = (wall.returnsCm ?? []).reduce((sum, depth) => sum + depth, 0);
+    if (!validTicks(wall.widthCm + returns) || !validTicks(wall.heightCm)) return 'Check the wall dimensions. Enter finite measurements greater than zero.';
     runs.push({ width: toT(wall.widthCm + returns), height: toT(wall.heightCm), openings: wall.openings ?? [], wall: index + 1 });
   }
   return runs;
@@ -433,16 +436,23 @@ export function calculate(input: QuantityInput): QuantityResult {
     if (negative(soldBy.marginCm)) return { ok: false, route: 'error', reason: 'The margin cannot be negative.' };
     const widthCm = wall.widthCm + soldBy.marginCm;
     const heightCm = wall.heightCm + soldBy.marginCm;
+    if (!validTicks(widthCm) || !validTicks(heightCm) || !Number.isFinite(soldBy.marginCm)) return { ok: false, route: 'error', reason: 'Check the wall dimensions and the maker’s margin.' };
     return { ok: true, kind: 'mural', widthCm, heightCm, marginCm: soldBy.marginCm, areaM2: Math.round((widthCm * heightCm) / 100) / 100 };
   }
 
   if (bad(paper.widthCm)) return { ok: false, route: 'error', reason: 'Enter the usable width of the paper, greater than zero.' };
+  if (!validTicks(paper.widthCm)) return { ok: false, route: 'error', reason: 'Check the usable width of the paper. Enter a finite measurement greater than zero.' };
   if (soldBy.kind !== 'length' && bad(paper.lengthCm)) return { ok: false, route: 'error', reason: 'Enter the roll length, greater than zero.' };
+  if (soldBy.kind === 'length' && paper.lengthCm < 0) return { ok: false, route: 'error', reason: 'The longest supplied length cannot be negative.' };
   if (negative(paper.trimTopCm) || negative(paper.trimBottomCm)) return { ok: false, route: 'error', reason: 'Trim cannot be negative.' };
   if (negative(paper.repeatCm)) return { ok: false, route: 'error', reason: 'The pattern repeat cannot be negative.' };
   const patterned = paper.match !== 'free' && paper.match !== 'reverse';
+  if (!Object.hasOwn(PHASES, paper.match)) return { ok: false, route: 'error', reason: 'Choose a pattern match from the list.' };
   if (patterned && bad(paper.repeatCm)) return { ok: false, route: 'error', reason: 'A patterned paper needs its pattern repeat. Free match papers have none.' };
+  if (patterned && !validTicks(paper.repeatCm!)) return { ok: false, route: 'error', reason: 'Check the pattern repeat. Enter a finite measurement greater than zero.' };
   if (soldBy.kind === 'set' && !(Number.isInteger(soldBy.rollsPerSet) && soldBy.rollsPerSet > 1)) return { ok: false, route: 'error', reason: 'A set needs at least two rolls.' };
+  if (soldBy.kind === 'bolt' && soldBy.minimumBolts !== undefined && (!Number.isSafeInteger(soldBy.minimumBolts) || soldBy.minimumBolts < 0)) return { ok: false, route: 'error', reason: 'The minimum order must be a whole number of bolts.' };
+  if (soldBy.kind === 'length' && soldBy.minimumUnits !== undefined && (!Number.isSafeInteger(soldBy.minimumUnits) || soldBy.minimumUnits < 0)) return { ok: false, route: 'error', reason: 'The minimum order must be a whole number of metres or yards.' };
 
   const runs = runsOf(input);
   if (typeof runs === 'string') return { ok: false, route: 'error', reason: runs };
@@ -451,6 +461,9 @@ export function calculate(input: QuantityInput): QuantityResult {
   const trimBottomCm = paper.trimBottomCm ?? DEFAULT_TRIM_CM;
   const ctx: Ctx = { w: toT(paper.widthCm), R: patterned ? toT(paper.repeatCm ?? 0) : 0, m: patterned ? PHASES[paper.match] : 1, t: toT(trimTopCm + trimBottomCm) };
   const L = soldBy.kind === 'length' ? toT(paper.lengthCm > 0 ? paper.lengthCm : 3000) : toT(paper.lengthCm);
+  if (!Number.isSafeInteger(L) || L <= 0 || !Number.isSafeInteger(ctx.t)) return { ok: false, route: 'error', reason: 'Check the roll length and trim. Enter finite measurements.' };
+  const expectedDrops = runs.reduce((sum, run) => sum + Math.ceil(run.width / ctx.w), 0);
+  if (expectedDrops > MAX_PIECES || runs.some((run) => run.openings.length > MAX_PIECES)) return { ok: false, route: 'request', reason: COMPLEX_PLAN };
 
   const pieces: Piece[] = [];
   const runInfo: PlanResult['runs'] = [];
@@ -459,6 +472,7 @@ export function calculate(input: QuantityInput): QuantityResult {
     const made = piecesFor(run, ctx);
     if (typeof made === 'string') return { ok: false, route: 'error', reason: made };
     pieces.push(...made.pieces);
+    if (pieces.length > MAX_PIECES) return { ok: false, route: 'request', reason: COMPLEX_PLAN };
     drops += made.drops;
     runInfo.push({ widthCm: toCm(run.width), heightCm: toCm(run.height), drops: made.drops });
   }
@@ -506,7 +520,9 @@ export function calculate(input: QuantityInput): QuantityResult {
       const total = plan.rolls.reduce((sum, roll) => sum + roll.cursor, 0);
       usedCm = toCm(total);
       working = { count: Math.max(Math.ceil(total / unitT), soldBy.minimumUnits ?? 0), unit: UNITS[soldBy.unit] };
-      spare = { count: Math.ceil(cutPitch / unitT), unit: UNITS[soldBy.unit] };
+      const longestDrop = Math.max(...runs.map((run) => run.height + ctx.t));
+      const spareLength = ctx.R && ctx.m === 1 ? Math.ceil(longestDrop / ctx.R) * ctx.R : longestDrop;
+      spare = { count: Math.ceil(spareLength / unitT), unit: UNITS[soldBy.unit] };
       break;
     }
     default:
@@ -586,6 +602,7 @@ export function liningPlan(input: QuantityInput, liningWidthCm: number, liningLe
   if (typeof runs === 'string' || bad(liningWidthCm) || bad(liningLengthCm)) return null;
   const w = toT(liningWidthCm);
   const L = toT(liningLengthCm);
+  if (!Number.isSafeInteger(w) || !Number.isSafeInteger(L) || w <= 0 || L <= 0) return null;
   const t = toT(2 * DEFAULT_TRIM_CM);
   const pieces: Piece[] = [];
   let seq = 0;
@@ -602,6 +619,9 @@ export function liningPlan(input: QuantityInput, liningWidthCm: number, liningLe
     ? [input.room.lengthCm, input.room.widthCm, input.room.lengthCm, input.room.widthCm].map((width, index) => ({ width: toT(width + (index === 0 ? (input.room!.returnsCm ?? []).reduce((a, b) => a + b, 0) : 0)), height: toT(input.room!.heightCm), wall: index + 1 }))
     : runs.map((run) => ({ width: run.width, height: run.height, wall: run.wall }));
   for (const wall of walls) {
+    const count = orientation === 'across' ? Math.ceil(wall.height / w) : Math.ceil(wall.width / w);
+    const length = orientation === 'across' ? wall.width + t : wall.height + t;
+    if (count * Math.ceil(length / L) + pieces.length > MAX_PIECES) return null;
     if (orientation === 'across') {
       const courses = Math.ceil(wall.height / w);
       for (let c = 0; c < courses; c++) add(wall.width + t, wall.wall);

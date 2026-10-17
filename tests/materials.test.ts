@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { test } from 'node:test';
 import { HOUSE_LINING_PASTE, liningPaste, packsFor, pasteKg, primerLitres, product, products, makers } from '../src/lib/materials.ts';
+import type { PlanResult, QuantityInput } from '../src/lib/quantity.ts';
 
 test('every product and maker row carries a source and a check date, and confirmed figures are as printed', () => {
   for (const item of products) {
@@ -53,7 +54,7 @@ test('unconfirmed products never feed a quantity', () => {
 test('the materials list under a result: primer, lining across, the maker\'s paste with its printed quantity, and a lining paste a step stronger', async () => {
   const { calculate } = await import('../src/lib/quantity.ts');
   const { materialsFor } = await import('../src/lib/materials.ts');
-  const input = { paper: { widthCm: 55, lengthCm: 1000, repeatCm: 65, match: 'straight' as const }, walls: [{ widthCm: 230, heightCm: 265 }] };
+  const input = { paper: { widthCm: 52, lengthCm: 1000, repeatCm: 65, match: 'straight' as const }, walls: [{ widthCm: 230, heightCm: 265 }] };
   const result = calculate(input);
   assert.ok(result.ok && result.kind === 'plan');
   if (!result.ok || result.kind !== 'plan') return;
@@ -101,7 +102,7 @@ test('the house pastes (owner, 14 Oct 2026): every one is on the ladder with a s
   assert.equal(words.some((word) => unnamed.has(createHash('sha256').update(word).digest('hex'))), false);
 });
 
-test('the ladder reads Light, Medium, Heavy, Extra-heavy (owner, 14 Oct 2026); a sealed wall gets a VOV adhesive, never a water-based paste', async () => {
+test('the house scale reads Light, Medium, Heavy, Extra-heavy; a sealed wall needs a compatible adhesive and build-up check', async () => {
   const { wallpapering, ladderLabel, materialsFor, vovAdhesives } = await import('../src/lib/materials.ts');
   const { calculate } = await import('../src/lib/quantity.ts');
   assert.deepEqual(wallpapering.ladder.map((step) => step.label), ['Light', 'Medium', 'Heavy', 'Extra-heavy']);
@@ -118,7 +119,7 @@ test('the ladder reads Light, Medium, Heavy, Extra-heavy (owner, 14 Oct 2026); a
   const generic = materialsFor(input, result, { condition: 'sealed' });
   assert.deepEqual(generic.lines.map((line) => line.name), ['A vinyl-over-vinyl adhesive (VOV) made for sealed surfaces']);
   assert.equal(generic.checks.length, 2, 'a sealed wall is checked with us, with the fire-rating warning (owner, 14 Oct 2026)');
-  assert.match(generic.checks.join(' '), /voids the makers\u2019 fire rating certification/);
+  assert.match(generic.checks.join(' '), /fire classification applies to the specified complete build-up/);
   const muraspec = materialsFor(input, result, { condition: 'sealed', makerId: 'muraspec' });
   assert.equal(muraspec.lines[0].name, 'Murabond Sealed Surface Adhesive (vinyl-over-vinyl use)');
   assert.equal(muraspec.lines[0].amount, '1.43–1.67 kg: 1 × 5 kg', '10 m² at the label\'s 6/7 m² per kg');
@@ -126,6 +127,85 @@ test('the ladder reads Light, Medium, Heavy, Extra-heavy (owner, 14 Oct 2026); a
   assert.equal(tektura.name, 'Tekfix Vinyl over Vinyl (Tekfix VOV)');
   assert.equal(tektura.amount, null, 'no amount from an archived page');
   assert.match(tektura.note ?? '', /check availability/);
+});
+
+test('per-roll paste coverage only applies to the maker’s checked standard roll sizes and sales unit', async () => {
+  const { calculate } = await import('../src/lib/quantity.ts');
+  const { materialsFor } = await import('../src/lib/materials.ts');
+  const listFor = (paper: QuantityInput['paper']) => {
+    const input = { paper, walls: [{ widthCm: 500, heightCm: 270 }] };
+    const result = calculate(input);
+    assert.ok(result.ok && result.kind === 'plan');
+    return { result: result as PlanResult, list: materialsFor(input, result as PlanResult, { makerId: 'cole-and-son', condition: 'sound' }) };
+  };
+  for (const lengthCm of [1000, 1005]) {
+    const { result, list } = listFor({ widthCm: 52, lengthCm, match: 'free' });
+    assert.equal(list.lines.find((line) => line.role === 'paste')!.need, `${result.working.count} kg`);
+    assert.equal(list.checks.length, 0);
+  }
+  const variants: QuantityInput['paper'][] = [
+    { widthCm: 70, lengthCm: 1000, match: 'free' },
+    { widthCm: 52, lengthCm: 2000, match: 'free' },
+    { widthCm: 52, lengthCm: 1000, match: 'free', soldBy: { kind: 'double-roll' } },
+    { widthCm: 52, lengthCm: 1000, match: 'free', soldBy: { kind: 'bolt' } },
+    { widthCm: 52, lengthCm: 1000, match: 'free', soldBy: { kind: 'set', rollsPerSet: 3 } },
+    { widthCm: 52, lengthCm: 3000, match: 'free', soldBy: { kind: 'length', unit: 'm' } },
+    { widthCm: 52, lengthCm: 3000, match: 'free', soldBy: { kind: 'length', unit: 'yd' } },
+  ];
+  for (const paper of variants) {
+    const { list } = listFor(paper);
+    assert.equal(list.lines.find((line) => line.role === 'paste')!.amount, null, JSON.stringify(paper));
+    assert.match(list.checks.join(' '), /confirm the amount for this roll size and sales unit/);
+  }
+});
+
+test('maker-only Farrow & Ball selection cannot choose powder paste for an unidentified backing', async () => {
+  const { calculate } = await import('../src/lib/quantity.ts');
+  const { materialsFor } = await import('../src/lib/materials.ts');
+  const input = { paper: { widthCm: 53, lengthCm: 1000, match: 'free' as const }, walls: [{ widthCm: 500, heightCm: 270 }] };
+  const result = calculate(input);
+  assert.ok(result.ok && result.kind === 'plan');
+  if (!result.ok || result.kind !== 'plan') return;
+  const list = materialsFor(input, result, { condition: 'sound', makerId: 'farrow-and-ball' });
+  const paste = list.lines.find((line) => line.role === 'paste')!;
+  assert.equal(paste.amount, null);
+  assert.match(paste.name, /confirms for this product/);
+  assert.match(list.checks.join(' '), /not recommended for non-woven/);
+  assert.equal(list.lines.some((line) => line.role === 'lining-paste'), false);
+});
+
+test('unconfirmed maker and paste instructions cannot generate named adhesive purchases', async () => {
+  const { calculate } = await import('../src/lib/quantity.ts');
+  const { materialsFor } = await import('../src/lib/materials.ts');
+  const input = { paper: { widthCm: 53, lengthCm: 1005, match: 'free' as const }, walls: [{ widthCm: 500, heightCm: 270 }] };
+  const result = calculate(input);
+  assert.ok(result.ok && result.kind === 'plan');
+  if (!result.ok || result.kind !== 'plan') return;
+  for (const makerId of ['timorous-beasties', 'schumacher']) {
+    const list = materialsFor(input, result, { condition: 'sound', makerId });
+    assert.equal(list.lines.some((line) => line.role === 'lining'), false, makerId);
+    assert.equal(list.lines.find((line) => line.role === 'paste')!.name, 'The paste the wallpaper maker names');
+    assert.match(list.checks.join(' '), /instructions have not been confirmed/);
+    assert.equal(liningPaste(2, makerId).ok, false);
+  }
+  const pj = materialsFor(input, result, { condition: 'stripped', makerId: 'phillip-jeffries' });
+  assert.equal(pj.lines.find((line) => line.role === 'paste')!.amount, null);
+  assert.equal(pj.lines.some((line) => line.role === 'lining-paste'), false);
+  assert.match(pj.checks.join(' '), /paste instruction has not been confirmed/);
+});
+
+test('an unknown wallpaper paste cannot imply that the house lining adhesive is compatible', async () => {
+  const { calculate } = await import('../src/lib/quantity.ts');
+  const { materialsFor } = await import('../src/lib/materials.ts');
+  assert.equal(liningPaste(null).ok, false);
+  const input = { paper: { widthCm: 53, lengthCm: 1005, match: 'free' as const }, walls: [{ widthCm: 500, heightCm: 270 }] };
+  const result = calculate(input);
+  assert.ok(result.ok && result.kind === 'plan');
+  if (!result.ok || result.kind !== 'plan') return;
+  const list = materialsFor(input, result, { condition: 'stripped' });
+  assert.ok(list.lines.some((line) => line.role === 'lining'));
+  assert.equal(list.lines.some((line) => line.role === 'lining-paste'), false);
+  assert.match(list.checks.join(' '), /check both pastes/);
 });
 
 test('each amount splits into what the wall needs and what to buy, for the materials ledger', async () => {

@@ -1,5 +1,6 @@
 ---
 import Breadcrumb from '../components/Breadcrumb.astro';
+import Action from '../components/Action.astro';
 import WallpaperingNav from '../components/WallpaperingNav.astro';
 import Base from '../layouts/Base.astro';
 import { isConfirmed, makers, wallpapering } from '../lib/materials';
@@ -105,7 +106,8 @@ const conditions = wallpapering.conditionQuestion.options;
           </div>
           <div class="field" data-mural-field hidden>
             <label for="qc-margin">Margin the mural maker asks you to add, <span data-u="small">cm</span></label>
-            <input id="qc-margin" name="margin" data-dim="small" type="number" inputmode="decimal" min="0" step="0.5" value="10" />
+            <input id="qc-margin" name="margin" data-dim="small" type="number" inputmode="decimal" min="0" step="0.5" placeholder="From the maker's instructions" aria-describedby="qc-hint-margin" />
+            <p class="qc-hint form-note" id="qc-hint-margin">Use the maker's stated margin. Enter 0 only when the maker says no extra margin is needed.</p>
           </div>
         </div>
         <details class="qc-sub" data-maker-box>
@@ -207,24 +209,47 @@ const conditions = wallpapering.conditionQuestion.options;
       </details>
 
       <div class="qc-submit">
-        <button class="btn btn-solid-ink" type="submit">Work it out</button>
+        <Action type="submit" icon="arrow-right">Work it out</Action>
       </div>
       <!-- The docket spans every row of the left column at desktop width (see .qc-docket below), so it stays beside the form. -->
       <aside class="qc-docket" data-docket aria-labelledby="qc-docket-heading">
         <h3 id="qc-docket-heading" class="qc-docket-title" tabindex="-1">Your order</h3>
         <div class="qc-docket-body" data-docket-body>
+          <figure class="qc-measure-diagram">
+            <svg viewBox="0 0 320 180" role="img" aria-labelledby="qc-measure-title qc-measure-desc">
+              <title id="qc-measure-title">Two measurements to begin</title>
+              <desc id="qc-measure-desc">An illustrative wall elevation: measure its full width and the height from the skirting to where the wallpaper stops. The drawing is not to scale.</desc>
+              <defs>
+                <linearGradient id="qc-paper" x1="0" x2="1"><stop stop-color="var(--color-panel)" /><stop offset="1" stop-color="var(--color-ivory-deep)" /></linearGradient>
+              </defs>
+              <path class="qc-diagram-shadow" d="M45 33h226v116H45z" />
+              <path class="qc-diagram-wall" d="M34 24h226v116H34z" />
+              <path class="qc-diagram-paper" d="M34 24h57v116H34z" />
+              <path class="qc-diagram-seam" d="M91 24v116m56-116v116m57-116v116" />
+              <path class="qc-diagram-rule" d="M34 134h226M34 140h226" />
+              <path class="qc-diagram-dimension" d="M34 155v10m226-10v10M34 160h226m-226 0 5-3m-5 3 5 3m221-3-5-3m5 3-5 3M276 24h10m-10 110h10m-5-110v110m0-110-3 5m3-5 3 5m-3 105-3-5m3 5 3-5" />
+              <text x="147" y="177" text-anchor="middle">Wall width</text>
+              <text x="302" y="80" text-anchor="middle" transform="rotate(-90 302 80)">Height to paper</text>
+            </svg>
+            <figcaption>Width sets the number of drops. Height sets each cut. <span>Illustrative · not to scale</span></figcaption>
+          </figure>
           <dl class="qc-order qc-order-empty">
             <div><dt>Working</dt><dd><strong>—</strong></dd></div>
             <div><dt><span class="qc-op">+</span> Spare</dt><dd><strong>—</strong></dd></div>
             <div class="qc-total"><dt><span class="qc-op">=</span> Order</dt><dd><strong>—</strong></dd></div>
           </dl>
-          <span class="qc-roll-bar qc-roll-empty" aria-hidden="true"></span>
           <p class="qc-hint">Type the wall's width and height.</p>
         </div>
+        <p class="qc-small" data-stale-note hidden>Update the measurement to refresh this result.</p>
       </aside>
       <p class="sr-only" role="status" data-qc-status></p>
       <div class="qc-result" id="qc-result" data-quantity-output tabindex="-1" hidden></div>
     </form>
+
+    <!-- Shared actions are rendered once, then cloned when the calculator has an outcome. -->
+    <template data-qc-action="check"><Action href="/contact/?intent=advice&from=calculator" icon="arrow-right">Have Mr Wallcover check this</Action></template>
+    <template data-qc-action="send"><Action href="/contact/?intent=install&from=calculator" variant="secondary" icon="mail">Send us your measurements</Action></template>
+    <template data-qc-action="request"><Action href="/contact/?intent=install&from=calculator" icon="mail">Send us your measurements</Action></template>
 
     <template data-opening-template>
       <fieldset class="qc-opening" data-opening>
@@ -255,8 +280,8 @@ const conditions = wallpapering.conditionQuestion.options;
       <h2>The method, with worked examples.</h2>
       <p>Why width decides the number of drops, how the pattern repeat changes the cut, why we count drops rather than add a percentage, and when doors and windows save a drop: our guide to <a href="/advice/quantities/">how much wallpaper to order</a> works through it by hand. The materials follow our <a href="/wallpapering/preparation/">preparation tables</a> and the <a href="/wallpapering/lining-and-adhesives/">lining papers, pastes and primers</a> we use.</p>
       <div class="flex flex-wrap gap-3">
-        <a class="btn btn-solid-ink" href="/contact/?intent=install">Send us your measurements</a>
-        <a class="btn btn-line" href="/advice/quantities/">Read the guide</a>
+        <Action href="/contact/?intent=install" icon="mail">Send us your measurements</Action>
+        <Action href="/advice/quantities/" variant="secondary" icon="book">Read the guide</Action>
       </div>
     </section>
   </div>
@@ -288,7 +313,7 @@ const conditions = wallpapering.conditionQuestion.options;
   main .guide-next > h2:not(.sr-only) { font-size: var(--text-h3); }
   .qc-num { display: inline-block; min-width: 1.5em; font-family: var(--font-serif); color: var(--color-brass); font-variant-numeric: lining-nums; }
   .qc-hint { margin: 0; max-width: var(--measure-copy); color: var(--color-stone); font-size: var(--text-meta); }
-  .qc-hint a, .qc-result a, .qc-docket a:not(.btn) { color: inherit; text-decoration: underline; text-decoration-color: var(--color-brass); text-underline-offset: 3px; }
+  .qc-hint a, .qc-result a:not(.mw-action), .qc-docket a:not(.mw-action) { color: inherit; text-decoration: underline; text-decoration-color: var(--color-brass); text-underline-offset: 3px; }
 
   /* ---- Steps: the hairline above each title, never through it ---- */
   .qc-step { min-width: 0; margin: 0; padding: 0; border: 0; display: grid; gap: var(--space-5); }
@@ -348,11 +373,23 @@ const conditions = wallpapering.conditionQuestion.options;
   .qc-docket-title:focus:not(:focus-visible) { outline: none; }
   .qc-docket-title:focus-visible { outline: 2px solid var(--color-brass); outline-offset: 6px; }
   .qc-docket-body { display: grid; gap: var(--space-4); }
+  .qc-measure-diagram { margin: .5rem 0 0; }
+  .qc-measure-diagram svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .qc-measure-diagram path { stroke-linejoin: round; }
+  .qc-diagram-shadow { fill: var(--color-ivory-deep); }
+  .qc-diagram-wall { fill: url(#qc-paper); stroke: var(--color-field-border); stroke-width: 1; }
+  .qc-diagram-paper { fill: var(--color-paper); }
+  .qc-diagram-seam { fill: none; stroke: var(--color-line); stroke-width: 1; }
+  .qc-diagram-rule { fill: none; stroke: var(--color-field-border); stroke-width: 1; }
+  .qc-diagram-dimension { fill: none; stroke: var(--color-brass); stroke-width: 1.25; }
+  .qc-measure-diagram text { fill: var(--color-stone); font: 18px var(--font-sans); }
+  .qc-measure-diagram figcaption { margin-top: .8rem; color: var(--color-stone); font-size: var(--text-meta); line-height: 1.5; }
+  .qc-measure-diagram figcaption span { display: block; margin-top: .3rem; font-size: var(--text-label); }
   .qc-docket-lead { margin: 0; font-weight: 500; }
   .qc-docket-link { justify-self: start; }
   /* Links that stand alone, outside a sentence, get a 44px target. */
   .qc-target, .qc-docket-link { display: inline-flex; align-items: center; min-height: 44px; }
-  .qc-docket.is-stale .qc-docket-body { opacity: .55; }
+  .qc-docket.is-stale .qc-docket-body, .qc-result.is-stale { opacity: .45; }
   .qc-order { display: grid; margin: 0; }
   .qc-order > div { display: grid; grid-template-columns: 5.5rem 1fr; gap: .25rem 1rem; align-items: baseline; padding: .6rem 0; border-bottom: 1px solid var(--color-line); }
   .qc-order dt { font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-brass); }
@@ -366,7 +403,8 @@ const conditions = wallpapering.conditionQuestion.options;
   .qc-note { font-size: var(--text-meta); color: var(--color-stone); }
   .qc-warning { margin: 0; padding: .9rem 1rem; background: var(--color-ivory-deep); border-left: 2px solid var(--color-brass); }
   .qc-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
-  @media (max-width: 47.99rem) { .qc-actions .btn { flex: 1 1 100%; justify-content: center; } }
+  .qc-actions .mw-action { width: 100%; }
+  @media (max-width: 47.99rem) { .qc-actions .mw-action { flex: 1 1 100%; } }
   .qc-actions-wrap { display: grid; gap: .5rem; }
   .qc-result .qc-actions-wrap { display: none; }
   @media (max-width: 63.99rem) { .qc-result .qc-actions-wrap { display: grid; } }
@@ -402,6 +440,7 @@ const conditions = wallpapering.conditionQuestion.options;
   .qc-cut, .qc-left { position: absolute; inset-block: 0; display: grid; place-items: center; overflow: hidden; white-space: nowrap; border-left: 2px solid var(--color-brass); }
   .qc-cut { left: calc(var(--at) * 1%); width: calc(var(--len) * 1%); background: var(--color-panel); font: 500 1.15rem/1 var(--font-serif); font-variant-numeric: lining-nums; color: var(--color-ink); }
   .qc-cut:not([data-kind="full"]) { background: var(--color-ivory-deep); font: 400 var(--text-meta)/1 var(--font-sans); }
+  .qc-cut.qc-cut-grouped { font-family: var(--font-sans); font-size: .8rem; font-weight: 400; }
   .qc-left { right: 0; width: calc(var(--len) * 1%); background: var(--color-ivory-deep); color: var(--color-stone); font-size: var(--text-meta); }
   .qc-roll-spare .qc-roll-bar { background: none; border: 2px solid var(--color-brass); }
   .qc-roll-empty { background: none; border-style: dashed; }
@@ -421,6 +460,7 @@ const conditions = wallpapering.conditionQuestion.options;
   .qc-assumed > li > span { flex: 1 1 auto; min-width: 0; padding: .6rem 0; }
   .qc-assumed > li > .qc-link { flex: none; white-space: nowrap; }
   .qc-docket .qc-assumed > li > .qc-link { flex: 1 1 auto; white-space: normal; text-align: left; }
+  .qc-docket .qc-assumed > li > .qc-link:focus-visible, .qc-utility button:focus-visible, .qc-link:focus-visible { outline: 2px solid var(--color-brass); outline-offset: 3px; }
   .qc-materials { display: grid; margin: 0; }
   .qc-materials > div { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: .25rem 1rem; padding: .75rem 0; border-top: 1px solid var(--color-line); break-inside: avoid; }
   @media (max-width: 47.99rem) { .qc-materials > div { grid-template-columns: minmax(0, 1fr); } }
@@ -437,6 +477,7 @@ const conditions = wallpapering.conditionQuestion.options;
   @media print {
     .qc { display: block; }
     .qc-docket { position: static; min-height: 0; padding: 0; background: none; }
+    .qc-measure-diagram { display: none; }
     .qc-step, .qc-more, .qc-submit, .qc-actions-wrap, .qc-utility, .qc-docket-link, .wp-subnav, .crumbs, .page-head .eyebrow, .page-head .lede, noscript, .guide-next { display: none !important; }
     .page-head h1 { font-size: 22pt; }
     .qc-print-only { display: block; }

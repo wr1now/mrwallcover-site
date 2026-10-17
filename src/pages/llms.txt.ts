@@ -10,6 +10,7 @@
  * nothing about ranking; the crawlable HTML pages come first.
  */
 import { publishedGuides, guideHref } from '../lib/guides';
+import fireRatingsPage from '../content/fire-ratings/page.json';
 import type { APIRoute } from 'astro';
 import { ANALYTICS_SRC, SITE_URL } from '../config';
 import facts from '../data/facts.json';
@@ -79,10 +80,12 @@ export const GET: APIRoute = () => {
     entry('Aftercare', '/aftercare/', 'care by material and the guarantee'),
     entry('FAQ', '/faq/', 'cost, lead times, preparation, supply and warranty'),
     entry('About', '/about/', `${FOUNDER_NAME}, founder`),
+    entry('Get in touch', '/get-in-touch/', 'direct contact methods and areas covered'),
     entry('Contact', '/contact/', 'request a quotation'),
     '',
     '## Wallcovering Guide',
     entry('Wallcovering Guide', '/advice/', 'choosing, preparation, quantities and care'),
+    entry(fireRatingsPage.title, guideHref(fireRatingsPage.slug), fireRatingsPage.description),
     entry('How much wallpaper to order', '/advice/quantities/', 'count drops, not square metres: width, height and trim, the pattern repeat, half-drop, doors and windows, worked by hand, with the spare from one batch'),
     ...guides.map((guide) => entry(guide.frontmatter.title, guideHref(guide.frontmatter.slug), guide.frontmatter.description)),
     '',

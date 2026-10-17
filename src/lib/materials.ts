@@ -18,6 +18,9 @@ export interface Coverage {
   unit: string;
   coats?: number;
   conflict?: string;
+  source?: string;
+  /** Exact roll formats to which a per-roll coverage applies, checked against maker product pages. */
+  rollSizes?: { widthCm: number; lengthCm: number; source: string }[];
 }
 
 export interface Packs {
@@ -72,6 +75,9 @@ export interface MakerRule {
   pasteStep?: number;
   pasteName?: string;
   pasteStatus?: string;
+  pasteCheck?: string;
+  pasteCoverage?: Coverage;
+  pasteSource?: string;
   primerPrinted?: string;
   noOffcutInfill?: boolean;
   notes?: string[];
@@ -210,6 +216,9 @@ export const HOUSE_LINING_PASTE = 'wallrock-power';
  */
 export function liningPaste(wallpaperPasteStep: number | null, makerId?: string, wallpaperPasteName?: string): LiningPasteDecision {
   const rule = makerId ? maker(makerId) : undefined;
+  if (makerId && (!rule || !isConfirmed(rule))) {
+    return { ok: false, reason: 'The maker’s lining instruction has not been confirmed. Have Mr Wallcover check this combination before anything is ordered.' };
+  }
   if (rule?.liningPaste === 'same-as-paper') {
     return {
       ok: true,
@@ -224,7 +233,11 @@ export function liningPaste(wallpaperPasteStep: number | null, makerId?: string,
   }
   if (rule?.liningPaste) {
     const named = product(rule.liningPaste);
+    if (!isConfirmed(named)) return { ok: false, reason: `${named.name} has not been confirmed. Have Mr Wallcover check the lining paste before anything is ordered.` };
     return { ok: true, paste: named, pasteName: named.name, rule: 'maker-named', note: `${rule.name} names ${named.name} for lining paper.` };
+  }
+  if (wallpaperPasteStep === null || rule?.pasteStatus === 'unconfirmed' || rule?.pasteCheck) {
+    return { ok: false, reason: 'The wallpaper paste and its place on our house scale are not confirmed. Have Mr Wallcover check both pastes before ordering lining adhesive.' };
   }
   const house = product(HOUSE_LINING_PASTE);
   const houseStep = house.step ?? TOP_STEP;
@@ -240,10 +253,7 @@ export function liningPaste(wallpaperPasteStep: number | null, makerId?: string,
     paste: house,
     pasteName: house.name,
     rule: 'house',
-    note:
-      wallpaperPasteStep === null
-        ? `${house.name} is ${step}. The wallpaper paste must be at least one step lighter, so it cannot soften the lining.`
-        : `${house.name} is ${step}, at least one step stronger than the wallpaper paste, so the wallpaper's paste cannot soften the lining.`,
+    note: `In our house practice, ${house.name} is ${step}, at least one step above the wallpaper paste on our own scale. The wallpaper maker’s instruction takes precedence.`,
   };
 }
 
@@ -289,6 +299,12 @@ const sourceOf = (item: Product) => item.dataSheet ?? item.page ?? null;
 /** The need and the packs, and the two together as the amount line. */
 const amountOf = (need: string | null, packs: string | null) => ({ need, packs, amount: need && packs ? `${need}: ${packs}` : need ?? packs });
 
+/** A metre, bolt, set or arbitrary roll is not the standard roll in a maker's paste coverage. */
+const matchesCoverageRoll = (input: QuantityInput, cover: Coverage) =>
+  (!input.paper.soldBy || input.paper.soldBy.kind === 'roll') &&
+  Boolean(cover.rollSizes?.some((size) =>
+    Math.abs(input.paper.widthCm - size.widthCm) < 0.01 && Math.abs(input.paper.lengthCm - size.lengthCm) < 0.01));
+
 /** The lining grade: the maker's grade when it names one, otherwise the grade for the wall (owner, 14 Oct 2026). */
 function liningGrade(conditionGrade: number | null, rule?: MakerRule): { grade: number; check?: string } | null {
   const makerWants = rule && ['all-walls', 'recommended'].includes(rule.lining.need);
@@ -308,7 +324,9 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
   const option = wallpapering.conditionQuestion.options.find((item) => item.id === options.condition) ?? wallpapering.conditionQuestion.options[0];
   if (!options.condition) assumed.push(`The walls are ${option.label.toLowerCase()}.`);
   if (option.check) checks.push(`The walls are "${option.label.toLowerCase()}", so we should see them before anything is ordered.`);
-  const rule = options.makerId ? maker(options.makerId) : undefined;
+  const requestedRule = options.makerId ? maker(options.makerId) : undefined;
+  const rule = requestedRule && isConfirmed(requestedRule) ? requestedRule : undefined;
+  if (options.makerId && !rule) checks.push('The maker’s preparation and paste instructions have not been confirmed. Have Mr Wallcover check the product before materials are ordered.');
   const area = result.areaM2;
 
   // Primer and treatments: the maker's primer when it names one; otherwise the house primers for the wall.
@@ -350,9 +368,9 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
     }
   }
 
-  // A sealed surface (gloss paint, an old vinyl) takes a VOV adhesive instead of a water-based paste.
+  // Sealed surfaces need the maker's compatible sealed-surface adhesive, checked on site.
   if (option.vov) {
-    checks.push('An old wallcovering has to come off first: hanging vinyl over it voids the makers\u2019 fire rating certification. Check the wallpaper maker\u2019s guide.');
+    checks.push('Remove old wallcoverings wherever the wallpaper maker requires it. Any fire classification applies to the specified complete build-up; check the product’s current instructions.');
     const named = vovAdhesives.find((item) => rule && item.maker && rule.name && item.maker.includes(rule.name) && isConfirmed(item));
     // An amount only from a coverage the maker prints today, per kilogram (Muraspec's label); never from an archived page.
     const cover = named?.coverage;
@@ -365,7 +383,7 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
         ? kg
           ? `${rule!.name}\u2019s adhesive for a sealed surface. The label: "${cover!.printed}"`
           : `${rule!.name}\u2019s adhesive for a sealed surface.${named.availability ? ` ${named.availability}` : ' We confirm the amount from its instructions.'}`
-        : 'A water-based paste cannot soak into a sealed surface. We choose the VOV adhesive with the wallpaper maker\u2019s instruction.',
+        : 'We confirm a compatible sealed-surface adhesive with the wallpaper maker before anything is ordered.',
       source: named ? sourceOf(named) : null,
       sourceLabel: named ? (named.dataSheet ? 'Data sheet' : "Maker's page") : undefined,
     });
@@ -373,17 +391,22 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
   }
 
   // Wallpaper paste: the maker's own, with its printed quantity when there is one.
-  const pasteProduct = rule?.paste ? product(rule.paste) : null;
-  const pasteStep: number | null = pasteProduct?.step ?? rule?.pasteStep ?? null;
-  const pasteName = pasteProduct?.name ?? rule?.pasteName ?? 'The paste the wallpaper maker names';
+  const candidatePaste = rule?.paste ? product(rule.paste) : null;
+  const pasteBlocked = rule?.pasteStatus === 'unconfirmed' || Boolean(rule?.pasteCheck) || Boolean(candidatePaste && !isConfirmed(candidatePaste));
+  if (pasteBlocked) checks.push(rule?.pasteCheck ?? `${rule!.name}’s paste instruction has not been confirmed. Have Mr Wallcover check the product before paste is ordered.`);
+  const pasteProduct = !pasteBlocked && candidatePaste && isConfirmed(candidatePaste) ? candidatePaste : null;
+  const pasteStep: number | null = pasteBlocked ? null : pasteProduct?.step ?? rule?.pasteStep ?? null;
+  const pasteName = pasteBlocked ? 'The paste the wallpaper maker confirms for this product' : pasteProduct?.name ?? rule?.pasteName ?? 'The paste the wallpaper maker names';
   let paste = amountOf(null, null);
-  if (pasteProduct?.coverage?.unit === 'kg/roll' && pasteProduct.coverage.perUnit && isConfirmed(pasteProduct)) {
+  const rollCoverage = pasteProduct?.coverage?.unit === 'kg/roll' ? pasteProduct.coverage : rule?.pasteCoverage?.unit === 'rolls/tube' ? rule.pasteCoverage : null;
+  const compatibleRoll = Boolean(rollCoverage && matchesCoverageRoll(input, rollCoverage));
+  if (!pasteBlocked && rollCoverage && !compatibleRoll) checks.push(`${rule!.name}’s paste coverage is for its specified standard rolls. Have Mr Wallcover confirm the amount for this roll size and sales unit.`);
+  if (!pasteBlocked && compatibleRoll && pasteProduct?.coverage?.unit === 'kg/roll' && pasteProduct.coverage.perUnit) {
     const kg = pasteProduct.coverage.perUnit * result.working.count;
     paste = amountOf(`${formatNumber(kg)} kg`, pasteProduct.packs?.sizes ? packLine(packsFor(kg, pasteProduct.packs.sizes), 'kg') : null);
   }
-  const fb = rule as (MakerRule & { pasteCoverage?: { perUnit: number } }) | undefined;
-  if (!paste.amount && fb?.pasteCoverage?.perUnit) {
-    const tubes = Math.ceil(result.working.count / fb.pasteCoverage.perUnit);
+  if (!pasteBlocked && compatibleRoll && !paste.amount && rule?.pasteCoverage?.perUnit) {
+    const tubes = Math.ceil(result.working.count / rule.pasteCoverage.perUnit);
     paste = amountOf(null, `${tubes} ${tubes === 1 ? 'tube' : 'tubes'}`);
   }
   const pasteAmount = paste.amount;
@@ -391,8 +414,8 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
     role: 'paste',
     name: pasteName,
     ...paste,
-    note: pasteAmount ? `"${pasteProduct?.coverage?.printed ?? 'Each tube can be used to hang five rolls of wallpaper.'}"` : 'We confirm the paste from the maker’s hanging instruction for the product.',
-    source: pasteProduct ? sourceOf(pasteProduct) : rule?.source ?? null,
+    note: pasteAmount ? `"${pasteProduct?.coverage?.printed ?? rule!.pasteCoverage!.printed}"` : 'We confirm the paste and amount from the maker’s hanging instruction for the product.',
+    source: pasteProduct ? sourceOf(pasteProduct) : rule?.pasteSource ?? rule?.source ?? null,
     sourceLabel: pasteProduct ? (pasteProduct.dataSheet ? 'Data sheet' : "Maker's page") : "Maker's instructions",
   });
 

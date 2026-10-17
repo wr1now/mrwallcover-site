@@ -333,3 +333,7 @@ Rows 6, 7, 13, 28 and 29 were worked by hand and checked against a scratch model
 
 1. **Calibration:** 5–10 real past jobs with the rolls actually used, before launch.
 2. **Wallpaper pastes:** the owner's tested makers are Vescom, Tektura, Muraspec, Beeline, Albany and Roman. Each product goes on the ladder once its data sheet is checked and the owner confirms its step.
+
+## Implementation review — 17 October 2026
+
+See [the calculator review](review-2026-10-17.md). The implementation rejects nonrepresentable dimensions and plans beyond 2,000 pieces with a measurement/check request. Shared links preserve unit conversion precision. Paste strength is a house scale; unknown combinations and product/backing exclusions require confirmation, and per-roll coverage is applied only to compatible sourced roll formats. These validation changes do not clear the real-job calibration condition above.

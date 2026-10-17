@@ -3,8 +3,7 @@ import Action from './Action.astro';
 /**
  * Floating inset champagne-glass header (stage 5, step G5).
  *
- * Desktop: wordmark, the navigation items, the phone reveal (only when
- * SITE_PHONE was set at build time) and the "Start your project" action.
+ * Desktop: wordmark, the navigation items, a Contact link and optional WhatsApp and the "Start your project" action.
  * Phones: wordmark, "Start" and a disclosure button that opens the mobile
  * menu panel below the bar. The panel is a sibling of the header so the bar
  * stays the only glass surface and the panel stays opaque ivory.
@@ -24,9 +23,7 @@ import Action from './Action.astro';
  * shift: the scrollbar width is compensated).
  */
 import Glass from './Glass.astro';
-import PhoneReveal from './PhoneReveal.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
-import BookCallLink from './BookCallLink.astro';
 import { navigation } from '../lib/content';
 
 interface Props {
@@ -54,8 +51,7 @@ function isCurrent(href: string) {
           </a>
         ))
       }
-      <PhoneReveal class="nav-link reveal-phone" label="Phone" />
-      <BookCallLink class="nav-link header-book" />
+      <a class="nav-link" href="/get-in-touch/" aria-current={isCurrent('/get-in-touch/') ? 'page' : undefined}>Contact</a>
       <WhatsAppLink class="nav-link" icon />
       <Action class="header-action" href="/contact/">Start your project</Action>
     </nav>
@@ -78,8 +74,8 @@ function isCurrent(href: string) {
         </a>
       ))
     }
+    <a href="/get-in-touch/" aria-current={isCurrent('/get-in-touch/') ? 'page' : undefined}>Contact</a>
     <a href="/contact/">Start your project</a>
-    <PhoneReveal class="reveal-phone menu-reveal" label="Show phone number" prefix="Call " />
   </nav>
 </div>
 

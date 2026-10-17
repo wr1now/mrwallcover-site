@@ -195,6 +195,74 @@ test('row 21: bad input gives an error, never a count', () => {
   }
 });
 
+test('opening widths are checked against the measured wall, including the final partial strip', () => {
+  const paper = { widthCm: 53, lengthCm: 1005, match: 'free' as const };
+  // Both spans round to two strips, but a 100 cm opening still cannot fit in a 54 cm wall.
+  const result = calculate({ paper, walls: [wall(54, 240, { openings: [{ kind: 'door', widthCm: 100, heightCm: 200 }] })] });
+  assert.equal(!result.ok && result.route, 'error');
+  if (!result.ok) assert.match(result.reason, /openings are wider than the wall/);
+});
+
+test('paper sold by length has a spare long enough for the tallest wall, regardless of entry order', () => {
+  for (const match of ['free', 'straight'] as const) {
+    const paper = { widthCm: 100, lengthCm: 3000, repeatCm: 65, match, soldBy: { kind: 'length' as const, unit: 'm' as const } };
+    const shortFirst = plan(calculate({ paper, walls: [wall(100, 90), wall(100, 290)] }));
+    const tallFirst = plan(calculate({ paper, walls: [wall(100, 290), wall(100, 90)] }));
+    assert.equal(shortFirst.spare.count, match === 'free' ? 3 : 4);
+    assert.equal(shortFirst.spare.count, tallFirst.spare.count);
+  }
+});
+
+test('a long supplied roll reports its full capacity beyond 1000 drops', () => {
+  const result = plan(calculate({ paper: { widthCm: 53, lengthCm: 30000, match: 'free', trimTopCm: 0, trimBottomCm: 0 }, walls: [wall(53, 20)] }));
+  assert.equal(result.dropsPerRoll, 1500);
+  assert.equal(result.working.count, 1);
+});
+
+test('non-representable dimensions and oversized plans refuse safely without allocating unbounded cuts', () => {
+  const paper = { widthCm: 53, lengthCm: 1005, match: 'free' as const };
+  const badInputs: QuantityInput[] = [
+    { paper: { ...paper, widthCm: 0.00001 }, walls: [wall(500, 270)] },
+    { paper: { ...paper, lengthCm: 0.00001 }, walls: [wall(500, 270)] },
+    { paper: { ...paper, match: 'straight', repeatCm: 0.00001 }, walls: [wall(500, 270)] },
+    { paper, walls: [wall(500, 0.00001)] },
+    { paper, walls: [wall(Number.MAX_VALUE, 270)] },
+    { paper: { ...paper, match: '' as QuantityInput['paper']['match'], repeatCm: 65 }, walls: [wall(500, 270)] },
+    { paper: { ...paper, soldBy: { kind: 'bolt', minimumBolts: NaN } }, walls: [wall(500, 270)] },
+  ];
+  for (const input of badInputs) assert.equal(calculate(input).ok, false);
+  const huge = calculate({ paper, walls: [wall(53 * 2001, 270)] });
+  assert.equal(!huge.ok && huge.route, 'request');
+  assert.equal(liningPlan({ paper, walls: [wall(500, 270)] }, 0.00001, 1000), null);
+  assert.equal(liningPlan({ paper, walls: [wall(500, 270)] }, 53, 0.00001), null);
+  assert.equal(liningPlan({ paper, walls: [wall(Number.MAX_VALUE, 270)] }, 53, 1000), null);
+});
+
+test('all six match modes keep cuts within each roll without overlaps, including millimetre boundary sizes', () => {
+  const matches = ['free', 'reverse', 'straight', 'half', 'third', 'quarter'] as const;
+  for (const match of matches) {
+    for (const heightCm of [149.9, 150, 150.1, 265, 275.9, 276]) {
+      const paper = { widthCm: 53, lengthCm: 1000, match, repeatCm: 65 };
+      const result = plan(calculate({ paper, walls: [wall(371.1, heightCm)] }));
+      assert.equal(result.drops, 8);
+      assert.equal(result.rolls.flatMap((roll) => roll.cuts).length, result.fullDrops + result.shortPieces);
+      for (const roll of result.rolls) {
+        let end = 0;
+        for (const cut of roll.cuts) {
+          assert.ok(cut.atCm >= end - 0.1, `${match}: cuts overlap`);
+          end = cut.atCm + cut.lengthCm;
+          assert.ok(end <= paper.lengthCm + 0.1, `${match}: a cut extends past the roll`);
+        }
+        assert.ok(Math.abs(end + roll.leftoverCm - paper.lengthCm) <= 0.11);
+      }
+      if (match === 'free' || match === 'reverse') {
+        const capacity = Math.floor(paper.lengthCm / (heightCm + 10));
+        assert.equal(result.working.count, Math.ceil(8 / capacity));
+      }
+    }
+  }
+});
+
 test('row 23: lining for the owner\'s wall, Erfurt 53 cm × 10 m hung across → 5 courses of 240, 4 per roll, 2 rolls; upright is counted too', () => {
   const input: QuantityInput = { paper: { widthCm: 55, lengthCm: 1000, repeatCm: 65, match: 'straight' }, walls: [wall(230, 265)] };
   const across = liningPlan(input, 53, 1000)!;

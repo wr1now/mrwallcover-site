@@ -139,17 +139,23 @@ if (form && output) {
   const syncWidthList = () => {
     const values = (widthList.dataset[widthUnit()] ?? '').split(' ').filter(Boolean);
     widthList.replaceChildren(...values.map((v) => Object.assign(document.createElement('option'), { value: v })));
-    for (const select of form.querySelectorAll<HTMLSelectElement>('[name="widthUnit"], [name="lengthUnit"]')) select.dataset.was = select.value;
+    for (const select of form.querySelectorAll<HTMLSelectElement>('[name="widthUnit"], [name="lengthUnit"], [name="repeatUnit"]')) select.dataset.was = select.value;
   };
   const syncFormat = (fill: boolean) => {
     const option = formatOption();
     const kind = soldKind();
     if (fill && Number(option.dataset.width) > 0) {
-      (field('rollWidth') as HTMLInputElement).value = option.dataset.width!;
+      const presetValue = (name: string, next: string) => {
+        const input = field(name) as HTMLInputElement;
+        input.value = next;
+        delete input.dataset.exactCm;
+        delete input.dataset.shown;
+      };
+      presetValue('rollWidth', option.dataset.width!);
       (field('widthUnit') as HTMLSelectElement).value = option.dataset.wunit ?? 'cm';
-      (field('rollLength') as HTMLInputElement).value = option.dataset.length ?? '';
+      presetValue('rollLength', option.dataset.length ?? '');
       (field('lengthUnit') as HTMLSelectElement).value = option.dataset.lunit ?? 'm';
-      (field('overlap') as HTMLInputElement).value = String(option.dataset.wunit === 'in' ? convert(Number(option.dataset.overlap ?? 0), 'cm', 'in') : Number(option.dataset.overlap ?? 0));
+      presetValue('overlap', String(option.dataset.wunit === 'in' ? convert(Number(option.dataset.overlap ?? 0), 'cm', 'in') : Number(option.dataset.overlap ?? 0)));
       if (option.dataset.sets) (field('rollsPerSet') as HTMLInputElement).value = option.dataset.sets;
       const printed = (option.dataset.wunit ?? 'cm') as WidthUnit;
       const repeatSelect = field('repeatUnit') as HTMLSelectElement;
@@ -199,7 +205,7 @@ if (form && output) {
     try {
       const host = new URL(raw).hostname.replace(/^www\./, '');
       const found = LINK_MAKERS.find(([pattern]) => pattern.test(host));
-      if (found && maker(found[1])) {
+      if (found && maker(found[1]) && [...makerSelect.options].some((option) => option.value === found[1])) {
         makerSelect.value = found[1];
         linkNote.textContent = `${maker(found[1])!.name}: its hanging instructions are applied. Type the roll size, repeat and match from that page.`;
       } else {
@@ -232,7 +238,17 @@ if (form && output) {
   };
   const addWallRow = (width = '', height = '') => {
     const row = wallRows()[0].cloneNode(true) as HTMLElement;
-    row.querySelectorAll('input').forEach((input) => (input.value = ''));
+    row.querySelectorAll('.form-error, .qc-cm').forEach((note) => note.remove());
+    row.querySelectorAll('input').forEach((input) => {
+      input.value = '';
+      input.removeAttribute('aria-invalid');
+      input.removeAttribute('data-error-id');
+      input.removeAttribute('data-exact-cm');
+      input.removeAttribute('data-shown');
+      const described = (input.getAttribute('aria-describedby') ?? '').split(' ').filter((id) => id && !id.startsWith('qc-error-')).join(' ');
+      if (described) input.setAttribute('aria-describedby', described);
+      else input.removeAttribute('aria-describedby');
+    });
     (row.querySelector('[name="width"]') as HTMLInputElement).value = width;
     (row.querySelector('[name="height"]') as HTMLInputElement).value = height || (wallRows()[0].querySelector('[name="height"]') as HTMLInputElement).value;
     if (!row.querySelector('[data-remove]')) {
@@ -329,6 +345,9 @@ if (form && output) {
     const kind = soldKind();
     const match = (['mural', 'panel-set'].includes(kind) ? 'free' : value('match')) as Match;
     const soldBy = soldByFor(formatGroup(), { rollsPerSet: num(field('rollsPerSet')), marginCm: cm(field('margin')) || 0 });
+    if (kind === 'mural' && (!(cm(field('margin')) >= 0) || !Number.isFinite(cm(field('margin'))))) {
+      problems.push({ message: 'Enter the extra margin stated in the mural maker’s instructions, or 0 if it specifies none.', field: field('margin') as HTMLElement });
+    }
     const makerId = makerSelect.value;
     const rule = makerId ? maker(makerId) : undefined;
     const overlapCm = kind === 'length' ? cm(field('overlap')) || 0 : 0;
@@ -344,6 +363,10 @@ if (form && output) {
       trimBottomCm: cm(field('trimBottom')),
       noOffcutInfill: Boolean(rule?.noOffcutInfill),
     };
+    for (const name of ['trimTop', 'trimBottom']) {
+      const trim = cm(field(name));
+      if (!(trim >= 0) || !Number.isFinite(trim)) problems.push({ message: 'Enter a trim allowance of zero or more.', field: field(name) as HTMLElement });
+    }
     const openingsByWall = new Map<number, OpeningInput[]>();
     for (const row of openingsBox.querySelectorAll<HTMLElement>('[data-opening]')) {
       const wall = Number((row.querySelector('[name="o-wall"]') as HTMLSelectElement).value || 1);
@@ -360,12 +383,16 @@ if (form && output) {
         const empty = [...row.querySelectorAll<HTMLInputElement>('[name="o-width"], [name="o-height"], [name="o-floor"]')].find((input) => !input.closest('[hidden]') && !(Number(input.value) > 0 || (input.name === 'o-floor' && input.value.trim() !== '')));
         problems.push({ message: `Fill in the ${k}'s width, height${k === 'door' ? '' : ' and height above the skirting'}, or remove it.`, field: empty ?? row.querySelector<HTMLElement>('[name="o-width"]') });
       }
+      if (opening.depthCm! < 0 || !Number.isFinite(opening.depthCm)) problems.push({ message: 'Reveal depth must be zero or more.', field: row.querySelector<HTMLElement>('[name="o-depth"]') });
       openingsByWall.set(wall, [...(openingsByWall.get(wall) ?? []), opening]);
     }
     const returnsByWall = new Map<number, number[]>();
     for (const row of returnsBox.querySelectorAll<HTMLElement>('[data-return]')) {
       const depth = cm(row.querySelector('[name="r-depth"]'));
-      if (!(depth > 0)) continue;
+      if (!(depth > 0) || !Number.isFinite(depth)) {
+        problems.push({ message: 'Enter the return depth, greater than zero, or remove it.', field: row.querySelector<HTMLElement>('[name="r-depth"]') });
+        continue;
+      }
       const wall = Number((row.querySelector('[name="r-wall"]') as HTMLSelectElement).value || 1);
       returnsByWall.set(wall, [...(returnsByWall.get(wall) ?? []), depth]);
     }
@@ -378,10 +405,17 @@ if (form && output) {
       in: `Enter the ${what} in inches, for example 106.`,
       ft: `Enter the ${what} in feet, for example 8.9.`,
     })[measureUnit()];
+    const checkDimensions = (boxes: HTMLElement[], what: string) => {
+      for (const box of boxes) {
+        const size = cm(box);
+        if (!(size > 0) || !Number.isFinite(size)) problems.push({ message: `Enter the ${box.getAttribute('name')?.toLowerCase().includes('height') ? 'height to paper' : what} in ${unitName()}, greater than zero.`, field: box });
+      }
+      const small = boxes.find((box) => tooSmall(cm(box)));
+      if (small) problems.push({ message: unitHelp(what), field: small });
+    };
     if (measure() === 'room') {
       input.room = { lengthCm: cm(field('roomLength')), widthCm: cm(field('roomWidth')), heightCm: cm(field('roomHeight')), returnsCm: returnsByWall.get(1), openings: openingsByWall.get(1) };
-      const small = ['roomLength', 'roomWidth', 'roomHeight'].map((name) => field(name) as HTMLElement).find((box) => tooSmall(cm(box)));
-      if (small) problems.push({ message: unitHelp('room'), field: small });
+      checkDimensions(['roomLength', 'roomWidth', 'roomHeight'].map((name) => field(name) as HTMLElement), 'room dimension');
     } else {
       input.walls = wallRows().map((row, index) => ({
         widthCm: cm(row.querySelector('[name="width"]')),
@@ -389,67 +423,89 @@ if (form && output) {
         returnsCm: returnsByWall.get(index + 1),
         openings: openingsByWall.get(index + 1),
       }));
-      const small = wallRows().flatMap((row) => [...row.querySelectorAll<HTMLElement>('[name="width"], [name="height"]')]).find((box) => tooSmall(cm(box)));
-      if (small) problems.push({ message: unitHelp('wall'), field: small });
+      checkDimensions(wallRows().flatMap((row) => [...row.querySelectorAll<HTMLElement>('[name="width"], [name="height"]')]), 'wall width');
     }
     if (tooSmall(paper.widthCm) && !['mural', 'panel-set'].includes(kind)) problems.push({ message: widthUnit() === 'in' ? 'Enter the roll width in inches, for example 20.5 or 27.' : 'Enter the roll width in centimetres: 0.53 m is 53 cm.', field: field('rollWidth') as HTMLElement });
+    if (bespoke.length || kind === 'panel-set') problems.length = 0;
     return { input, problems, makerId, condition: conditionAnswered ? value('condition') : '', link: value('link') };
   };
 
   /* ---------- sharing ---------- */
 
+  // Unit controls show a rounded value for reading. Share the retained measurement at full precision,
+  // so reopening an inches/feet link cannot move a wall or repeat across a cutting threshold.
+  const sharedValue = (box: HTMLInputElement | HTMLSelectElement | null) => {
+    if (!box) return '';
+    const dim = box.dataset.dim as Dim | undefined;
+    if (dim && box.dataset.exactCm && box.dataset.shown === box.value) {
+      return String(Number((Number(box.dataset.exactCm) / CM_PER[unitFor(dim)]).toPrecision(14)));
+    }
+    return box.value.trim();
+  };
+  const shared = (name: string) => sharedValue(field(name));
   const toQuery = (): string => {
     const q = new URLSearchParams();
     q.set('f', formatSelect.value);
     if (makerSelect.value) q.set('mk', makerSelect.value);
-    q.set('rw', value('rollWidth'));
-    q.set('rl', value('rollLength'));
+    q.set('rw', shared('rollWidth'));
+    q.set('rl', shared('rollLength'));
+    if (value('link')) q.set('link', value('link'));
     if (widthUnit() !== 'cm') q.set('wu', widthUnit());
     if (lengthUnit() !== 'm') q.set('lu', lengthUnit());
-    if (soldKind() === 'length' && value('overlap') && value('overlap') !== '0') q.set('ov', value('overlap'));
+    if (soldKind() === 'length' && value('overlap') && value('overlap') !== '0') q.set('ov', shared('overlap'));
     if (soldKind() === 'set') q.set('rs', value('rollsPerSet'));
     if (repeatUnit() !== 'cm') q.set('ru', repeatUnit());
     if (measureUnit() !== 'cm') q.set('mu', measureUnit());
     q.set('m', value('match'));
-    if (value('repeat') && value('repeat') !== '0') q.set('r', value('repeat'));
-    if (soldKind() === 'mural') q.set('mg', value('margin'));
+    if (value('repeat') && value('repeat') !== '0') q.set('r', shared('repeat'));
+    if (soldKind() === 'mural') q.set('mg', shared('margin'));
     q.set('ms', measure());
-    if (measure() === 'room') q.set('rm', [value('roomLength'), value('roomWidth'), value('roomHeight')].join('x'));
-    else q.set('w', wallRows().map((row) => `${(row.querySelector('[name="width"]') as HTMLInputElement).value}x${(row.querySelector('[name="height"]') as HTMLInputElement).value}`).join(','));
-    const openings = [...openingsBox.querySelectorAll<HTMLElement>('[data-opening]')].map((row) => [row.dataset.kind, ...['o-wall', 'o-width', 'o-height', 'o-floor', 'o-depth', 'o-reveals'].map((name) => (row.querySelector(`[name="${name}"]`) as HTMLInputElement).value)].join(':'));
+    if (measure() === 'room') q.set('rm', [shared('roomLength'), shared('roomWidth'), shared('roomHeight')].join('x'));
+    else q.set('w', wallRows().map((row) => ['width', 'height'].map((name) => sharedValue(row.querySelector<HTMLInputElement>(`[name="${name}"]`))).join('x')).join(','));
+    const openings = [...openingsBox.querySelectorAll<HTMLElement>('[data-opening]')].map((row) => [row.dataset.kind, ...['o-wall', 'o-width', 'o-height', 'o-floor', 'o-depth', 'o-reveals'].map((name) => sharedValue(row.querySelector<HTMLInputElement | HTMLSelectElement>(`[name="${name}"]`)))].join(':'));
     if (openings.length) q.set('o', openings.join(';'));
-    const returns = [...returnsBox.querySelectorAll<HTMLElement>('[data-return]')].map((row) => `${(row.querySelector('[name="r-wall"]') as HTMLSelectElement).value}:${(row.querySelector('[name="r-depth"]') as HTMLInputElement).value}`);
+    const returns = [...returnsBox.querySelectorAll<HTMLElement>('[data-return]')].map((row) => ['r-wall', 'r-depth'].map((name) => sharedValue(row.querySelector<HTMLInputElement | HTMLSelectElement>(`[name="${name}"]`))).join(':'));
     if (returns.length) q.set('rt', returns.join(';'));
     if (conditionAnswered) q.set('c', value('condition'));
     const bespoke = [...form.querySelectorAll<HTMLInputElement>('[name="bespoke"]:checked')].map((box) => box.value);
     if (bespoke.length) q.set('b', bespoke.join(','));
-    if (value('trimTop') !== '5') q.set('tt', value('trimTop'));
-    if (value('trimBottom') !== '5') q.set('tb', value('trimBottom'));
+    if (value('trimTop') !== '5') q.set('tt', shared('trimTop'));
+    if (value('trimBottom') !== '5') q.set('tb', shared('trimBottom'));
     return q.toString();
   };
   const fromQuery = (q: URLSearchParams): boolean => {
     if (!q.has('w') && !q.has('rm')) return false;
     const set = (name: string, v: string | null) => {
       const input = field(name);
-      if (input && v !== null) input.value = v;
+      if (!input || v === null) return false;
+      if (input instanceof HTMLSelectElement && ![...input.options].some((option) => option.value === v)) return false;
+      input.value = v;
+      return true;
     };
     const f = q.get('f') === 'custom' ? 'other-roll' : q.get('f');
     if (f && [...formatSelect.options].some((option) => option.value === f)) formatSelect.value = f;
-    syncFormat(false);
+    syncFormat(true);
     if (q.get('mk') && maker(q.get('mk')!)) {
       makerSelect.value = q.get('mk')!;
       $<HTMLDetailsElement>('[data-maker-box]').open = true;
     }
     set('rollWidth', q.get('rw'));
     set('rollLength', q.get('rl'));
+    if (set('link', q.get('link'))) {
+      $<HTMLDetailsElement>('[data-maker-box]').open = true;
+      readLink();
+    }
     if (q.get('wu') === 'in') set('widthUnit', 'in');
     if (['ft', 'yd'].includes(q.get('lu') ?? '')) set('lengthUnit', q.get('lu'));
     set('overlap', q.get('ov'));
     set('rollsPerSet', q.get('rs'));
     if (q.get('ru') === 'in') set('repeatUnit', 'in');
-    const mu = form.querySelector<HTMLInputElement>(`[name="mu"][value="${q.get('mu') ?? 'cm'}"]`);
+    const requestedUnit = q.get('mu') ?? 'cm';
+    const mu = [...form.querySelectorAll<HTMLInputElement>('[name="mu"]')].find((radio) => radio.value === requestedUnit);
     if (mu) {
       mu.checked = true;
+      const previous = lastMeasure;
+      convertAll(['measure', 'small'], (dim) => (dim === 'measure' ? previous : smallFor(previous)) as Unit, (dim) => unitFor(dim));
       lastMeasure = mu.value;
     }
     syncWidthList();
@@ -484,16 +540,30 @@ if (form && output) {
       const [wall, depth] = item.split(':');
       addReturn({ 'r-wall': wall, 'r-depth': depth });
     }
-    if (q.get('c')) {
-      set('condition', q.get('c'));
+    if (q.get('c') && set('condition', q.get('c'))) {
       conditionAnswered = true;
     }
     for (const v of (q.get('b') ?? '').split(',').filter(Boolean)) {
-      const box = form.querySelector<HTMLInputElement>(`[name="bespoke"][value="${v}"]`);
+      const box = [...form.querySelectorAll<HTMLInputElement>('[name="bespoke"]')].find((input) => input.value === v);
       if (box) box.checked = true;
     }
     set('trimTop', q.get('tt'));
     set('trimBottom', q.get('tb'));
+    form.querySelectorAll<HTMLInputElement>('input[data-dim]').forEach((input) => {
+      if (!input.value.trim() || !Number.isFinite(Number(input.value))) return;
+      const exact = input.dataset.shown === input.value && input.dataset.exactCm ? Number(input.dataset.exactCm) : Number(input.value) * CM_PER[unitFor(input.dataset.dim as Dim)];
+      input.value = String(convert(exact, 'cm', unitFor(input.dataset.dim as Dim)));
+      input.dataset.exactCm = String(exact);
+      input.dataset.shown = input.value;
+    });
+    // A tampered or old link may carry a custom size with a preset id. Keep the actual size visible.
+    const option = formatOption();
+    if (!option.dataset.other && Number(option.dataset.width) > 0) {
+      const presetWidth = Number(option.dataset.width) * CM_PER[(option.dataset.wunit ?? 'cm') as Unit];
+      const presetLength = Number(option.dataset.length) * CM_PER[(option.dataset.lunit ?? 'm') as Unit];
+      if (Math.abs(cm(field('rollWidth')) - presetWidth) > .011 || Math.abs(cm(field('rollLength')) - presetLength) > .011) toOther();
+    }
+    syncFormat(false);
     if (q.has('o') || q.has('rt') || q.has('c') || q.has('b') || q.has('tt') || q.has('tb')) more.open = true;
     syncMatch();
     syncUnits();
@@ -536,6 +606,7 @@ if (form && output) {
   const docket = $<HTMLElement>('[data-docket]');
   const docketBody = $<HTMLElement>('[data-docket-body]');
   const docketHeading = $<HTMLElement>('#qc-docket-heading');
+  const staleNote = $<HTMLElement>('[data-stale-note]');
   const status = form.querySelector<HTMLElement>('[data-qc-status]')!;
   // The working shows once "Work it out" is pressed or a shared link opens; the docket is live from the first measurement.
   let submitted = false;
@@ -561,22 +632,22 @@ if (form && output) {
     const wrap = el('div', undefined, 'qc-actions-wrap');
     const box = el('div', undefined, 'qc-actions');
     const chosen = Boolean(state.makerId || state.link);
-    const send = el('a', 'Send us your measurements', 'btn btn-line');
+    const plan = outcome === 'plan' || outcome === 'plan-check';
+    const action = (name: 'send' | 'check' | 'request') => document.querySelector<HTMLTemplateElement>(`[data-qc-action="${name}"]`)!.content.firstElementChild!.cloneNode(true) as HTMLAnchorElement;
+    const send = action(plan ? 'send' : 'request');
     send.href = `/contact/?intent=${chosen ? 'install' : 'source'}&from=calculator`;
     send.addEventListener('click', () => {
       keep();
       track('measurements_click', { outcome, chosen });
     });
-    if (outcome === 'plan' || outcome === 'plan-check') {
-      const check = el('a', 'Have Mr Wallcover check this', 'btn btn-solid-ink');
-      check.href = '/contact/?intent=advice&from=calculator';
+    if (plan) {
+      const check = action('check');
       check.addEventListener('click', () => {
         keep();
         track('check_click', { outcome });
       });
       box.append(check, send);
     } else {
-      send.className = 'btn btn-solid-ink';
       box.append(send);
     }
     wrap.append(box, el('p', 'Your figures go with your message.', 'qc-small'));
@@ -702,13 +773,17 @@ if (form && output) {
       const bar = el('span', undefined, 'qc-roll-bar');
       bar.setAttribute('aria-hidden', 'true');
       for (const cut of roll.cuts) {
-        const piece = el('span', cut.kind === 'full' ? String(cut.drop) : SHORT_LABEL[cut.kind] ?? '', 'qc-cut');
+        const index = roll.cuts.indexOf(cut);
+        const drops = group.map((item) => item.cuts[index].drop);
+        const label = group.length > 1 ? (drops.length <= 3 ? drops.join(' / ') : `${drops[0]}…${drops[drops.length - 1]}`) : String(cut.drop);
+        const piece = el('span', cut.kind === 'full' ? label : SHORT_LABEL[cut.kind] ?? '', 'qc-cut');
+        if (group.length > 1) piece.classList.add('qc-cut-grouped');
         piece.dataset.kind = cut.kind;
         set(piece, cut.atCm, cut.lengthCm);
         bar.append(piece);
       }
       if (roll.leftoverCm > 0) {
-        const left = el('span', `${fmt(roll.leftoverCm)} cm`, 'qc-left');
+        const left = el('span', roll.leftoverCm / L >= .14 ? `${fmt(roll.leftoverCm)} cm` : '', 'qc-left');
         set(left, L - roll.leftoverCm, roll.leftoverCm);
         bar.append(left);
       }
@@ -792,7 +867,7 @@ if (form && output) {
         }
         dd.append(figure);
       } else {
-        if (line.note) dd.append(el('span', named ? line.note : 'Confirmed from the maker’s hanging instructions.', 'qc-mat-note'));
+        dd.append(el('span', line.note || 'Check the product’s current hanging instructions before ordering.', 'qc-mat-note'));
         if (link) {
           const span = el('span', undefined, 'qc-mat-note');
           span.append(link);
@@ -823,8 +898,8 @@ if (form && output) {
   };
   const clearErrors = () => form.querySelectorAll('[aria-invalid="true"]').forEach(clearError);
   let errorCount = 0;
-  const showErrors = (problems: Problem[]) => {
-    clearErrors();
+  const showErrors = (problems: Problem[], reset = true) => {
+    if (reset) clearErrors();
     for (const problem of problems) {
       const box = problem.field;
       if (!box || box.getAttribute('aria-invalid') === 'true') continue;
@@ -845,12 +920,16 @@ if (form && output) {
     : /roll length/i.test(reason) ? (field('rollLength') as HTMLElement)
     : /margin/i.test(reason) ? (field('margin') as HTMLElement)
     : /set needs/i.test(reason) ? (field('rollsPerSet') as HTMLElement)
+    : /pattern match/i.test(reason) ? (field('match') as HTMLElement)
+    : /trim/i.test(reason) ? (field('trimTop') as HTMLElement)
     : null;
   const unitName = () => ({ cm: 'centimetres', m: 'metres', in: 'inches', ft: 'feet' })[measureUnit()];
 
   /* ---------- rendering ---------- */
 
   const docketProblems = (problems: Problem[]) => {
+    docket.classList.remove('is-stale');
+    staleNote.hidden = true;
     const lead = el('p', 'Check the figures', 'qc-docket-lead');
     const list = el('ul', undefined, 'qc-assumed');
     list.setAttribute('role', 'list');
@@ -865,6 +944,8 @@ if (form && output) {
 
   const render = (state: Read, result: QuantityResult) => {
     docket.classList.remove('is-stale');
+    staleNote.hidden = true;
+    output.classList.remove('is-stale');
     const rule = state.makerId ? maker(state.makerId) : undefined;
     if (!result.ok) {
       output.hidden = true;
@@ -881,6 +962,7 @@ if (form && output) {
         el('p', 'Send us the measurements you have and a photograph, and we will work out the order with you.', 'qc-small'),
         actions(state, result.reason, result.route),
       );
+      form.dataset.hasResult = '';
       announce(result.reason);
       return;
     }
@@ -894,6 +976,7 @@ if (form && output) {
       div.append(el('dt', 'Order'), dd);
       dl.append(div);
       docketBody.replaceChildren(dl, el('p', 'A mural is made to the measurements you send the maker, so we check the wall and the set-out before you order.', 'qc-small'), actions(state, `Mural: ${fmt(result.widthCm)} × ${fmt(result.heightCm)} cm, ${fmtM(result.areaM2)} m².`, 'mural'));
+      form.dataset.hasResult = '';
       announce(`Order ${fmtM(result.areaM2)} square metres of mural.`);
       return;
     }
@@ -915,6 +998,7 @@ if (form && output) {
       docketParts.push(jump);
     }
     docketBody.replaceChildren(...docketParts);
+    form.dataset.hasResult = '';
     announce(`Order ${plural(r.order)}: ${plural(r.working)} working and ${plural(r.spare)} spare.`);
     if (!submitted) return;
 
@@ -965,7 +1049,7 @@ if (form && output) {
     inputs.append(given, el('p', `${shareUrl()} · ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}`, 'qc-small qc-print-only'));
     const end = el('section');
     const terms = el('p', undefined, 'qc-terms');
-    terms.append(el('small', 'An order quantity for walls of one height, using the roll shown. Not a set-out, not a price.'));
+    terms.append(el('small', 'An order quantity for the measurements and wallpaper shown. Not a set-out, not a price.'));
     end.append(terms, actions(state, summary, outcome), utility());
     sections.push(before, inputs, end);
     output.replaceChildren(...sections);
@@ -976,13 +1060,24 @@ if (form && output) {
       ? ['roomLength', 'roomWidth', 'roomHeight'].every((name) => cm(field(name)) > 0)
       : wallRows().every((row) => cm(row.querySelector('[name="width"]')) > 0 && cm(row.querySelector('[name="height"]')) > 0);
 
+  const markStale = () => {
+    docket.classList.add('is-stale');
+    staleNote.hidden = false;
+    announce('The measurements are incomplete. Update the measurement to refresh this result.');
+    if (!output.hidden) output.classList.add('is-stale');
+    for (const box of [docketBody, output]) box.querySelectorAll<HTMLElement>('.qc-actions-wrap, .qc-utility').forEach((controls) => (controls.inert = true));
+  };
+
   /** Live while typing (the docket only, never an error), on submit (everything), or from a shared link. */
   const run = (mode: 'live' | 'submit' | 'link') => {
     const state = read();
-    if (mode === 'live' && !ready()) return;
+    if (mode === 'live' && !ready() && !state.input.bespoke?.length && soldKind() !== 'panel-set') {
+      if (lastSentence) markStale();
+      return;
+    }
     if (state.problems.length) {
       if (mode === 'live') {
-        docket.classList.add('is-stale');
+        markStale();
         return;
       }
       output.hidden = true;
@@ -994,9 +1089,10 @@ if (form && output) {
     }
     const result = calculate(state.input);
     if (mode === 'live' && !result.ok && result.route === 'error') {
-      docket.classList.add('is-stale');
+      markStale();
       return;
     }
+    output.classList.remove('is-stale');
     if (mode !== 'live') {
       submitted = true;
       clearErrors();
@@ -1038,6 +1134,20 @@ if (form && output) {
     if (target.matches('input[data-dim]')) syncUnits();
     if (target.getAttribute('aria-invalid') === 'true') clearError(target);
   });
+  form.addEventListener('focusout', (event) => {
+    const target = event.target as HTMLElement;
+    if (!target.matches('input[data-dim]')) return;
+    const problems = read().problems.filter((problem) => problem.field === target);
+    if (problems.length) showErrors(problems, false);
+  });
+  // A retained answer is visibly dimmed while a field is incomplete. It cannot send or share stale figures.
+  form.addEventListener('click', (event) => {
+    const target = event.target as Element;
+    if (target.closest('.is-stale') && target.closest('.qc-actions-wrap, .qc-utility')) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  }, true);
   // A patterned match needs its repeat: clear the 0 and ask for it, rather than show an error.
   form.querySelector('[name="match"]')!.addEventListener('change', () => {
     syncMatch();

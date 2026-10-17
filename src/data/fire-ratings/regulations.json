@@ -1,0 +1,177 @@
+{
+  "_note": "The four UK building-regulation systems, kept separate. Dates: 'effective' = in force on or before the checking date; 'forthcoming' = printed or announced but not yet in force; 'published' = issue date. Every entry cites src/data/fire-ratings/sources.json. Summarised in our words from Crown-copyright documents (Open Government Licence v3.0).",
+  "englandLinings": {
+    "document": "Approved Document B, Volume 2 (buildings other than dwellings), 2019 edition incorporating the 2020, 2022, 2025 and 2026 amendments",
+    "table": "England, Approved Document B Volume 2, Table 6.1",
+    "rows": [
+      {
+        "location": "Small rooms",
+        "detail": "Internal floor area of up to 4 m² in residential accommodation, or up to 30 m² in non-residential accommodation",
+        "euroclass": "D-s3,d2"
+      },
+      {
+        "location": "Other rooms",
+        "detail": "Including garages",
+        "euroclass": "C-s3,d2"
+      },
+      {
+        "location": "Other circulation spaces",
+        "detail": "See note 1 below for wallcoverings",
+        "euroclass": "B-s3,d2"
+      }
+    ],
+    "notes": [
+      "Note 1 to the table (on the circulation-space row): wallcoverings conforming to BS EN 15102, achieving at least class C-s3,d2 and bonded to a class A2-s3,d2 substrate, are also acceptable.",
+      "Paragraph 6.4: parts of walls in rooms may be of lower performance, but no worse than D-s3,d2, with the total lower-performance area less than half the room's floor area and no more than 20 m² (residential) or 60 m² (non-residential).",
+      "Paragraphs 6.2 to 6.6 define what counts as a wall and a ceiling; paragraph 6.12 points to further guidance for escape stairs, firefighting shafts and surfaces above fire-protecting suspended ceilings.",
+      "s3,d2 in the table means no limit is set for smoke production or flaming droplets (Appendix B, paragraph B7). A project may still specify a stricter subclass.",
+      "This is guidance on one way of meeting requirement B2. The project's fire strategy, designer or building-control body may require more."
+    ],
+    "sourceIds": [
+      "src-adb2-2026-consolidated"
+    ]
+  },
+  "jurisdictions": [
+    {
+      "id": "england",
+      "name": "England",
+      "document": "Approved Document B, Volume 2 (Volume 1 covers dwellings, including blocks of flats and their common areas)",
+      "edition": "2019 edition incorporating the 2020, 2022, 2025 and 2026 amendments, printed with the forthcoming 2029 changes",
+      "linings": "Requirement B2; Section 6 and Table 6.1 give minimum European classes by location, with a BS EN 15102 note for wallcoverings in circulation spaces. Volume 1, Table 4.1, sets the same B-s3,d2, with the same note, for the common areas of blocks of flats.",
+      "nationalClasses": "National reaction-to-fire classes (BS 476 Parts 6, 7 and 11) removed from the guidance from 2 March 2025, subject to transitional arrangements. National fire-resistance classes are due to be removed from 2 September 2029.",
+      "dates": [
+        {
+          "label": "2025 amendments in force: national reaction-to-fire classes removed (transitional arrangements apply)",
+          "date": "2025-03-02",
+          "kind": "effective"
+        },
+        {
+          "label": "2026 amendments in force: stairs and evacuation lifts in blocks of flats; no change to lining classes",
+          "date": "2026-09-30",
+          "kind": "effective"
+        },
+        {
+          "label": "2029 amendments due: national fire-resistance classes removed",
+          "date": "2029-09-02",
+          "kind": "forthcoming"
+        }
+      ],
+      "notes": [],
+      "sourceIds": [
+        "src-adb2-2026-consolidated",
+        "src-adb1-2026-consolidated",
+        "src-adb-2025-amendments",
+        "src-adb-2026-amendments",
+        "src-adb-2029-amendments"
+      ]
+    },
+    {
+      "id": "wales",
+      "name": "Wales",
+      "document": "Approved Document B, Volume 2 (Welsh edition), with Volume 1 for dwellinghouses",
+      "edition": "Volume 2: 2006 edition incorporating the 2010, 2013, 2016, 2017 and 2020 amendments. Volume 1: 2006 edition incorporating the 2010, 2016 and 2020 amendments. Both are for use in Wales. An amendment slip in force from 20 December 2025 replaces the external-wall guidance and adds fire-service provisions for blocks of flats (wayfinding signage, evacuation alert systems, secure information boxes). It does not change Volume 2's Section 7 or Table 10.",
+      "linings": "Requirement B2; Section 7 and Table 10 give both a national class and a European class for small rooms, other rooms, circulation spaces within dwellings, and other circulation spaces including the common areas of blocks of flats (Welsh Volume 2 covers flats). Note 5, on the circulation-space row, accepts BS EN 15102:2007 wallcoverings of at least C-s3,d2 bonded to an A2-s3,d2 substrate.",
+      "nationalClasses": "Kept: Table 10 still lists national classes 3, 1 and 0 beside the European classes, and Appendix A still defines Class 0. The Welsh Government has said national classes will move to an appendix at the next revision; no date has been set.",
+      "dates": [
+        {
+          "label": "2020 amendments in force (Welsh edition)",
+          "date": "2020-12-31",
+          "kind": "effective"
+        },
+        {
+          "label": "Welsh Government consultation response: national classes to move to an appendix, not yet done",
+          "date": "2025-01-08",
+          "kind": "published"
+        },
+        {
+          "label": "Amendment slip in force: external walls and fire-service provisions for blocks of flats; Table 10 unchanged",
+          "date": "2025-12-20",
+          "kind": "effective"
+        },
+        {
+          "label": "Dutyholder and competence duties for building work, and the higher-risk building procedure, in force in Wales; lining classes unchanged",
+          "date": "2026-07-01",
+          "kind": "effective"
+        }
+      ],
+      "notes": [
+        "Wales did not adopt England's 2019 edition or its 2025 removal of national reaction-to-fire classes."
+      ],
+      "sourceIds": [
+        "src-wales-adb-page",
+        "src-wales-adb-vol2",
+        "src-wales-slip-2025",
+        "src-wales-wgc-004-2025",
+        "src-wales-partb-summary",
+        "src-wales-adb-vol1",
+        "src-leg-wsi-2025-1320",
+        "src-leg-wsi-2025-1321",
+        "src-leg-wsi-2023-1210"
+      ]
+    },
+    {
+      "id": "scotland",
+      "name": "Scotland",
+      "document": "Building standards technical handbooks: non-domestic (linings table below) and domestic",
+      "edition": "April 2026 handbooks (both published 9 March 2026), for building warrants submitted on or after 6 April 2026 and for building work that needs no warrant started on or after that date",
+      "linings": "Non-domestic handbook: Standard 2.5 and Table 2.4 give European classes by building group (residential care buildings and hospitals, shops, all other buildings) and by location (rooms up to and over 30 m², unprotected zones, and protected zones and fire-fighting shafts). Domestic handbook: protected zones A1, A2 or B; rooms, unprotected zones and protected enclosures no worse than C; small rooms and limited wall areas D (clause 2.5.1). In both, clause 2.5.1 defines wall and ceiling surfaces as the substrate or lining material, excluding decorative wallpaper and paints, and says multiple layers can increase flame spread and are not recommended when redecorating.",
+      "nationalClasses": "Not used for linings: reaction-to-fire classification uses European classes only (Annex 2.E, Table 2.20). The non-domestic handbook still accepts national BS 476 tests for fire resistance (Annex 2.D, clause 2.D.4, BS 476 Parts 20 to 24) and for roof coverings (Annex 2.F, BS 476-3). Where the non-domestic handbook gives a lining class without subclasses, s3,d2 is deemed included (Annex 2.E).",
+      "dates": [
+        {
+          "label": "April 2026 handbooks apply (by building warrant date, or start date for work that needs no warrant)",
+          "date": "2026-04-06",
+          "kind": "effective"
+        }
+      ],
+      "notes": [
+        "Clause 2.5.1 of both handbooks excludes decorative wallpaper and paints from the classified surface but does not define them. Where the work needs a building warrant, agree with the verifier whether a given wallcovering is treated as decoration or as lining. Work that needs no warrant must still meet the building regulations, and the owner or client has the duty to comply. Both warn that multiple decorative layers can increase flame spread."
+      ],
+      "sourceIds": [
+        "src-scot-collection",
+        "src-scot-nd-apr2026-page",
+        "src-scot-dom-apr2026-page",
+        "src-scot-nd-2022-html",
+        "src-leg-bsr-scotland-2004",
+        "src-leg-bsr-scotland-2004-r5",
+        "src-leg-bsr-scotland-2004-sch3"
+      ]
+    },
+    {
+      "id": "northern-ireland",
+      "name": "Northern Ireland",
+      "document": "Technical Booklet E: Fire safety",
+      "edition": "October 2012 booklet as amended by AMD 7 (1 April 2022) and AMD 9 (6 May 2025)",
+      "linings": "Regulation 34; Section 3 and Table 3.1 give both national and European classes by purpose group, room size and circulation space. There is no BS EN 15102 wallcovering note.",
+      "nationalClasses": "Kept: Table 3.1 lists national classes (3, 1 and 0) beside European classes, and the booklet still defines Class 0 by reference to BS 476.",
+      "dates": [
+        {
+          "label": "Technical Booklet E in effect",
+          "date": "2012-10-31",
+          "kind": "effective"
+        },
+        {
+          "label": "AMD 7 in force (no change to Table 3.1 found)",
+          "date": "2022-04-01",
+          "kind": "effective"
+        },
+        {
+          "label": "AMD 9 in force (no change to Table 3.1 found)",
+          "date": "2025-05-06",
+          "kind": "effective"
+        }
+      ],
+      "notes": [
+        "The Department publishes a track-changes version and says it is not an up-to-date consolidated version."
+      ],
+      "sourceIds": [
+        "src-ni-tbe-page",
+        "src-ni-tbe-2012",
+        "src-ni-tbe-trackchanges",
+        "src-ni-amd7",
+        "src-ni-amd9",
+        "src-leg-br-ni-2012-r2",
+        "src-leg-br-ni-2012-r34"
+      ]
+    }
+  ]
+}

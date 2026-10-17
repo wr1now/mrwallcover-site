@@ -1,0 +1,103 @@
+---
+/**
+ * /get-in-touch/: every way to reach the practice directly, opened by "Contact" in the header and the
+ * mobile menu (owner, 15 Oct 2026). The quotation form stays on /contact/ ("Start your project").
+ * The phone reveal and WhatsApp render only when SITE_PHONE was set at build time, the call only when
+ * BOOKING_URL is set, exactly as on /contact/; this page and the contact pages are the only places the
+ * phone reveal appears.
+ */
+import { BOOKING_URL, COVERAGE, INSTAGRAM_HANDLE, INSTAGRAM_URL, PUBLIC_EMAIL } from '../config';
+import Action from '../components/Action.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PhoneReveal from '../components/PhoneReveal.astro';
+import WhatsAppLink from '../components/WhatsAppLink.astro';
+import BookCallLink from '../components/BookCallLink.astro';
+import Base from '../layouts/Base.astro';
+import copy from '../content/get-in-touch.json';
+import { areaHref, areas } from '../lib/content';
+import { phoneAvailable } from '../lib/phone';
+import { breadcrumbNode } from '../lib/schema';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Contact', href: '/get-in-touch/' },
+];
+const areaName = (name: string) => name.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase());
+---
+
+<Base title={copy.title} description={copy.description} path="/get-in-touch/" extraSchema={[breadcrumbNode(crumbs)]}>
+  <div class="container-page pb-20 contact-overview">
+    <header class="page-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">{copy.eyebrow}</p>
+      <h1>{copy.heading}</h1>
+      <p class="lede mt-5">{phoneAvailable ? copy.lede : copy.ledeNoPhone}</p>
+    <div class="mt-6 flex flex-wrap gap-3"><Action href="/contact/">Start your project</Action><Action href="#ways-heading" variant="quiet" icon="mail">Contact Dorin directly</Action></div>
+    </header>
+    <div class="grid gap-12 md:grid-cols-12">
+      <section class="md:col-span-7" aria-labelledby="ways-heading">
+        <h2 id="ways-heading" class="font-serif text-[2rem]">{copy.waysHeading}</h2>
+        <ul class="m-0 list-none p-0" data-contact-ways>
+          <li class="border-t border-line py-6">
+            <h3 class="m-0 text-[1.8rem]"><Icon name="mail" /> {copy.email.heading}</h3>
+            <p class="mt-2 mb-0 text-stone">{copy.email.text}</p>
+            <p class="mt-2 mb-0"><a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a></p>
+          </li>
+          {phoneAvailable && (
+            <li class="border-t border-line py-6">
+              <h3 class="m-0 text-[1.8rem]"><Icon name="phone" /> {copy.phone.heading}</h3>
+              <p class="mt-2 mb-0 text-stone">{copy.phone.text}</p>
+              <PhoneReveal wrap="mt-2 mb-0" prefix="Call " />
+            </li>
+          )}
+          {phoneAvailable && (
+            <li class="border-t border-line py-6">
+              <h3 class="m-0 text-[1.8rem]"><Icon name="phone" /> {copy.whatsapp.heading}</h3>
+              <p class="mt-2 mb-0 text-stone">{copy.whatsapp.text}</p>
+              <WhatsAppLink wrap="mt-4 mb-0" class="btn btn-line" />
+            </li>
+          )}
+          {BOOKING_URL && (
+            <li class="border-t border-line py-6">
+              <h3 class="m-0 text-[1.8rem]"><Icon name="calendar" /> {copy.call.heading}</h3>
+              <p class="mt-2 mb-0 text-stone">{copy.call.text}</p>
+              <BookCallLink wrap="mt-4 mb-0" class="btn btn-line" />
+              <p class="booking-hours mt-3 mb-0 text-sm text-stone">Calls Mon–Fri, 9am–5pm UK.</p>
+            </li>
+          )}
+          <li class="border-t border-b border-line py-6">
+            <h3 class="m-0 text-[1.8rem]"><Icon name="instagram" /> {copy.instagram.heading}</h3>
+            <p class="mt-2 mb-0 text-stone">{copy.instagram.text}</p>
+            <p class="mt-2 mb-0"><a href={INSTAGRAM_URL}>{INSTAGRAM_HANDLE}</a></p>
+          </li>
+        </ul>
+      </section>
+      <aside class="md:col-span-4 md:col-start-9 contact-project-note">
+        <section aria-labelledby="project-heading" class="mb-12">
+          <h2 id="project-heading" class="font-serif text-[2rem]">{copy.project.heading}</h2>
+          <p>{copy.project.text}</p>
+          <p class="mt-4 mb-0"><Action href="/contact/" variant="quiet">What to include in your enquiry</Action></p>
+        </section>
+        <section aria-labelledby="areas-heading">
+          <h2 id="areas-heading" class="font-serif text-[2rem]">{copy.areas.heading}</h2>
+          <p>{COVERAGE.replace(/^./, (c) => c.toUpperCase())}.</p>
+          <ul class="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0">
+            {areas.map((area) => (
+              <li><a class="inline-flex min-h-[44px] items-center" href={areaHref(area.slug)}>{areaName(area.name)}</a></li>
+            ))}
+            <li><a class="inline-flex min-h-[44px] items-center" href="/areas/">{copy.areas.all}</a></li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </div>
+</Base>
+
+<style>
+.contact-overview h3 { display:flex; align-items:center; gap:.8rem; }
+.contact-overview h3 :global(.mw-icon) { color:var(--color-stone); }
+.contact-project-note h2 { font-size:clamp(1.6rem,2.4vw,2rem); line-height:1.15; margin-top:0; }
+.contact-project-note { align-self:start; padding:1.5rem; background:var(--color-paper); border:1px solid var(--color-line); }
+#ways-heading { scroll-margin-top:7rem; }
+</style>

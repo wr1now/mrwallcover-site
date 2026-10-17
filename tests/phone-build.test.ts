@@ -96,7 +96,7 @@ test('with SITE_PHONE the reveal control and WhatsApp link render, and the numbe
     const nav = home.slice(home.indexOf('class="primary-nav"')).split('</nav>')[0];
     const footer = home.slice(home.indexOf('<footer')).split('</footer>')[0];
     const quick = contact.slice(contact.indexOf('contact-quick')).split('</div>')[0];
-    for (const [name, part] of [['dock', dock], ['header', nav], ['footer', footer], ['contact', quick]] as const) {
+    for (const [name, part] of [['dock', dock], ['footer', footer], ['contact', quick]] as const) {
       assert.match(part, /data-wa/, `WhatsApp in the ${name}`);
       assert.ok(part.includes(`href="${BOOKING_FIXTURE}"`), `booking in the ${name}`);
     }
@@ -114,7 +114,12 @@ test('with SITE_PHONE the reveal control and WhatsApp link render, and the numbe
     assert.match(contact, /Calls Mon–Fri, 9am–5pm UK\./);
     assert.doesNotMatch(home, /Calls Mon–Fri/, 'the hours line is on the contact page only');
     // The phone reveal is unchanged: still a button, the number still only in the payload.
-    assert.match(home, /<button type="button" class="dock-phone" data-phone-reveal>Phone<\/button>/);
+    assert.doesNotMatch(home, /<button\b[^>]*data-phone-reveal/);
+    assert.doesNotMatch(nav, /data-book/);
+    assert.match(nav, /href="\/get-in-touch\/"/);
+    const touch = await readFile(path.join(dir, 'get-in-touch', 'index.html'), 'utf8');
+    assert.match(touch, /<button\b[^>]*data-phone-reveal/);
+    assert.match(touch, /data-wa/);
   } finally {
     await rm(dir, { recursive: true, force: true });
   }

@@ -2,6 +2,10 @@
   "reviewDate": "2026-10-17",
   "routes": [
     {
+      "path": "/",
+      "decision": "Retain existing real hero/project photography; use stage and enquiry icons and shared action states."
+    },
+    {
       "path": "/404.html",
       "decision": "Keep a concise error status and shared recovery actions; no decorative illustration is needed."
     },
@@ -12,6 +16,10 @@
     {
       "path": "/accessibility/",
       "decision": "Keep text-only access information, clear headings and contact links; no decorative imagery is useful."
+    },
+    {
+      "path": "/advice/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
     },
     {
       "path": "/advice/choosing-wallcoverings/",
@@ -46,10 +54,6 @@
       "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
     },
     {
-      "path": "/advice/",
-      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
-    },
-    {
       "path": "/advice/installation-cost/",
       "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
     },
@@ -70,12 +74,20 @@
       "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
     },
     {
+      "path": "/advice/wallcovering-fire-ratings-uk/",
+      "decision": "Use readable paper surfaces, a full-width responsive evidence table and a schematic of the product, fixing and substrate checks. Keep citations and limitations in HTML; use neutral typographic share artwork rather than unrelated project photography."
+    },
+    {
       "path": "/advice/wallcovering-problems-and-aftercare/",
       "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
     },
     {
       "path": "/aftercare/",
       "decision": "Show an actual finished junction beside the terms and an inspection schematic; preserve the repair form."
+    },
+    {
+      "path": "/areas/",
+      "decision": "Use real linked local project evidence and shared quotation controls; do not imply a generic place photograph is our work."
     },
     {
       "path": "/areas/belgravia/",
@@ -91,10 +103,6 @@
     },
     {
       "path": "/areas/cotswolds/",
-      "decision": "Use real linked local project evidence and shared quotation controls; do not imply a generic place photograph is our work."
-    },
-    {
-      "path": "/areas/",
       "decision": "Use real linked local project evidence and shared quotation controls; do not imply a generic place photograph is our work."
     },
     {
@@ -122,12 +130,16 @@
       "decision": "Keep plain facts, sourced links and machine-readable destinations text-led; decorative images do not establish claims."
     },
     {
+      "path": "/how-we-check/",
+      "decision": "Keep editorial rules text-led with explicit scope; photographs would not establish independent checking or certification."
+    },
+    {
       "path": "/image-use/",
       "decision": "Keep text-only rights and reuse guidance; the reader needs the exact terms and contact links."
     },
     {
-      "path": "/",
-      "decision": "Retain existing real hero/project photography; use stage and enquiry icons and shared action states."
+      "path": "/materials/",
+      "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
     },
     {
       "path": "/materials/acoustic/",
@@ -143,10 +155,6 @@
     },
     {
       "path": "/materials/hand-painted/",
-      "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
-    },
-    {
-      "path": "/materials/",
       "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
     },
     {
@@ -170,6 +178,10 @@
       "decision": "Keep text-only legal reading with clear headings and links; no decorative imagery is useful."
     },
     {
+      "path": "/professionals/",
+      "decision": "Use project evidence, briefing checklist icons and labelled file-download and enquiry controls; preserve procurement copy and audience handoffs."
+    },
+    {
       "path": "/professionals/designers/",
       "decision": "Use project evidence, briefing checklist icons and labelled file-download and enquiry controls; preserve procurement copy and audience handoffs."
     },
@@ -186,8 +198,8 @@
       "decision": "Use project evidence, briefing checklist icons and labelled file-download and enquiry controls; preserve procurement copy and audience handoffs."
     },
     {
-      "path": "/professionals/",
-      "decision": "Use project evidence, briefing checklist icons and labelled file-download and enquiry controls; preserve procurement copy and audience handoffs."
+      "path": "/projects/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
     },
     {
       "path": "/projects/biltmore-mayfair/",
@@ -247,10 +259,6 @@
     },
     {
       "path": "/projects/imperfect-arches-external-corner-trim/",
-      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
-    },
-    {
-      "path": "/projects/",
       "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
     },
     {
@@ -326,6 +334,10 @@
       "decision": "Use a search icon and spacious result links; no decorative illustration competes with finding content."
     },
     {
+      "path": "/services/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
       "path": "/services/acoustic-wallcovering-installation/",
       "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
     },
@@ -370,10 +382,6 @@
       "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
     },
     {
-      "path": "/services/",
-      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
-    },
-    {
       "path": "/services/joinery-wallcoverings-and-panels/",
       "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
     },
@@ -406,12 +414,20 @@
       "decision": "Keep fit/evidence tables, native disclosures and brief-building tools readable; no decorative image is needed."
     },
     {
-      "path": "/calculator/",
-      "decision": "A working tool, not a gallery: three short numbered steps beside a sticky order docket, and the cutting plan drawn as roll strips to scale (drops, pattern loss hatched, offcut shaded). No decorative photography; the strips are the explanatory visual."
+      "path": "/wallpapering/",
+      "decision": "A compact hub links to the separate calculator, preparation, materials and hanging guides. Preserve the published fire reference and its labelled evidence-build-up schematic; no product or certification imagery is implied."
     },
     {
-      "path": "/wallpapering/",
-      "decision": "Hub page: four tool cards (calculator, preparation, lining and adhesives, hanging guides), the house rules as a plain list and the hanging-guide cards. Text and cards only; the linked guides carry their own photographs and diagrams."
+      "path": "/where-to-buy/",
+      "decision": "Use a text-led ordering checklist and primary source links; no supplier record or product imagery is being published."
+    },
+    {
+      "path": "/get-in-touch/",
+      "decision": "Contact icons identify direct channels; shared actions distinguish a quotation from a conversation. No room photography: this page helps visitors choose a contact method, not assess project evidence."
+    },
+    {
+      "path": "/calculator/",
+      "decision": "Use a labelled original wall-measurement illustration, a live working/spare/order panel and engine-derived cutting strips. Shared actions and navigation support a separate calculator route; no decorative room photography or second quantity algorithm."
     },
     {
       "path": "/wallpapering/lining-and-adhesives/",
