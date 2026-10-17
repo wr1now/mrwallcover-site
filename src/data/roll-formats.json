@@ -131,6 +131,18 @@
       }
     },
     {
+      "id": "roll-685-822",
+      "group": "roll",
+      "width": 68.5,
+      "widthUnit": "cm",
+      "length": 8.22,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Tektura, Carved in Stone: roll size 68.5 cm × 8.22 m, butt joined",
+        "url": "https://www.tektura.com/product/carved-in-stone"
+      }
+    },
+    {
       "id": "roll-686",
       "group": "roll",
       "width": 68.6,
@@ -155,6 +167,42 @@
       }
     },
     {
+      "id": "roll-86",
+      "group": "roll",
+      "width": 86,
+      "widthUnit": "cm",
+      "length": 7.2,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Arte, Icarus Alata: rolls of 7.20 m × 0.86 m",
+        "url": "https://www.arte-international.com/en/collections/icarus/alata/15710"
+      }
+    },
+    {
+      "id": "roll-90",
+      "group": "roll",
+      "width": 90,
+      "widthUnit": "cm",
+      "length": 9,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Arte, Marquesa Taio: rolls of 9 m × 0.90 m",
+        "url": "https://www.arte-international.com/en/collections/marquesa/taio/31710"
+      }
+    },
+    {
+      "id": "roll-100",
+      "group": "roll",
+      "width": 100,
+      "widthUnit": "cm",
+      "length": 10,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Arte, Indienne Agra: rolls of 10 m × 1 m",
+        "url": "https://www.arte-international.com/en/collections/indienne/agra/18310"
+      }
+    },
+    {
       "id": "us-double",
       "group": "double-roll",
       "width": 20.5,
@@ -164,6 +212,18 @@
       "source": {
         "label": "York Wallcoverings double roll",
         "url": "https://www.yorkwallcoverings.com/products/chesapeake-forest-dance-damask-wallpaper"
+      }
+    },
+    {
+      "id": "us-double-21",
+      "group": "double-roll",
+      "width": 21,
+      "widthUnit": "in",
+      "length": 33,
+      "lengthUnit": "ft",
+      "source": {
+        "label": "York Wallcoverings, Seagrass: double roll 21 in × 33 ft",
+        "url": "https://yorkwallcoverings.com/products/seagrass-wallpaper"
       }
     },
     {
@@ -241,6 +301,19 @@
       }
     },
     {
+      "id": "length-130-50",
+      "group": "length-m",
+      "width": 130,
+      "widthUnit": "cm",
+      "length": 50,
+      "lengthUnit": "m",
+      "overlapCm": 6,
+      "source": {
+        "label": "Vescom, Harrison: 130 cm, 50 m roll; Vescom's application instructions allow ± 6 cm for the overlap",
+        "url": "https://vescom.com/en/products/harrison"
+      }
+    },
+    {
       "id": "length-100",
       "group": "length-m",
       "width": 100,
@@ -262,6 +335,30 @@
       "source": {
         "label": "Timorous Beasties, Iguana Superwide: 1350 mm, per metre, overlap and double cut",
         "url": "https://www.timorousbeasties.com/shop/view-product/iguana-superwide-wallpaper?item=12830"
+      }
+    },
+    {
+      "id": "length-137-27",
+      "group": "length-m",
+      "width": 137,
+      "widthUnit": "cm",
+      "length": 27,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Tektura, Abaca: roll size 137 cm × 27 m, overlapped and double cut (no overlap amount printed)",
+        "url": "https://www.tektura.com/product/abaca"
+      }
+    },
+    {
+      "id": "length-yd-52",
+      "group": "length-yd",
+      "width": 52,
+      "widthUnit": "in",
+      "length": 30,
+      "lengthUnit": "yd",
+      "source": {
+        "label": "Maharam, Cleft: width 52 in, bolt 30 yards",
+        "url": "https://www.maharam.com/maharam/products/cleft/colors/001-dazzle"
       }
     },
     {
@@ -298,11 +395,14 @@
       68.6,
       70,
       80,
+      86,
       90,
       91.4,
       100,
+      110,
       122,
       130,
+      132,
       135,
       137
     ],
@@ -314,6 +414,7 @@
       27.5,
       36,
       48,
+      52,
       54
     ]
   }
