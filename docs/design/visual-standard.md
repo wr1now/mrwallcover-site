@@ -29,6 +29,8 @@ Keep controls at least 44px tall where practical, with generous hit areas, consi
 
 Icons accompany text labels and use the shared stroke family. Use an arrow for navigation, a download symbol for a file, a contact symbol for email or booking and plus/minus or a native marker for disclosure. Do not give every control the same diagonal arrow. Decorative icons are hidden from assistive technology. An icon-only control requires an accessible name and a real need for that compact treatment.
 
+Every question row also uses `QuestionVisual.astro` on its right, matched to the question's subject by `question-visual.ts`: for example a ruler for measuring, a roll for quantities, a calendar for timing or tools for repairs. Preserve the actual question/answer and existing disclosure behaviour. The small framed drawing is decorative and hidden from assistive technology. New FAQ content must review the topic choice; use a neutral document for evidence, approvals or fire paperwork rather than a certification badge.
+
 ```astro
 ---
 import Base from '../layouts/Base.astro';

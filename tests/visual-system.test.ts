@@ -2,6 +2,21 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import { questionIcon } from '../src/lib/question-visual.ts';
+
+test('question drawings follow the topic and do not imply approval or certification',()=>{
+  assert.equal(questionIcon('What does the project cost?'),'tag');
+  assert.equal(questionIcon('How many rolls are needed?'),'roll');
+  assert.equal(questionIcon('When should we book?'),'calendar');
+  assert.equal(questionIcon('What wall dimensions do you need?'),'ruler');
+  assert.equal(questionIcon('Can this be confidential?'),'lock');
+  assert.equal(questionIcon('What insurance do you hold?','f-q1'),'drawing');
+  assert.equal(questionIcon('Who installs hand-painted scenic wallpaper?','f-a2'),'panels');
+  assert.equal(questionIcon('Which accreditation do you have?'),'drawing');
+  assert.equal(questionIcon('Where should the first drop of wallpaper go?'),'ruler');
+  assert.equal(questionIcon('What happens when the walls are not straight?'),'ruler');
+  assert.equal(questionIcon('What is overlap and splice?'),'layers');
+});
 
 test('every normal built page inherits the shared footer and visual action stylesheet', async () => {
   async function walk(dir:string):Promise<string[]> {

@@ -1,6 +1,6 @@
 ---
 /** One decorative icon family. Meaning always comes from the adjacent label. */
-export type IconName = 'arrow-right' | 'arrow-left' | 'download' | 'search' | 'pin' | 'lock' | 'mail' | 'calendar' | 'instagram' | 'phone' | 'ruler' | 'roll' | 'layers' | 'check' | 'room' | 'tag' | 'camera' | 'drawing' | 'access' | 'swatch' | 'book' | 'tools';
+export type IconName = 'arrow-right' | 'arrow-left' | 'download' | 'search' | 'pin' | 'lock' | 'panels' | 'mail' | 'calendar' | 'instagram' | 'phone' | 'ruler' | 'roll' | 'layers' | 'check' | 'room' | 'tag' | 'camera' | 'drawing' | 'access' | 'swatch' | 'book' | 'tools';
 interface Props { name: IconName; class?: string; }
 const { name, class: className } = Astro.props;
 const paths: Record<IconName, string[]> = {
@@ -10,6 +10,7 @@ const paths: Record<IconName, string[]> = {
   search: ['M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z', 'm15 15 6 6'],
   pin: ['M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z', 'M15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z'],
   lock: ['M6 10h12v11H6Z', 'M8 10V6a4 4 0 0 1 8 0v4', 'M12 15v2'],
+  panels: ['M3 4h18v16H3Z', 'M9 4v16m6-16v16', 'M3 15c3-6 6 3 9-2s6 1 9-5'],
   mail: ['M3 5h18v14H3z', 'm3 6 9 7 9-7'],
   calendar: ['M4 5h16v16H4z', 'M8 3v4m8-4v4M4 10h16', 'm8 15 3 3 5-5'],
   instagram: ['M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5Z', 'M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z', 'M17 7h.01'],

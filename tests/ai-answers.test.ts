@@ -52,7 +52,7 @@ for (const page of FAQ_PAGES) {
       assert.equal(q.acceptedAnswer?.['@type'], 'Answer');
       assert.ok(typeof q.acceptedAnswer.text === 'string' && q.acceptedAnswer.text.length > 20, 'Answer.text');
     }
-    const visible = [...html.matchAll(/<div class="guide-faq-item"[^>]*>\s*<h3>([\s\S]*?)<\/h3>/g)].map((m) => decode(m[1]).trim());
+    const visible = [...html.matchAll(/<div class="guide-faq-item"[^>]*>\s*<div class="question-heading-row">\s*<h3>([\s\S]*?)<\/h3>/g)].map((m) => decode(m[1]).trim());
     assert.deepEqual(visible, faq.mainEntity.map((q: any) => q.name), 'schema questions are the visible questions, in order');
     for (const item of all.filter((a) => a.pages.includes(page))) {
       assert.ok(visible.includes(item.question), `${item.id} visible`);

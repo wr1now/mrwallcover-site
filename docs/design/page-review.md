@@ -64,7 +64,7 @@ The source inventory includes `/services/calico-wallpaper-installer/`, `/service
 | Keyboard, focus, disclosures, contrast and reduced effects | Keyboard Enter opens native disclosure; effects preference survives reload; form/menu dock hides. Token contrast checks pass; hero contrast and type-floor browser tests pass on 12 pages at five widths. |
 | No-JavaScript footer navigation and article content | Chrome with JavaScript disabled sees expanded server-rendered footer groups and links. Article/diagram content is static HTML/SVG. |
 | Form/shortlist/calculator and query-intent regression checks | Existing source/unit/build checks pass; enquiry field focus checked in Chrome. No enquiry was submitted. Quantity algorithm and enquiry submission code were unchanged. |
-| Build, repository checks and no-loss comparison | `check`: 84; `check:dist`: 195 plus temporary new-route fixture; `check:type`: 2; `check:phone`: 2; `check:guides`: 5. Production/review builds and case-study date check pass. No-loss passes: 98 pages, 3,609 media files, 98 Markdown twins and JSON-LD node/property counts did not decrease (7,706 baseline nodes). `check:analytics` is absent. The #67 private-list guard is present after rebasing; its five unit tests pass, but `check:names` explicitly reports no configured list and does not scan other firms’ names. This is a skipped scan, not a pass. |
+| Build, repository checks and no-loss comparison | `check`: 84; `check:dist`: 196 plus temporary new-route fixture; `check:type`: 2; `check:phone`: 2; `check:guides`: 5. Production/review builds and case-study date check pass. No-loss passes: 98 pages, 3,609 media files, 98 Markdown twins and JSON-LD node/property counts did not decrease (7,706 baseline nodes). `check:analytics` is absent. The #67 private-list guard is present after rebasing; its five unit tests pass, but `check:names` explicitly reports no configured list and does not scan other firms’ names. This is a skipped scan, not a pass. |
 | Representative new route inherits Base/footer/action styling without local CSS | `scripts/check-visual-fixture.mjs` builds a new route in temporary output, verifies shared footer/actions and native/disabled semantics, then removes its source and output. The fixture is not published. |
 | Before/after performance on the same representative pages | Local transfer/resource/DOMContentLoaded observations collected for the same five pages at 390/1440, before and after. Images add transfer cost to Services/Guide; they remain lazy, sized and use existing responsive derivatives. See observations below. |
 
@@ -110,7 +110,7 @@ Production audit artifacts are locally reproducible with `MW_VISUAL_AUDIT_OUTPUT
 
 The interaction review exercised shortlist persistence and enquiry handoff, finder recommendations/reset/session restore, professional audience/intent, calculator submit/match/room/add-wall/refusal states and search results/empty state. No enquiry was submitted and no call or chat was opened. A caught Action wrapper defect is fixed: explicit native submit/reset types render once, and the temporary future-page fixture now exercises actual native submit/reset events. Care icon choices remain presentation metadata so they do not leak into the public factual data projections. Meaningful stage-link labels preserve homepage links in its Markdown twin.
 
-Local verification passed: 84 source tests, 195 built-site tests plus the new-page/native-form/phone browser fixture, 2 typography/hero-contrast tests, both phone builds, 5 guide-boundary tests and 5 names-guard unit tests. Production and review builds, case-study dates and no-loss pass. The hosted workflow must also pass at the final PR head before publication. Separate draft feature PRs #61–65 are outside this release.
+Local verification passed: 84 source tests, 196 built-site tests plus the new-page/native-form/phone browser fixture, 2 typography/hero-contrast tests, both phone builds, 5 guide-boundary tests and 5 names-guard unit tests. Production and review builds, case-study dates and no-loss pass. The hosted workflow must also pass at the final PR head before publication. Separate draft feature PRs #61–65 are outside this release.
 
 
 ### Remaining-family evidence
@@ -143,3 +143,13 @@ The same eight routes were fully visited before/after at 390px and 1440px. These
 | `/faq/` | 1440 | 161 KiB | 163 KiB |
 | `/projects/browns-hotel-mayfair/` | 390 | 975 KiB | 977 KiB |
 | `/projects/browns-hotel-mayfair/` | 1440 | 1098 KiB | 1100 KiB |
+
+
+### Right-hand question illustrations
+
+The shared buyer-question, Guide and FAQ templates now place a relevant framed topic drawing on the right of every question. Buyer answers remain open, as requested; native FAQ disclosures keep their behaviour. Explicit mappings cover current question IDs and unnumbered Guide questions, with topic matching for new entries. Cost, quantities, measuring, timing, care, privacy and evidence use different relevant drawings. Evidence/approval questions use neutral document imagery rather than badges. The all-route browser check verifies that each drawing stays to the right at both widths, and the factual FAQ/schema tests retain exact questions and answers.
+
+
+[Question block before](screens/questions-before-1440.jpg) · [After with relevant right-hand drawings](screens/questions-after-1440.jpg) · [After on mobile](screens/questions-after-390.jpg)
+
+The additional question review covered standard, buyer, Guide and home FAQ layouts at390/1440 (56 question instances). Every drawing remained to the right, buyer answers stayed open and there was no overflow. All196 built-site checks and both typography/contrast checks passed after the question treatment; a final build and64 focused shared-system/FAQ checks passed after the scenic-panel glyph refinement.
