@@ -161,3 +161,7 @@ The independent fire-reference branch inherits this visual standard and shared c
 Both routes were inspected at 390px and 1440px, with automated overflow/interaction checks at 360, 390, 768, 1024, 1280 and 1440px. Classification text stays at least 14px. Essential table rows, caveats and source links remain in the initial HTML. Keyboard menu/Escape, decoder success/error paths and no-JavaScript content are checked. The header/footer retain the foundation's behaviour; this branch adds the Wallpapering destination and fire-reference links.
 
 Evidence: [release verification](../research/fire-ratings/release-review.md), including representative screenshots and the dependency boundary. The draft calculator and adhesive dataset are not included. No deployment or professional fire-safety approval is claimed.
+
+## Live header follow-up — 17 October 2026
+
+Live fire-release verification with conditional WhatsApp enabled exposed a three-line primary header action. The header now uses compact link gaps, preserves a single-line enquiry action and shows booking in the bar from 1440px. Booking remains available in the footer and mobile dock. Labels, type sizes, routes and enquiry behaviour are retained. The phone-enabled new-page fixture reproduced the wrap at 1024px before the fix; it now asserts one text line, clearance from the wordmark and the bar edge, and the booking breakpoint at 1024, 1280 and 1440px. The same fixture checks the other mobile widths and contact behaviour.

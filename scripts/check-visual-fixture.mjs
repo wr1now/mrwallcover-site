@@ -45,6 +45,20 @@ try {
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`phone-enabled layout @${width}`);
       assert.ok(await page.$('[data-wa]'),'phone-enabled WhatsApp control');
       assert.match(await page.$eval('[data-wa]',(link)=>link.href),/^https:\/\/wa\.me\//,'WhatsApp payload resolves without opening a chat');
+      if (width >= 1024) {
+        const header = await page.evaluate(() => {
+          const bar = document.querySelector('.site-header').getBoundingClientRect();
+          const mark = document.querySelector('.wordmark').getBoundingClientRect();
+          const nav = document.querySelector('.primary-nav').getBoundingClientRect();
+          const action = document.querySelector('.header-action').getBoundingClientRect();
+          const text = document.createRange();
+          text.selectNodeContents(document.querySelector('.header-action > span'));
+          return { lines: text.getClientRects().length, clear: nav.left >= mark.right + 8 && action.right <= bar.right - 8, book: getComputedStyle(document.querySelector('.header-book')).display !== 'none' };
+        });
+        assert.equal(header.lines, 1, `phone-enabled header action stays on one line @${width}`);
+        assert.equal(header.clear, true, `phone-enabled header controls fit inside the bar @${width}`);
+        assert.equal(header.book, width >= 1440, `booking link uses the wider header @${width}`);
+      }
       if (width<1280) {
         await page.focus('input[name="name"]');
         assert.equal(await page.$eval('[data-dock]',(dock)=>getComputedStyle(dock).display),'none','phone-enabled dock hides for form focus');
@@ -54,5 +68,5 @@ try {
     assert.ok(await page.$('[data-footer] a[href^="tel:"]'),'phone reveal becomes a dial link without placing a call');
   } finally { await browser.close(); await server.close(); }
   console.log('New route fixture: shared footer/actions inherited without local CSS; native button and disabled-link semantics pass. Fixture removed from source and public output.');
-  console.log('Phone-enabled browser fixture: six widths, WhatsApp href decoding, field-focus dock hiding and phone reveal pass; no call or message sent.');
+  console.log('Phone-enabled browser fixture: six widths, single-line desktop contact action within the bar, booking from 1440px, WhatsApp href decoding, field-focus dock hiding and phone reveal pass; no call or message sent.');
 } finally { await rm(fixture,{force:true}); await rm(out,{recursive:true,force:true}); }
