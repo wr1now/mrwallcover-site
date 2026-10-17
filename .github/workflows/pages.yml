@@ -77,6 +77,9 @@ jobs:
         run: npm run check:no-loss
       - name: Check both phone builds
         run: npm run check:phone
+      - name: Check analytics on/off fixture builds
+        # Production analytics stay off; enabling a real account is a separate configured release.
+        run: npm run check:analytics
       - name: Build editorial review
         run: npm run build:review
       - name: Check guide publication boundaries
