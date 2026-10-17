@@ -48,9 +48,9 @@ There is one source of truth. The page, its tables, the Markdown twin and `llms.
 
 ## Review and maintenance
 
-**Ownership.** Dorin Burcus (founder) approves the public wording. Second checks are done by someone other than the author, as the owner decided for the site's guides; who and how often is still to be confirmed by the owner.
+**Ownership (owner's decision, 17 October 2026).** Dorin Burcus (founder) owns the review and approves the public wording. Second checks are done by someone other than the author, as the owner decided for the site's guides.
 
-**Proposed cadence: quarterly**, and whenever one of these is due:
+**Cadence: quarterly** (run `npm run check:fire-sources` every quarter), and also whenever one of these is due. The public page makes no review promise; it shows only each row's "last checked" date.
 
 - a stated validity date in `sources.json` passes or falls within 90 days (for example certificate 0493-CPR-W038 on 28 July 2029, Centexbel report 19/721 on 28 July 2027, and the certificate expiry dates listed in Muraspec's declarations, from November 2026 to January 2028);
 - a regulatory date passes: England's 2029 fire-resistance amendments take effect on 2 September 2029; Wales's promised move of national classes into an appendix; a new Scottish handbook or Northern Irish amendment;

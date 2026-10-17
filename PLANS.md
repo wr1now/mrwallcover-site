@@ -124,10 +124,12 @@ Owner: the dedicated session "MrWallcover — Fire Ratings & British Standards".
 
 **Evidence gaps left open (published as gaps, not hidden).** No Tektura declaration of performance or classification report is published; Colour Choice+Protect's linked report describes a different vinyl; Arte Collines and other textiles have declarations and reports that disagree; several reports exclude paper-faced plasterboard; Muraspec has overlapping declarations with different smoke subclasses. Questions for each maker are in `docs/research/fire-ratings/conflicts-and-gaps.md`.
 
+**Owner's decisions (17 October 2026, relayed by the coordinating session).** Keep the corrected "who certifies" lines; the installer line now reads "installs to the wallcovering maker's instructions and the project's fire specification" (no compliance promise); keep the f-b5 "Class A" explanation; the page uses its own typographic share card (no client named); Dorin owns the review, run quarterly and at stated expiry or effective dates (2 September 2029 included), recorded in the research README and kept off the public page. Auto-fix is on for #64.
+
+**Publication state.** PR #64 is open on `wr1now/mrwallcover-site`, stacked on #62; #65 (information shop) is stacked on #64. CI's no-loss failure was fixed in 851cf1e.
+
 **Remaining publication steps (not done).**
 
-1. Owner review of the wording, in particular the corrected "who certifies" lines (they were the owner's own approved words) and the product rows.
-2. Decide the push route to `wr1now/mrwallcover-site`, push the branch and open the PR stacked on #62; CI must pass, including `check:type` (needs Chrome, not available locally) and `check:no-loss`.
-3. Merge #62 first, then this PR, by the repository's normal route. Deployment follows the merge to `main`.
-4. After deployment: check the live URL returns 200, is in the live sitemap and has no `noindex`; then, if the owner wants, request indexing in Search Console. Not crawled, submitted or indexed yet.
-5. Set the review owner and cadence (proposed: quarterly, and at stated expiry or effective dates; see the research README).
+1. Merge #62 first, then #64, by the repository's normal route (merging stays with the owner). Deployment follows the merge to `main`.
+2. After deployment: check the live URL returns 200, is in the live sitemap and has no `noindex`; then, if the owner wants, request indexing in Search Console. Not crawled, submitted or indexed yet.
+3. Residential and wider UK coverage, then other countries: see the coverage audit of 17 October 2026.
