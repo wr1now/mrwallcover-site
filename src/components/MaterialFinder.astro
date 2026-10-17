@@ -1,4 +1,5 @@
 ---
+import Action from './Action.astro';
 import { materials } from '../lib/content';
 import { preferenceOptions } from '../lib/material-advice';
 const labels = { use: 'Where will it go?', look: 'What appeals to you?', cleaning: 'How will it be cared for?', panels: 'What do you expect from the joints?', light: 'What is the light like?' };
@@ -11,7 +12,7 @@ const labels = { use: 'Where will it go?', look: 'What appeals to you?', cleanin
     <div class="grid gap-5 md:grid-cols-2">
       {Object.entries(preferenceOptions).map(([key, options]) => <div class="field"><label for={`finder-${key}`}>{labels[key as keyof typeof labels]}</label><select id={`finder-${key}`} name={key}>{Object.entries(options).map(([value, label]) => <option value={value} selected={value === 'unsure'}>{label}</option>)}</select></div>)}
     </div>
-    <div class="mt-5 flex flex-wrap gap-3"><button type="submit" class="btn btn-solid-ink">Show me what to compare</button><button type="reset" class="btn btn-line">Clear my choices</button></div>
+    <div class="mt-5 flex flex-wrap gap-3"><Action variant="primary" type="submit" >Show me what to compare</Action><Action variant="secondary" type="reset" >Clear my choices</Action></div>
     <p class="text-sm text-stone">Your choices stay in this browser session and can be included when you send an enquiry.</p>
   </form>
   <noscript><p>Explore the material families below, or <a href="/contact/?intent=advice">ask about your room</a>.</p></noscript>
@@ -20,8 +21,8 @@ const labels = { use: 'Where will it go?', look: 'What appeals to you?', cleanin
     <p data-material-explanation role="status"></p>
     <p data-material-light hidden>Strong side lighting can emphasise texture, joints and the surface underneath. Review a sample in that light.</p>
     <p data-material-commercial hidden>For a commercial specification, confirm the exact product's required performance documents and installation conditions with the responsible project professional.</p>
-    {materials.items.map((item) => <article class="material-result" data-material-result={item.slug} hidden><h3><a href={`/materials/${item.slug}/`}>{item.name}</a></h3><p>{item.decision.considerWhen}</p><p><strong>Consider this:</strong> {item.decision.tradeoff}</p><button class="btn btn-line" type="button" data-shortlist={item.slug} aria-pressed="false">Save to shortlist</button></article>)}
-    <a class="btn btn-solid-ink mt-4" href="/contact/?intent=source">Discuss these choices</a>
+    {materials.items.map((item) => <article class="material-result" data-material-result={item.slug} hidden><h3><a href={`/materials/${item.slug}/`}>{item.name}</a></h3><p>{item.decision.considerWhen}</p><p><strong>Consider this:</strong> {item.decision.tradeoff}</p><Action variant="secondary" type="button" data-shortlist={item.slug} aria-pressed="false">Save to shortlist</Action></article>)}
+    <Action variant="primary" class="mt-4" href="/contact/?intent=source">Discuss these choices</Action>
   </div>
 </section>
 <script>

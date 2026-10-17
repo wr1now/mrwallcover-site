@@ -12,5 +12,18 @@ import Icon from '../components/Icon.astro';
     <Action variant="secondary">Native button</Action>
     <Action href="/contact/" aria-disabled="true">Unavailable navigation</Action>
     <Action aria-disabled="true">Unavailable button</Action>
+    <form data-action-form>
+      <label>Fixture input <input name="fixture" value="Original" /></label>
+      <Action type="submit">Submit fixture</Action>
+      <Action type="reset" variant="secondary">Reset fixture</Action>
+      <output data-action-submissions>0</output>
+    </form>
   </div>
+  <script is:inline>
+    document.querySelector('[data-action-form]').addEventListener('submit', event => {
+      event.preventDefault();
+      const output = document.querySelector('[data-action-submissions]');
+      output.textContent = String(Number(output.textContent) + 1);
+    });
+  </script>
 </Base>

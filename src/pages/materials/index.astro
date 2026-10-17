@@ -50,8 +50,8 @@ const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((
             <p class="mt-3 mb-0 text-stone">{item.appearance}</p>
             <p class="mt-3 mb-0">{item.joins}</p>
             <div class="mt-4 flex flex-wrap gap-3">
-              <button class="btn btn-line" type="button" data-shortlist={item.slug} aria-pressed="false">Save to shortlist</button>
-              {service && <a class="btn btn-line" href={specialismHref(service.slug)}>Installation</a>}
+              <Action variant="secondary" type="button" data-shortlist={item.slug} aria-pressed="false">Save to shortlist</Action>
+              {service && <Action variant="secondary" href={specialismHref(service.slug)}>Installation</Action>}
             </div>
           </li>
         );
@@ -94,7 +94,7 @@ const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((
     </section>
     <section class="mt-16 border-t border-line pt-10" aria-labelledby="compare-heading">
       <p data-shortlist-status role="status"></p>
-      <button type="button" class="btn btn-line mb-5" data-shortlist-clear>Clear shortlist</button>
+      <Action variant="secondary" type="button" class="mb-5" data-shortlist-clear>Clear shortlist</Action>
       <h2 id="compare-heading" class="m-0 text-[2rem]">Compare the shortlist <span data-shortlist-count>0</span></h2>
       <p data-compare-empty class="lede mt-4">Save two or more families to compare joins, care and where they belong.</p>
       <div class="mt-6 grid gap-6">
@@ -107,7 +107,7 @@ const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((
           </article>
         ))}
       </div>
-      <p class="mt-8"><a class="btn btn-solid-ink" href="/contact/?intent=source">Discuss this shortlist</a></p>
+      <p class="mt-8"><Action variant="primary" href="/contact/?intent=source">Discuss this shortlist</Action></p>
     </section>
   </div>
   <MaterialStudio />

@@ -33,7 +33,7 @@ for (const fm of studies) {
     const box = h.match(/<section class="glance-box"[^>]*data-glance[^>]*>([\s\S]*?)<\/section>/)?.[1];
     assert.ok(box, 'the box is on the page');
     assert.ok(h.indexOf('data-glance') < h.indexOf('class="prose case-study"'), 'the box sits above the story');
-    const rows = [...box!.matchAll(/<dt>([\s\S]*?)<\/dt>\s*<dd>([\s\S]*?)<\/dd>/g)].map((m) => [decode(m[1]), decode(m[2].replace(/<span aria-hidden="true">–<\/span><span class="sr-only">Not recorded<\/span>/, '').replace(/<[^>]+>/g, ''))]);
+    const rows = [...box!.matchAll(/<dt>([\s\S]*?)<\/dt>\s*<dd>([\s\S]*?)<\/dd>/g)].map((m) => [decode(m[1].replace(/<[^>]+>/g, '')), decode(m[2].replace(/<span aria-hidden="true">–<\/span><span class="sr-only">Not recorded<\/span>/, '').replace(/<[^>]+>/g, ''))]);
     assert.deepEqual(rows.map((r) => r[0]), LABELS);
     const get = (label: string) => rows.find((r) => r[0] === label)![1];
     const extra = glance[fm.slug];

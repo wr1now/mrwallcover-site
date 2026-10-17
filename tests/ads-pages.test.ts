@@ -155,7 +155,7 @@ test('the heritage page links its case studies and the fit-out page carries the 
 test('every professional page lists fit-out contractors under "Other ways we can help", and all four share the "Questions" eyebrow and "Questions buyers ask"', async () => {
   for (const slug of ['designers', 'developers', 'hotels']) {
     const html = await readFile(`dist/professionals/${slug}/index.html`, 'utf8');
-    const row = html.match(/<h2>Other ways we can help<\/h2>([\s\S]*?)<\/section>/);
+    const row = html.match(/<h2\b[^>]*>Other ways we can help<\/h2>([\s\S]*?)<\/section>/);
     assert.ok(row, `${slug}: "Other ways we can help" row`);
     assert.ok(row![1].includes('href="/professionals/fit-out-contractors/"'), `${slug}: links fit-out contractors`);
     for (const other of ['designers', 'developers', 'hotels'].filter((s) => s !== slug)) {

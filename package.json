@@ -13,8 +13,8 @@
     "postbuild": "node scripts/build-ai-layer.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "node --experimental-strip-types --test tests/quantity.test.ts tests/enquiry.test.ts tests/leads-api.test.ts tests/content-guards.test.ts tests/phone.test.ts tests/material-advice.test.ts tests/contrast.test.ts tests/material-studio.test.ts tests/project-explorer.test.ts tests/enquiry-attachments.test.ts tests/enquiry-browser-guards.test.ts tests/image-rights.test.ts tests/fire-ratings.test.ts",
-    "check:dist": "node --experimental-strip-types --test tests/dist-guards.test.ts tests/ai-layer.test.ts tests/glass-system.test.ts tests/ai-crawler.test.ts tests/atelier.test.ts tests/discovery-integrity.test.ts tests/seo-step2.test.ts tests/lee-broom.test.ts tests/ai-layer-data.test.ts tests/ai-layer-consistency.test.ts tests/home-restore.test.ts tests/ai-answers.test.ts tests/private-terms.test.ts tests/image-metadata.test.ts tests/sitemap.test.ts tests/laser-setout.test.ts tests/footer-visual.test.ts tests/visual-system.test.ts tests/visual-browser.test.ts tests/fire-release-browser.test.ts tests/fire-ratings-build.test.ts tests/hotel-fire-guide.test.ts && node scripts/check-visual-fixture.mjs",
+    "check": "node --experimental-strip-types --test tests/quantity.test.ts tests/enquiry.test.ts tests/leads-api.test.ts tests/content-guards.test.ts tests/phone.test.ts tests/material-advice.test.ts tests/contrast.test.ts tests/material-studio.test.ts tests/project-explorer.test.ts tests/enquiry-attachments.test.ts tests/enquiry-browser-guards.test.ts tests/image-rights.test.ts tests/names-guard.test.ts tests/fire-ratings.test.ts",
+    "check:dist": "node --experimental-strip-types --test tests/dist-guards.test.ts tests/ai-layer.test.ts tests/glass-system.test.ts tests/ai-crawler.test.ts tests/atelier.test.ts tests/discovery-integrity.test.ts tests/seo-step2.test.ts tests/lee-broom.test.ts tests/ai-layer-data.test.ts tests/ai-layer-consistency.test.ts tests/home-restore.test.ts tests/ai-answers.test.ts tests/private-terms.test.ts tests/image-metadata.test.ts tests/sitemap.test.ts tests/laser-setout.test.ts tests/footer-visual.test.ts tests/visual-system.test.ts tests/visual-browser.test.ts tests/visual-coverage.test.ts tests/fire-release-browser.test.ts tests/fire-ratings-build.test.ts tests/hotel-fire-guide.test.ts && node scripts/check-visual-fixture.mjs",
     "check:type": "node --experimental-strip-types --test tests/type-scale.test.ts",
     "check:phone": "node --experimental-strip-types --test tests/phone-build.test.ts",
     "lead-api": "LEAD_API_ENABLED=1 node --experimental-strip-types server/index.ts",
@@ -23,10 +23,10 @@
     "check:guides": "node --experimental-strip-types --test tests/guide-build.test.ts",
     "indexnow": "node scripts/indexnow-ping.mjs dist",
     "check:no-loss": "node scripts/no-loss-guard.mjs --base-dist ../mw-main-base/dist --dist dist --base-ref origin/main",
-    "check:visual": "node --experimental-strip-types --test tests/footer-visual.test.ts tests/visual-system.test.ts tests/visual-browser.test.ts && node scripts/check-visual-fixture.mjs",
+    "check:names": "node scripts/names-guard.mjs --repo",
+    "check:visual": "node --experimental-strip-types --test tests/footer-visual.test.ts tests/visual-system.test.ts tests/visual-browser.test.ts tests/visual-coverage.test.ts && node scripts/check-visual-fixture.mjs",
     "capture:visual": "node scripts/capture-visual-review.mjs",
-    "check:fire-sources": "node scripts/check-fire-sources.mjs",
-    "check:names": "node scripts/names-guard.mjs --repo"
+    "check:fire-sources": "node scripts/check-fire-sources.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

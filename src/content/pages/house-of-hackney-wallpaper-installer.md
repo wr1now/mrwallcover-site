@@ -7,10 +7,19 @@
   "eyebrow": "Services",
   "heading": "House of Hackney wallpaper installation",
   "lede": "Mr Wallcover has hung House of Hackney wallpapers in a Georgian house inside a Cornish castle, the maker's London showroom, a London hotel suite and a listed North London house. This page says which papers, how they hang, and where each case study is.",
-  "parent": { "name": "Services", "href": "/services/" },
-  "updated": "2026-10-11",
-  "service": { "name": "House of Hackney wallpaper installation", "serviceType": "Wallcovering installation" },
-  "cta": { "label": "Discuss a House of Hackney installation", "href": "/contact/?intent=install" },
+  "parent": {
+    "name": "Services",
+    "href": "/services/"
+  },
+  "updated": "2026-10-17",
+  "service": {
+    "name": "House of Hackney wallpaper installation",
+    "serviceType": "Wallcovering installation"
+  },
+  "cta": {
+    "label": "Discuss a House of Hackney installation",
+    "href": "/contact/?intent=install"
+  },
   "projects": [
     "trematon-castle",
     "house-of-hackney-st-michaels",
@@ -39,7 +48,13 @@
         "The finished-room photographs are House of Hackney's own, credited \"Photography: House of Hackney\". The others were taken on site by us."
       ]
     }
-  ]
+  ],
+  "featureMedia": {
+    "id": "trematon-01",
+    "caption": "House of Hackney’s PLANTASIA mural installed at the Castle of Trematon, Cornwall. A recorded installation does not imply maker endorsement.",
+    "credit": "Photograph: Dorin Burcus / Mr Wallcover.",
+    "project": "trematon-castle"
+  }
 }
 ---
 

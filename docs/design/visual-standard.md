@@ -2,6 +2,8 @@
 
 This is the standing design contract for existing and future Mr Wallcover pages. Apply it with the existing Glass Atelier direction; historical preview styles in `scripts/glass-variants.preview.css` are not shipped styles. Review coverage and outstanding evidence belong in [page-review.md](page-review.md).
 
+Every normal HTML route also needs a concrete decision in [route-review.json](route-review.json). The build checks exact route coverage, mobile/desktop overflow, image loading, main headings, action sizes and decorative icon semantics. A new route must inherit the shared shell and use the appropriate family template; a new standalone route is verified by the temporary new-page fixture. These checks support visual review and do not replace inspecting composition and crops.
+
 ## Character and composition
 
 Keep warm ivory reading surfaces, ink text, restrained olive and brass accents, Cormorant Garamond headings and Outfit body text. Photography should show the material or the work honestly. Use clear section hierarchy, readable line lengths and generous, deliberate spacing. Glass belongs to controls and navigation; paragraphs and long articles sit on paper.
@@ -54,6 +56,8 @@ Check each image's subject, crop, alt text, caption and reuse terms before addin
 Use `Picture.astro` with a registered image id and realistic `sizes`. Keep intrinsic dimensions, responsive AVIF/WebP sources, deliberate focal points and lazy loading below the fold. Prioritise the actual lead image only. Do not upscale a small source into a large proof image. Material comparisons need photographs of that material rather than an unrelated finished room. Verify crops at mobile width so the relevant seam or detail is still visible.
 
 Use original SVG diagrams for technical explanation. Label schematic diagrams as illustrative or not to scale, provide a title/description or equivalent text, and keep labels readable on mobile. Distinguish free, straight and drop matches; retain real product instructions and source caveats. A live cutting diagram must render the calculator's existing result, not a second quantity algorithm. Fire illustrations must distinguish the product, substrate and tested build-up; no decorative certification or fireproof badges.
+
+`EvidenceFigure.astro` keeps a registered photograph, caption, credit and optional source link together. `ProjectEvidence.astro` presents cleared own photographs from linked projects and retains the remaining project records as links. `ProfessionalBriefing.astro` supplies a labelled checklist and real download action. Prefer these shared patterns to copying a sidebar or inventing a new card style. Material and professional entries can provide their own evidence metadata; guide frontmatter supports an evidence figure or a technical diagram.
 
 Generated realistic graphics must be labelled **Illustrative**, recorded with provenance and kept separate from project evidence. Do not generate wallpaper artwork, a completed commission, client approval, maker endorsement or a certificate and present it as real. Do not leave placeholder image boxes in finished pages.
 

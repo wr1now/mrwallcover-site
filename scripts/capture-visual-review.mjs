@@ -6,7 +6,7 @@ import { serve, launchBrowser } from './visual-browser.mjs';
 const output = resolve(process.env.MW_VISUAL_OUTPUT || '.review-screens');
 const root = process.env.MW_VISUAL_DIST || 'dist';
 const label = process.env.MW_VISUAL_LABEL || 'after';
-const routes = [['home','/'],['services','/services/'],['guide','/advice/'],['contact','/contact/'],['timorous','/services/timorous-beasties-installer/']];
+const routes = process.env.MW_VISUAL_ROUTES ? JSON.parse(process.env.MW_VISUAL_ROUTES) : [['home','/'],['services','/services/'],['guide','/advice/'],['contact','/contact/'],['timorous','/services/timorous-beasties-installer/']];
 await mkdir(output, { recursive:true });
 const server = await serve(root);
 const browser = await launchBrowser();

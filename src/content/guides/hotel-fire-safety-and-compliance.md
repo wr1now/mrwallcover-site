@@ -16,6 +16,8 @@ description: "Where a hotel wallcovering's fire classification comes from, why i
 metaDescription: "Hotel wallcovering fire safety: who classifies and declares the rating, why the tested build-up matters, installing to the maker's system, RAMS, handover."
 shortTitle: "Hotel fire safety"
 order: 11
+diagram: "tested-build-up"
+diagramCaption: "This illustrates the distinction only and carries no classification. Obtain the current document for the exact wallcovering, backing, adhesive and substrate, then have the responsible project professional confirm acceptance."
 relatedMaterials: ["contract-vinyl", "acoustic"]
 relatedGuides: ["hotel-wallcovering-specification", "developer-wallcovering-package", "designer-specification-checklist"]
 ctaLabel: "Discuss a hotel package"

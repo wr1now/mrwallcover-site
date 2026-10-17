@@ -16,6 +16,7 @@ description: "Specifying wallcoverings for an occupied hotel: cleaning and durab
 metaDescription: "Specifying wallcoverings for an occupied hotel: cleaning and durability, the sample room, batch control, phasing around guests, spares and handover."
 shortTitle: "Hotel wallcoverings"
 order: 7
+evidence: {"id": "old-bailey-06", "caption": "The Hyde London City sample room, November 2022: a shaped Tropical Clouded Leopard headboard panel before the repeating guest-room programme.", "credit": "Photograph: Dorin Burcus / Mr Wallcover.", "href": "/projects/old-bailey-hotel/", "linkLabel": "See the Hyde London City project"}
 relatedMaterials: ["contract-vinyl", "acoustic", "grasscloth-and-weaves"]
 relatedGuides: ["developer-wallcovering-package", "designer-specification-checklist", "wall-preparation"]
 ctaLabel: "Discuss phased works"

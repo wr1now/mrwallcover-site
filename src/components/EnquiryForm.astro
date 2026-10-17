@@ -1,4 +1,5 @@
 ---
+import Action from './Action.astro';
 import { LEAD_API_URL, FORM_ENDPOINT, FORM_PROVIDER, PUBLIC_EMAIL, SITE_URL } from '../config';
 import { attachmentLimits } from '../lib/enquiry-attachments';
 
@@ -42,12 +43,12 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
   )}
 
   <div data-hide-on-success>
-    <div class="selection-summary" data-selection-summary hidden><p class="eyebrow">Your material choices</p><p data-selection-text></p><button type="button" class="btn btn-line" data-clear-selection>Remove these choices</button></div>
+    <div class="selection-summary" data-selection-summary hidden><p class="eyebrow">Your material choices</p><p data-selection-text></p><Action variant="secondary" type="button" data-clear-selection>Remove these choices</Action></div>
     <div data-error-summary class="form-summary" tabindex="-1" hidden></div>
 
     {variant === 'enquiry' && (
       <div>
-        <button class="btn btn-line" type="button" data-open-builder>Add a fuller brief</button>
+        <Action variant="secondary" type="button" data-open-builder>Add a fuller brief</Action>
         <p class="form-note m-0 mt-2 text-stone">The short note below is enough. The fuller brief is optional, and you can leave any answer as “not sure”.</p>
       </div>
     )}
@@ -148,8 +149,8 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
           <p class="m-0">Check the note below, then send. You can go back and change an answer. Nothing is stored in the page address.</p>
         </div>
         <div class="mt-4 flex flex-wrap gap-3">
-          <button class="btn btn-line" type="button" data-step-back>Back</button>
-          <button class="btn btn-line" type="button" data-step-next>Continue</button>
+          <Action variant="secondary" icon="arrow-left" type="button" data-step-back>Back</Action>
+          <Action variant="secondary" icon="arrow-right" type="button" data-step-next>Continue</Action>
         </div>
       </div>
     )}
@@ -209,7 +210,7 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
           ? `Your enquiry is saved with a reference before this page confirms it. Dorin Burcus reads it. If you have not heard back, email ${PUBLIC_EMAIL} and quote the reference.`
           : `Your note is sent to ${PUBLIC_EMAIL} with a reference. Dorin Burcus reads it. If you have not heard back, email that address directly.`}
       </p>
-      <button class="btn btn-solid-ink" type="submit">{variant === 'aftercare' ? 'Send the note' : 'Start your project'}</button>
+      <Action variant="primary" type="submit">{variant === 'aftercare' ? 'Send the note' : 'Start your project'}</Action>
     </fieldset>
   </div>
   <p data-status role="status" hidden></p>

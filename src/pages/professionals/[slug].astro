@@ -1,6 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import Action from '../../components/Action.astro';
+import Icon, { type IconName } from '../../components/Icon.astro';
+import EvidenceFigure from '../../components/EvidenceFigure.astro';
+import ProfessionalBriefing from '../../components/ProfessionalBriefing.astro';
 import professionals from '../../content/professionals.json';
 import { guides, guideHref } from '../../lib/guides';
 import BuyerFaq from '../../components/BuyerFaq.astro';
@@ -21,14 +25,38 @@ const professionalEditorials = editorialPages.map((mod) => mod.frontmatter).filt
 ---
 <Base title={`${item.name} | Mr Wallcover`} description={item.description} path={path} extraSchema={[breadcrumbNode(crumbs), ...(faq.length ? [buyerFaqNode(faq)] : [])]}>
   <div class="container-page pb-20">
-    <header class="page-head guide-head"><Breadcrumb items={crumbs} /><p class="eyebrow">{item.name}</p><h1>{item.heading}</h1><p class="lede mt-5">{item.intro}</p><a class="btn btn-solid-ink mt-4" href={`/contact/?audience=${item.audience}&intent=install`}>{item.cta}</a></header>
-    <div class="grid gap-10 md:grid-cols-12">
-      <div class="prose guide-prose md:col-span-7">{item.sections.map((section) => <section><h2>{section.title}</h2><p>{section.text}</p></section>)}</div>
-      <aside class="professional-intake md:col-span-4 md:col-start-9"><p class="eyebrow">A useful starting point</p><h2>What to send</h2><ul>{item.checklist.map((line) => <li>{line}</li>)}</ul><a class="btn btn-line mt-5" href={`/downloads/${item.download}`} download>{item.downloadLabel}</a><p class="text-sm text-stone">CSV · opens in Excel or Numbers. Leave unknown items blank. This is a planning schedule, not an ordering calculation.</p>{related && <p class="mt-6"><a href={guideHref(related.frontmatter.slug)}>{related.frontmatter.shortTitle}: read the guide</a></p>}</aside>
+    <header class="page-head guide-head">
+      <Breadcrumb items={crumbs} />
+      <div class="professional-opening">
+        <div>
+          <p class="eyebrow">{item.name}</p><h1>{item.heading}</h1><p class="lede mt-5">{item.intro}</p>
+          <Action class="mt-4" href={`/contact/?audience=${item.audience}&intent=install`}>{item.cta}</Action>
+        </div>
+        {item.visual?.evidence && <EvidenceFigure {...item.visual.evidence} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" class="professional-opening-evidence" />}
+      </div>
+    </header>
+    <div class="professional-body grid gap-10 lg:grid-cols-12">
+      <div class="professional-sections prose guide-prose lg:col-span-7">{item.sections.map((section, index) => <section>
+        <div class="professional-section-mark"><Icon name={(item.visual?.sectionIcons?.[index] ?? 'drawing') as IconName} /><span>{String(index + 1).padStart(2, '0')}</span></div>
+        <h2>{section.title}</h2><p>{section.text}</p>
+      </section>)}</div>
+      <ProfessionalBriefing items={item.checklist} icons={item.visual?.checklistIcons as IconName[]} download={`/downloads/${item.download}`} downloadLabel={item.downloadLabel} guide={related ? { href: guideHref(related.frontmatter.slug), label: `${related.frontmatter.shortTitle}: read the guide` } : undefined} class="lg:col-span-4 lg:col-start-9" />
     </div>
     {item.slug === 'hotels' && <HotelGroups />}
     {faq.length > 0 && <div class="prose guide-prose"><BuyerFaq items={faq} eyebrow="Questions" /></div>}
     {item.slug === 'designers' && <DesignersStrip />}
-    <section class="guide-related"><h2>Other ways we can help</h2><div class="flex flex-wrap gap-3">{professionals.filter((other) => other.slug !== item.slug).map((other) => <a class="btn btn-line" href={`/professionals/${other.slug}/`}>{other.name}</a>)}{professionalEditorials.map((fm) => <a class="btn btn-line" href={fm.path}>{fm.title}</a>)}<a class="btn btn-line" href="/projects/">Explore our work</a></div></section>
+    <section class="guide-related"><h2>Other ways we can help</h2><div class="flex flex-wrap gap-3">{professionals.filter((other) => other.slug !== item.slug).map((other) => <Action variant="secondary" href={`/professionals/${other.slug}/`}>{other.name}</Action>)}{professionalEditorials.map((fm) => <Action variant="secondary" href={fm.path}>{fm.title}</Action>)}<Action variant="secondary" href="/projects/">Explore our work</Action></div></section>
   </div>
 </Base>
+
+<style>
+  .professional-opening { display: grid; gap: 2.5rem; align-items: center; margin-top: 1rem; }
+  .professional-opening :global(.professional-opening-evidence) { min-width: 0; }
+  .professional-body { padding-block: 1rem 2rem; border-top: 1px solid var(--color-line); }
+  .professional-sections section { padding-block: 1.7rem; border-bottom: 1px solid var(--color-line); }
+  .professional-sections section:last-child { border-bottom: 0; }
+  .professional-section-mark { display: flex; align-items: center; gap: .9rem; margin-bottom: 1rem; color: var(--color-brass); font-size: var(--text-meta); letter-spacing: var(--tracking-label); }
+  .professional-sections h2 { margin: 0 0 1rem; font-size: var(--text-h3); line-height: 1.15; }
+  .professional-sections p { margin: 0; }
+  @media (min-width: 1024px) { .professional-opening { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(2rem, 5vw, 5rem); } }
+</style>

@@ -1,4 +1,5 @@
 ---
+import Action from '../../components/Action.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import TechnicalDiagram from '../../components/TechnicalDiagram.astro';
 import Base from '../../layouts/Base.astro';
@@ -47,7 +48,7 @@ const crumbs = [
           <div class="field"><label>Height, metres <input name="height" type="number" min="0" step="0.01" value="2.7" /></label></div>
         </div>
       </div>
-      <button class="btn btn-line" type="button" data-add-wall>Add another wall</button>
+      <Action variant="secondary" type="button" data-add-wall>Add another wall</Action>
       <div class="grid gap-5 md:grid-cols-2">
         <div class="field"><label>Top and bottom trim, metres <input name="trim" type="number" min="0" step="0.01" value="0.1" /></label></div>
         <div class="field"><label>Usable roll width, metres <input name="rollWidth" type="number" min="0" step="0.01" value="0.53" /></label></div>
@@ -66,7 +67,7 @@ const crumbs = [
         </div>
         <div class="field"><label>Pattern repeat, metres <input name="repeat" type="number" min="0" step="0.01" value="0.64" /></label></div>
       </div>
-      <button class="btn btn-solid-ink" type="submit">Calculate</button>
+      <Action variant="primary" type="submit">Calculate</Action>
       <div class="quantity-output" data-quantity-output role="status" aria-live="polite" hidden></div>
       <p class="m-0 text-stone">For a surveyed figure, <a href="/contact/?intent=install">send us the room</a>: a photograph, these dimensions and the product reference are enough to start.</p>
     </form>
@@ -81,7 +82,7 @@ const crumbs = [
           <li><a href="#batch">Why order everything from one batch</a></li>
           <li><a href="#limits">When the calculator stops being reliable</a></li>
         </ol></nav>
-        <a class="btn btn-line mt-5" href="/contact/?intent=install">Ask for a surveyed quantity</a>
+        <Action variant="secondary" class="mt-5" href="/contact/?intent=install">Ask for a surveyed quantity</Action>
       </aside>
       <article class="prose guide-prose">
         <h2 id="drops">Why width decides the number of drops</h2>
@@ -108,7 +109,7 @@ const crumbs = [
         <h2 id="limits">When the calculator stops being reliable</h2>
         <p>Stop trusting a formula when the wall is not a simple rectangle, when the paper is a mural or a set of panels, or when the pattern needs a set-out. Stairwells have sloping lines and changing heights. Hand-painted and panoramic papers are made to the elevations and ordered by panel, not by roll; our guide to <a href={guideHref('hand-painted-murals-set-out')}>setting out hand-painted papers and murals</a> explains what has to be decided first. Designers specifying several rooms can use the <a href={guideHref('designer-specification-checklist')}>specification checklist</a> to record repeat, match and usable width for every product.</p>
         <p>Whatever the calculator says, the maker's instruction and a surveyed set-out take precedence. Keep the purchase quantity separate from any labour measurement in a quotation: our guide to <a href={guideHref('installation-cost')}>what changes the cost of installation</a> explains the difference.</p>
-        <div class="guide-next"><p class="eyebrow">Your next step</p><h2>Send the wall, and we will count the drops.</h2><p>A photograph, the dimensions you have and the product reference are enough for a first quantity. Where the geometry needs it, we measure on site. Back to <a href="/advice/">the Wallcovering Guide</a>.</p><a class="btn btn-solid-ink" href="/contact/?intent=install">Ask for a surveyed quantity</a></div>
+        <div class="guide-next"><p class="eyebrow">Your next step</p><h2>Send the wall, and we will count the drops.</h2><p>A photograph, the dimensions you have and the product reference are enough for a first quantity. Where the geometry needs it, we measure on site. Back to <a href="/advice/">the Wallcovering Guide</a>.</p><Action variant="primary" href="/contact/?intent=install">Ask for a surveyed quantity</Action></div>
       </article>
     </div>
   </div>
