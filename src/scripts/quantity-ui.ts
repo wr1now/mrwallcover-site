@@ -161,6 +161,8 @@ if (form && output) {
     }
     const sizeless = kind === 'mural' || kind === 'panel-set';
     form.querySelectorAll<HTMLElement>('[data-paper-size]').forEach((box) => (box.hidden = sizeless));
+    // A preset's size is already in its label; the width and length rows open for "Another size".
+    $<HTMLElement>('[data-custom-size]').hidden = sizeless || !option.dataset.other;
     $<HTMLElement>('[data-mural-field]').hidden = kind !== 'mural';
     $<HTMLElement>('[data-overlap-field]').hidden = kind !== 'length';
     $<HTMLElement>('[data-set-field]').hidden = kind !== 'set';
@@ -221,7 +223,10 @@ if (form && output) {
         const base = input.name === 'width' ? 'width' : 'Height to paper';
         label.firstChild!.textContent = many ? `Wall ${index + 1} ${base === 'width' ? 'width' : 'height to paper'}, ` : `${base === 'width' ? 'Wall width' : 'Height to paper'}, `;
       });
-      row.querySelector('[data-remove]')?.toggleAttribute('hidden', !many || index === 0);
+      const remove = row.querySelector<HTMLElement>('[data-remove]');
+      remove?.toggleAttribute('hidden', !many || index === 0);
+      const name = remove?.querySelector('[data-remove-name]');
+      if (name) name.textContent = ` wall ${index + 1}`;
     });
     syncWallChoices();
   };
@@ -234,6 +239,9 @@ if (form && output) {
       const remove = el('button', 'Remove', 'btn btn-line justify-self-start');
       remove.type = 'button';
       remove.dataset.remove = '';
+      const name = el('span', '', 'sr-only');
+      name.setAttribute('data-remove-name', '');
+      remove.append(name);
       row.append(remove);
     }
     wallsBox.append(row);
@@ -267,10 +275,22 @@ if (form && output) {
 
   /* ---------- step 3: openings, returns, the wall ---------- */
 
+  const KIND_NAME: Record<string, string> = { door: 'Door', window: 'Window', niche: 'Niche' };
+  // Each opening and return is named and numbered ("Window 2"), and so is its Remove button.
+  const nameRows = () => {
+    const counts: Record<string, number> = {};
+    for (const row of openingsBox.querySelectorAll<HTMLElement>('[data-opening]')) {
+      const kind = row.dataset.kind!;
+      counts[kind] = (counts[kind] ?? 0) + 1;
+      row.querySelector('[data-opening-title]')!.textContent = `${KIND_NAME[kind]} ${counts[kind]}`;
+      row.querySelector('[data-remove-name]')!.textContent = ` ${kind} ${counts[kind]}`;
+    }
+    returnsBox.querySelectorAll<HTMLElement>('[data-return]').forEach((row, index) => (row.querySelector('[data-remove-name]')!.textContent = ` return ${index + 1}`));
+  };
+
   const addOpening = (kind: OpeningInput['kind'], values: Partial<Record<string, string>> = {}) => {
     const row = openingTemplate.content.firstElementChild!.cloneNode(true) as HTMLElement;
     row.dataset.kind = kind;
-    row.querySelector('[data-opening-title]')!.textContent = kind === 'door' ? 'Door' : kind === 'window' ? 'Window' : 'Niche';
     const floor = row.querySelector<HTMLElement>('[data-from-floor]')!;
     floor.hidden = kind === 'door';
     floor.querySelector('[data-from-floor-label]')!.textContent = kind === 'niche' ? 'Bottom of the niche above the skirting' : 'Sill above the skirting';
@@ -280,6 +300,7 @@ if (form && output) {
       if (input && v !== undefined) input.value = v;
     }
     openingsBox.append(row);
+    nameRows();
     syncWallChoices();
     syncUnits();
     if (values['o-wall']) (row.querySelector('[name="o-wall"]') as HTMLSelectElement).value = values['o-wall'];
@@ -288,6 +309,7 @@ if (form && output) {
   const addReturn = (values: Partial<Record<string, string>> = {}) => {
     const row = returnTemplate.content.firstElementChild!.cloneNode(true) as HTMLElement;
     returnsBox.append(row);
+    nameRows();
     syncWallChoices();
     syncUnits();
     for (const [name, v] of Object.entries(values)) {
@@ -299,10 +321,11 @@ if (form && output) {
 
   /* ---------- reading the form ---------- */
 
-  type Read = { input: QuantityInput; problems: string[]; makerId: string; condition: string; link: string };
+  type Problem = { message: string; field?: HTMLElement | null };
+  type Read = { input: QuantityInput; problems: Problem[]; makerId: string; condition: string; link: string };
 
   const read = (): Read => {
-    const problems: string[] = [];
+    const problems: Problem[] = [];
     const kind = soldKind();
     const match = (['mural', 'panel-set'].includes(kind) ? 'free' : value('match')) as Match;
     const soldBy = soldByFor(formatGroup(), { rollsPerSet: num(field('rollsPerSet')), marginCm: cm(field('margin')) || 0 });
@@ -310,7 +333,7 @@ if (form && output) {
     const rule = makerId ? maker(makerId) : undefined;
     const overlapCm = kind === 'length' ? cm(field('overlap')) || 0 : 0;
     const nominalCm = cm(field('rollWidth'));
-    if (overlapCm < 0 || (overlapCm > 0 && overlapCm >= nominalCm)) problems.push('The overlap must be less than the width, and not below zero.');
+    if (overlapCm < 0 || (overlapCm > 0 && overlapCm >= nominalCm)) problems.push({ message: 'The overlap must be less than the width, and not below zero.', field: field('overlap') as HTMLElement });
     const paper: QuantityInput['paper'] = {
       widthCm: Math.round((nominalCm - overlapCm) * 100) / 100,
       lengthCm: cm(field('rollLength')),
@@ -333,7 +356,10 @@ if (form && output) {
         depthCm: cm(row.querySelector('[name="o-depth"]')) || 0,
         reveals: k === 'niche' ? undefined : ((row.querySelector('[name="o-reveals"]') as HTMLSelectElement).value as OpeningInput['reveals']),
       };
-      if (!(opening.widthCm > 0) || !(opening.heightCm > 0) || (k !== 'door' && !(opening.fromFloorCm! >= 0))) problems.push(`Fill in the ${k}'s width, height${k === 'door' ? '' : ' and height above the skirting'}, or remove it.`);
+      if (!(opening.widthCm > 0) || !(opening.heightCm > 0) || (k !== 'door' && !(opening.fromFloorCm! >= 0))) {
+        const empty = [...row.querySelectorAll<HTMLInputElement>('[name="o-width"], [name="o-height"], [name="o-floor"]')].find((input) => !input.closest('[hidden]') && !(Number(input.value) > 0 || (input.name === 'o-floor' && input.value.trim() !== '')));
+        problems.push({ message: `Fill in the ${k}'s width, height${k === 'door' ? '' : ' and height above the skirting'}, or remove it.`, field: empty ?? row.querySelector<HTMLElement>('[name="o-width"]') });
+      }
       openingsByWall.set(wall, [...(openingsByWall.get(wall) ?? []), opening]);
     }
     const returnsByWall = new Map<number, number[]>();
@@ -354,7 +380,8 @@ if (form && output) {
     })[measureUnit()];
     if (measure() === 'room') {
       input.room = { lengthCm: cm(field('roomLength')), widthCm: cm(field('roomWidth')), heightCm: cm(field('roomHeight')), returnsCm: returnsByWall.get(1), openings: openingsByWall.get(1) };
-      if ([input.room.lengthCm, input.room.widthCm, input.room.heightCm].some(tooSmall)) problems.push(unitHelp('room'));
+      const small = ['roomLength', 'roomWidth', 'roomHeight'].map((name) => field(name) as HTMLElement).find((box) => tooSmall(cm(box)));
+      if (small) problems.push({ message: unitHelp('room'), field: small });
     } else {
       input.walls = wallRows().map((row, index) => ({
         widthCm: cm(row.querySelector('[name="width"]')),
@@ -362,9 +389,10 @@ if (form && output) {
         returnsCm: returnsByWall.get(index + 1),
         openings: openingsByWall.get(index + 1),
       }));
-      if (input.walls.some((wall) => tooSmall(wall.widthCm) || tooSmall(wall.heightCm))) problems.push(unitHelp('wall'));
+      const small = wallRows().flatMap((row) => [...row.querySelectorAll<HTMLElement>('[name="width"], [name="height"]')]).find((box) => tooSmall(cm(box)));
+      if (small) problems.push({ message: unitHelp('wall'), field: small });
     }
-    if (tooSmall(paper.widthCm) && !['mural', 'panel-set'].includes(kind)) problems.push(widthUnit() === 'in' ? 'Enter the roll width in inches, for example 20.5 or 27.' : 'Enter the roll width in centimetres: 0.53 m is 53 cm.');
+    if (tooSmall(paper.widthCm) && !['mural', 'panel-set'].includes(kind)) problems.push({ message: widthUnit() === 'in' ? 'Enter the roll width in inches, for example 20.5 or 27.' : 'Enter the roll width in centimetres: 0.53 m is 53 cm.', field: field('rollWidth') as HTMLElement });
     return { input, problems, makerId, condition: conditionAnswered ? value('condition') : '', link: value('link') };
   };
 
@@ -408,7 +436,10 @@ if (form && output) {
     const f = q.get('f') === 'custom' ? 'other-roll' : q.get('f');
     if (f && [...formatSelect.options].some((option) => option.value === f)) formatSelect.value = f;
     syncFormat(false);
-    if (q.get('mk') && maker(q.get('mk')!)) makerSelect.value = q.get('mk')!;
+    if (q.get('mk') && maker(q.get('mk')!)) {
+      makerSelect.value = q.get('mk')!;
+      $<HTMLDetailsElement>('[data-maker-box]').open = true;
+    }
     set('rollWidth', q.get('rw'));
     set('rollLength', q.get('rl'));
     if (q.get('wu') === 'in') set('widthUnit', 'in');
@@ -500,8 +531,26 @@ if (form && output) {
     return lines;
   };
 
+  /* ---------- the answer: the docket beside the form, the working below ---------- */
+
+  const docket = $<HTMLElement>('[data-docket]');
+  const docketBody = $<HTMLElement>('[data-docket-body]');
+  const docketHeading = $<HTMLElement>('#qc-docket-heading');
+  const status = form.querySelector<HTMLElement>('[data-qc-status]')!;
+  // The working shows once "Work it out" is pressed or a shared link opens; the docket is live from the first measurement.
+  let submitted = false;
+  let lastSentence = '';
+  const announce = (sentence: string) => {
+    if (sentence === lastSentence) return;
+    lastSentence = sentence;
+    status.textContent = sentence;
+  };
+  const q0 = () => new URLSearchParams(location.search);
+  const shareUrl = () => `${location.origin}${location.pathname}?${toQuery()}`;
+
+  /** The next step for an outcome: one ink button, and the brief travels with it. */
   const actions = (state: Read, summary: string, outcome: string) => {
-    const brief = ['From the quantity calculator on mrwallcover.com:', ...describeInputs(state), summary, `Link: ${location.origin}${location.pathname}?${toQuery()}`].join('\n');
+    const brief = ['From the quantity calculator on mrwallcover.com:', ...describeInputs(state), summary, `Link: ${shareUrl()}`].join('\n');
     const keep = () => {
       try {
         sessionStorage.setItem(BRIEF_KEY, brief);
@@ -509,61 +558,122 @@ if (form && output) {
         /* private mode: the enquiry starts empty */
       }
     };
+    const wrap = el('div', undefined, 'qc-actions-wrap');
     const box = el('div', undefined, 'qc-actions');
-    const check = el('a', 'Have Mr Wallcover check this', 'btn btn-solid-ink');
-    check.href = '/contact/?intent=advice&from=calculator';
-    check.addEventListener('click', () => {
-      keep();
-      track('check_click', { outcome });
-    });
-    const send = el('a', 'Send us your measurements', 'btn btn-line');
     const chosen = Boolean(state.makerId || state.link);
+    const send = el('a', 'Send us your measurements', 'btn btn-line');
     send.href = `/contact/?intent=${chosen ? 'install' : 'source'}&from=calculator`;
     send.addEventListener('click', () => {
       keep();
       track('measurements_click', { outcome, chosen });
     });
-    const share = el('button', 'Copy a link to this result', 'btn btn-line');
+    if (outcome === 'plan' || outcome === 'plan-check') {
+      const check = el('a', 'Have Mr Wallcover check this', 'btn btn-solid-ink');
+      check.href = '/contact/?intent=advice&from=calculator';
+      check.addEventListener('click', () => {
+        keep();
+        track('check_click', { outcome });
+      });
+      box.append(check, send);
+    } else {
+      send.className = 'btn btn-solid-ink';
+      box.append(send);
+    }
+    wrap.append(box, el('p', 'Your figures go with your message.', 'qc-small'));
+    return wrap;
+  };
+
+  const utility = () => {
+    const row = el('div', undefined, 'qc-utility');
+    const share = el('button', 'Copy a link to this result');
     share.type = 'button';
     share.addEventListener('click', async () => {
-      const url = `${location.origin}${location.pathname}?${toQuery()}`;
       history.replaceState(null, '', `?${toQuery()}`);
       try {
-        await navigator.clipboard.writeText(url);
+        await navigator.clipboard.writeText(shareUrl());
         share.textContent = 'Link copied';
+        announce('Link copied.');
       } catch {
         share.textContent = 'The link is in the address bar';
+        announce('The link is in the address bar.');
       }
     });
-    const print = el('button', 'Print', 'btn btn-line');
+    const print = el('button', 'Print');
     print.type = 'button';
     print.addEventListener('click', () => window.print());
-    box.append(check, send, share, print);
-    return box;
+    const dot = el('span', '·', 'qc-dot');
+    dot.setAttribute('aria-hidden', 'true');
+    row.append(share, dot, print);
+    return row;
+  };
+
+  const byLength = (r: PlanResult) => r.working.unit.one === 'metre' || r.working.unit.one === 'yard';
+  /** Yards always with metres beside them; metres with yards for someone measuring in feet or inches. */
+  const otherUnit = (r: PlanResult, count: number) => r.working.unit.one === 'yard' ? `${fmtM(count * 0.9144)} m` : r.working.unit.one === 'metre' && imperial() ? `${fmtM(count / 0.9144)} yd` : '';
+
+  const ledger = (r: PlanResult) => {
+    const dl = el('dl', undefined, 'qc-order');
+    const row = (label: string, op: string, count: string, alt: string, cls?: string) => {
+      const div = el('div', undefined, cls);
+      const dt = el('dt');
+      if (op) {
+        const sign = el('span', op, 'qc-op');
+        sign.setAttribute('aria-hidden', 'true');
+        dt.append(sign);
+      }
+      dt.append(label);
+      const dd = el('dd');
+      dd.append(el('strong', count));
+      if (alt) dd.append(el('span', alt, 'qc-alt'));
+      div.append(dt, dd);
+      dl.append(div);
+    };
+    row('Working', '', plural(r.working), otherUnit(r, r.working.count));
+    row('Spare', '+', plural(r.spare), otherUnit(r, r.spare.count));
+    row('Order', '=', plural(r.order), r.singleRollsPriced ? `US papers are priced by the single roll: ${r.singleRollsPriced} single rolls.` : otherUnit(r, r.order.count), 'qc-total');
+    return dl;
   };
 
   const planSentences = (r: PlanResult): string[] => {
     const sentences: string[] = [];
+    const also = (v: number) => (imperial() ? ` (${ftIn(v)})` : '');
     sentences.push(`${r.drops} ${r.drops === 1 ? 'drop' : 'drops'} across the ${measure() === 'room' ? 'room, counted as one run of ' + fmt(r.runs[0].widthCm) + ' cm' : r.runs.length > 1 ? 'walls, each rounded up' : 'wall'}.`);
     const over = r.drops - r.fullDrops;
     if (r.shortPieces) sentences.push(`${over ? `${over} of them ${over === 1 ? 'sits' : 'sit'} over an opening and ${over === 1 ? 'is' : 'are'} cut as shorter pieces. ` : ''}With any reveals and niche backs, that is ${r.fullDrops} full-height ${r.fullDrops === 1 ? 'drop' : 'drops'} and ${r.shortPieces} shorter ${r.shortPieces === 1 ? 'piece' : 'pieces'}, cut from offcuts where the pattern lines up.`);
-    const also = (v: number) => (imperial() ? ` (${ftIn(v)})` : '');
-    sentences.push(`Each drop is cut at ${fmt(r.dropLengthCm)} cm${also(r.dropLengthCm)}, including ${fmt(r.trimTopCm)} cm at the top and ${fmt(r.trimBottomCm)} cm at the bottom.`);
-    if (r.match === 'straight') sentences.push(`The straight match moves the start of the next drop on by ${fmt(r.cutPitchCm)} cm.`);
+    if (r.match === 'straight') sentences.push(`The straight match moves the start of the next drop on by ${fmt(r.cutPitchCm)} cm${also(r.cutPitchCm)}.`);
     if (['half', 'third', 'quarter'].includes(r.match)) {
       const step = r.match === 'half' ? 'half' : r.match === 'third' ? 'a third' : 'a quarter';
       sentences.push(`Each drop starts ${step} of a repeat lower in the pattern than the one before. ${r.method === 'phase' ? 'The drops that start at the same point are cut together, which needs fewer rolls here.' : 'The drops are cut in order along the roll.'}`);
     }
     if (r.startLossCm) sentences.push(`${fmt(r.startLossCm)} cm${also(r.startLossCm)} is allowed at the start of each roll to find the pattern.`);
-    if (r.dropsPerRoll) sentences.push(`${r.dropsPerRoll} full ${r.dropsPerRoll === 1 ? 'drop fits' : 'drops fit'} on a ${r.working.unit.one === 'metre' ? 'piece' : r.working.unit.one}.`);
     if (r.noOffcutInfill) sentences.push('The maker asks for every piece to be cut and hung in order as it comes off the roll, so offcuts are not reused.');
     return sentences;
   };
 
-  const rollList = (r: PlanResult) => {
-    const list = el('ol', undefined, 'qc-plan');
-    const unit = r.working.unit.one === 'metre' || r.working.unit.one === 'yard' ? 'Piece' : r.working.unit.one[0].toUpperCase() + r.working.unit.one.slice(1);
-    // Rolls cut the same way, one after another, share a line: "Rolls 1 to 9: drops 1 to 27, three on each…".
+  const facts = (r: PlanResult) => {
+    const dl = el('dl', undefined, 'qc-facts');
+    const fact = (label: string, value: string, small?: string) => {
+      const div = el('div');
+      const dd = el('dd', value);
+      if (small) dd.append(el('small', small));
+      div.append(el('dt', label), dd);
+      dl.append(div);
+    };
+    const height = r.dropLengthCm - r.trimTopCm - r.trimBottomCm;
+    const unit = byLength(r) ? 'piece' : r.working.unit.one.startsWith('set') ? 'roll' : r.working.unit.one;
+    fact('Drops', String(r.drops), r.shortPieces ? `${r.fullDrops} full, ${r.shortPieces} short` : undefined);
+    fact('Cut length', `${fmt(r.dropLengthCm)} cm`, `${fmt(r.trimTopCm)} + ${fmt(height)} + ${fmt(r.trimBottomCm)}${imperial() ? ` · ${ftIn(r.dropLengthCm)}` : ''}`);
+    fact(`Full drops per ${unit}`, String(r.dropsPerRoll));
+    return dl;
+  };
+
+  const SHORT_LABEL: Record<string, string> = { above: 'over', below: 'under', part: 'reveal', back: 'back' };
+  /** The roll strips: each roll to scale, drops as panels, pattern loss hatched, the offcut shaded. */
+  const rollStrips = (r: PlanResult, lengthCm: number) => {
+    const list = el('ol', undefined, 'qc-rolls');
+    list.setAttribute('role', 'list');
+    const L = lengthCm > 0 ? lengthCm : 3000;
+    const one = byLength(r) ? 'Piece' : r.working.unit.one.startsWith('set') ? 'Roll' : r.working.unit.one[0].toUpperCase() + r.working.unit.one.slice(1);
     const shape = (roll: PlanResult['rolls'][number]) => roll.cuts.every((cut) => cut.kind === 'full' && cut.wall === roll.cuts[0].wall) ? `${roll.cuts.map((cut) => `${cut.lengthCm}@${cut.atCm}`).join(',')}|${roll.leftoverCm}` : null;
     const groups: PlanResult['rolls'][] = [];
     for (const roll of r.rolls) {
@@ -571,133 +681,338 @@ if (form && output) {
       if (last && shape(roll) !== null && shape(roll) === shape(last[0])) last.push(roll);
       else groups.push([roll]);
     }
-    for (const group of groups) {
+    const sentence = (group: PlanResult['rolls']) => {
       const roll = group[0];
-      if (group.length > 2) {
-        const first = group[0].cuts[0].drop;
-        const final = group[group.length - 1].cuts[group[group.length - 1].cuts.length - 1].drop;
+      if (group.length > 1) {
         const at = roll.cuts.map((cut) => fmt(cut.atCm));
-        list.append(el('li', `${unit}s ${roll.roll} to ${group[group.length - 1].roll}: drops ${first} to ${final}, ${roll.cuts.length} on each (${fmt(roll.cuts[0].lengthCm)} cm), cut at ${at.slice(0, -1).join(', ')}${at.length > 1 ? ' and ' : ''}${at[at.length - 1]} cm. ${fmt(roll.leftoverCm)} cm left on each.`));
-        continue;
+        return `${one}s ${roll.roll} to ${group[group.length - 1].roll}: drops ${roll.cuts[0].drop} to ${group[group.length - 1].cuts[group[group.length - 1].cuts.length - 1].drop}, ${roll.cuts.length} on each (${fmt(roll.cuts[0].lengthCm)} cm), cut at ${at.slice(0, -1).join(', ')}${at.length > 1 ? ' and ' : ''}${at[at.length - 1]} cm. ${fmt(roll.leftoverCm)} cm left on each.`;
       }
-      for (const single of group) {
-        const parts = single.cuts.map((cut) => {
-          const what = cut.kind === 'full' ? `drop ${cut.drop}${r.runs.length > 1 ? ` of wall ${cut.wall}` : ''}` : `${KIND_LABEL[cut.kind]}${r.runs.length > 1 ? ` on wall ${cut.wall}` : ''}`;
-          return `${what} (${fmt(cut.lengthCm)} cm) at ${fmt(cut.atCm)} cm`;
-        });
-        list.append(el('li', `${unit} ${single.roll}: ${parts.join(', ')}. ${fmt(single.leftoverCm)} cm left.`));
+      const parts = roll.cuts.map((cut) => `${cut.kind === 'full' ? `drop ${cut.drop}${r.runs.length > 1 ? ` of wall ${cut.wall}` : ''}` : `${KIND_LABEL[cut.kind]}${r.runs.length > 1 ? ` on wall ${cut.wall}` : ''}`} (${fmt(cut.lengthCm)} cm) at ${fmt(cut.atCm)} cm`);
+      return `${one} ${roll.roll}: ${parts.join(', ')}. ${fmt(roll.leftoverCm)} cm left.`;
+    };
+    const set = (node: HTMLElement, at: number, len: number) => {
+      node.style.setProperty('--at', String((at / L) * 100));
+      node.style.setProperty('--len', String((len / L) * 100));
+    };
+    groups.forEach((group, index) => {
+      const roll = group[0];
+      const li = el('li', undefined, 'qc-roll');
+      const last = group[group.length - 1].roll;
+      li.append(el('span', group.length > 1 ? `${one}s ${roll.roll}–${last} ×${group.length}` : `${one} ${roll.roll}`, 'qc-roll-name'));
+      const bar = el('span', undefined, 'qc-roll-bar');
+      bar.setAttribute('aria-hidden', 'true');
+      for (const cut of roll.cuts) {
+        const piece = el('span', cut.kind === 'full' ? String(cut.drop) : SHORT_LABEL[cut.kind] ?? '', 'qc-cut');
+        piece.dataset.kind = cut.kind;
+        set(piece, cut.atCm, cut.lengthCm);
+        bar.append(piece);
       }
-    }
+      if (roll.leftoverCm > 0) {
+        const left = el('span', `${fmt(roll.leftoverCm)} cm`, 'qc-left');
+        set(left, L - roll.leftoverCm, roll.leftoverCm);
+        bar.append(left);
+      }
+      li.append(bar);
+      if (index === 0) {
+        const scale = el('span', undefined, 'qc-roll-scale');
+        scale.setAttribute('aria-hidden', 'true');
+        scale.append(el('span', '0'), el('span', `${fmtM(L / 100)} m`));
+        li.append(scale);
+      }
+      li.append(el('span', sentence(group), 'qc-roll-text'));
+      list.append(li);
+    });
+    const spare = el('li', undefined, 'qc-roll qc-roll-spare');
+    const bar = el('span', undefined, 'qc-roll-bar');
+    bar.setAttribute('aria-hidden', 'true');
+    spare.append(el('span', 'Spare', 'qc-roll-name'), bar, el('span', byLength(r) ? 'One more drop, uncut, from the same batch.' : `${plural(r.spare)}, uncut, from the same batch.`, 'qc-roll-text'));
+    list.append(spare);
     return list;
   };
 
-  const orderBlock = (r: PlanResult) => {
-    const dl = el('dl', undefined, 'qc-order');
-    const row = (label: string, count: string, note: string, cls?: string) => {
-      const div = el('div', undefined, cls);
-      const dd = el('dd');
-      dd.append(el('strong', count), el('span', note, 'qc-note'));
-      div.append(el('dt', label), dd);
-      dl.append(div);
+  const linkButton = (text: string, go: () => void) => {
+    const button = el('button', text, 'qc-link');
+    button.type = 'button';
+    button.addEventListener('click', go);
+    return button;
+  };
+  const openAndFocus = (target: () => HTMLElement | null) => () => {
+    more.open = true;
+    target()?.focus();
+  };
+
+  const assumedSection = (state: Read, r: PlanResult, materials: ReturnType<typeof materialsFor>) => {
+    const section = el('section', undefined, 'qc-assumed-section');
+    section.append(el('p', 'What we assumed', 'qc-eyebrow'));
+    const list = el('ul', undefined, 'qc-assumed');
+    list.setAttribute('role', 'list');
+    const item = (text: string, button?: HTMLButtonElement) => {
+      const li = el('li');
+      li.append(el('span', text));
+      if (button) li.append(button);
+      list.append(li);
     };
-    const byLength = r.working.unit.one === 'metre' || r.working.unit.one === 'yard';
-    const other = (count: number) => r.working.unit.one === 'yard' ? ` (${fmtM(count * 0.9144)} m)` : r.working.unit.one === 'metre' && imperial() ? ` (${fmtM(count / 0.9144)} yd)` : '';
-    const what = byLength ? `The plan uses ${fmtM((r.usedCm ?? 0) / (r.working.unit.one === 'metre' ? 100 : 91.44))} ${r.working.unit.many}${other((r.usedCm ?? 0) / (r.working.unit.one === 'metre' ? 100 : 91.44))}.` : `These cover the ${r.drops} ${r.drops === 1 ? 'drop' : 'drops'} in the plan.`;
-    row('Working', `${plural(r.working)}${other(r.working.count)}`, what);
-    row('Spare', `${plural(r.spare)}${other(r.spare.count)}`, r.working.unit.one === 'metre' || r.working.unit.one === 'yard' ? 'One more drop, kept for a damaged length or a later repair, from the same batch.' : 'From the same batch, kept for a damaged length or a later repair.');
-    row('Order', `${plural(r.order)}${other(r.order.count)}`, r.singleRollsPriced ? `US papers are priced by the single roll: that is ${r.singleRollsPriced} single rolls.` : 'Everything from one batch.', 'qc-total');
-    return dl;
+    const option = formatOption();
+    const roll = ['mural', 'panel-set'].includes(soldKind()) ? option.textContent ?? '' : option.dataset.other ? `${value('rollWidth')} ${widthUnit()} wide${value('rollLength') ? ` × ${value('rollLength')} ${lengthUnit()}` : ''}, typed in` : `${option.textContent}, a size makers print: check it against your product`;
+    item(`Roll: ${roll}.`, linkButton('Change', () => formatSelect.focus()));
+    item(`Match: ${MATCH_LABEL[r.match]}${state.input.paper.repeatCm ? `, repeat ${fmt(state.input.paper.repeatCm)} cm` : ''}.`, linkButton('Change', () => (field('match') as HTMLElement).focus()));
+    const condition = wallpapering.conditionQuestion.options.find((entry) => entry.id === value('condition'));
+    item(`Walls: ${(condition?.label ?? 'painted and sound').toLowerCase()}${state.condition ? '' : ' (assumed)'}.`, linkButton('Change', openAndFocus(() => field('condition') as HTMLElement)));
+    const hasOpenings = Boolean(state.input.room?.openings?.length || state.input.walls?.some((wall) => wall.openings?.length));
+    if (!hasOpenings) item('Doors and windows: none taken out.', linkButton('Add one', openAndFocus(() => form.querySelector<HTMLElement>('[data-add-opening="window"]'))));
+    item(`Trim: ${fmt(r.trimTopCm)} cm at the top and ${fmt(r.trimBottomCm)} cm at the bottom.`, linkButton('Change', openAndFocus(() => field('trimTop') as HTMLElement)));
+    for (const note of materials.assumed) if (!/^The walls are/.test(note)) item(note);
+    section.append(list);
+    return section;
+  };
+
+  const ROLE: Record<string, string> = { primer: 'Primer', treatment: 'Treatment', lining: 'Lining paper', 'lining-paste': 'Lining paste', paste: 'Wallpaper paste' };
+  const materialsSection = (materials: ReturnType<typeof materialsFor>) => {
+    const section = el('section');
+    section.append(el('h3', 'Materials'));
+    const dl = el('dl', undefined, 'qc-materials');
+    for (const line of materials.lines) {
+      const div = el('div');
+      const dd = el('dd');
+      const named = line.name !== 'The paste the wallpaper maker names';
+      dd.append(el('span', named ? line.name : 'The maker’s own', 'qc-mat-name'));
+      const packs = line.packs ?? (line.need ? null : line.amount);
+      if (packs) dd.append(el('span', packs, 'qc-mat-packs'));
+      if (line.need) dd.append(el('span', `You need ${line.need}.`, 'qc-mat-need'));
+      const quoted = line.note?.match(/^(.*?)\s*(?:The (?:data sheet|label):\s*)?"([^"]+)"\s*$/);
+      const link = line.source ? Object.assign(el('a', line.sourceLabel ?? "Maker's page"), { href: line.source, rel: 'noopener' }) : null;
+      if (quoted) {
+        if (quoted[1].trim()) dd.append(el('span', quoted[1].trim(), 'qc-mat-note'));
+        const figure = el('figure', undefined, 'qc-quote');
+        figure.append(el('blockquote', `“${quoted[2]}”`));
+        if (link) {
+          const cite = el('figcaption');
+          cite.append(link);
+          figure.append(cite);
+        }
+        dd.append(figure);
+      } else {
+        if (line.note) dd.append(el('span', named ? line.note : 'Confirmed from the maker’s hanging instructions.', 'qc-mat-note'));
+        if (link) {
+          const span = el('span', undefined, 'qc-mat-note');
+          span.append(link);
+          dd.append(span);
+        }
+      }
+      div.append(el('dt', ROLE[line.role] ?? line.role), dd);
+      dl.append(div);
+    }
+    section.append(dl);
+    const listed = el('p', 'The products, grades and data sheets are listed on ', 'qc-small');
+    listed.append(Object.assign(el('a', 'lining papers, pastes and primers'), { href: '/wallpapering/lining-and-adhesives/' }), '.');
+    section.append(listed);
+    return section;
+  };
+
+  /* ---------- errors at the field ---------- */
+
+  const clearError = (box: Element) => {
+    box.removeAttribute('aria-invalid');
+    const id = (box as HTMLElement).dataset.errorId;
+    if (!id) return;
+    document.getElementById(id)?.remove();
+    const rest = (box.getAttribute('aria-describedby') ?? '').split(' ').filter((token) => token && token !== id).join(' ');
+    if (rest) box.setAttribute('aria-describedby', rest);
+    else box.removeAttribute('aria-describedby');
+    delete (box as HTMLElement).dataset.errorId;
+  };
+  const clearErrors = () => form.querySelectorAll('[aria-invalid="true"]').forEach(clearError);
+  let errorCount = 0;
+  const showErrors = (problems: Problem[]) => {
+    clearErrors();
+    for (const problem of problems) {
+      const box = problem.field;
+      if (!box || box.getAttribute('aria-invalid') === 'true') continue;
+      const id = `qc-error-${++errorCount}`;
+      const note = el('p', problem.message, 'form-error');
+      note.id = id;
+      const anchor = box.closest('.qc-unit') ?? (box.parentElement?.tagName === 'LABEL' ? box.parentElement : box);
+      anchor.after(note);
+      box.setAttribute('aria-invalid', 'true');
+      box.setAttribute('aria-describedby', [box.getAttribute('aria-describedby'), id].filter(Boolean).join(' '));
+      box.dataset.errorId = id;
+    }
+  };
+  // The engine's own refusals name a field too.
+  const fieldFor = (reason: string): HTMLElement | null =>
+    /repeat/i.test(reason) ? (field('repeat') as HTMLElement)
+    : /usable width|width of the paper/i.test(reason) ? (field('rollWidth') as HTMLElement)
+    : /roll length/i.test(reason) ? (field('rollLength') as HTMLElement)
+    : /margin/i.test(reason) ? (field('margin') as HTMLElement)
+    : /set needs/i.test(reason) ? (field('rollsPerSet') as HTMLElement)
+    : null;
+  const unitName = () => ({ cm: 'centimetres', m: 'metres', in: 'inches', ft: 'feet' })[measureUnit()];
+
+  /* ---------- rendering ---------- */
+
+  const docketProblems = (problems: Problem[]) => {
+    const lead = el('p', 'Check the figures', 'qc-docket-lead');
+    const list = el('ul', undefined, 'qc-assumed');
+    list.setAttribute('role', 'list');
+    for (const problem of problems) {
+      const li = el('li');
+      if (problem.field) li.append(linkButton(problem.message, () => problem.field!.focus()));
+      else li.append(el('span', problem.message));
+      list.append(li);
+    }
+    docketBody.replaceChildren(lead, list);
   };
 
   const render = (state: Read, result: QuantityResult) => {
-    output.hidden = false;
-    output.replaceChildren();
+    docket.classList.remove('is-stale');
     const rule = state.makerId ? maker(state.makerId) : undefined;
     if (!result.ok) {
-      output.append(el('h3', result.route === 'error' ? 'Check the figures' : 'We will measure this for you'), el('p', result.reason));
-      if (result.route !== 'error') output.append(el('p', 'Send us the measurements you have and a photograph, and we will work out the order with you.', 'qc-small'), actions(state, result.reason, result.route));
-      track('calculator_complete', { outcome: result.route, mode: measure(), sold: soldKind() });
+      output.hidden = true;
+      delete form.dataset.hasResult;
+      if (result.route === 'error') {
+        const reason = result.reason.replace('in centimetres', `in ${unitName()}`);
+        docketProblems([{ message: reason, field: fieldFor(reason) }]);
+        announce(`Check the figures: ${reason}`);
+        return;
+      }
+      docketBody.replaceChildren(
+        el('p', 'We will measure this for you.', 'qc-docket-lead'),
+        el('p', result.reason),
+        el('p', 'Send us the measurements you have and a photograph, and we will work out the order with you.', 'qc-small'),
+        actions(state, result.reason, result.route),
+      );
+      announce(result.reason);
       return;
     }
     if (result.kind === 'mural') {
-      output.append(el('h3', 'Mural order size'));
+      output.hidden = true;
+      delete form.dataset.hasResult;
       const dl = el('dl', undefined, 'qc-order');
       const div = el('div', undefined, 'qc-total');
       const dd = el('dd');
-      dd.append(el('strong', `${fmtM(result.areaM2)} m²`), el('span', `${fmt(result.widthCm)} × ${fmt(result.heightCm)} cm, including the ${fmt(result.marginCm)} cm margin the maker asks for.`, 'qc-note'));
+      dd.append(el('strong', `${fmtM(result.areaM2)} m²`), el('span', `${fmt(result.widthCm)} × ${fmt(result.heightCm)} cm, including the ${fmt(result.marginCm)} cm margin the maker asks for.`, 'qc-alt'));
       div.append(el('dt', 'Order'), dd);
       dl.append(div);
-      output.append(dl, el('p', 'A mural is made to the measurements you send the maker, so we check the wall and the set-out before you order.'), actions(state, `Mural: ${fmt(result.widthCm)} × ${fmt(result.heightCm)} cm, ${fmtM(result.areaM2)} m².`, 'mural'));
-      track('calculator_complete', { outcome: 'mural', mode: measure(), sold: 'mural' });
+      docketBody.replaceChildren(dl, el('p', 'A mural is made to the measurements you send the maker, so we check the wall and the set-out before you order.', 'qc-small'), actions(state, `Mural: ${fmt(result.widthCm)} × ${fmt(result.heightCm)} cm, ${fmtM(result.areaM2)} m².`, 'mural'));
+      announce(`Order ${fmtM(result.areaM2)} square metres of mural.`);
       return;
     }
+
     const r = result;
-    output.append(orderBlock(r));
-    const close = closeCall(state.input, r);
-    if (close) output.append(el('p', `${close.extraCm} cm more ${close.dimension} would make this ${close.working} working ${close.working === 1 ? r.working.unit.one : r.working.unit.many}. Measure twice.`, 'qc-warning'));
-
-    const how = el('section');
-    how.append(el('h3', 'How we worked it out'));
-    const ul = el('ul');
-    for (const sentence of planSentences(r)) ul.append(el('li', sentence));
-    how.append(ul, el('p', 'The cutting plan:', 'qc-small mt-3'), rollList(r));
-    const hasOpenings = Boolean(state.input.room?.openings?.length || state.input.walls?.some((wall) => wall.openings?.length));
-    if (!hasOpenings) how.append(el('p', 'Windows and doors have not been taken out. Add them in step 3 if you want them counted.', 'qc-small mt-3'));
-    if (!formatOption().dataset.other) how.append(el('p', `Roll size: ${formatOption().textContent}, a size makers print. Check it against your product's page or label.`, 'qc-small mt-3'));
-    output.append(how);
-
     const materials = materialsFor(state.input, r, { condition: state.condition, makerId: state.makerId || undefined });
-    const mat = el('section');
-    mat.append(el('h3', 'Materials'));
-    const list = el('ul', undefined, 'qc-materials');
-    for (const line of materials.lines) {
-      const li = el('li');
-      li.append(el('strong', line.name), line.amount ? `: ${line.amount}` : '');
-      if (line.note) li.append(el('span', line.note));
-      if (line.source) {
-        const a = el('a', line.sourceLabel ?? "Maker's page");
-        a.href = line.source;
-        a.rel = 'noopener';
-        const span = el('span');
-        span.append(a);
-        li.append(span);
-      }
-      list.append(li);
-    }
-    mat.append(list);
-    for (const note of materials.assumed) mat.append(el('p', `We assumed: ${note.charAt(0).toLowerCase()}${note.slice(1)} Change it in step 3.`, 'qc-small mt-3'));
-    const link = el('p', 'The products, grades and data sheets are listed on ', 'qc-small mt-3');
-    const a = el('a', 'lining papers, pastes and primers');
-    a.href = '/wallpapering/lining-and-adhesives/';
-    link.append(a, '.');
-    mat.append(link);
-    output.append(mat);
-
     const checks = materials.checks;
+    const summary = `Result: ${plural(r.working)} working + ${plural(r.spare)} spare = ${plural(r.order)}.${checks.length ? ' Please check: ' + checks.join(' ') : ''}`;
+    const outcome = checks.length ? 'plan-check' : 'plan';
+
+    // The docket: the ledger, the close call, the spare, the next step.
+    const docketParts: Node[] = [ledger(r)];
+    const close = closeCall(state.input, r);
+    if (close) docketParts.push(el('p', `${close.extraCm} cm more ${close.dimension} would make this ${close.working} working ${close.working === 1 ? r.working.unit.one : r.working.unit.many}. Measure twice.`, 'qc-warning'));
+    docketParts.push(el('p', byLength(r) ? 'The spare is one more drop, from the same batch, for a damaged length or a later repair.' : 'The spare is from the same batch, for a damaged length or a later repair.', 'qc-note'));
+    docketParts.push(actions(state, summary, outcome));
+    if (submitted) {
+      const jump = Object.assign(el('a', 'The cutting plan and materials ↓', 'qc-docket-link qc-small'), { href: '#qc-result' });
+      docketParts.push(jump);
+    }
+    docketBody.replaceChildren(...docketParts);
+    announce(`Order ${plural(r.order)}: ${plural(r.working)} working and ${plural(r.spare)} spare.`);
+    if (!submitted) return;
+
+    // The working.
+    output.hidden = false;
+    form.dataset.hasResult = '';
+    const sections: HTMLElement[] = [assumedSection(state, r, materials)];
+    const how = el('section');
+    how.append(el('h3', 'How we worked it out'), facts(r));
+    const list = el('ul');
+    list.setAttribute('role', 'list');
+    for (const sentence of planSentences(r)) list.append(el('li', sentence));
+    how.append(list);
+    if (r.rolls.length) {
+      how.append(el('p', 'The cutting plan, each roll to scale:', 'qc-small'));
+      const key = el('p', undefined, 'qc-key');
+      key.setAttribute('aria-hidden', 'true');
+      key.append(el('span', 'Drop', 'k-drop'));
+      if (r.startLossCm) key.append(el('span', 'Pattern lost', 'k-lost'));
+      key.append(el('span', 'Left over', 'k-left'));
+      how.append(key, rollStrips(r, state.input.paper.lengthCm));
+    }
+    sections.push(how, materialsSection(materials));
     if (checks.length) {
       const box = el('section');
       box.append(el('h3', 'Have Mr Wallcover check this'));
       const items = el('ul');
+      items.setAttribute('role', 'list');
       for (const reason of checks) items.append(el('li', reason));
       box.append(items);
-      output.append(box);
+      sections.push(box);
     }
-    output.append(
-      el('p', `Order every ${r.working.unit.one === 'metre' || r.working.unit.one === 'yard' ? 'length' : r.working.unit.one}, including the spare, from one batch, and check the batch number before anything is cut. Hang the first three drops, then stop and check the shade and the match in daylight.${rule ? ` We follow ${rule.name}'s hanging instructions first.` : ''}`),
-      el('p', 'This is an order quantity for walls of one height, using the roll shown. It is not a set-out and not a price.', 'qc-small'),
+    const before = el('section');
+    before.append(el('h3', 'Before you order'));
+    const steps = el('ul');
+    steps.setAttribute('role', 'list');
+    const unit = byLength(r) ? 'length' : r.working.unit.one;
+    steps.append(
+      el('li', `Order every ${unit}, including the spare, from one batch, and check the batch number before anything is cut.`),
+      el('li', `Hang the first three drops, then stop and check the shade and the match in daylight.${rule ? ` We follow ${rule.name}'s hanging instructions first.` : ''}`),
     );
-    output.append(actions(state, `Result: ${plural(r.working)} working + ${plural(r.spare)} spare = ${plural(r.order)}.${checks.length ? ' Please check: ' + checks.join(' ') : ''}`, checks.length ? 'plan-check' : 'plan'));
-    track('calculator_complete', { outcome: 'plan', mode: measure(), match: r.match, sold: soldKind(), working: r.working.count, check: checks.length > 0, openings: r.shortPieces > 0 });
+    before.append(steps);
+    const inputs = el('section', undefined, 'qc-inputs');
+    inputs.append(el('h3', 'Your measurements'));
+    const given = el('ul');
+    given.setAttribute('role', 'list');
+    for (const line of describeInputs(state)) given.append(el('li', line));
+    inputs.append(given, el('p', `${shareUrl()} · ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}`, 'qc-small qc-print-only'));
+    const end = el('section');
+    const terms = el('p', undefined, 'qc-terms');
+    terms.append(el('small', 'An order quantity for walls of one height, using the roll shown. Not a set-out, not a price.'));
+    end.append(terms, actions(state, summary, outcome), utility());
+    sections.push(before, inputs, end);
+    output.replaceChildren(...sections);
   };
 
-  const run = () => {
+  const ready = () =>
+    measure() === 'room'
+      ? ['roomLength', 'roomWidth', 'roomHeight'].every((name) => cm(field(name)) > 0)
+      : wallRows().every((row) => cm(row.querySelector('[name="width"]')) > 0 && cm(row.querySelector('[name="height"]')) > 0);
+
+  /** Live while typing (the docket only, never an error), on submit (everything), or from a shared link. */
+  const run = (mode: 'live' | 'submit' | 'link') => {
     const state = read();
+    if (mode === 'live' && !ready()) return;
     if (state.problems.length) {
-      output.hidden = false;
-      output.replaceChildren(el('h3', 'Check the figures'), ...state.problems.map((problem) => el('p', problem)));
+      if (mode === 'live') {
+        docket.classList.add('is-stale');
+        return;
+      }
+      output.hidden = true;
+      delete form.dataset.hasResult;
+      showErrors(state.problems);
+      docketProblems(state.problems);
+      announce(`Check the figures: ${state.problems[0].message}`);
       return;
     }
-    render(state, calculate(state.input));
+    const result = calculate(state.input);
+    if (mode === 'live' && !result.ok && result.route === 'error') {
+      docket.classList.add('is-stale');
+      return;
+    }
+    if (mode !== 'live') {
+      submitted = true;
+      clearErrors();
+    }
+    render(state, result);
+    if (!result.ok && result.route === 'error' && mode === 'submit') {
+      const box = fieldFor(result.reason);
+      if (box) showErrors([{ message: result.reason.replace('in centimetres', `in ${unitName()}`), field: box }]);
+    }
+    if (mode === 'submit') {
+      const plan = result.ok && result.kind === 'plan' ? result : null;
+      track('calculator_complete', plan
+        ? { outcome: 'plan', mode: measure(), match: plan.match, sold: soldKind(), working: plan.working.count, check: materialsFor(state.input, plan, { condition: state.condition, makerId: state.makerId || undefined }).checks.length > 0, openings: plan.shortPieces > 0 }
+        : { outcome: result.ok ? result.kind : result.route, mode: measure(), sold: soldKind() });
+      requestAnimationFrame(() => docketHeading.focus());
+    }
   };
 
   /* ---------- wiring ---------- */
@@ -719,9 +1034,20 @@ if (form && output) {
     }),
   );
   form.addEventListener('input', (event) => {
-    if ((event.target as HTMLElement).matches('input[data-dim]')) syncUnits();
+    const target = event.target as HTMLElement;
+    if (target.matches('input[data-dim]')) syncUnits();
+    if (target.getAttribute('aria-invalid') === 'true') clearError(target);
   });
-  form.querySelector('[name="match"]')!.addEventListener('change', syncMatch);
+  // A patterned match needs its repeat: clear the 0 and ask for it, rather than show an error.
+  form.querySelector('[name="match"]')!.addEventListener('change', () => {
+    syncMatch();
+    const repeat = field('repeat') as HTMLInputElement;
+    if (!['free', 'reverse'].includes(value('match')) && !(Number(repeat.value) > 0)) {
+      repeat.value = '';
+      repeat.placeholder = 'Add the pattern repeat';
+      repeat.focus();
+    }
+  });
   form.querySelector('[name="condition"]')!.addEventListener('change', () => (conditionAnswered = true));
   form.querySelector('[name="link"]')!.addEventListener('change', readLink);
   form.querySelectorAll('[name="measure"]').forEach((radio) => radio.addEventListener('change', syncMeasure));
@@ -730,25 +1056,39 @@ if (form && output) {
     button.addEventListener('click', () => addOpening(button.dataset.addOpening as OpeningInput['kind']).querySelector<HTMLInputElement>('[name="o-width"]')?.focus()),
   );
   form.querySelector('[data-add-return]')!.addEventListener('click', () => addReturn().querySelector<HTMLInputElement>('[name="r-depth"]')?.focus());
+  // After a Remove, focus goes to the matching Add button, never to the page.
   form.addEventListener('click', (event) => {
     const remove = (event.target as Element).closest('[data-remove]');
     if (!remove) return;
-    remove.closest('[data-wall], [data-opening], [data-return]')?.remove();
+    const row = remove.closest<HTMLElement>('[data-wall], [data-opening], [data-return]');
+    if (!row) return;
+    const next = row.matches('[data-wall]') ? addWall : row.matches('[data-opening]') ? form.querySelector<HTMLElement>(`[data-add-opening="${row.dataset.kind}"]`) : form.querySelector<HTMLElement>('[data-add-return]');
+    row.remove();
+    nameRows();
     labelWalls();
+    next?.focus();
+    live();
   });
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    run();
-    output.focus({ preventScroll: true });
-    output.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    window.clearTimeout(timer);
+    run('submit');
   });
-  form.addEventListener('change', () => {
-    if (!output.hidden) run();
-  });
+  // The docket follows the typing, about 300 ms after the last key.
+  let timer = 0;
+  const live = () => {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => run('live'), 300);
+  };
+  form.addEventListener('input', live);
+  form.addEventListener('change', live);
 
   syncFormat(false);
   syncMatch();
   syncMeasure();
   syncUnits();
-  if (fromQuery(new URLSearchParams(location.search))) run();
+  if (fromQuery(new URLSearchParams(location.search))) {
+    if (q0().has('mk') || q0().has('link')) $<HTMLDetailsElement>('[data-maker-box]').open = true;
+    run('link');
+  }
 }

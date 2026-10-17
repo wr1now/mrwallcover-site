@@ -30,32 +30,20 @@ const conditions = wallpapering.conditionQuestion.options;
       <Breadcrumb items={crumbs} />
       <p class="eyebrow">Calculator</p>
       <h1>Wallpaper calculator</h1>
-      <p class="lede mt-5">Tell us the paper and the wall, and the calculator cuts every drop from the rolls the way we do. You get the working rolls, one spare roll on its own line, the order, the cutting plan, and the primer, lining and paste for the wall. It gives a quantity to order, not a set-out, and never a price.</p>
+      <p class="lede qc-lede mt-5">Choose the roll, then give the wall's width and height. We cut every drop from the rolls the way we do and give you the order with a spare, the cutting plan, and the primer, lining and paste. A quantity to order, not a set-out, and never a price.</p>
     </header>
     <WallpaperingNav current="calculator" />
 
-    <form class="qc grid gap-8" data-quantity aria-labelledby="calculator-heading" novalidate>
-      <h2 id="calculator-heading" class="m-0 text-[1.6rem]">Roll calculator</h2>
-      <noscript><p class="m-0">The calculator needs JavaScript. Our guide to <a href="/advice/quantities/">how much wallpaper to order</a> shows the same method by hand, or <a href="/contact/?intent=install">send us your measurements</a>.</p></noscript>
+    <form class="qc" data-quantity aria-labelledby="calculator-heading" novalidate>
+      <h2 id="calculator-heading" class="sr-only">Roll calculator</h2>
+      <noscript><p class="qc-warning">The calculator needs JavaScript. Our guide to <a href="/advice/quantities/">how much wallpaper to order</a> shows the same method by hand, or <a href="/contact/?intent=install">send us your measurements</a>.</p></noscript>
 
       <fieldset class="qc-step">
-        <legend><span class="eyebrow">1</span> The wallpaper</legend>
+        <legend><span class="qc-num">1</span> The wallpaper</legend>
         <div class="grid gap-5 md:grid-cols-2">
-          <div class="field">
-            <label for="qc-maker">Maker</label>
-            <select id="qc-maker" name="maker">
-              <option value="">Not sure, or another maker</option>
-              {makerOptions.map((option) => <option value={option.id} data-no-infill={option.noInfill ? 'true' : undefined}>{option.name}</option>)}
-            </select>
-          </div>
-          <div class="field">
-            <label for="qc-link">Or paste the product link <span class="text-stone">(optional)</span></label>
-            <input id="qc-link" name="link" type="url" inputmode="url" autocomplete="off" placeholder="https://" />
-            <p class="qc-hint form-note" data-link-note hidden></p>
-          </div>
           <div class="field md:col-span-2">
             <label for="qc-format">Roll size</label>
-            <select id="qc-format" name="format">
+            <select id="qc-format" name="format" aria-describedby="qc-hint-roll">
               {groups.map((group) => (
                 <optgroup label={group.label}>
                   {group.presets.map((format) => (
@@ -65,28 +53,32 @@ const conditions = wallpapering.conditionQuestion.options;
                 </optgroup>
               ))}
             </select>
+            <p class="qc-hint form-note" id="qc-hint-roll">Not sure? Leave the standard roll and free match: the result says what it assumed.</p>
           </div>
-          <div class="field" data-paper-size>
-            <label for="qc-roll-width">Width</label>
-            <div class="qc-unit">
-              <input id="qc-roll-width" name="rollWidth" data-dim="pwidth" type="number" inputmode="decimal" min="0" step="0.01" value="53" list="qc-widths" />
-              <select name="widthUnit" aria-label="Width unit"><option value="cm">cm</option><option value="in">in</option></select>
+          <div class="qc-custom-size grid gap-5 md:grid-cols-2 md:col-span-2" data-custom-size>
+            <p class="qc-hint form-note md:col-span-2">Type the width and length as they are printed, in centimetres or inches, metres, feet or yards.</p>
+            <div class="field" data-paper-size>
+              <label for="qc-roll-width">Width</label>
+              <div class="qc-unit">
+                <input id="qc-roll-width" name="rollWidth" data-dim="pwidth" type="number" inputmode="decimal" min="0" step="0.01" value="53" list="qc-widths" />
+                <select name="widthUnit" aria-label="Width unit"><option value="cm">cm</option><option value="in">in</option></select>
+              </div>
+              <datalist id="qc-widths" data-cm={rollFormats.widthSuggestions.cm.join(' ')} data-in={rollFormats.widthSuggestions.in.join(' ')}>
+                {rollFormats.widthSuggestions.cm.map((width) => <option value={width} />)}
+              </datalist>
             </div>
-            <datalist id="qc-widths" data-cm={rollFormats.widthSuggestions.cm.join(' ')} data-in={rollFormats.widthSuggestions.in.join(' ')}>
-              {rollFormats.widthSuggestions.cm.map((width) => <option value={width} />)}
-            </datalist>
-          </div>
-          <div class="field" data-paper-size>
-            <label for="qc-roll-length">Roll length</label>
-            <div class="qc-unit">
-              <input id="qc-roll-length" name="rollLength" data-dim="plength" type="number" inputmode="decimal" min="0" step="0.01" value="10.05" />
-              <select name="lengthUnit" aria-label="Length unit"><option value="m">m</option><option value="ft">ft</option><option value="yd">yd</option></select>
+            <div class="field" data-paper-size>
+              <label for="qc-roll-length">Roll length</label>
+              <div class="qc-unit">
+                <input id="qc-roll-length" name="rollLength" data-dim="plength" type="number" inputmode="decimal" min="0" step="0.01" value="10.05" />
+                <select name="lengthUnit" aria-label="Length unit"><option value="m">m</option><option value="ft">ft</option><option value="yd">yd</option></select>
+              </div>
             </div>
           </div>
           <div class="field" data-overlap-field hidden>
             <label for="qc-overlap">Overlap at each joint, <span data-u="pwidth">cm</span></label>
-            <input id="qc-overlap" name="overlap" data-dim="pwidth" type="number" inputmode="decimal" min="0" step="0.5" value="0" />
-            <p class="qc-hint form-note">Wide goods are usually overlapped and cut through. Use the overlap on the maker's sheet, or 0 for butt joints.</p>
+            <input id="qc-overlap" name="overlap" data-dim="pwidth" type="number" inputmode="decimal" min="0" step="0.5" value="0" aria-describedby="qc-hint-overlap" />
+            <p class="qc-hint form-note" id="qc-hint-overlap">Wide goods are usually overlapped and cut through. Use the overlap on the maker's sheet, or 0 for butt joints.</p>
           </div>
           <div class="field" data-set-field hidden>
             <label for="qc-sets">Rolls in each set</label>
@@ -115,41 +107,69 @@ const conditions = wallpapering.conditionQuestion.options;
             <input id="qc-margin" name="margin" data-dim="small" type="number" inputmode="decimal" min="0" step="0.5" value="10" />
           </div>
         </div>
-        <p class="qc-hint form-note">Not sure? Leave the standard roll and free match: the result says what it assumed. The roll size, repeat and match are on the product page or the label. Any width can be typed, in centimetres or inches.</p>
+        <details class="qc-sub" data-maker-box>
+          <summary>Know the maker or have the product link? <span class="text-stone">(optional)</span></summary>
+          <div class="grid gap-5 md:grid-cols-2">
+            <div class="field">
+              <label for="qc-maker">Maker</label>
+              <select id="qc-maker" name="maker">
+                <option value="">Not sure, or another maker</option>
+                {makerOptions.map((option) => <option value={option.id} data-no-infill={option.noInfill ? 'true' : undefined}>{option.name}</option>)}
+              </select>
+            </div>
+            <div class="field">
+              <label for="qc-link">Product link</label>
+              <input id="qc-link" name="link" type="url" inputmode="url" autocomplete="off" placeholder="https://" />
+              <p class="qc-hint form-note" data-link-note aria-live="polite" hidden></p>
+            </div>
+          </div>
+        </details>
       </fieldset>
 
       <fieldset class="qc-step">
-        <legend><span class="eyebrow">2</span> The wall or the room</legend>
-        <div class="quantity-measure qc-measured" role="radiogroup" aria-label="Measured in">
-          <span class="qc-measured-label">Measured in</span>
-          <label><input type="radio" name="mu" value="cm" checked /> cm</label>
-          <label><input type="radio" name="mu" value="m" /> m</label>
-          <label><input type="radio" name="mu" value="in" /> inches</label>
-          <label><input type="radio" name="mu" value="ft" /> feet</label>
-        </div>
-        <div class="quantity-measure" role="radiogroup" aria-label="Measure by">
-          <label><input type="radio" name="measure" value="wall" checked /> One wall</label>
-          <label><input type="radio" name="measure" value="walls" /> Several walls</label>
-          <label><input type="radio" name="measure" value="room" /> A whole room</label>
-        </div>
+        <legend><span class="qc-num">2</span> The wall or the room</legend>
+        <fieldset class="qc-group">
+          <legend>What you are measuring</legend>
+          <div class="qc-seg">
+            <label><input type="radio" class="sr-only" name="measure" value="wall" checked /><span>One wall</span></label>
+            <label><input type="radio" class="sr-only" name="measure" value="walls" /><span>Several walls</span></label>
+            <label><input type="radio" class="sr-only" name="measure" value="room" /><span>A whole room</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="qc-group qc-group-quiet">
+          <legend>Measured in</legend>
+          <div class="qc-seg qc-seg-small">
+            <label><input type="radio" class="sr-only" name="mu" value="cm" checked /><span>cm</span></label>
+            <label><input type="radio" class="sr-only" name="mu" value="m" /><span>m</span></label>
+            <label><input type="radio" class="sr-only" name="mu" value="in" /><span>inches</span></label>
+            <label><input type="radio" class="sr-only" name="mu" value="ft" /><span>feet</span></label>
+          </div>
+        </fieldset>
         <div data-walls class="grid gap-4">
           <div class="qc-wall grid gap-5 md:grid-cols-2" data-wall>
-            <div class="field"><label>Wall width, <span data-u="measure">cm</span> <input name="width" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" value="500" /></label></div>
-            <div class="field"><label>Height to paper, <span data-u="measure">cm</span> <input name="height" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" value="270" /></label></div>
+            <div class="field"><label>Wall width, <span data-u="measure">cm</span> <input name="width" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" placeholder="e.g. 500" /></label></div>
+            <div class="field"><label>Height to paper, <span data-u="measure">cm</span> <input name="height" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" placeholder="e.g. 270" aria-describedby="qc-hint-height" /></label></div>
           </div>
         </div>
-        <button class="btn btn-line" type="button" data-add-wall hidden>Add another wall</button>
+        <button class="btn btn-line justify-self-start" type="button" data-add-wall hidden>Add another wall</button>
         <div data-room class="grid gap-5 md:grid-cols-3" hidden>
-          <div class="field"><label>Room length, <span data-u="measure">cm</span> <input name="roomLength" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" value="400" /></label></div>
-          <div class="field"><label>Room width, <span data-u="measure">cm</span> <input name="roomWidth" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" value="350" /></label></div>
-          <div class="field"><label>Height to paper, <span data-u="measure">cm</span> <input name="roomHeight" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" value="270" /></label></div>
+          <div class="field"><label>Room length, <span data-u="measure">cm</span> <input name="roomLength" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" placeholder="e.g. 400" /></label></div>
+          <div class="field"><label>Room width, <span data-u="measure">cm</span> <input name="roomWidth" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" placeholder="e.g. 350" /></label></div>
+          <div class="field"><label>Height to paper, <span data-u="measure">cm</span> <input name="roomHeight" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" placeholder="e.g. 270" aria-describedby="qc-hint-height" /></label></div>
         </div>
-        <p class="qc-hint form-note">Height to paper: from the top of the skirting to where the paper stops, at the ceiling, the cornice or the picture rail. A room is counted as one run round its walls.</p>
+        <p class="qc-hint form-note" id="qc-hint-height">Height to paper: from the top of the skirting to where the paper stops, at the ceiling, the cornice or the picture rail. A room is counted as one run round its walls.</p>
+        <p class="qc-hint form-note">A stairwell, a sloping or curved wall, or a ceiling? We measure those for you: <a href="/contact/?intent=install&from=calculator">send us your measurements</a>.</p>
       </fieldset>
 
       <details class="qc-step qc-more" data-more>
-        <summary><span class="eyebrow">3</span> Openings, returns and the wall <span class="text-stone">(optional)</span></summary>
-        <div class="grid gap-6 mt-5">
+        <summary>
+          <span class="qc-num">3</span>
+          <span class="qc-summary-text">Doors, windows, chimney breasts and the walls' condition <span class="text-stone">(optional)</span>
+            <span class="qc-summary-note">Takes out drops over doors and windows; sets the primer and lining.</span>
+          </span>
+          <span class="qc-plus" aria-hidden="true"></span>
+        </summary>
+        <div class="grid gap-6">
           <div class="field md:max-w-md">
             <label for="qc-condition">{wallpapering.conditionQuestion.label}</label>
             <select id="qc-condition" name="condition">
@@ -171,7 +191,7 @@ const conditions = wallpapering.conditionQuestion.options;
             <button class="btn btn-line justify-self-start" type="button" data-add-return>Add a return</button>
             <p class="qc-hint form-note m-0">Each side of a chimney breast or an alcove is a return. Its depth is added to the width of the wall.</p>
           </div>
-          <fieldset class="quantity-measure">
+          <fieldset class="qc-group qc-checks">
             <legend>Anything else about the space?</legend>
             <label><input type="checkbox" name="bespoke" value="stairs" /> A stairwell</label>
             <label><input type="checkbox" name="bespoke" value="slope" /> A sloping wall or ceiling</label>
@@ -185,31 +205,47 @@ const conditions = wallpapering.conditionQuestion.options;
         </div>
       </details>
 
-      <div class="flex flex-wrap gap-3">
+      <div class="qc-submit">
         <button class="btn btn-solid-ink" type="submit">Work it out</button>
       </div>
-      <div class="qc-result" data-quantity-output role="status" aria-live="polite" tabindex="-1" hidden></div>
+      <!-- The docket spans every row of the left column at desktop width (see .qc-docket below), so it stays beside the form. -->
+      <aside class="qc-docket" data-docket aria-labelledby="qc-docket-heading">
+        <h3 id="qc-docket-heading" class="qc-docket-title" tabindex="-1">Your order</h3>
+        <div class="qc-docket-body" data-docket-body>
+          <dl class="qc-order qc-order-empty">
+            <div><dt>Working</dt><dd><strong>—</strong></dd></div>
+            <div><dt><span class="qc-op">+</span> Spare</dt><dd><strong>—</strong></dd></div>
+            <div class="qc-total"><dt><span class="qc-op">=</span> Order</dt><dd><strong>—</strong></dd></div>
+          </dl>
+          <span class="qc-roll-bar qc-roll-empty" aria-hidden="true"></span>
+          <p class="qc-hint">Type the wall's width and height.</p>
+        </div>
+      </aside>
+      <p class="sr-only" role="status" data-qc-status></p>
+      <div class="qc-result" id="qc-result" data-quantity-output tabindex="-1" hidden></div>
     </form>
 
     <template data-opening-template>
-      <div class="qc-opening grid gap-4 md:grid-cols-3" data-opening>
-        <p class="m-0 md:col-span-3 font-medium" data-opening-title></p>
-        <div class="field" data-opening-wall hidden><label>On wall <select name="o-wall"></select></label></div>
-        <div class="field"><label>Width, <span data-u="measure">cm</span> <input name="o-width" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
-        <div class="field"><label>Height, <span data-u="measure">cm</span> <input name="o-height" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
-        <div class="field" data-from-floor><label><span data-from-floor-label>Sill above the skirting</span>, <span data-u="measure">cm</span> <input name="o-floor" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
-        <div class="field"><label>Reveal depth, <span data-u="small">cm</span> <input name="o-depth" data-dim="small" type="number" inputmode="decimal" min="0" step="0.1" value="0" /></label></div>
-        <div class="field" data-reveals><label>Papered reveals
-          <select name="o-reveals"><option value="none">None</option><option value="sides">Sides</option><option value="sides-head">Sides and head</option></select>
-        </label></div>
-        <button class="btn btn-line md:col-span-3 justify-self-start" type="button" data-remove>Remove</button>
-      </div>
+      <fieldset class="qc-opening" data-opening>
+        <legend class="qc-opening-title" data-opening-title></legend>
+        <div class="grid gap-4 md:grid-cols-3">
+          <div class="field" data-opening-wall hidden><label>On wall <select name="o-wall"></select></label></div>
+          <div class="field"><label>Width, <span data-u="measure">cm</span> <input name="o-width" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
+          <div class="field"><label>Height, <span data-u="measure">cm</span> <input name="o-height" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
+          <div class="field" data-from-floor><label><span data-from-floor-label>Sill above the skirting</span>, <span data-u="measure">cm</span> <input name="o-floor" data-dim="measure" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
+          <div class="field"><label>Reveal depth, <span data-u="small">cm</span> <input name="o-depth" data-dim="small" type="number" inputmode="decimal" min="0" step="0.1" value="0" /></label></div>
+          <div class="field" data-reveals><label>Papered reveals
+            <select name="o-reveals"><option value="none">None</option><option value="sides">Sides</option><option value="sides-head">Sides and head</option></select>
+          </label></div>
+          <button class="btn btn-line md:col-span-3 justify-self-start" type="button" data-remove>Remove<span class="sr-only" data-remove-name></span></button>
+        </div>
+      </fieldset>
     </template>
     <template data-return-template>
       <div class="qc-return grid gap-4 md:grid-cols-3" data-return>
         <div class="field" data-return-wall hidden><label>On wall <select name="r-wall"></select></label></div>
         <div class="field"><label>Return depth, <span data-u="small">cm</span> <input name="r-depth" data-dim="small" type="number" inputmode="decimal" min="0" step="0.1" /></label></div>
-        <button class="btn btn-line justify-self-start self-end" type="button" data-remove>Remove</button>
+        <button class="btn btn-line justify-self-start self-end" type="button" data-remove>Remove<span class="sr-only" data-remove-name></span></button>
       </div>
     </template>
 
@@ -230,44 +266,176 @@ const conditions = wallpapering.conditionQuestion.options;
 </script>
 
 <style is:global>
-  .qc { max-width: 52rem; }
-  .qc-step { margin: 0; padding: 1.5rem 0 0; border: 0; border-top: 1px solid var(--color-line); display: grid; gap: 1.25rem; }
-  .qc-step > legend, .qc-more > summary { padding: 0; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; }
-  .qc-step legend .eyebrow, .qc-more summary .eyebrow { display: inline-block; margin: 0 .5rem 0 0; vertical-align: middle; font-family: var(--font-sans, inherit); }
-  .qc-more > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: .25rem; flex-wrap: wrap; }
-  .qc-hint { margin: 0; color: var(--color-stone); font-size: .9rem; }
-  .qc-unit { display: flex; gap: .5rem; }
-  .field .qc-unit input { flex: 1 1 auto; min-width: 0; }
-  .field .qc-unit select { flex: 0 0 auto; width: 5.25rem; }
-  .qc-cm { display: block; margin-top: .3rem; color: var(--color-stone); font-size: .9rem; }
-  .qc-measured { align-items: center; gap: .25rem 1.25rem; }
-  .qc-measured-label { font-weight: 500; flex-basis: 100%; }
-  .qc-opening, .qc-return { border-left: 2px solid var(--color-line); padding-left: 1rem; }
-  .quantity-measure { margin: 0; padding: 0; border: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; }
-  .quantity-measure legend { padding: 0; margin-bottom: .5rem; font-weight: 500; }
-  .quantity-measure label { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; }
-  .qc-result { border-top: 2px solid var(--color-ink); padding-top: 1.5rem; display: grid; gap: 1.5rem; }
-  .qc-result:focus { outline: none; }
-  .qc-order { display: grid; gap: .25rem; margin: 0; }
-  .qc-order div { display: grid; grid-template-columns: minmax(8rem, 12rem) 1fr; gap: .25rem 1rem; align-items: baseline; padding: .6rem 0; border-bottom: 1px solid var(--color-line); }
-  .qc-order dd { display: grid; gap: .15rem; }
-  .qc-note { color: var(--color-stone); font-size: .95rem; }
-  @media (max-width: 47.99rem) { .qc-order div { grid-template-columns: 1fr; } }
+  /* ---- Layout: the form, with the order docket beside it from 64rem ---- */
+  .qc { display: grid; grid-template-columns: minmax(0, 1fr); accent-color: var(--color-ink); }
+  .qc > * + * { margin-top: var(--space-8); }
+  .qc > .qc-docket { margin-top: var(--space-6); }
+  @media (min-width: 64rem) {
+    .qc { grid-template-columns: minmax(0, 46rem) minmax(18rem, 22rem); column-gap: clamp(3rem, 5vw, 5rem); justify-content: space-between; align-items: start; }
+    .qc > * { grid-column: 1; }
+    /* The docket spans every row of the left column (steps 1-3, the submit row, the result, with rows to spare:
+       empty rows take no height), so it stays beside the form from step 1 to the end of the materials. */
+    .qc > .qc-docket { grid-column: 2; grid-row: 1 / span 9; align-self: start; position: sticky; top: calc(var(--header-height) + var(--header-inset-top) + var(--space-6)); margin-top: 0; }
+  }
+  html:has(.qc) { scroll-padding-top: calc(var(--header-height) + var(--header-inset-top) + 1rem); }
+  @media (max-width: 79.99rem) { html:has(.qc) { scroll-padding-bottom: var(--dock-clearance); } }
+  html:not(.js) .qc-docket, html:not(.js) .qc :is([type="submit"], [data-add-opening], [data-add-return], [data-add-wall]) { display: none; }
+
+  /* ---- Type: the answer is the largest thing after the H1 ---- */
+  @media (max-width: 47.99rem) { .qc-lede { font-size: var(--text-body); } }
+  .qc-step > legend, .qc-more > summary, .qc-result h3, .qc-docket-title { margin: 0; font-family: var(--font-serif); font-size: var(--text-h3); font-weight: 500; line-height: 1.15; }
+  main .guide-next > h2:not(.sr-only) { font-size: var(--text-h3); }
+  .qc-num { display: inline-block; min-width: 1.5em; font-family: var(--font-serif); color: var(--color-brass); font-variant-numeric: lining-nums; }
+  .qc-hint { margin: 0; max-width: var(--measure-copy); color: var(--color-stone); font-size: var(--text-meta); }
+  .qc-hint a, .qc-result a, .qc-docket a:not(.btn) { color: inherit; text-decoration: underline; text-decoration-color: var(--color-brass); text-underline-offset: 3px; }
+
+  /* ---- Steps: the hairline above each title, never through it ---- */
+  .qc-step { min-width: 0; margin: 0; padding: 0; border: 0; display: grid; gap: var(--space-5); }
+  .qc-step > legend, .qc-more > summary { float: left; width: 100%; padding: var(--space-5) 0 0; border-top: 1px solid var(--color-line); }
+  .qc-step > legend + * { clear: both; }
+  .qc-more > summary { cursor: pointer; display: flex; align-items: flex-start; gap: .25rem; min-height: 44px; list-style: none; }
+  .qc-more > summary::-webkit-details-marker { display: none; }
+  .qc-summary-text { flex: 1; }
+  .qc-summary-note { display: block; margin-top: .35rem; font: 400 var(--text-meta)/1.5 var(--font-sans); color: var(--color-stone); }
+  .qc-plus { position: relative; flex: none; width: .9rem; height: .9rem; margin: .55em 0 0 1rem; }
+  .qc-plus::before, .qc-plus::after { content: ""; position: absolute; background: var(--color-brass); }
+  .qc-plus::before { left: 0; top: calc(50% - 1px); width: 100%; height: 2px; }
+  .qc-plus::after { top: 0; left: calc(50% - 1px); width: 2px; height: 100%; }
+  .qc-more[open] .qc-plus::after { transform: scaleY(0); }
+  @media (prefers-reduced-motion: no-preference) { .qc-plus::after { transition: transform .2s ease; } }
+  .qc-sub { border-top: 1px solid var(--color-line); }
+  .qc-sub > summary { cursor: pointer; display: flex; align-items: center; gap: .5rem; min-height: 48px; font-weight: 500; list-style: none; }
+  .qc-sub > summary::-webkit-details-marker { display: none; }
+  .qc-sub > summary::before { content: "+"; width: 1ch; color: var(--color-brass); font-size: 1.2em; line-height: 1; }
+  .qc-sub[open] > summary::before { content: "\2212"; }
+  .qc-sub > div { padding: var(--space-3) 0 0; }
+
+  /* ---- Controls: ink segmented choices, 2px corners, joined unit fields ---- */
+  .qc-group { min-width: 0; margin: 0; padding: 0; border: 0; display: grid; gap: var(--space-2); }
+  .qc-group > legend { padding: 0; margin-bottom: var(--space-2); font-weight: 500; }
+  .qc-group-quiet > legend { font-weight: 400; font-size: var(--text-meta); color: var(--color-stone); }
+  .qc-seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border: 1px solid var(--color-ink); border-radius: var(--button-radius); }
+  .qc-seg label { display: block; margin: 0; }
+  .qc-seg span { position: relative; display: flex; min-height: 48px; align-items: center; justify-content: center; padding: 0 .5rem; border-left: 1px solid var(--color-line); text-align: center; line-height: 1.2; cursor: pointer; }
+  .qc-seg label:first-child span { border-left: 0; }
+  .qc-seg input:checked + span { background: var(--color-ink); color: var(--color-ivory); }
+  .qc-seg input:focus-visible + span { z-index: 1; outline: 2px solid var(--color-brass); outline-offset: 2px; }
+  .qc-seg-small { max-width: 26rem; }
+  .qc-seg-small span { min-height: 44px; font-size: var(--text-meta); }
+  @media (forced-colors: active) { .qc-seg input:checked + span { forced-color-adjust: none; background: Highlight; color: HighlightText; } }
+  .qc-checks { display: flex; flex-wrap: wrap; gap: 0 1.5rem; }
+  .qc-checks > legend { flex-basis: 100%; }
+  .qc-checks label { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; }
+  .qc-checks input { width: 1.1rem; height: 1.1rem; }
+  .qc .field :is(input, select), .qc ~ .guide-next { border-radius: var(--button-radius); }
+  .qc .field select { appearance: none; -webkit-appearance: none; padding-right: 2.5rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23141210' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .9rem center; background-size: 12px 8px; }
+  .qc .field input[type="number"] { appearance: textfield; -moz-appearance: textfield; font-variant-numeric: tabular-nums; }
+  .qc .field input[type="number"]::-webkit-inner-spin-button, .qc .field input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  .qc-unit { display: flex; }
+  .qc .field .qc-unit input { flex: 1 1 auto; min-width: 0; border-right: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+  .qc .field .qc-unit select { flex: 0 0 auto; width: 5.5rem; border-left: 1px solid var(--color-line); border-top-left-radius: 0; border-bottom-left-radius: 0; background-color: var(--color-ivory-deep); }
+  .qc-cm { display: block; margin-top: .3rem; color: var(--color-stone); font-size: var(--text-meta); }
+  .qc [aria-invalid="true"] { border-color: var(--color-error); box-shadow: inset 0 0 0 1px var(--color-error); }
+  .qc .form-error { font-size: var(--text-meta); }
+  .qc-opening { min-width: 0; margin: 0; padding: 0 0 0 1rem; border: 0; border-left: 2px solid var(--color-line); }
+  .qc-opening-title { padding: 0; margin-bottom: var(--space-3); font-weight: 500; }
+  .qc-return { padding-left: 1rem; border-left: 2px solid var(--color-line); }
+  .qc-submit { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+  /* ---- The order docket ---- */
+  .qc-docket { display: grid; align-content: start; gap: var(--space-4); min-height: 18rem; padding: var(--space-6); background: var(--color-panel); border-top: 2px solid var(--color-ink); border-radius: var(--button-radius); }
+  .qc-docket-title:focus:not(:focus-visible) { outline: none; }
+  .qc-docket-title:focus-visible { outline: 2px solid var(--color-brass); outline-offset: 6px; }
+  .qc-docket-body { display: grid; gap: var(--space-4); }
+  .qc-docket-lead { margin: 0; font-weight: 500; }
+  .qc-docket-link { justify-self: start; }
+  .qc-docket.is-stale .qc-docket-body { opacity: .55; }
+  .qc-order { display: grid; margin: 0; }
+  .qc-order > div { display: grid; grid-template-columns: 5.5rem 1fr; gap: .25rem 1rem; align-items: baseline; padding: .6rem 0; border-bottom: 1px solid var(--color-line); }
   .qc-order dt { font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-brass); }
-  .qc-order dd { margin: 0; }
-  .qc-order strong { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 500; line-height: 1.1; white-space: nowrap; }
-  .qc-order .qc-total strong { font-size: 2.4rem; }
-  .qc-warning { margin: 0; padding: .9rem 1rem; background: var(--color-ivory-deep); border-left: 3px solid var(--color-brass); }
-  .qc-result h3 { margin: 0 0 .5rem; font-size: 1.35rem; }
-  .qc-result ul, .qc-result ol { margin: 0; padding-left: 1.2rem; display: grid; gap: .35rem; }
-  .qc-result p { margin: 0; }
-  .qc-plan li { overflow-wrap: anywhere; }
-  .qc-materials li span { display: block; color: var(--color-stone); font-size: .9rem; }
-  .qc-materials a, .qc-result p a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-brass); text-underline-offset: 3px; }
+  .qc-op { display: inline-block; min-width: 1.1em; }
+  .qc-order dd { display: grid; gap: .15rem; margin: 0; }
+  .qc-order strong { font-family: var(--font-serif); font-size: var(--text-h3); font-weight: 500; line-height: 1.05; font-variant-numeric: lining-nums tabular-nums; overflow-wrap: anywhere; }
+  .qc-order .qc-total { border-top: 2px solid var(--color-ink); border-bottom: 0; }
+  .qc-order .qc-total strong { font-size: var(--text-h2); }
+  .qc-order-empty strong { color: var(--color-stone); }
+  .qc-alt { display: block; font-size: var(--text-meta); color: var(--color-stone); }
+  .qc-note { font-size: var(--text-meta); color: var(--color-stone); }
+  .qc-warning { margin: 0; padding: .9rem 1rem; background: var(--color-ivory-deep); border-left: 2px solid var(--color-brass); }
   .qc-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .qc-small { color: var(--color-stone); }
+  @media (max-width: 47.99rem) { .qc-actions .btn { flex: 1 1 100%; justify-content: center; } }
+  .qc-actions-wrap { display: grid; gap: .5rem; }
+  .qc-result .qc-actions-wrap { display: none; }
+  @media (max-width: 63.99rem) { .qc-result .qc-actions-wrap { display: grid; } }
+  .qc-utility { display: flex; flex-wrap: wrap; align-items: center; gap: 0 .75rem; }
+  .qc-utility button, .qc-link { min-height: 44px; padding: 0; border: 0; background: none; font: inherit; font-size: var(--text-meta); color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-brass); text-underline-offset: 3px; cursor: pointer; }
+  .qc-dot { color: var(--color-stone); }
+  .qc[data-has-result] ~ .guide-next a[href^="/contact/"] { display: none; }
+
+  /* ---- The working: one left edge, one rhythm ---- */
+  .qc-result { display: grid; }
+  .qc-result:focus { outline: none; }
+  .qc-result > section { display: grid; gap: var(--space-4); padding-top: var(--space-8); margin-top: var(--space-8); border-top: 1px solid var(--color-line); }
+  .qc-result > section:first-child { margin-top: 0; }
+  .qc-result p { margin: 0; max-width: var(--measure-copy); }
+  .qc-result :is(ul, ol) { margin: 0; padding: 0; list-style: none; }
+  .qc-result :is(ul, ol) > li { padding: .5rem 0; border-top: 1px solid var(--color-line); }
+  .qc-result strong { font-weight: 500; }
+  .qc-small { font-size: var(--text-meta); color: var(--color-stone); }
+  .qc-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem 1.5rem; margin: 0; }
+  @media (max-width: 47.99rem) { .qc-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .qc-facts div { display: grid; align-content: start; gap: .2rem; }
+  .qc-facts dt, .qc-roll-name, .qc-materials dt, .qc-eyebrow { font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-brass); }
+  .qc-facts dd { margin: 0; font: 500 var(--text-h4)/1.2 var(--font-serif); font-variant-numeric: lining-nums tabular-nums; }
+  .qc-facts dd small { display: block; font: 400 var(--text-meta)/1.4 var(--font-sans); color: var(--color-stone); }
+
+  /* ---- Roll strips: each roll to scale ---- */
+  .qc-result .qc-rolls { display: grid; gap: var(--space-4); }
+  .qc-result .qc-rolls > li { padding: 0; border-top: 0; }
+  .qc-roll { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: .35rem 1rem; align-items: center; break-inside: avoid; }
+  .qc-roll-text, .qc-roll-scale { grid-column: 2; }
+  @media (max-width: 47.99rem) { .qc-roll { grid-template-columns: minmax(0, 1fr); } .qc-roll-text, .qc-roll-scale { grid-column: 1; } }
+  .qc-roll-bar { position: relative; display: block; height: 2.5rem; overflow: hidden; border: 1px solid var(--color-field-border); border-radius: var(--button-radius); background: repeating-linear-gradient(135deg, var(--color-field-border) 0 1px, transparent 1px 7px); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .qc-cut, .qc-left { position: absolute; inset-block: 0; display: grid; place-items: center; overflow: hidden; white-space: nowrap; border-left: 2px solid var(--color-brass); }
+  .qc-cut { left: calc(var(--at) * 1%); width: calc(var(--len) * 1%); background: var(--color-panel); font: 500 1.15rem/1 var(--font-serif); font-variant-numeric: lining-nums; color: var(--color-ink); }
+  .qc-cut:not([data-kind="full"]) { background: var(--color-ivory-deep); font: 400 var(--text-meta)/1 var(--font-sans); }
+  .qc-left { right: 0; width: calc(var(--len) * 1%); background: var(--color-ivory-deep); color: var(--color-stone); font-size: var(--text-meta); }
+  .qc-roll-spare .qc-roll-bar { background: none; border: 2px solid var(--color-brass); }
+  .qc-roll-empty { background: none; border-style: dashed; }
+  .qc-roll-text { font-size: var(--text-meta); color: var(--color-stone); }
+  .qc-roll-scale { display: flex; justify-content: space-between; font-size: var(--text-meta); color: var(--color-stone); }
+  .qc-key { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; font-size: var(--text-meta); color: var(--color-stone); }
+  .qc-key span::before { content: ""; display: inline-block; width: 1.25rem; height: .85rem; margin-right: .4rem; vertical-align: -2px; border: 1px solid var(--color-field-border); }
+  .qc-key .k-drop::before { background: var(--color-panel); border-left: 2px solid var(--color-brass); }
+  .qc-key .k-lost::before { background: repeating-linear-gradient(135deg, var(--color-field-border) 0 1px, transparent 1px 5px); }
+  .qc-key .k-left::before { background: var(--color-ivory-deep); }
+  @media (forced-colors: active) { .qc-cut, .qc-left, .qc-roll-bar { border-color: CanvasText; } }
+
+  /* ---- Assumptions, materials, terms ---- */
+  .qc-result .qc-assumed, .qc-docket .qc-assumed { margin: 0; padding: var(--space-3) var(--space-5); list-style: none; background: var(--color-ivory-deep); border-left: 2px solid var(--color-brass); }
+  .qc-result .qc-assumed > li, .qc-docket .qc-assumed > li { display: flex; flex-wrap: wrap; align-items: center; gap: 0 .75rem; padding: 0; border-top: 0; }
+  .qc-assumed > li > span { padding: .6rem 0; }
+  .qc-materials { display: grid; margin: 0; }
+  .qc-materials > div { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: .25rem 1rem; padding: .75rem 0; border-top: 1px solid var(--color-line); break-inside: avoid; }
+  @media (max-width: 47.99rem) { .qc-materials > div { grid-template-columns: minmax(0, 1fr); } }
+  .qc-materials dd { display: grid; gap: .3rem; margin: 0; }
+  .qc-mat-name { font-weight: 500; }
+  .qc-mat-packs { font: 500 var(--text-h4)/1.2 var(--font-serif); font-variant-numeric: lining-nums tabular-nums; }
+  .qc-mat-need, .qc-mat-note { font-size: var(--text-meta); color: var(--color-stone); }
+  .qc-quote { display: grid; gap: .25rem; margin: 0; padding-left: .75rem; border-left: 2px solid var(--color-brass); font-size: var(--text-meta); color: var(--color-stone); }
+  .qc-quote blockquote, .qc-quote figcaption { margin: 0; }
+  .qc-terms { padding-top: var(--space-4); border-top: 1px solid var(--color-line); color: var(--color-stone); }
+  .qc-terms small { font-size: var(--text-meta); }
+  .qc-print-only { display: none; }
+
   @media print {
-    .qc-step, .qc-more, .qc button[type="submit"], .qc-actions, .wp-subnav, .guide-layout, .page-head .lede { display: none !important; }
-    .qc-result { border: 0; }
+    .qc { display: block; }
+    .qc-docket { position: static; min-height: 0; padding: 0; background: none; }
+    .qc-step, .qc-more, .qc-submit, .qc-actions-wrap, .qc-utility, .qc-docket-link, .wp-subnav, .crumbs, .page-head .eyebrow, .page-head .lede, noscript, .guide-next { display: none !important; }
+    .page-head h1 { font-size: 22pt; }
+    .qc-print-only { display: block; }
+    .qc-order > div, .qc-roll, .qc-materials > div { break-inside: avoid; }
+    .qc-result h3 { break-after: avoid; }
+    .qc-result a[href^="http"]::after { content: " (" attr(href) ")"; overflow-wrap: anywhere; color: var(--color-stone); }
   }
 </style>

@@ -87,3 +87,18 @@ test('the menu calls it Wallpaper calculator (owner, 17 Oct 2026)', () => {
   const menu = JSON.parse(readFileSync(new URL('../src/content/navigation.json', import.meta.url), 'utf8')) as { href: string; label: string }[];
   assert.equal(menu.find((item) => item.href === '/calculator/')?.label, 'Wallpaper calculator');
 });
+
+test('the calculator page follows the design brief: answer beside the form, one status sentence, the strips', () => {
+  const page = readFileSync(new URL('../src/pages/calculator.astro', import.meta.url), 'utf8');
+  const script = readFileSync(new URL('../src/scripts/quantity-ui.ts', import.meta.url), 'utf8');
+  assert.match(page, /<h2 id="calculator-heading" class="sr-only">Roll calculator<\/h2>/, 'the H2 no longer repeats the H1 on screen');
+  assert.match(page, /<aside class="qc-docket"[^>]*aria-labelledby="qc-docket-heading"/, 'the order docket sits beside the form');
+  assert.match(page, /role="status" data-qc-status/, 'one status line, always present');
+  assert.doesNotMatch(page, /class="qc-result"[^>]*aria-live/, 'the whole result is not read out on every change');
+  assert.match(page, /class="qc-seg"/, 'brand segmented controls in step 2');
+  assert.doesNotMatch(page, /£/);
+  assert.match(script, /qc-roll-bar/, 'the cutting plan is drawn as roll strips');
+  assert.match(script, /Not a set-out, not a price\./, 'the honesty line stays');
+  assert.match(script, /track\('calculator_complete'/);
+  assert.equal((script.match(/track\('calculator_complete'/g) ?? []).length, 1, 'analytics counts a calculation once, on submit');
+});

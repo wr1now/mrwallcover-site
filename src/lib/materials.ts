@@ -253,7 +253,12 @@ export function liningPaste(wallpaperPasteStep: number | null, makerId?: string,
 export interface MaterialLine {
   role: 'primer' | 'treatment' | 'lining' | 'lining-paste' | 'paste';
   name: string;
+  /** The whole amount in words, e.g. "3.33–4.06 litres: 1 × 2.5 L + 2 × 1 L": need and packs together. */
   amount: string | null;
+  /** What the wall needs, e.g. "3.33–4.06 litres", where a coverage gives it. */
+  need?: string | null;
+  /** What to buy, e.g. "1 × 2.5 L + 2 × 1 L" or "3 × 10 m rolls". */
+  packs?: string | null;
   note?: string;
   source?: string | null;
   sourceLabel?: string;
@@ -281,6 +286,8 @@ const packLine = (packs: number[], unit: string) => {
   return [...counts].map(([size, count]) => `${count} × ${formatNumber(size)} ${unit}`).join(' + ');
 };
 const sourceOf = (item: Product) => item.dataSheet ?? item.page ?? null;
+/** The need and the packs, and the two together as the amount line. */
+const amountOf = (need: string | null, packs: string | null) => ({ need, packs, amount: need && packs ? `${need}: ${packs}` : need ?? packs });
 
 /** The lining grade: the maker's grade when it names one, otherwise the grade for the wall (owner, 14 Oct 2026). */
 function liningGrade(conditionGrade: number | null, rule?: MakerRule): { grade: number; check?: string } | null {
@@ -313,7 +320,7 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
     lines.push({
       role: item.kind === 'primer' ? 'primer' : 'treatment',
       name: item.name,
-      amount: litres ? `${litres.min === litres.max ? formatNumber(litres.max) : `${formatNumber(litres.min)}–${formatNumber(litres.max)}`} litres${sizes.length ? `: ${packLine(packsFor(litres.max, sizes), 'L')}` : ''}` : null,
+      ...amountOf(litres ? `${litres.min === litres.max ? formatNumber(litres.max) : `${formatNumber(litres.min)}–${formatNumber(litres.max)}`} litres` : null, litres && sizes.length ? packLine(packsFor(litres.max, sizes), 'L') : null),
       note: litres ? `${coats === 1 ? 'One coat' : `${coats} coats`}. The data sheet: "${item.coverage!.printed}"` : 'Quantity from its data sheet once the area is confirmed.',
       source: sourceOf(item),
       sourceLabel: item.dataSheet ? 'Data sheet' : "Maker's page",
@@ -335,7 +342,7 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
       lines.push({
         role: 'lining',
         name: paper.name,
-        amount: `${plan.rolls} × ${roll.lengthM} m rolls${planDouble && doubles ? `, or ${planDouble.rolls} × ${doubles.lengthM} m` : ''}`,
+        ...amountOf(null, `${plan.rolls} × ${roll.lengthM} m rolls${planDouble && doubles ? `, or ${planDouble.rolls} × ${doubles.lengthM} m` : ''}`),
         note: `Hung across, ${plan.pieces} courses. Every roll the same grade, so the same thickness and the same white.${rule && ['all-walls', 'recommended'].includes(rule.lining.need) ? ` ${rule.name} asks for lining.` : ''}`,
         source: sourceOf(paper),
         sourceLabel: "Maker's page",
@@ -353,7 +360,7 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
     lines.push({
       role: 'paste',
       name: named ? named.name : 'A vinyl-over-vinyl adhesive (VOV) made for sealed surfaces',
-      amount: kg ? `${formatNumber(kg.min)}–${formatNumber(kg.max)} kg${named!.packs?.sizes ? `: ${packLine(packsFor(kg.max, named!.packs.sizes), 'kg')}` : ''}` : null,
+      ...amountOf(kg ? `${formatNumber(kg.min)}–${formatNumber(kg.max)} kg` : null, kg && named!.packs?.sizes ? packLine(packsFor(kg.max, named!.packs.sizes), 'kg') : null),
       note: named
         ? kg
           ? `${rule!.name}\u2019s adhesive for a sealed surface. The label: "${cover!.printed}"`
@@ -369,20 +376,21 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
   const pasteProduct = rule?.paste ? product(rule.paste) : null;
   const pasteStep: number | null = pasteProduct?.step ?? rule?.pasteStep ?? null;
   const pasteName = pasteProduct?.name ?? rule?.pasteName ?? 'The paste the wallpaper maker names';
-  let pasteAmount: string | null = null;
+  let paste = amountOf(null, null);
   if (pasteProduct?.coverage?.unit === 'kg/roll' && pasteProduct.coverage.perUnit && isConfirmed(pasteProduct)) {
     const kg = pasteProduct.coverage.perUnit * result.working.count;
-    pasteAmount = `${formatNumber(kg)} kg${pasteProduct.packs?.sizes ? `: ${packLine(packsFor(kg, pasteProduct.packs.sizes), 'kg')}` : ''}`;
+    paste = amountOf(`${formatNumber(kg)} kg`, pasteProduct.packs?.sizes ? packLine(packsFor(kg, pasteProduct.packs.sizes), 'kg') : null);
   }
   const fb = rule as (MakerRule & { pasteCoverage?: { perUnit: number } }) | undefined;
-  if (!pasteAmount && fb?.pasteCoverage?.perUnit) {
+  if (!paste.amount && fb?.pasteCoverage?.perUnit) {
     const tubes = Math.ceil(result.working.count / fb.pasteCoverage.perUnit);
-    pasteAmount = `${tubes} ${tubes === 1 ? 'tube' : 'tubes'}`;
+    paste = amountOf(null, `${tubes} ${tubes === 1 ? 'tube' : 'tubes'}`);
   }
+  const pasteAmount = paste.amount;
   lines.push({
     role: 'paste',
     name: pasteName,
-    amount: pasteAmount,
+    ...paste,
     note: pasteAmount ? `"${pasteProduct?.coverage?.printed ?? 'Each tube can be used to hang five rolls of wallpaper.'}"` : 'We confirm the paste from the maker’s hanging instruction for the product.',
     source: pasteProduct ? sourceOf(pasteProduct) : rule?.source ?? null,
     sourceLabel: pasteProduct ? (pasteProduct.dataSheet ? 'Data sheet' : "Maker's page") : "Maker's instructions",
@@ -397,7 +405,7 @@ export function materialsFor(input: QuantityInput, result: PlanResult, options: 
       lines.push({
         role: 'lining-paste',
         name: decision.pasteName,
-        amount: kg && decision.paste?.packs?.sizes ? `${formatNumber(kg)} kg: ${packLine(packsFor(kg, decision.paste.packs.sizes), 'kg')}` : kg ? `${formatNumber(kg)} kg` : null,
+        ...amountOf(kg ? `${formatNumber(kg)} kg` : null, kg && decision.paste?.packs?.sizes ? packLine(packsFor(kg, decision.paste.packs.sizes), 'kg') : null),
         note: decision.note,
         source: decision.paste ? sourceOf(decision.paste) : rule?.source ?? null,
         sourceLabel: decision.paste ? (decision.paste.dataSheet ? 'Data sheet' : "Maker's page") : "Maker's instructions",

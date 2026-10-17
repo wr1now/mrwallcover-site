@@ -3,6 +3,12 @@
 .wp-subnav a { display:inline-flex; align-items:center; min-height:44px; color:var(--color-stone); text-decoration:none; font-size:.95rem; }
 .wp-subnav a:hover { color:var(--color-ink); }
 .wp-subnav a[aria-current="page"] { color:var(--color-ink); box-shadow:inset 0 -2px 0 var(--color-brass); }
+/* Phones: the hub tabs stay on one row and scroll sideways, so the page's own content starts on the first screen. */
+@media (max-width:47.99rem) {
+  .wp-subnav { margin-bottom:1.75rem; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; gap:1.25rem; margin-inline:calc(var(--gutter) * -1); padding-inline:var(--gutter); scroll-padding-inline:var(--gutter); -webkit-mask-image:linear-gradient(90deg,#000 85%,transparent); mask-image:linear-gradient(90deg,#000 85%,transparent); }
+  .wp-subnav::-webkit-scrollbar { display:none; }
+  .wp-subnav a { white-space:nowrap; }
+}
 
 .wp-tools > a > span:last-child { overflow-wrap:anywhere; }
 @media (min-width:48rem) {
