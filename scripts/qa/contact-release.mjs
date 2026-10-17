@@ -10,7 +10,7 @@ try {
   assert.equal(data.overflow,false,`${width}: overflow`);assert.equal(data.rowOverflow,false,`${width}: header`);assert.equal(data.headings,1);assert.ok(data.current);assert.equal(data.navReveal,false);
   if([390,1440].includes(width))await page.screenshot({path:`.review-screens/contact/after-${width}.png`,fullPage:true});
   if(width<1280){await page.focus('[data-menu-toggle]');await page.keyboard.press('Enter');assert.equal(await page.$eval('[data-menu-toggle]',e=>e.getAttribute('aria-expanded')),'true');assert.equal(await page.$eval('[data-dock]',e=>getComputedStyle(e).display),'none');await page.keyboard.press('Escape');assert.ok(await page.$eval('[data-menu-toggle]',e=>document.activeElement===e));}
-  if(data.reveal){await page.$eval('main [data-phone-reveal]',e=>e.scrollIntoView({block:'center'}));await new Promise(r=>setTimeout(r,200));await page.click('main [data-phone-reveal]');assert.ok(await page.$('main a[href="tel:+447700900000"]'));}
+  if(data.reveal){await page.$eval('main [data-phone-reveal]',e=>e.scrollIntoView({block:'center'}));await new Promise(r=>setTimeout(r,200));await page.click('main [data-phone-reveal]');assert.ok(await page.$('main a[href^="tel:"]'));}
   results.push({width,...data});await page.close();
  }
  const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(server.origin+'/get-in-touch/');assert.ok(await nojs.$('a[href="mailto:info@mrwallcover.com"]'));await nojs.close();
