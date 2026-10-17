@@ -167,6 +167,30 @@
       }
     },
     {
+      "id": "roll-70-1005",
+      "group": "roll",
+      "width": 70,
+      "widthUnit": "cm",
+      "length": 10.05,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Marburg, Felix Diener Craft: 1005 × 70 cm",
+        "url": "https://marburg.com/en/search/36656-felix-diener-craft/"
+      }
+    },
+    {
+      "id": "roll-70-85",
+      "group": "roll",
+      "width": 70,
+      "widthUnit": "cm",
+      "length": 8.5,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Arte, Brushed Suede: rolls of 8.50 m × 0.70 m",
+        "url": "https://www.arte-international.com/en/collections/essentials-brushed-suede/brushed-suede/59600"
+      }
+    },
+    {
       "id": "roll-86",
       "group": "roll",
       "width": 86,
@@ -200,6 +224,30 @@
       "source": {
         "label": "Arte, Indienne Agra: rolls of 10 m × 1 m",
         "url": "https://www.arte-international.com/en/collections/indienne/agra/18310"
+      }
+    },
+    {
+      "id": "roll-106-10",
+      "group": "roll",
+      "width": 106,
+      "widthUnit": "cm",
+      "length": 10,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Rasch, Alghero: width 1.06 m, length 10.0 m",
+        "url": "https://rasch.de/Vliestapete-in-Beige-Alghero-943023/10-943023/"
+      }
+    },
+    {
+      "id": "roll-106-1005",
+      "group": "roll",
+      "width": 106,
+      "widthUnit": "cm",
+      "length": 10.05,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Khroma, Color Ash: roll width 1.06 m, roll length 10.05 m",
+        "url": "https://masureel.com/brands/khroma/colorythm/color/color-ash/"
       }
     },
     {
@@ -394,11 +442,13 @@
       68.5,
       68.6,
       70,
+      75,
       80,
       86,
       90,
       91.4,
       100,
+      106,
       110,
       122,
       130,
