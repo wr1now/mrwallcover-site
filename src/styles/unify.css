@@ -200,12 +200,12 @@ body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-f
 /* The case-study "At a glance" box: its heading is an eyebrow label, not a section title (src/components/CaseStudyGlance.astro). */
 main .glance-box h2 { font-family:var(--font-sans, inherit); font-size:var(--text-eyebrow); font-weight:500; line-height:1.4; letter-spacing:var(--tracking-eyebrow); text-transform:uppercase; color:var(--color-ink); }
 
-/* Header with nine menu links (Wallpapering and Calculator added 14 Oct 2026) and "Contact" (15 Oct 2026). Width-tested
-   with SITE_PHONE set and links at the 14px type floor: from 1280px the links, "Contact", WhatsApp and the action fit
-   on one line with 12px gaps; below 1280px the bar shows the menu button (navigation.css). The bar is capped at the
-   content width, so its row is 1200px at 1280 and at 1440: "Book a 20-minute call" left the bar to make room for
-   "Contact" and, later, Inspiration (owner, 15 Oct 2026; it stays in the dock, the footer and the contact pages).
-   The action never wraps. */
+/* Header with nine menu links (Wallpapering and Calculator added 14 Oct 2026; Calculator reads "Wallpaper calculator"
+   from 17 Oct) and "Contact" (15 Oct 2026). Width-tested with SITE_PHONE set and links at the 14px type floor: from
+   1280px the links, "Contact", WhatsApp and the action fit on one line with 12px gaps and 24px to spare; below 1280px
+   the bar shows the menu button (navigation.css). The bar is capped at the content width, so its row is 1200px at 1280
+   and at 1440. "Book a 20-minute call" left the bar (owner, 15 Oct 2026; it stays in the dock, the footer and the
+   contact pages). An "Inspiration" link (66px) would overflow by 54px: it needs room made first. The action never wraps. */
 @media (min-width:1280px) {
   .site-header .primary-nav { gap:12px; }
   .site-header .header-action { padding-inline:.9rem; white-space:nowrap; }

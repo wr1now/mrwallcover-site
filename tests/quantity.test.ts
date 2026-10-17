@@ -244,12 +244,15 @@ test('the ordering allowance the site quotes elsewhere is unchanged: 13.5 m² on
   assert.equal(allowanceRange({ match: 'mural', rollWidthM: 0.53, rollLengthM: 10.05, walls: [{ widthM: 5, heightM: 2.7 }] }).ok, false);
 });
 
-test('/calculator/ opens on the worked example in centimetres; the guide at /advice/quantities/ states the result it gives and points to the calculator', async () => {
+test('/calculator/ suggests the worked example in centimetres, never a confident answer for an unmeasured wall; the guide at /advice/quantities/ states the result it gives and points to the calculator', async () => {
   const calculator = await readFile('src/pages/calculator.astro', 'utf8');
   const guide = await readFile('src/pages/advice/quantities.astro', 'utf8');
   const value = (name: string) => Number(calculator.match(new RegExp(`name="${name}"[^>]*value="([0-9.]+)"`))![1]);
-  const r = plan(calculate({ paper: { widthCm: value('rollWidth'), lengthCm: value('rollLength') * 100, match: 'free' }, walls: [wall(value('width'), value('height'))] }));
-  assert.deepEqual([value('width'), value('height'), value('rollWidth'), value('rollLength')], [500, 270, 53, 10.05]);
+  // The wall inputs carry the example as a placeholder (design brief P1.6), so the docket waits for a real measurement.
+  const example = (name: string) => Number(calculator.match(new RegExp(`name="${name}"[^>]*placeholder="e\\.g\\. ([0-9.]+)"`))![1]);
+  assert.doesNotMatch(calculator, /name="(width|height|roomLength|roomWidth|roomHeight)"[^>]*value=/, 'no wall is measured until the visitor types it');
+  const r = plan(calculate({ paper: { widthCm: value('rollWidth'), lengthCm: value('rollLength') * 100, match: 'free' }, walls: [wall(example('width'), example('height'))] }));
+  assert.deepEqual([example('width'), example('height'), value('rollWidth'), value('rollLength')], [500, 270, 53, 10.05]);
   assert.equal(r.working.count, 4);
   assert.match(guide, /Ten drops at three per roll is 4 rolls/);
   assert.match(guide, /<a href="\/calculator\/">calculator<\/a> and it gives 4, plus the spare/);

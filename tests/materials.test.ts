@@ -117,7 +117,8 @@ test('the ladder reads Light, Medium, Heavy, Extra-heavy (owner, 14 Oct 2026); a
   if (!result.ok || result.kind !== 'plan') return;
   const generic = materialsFor(input, result, { condition: 'sealed' });
   assert.deepEqual(generic.lines.map((line) => line.name), ['A vinyl-over-vinyl adhesive (VOV) made for sealed surfaces']);
-  assert.equal(generic.checks.length, 1, 'a sealed wall is checked with us');
+  assert.equal(generic.checks.length, 2, 'a sealed wall is checked with us, with the fire-rating warning (owner, 14 Oct 2026)');
+  assert.match(generic.checks.join(' '), /voids the makers\u2019 fire rating certification/);
   const muraspec = materialsFor(input, result, { condition: 'sealed', makerId: 'muraspec' });
   assert.equal(muraspec.lines[0].name, 'Murabond Sealed Surface Adhesive (vinyl-over-vinyl use)');
   assert.equal(muraspec.lines[0].amount, '1.43–1.67 kg: 1 × 5 kg', '10 m² at the label\'s 6/7 m² per kg');
@@ -126,3 +127,18 @@ test('the ladder reads Light, Medium, Heavy, Extra-heavy (owner, 14 Oct 2026); a
   assert.equal(tektura.amount, null, 'no amount from an archived page');
   assert.match(tektura.note ?? '', /check availability/);
 });
+
+test('each amount splits into what the wall needs and what to buy, for the materials ledger', async () => {
+  const { calculate } = await import('../src/lib/quantity.ts');
+  const { materialsFor } = await import('../src/lib/materials.ts');
+  type PlanResult = import('../src/lib/quantity.ts').PlanResult;
+  const result = calculate({ paper: { widthCm: 53, lengthCm: 1005, match: 'free' }, walls: [{ widthCm: 500, heightCm: 270 }] });
+  assert.ok(result.ok && result.kind === 'plan');
+  const list = materialsFor({ paper: { widthCm: 53, lengthCm: 1005, match: 'free' }, walls: [{ widthCm: 500, heightCm: 270 }] }, result as PlanResult, { condition: 'new-plaster', makerId: 'cole-and-son' });
+  for (const line of list.lines) {
+    const joined = line.need && line.packs ? `${line.need}: ${line.packs}` : line.need ?? line.packs ?? null;
+    assert.equal(line.amount, joined, `${line.name}: the amount is the need and the packs together`);
+  }
+  assert.ok(list.lines.some((line) => line.need && line.packs), 'at least one line has both');
+});
+

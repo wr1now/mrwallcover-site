@@ -1527,7 +1527,8 @@
       "notes": [
         "Never use material from different batches on one wall.",
         "Cut and hang in roll sequence; do not in-fill with off cuts or out of sequence drops.",
-        "On a non-absorbent wall: \"Murabond Sealed Surface must be used and applied one drop at a time\"."
+        "Remove all existing wallcovering and backing papers. (Hanging leaflet, May 2026)",
+        "On coated non-absorbent walls: \"rub down the wall to provide a key. Hang the wallcovering using Murabond Sealed Surface Adhesive.\" (Hanging leaflet, May 2026)"
       ],
       "source": "https://www.muraspec.com/wp-content/uploads/2024/05/Muraspec-UK-Hanging-Instructions-Feb-24.pdf",
       "checked": "2026-10-14",
@@ -1732,7 +1733,7 @@
     {
       "id": "sealed",
       "name": "Sealed or non-porous: gloss paint, an existing vinyl",
-      "treatment": "Cleaned and keyed. A water-based paste cannot soak into a sealed surface, so the paper goes up with a vinyl-over-vinyl adhesive (VOV) made for it, as the wallpaper maker allows.",
+      "treatment": "Washed, degreased and keyed with sandpaper. A water-based paste cannot soak into a sealed surface, so the paper goes up with a vinyl-over-vinyl adhesive (VOV) made for it, as the wallpaper maker allows. An old wallcovering comes off first: hanging vinyl over it voids the makers' fire rating certification, and Muraspec and Vescom both ask for it to be removed. Check the wallpaper maker's guide.",
       "products": [],
       "vov": true,
       "lining": "Only with an adhesive the lining maker accepts on a sealed surface.",
