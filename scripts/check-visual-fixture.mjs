@@ -11,9 +11,10 @@ let exists=false;
 try { await access(fixture); exists=true; } catch {}
 assert.equal(exists,false,'temporary fixture must never overwrite an existing route');
 const out=await mkdtemp(join(tmpdir(),'mw-visual-fixture-'));
+const contact=JSON.parse(await readFile('tests/fixtures/contact.json','utf8'));
 try {
   await writeFile(fixture,await readFile('tests/fixtures/visual-page.astro.txt','utf8'),{flag:'wx'});
-  await promisify(execFile)(process.execPath,['node_modules/astro/bin/astro.mjs','build','--outDir',out],{maxBuffer:32*1024*1024,env:{...process.env,SITE_PHONE:'07700900000'}});
+  await promisify(execFile)(process.execPath,['node_modules/astro/bin/astro.mjs','build','--outDir',out],{maxBuffer:32*1024*1024,env:{...process.env,SITE_PHONE:contact.phone}});
   const html=await readFile(join(out,'visual-contract-fixture/index.html'),'utf8');
   assert.match(html,/<footer\b[^>]*data-footer/);
   assert.equal((html.match(/class="footer-group /g)||[]).length,4);
