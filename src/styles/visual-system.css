@@ -1,0 +1,48 @@
+/* Shared by Base, including future pages. Existing action classes use the same states. */
+.mw-icon { width:1.5rem; height:1.5rem; flex:0 0 auto; vertical-align:middle; }
+.mw-action, .btn, .atelier-button {
+  display:inline-flex; align-items:center; justify-content:space-between; gap:1rem;
+  min-height:var(--button-height); padding:.85rem var(--button-pad);
+  border:1px solid currentColor; border-radius:var(--button-radius);
+  font:500 var(--text-button)/1.35 var(--font-sans); text-decoration:none;
+  cursor:pointer; box-sizing:border-box;
+  transition:background-color var(--dur-control), color var(--dur-control), box-shadow var(--dur-control);
+}
+.mw-action--primary { background:var(--color-ink); color:var(--color-ivory); border-color:var(--color-ink); box-shadow:0 2px 0 rgb(20 18 16 / .12); }
+.mw-action--secondary { background:var(--color-paper); color:var(--color-ink); border-color:var(--color-ink); }
+.mw-action--quiet { background:transparent; color:var(--color-ink); border-color:transparent; padding-inline:0; min-height:44px; }
+.mw-action > span { min-width:0; }
+.mw-action .mw-icon { width:1.25rem; height:1.25rem; }
+@media (hover:hover) {
+  .mw-action--primary:hover, .btn-solid-ink:hover, .atelier-button.ink:hover { background:var(--color-stone); border-color:var(--color-stone); color:var(--color-panel); }
+  .mw-action--secondary:hover, .btn-line:hover { background:var(--color-ivory-deep); }
+  .mw-action--quiet:hover { text-decoration:underline; text-underline-offset:.3em; }
+  .atelier-button.cream:hover, .btn-solid:hover { background:var(--color-panel); color:var(--color-ink); }
+}
+.mw-action:focus-visible, .btn:focus-visible, .atelier-button:focus-visible, .guide-filters button:focus-visible, .work-filters button:focus-visible, .home-needs-grid a:focus-visible {
+  outline:2px solid var(--color-brass); outline-offset:4px; box-shadow:0 0 0 2px var(--color-panel);
+}
+.mw-action:active, .btn:active, .atelier-button:active { box-shadow:inset 0 2px 3px rgb(20 18 16 / .18); transform:none; }
+.mw-action:disabled, .btn:disabled, .mw-action[aria-disabled="true"] { opacity:.6; cursor:not-allowed; box-shadow:none; }
+.mw-action[aria-busy="true"], .btn[aria-busy="true"] { cursor:progress; }
+.guide-filters button, .work-filters button { transition:background-color var(--dur-control), color var(--dur-control); }
+/* This is deliberately unlayered: the booking-cell display rule in unify.css otherwise wins. */
+body.nav-open .dock, body.field-focus .dock { display:none; }
+.home-needs-grid > a { position:relative; padding-top:1.5rem; }
+.home-needs-grid .mw-icon { color:var(--color-brass); width:2rem; height:2rem; margin-bottom:1.25rem; }
+.home-needs-grid > a > .mw-icon:last-child { width:1.25rem; height:1.25rem; margin:1.25rem 0 0; }
+.atelier-service ol a > .mw-icon { width:1.75rem; height:1.75rem; color:var(--color-brass); }
+.atelier-service ol a > .mw-icon:last-child { width:1.25rem; height:1.25rem; }
+.atelier-service-number .mw-icon { display:block; margin-top:.75rem; width:1.6rem; height:1.6rem; }
+@media (prefers-reduced-motion:reduce) { .mw-action, .btn, .atelier-button, .guide-filters button, .work-filters button { transition:none; } }
+@media print { .mw-action { box-shadow:none; } }
+
+.material-evidence { display:grid; gap:2rem; align-items:center; padding-block:1rem 4rem; }
+.material-evidence > div { max-width:30rem; }
+.material-evidence h2 { margin:.5rem 0 1rem; }
+.material-evidence figure { margin:0; min-width:0; }
+.material-evidence .media-frame { display:block; overflow:hidden; border-radius:var(--button-radius); }
+.material-evidence img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; }
+.material-evidence figcaption { color:var(--color-stone); line-height:1.5; margin-top:.75rem; }
+.material-family-icon { color:var(--color-brass); margin-bottom:1rem; }
+@media (min-width:768px) { .material-evidence { grid-template-columns:1fr 1fr; gap:4rem; } }

@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import PageMeta from '../../components/PageMeta.astro';
 import GuideCard from '../../components/GuideCard.astro';
+import TechnicalDiagram from '../../components/TechnicalDiagram.astro';
 import { guides, guideHref } from '../../lib/guides';
 import { materials } from '../../lib/content';
 import { breadcrumbNode, guideArticleNode, guideFaqNode } from '../../lib/schema';
@@ -41,6 +42,7 @@ const extraSchema = [breadcrumbNode(crumbs), ...(data.draft ? [] : [article, ...
         <a class="btn btn-line mt-5" href={data.ctaHref}>{data.ctaLabel}</a>
       </aside>
       <article class="prose guide-prose">
+        {data.diagram && <TechnicalDiagram kind={data.diagram} caption={data.diagramCaption} class="guide-opening-diagram" />}
         <Content />
         {faq.length > 0 && <section class="guide-faq" aria-labelledby="questions"><h2 id="questions">Questions people ask</h2>{faq.map((item) => <div class="guide-faq-item" id={item.id}><h3>{item.q}</h3><p>{item.a}</p></div>)}</section>}
         {data.sources.length > 0 && <aside class="guide-sources"><h2>Further reading</h2><ul>{data.sources.map((source) => <li><a href={source.url}>{source.label}</a></li>)}</ul></aside>}
