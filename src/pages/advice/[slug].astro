@@ -4,9 +4,11 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import PageMeta from '../../components/PageMeta.astro';
 import GuideCard from '../../components/GuideCard.astro';
 import TechnicalDiagram from '../../components/TechnicalDiagram.astro';
+import EvidenceFigure from '../../components/EvidenceFigure.astro';
+import Action from '../../components/Action.astro';
 import { guides, guideHref } from '../../lib/guides';
-import { materials } from '../../lib/content';
-import { breadcrumbNode, guideArticleNode, guideFaqNode } from '../../lib/schema';
+import { materials, media } from '../../lib/content';
+import { breadcrumbNode, guideArticleNode, guideFaqNode, imageObject } from '../../lib/schema';
 import { buyerFaqFor } from '../../lib/ai-layer-data';
 import { SITE_URL } from '../../config';
 export function getStaticPaths() {
@@ -24,10 +26,12 @@ const relatedMaterials = materials.items.filter((item) => data.relatedMaterials.
 const faq: { q: string; a: string; id?: string }[] = [...(data.faq ?? []), ...buyerFaqFor(path).map((item) => ({ q: item.question, a: item.answer, id: item.id }))];
 const metaDescription = data.metaDescription ?? data.description;
 const article = guideArticleNode({ url, headline: data.title, description: metaDescription, published: data.published, updated: data.updated });
+const evidenceImage = data.evidence ? media(data.evidence.id) : undefined;
+if (evidenceImage) article.image = [imageObject(new URL(evidenceImage.src, SITE_URL).href)];
 // FAQPage only when the questions are rendered on the page below; drafts carry no Article so the review build cannot be mistaken for publication.
 const extraSchema = [breadcrumbNode(crumbs), ...(data.draft ? [] : [article, ...(faq.length ? [guideFaqNode(faq)] : [])])];
 ---
-<Base title={`${data.shortTitle} | Mr Wallcover`} description={metaDescription} path={path} author={data.author} ogType="article" extraSchema={extraSchema} updated={data.updated} meta={false}>
+<Base title={`${data.shortTitle} | Mr Wallcover`} description={metaDescription} path={path} author={data.author} ogType="article" extraSchema={extraSchema} updated={data.updated} meta={false} image={evidenceImage?.src} imageAlt={evidenceImage?.alt}>
   <div class="container-page pb-20">
     <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
@@ -39,17 +43,19 @@ const extraSchema = [breadcrumbNode(crumbs), ...(data.draft ? [] : [article, ...
     <div class="guide-layout">
       <aside class="guide-contents">
         <nav aria-label="On this page"><p class="eyebrow">In this guide</p><ol>{headings.map((heading) => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}{faq.length > 0 && <li><a href="#questions">Questions people ask</a></li>}</ol></nav>
-        <a class="btn btn-line mt-5" href={data.ctaHref}>{data.ctaLabel}</a>
+        <Action variant="secondary" class="mt-5" href={data.ctaHref}>{data.ctaLabel}</Action>
+        {data.download && <Action variant="quiet" class="mt-3" href={data.download.href} download icon="download">{data.download.label}</Action>}
       </aside>
       <article class="prose guide-prose">
         {data.diagram && <TechnicalDiagram kind={data.diagram} caption={data.diagramCaption} class="guide-opening-diagram" />}
+        {data.evidence && <EvidenceFigure {...data.evidence} sizes="(min-width: 1024px) 46rem, calc(100vw - 2.5rem)" class="guide-opening-evidence" />}
         <Content />
         {faq.length > 0 && <section class="guide-faq" aria-labelledby="questions"><h2 id="questions">Questions people ask</h2>{faq.map((item) => <div class="guide-faq-item" id={item.id}><h3>{item.q}</h3><p>{item.a}</p></div>)}</section>}
         {data.sources.length > 0 && <aside class="guide-sources"><h2>Further reading</h2><ul>{data.sources.map((source) => <li><a href={source.url}>{source.label}</a></li>)}</ul></aside>}
-        <div class="guide-next"><p class="eyebrow">Your next step</p><h2>Bring it back to your room.</h2><p>Send the material reference and what you already know. A photograph and a short note are enough to start.</p><a class="btn btn-solid-ink" href={data.ctaHref}>{data.ctaLabel}</a></div>
+        <div class="guide-next"><p class="eyebrow">Your next step</p><h2>Bring it back to your room.</h2><p>Send the material reference and what you already know. A photograph and a short note are enough to start.</p><Action href={data.ctaHref}>{data.ctaLabel}</Action></div>
       </article>
     </div>
-    {relatedMaterials.length > 0 && <section class="guide-related"><h2>Explore the materials</h2><div class="flex flex-wrap gap-3">{relatedMaterials.map((material) => <a class="btn btn-line" href={`/materials/${material.slug}/`}>{material.name}</a>)}</div></section>}
+    {relatedMaterials.length > 0 && <section class="guide-related"><h2>Explore the materials</h2><div class="flex flex-wrap gap-3">{relatedMaterials.map((material) => <Action variant="secondary" href={`/materials/${material.slug}/`}>{material.name}</Action>)}</div></section>}
     {related.length > 0 && <section class="guide-related"><h2>Keep reading</h2><div class="guide-grid">{related.map((item) => <GuideCard guide={item.frontmatter} />)}</div></section>}
   </div>
 </Base>

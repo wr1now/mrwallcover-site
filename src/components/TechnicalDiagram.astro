@@ -1,6 +1,6 @@
 ---
 /** Original, schematic drawings. These never stand in for a measured survey or a product specification. */
-export type DiagramKind = 'survey' | 'programme' | 'supply' | 'setout' | 'inspection' | 'pattern-match' | 'preparation' | 'panel-sequence' | 'reveal' | 'roll-cutting';
+export type DiagramKind = 'survey' | 'programme' | 'supply' | 'setout' | 'inspection' | 'pattern-match' | 'preparation' | 'panel-sequence' | 'reveal' | 'roll-cutting' | 'tested-build-up' | 'natural-panels';
 interface Props { kind: DiagramKind; caption?: string; class?: string; }
 const { kind, caption, class: className } = Astro.props;
 const labels: Record<DiagramKind, string> = {
@@ -14,6 +14,8 @@ const labels: Record<DiagramKind, string> = {
   'panel-sequence': 'Four numbered panels forming one continuous unbranded schematic scene.',
   reveal: 'A window opening drawn with a separate reveal return and a junction to plan.',
   'roll-cutting': 'An illustrative roll divided into three full-height cut lengths and a shorter offcut. The diagram is not a calculation.',
+  'tested-build-up': 'Wallcovering, adhesive and substrate are considered together in the tested system. No fire classification is illustrated or claimed.',
+  'natural-panels': 'Four natural-weave panels vary in shade while their vertical joints remain closed. Colour variation is distinguished from an open seam.',
 };
 ---
 <figure class:list={['technical-diagram', className]} data-technical-diagram={kind}>
@@ -117,6 +119,28 @@ const labels: Record<DiagramKind, string> = {
       <text x="453" y="151" text-anchor="middle">Offcut</text>
       <text x="280" y="259" text-anchor="middle">Count complete cut lengths</text>
     </>}
+    {kind === 'tested-build-up' && <>
+      <text x="110" y="35" text-anchor="middle">Wallcovering</text>
+      <text x="280" y="35" text-anchor="middle">Adhesive</text>
+      <text x="450" y="35" text-anchor="middle">Substrate</text>
+      {[60, 230, 400].map((x) => <rect class="surface" x={x} y="66" width="100" height="142" />)}
+      {[0, 1, 2, 3].map((row) => <>
+        <path class="motif" d={`M70 ${88 + row * 32}q20-20 40 0t40 0`} />
+        <path class="datum" d={`M240 ${88 + row * 32}h80`} />
+        <path d={`M400 ${101 + row * 32}h100`} />
+      </>)}
+      <path d="M450 66v35m-24 0v32m48 0v32m-48 0v32M185 135h20m-10-10v20m160-10h20m-10-10v20M60 228v12h440v-12" />
+      <text x="280" y="282" text-anchor="middle">Review the tested system together</text>
+    </>}
+    {kind === 'natural-panels' && <>
+      <text x="280" y="32" text-anchor="middle">Natural variation between panels</text>
+      {[0, 1, 2, 3].map((col) => <>
+        <rect x={70 + col * 105} y="62" width="105" height="158" fill={['#e6ddc9', '#d9ceb8', '#e0d5c0', '#d4c8b1'][col]} />
+        {[0, 1, 2, 3, 4, 5, 6].map((row) => <path class="weave-line" d={`M${74 + col * 105} ${78 + row * 21}h97`} />)}
+      </>)}
+      <path d="M175 220v24m105-24v24m105-24v24" />
+      <text x="280" y="280" text-anchor="middle">Visible panels / closed joints</text>
+    </>}
   </svg>
   <figcaption><span class="diagram-label">Schematic · not to scale</span>{caption && <span>{caption}</span>}</figcaption>
 </figure>
@@ -130,6 +154,7 @@ const labels: Record<DiagramKind, string> = {
   .light { stroke: var(--color-line); }
   .datum { stroke: var(--color-brass); stroke-dasharray: 6 6; }
   .motif { stroke: var(--color-brass); stroke-width: 2; }
+  .weave-line { stroke: var(--color-brass); stroke-width: .8; opacity: .45; }
   .accent-fill { fill: var(--color-brass); stroke: none; }
   figcaption { display: grid; gap: .3rem; margin-top: .8rem; color: var(--color-stone); font-size: .875rem; line-height: 1.5; }
   .diagram-label { color: var(--color-brass); font-size: var(--text-label); letter-spacing: .08em; text-transform: uppercase; }

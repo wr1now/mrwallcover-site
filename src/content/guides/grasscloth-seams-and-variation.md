@@ -11,11 +11,13 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-09"
+updated: "2026-10-17"
 description: "Grasscloth seams show and panels vary in shade. What is normal, what is a fault, how the set-out and the batch change the result, and what to settle before you order."
 metaDescription: "Grasscloth seams show and panels vary in shade. What is normal, what is a fault, how set-out and batch change the result, and what to settle first."
 shortTitle: "Grasscloth seams and variation"
 order: 2
+diagram: "natural-panels"
+diagramCaption: "Illustrative shading only. Natural panels can differ in tone while their joints remain closed. An open or lifted seam, staining or crushed fibre is a different issue; use the exact maker’s instruction and an installed sample."
 relatedMaterials: ["grasscloth-and-weaves", "paper-and-non-woven"]
 relatedGuides: ["choosing-wallcoverings", "wall-preparation", "wallcovering-problems-and-aftercare"]
 ctaLabel: "Discuss a natural wallcovering"

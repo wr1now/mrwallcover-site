@@ -1,6 +1,8 @@
 ---
+import Action from '../../components/Action.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CaseStudyGlance from '../../components/CaseStudyGlance.astro';
+import Icon, { type IconName } from '../../components/Icon.astro';
 import Picture from '../../components/Picture.astro';
 import { pictureSources } from '../../lib/picture';
 import Base from '../../layouts/Base.astro';
@@ -10,6 +12,7 @@ import { breadcrumbNode, caseStudyArticleNode, projectNode, videoNode } from '..
 import type { Project } from '../../lib/types';
 import method from '../../content/method.json';
 import retired from '../../content/retired-projects.json';
+const methodIcons: IconName[] = ['ruler', 'layers', 'room', 'tag', 'drawing', 'check'];
 
 export function getStaticPaths() {
   return [
@@ -157,7 +160,7 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
           <ol class="method-list mt-8 grid md:grid-cols-2" style="list-style:none;padding:0;margin-left:0;column-gap:2.5rem;row-gap:1.5rem">
             {method.items.map((item, index) => (
               <li style="padding-top:0.25rem">
-                <p class="eyebrow m-0">{String(index + 1).padStart(2, '0')}</p>
+                <p class="eyebrow method-marker m-0"><Icon name={methodIcons[index]} />{String(index + 1).padStart(2, '0')}</p>
                 <h3 style="margin:0.25rem 0 0.5rem;font-size:1.25rem;line-height:1.4">{item.title}</h3>
                 <p class="m-0">{item.text}</p>
               </li>
@@ -216,7 +219,7 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
             <ul class="m-0 grid list-none gap-1 p-0">
               {(relatedAreas.length ? relatedAreas : areas.slice(0, 3)).map((a) => <li><a href={areaHref(a.slug)}>{a.heading}</a></li>)}
             </ul>
-            <p class="mt-6"><a class="btn btn-solid-ink" href="/contact/">Request a quotation</a></p>
+            <p class="mt-6"><Action variant="primary" href="/contact/">Request a quotation</Action></p>
           </div>
         </nav>
       </div>

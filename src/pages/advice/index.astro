@@ -1,4 +1,5 @@
 ---
+import Action from '../../components/Action.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import GuideCard from '../../components/GuideCard.astro';
 import Base from '../../layouts/Base.astro';
@@ -25,7 +26,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href:
       <p class="sr-only" data-guide-count role="status"></p>
       <div class="guide-grid">{hubCards.map((card) => <GuideCard guide={card} />)}</div>
     </section>}
-    <section class="guide-next"><p class="eyebrow">A question about your project?</p><h2>Start with what you know.</h2><p>Tell us about the room or send the material you are considering. We can discuss preparation, installation or the complete package.</p><div class="flex flex-wrap gap-3"><a class="btn btn-solid-ink" href="/contact/?intent=advice">Discuss your project</a><a class="btn btn-line" href="/aftercare/">Care and repairs</a></div></section>
+    <section class="guide-next"><p class="eyebrow">A question about your project?</p><h2>Start with what you know.</h2><p>Tell us about the room or send the material you are considering. We can discuss preparation, installation or the complete package.</p><div class="flex flex-wrap gap-3"><Action variant="primary" href="/contact/?intent=advice">Discuss your project</Action><Action variant="secondary" href="/aftercare/">Care and repairs</Action></div></section>
   </div>
 </Base>
 <script>

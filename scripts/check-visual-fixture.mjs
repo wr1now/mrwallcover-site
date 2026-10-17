@@ -26,10 +26,19 @@ try {
   assert.match(unavailable,/tabindex="-1"/);
   assert.match(html,/<button\b[^>]*aria-disabled="true"[^>]*disabled/,'unavailable button is natively disabled');
   assert.match(html,/noindex/);
+  assert.equal((html.match(/type="submit"/g)||[]).length,1,'native submit type rendered once');
+  assert.equal((html.match(/type="reset"/g)||[]).length,1,'native reset type rendered once');
+  assert.doesNotMatch(html,/<button\b[^>]*\btype="[^"]*"[^>]*\btype=/,'no duplicate native button types');
   const server=await serve(out);
   const browser=await launchBrowser();
   try {
     const page=await browser.newPage();
+    await page.goto(server.origin+'/visual-contract-fixture/',{waitUntil:'networkidle0'});
+    await page.type('[data-action-form] input',' changed');
+    await page.click('[data-action-form] button[type="reset"]');
+    assert.equal(await page.$eval('[data-action-form] input',input=>input.value),'Original','reset action performs a native form reset');
+    await page.click('[data-action-form] button[type="submit"]');
+    assert.equal(await page.$eval('[data-action-submissions]',output=>output.textContent),'1','submit action fires the native submit event');
     for (const width of [360,390,768,1024,1280,1440]) {
       await page.setViewport({width,height:900});
       await page.goto(server.origin+'/contact/',{waitUntil:'networkidle0'});

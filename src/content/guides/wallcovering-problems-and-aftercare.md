@@ -11,11 +11,13 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-10"
+updated: "2026-10-17"
 description: "What to do when a wallcovering bubbles, lifts or marks: what to photograph and record, what not to touch, how to clean each material, and when an inspection is needed."
 metaDescription: "What to do when a wallcovering bubbles, lifts or marks: what to record, what not to touch, how to clean each material and when to call for an inspection."
 shortTitle: "Problems and aftercare"
 order: 10
+diagram: "inspection"
+diagramCaption: "Record the whole wall and a close detail of the affected seam, edge or corner. This is an inspection diagram, not a diagnosis; leave the area untouched until its cause has been assessed."
 relatedMaterials: ["grasscloth-and-weaves", "silk-and-textiles", "contract-vinyl", "hand-painted"]
 relatedGuides: ["wall-preparation", "grasscloth-seams-and-variation", "choosing-wallcoverings"]
 ctaLabel: "Request aftercare"

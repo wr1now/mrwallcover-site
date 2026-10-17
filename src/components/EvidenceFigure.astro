@@ -1,0 +1,33 @@
+---
+import Picture from './Picture.astro';
+/** Registered evidence only. Keep credit beside the photograph, including when it is reused. */
+export interface EvidenceMedia {
+  id: string;
+  caption: string;
+  credit: string;
+  href?: string;
+  linkLabel?: string;
+}
+interface Props extends EvidenceMedia {
+  sizes?: string;
+  class?: string;
+  ratio?: 'natural' | 'landscape' | 'square';
+}
+const { id, caption, credit, href, linkLabel = 'See the project record', sizes, class: className, ratio = 'natural' } = Astro.props;
+---
+<figure class:list={['evidence-figure', `evidence-figure--${ratio}`, className]} data-evidence-image={id}>
+  <Picture id={id} sizes={sizes} />
+  <figcaption><span>{caption}</span><span class="evidence-credit">{credit}</span>{href && <a href={href}>{linkLabel}</a>}</figcaption>
+</figure>
+
+<style>
+  .evidence-figure { margin: 0; min-width: 0; }
+  .evidence-figure.guide-opening-evidence { margin: 0 0 2.5rem; }
+  .evidence-figure :global(.media-frame) { display: block; overflow: hidden; border-radius: var(--radius-control); }
+  .evidence-figure :global(.media-img) { display: block; width: 100%; height: auto; }
+  .evidence-figure--landscape :global(.media-img) { aspect-ratio: 4 / 3; object-fit: cover; }
+  .evidence-figure--square :global(.media-img) { aspect-ratio: 1; object-fit: cover; }
+  figcaption { display: grid; gap: .4rem; margin-top: .9rem; color: var(--color-stone); font-size: var(--text-meta); line-height: 1.55; }
+  .evidence-credit { font-size: var(--text-meta); }
+  figcaption a { width: fit-content; color: var(--color-brass); text-decoration: underline; text-underline-offset: .2em; }
+</style>

@@ -1,6 +1,6 @@
 # Page and template review
 
-Review date: 17 October 2026. This record covers the shared visual-standard implementation. **Source inventory, implementation and the verification below are complete.** This branch starts at public main 26975eb; open calculator/reference/Contact PRs were not merged into it.
+Review date: 17 October 2026. This record covers PR #66, including the second pass across all remaining page families. The branch starts at public main 26975eb; open calculator/reference/Contact PRs were not merged into it. The user authorised completion and publication on 17 October. The route-by-route design decisions are recorded in [route-review.json](route-review.json), including the three noindex utility pages. Final validation results follow below.
 
 ## Template inheritance
 
@@ -10,25 +10,25 @@ All normal HTML routes below use `src/layouts/Base.astro`, directly or through t
 | --- | --- | --- |
 | `src/pages/index.astro` | `/` | Keep the real hero and finished-room photography; refine stage and enquiry navigation with meaningful icons. Browser reviewed at 390px and 1440px. |
 | `src/pages/services.astro` | `/services/` | Break the five stages into readable illustrated sections using site photography and schematic graphics. Browser reviewed at 390px and 1440px. |
-| `src/pages/services/[slug].astro` + `LandingBody.astro` | 12 specialisms from `specialisms.json`, with `service-depth.json` | Inherit shared actions and shell. Keep page-specific evidence and captions; do not add an image where none is cleared and relevant. |
-| `src/pages/areas/[slug].astro` + `LandingBody.astro` | Six areas from `areas.json`; index at `/areas/` | Inherit the same landing layout; retain real local project links. No decorative location imagery is required. |
-| `src/pages/[...page].astro` | Editorial Markdown pages listed below | Inherit shared actions and shell; support a relevant, credited image where the subject warrants it. Timorous Beasties is the representative image treatment. |
+| `src/pages/services/[slug].astro` + `LandingBody.astro` | 12 specialisms from `specialisms.json`, with `service-depth.json` | All 12 pages use shared quotation actions, accurately matched lead photographs and linked project evidence cards. Architectural film has an original edge-return schematic. Every original project destination remains available. |
+| `src/pages/areas/[slug].astro` + `LandingBody.astro` | Six areas from `areas.json`; index at `/areas/` | All six areas inherit project evidence cards and shared actions. The index uses scannable location cards. Corrected the Chelsea lead image/caption; retained every real local project link. |
+| `src/pages/[...page].astro` | Editorial Markdown pages listed below | Maker and heritage pages have relevant, credited project imagery and project evidence cards. Trade/fit-out pages use the shared briefing checklist and download actions. Reviews, image-use terms and specified-paper records stay text-led for accurate close reading. |
 | `src/pages/advice/index.astro` + `GuideCard.astro` | `/advice/`, published Guide cards and quantities card | Add consistent purposeful visual anchors; retain filters and publication boundaries. Browser reviewed at 390px and 1440px. |
-| `src/pages/advice/[slug].astro` | 12 Markdown guides from `src/content/guides/` | Shared reading layout and actions; technical diagrams added where they explain existing guidance. Do not illustrate every article by default. |
+| `src/pages/advice/[slug].astro` | 12 Markdown guides from `src/content/guides/` | Each of the 12 published guides has an individually selected photograph or explanatory diagram. Added natural-panel variation and tested-build-up schematics; retain exact-product and fire-documentation caveats. Real file downloads use the shared download glyph. |
 | `src/pages/advice/quantities.astro` | `/advice/quantities/` | Preserve the existing restricted calculator and its quantity logic. Static roll-cutting and reveal drawings explain the article; any future live diagram must derive from its real result. New calculator features remain a separate publication decision. |
-| `src/pages/materials/index.astro` + `MaterialFinder.astro` / `MaterialStudio.astro` | `/materials/` | Retain meaningful comparisons and existing media. Check control states and query-intent journeys. |
-| `src/pages/materials/[slug].astro` | Seven material families from `materials.json` | Preserve real maker-installed photographs and shortlist. Keep introductory guidance text-led where no cleared material close-up is available. A generic room cannot prove material properties. |
-| `src/pages/projects/index.astro` | `/projects/`, including `#hotels` | Retain real project photography and filtering; inherit shared action system. |
-| `src/pages/projects/[slug].astro` | Published case studies, legacy projects and redirects | Keep image policies, gallery credits and measured claims. Alias/retired routes remain redirects rather than new portfolio evidence. |
-| `src/pages/professionals.astro` + `professionals/[slug].astro` | `/professionals/`, `/professionals/designers/`, `/professionals/developers/`, `/professionals/hotels/` | Keep readable briefing/checklist layout, downloads, FAQ and audience handoffs. Text-led intake sections support scanning; a photograph is optional evidence. |
+| `src/pages/materials/index.astro` + `MaterialFinder.astro` / `MaterialStudio.astro` | `/materials/` | Retain comparisons, finder and illustrative studio. All prominent controls use Action with native button types/data attributes; shortlist and preset selected states are visually distinct. |
+| `src/pages/materials/[slug].astro` | Seven material families from `materials.json` | All seven families now pair their decision guidance with relevant registered installation/material close-ups and honest captions. Preserve the maker-installed record, exact-product caveats and real shortlist behaviour. |
+| `src/pages/projects/index.astro` | `/projects/`, including `#hotels` | Retain real project photography, filtering and hotel record. Standardise enquiry arrows and shared action states. |
+| `src/pages/projects/[slug].astro` | Published case studies, legacy projects and redirects | Keep all image policies, gallery credits and measured claims. Add consistent labelled glance/method icons and shared quotation actions to the case-study template. Alias/retired routes remain redirects. |
+| `src/pages/professionals.astro` + `professionals/[slug].astro` | `/professionals/`, `/professionals/designers/`, `/professionals/developers/`, `/professionals/hotels/` | Audience cards and each profile now use recorded project evidence, meaningful section/checklist icons, shared briefing/download actions and preserved FAQ/audience handoffs. The fit-out and trade routes share the same briefing component. |
 | `src/pages/contact.astro` + `EnquiryForm.astro` | `/contact/` | Improve the optional quote checklist with meaningful icons. Preserve submissions, attachments, intent and phone/email preferences. Browser reviewed at 390px and 1440px. |
-| `src/pages/aftercare.astro` | `/aftercare/` | Shared actions and shell; keep care instructions readable. A specific inspection diagram is useful only if it clarifies an instruction. |
-| `src/pages/about.astro` | `/about/` | Retain the real founder portrait and factual practice story. |
+| `src/pages/aftercare.astro` | `/aftercare/` | Correct the door photograph to an actual finished wallcovering junction; pair it with an inspection schematic and care-family icons. Keep terms and repair form intact; use shared next-step actions. |
+| `src/pages/about.astro` | `/about/` | Retain real founder/project photography; add values icons, a programme schematic and a readable timeline. Use a shared closing enquiry action. |
 | `src/pages/details.astro` | `/details/` | Keep the existing real seam, corner, edge and join photographs with their captions and project links. This is already a useful evidence-led visual page. |
 | `src/pages/faq.astro` | `/faq/` | Deliberately text-led: question-and-answer disclosure provides the hierarchy. No generic illustration is needed. |
 | `src/pages/privacy.astro`, `accessibility.astro` | `/privacy/`, `/accessibility/` | Deliberately text-only reading content; clear headings, links and usable controls serve the purpose. Shared footer still applies. |
 | `src/pages/for-ai.astro`, `wallcovering-installation-ai-crawler.astro` | `/for-ai/`, `/wallcovering-installation-ai-crawler/` | Keep plain facts and brief-building tools accurate. Use existing shared controls; decorative evidence is unnecessary. |
-| `src/pages/search.astro` | `/search/` | Keep search results and state clear. Noindex utility page; a new illustration would distract from finding content. |
+| `src/pages/search.astro` | `/search/` | Add a search glyph and generous result-row hit areas with directional icons. Keep the live client-side filter. No decorative image competes with finding content. |
 | `src/pages/404.astro`, `thank-you.astro` | `/404.html`, `/thank-you/` | Deliberately text-led: concise status, next-step content and shared actions serve these noindex utility pages. |
 | `src/pages/*.ts`, `src/pages/ai/*.ts`, `.well-known/facts.json.ts` | Facts, public AI data, feed, `llms.txt`, project JSON and logo endpoint | Machine-readable/asset outputs; no visual redesign. Preserve projection consistency and publication filtering. |
 
@@ -64,7 +64,7 @@ The source inventory includes `/services/calico-wallpaper-installer/`, `/service
 | Keyboard, focus, disclosures, contrast and reduced effects | Keyboard Enter opens native disclosure; effects preference survives reload; form/menu dock hides. Token contrast checks pass; hero contrast and type-floor browser tests pass on 12 pages at five widths. |
 | No-JavaScript footer navigation and article content | Chrome with JavaScript disabled sees expanded server-rendered footer groups and links. Article/diagram content is static HTML/SVG. |
 | Form/shortlist/calculator and query-intent regression checks | Existing source/unit/build checks pass; enquiry field focus checked in Chrome. No enquiry was submitted. Quantity algorithm and enquiry submission code were unchanged. |
-| Build, repository checks and no-loss comparison | `check`: 79; `check:dist`: 194 plus temporary new-route fixture; `check:type`: 2; `check:phone`: 2; `check:guides`: 5. Production/review builds and case-study date check pass. No-loss passes: 98 pages, 3,609 media files, 98 Markdown twins and JSON-LD node/property counts did not decrease (7,706 baseline nodes). `check:analytics` and private-list guard are absent on this main-based branch; no claim is made that they ran. |
+| Build, repository checks and no-loss comparison | `check`: 79; `check:dist`: 195 plus temporary new-route fixture; `check:type`: 2; `check:phone`: 2; `check:guides`: 5. Production/review builds and case-study date check pass. No-loss passes: 98 pages, 3,609 media files, 98 Markdown twins and JSON-LD node/property counts did not decrease (7,706 baseline nodes). `check:analytics` and private-list guard are absent on this main-based branch; no claim is made that they ran. |
 | Representative new route inherits Base/footer/action styling without local CSS | `scripts/check-visual-fixture.mjs` builds a new route in temporary output, verifies shared footer/actions and native/disabled semantics, then removes its source and output. The fixture is not published. |
 | Before/after performance on the same representative pages | Local transfer/resource/DOMContentLoaded observations collected for the same five pages at 390/1440, before and after. Images add transfer cost to Services/Guide; they remain lazy, sized and use existing responsive derivatives. See observations below. |
 
@@ -97,4 +97,43 @@ These are fully visited local-page transfer totals, including decoded below-fold
 | `/services/timorous-beasties-installer/` | 390 | 185 KiB | 217 KiB |
 | `/services/timorous-beasties-installer/` | 1440 | 185 KiB | 217 KiB |
 
-The current branch preserves the conditional phone reveal from main. PR #63 removes it from the footer and changes Contact navigation; reconcile those placements when integrating that sibling PR. Future calculator, fire-reference and sourcing pages must inherit the standard when they are published.
+The current branch preserves the conditional phone reveal from main. PR #63 removes it from the footer and changes Contact navigation; reconcile those placements when integrating that sibling PR. Future calculator, fire-reference and sourcing pages must inherit the standard when they are published. Shared landing pages support a specific `visualDiagram` and editorial pages support `featureMedia` or `featureDiagram` metadata; new content inherits the shared presentation instead of copying local layouts.
+
+
+## Completion pass across the remaining pages
+
+All 98 published pages and the three noindex utility pages have a route-level visual decision in [route-review.json](route-review.json). The production browser audit opens each of those 101 pages at 390px and 1440px, checks image loading, horizontal overflow, headings, action height, icon semantics and browser exceptions. Shared boundary-width tests still cover 360, 768, 1024 and 1280px. The CI route ledger check fails when a new normal HTML page has no recorded design decision.
+
+The second pass adds real material evidence beside the seven family decisions, project cards on all service/area/maker templates, individual visuals for all 12 Guide articles, professional audience/briefing layouts, aftercare inspection guidance and practice/story icons. Existing photograph-rich project galleries are retained. Privacy, accessibility, image-use terms, plain facts and FAQ pages stay text-led where a picture would interrupt their purpose. Search and utility pages use clear controls without decorative photography.
+
+Production audit artifacts are locally reproducible with `MW_VISUAL_AUDIT_OUTPUT=.review-screens/all-routes npm run check:dist`. The screenshot option captures a representative evidence region per route; full before/after captures for the additional page families are in `.review-screens/pass1-*` and `complete-*`. `pass1` is PR #66 before the remaining-family pass. The earlier `before-*` captures compare with deployed main. The local before/after viewer is `.review-screens/review.html`.
+
+The interaction review exercised shortlist persistence and enquiry handoff, finder recommendations/reset/session restore, professional audience/intent, calculator submit/match/room/add-wall/refusal states and search results/empty state. No enquiry was submitted and no call or chat was opened. A caught Action wrapper defect is fixed: explicit native submit/reset types render once, and the temporary future-page fixture now exercises actual native submit/reset events. Care icon choices remain presentation metadata so they do not leak into the public factual data projections. Meaningful stage-link labels preserve homepage links in its Markdown twin.
+
+The all-route/browser checks, production/review builds, source checks, typography/hero contrast, phone variants, guide boundaries and no-loss comparison must pass at the final PR head before publication. Separate draft feature PRs #61–65 are outside this release.
+
+
+### Remaining-family evidence
+
+| Material page, before | Material page, after |
+| --- | --- |
+| ![Silk page before](screens/material-before-1440.jpg) | ![Silk material evidence and controls](screens/material-after-1440.jpg) |
+
+[Professional page before, mobile](screens/professional-before-390.jpg) · [Professional page after, mobile](screens/professional-after-390.jpg)
+
+### Completion-pass local transfer observations
+
+The same eight routes were fully visited before/after at 390px and 1440px. These totals include all lazy images decoded for evidence capture; they are local transfer measurements, not field performance or Core Web Vitals. Added photography remains responsive, dimensioned and lazy. No new client graphics library was introduced.
+
+| Route | Width | Before | After |
+| --- | ---: | ---: | ---: |
+| `/professionals/designers/` | 390 | 162 KiB | 174 KiB |
+| `/professionals/designers/` | 1440 | 161 KiB | 174 KiB |
+| `/advice/designer-specification-checklist/` | 390 | 166 KiB | 168 KiB |
+| `/advice/designer-specification-checklist/` | 1440 | 174 KiB | 181 KiB |
+| `/about/` | 390 | 493 KiB | 495 KiB |
+| `/about/` | 1440 | 513 KiB | 515 KiB |
+| `/faq/` | 390 | 161 KiB | 163 KiB |
+| `/faq/` | 1440 | 161 KiB | 163 KiB |
+| `/projects/browns-hotel-mayfair/` | 390 | 975 KiB | 977 KiB |
+| `/projects/browns-hotel-mayfair/` | 1440 | 1098 KiB | 1100 KiB |

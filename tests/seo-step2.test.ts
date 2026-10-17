@@ -57,6 +57,6 @@ test('area pages show photographs of their own, each captioned with where it was
   for (const area of areas) {
     assert.ok(area.imageCaption, `${area.slug} has a caption`);
     const html = await readFile(`dist/areas/${area.slug}/index.html`, 'utf8');
-    assert.match(html, /<figcaption class="caption mt-3">/, `${area.slug} prints the caption`);
+    assert.match(html, /<figcaption class="caption mt-3"[^>]*>/, `${area.slug} prints the caption`);
   }
 });

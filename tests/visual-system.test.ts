@@ -31,6 +31,7 @@ test('new page instructions require the shared standard, not an image quota', as
   assert.match(await readFile('.github/pull_request_template.md','utf8'),/visual/i);
   const action=await readFile('src/components/Action.astro','utf8');
   assert.match(action,/<a\b/);
-  assert.match(action,/<button type="button"/);
+  assert.match(action,/<button\b/);
+  assert.match(action,/type=\{buttonType\}/,'explicit native submit/reset types survive rendering');
   assert.doesNotMatch(action,/role="button"/,'navigation anchors retain native semantics');
 });

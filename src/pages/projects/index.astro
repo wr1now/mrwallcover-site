@@ -1,4 +1,5 @@
 ---
+import Icon from '../../components/Icon.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Picture from '../../components/Picture.astro';
 import Base from '../../layouts/Base.astro';
@@ -103,7 +104,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
                 <h3><a href={projectHref(project.slug)}>{project.title}</a></h3>
                 <p class="work-role">{project.role}</p>
                 <p class="work-summary">{project.summary}</p>
-                <a class="work-enquire" href={`/contact/?audience=${audience}#enquiry`}>Discuss a similar project<span class="sr-only">: {project.title}</span><span aria-hidden="true">↗</span></a>
+                <a class="work-enquire" href={`/contact/?audience=${audience}#enquiry`}>Discuss a similar project<span class="sr-only">: {project.title}</span><Icon name="arrow-right" /></a>
               </article>
             ))}
           </div>

@@ -11,7 +11,13 @@
     "name": "For professionals",
     "href": "/professionals/"
   },
-  "updated": "2026-10-10",
+  "updated": "2026-10-17",
+  "featureMedia": {
+    "id": "heathrow-05",
+    "caption": "The Calico Wallpaper mural continuing around an internal corner at Heathrow Terminal 4, installed overnight in a live terminal.",
+    "credit": "Photograph: Dorin Burcus / Mr Wallcover.",
+    "project": "heathrow-terminal-4-calico"
+  },
   "service": {
     "name": "Wallcovering packages for fit-out contractors",
     "serviceType": "Wallcovering installation"
@@ -29,6 +35,7 @@
       "Site induction, RAMS format and contract form",
       "Tender deadline, sample approval and handover requirements"
     ],
+    "icons": ["drawing", "roll", "calendar", "access", "check"],
     "download": "wallcovering-package-schedule.csv",
     "downloadLabel": "Download a package schedule",
     "guide": "developer-wallcovering-package"

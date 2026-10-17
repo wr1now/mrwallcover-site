@@ -3,7 +3,12 @@ import Breadcrumb from './Breadcrumb.astro';
 import FaqList from './FaqList.astro';
 import Picture from './Picture.astro';
 import HotelGroups from './HotelGroups.astro';
-import { areaHref, areas, landingProjectSlugs, linkedProjects, projectHref, specialismHref, specialisms } from '../lib/content';
+import Action from './Action.astro';
+import Icon from './Icon.astro';
+import ProjectEvidence from './ProjectEvidence.astro';
+import FilmWrapDiagram from './FilmWrapDiagram.astro';
+import { areaHref, areas, landingProjectSlugs, linkedProjects, media, specialismHref, specialisms } from '../lib/content';
+import { imageRights } from '../lib/schema';
 import type { LandingPage } from '../lib/content';
 
 interface Props {
@@ -17,6 +22,7 @@ const { page, crumbs, eyebrow, kind } = Astro.props;
 const linked = linkedProjects(landingProjectSlugs(page), `${kind} page "${page.slug}"`);
 const otherAreas = areas.filter((a) => a.slug !== page.slug);
 const otherSpecialisms = specialisms.filter((s) => s.slug !== page.slug);
+const photographCredit = page.imageId ? imageRights(media(page.imageId).jpg).creditText : null;
 
 /** Split a paragraph into text and [label](href) link segments. Content is our own JSON. */
 function segments(text: string) {
@@ -40,11 +46,15 @@ function segments(text: string) {
     <h1>{page.heading}</h1>
     <p class="lede mt-5">{page.lede}</p>
     <div class="mt-6 flex flex-wrap gap-3">
-      <a class="btn btn-solid-ink" href="/contact/">Request a quotation</a>
-      <a class="btn btn-line" href="/projects/">See the work</a>
+      <Action href="/contact/">Request a quotation</Action>
+      <Action variant="secondary" href="/projects/">See the work</Action>
     </div>
   </header>
-  <div class="grid gap-10 pb-12 md:grid-cols-12">
+  {page.sections && page.sections.length >= 3 && <nav class="landing-contents" aria-label="On this page">
+    <p class="eyebrow">On this page</p>
+    <ul>{page.sections.map((section, index) => <li><a href={`#landing-section-${index + 1}`}><Icon name="arrow-right" /><span>{section.heading}</span></a></li>)}</ul>
+  </nav>}
+  <div class="landing-introduction grid gap-10 pb-12 md:grid-cols-12">
     <div class="prose md:col-span-7">
       {page.paragraphs.map((paragraph) => (
         <p>{segments(paragraph).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</p>
@@ -65,21 +75,20 @@ function segments(text: string) {
     </div>
     {
       page.imageId && (
-        <figure class="m-0 md:col-span-4 md:col-start-9">
+        <figure class="landing-photograph m-0 md:col-span-4 md:col-start-9">
           <Picture id={page.imageId} sizes="(min-width: 768px) 22rem, calc(100vw - 2.5rem)" />
-          {page.imageCaption && (
-            <figcaption class="caption mt-3">{segments(page.imageCaption).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</figcaption>
-          )}
+          <figcaption class="caption mt-3"><span>{segments(page.imageCaption ?? media(page.imageId).alt).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</span><span>Photograph: {photographCredit}.</span></figcaption>
         </figure>
       )
     }
+    {page.visualDiagram === 'film-wrap' && <div class="md:col-span-4 md:col-start-9"><FilmWrapDiagram /></div>}
   </div>
 
   {
     page.sections && page.sections.length > 0 && (
       <div class="landing-sections prose border-t border-line pt-12 pb-4">
-        {page.sections.map((section) => (
-          <section class="mb-10">
+        {page.sections.map((section, index) => (
+          <section class="mb-10" id={`landing-section-${index + 1}`}>
             <h2 class="mb-4 text-[clamp(2rem,3vw,2.7rem)]">{section.heading}</h2>
             {section.paragraphs.map((paragraph) => (
               <p>{segments(paragraph).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</p>
@@ -94,19 +103,24 @@ function segments(text: string) {
     linked.length > 0 && (
       <section class="border-t border-line py-12" aria-labelledby="record-heading">
         <h2 id="record-heading" class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On the public record</h2>
-        <ul class="link-row mt-6 grid list-none gap-3 p-0 md:grid-cols-2">
-          {linked.map((project) => (
-            <li>
-              <a href={projectHref(project.slug)}>{project.title}</a>
-              <span class="text-stone">. {project.role}{project.dates ? `, ${project.dates}` : ''}.</span>
-            </li>
-          ))}
-        </ul>
+        <ProjectEvidence projects={linked} />
       </section>
     )
   }
   {page.autoProjects === 'hotels' && <HotelGroups />}
 </div>
+
+<style>
+  .landing-photograph figcaption { display:grid; gap:.45rem; line-height:1.6; color:var(--color-stone); }
+  .landing-photograph figcaption a { text-decoration:underline; text-underline-offset:.2em; }
+  .landing-contents { padding:1.2rem 1.5rem; border:1px solid var(--color-line); border-radius:var(--radius-control); background:var(--color-paper); margin-bottom:2.5rem; }
+  .landing-contents > p { margin:0 0 .6rem; }
+  .landing-contents ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:2rem; list-style:none; margin:0; padding:0; }
+  .landing-contents a { display:flex; align-items:center; gap:.7rem; min-height:44px; font-size:var(--text-button); line-height:1.45; padding-block:.45rem; }
+  .landing-contents :global(.mw-icon) { width:1.15rem; height:1.15rem; color:var(--color-brass); flex-shrink:0; }
+  .landing-sections > section { scroll-margin-top:8rem; }
+  @media (max-width:639px) { .landing-contents ul { grid-template-columns:1fr; } }
+</style>
 
 <FaqList items={page.faq} eyebrow="Questions" heading={`Asked about ${page.name.replace(/^the /, '')}`} />
 

@@ -14,9 +14,10 @@
       ],
       "materialKey": "Hand-painted papers",
       "projects": [
-        "browns-hotel-mayfair"
+        "browns-hotel-mayfair",
+        "four-seasons-ten-trinity-square"
       ],
-      "imageId": "browns-hotel-mayfair-10",
+      "imageId": "fs-ig-09",
       "faq": [
         {
           "id": "hp-lining",
@@ -32,7 +33,8 @@
             "From a fixed point, in the supplied sequence, so the scene meets where it should around doors, windows and corners. The set-out is agreed before the first panel is hung."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Fromental hand-painted silk at [Four Seasons Hotel London at Ten Trinity Square](/projects/four-seasons-ten-trinity-square/): a close detail of the dark, wave-patterned wallcovering."
     },
     {
       "slug": "grasscloth-installation",
@@ -47,8 +49,10 @@
         "Quantities allow for the variation between rolls, so lengths from the same batch can be kept together on a wall."
       ],
       "materialKey": "Grasscloth and natural weaves",
-      "projects": [],
-      "imageId": null,
+      "projects": [
+        "four-seasons-ten-trinity-square"
+      ],
+      "imageId": "fs-residences-06",
       "faq": [
         {
           "id": "gc-seams",
@@ -64,7 +68,8 @@
             "Gently, and dry. The care notes for each material are on the aftercare page."
           ]
         }
-      ]
+      ],
+      "imageCaption": "A natural weave turning an external corner in the [Four Seasons Private Residences at Ten Trinity Square](/projects/four-seasons-ten-trinity-square/). The weave and the corner detail remain visible."
     },
     {
       "slug": "silk-wallcovering-installation",
@@ -79,8 +84,10 @@
         "Protection of floors, furniture and finished joinery is part of the hang, not an optional extra."
       ],
       "materialKey": "Silk",
-      "projects": [],
-      "imageId": "browns-hotel-mayfair-12",
+      "projects": [
+        "four-seasons-ten-trinity-square"
+      ],
+      "imageId": "fs-ig-11",
       "faq": [
         {
           "id": "silk-marks",
@@ -89,7 +96,8 @@
             "It is unforgiving. Adhesive on the face or a ridge at the seam shows in raking light. That is why the set-out, the adhesive and the preparation are planned before the first length."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Blue-grey hand-dyed Fromental silk at [Four Seasons Hotel London at Ten Trinity Square](/projects/four-seasons-ten-trinity-square/). A photograph records the installed surface; a physical sample decides colour and sheen."
     },
     {
       "slug": "fabric-walling",
@@ -104,8 +112,10 @@
         "As with every material, aftercare is included: a return visit once the room has settled, and a twelve-month guarantee on the workmanship."
       ],
       "materialKey": "Fabric walling",
-      "projects": [],
-      "imageId": "browns-hotel-mayfair-01",
+      "projects": [
+        "four-seasons-ten-trinity-square"
+      ],
+      "imageId": "fs-ig-36",
       "faq": [
         {
           "id": "fabric-wide",
@@ -114,7 +124,8 @@
             "Yes. Wider goods need more hands and careful handling, especially at corners and openings. We plan for that in the scope."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Fabric-wrapped wall panels beneath framed artworks at [Four Seasons Hotel London at Ten Trinity Square](/projects/four-seasons-ten-trinity-square/)."
     },
     {
       "slug": "hotel-wallcovering-installation",
@@ -181,7 +192,7 @@
         "hilton-holborn",
         "hilton-silverstone"
       ],
-      "imageId": "browns-hotel-mayfair-02",
+      "imageId": "browns-hotel-mayfair-09",
       "faq": [
         {
           "id": "hotel-live",
@@ -198,7 +209,8 @@
           ]
         }
       ],
-      "autoProjects": "hotels"
+      "autoProjects": "hotels",
+      "imageCaption": "A finished guest room at [Brown’s Hotel, Mayfair](/projects/browns-hotel-mayfair/), part of our 2022–2024 decorating package."
     },
     {
       "slug": "mural-installation",
@@ -222,7 +234,7 @@
         "scp-showroom-pimlico",
         "tea-house-jaillon-studio"
       ],
-      "imageId": "browns-hotel-mayfair-04",
+      "imageId": "trematon-01",
       "faq": [
         {
           "id": "mural-measure",
@@ -231,7 +243,8 @@
             "Yes. We measure on site, take out the openings and give the supplier the dimensions of the wall that will actually be hung."
           ]
         }
-      ]
+      ],
+      "imageCaption": "House of Hackney’s PLANTASIA forest mural, installed by Mr Wallcover at [the Castle of Trematon](/projects/trematon-castle/), Cornwall."
     },
     {
       "slug": "acoustic-wallcovering-installation",
@@ -247,7 +260,7 @@
       ],
       "materialKey": "Acoustic wallcoverings and panels",
       "projects": [],
-      "imageId": "browns-hotel-mayfair-06",
+      "imageId": "brand-elitis-01",
       "faq": [
         {
           "id": "acoustic-where",
@@ -256,7 +269,8 @@
             "Commonly in hotel corridors and function rooms, restaurants, offices, and in homes where a room needs to be quieter. We install to the maker's specification."
           ]
         }
-      ]
+      ],
+      "imageCaption": "Elitis acoustic wallcovering in a private Mayfair cinema room. The photograph shows the finish; acoustic performance depends on the specified system and its data."
     },
     {
       "slug": "architectural-film-wrapping",
@@ -307,7 +321,8 @@
           "label": "Solar Screen window films",
           "href": "https://solarscreen.eu/en/"
         }
-      ]
+      ],
+      "visualDiagram": "film-wrap"
     },
     {
       "slug": "window-film",
@@ -326,7 +341,7 @@
       "projects": [
         "old-bailey-hotel"
       ],
-      "imageId": null,
+      "imageId": "old-bailey-15",
       "faq": [
         {
           "id": "wf-types",
@@ -359,7 +374,8 @@
           "label": "Cover Styl' architectural and furniture films",
           "href": "https://coverstyl.com/en/"
         }
-      ]
+      ],
+      "imageCaption": "Rolls of Solar Screen window film on site before installation at [Hyde London City](/projects/old-bailey-hotel/). The product is checked before any glazing is covered."
     },
     {
       "slug": "joinery-wallcoverings-and-panels",
@@ -382,7 +398,7 @@
         "raffles-london-the-owo",
         "trematon-castle"
       ],
-      "imageId": null,
+      "imageId": "lee-broom-04",
       "faq": [
         {
           "id": "jp-doors",
@@ -422,7 +438,8 @@
           "label": "Lincrusta heritage relief",
           "href": "https://www.lincrusta.com/"
         }
-      ]
+      ],
+      "imageCaption": "Overture panels on the side wall of the [Lee Broom showroom](/projects/calico-lee-broom-overture/). The installed scene is checked across the supplied sequence."
     },
     {
       "slug": "exterior-works",
@@ -473,7 +490,8 @@
             "Yes. One commission can be all the internal works plus the full exterior: decorating and wallpapering inside, then the front elevation, with one survey and one programme covering both."
           ]
         }
-      ]
+      ],
+      "imageCaption": "The finished stucco entrance and black railings at [St George’s Square, Pimlico](/projects/pimlico-st-georges-square/), with the scaffold down."
     },
     {
       "slug": "commercial-wallcovering-installation",
@@ -556,7 +574,8 @@
             "Yes. At the Mercedes-AMG showroom we supplied and fitted the black matt Muraspec. We can also install material you have already bought."
           ]
         }
-      ]
+      ],
+      "imageCaption": "The tweed-print wallpapered room and matching display treatment at [Huntsman, Savile Row](/projects/huntsman-savile-row/)."
     }
   ]
 }
