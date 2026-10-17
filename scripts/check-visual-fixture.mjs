@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import { promisify } from 'node:util';
 import { execFile } from 'node:child_process';
 import assert from 'node:assert/strict';
+import { serve, launchBrowser } from './visual-browser.mjs';
 const fixture='src/pages/visual-contract-fixture.astro';
 let exists=false;
 try { await access(fixture); exists=true; } catch {}
@@ -12,7 +13,7 @@ assert.equal(exists,false,'temporary fixture must never overwrite an existing ro
 const out=await mkdtemp(join(tmpdir(),'mw-visual-fixture-'));
 try {
   await writeFile(fixture,await readFile('tests/fixtures/visual-page.astro.txt','utf8'),{flag:'wx'});
-  await promisify(execFile)(process.execPath,['node_modules/astro/bin/astro.mjs','build','--outDir',out],{maxBuffer:32*1024*1024});
+  await promisify(execFile)(process.execPath,['node_modules/astro/bin/astro.mjs','build','--outDir',out],{maxBuffer:32*1024*1024,env:{...process.env,SITE_PHONE:'07700900000'}});
   const html=await readFile(join(out,'visual-contract-fixture/index.html'),'utf8');
   assert.match(html,/<footer\b[^>]*data-footer/);
   assert.equal((html.match(/class="footer-group /g)||[]).length,4);
@@ -24,5 +25,24 @@ try {
   assert.match(unavailable,/tabindex="-1"/);
   assert.match(html,/<button\b[^>]*aria-disabled="true"[^>]*disabled/,'unavailable button is natively disabled');
   assert.match(html,/noindex/);
+  const server=await serve(out);
+  const browser=await launchBrowser();
+  try {
+    const page=await browser.newPage();
+    for (const width of [360,390,768,1024,1280,1440]) {
+      await page.setViewport({width,height:900});
+      await page.goto(server.origin+'/contact/',{waitUntil:'networkidle0'});
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`phone-enabled layout @${width}`);
+      assert.ok(await page.$('[data-wa]'),'phone-enabled WhatsApp control');
+      assert.match(await page.$eval('[data-wa]',(link)=>link.href),/^https:\/\/wa\.me\//,'WhatsApp payload resolves without opening a chat');
+      if (width<1280) {
+        await page.focus('input[name="name"]');
+        assert.equal(await page.$eval('[data-dock]',(dock)=>getComputedStyle(dock).display),'none','phone-enabled dock hides for form focus');
+      }
+    }
+    await page.click('[data-footer] [data-phone-reveal]');
+    assert.ok(await page.$('[data-footer] a[href^="tel:"]'),'phone reveal becomes a dial link without placing a call');
+  } finally { await browser.close(); await server.close(); }
   console.log('New route fixture: shared footer/actions inherited without local CSS; native button and disabled-link semantics pass. Fixture removed from source and public output.');
+  console.log('Phone-enabled browser fixture: six widths, WhatsApp href decoding, field-focus dock hiding and phone reveal pass; no call or message sent.');
 } finally { await rm(fixture,{force:true}); await rm(out,{recursive:true,force:true}); }
