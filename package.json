@@ -25,7 +25,8 @@
     "check:no-loss": "node scripts/no-loss-guard.mjs --base-dist ../mw-main-base/dist --dist dist --base-ref origin/main",
     "check:visual": "node --experimental-strip-types --test tests/footer-visual.test.ts tests/visual-system.test.ts tests/visual-browser.test.ts && node scripts/check-visual-fixture.mjs",
     "capture:visual": "node scripts/capture-visual-review.mjs",
-    "check:fire-sources": "node scripts/check-fire-sources.mjs"
+    "check:fire-sources": "node scripts/check-fire-sources.mjs",
+    "check:names": "node scripts/names-guard.mjs --repo"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
