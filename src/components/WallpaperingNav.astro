@@ -1,0 +1,20 @@
+---
+/** Only published destinations: the advanced calculator and materials reference remain in review. */
+interface Props { current: 'hub' | 'fire'; }
+const { current } = Astro.props;
+const parts = [
+  { id: 'hub', href: '/wallpapering/', label: 'Wallpapering' },
+  { id: 'preparation', href: '/advice/wall-preparation/', label: 'Preparation' },
+  { id: 'quantities', href: '/advice/quantities/', label: 'Quantities' },
+  { id: 'fire', href: '/advice/wallcovering-fire-ratings-uk/', label: 'Fire ratings & standards' },
+];
+---
+<nav aria-label="Wallpapering">
+  <ul class="wp-subnav">{parts.map((part) => <li><a href={part.href} aria-current={part.id === current ? 'page' : undefined}>{part.label}</a></li>)}</ul>
+</nav>
+<style>
+  .wp-subnav { display:flex; flex-wrap:wrap; gap:.25rem 1.5rem; margin:0 0 2.5rem; padding:0; list-style:none; border-block:1px solid var(--color-line); }
+  .wp-subnav a { display:inline-flex; align-items:center; min-height:44px; color:var(--color-stone); text-decoration:none; font-size:.95rem; }
+  .wp-subnav a:hover { color:var(--color-ink); }
+  .wp-subnav a[aria-current="page"] { color:var(--color-ink); box-shadow:inset 0 -2px 0 var(--color-brass); }
+</style>
