@@ -8,7 +8,7 @@ Shared ivory/brass editorial system, measured-wall elevation, sticky order docke
 
 ## Publication
 
-5–10 real completed jobs and actual roll use have not been supplied. Synthetic tests do not clear calibration. Keep this PR in draft until resolved. No merge or deployment performed. Search Console submission must follow deployment; no indexing claimed.
+On 17 October 2026 the owner removed the additional 5–10 real-job calibration requirement, stating: “no need for that. i tested and compared with others and is fine”. This records the owner’s acceptance, not agent verification of real jobs. Publication may proceed after release checks. Search Console submission follows deployment; no indexing claimed.
 
 ## Verification receipt
 
@@ -20,4 +20,4 @@ Shared ivory/brass editorial system, measured-wall elevation, sticky order docke
 - Visual review: first load and worked result at 390/1024/1280/1440px, no horizontal document overflow. Screenshots in `docs/design/calculator-release/`.
 - Search readiness: canonical `/calculator/`, indexable production HTML, menu/footer/sub-navigation, XML sitemap and public text projections. Search Console request not performed: route is not deployed and no authenticated Search Console connection is available in this chat. Google request process: https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl .
 
-Typography/hero check: 1 passed, 1 failed on the unchanged heritage page footer’s “Reduce visual effects” button (13.333px). Baseline comparison pending; not recorded as a pass.
+Typography/hero checks: 2 passed on final rerun; baseline main also passed 2. An initial run saw a transient 13.333px footer-control reading on the heritage page; no footer style was changed to suppress it.

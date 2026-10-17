@@ -50,5 +50,5 @@
 - [x] Extract standalone calculator and dependencies onto current main in `codex/calculator-release`.
 - [x] Add dedicated menu, footer and sitemap discovery; retain old written guide and shared-link forwarding.
 - [x] Inspect illustrated order docket and cutting-plan layout at mobile and desktop sizes.
-- [ ] Calibrate against 5–10 real completed jobs before production merge.
+- [x] Owner accepted their own testing/comparisons and waived the additional real-job gate on 17 October 2026.
 - [ ] Deploy approved release and inspect/request `/calculator/` indexing in Google Search Console; confirm indexing separately.

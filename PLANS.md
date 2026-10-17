@@ -112,4 +112,4 @@ Prepare `codex/fire-ratings-release` from PR #66 (`28bd059`), extracting the rev
 
 ## Calculator-only release, 17 October 2026
 
-`codex/calculator-release`: standalone `/calculator/`, source-checked roll presets, materials dependency, dedicated menu link and illustrated cutting plan. Extracted from PR #62 onto current main without unrelated unpublished hub/analytics work. Verification recorded in `docs/calculator/release-review.md`. Still outstanding: real-job calibration before merge, then production verification and Search Console URL inspection/request.
+`codex/calculator-release`: standalone `/calculator/`, source-checked roll presets, materials dependency, dedicated menu link and illustrated cutting plan. Extracted from PR #62 onto current main without unrelated unpublished hub/analytics work. Verification recorded in `docs/calculator/release-review.md`. Owner waived additional real-job calibration on 17 October after their own tests/comparisons. Remaining: hosted checks, production verification and Search Console URL inspection/request.

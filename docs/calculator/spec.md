@@ -331,7 +331,7 @@ Rows 6, 7, 13, 28 and 29 were worked by hand and checked against a scratch model
 
 ## 11. Still to confirm
 
-1. **Calibration:** 5–10 real past jobs with the rolls actually used, before launch.
+1. **Calibration:** originally 5–10 real past jobs before launch. On 17 October 2026 the owner waived this additional gate after their own testing and comparisons. This is owner acceptance; no agent-verified real-job calibration is claimed.
 2. **Wallpaper pastes:** the owner's tested makers are Vescom, Tektura, Muraspec, Beeline, Albany and Roman. Each product goes on the ladder once its data sheet is checked and the owner confirms its step.
 
 ## Implementation review — 17 October 2026
