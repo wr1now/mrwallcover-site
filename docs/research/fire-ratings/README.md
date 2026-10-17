@@ -69,6 +69,6 @@ Implemented on branch `feat/wallcovering-fire-ratings-uk`, stacked on draft pull
 
 ## Independent release — 17 October 2026
 
-The earlier implementation in PR #64 depends on the draft calculator (#62). This release extracts the reviewed reference from head `6960fc2` onto the shared visual foundation (#66, `28bd059`) without the draft calculator, materials dataset, analytics setup or their history. It supplies a small `/wallpapering/` hub linking only to existing published guides and the fire reference. The original #64/#65 stack is preserved for later reconciliation.
+The earlier implementation in PR #64 depends on the draft calculator (#62). This release extracts the reviewed reference from head `6960fc2` onto the shared visual foundation (#66, initially `28bd059`, updated to `22a0ab5`) without the draft calculator, materials dataset, analytics setup or their history. It supplies a small `/wallpapering/` hub linking only to existing published guides and the fire reference. The original #64/#65 stack is preserved for later reconciliation.
 
 A focused release review corrected two further points: the Muraspec woven Type I row now shows the conflicting smoke subclasses as unresolved, and the overview retains the narrow firefighter-facilities maintenance exception for shared parts in Scotland and Northern Ireland. This work is AI evidence review, not professional fire-engineering approval. See `docs/research/fire-ratings/release-review.md` for final checks and the release order.

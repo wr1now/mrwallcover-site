@@ -2,7 +2,7 @@
 
 ## Release boundary
 
-Branch `codex/fire-ratings-release` starts at PR #66 (`28bd059`), which installs the shared visual standard on current public main. It extracts the fire-reference changes from PR #64 (`6960fc2`) relative to the calculator base (`f83dc61`). It does not merge #62, #63, #64 or #65, and does not include their branch history. It also merges current public main (`2849676`, PR #67) to retain the public privacy cleanup.
+Branch `codex/fire-ratings-release` starts at PR #66 (`28bd059`), which installs the shared visual standard on current public main. It extracts the fire-reference changes from PR #64 (`6960fc2`) relative to the calculator base (`f83dc61`). It does not merge #62, #63, #64 or #65, and does not include their branch history. It also merges current public main (`2849676`, PR #67) to retain the public privacy cleanup, then the updated #66 foundation (`22a0ab5`) to retain its complete visual patterns, route-review register and checks. Both new routes have specific decisions in that register.
 
 The advanced calculator is still awaiting real-job calibration. That hold does not need to delay this reference. This branch adds a small `/wallpapering/` front door that links to the existing published preparation, quantity and hanging guides, plus the fire reference. It keeps the established simple quantity guide. The advanced calculator, materials/paste dataset, separate preparation and adhesive routes and analytics setup from the other stack are outside this release. The names guard is inherited independently from main’s privacy cleanup.
 
@@ -26,14 +26,14 @@ Executed locally against the extracted release:
 
 | Check | Evidence |
 | --- | --- |
-| Build and source/data tests | Build succeeds; 93 source/data tests pass. |
+| Build and source/data tests | Build succeeds; 98 source/data tests pass. |
 | Responsive fire reference and hub | Six widths: 360, 390, 768, 1024, 1280 and 1440px; no document overflow; sub-menu targets at least 44px; the draft routes are absent. |
 | Decoder, keyboard and no JavaScript | Valid/invalid/legacy input checked; keyboard tab order, mobile menu and Escape checked; all 26 evidence rows remain available with JavaScript disabled. |
 | Existing typography and hero contrast | Both `check:type` checks pass using Chrome for Testing. The new page additionally checks classification text size in its browser test. |
 | Preservation against a fresh main build | No-loss passes: 98 existing routes retained (100 now); 3,609 existing media files retained (3,610 now); 98 existing Markdown twins retained (100 now); no project gallery loss or JSON-LD reduction. |
 | Source URL check | 129 HTTP 2xx responses, four redirects, zero failed URLs. The command correctly exits with review flags for redirected sources, stated validity dates and unclear product status. It is not a clean technical-evidence approval. Hash mode was not run in this release pass. |
 
-Final verification: `npm run check` 93/93; `npm run build` passed; `npm run check:dist` 210/210, plus the new-route and phone-enabled browser fixture; `npm run check:type` 2/2; `npm run check:phone` 2/2; `npm run build:review` passed; `npm run check:guides` 5/5. Case-study dates and whitespace checks pass. The no-loss command used a fresh build of `upstream/main` as its baseline. The strict names guard, inherited from main, passes against the built site and tracked repository using the private list by path: none of its 64 entries match. Its five unit tests also pass. The list remains outside the public repository and is never printed. No private archive, exclusion list, client file or manufacturer PDF is included.
+Final verification: `npm run check` 98/98; `npm run build` passed; `npm run check:dist` 211/211, plus the new-route and phone-enabled browser fixture; `npm run check:type` 2/2; `npm run check:phone` 2/2; `npm run build:review` passed; `npm run check:guides` 5/5. Case-study dates and whitespace checks pass. The no-loss command used a fresh build of `upstream/main` as its baseline. The strict names guard, inherited from main, passes against the built site and tracked repository using the private list by path: none of its 64 entries match. Its five unit tests also pass. The list remains outside the public repository and is never printed. No private archive, exclusion list, client file or manufacturer PDF is included.
 
 Inspected screenshots:
 
@@ -43,7 +43,7 @@ Inspected screenshots:
 
 ![Mobile Wallpapering front door](../../design/fire-release/hub-390.jpg)
 
-The reproducible browser test is `tests/fire-release-browser.test.ts` (included in `check:dist`). Full local captures and machine reports are ignored under `.review-screens/fire-release/`; the three representative screenshots above are retained for review.
+The foundation’s sitewide visual audit also passes for every normal published and utility route at 390px and 1440px. The reproducible focused browser test is `tests/fire-release-browser.test.ts` (included in `check:dist`). Full local captures and machine reports are ignored under `.review-screens/fire-release/`; the three representative screenshots above are retained for review.
 
 ## Remaining publication steps
 
