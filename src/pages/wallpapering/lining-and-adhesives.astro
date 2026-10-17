@@ -175,7 +175,7 @@ const liningNeed: Record<string, string> = {
               <td data-label="Lining">{liningNeed[rule.lining.need] ?? rule.lining.need}{rule.lining.printed && <small><q>{rule.lining.printed}</q></small>}</td>
               <td data-label="Paste">
                 {rule.liningPastePrinted ? <q>{rule.liningPastePrinted}</q> : rule.pastePrinted && rule.pasteStatus !== 'unconfirmed' ? <q>{rule.pastePrinted}</q> : rule.paste && rule.pasteStatus !== 'unconfirmed' ? product(rule.paste).name : 'Confirm for the specific product'}
-                {rule.pasteSource && <small><a href={rule.pasteSource}>Current paste instructions</a></small>}
+                {rule.pasteSource && <small><a href={rule.pasteSource}>Current paste instructions</a>{rule.pasteChecked && ` · Checked ${checked(rule.pasteChecked)}`}</small>}
               </td>
               <td data-label="Also">{rule.notes?.length ? rule.notes.map((note) => <span style="display:block">{note}</span>) : '—'}</td>
               <td data-label="Source"><a href={rule.source}>Hanging instructions</a><small>Checked {checked(rule.checked)}</small></td>

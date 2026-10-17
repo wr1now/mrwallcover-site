@@ -78,6 +78,7 @@ export interface MakerRule {
   pasteCheck?: string;
   pasteCoverage?: Coverage;
   pasteSource?: string;
+  pasteChecked?: string;
   primerPrinted?: string;
   noOffcutInfill?: boolean;
   notes?: string[];
