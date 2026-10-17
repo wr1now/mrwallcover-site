@@ -219,4 +219,3 @@ test('each amount splits into what the wall needs and what to buy, for the mater
   }
   assert.ok(list.lines.some((line) => line.need && line.packs), 'at least one line has both');
 });
-
