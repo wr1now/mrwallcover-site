@@ -79,4 +79,11 @@ test('the calculator page takes any width, in cm or inches, and suggests the com
   assert.match(page, /list="qc-widths"/);
   for (const width of [45, 55, 68, 80, 90, 100]) assert.ok(rollFormats.widthSuggestions.cm.includes(width), `${width} cm is suggested`);
   assert.match(page, /Another size: type it below/);
+  assert.match(page, /name="mu" value="cm" checked/, 'walls are measured in cm unless the visitor picks m, inches or feet');
+  assert.equal((page.match(/data-dim="/g) ?? []).length, 17, 'every size on the form is converted to cm');
+});
+
+test('the menu calls it Wallpaper calculator (owner, 17 Oct 2026)', () => {
+  const menu = JSON.parse(readFileSync(new URL('../src/content/navigation.json', import.meta.url), 'utf8')) as { href: string; label: string }[];
+  assert.equal(menu.find((item) => item.href === '/calculator/')?.label, 'Wallpaper calculator');
 });
