@@ -349,6 +349,8 @@ const conditions = wallpapering.conditionQuestion.options;
   .qc-docket-body { display: grid; gap: var(--space-4); }
   .qc-docket-lead { margin: 0; font-weight: 500; }
   .qc-docket-link { justify-self: start; }
+  /* Links that stand alone, outside a sentence, get a 44px target. */
+  .qc-target, .qc-docket-link { display: inline-flex; align-items: center; min-height: 44px; }
   .qc-docket.is-stale .qc-docket-body { opacity: .55; }
   .qc-order { display: grid; margin: 0; }
   .qc-order > div { display: grid; grid-template-columns: 5.5rem 1fr; gap: .25rem 1rem; align-items: baseline; padding: .6rem 0; border-bottom: 1px solid var(--color-line); }
@@ -413,8 +415,11 @@ const conditions = wallpapering.conditionQuestion.options;
 
   /* ---- Assumptions, materials, terms ---- */
   .qc-result .qc-assumed, .qc-docket .qc-assumed { margin: 0; padding: var(--space-3) var(--space-5); list-style: none; background: var(--color-ivory-deep); border-left: 2px solid var(--color-brass); }
-  .qc-result .qc-assumed > li, .qc-docket .qc-assumed > li { display: flex; flex-wrap: wrap; align-items: center; gap: 0 .75rem; padding: 0; border-top: 0; }
-  .qc-assumed > li > span { padding: .6rem 0; }
+  /* One layout for every row: the fact on the left, its link on the right, never wrapped under it. */
+  .qc-result .qc-assumed > li, .qc-docket .qc-assumed > li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0; border-top: 0; }
+  .qc-assumed > li > span { flex: 1 1 auto; min-width: 0; padding: .6rem 0; }
+  .qc-assumed > li > .qc-link { flex: none; white-space: nowrap; }
+  .qc-docket .qc-assumed > li > .qc-link { flex: 1 1 auto; white-space: normal; text-align: left; }
   .qc-materials { display: grid; margin: 0; }
   .qc-materials > div { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: .25rem 1rem; padding: .75rem 0; border-top: 1px solid var(--color-line); break-inside: avoid; }
   @media (max-width: 47.99rem) { .qc-materials > div { grid-template-columns: minmax(0, 1fr); } }

@@ -663,7 +663,7 @@ if (form && output) {
     const unit = byLength(r) ? 'piece' : r.working.unit.one.startsWith('set') ? 'roll' : r.working.unit.one;
     fact('Drops', String(r.drops), r.shortPieces ? `${r.fullDrops} full, ${r.shortPieces} short` : undefined);
     fact('Cut length', `${fmt(r.dropLengthCm)} cm`, `${fmt(r.trimTopCm)} + ${fmt(height)} + ${fmt(r.trimBottomCm)}${imperial() ? ` · ${ftIn(r.dropLengthCm)}` : ''}`);
-    fact(`Full drops per ${unit}`, String(r.dropsPerRoll));
+    fact(`Drops per ${unit}`, String(r.dropsPerRoll));
     return dl;
   };
 
@@ -780,7 +780,7 @@ if (form && output) {
       if (packs) dd.append(el('span', packs, 'qc-mat-packs'));
       if (line.need) dd.append(el('span', `You need ${line.need}.`, 'qc-mat-need'));
       const quoted = line.note?.match(/^(.*?)\s*(?:The (?:data sheet|label):\s*)?"([^"]+)"\s*$/);
-      const link = line.source ? Object.assign(el('a', line.sourceLabel ?? "Maker's page"), { href: line.source, rel: 'noopener' }) : null;
+      const link = line.source ? Object.assign(el('a', line.sourceLabel ?? "Maker's page", 'qc-target'), { href: line.source, rel: 'noopener' }) : null;
       if (quoted) {
         if (quoted[1].trim()) dd.append(el('span', quoted[1].trim(), 'qc-mat-note'));
         const figure = el('figure', undefined, 'qc-quote');
