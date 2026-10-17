@@ -280,7 +280,7 @@ const legacySources: [string, string | null][] = [
                   <ul class="fr-evidence">
                     {p.evidence.map((ev) => {
                       const s = source(ev.sourceId);
-                      return <li><a href={s.url}>{evidenceLabel[ev.evidenceType]}</a>{ev.documentReference && <>, {ev.documentReference}</>}{s.issued && <>, {s.issued}</>}{ev.testBody && <span class="fr-sub">Test body named: {ev.testBody}</span>}</li>;
+                      return <li><a href={s.url}>{evidenceLabel[ev.evidenceType]}</a>{ev.documentReference && <>, {ev.documentReference}</>}{s.issued && !ev.documentReference?.includes(s.issued) && <>, {s.issued}</>}{ev.testBody && <span class="fr-sub">Test body named: {ev.testBody}</span>}</li>;
                     })}
                   </ul>
                   <span class="fr-sub">Checked <time datetime={p.checked}>{formatGuideDate(p.checked)}</time></span>

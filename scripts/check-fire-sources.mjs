@@ -50,9 +50,11 @@ for (const s of sources) {
   }
   if (s.effective && s.effective <= today && s.effective > s.accessed) flag(s.id, `came into force ${s.effective}, after it was last checked (${s.accessed}); review the page text`);
   if (days(s.accessed, today) > 92) flag(s.id, `last checked ${s.accessed}, more than a quarter ago`);
-  if (hashMode && s.sha256 && ok) {
-    const res = await fetch(s.url, { signal: AbortSignal.timeout(60_000) }).catch(() => null);
-    if (res?.ok) {
+  if (hashMode && s.sha256) {
+    // A hash that could not be checked is flagged, never passed over: "Nothing to review" must mean every recorded hash matched.
+    const res = ok ? await fetch(s.url, { signal: AbortSignal.timeout(60_000) }).catch((e) => ({ ok: false, status: `error ${e.cause?.code ?? e.name}` })) : { ok: false, status };
+    if (!res.ok) flag(s.id, `hash not verified: the document could not be downloaded (${res.status})`);
+    else {
       const hash = createHash('sha256').update(Buffer.from(await res.arrayBuffer())).digest('hex');
       if (hash !== s.sha256) flag(s.id, `document has changed since it was read (sha256 ${hash.slice(0, 12)}… recorded ${s.sha256.slice(0, 12)}…)`);
     }
