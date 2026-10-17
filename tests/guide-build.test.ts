@@ -91,7 +91,9 @@ test('local content links and downloads resolve in the corresponding build', asy
 
 test('technique guides (11 Oct 2026): built from our own record, linked from the AI layer, no competitor names or unconfirmed techniques', async () => {
   const forAi = await readFile('dist/for-ai/index.html', 'utf8');
-  const barred = /kill[- ]point|open time|Wells Interiors|Hamiltons|Jouffre|Tapetenmeister|Maruni|Jegal|Nakamura|TP Decorating|Heritage Wallpaper|Wallpaper Installation Sydney/i;
+  // Competitor names are checked by scripts/names-guard.mjs against the owner's private list (npm run check:names).
+  // Never list a name here: this repository is public, and a banned-words list would publish it.
+  const barred = /kill[- ]point|open time/i;
   const scheme = new RegExp(['safe', 'contractor'].join('[\\s_-]*'), 'i');
   for (const slug of ['papered-ceilings-and-staircases', 'set-out-and-pattern-matching']) {
     assert.ok(forAi.includes(`href="/advice/${slug}/"`), `${slug} missing from /for-ai/`);

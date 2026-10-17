@@ -168,6 +168,9 @@ npm run check:dist
 npm run check:phone
 npm run check:guides
 npm run check:analytics
+MW_NAMES_FILE=<private list> npm run check:names
 ```
+
+`check:names` (`scripts/names-guard.mjs`) fails if any name on the owner's private list appears in the built site or in any file the repository tracks. The list is never stored in this public repository: it lives in the private research repository, and the guard reports only a file and an entry number. Run it before every push. It can also read the whole list from an `MW_NAMES` environment variable, so CI can run it from a repository secret of that name; with `--if-present` it warns instead of failing when no list is given.
 
 No separate lint/typecheck script is configured in this repository. Build and the listed tests are distinct checks and should not be described as a full static typecheck. The Sites edition is built without `SITE_PHONE` unless configured by the owner; email and the existing form remain available. FormSubmit delivery requires its existing active provider configuration; QA does not send synthetic leads.

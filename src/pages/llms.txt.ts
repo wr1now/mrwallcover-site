@@ -83,7 +83,7 @@ export const GET: APIRoute = () => {
     entry('Contact', '/contact/', 'request a quotation'),
     '',
     '## Wallcovering Guide',
-    entry('Wallcovering Guide', '/advice/', 'choosing, preparation, quantities and care'),
+    entry('Wallcovering Guide', '/advice/', 'the front door of the reference, in five stages (choose, specify, source, prepare, install), each linking to its own pages; then the guides on choosing, preparation, quantities and care'),
     entry('How much wallpaper to order', '/advice/quantities/', 'count drops, not square metres: width, height and trim, the pattern repeat, half-drop, doors and windows, worked by hand, with the spare from one batch'),
     entry(fireRatingsPage.title, guideHref(fireRatingsPage.slug), fireRatingsPage.description),
     ...guides.map((guide) => entry(guide.frontmatter.title, guideHref(guide.frontmatter.slug), guide.frontmatter.description)),

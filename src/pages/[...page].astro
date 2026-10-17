@@ -12,10 +12,13 @@
  *   out like /professionals/<slug>/ (body beside a "What to send" panel).
  * - otherProfessionals: true; adds the "Other ways we can help" row that the
  *   professional pages carry.
+ * - guideStage: a Wallcovering Guide stage id (or "check"); shows the Guide's stage
+ *   bar under the header (src/lib/guide-stages.ts).
  */
 import Breadcrumb from '../components/Breadcrumb.astro';
 import BuyerFaq from '../components/BuyerFaq.astro';
 import FaqList from '../components/FaqList.astro';
+import GuideNav from '../components/GuideNav.astro';
 import PageMeta from '../components/PageMeta.astro';
 import Base from '../layouts/Base.astro';
 import { SITE_URL } from '../config';
@@ -25,6 +28,8 @@ import type { EditorialPageData } from '../lib/content';
 import type { BuyerAnswer } from '../lib/ai-layer-data';
 import { guides, guideHref } from '../lib/guides';
 import { breadcrumbNode, faqNode, guideArticleNode, singleServiceNode } from '../lib/schema';
+import type { GuideStage } from '../lib/guide-stages';
+import '../styles/guide.css';
 
 interface PageExtras {
   updated?: string;
@@ -33,6 +38,7 @@ interface PageExtras {
   cta?: { label: string; href: string };
   intake?: { heading: string; items: string[]; download?: string; downloadLabel?: string; guide?: string };
   otherProfessionals?: boolean;
+  guideStage?: GuideStage['id'] | 'check';
 }
 
 export function getStaticPaths() {
@@ -93,6 +99,7 @@ const buyerFaq = professionalPage
         <a class="btn btn-line" href="/projects/">See the work</a>
       </div>
     </header>
+    {page.guideStage && <GuideNav current={page.guideStage} />}
     {
       intake ? (
         <div class="grid gap-10 pb-12 md:grid-cols-12">
@@ -123,7 +130,7 @@ const buyerFaq = professionalPage
           </aside>
         </div>
       ) : (
-        <article class="prose guide-prose max-w-3xl pb-12">
+        <article class:list={['prose guide-prose max-w-3xl pb-12', page.guideStage && 'guide-stage-page']}>
           <Content />
         </article>
       )
