@@ -59,15 +59,15 @@
       }
     },
     {
-      "id": "roll-52-1005",
+      "id": "roll-50",
       "group": "roll",
-      "width": 52,
+      "width": 50,
       "widthUnit": "cm",
-      "length": 10.05,
+      "length": 10,
       "lengthUnit": "m",
       "source": {
-        "label": "Cole & Son, Woods",
-        "url": "https://cole-and-son.com/products/woods-roll"
+        "label": "Feathr hanging guide",
+        "url": "https://www.feathr.com/uk/how-to/how-to-wallpaper-simple-how-to-hang-patterned-wallpaper-guide/"
       }
     },
     {
@@ -83,6 +83,18 @@
       }
     },
     {
+      "id": "roll-52-1005",
+      "group": "roll",
+      "width": 52,
+      "widthUnit": "cm",
+      "length": 10.05,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Cole & Son, Woods",
+        "url": "https://cole-and-son.com/products/woods-roll"
+      }
+    },
+    {
       "id": "roll-53-10",
       "group": "roll",
       "width": 53,
@@ -95,18 +107,6 @@
       }
     },
     {
-      "id": "roll-50",
-      "group": "roll",
-      "width": 50,
-      "widthUnit": "cm",
-      "length": 10,
-      "lengthUnit": "m",
-      "source": {
-        "label": "Feathr hanging guide",
-        "url": "https://www.feathr.com/uk/how-to/how-to-wallpaper-simple-how-to-hang-patterned-wallpaper-guide/"
-      }
-    },
-    {
       "id": "roll-60",
       "group": "roll",
       "width": 60,
@@ -116,6 +116,30 @@
       "source": {
         "label": "Muraspec 14568, printed non-woven",
         "url": "https://www.muraspec.com/product/14568/"
+      }
+    },
+    {
+      "id": "roll-685",
+      "group": "roll",
+      "width": 68.5,
+      "widthUnit": "cm",
+      "length": 10,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Osborne & Little, Rosalia Damask: roll size 10 m × 68.5 cm",
+        "url": "https://www.osborneandlittle.com/rosalia-damask-w6493-w6493.html"
+      }
+    },
+    {
+      "id": "roll-686",
+      "group": "roll",
+      "width": 68.6,
+      "widthUnit": "cm",
+      "length": 10.05,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Sanderson, Chiswick Grove: usable width 68.6 cm, standard length 10.05 m",
+        "url": "https://www.sanderson.design/wallpaper/chiswick-grove-gold-saw0086-01"
       }
     },
     {
@@ -155,6 +179,18 @@
       }
     },
     {
+      "id": "us-double-27-11",
+      "group": "double-roll",
+      "width": 27,
+      "widthUnit": "in",
+      "length": 11,
+      "lengthUnit": "yd",
+      "source": {
+        "label": "Thibaut, Camellia Garden: 27 in, double roll 11 yd",
+        "url": "https://www.thibautdesign.com/products/wallcoverings/AT24551"
+      }
+    },
+    {
       "id": "us-double-36",
       "group": "double-roll",
       "width": 36,
@@ -164,6 +200,19 @@
       "source": {
         "label": "York Wallcoverings grasscloth double roll",
         "url": "https://www.yorkwallcoverings.com/products/kira-hemp-grasscloth-wallpaper"
+      }
+    },
+    {
+      "id": "set-3-52",
+      "group": "set",
+      "width": 52,
+      "widthUnit": "cm",
+      "length": 3,
+      "lengthUnit": "m",
+      "rollsPerSet": 3,
+      "source": {
+        "label": "Mind the Gap: sold by the box of 3 rolls, each 52 cm × 300 cm",
+        "url": "https://mindtheg.uk/faqs"
       }
     },
     {
@@ -204,6 +253,18 @@
       }
     },
     {
+      "id": "length-135",
+      "group": "length-m",
+      "width": 135,
+      "widthUnit": "cm",
+      "length": null,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Timorous Beasties, Iguana Superwide: 1350 mm, per metre, overlap and double cut",
+        "url": "https://www.timorousbeasties.com/shop/view-product/iguana-superwide-wallpaper?item=12830"
+      }
+    },
+    {
       "id": "length-yd-54",
       "group": "length-yd",
       "width": 54,
@@ -233,6 +294,7 @@
       55,
       60,
       68,
+      68.5,
       68.6,
       70,
       80,
@@ -241,6 +303,7 @@
       100,
       122,
       130,
+      135,
       137
     ],
     "in": [
