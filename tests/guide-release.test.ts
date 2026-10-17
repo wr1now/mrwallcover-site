@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 const read=(p:string)=>readFileSync(p,'utf8');
 const paths=['advice','where-to-buy','how-we-check'];
-test('standalone Guide pages use the shared shell and only published internal destinations',()=>{
+test('Guide pages use the shared shell and only published internal destinations',()=>{
  for(const p of paths){
   const html=read(`dist/${p}/index.html`);
   assert.equal((html.match(/<h1\b/g)||[]).length,1,p);
@@ -11,9 +11,9 @@ test('standalone Guide pages use the shared shell and only published internal de
   for(const match of html.matchAll(/href="(\/[^"?#]*)(?:[?#][^"]*)?"/g)){
    const href=match[1]; assert.ok(existsSync(`dist${href}${href.endsWith('/')?'index.html':''}`),`${p}: ${href}`);
   }
-  assert.doesNotMatch(html,/href="\/(?:calculator\/|wallpapering\/(?:preparation|lining-and-adhesives)\/)/);
  }
- assert.ok(!existsSync('dist/calculator/index.html'));
+ assert.ok(existsSync('dist/calculator/index.html'), 'calculator has its own published route');
+ assert.match(read('dist/calculator/index.html'), /aria-label="Primary"[\s\S]*href="\/calculator\/"/);
 
 });
 test('policy scopes review promises; discovery includes both editorial routes',()=>{

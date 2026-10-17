@@ -186,3 +186,8 @@ Final focused browser run passed with and without the fictional phone number at 
 ## Live header follow-up — 17 October 2026
 
 Live fire-release verification with conditional WhatsApp enabled exposed a three-line primary header action. The header now uses compact link gaps, preserves a single-line enquiry action and shows booking in the bar from 1440px. Booking remains available in the footer and mobile dock. Labels, type sizes, routes and enquiry behaviour are retained. The phone-enabled new-page fixture reproduced the wrap at 1024px before the fix; it now asserts one text line, clearance from the wordmark and the bar edge, and the booking breakpoint at 1024, 1280 and 1440px. The same fixture checks the other mobile widths and contact behaviour.
+
+
+## Calculator-only release — 17 October 2026
+
+Branch `codex/calculator-release` extracts only the calculator and its dependencies from PR #62 onto main `990ff83`. Existing Wallpapering and fire pages remain intact. The calculator uses Base, Action and an original measured-wall illustration; result roll strips render the authoritative engine output. Room photography would not explain quantities and is deliberately omitted. The warm-paper order docket keeps working rolls, spare and total distinct. Screenshots: `calculator-release/page-390.png`, `page-1440.png`, `result-390.png`, `result-1440.png`. No new site-wide styles or dependencies. Real-job calibration remains a publication blocker.

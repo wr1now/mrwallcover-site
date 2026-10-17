@@ -108,3 +108,8 @@ Follow-up release gate: 70 source + 50 built-output + 2 phone + 4 guide tests pa
 ## Independent fire-reference release — 17 October 2026
 
 Prepare `codex/fire-ratings-release` from PR #66 (`28bd059`), extracting the reviewed fire content from #64 (`6960fc2`). The draft calculator (#62) remains held for real-job calibration. The release contains a small Wallpapering hub, source-backed reference, original build-up schematic, shared actions/footer and the hotel wording corrections. Preserve the #64/#65 branches; reconcile their overlapping fire files after this release. The owner authorised merge and deployment on 17 October 2026 after publication checks. #66 is merged as `07c1e864`; #68 is reconciled with its final tree and awaiting final hosted validation before merge. Live verification follows deployment. Evidence and remaining gates: `docs/research/fire-ratings/release-review.md`.
+
+
+## Calculator-only release, 17 October 2026
+
+`codex/calculator-release`: standalone `/calculator/`, source-checked roll presets, materials dependency, dedicated menu link and illustrated cutting plan. Extracted from PR #62 onto current main without unrelated unpublished hub/analytics work. Verification recorded in `docs/calculator/release-review.md`. Still outstanding: real-job calibration before merge, then production verification and Search Console URL inspection/request.

@@ -424,6 +424,10 @@
     {
       "path": "/get-in-touch/",
       "decision": "Contact icons identify direct channels; shared actions distinguish a quotation from a conversation. No room photography: this page helps visitors choose a contact method, not assess project evidence."
+    },
+    {
+      "path": "/calculator/",
+      "decision": "Use an original measured-wall elevation and live roll strips derived from the cutting engine; warm paper order docket, shared actions and responsive form. No unrelated room photograph."
     }
   ]
 }

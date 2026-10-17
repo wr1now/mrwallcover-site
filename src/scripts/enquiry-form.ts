@@ -121,6 +121,13 @@ export function bindEnquiryForm(form: HTMLFormElement) {
   const shortlist = form.querySelector<HTMLInputElement>('[name="shortlist"]');
   if (shortlist) shortlist.value = form.dataset.variant === 'aftercare' ? '' : shortlistValue();
   restoreDraft(form);
+  if (params.get('from') === 'calculator') {
+    const message = form.querySelector<HTMLTextAreaElement>('[name="message"]');
+    try {
+      const brief = sessionStorage.getItem('mw-quantity-brief');
+      if (message && brief && !message.value) message.value = brief.slice(0, 3500);
+    } catch { /* storage may be unavailable */ }
+  }
 
   const builder = form.querySelector<HTMLElement>('[data-builder]');
   const openBuilder = form.querySelector<HTMLButtonElement>('[data-open-builder]');

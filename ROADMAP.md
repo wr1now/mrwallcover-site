@@ -42,3 +42,13 @@
 - [x] Reconcile #68 with the final #66 source tree and retarget to main.
 - [ ] Pass final #68 hosted checks, merge and complete Pages deployment.
 - [ ] Verify live reference, desktop/mobile menu links and the contact journey; record delivery limits and indexing state separately.
+
+
+## Calculator-only extraction — 17 October 2026
+
+- [x] Audit PR #62: still open, not merged; compare local-only CI commit and later remote fixes.
+- [x] Extract standalone calculator and dependencies onto current main in `codex/calculator-release`.
+- [x] Add dedicated menu, footer and sitemap discovery; retain old written guide and shared-link forwarding.
+- [x] Inspect illustrated order docket and cutting-plan layout at mobile and desktop sizes.
+- [ ] Calibrate against 5–10 real completed jobs before production merge.
+- [ ] Deploy approved release and inspect/request `/calculator/` indexing in Google Search Console; confirm indexing separately.

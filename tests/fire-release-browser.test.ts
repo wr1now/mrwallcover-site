@@ -1,4 +1,5 @@
 import { test, before, after } from 'node:test';
+import { existsSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { serve, launchBrowser } from '../scripts/visual-browser.mjs';
@@ -28,7 +29,7 @@ test('fire reference and hub: responsive reading, real evidence, decoder and key
           classTextSize: document.querySelector('.fr-products code') ? parseFloat(getComputedStyle(document.querySelector('.fr-products code')!).fontSize) : null,
         }));
         assert.equal(reading.overflow, false, `${path} @${width}`);
-        assert.deepEqual(reading.brokenLinks, [], 'unreleased calculator routes are absent');
+        for (const href of reading.brokenLinks) assert.ok(existsSync(`dist${new URL(href).pathname}index.html`), `integrated calculator link resolves: ${href}`);
         assert.ok(reading.navTargets.every((height) => height >= 44));
         assert.ok(reading.footer, 'new pages inherit the shared footer');
         if (reading.classTextSize !== null) assert.ok(reading.classTextSize >= 14, 'classification text stays readable');

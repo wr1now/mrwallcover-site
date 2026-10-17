@@ -151,6 +151,7 @@ export function computeLastmod(root) {
     '/wallcovering-installation-ai-crawler/': ['src/pages/wallcovering-installation-ai-crawler.astro', 'src/lib/ai-crawler.ts', 'src/lib/ai-decision-guide.ts'],
     '/advice/': ['src/pages/advice/index.astro'],
     '/wallpapering/': ['src/pages/wallpapering/index.astro'],
+    '/calculator/': ['src/pages/calculator.astro', 'src/lib/quantity.ts', 'src/data/roll-formats.json'],
     '/advice/quantities/': ['src/pages/advice/quantities.astro', 'src/lib/quantity.ts'],
     '/areas/': ['src/pages/areas/index.astro', 'src/content/areas.json'],
     '/materials/': ['src/pages/materials/index.astro', 'src/content/materials.json', 'src/content/makers-installed.json'],

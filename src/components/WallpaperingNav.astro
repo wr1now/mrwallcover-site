@@ -1,10 +1,11 @@
 ---
 /** Only published destinations: the advanced calculator and materials reference remain in review. */
-interface Props { current: 'hub' | 'fire'; }
+interface Props { current: 'hub' | 'fire' | 'calculator' | 'guide'; }
 const { current } = Astro.props;
 const parts = [
   { id: 'hub', href: '/wallpapering/', label: 'Wallpapering' },
   { id: 'preparation', href: '/advice/wall-preparation/', label: 'Preparation' },
+  { id: 'calculator', href: '/calculator/', label: 'Calculator' },
   { id: 'quantities', href: '/advice/quantities/', label: 'Quantities' },
   { id: 'fire', href: '/advice/wallcovering-fire-ratings-uk/', label: 'Fire ratings & standards' },
 ];

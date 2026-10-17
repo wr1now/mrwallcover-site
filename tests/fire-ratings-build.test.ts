@@ -118,9 +118,7 @@ test('reaction to fire is never presented as fire resistance, and nothing claims
 });
 
 
-test("independent release excludes the draft calculator and preserves the maintenance exception", () => {
-  assert.equal(existsSync("dist/calculator/index.html"), false);
-  assert.equal(existsSync("src/data/wallpapering.json"), false);
+test("fire reference retains the maintenance exception when calculator is integrated", () => {
   assert.match(page.scope.notice, /main assessment and general fire-precaution duties/);
   assert.match(page.scope.notice, /maintain facilities for firefighters/);
   assert.match(html, /class="fire-evidence/);
