@@ -1,0 +1,24 @@
+---
+/** Original illustrative objects; never a photograph, maker product or evidence of completed work. */
+import type { DesignObjectKind } from '../lib/design-object-kinds';
+interface Props { kind: DesignObjectKind; class?: string }
+const { kind, class: className } = Astro.props;
+---
+<span class:list={['design-object', className]} data-design-object={kind} aria-hidden="true">
+  <img src={`/media/design-objects/${kind}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" />
+</span>
+
+<script>
+  import { mountDesignObjects } from '../scripts/design-objects';
+  if(document.readyState==='complete')mountDesignObjects();
+  else window.addEventListener('load',()=>mountDesignObjects(),{once:true});
+</script>
+
+<style>
+  .design-object { display:block; position:relative; width:100%; aspect-ratio:1; isolation:isolate; pointer-events:none; }
+  .design-object img, .design-object :global(canvas) { display:block; position:absolute; inset:0; width:100%; height:100%; object-fit:contain; }
+  .design-object :global(canvas) { opacity:0; }
+  .design-object[data-live] :global(canvas) { opacity:1; }
+  .design-object[data-live] img { visibility:hidden; }
+  @media print { .design-object :global(canvas) { display:none; } .design-object[data-live] img { visibility:visible; } }
+</style>

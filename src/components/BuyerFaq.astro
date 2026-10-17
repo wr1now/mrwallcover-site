@@ -7,20 +7,29 @@
  */
 import type { BuyerAnswer } from '../lib/ai-layer-data';
 import QuestionVisual from './QuestionVisual.astro';
+import Action from './Action.astro';
 /** eyebrow: optional small label above the heading, in the site's .eyebrow style (the professional pages pass "Questions"). */
-interface Props { items: BuyerAnswer[]; heading?: string; intro?: string; eyebrow?: string }
-const { items, heading = 'Questions buyers ask', intro, eyebrow } = Astro.props;
+interface Props { items: BuyerAnswer[]; heading?: string; intro?: string; eyebrow?: string; visual?: 'drawing'|'dimensional' }
+const { items, heading = 'Questions buyers ask', intro, eyebrow, visual='drawing' } = Astro.props;
 ---
 {items.length > 0 && (
-  <section class="guide-faq" aria-labelledby="questions">
+  <section class="guide-faq" data-visual={visual} aria-labelledby="questions">
     {eyebrow && <p class="eyebrow">{eyebrow}</p>}
     <h2 id="questions">{heading}</h2>
+    {visual==='dimensional'&&<div class="question-study-controls"><p>Illustrative material studies</p><Action variant="quiet" icon={false} data-object-motion aria-pressed="false" hidden><span data-motion-label>Pause motion</span></Action></div>}
     {intro && <p>{intro}</p>}
     {items.map((item) => (
       <div class="guide-faq-item" id={item.id}>
-        <div class="question-heading-row"><h3>{item.question}</h3><QuestionVisual question={item.question} id={item.id} /></div>
+        <div class="question-heading-row"><h3>{item.question}</h3><QuestionVisual question={item.question} id={item.id} variant={visual} /></div>
         <p>{item.answer}</p>
       </div>
     ))}
   </section>
 )}
+
+<style is:global>
+  .question-study-controls { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.5rem 2rem; margin:-.5rem 0 1rem; min-height:44px; }
+  .question-study-controls p { margin:0; color:var(--color-stone); font-size:var(--text-meta); }
+  .question-study-controls .mw-action { min-height:44px; font-size:var(--text-meta); }
+  .question-study-controls [hidden] { display:none!important; }
+</style>

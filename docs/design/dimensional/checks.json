@@ -1,0 +1,269 @@
+{
+  "base": "d22b6b032a4e6e0acc8010d286223975e33e2125",
+  "localChecks": {
+    "source": 141,
+    "built": 233,
+    "typographyContrast": 2,
+    "phone": 2,
+    "guides": 5,
+    "analytics": 2
+  },
+  "responsive": [
+    {
+      "width": 360,
+      "where": ".professional-body",
+      "overflow": false,
+      "live": 3,
+      "canvases": 3,
+      "errors": []
+    },
+    {
+      "width": 360,
+      "where": "#questions",
+      "overflow": false,
+      "live": 1,
+      "canvases": 4,
+      "errors": []
+    },
+    {
+      "width": 360,
+      "where": "#s-joinery",
+      "overflow": false,
+      "live": 3,
+      "canvases": 7,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "where": ".professional-body",
+      "overflow": false,
+      "live": 3,
+      "canvases": 3,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "where": "#questions",
+      "overflow": false,
+      "live": 1,
+      "canvases": 4,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "where": "#s-joinery",
+      "overflow": false,
+      "live": 3,
+      "canvases": 7,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "where": ".professional-body",
+      "overflow": false,
+      "live": 4,
+      "canvases": 4,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "where": "#questions",
+      "overflow": false,
+      "live": 2,
+      "canvases": 6,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "where": "#s-joinery",
+      "overflow": false,
+      "live": 5,
+      "canvases": 11,
+      "errors": []
+    },
+    {
+      "width": 1024,
+      "where": ".professional-body",
+      "overflow": false,
+      "live": 4,
+      "canvases": 4,
+      "errors": []
+    },
+    {
+      "width": 1024,
+      "where": "#questions",
+      "overflow": false,
+      "live": 2,
+      "canvases": 6,
+      "errors": []
+    },
+    {
+      "width": 1024,
+      "where": "#s-joinery",
+      "overflow": false,
+      "live": 5,
+      "canvases": 11,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "where": ".professional-body",
+      "overflow": false,
+      "live": 4,
+      "canvases": 4,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "where": "#questions",
+      "overflow": false,
+      "live": 2,
+      "canvases": 6,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "where": "#s-joinery",
+      "overflow": false,
+      "live": 5,
+      "canvases": 11,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "where": ".professional-body",
+      "overflow": false,
+      "live": 4,
+      "canvases": 4,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "where": "#questions",
+      "overflow": false,
+      "live": 2,
+      "canvases": 6,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "where": "#s-joinery",
+      "overflow": false,
+      "live": 5,
+      "canvases": 11,
+      "errors": []
+    }
+  ],
+  "fallbackAndTiming": {
+    "timing": {
+      "photoEnd": 33.400000005960464,
+      "sceneStart": 586.6999999880791,
+      "photographBefore3D": true,
+      "layoutShiftTotal": 0.005539194923683449
+    },
+    "contextLoss": {
+      "postersVisible": true,
+      "deadControls": false
+    },
+    "noWebGL": {
+      "live": 0,
+      "postersVisible": true,
+      "controlsHidden": true
+    }
+  },
+  "visibility": {
+    "offscreenSuspension": true,
+    "hiddenTabSuspension": true,
+    "visibleTabResume": true
+  },
+  "cost": {
+    "boot": {
+      "file": "DesignObject.astro_astro_type_script_index_0_lang.lhqNk1mk.js",
+      "bytes": 3576,
+      "gzipBytes": 1590
+    },
+    "scene": {
+      "file": "design-object-scenes.C92vKTl5.js",
+      "bytes": 9949,
+      "gzipBytes": 4232
+    },
+    "existingSharedThree": {
+      "file": "three.module.DGYv-SGP.js",
+      "bytes": 679014,
+      "gzipBytes": 171199
+    },
+    "posters": [
+      {
+        "file": "calendar.webp",
+        "bytes": 29000
+      },
+      {
+        "file": "care.webp",
+        "bytes": 31054
+      },
+      {
+        "file": "document.webp",
+        "bytes": 28540
+      },
+      {
+        "file": "folio.webp",
+        "bytes": 30914
+      },
+      {
+        "file": "layers.webp",
+        "bytes": 29902
+      },
+      {
+        "file": "panels.webp",
+        "bytes": 26508
+      },
+      {
+        "file": "price.webp",
+        "bytes": 27552
+      },
+      {
+        "file": "privacy.webp",
+        "bytes": 26868
+      },
+      {
+        "file": "roll.webp",
+        "bytes": 26176
+      },
+      {
+        "file": "room.webp",
+        "bytes": 23858
+      },
+      {
+        "file": "samples.webp",
+        "bytes": 30914
+      }
+    ],
+    "totalPosterBytes": 311286
+  },
+  "noLoss": {
+    "base": {
+      "pages": 106,
+      "projectRecords": 5,
+      "projectGalleryEntries": 12,
+      "mediaFiles": 3610,
+      "imageFiles": 3606,
+      "markdownTwins": 106,
+      "jsonLd": {
+        "nodes": 8181,
+        "props": 36741
+      }
+    },
+    "pr": {
+      "pages": 106,
+      "projectRecords": 5,
+      "projectGalleryEntries": 12,
+      "mediaFiles": 3621,
+      "imageFiles": 3617,
+      "markdownTwins": 106,
+      "jsonLd": {
+        "nodes": 8181,
+        "props": 36741
+      }
+    }
+  }
+}

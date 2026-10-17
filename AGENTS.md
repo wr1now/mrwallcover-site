@@ -10,6 +10,8 @@ Add each new HTML route to [the route review](docs/design/route-review.json) wit
 
 Question rows use `QuestionVisual.astro` with a relevant topic drawing on the right. Reuse the shared FAQ components and review `question-visual.ts` mappings when adding questions; retain existing answers and native disclosure behaviour.
 
+Professional profiles can explicitly opt into the original procedural object family with `visual.objects: true`; this currently applies to Designers & architects only. Reuse `DesignObject.astro` and the dimensional `QuestionVisual` variant, retain server-rendered WebP posters and real project evidence, label the studies illustrative, and preserve lazy visible rendering, Pause motion and live OS/footer motion preferences. Review suitability before enabling another profile; this is not a requirement to animate every page.
+
 Preserve existing destinations, enquiry behaviour, accessibility, structured data and public content projections. Keep the shared footer on new routes. Include responsive screenshots and interaction checks proportionate to the change; passing builds do not establish visual quality. Keep verification status honest and list skipped checks with their reason.
 
 This is a public website repository. Do not import private research archives, private exclusion lists, leads, credentials or unpublished claims. Draft publication requires the existing editorial review; design changes do not clear content blockers. Do not merge or deploy unless the user has authorised that action.

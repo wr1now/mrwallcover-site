@@ -2,7 +2,12 @@
 /** A topic-specific drawing beside a question; the question itself carries the meaning. */
 import Icon from './Icon.astro';
 import { questionIcon } from '../lib/question-visual';
-interface Props { question: string; id?: string; }
+import DesignObject from './DesignObject.astro';
+import type { DesignObjectKind } from '../lib/design-object-kinds';
+interface Props { question: string; id?: string; variant?: 'drawing' | 'dimensional' }
 const icon = questionIcon(Astro.props.question, Astro.props.id);
+const dimensional=Astro.props.variant==='dimensional';
+const kinds:Partial<Record<string,DesignObjectKind>>={panels:'panels',calendar:'calendar',roll:'roll',book:'folio',drawing:'document',tag:'price',lock:'privacy',room:'room',tools:'care',layers:'layers',swatch:'samples',ruler:'document',pin:'room',search:'samples'};
+const kind=Astro.props.id==='s-joinery'?'panels':kinds[icon]??'document';
 ---
-<span class="question-visual" data-question-visual={icon} aria-hidden="true"><Icon name={icon} /></span>
+<span class:list={['question-visual', {'question-visual--dimensional':dimensional}]} data-question-visual={icon} aria-hidden="true">{dimensional?<DesignObject kind={kind} />:<Icon name={icon} />}</span>

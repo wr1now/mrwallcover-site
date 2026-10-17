@@ -13,6 +13,8 @@ import { buyerFaqFor } from '../../lib/ai-layer-data';
 import { breadcrumbNode, buyerFaqNode } from '../../lib/schema';
 import { editorialPages } from '../../lib/content';
 import DesignersStrip from '../../components/DesignersStrip.astro';
+import DesignObject from '../../components/DesignObject.astro';
+import type { DesignObjectKind } from '../../lib/design-object-kinds';
 export function getStaticPaths() { return professionals.map((item) => ({ params: { slug: item.slug }, props: { item } })); }
 const { item } = Astro.props;
 const path = `/professionals/${item.slug}/`;
@@ -22,9 +24,11 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'For professionals', href: 
 const faq = buyerFaqFor(path);
 // Published editorial pages under /professionals/ (e.g. fit-out contractors) join the "Other ways we can help" row.
 const professionalEditorials = editorialPages.map((mod) => mod.frontmatter).filter((fm) => fm.path.startsWith('/professionals/'));
+const dimensional=item.visual?.objects===true;
+const sectionObjects:DesignObjectKind[]=['document','samples','layers'];
 ---
 <Base title={`${item.name} | Mr Wallcover`} description={item.description} path={path} extraSchema={[breadcrumbNode(crumbs), ...(faq.length ? [buyerFaqNode(faq)] : [])]}>
-  <div class="container-page pb-20">
+  <div class:list={['container-page pb-20',{'designer-dimensional':dimensional}]}>
     <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
       <div class="professional-opening">
@@ -35,15 +39,16 @@ const professionalEditorials = editorialPages.map((mod) => mod.frontmatter).filt
         {item.visual?.evidence && <EvidenceFigure {...item.visual.evidence} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" class="professional-opening-evidence" />}
       </div>
     </header>
+    {dimensional&&<div class="design-study-controls"><p>Material & detail studies <span>· Illustrative</span></p><Action variant="quiet" icon={false} data-object-motion aria-pressed="false" hidden><span data-motion-label>Pause motion</span></Action></div>}
     <div class="professional-body grid gap-10 lg:grid-cols-12">
       <div class="professional-sections prose guide-prose lg:col-span-7">{item.sections.map((section, index) => <section>
-        <div class="professional-section-mark"><Icon name={(item.visual?.sectionIcons?.[index] ?? 'drawing') as IconName} /><span>{String(index + 1).padStart(2, '0')}</span></div>
+        {dimensional?<div class="professional-section-object"><DesignObject kind={sectionObjects[index]??'panels'} /><span>{String(index+1).padStart(2,'0')}</span></div>:<div class="professional-section-mark"><Icon name={(item.visual?.sectionIcons?.[index] ?? 'drawing') as IconName} /><span>{String(index + 1).padStart(2, '0')}</span></div>}
         <h2>{section.title}</h2><p>{section.text}</p>
       </section>)}</div>
-      <ProfessionalBriefing items={item.checklist} icons={item.visual?.checklistIcons as IconName[]} download={`/downloads/${item.download}`} downloadLabel={item.downloadLabel} guide={related ? { href: guideHref(related.frontmatter.slug), label: `${related.frontmatter.shortTitle}: read the guide` } : undefined} class="lg:col-span-4 lg:col-start-9" />
+      <ProfessionalBriefing dimensional={dimensional} items={item.checklist} icons={item.visual?.checklistIcons as IconName[]} download={`/downloads/${item.download}`} downloadLabel={item.downloadLabel} guide={related ? { href: guideHref(related.frontmatter.slug), label: `${related.frontmatter.shortTitle}: read the guide` } : undefined} class="lg:col-span-4 lg:col-start-9" />
     </div>
     {item.slug === 'hotels' && <HotelGroups />}
-    {faq.length > 0 && <div class="prose guide-prose"><BuyerFaq items={faq} eyebrow="Questions" /></div>}
+    {faq.length > 0 && <div class:list={['prose guide-prose',{'designer-questions':dimensional}]}><BuyerFaq items={faq} eyebrow="Questions" visual={dimensional?'dimensional':'drawing'} /></div>}
     {item.slug === 'designers' && <DesignersStrip />}
     <section class="guide-related"><h2>Other ways we can help</h2><div class="flex flex-wrap gap-3">{professionals.filter((other) => other.slug !== item.slug).map((other) => <Action variant="secondary" href={`/professionals/${other.slug}/`}>{other.name}</Action>)}{professionalEditorials.map((fm) => <Action variant="secondary" href={fm.path}>{fm.title}</Action>)}<Action variant="secondary" href="/projects/">Explore our work</Action></div></section>
   </div>
@@ -58,5 +63,22 @@ const professionalEditorials = editorialPages.map((mod) => mod.frontmatter).filt
   .professional-section-mark { display: flex; align-items: center; gap: .9rem; margin-bottom: 1rem; color: var(--color-brass); font-size: var(--text-meta); letter-spacing: var(--tracking-label); }
   .professional-sections h2 { margin: 0 0 1rem; font-size: var(--text-h3); line-height: 1.15; }
   .professional-sections p { margin: 0; }
+  .design-study-controls { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.5rem 2rem; padding-block:.5rem 1rem; min-height:68px; }
+  .design-study-controls p { margin:0; color:var(--color-ink); font-size:var(--text-meta); }
+  .design-study-controls p span { color:var(--color-stone); }
+  .design-study-controls :global([hidden]) { display:none!important; }
+  .design-study-controls :global(.mw-action) { min-height:44px; font-size:var(--text-meta); }
+  .professional-section-object { position:relative; width:9rem; margin:-1.5rem 0 .25rem -1rem; }
+  .professional-section-object > span { position:absolute; bottom:1rem; right:0; color:var(--color-stone); font-size:var(--text-meta); }
+  .designer-questions { max-width:62rem; }
+  .designer-dimensional :global(.guide-faq[data-visual="dimensional"] .guide-faq-item) { position:relative; padding-block:2.4rem; }
+  .designer-dimensional :global(.question-visual--dimensional) { flex:0 0 128px; width:128px; height:128px; margin:-1rem -.5rem -.5rem 0; border:0; background:transparent; border-radius:0; }
+  .designer-dimensional :global(.question-visual--dimensional::before), .designer-dimensional :global(.question-visual--dimensional::after) { display:none; }
+  @media(min-width:768px) {
+    .designer-dimensional :global(.guide-faq[data-visual="dimensional"] .guide-faq-item) { padding-right:16rem; min-height:15rem; }
+    .designer-dimensional :global(.question-visual--dimensional) { position:absolute; width:240px; height:240px; top:50%; right:-1rem; margin:0; transform:translateY(-50%); }
+    .designer-dimensional :global(.guide-faq[data-visual="dimensional"] .question-heading-row) { display:block; }
+    .designer-dimensional :global(.guide-faq[data-visual="dimensional"] h3) { max-width:34rem; }
+  }
   @media (min-width: 1024px) { .professional-opening { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(2rem, 5vw, 5rem); } }
 </style>
