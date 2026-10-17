@@ -93,7 +93,7 @@ export const GET: APIRoute = () => {
     entry('Wallpaper calculator', '/calculator/', 'cuts every drop from the rolls (free, straight, half, third and quarter drop; doors, windows, reveals, niches and returns; rooms as one run), shows the cutting plan, working rolls, one spare on its own line and the order, and lists primer, lining and paste from data sheets; stairs, slopes, ceilings and panel sets go to an enquiry; no price'),
     entry('Wallpapering', '/wallpapering/', 'the quantity calculator, wall preparation by type and condition, lining papers, primers and pastes with their data sheets, and the hanging guides'),
     entry('Preparing walls for wallpaper', '/wallpapering/preparation/', 'treatment, primer, lining grade and site inspection for each wall type and condition; the maker first, then the house standard'),
-    entry('Lining papers, pastes and primers', '/wallpapering/lining-and-adhesives/', 'Gardz, Erfurt lining grades, Wallrock Power and maker-named pastes, with coverage as printed, data sheet links and dates; the lining paste is at least one step stronger than the wallpaper paste'),
+    entry('Lining papers, pastes and primers', '/wallpapering/lining-and-adhesives/', 'Gardz, Erfurt lining grades, Wallrock Power and maker-named pastes, with coverage as printed, data sheet links and dates; the Mr Wallcover house paste scale, with maker instructions taking precedence'),
     '',
     '## Services by material',
     ...specialisms.map((s) => entry(s.name, specialismHref(s.slug), s.description)),
