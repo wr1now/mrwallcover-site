@@ -173,3 +173,7 @@ Verification: source checks 98/98; production build; built-site checks 212/212 p
 Mobile and desktop captures are in [guide-release/](guide-release/), including each new/changed page and the shared footer on home, services, contact and the Timorous Beasties page. Images were inspected for readable hierarchy and navigation; the two editorial pages remain deliberately text-led. No runtime package or animation dependency is added.
 
 Guide uncompressed local transfer inventory on the same production page (HTML and directly referenced CSS/JS): `{"main": {"htmlBytes": 54933, "cssBytes": 92141, "jsBytes": 0, "assetCount": 1}, "release": {"htmlBytes": 62127, "cssBytes": 92141, "jsBytes": 0, "assetCount": 1}}`. This is a static asset comparison, not a field Core Web Vitals claim.
+
+## Live header follow-up — 17 October 2026
+
+Live fire-release verification with conditional WhatsApp enabled exposed a three-line primary header action. The header now uses compact link gaps, preserves a single-line enquiry action and shows booking in the bar from 1440px. Booking remains available in the footer and mobile dock. Labels, type sizes, routes and enquiry behaviour are retained. The phone-enabled new-page fixture reproduced the wrap at 1024px before the fix; it now asserts one text line, clearance from the wordmark and the bar edge, and the booking breakpoint at 1024, 1280 and 1440px. The same fixture checks the other mobile widths and contact behaviour.

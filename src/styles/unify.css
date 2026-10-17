@@ -24,6 +24,15 @@ main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
 
 /* ---- 3. Header: links 14px, the action is the primary button ---- */
 .site-header .nav-link, .site-header .menu-toggle, .site-header .header-mobile .nav-link { font-size:var(--text-nav); }
+/* Keep the complete enquiry action readable when conditional contact links are present. */
+.site-header .primary-nav { gap:.75rem; }
+.site-header .primary-nav .header-action { white-space:nowrap; flex:none; }
+.site-header .primary-nav .header-book { display:none; }
+@media (min-width:1440px) { .site-header .primary-nav .header-book { display:inline-flex; } }
+@media (min-width:1024px) and (max-width:1279px) {
+  .site-header .primary-nav { gap:.5rem; }
+  .site-header .primary-nav .header-action { padding-inline:1rem; }
+}
 
 /* The mobile dock: 14px like the header links. */
 .dock a, .dock .dock-phone { font-size:var(--text-meta); }
