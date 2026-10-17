@@ -420,6 +420,10 @@
     {
       "path": "/where-to-buy/",
       "decision": "Use a text-led ordering checklist and primary source links; no supplier record or product imagery is being published."
+    },
+    {
+      "path": "/get-in-touch/",
+      "decision": "Contact icons identify direct channels; shared actions distinguish a quotation from a conversation. No room photography: this page helps visitors choose a contact method, not assess project evidence."
     }
   ]
 }
