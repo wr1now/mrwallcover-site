@@ -19,7 +19,7 @@
     },
     {
       "path": "/advice/",
-      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+      "decision": "Five topic icons distinguish choosing, specification, sourcing, preparation and installation; retain the existing illustrated Guide cards below."
     },
     {
       "path": "/advice/choosing-wallcoverings/",
@@ -128,6 +128,10 @@
     {
       "path": "/for-ai/",
       "decision": "Keep plain facts, sourced links and machine-readable destinations text-led; decorative images do not establish claims."
+    },
+    {
+      "path": "/how-we-check/",
+      "decision": "Keep editorial rules text-led with explicit scope; photographs would not establish independent checking or certification."
     },
     {
       "path": "/image-use/",
@@ -412,6 +416,10 @@
     {
       "path": "/wallpapering/",
       "decision": "Use the shared page shell and Guide cards as a compact front door to existing guides; a clearly labelled evidence schematic supports the fire-reference link without implying an approved assembly."
+    },
+    {
+      "path": "/where-to-buy/",
+      "decision": "Use a text-led ordering checklist and primary source links; no supplier record or product imagery is being published."
     }
   ]
 }

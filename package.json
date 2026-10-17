@@ -26,7 +26,9 @@
     "check:names": "node scripts/names-guard.mjs --repo",
     "check:visual": "node --experimental-strip-types --test tests/footer-visual.test.ts tests/visual-system.test.ts tests/visual-browser.test.ts tests/visual-coverage.test.ts && node scripts/check-visual-fixture.mjs",
     "capture:visual": "node scripts/capture-visual-review.mjs",
-    "check:fire-sources": "node scripts/check-fire-sources.mjs"
+    "check:fire-sources": "node scripts/check-fire-sources.mjs",
+    "check:guide-release": "node --experimental-strip-types --test tests/guide-release.test.ts tests/names-guard.test.ts",
+    "check:guide-browser": "node scripts/qa/guide-release-browser.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
