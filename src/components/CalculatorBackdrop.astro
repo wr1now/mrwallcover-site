@@ -1,0 +1,57 @@
+---
+/** Original atmospheric linework; never a measurement, product pattern or calculated cutting plan. */
+interface Props { kind: 'roll' | 'measure' | 'wall'; }
+const { kind } = Astro.props;
+---
+
+<svg class:list={['calculator-backdrop', `calculator-backdrop--${kind}`]} viewBox="0 0 600 500" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  {kind === 'roll' && <>
+    <defs>
+      <linearGradient id="qc-background-paper" x1="0" y1="0" x2="1" y2="1">
+        <stop stop-color="var(--color-gold)" stop-opacity=".7" />
+        <stop offset="1" stop-color="var(--color-gold)" stop-opacity=".08" />
+      </linearGradient>
+    </defs>
+    <g transform="rotate(-12 310 250)">
+      <path class="wash" d="M190 104h174c49 0 88 29 88 67v207c0 42-36 70-85 70H190c49 0 87-28 87-70V171c0-38-38-67-87-67Z" />
+      <path d="M190 104h174c49 0 88 29 88 67v207c0 42-36 70-85 70H190c49 0 87-28 87-70V171c0-38-38-67-87-67Z" />
+      <path d="M121 126v231c0 29 138 29 138 0V126" />
+      <ellipse cx="190" cy="126" rx="69" ry="22" />
+      <ellipse cx="190" cy="126" rx="24" ry="8" />
+      <path class="fine" d="M145 145v205m23-201v205m23-203v205m23-207v207m23-214v214M313 165v204m43-214v213m43-202v199" />
+      <path class="rule" d="M112 405h151m-151-8v16m151-16v16m-132-8v-5m19 5v-5m19 5v-9m19 9v-5m19 5v-5m19 5v-9m19 9v-5" />
+    </g>
+  </>}
+  {kind === 'measure' && <g transform="rotate(9 310 250)">
+    <path class="sheet" d="M164 42h84v404h-84zm84 0h84v404h-84zm84 0h84v404h-84z" />
+    <path class="fine" d="M206 59v370m84-370v370m84-370v370" stroke-dasharray="4 12" />
+    <path class="rule" d="M455 42v404m-12-404h24m-24 404h24" />
+    {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => <path class="fine" d={`M455 ${60 + i * 46}h${i % 2 ? 10 : 18}`} />)}
+  </g>}
+  {kind === 'wall' && <g transform="rotate(-7 310 250)">
+    <path class="sheet" d="M62 125h452v238H62z" />
+    <path d="M355 211h81v152h-81zM355 226h81" />
+    <path class="fine" d="M137 125v238m75-238v238m75-238v238m75-238v86m75-86v86M62 349h293m81 0h78" />
+    <path class="rule" d="M62 92h452m-452-11v22m452-22v22M548 125v238m-11-238h22m-22 238h22" />
+    <path class="fine" d="M137 87v10m75-10v10m75-10v10m75-10v10m75-10v10M543 184h10m-10 60h10m-10 60h10" />
+  </g>}
+</svg>
+
+<style>
+  .calculator-backdrop { position: absolute; display: block; height: auto; fill: none; stroke: var(--color-brass); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; user-select: none; }
+  .calculator-backdrop .fine { stroke-width: .8; opacity: .65; }
+  .calculator-backdrop .rule { stroke-width: 1; }
+  .calculator-backdrop .wash { fill: url(#qc-background-paper); stroke: none; }
+  .calculator-backdrop .sheet { fill: var(--color-gold); fill-opacity: .15; }
+  .calculator-backdrop--roll { width: clamp(24rem, 37vw, 36rem); top: 1.5rem; right: max(.5rem, calc((100% - 80rem) / 2)); opacity: .16; }
+  .calculator-backdrop--measure { width: 32rem; top: 63rem; right: -15rem; opacity: .1; }
+  .calculator-backdrop--wall { width: 32rem; right: -1rem; top: -.6rem; opacity: .12; }
+  @media (max-width: 1023px) {
+    .calculator-backdrop--roll { right: -9rem; top: 2.5rem; width: 28rem; opacity: .075; mask-image: linear-gradient(90deg, transparent 15%, #000 65%); }
+    .calculator-backdrop--measure { display: none; }
+    .calculator-backdrop--wall { right: -11rem; width: 27rem; opacity: .07; mask-image: linear-gradient(90deg, transparent 15%, #000 80%); }
+  }
+  @media (max-width: 479px) { .calculator-backdrop--roll { right: -12rem; width: 27rem; top: 2rem; opacity: .06; } }
+  :global(html[data-effects="reduced"]) .calculator-backdrop { display: none; }
+  @media (prefers-reduced-motion: reduce), (forced-colors: active), print { .calculator-backdrop { display: none; } }
+</style>
