@@ -1,13 +1,16 @@
 ---
+import Icon from '../../components/Icon.astro';
 import Action from '../../components/Action.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import GuideCard from '../../components/GuideCard.astro';
 import Base from '../../layouts/Base.astro';
 import { hubCards, guideCategories } from '../../lib/guides';
 import { breadcrumbNode } from '../../lib/schema';
+import { guideStages, howWeCheck } from '../../lib/guide-stages';
+import '../../styles/guide.css';
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href: '/advice/' }];
 ---
-<Base title="Wallcovering Guide | Mr Wallcover" description="Practical guidance on choosing wallpaper, preparation, quantity, specification and care." path="/advice/" extraSchema={[breadcrumbNode(crumbs)]}>
+<Base title="Wallcovering Guide | Mr Wallcover" description="Choose, specify, source, prepare for and install a wallcovering: our guides, the roll calculator, how wallpaper is sold and how we check." path="/advice/" extraSchema={[breadcrumbNode(crumbs)]}>
   <div class="container-page pb-20">
     <header class="page-head guide-intro">
       <Breadcrumb items={crumbs} />
@@ -15,18 +18,31 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href:
       <h1>Before the first<br /><em>length is cut.</em></h1>
       <p class="lede mt-5">The sample is only the start. Make sense of the material, the wall and the work before committing to a room.</p>
     </header>
-    <div class="guide-tools">
-      <a href="/materials/#material-finder"><span class="eyebrow">Choose</span><strong>Find a material family</strong><span>Compare appearance and everyday use ↗</span></a>
-      <a href="/advice/quantities/"><span class="eyebrow">Plan</span><strong>Check a simple quantity</strong><span>Plain and straight-match walls ↗</span></a>
-      <a href="/professionals/"><span class="eyebrow">Specify</span><strong>Plan a professional package</strong><span>Designers, developers and hotels ↗</span></a>
-    </div>
+    <section class="guide-stages" aria-labelledby="stages-heading">
+      <h2 id="stages-heading">Choose, specify, source, prepare, install.</h2>
+      <p>Each stage has its own pages. Start where your project is.</p>
+      <ol class="stage-list">
+        {guideStages.map((stage) => (
+          <li class="stage" id={stage.id}>
+            <div class="stage-head">
+              <Icon name={({choose:"layers", specify:"drawing", source:"roll", prepare:"ruler", install:"tools"} as const)[stage.id]} /><h3>{stage.label}</h3>
+              <p>{stage.question}</p>
+            </div>
+            <ul class="stage-links">
+              {stage.links.map((link) => <li><a href={link.href}><strong>{link.label}</strong><span>{link.note}</span></a></li>)}
+            </ul>
+          </li>
+        ))}
+      </ol>
+      <p class="stage-trust"><a href={howWeCheck.href}>{howWeCheck.label}</a>{` `}<span>{howWeCheck.note}</span></p>
+    </section>
     {hubCards.length > 0 && <section class="guide-library" aria-labelledby="guide-library-heading">
       <h2 id="guide-library-heading">Find the answer you need.</h2>
       <fieldset class="guide-filters" data-guide-filters hidden><legend class="sr-only">Filter guides by topic</legend><button type="button" data-filter="all" aria-pressed="true">All guides</button>{guideCategories.map((category) => <button type="button" data-filter={category.id} aria-pressed="false">{category.label}</button>)}</fieldset>
       <p class="sr-only" data-guide-count role="status"></p>
       <div class="guide-grid">{hubCards.map((card) => <GuideCard guide={card} />)}</div>
     </section>}
-    <section class="guide-next"><p class="eyebrow">A question about your project?</p><h2>Start with what you know.</h2><p>Tell us about the room or send the material you are considering. We can discuss preparation, installation or the complete package.</p><div class="flex flex-wrap gap-3"><Action variant="primary" href="/contact/?intent=advice">Discuss your project</Action><Action variant="secondary" href="/aftercare/">Care and repairs</Action></div></section>
+    <section class="guide-next"><p class="eyebrow">A question about your project?</p><h2>Start with what you know.</h2><p>Tell us about the room or send the material you are considering. We can discuss preparation, installation or the complete package.</p><div class="flex flex-wrap gap-3"><Action href="/contact/?intent=advice">Discuss your project</Action><Action variant="secondary" href="/aftercare/">Care and repairs</Action></div></section>
   </div>
 </Base>
 <script>

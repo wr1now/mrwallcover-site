@@ -162,6 +162,18 @@ Both routes were inspected at 390px and 1440px, with automated overflow/interact
 
 Evidence: [release verification](../research/fire-ratings/release-review.md), including representative screenshots and the dependency boundary. The draft calculator and adhesive dataset are not included. No deployment or professional fire-safety approval is claimed.
 
+## Standalone Guide release — 17 October 2026
+
+Based on main after #66, #67 and the independent fire-reference release #68. The shared design foundation is inherited, not bundled as an unpublished dependency. The Guide’s five stage icons clarify navigation; the existing illustrated guide library stays below. Where to buy is a text-led order checklist, with dated official sources. How we check is a text-led editorial policy: no photograph can prove independent review. Neither new page publishes maker/seller records or technical performance figures. No draft calculator, materials dataset or analytics is added. The independently released fire reference now comes from main. All preparation/quantity/fire links point to existing published guides.
+
+The policy governs new product/buying-route references and explicitly avoids claiming all older content has had two independent reviews. The private names secret is configured; CI requires it and fails on absence. New routes inherit the editorial template, common actions and footer. Both routes are in the route review and search; the editorial discovery pipeline adds sitemap, llms and Markdown twins.
+
+Verification: source checks 98/98; production build; built-site checks 212/212 plus temporary new-route and phone-enabled browser fixtures; Guide integration/name unit checks 9/9; guide publication checks 5/5; phone builds 2/2. Focused browser review covers 18 route/width cases (360, 390, 768, 1024, 1280, 1440), 8 shared-footer cases, keyboard menu/Escape, native disclosures, reduced effects and no-JavaScript content. The full inherited site audit covers all routes at 390/1440. No-loss passes against a fresh main build: 100 → 102 routes, 3,610 media files retained, 100 → 102 Markdown twins, no JSON-LD reduction. Strict private-name check passes with 64 entries; the list stays private.
+
+Mobile and desktop captures are in [guide-release/](guide-release/), including each new/changed page and the shared footer on home, services, contact and the Timorous Beasties page. Images were inspected for readable hierarchy and navigation; the two editorial pages remain deliberately text-led. No runtime package or animation dependency is added.
+
+Guide uncompressed local transfer inventory on the same production page (HTML and directly referenced CSS/JS): `{"main": {"htmlBytes": 54933, "cssBytes": 92141, "jsBytes": 0, "assetCount": 1}, "release": {"htmlBytes": 62127, "cssBytes": 92141, "jsBytes": 0, "assetCount": 1}}`. This is a static asset comparison, not a field Core Web Vitals claim.
+
 ## Live header follow-up — 17 October 2026
 
 Live fire-release verification with conditional WhatsApp enabled exposed a three-line primary header action. The header now uses compact link gaps, preserves a single-line enquiry action and shows booking in the bar from 1440px. Booking remains available in the footer and mobile dock. Labels, type sizes, routes and enquiry behaviour are retained. The phone-enabled new-page fixture reproduced the wrap at 1024px before the fix; it now asserts one text line, clearance from the wordmark and the bar edge, and the booking breakpoint at 1024, 1280 and 1440px. The same fixture checks the other mobile widths and contact behaviour.

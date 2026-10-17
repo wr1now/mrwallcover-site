@@ -1,0 +1,40 @@
+/* The Wallcovering Guide's front door (/advice/) and its stage bar on the Guide's own pages (/where-to-buy/,
+   /how-we-check/): five stages, each linking to its own pages. Paper, ink and brass, as in the rest of the guide. */
+.guide-subnav { display:flex; flex-wrap:wrap; gap:.25rem 1.5rem; margin:0 0 2.5rem; padding:0; list-style:none; border-block:1px solid var(--color-line); }
+.guide-subnav a { display:inline-flex; align-items:center; min-height:44px; color:var(--color-stone); text-decoration:none; font-size:1rem; }
+.guide-subnav a:hover { color:var(--color-ink); }
+.guide-subnav a[aria-current] { color:var(--color-ink); box-shadow:inset 0 -2px 0 var(--color-brass); }
+
+.guide-stages { margin-top:1rem; }
+.guide-stages > h2 { margin:0; font-size:clamp(2rem,4vw,3rem); }
+.guide-stages > p { max-width:42rem; margin:1rem 0 0; }
+.stage-list { margin:2rem 0 0; padding:0; list-style:none; counter-reset:stage; border-top:1px solid var(--color-line); }
+.stage { display:grid; gap:1rem; padding-block:1.75rem; border-bottom:1px solid var(--color-line); scroll-margin-top:7rem; counter-increment:stage; }
+.stage-head h3 { margin:0; font-size:clamp(1.9rem,3vw,2.3rem); }
+.stage-head h3::before { content:counter(stage) "\2002"; color:var(--color-brass); font-size:.7em; vertical-align:.12em; font-variant-numeric:lining-nums; }
+.stage-head p { margin:.4rem 0 0; color:var(--color-stone); }
+.stage-links { display:grid; gap:0; margin:0; padding:0; list-style:none; }
+.stage-links a { display:grid; gap:.2rem; padding:.85rem 0; color:inherit; text-decoration:none; border-top:1px solid var(--color-line); min-height:44px; }
+.stage-links li:first-child a { border-top:0; }
+.stage-links strong { font-weight:500; text-decoration:underline; text-decoration-color:var(--color-brass); text-underline-offset:3px; }
+.stage-links span { color:var(--color-stone); }
+.stage-links a:hover strong { text-decoration-thickness:2px; }
+.stage-trust { display:grid; gap:.4rem; margin-top:2rem; padding:1.25rem 0 0; }
+.stage-trust a { color:inherit; text-decoration:underline; text-decoration-color:var(--color-brass); text-underline-offset:3px; }
+@media (min-width:48rem) {
+  .stage-links { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:2rem; }
+  .stage-links li:nth-child(2) a { border-top:0; }
+}
+@media (min-width:64rem) {
+  .stage { grid-template-columns:minmax(0,1fr) minmax(0,2.2fr); gap:3rem; }
+}
+
+/* Editorial pages in the Guide (Where to buy, How we check): lists keep their bullets and some air. */
+.guide-stage-page ul, .guide-stage-page ol { padding-left:1.25rem; }
+.guide-stage-page ul { list-style:disc; }
+.guide-stage-page ol { list-style:decimal; }
+.guide-stage-page li { line-height:1.75; }
+.guide-stage-page li + li { margin-top:.75rem; }
+.guide-stage-page li::marker { color:var(--color-brass); }
+
+.stage-head > .mw-icon { color:var(--color-brass); width:2rem; height:2rem; margin-bottom:.75rem; }
