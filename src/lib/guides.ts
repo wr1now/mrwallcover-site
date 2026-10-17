@@ -80,7 +80,7 @@ export function formatGuideDate(iso: string): string {
 export const quantityCalculatorCard: GuideCardData = {
   slug: 'quantities',
   shortTitle: 'How much wallpaper to order',
-  description: 'Count drops, not square metres. A restricted roll calculator, and why repeat, batch and spares change the order.',
+  description: 'Count drops, not square metres: how the repeat, half-drop, doors and windows change the order, with worked examples, and a link to the calculator.',
   category: 'planning',
   order: 4,
 };

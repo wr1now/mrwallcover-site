@@ -11,10 +11,10 @@
  */
 import { publishedGuides, guideHref } from '../lib/guides';
 import type { APIRoute } from 'astro';
-import { SITE_URL } from '../config';
+import { ANALYTICS_SRC, SITE_URL } from '../config';
 import facts from '../data/facts.json';
 import professionals from '../content/professionals.json';
-import { areaHref, areas, editorialPages, faqItems, materials, projectHref, projects, specialismHref, specialisms } from '../lib/content';
+import { areaHref, areas, editorialPages, faqItems, materials, privacy, projectHref, projects, specialismHref, specialisms } from '../lib/content';
 import { caseStudyCount, trustMakers, trustSummary } from '../lib/trust';
 import { AWARD, FOUNDER_SUMMARY, SINCE_TEXT, WASTAGE, buyerQuestions, enquiryRoutes, projectFacts, serviceFacts } from '../lib/ai-layer-data';
 
@@ -83,8 +83,14 @@ export const GET: APIRoute = () => {
     '',
     '## Wallcovering Guide',
     entry('Wallcovering Guide', '/advice/', 'choosing, preparation, quantities and care'),
-    entry('How much wallpaper to order', '/advice/quantities/', 'count drops, not square metres; a restricted roll calculator for plain and straight-match walls, measured by wall or by room, with the usual 15–30% allowance range (staircases around 30%) beside the drop count; pattern-match extras confirmed at survey'),
+    entry('How much wallpaper to order', '/advice/quantities/', 'count drops, not square metres: width, height and trim, the pattern repeat, half-drop, doors and windows, worked by hand, with the spare from one batch'),
     ...guides.map((guide) => entry(guide.frontmatter.title, guideHref(guide.frontmatter.slug), guide.frontmatter.description)),
+    '',
+    '## Wallpapering',
+    entry('Wallpaper calculator', '/calculator/', 'cuts every drop from the rolls (free, straight, half, third and quarter drop; doors, windows, reveals, niches and returns; rooms as one run), shows the cutting plan, working rolls, one spare on its own line and the order, and lists primer, lining and paste from data sheets; stairs, slopes, ceilings and panel sets go to an enquiry; no price'),
+    entry('Wallpapering', '/wallpapering/', 'the quantity calculator, wall preparation by type and condition, lining papers, primers and pastes with their data sheets, and the hanging guides'),
+    entry('Preparing walls for wallpaper', '/wallpapering/preparation/', 'treatment, primer, lining grade and site inspection for each wall type and condition; the maker first, then the house standard'),
+    entry('Lining papers, pastes and primers', '/wallpapering/lining-and-adhesives/', 'Gardz, Erfurt lining grades, Wallrock Power and maker-named pastes, with coverage as printed, data sheet links and dates; the lining paste is at least one step stronger than the wallpaper paste'),
     '',
     '## Services by material',
     ...specialisms.map((s) => entry(s.name, specialismHref(s.slug), s.description)),
@@ -123,7 +129,7 @@ export const GET: APIRoute = () => {
     entry('Feed', '/feed.xml', 'Atom feed of the published guides and case studies, with their dates'),
     entry('Sitemap', '/sitemap-index.xml', 'every published page'),
     entry('Accessibility', '/accessibility/', 'how the site is built for keyboard, mobile and reduced-motion use'),
-    entry('Privacy', '/privacy/', 'how enquiry details are handled; no cookies and no analytics by default'),
+    entry('Privacy', '/privacy/', ANALYTICS_SRC ? privacy.analyticsOn.llms : 'how enquiry details are handled; no cookies and no analytics by default'),
     '',
   ];
   return new Response(lines.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

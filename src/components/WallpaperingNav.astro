@@ -1,0 +1,20 @@
+---
+/** The four parts of the Wallpapering hub, shown at the top of each part. */
+interface Props {
+  current: 'hub' | 'calculator' | 'guide' | 'preparation' | 'lining';
+}
+const { current } = Astro.props;
+const parts = [
+  { id: 'hub', href: '/wallpapering/', label: 'Wallpapering' },
+  { id: 'calculator', href: '/calculator/', label: 'Calculator' },
+  { id: 'preparation', href: '/wallpapering/preparation/', label: 'Preparation' },
+  { id: 'lining', href: '/wallpapering/lining-and-adhesives/', label: 'Lining & adhesives' },
+  { id: 'guides', href: '/wallpapering/#hanging-guides', label: 'Hanging guides' },
+];
+---
+
+<nav aria-label="Wallpapering">
+  <ul class="wp-subnav">
+    {parts.map((part) => <li><a href={part.href} aria-current={part.id === current ? 'page' : undefined}>{part.label}</a></li>)}
+  </ul>
+</nav>

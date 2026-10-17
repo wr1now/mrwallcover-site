@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { test } from 'node:test';
@@ -13,6 +14,31 @@ async function htmlFiles(dir: string): Promise<string[]> {
   }
   return out;
 }
+
+test('the private research archive is never referenced from the built site, scripts included', async () => {
+  const files = await (async function walk(dir: string): Promise<string[]> {
+    const out: string[] = [];
+    for (const entry of await readdir(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) out.push(...(await walk(full)));
+      else if (/\.(html|js|json|txt|md|xml)$/.test(entry.name)) out.push(full);
+    }
+    return out;
+  })('dist');
+  for (const file of files) {
+    const text = await readFile(file, 'utf8');
+    for (const term of ['mrwallcover-private', 'calculator-inputs', 'Grok']) assert.equal(text.includes(term), false, `${file}: ${term}`);
+  }
+});
+
+test('names the owner keeps off the site never appear in it (owner, 14 Oct 2026)', async () => {
+  // Kept as SHA-256 fingerprints so this public test does not publish the names it guards against.
+  const unnamed = new Set(['3a68ef6f0d873650a9a1f74ce6f76b91ebc18601978e9ae5f454d411ba51526c', '928f634e7bf43f6d70f3e079a6c29cf84c5b6bdc0491bb72303dff58a760ba70']);
+  const files = await htmlFiles('dist');
+  const text = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n').toLowerCase();
+  const found = [...new Set(text.match(/[a-z][a-z0-9-]{2,}/g) ?? [])].filter((word) => unnamed.has(createHash('sha256').update(word).digest('hex')));
+  assert.deepEqual(found.length, 0);
+});
 
 test('the built site keeps private names and the verification token out of the wrong places', async () => {
   const files = await htmlFiles('dist');
@@ -466,7 +492,8 @@ test('every media file the built pages point to exists', async () => {
   const missing = new Set<string>();
   for (const file of files) {
     const html = await readFile(file, 'utf8');
-    for (const match of html.matchAll(/\/media\/[^"'\s,)?#]+/g)) {
+    // Root-relative or on our own host; another site's /media/ path (a maker's data sheet) is not ours to check.
+    for (const match of html.matchAll(/(?:(?<![\w.-])|(?<=https:\/\/www\.mrwallcover\.com))\/media\/[^"'\s,)?#]+/g)) {
       const asset = path.join('dist', match[0]);
       try {
         await stat(asset);

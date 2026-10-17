@@ -1,5 +1,5 @@
 ---
-import { PUBLIC_EMAIL } from '../config';
+import { ANALYTICS_SRC, PUBLIC_EMAIL } from '../config';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Base from '../layouts/Base.astro';
 import { privacy } from '../lib/content';
@@ -10,11 +10,19 @@ const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'Privacy', href: '/privacy/' },
 ];
+// With analytics switched on at build time, the notice describes it; otherwise it says none runs.
+const analyticsOn = Boolean(ANALYTICS_SRC);
+const lineFor = (paragraph: string) => {
+  if (!analyticsOn) return paragraph;
+  if (paragraph.includes('does not run analytics')) return privacy.analyticsOn.covers;
+  if (paragraph.includes('There is a place in the build for a cookie-free analytics script')) return privacy.analyticsOn.cookies;
+  return paragraph;
+};
 ---
 
 <Base
   title={privacy.title}
-  description={privacy.description}
+  description={analyticsOn ? privacy.analyticsOn.description : privacy.description}
   path="/privacy/"
   extraSchema={[breadcrumbNode(crumbs)]}
 >
@@ -49,7 +57,7 @@ const crumbs = [
                       <a href="https://ico.org.uk/make-a-complaint/">ico.org.uk</a>.
                     </>
                   ) : (
-                    paragraph
+                    lineFor(paragraph)
                   )}
                 </p>
               ))}
