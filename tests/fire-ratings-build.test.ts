@@ -77,16 +77,18 @@ test('every product row shows its printed class, a decoded reading, its limitati
   }
 });
 
-test('the Markdown twin keeps each product’s build-up, evidence and gaps in that product’s own row', () => {
-  const lines = readFileSync(`dist${PATH}index.md`, 'utf8').split('\n');
-  assert.ok(!lines.some((l) => /\|\s*\|\s*\|\s*$/.test(l)), 'no table row ends in empty cells');
+test('the Markdown twin keeps each product’s build-up, evidence and gaps in that product’s own record', () => {
+  const md = readFileSync(`dist${PATH}index.md`, 'utf8');
+  assert.ok(!md.split('\n').some((l) => /\|\s*\|\s*\|\s*$/.test(l)), 'no table row ends in empty cells');
+  const records = md.split(/\n{2,}/);
   const flat = (s: string) => s.replace(/\s+/g, ' ');
   for (const p of products) {
-    const row = lines.find((l) => l.startsWith(`| ${p.manufacturer} ${flat(p.product)}`) && l.includes(flat(p.reference)));
-    assert.ok(row, `${p.id} has a row`);
-    if (p.testedBuildup.substrate) assert.ok(row!.includes(flat(p.testedBuildup.substrate)), `${p.id} substrate in its own row`);
-    for (const e of p.evidence) assert.ok(row!.includes(sources.find((s) => s.id === e.sourceId)!.url), `${p.id} links ${e.sourceId} in its own row`);
-    for (const g of gapsFor(p)) assert.ok(row!.includes(flat(g.text)), `${p.id} gap in its own row: ${g.text}`);
+    const record = records.find((r) => r.startsWith(`- **Product**: ${p.manufacturer} ${flat(p.product)}`) && r.includes(flat(p.reference)));
+    assert.ok(record, `${p.id} has its own record`);
+    assert.ok(record!.includes(`- **Classification as printed**: ${flat(p.classificationRaw)}`), `${p.id} printed class`);
+    if (p.testedBuildup.substrate) assert.ok(record!.includes(`- **Substrate**: ${flat(p.testedBuildup.substrate)}`), `${p.id} substrate in its own record`);
+    for (const e of p.evidence) assert.ok(record!.includes(`](${sources.find((s) => s.id === e.sourceId)!.url})`), `${p.id} links ${e.sourceId} in its own record`);
+    for (const g of gapsFor(p)) assert.ok(record!.includes(`  - ${flat(g.text)}`), `${p.id} gap in its own record: ${g.text}`);
   }
 });
 

@@ -58,16 +58,61 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
   let kind = 'p';
   const lists = [];
   const links = [];
-  let row = null; // table row cells being collected
-  let rowsInTable = 0;
-  let inTable = false;
   let afterLink = false; // two links side by side get a space between them
-  // Inside a table cell, lists, definition lists and other blocks stay in the cell as inline text
-  // ("; " between items, "Label: value" for dt/dd, " — " before a sub-note span), so a row never
-  // loses its contents to loose blocks printed before it.
-  let inCell = false;
-  const ROWLEVEL = new Set(['table', 'thead', 'tbody', 'tr']);
+  // Tables are buffered and written at </table>, so a cell's lists and notes always stay with
+  // their own row. A cell is a list of parts (text, list items, dt/dd pairs). A table whose cells
+  // are plain text is written as a Markdown table; a table with lists or definition lists in its
+  // cells is written as one record per row ("- **Header**: value", with the list as sub-items).
+  let table = null;
+  let row = null;
+  let cell = null;
+  let partKind = 'text';
+  let partSep = '';
+  const ROWLEVEL = new Set(['table', 'thead', 'tbody', 'tfoot', 'tr']);
   const subNote = (token) => /\b(fr-sub|fr-maker)\b/.test(attr(token, 'class') ?? '');
+  /** End the cell part being collected; the next part has this kind and, in a Markdown table, this separator before it. */
+  const cut = (kind = 'text', sep = ' ') => {
+    const text = line.replace(/\s+/g, ' ').trim();
+    if (text) cell.parts.push({ kind: partKind, sep: partSep, text });
+    line = '';
+    partKind = kind;
+    partSep = sep;
+  };
+  const cellText = (c) => c.parts.map((part, i) => `${i ? part.sep : ''}${part.kind === 'dt' ? `**${part.text}**:` : part.text}`).join('').trim();
+  const writeTable = (t) => {
+    const rows = t.rows.filter((r) => r.cells.length);
+    if (!rows.length) return;
+    const head = rows[0].cells.every((c) => c.th) ? rows[0] : null;
+    if (!rows.some((r) => r.cells.some((c) => c.list))) {
+      rows.forEach((r, i) => {
+        blocks.push({ kind: 'tr', text: `| ${r.cells.map((c) => cellText(c).replace(/\|/g, '\\|')).join(' | ')} |` });
+        if (i === 0) blocks.push({ kind: 'tr', text: `|${r.cells.map(() => ' --- |').join('')}` });
+      });
+      return;
+    }
+    const labels = head ? head.cells.map(cellText) : [];
+    for (const r of head ? rows.slice(1) : rows) {
+      const out = [];
+      r.cells.forEach((c, j) => {
+        const label = labels[j] ? `**${labels[j]}**:` : '';
+        if (!c.list) {
+          const text = cellText(c);
+          if (text) out.push(`- ${label ? `${label} ` : ''}${text}`);
+          return;
+        }
+        const pad = label ? '  ' : '';
+        if (label) out.push(`- ${label}`);
+        for (let k = 0; k < c.parts.length; k += 1) {
+          const part = c.parts[k];
+          if (part.kind === 'dt' && c.parts[k + 1]?.kind === 'dd') {
+            out.push(`${pad}- **${part.text}**: ${c.parts[k + 1].text}`);
+            k += 1;
+          } else out.push(`${pad}- ${part.kind === 'dt' ? `**${part.text}**` : part.text}`);
+        }
+      });
+      if (out.length) blocks.push({ kind: 'record', text: out.join('\n') });
+    }
+  };
 
   const flush = () => {
     const text = line.replace(/\s+/g, ' ').trim();
@@ -88,20 +133,23 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
     const closing = token[1] === '/';
     const name = token.match(/^<\/?([a-z0-9-]+)/i)?.[1]?.toLowerCase();
     if (!name) continue;
-    if (inCell && !ROWLEVEL.has(name) && name !== 'th' && name !== 'td') {
+    if (cell && !ROWLEVEL.has(name) && name !== 'th' && name !== 'td') {
       const hasText = /\S/.test(line);
-      if (!closing && BLOCK.has(name)) {
-        if (name === 'dt') line = `${hasText ? `${line.trimEnd()}; ` : line}**`;
-        else if (name === 'li') line = hasText ? `${line.trimEnd()}; ` : line;
+      if (name === 'li' || name === 'dt' || name === 'dd') {
+        if (!closing) {
+          cell.list = true;
+          cut(name, name === 'dd' ? ' ' : '; ');
+        } else cut('text', ' ');
+        continue;
+      }
+      if (BLOCK.has(name)) {
+        if (partKind === 'text') cut('text', ' ');
         else line += ' ';
         continue;
       }
-      if (closing && BLOCK.has(name)) {
-        line = name === 'dt' ? `${line.trimEnd()}**: ` : `${line} `;
-        continue;
-      }
       if (name === 'span' && !closing && /display:\s*block/.test(attr(token, 'style') ?? '')) {
-        line = hasText ? `${line.trimEnd()}; ` : line;
+        if (partKind === 'text') cut('text', '; ');
+        else line += '; ';
         continue;
       }
       if (name === 'small' || (name === 'span' && (closing || subNote(token)))) {
@@ -148,14 +196,15 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
         blocks.push({ kind: 'p', text: '---' });
       } else if (name === 'table') {
         flush();
-        inTable = true;
-        rowsInTable = 0;
+        table = { rows: [] };
       } else if (name === 'tr') {
         flush();
-        row = [];
+        row = { cells: [] };
       } else if (name === 'th' || name === 'td') {
         line = '';
-        inCell = true;
+        cell = { parts: [], list: false, th: name === 'th' };
+        partKind = 'text';
+        partSep = '';
       } else if (BLOCK.has(name)) {
         flush();
       }
@@ -182,26 +231,27 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
       } else if (name === 'em' || name === 'i') {
         line += '*';
       } else if (name === 'th' || name === 'td') {
-        if (row) row.push(line.replace(/\s+/g, ' ').replace(/\|/g, '\\|').trim());
-        line = '';
-        inCell = false;
-      } else if (name === 'tr') {
-        if (row && row.length) {
-          blocks.push({ kind: 'tr', text: `| ${row.join(' | ')} |` });
-          rowsInTable += 1;
-          if (rowsInTable === 1) blocks.push({ kind: 'tr', text: `|${row.map(() => ' --- |').join('')}` });
+        if (cell) {
+          cut();
+          if (row) row.cells.push(cell);
         }
+        cell = null;
+        line = '';
+      } else if (name === 'tr') {
+        if (row && row.cells.length) (table ??= { rows: [] }).rows.push(row);
         row = null;
         line = '';
       } else if (name === 'table') {
-        inTable = false;
         flush();
+        if (table) writeTable(table);
+        table = null;
       } else if (BLOCK.has(name)) {
         flush();
       }
     }
   }
   flush();
+  if (table) writeTable(table);
 
   let out = '';
   let previous = null;
@@ -210,7 +260,6 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
     out += (previous ? (tight ? '\n' : '\n\n') : '') + block.text;
     previous = block;
   }
-  void inTable;
   return out.trim() + '\n';
 }
 
