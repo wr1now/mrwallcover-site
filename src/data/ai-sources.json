@@ -35,7 +35,7 @@
   },
   "buyerQuestions": {
     "answers, standing": "src/data/buyer-answers.json: the AI answer audit's FILL.md text (10 Oct 2026), each [Pending Qn] sentence left out (pendingOmitted names the question); standing entries quote the site word for word (specialisms.json, aftercare.json, facts.json award, areas.json, case-study frontmatter)",
-    "factsAdditions": "src/data/buyer-answers.json factsAdditions: FILL.md 'facts.json additions', copied unchanged into /.well-known/facts.json",
+    "factsAdditions": "src/data/buyer-answers.json factsAdditions: sourced business facts and owner corrections recorded in docs/sources.md, copied unchanged into /.well-known/facts.json",
     "llms.txt Buyer questions": "src/data/buyer-answers.json answers: short where FILL.md gives a short form, otherwise the answer"
   }
 }

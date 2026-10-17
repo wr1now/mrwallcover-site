@@ -293,7 +293,7 @@ export function businessNode() {
       'Wallpaper mural installation',
       'Contract vinyl wallcoverings',
       'Wallcoverings on joinery',
-      'Bespoke wall panels and joinery',
+      'Bespoke wallcovering panels',
       'Architectural and furniture film wrapping',
       'Window film installation',
     ],

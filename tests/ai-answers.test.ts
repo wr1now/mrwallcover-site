@@ -91,6 +91,25 @@ test('llms.txt lists every buyer question; /.well-known/facts.json carries them 
   for (const key of ['inTradeSince', 'awardText', 'services', 'areasServed', 'enquiryRoutes', 'wastageAllowance', 'projects']) assert.ok(key in wellKnown, `${key} kept`);
 });
 
+test('joinery scope distinguishes our panels from full joinery delivered through vetted partners', async () => {
+  const known = JSON.parse(await readFile('dist/.well-known/facts.json', 'utf8'));
+  assert.equal(known.joineryByOwnTeam, false, 'do not republish the former in-house joinery claim');
+  assert.equal(known.panelsForJoinery, true);
+  assert.equal(known.fullJoineryServices, 'Available through trusted, vetted specialist partners.');
+  for (const page of ['/services/joinery-wallcoverings-and-panels/', '/services/architectural-film-wrapping/', '/professionals/designers/', '/professionals/developers/']) {
+    const html = await readFile(`dist${page}index.html`, 'utf8');
+    if (!page.includes('architectural-film')) assert.match(html, /not a joinery company/, page);
+    assert.match(html, /trusted, vetted specialist partners/, page);
+    if (page.includes('architectural-film')) assert.match(decode(html), /Trained at Solar Screen's headquarters/, 'retain the separate film-training fact');
+  }
+  const regressions: string[] = [];
+  for (const file of await textFiles('dist')) {
+    const text = await readFile(file, 'utf8');
+    if (/same team develops the detail, makes the panels and joinery|make the panels and joinery|create bespoke wall panels and joinery|new panels or joinery rather than a wrap|"joineryByOwnTeam"\s*:\s*true/.test(text)) regressions.push(file);
+  }
+  assert.deepEqual(regressions, [], 'visible copy, schema, Markdown and AI projections must all carry the correction');
+});
+
 // The accreditation scheme Dorin keeps private (owner decision, 11 Oct 2026 20:58), matched with or without a space.
 const ACCREDITATION_SCHEME = new RegExp(['safe', 'contractor'].join('\\s*'), 'i');
 
