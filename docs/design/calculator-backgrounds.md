@@ -6,7 +6,7 @@ Adds faded, original wallpaper-roll, drop-measuring and wall-elevation drawings 
 
 The backgrounds are static, hidden from assistive technology and cannot intercept input. They disappear for Reduce visual effects, reduced-motion preference, forced colours and printing. Clipping is confined to the decorative layer and method panel so the sticky order summary retains its normal behaviour. No new image request, script or dependency is required.
 
-Reviewed at 320, 360, 390, 768, 1024, 1280 and 1440px without overflow. Existing calculator/browser, source, built-site, privacy and no-loss checks cover the change. No-loss retains 106 routes/Markdown twins, 3,610 media files and unchanged structured-data counts against main `51f372c`.
+Reviewed at 320, 360, 390, 768, 1024, 1280 and 1440px without overflow. Existing calculator/browser, source, built-site, privacy and no-loss checks cover the change. No-loss retains 106 routes/Markdown twins, 3,610 media files and unchanged structured-data counts against main `bd7b610`, including the published pattern-match guide and worked example.
 
 | View | Before | After |
 | --- | --- | --- |
