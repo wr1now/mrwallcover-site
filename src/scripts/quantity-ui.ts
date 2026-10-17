@@ -196,6 +196,10 @@ if (form && output) {
   };
   const syncMatch = () => {
     const free = ['free', 'reverse'].includes(value('match'));
+    const diagrams = form.querySelectorAll<HTMLElement>('[data-match-example]');
+    diagrams.forEach((diagram) => { diagram.hidden = diagram.dataset.matchExample !== value('match'); });
+    const guide = form.querySelector<HTMLElement>('[data-match-guide]');
+    if (guide) guide.hidden = ['mural', 'panel-set'].includes(soldKind());
     $<HTMLElement>('[data-repeat-field]').hidden = free || ['mural', 'panel-set'].includes(soldKind());
   };
   const readLink = () => {
