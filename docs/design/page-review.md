@@ -200,3 +200,8 @@ Reviewed deployed PR #62 (`14225b5`) and its release receipt before enhancing it
 ### Joinery scope clarification — 17 October 2026
 
 Copy and factual data corrected on Services, the joinery and architectural-film service pages, and designer/developer buyer FAQs. Mr Wallcover creates and finishes panels for joinery; full joinery services can be arranged through trusted, vetted specialist partners. No in-house joinery manufacturing claim remains. Existing graphics, links and layouts are retained. The five affected routes were inspected at390/1440 with no overflow or browser errors; [the corrected mobile buyer answer](screens/joinery-scope-390.jpg) retains its topic drawing and open answer. Source checks141/141 and focused FAQ/AI checks77/77 pass; the production build and no-loss comparison preserve106 pages,3,610 media files and106 Markdown twins.
+
+
+## Faded calculator backgrounds — 17 October 2026
+
+Added original, pale roll, measuring and wall-elevation linework in the calculator margins and method panel, with softer mobile crops. Static decorative SVG stays separate from the real result diagrams, avoids input targets and disappears in reduced effects/motion, forced colours and print. Seven-width visual review and existing calculator interactions pass. [Before/after evidence and provenance](calculator-backgrounds.md).

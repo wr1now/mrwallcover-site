@@ -2,6 +2,7 @@
 import Breadcrumb from '../components/Breadcrumb.astro';
 import PatternMatchGuide from '../components/PatternMatchGuide.astro';
 import Action from '../components/Action.astro';
+import CalculatorBackdrop from '../components/CalculatorBackdrop.astro';
 import WallpaperingNav from '../components/WallpaperingNav.astro';
 import Base from '../layouts/Base.astro';
 import { isConfirmed, makers, wallpapering } from '../lib/materials';
@@ -28,6 +29,11 @@ const conditions = wallpapering.conditionQuestion.options;
   extraSchema={[breadcrumbNode(crumbs)]}
   preloadFonts
 >
+  <div class="qc-page">
+  <div class="qc-background" aria-hidden="true">
+    <CalculatorBackdrop kind="roll" />
+    <CalculatorBackdrop kind="measure" />
+  </div>
   <div class="container-page pb-20">
     <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
@@ -278,7 +284,8 @@ const conditions = wallpapering.conditionQuestion.options;
       </div>
     </template>
 
-    <section class="guide-next mt-16">
+    <section class="guide-next mt-16 qc-method">
+      <CalculatorBackdrop kind="wall" />
       <p class="eyebrow">How it counts</p>
       <h2>The method, with worked examples.</h2>
       <p>Why width decides the number of drops, how the pattern repeat changes the cut, why we count drops rather than add a percentage, and when doors and windows save a drop: our guide to <a href="/advice/quantities/">how much wallpaper to order</a> works through it by hand. The materials follow our <a href="/wallpapering/preparation/">preparation tables</a> and the <a href="/wallpapering/lining-and-adhesives/">lining papers, pastes and primers</a> we use.</p>
@@ -288,6 +295,7 @@ const conditions = wallpapering.conditionQuestion.options;
       </div>
     </section>
   </div>
+  </div>
 </Base>
 
 <script>
@@ -295,6 +303,11 @@ const conditions = wallpapering.conditionQuestion.options;
 </script>
 
 <style is:global>
+  .qc-page { position: relative; isolation: isolate; }
+  .qc-background { position: absolute; inset: 0; overflow: clip; pointer-events: none; }
+  .qc-page > .container-page { position: relative; }
+  .qc-method { position: relative; isolation: isolate; overflow: clip; }
+  .qc-method > :not(.calculator-backdrop) { position: relative; }
   /* ---- Layout: the form, with the order docket beside it from 64rem ---- */
   .qc { display: grid; grid-template-columns: minmax(0, 1fr); accent-color: var(--color-ink); }
   .qc > * + * { margin-top: var(--space-8); }
