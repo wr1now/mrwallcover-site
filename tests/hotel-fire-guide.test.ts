@@ -22,7 +22,7 @@ test(`${PATH}: built, listed on the hub, in the sitemap and llms.txt`, () => {
 test(`${PATH}: the compliance lines are Dorin's own words, and the FAQPage matches the placed answers`, () => {
   for (const line of [
     'The fire classification is not certified by the installer: it comes from testing and classification of the product in a stated build-up, and the wallcovering manufacturer declares it.',
-    "Mr Wallcover installs in line with the manufacturer's system and the applicable regulations",
+    "Mr Wallcover installs to the wallcovering maker's instructions and the project's fire specification",
     'Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site.',
     "Public liability, employers' liability and professional indemnity details are available on request.",
   ]) assert.ok(text.includes(line), line);
