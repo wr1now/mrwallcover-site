@@ -30,6 +30,13 @@ export interface GuideData {
   ctaLabel: string;
   ctaHref: string;
   sources: { label: string; url: string }[];
+  /** Optional original schematic, shared with services. Never a product specification. */
+  diagram?: 'survey' | 'programme' | 'supply' | 'setout' | 'inspection' | 'pattern-match' | 'preparation' | 'panel-sequence' | 'reveal' | 'roll-cutting' | 'tested-build-up' | 'natural-panels';
+  diagramCaption?: string;
+  /** Relevant cleared photograph rendered by the shared evidence component. */
+  evidence?: { id: string; caption: string; credit: string; href?: string; linkLabel?: string };
+  /** Optional real worksheet, also linked in the article copy. */
+  download?: { href: string; label: string };
   /** Visible question-and-answer block; only guides that carry one emit FAQPage schema. */
   faq?: GuideFaq[];
 }

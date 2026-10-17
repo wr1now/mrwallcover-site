@@ -10,6 +10,18 @@
     "download": "wallcovering-specification-schedule.csv",
     "downloadLabel": "Download a specification schedule",
     "guide": "designer-specification-checklist",
+    "visual": {
+      "icon": "drawing",
+      "sectionIcons": ["drawing", "swatch", "layers"],
+      "checklistIcons": ["tag", "drawing", "ruler", "roll", "calendar"],
+      "evidence": {
+        "id": "lee-broom-06",
+        "caption": "Setting out an Overture panel to a laser line at the Lee Broom showroom, Shoreditch.",
+        "credit": "Photograph: Dorin Burcus / Mr Wallcover.",
+        "href": "/projects/calico-lee-broom-overture/",
+        "linkLabel": "See the Overture installation"
+      }
+    },
     "sections": [
       {
         "title": "Protect the design intent",
@@ -43,6 +55,18 @@
     "download": "wallcovering-package-schedule.csv",
     "downloadLabel": "Download a package schedule",
     "guide": "developer-wallcovering-package",
+    "visual": {
+      "icon": "layers",
+      "sectionIcons": ["drawing", "calendar", "check"],
+      "checklistIcons": ["drawing", "roll", "layers", "calendar", "check"],
+      "evidence": {
+        "id": "browns-hotel-mayfair-07",
+        "caption": "Brown’s Hotel, Mayfair, during works: the wallcovering is hung while the floors remain protected.",
+        "credit": "Mr Wallcover project photograph.",
+        "href": "/projects/browns-hotel-mayfair/",
+        "linkLabel": "See the Brown’s Hotel package"
+      }
+    },
     "sections": [
       {
         "title": "Define the package",
@@ -76,6 +100,18 @@
     "download": "wallcovering-package-schedule.csv",
     "downloadLabel": "Download a room and phase schedule",
     "guide": "hotel-wallcovering-specification",
+    "visual": {
+      "icon": "room",
+      "sectionIcons": ["calendar", "swatch", "book"],
+      "checklistIcons": ["room", "tag", "access", "roll", "check"],
+      "evidence": {
+        "id": "old-bailey-06",
+        "caption": "The sample room at Hyde London City: Tropical Clouded Leopard by Timorous Beasties, set out as a shaped headboard panel.",
+        "credit": "Photograph: Dorin Burcus / Mr Wallcover.",
+        "href": "/projects/old-bailey-hotel/",
+        "linkLabel": "See the Hyde London City programme"
+      }
+    },
     "sections": [
       {
         "title": "Plan around occupation",

@@ -32,3 +32,6 @@ tmp-scaffold/
 
 # editorial review build
 dist-review/
+
+# Local visual comparison evidence
+.review-screens/

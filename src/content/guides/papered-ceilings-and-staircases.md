@@ -11,11 +11,12 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-11"
-updated: "2026-10-11"
+updated: "2026-10-17"
 description: "What changes when the paper goes overhead or up a stair: the order of work in a room, relief papers on ceilings, cutting around lanterns and roses, heritage ceilings, stair-wall set-out and why stairs need a larger allowance."
 metaDescription: "Papering ceilings and staircases: room sequence, Anaglypta and relief ceilings, heritage ceilings, Lincrusta on a stair and the 30% stair allowance."
 shortTitle: "Ceilings and staircases"
 order: 12
+evidence: {"id": "trematon-ig-29", "caption": "Lincrusta offered up to a laser line at Trematon Castle. The vertical datum comes from the laser, even when the surrounding building is irregular.", "credit": "Mr Wallcover project photograph, November 2021.", "href": "/projects/trematon-castle/", "linkLabel": "See the Trematon project"}
 relatedMaterials: ["paper-and-non-woven"]
 relatedGuides: ["wall-preparation", "set-out-and-pattern-matching", "developer-wallcovering-package"]
 ctaLabel: "Discuss a ceiling or stair"

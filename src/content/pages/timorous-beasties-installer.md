@@ -8,10 +8,16 @@
   "heading": "Timorous Beasties installation in London",
   "lede": "We install Timorous Beasties papers. On the public record, we hung Tropical Clouded Leopard and Totem Damask, custom-printed as vinyl, through the 111 guest rooms across seven storeys of Hyde London City.",
   "parent": { "name": "Services", "href": "/services/" },
-  "updated": "2026-10-11",
+  "updated": "2026-10-17",
   "service": { "name": "Timorous Beasties wallpaper installation", "serviceType": "Wallcovering installation" },
   "cta": { "label": "Discuss a Timorous Beasties installation", "href": "/contact/?intent=install" },
   "projects": ["old-bailey-hotel"],
+  "featureMedia": {
+    "id": "old-bailey-06",
+    "caption": "The sample room at Hyde London City: Tropical Clouded Leopard by Timorous Beasties, set out as a shaped headboard panel.",
+    "credit": "Photograph: Dorin Burcus / Mr Wallcover.",
+    "project": "old-bailey-hotel"
+  },
   "faq": [
     {
       "id": "tb-relationship",

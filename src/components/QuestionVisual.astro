@@ -1,0 +1,8 @@
+---
+/** A topic-specific drawing beside a question; the question itself carries the meaning. */
+import Icon from './Icon.astro';
+import { questionIcon } from '../lib/question-visual';
+interface Props { question: string; id?: string; }
+const icon = questionIcon(Astro.props.question, Astro.props.id);
+---
+<span class="question-visual" data-question-visual={icon} aria-hidden="true"><Icon name={icon} /></span>

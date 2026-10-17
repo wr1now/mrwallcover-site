@@ -1,6 +1,9 @@
 ---
 import facts from '../data/facts.json';
 import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import Action from '../components/Action.astro';
+import QuestionVisual from '../components/QuestionVisual.astro';
 import Picture from '../components/Picture.astro';
 import MaterialStudio from '../components/MaterialStudio.astro';
 import Base from '../layouts/Base.astro';
@@ -69,8 +72,8 @@ const hotelNames = [
         <p class="atelier-hero-description">{home.hero.lede}</p>
         <p class="atelier-hero-award hero-award"><a href={AWARD_URL} rel="noopener">{AWARD_TEXT}</a></p>
         <div class="atelier-hero-actions">
-          <a class="atelier-button cream" href="/projects/">Explore our work <span aria-hidden="true">↗</span></a>
-          <a class="atelier-button ghost" href="/contact/">Start your project <span aria-hidden="true">↗</span></a>
+          <a class="atelier-button cream" href="/projects/">Explore our work <Icon name="arrow-right" /></a>
+          <a class="atelier-button ghost" href="/contact/">Start your project <Icon name="arrow-right" /></a>
         </div>
       </div>
       <div class="atelier-hero-foot">
@@ -116,7 +119,7 @@ const hotelNames = [
     <section class="atelier-intro atelier-section" aria-labelledby="intro-heading">
       <p class="atelier-kicker">THE PRACTICE</p>
       <div><h2 id="intro-heading">A beautiful wall begins<br />long before <em>the first drop.</em></h2>
-        <div class="atelier-intro-bottom"><p>From the first survey to the last carefully matched seam, we bring care to every stage. Silk, grasscloth, hand-painted paper and bespoke murals. Wallcoverings, hung properly. By people who understand the material.</p><div><p>{facts.description}</p><a class="atelier-text-link" href="/about/">Meet the practice <span aria-hidden="true">↗</span></a></div></div>
+        <div class="atelier-intro-bottom"><p>From the first survey to the last carefully matched seam, we bring care to every stage. Silk, grasscloth, hand-painted paper and bespoke murals. Wallcoverings, hung properly. By people who understand the material.</p><div><p>{facts.description}</p><a class="atelier-text-link" href="/about/">Meet the practice <Icon name="arrow-right" /></a></div></div>
         <dl class="home-facts">{home.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
         <p class="home-pillars">{home.pillars.join(' · ')}</p>
       </div>
@@ -134,7 +137,7 @@ const hotelNames = [
           <li>{teamFacts.hours}</li>
         </ul>
       </div>
-      <a class="atelier-text-link" href="/about/#dorin">More about Dorin and how we work <span aria-hidden="true">↗</span></a>
+      <a class="atelier-text-link" href="/about/#dorin">More about Dorin and how we work <Icon name="arrow-right" /></a>
     </section>
 
     <section class="atelier-section home-proof" aria-labelledby="proof-heading">
@@ -148,7 +151,7 @@ const hotelNames = [
     <div class="home-studio"><MaterialStudio /></div>
 
     <section class="atelier-section atelier-work" aria-labelledby="selected-work">
-      <div class="atelier-section-head"><div><p class="atelier-kicker">SELECTED COMMISSIONS</p><h2 id="selected-work">Places with <em>presence.</em></h2></div><a class="atelier-text-link" href="/projects/">View the full portfolio <span aria-hidden="true">↗</span></a></div>
+      <div class="atelier-section-head"><div><p class="atelier-kicker">SELECTED COMMISSIONS</p><h2 id="selected-work">Places with <em>presence.</em></h2></div><a class="atelier-text-link" href="/projects/">View the full portfolio <Icon name="arrow-right" /></a></div>
       <div class="atelier-project-grid">
         <article class="atelier-project atelier-project-lead">
           <a class="atelier-project-image" href="/projects/browns-hotel-mayfair/">
@@ -188,13 +191,13 @@ const hotelNames = [
       <div class="atelier-craft-image"><picture><source srcset="/media/atelier/browns-cornice-960.webp 960w, /media/atelier/browns-cornice-1440.webp 1440w" type="image/webp" sizes="(min-width: 768px) 50vw, 100vw" /><img src="/media/atelier/browns-cornice-960.webp" width="960" height="1280" alt="Botanical wallcovering meeting the detailed white cornice at Brown's Hotel, Mayfair." loading="lazy" /></picture><p>THE FINISH, UP CLOSE · BROWN’S HOTEL</p></div>
       <div class="atelier-craft-copy"><p class="atelier-kicker light">THE DETAIL IS THE DIFFERENCE</p><h2 id="craft-heading">The room is the vision.<br /><em>The finish is our craft.</em></h2><p>Setting out around a doorway. Carrying a pattern through a corner. Preparing a wall so raking light reveals the texture, never the substrate. This is the work that makes the whole room feel right.</p>
         <dl><div><dt>Material knowledge</dt><dd>Silk, grasscloth, vinyl, textiles, murals and hand-painted papers.</dd></div><div><dt>Care from beginning to end</dt><dd>Survey, management, supply, installation and aftercare.</dd></div><div><dt>A considered return</dt><dd>A follow-up visit after four to six weeks, with twelve months’ cover on the workmanship of the hang.</dd></div></dl>
-        <a class="atelier-text-link light" href="/services/">Explore our expertise <span aria-hidden="true">↗</span></a>
+        <a class="atelier-text-link light" href="/services/">Explore our expertise <Icon name="arrow-right" /></a>
       </div>
     </section>
 
     <section class="atelier-section atelier-service" aria-labelledby="service-heading">
-      <div><p class="atelier-kicker">FROM FIRST IDEA TO FINISHED ROOM</p><h2 id="service-heading">One practice.<br /><em>Every stage.</em></h2><p>Bring us the paper you love, a specification, or simply the room you have in mind.</p><a class="atelier-text-link" href="/contact/">Tell us about it <span aria-hidden="true">↗</span></a></div>
-      <ol>{home.serviceCards.map((service, i) => <li><a href={service.href}><span class="atelier-service-number">0{i+1}</span><div><h3>{service.title}</h3><p>{service.text}</p></div><span aria-hidden="true">↗</span></a></li>)}</ol>
+      <div><p class="atelier-kicker">FROM FIRST IDEA TO FINISHED ROOM</p><h2 id="service-heading">One practice.<br /><em>Every stage.</em></h2><p>Bring us the paper you love, a specification, or simply the room you have in mind.</p><a class="atelier-text-link" href="/contact/">Tell us about it <Icon name="arrow-right" /></a></div>
+      <ol>{home.serviceCards.map((service, i) => <li><a href={service.href}><span class="atelier-service-number">0{i+1}<Icon name={(['ruler', 'calendar', 'roll', 'layers', 'check'] as const)[i]} /></span><div><h3>{service.title}</h3><p>{service.text}</p></div><span class="sr-only">Read about {service.title.toLowerCase()}</span><Icon name="arrow-right" /></a></li>)}</ol>
     </section>
 
     <section class="atelier-section home-process" aria-labelledby="process-heading">
@@ -208,14 +211,14 @@ const hotelNames = [
             <figure><Picture id={item.image} sizes="(min-width: 1024px) 18vw, (min-width: 640px) 40vw, 78vw" /></figure>
             <p class="home-steps-label">{item.step}</p>
             <p class="home-steps-text">{item.text}</p>
-            <a href={item.href}>{item.guide} <span aria-hidden="true">↗</span></a>
+            <a href={item.href}>{item.guide} <Icon name="arrow-right" /></a>
           </li>
         ))}
       </ol>
     </section>
 
     <section class="atelier-materials" aria-labelledby="materials-heading">
-      <div class="atelier-materials-copy"><p class="atelier-kicker">A FEEL FOR MATERIAL</p><h2 id="materials-heading">Find the character<br /><em>of your room.</em></h2><p>Soft texture. Quiet depth. A whole landscape on a wall. Explore the material families and what they ask of the room.</p><div class="atelier-material-links"><a href="/services/silk-wallcovering-installation/">Silk <span aria-hidden="true">↗</span></a><a href="/services/grasscloth-installation/">Grasscloth <span aria-hidden="true">↗</span></a><a href="/materials/">All materials <span aria-hidden="true">↗</span></a><a href="/details/">Details up close <span aria-hidden="true">↗</span></a></div></div>
+      <div class="atelier-materials-copy"><p class="atelier-kicker">A FEEL FOR MATERIAL</p><h2 id="materials-heading">Find the character<br /><em>of your room.</em></h2><p>Soft texture. Quiet depth. A whole landscape on a wall. Explore the material families and what they ask of the room.</p><div class="atelier-material-links"><a href="/services/silk-wallcovering-installation/">Silk <Icon name="arrow-right" /></a><a href="/services/grasscloth-installation/">Grasscloth <Icon name="arrow-right" /></a><a href="/materials/">All materials <Icon name="arrow-right" /></a><a href="/details/">Details up close <Icon name="arrow-right" /></a></div></div>
       <div class="atelier-materials-image"><Picture id="browns-hotel-mayfair-06" sizes="(min-width: 768px) 50vw, 100vw" /><span>ADAM’S EDEN · LEWIS & WOOD · BROWN’S HOTEL</span></div>
     </section>
 
@@ -223,7 +226,7 @@ const hotelNames = [
       <p class="atelier-kicker">{home.partners.eyebrow}</p>
       <h2 id="calico-heading">{home.partners.title}</h2>
       <p class="home-calico-text">{home.partners.text}</p>
-      <ul>{calicoProjects.map((project) => <li data-project-slug={project.slug}><a href={projectHref(project.slug)}>{calicoLabel(project)} <span aria-hidden="true">↗</span></a></li>)}</ul>
+      <ul>{calicoProjects.map((project) => <li data-project-slug={project.slug}><a href={projectHref(project.slug)}>{calicoLabel(project)} <Icon name="arrow-right" /></a></li>)}</ul>
       {/* Testimonials: only the approved lines in src/data/approved-quotes.json (Dorin, 11 Oct 2026), exact wording, Calico Wallpaper attribution only. */}
       <div class="home-praise" role="group" aria-label="In Calico Wallpaper's own words">
         {approvedQuotes.quotes.map((item) => (
@@ -240,31 +243,31 @@ const hotelNames = [
         <p class="atelier-kicker light">{home.aftercare.eyebrow}</p>
         <h2 id="aftercare-heading">{home.aftercare.title}</h2>
         <p>{home.aftercare.text}</p>
-        <a class="atelier-text-link light" href={home.aftercare.href}>{home.aftercare.label} <span aria-hidden="true">↗</span></a>
+        <a class="atelier-text-link light" href={home.aftercare.href}>{home.aftercare.label} <Icon name="arrow-right" /></a>
       </div>
     </section>
 
     <section class="atelier-section atelier-questions" aria-labelledby="questions-heading">
-      <div><p class="atelier-kicker">BEFORE WE BEGIN</p><h2 id="questions-heading">A few good<br /><em>questions.</em></h2><p class="home-faq-links"><a class="atelier-text-link" href="/advice/">The Wallcovering Guide <span aria-hidden="true">↗</span></a><a class="atelier-text-link" href="/faq/">All questions answered <span aria-hidden="true">↗</span></a></p>
+      <div><p class="atelier-kicker">BEFORE WE BEGIN</p><h2 id="questions-heading">A few good<br /><em>questions.</em></h2><p class="home-faq-links"><a class="atelier-text-link" href="/advice/">The Wallcovering Guide <Icon name="arrow-right" /></a><a class="atelier-text-link" href="/faq/">All questions answered <Icon name="arrow-right" /></a></p>
         <nav class="home-guides" aria-label="Wallcovering guides"><p class="home-guides-label">The guides</p><ul role="list">{guideList.map((guide) => <li><a href={guideHref(guide.frontmatter.slug)}>{guide.frontmatter.title}</a></li>)}</ul></nav></div>
-      <div class="faq">{faqItems.map(item => <details id={item.id}><summary><h3>{item.question}</h3><span class="plus" aria-hidden="true"></span></summary><div class="prose pb-5">{item.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div></details>)}</div>
+      <div class="faq">{faqItems.map(item => <details id={item.id}><summary><h3>{item.question}</h3><span class="question-row-tools"><QuestionVisual question={item.question} id={item.id} /><span class="plus" aria-hidden="true"></span></span></summary><div class="prose pb-5">{item.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div></details>)}</div>
     </section>
 
     <section class="atelier-section home-needs" aria-labelledby="needs-heading">
       <p class="atelier-kicker">What do you need?</p>
       <h2 id="needs-heading">Five ways to begin.</h2>
       <div class="home-needs-grid">
-        <a href="/contact/?intent=install#enquiry"><h3>I already have the wallpaper</h3><p>Installation, with the product you have bought. Measurements can wait.</p></a>
-        <a href="/contact/?intent=source#enquiry"><h3>Help me choose and install it</h3><p>A material family, a sample in the room, then the hang.</p></a>
-        <a href="/professionals/#designers"><h3>I am specifying a project</h3><p>Send the room schedule, drawings and the specification. Unknowns can stay blank.</p></a>
-        <a href="/professionals/"><h3>A hotel or contractor package</h3><p>Access, programme and who supplies the material.</p></a>
-        <a href="/aftercare/#support"><h3>Aftercare or a repair</h3><p>A separate note for existing work. A photograph tells us whether it is the hang or the building.</p></a>
+        <a href="/contact/?intent=install#enquiry"><Icon name="roll" /><h3>I already have the wallpaper</h3><p>Installation, with the product you have bought. Measurements can wait.</p></a>
+        <a href="/contact/?intent=source#enquiry"><Icon name="swatch" /><h3>Help me choose and install it</h3><p>A material family, a sample in the room, then the hang.</p></a>
+        <a href="/professionals/#designers"><Icon name="drawing" /><h3>I am specifying a project</h3><p>Send the room schedule, drawings and the specification. Unknowns can stay blank.</p></a>
+        <a href="/professionals/"><Icon name="room" /><h3>A hotel or contractor package</h3><p>Access, programme and who supplies the material.</p></a>
+        <a href="/aftercare/#support"><Icon name="tools" /><h3>Aftercare or a repair</h3><p>A separate note for existing work. A photograph tells us whether it is the hang or the building.</p></a>
       </div>
     </section>
 
-    <section class="atelier-contact" aria-labelledby="contact-heading"><p class="atelier-kicker">YOUR NEXT ROOM</p><h2 id="contact-heading">Let’s make it<br /><em>something remarkable.</em></h2><p>Hotels, prime residences and specified schemes. Tell us what you have in mind.</p><nav class="atelier-enquiry-routes" aria-label="Start with your project"><a href="/contact/?intent=install#enquiry">Wallpaper already chosen <span aria-hidden="true">↗</span></a><a href="/contact/?intent=source#enquiry">Help choosing a wallcovering <span aria-hidden="true">↗</span></a><a href="/contact/?audience=designer#enquiry">A designer’s specification <span aria-hidden="true">↗</span></a></nav><a class="atelier-button ink" href="/contact/">Start your project <span aria-hidden="true">↗</span></a><a class="atelier-contact-email" href={`mailto:${facts.email}`}>{facts.email}</a></section>
+    <section class="atelier-contact" aria-labelledby="contact-heading"><p class="atelier-kicker">YOUR NEXT ROOM</p><h2 id="contact-heading">Let’s make it<br /><em>something remarkable.</em></h2><p>Hotels, prime residences and specified schemes. Tell us what you have in mind.</p><nav class="atelier-enquiry-routes" aria-label="Start with your project"><a href="/contact/?intent=install#enquiry">Wallpaper already chosen <Icon name="arrow-right" /></a><a href="/contact/?intent=source#enquiry">Help choosing a wallcovering <Icon name="arrow-right" /></a><a href="/contact/?audience=designer#enquiry">A designer’s specification <Icon name="arrow-right" /></a></nav><Action href="/contact/">Start your project</Action><a class="atelier-contact-email" href={`mailto:${facts.email}`}>{facts.email}</a></section>
 
-    <div class="atelier-ai-note"><p>Looking for structured business and project information?</p><a href="/wallcovering-installation-ai-crawler/">Wallcovering Installation AI Crawler <span aria-hidden="true">↗</span></a></div>
+    <div class="atelier-ai-note"><p>Looking for structured business and project information?</p><a href="/wallcovering-installation-ai-crawler/">Wallcovering Installation AI Crawler <Icon name="arrow-right" /></a></div>
   </div>
 </Base>
 

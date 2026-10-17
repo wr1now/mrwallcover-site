@@ -1,20 +1,23 @@
 ---
+import Action from '../components/Action.astro';
 import PhoneReveal from '../components/PhoneReveal.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
 import Base from '../layouts/Base.astro';
 import utility from '../content/utility.json';
+import Icon from '../components/Icon.astro';
 ---
 
 <Base title={utility.thanks.title} description={utility.thanks.description} path="/thank-you/" noindex={true}>
   <div class="container-page py-20">
     <p class="eyebrow">Contact</p>
+    <Icon name="check" class="value-icon" />
     <h1 class="m-0 text-[clamp(2.6rem,6vw,4.2rem)]">{utility.thanks.heading}</h1>
     <p class="lede mt-5">{utility.thanks.text}</p>
     <p class="mt-4" data-receipt-line hidden></p>
     <div class="mt-8 flex flex-wrap gap-3">
       <PhoneReveal class="btn btn-solid-ink" label="Show phone number" prefix="Call " />
       <WhatsAppLink class="btn btn-line" />
-      <a class="btn btn-line" href="/">Home</a>
+      <Action variant="secondary" href="/">Home</Action>
     </div>
   </div>
   <script>

@@ -1,6 +1,7 @@
 ---
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FaqList from '../components/FaqList.astro';
+import Action from '../components/Action.astro';
 import Base from '../layouts/Base.astro';
 import { faq, faqItems } from '../lib/content';
 import { breadcrumbNode, faqNode } from '../lib/schema';
@@ -23,4 +24,5 @@ const crumbs = [
     </header>
   </div>
   <FaqList items={faqItems} eyebrow={faq.eyebrow} heading={faq.heading} lede={faq.lede} titleLevel="h1" />
+  <div class="container-page pb-16"><Action href="/contact/?intent=advice">Ask about your project</Action></div>
 </Base>

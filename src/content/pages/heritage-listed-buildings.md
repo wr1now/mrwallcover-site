@@ -11,7 +11,7 @@
     "name": "Services",
     "href": "/services/"
   },
-  "updated": "2026-10-11",
+  "updated": "2026-10-17",
   "service": {
     "name": "Heritage and listed-building wallcovering installation",
     "serviceType": "Wallcovering installation"
@@ -49,7 +49,13 @@
         "Old walls are surveyed before they are priced: old lime plaster, uneven walls, tall stair halls and rooms that were not built square all change the preparation. At Trematon, every wall was a little out of true and every ceiling a little out of level; rooms were taken back to bare plaster and lined before the hand-printed papers went up, and several ceilings were papered too; our guide to [papering ceilings and staircases](/advice/papered-ceilings-and-staircases/) covers that work. Damp, movement and historic fabric need the product's own instructions and, often, the specifier's decision first."
       ]
     }
-  ]
+  ],
+  "featureMedia": {
+    "id": "trematon-ig-29",
+    "caption": "A Lincrusta relief panel offered up to a laser datum at Trematon Castle. The set-out is planned around the existing room.",
+    "credit": "Photograph: Mr Wallcover.",
+    "project": "trematon-castle"
+  }
 }
 ---
 ## On the public record

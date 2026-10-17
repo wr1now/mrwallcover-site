@@ -1,4 +1,5 @@
 ---
+import Action from '../components/Action.astro';
 import Base from '../layouts/Base.astro';
 import utility from '../content/utility.json';
 ---
@@ -9,9 +10,9 @@ import utility from '../content/utility.json';
     <h1 class="m-0 text-[clamp(2.6rem,6vw,4.2rem)]">{utility.notFound.heading}</h1>
     <p class="lede mt-5">{utility.notFound.text}</p>
     <div class="mt-8 flex flex-wrap gap-3">
-      <a class="btn btn-solid-ink" href="/">Home</a>
-      <a class="btn btn-line" href="/projects/">Work</a>
-      <a class="btn btn-line" href="/contact/">Contact</a>
+      <Action variant="primary" href="/">Home</Action>
+      <Action variant="secondary" href="/projects/">Work</Action>
+      <Action variant="secondary" href="/contact/">Contact</Action>
     </div>
   </div>
 </Base>

@@ -1,5 +1,6 @@
 ---
 import type { FaqItem } from '../lib/types';
+import QuestionVisual from './QuestionVisual.astro';
 
 interface Props {
   items: FaqItem[];
@@ -40,7 +41,7 @@ const Question = titleLevel === 'h1' ? 'h2' : 'h3';
             <details id={item.id}>
               <summary>
                 <Question>{item.question}</Question>
-                <span class="plus" aria-hidden="true"></span>
+                <span class="question-row-tools"><QuestionVisual question={item.question} id={item.id} /><span class="plus" aria-hidden="true"></span></span>
               </summary>
               <div class="prose pb-5">
                 {item.paragraphs.map((paragraph) => (

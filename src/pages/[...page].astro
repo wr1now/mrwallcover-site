@@ -12,11 +12,20 @@
  *   out like /professionals/<slug>/ (body beside a "What to send" panel).
  * - otherProfessionals: true; adds the "Other ways we can help" row that the
  *   professional pages carry.
+ * - featureMedia: { id, caption, credit, project? }; adds an evidence photograph
+ *   beside the body. Use cleared library media and an existing linked project.
+ * - featureDiagram: { kind, caption }; adds an original schematic where it explains the article.
  */
 import Breadcrumb from '../components/Breadcrumb.astro';
 import BuyerFaq from '../components/BuyerFaq.astro';
 import FaqList from '../components/FaqList.astro';
 import PageMeta from '../components/PageMeta.astro';
+import Action from '../components/Action.astro';
+import type { IconName } from '../components/Icon.astro';
+import EvidenceFigure from '../components/EvidenceFigure.astro';
+import ProfessionalBriefing from '../components/ProfessionalBriefing.astro';
+import ProjectEvidence from '../components/ProjectEvidence.astro';
+import TechnicalDiagram, { type DiagramKind } from '../components/TechnicalDiagram.astro';
 import Base from '../layouts/Base.astro';
 import { SITE_URL } from '../config';
 import professionals from '../content/professionals.json';
@@ -31,8 +40,10 @@ interface PageExtras {
   published?: string;
   service?: { name: string; serviceType?: string };
   cta?: { label: string; href: string };
-  intake?: { heading: string; items: string[]; download?: string; downloadLabel?: string; guide?: string };
+  intake?: { heading: string; items: string[]; icons?: IconName[]; download?: string; downloadLabel?: string; guide?: string };
   otherProfessionals?: boolean;
+  featureMedia?: { id: string; caption: string; credit: string; project?: string };
+  featureDiagram?: { kind: DiagramKind; caption: string };
 }
 
 export function getStaticPaths() {
@@ -55,6 +66,8 @@ const intake = page.intake;
 const relatedGuide = intake?.guide ? guides.find((guide) => guide.frontmatter.slug === intake.guide) : undefined;
 if (intake?.guide && !relatedGuide) throw new Error(`editorial page "${page.path}" names a guide that does not exist: ${intake.guide}`);
 const cta = page.cta ?? { label: 'Request a quotation', href: '/contact/' };
+const featureProject = page.featureMedia?.project ? linked.find((project) => project.slug === page.featureMedia?.project) : undefined;
+if (page.featureMedia?.project && !featureProject) throw new Error(`Editorial page "${page.path}" featureMedia must name one of its linked projects`);
 // Pages under /professionals/ show their questions the way /professionals/<slug>/ does: the shared
 // BuyerFaq block, headed "Questions buyers ask", above "Other ways we can help". Other editorial pages keep FaqList.
 const professionalPage = page.parent.href === '/professionals/';
@@ -89,8 +102,8 @@ const buyerFaq = professionalPage
       {page.updated && <PageMeta updated={page.updated} class="guide-byline" />}
       <p class="lede mt-5">{page.lede}</p>
       <div class="mt-6 flex flex-wrap gap-3">
-        <a class="btn btn-solid-ink" href={cta.href}>{cta.label}</a>
-        <a class="btn btn-line" href="/projects/">See the work</a>
+        <Action href={cta.href}>{cta.label}</Action>
+        <Action variant="secondary" href="/projects/">See the work</Action>
       </div>
     </header>
     {
@@ -99,47 +112,26 @@ const buyerFaq = professionalPage
           <article class="prose guide-prose md:col-span-7">
             <Content />
           </article>
-          <aside class="professional-intake md:col-span-4 md:col-start-9">
-            <p class="eyebrow">A useful starting point</p>
-            <h2>{intake.heading}</h2>
-            <ul>
-              {intake.items.map((line) => (
-                <li>{line}</li>
-              ))}
-            </ul>
-            {intake.download && (
-              <>
-                <a class="btn btn-line mt-5" href={`/downloads/${intake.download}`} download>
-                  {intake.downloadLabel}
-                </a>
-                <p class="text-sm text-stone">CSV · opens in Excel or Numbers. Leave unknown items blank. This is a planning schedule, not an ordering calculation.</p>
-              </>
-            )}
-            {relatedGuide && (
-              <p class="mt-6">
-                <a href={guideHref(relatedGuide.frontmatter.slug)}>{relatedGuide.frontmatter.shortTitle}: read the guide</a>
-              </p>
-            )}
-          </aside>
+          <div class="editorial-intake-column md:col-span-4 md:col-start-9">
+            {page.featureMedia && <EvidenceFigure id={page.featureMedia.id} caption={page.featureMedia.caption} credit={page.featureMedia.credit} href={featureProject ? projectHref(featureProject.slug) : undefined} linkLabel={featureProject ? `View the ${featureProject.title} case study` : undefined} sizes="(min-width: 1024px) 24rem, calc(100vw - 2.5rem)" />}
+            <ProfessionalBriefing items={intake.items} icons={intake.icons} heading={intake.heading} download={intake.download ? `/downloads/${intake.download}` : undefined} downloadLabel={intake.downloadLabel} guide={relatedGuide ? {href:guideHref(relatedGuide.frontmatter.slug), label:`${relatedGuide.frontmatter.shortTitle}: read the guide`} : undefined} />
+          </div>
         </div>
       ) : (
-        <article class="prose guide-prose max-w-3xl pb-12">
-          <Content />
-        </article>
+        <div class:list={['editorial-body pb-12', (page.featureMedia || page.featureDiagram) && 'editorial-body-with-media']}>
+          <article class="prose guide-prose max-w-3xl">
+            <Content />
+          </article>
+          {page.featureMedia && <EvidenceFigure class="editorial-feature-media" id={page.featureMedia.id} caption={page.featureMedia.caption} credit={page.featureMedia.credit} href={featureProject ? projectHref(featureProject.slug) : undefined} linkLabel={featureProject ? `View the ${featureProject.title} case study` : undefined} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" />}
+          {page.featureDiagram && <div class="editorial-feature-media"><TechnicalDiagram kind={page.featureDiagram.kind} caption={page.featureDiagram.caption} /></div>}
+        </div>
       )
     }
     {
       linked.length > 0 && (
         <section class="border-t border-line py-12" aria-labelledby="record-heading">
           <h2 id="record-heading" class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On the public record</h2>
-          <ul class="link-row mt-6 grid list-none gap-3 p-0 md:grid-cols-2">
-            {linked.map((project) => (
-              <li>
-                <a href={projectHref(project!.slug)}>{project!.title}</a>
-                <span class="text-stone">. {project!.role}{project!.dates ? `, ${project!.dates}` : ''}.</span>
-              </li>
-            ))}
-          </ul>
+          <ProjectEvidence projects={linked} />
         </section>
       )
     }
@@ -150,11 +142,11 @@ const buyerFaq = professionalPage
           <h2>Other ways we can help</h2>
           <div class="flex flex-wrap gap-3">
             {professionals.map((other) => (
-              <a class="btn btn-line" href={`/professionals/${other.slug}/`}>
+              <Action variant="secondary" href={`/professionals/${other.slug}/`}>
                 {other.name}
-              </a>
+              </Action>
             ))}
-            <a class="btn btn-line" href="/projects/">Explore our work</a>
+            <Action variant="secondary" href="/projects/">Explore our work</Action>
           </div>
         </section>
       )
@@ -162,3 +154,15 @@ const buyerFaq = professionalPage
   </div>
   {!professionalPage && page.faq.length > 0 && <FaqList items={page.faq} eyebrow="Questions" heading={`Asked about ${page.title}`} />}
 </Base>
+
+<style>
+  .editorial-feature-media { margin: 0; }
+  .editorial-feature-media figcaption { display: grid; gap: .4rem; margin-top: .9rem; }
+  .editorial-feature-media a { color: var(--color-brass); text-decoration: underline; text-underline-offset: .2em; }
+  .editorial-body-with-media { display: grid; gap: 2rem; }
+  .editorial-intake-column { display:grid; gap:2rem; align-content:start; }
+  @media (min-width: 1024px) {
+    .editorial-body-with-media { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+    .editorial-feature-media { position: sticky; top: 8rem; margin-top: 1.4rem; }
+  }
+</style>

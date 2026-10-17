@@ -1,0 +1,409 @@
+{
+  "reviewDate": "2026-10-17",
+  "routes": [
+    {
+      "path": "/404.html",
+      "decision": "Keep a concise error status and shared recovery actions; no decorative illustration is needed."
+    },
+    {
+      "path": "/about/",
+      "decision": "Retain founder and recorded project photographs; add values icons, programme schematic and a timeline."
+    },
+    {
+      "path": "/accessibility/",
+      "decision": "Keep text-only access information, clear headings and contact links; no decorative imagery is useful."
+    },
+    {
+      "path": "/advice/choosing-wallcoverings/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/cost/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/designer-specification-checklist/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/developer-wallcovering-package/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/grasscloth-seams-and-variation/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/hand-painted-murals-set-out/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/hotel-fire-safety-and-compliance/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/hotel-wallcovering-specification/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/installation-cost/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/papered-ceilings-and-staircases/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/quantities/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/set-out-and-pattern-matching/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/wall-preparation/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/advice/wallcovering-problems-and-aftercare/",
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
+    },
+    {
+      "path": "/aftercare/",
+      "decision": "Show an actual finished junction beside the terms and an inspection schematic; preserve the repair form."
+    },
+    {
+      "path": "/areas/belgravia/",
+      "decision": "Use real linked local project evidence and shared quotation controls; do not imply a generic place photograph is our work."
+    },
+    {
+      "path": "/areas/chelsea/",
+      "decision": "Use real linked local project evidence and shared quotation controls; do not imply a generic place photograph is our work."
+    },
+    {
+      "path": "/areas/city-of-london/",
+      "decision": "Use real linked local project evidence and shared quotation controls; do not imply a generic place photograph is our work."
+    },
+    {
+      "path": "/areas/cotswolds/",
+      "decision": "Use real linked local project evidence and shared quotation controls; do not imply a generic place photograph is our work."
+    },
+    {
+      "path": "/areas/",
+      "decision": "Use real linked local project evidence and shared quotation controls; do not imply a generic place photograph is our work."
+    },
+    {
+      "path": "/areas/kensington/",
+      "decision": "Use real linked local project evidence and shared quotation controls; do not imply a generic place photograph is our work."
+    },
+    {
+      "path": "/areas/mayfair/",
+      "decision": "Use real linked local project evidence and shared quotation controls; do not imply a generic place photograph is our work."
+    },
+    {
+      "path": "/contact/",
+      "decision": "Prioritise the real enquiry form, meaningful checklist icons and labelled contact controls."
+    },
+    {
+      "path": "/details/",
+      "decision": "Retain the existing real seam, corner and join close-ups and their captions; the images already explain workmanship."
+    },
+    {
+      "path": "/faq/",
+      "decision": "Keep native question disclosures, visible focus and an advice action; decorative photography would interrupt answers."
+    },
+    {
+      "path": "/for-ai/",
+      "decision": "Keep plain facts, sourced links and machine-readable destinations text-led; decorative images do not establish claims."
+    },
+    {
+      "path": "/image-use/",
+      "decision": "Keep text-only rights and reuse guidance; the reader needs the exact terms and contact links."
+    },
+    {
+      "path": "/",
+      "decision": "Retain existing real hero/project photography; use stage and enquiry icons and shared action states."
+    },
+    {
+      "path": "/materials/acoustic/",
+      "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
+    },
+    {
+      "path": "/materials/contract-vinyl/",
+      "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
+    },
+    {
+      "path": "/materials/grasscloth-and-weaves/",
+      "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
+    },
+    {
+      "path": "/materials/hand-painted/",
+      "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
+    },
+    {
+      "path": "/materials/",
+      "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
+    },
+    {
+      "path": "/materials/murals/",
+      "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
+    },
+    {
+      "path": "/materials/paper-and-non-woven/",
+      "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
+    },
+    {
+      "path": "/materials/silk-and-textiles/",
+      "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
+    },
+    {
+      "path": "/materials/specified-papers/",
+      "decision": "Use actual material or installation close-ups with honest captions, relevant comparisons and selected shortlist controls; retain exact-product caveats."
+    },
+    {
+      "path": "/privacy/",
+      "decision": "Keep text-only legal reading with clear headings and links; no decorative imagery is useful."
+    },
+    {
+      "path": "/professionals/designers/",
+      "decision": "Use project evidence, briefing checklist icons and labelled file-download and enquiry controls; preserve procurement copy and audience handoffs."
+    },
+    {
+      "path": "/professionals/developers/",
+      "decision": "Use project evidence, briefing checklist icons and labelled file-download and enquiry controls; preserve procurement copy and audience handoffs."
+    },
+    {
+      "path": "/professionals/fit-out-contractors/",
+      "decision": "Use project evidence, briefing checklist icons and labelled file-download and enquiry controls; preserve procurement copy and audience handoffs."
+    },
+    {
+      "path": "/professionals/hotels/",
+      "decision": "Use project evidence, briefing checklist icons and labelled file-download and enquiry controls; preserve procurement copy and audience handoffs."
+    },
+    {
+      "path": "/professionals/",
+      "decision": "Use project evidence, briefing checklist icons and labelled file-download and enquiry controls; preserve procurement copy and audience handoffs."
+    },
+    {
+      "path": "/projects/biltmore-mayfair/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/browns-hotel-mayfair/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/calico-ahluwalia-estuary-rosewood/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/calico-beverly-1975-cadence/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/calico-lee-broom-overture/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/doubletree-victoria/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/doubletree-west-end/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/everyman-liverpool/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/four-seasons-ten-trinity-square/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/heathrow-terminal-4-calico/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/hilton-garden-inn-silverstone/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/hilton-london-metropole/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/house-of-hackney-st-michaels/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/huntsman-savile-row/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/imperfect-arches-external-corner-trim/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/inverness-terrace/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/jumeirah-carlton-tower/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/masterpiece-london-2019/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/mercedes-amg-showroom-london/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/north-london-residence/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/novotel-london-canary-wharf/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/old-bailey-hotel/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/oxygen-freejumping-the-o2/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/pendley-manor-hotel/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/penny-morrison-showroom/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/pimlico-st-georges-square/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/private-residence-little-venice/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/raffles-london-the-owo/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/scp-showroom-pimlico/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/tea-house-jaillon-studio/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/projects/trematon-castle/",
+      "decision": "Retain recorded project photography, gallery credits and image policy; use labelled glance icons, method icons and shared enquiry controls. Text-only records retain their stated photo clearance boundary."
+    },
+    {
+      "path": "/reviews/",
+      "decision": "Keep published quotations text-led and verbatim; shared actions and linked evidence provide navigation."
+    },
+    {
+      "path": "/search/",
+      "decision": "Use a search icon and spacious result links; no decorative illustration competes with finding content."
+    },
+    {
+      "path": "/services/acoustic-wallcovering-installation/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/architectural-film-wrapping/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/calico-wallpaper-installer/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/commercial-wallcovering-installation/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/exterior-works/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/fabric-walling/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/grasscloth-installation/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/hand-painted-wallpaper-installation/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/heritage-listed-buildings/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/hotel-wallcovering-installation/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/house-of-hackney-wallpaper-installer/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/joinery-wallcoverings-and-panels/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/mural-installation/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/silk-wallcovering-installation/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/timorous-beasties-installer/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/services/window-film/",
+      "decision": "Show related cleared installation photographs, relevant schematic process guidance and shared quotation controls; retain every project link and service qualification."
+    },
+    {
+      "path": "/thank-you/",
+      "decision": "Use a restrained confirmation check and next-step actions; retain receipt and phone behaviours."
+    },
+    {
+      "path": "/trade/",
+      "decision": "Use project evidence, briefing checklist icons and labelled file-download and enquiry controls; preserve procurement copy and audience handoffs."
+    },
+    {
+      "path": "/wallcovering-installation-ai-crawler/",
+      "decision": "Keep fit/evidence tables, native disclosures and brief-building tools readable; no decorative image is needed."
+    }
+  ]
+}

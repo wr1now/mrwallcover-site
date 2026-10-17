@@ -11,11 +11,13 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-11"
-updated: "2026-10-11"
+updated: "2026-10-17"
 description: "Where the first drop goes and why: setting out from a focal point, setting a true vertical with a laser in a room that is not square, matching across joints and corners, balancing the end panels, hanging murals in order, and joining wide vinyl by overlap and splice."
 metaDescription: "Wallpaper set-out and pattern matching: start from a focal point, laser-set every drop, match across corners, balance end panels, overlap and splice."
 shortTitle: "Set-out and pattern matching"
 order: 13
+diagram: "pattern-match"
+diagramCaption: "Read the product’s match instruction before cutting. Half-drop is shown here as an example of an offset match; other offsets also exist. Motifs are original schematic shapes."
 relatedMaterials: ["paper-and-non-woven", "murals", "contract-vinyl"]
 relatedGuides: ["hand-painted-murals-set-out", "grasscloth-seams-and-variation", "designer-specification-checklist"]
 ctaLabel: "Discuss a set-out"

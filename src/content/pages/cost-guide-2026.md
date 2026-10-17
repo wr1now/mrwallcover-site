@@ -7,10 +7,16 @@
   "eyebrow": "Advice",
   "heading": "How much does wallpaper installation cost?",
   "lede": "Every job is quoted after a survey, because the price depends on the room, the paper and the building rather than on a rate per roll. Mr Wallcover publishes no price list. This page says what moves the figure, so a quotation can be read and compared.",
-  "parent": { "name": "Advice", "href": "/advice/" },
+  "parent": {
+    "name": "Advice",
+    "href": "/advice/"
+  },
   "published": "2026-10-11",
-  "updated": "2026-10-11",
-  "cta": { "label": "Request a quotation", "href": "/contact/?intent=install" },
+  "updated": "2026-10-17",
+  "cta": {
+    "label": "Request a quotation",
+    "href": "/contact/?intent=install"
+  },
   "projects": [],
   "faq": [
     {
@@ -34,7 +40,11 @@
         "After the survey. We measure, look at the walls and the access, and then write a scope of works room by room, saying what has been allowed for. Drawings and a product code let us prepare before the visit."
       ]
     }
-  ]
+  ],
+  "featureDiagram": {
+    "kind": "survey",
+    "caption": "Measured wall area, openings and the set-out inform the quotation. This drawing explains the survey; it is not a price or ordering calculation."
+  }
 }
 ---
 

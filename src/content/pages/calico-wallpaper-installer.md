@@ -7,10 +7,19 @@
   "eyebrow": "Services",
   "heading": "Calico Wallpaper installation in London",
   "lede": "Mr Wallcover has installed Calico Wallpaper murals and papers at four public commissions in London since 2018. This page says what was hung, how it hangs, and where each case study is.",
-  "parent": { "name": "Services", "href": "/services/" },
-  "updated": "2026-10-11",
-  "service": { "name": "Calico Wallpaper installation", "serviceType": "Wallcovering installation" },
-  "cta": { "label": "Discuss a Calico installation", "href": "/contact/?intent=install" },
+  "parent": {
+    "name": "Services",
+    "href": "/services/"
+  },
+  "updated": "2026-10-17",
+  "service": {
+    "name": "Calico Wallpaper installation",
+    "serviceType": "Wallcovering installation"
+  },
+  "cta": {
+    "label": "Discuss a Calico installation",
+    "href": "/contact/?intent=install"
+  },
   "projects": [
     "heathrow-terminal-4-calico",
     "calico-lee-broom-overture",
@@ -39,7 +48,13 @@
         "Yes. Three of the four published installs were for events with fixed opening dates: London Design Festival 2025, Brompton Design District 2026 and London Fashion Week in September 2026. The Heathrow mural was hung overnight in a live terminal. The case studies give the dates."
       ]
     }
-  ]
+  ],
+  "featureMedia": {
+    "id": "lee-broom-06",
+    "caption": "Setting out an Overture panel against a laser line in the Lee Broom showroom. The vertical datum guides the panel sequence.",
+    "credit": "Photograph: Dorin Burcus / Mr Wallcover.",
+    "project": "calico-lee-broom-overture"
+  }
 }
 ---
 

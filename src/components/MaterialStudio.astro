@@ -1,4 +1,5 @@
 ---
+import Action from './Action.astro';
 import Picture from './Picture.astro';
 ---
 
@@ -14,31 +15,31 @@ import Picture from './Picture.astro';
       <p class="caption">A real surface at Brown's Hotel, Mayfair. The studio does not replace this photograph.</p>
     </div>
     <p class="mt-6 mb-0">
-      <button class="btn btn-solid-ink" type="button" data-open-studio>Open the material light studio</button>
+      <Action variant="primary" type="button" data-open-studio>Open the material light studio</Action>
     </p>
     <p data-studio-status class="m-0 mt-3 text-stone" role="status"></p>
     <div data-studio-controls hidden>
       <div class="studio-stage mt-6" data-studio-stage></div>
       <p class="mt-4 mb-0" data-studio-note>Paper and non-woven. A matte printed surface.</p>
       <div class="mt-4 flex flex-wrap gap-2" role="group" aria-label="Material family">
-        <button class="btn btn-line glass-clear" type="button" data-preset="paper" aria-pressed="true">Paper</button>
-        <button class="btn btn-line glass-clear" type="button" data-preset="grasscloth" aria-pressed="false">Grasscloth</button>
-        <button class="btn btn-line glass-clear" type="button" data-preset="silk" aria-pressed="false">Silk</button>
-        <button class="btn btn-line glass-clear" type="button" data-preset="scenic" aria-pressed="false">Scenic</button>
-        <button class="btn btn-line glass-clear" type="button" data-preset="vinyl" aria-pressed="false">Vinyl</button>
-        <button class="btn btn-line glass-clear" type="button" data-preset="acoustic" aria-pressed="false">Acoustic</button>
+        <Action variant="secondary" class="glass-clear" type="button" data-preset="paper" aria-pressed="true">Paper</Action>
+        <Action variant="secondary" class="glass-clear" type="button" data-preset="grasscloth" aria-pressed="false">Grasscloth</Action>
+        <Action variant="secondary" class="glass-clear" type="button" data-preset="silk" aria-pressed="false">Silk</Action>
+        <Action variant="secondary" class="glass-clear" type="button" data-preset="scenic" aria-pressed="false">Scenic</Action>
+        <Action variant="secondary" class="glass-clear" type="button" data-preset="vinyl" aria-pressed="false">Vinyl</Action>
+        <Action variant="secondary" class="glass-clear" type="button" data-preset="acoustic" aria-pressed="false">Acoustic</Action>
       </div>
       <div class="mt-4 grid gap-4 md:grid-cols-2">
         <label class="field">Light direction
           <input data-light type="range" min="0" max="180" value="40" />
         </label>
         <div class="flex flex-wrap gap-2">
-          <button class="btn btn-line" type="button" data-daylight>Daylight</button>
-          <button class="btn btn-line" type="button" data-warm>Warm interior</button>
-          <button class="btn btn-line" type="button" data-overview>Overview</button>
-          <button class="btn btn-line" type="button" data-closeup>Close-up</button>
-          <button class="btn btn-line" type="button" data-reset-studio>Reset</button>
-          <button class="btn btn-line" type="button" data-close-studio>Close</button>
+          <Action variant="secondary" type="button" data-daylight>Daylight</Action>
+          <Action variant="secondary" type="button" data-warm>Warm interior</Action>
+          <Action variant="secondary" type="button" data-overview>Overview</Action>
+          <Action variant="secondary" type="button" data-closeup>Close-up</Action>
+          <Action variant="secondary" type="button" data-reset-studio>Reset</Action>
+          <Action variant="secondary" type="button" data-close-studio>Close</Action>
         </div>
       </div>
     </div>

@@ -1,12 +1,16 @@
 ---
 import Breadcrumb from '../components/Breadcrumb.astro';
+import Action from '../components/Action.astro';
+import Icon, { type IconName } from '../components/Icon.astro';
+import EvidenceFigure from '../components/EvidenceFigure.astro';
 import Base from '../layouts/Base.astro';
 import professionals from '../content/professionals.json';
-import { editorialPages } from '../lib/content';
+import { editorialPages, linkedProjects, projectHref, type EditorialPageData } from '../lib/content';
 import { breadcrumbNode } from '../lib/schema';
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'For professionals', href: '/professionals/' }];
 // Published editorial pages under /professionals/ (e.g. fit-out contractors) sit beside the audience pages.
-const professionalEditorials = editorialPages.map((mod) => mod.frontmatter).filter((fm) => fm.path.startsWith('/professionals/'));
+type ProfessionalEditorial = EditorialPageData & { featureMedia?: { id: string; caption: string; credit: string; project?: string } };
+const professionalEditorials = editorialPages.map((mod) => mod.frontmatter as ProfessionalEditorial).filter((fm) => fm.path.startsWith('/professionals/'));
 ---
 <Base title="For Designers, Developers & Hotels | Mr Wallcover" description="Wallcovering specification and installation routes for designers, property developers, contractors and hotel operators." path="/professionals/" extraSchema={[breadcrumbNode(crumbs)]}>
   <div class="container-page pb-20">
@@ -16,10 +20,38 @@ const professionalEditorials = editorialPages.map((mod) => mod.frontmatter).filt
       <h1>Wallcovering support for your specification.</h1>
       <p class="lede mt-5">Choose the route that fits your work. Bring the drawings, the material and the decisions still to be made.</p>
     </header>
-    <div class="grid gap-6 md:grid-cols-3">
-      {professionals.map((item) => <section class="guide-card" id={item.slug === 'developers' ? 'commercial' : item.slug}><p class="eyebrow">{item.name}</p><h2><a href={`/professionals/${item.slug}/`}>{item.heading}</a></h2><p>{item.intro}</p><a class="guide-read" href={`/professionals/${item.slug}/`}>Explore this service ↗</a></section>)}
-      {professionalEditorials.map((fm) => <section class="guide-card" id={fm.path.split('/')[2]}><p class="eyebrow">{fm.title}</p><h2><a href={fm.path}>{fm.heading}</a></h2><p>{fm.lede}</p><a class="guide-read" href={fm.path}>Explore this service ↗</a></section>)}
+    <div class="professional-route-grid">
+      {professionals.map((item) => <section class="professional-card" id={item.slug === 'developers' ? 'commercial' : item.slug}>
+        <div class="professional-card-heading"><Icon name={(item.visual?.icon ?? 'drawing') as IconName} /><p class="eyebrow">{item.name}</p></div>
+        <h2><a href={`/professionals/${item.slug}/`}>{item.heading}</a></h2>
+        <p class="professional-card-intro">{item.intro}</p>
+        {item.visual?.evidence && <EvidenceFigure {...item.visual.evidence} ratio="landscape" sizes="(min-width: 768px) 36rem, calc(100vw - 5rem)" class="professional-card-evidence" />}
+        <Action variant="quiet" href={`/professionals/${item.slug}/`} aria-label={`Explore this service: ${item.name}`}>Explore this service</Action>
+      </section>)}
+      {professionalEditorials.map((fm) => {
+        const project = fm.featureMedia?.project ? linkedProjects(fm.projects, fm.path).find((item) => item.slug === fm.featureMedia?.project) : undefined;
+        return <section class="professional-card" id={fm.path.split('/')[2]}>
+          <div class="professional-card-heading"><Icon name="tools" /><p class="eyebrow">{fm.title}</p></div>
+          <h2><a href={fm.path}>{fm.heading}</a></h2>
+          <p class="professional-card-intro">{fm.lede}</p>
+          {fm.featureMedia && <EvidenceFigure {...fm.featureMedia} href={project ? projectHref(project.slug) : undefined} linkLabel={project ? `View the ${project.title} case study` : undefined} ratio="landscape" sizes="(min-width: 768px) 36rem, calc(100vw - 5rem)" class="professional-card-evidence" />}
+          <Action variant="quiet" href={fm.path} aria-label={`Explore this service: ${fm.title}`}>Explore this service</Action>
+        </section>;
+      })}
     </div>
-    <section class="guide-next"><p class="eyebrow">Already have a complete brief?</p><h2>Send the work in front of you.</h2><p>A schedule, drawings and a short note are enough to begin. Include who is supplying the material and any date the tender needs.</p><a class="btn btn-solid-ink" href="/contact/?audience=commercial&intent=install">Start a professional enquiry</a></section>
+    <section class="guide-next"><p class="eyebrow">Already have a complete brief?</p><h2>Send the work in front of you.</h2><p>A schedule, drawings and a short note are enough to begin. Include who is supplying the material and any date the tender needs.</p><Action href="/contact/?audience=commercial&intent=install">Start a professional enquiry</Action></section>
   </div>
 </Base>
+
+<style>
+  .professional-route-grid { display: grid; gap: 1.5rem; }
+  .professional-card { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--color-line); border-radius: var(--radius-control); background: var(--color-paper); }
+  .professional-card-heading { display: flex; align-items: center; gap: .8rem; margin-bottom: 1.2rem; color: var(--color-brass); }
+  .professional-card-heading .eyebrow { margin: 0; }
+  .professional-card h2 { margin: 0; font-size: var(--text-h3); line-height: 1.15; }
+  .professional-card h2 a { color: inherit; text-decoration: none; }
+  .professional-card h2 a:hover { text-decoration: underline; text-underline-offset: .2em; }
+  .professional-card-intro { margin: 1rem 0 1.5rem; color: var(--color-stone); font-size: var(--text-body); line-height: 1.65; }
+  .professional-card :global(.professional-card-evidence) { width: 100%; margin: auto 0 1.2rem; }
+  @media (min-width: 768px) { .professional-route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; } }
+</style>

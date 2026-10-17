@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Action from '../components/Action.astro';
+import Icon from '../components/Icon.astro';
+---
+<Base title="Visual contract test" description="Temporary test of a new route inheriting the shared design system." path="/visual-contract-fixture/" noindex>
+  <div class="container-page page-head">
+    <h1>Visual contract test</h1>
+    <p>A new route needs no local CSS to inherit its shell and actions.</p>
+    <Icon name="room" />
+    <Action href="/contact/">Navigation action</Action>
+    <Action variant="secondary">Native button</Action>
+    <Action href="/contact/" aria-disabled="true">Unavailable navigation</Action>
+    <Action aria-disabled="true">Unavailable button</Action>
+    <form data-action-form>
+      <label>Fixture input <input name="fixture" value="Original" /></label>
+      <Action type="submit">Submit fixture</Action>
+      <Action type="reset" variant="secondary">Reset fixture</Action>
+      <output data-action-submissions>0</output>
+    </form>
+  </div>
+  <script is:inline>
+    document.querySelector('[data-action-form]').addEventListener('submit', event => {
+      event.preventDefault();
+      const output = document.querySelector('[data-action-submissions]');
+      output.textContent = String(Number(output.textContent) + 1);
+    });
+  </script>
+</Base>
