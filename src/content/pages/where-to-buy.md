@@ -47,7 +47,7 @@ Sample terms differ from seller to seller: some are free, some are charged, and 
 
 ## Order every roll at once
 
-Order every roll you need, plus the spare, at the same time, and ask for a single batch. We check the batch number on every roll before we cut the first drop. To count the rolls, use the [calculator](/calculator/): it gives the working rolls, the spare on its own line, and the cutting plan.
+Order every roll you need, plus the spare, at the same time, and ask for a single batch. Before the first drop is cut, check that every roll has the same batch number. To count the rolls, use the [calculator](/calculator/): it gives the working rolls, the spare on its own line, and the cutting plan.
 
 ## Lead times and returns
 
@@ -61,7 +61,7 @@ Paper sent to Great Britain from outside the UK can carry VAT and Customs Duty. 
 
 ## Where we come in
 
-We hang the paper. Send us the product reference, the room and the seller you are considering, and we will check the order before it is placed: the roll count, the batch, the lining and the paste. If you have not settled on the paper or the seller, we can help you choose, then hang it.
+Mr Wallcover installs wallcoverings. If you would like us to hang the paper, or to help you choose it first, send us the product reference and a few words about the room.
 
 - [Work out the rolls](/calculator/)
 - [Prepare the wall](/wallpapering/preparation/)

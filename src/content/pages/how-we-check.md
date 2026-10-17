@@ -45,9 +45,9 @@ We do not call a product fire-rated, washable or waterproof unless the maker's o
 
 - No maker or seller pays to appear on this site, or to be listed higher.
 - There are no affiliate links. If we ever add one, it will be labelled as an advert, marked as sponsored, and it will not change anything we recommend.
-- Lists are in alphabetical order or follow your own answers, never a commission.
+- Where makers or sellers are listed, the order never depends on payment or commission.
 - We do not show wallpaper prices, because they change. Where a price matters, we link to the seller's site. The [calculator](/calculator/) gives no installation price.
 
 ## Corrections
 
-If something here is wrong or out of date, tell us which page and what the maker's document says. We correct it and change the date.
+If something here is wrong or out of date, tell us which page and what the maker's document says. A corrected fact shows the date it was checked again.
