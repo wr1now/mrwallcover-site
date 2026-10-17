@@ -1,16 +1,12 @@
 # MR WALLCOVER — three benchmark cycles
 
-Research date: 10 October 2026. Public pages inspected; technology and performance are unknown unless observed. Comparisons are qualitative, not lab speed scores. Named competitors are installation businesses; design brands are presentation comparables.
+Research date: 10 October 2026. Public pages inspected; technology and performance are unknown unless observed. Comparisons are qualitative, not lab speed scores. Supplier brands below are presentation references. Installation guidance must come from the practice’s own documented work or the maker’s product instructions.
 
-## Cycle 1 — close practical presentation and enquiry gaps
+## Cycle 1 — project enquiries and evidence
 
-| Comparable | Public feature/UX | Commercial model | Architecture/performance | Opportunity |
-| --- | --- | --- | --- | --- |
-| [Wells Interiors](https://www.wells-interiors.com/) and [pricing guide](https://www.wells-interiors.com/pricing-guide/) | Separate homeowner, designer, contractor and commercial paths; explanatory pricing | Scope-based installation; guide is not our pricing | Backend and measured speed unknown | Direct entry routes and clear briefing inputs |
-| [FeatureWall](https://www.featurewall.london/) and [portfolio](https://www.featurewall.london/portfolio) | Specialist portfolio and quotation context | Quote based; public pricing guidance | Backend and measured speed unknown | Connect aspirational images with an actionable enquiry |
-| [Bluespec](https://bluespeclimited.co.uk/) | Residential/commercial/bespoke service separation and contact steps | Quote based | Backend and measured speed unknown | Explain the first conversation simply |
+The practice accepts installation, sourcing and advice enquiries. Visitors can describe their project using the existing form, with a short checklist and optional fuller brief. These routes describe the services Mr Wallcover offers.
 
-Implemented: real full-width hotel imagery, finished-work and venue-photo distinctions, three intent-specific enquiry routes using the existing form contract, and a concise contact-page checklist. Preserved the optional fuller brief. Rejected: copying competitor prices, invented client metrics and an additional redundant form.
+Implemented: full-width hotel imagery with recorded credits, a distinction between finished installation and venue photographs, and clear enquiry choices. Prices and project claims require evidence from the practice's own records.
 Validation: production homepage route/media tests; existing enquiry validation tests; browser checks recorded in QA_REPORT.md.
 
 ## Cycle 2 — premium portfolio discovery
