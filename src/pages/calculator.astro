@@ -1,5 +1,6 @@
 ---
 import Breadcrumb from '../components/Breadcrumb.astro';
+import PatternMatchGuide from '../components/PatternMatchGuide.astro';
 import Action from '../components/Action.astro';
 import WallpaperingNav from '../components/WallpaperingNav.astro';
 import Base from '../layouts/Base.astro';
@@ -33,6 +34,7 @@ const conditions = wallpapering.conditionQuestion.options;
       <p class="eyebrow">Calculator</p>
       <h1>Wallpaper calculator</h1>
       <p class="lede qc-lede mt-5">Choose the roll, then give the wall's width and height. We cut every drop from the rolls the way we do and give you the order with a spare, the cutting plan, and the primer, lining and paste. A quantity to order, not a set-out, and never a price.</p>
+      <div class="qc-start-options"><Action href="/calculator/?f=other-roll&rw=55&rl=10&m=straight&r=65&ms=wall&w=230x265#calculator-heading" variant="quiet" icon="roll">Try the worked example</Action><span>230 × 265 cm wall · 65 cm straight repeat</span></div>
     </header>
     <WallpaperingNav current="calculator" />
 
@@ -110,6 +112,7 @@ const conditions = wallpapering.conditionQuestion.options;
             <p class="qc-hint form-note" id="qc-hint-margin">Use the maker's stated margin. Enter 0 only when the maker says no extra margin is needed.</p>
           </div>
         </div>
+        <PatternMatchGuide />
         <details class="qc-sub" data-maker-box>
           <summary>Know the maker or have the product link? <span class="text-stone">(optional)</span></summary>
           <div class="grid gap-5 md:grid-cols-2">
@@ -306,6 +309,10 @@ const conditions = wallpapering.conditionQuestion.options;
   html:has(.qc) { scroll-padding-top: calc(var(--header-height) + var(--header-inset-top) + 1rem); }
   @media (max-width: 79.99rem) { html:has(.qc) { scroll-padding-bottom: var(--dock-clearance); } }
   html:not(.js) .qc-docket, html:not(.js) .qc :is([type="submit"], [data-add-opening], [data-add-return], [data-add-wall]) { display: none; }
+
+  .qc-start-options { display:flex; align-items:center; flex-wrap:wrap; gap:.25rem 1.25rem; margin-top:1rem; }
+  .qc-start-options > span { color:var(--color-stone); font-size:var(--text-meta); }
+  @media print { .qc-start-options, .qc-match-guide { display:none !important; } }
 
   /* ---- Type: the answer is the largest thing after the H1 ---- */
   @media (max-width: 47.99rem) { .qc-lede { font-size: var(--text-body); } }

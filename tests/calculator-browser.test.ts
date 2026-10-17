@@ -200,3 +200,27 @@ test('clearing a measured dimension marks the old plan stale and disables sendin
     assert.equal(await page.evaluate(() => sessionStorage.getItem('mw-quantity-brief')), null);
   });
 });
+
+test('pattern guide follows each match and stays explanatory rather than changing quantities', async () => {
+  await withCalculator(ownerExample, async (page) => {
+    await page.locator('[data-match-guide] summary').click();
+    for (const match of ['free', 'reverse', 'straight', 'half', 'third', 'quarter']) {
+      await page.select('[name="match"]', match);
+      const shown = await page.$$eval('[data-match-example]', (nodes: HTMLElement[]) => nodes.filter((node) => !node.hidden).map((node) => node.dataset.matchExample));
+      assert.deepEqual(shown, [match]);
+      assert.match(await page.$eval(`[data-match-example="${match}"]`, (node: HTMLElement) => node.innerText), /Illustrative/);
+    }
+    await page.select('[name="format"]', 'mural');
+    assert.equal(await page.$eval('[data-match-guide]', (node: HTMLElement) => node.hidden), true);
+  });
+});
+
+test('worked-example shortcut fills a transparent example and shows working, spare and total on mobile', async () => {
+  await withCalculator({}, async (page) => {
+    await page.setViewport({ width: 390, height: 844 });
+    await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('.qc-start-options a')]);
+    await page.waitForSelector('[data-docket-body] .qc-order');
+    assert.deepEqual(await ledger(page), ['2 rolls', '1 roll', '3 rolls']);
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+  });
+});
