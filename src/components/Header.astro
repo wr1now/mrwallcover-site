@@ -1,4 +1,5 @@
 ---
+import Action from './Action.astro';
 /**
  * Floating inset champagne-glass header (stage 5, step G5).
  *
@@ -56,7 +57,7 @@ function isCurrent(href: string) {
       <PhoneReveal class="nav-link reveal-phone" label="Phone" />
       <BookCallLink class="nav-link header-book" />
       <WhatsAppLink class="nav-link" icon />
-      <a class="btn btn-solid-ink header-action" href="/contact/">Start your project <span aria-hidden="true">↗</span></a>
+      <Action class="header-action" href="/contact/">Start your project</Action>
     </nav>
     <div class="header-mobile">
       <a class="nav-link header-start" href="/contact/">Start<span class="sr-only"> your project</span></a>

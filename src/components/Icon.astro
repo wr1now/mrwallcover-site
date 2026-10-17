@@ -1,0 +1,34 @@
+---
+/** One decorative icon family. Meaning always comes from the adjacent label. */
+export type IconName = 'arrow-right' | 'arrow-left' | 'download' | 'search' | 'pin' | 'lock' | 'panels' | 'mail' | 'calendar' | 'instagram' | 'phone' | 'ruler' | 'roll' | 'layers' | 'check' | 'room' | 'tag' | 'camera' | 'drawing' | 'access' | 'swatch' | 'book' | 'tools';
+interface Props { name: IconName; class?: string; }
+const { name, class: className } = Astro.props;
+const paths: Record<IconName, string[]> = {
+  'arrow-right': ['M4 12h15', 'm13 6 6 6-6 6'],
+  'arrow-left': ['M20 12H5', 'm11 6-6 6 6 6'],
+  download: ['M12 3v12', 'm7 10 5 5 5-5', 'M4 16v5h16v-5'],
+  search: ['M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z', 'm15 15 6 6'],
+  pin: ['M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z', 'M15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z'],
+  lock: ['M6 10h12v11H6Z', 'M8 10V6a4 4 0 0 1 8 0v4', 'M12 15v2'],
+  panels: ['M3 4h18v16H3Z', 'M9 4v16m6-16v16', 'M3 15c3-6 6 3 9-2s6 1 9-5'],
+  mail: ['M3 5h18v14H3z', 'm3 6 9 7 9-7'],
+  calendar: ['M4 5h16v16H4z', 'M8 3v4m8-4v4M4 10h16', 'm8 15 3 3 5-5'],
+  instagram: ['M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5Z', 'M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z', 'M17 7h.01'],
+  phone: ['m7 3 3 5-2 2a14 14 0 0 0 6 6l2-2 5 3-1 3c-1 3-8 0-12-4S1 5 4 4Z'],
+  ruler: ['m3 15 12-12 6 6L9 21Z', 'm6 12 2 2m1-5 2 2m1-5 2 2m1-5 2 2'],
+  roll: ['M6 7c0-2 12-2 12 0v12c0 2-12 2-12 0Z', 'M6 7c0 2 12 2 12 0M9 3h6M12 3v2'],
+  layers: ['m12 3 10 5-10 5L2 8Z', 'm2 12 10 5 10-5M2 16l10 5 10-5'],
+  check: ['m5 12 4 4L19 6'],
+  room: ['M3 21V8l9-5 9 5v13H3Z', 'M12 3v12m0 0L3 21m9-6 9 6', 'M6 9v5l3-1V8Z'],
+  tag: ['M3 3h8l10 10-8 8L3 11Z', 'M7 7h.01'],
+  camera: ['M3 7h4l2-3h6l2 3h4v14H3Z', 'M16 13a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z'],
+  drawing: ['M5 3h10l4 4v14H5Z', 'M15 3v5h4M8 12h8M8 16h5'],
+  access: ['M3 21h6v-6h6V9h6V3', 'M3 3h11m-4 0 4 4-4 4'],
+  swatch: ['M3 4h6v16H3Z', 'm9 5 5 3-5 9', 'm17 10 4 4-10 7H6', 'M6 16h.01'],
+  book: ['M12 5C9 3 5 3 2 4v16c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Z', 'M12 5v16'],
+  tools: ['m4 20 9-9', 'M14 3a6 6 0 0 0-3 8l2 2a6 6 0 0 0 8-3l-5 1-3-3Z', 'm3 18 3 3'],
+};
+---
+<svg class:list={['mw-icon', className]} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  {paths[name].map((d) => <path d={d} />)}
+</svg>

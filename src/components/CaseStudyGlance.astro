@@ -4,20 +4,22 @@
  * A field the case study does not record shows a dash, with "Not recorded" for screen readers.
  */
 import { glanceRows, type GlanceSource } from '../lib/glance';
+import Icon, { type IconName } from './Icon.astro';
 
 interface Props {
   study: GlanceSource;
 }
 
 const rows = glanceRows(Astro.props.study);
+const icons: IconName[] = ['room', 'drawing', 'tools', 'swatch', 'ruler', 'layers', 'calendar'];
 ---
 
 <section class="glance-box" aria-labelledby="glance-heading" data-glance>
   <h2 id="glance-heading" class="eyebrow m-0">At a glance</h2>
   <dl class="glance-list">
-    {rows.map((row) => (
+    {rows.map((row, index) => (
       <div>
-        <dt>{row.label}</dt>
+        <dt><Icon name={icons[index]} />{row.label}</dt>
         <dd>{row.value ?? <><span aria-hidden="true">–</span><span class="sr-only">Not recorded</span></>}</dd>
       </div>
     ))}

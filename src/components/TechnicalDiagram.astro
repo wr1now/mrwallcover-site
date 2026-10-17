@@ -1,0 +1,162 @@
+---
+/** Original, schematic drawings. These never stand in for a measured survey or a product specification. */
+export type DiagramKind = 'survey' | 'programme' | 'supply' | 'setout' | 'inspection' | 'pattern-match' | 'preparation' | 'panel-sequence' | 'reveal' | 'roll-cutting' | 'tested-build-up' | 'natural-panels';
+interface Props { kind: DiagramKind; caption?: string; class?: string; }
+const { kind, caption, class: className } = Astro.props;
+const labels: Record<DiagramKind, string> = {
+  survey: 'Wall elevation showing overall width, height, an opening and a vertical datum.',
+  programme: 'An illustrative project sequence: survey, delivery, preparation, installation and inspection.',
+  supply: 'Three rolls checked against the product reference, batch and quantity.',
+  setout: 'Wallpaper panels balanced around a focal point, with joints on a true vertical.',
+  inspection: 'A magnified junction showing the seam, top edge and corner to inspect.',
+  'pattern-match': 'Free match has no aligned motif; straight match aligns motifs; half-drop offsets adjacent lengths.',
+  preparation: 'Separate wall preparation decisions: sound substrate, specified preparation and the finish system.',
+  'panel-sequence': 'Four numbered panels forming one continuous unbranded schematic scene.',
+  reveal: 'A window opening drawn with a separate reveal return and a junction to plan.',
+  'roll-cutting': 'An illustrative roll divided into three full-height cut lengths and a shorter offcut. The diagram is not a calculation.',
+  'tested-build-up': 'Wallcovering, adhesive and substrate are considered together in the tested system. No fire classification is illustrated or claimed.',
+  'natural-panels': 'Four natural-weave panels vary in shade while their vertical joints remain closed. Colour variation is distinguished from an open seam.',
+};
+---
+<figure class:list={['technical-diagram', className]} data-technical-diagram={kind}>
+  <svg viewBox="0 0 560 300" role="img" aria-label={labels[kind]} xmlns="http://www.w3.org/2000/svg">
+    {kind === 'survey' && <>
+      <path class="surface" d="M100 65h360v172H100z" />
+      <path d="M330 112h78v125h-78zM330 123h78" />
+      <path class="datum" d="M235 54v194" />
+      <path d="M100 45h360m-360-8v16m360-16v16M77 65v172m-8-172h16m-16 172h16" />
+      <text x="280" y="30" text-anchor="middle">Width W</text>
+      <text x="43" y="155" transform="rotate(-90 43 155)" text-anchor="middle">Height H</text>
+      <text x="369" y="175" text-anchor="middle">Door</text>
+      <text x="235" y="276" text-anchor="middle">True vertical</text>
+    </>}
+    {kind === 'programme' && <>
+      <path class="light" d="M190 35v222m80-222v222m80-222v222m80-222v222m80-222v222" />
+      {['Survey', 'Delivery', 'Prepare', 'Install', 'Inspect'].map((label, i) => <>
+        <text x="28" y={66 + i * 43}>{label}</text>
+        <rect class="accent-fill" x={190 + i * 53} y={48 + i * 43} width={i === 2 ? 102 : 77} height="18" rx="3" />
+      </>)}
+      <text x="350" y="284" text-anchor="middle">Sequence agreed for the project</text>
+    </>}
+    {kind === 'supply' && <>
+      {[112, 242, 372].map((x, i) => <>
+        <path class="surface" d={`M${x} 76v148c0 20 76 20 76 0V76`} />
+        <ellipse class="surface" cx={x + 38} cy="76" rx="38" ry="14" />
+        <ellipse cx={x + 38} cy="76" rx="12" ry="5" />
+        <rect x={x + 9} y="126" width="58" height="56" rx="2" />
+        <path d={`m${x + 20} 153 10 10 24-26`} />
+        <text x={x + 38} y="274" text-anchor="middle">{['Reference', 'Batch', 'Quantity'][i]}</text>
+      </>)}
+    </>}
+    {kind === 'setout' && <>
+      <path class="surface" d="M66 45h428v186H66z" />
+      {[173, 280, 387].map((x) => <path d={`M${x} 45v186`} />)}
+      {[119.5, 226.5, 333.5, 440.5].map((x) => <>
+        <path class="motif" d={`M${x} 75c-30 20-30 46 0 60 30-14 30-40 0-60ZM${x} 135v58m0-27c-25-15-35-6-26 8 11 8 20 3 26-8m0 14c25-15 35-6 26 8-11 8-20 3-26-8`} />
+      </>)}
+      <path class="datum" d="M280 28v222" />
+      <path d="M66 249h107m-107-7v14m107-14v14m214-7h107m-107-7v14m107-14v14" />
+      <text x="280" y="279" text-anchor="middle">Focal point / balanced set-out</text>
+    </>}
+    {kind === 'inspection' && <>
+      <path class="surface" d="M55 65h222v160H55z" />
+      <path d="M55 84h222M166 84v141M250 84v141" />
+      <circle class="surface" cx="410" cy="142" r="92" />
+      <path class="light" d="m250 84 91-29M250 225l91 17" />
+      <path d="M328 111h164m-79 0v118" />
+      <path class="datum" d="M414 126v88" />
+      <text x="155" y="272" text-anchor="middle">Edges and corners</text>
+      <text x="412" y="272" text-anchor="middle">Seam detail</text>
+    </>}
+    {kind === 'pattern-match' && <>
+      {['Free', 'Straight', 'Half-drop'].map((label, group) => <>
+        {[0, 1, 2].map((col) => <>
+          <rect class="surface" x={28 + group * 181 + col * 44} y="46" width="44" height="174" />
+          {group === 0
+            ? <path class="motif" d={`M${50 + col * 44} 70v126`} />
+            : [0, 1, 2].filter((row) => !(group === 2 && col % 2 && row === 2)).map((row) => {
+              const x = 50 + group * 181 + col * 44;
+              const y = 68 + row * 57 + (group === 2 && col % 2 ? 28.5 : 0);
+              return <path class="motif" d={`m${x} ${y} 10 14-10 14-10-14Z`} />;
+            })}
+        </>)}
+        <text x={94 + group * 181} y="264" text-anchor="middle">{label}</text>
+      </>)}
+    </>}
+    {kind === 'preparation' && <>
+      <path class="surface" d="m58 99 95-50 52 27v154l-95 50-52-27Z" />
+      <path class="surface" d="m201 99 95-50 52 27v154l-95 50-52-27Z" />
+      <path class="surface" d="m344 99 95-50 52 27v154l-95 50-52-27Z" />
+      <path class="light" d="m78 126 49-26m-49 62 49-26m-49 62 49-26m272-18 49-26m-49 62 49-26m-49 62 49-26" />
+      <path class="datum" d="m161 134 40-21m103 21 40-21" />
+      <text x="124" y="28" text-anchor="middle">Substrate</text>
+      <text x="270" y="28" text-anchor="middle">Prepare</text>
+      <text x="417" y="28" text-anchor="middle">Finish</text>
+    </>}
+    {kind === 'panel-sequence' && <>
+      {[1, 2, 3, 4].map((number, i) => <>
+        <rect class="surface" x={56 + i * 112} y="44" width="112" height="181" />
+        <text x={112 + i * 112} y="269" text-anchor="middle">{String(number).padStart(2, '0')}</text>
+      </>)}
+      <path class="motif" d="M56 181c48-57 69 36 112-24s66-91 112-22 73-66 112-29 61 12 112-30M56 204c51-17 81 19 112-9s78 15 112-5 79 17 112-18 78 21 112-9" />
+      <text x="280" y="26" text-anchor="middle">Keep the scene in sequence</text>
+    </>}
+    {kind === 'reveal' && <>
+      <path class="surface" d="M76 45h408v199H76z" />
+      <path d="M200 98h161v146H200zM222 116h118v128H222zM200 98l22 18m139-18-21 18" />
+      <path class="datum" d="M200 72v185M361 72v185" />
+      <path d="m343 151 76-42m-198 42-76-42" />
+      <text x="108" y="88" text-anchor="middle">Junction</text>
+      <text x="435" y="88" text-anchor="middle">Return</text>
+      <text x="280" y="280" text-anchor="middle">Plan the opening and its reveals</text>
+    </>}
+    {kind === 'roll-cutting' && <>
+      <path d="M45 59h470m-470-8v16m470-16v16" />
+      <text x="280" y="35" text-anchor="middle">Usable roll length</text>
+      <rect class="surface" x="45" y="100" width="470" height="86" />
+      {[160, 275, 390].map((x) => <path class="datum" d={`M${x} 85v116`} />)}
+      {[102.5, 217.5, 332.5].map((x) => <text x={x} y="151" text-anchor="middle">Drop</text>)}
+      <text x="453" y="151" text-anchor="middle">Offcut</text>
+      <text x="280" y="259" text-anchor="middle">Count complete cut lengths</text>
+    </>}
+    {kind === 'tested-build-up' && <>
+      <text x="110" y="35" text-anchor="middle">Wallcovering</text>
+      <text x="280" y="35" text-anchor="middle">Adhesive</text>
+      <text x="450" y="35" text-anchor="middle">Substrate</text>
+      {[60, 230, 400].map((x) => <rect class="surface" x={x} y="66" width="100" height="142" />)}
+      {[0, 1, 2, 3].map((row) => <>
+        <path class="motif" d={`M70 ${88 + row * 32}q20-20 40 0t40 0`} />
+        <path class="datum" d={`M240 ${88 + row * 32}h80`} />
+        <path d={`M400 ${101 + row * 32}h100`} />
+      </>)}
+      <path d="M450 66v35m-24 0v32m48 0v32m-48 0v32M185 135h20m-10-10v20m160-10h20m-10-10v20M60 228v12h440v-12" />
+      <text x="280" y="282" text-anchor="middle">Review the tested system together</text>
+    </>}
+    {kind === 'natural-panels' && <>
+      <text x="280" y="32" text-anchor="middle">Natural variation between panels</text>
+      {[0, 1, 2, 3].map((col) => <>
+        <rect x={70 + col * 105} y="62" width="105" height="158" fill={['#e6ddc9', '#d9ceb8', '#e0d5c0', '#d4c8b1'][col]} />
+        {[0, 1, 2, 3, 4, 5, 6].map((row) => <path class="weave-line" d={`M${74 + col * 105} ${78 + row * 21}h97`} />)}
+      </>)}
+      <path d="M175 220v24m105-24v24m105-24v24" />
+      <text x="280" y="280" text-anchor="middle">Visible panels / closed joints</text>
+    </>}
+  </svg>
+  <figcaption><span class="diagram-label">Schematic · not to scale</span>{caption && <span>{caption}</span>}</figcaption>
+</figure>
+
+<style>
+  .technical-diagram { margin: 0; padding: 1.15rem; background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
+  .technical-diagram.guide-opening-diagram { margin: 0 0 2rem; }
+  svg { display: block; width: 100%; height: auto; overflow: visible; fill: none; stroke: var(--color-stone); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  svg text { fill: var(--color-ink); stroke: none; font: 28px 'Outfit', sans-serif; }
+  .surface { fill: var(--color-ivory); }
+  .light { stroke: var(--color-line); }
+  .datum { stroke: var(--color-brass); stroke-dasharray: 6 6; }
+  .motif { stroke: var(--color-brass); stroke-width: 2; }
+  .weave-line { stroke: var(--color-brass); stroke-width: .8; opacity: .45; }
+  .accent-fill { fill: var(--color-brass); stroke: none; }
+  figcaption { display: grid; gap: .3rem; margin-top: .8rem; color: var(--color-stone); font-size: .875rem; line-height: 1.5; }
+  .diagram-label { color: var(--color-brass); font-size: var(--text-label); letter-spacing: .08em; text-transform: uppercase; }
+  @media (max-width: 480px) { .technical-diagram { padding: .8rem; } }
+</style>

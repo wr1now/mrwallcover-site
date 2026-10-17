@@ -39,7 +39,13 @@
       ]
     }
   ],
-  "updated": "2026-10-11",
+  "updated": "2026-10-17",
+  "featureMedia": {
+    "id": "browns-hotel-mayfair-07",
+    "caption": "Brown’s Hotel, Mayfair, during works: wallcoverings hung as part of the full decorating package, with the floors protected.",
+    "credit": "Mr Wallcover project photograph.",
+    "project": "browns-hotel-mayfair"
+  },
   "cta": {
     "label": "Send a tender package",
     "href": "/contact/?audience=contractor#enquiry"

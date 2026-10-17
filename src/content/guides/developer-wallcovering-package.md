@@ -11,11 +11,14 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-11"
+updated: "2026-10-17"
 description: "What a wallcovering package needs to be priced, programmed and handed over: scope, measurement basis, substrate handover, programme, changes, snagging and spares."
 metaDescription: "What a wallcovering package needs to be priced, programmed and handed over: scope, measurement, substrate handover, changes, snagging and spares."
 shortTitle: "Developer package"
 order: 9
+diagram: "programme"
+diagramCaption: "A sequence, not a promised duration. Confirm dependencies, room release, delivery and acceptance in the project’s own dated programme."
+download: {"href": "/downloads/wallcovering-package-schedule.csv", "label": "Download the package schedule"}
 relatedMaterials: ["contract-vinyl", "acoustic", "paper-and-non-woven"]
 relatedGuides: ["hotel-wallcovering-specification", "designer-specification-checklist", "wall-preparation", "installation-cost"]
 ctaLabel: "Send drawings and schedule"

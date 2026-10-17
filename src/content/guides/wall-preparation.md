@@ -11,11 +11,13 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-14"
+updated: "2026-10-17"
 description: "How to tell whether a wall is ready for wallcovering: old coatings, dryness, soundness, filling and sanding, lining paper, priming and what needs a site inspection."
 metaDescription: "How to tell if a wall is ready for wallcovering: old coatings, dryness, soundness, filling and sanding, lining paper, priming and when to inspect."
 shortTitle: "Wall preparation"
 order: 3
+diagram: "preparation"
+diagramCaption: "Check the substrate first. Primer, adhesive, lining where specified, and wallcovering form a product-specific system; this drawing does not prescribe a universal layer order."
 relatedMaterials: ["silk-and-textiles", "paper-and-non-woven", "contract-vinyl"]
 relatedGuides: ["installation-cost", "wallcovering-problems-and-aftercare", "choosing-wallcoverings"]
 ctaLabel: "Discuss wall preparation"

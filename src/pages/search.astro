@@ -2,6 +2,7 @@
 import { guides, guideHref } from '../lib/guides';
 import professionals from '../content/professionals.json';
 import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
 import { areaHref, areas, materials, projectHref, projects, specialismHref, specialisms } from '../lib/content';
 
 const entries = [
@@ -27,15 +28,15 @@ const entries = [
 <Base title="Search | Mr Wallcover" description="Find a service, material or project on the Mr Wallcover site." path="/search/" noindex={true}>
   <div class="container-page py-16">
     <h1 class="m-0 text-[clamp(2.4rem,5vw,4rem)]">Search</h1>
-    <form class="mt-6" role="search">
+    <form class="search-form mt-6" role="search">
       <label class="field" for="q">Search the site
-        <input id="q" name="q" type="search" data-search />
+        <span class="search-input"><Icon name="search" /><input id="q" name="q" type="search" data-search aria-controls="search-results" /></span>
       </label>
     </form>
     <p data-search-empty class="mt-6" hidden>Nothing matches. Try “grasscloth”, “aftercare” or “hotel”, or <a href="/contact/">start a project</a>.</p>
-    <ul class="mt-6 grid list-none gap-1 p-0" data-search-list>
+    <ul id="search-results" class="search-results mt-6 grid list-none gap-1 p-0" data-search-list>
       {entries.map((entry) => (
-        <li data-search-item={entry.label.toLowerCase()}><a href={entry.href}>{entry.label}</a></li>
+        <li data-search-item={entry.label.toLowerCase()}><a href={entry.href}><span>{entry.label}</span><Icon name="arrow-right" /></a></li>
       ))}
     </ul>
   </div>

@@ -9,6 +9,7 @@ import EnquiryForm from '../components/EnquiryForm.astro';
 import PhoneReveal from '../components/PhoneReveal.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
 import BookCallLink from '../components/BookCallLink.astro';
+import Icon, { type IconName } from '../components/Icon.astro';
 import Base from '../layouts/Base.astro';
 import { contact } from '../lib/content';
 import quoteChecklist from '../content/quote-checklist.json';
@@ -42,7 +43,7 @@ const crumbs = [
           <p>{quoteChecklist.intro}</p>
           <ul class="quote-checklist-list">
             {quoteChecklist.items.map((item) => (
-              <li><strong>{item.lead}</strong> {item.text}{item.href && <> <a href={item.href}>{item.linkText}</a>.</>}</li>
+              <li><span class="quote-checklist-icon"><Icon name={item.icon as IconName} /></span><div><strong>{item.lead}</strong> {item.text}{item.href && <> <a href={item.href}>{item.linkText}</a>.</>}</div></li>
             ))}
           </ul>
         </section>
@@ -73,3 +74,12 @@ const crumbs = [
     </div>
   </div>
 </Base>
+
+<style>
+  .quote-checklist { padding-bottom: 1.8rem; border-bottom: 1px solid var(--color-line); }
+  .quote-checklist-list { gap: 0; padding: 0; list-style: none; }
+  .quote-checklist-list li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: .9rem; align-items: start; padding: 1rem 0; border-top: 1px solid var(--color-line); }
+  .quote-checklist-list strong { display: block; margin-bottom: .2rem; font-weight: 500; color: var(--color-ink); }
+  .quote-checklist-list li > div { color: var(--color-stone); line-height: 1.65; }
+  .quote-checklist-icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: var(--color-brass); border: 1px solid var(--color-line); border-radius: 50%; background: var(--color-paper); }
+</style>

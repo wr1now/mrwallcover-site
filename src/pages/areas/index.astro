@@ -1,13 +1,28 @@
 ---
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Base from '../../layouts/Base.astro';
-import { areaHref, areas, areasIndex } from '../../lib/content';
-import { breadcrumbNode } from '../../lib/schema';
+import Action from '../../components/Action.astro';
+import Icon from '../../components/Icon.astro';
+import Picture from '../../components/Picture.astro';
+import { areaHref, areas, areasIndex, media } from '../../lib/content';
+import { breadcrumbNode, imageRights } from '../../lib/schema';
 
 const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'Areas', href: '/areas/' },
 ];
+function segments(text: string) {
+  const parts: { text: string; href?: string }[] = [];
+  const re = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+  let last = 0;
+  for (const match of text.matchAll(re)) {
+    if (match.index! > last) parts.push({ text:text.slice(last, match.index) });
+    parts.push({ text:match[1], href:match[2] });
+    last = match.index! + match[0].length;
+  }
+  if (last < text.length) parts.push({ text:text.slice(last) });
+  return parts;
+}
 ---
 
 <Base title={areasIndex.title} description={areasIndex.description} path="/areas/" extraSchema={[breadcrumbNode(crumbs)]}>
@@ -17,16 +32,38 @@ const crumbs = [
       <p class="eyebrow">{areasIndex.eyebrow}</p>
       <h1>{areasIndex.heading}</h1>
       <p class="lede mt-5">{areasIndex.lede}</p>
+      <div class="mt-6"><Action href="/contact/">Discuss your location</Action></div>
     </header>
-    <div class="grid gap-x-8 pb-20 sm:grid-cols-2">
+    <div class="area-directory pb-20">
       {
         areas.map((area) => (
-          <a class="card-link" href={areaHref(area.slug)}>
-            <h2 class="text-[1.8rem]">{area.heading}</h2>
+          <article class="area-directory-card">
+            {area.imageId && <figure>
+              <Picture id={area.imageId} sizes="(min-width: 768px) 35rem, calc(100vw - 2.5rem)" />
+              <figcaption><span>{segments(area.imageCaption ?? media(area.imageId).alt).map((part) => part.href ? <a href={part.href}>{part.text}</a> : part.text)}</span><span>Photograph: {imageRights(media(area.imageId).jpg).creditText}.</span></figcaption>
+            </figure>}
+            <h2><a href={areaHref(area.slug)}><span>{area.heading}</span><Icon name="arrow-right" /></a></h2>
             <p class="m-0 text-stone">{area.description}</p>
-          </a>
+            <Action variant="quiet" href={areaHref(area.slug)}>Explore {area.name.replace(/^the /, '')}</Action>
+          </article>
         ))
       }
     </div>
   </div>
 </Base>
+
+<style>
+  .area-directory { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:3.5rem 2.5rem; }
+  .area-directory-card { min-width:0; }
+  figure { margin:0 0 1.5rem; }
+  figure :global(.media-frame) { display:block; overflow:hidden; border-radius:var(--radius-control); }
+  figure :global(img) { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; }
+  figcaption { display:grid; gap:.4rem; margin-top:.8rem; color:var(--color-stone); font-size:var(--text-meta); line-height:1.55; }
+  figcaption a { text-decoration:underline; text-underline-offset:.2em; }
+  h2 { margin:0 0 .8rem; font-family:var(--font-serif); font-size:var(--text-h3); line-height:1.15; }
+  h2 a { display:flex; align-items:start; justify-content:space-between; gap:1rem; }
+  h2 :global(.mw-icon) { margin-top:.2rem; width:1.25rem; height:1.25rem; flex-shrink:0; }
+  .area-directory-card > p { font-size:var(--text-body); line-height:1.6; }
+  .area-directory-card :global(.mw-action) { margin-top:.8rem; }
+  @media (max-width:767px) { .area-directory { grid-template-columns:1fr; gap:3rem; } }
+</style>

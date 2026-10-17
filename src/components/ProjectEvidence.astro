@@ -1,0 +1,63 @@
+---
+/** Real linked work, with limited own photography and a complete, compact record. */
+import Action from './Action.astro';
+import Icon from './Icon.astro';
+import Picture from './Picture.astro';
+import { media, projectHref } from '../lib/content';
+import { imageRights } from '../lib/schema';
+import type { Project } from '../lib/types';
+interface Props { projects: Project[]; maxPhotos?: number; }
+const { projects, maxPhotos = 3 } = Astro.props;
+const photos = projects.flatMap((project) => {
+  if (!project.imageId || project.awaitingPhotos) return [];
+  const image = media(project.imageId);
+  const rights = imageRights(image.jpg);
+  // A library record is not unrestricted reuse permission. Keep client, venue,
+  // unknown-photographer and externally supplied photographs on their approved pages.
+  if (rights.basis !== 'own' && rights.basis !== 'dorin') return [];
+  return [{ project, image, rights }];
+}).slice(0, Math.max(0, maxPhotos));
+const photographed = new Set(photos.map(({ project }) => project.slug));
+const records = projects.filter((project) => !photographed.has(project.slug));
+---
+
+{photos.length > 0 && <ul class="project-evidence-grid" role="list">
+  {photos.map(({ project, image, rights }) => <li class="project-evidence-card" data-evidence-project={project.slug}>
+    <figure style={project.modest ? `--evidence-image-max:${image.thumbWidth}px` : undefined}>
+      <a class="project-evidence-image" href={projectHref(project.slug)} tabindex="-1" aria-hidden="true">
+        <Picture id={project.imageId!} sizes="(min-width: 1024px) 24rem, (min-width: 640px) 45vw, calc(100vw - 2.5rem)" thumbOnly={project.modest} />
+      </a>
+      <figcaption><span>{image.alt}</span><span>Photograph: {rights.creditText}.</span></figcaption>
+    </figure>
+    <h3><a href={projectHref(project.slug)}>{project.title}</a></h3>
+    <p>{project.role}{project.dates ? `, ${project.dates}` : ''}.</p>
+    <Action href={projectHref(project.slug)} variant="quiet">View the project</Action>
+  </li>)}
+</ul>}
+{records.length > 0 && <ul class="project-evidence-records" role="list">
+  {records.map((project) => <li>
+    <a href={projectHref(project.slug)}><span>{project.title}</span><Icon name="arrow-right" /></a>
+    <span class="project-evidence-record-role">. {project.role}{project.dates ? `, ${project.dates}` : ''}.</span>
+  </li>)}
+</ul>}
+
+<style>
+  .project-evidence-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr)); gap:2rem; margin:1.8rem 0 0; padding:0; list-style:none; }
+  .project-evidence-card { min-width:0; max-width:28rem; }
+  figure { margin:0; max-width:var(--evidence-image-max,100%); }
+  .project-evidence-image { display:block; min-height:0; }
+  .project-evidence-image :global(.media-frame) { overflow:hidden; display:block; }
+  .project-evidence-image :global(img) { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; }
+  figcaption { display:grid; gap:.4rem; margin-top:.75rem; font-size:var(--text-meta); line-height:1.55; color:var(--color-stone); }
+  h3 { margin:1.2rem 0 .5rem; font-family:var(--font-serif); font-size:var(--text-h3); font-weight:500; line-height:1.15; }
+  h3 a { text-decoration:none; }
+  h3 a:hover { text-decoration:underline; text-underline-offset:.15em; }
+  .project-evidence-card > p { margin:0; font-size:var(--text-body); line-height:1.6; color:var(--color-stone); }
+  .project-evidence-card :global(.mw-action) { margin-top:.6rem; }
+  .project-evidence-records { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 2rem; margin:2rem 0 0; padding:0; list-style:none; }
+  .project-evidence-records li { padding:1rem 0; border-top:1px solid var(--color-line); line-height:1.65; }
+  .project-evidence-records a { display:inline-flex; align-items:center; justify-content:space-between; gap:.7rem; min-height:44px; font-size:var(--text-body); text-decoration:underline; text-decoration-color:var(--color-underline); text-underline-offset:.2em; }
+  .project-evidence-records :global(.mw-icon) { width:1.1rem; height:1.1rem; flex-shrink:0; }
+  .project-evidence-record-role { color:var(--color-stone); }
+  @media (max-width:639px) { .project-evidence-records { grid-template-columns:1fr; } }
+</style>

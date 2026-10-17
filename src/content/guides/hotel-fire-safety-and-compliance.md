@@ -11,11 +11,13 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-11"
-updated: "2026-10-11"
+updated: "2026-10-17"
 description: "Who certifies a hotel wallcovering's fire performance, why the classification belongs to the tested build-up, what the installer does, and the RAMS, insurance and handover papers that come with the package."
 metaDescription: "Hotel wallcovering fire safety: the maker certifies the rating, the build-up is what was tested, we install to the maker's system. RAMS and handover."
 shortTitle: "Hotel fire safety"
 order: 11
+diagram: "tested-build-up"
+diagramCaption: "This illustrates the distinction only and carries no classification. Obtain the current document for the exact wallcovering, backing, adhesive and substrate, then have the responsible project professional confirm acceptance."
 relatedMaterials: ["contract-vinyl", "acoustic"]
 relatedGuides: ["hotel-wallcovering-specification", "developer-wallcovering-package", "designer-specification-checklist"]
 ctaLabel: "Discuss a hotel package"

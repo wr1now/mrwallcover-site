@@ -1,9 +1,12 @@
 ---
 import EnquiryForm from '../components/EnquiryForm.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import Picture from '../components/Picture.astro';
+import Action from '../components/Action.astro';
+import EvidenceFigure from '../components/EvidenceFigure.astro';
+import TechnicalDiagram from '../components/TechnicalDiagram.astro';
+import Icon, { type IconName } from '../components/Icon.astro';
 import Base from '../layouts/Base.astro';
-import { aftercare } from '../lib/content';
+import { aftercare, media } from '../lib/content';
 import BuyerFaq from '../components/BuyerFaq.astro';
 import { buyerFaqFor } from '../lib/ai-layer-data';
 import { breadcrumbNode, buyerFaqNode, serviceNodes } from '../lib/schema';
@@ -14,14 +17,18 @@ const crumbs = [
 ];
 
 const blocks = [aftercare.inspection, aftercare.seams, aftercare.callout, aftercare.humidity];
+const careIcons: Record<string, IconName> = {'Silk':'swatch', 'Grasscloth and natural weaves':'layers', 'Fabric walling':'layers', 'Vinyl and contract wallcoverings':'roll', 'Hand-painted papers':'drawing', 'Murals':'drawing', 'Acoustic wallcoverings and panels':'layers'};
 // The visible questions below and the FAQPage node are read from the same list.
 const faq = buyerFaqFor('/aftercare/');
+const detailImage = media('fs-residences-06');
 ---
 
 <Base
   title={aftercare.title}
   description={aftercare.description}
   path="/aftercare/"
+  image={detailImage.src}
+  imageAlt={detailImage.alt}
   extraSchema={[
     ...serviceNodes([
       {
@@ -39,12 +46,11 @@ const faq = buyerFaqFor('/aftercare/');
       <p class="eyebrow">{aftercare.eyebrow}</p>
       <h1>{aftercare.heading}</h1>
       <p class="lede mt-5">{aftercare.lede}</p>
+      <div class="mt-6 flex flex-wrap gap-3"><Action href="#support">Request aftercare</Action><Action variant="secondary" href="#guarantee-band">Read the workmanship guarantee</Action></div>
     </header>
-    <div class="grid items-end gap-8 pb-14 md:grid-cols-12">
-      <div class="md:col-span-5">
-        <Picture id="browns-hotel-mayfair-01" sizes="(min-width: 768px) 24rem, 100vw" />
-        <p class="caption">The surface, close to. Brown's Hotel, Mayfair.</p>
-      </div>
+    <div class="aftercare-evidence">
+      <EvidenceFigure id="fs-residences-06" caption="A woven wallcovering turning an external corner at the Four Seasons residences, Ten Trinity Square. A finished edge is part of the detail checked at handover and return inspection." credit="Mr Wallcover project photograph." href="/projects/four-seasons-ten-trinity-square/" linkLabel="See the Four Seasons project" sizes="(min-width: 768px) 36rem, calc(100vw - 2.5rem)" />
+      <TechnicalDiagram kind="inspection" caption="The return visit looks at seams, edges, corners and covered joinery. A visible natural seam and a seam that has lifted are different things." />
     </div>
   </div>
 
@@ -71,6 +77,7 @@ const faq = buyerFaqFor('/aftercare/');
         {
           aftercare.care.items.map((item) => (
             <article class="border-t border-line pt-4">
+              <span class="care-material-icon"><Icon name={careIcons[item.title] ?? 'swatch'} /></span>
               <h3 class="m-0 text-[1.7rem]">{item.title}</h3>
               <p class="mt-3 mb-0 text-stone">{item.text}</p>
             </article>
@@ -128,7 +135,13 @@ const faq = buyerFaqFor('/aftercare/');
           ))
         }
       </div>
-      <a class="btn btn-ghost mt-8" href="/contact/">Ask about a room</a>
+      <Action variant="secondary" class="mt-8" href="/contact/">Ask about a room</Action>
     </div>
   </section>
 </Base>
+
+<style>
+  .aftercare-evidence { display: grid; gap: 2rem; align-items: center; padding-bottom: 3.5rem; }
+  .care-material-icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-bottom: .9rem; color: var(--color-brass); border: 1px solid var(--color-line); border-radius: 50%; }
+  @media (min-width: 768px) { .aftercare-evidence { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); } }
+</style>

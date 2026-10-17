@@ -1,6 +1,9 @@
 ---
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Picture from '../components/Picture.astro';
+import Icon, { type IconName } from '../components/Icon.astro';
+import Action from '../components/Action.astro';
+import TechnicalDiagram from '../components/TechnicalDiagram.astro';
 import Base from '../layouts/Base.astro';
 import { about } from '../lib/content';
 import { AWARD_TEXT, AWARD_URL, breadcrumbNode } from '../lib/schema';
@@ -10,6 +13,7 @@ const crumbs = [
   { name: 'About', href: '/about/' },
 ];
 import DesignersStrip from '../components/DesignersStrip.astro';
+const valueIcons: IconName[] = ['room', 'lock', 'check'];
 ---
 
 <Base
@@ -52,8 +56,9 @@ import DesignersStrip from '../components/DesignersStrip.astro';
       <h2 id="values-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{about.values.title}</h2>
       <div class="mt-10 grid gap-8 md:grid-cols-3">
         {
-          about.values.items.map((item) => (
+          about.values.items.map((item, index) => (
             <article class="border-t border-line pt-4">
+              <Icon name={valueIcons[index]} class="value-icon" />
               <h3 class="m-0 text-[1.8rem]">{item.title}</h3>
               <p class="mt-3 mb-0 text-stone">{item.text}</p>
             </article>
@@ -67,9 +72,12 @@ import DesignersStrip from '../components/DesignersStrip.astro';
     <div class="container-page py-16 md:py-24">
       <p class="eyebrow">{about.howWeWork.eyebrow}</p>
       <h2 id="how-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{about.howWeWork.title}</h2>
-      <div class="prose mt-6 max-w-3xl">
+      <div class="about-process mt-6">
+      <div class="prose max-w-3xl">
         <p class="m-0">{about.howWeWork.intro}</p>
         <ul class="mt-4">{about.howWeWork.items.map((item) => <li>{item}</li>)}</ul>
+      </div>
+      <TechnicalDiagram kind="programme" />
       </div>
     </div>
   </section>
@@ -124,7 +132,7 @@ import DesignersStrip from '../components/DesignersStrip.astro';
     <div class="container-page py-16 md:py-24">
       <p class="eyebrow">{about.timeline.eyebrow}</p>
       <h2 id="timeline-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{about.timeline.title}</h2>
-      <dl class="mt-10 grid max-w-4xl gap-6">
+      <dl class="practice-timeline mt-10 grid max-w-4xl gap-6">
         {
           about.timeline.items.map((item) => (
             <div class="grid gap-2 border-t border-line pt-4 md:grid-cols-[8rem_1fr]">
@@ -142,6 +150,7 @@ import DesignersStrip from '../components/DesignersStrip.astro';
       <p class="eyebrow">{about.collaborators.eyebrow}</p>
       <h2 id="collaborators-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{about.collaborators.title}</h2>
       <p class="mt-6 mb-0 max-w-3xl text-stone">{about.collaborators.text} <a href="/contact/">Talk to us about your project.</a></p>
+      <p class="mt-6"><Action href="/contact/">Discuss your project</Action></p>
       <DesignersStrip headingLevel="h3" />
     </div>
   </section>

@@ -11,11 +11,12 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-11"
+updated: "2026-10-17"
 description: "How to choose a wallcovering that still looks right once it is on the wall: traffic, light, cleaning, moisture, sample size and the questions to settle before ordering."
 metaDescription: "How to choose a wallcovering that still looks right on the wall: traffic, light, cleaning, moisture, sample size and what to settle before ordering."
 shortTitle: "Choosing wallcoverings"
 order: 1
+evidence: {"id": "fs-ig-09", "caption": "Fromental hand-painted silk at Four Seasons Ten Trinity Square. The marbled face catches the light; inspect a physical sample in the room before choosing.", "credit": "Mr Wallcover project photograph, March 2019.", "href": "/projects/four-seasons-ten-trinity-square/", "linkLabel": "See the Four Seasons project"}
 relatedMaterials: ["paper-and-non-woven", "grasscloth-and-weaves", "silk-and-textiles", "contract-vinyl"]
 relatedGuides: ["grasscloth-seams-and-variation", "wall-preparation", "installation-cost"]
 ctaLabel: "Discuss my room"

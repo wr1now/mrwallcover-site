@@ -11,11 +11,14 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-11"
+updated: "2026-10-17"
 description: "What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, light, lining, free-issue responsibilities and change control."
 metaDescription: "What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, lining, free-issue roles and change control."
 shortTitle: "Designer checklist"
 order: 8
+diagram: "survey"
+diagramCaption: "An elevation locates openings, overall dimensions and a true vertical. Add the actual product, focal point, seam positions and drawing revision to the project schedule."
+download: {"href": "/downloads/wallcovering-specification-schedule.csv", "label": "Download the specification schedule"}
 relatedMaterials: ["silk-and-textiles", "hand-painted", "grasscloth-and-weaves", "acoustic"]
 relatedGuides: ["hand-painted-murals-set-out", "grasscloth-seams-and-variation", "developer-wallcovering-package"]
 ctaLabel: "Send a specification"
