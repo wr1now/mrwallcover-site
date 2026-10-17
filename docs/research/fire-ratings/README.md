@@ -63,12 +63,14 @@ There is one source of truth. The page, its tables, the Markdown twin and `llms.
 3. If the visible guidance changes, update `updated` in `src/content/fire-ratings/page.json` (it drives the visible date, the Article schema and the sitemap `lastmod`); if only the checking dates change, update `accessed`, `checked` and `scope.sourcesChecked`.
 4. Run `npm run check`, `npm run build`, `npm run check:dist` and open a pull request for review. Fire guidance is never updated or published automatically, and no recurring job has been set up.
 
-## Publication state (15 October 2026)
+## Historical publication state (15 October 2026)
 
 Implemented on branch `feat/wallcovering-fire-ratings-uk`, stacked on draft pull request #62. Not merged, not deployed, not indexed. See `PLANS.md` for the remaining publication steps.
 
 ## Independent release — 17 October 2026
 
-The earlier implementation in PR #64 depends on the draft calculator (#62). This release extracts the reviewed reference from head `6960fc2` onto the shared visual foundation (#66, initially `28bd059`, updated to `22a0ab5`) without the draft calculator, materials dataset, analytics setup or their history. It supplies a small `/wallpapering/` hub linking only to existing published guides and the fire reference. The original #64/#65 stack is preserved for later reconciliation.
+The earlier implementation in PR #64 depends on the draft calculator (#62). This release extracts the reviewed reference from head `6960fc2` onto the shared visual foundation (#66, initially `28bd059`, updated through final `a8cbe54`) without the draft calculator, materials dataset, analytics setup or their history. It supplies a small `/wallpapering/` hub linking only to existing published guides and the fire reference. The original #64/#65 stack is preserved for later reconciliation.
 
 A focused release review corrected two further points: the Muraspec woven Type I row now shows the conflicting smoke subclasses as unresolved, and the overview retains the narrow firefighter-facilities maintenance exception for shared parts in Scotland and Northern Ireland. This work is AI evidence review, not professional fire-engineering approval. See `docs/research/fire-ratings/release-review.md` for final checks and the release order.
+
+On 17 October 2026 the owner authorised merging #66 and #68 after their publication gates, then deploying and verifying the live fire page, navigation and contact journey. #66 is merged as `07c1e864`; #68 is reconciled with that main tree and awaiting its final hosted gate before merge. The release PR records the eventual deployment and live-verification receipt; no indexing result is asserted here.

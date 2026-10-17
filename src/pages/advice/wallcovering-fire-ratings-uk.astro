@@ -12,6 +12,7 @@ import PageMeta from '../../components/PageMeta.astro';
 import WallpaperingNav from '../../components/WallpaperingNav.astro';
 import Base from '../../layouts/Base.astro';
 import Action from '../../components/Action.astro';
+import QuestionVisual from '../../components/QuestionVisual.astro';
 import FireEvidenceDiagram from '../../components/FireEvidenceDiagram.astro';
 import { fireRatingsCard } from '../../lib/guides';
 import { SITE_URL } from '../../config';
@@ -342,7 +343,7 @@ const legacySources: [string, string | null][] = [
     <div class="fr-section">
       <section class="guide-faq" aria-labelledby="questions">
         <h2 id="questions">Questions people ask</h2>
-        {page.faq.map((item) => <div class="guide-faq-item"><h3>{item.q}</h3><p>{item.a}</p></div>)}
+        {page.faq.map((item) => <div class="guide-faq-item"><div class="question-heading-row"><h3>{item.q}</h3><QuestionVisual question={item.q} /></div><p>{item.a}</p></div>)}
       </section>
     </div>
 
