@@ -102,3 +102,8 @@ Every technique sentence added in this PR restates something already on our own 
 ## Standalone buying guide — 17 October 2026
 
 Generic purchasing checklist; no maker/seller research records are published. Consumer cancellation exceptions checked in Consumer Contracts Regulations 2013, regulation 28(1)(b), using the official legislation XML: https://www.legislation.gov.uk/uksi/2013/3134/regulation/28/data.xml. The distinction from rights for faulty/misdescribed goods was checked at https://www.gov.uk/accepting-returns-and-giving-refunds. Import VAT/duty overview checked at https://www.gov.uk/goods-sent-from-abroad/tax-and-duty. All three checked 17 October 2026; the page links the reader to the primary sources. No tax rate, delivery time or supplier authorisation is inferred. Maker instructions and the practice’s documented installation evidence remain distinct.
+
+
+## Joinery scope correction — 17 October 2026
+
+Owner clarification: Mr Wallcover creates panels for joinery and can work with trusted, vetted specialist partners for full joinery services. It is a wallcovering specialist, not a joinery company. This supersedes the earlier same-team joinery-manufacture claim in the joinery service and placed buyer answers. The service copy, FAQs, business schema description and machine-readable own-team flag are corrected together; existing records of applying wallcoverings to joinery remain valid.

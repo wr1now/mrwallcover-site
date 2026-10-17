@@ -717,13 +717,16 @@
     {
       "id": "s-joinery",
       "question": "Is the joinery made by your own team?",
-      "answer": "The same team develops the detail, makes the panels and joinery, installs and finishes them, and returns for aftercare, so there is one point of responsibility throughout.",
+      "answer": "Mr Wallcover is a wallcovering specialist, not a joinery company. We create and finish panels for joinery. For full joinery services, we can work with trusted, vetted specialist partners, coordinating the wallcovering details, installation and aftercare with their work.",
       "auditRows": [
         "a25"
       ],
       "sources": [
         {
           "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/"
+        },
+        {
+          "note": "Owner clarification, 17 October 2026: panels for joinery; full joinery services through trusted, vetted specialist partners."
         }
       ],
       "pages": [
@@ -865,7 +868,7 @@
       "aftercare terms"
     ],
     "confidentiality": "Private clients are not named. Private and NDA jobs are anonymised.",
-    "joineryByOwnTeam": true,
+    "joineryByOwnTeam": false,
     "acousticWallcoverings": true,
     "makerNamesMean": "Mr Wallcover installed that maker's product on that project. It is not a maker approval, accreditation or endorsement.",
     "contractingParty": "Dorin Burcus, trading as Mr Wallcover",
@@ -921,7 +924,9 @@
       "note": "Installed by Mr Wallcover. Not a maker approval, accreditation or endorsement; Calico Wallpaper is the only partnership.",
       "fromentalVolume": "a large volume at Four Seasons Ten Trinity Square",
       "timorousBeastiesEvidence": "Hyde London City: Tropical Clouded Leopard and Totem Damask, custom-printed as vinyl, through the 111 guest rooms (confirmed by Dorin Burcus, 11 Oct 2026)"
-    }
+    },
+    "panelsForJoinery": true,
+    "fullJoineryServices": "Available through trusted, vetted specialist partners."
   },
   "factsAdditionsPending": [
     "roomsPerDay",
