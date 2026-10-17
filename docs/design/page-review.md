@@ -1,6 +1,6 @@
 # Page and template review
 
-Review date: 17 October 2026. This record covers PR #66, including the second pass across all remaining page families. The branch starts at public main 26975eb; open calculator/reference/Contact PRs were not merged into it. The user authorised completion and publication on 17 October. The route-by-route design decisions are recorded in [route-review.json](route-review.json), including the three noindex utility pages. Final validation results follow below.
+Review date: 17 October 2026. This record covers PR #66, including the second pass across all remaining page families. The branch was rebased onto public main 2849676, preserving the separate #67 privacy cleanup; open calculator/reference/Contact PRs were not merged into it. The user authorised completion and publication on 17 October. The route-by-route design decisions are recorded in [route-review.json](route-review.json), including the three noindex utility pages. Final validation results follow below.
 
 ## Template inheritance
 
@@ -64,7 +64,7 @@ The source inventory includes `/services/calico-wallpaper-installer/`, `/service
 | Keyboard, focus, disclosures, contrast and reduced effects | Keyboard Enter opens native disclosure; effects preference survives reload; form/menu dock hides. Token contrast checks pass; hero contrast and type-floor browser tests pass on 12 pages at five widths. |
 | No-JavaScript footer navigation and article content | Chrome with JavaScript disabled sees expanded server-rendered footer groups and links. Article/diagram content is static HTML/SVG. |
 | Form/shortlist/calculator and query-intent regression checks | Existing source/unit/build checks pass; enquiry field focus checked in Chrome. No enquiry was submitted. Quantity algorithm and enquiry submission code were unchanged. |
-| Build, repository checks and no-loss comparison | `check`: 79; `check:dist`: 195 plus temporary new-route fixture; `check:type`: 2; `check:phone`: 2; `check:guides`: 5. Production/review builds and case-study date check pass. No-loss passes: 98 pages, 3,609 media files, 98 Markdown twins and JSON-LD node/property counts did not decrease (7,706 baseline nodes). `check:analytics` and private-list guard are absent on this main-based branch; no claim is made that they ran. |
+| Build, repository checks and no-loss comparison | `check`: 84; `check:dist`: 195 plus temporary new-route fixture; `check:type`: 2; `check:phone`: 2; `check:guides`: 5. Production/review builds and case-study date check pass. No-loss passes: 98 pages, 3,609 media files, 98 Markdown twins and JSON-LD node/property counts did not decrease (7,706 baseline nodes). `check:analytics` is absent. The #67 private-list guard is present after rebasing; its five unit tests pass, but `check:names` explicitly reports no configured list and does not scan other firms’ names. This is a skipped scan, not a pass. |
 | Representative new route inherits Base/footer/action styling without local CSS | `scripts/check-visual-fixture.mjs` builds a new route in temporary output, verifies shared footer/actions and native/disabled semantics, then removes its source and output. The fixture is not published. |
 | Before/after performance on the same representative pages | Local transfer/resource/DOMContentLoaded observations collected for the same five pages at 390/1440, before and after. Images add transfer cost to Services/Guide; they remain lazy, sized and use existing responsive derivatives. See observations below. |
 
@@ -110,7 +110,7 @@ Production audit artifacts are locally reproducible with `MW_VISUAL_AUDIT_OUTPUT
 
 The interaction review exercised shortlist persistence and enquiry handoff, finder recommendations/reset/session restore, professional audience/intent, calculator submit/match/room/add-wall/refusal states and search results/empty state. No enquiry was submitted and no call or chat was opened. A caught Action wrapper defect is fixed: explicit native submit/reset types render once, and the temporary future-page fixture now exercises actual native submit/reset events. Care icon choices remain presentation metadata so they do not leak into the public factual data projections. Meaningful stage-link labels preserve homepage links in its Markdown twin.
 
-The all-route/browser checks, production/review builds, source checks, typography/hero contrast, phone variants, guide boundaries and no-loss comparison must pass at the final PR head before publication. Separate draft feature PRs #61–65 are outside this release.
+Local verification passed: 84 source tests, 195 built-site tests plus the new-page/native-form/phone browser fixture, 2 typography/hero-contrast tests, both phone builds, 5 guide-boundary tests and 5 names-guard unit tests. Production and review builds, case-study dates and no-loss pass. The hosted workflow must also pass at the final PR head before publication. Separate draft feature PRs #61–65 are outside this release.
 
 
 ### Remaining-family evidence
@@ -127,6 +127,12 @@ The same eight routes were fully visited before/after at 390px and 1440px. These
 
 | Route | Width | Before | After |
 | --- | ---: | ---: | ---: |
+| `/services/grasscloth-installation/` | 390 | 162 KiB | 176 KiB |
+| `/services/grasscloth-installation/` | 1440 | 161 KiB | 176 KiB |
+| `/materials/silk-and-textiles/` | 390 | 192 KiB | 203 KiB |
+| `/materials/silk-and-textiles/` | 1440 | 192 KiB | 219 KiB |
+| `/areas/mayfair/` | 390 | 225 KiB | 275 KiB |
+| `/areas/mayfair/` | 1440 | 225 KiB | 275 KiB |
 | `/professionals/designers/` | 390 | 162 KiB | 174 KiB |
 | `/professionals/designers/` | 1440 | 161 KiB | 174 KiB |
 | `/advice/designer-specification-checklist/` | 390 | 166 KiB | 168 KiB |
