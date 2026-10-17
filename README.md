@@ -53,6 +53,14 @@ Editorial pages (maker installer pages, the trade page, the cost guide, the revi
 
 Photographs are in `public/media/`. Third-party photographs retain their recorded rights constraints and credits; the Raffles homepage photograph is explicitly labelled official venue imagery. Brown’s Hotel photographs and films were taken on site and are shown in full on that project.
 
+## Create or substantially change a page
+
+Follow [the visual standard](docs/design/visual-standard.md) and update [the page review](docs/design/page-review.md). Every normal HTML page uses `src/layouts/Base.astro`, which supplies the shared header, footer, mobile dock and visual system. Use `Action.astro` for new prominent actions, `Icon.astro` for the shared icon family and `Picture.astro` for registered photography. Assess whether relevant photography, a diagram or an icon helps the content; record a reason when a text-only layout is appropriate. There is no image quota.
+
+Prefer the existing content template: service and area entries use `LandingBody.astro`; material families use `materials/[slug].astro`; case studies use `projects/[slug].astro`; Guide articles use `advice/[slug].astro` and `GuideCard.astro`; editorial Markdown pages use `[...page].astro`. Keep draft/publication rules, dates, schema and public text projections intact. Use a standalone `.astro` route only when the existing content model does not fit, and wrap it in `Base` without duplicating chrome or local button styles.
+
+Check the changed route and shared template on mobile and desktop, preserve form and navigation behaviour, and include screenshot evidence in the PR. Run the relevant checks listed in the standard; source checks and build success do not judge visual composition. Record skipped checks honestly and retain any content publication blockers.
+
 ## Enquiry form
 
 The public site posts to FormSubmit, which forwards the note to `info@mrwallcover.com`. The endpoint in `src/config.ts` is FormSubmit’s alias, not a mailto link. The visitor chooses email or phone. There is no four-second wait. Attachments are optional: JPEG, PNG, WebP, HEIC, HEIF or PDF, up to eight files and 10 MB combined on FormSubmit. The optional private API retains its separate 12 MiB/file and 36 MiB total limits. Browser selection checks give feedback before submission; upload content inspection remains the receiving provider’s responsibility.

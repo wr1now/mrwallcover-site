@@ -11,11 +11,13 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-10"
+updated: "2026-10-17"
 description: "How a scenic or hand-painted paper is set out: elevations, the focal point, panel sequence, doors and corners, finished dimensions and when the survey has to happen."
 metaDescription: "How a scenic or hand-painted paper is set out: elevations, the focal point, panel sequence, doors and corners, finished sizes and when to survey."
 shortTitle: "Hand-painted papers and murals"
 order: 6
+diagram: "panel-sequence"
+diagramCaption: "A scene continues across numbered panels. Check the maker’s layout dry against the room’s elevations, openings and focal point before pasting. The scene here is an original illustration."
 relatedMaterials: ["hand-painted", "murals"]
 relatedGuides: ["designer-specification-checklist", "wall-preparation", "installation-cost"]
 ctaLabel: "Discuss a scenic layout"

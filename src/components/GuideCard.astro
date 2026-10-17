@@ -1,11 +1,34 @@
 ---
 import { guideHref, type GuideCardData } from '../lib/guides';
+import Icon, { type IconName } from './Icon.astro';
+import Picture from './Picture.astro';
+import Action from './Action.astro';
 interface Props { guide: GuideCardData; }
 const { guide } = Astro.props;
+const categoryIcons: Record<GuideCardData['category'], IconName> = { choosing: 'swatch', preparing: 'tools', planning: 'drawing', caring: 'check' };
+const topicIcons: Record<string, IconName> = { quantities: 'roll', 'designer-specification-checklist': 'drawing', 'hotel-wallcovering-specification': 'room', 'installation-cost': 'tag', 'set-out-and-pattern-matching': 'ruler', 'hand-painted-murals-set-out': 'layers' };
+const photographs: Record<string, { id: string; caption: string }> = {
+  'choosing-wallcoverings': { id: 'browns-hotel-mayfair-06', caption: 'Adam’s Eden at Brown’s Hotel, Mayfair. Mr Wallcover photograph.' },
+  'grasscloth-seams-and-variation': { id: 'fs-residences-06', caption: 'Natural weave at an external corner, Four Seasons residences. Mr Wallcover photograph.' },
+  'set-out-and-pattern-matching': { id: 'lee-broom-06', caption: 'Setting out Overture to a laser line. Photograph: Dorin Burcus.' },
+};
+const photograph = photographs[guide.slug];
 ---
 <article class="guide-card" data-guide-category={guide.category}>
-  <p class="eyebrow">{String(guide.order).padStart(2, '0')} / {guide.category}</p>
+  {photograph && <figure class="guide-card-media"><Picture id={photograph.id} sizes="(min-width: 768px) 38rem, calc(100vw - 5rem)" /><figcaption>{photograph.caption}</figcaption></figure>}
+  <div class="guide-card-anchor"><span class="guide-card-icon"><Icon name={topicIcons[guide.slug] ?? categoryIcons[guide.category]} /></span><p class="eyebrow">{String(guide.order).padStart(2, '0')} / {guide.category}</p></div>
   <h2><a href={guideHref(guide.slug)}>{guide.shortTitle}</a></h2>
   <p>{guide.description}</p>
-  <a class="guide-read" href={guideHref(guide.slug)} aria-label={`Read ${guide.shortTitle}`}>Read the guide <span aria-hidden="true">↗</span></a>
+  <Action variant="quiet" class="guide-read" href={guideHref(guide.slug)} aria-label={`Read the guide: ${guide.shortTitle}`}>Read the guide</Action>
 </article>
+
+<style>
+  .guide-card-anchor { display: flex; align-items: center; gap: .8rem; margin-bottom: 1.2rem; }
+  .guide-card-anchor .eyebrow { margin: 0; }
+  .guide-card-icon { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 44px; width: 44px; height: 44px; border: 1px solid var(--color-line); border-radius: 50%; color: var(--color-brass); }
+  .guide-card-media { margin: 0 0 1.5rem; }
+  .guide-card-media :global(.media-frame) { overflow: hidden; aspect-ratio: 2.2; }
+  .guide-card-media :global(.media-img) { width: 100%; height: 100%; aspect-ratio: 2.2; object-fit: cover; }
+  .guide-card-media figcaption { margin-top: .65rem; color: var(--color-stone); font-size: var(--text-meta); line-height: 1.4; }
+  .guide-card :global(.guide-read) { align-self: flex-start; padding-top: .75rem; padding-bottom: .75rem; }
+</style>

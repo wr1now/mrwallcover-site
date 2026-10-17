@@ -1,6 +1,8 @@
 ---
 import facts from '../data/facts.json';
 import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import Action from '../components/Action.astro';
 import Picture from '../components/Picture.astro';
 import MaterialStudio from '../components/MaterialStudio.astro';
 import Base from '../layouts/Base.astro';
@@ -194,7 +196,7 @@ const hotelNames = [
 
     <section class="atelier-section atelier-service" aria-labelledby="service-heading">
       <div><p class="atelier-kicker">FROM FIRST IDEA TO FINISHED ROOM</p><h2 id="service-heading">One practice.<br /><em>Every stage.</em></h2><p>Bring us the paper you love, a specification, or simply the room you have in mind.</p><a class="atelier-text-link" href="/contact/">Tell us about it <span aria-hidden="true">↗</span></a></div>
-      <ol>{home.serviceCards.map((service, i) => <li><a href={service.href}><span class="atelier-service-number">0{i+1}</span><div><h3>{service.title}</h3><p>{service.text}</p></div><span aria-hidden="true">↗</span></a></li>)}</ol>
+      <ol>{home.serviceCards.map((service, i) => <li><a href={service.href}><span class="atelier-service-number">0{i+1}<Icon name={(['ruler', 'calendar', 'roll', 'layers', 'check'] as const)[i]} /></span><div><h3>{service.title}</h3><p>{service.text}</p></div><span aria-hidden="true">↗</span></a></li>)}</ol>
     </section>
 
     <section class="atelier-section home-process" aria-labelledby="process-heading">
@@ -254,15 +256,15 @@ const hotelNames = [
       <p class="atelier-kicker">What do you need?</p>
       <h2 id="needs-heading">Five ways to begin.</h2>
       <div class="home-needs-grid">
-        <a href="/contact/?intent=install#enquiry"><h3>I already have the wallpaper</h3><p>Installation, with the product you have bought. Measurements can wait.</p></a>
-        <a href="/contact/?intent=source#enquiry"><h3>Help me choose and install it</h3><p>A material family, a sample in the room, then the hang.</p></a>
-        <a href="/professionals/#designers"><h3>I am specifying a project</h3><p>Send the room schedule, drawings and the specification. Unknowns can stay blank.</p></a>
-        <a href="/professionals/"><h3>A hotel or contractor package</h3><p>Access, programme and who supplies the material.</p></a>
-        <a href="/aftercare/#support"><h3>Aftercare or a repair</h3><p>A separate note for existing work. A photograph tells us whether it is the hang or the building.</p></a>
+        <a href="/contact/?intent=install#enquiry"><Icon name="roll" /><h3>I already have the wallpaper</h3><p>Installation, with the product you have bought. Measurements can wait.</p></a>
+        <a href="/contact/?intent=source#enquiry"><Icon name="swatch" /><h3>Help me choose and install it</h3><p>A material family, a sample in the room, then the hang.</p></a>
+        <a href="/professionals/#designers"><Icon name="drawing" /><h3>I am specifying a project</h3><p>Send the room schedule, drawings and the specification. Unknowns can stay blank.</p></a>
+        <a href="/professionals/"><Icon name="room" /><h3>A hotel or contractor package</h3><p>Access, programme and who supplies the material.</p></a>
+        <a href="/aftercare/#support"><Icon name="tools" /><h3>Aftercare or a repair</h3><p>A separate note for existing work. A photograph tells us whether it is the hang or the building.</p></a>
       </div>
     </section>
 
-    <section class="atelier-contact" aria-labelledby="contact-heading"><p class="atelier-kicker">YOUR NEXT ROOM</p><h2 id="contact-heading">Let’s make it<br /><em>something remarkable.</em></h2><p>Hotels, prime residences and specified schemes. Tell us what you have in mind.</p><nav class="atelier-enquiry-routes" aria-label="Start with your project"><a href="/contact/?intent=install#enquiry">Wallpaper already chosen <span aria-hidden="true">↗</span></a><a href="/contact/?intent=source#enquiry">Help choosing a wallcovering <span aria-hidden="true">↗</span></a><a href="/contact/?audience=designer#enquiry">A designer’s specification <span aria-hidden="true">↗</span></a></nav><a class="atelier-button ink" href="/contact/">Start your project <span aria-hidden="true">↗</span></a><a class="atelier-contact-email" href={`mailto:${facts.email}`}>{facts.email}</a></section>
+    <section class="atelier-contact" aria-labelledby="contact-heading"><p class="atelier-kicker">YOUR NEXT ROOM</p><h2 id="contact-heading">Let’s make it<br /><em>something remarkable.</em></h2><p>Hotels, prime residences and specified schemes. Tell us what you have in mind.</p><nav class="atelier-enquiry-routes" aria-label="Start with your project"><a href="/contact/?intent=install#enquiry">Wallpaper already chosen <span aria-hidden="true">↗</span></a><a href="/contact/?intent=source#enquiry">Help choosing a wallcovering <span aria-hidden="true">↗</span></a><a href="/contact/?audience=designer#enquiry">A designer’s specification <span aria-hidden="true">↗</span></a></nav><Action href="/contact/">Start your project</Action><a class="atelier-contact-email" href={`mailto:${facts.email}`}>{facts.email}</a></section>
 
     <div class="atelier-ai-note"><p>Looking for structured business and project information?</p><a href="/wallcovering-installation-ai-crawler/">Wallcovering Installation AI Crawler <span aria-hidden="true">↗</span></a></div>
   </div>

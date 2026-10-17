@@ -15,10 +15,17 @@ test('/contact/: the checklist sits above the enquiry form, every item rendered,
   assert.ok(at < contact.indexOf('<form'), 'above the enquiry form');
   const section = decode(contact.slice(at, contact.indexOf('</section>', at)));
   assert.ok(section.includes(`>${checklist.heading}</h2>`));
-  for (const item of checklist.items) {
-    assert.ok(section.includes(`<strong>${item.lead}</strong> ${item.text}`), item.lead);
+  const items = [...section.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/g)].map((match) => match[1]);
+  assert.equal(items.length, checklist.items.length, 'one list item per checklist point');
+  for (const [index, item] of checklist.items.entries()) {
+    const markup = items[index];
+    const lead = markup.match(/<strong\b[^>]*>([\s\S]*?)<\/strong>/)?.[1];
+    assert.equal(lead, item.lead, 'the lead stays visible and emphasised');
+    const text = markup.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    assert.ok(text.includes(`${item.lead} ${item.text}`), item.lead);
+    assert.match(markup, /<svg\b[^>]*aria-hidden="true"/, 'the icon is decorative beside the full label');
     if (item.href) {
-      assert.ok(section.includes(`href="${item.href}"`));
+      assert.ok(markup.includes(`href="${item.href}"`));
       assert.ok(existsSync(`dist${item.href}index.html`), `${item.href} is built`);
     }
     for (const file of item.source.match(/src\/[\w./[\]-]+/g) ?? []) assert.ok(existsSync(file), `source ${file} exists`);

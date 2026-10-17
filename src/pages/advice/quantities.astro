@@ -1,5 +1,6 @@
 ---
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import TechnicalDiagram from '../../components/TechnicalDiagram.astro';
 import Base from '../../layouts/Base.astro';
 import { guideHref } from '../../lib/guides';
 import { breadcrumbNode } from '../../lib/schema';
@@ -85,6 +86,7 @@ const crumbs = [
       <article class="prose guide-prose">
         <h2 id="drops">Why width decides the number of drops</h2>
         <p>A drop is one full-height length of paper. Divide the wall width by the usable width of the roll and round up: that is the number of drops. Each drop is cut to the wall height plus a trimming allowance at the top and bottom, and a roll yields only as many whole drops as fit into its length. Round the drops up, the drops per roll down and the rolls up. Offcuts shorter than a drop are rarely usable on the same wall.</p>
+        <TechnicalDiagram kind="roll-cutting" caption="Illustrative division only: three complete cut lengths and a shorter offcut. The actual cut length, match and yield come from the calculator above; this drawing does not calculate a quantity." class="guide-opening-diagram" />
         <p>Take a simple wall, as an illustration rather than an order: 5.00 metres wide and 2.70 metres high, with a free-match paper on a roll labelled 10.05 metres long and 0.53 metres wide. Allow 50 millimetres for trimming at the top and 50 at the bottom, so each cut length is 2.80 metres. The width needs 10 drops: 5.00 ÷ 0.53 is 9.43, so nine full widths cover 4.77 metres and the tenth drop is a strip about 0.23 metres wide that still uses a full 2.80-metre length. Each roll yields 3 drops, because 10.05 ÷ 2.80 is 3.59 and the remainder is too short for a fourth. Ten drops at three per roll is 4 rolls.</p>
         <p>Dividing the wall area by the roll area gives a different answer. The wall is 13.5 square metres and the roll about 5.33, so 13.5 ÷ 5.33 is 2.53, which rounds up to 3 rolls: one short, because the area method counts the offcuts and the narrow last strip as if they could be used. Enter the figures above and the calculator gives 4. The example assumes a truly vertical, square wall, the usable dimensions on the label, a free match, no defects and no spare; a real order adds a spare from the same batch.</p>
 
@@ -98,6 +100,7 @@ const crumbs = [
 
         <h2 id="openings">Do doors and windows save a drop?</h2>
         <p>Usually less than people hope. The drops either side of a window still run full height, and the short pieces above and below it must keep the correct pattern relationship with their neighbours. Only a wide opening, or a plain paper where any offcut will do, reliably saves material. The calculator leaves openings in for that reason. A survey takes them out where it is safe to.</p>
+        <TechnicalDiagram kind="reveal" caption="The opening, its reveals and the pattern at each junction need a set-out together. This diagram does not deduct the opening from the calculator’s wall area." class="guide-opening-diagram" />
 
         <h2 id="batch">Why order everything from one batch</h2>
         <p>Rolls from different production batches can differ slightly in colour, and that difference shows most at a seam. Order the whole room, including a spare, from one batch number, and check the batch on delivery before anything is cut. A spare roll kept from the same batch is also the only realistic way to make a later repair blend in.</p>

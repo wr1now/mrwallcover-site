@@ -30,6 +30,9 @@ export interface GuideData {
   ctaLabel: string;
   ctaHref: string;
   sources: { label: string; url: string }[];
+  /** Optional original schematic, shared with services. Never a product specification. */
+  diagram?: 'survey' | 'programme' | 'supply' | 'setout' | 'inspection' | 'pattern-match' | 'preparation' | 'panel-sequence' | 'reveal' | 'roll-cutting';
+  diagramCaption?: string;
   /** Visible question-and-answer block; only guides that carry one emit FAQPage schema. */
   faq?: GuideFaq[];
 }

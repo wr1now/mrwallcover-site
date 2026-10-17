@@ -1,105 +1,149 @@
 ---
+import '../styles/footer.css';
 import facts from '../data/facts.json';
 import PhoneReveal from './PhoneReveal.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
 import BookCallLink from './BookCallLink.astro';
+import Action from './Action.astro';
+import Icon from './Icon.astro';
+import { BOOKING_URL } from '../config';
+import { phoneAvailable } from '../lib/phone';
 import { areaHref, areas, editorialPages, home, materials, specialismHref, specialisms } from '../lib/content';
 
-/** Every service and material page, generated from content so a new page joins the footer by itself. */
-const servicePages = [
+type FooterLink = { href: string; label: string };
+const unique = (links: FooterLink[]) => links.filter((link, index) => links.findIndex((item) => item.href === link.href) === index);
+
+/** Published services and materials join the shared directory automatically. */
+const servicePages = unique([
   ...specialisms.map((item) => ({ href: specialismHref(item.slug), label: item.name })),
   ...editorialPages.filter((mod) => mod.frontmatter.path.startsWith('/services/')).map((mod) => ({ href: mod.frontmatter.path, label: mod.frontmatter.title })),
-];
-const materialPages = [
+]);
+const materialPages = unique([
   ...materials.items.map((item) => ({ href: `/materials/${item.slug}/`, label: item.name })),
   ...editorialPages.filter((mod) => mod.frontmatter.path.startsWith('/materials/')).map((mod) => ({ href: mod.frontmatter.path, label: mod.frontmatter.title })),
+]);
+const installationSlugs = new Set([
+  'hand-painted-wallpaper-installation', 'grasscloth-installation', 'silk-wallcovering-installation',
+  'fabric-walling', 'mural-installation', 'acoustic-wallcovering-installation',
+  'calico-wallpaper-installer', 'house-of-hackney-wallpaper-installer', 'timorous-beasties-installer',
+]);
+const installation = servicePages.filter((page) => installationSlugs.has(page.href.split('/')[2]));
+const specialistWork = servicePages.filter((page) => !installationSlugs.has(page.href.split('/')[2]));
+const explore = [
+  { href: '/projects/', label: 'Projects' },
+  { href: '/projects/#hotels', label: 'Hotels' },
+  { href: '/services/', label: 'Services' },
+  { href: '/materials/', label: 'Materials' },
+  { href: '/professionals/', label: 'For professionals' },
+  { href: '/trade/', label: 'Trade and contractors' },
+  { href: '/advice/', label: 'Wallcovering Guide' },
+  { href: '/advice/cost/', label: 'Installation cost' },
+  { href: '/aftercare/', label: 'Aftercare' },
+  { href: '/about/', label: 'About' },
+  { href: '/reviews/', label: 'Reviews' },
+  { href: '/faq/', label: 'Questions' },
+  { href: '/areas/', label: 'All areas' },
+];
+const utility = [
+  { href: '/accessibility/', label: 'Accessibility' },
+  { href: '/privacy/', label: 'Privacy' },
+  { href: '/image-use/', label: 'Image use' },
+  { href: '/for-ai/', label: 'For AI assistants' },
 ];
 const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase());
-
-const BRAND_NAME = facts.brand;
-const FOUNDER_NAME = facts.founder.name;
-const PUBLIC_EMAIL = facts.email;
 ---
 
-<footer class="site-footer">
-  <div class="container-page grid gap-10 md:grid-cols-12">
-    <div class="md:col-span-5">
-      <p class="footer-brand">{BRAND_NAME}</p>
-      <p class="mt-3 max-w-sm text-stone" data-fact-sheet>{facts.description}</p>
-      <p class="mt-4 text-sm tracking-[0.14em] text-brass uppercase">
-        {home.pillars.join(' · ')}
-      </p>
+<footer class="site-footer" data-footer>
+  <div class="container-page">
+    <div class="footer-introduction">
+      <div class="footer-practice">
+        <p class="footer-brand">{facts.brand}</p>
+        <p class="footer-description" data-fact-sheet>{facts.description}</p>
+        <p class="footer-workflow">{home.pillars.join(' · ')}</p>
+      </div>
+      <section class="footer-contact" aria-labelledby="footer-contact-heading">
+        <div class="footer-contact-heading">
+          <div>
+            <h2 id="footer-contact-heading">Start a conversation.</h2>
+            <p>{facts.founder.name}, founder</p>
+          </div>
+          <Action href="/contact/" variant="primary" icon="arrow-right" class="footer-start">Start your project</Action>
+        </div>
+        <ul class="footer-contact-list">
+          <li><a href={`mailto:${facts.email}`}><Icon name="mail" /><span>{facts.email}</span></a></li>
+          {phoneAvailable && <li><WhatsAppLink /></li>}
+          {BOOKING_URL && <li><BookCallLink><Icon name="calendar" /><span>Book a <span class="whitespace-nowrap">20-minute</span> call</span></BookCallLink></li>}
+          {facts.profiles.map((profile) => (
+            <li><a href={profile.url}><Icon name="instagram" /><span>{profile.handle ?? profile.name}</span></a></li>
+          ))}
+          {phoneAvailable && <li class="footer-phone"><Icon name="phone" /><PhoneReveal class="footer-reveal" /></li>}
+        </ul>
+      </section>
     </div>
-    <div class="md:col-span-3">
-      <p class="eyebrow">Visit</p>
-      <ul class="m-0 grid list-none gap-1 p-0">
-        <li><a href="/projects/">Projects</a></li>
-        <li><a href="/projects/#hotels">Hotels</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/materials/">Materials</a></li>
-        <li><a href="/professionals/">For professionals</a></li>
-        <li><a href="/trade/">Trade and contractors</a></li>
-        <li><a href="/services/joinery-wallcoverings-and-panels/">Joinery &amp; bespoke panels</a></li>
-        <li><a href="/advice/">Wallcovering Guide</a></li>
-        <li><a href="/advice/cost/">Installation cost</a></li>
-        <li><a href="/aftercare/">Aftercare</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/reviews/">Reviews</a></li>
-        <li><a href="/faq/">Questions</a></li>
-        <li><a href="/areas/">Areas</a></li>
-        <li><a href="/accessibility/">Accessibility</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/image-use/">Image use</a></li>
-        <li><a href="/for-ai/">For AI assistants</a></li>
-      </ul>
-      <p class="eyebrow mt-6">Areas</p>
-      <ul class="m-0 flex list-none flex-wrap gap-x-3 gap-y-1 p-0 text-sm">
-        {areas.map((area) => (
-          <li><a href={areaHref(area.slug)}>{area.name.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase())}</a></li>
-        ))}
-      </ul>
+
+    <nav class="footer-directory" aria-label="Footer navigation">
+      {/* Open in the server HTML: desktop and no-JavaScript visitors get the full directory.
+          The enhancement below collapses these native disclosures on small screens only. */}
+      <details class="footer-group footer-explore" open>
+        <summary><span>Explore</span><span class="footer-disclosure" aria-hidden="true"></span></summary>
+        <div class="footer-group-content footer-explore-columns">
+          {[explore.slice(0, 6), explore.slice(6)].map((links) => (
+            <ul>{links.map((page) => <li><a href={page.href}>{page.label}</a></li>)}</ul>
+          ))}
+        </div>
+      </details>
+      <details class="footer-group footer-expertise" open>
+        <summary><span>Expertise</span><span class="footer-disclosure" aria-hidden="true"></span></summary>
+        <div class="footer-group-content footer-expertise-columns">
+          <div>
+            <p class="footer-subheading">Material installation</p>
+            <ul>{installation.map((page) => <li><a href={page.href}>{sentence(page.label)}</a></li>)}</ul>
+          </div>
+          <div>
+            <p class="footer-subheading">Specialist work</p>
+            <ul>{specialistWork.map((page) => <li><a href={page.href}>{sentence(page.label)}</a></li>)}</ul>
+          </div>
+        </div>
+      </details>
+      <details class="footer-group footer-materials" open>
+        <summary><span>Materials</span><span class="footer-disclosure" aria-hidden="true"></span></summary>
+        <div class="footer-group-content">
+          <ul>{materialPages.map((page) => <li><a href={page.href}>{sentence(page.label)}</a></li>)}</ul>
+        </div>
+      </details>
+      <details class="footer-group footer-areas" open>
+        <summary><span>Areas</span><span class="footer-disclosure" aria-hidden="true"></span></summary>
+        <div class="footer-group-content">
+          <ul>{areas.map((area) => <li><a href={areaHref(area.slug)}>{sentence(area.name)}</a></li>)}</ul>
+        </div>
+      </details>
+    </nav>
+
+    <div class="footer-utilities">
+      <p class="footer-copyright">© {new Date().getFullYear()} {facts.brand}. {facts.founder.name}, founder. {facts.place}.</p>
+      <nav aria-label="Policies and information">
+        <ul>{utility.map((page) => <li><a href={page.href}>{page.label}</a></li>)}</ul>
+      </nav>
+      <button class="btn btn-line footer-effects" type="button" data-effects-toggle aria-pressed="false">Reduce visual effects</button>
     </div>
-    <div class="md:col-span-4">
-      <p class="eyebrow">Contact</p>
-      <p class="m-0">{FOUNDER_NAME}, founder</p>
-      <PhoneReveal wrap="m-0 mt-2" />
-      <p class="m-0">
-        <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
-      </p>
-      <WhatsAppLink wrap="m-0" />
-      <BookCallLink wrap="m-0" />
-      {
-        facts.profiles.map((profile) => (
-          <p class="m-0">
-            <a href={profile.url}>{profile.handle ?? profile.name}</a>
-          </p>
-        ))
-      }
-    </div>
-  </div>
-  <nav class="container-page mt-10 grid gap-6 md:grid-cols-2" aria-label="Services and materials">
-    <div>
-      <p class="eyebrow">Services</p>
-      <ul class="m-0 flex list-none flex-wrap gap-x-3 gap-y-1 p-0 text-sm">
-        {servicePages.map((page) => <li><a href={page.href}>{sentence(page.label)}</a></li>)}
-      </ul>
-    </div>
-    <div>
-      <p class="eyebrow">Materials</p>
-      <ul class="m-0 flex list-none flex-wrap gap-x-3 gap-y-1 p-0 text-sm">
-        {materialPages.map((page) => <li><a href={page.href}>{sentence(page.label)}</a></li>)}
-      </ul>
-    </div>
-  </nav>
-  <div class="container-page mt-10 flex flex-wrap items-center justify-between gap-4 text-sm text-stone">
-    <p class="m-0">© {new Date().getFullYear()} {BRAND_NAME}. {FOUNDER_NAME}, founder. {facts.place}.</p>
-    {/* Opaque glass, no blur, no transitions. A user-requested preference, so localStorage holds it (the only thing the site stores). */}
-    <button class="btn btn-line" type="button" data-effects-toggle aria-pressed="false">Reduce visual effects</button>
   </div>
 </footer>
 
 <script>
-  const button = document.querySelector<HTMLButtonElement>('[data-effects-toggle]');
+  const footer = document.querySelector<HTMLElement>('[data-footer]');
+  const groups = Array.from(footer?.querySelectorAll<HTMLDetailsElement>('.footer-group') ?? []);
+  const desktop = window.matchMedia('(min-width: 1024px)');
+  const setDirectory = () => groups.forEach((group) => { group.open = desktop.matches; });
+  setDirectory();
+  desktop.addEventListener('change', setDirectory);
+  groups.forEach((group) => {
+    group.querySelector('summary')?.addEventListener('click', (event) => {
+      // At desktop this is an expanded directory; mobile keeps native interaction.
+      if (desktop.matches) event.preventDefault();
+    });
+  });
+
+  const button = footer?.querySelector<HTMLButtonElement>('[data-effects-toggle]');
   const reduced = () => document.documentElement.dataset.effects === 'reduced';
   const paint = () => button?.setAttribute('aria-pressed', reduced() ? 'true' : 'false');
   paint();

@@ -1,6 +1,8 @@
 ---
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Picture from '../components/Picture.astro';
+import Icon, { type IconName } from '../components/Icon.astro';
+import TechnicalDiagram, { type DiagramKind } from '../components/TechnicalDiagram.astro';
 import Base from '../layouts/Base.astro';
 import { areaHref, areas, editorialPages, services, specialismHref, specialisms } from '../lib/content';
 import { breadcrumbNode, serviceNodes, singleServiceNode } from '../lib/schema';
@@ -12,6 +14,13 @@ const crumbs = [
 ];
 // Published editorial pages that live under /services/ (e.g. heritage and listed buildings).
 const serviceEditorials = editorialPages.map((mod) => mod.frontmatter).filter((fm) => fm.path.startsWith('/services/'));
+const stageVisuals: Record<string, { icon: IconName; diagram: DiagramKind; caption: string; image?: string; imageCaption?: string }> = {
+  surveying: { icon: 'ruler', diagram: 'survey', caption: 'Record the wall, openings and a true vertical before setting out the paper.' },
+  management: { icon: 'calendar', diagram: 'programme', caption: 'Illustrative sequence only. Delivery, overlaps and working dates are agreed for each project.' },
+  supply: { icon: 'roll', diagram: 'supply', caption: 'Product, batch and delivered quantity are checked against the agreed schedule.' },
+  installation: { icon: 'layers', diagram: 'setout', caption: 'The focal point and the end panels guide the layout before any length is cut.', image: 'browns-hotel-mayfair-07', imageCaption: 'Adam’s Eden at Brown’s Hotel, Mayfair, during installation. Floors remain protected. Mr Wallcover project photograph.' },
+  aftercare: { icon: 'check', diagram: 'inspection', caption: 'Look at seams, edges and junctions once the paper has settled.', image: 'browns-hotel-mayfair-12', imageCaption: 'Wallcovering meeting the cornice and door case at Brown’s Hotel, Mayfair. Mr Wallcover project photograph.' },
+};
 ---
 
 <Base
@@ -32,18 +41,22 @@ const serviceEditorials = editorialPages.map((mod) => mod.frontmatter).filter((f
       <p class="eyebrow">{services.eyebrow}</p>
       <h1>{services.heading}</h1>
       <p class="lede mt-5">{services.lede}</p>
+      <nav class="service-stage-nav" aria-label="The five service stages">
+        {services.pillars.map((pillar) => <a href={`#${pillar.id}`}><Icon name={stageVisuals[pillar.id].icon} /><span>{pillar.title}</span></a>)}
+      </nav>
     </header>
   </div>
 
   {
     services.pillars.map((pillar, index) => (
-      <section id={pillar.id} class:list={[index % 2 === 1 && 'bg-paper']}>
-        <div class="container-page grid gap-8 py-14 md:grid-cols-12 md:py-20">
-          <div class="md:col-span-4">
+      <section id={pillar.id} class:list={['service-stage', index % 2 === 1 && 'bg-paper']}>
+        <div class="container-page grid gap-8 py-14 lg:grid-cols-12 md:py-20">
+          <div class="lg:col-span-5">
             <p class="eyebrow">0{index + 1}</p>
             <h2 class="m-0 text-[clamp(2rem,4vw,3rem)]">{pillar.title}</h2>
+            <TechnicalDiagram kind={stageVisuals[pillar.id].diagram} caption={stageVisuals[pillar.id].caption} class="service-stage-diagram" />
           </div>
-          <div class="prose md:col-span-7 md:col-start-6">
+          <div class="prose lg:col-span-6 lg:col-start-7">
             {pillar.paragraphs.map((paragraph) => (
               <p class="m-0">{paragraph}</p>
             ))}
@@ -57,6 +70,10 @@ const serviceEditorials = editorialPages.map((mod) => mod.frontmatter).filter((f
                 <a href="/aftercare/">The aftercare page</a>
               </p>
             )}
+            {stageVisuals[pillar.id].image && <figure class="service-stage-photo">
+              <Picture id={stageVisuals[pillar.id].image!} sizes="(min-width: 768px) 42rem, calc(100vw - 2.5rem)" />
+              <figcaption class="caption">{stageVisuals[pillar.id].imageCaption}</figcaption>
+            </figure>}
           </div>
         </div>
       </section>
@@ -72,8 +89,8 @@ const serviceEditorials = editorialPages.map((mod) => mod.frontmatter).filter((f
           <p class="lede mt-4">{services.materials.intro}</p>
         </div>
         <div class="md:col-span-5 md:col-start-8">
-          <Picture id="browns-hotel-mayfair-03" sizes="(min-width: 768px) 24rem, 100vw" />
-          <p class="caption">Where two lengths meet. Brown's Hotel, Mayfair.</p>
+          <Picture id="browns-hotel-mayfair-06" sizes="(min-width: 768px) 24rem, 100vw" />
+          <p class="caption">Adam’s Eden by Adam Calkin for Lewis &amp; Wood, photographed with its printed selvedge at Brown’s Hotel, Mayfair. Mr Wallcover project photograph.</p>
         </div>
       </div>
       <div class="mt-12 grid gap-8 md:grid-cols-2">
@@ -149,3 +166,15 @@ const serviceEditorials = editorialPages.map((mod) => mod.frontmatter).filter((f
     </div>
   </section>
 </Base>
+
+<style>
+  .service-stage-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
+  .service-stage-nav a { display: inline-flex; align-items: center; gap: .55rem; min-height: 44px; padding: .65rem .9rem; border: 1px solid var(--color-line); border-radius: var(--radius-control); text-decoration: none; color: var(--color-ink); background: var(--color-paper); }
+  .service-stage-nav a:hover { border-color: var(--color-brass); }
+  .service-stage { scroll-margin-top: 7rem; }
+  .service-stage :global(.service-stage-diagram) { max-width: 34rem; margin-top: 1.75rem; }
+  .service-stage-photo { margin: 2rem 0 0; }
+  .service-stage-photo :global(.media-img) { width: 100%; max-height: 29rem; object-fit: cover; }
+  .service-stage-photo figcaption { margin-top: .8rem; }
+  @media (min-width: 768px) and (max-width: 1023px) { .service-stage-nav { gap: .5rem; } }
+</style>
