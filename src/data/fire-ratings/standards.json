@@ -1,0 +1,291 @@
+{
+  "_note": "Standards named in wallcovering fire documents, and the reaction-to-fire class decoder. Editions and status are from BSI's catalogue records (metadata only: the paid texts were not read or reproduced). Class criteria are summarised from Commission Delegated Regulation (EU) 2016/364, Annex, Table 1 (as carried on legislation.gov.uk), and England's Approved Document B, Appendix B. sourceIds refer to sources.json.",
+  "standards": [
+    {
+      "id": "std-13501-1",
+      "designation": "BS EN 13501-1",
+      "title": "Fire classification of construction products and building elements. Classification using data from reaction to fire tests",
+      "latestEdition": "BS EN 13501-1:2018",
+      "published": "January 2019",
+      "status": "Current",
+      "role": "Turns the results of the reaction-to-fire tests into a class (A1 to F) with smoke and droplet subclasses.",
+      "editionNote": "Some older reports and declarations cite EN 13501-1:2007+A1:2009, which BSI shows as withdrawn in January 2019. A document citing the older edition is not automatically invalid; record the edition it cites and ask the maker if in doubt.",
+      "sourceIds": [
+        "src-bsi-13501-1-landing",
+        "src-bsi-13501-1-kn"
+      ]
+    },
+    {
+      "id": "std-13823",
+      "designation": "BS EN 13823",
+      "title": "Reaction to fire tests for building products. Building products excluding floorings exposed to the thermal attack by a single burning item (SBI)",
+      "latestEdition": "BS EN 13823:2020+A1:2022",
+      "published": "January 2023",
+      "status": "Current (BSI marks it under review)",
+      "role": "The single burning item test: a corner test that measures heat release, lateral flame spread, smoke production and flaming droplets for classes A2 to D.",
+      "editionNote": "BSI shows earlier editions current until these dates: 2002 to October 2010, 2010 to November 2014, 2010+A1:2014 to May 2020, and 2020 to January 2023. A report cites the edition used when the product was tested; record the edition it cites.",
+      "sourceIds": [
+        "src-bsi-13823-kn"
+      ]
+    },
+    {
+      "id": "std-11925-2",
+      "designation": "BS EN ISO 11925-2",
+      "title": "Reaction to fire tests. Ignitability of products subjected to direct impingement of flame. Single-flame source test",
+      "latestEdition": "BS EN ISO 11925-2:2026",
+      "published": "January 2026",
+      "status": "Current",
+      "role": "A small-flame ignitability test used for classes B to F; ignition of the filter paper below the specimen gives the d2 droplet subclass.",
+      "editionNote": "The 2020 edition was current until January 2026, so almost every report you will see cites 2020 or 2010.",
+      "sourceIds": [
+        "src-bsi-11925-2-kn"
+      ]
+    },
+    {
+      "id": "std-1182-1716",
+      "designation": "BS EN ISO 1182 and BS EN ISO 1716",
+      "title": "Non-combustibility test; determination of the gross heat of combustion",
+      "latestEdition": "BS EN ISO 1182:2020; BS EN ISO 1716:2018",
+      "published": "2020; 2018",
+      "status": "Current",
+      "role": "Used only for classes A1 and A2. None of the wallcovering reports we read used them.",
+      "editionNote": null,
+      "sourceIds": [
+        "src-bsi-1182-kn",
+        "src-bsi-1716-kn"
+      ]
+    },
+    {
+      "id": "std-15102",
+      "designation": "BS EN 15102",
+      "title": "Decorative wallcoverings. Roll form (2019); previously Decorative wall coverings. Roll and panel form (2007+A1:2011)",
+      "latestEdition": "BS EN 15102:2019",
+      "published": "June 2019",
+      "status": "Current at BSI; the 2007+A1:2011 edition is the one cited in the GB designated-standards list and the EU list",
+      "role": "The product standard for decorative wallcoverings, under which makers declare reaction to fire. England's Table 6.1 note refers to wallcoverings that conform to it.",
+      "editionNote": "The edition BSI treats as current (2019) is not the edition cited for UKCA and CE marking (2007+A1:2011), and Approved Document B also lists 2007+A1:2011. Declarations of performance normally cite 2007+A1:2011. Do not read one as the other.",
+      "sourceIds": [
+        "src-bsi-15102-2019-kn",
+        "src-bsi-15102-2007-kn",
+        "src-gov-ds-notice-0123-25",
+        "src-ec-cpr-summary-2026"
+      ]
+    },
+    {
+      "id": "std-13238",
+      "designation": "BS EN 13238",
+      "title": "Reaction to fire tests for building products. Conditioning procedures and general rules for selection of substrates",
+      "latestEdition": "BS EN 13238:2026",
+      "published": "July 2026",
+      "status": "Current (the 2010 edition was withdrawn in August 2026)",
+      "role": "Sets the standard substrates products are tested on, which is why a classification names a substrate and holds only for substrates it represents.",
+      "editionNote": "Approved Document B still lists the 2010 edition, and existing reports cite 2010.",
+      "sourceIds": [
+        "src-bsi-13238-kn",
+        "src-adb2-2026-consolidated"
+      ]
+    },
+    {
+      "id": "std-15725",
+      "designation": "BS EN 15725",
+      "title": "Extended application on the fire performance of construction products and building elements",
+      "latestEdition": "BS EN 15725:2023",
+      "published": "March 2023",
+      "status": "Current",
+      "role": "Principles for extended-application reports, which assess whether a result can be extended beyond the tested build-up. England's guidance points to it.",
+      "editionNote": "Approved Document B lists the 2010 edition.",
+      "sourceIds": [
+        "src-bsi-15725-kn"
+      ]
+    },
+    {
+      "id": "std-13501-2",
+      "designation": "BS EN 13501-2",
+      "title": "Fire classification of construction products and building elements. Classification using data from fire resistance and/or smoke control tests",
+      "latestEdition": "BS EN 13501-2:2023",
+      "published": "June 2023",
+      "status": "Current (BSI marks it under review)",
+      "role": "Fire resistance of building elements, in minutes (for example EI 30). Not a wallcovering standard; listed here to keep the two ideas apart.",
+      "editionNote": null,
+      "sourceIds": [
+        "src-bsi-13501-2-kn"
+      ]
+    },
+    {
+      "id": "std-476-6-7",
+      "designation": "BS 476-6 and BS 476-7",
+      "title": "Fire tests on building materials and structures: fire propagation (Part 6); surface spread of flame (Part 7)",
+      "latestEdition": "BS 476-6:1989+A1:2009; BS 476-7:1997",
+      "published": "1989; 1997",
+      "status": "Withdrawn by BSI on 4 March 2025",
+      "role": "The British national tests, now withdrawn by BSI, behind Class 1 to 4 (Part 7) and the fire-propagation route to Class 0 (Parts 6 and 7); Class 0 could also be met by materials of limited combustibility.",
+      "editionNote": "Removed from England's Approved Document B from 2 March 2025; still referred to in the Welsh and Northern Irish guidance.",
+      "sourceIds": [
+        "src-bsi-476-6-kn",
+        "src-bsi-476-7-kn",
+        "src-bsi-476-article"
+      ]
+    }
+  ],
+  "classes": [
+    {
+      "code": "A1",
+      "label": "highest",
+      "meaning": "The highest class. The product passes both the non-combustibility and the calorific-value tests. No smoke or droplet subclass is given.",
+      "basis": "BS EN ISO 1182 and BS EN ISO 1716.",
+      "sourceIds": [
+        "src-reg-2016-364-legis",
+        "src-adb2-2026-consolidated"
+      ]
+    },
+    {
+      "code": "A2",
+      "label": "",
+      "meaning": "Passes one of the A1 tests to a less strict limit, and the single burning item test to the class B limits. Carries smoke and droplet subclasses.",
+      "basis": "BS EN ISO 1182 or BS EN ISO 1716, plus BS EN 13823: fire growth rate (FIGRA) up to 120 W/s, lateral flame spread short of the specimen edge, total heat release in 600 s up to 7.5 MJ.",
+      "sourceIds": [
+        "src-reg-2016-364-legis",
+        "src-adb2-2026-consolidated"
+      ]
+    },
+    {
+      "code": "B",
+      "label": "",
+      "meaning": "A limited contribution to fire growth in the single burning item test, and limited flame spread from a small flame.",
+      "basis": "BS EN 13823: FIGRA up to 120 W/s, lateral flame spread short of the specimen edge, total heat release in 600 s up to 7.5 MJ. BS EN ISO 11925-2: 30-second flame, flame spread no more than 150 mm within 60 seconds.",
+      "sourceIds": [
+        "src-reg-2016-364-legis",
+        "src-adb2-2026-consolidated"
+      ]
+    },
+    {
+      "code": "C",
+      "label": "",
+      "meaning": "As class B, with higher limits for fire growth and total heat release.",
+      "basis": "BS EN 13823: FIGRA up to 250 W/s, lateral flame spread short of the specimen edge, total heat release in 600 s up to 15 MJ. BS EN ISO 11925-2: 30-second flame, flame spread no more than 150 mm within 60 seconds.",
+      "sourceIds": [
+        "src-reg-2016-364-legis",
+        "src-adb2-2026-consolidated"
+      ]
+    },
+    {
+      "code": "D",
+      "label": "",
+      "meaning": "A higher fire-growth limit in the single burning item test and the same small-flame test as B and C.",
+      "basis": "BS EN 13823: FIGRA up to 750 W/s. BS EN ISO 11925-2: 30-second flame, flame spread no more than 150 mm within 60 seconds.",
+      "sourceIds": [
+        "src-reg-2016-364-legis",
+        "src-adb2-2026-consolidated"
+      ]
+    },
+    {
+      "code": "E",
+      "label": "",
+      "meaning": "Passes a shorter small-flame test only. May carry d2 if the filter paper ignites; no smoke subclass.",
+      "basis": "BS EN ISO 11925-2: 15-second flame, flame spread no more than 150 mm within 20 seconds.",
+      "sourceIds": [
+        "src-reg-2016-364-legis",
+        "src-adb2-2026-consolidated"
+      ]
+    },
+    {
+      "code": "F",
+      "label": "lowest",
+      "meaning": "Assigned when a product fails to attain class E. It is a class, not a blank: different from “no performance determined” and from an untested product.",
+      "basis": "BS EN ISO 11925-2: 15-second flame, flame spread more than 150 mm within 20 seconds (Delegated Regulation 2016/364, Table 1); England's Approved Document B, Appendix B, paragraph B6.",
+      "sourceIds": [
+        "src-adb2-2026-consolidated",
+        "src-reg-2016-364-legis"
+      ]
+    }
+  ],
+  "smoke": [
+    {
+      "code": "s1",
+      "label": "lowest smoke",
+      "meaning": "The lowest smoke production category in the single burning item test.",
+      "basis": "Smoke growth rate (SMOGRA) up to 30 m²/s² and total smoke production in 600 s up to 50 m².",
+      "sourceIds": [
+        "src-reg-2016-364-legis",
+        "src-adb2-2026-consolidated"
+      ]
+    },
+    {
+      "code": "s2",
+      "label": "",
+      "meaning": "More smoke allowed than s1, still within a limit.",
+      "basis": "SMOGRA up to 180 m²/s² and total smoke production in 600 s up to 200 m².",
+      "sourceIds": [
+        "src-reg-2016-364-legis"
+      ]
+    },
+    {
+      "code": "s3",
+      "label": "no limit set",
+      "meaning": "Neither s1 nor s2: no limit is set for smoke production.",
+      "basis": "Not s1 or s2. Approved Document B: s3 means no limit is set.",
+      "sourceIds": [
+        "src-reg-2016-364-legis",
+        "src-adb2-2026-consolidated"
+      ]
+    }
+  ],
+  "droplets": [
+    {
+      "code": "d0",
+      "label": "none",
+      "meaning": "No flaming droplets or particles in the single burning item test within 600 seconds.",
+      "basis": "BS EN 13823 observation over 600 s.",
+      "sourceIds": [
+        "src-reg-2016-364-legis",
+        "src-adb2-2026-consolidated"
+      ]
+    },
+    {
+      "code": "d1",
+      "label": "",
+      "meaning": "No flaming droplets or particles that persist for longer than 10 seconds within 600 seconds.",
+      "basis": "BS EN 13823 observation over 600 s.",
+      "sourceIds": [
+        "src-reg-2016-364-legis"
+      ]
+    },
+    {
+      "code": "d2",
+      "label": "no limit set",
+      "meaning": "Neither d0 nor d1: no limit is set for flaming droplets. Also given when the filter paper ignites in the small-flame test.",
+      "basis": "Not d0 or d1; or paper ignition in BS EN ISO 11925-2.",
+      "sourceIds": [
+        "src-reg-2016-364-legis",
+        "src-adb2-2026-consolidated"
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "notation": "B-s1,d0",
+      "reading": "Class B; s1, the lowest smoke category in the test; d0, no flaming droplets or particles.",
+      "note": "It describes the tested build-up in the classification document, not the product on any wall."
+    },
+    {
+      "notation": "B-s2,d0",
+      "reading": "Class B; s2, more smoke allowed than s1 but within a limit; d0, no flaming droplets or particles.",
+      "note": "The main class and the droplet result match B-s1,d0; only the smoke category differs."
+    },
+    {
+      "notation": "C-s3,d2",
+      "reading": "Class C with no limit set for smoke or droplets.",
+      "note": "The class England's Table 6.1 gives for “other rooms”."
+    },
+    {
+      "notation": "Euroclass B",
+      "reading": "Main class B. The smoke and droplet subclasses are not stated, so they are unknown.",
+      "note": "Ask for the declaration of performance or classification report, which will state them."
+    },
+    {
+      "notation": "Class 0",
+      "reading": "Not a European class. A British national classification based on BS 476 tests, no longer used in England's Approved Document B but still printed in the Welsh and Northern Irish guidance.",
+      "note": "There is no automatic conversion to a European class; see below."
+    }
+  ]
+}

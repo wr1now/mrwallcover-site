@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 // The hotel fire-safety and compliance guide (competitor-analysis follow-up d): built from Dorin's
-// answers only. The manufacturer certifies the rating; we install to the maker's system; RAMS,
+// answers only, corrected on 15 Oct 2026 (owner's fire-ratings brief): the class comes from testing and classification of a stated
+// build-up and the manufacturer declares it; the installer never certifies it; we install to the maker's system; RAMS,
 // insurance and handover as stated. It never claims a rating or certifies anything itself.
 const decode = (s: string) => s.replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 const PATH = '/advice/hotel-fire-safety-and-compliance/';
@@ -20,8 +21,8 @@ test(`${PATH}: built, listed on the hub, in the sitemap and llms.txt`, () => {
 
 test(`${PATH}: the compliance lines are Dorin's own words, and the FAQPage matches the placed answers`, () => {
   for (const line of [
-    'The fire classification is certified by the wallcovering manufacturer, not by the installer.',
-    "Mr Wallcover installs in line with the manufacturer's system and the applicable regulations",
+    'The fire classification is not certified by the installer: it comes from testing and classification of the product in a stated build-up, and the wallcovering manufacturer declares it.',
+    "Mr Wallcover installs to the wallcovering maker's instructions and the project's fire specification",
     'Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site.',
     "Public liability, employers' liability and professional indemnity details are available on request.",
   ]) assert.ok(text.includes(line), line);
@@ -31,6 +32,11 @@ test(`${PATH}: the compliance lines are Dorin's own words, and the FAQPage match
   const faq = graph.filter((n: { '@type'?: string }) => n['@type'] === 'FAQPage');
   assert.equal(faq.length, 1, 'one FAQPage');
   for (const a of placed) assert.ok(faq[0].mainEntity.some((q: { name: string }) => q.name === a.question), a.question);
+});
+
+test(`${PATH}: links the fire-ratings reference and no longer says the maker "certifies" the rating`, () => {
+  assert.ok(html.includes('href="/advice/wallcovering-fire-ratings-uk/"'), 'links the reference page');
+  assert.doesNotMatch(text, /(maker|manufacturer) (certifies|does, not the installer)/i);
 });
 
 test(`${PATH}: never claims a rating, never certifies, no barred words`, () => {

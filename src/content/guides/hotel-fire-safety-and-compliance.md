@@ -11,9 +11,9 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-11"
-updated: "2026-10-11"
-description: "Who certifies a hotel wallcovering's fire performance, why the classification belongs to the tested build-up, what the installer does, and the RAMS, insurance and handover papers that come with the package."
-metaDescription: "Hotel wallcovering fire safety: the maker certifies the rating, the build-up is what was tested, we install to the maker's system. RAMS and handover."
+updated: "2026-10-15"
+description: "Where a hotel wallcovering's fire classification comes from, why it belongs to the tested build-up, what the installer does, and the RAMS, insurance and handover papers that come with the package."
+metaDescription: "Hotel wallcovering fire safety: who classifies and declares the rating, why the tested build-up matters, installing to the maker's system, RAMS, handover."
 shortTitle: "Hotel fire safety"
 order: 11
 relatedMaterials: ["contract-vinyl", "acoustic"]
@@ -23,7 +23,7 @@ ctaHref: "/contact/?audience=hotel&intent=install"
 sources: [{"label": "Vescom: adhesives and accessories", "url": "https://vescom.com/en/adhesives-accessories"}]
 ---
 
-Who certifies a hotel wallcovering's fire performance? The wallcovering manufacturer does, not the installer. Mr Wallcover installs in line with the manufacturer's system and the applicable regulations, and does not call a wallcovering fire-rated unless that product's own data says so. This guide explains what that means on a hotel project, what the specification has to settle before anything is ordered, and the papers that come with our package.
+Who certifies a hotel wallcovering's fire performance? Not the installer. The class comes from testing and classification of the product in a stated build-up, and the wallcovering manufacturer declares it in its declaration of performance. Mr Wallcover installs to the wallcovering maker's instructions and the project's fire specification, and does not call a wallcovering fire-rated unless that product's own data says so. This guide explains what that means on a hotel project, what the specification has to settle before anything is ordered, and the papers that come with our package. For the classes themselves, England's Table 6.1, the other UK nations and what makers' documents show product by product, see our [wallcovering fire ratings reference](/advice/wallcovering-fire-ratings-uk/).
 
 ## Why does a fire classification belong to the build-up, not the paper?
 
@@ -31,7 +31,7 @@ A fire classification, such as a Euroclass under EN 13501-1 (the standard's own 
 
 ## Is there one class that hotels need?
 
-No. A guest room, a public corridor and a protected stair can have different requirements, and no single class is what "hotels need". For a hotel, get the current classification document for the exact product, backing and installation method, and have the responsible designer, fire engineer or building-control route accept it. Whether an older British classification satisfies a project is for that responsible professional to decide, not the installer.
+No. A guest room, a public corridor and a protected stair can have different requirements, and no single class is what "hotels need". In England, Approved Document B's Table 6.1 gives different minimum classes for small rooms, other rooms and circulation spaces, and a project's fire strategy can ask for more; our [fire ratings reference](/advice/wallcovering-fire-ratings-uk/#england) sets out the table and its wallcovering note. For a hotel, get the current classification document for the exact product, backing and installation method, and have the responsible designer, fire engineer or building-control route accept it. Whether an older British classification satisfies a project is for that responsible professional to decide, not the installer.
 
 ## What does the installer do?
 
@@ -52,4 +52,4 @@ Most of the hotel work on our record was done in buildings that stayed open. [Br
 
 ## When does this guide stop being reliable?
 
-It explains who certifies what and how we work to a specified system. It does not certify any product, it is not fire-engineering advice, and it does not replace the review of the responsible designer, fire engineer or building-control route. For a hotel package, send the room types, the floor or phase schedule, occupancy, working hours and the material codes, with the fire requirement each area carries; the [hotels and operators page](/professionals/hotels/) lists what else to include.
+It explains where a classification comes from and how we work to a specified system. It does not certify any product, it is not fire-engineering advice, and it does not replace the review of the responsible designer, fire engineer or building-control route. For a hotel package, send the room types, the floor or phase schedule, occupancy, working hours and the material codes, with the fire requirement each area carries; the [hotels and operators page](/professionals/hotels/) lists what else to include.
