@@ -5,7 +5,7 @@ import '../styles/atelier.css';
 import '../styles/unify.css';
 import '../styles/visual-system.css';
 import hero from '../content/hero.json';
-import { ANALYTICS_SRC, BRAND_NAME, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
+import { ANALYTICS_EVENTS, ANALYTICS_SRC, ANALYTICS_WEBSITE_ID, BRAND_NAME, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
 import { CONTACT_PAYLOAD } from '../lib/phone';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
@@ -150,8 +150,32 @@ import outfit400 from '@fontsource/outfit/files/outfit-latin-400-normal.woff2?ur
     <script type="application/ld+json" set:html={schema} />
     <!-- Page-specific critical CSS (the homepage inlines its own rules here, before first paint). -->
     <slot name="head" />
-    <!-- Cookie-free analytics placeholder. No script loads, and the site sets no cookies, unless PUBLIC_ANALYTICS_SRC is set at build time. -->
-    {ANALYTICS_SRC && <script is:inline defer src={ANALYTICS_SRC}></script>}
+    <!-- Cookie-free analytics (Umami). No script loads, and the site sets no cookies, unless PUBLIC_ANALYTICS_SRC is set at build time.
+         It runs only on the live host, honours Do Not Track, and ignores the query string and hash, where the calculator keeps measurements. -->
+    {
+      ANALYTICS_SRC && (
+        <script
+          is:inline
+          defer
+          src={ANALYTICS_SRC}
+          data-website-id={ANALYTICS_WEBSITE_ID || undefined}
+          data-domains={new URL(SITE_URL).host}
+          data-do-not-track="true"
+          data-exclude-search="true"
+          data-exclude-hash="true"
+        ></script>
+      )
+    }
+    {
+      ANALYTICS_SRC && (
+        <script is:inline define:vars={{ allowed: ANALYTICS_EVENTS }}>
+          window.__mwTrack = function (name, detail) {
+            if (allowed.indexOf(name) === -1 || !window.umami || typeof window.umami.track !== 'function') return;
+            try { window.umami.track(name, detail || {}); } catch (e) {}
+          };
+        </script>
+      )
+    }
   </head>
   <body class:list={[path === '/' && 'is-home']}>
     <a class="skip-link" href="#main">Skip to content</a>

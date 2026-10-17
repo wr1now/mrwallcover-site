@@ -205,3 +205,11 @@ body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-f
 
 /* The case-study "At a glance" box: its heading is an eyebrow label, not a section title (src/components/CaseStudyGlance.astro). */
 main .glance-box h2 { font-family:var(--font-sans, inherit); font-size:var(--text-eyebrow); font-weight:500; line-height:1.4; letter-spacing:var(--tracking-eyebrow); text-transform:uppercase; color:var(--color-ink); }
+
+/* Calculator has a dedicated header destination. Keep all ten labelled links, Contact and the project action
+   readable at the 14px floor; booking remains in Contact, the footer and the mobile dock. */
+@media (min-width:1280px) {
+  .site-header .primary-nav { gap:10px; }
+  .site-header .nav-link { font-size:var(--text-meta); white-space:nowrap; }
+  .site-header .header-action { padding-inline:.75rem; white-space:nowrap; }
+}

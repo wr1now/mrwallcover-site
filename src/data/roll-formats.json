@@ -1,0 +1,471 @@
+{
+  "_note": "Roll sizes offered as presets on /calculator/. Every preset is a size a maker prints on its own product page or data sheet; source is that page. Widths and lengths are as printed, in the printed unit. overlapCm is the joint overlap the maker prints (usable width = width - overlap). Any other size can be typed in. Owner, 17 Oct 2026: wallpapers come in many widths (45, 55, 68, 80, 90 cm, 1 m and more), so every width must be accepted.",
+  "checked": "2026-10-17",
+  "groups": [
+    {
+      "id": "roll",
+      "label": "Rolls",
+      "soldBy": "roll"
+    },
+    {
+      "id": "double-roll",
+      "label": "US double rolls, priced by the single roll",
+      "soldBy": "double-roll"
+    },
+    {
+      "id": "set",
+      "label": "Sets of rolls, sold together",
+      "soldBy": "set"
+    },
+    {
+      "id": "bolt",
+      "label": "Bolts: grasscloth and natural weaves",
+      "soldBy": "bolt"
+    },
+    {
+      "id": "length-m",
+      "label": "Wide contract, sold by the metre",
+      "soldBy": "length",
+      "unit": "m"
+    },
+    {
+      "id": "length-yd",
+      "label": "Wide contract, sold by the yard",
+      "soldBy": "length",
+      "unit": "yd"
+    },
+    {
+      "id": "mural",
+      "label": "Made-to-measure murals",
+      "soldBy": "mural"
+    },
+    {
+      "id": "panel-set",
+      "label": "Scenic and panel sets",
+      "soldBy": "panel-set"
+    }
+  ],
+  "formats": [
+    {
+      "id": "standard",
+      "group": "roll",
+      "width": 53,
+      "widthUnit": "cm",
+      "length": 10.05,
+      "lengthUnit": "m",
+      "source": {
+        "label": "EN 233 Category 1 roll: 5.326 m² (53 cm × 10.05 m)",
+        "url": "https://standards.iteh.ai/catalog/standards/cen/848e59fa-e595-4da5-b533-4e3a4ed9cee2/en-233-2016"
+      }
+    },
+    {
+      "id": "roll-50",
+      "group": "roll",
+      "width": 50,
+      "widthUnit": "cm",
+      "length": 10,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Feathr hanging guide",
+        "url": "https://www.feathr.com/uk/how-to/how-to-wallpaper-simple-how-to-hang-patterned-wallpaper-guide/"
+      }
+    },
+    {
+      "id": "roll-52",
+      "group": "roll",
+      "width": 52,
+      "widthUnit": "cm",
+      "length": 10,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Cole & Son, Fretwork",
+        "url": "https://cole-and-son.com/products/fretwork-roll"
+      }
+    },
+    {
+      "id": "roll-52-1005",
+      "group": "roll",
+      "width": 52,
+      "widthUnit": "cm",
+      "length": 10.05,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Cole & Son, Woods",
+        "url": "https://cole-and-son.com/products/woods-roll"
+      }
+    },
+    {
+      "id": "roll-53-10",
+      "group": "roll",
+      "width": 53,
+      "widthUnit": "cm",
+      "length": 10,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Farrow & Ball, Bamboo",
+        "url": "https://www.farrow-ball.com/wallpaper/bamboo"
+      }
+    },
+    {
+      "id": "roll-60",
+      "group": "roll",
+      "width": 60,
+      "widthUnit": "cm",
+      "length": 10,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Muraspec 14568, printed non-woven",
+        "url": "https://www.muraspec.com/product/14568/"
+      }
+    },
+    {
+      "id": "roll-685",
+      "group": "roll",
+      "width": 68.5,
+      "widthUnit": "cm",
+      "length": 10,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Osborne & Little, Rosalia Damask: roll size 10 m × 68.5 cm",
+        "url": "https://www.osborneandlittle.com/rosalia-damask-w6493-w6493.html"
+      }
+    },
+    {
+      "id": "roll-685-822",
+      "group": "roll",
+      "width": 68.5,
+      "widthUnit": "cm",
+      "length": 8.22,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Tektura, Carved in Stone: roll size 68.5 cm × 8.22 m, butt joined",
+        "url": "https://www.tektura.com/product/carved-in-stone"
+      }
+    },
+    {
+      "id": "roll-686",
+      "group": "roll",
+      "width": 68.6,
+      "widthUnit": "cm",
+      "length": 10.05,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Sanderson, Chiswick Grove: usable width 68.6 cm, standard length 10.05 m",
+        "url": "https://www.sanderson.design/wallpaper/chiswick-grove-gold-saw0086-01"
+      }
+    },
+    {
+      "id": "roll-70",
+      "group": "roll",
+      "width": 70,
+      "widthUnit": "cm",
+      "length": 10,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Cole & Son, Painted Prism",
+        "url": "https://cole-and-son.com/products/painted-prism-roll"
+      }
+    },
+    {
+      "id": "roll-70-1005",
+      "group": "roll",
+      "width": 70,
+      "widthUnit": "cm",
+      "length": 10.05,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Marburg, Felix Diener Craft: 1005 × 70 cm",
+        "url": "https://marburg.com/en/search/36656-felix-diener-craft/"
+      }
+    },
+    {
+      "id": "roll-70-85",
+      "group": "roll",
+      "width": 70,
+      "widthUnit": "cm",
+      "length": 8.5,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Arte, Brushed Suede: rolls of 8.50 m × 0.70 m",
+        "url": "https://www.arte-international.com/en/collections/essentials-brushed-suede/brushed-suede/59600"
+      }
+    },
+    {
+      "id": "roll-86",
+      "group": "roll",
+      "width": 86,
+      "widthUnit": "cm",
+      "length": 7.2,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Arte, Icarus Alata: rolls of 7.20 m × 0.86 m",
+        "url": "https://www.arte-international.com/en/collections/icarus/alata/15710"
+      }
+    },
+    {
+      "id": "roll-90",
+      "group": "roll",
+      "width": 90,
+      "widthUnit": "cm",
+      "length": 9,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Arte, Marquesa Taio: rolls of 9 m × 0.90 m",
+        "url": "https://www.arte-international.com/en/collections/marquesa/taio/31710"
+      }
+    },
+    {
+      "id": "roll-100",
+      "group": "roll",
+      "width": 100,
+      "widthUnit": "cm",
+      "length": 10,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Arte, Indienne Agra: rolls of 10 m × 1 m",
+        "url": "https://www.arte-international.com/en/collections/indienne/agra/18310"
+      }
+    },
+    {
+      "id": "roll-106-10",
+      "group": "roll",
+      "width": 106,
+      "widthUnit": "cm",
+      "length": 10,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Rasch, Alghero: width 1.06 m, length 10.0 m",
+        "url": "https://rasch.de/Vliestapete-in-Beige-Alghero-943023/10-943023/"
+      }
+    },
+    {
+      "id": "roll-106-1005",
+      "group": "roll",
+      "width": 106,
+      "widthUnit": "cm",
+      "length": 10.05,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Khroma, Color Ash: roll width 1.06 m, roll length 10.05 m",
+        "url": "https://masureel.com/brands/khroma/colorythm/color/color-ash/"
+      }
+    },
+    {
+      "id": "us-double",
+      "group": "double-roll",
+      "width": 20.5,
+      "widthUnit": "in",
+      "length": 33,
+      "lengthUnit": "ft",
+      "source": {
+        "label": "York Wallcoverings double roll",
+        "url": "https://www.yorkwallcoverings.com/products/chesapeake-forest-dance-damask-wallpaper"
+      }
+    },
+    {
+      "id": "us-double-21",
+      "group": "double-roll",
+      "width": 21,
+      "widthUnit": "in",
+      "length": 33,
+      "lengthUnit": "ft",
+      "source": {
+        "label": "York Wallcoverings, Seagrass: double roll 21 in × 33 ft",
+        "url": "https://yorkwallcoverings.com/products/seagrass-wallpaper"
+      }
+    },
+    {
+      "id": "us-double-27",
+      "group": "double-roll",
+      "width": 27,
+      "widthUnit": "in",
+      "length": 27,
+      "lengthUnit": "ft",
+      "source": {
+        "label": "York Wallcoverings double roll",
+        "url": "https://www.yorkwallcoverings.com/products/tiverton-faux-grasscloth-wallpaper"
+      }
+    },
+    {
+      "id": "us-double-27-11",
+      "group": "double-roll",
+      "width": 27,
+      "widthUnit": "in",
+      "length": 11,
+      "lengthUnit": "yd",
+      "source": {
+        "label": "Thibaut, Camellia Garden: 27 in, double roll 11 yd",
+        "url": "https://www.thibautdesign.com/products/wallcoverings/AT24551"
+      }
+    },
+    {
+      "id": "us-double-36",
+      "group": "double-roll",
+      "width": 36,
+      "widthUnit": "in",
+      "length": 24,
+      "lengthUnit": "ft",
+      "source": {
+        "label": "York Wallcoverings grasscloth double roll",
+        "url": "https://www.yorkwallcoverings.com/products/kira-hemp-grasscloth-wallpaper"
+      }
+    },
+    {
+      "id": "set-3-52",
+      "group": "set",
+      "width": 52,
+      "widthUnit": "cm",
+      "length": 3,
+      "lengthUnit": "m",
+      "rollsPerSet": 3,
+      "source": {
+        "label": "Mind the Gap: sold by the box of 3 rolls, each 52 cm × 300 cm",
+        "url": "https://mindtheg.uk/faqs"
+      }
+    },
+    {
+      "id": "bolt",
+      "group": "bolt",
+      "width": 36,
+      "widthUnit": "in",
+      "length": 8,
+      "lengthUnit": "yd",
+      "source": {
+        "label": "Phillip Jeffries, Manila Hemp: 36 in pre-trimmed, 8-yard bolt",
+        "url": "https://www.phillipjeffries.com/shop/CARD-NAT-MANHPIII/9825"
+      }
+    },
+    {
+      "id": "length",
+      "group": "length-m",
+      "width": 130,
+      "widthUnit": "cm",
+      "length": 30,
+      "lengthUnit": "m",
+      "overlapCm": 5,
+      "source": {
+        "label": "Muraspec technical sheet: 130 cm, 30 m, per linear metre, 5 cm overlap",
+        "url": "https://muraspec.com/wp-content/uploads/rtwwpcp_pdf/segment-linen-13881.pdf?var=true"
+      }
+    },
+    {
+      "id": "length-130-50",
+      "group": "length-m",
+      "width": 130,
+      "widthUnit": "cm",
+      "length": 50,
+      "lengthUnit": "m",
+      "overlapCm": 6,
+      "source": {
+        "label": "Vescom, Harrison: 130 cm, 50 m roll; Vescom's application instructions allow ± 6 cm for the overlap",
+        "url": "https://vescom.com/en/products/harrison"
+      }
+    },
+    {
+      "id": "length-100",
+      "group": "length-m",
+      "width": 100,
+      "widthUnit": "cm",
+      "length": null,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Omexco, Birds of Paradise: 100 cm, sold by the metre",
+        "url": "https://www.omexco.com/wallcoverings/birds-of-paradise/bop321?lang=en"
+      }
+    },
+    {
+      "id": "length-135",
+      "group": "length-m",
+      "width": 135,
+      "widthUnit": "cm",
+      "length": null,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Timorous Beasties, Iguana Superwide: 1350 mm, per metre, overlap and double cut",
+        "url": "https://www.timorousbeasties.com/shop/view-product/iguana-superwide-wallpaper?item=12830"
+      }
+    },
+    {
+      "id": "length-137-27",
+      "group": "length-m",
+      "width": 137,
+      "widthUnit": "cm",
+      "length": 27,
+      "lengthUnit": "m",
+      "source": {
+        "label": "Tektura, Abaca: roll size 137 cm × 27 m, overlapped and double cut (no overlap amount printed)",
+        "url": "https://www.tektura.com/product/abaca"
+      }
+    },
+    {
+      "id": "length-yd-52",
+      "group": "length-yd",
+      "width": 52,
+      "widthUnit": "in",
+      "length": 30,
+      "lengthUnit": "yd",
+      "source": {
+        "label": "Maharam, Cleft: width 52 in, bolt 30 yards",
+        "url": "https://www.maharam.com/maharam/products/cleft/colors/001-dazzle"
+      }
+    },
+    {
+      "id": "length-yd-54",
+      "group": "length-yd",
+      "width": 54,
+      "widthUnit": "in",
+      "length": null,
+      "lengthUnit": "yd",
+      "source": {
+        "label": "Wolf-Gordon Type II vinyl: 54 in, per linear yard",
+        "url": "https://www.wolfgordon.com/products/wallcovering/sherwood-y47965sh"
+      }
+    },
+    {
+      "id": "mural",
+      "group": "mural"
+    },
+    {
+      "id": "panel-set",
+      "group": "panel-set"
+    }
+  ],
+  "widthSuggestions": {
+    "cm": [
+      45,
+      50,
+      52,
+      53,
+      55,
+      60,
+      68,
+      68.5,
+      68.6,
+      70,
+      75,
+      80,
+      86,
+      90,
+      91.4,
+      100,
+      106,
+      110,
+      122,
+      130,
+      132,
+      135,
+      137
+    ],
+    "in": [
+      20.5,
+      20.9,
+      21,
+      27,
+      27.5,
+      36,
+      48,
+      52,
+      54
+    ]
+  }
+}

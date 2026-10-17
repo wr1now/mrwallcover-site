@@ -78,7 +78,8 @@ Then build the site with `PUBLIC_LEAD_API` set to that server’s origin, for ex
 | `PUBLIC_FORM_PROVIDER` | `formsubmit` in the file. Also `mailto`, `netlify`, or `formspree` |
 | `PUBLIC_FORM_ENDPOINT` | Overrides the FormSubmit alias |
 | `PUBLIC_LEAD_API` | Origin of the private store. Empty on the live build |
-| `PUBLIC_ANALYTICS_SRC` | Optional cookie-free analytics script. Empty means no script and no cookies |
+| `PUBLIC_ANALYTICS_SRC` | Cookie-free analytics script: Umami, `https://cloud.umami.is/script.js` (owner's choice, 14 Oct 2026). Empty means no script and no cookies. The privacy notice switches to its Umami wording in the same build |
+| `PUBLIC_ANALYTICS_WEBSITE_ID` | The website ID from the Umami account the owner creates. Only three calculator events are sent: `calculator_complete`, `measurements_click`, `check_click` |
 | `SITE_PHONE` | Build-time only. UK mobile or international form. Never stored in the repository. Set it as the GitHub Actions secret `SITE_PHONE` to show the click-to-reveal phone and WhatsApp controls; leave it unset and those controls do not render at all |
 
 Do not put lead files, room photographs or the staff token in the repository.
@@ -174,6 +175,7 @@ npm run build
 npm run check:dist
 npm run check:phone
 npm run check:guides
+npm run check:analytics
 ```
 
 No separate lint/typecheck script is configured in this repository. Build and the listed tests are distinct checks and should not be described as a full static typecheck. The Sites edition is built without `SITE_PHONE` unless configured by the owner; email and the existing form remain available. FormSubmit delivery requires its existing active provider configuration; QA does not send synthetic leads.

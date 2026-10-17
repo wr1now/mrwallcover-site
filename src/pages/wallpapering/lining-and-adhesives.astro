@@ -1,0 +1,198 @@
+---
+import Action from '../../components/Action.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import WallpaperingNav from '../../components/WallpaperingNav.astro';
+import Base from '../../layouts/Base.astro';
+import { formatGuideDate } from '../../lib/guides';
+import { HOUSE_LINING_PASTE, isConfirmed, ladderLabel, liningGrades, makers, product, products, vovAdhesives, wallpapering } from '../../lib/materials';
+import { breadcrumbNode } from '../../lib/schema';
+import '../../styles/wallpapering.css';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Wallpapering', href: '/wallpapering/' },
+  { name: 'Lining & adhesives', href: '/wallpapering/lining-and-adhesives/' },
+];
+// Only figures re-checked on the date shown reach the public tables.
+const primers = products.filter((item) => ['primer', 'stain-block', 'alkali-primer'].includes(item.kind) && isConfirmed(item));
+const linings = liningGrades.filter(isConfirmed);
+const housePaste = product(HOUSE_LINING_PASTE);
+// Only pastes we have tested, or that a maker names for its own papers. One table per maker: our six first.
+const makerPastes = products.filter((item) => item.kind === 'paste' && item.role !== 'reference' && isConfirmed(item));
+const order = ['Ciret Ltd (Beeline)', 'Brewers (Albany)', 'Roman Decorating Products', 'Muraspec', 'Vescom', 'Tektura'];
+const rank = (name: string) => (order.includes(name) ? order.indexOf(name) : order.length);
+const pasteMakers = [...new Set(makerPastes.map((item) => item.maker ?? 'Other'))].sort((a, b) => rank(a) - rank(b));
+const makerRules = makers.filter(isConfirmed);
+const source = (item: { dataSheet?: string | null; page?: string }) => (item.dataSheet ? { href: item.dataSheet, label: 'Data sheet' } : item.page ? { href: item.page, label: "Maker's page" } : null);
+const checked = (iso: string | null) => (iso ? formatGuideDate(iso) : 'Not yet checked');
+// Printed text is shown in quotation marks; text that already quotes the maker keeps its own.
+const quoted = (text: string) => (text.includes('"') ? text : `“${text}”`);
+const liningNeed: Record<string, string> = {
+  'all-walls': 'Line every wall',
+  recommended: 'Recommended',
+  'if-needed': 'Where the wall needs it',
+  optional: 'Optional',
+  'some-products': 'For some products',
+  'not-stated': 'Not stated',
+};
+---
+
+<Base
+  title="Lining papers, pastes and primers | Mr Wallcover"
+  description="The lining papers, primers and pastes we use, the paste strength ladder, and what each wallpaper maker asks for, with data sheet links and dates."
+  path="/wallpapering/lining-and-adhesives/"
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page pb-20">
+    <header class="page-head guide-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Wallpapering / lining and adhesives</p>
+      <h1>Lining papers, pastes and primers</h1>
+      <p class="lede mt-5">The products we use when the wallpaper maker is silent, the paste ladder behind our one-step-stronger rule, and what each maker asks for. Product coverage is quoted from the maker’s data sheet or page with the date checked. Strength steps are our house scale, not a rating shared by manufacturers.</p>
+      <p class="mt-4 mb-0 text-stone">{wallpapering.independence}</p>
+    </header>
+    <WallpaperingNav current="lining" />
+
+    <section class="wp-section" aria-labelledby="primers">
+      <h2 id="primers">Primers</h2>
+      <p>Gardz on almost every wall; a stain block or an alkali-resisting primer first when the wall calls for one. A primer the wallpaper maker names replaces them.</p>
+      <table class="wp-table">
+        <thead><tr><th scope="col">Product</th><th scope="col">Used for</th><th scope="col">Coverage, as printed</th><th scope="col">Sizes</th><th scope="col">Source</th></tr></thead>
+        <tbody>
+          {primers.map((item) => {
+            const src = source(item);
+            return (
+              <tr>
+                <th scope="row">{item.name}<small>{item.what}</small></th>
+                <td data-label="Used for">{item.for}</td>
+                <td data-label="Coverage, as printed"><q>{item.coverage?.printed}</q>{item.coverage?.conflict && <small>{item.coverage.conflict}</small>}</td>
+                <td data-label="Sizes">{item.packs?.printed ?? 'Not stated'}</td>
+                <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>Checked {checked(item.checked)}</small></td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="wp-section" aria-labelledby="lining">
+      <h2 id="lining">Lining paper</h2>
+      <p>Erfurt lining paper, the grade chosen for the wall, unless the wallpaper maker names a grade. The heavier the grade, the more it covers; it never holds a failing surface or straightens a wall. Every roll on a job is the same grade, so the same thickness and the same white.</p>
+      <table class="wp-table">
+        <thead><tr><th scope="col">Grade</th><th scope="col">For, in Erfurt's words</th><th scope="col">Rolls, as printed</th><th scope="col">Soak</th><th scope="col">Source</th></tr></thead>
+        <tbody>
+          {linings.map((item) => (
+            <tr>
+              <th scope="row">{item.grade}</th>
+              <td data-label="For, in Erfurt's words"><q>{item.wall}</q></td>
+              <td data-label="Rolls, as printed">{item.rolls?.map((roll) => <span style="display:block">{roll.printed}</span>)}</td>
+              <td data-label="Soak">{item.soak}</td>
+              <td data-label="Source">{item.page && <a href={item.page}>Maker's page</a>}<small>Checked {checked(item.checked)}</small></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="wp-section" aria-labelledby="pastes">
+      <h2 id="pastes">Our paste scale and lining practice</h2>
+      <p>Mr Wallcover uses the four steps below to describe our own paste choices. Where the product’s instructions permit it, our house practice is to choose a lining paste at least one step above the wallpaper paste. These steps do not establish compatibility between different brands or substrates. If either paste’s position is unknown, or there is no higher step, we check the complete combination before ordering. The wallpaper and adhesive makers’ current instructions take precedence.</p>
+      <ol class="wp-ladder" aria-label="Our paste ladder, lightest first">
+        {wallpapering.ladder.map((step) => <li>{step.label}{step.alt && <small class="wp-ladder-alt">or {step.alt}</small>}<span>Step {step.step}</span></li>)}
+      </ol>
+      <table class="wp-table">
+        <caption>Our lining paste</caption>
+        <thead><tr><th scope="col">Paste</th><th scope="col">House step</th><th scope="col">Basis and product wording</th><th scope="col">Coverage, as printed</th><th scope="col">Source</th></tr></thead>
+        <tbody>
+          <tr>
+            <th scope="row">{housePaste.name}<small>Under our lining paper</small></th>
+            <td data-label="House step">{housePaste.step ? ladderLabel(housePaste.step) : ''}</td>
+            <td data-label="Basis and product wording">{housePaste.stepBasis}</td>
+            <td data-label="Coverage, as printed"><q>{housePaste.coverage?.printed}</q><small>{housePaste.packs?.printed}</small></td>
+            <td data-label="Source">{source(housePaste) && <a href={source(housePaste)!.href}>{source(housePaste)!.label}</a>}<small>Checked {checked(housePaste.checked)}</small></td>
+          </tr>
+        </tbody>
+      </table>
+      {pasteMakers.map((name) => (
+        <table class="wp-table">
+          <caption>{name}</caption>
+          <thead><tr><th scope="col">Paste</th><th scope="col">House step</th><th scope="col">Basis and product wording</th><th scope="col">Coverage, as printed</th><th scope="col">Source</th></tr></thead>
+          <tbody>
+            {makerPastes.filter((item) => (item.maker ?? 'Other') === name).sort((a, b) => (a.step ?? 9) - (b.step ?? 9)).map((item) => {
+              const src = source(item);
+              return (
+                <tr>
+                  <th scope="row">{item.name}<small>{item.for}</small></th>
+                  <td data-label="House step">{item.step && item.stepStatus === 'owner' ? ladderLabel(item.step) : 'By the maker\u2019s instruction'}</td>
+                  <td data-label="Basis and product wording">{item.stepBasis}{item.quotes?.[0] && <small><q>{item.quotes[0]}</q></small>}</td>
+                  <td data-label="Coverage, as printed">{item.coverage ? quoted(item.coverage.printed) : 'Not printed'}{item.packs?.printed && <small>{item.packs.printed}</small>}</td>
+                  <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>{item.availability ?? `Checked ${checked(item.checked)}`}</small></td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      ))}
+    </section>
+
+    <section class="wp-section" aria-labelledby="vov">
+      <h2 id="vov">{wallpapering.vov.title}</h2>
+      <p>{wallpapering.vov.text}</p>
+      <table class="wp-table">
+        <thead><tr><th scope="col">Adhesive</th><th scope="col">For, in the maker's words</th><th scope="col">Coverage, as printed</th><th scope="col">Sizes</th><th scope="col">Source</th></tr></thead>
+        <tbody>
+          {vovAdhesives.filter(isConfirmed).map((item) => {
+            const src = source(item);
+            return (
+              <tr>
+                <th scope="row">{item.name}<small>{item.maker}</small></th>
+                <td data-label="For, in the maker's words">{item.for}<small>{item.stepBasis}</small></td>
+                <td data-label="Coverage, as printed">{item.coverage ? quoted(item.coverage.printed) : 'Not printed'}</td>
+                <td data-label="Sizes">{item.packs?.printed ?? 'Not stated'}</td>
+                <td data-label="Source">{src && <a href={src.href}>{src.label}</a>}<small>{item.availability ?? `Checked ${checked(item.checked)}`}</small></td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="wp-section" aria-labelledby="woven">
+      <h2 id="woven">Woven wallcoverings: grasscloth, silk and textiles</h2>
+      <p>Natural and woven faces are hung with the paste their maker names, and the paste never touches the face: on grasscloth it leaves a dark line, and on silk it cannot be wiped away. Cole &amp; Son asks for its ready-mixed starch paste on its silks and grasscloths and warns against heavy-duty pastes; Fromental asks for a good-quality pre-mixed wallcovering adhesive on its grasscloth.</p>
+      <p>Where the maker gives no paste, we hang grasscloth, fabric, hessian and linen with a Medium-grade paste. The medium grades we use are made for them: Beeline's Medium Grade is <q>formulated for hanging a wide range of Wallcoverings including textiles, glass fibre, hessian, paper and fabric-backed contract vinyl Wallcoverings</q>, and Albany's Speciality, a medium grade, lists <q>hessians, grasscloth, suedes, flocks, textiles</q>. Our usual lining paste is Extra-heavy on the house scale. We confirm that it suits the particular wallpaper, lining, substrate and both makers’ instructions before using that combination.</p>
+    </section>
+
+    <section class="wp-section" aria-labelledby="makers">
+      <h2 id="makers">What the wallpaper makers ask for</h2>
+      <p>These are the makers' own instructions, which come before our house standard. They change; the product's current hanging instruction is the one that counts.</p>
+      <table class="wp-table">
+        <thead><tr><th scope="col">Maker</th><th scope="col">Lining</th><th scope="col">Paste</th><th scope="col">Also</th><th scope="col">Source</th></tr></thead>
+        <tbody>
+          {makerRules.map((rule) => (
+            <tr>
+              <th scope="row">{rule.name}</th>
+              <td data-label="Lining">{liningNeed[rule.lining.need] ?? rule.lining.need}{rule.lining.printed && <small><q>{rule.lining.printed}</q></small>}</td>
+              <td data-label="Paste">
+                {rule.liningPastePrinted ? <q>{rule.liningPastePrinted}</q> : rule.pastePrinted && rule.pasteStatus !== 'unconfirmed' ? <q>{rule.pastePrinted}</q> : rule.paste && rule.pasteStatus !== 'unconfirmed' ? product(rule.paste).name : 'Confirm for the specific product'}
+                {rule.pasteSource && <small><a href={rule.pasteSource}>Current paste instructions</a>{rule.pasteChecked && ` · Checked ${checked(rule.pasteChecked)}`}</small>}
+              </td>
+              <td data-label="Also">{rule.notes?.length ? rule.notes.map((note) => <span style="display:block">{note}</span>) : '—'}</td>
+              <td data-label="Source"><a href={rule.source}>Hanging instructions</a><small>Checked {checked(rule.checked)}</small></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-next mt-16">
+      <p class="eyebrow">Your next step</p>
+      <h2>Tell us the paper, and we will check the build-up.</h2>
+      <p>Send the product reference. We read the maker's current instruction and confirm the primer, the lining and both pastes before anything is ordered.</p>
+      <div class="flex flex-wrap gap-3">
+        <Action href="/contact/?intent=prepare">Discuss wall preparation</Action>
+        <Action variant="secondary" href="/wallpapering/preparation/">Preparation by wall type</Action>
+      </div>
+    </section>
+  </div>
+</Base>

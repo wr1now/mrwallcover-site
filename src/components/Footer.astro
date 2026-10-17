@@ -40,6 +40,9 @@ const explore = [
   { href: '/where-to-buy/', label: 'Where to buy' },
   { href: '/how-we-check/', label: 'How we check' },
   { href: '/wallpapering/', label: 'Wallpapering' },
+  { href: '/calculator/', label: 'Wallpaper calculator' },
+  { href: '/wallpapering/preparation/', label: 'Wall preparation' },
+  { href: '/wallpapering/lining-and-adhesives/', label: 'Lining & adhesives' },
   { href: '/advice/wallcovering-fire-ratings-uk/', label: 'Fire ratings & standards' },
   { href: '/advice/cost/', label: 'Installation cost' },
   { href: '/aftercare/', label: 'Aftercare' },
@@ -90,7 +93,7 @@ const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) =
       <details class="footer-group footer-explore" open>
         <summary><span>Explore</span><span class="footer-disclosure" aria-hidden="true"></span></summary>
         <div class="footer-group-content footer-explore-columns">
-          {[explore.slice(0, 6), explore.slice(6)].map((links) => (
+          {[explore.slice(0, Math.ceil(explore.length / 2)), explore.slice(Math.ceil(explore.length / 2))].map((links) => (
             <ul>{links.map((page) => <li><a href={page.href}>{page.label}</a></li>)}</ul>
           ))}
         </div>

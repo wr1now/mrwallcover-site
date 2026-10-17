@@ -65,7 +65,10 @@ export const guideStages: GuideStage[] = [
     label: 'Prepare',
     question: 'How much do I order, and what does the wall need?',
     links: [
-      { href: '/advice/quantities/', label: 'Work out the rolls', note: 'The existing estimator and its limits.' },
+      { href: '/calculator/', label: 'Wallpaper calculator', note: 'Working rolls, a separate spare and a cutting plan.' },
+      { href: '/advice/quantities/', label: 'How much wallpaper to order', note: 'The method with worked examples.' },
+      { href: '/wallpapering/preparation/', label: 'Preparation by wall type', note: 'Treatment, primer and lining guidance.' },
+      { href: '/wallpapering/lining-and-adhesives/', label: 'Lining & adhesives', note: 'Product sources and house practice.' },
       guide('wall-preparation', 'What to establish about the wall before hanging.'),
     ],
   },

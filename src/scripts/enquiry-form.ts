@@ -121,6 +121,16 @@ export function bindEnquiryForm(form: HTMLFormElement) {
   const shortlist = form.querySelector<HTMLInputElement>('[name="shortlist"]');
   if (shortlist) shortlist.value = form.dataset.variant === 'aftercare' ? '' : shortlistValue();
   restoreDraft(form);
+  // "Send us your measurements" on the quantity calculator leaves a plain-text brief in this tab only.
+  if (params.get('from') === 'calculator') {
+    const message = form.querySelector<HTMLTextAreaElement>('[name="message"]');
+    try {
+      const brief = sessionStorage.getItem('mw-quantity-brief');
+      if (message && brief && !message.value) message.value = brief.slice(0, 3500);
+    } catch {
+      /* private mode: the note starts empty */
+    }
+  }
 
   const builder = form.querySelector<HTMLElement>('[data-builder]');
   const openBuilder = form.querySelector<HTMLButtonElement>('[data-open-builder]');

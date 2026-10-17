@@ -19,7 +19,7 @@
     },
     {
       "path": "/advice/",
-      "decision": "Five topic icons distinguish choosing, specification, sourcing, preparation and installation; retain the existing illustrated Guide cards below."
+      "decision": "Use a readable article with a topic-specific diagram or accurately captioned site photograph, related-guide cards and shared next-step controls; calculator maths stays authoritative."
     },
     {
       "path": "/advice/choosing-wallcoverings/",
@@ -415,7 +415,7 @@
     },
     {
       "path": "/wallpapering/",
-      "decision": "Use the shared page shell and Guide cards as a compact front door to existing guides; a clearly labelled evidence schematic supports the fire-reference link without implying an approved assembly."
+      "decision": "A compact hub links to the separate calculator, preparation, materials and hanging guides. Preserve the published fire reference and its labelled evidence-build-up schematic; no product or certification imagery is implied."
     },
     {
       "path": "/where-to-buy/",
@@ -424,6 +424,18 @@
     {
       "path": "/get-in-touch/",
       "decision": "Contact icons identify direct channels; shared actions distinguish a quotation from a conversation. No room photography: this page helps visitors choose a contact method, not assess project evidence."
+    },
+    {
+      "path": "/calculator/",
+      "decision": "Use a labelled original wall-measurement illustration, a live working/spare/order panel and engine-derived cutting strips. Shared actions and navigation support a separate calculator route; no decorative room photography or second quantity algorithm."
+    },
+    {
+      "path": "/wallpapering/lining-and-adhesives/",
+      "decision": "Reference tables for primers, lining grades and the paste ladder, each figure linked to the maker's own data sheet with the date checked. No product photography, so the page never implies a maker endorses or pays to appear."
+    },
+    {
+      "path": "/wallpapering/preparation/",
+      "decision": "Reference tables by wall type and wall condition, with products linked to the makers' data sheets. Tables, not imagery: a photograph cannot show a wall's moisture or soundness, so none is used."
     }
   ]
 }

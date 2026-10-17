@@ -1,0 +1,119 @@
+---
+import Action from '../../components/Action.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import WallpaperingNav from '../../components/WallpaperingNav.astro';
+import Base from '../../layouts/Base.astro';
+import { guideHref } from '../../lib/guides';
+import { liningGrades, product, wallpapering } from '../../lib/materials';
+import { breadcrumbNode } from '../../lib/schema';
+import '../../styles/wallpapering.css';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Wallpapering', href: '/wallpapering/' },
+  { name: 'Preparation', href: '/wallpapering/preparation/' },
+];
+const link = (id: string) => {
+  const item = product(id);
+  return { name: item.name, href: item.dataSheet ?? item.page ?? null, confirmed: item.status === 'confirmed' };
+};
+const lining = (grade: number | null) => {
+  if (!grade) return null;
+  const item = liningGrades.find((entry) => entry.grade === grade);
+  return item ? { name: `Erfurt MAV ${grade} grade`, href: item.page ?? null } : null;
+};
+---
+
+<Base
+  title="Preparing walls for wallpaper | Mr Wallcover"
+  description="Wall types and conditions for wallpaper: the treatment, primer, lining grade and paste for each, and when the wall needs a site inspection first."
+  path="/wallpapering/preparation/"
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page pb-20">
+    <header class="page-head guide-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Wallpapering / preparation</p>
+      <h1>Preparing the wall for wallpaper</h1>
+      <p class="lede mt-5">Every wall is judged on two things: what it is made of, and the state it is in. Find both below to see the treatment, the primer, the lining grade, and when we need to see the wall before anything is ordered. The wallpaper maker's instruction for the product always comes first.</p>
+    </header>
+    <WallpaperingNav current="preparation" />
+
+    <section class="wp-section" aria-labelledby="by-wall">
+      <h2 id="by-wall">By what the wall is made of</h2>
+      <table class="wp-table">
+        <caption>Our house standard where the wallpaper maker is silent. Product names link to the maker's data sheet.</caption>
+        <thead><tr><th scope="col">Wall</th><th scope="col">Treatment</th><th scope="col">Primer</th><th scope="col">Lining</th><th scope="col">Site inspection</th></tr></thead>
+        <tbody>
+          {wallpapering.wallTypes.map((wall) => {
+            const primer = wall.primer ? link(wall.primer) : null;
+            const liner = lining(wall.lining);
+            return (
+              <tr>
+                <th scope="row">{wall.name}</th>
+                <td data-label="Treatment">{wall.treatment}</td>
+                <td data-label="Primer">
+                  {primer ? (primer.href ? <a href={primer.href}>{primer.name}</a> : primer.name) : 'As the maker asks, after inspection'}
+                  {wall.primerNote && <small>{wall.primerNote}</small>}
+                </td>
+                <td data-label="Lining">{liner ? (liner.href ? <a href={liner.href}>{liner.name}</a> : liner.name) : 'As the maker asks'}</td>
+                <td data-label="Site inspection">{wall.inspect}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="wp-section" aria-labelledby="by-condition">
+      <h2 id="by-condition">By the state it is in</h2>
+      <table class="wp-table">
+        <caption>What changes when the wall is not sound, clean and dry.</caption>
+        <thead><tr><th scope="col">Condition</th><th scope="col">What we do</th><th scope="col">Products</th><th scope="col">Lining</th><th scope="col">Site inspection</th></tr></thead>
+        <tbody>
+          {wallpapering.conditions.map((condition) => (
+            <tr>
+              <th scope="row">{condition.name}</th>
+              <td data-label="What we do">{condition.treatment}</td>
+              <td data-label="Products">
+                {condition.vov
+                  ? <a href="/wallpapering/lining-and-adhesives/#vov">A VOV adhesive</a>
+                  : condition.products.length
+                  ? condition.products.map((id, index) => {
+                      const item = link(id);
+                      return (
+                        <>
+                          {index > 0 && ', then '}
+                          {item.href ? <a href={item.href}>{item.name}</a> : item.name}
+                        </>
+                      );
+                    })
+                  : 'None until the cause is fixed'}
+              </td>
+              <td data-label="Lining">{condition.lining}</td>
+              <td data-label="Site inspection">{condition.inspect ? 'Needed' : 'Not usually'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="wp-section" aria-labelledby="house-rules">
+      <h2 id="house-rules">The rules behind the tables</h2>
+      <ul class="wp-rules">
+        {wallpapering.houseRules.map((rule) => <li><strong>{rule.title}</strong><p>{rule.text}</p></li>)}
+      </ul>
+      <p class="wp-note">The products, grades and paste ladder are listed with their data sheets on <a href="/wallpapering/lining-and-adhesives/">lining papers, pastes and primers</a>. The long read, with what each maker says, is <a href={guideHref('wall-preparation')}>Is the wall ready for wallpaper?</a></p>
+    </section>
+
+    <section class="guide-next mt-16">
+      <p class="eyebrow">Your next step</p>
+      <h2>Not sure what your wall is?</h2>
+      <p>Send a photograph in daylight and tell us what you know about the wall. We will say what it needs, and whether we should see it first.</p>
+      <div class="flex flex-wrap gap-3">
+        <Action href="/contact/?intent=prepare">Discuss wall preparation</Action>
+        <Action variant="secondary" href="/calculator/">Work out the rolls</Action>
+      </div>
+    </section>
+  </div>
+</Base>
