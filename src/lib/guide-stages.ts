@@ -47,7 +47,7 @@ export const guideStages: GuideStage[] = [
       { href: '/professionals/', label: 'Plan a professional package', note: 'Designers, developers and hotels.' },
       guide('designer-specification-checklist', 'What a schedule needs before a roll is ordered.'),
       guide('hotel-wallcovering-specification', 'Corridors, rooms and the spare stock a hotel keeps.'),
-      guide('hotel-fire-safety-and-compliance', 'Evidence to request for a commercial specification.'),
+      guide('wallcovering-fire-ratings-uk', 'Evidence to request for a commercial specification.'),
     ],
   },
   {

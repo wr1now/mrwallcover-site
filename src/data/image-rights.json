@@ -23,14 +23,20 @@
   "photographers": [
     {
       "pattern": "^scp-pimlico-\\d+$",
-      "creator": { "@type": "Person", "name": "JRH" },
+      "creator": {
+        "@type": "Person",
+        "name": "JRH"
+      },
       "copyrightNotice": "© JRH",
       "source": "docs/asset-rights.md: 'the SCP set is by a professional photographer credited only as JRH'; scripts/originals/scp-pimlico.json (photographer JRH, Nikon D810, September 2019)."
     }
   ],
   "unrecorded": {
     "source": "docs/asset-rights.md and the manifest notes record no maker for these: the tea-house set ('the tea-house set's photographer is not recorded'), old-bailey-hotel-01 ('source unknown') and four contextual exteriors (manifest notes 'exterior', 'exterior / Wix home hero', 'exterior (Bonnington Hotel facade)', 'likely hotel marketing photo'). They are not Mr Wallcover's photographs and no owner is named until the record names one.",
-    "creator": { "@type": "Person", "name": "Photographer not recorded" },
+    "creator": {
+      "@type": "Person",
+      "name": "Photographer not recorded"
+    },
     "creditText": "Photographer not recorded",
     "copyrightNotice": "© The photographer (name not recorded); not Mr Wallcover",
     "patterns": [
@@ -50,6 +56,10 @@
     {
       "prefix": "/media/atelier/",
       "source": "docs/atelier-media-provenance.md: owner-supplied project photographs from the practice's own archive."
+    },
+    {
+      "prefix": "/og-wallcovering-fire-ratings.jpg",
+      "source": "scripts/og/fire-ratings-card.swift: our own typographic share card for the fire-ratings page (site colours and the site's Cormorant Garamond and Outfit fonts, both SIL Open Font Licence); no photograph."
     }
   ]
 }

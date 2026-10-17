@@ -1,0 +1,418 @@
+---
+/**
+ * Wallcovering fire ratings: the technical reference behind the Wallpapering hub's short summary.
+ *
+ * Prose lives in src/content/fire-ratings/*.md and page.json; every table (decoder, standards,
+ * England's linings table, the four jurisdictions, product evidence, source library) is built from
+ * src/data/fire-ratings/ through src/lib/fire-ratings.ts, which refuses to build on an unsourced
+ * or malformed record. Everything essential is plain HTML; the decoder form is an extra.
+ */
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageMeta from '../../components/PageMeta.astro';
+import WallpaperingNav from '../../components/WallpaperingNav.astro';
+import Base from '../../layouts/Base.astro';
+import Action from '../../components/Action.astro';
+import QuestionVisual from '../../components/QuestionVisual.astro';
+import FireEvidenceDiagram from '../../components/FireEvidenceDiagram.astro';
+import { fireRatingsCard } from '../../lib/guides';
+import { SITE_URL } from '../../config';
+import page from '../../content/fire-ratings/page.json';
+import { Content as ShortAnswer } from '../../content/fire-ratings/short-answer.md';
+import { Content as ReactionResistance } from '../../content/fire-ratings/reaction-and-resistance.md';
+import { Content as StandardsText } from '../../content/fire-ratings/standards.md';
+import { Content as LegacyText } from '../../content/fire-ratings/legacy-and-other-systems.md';
+import { Content as EnglandText } from '../../content/fire-ratings/england.md';
+import { Content as DatesText } from '../../content/fire-ratings/dates.md';
+import { Content as NationsText } from '../../content/fire-ratings/uk-nations.md';
+import { Content as ExistingText } from '../../content/fire-ratings/existing-buildings.md';
+import { Content as ProductsText } from '../../content/fire-ratings/products.md';
+import { Content as BuildUpText } from '../../content/fire-ratings/build-up.md';
+import { Content as WhoText } from '../../content/fire-ratings/who-does-what.md';
+import {
+  classes,
+  decoderExamples,
+  dropletClasses,
+  englandLinings,
+  evidenceLabel,
+  formatClassification,
+  gapsFor,
+  jurisdictions,
+  products,
+  smokeClasses,
+  source,
+  sourceGroups,
+  sources,
+  standards,
+  validateFireData,
+} from '../../lib/fire-ratings';
+import { formatGuideDate, guideHref } from '../../lib/guides';
+import { breadcrumbNode, guideArticleNode, guideFaqNode, imageObject } from '../../lib/schema';
+import '../../styles/fire-ratings.css';
+
+const problems = validateFireData();
+if (problems.length) throw new Error(`Fire-ratings data needs fixing before it can be published:\n- ${problems.join('\n- ')}`);
+
+const path = guideHref(page.slug);
+const url = `${SITE_URL}${path}`;
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Wallcovering Guide', href: '/advice/' },
+  { name: page.shortTitle, href: path },
+];
+const sections = [
+  { id: 'short-answer', label: 'The short answer' },
+  { id: 'decoder', label: 'Reading a classification' },
+  { id: 'reaction-and-resistance', label: 'Reaction to fire is not fire resistance' },
+  { id: 'standards', label: 'The standards behind the classes' },
+  { id: 'legacy-and-other-systems', label: 'Class 0, ASTM, IMO and other systems' },
+  { id: 'england', label: 'Applying the guidance in England' },
+  { id: 'dates', label: 'What changed in 2025, and what comes in 2029' },
+  { id: 'uk-nations', label: 'Wales, Scotland and Northern Ireland' },
+  { id: 'existing-buildings', label: 'New work, refurbishment and occupied buildings' },
+  { id: 'products', label: 'What makers’ documents show' },
+  { id: 'build-up', label: 'The build-up on site' },
+  { id: 'who-does-what', label: 'Who does what' },
+  { id: 'checklists', label: 'Before ordering and at handover' },
+  { id: 'questions', label: 'Questions people ask' },
+  { id: 'sources', label: 'Source library' },
+];
+const article = guideArticleNode({ url, headline: page.title, description: page.metaDescription, published: page.published, updated: page.updated });
+article.image = [imageObject(`${SITE_URL}/og-wallcovering-fire-ratings.jpg`)];
+const extraSchema = [breadcrumbNode(crumbs), article, guideFaqNode(page.faq)];
+const sourceLink = (id: string) => source(id).url;
+// Checking dates come from the source records, so a source added later is never shown as checked earlier.
+const dateList = (dates: string[]) => {
+  const parts = [...new Set(dates)].sort().map((d) => formatGuideDate(d));
+  return parts.length > 1 ? `${parts.slice(0, -1).join(', ')} and ${parts.at(-1)}` : parts[0] ?? '';
+};
+const laterChecks = sources.map((s) => s.accessed).filter((d) => d > page.scope.sourcesChecked);
+const jurisdictionChecks = dateList([page.scope.sourcesChecked, ...jurisdictions.flatMap((j) => j.sourceIds).map((id) => source(id).accessed)]);
+const label = (id: string) => {
+  const s = source(id);
+  return `${s.issuer}, ${s.title}${s.reference ? ` (${s.reference})` : ''}`;
+};
+const typeLabel: Record<string, string> = {
+  legislation: 'Legislation',
+  government_guidance: 'Government guidance',
+  standard_catalogue: 'Standard: catalogue record',
+  eu_legislation: 'EU legislation',
+  declaration_of_performance: 'Declaration of performance',
+  classification_report: 'Classification report',
+  test_report: 'Test report',
+  certificate: 'Certificate',
+  technical_sheet: 'Technical data sheet',
+  installation_guide: 'Installation instructions',
+  brochure: 'Brochure',
+  webpage: 'Web page',
+  international_code: 'International code',
+};
+const decoderData = JSON.stringify({
+  classes: Object.fromEntries(classes.map((c) => [c.code, c.meaning])),
+  smoke: Object.fromEntries(smokeClasses.map((c) => [c.code, c.meaning])),
+  droplets: Object.fromEntries(dropletClasses.map((c) => [c.code, c.meaning])),
+});
+const makers = [...new Set(products.map((p) => p.manufacturer))];
+// The Class 0, ASTM and IMO section is prose; its sources are listed beside it.
+const legacySources: [string, string | null][] = [
+  ['src-adb2-2022-edition', 'Appendix B, Table B1 and notes, printed pp. 137–138'],
+  ['src-wales-adb-vol2', 'Appendix A, paragraph 13, p. 199; Table 10 note 3, p. 103'],
+  ['src-ni-tbe-2012', 'paragraph 3.4, p. 74; Table 3.1 note 2, p. 78'],
+  ['src-astm-e84', null],
+  ['src-imo-msc307', 'Annex 1, Part 5'],
+];
+---
+
+<Base
+  title={`${page.metaTitle} | Mr Wallcover`}
+  description={page.metaDescription}
+  path={path}
+  ogType="article"
+  image="/og-wallcovering-fire-ratings.jpg"
+  imageAlt="Wallcovering Fire Ratings: British standards and commercial specification. The Wallcovering Guide, Mr Wallcover."
+  extraSchema={extraSchema}
+  updated={page.updated}
+  meta={false}
+>
+  <div class="container-page pb-20">
+    <header class="page-head guide-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">The Wallcovering Guide / {fireRatingsCard.category}</p>
+      <h1>{page.title}</h1>
+      <p class="lede mt-5">{page.description}</p>
+      <PageMeta updated={page.updated} class="guide-byline" />
+    </header>
+    <WallpaperingNav current="fire" />
+
+    <aside class="fr-scope" aria-labelledby="fr-scope-heading">
+      <h2 id="fr-scope-heading" class="eyebrow">Scope of this page</h2>
+      <dl>
+        <div><dt>Jurisdiction</dt><dd>{page.scope.jurisdiction}</dd></div>
+        <div><dt>Sources checked</dt><dd><time datetime={page.scope.sourcesChecked}>{formatGuideDate(page.scope.sourcesChecked)}</time>.{laterChecks.length > 0 && ` Sources added later were checked on ${dateList(laterChecks)}.`} {page.scope.review}</dd></div>
+        <div><dt>What it is</dt><dd>{page.scope.notice}</dd></div>
+      </dl>
+    </aside>
+
+    <nav class="fr-contents" aria-label="On this page">
+      <p class="eyebrow">On this page</p>
+      <ol>{sections.map((s) => <li><a href={`#${s.id}`}>{s.label}</a></li>)}</ol>
+    </nav>
+
+    <section class="fr-section" aria-labelledby="short-answer">
+      <h2 id="short-answer">The short answer</h2>
+      <div class="prose fr-prose"><ShortAnswer /></div>
+      <p class="fr-hub-link">For preparation, quantities and hanging guides, see the <a href="/wallpapering/">Wallpapering hub</a>. For hotel packages, see <a href="/advice/hotel-fire-safety-and-compliance/">fire safety and compliance for hotel wallcoverings</a>.</p>
+    </section>
+
+    <section class="fr-section" aria-labelledby="decoder">
+      <h2 id="decoder">Reading a classification</h2>
+      <div class="prose fr-prose"><p>{page.decoderIntro}</p></div>
+      <div class="fr-tables">
+        <table class="fr-table">
+          <caption>Reaction-to-fire classes for wall and ceiling products (BS EN 13501-1; floorings use separate classes)</caption>
+          <thead><tr><th scope="col">Class</th><th scope="col">What it means</th><th scope="col">Basis</th></tr></thead>
+          <tbody>{classes.map((c) => <tr><th scope="row"><code>{c.code}</code>{c.label && <span class="fr-sub">{c.label}</span>}</th><td data-label="What it means">{c.meaning}</td><td data-label="Basis">{c.basis}</td></tr>)}</tbody>
+        </table>
+        <table class="fr-table">
+          <caption>Smoke production subclasses (A2 to D)</caption>
+          <thead><tr><th scope="col">Subclass</th><th scope="col">What it means</th><th scope="col">Basis</th></tr></thead>
+          <tbody>{smokeClasses.map((c) => <tr><th scope="row"><code>{c.code}</code>{c.label && <span class="fr-sub">{c.label}</span>}</th><td data-label="What it means">{c.meaning}</td><td data-label="Basis">{c.basis}</td></tr>)}</tbody>
+        </table>
+        <table class="fr-table">
+          <caption>Flaming droplets and particles subclasses (A2 to D; class E may carry d2)</caption>
+          <thead><tr><th scope="col">Subclass</th><th scope="col">What it means</th><th scope="col">Basis</th></tr></thead>
+          <tbody>{dropletClasses.map((c) => <tr><th scope="row"><code>{c.code}</code>{c.label && <span class="fr-sub">{c.label}</span>}</th><td data-label="What it means">{c.meaning}</td><td data-label="Basis">{c.basis}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <h3 class="fr-h3">Worked examples</h3>
+      <dl class="fr-examples">
+        {decoderExamples.map((e) => <div><dt><code>{e.notation}</code></dt><dd>{e.reading}{e.note && <span class="fr-sub"> {e.note}</span>}</dd></div>)}
+      </dl>
+      <form class="fr-decoder" data-fr-decoder hidden>
+        <label for="fr-notation">Decode a classification from a document</label>
+        <div class="fr-decoder-row">
+          <input id="fr-notation" name="notation" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="e.g. B-s2,d0" aria-describedby="fr-decoder-help" />
+          <button class="btn btn-line" type="submit">Decode</button>
+        </div>
+        <p id="fr-decoder-help" class="fr-sub">Type the class exactly as the document prints it. A missing subclass is reported as not stated, never guessed.</p>
+        <div class="fr-decoder-out" role="status" aria-live="polite" data-fr-out></div>
+      </form>
+      <script type="application/json" id="fr-decoder-data" set:html={decoderData} />
+      <p class="fr-cite">Class definitions: {[...new Set(classes.flatMap((c) => c.sourceIds))].map((id, i) => <>{i > 0 && '; '}<a href={sourceLink(id)}>{label(id)}</a></>)}.</p>
+    </section>
+
+    <section class="fr-section" aria-labelledby="reaction-and-resistance">
+      <h2 id="reaction-and-resistance">Reaction to fire is not fire resistance</h2>
+      <div class="prose fr-prose"><ReactionResistance /></div>
+    </section>
+
+    <section class="fr-section" aria-labelledby="standards">
+      <h2 id="standards">The standards behind the classes</h2>
+      <div class="prose fr-prose"><StandardsText /></div>
+      <table class="fr-table fr-fold-wide">
+        <caption>Standards named in wallcovering fire documents. Editions are from the publishers’ catalogue records; we have not reproduced the paid texts.</caption>
+        <thead><tr><th scope="col">Standard</th><th scope="col">What it does</th><th scope="col">Latest edition we found</th><th scope="col">Status</th><th scope="col">Note</th></tr></thead>
+        <tbody>
+          {standards.map((s) => (
+            <tr>
+              <th scope="row">{s.designation}<span class="fr-sub">{s.title}</span></th>
+              <td data-label="What it does">{s.role}</td>
+              <td data-label="Latest edition we found">{s.latestEdition ?? 'Not confirmed'}{s.published && <span class="fr-sub">Published {s.published}</span>}</td>
+              <td data-label="Status">{s.status}</td>
+              <td data-label="Note">{s.editionNote}{s.sourceIds.length > 0 && <span class="fr-sub">{s.sourceIds.map((id, i) => <>{i > 0 && ' · '}<a href={sourceLink(id)}>{source(id).issuer} record</a></>)}</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="fr-section" aria-labelledby="legacy-and-other-systems">
+      <h2 id="legacy-and-other-systems">Class 0, ASTM, IMO and other systems</h2>
+      <div class="prose fr-prose"><LegacyText /></div>
+      <p class="fr-cite">Sources: {legacySources.map(([id, where], i) => <>{i > 0 && '; '}<a href={sourceLink(id)}>{label(id)}</a>{where && `, ${where}`}</>)}.</p>
+    </section>
+
+    <section class="fr-section" aria-labelledby="england">
+      <h2 id="england">Applying the guidance in England</h2>
+      <div class="prose fr-prose"><EnglandText /></div>
+      <table class="fr-table">
+        <caption>{englandLinings.table}: minimum classes for wall and ceiling linings, as summarised by us from {englandLinings.document}. Read the table, its notes and Section 6 in full before relying on it.</caption>
+        <thead><tr><th scope="col">Location</th><th scope="col">Detail</th><th scope="col">European class</th></tr></thead>
+        <tbody>{englandLinings.rows.map((r) => <tr><th scope="row">{r.location}</th><td data-label="Detail">{r.detail}</td><td data-label="European class"><code>{r.euroclass}</code></td></tr>)}</tbody>
+      </table>
+      <ul class="fr-notes">{englandLinings.notes.map((n) => <li>{n}</li>)}</ul>
+      <p class="fr-cite">Source: {englandLinings.sourceIds.map((id, i) => <>{i > 0 && '; '}<a href={sourceLink(id)}>{label(id)}</a>{source(id).pages && `, ${source(id).pages}`}</>)}.</p>
+    </section>
+
+    <section class="fr-section" aria-labelledby="dates">
+      <h2 id="dates">What changed in 2025, and what comes in 2029</h2>
+      <div class="prose fr-prose"><DatesText /></div>
+    </section>
+
+    <section class="fr-section" aria-labelledby="uk-nations">
+      <h2 id="uk-nations">Wales, Scotland and Northern Ireland</h2>
+      <div class="prose fr-prose"><NationsText /></div>
+      <table class="fr-table fr-fold-wide">
+        <caption>The four building-regulation systems in the UK, as checked on {jurisdictionChecks}. Each has its own guidance; none of them is “UK law” for the others.</caption>
+        <thead><tr><th scope="col">Jurisdiction</th><th scope="col">Guidance</th><th scope="col">Wall and ceiling linings</th><th scope="col">National classes</th><th scope="col">Dates</th></tr></thead>
+        <tbody>
+          {jurisdictions.map((j) => (
+            <tr id={`jurisdiction-${j.id}`}>
+              <th scope="row">{j.name}</th>
+              <td data-label="Guidance">{j.document}<span class="fr-sub">{j.edition}</span></td>
+              <td data-label="Wall and ceiling linings">{j.linings}</td>
+              <td data-label="National classes">{j.nationalClasses}</td>
+              <td data-label="Dates"><ul class="fr-dates">{j.dates.map((d) => <li><time datetime={d.date}>{formatGuideDate(d.date)}</time>: {d.label}</li>)}</ul>{j.notes.map((n) => <span class="fr-sub">{n}</span>)}<span class="fr-sub">{j.sourceIds.map((id, i) => <>{i > 0 && ' · '}<a href={sourceLink(id)}>{source(id).title}</a></>)}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="fr-section" aria-labelledby="existing-buildings">
+      <h2 id="existing-buildings">New work, refurbishment and occupied buildings</h2>
+      <div class="prose fr-prose"><ExistingText /></div>
+    </section>
+
+    <section class="fr-section fr-product-section" aria-labelledby="products">
+      <h2 id="products">What makers’ documents show</h2>
+      <div class="prose fr-prose"><ProductsText /></div>
+      <table class="fr-table fr-products fr-fold-wide">
+        <caption>Product-specific evidence for {makers.join(', ')}, as read on the dates shown. Each row covers only the product and build-up named. It is not a ranking and not a list of approved products.</caption>
+        <colgroup><col class="c-product" /><col class="c-construction" /><col class="c-class" /><col class="c-evidence" /><col class="c-buildup" /><col class="c-gaps" /></colgroup>
+        <thead><tr><th scope="col">Product</th><th scope="col">Construction</th><th scope="col">Classification as printed</th><th scope="col">Evidence</th><th scope="col">Tested build-up and conditions</th><th scope="col">Gaps and cautions</th></tr></thead>
+        <tbody>
+          {products.map((p) => {
+            const gaps = gapsFor(p);
+            return (
+              <tr id={`product-${p.id}`}>
+                <th scope="row"><span class="fr-maker">{p.manufacturer}</span>{p.product}{p.reference && <span class="fr-sub">{p.reference}</span>}<span class="fr-sub">{p.scope}</span></th>
+                <td data-label="Construction">{p.construction ?? 'Not stated'}{p.weight && <span class="fr-sub">{p.weight}</span>}</td>
+                <td data-label="Classification as printed"><code>{p.classificationRaw}</code><span class="fr-sub">Read as: {p.notation ? formatClassification(p.classification) : p.conflicts.length ? 'not resolved: the documents disagree (see gaps)' : 'no European class printed'}</span>{p.classificationStandardCited && <span class="fr-sub">Cites {p.classificationStandardCited}</span>}</td>
+                <td data-label="Evidence">
+                  <ul class="fr-evidence">
+                    {p.evidence.map((ev) => {
+                      const s = source(ev.sourceId);
+                      return <li><a href={s.url}>{evidenceLabel[ev.evidenceType]}</a>{ev.documentReference && <>, {ev.documentReference}</>}{s.issued && !ev.documentReference?.includes(s.issued) && <>, {s.issued}</>}{ev.testBody && <span class="fr-sub">Test body named: {ev.testBody}</span>}</li>;
+                    })}
+                  </ul>
+                  <span class="fr-sub">Checked <time datetime={p.checked}>{formatGuideDate(p.checked)}</time></span>
+                </td>
+                <td data-label="Tested build-up and conditions">
+                  <dl class="fr-buildup">
+                    <div><dt>Substrate</dt><dd>{p.testedBuildup.substrate ?? 'Not stated in the document we read'}</dd></div>
+                    <div><dt>Adhesive</dt><dd>{p.testedBuildup.adhesive ?? 'Not stated in the document we read'}</dd></div>
+                    {p.testedBuildup.other && <div><dt>Other</dt><dd>{p.testedBuildup.other}</dd></div>}
+                    <div><dt>Field of application</dt><dd>{p.fieldOfApplication ?? 'Not stated in the document we read'}</dd></div>
+                  </dl>
+                </td>
+                <td data-label="Gaps and cautions">
+                  <ul class="fr-gaps">{p.limitations.map((l) => <li>{l}</li>)}{gaps.map((g) => <li data-gap={g.kind}>{g.text}</li>)}</ul>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <p class="fr-note">Manufacturers are named because their documents are public and checkable. None of them has paid for a place here, and no row says anything about a maker’s other products.</p>
+    </section>
+
+    <section class="fr-section" aria-labelledby="build-up">
+      <h2 id="build-up">The build-up on site</h2>
+      <FireEvidenceDiagram />
+      <div class="prose fr-prose"><BuildUpText /></div>
+    </section>
+
+    <section class="fr-section" aria-labelledby="who-does-what">
+      <h2 id="who-does-what">Who does what</h2>
+      <div class="prose fr-prose"><WhoText /></div>
+    </section>
+
+    <section class="fr-section" aria-labelledby="checklists">
+      <h2 id="checklists">Before ordering and at handover</h2>
+      <div class="fr-checklists">
+        {page.checklists.map((list) => (
+          <div class="fr-checklist">
+            <h3 class="fr-h3">{list.title}</h3>
+            <p>{list.intro}</p>
+            <ul>{list.items.map((item) => <li>{item}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="fr-section">
+      <section class="guide-faq" aria-labelledby="questions">
+        <h2 id="questions">Questions people ask</h2>
+        {page.faq.map((item) => <div class="guide-faq-item"><div class="question-heading-row"><h3>{item.q}</h3><QuestionVisual question={item.q} /></div><p>{item.a}</p></div>)}
+      </section>
+    </div>
+
+    <section class="fr-section" aria-labelledby="sources">
+      <h2 id="sources">Source library</h2>
+      <div class="prose fr-prose"><p>{page.sourcesIntro}</p></div>
+      {sourceGroups.filter((g) => sources.some((s) => s.group === g.id)).map((g) => (
+        <details class="fr-source-group" open={g.id === 'england'}>
+          <summary><h3 class="fr-h3">{g.label}</h3><span class="fr-sub">{sources.filter((s) => s.group === g.id).length} documents</span></summary>
+          <ul class="fr-sources">
+            {sources.filter((s) => s.group === g.id).map((s) => (
+              <li id={s.id}>
+                <a href={s.url}>{s.title}</a>
+                <span class="fr-sub">{s.issuer}{s.reference && ` · ${s.reference}`} · {typeLabel[s.type]}{s.issued && ` · dated ${s.issued}`}{s.effective && (s.effective > page.scope.sourcesChecked ? ` · takes effect ${formatGuideDate(s.effective)}` : ` · in force from ${formatGuideDate(s.effective)}`)}{s.statedExpiry && ` · stated expiry ${formatGuideDate(s.statedExpiry)}`} · checked {formatGuideDate(s.accessed)}{s.status !== 'current' && ` · ${s.status}`}</span>
+                <span class="fr-sub">{s.establishes}{s.limits && ` ${s.limits}`}</span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-next mt-16">
+      <p class="eyebrow">Your next step</p>
+      <h2>Discuss your wallcovering specification.</h2>
+      <p>{page.cta}</p>
+      <div class="flex flex-wrap gap-3">
+        <Action href="/contact/?intent=advice">Discuss your wallcovering specification</Action>
+        <Action variant="secondary" href="/advice/designer-specification-checklist/">Designer specification checklist</Action>
+      </div>
+      <p class="fr-sub mt-6">Related: <a href="/advice/hotel-wallcovering-specification/">hotel wallcovering specification</a> · <a href="/advice/developer-wallcovering-package/">developer wallcovering package</a> · <a href="/professionals/designers/">for designers</a> · <a href="/professionals/hotels/">for hotels</a> · <a href="/materials/contract-vinyl/">contract vinyl</a> · <a href="/advice/wall-preparation/">wall preparation</a></p>
+    </section>
+  </div>
+</Base>
+
+<script>
+  import { formatClassification, invalidCombination, parseClassification } from '../../lib/fire-classification';
+  const form = document.querySelector<HTMLFormElement>('[data-fr-decoder]');
+  const out = document.querySelector<HTMLElement>('[data-fr-out]');
+  const data = JSON.parse(document.getElementById('fr-decoder-data')?.textContent || '{}') as Record<'classes' | 'smoke' | 'droplets', Record<string, string>>;
+  if (form && out && data.classes) {
+    form.hidden = false;
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const raw = String(new FormData(form).get('notation') || '').trim();
+      out.replaceChildren();
+      if (!raw) return;
+      const c = parseClassification(raw);
+      const add = (text: string) => {
+        const p = document.createElement('p');
+        p.textContent = text;
+        out.append(p);
+      };
+      if (!c.class) {
+        add('That is not a European reaction-to-fire class for wall and ceiling products that this decoder can read. National classes such as Class 0, US or marine results, and flooring (fl) or pipe-insulation (L) classes are different; see below.');
+        return;
+      }
+      const impossible = invalidCombination(c);
+      if (impossible) {
+        add(`Not a valid combination under the European classification (Commission Delegated Regulation (EU) 2016/364, Table 1). ${impossible} Check the notation against the document.`);
+        return;
+      }
+      add(`Read as ${formatClassification(c)}.`);
+      add(`Class ${c.class}: ${data.classes[c.class]}`);
+      if (c.class === 'A1' || c.class === 'F') add('No smoke or droplet subclass applies to this class.');
+      if (c.smoke) add(`${c.smoke}: ${data.smoke[c.smoke]}`);
+      if (c.droplets) add(`${c.droplets}: ${data.droplets[c.droplets]}`);
+      if (['A2', 'B', 'C', 'D'].includes(c.class) && (!c.smoke || !c.droplets)) add('The document does not state the full subclasses. Treat what is missing as unknown and ask the maker for the declaration of performance or classification report.');
+      add('A class describes the tested build-up only. Check the substrate and adhesive in the document against the wall you have.');
+    });
+  }
+</script>

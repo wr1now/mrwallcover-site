@@ -11,10 +11,10 @@ test('standalone Guide pages use the shared shell and only published internal de
   for(const match of html.matchAll(/href="(\/[^"?#]*)(?:[?#][^"]*)?"/g)){
    const href=match[1]; assert.ok(existsSync(`dist${href}${href.endsWith('/')?'index.html':''}`),`${p}: ${href}`);
   }
-  assert.doesNotMatch(html,/href="\/(?:calculator\/|wallpapering\/)/);
+  assert.doesNotMatch(html,/href="\/(?:calculator\/|wallpapering\/(?:preparation|lining-and-adhesives)\/)/);
  }
  assert.ok(!existsSync('dist/calculator/index.html'));
- assert.ok(!existsSync('dist/wallpapering/index.html'));
+
 });
 test('policy scopes review promises; discovery includes both editorial routes',()=>{
  const policy=read('dist/how-we-check/index.html');

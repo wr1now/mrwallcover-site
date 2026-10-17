@@ -10,6 +10,7 @@
  * nothing about ranking; the crawlable HTML pages come first.
  */
 import { publishedGuides, guideHref } from '../lib/guides';
+import fireRatingsPage from '../content/fire-ratings/page.json';
 import type { APIRoute } from 'astro';
 import { SITE_URL } from '../config';
 import facts from '../data/facts.json';
@@ -83,6 +84,8 @@ export const GET: APIRoute = () => {
     '',
     '## Wallcovering Guide',
     entry('Wallcovering Guide', '/advice/', 'choosing, preparation, quantities and care'),
+    entry('Wallpapering', '/wallpapering/', 'preparation, quantities and hanging guides, with a separate source-backed fire-ratings reference'),
+    entry(fireRatingsPage.title, guideHref(fireRatingsPage.slug), fireRatingsPage.description),
     entry('How much wallpaper to order', '/advice/quantities/', 'count drops, not square metres; a restricted roll calculator for plain and straight-match walls, measured by wall or by room, with the usual 15–30% allowance range (staircases around 30%) beside the drop count; pattern-match extras confirmed at survey'),
     ...guides.map((guide) => entry(guide.frontmatter.title, guideHref(guide.frontmatter.slug), guide.frontmatter.description)),
     '',

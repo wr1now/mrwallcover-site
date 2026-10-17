@@ -154,9 +154,17 @@ The shared buyer-question, Guide and FAQ templates now place a relevant framed t
 
 The additional question review covered standard, buyer, Guide and home FAQ layouts at390/1440 (56 question instances). Every drawing remained to the right, buyer answers stayed open and there was no overflow. All196 built-site checks and both typography/contrast checks passed after the question treatment; a final build and64 focused shared-system/FAQ checks passed after the scenic-panel glyph refinement.
 
+## Fire reference release — 17 October 2026
+
+The independent fire-reference branch inherits this visual standard and shared components. `/wallpapering/` is a small front door to existing published guides. `/advice/wallcovering-fire-ratings-uk/` uses the common footer/actions, its neutral typographic share card and a reusable schematic showing how substrate, fixing/preparation and product must match the evidence. An unrelated project photograph would not substantiate product ratings, so none is added beside the performance claims. The schematic explicitly describes checks, not an approved build-up.
+
+Both routes were inspected at 390px and 1440px, with automated overflow/interaction checks at 360, 390, 768, 1024, 1280 and 1440px. Classification text stays at least 14px. Essential table rows, caveats and source links remain in the initial HTML. Keyboard menu/Escape, decoder success/error paths and no-JavaScript content are checked. The header/footer retain the foundation's behaviour; this branch adds the Wallpapering destination and fire-reference links.
+
+Evidence: [release verification](../research/fire-ratings/release-review.md), including representative screenshots and the dependency boundary. The draft calculator and adhesive dataset are not included. No deployment or professional fire-safety approval is claimed.
+
 ## Standalone Guide release — 17 October 2026
 
-Based on main after #66 and #67. The shared design foundation is inherited, not bundled as an unpublished dependency. The Guide’s five stage icons clarify navigation; the existing illustrated guide library stays below. Where to buy is a text-led order checklist, with dated official sources. How we check is a text-led editorial policy: no photograph can prove independent review. Neither new page publishes maker/seller records or technical performance figures. No draft calculator, materials dataset, fire-reference dataset or analytics is included. All preparation/quantity/fire links point to existing published guides.
+Based on main after #66 and #67. The shared design foundation is inherited, not bundled as an unpublished dependency. The Guide’s five stage icons clarify navigation; the existing illustrated guide library stays below. Where to buy is a text-led order checklist, with dated official sources. How we check is a text-led editorial policy: no photograph can prove independent review. Neither new page publishes maker/seller records or technical performance figures. No draft calculator, materials dataset or analytics is added. The independently released fire reference now comes from main. All preparation/quantity/fire links point to existing published guides.
 
 The policy governs new product/buying-route references and explicitly avoids claiming all older content has had two independent reviews. The private names secret is configured; CI requires it and fails on absence. New routes inherit the editorial template, common actions and footer. Both routes are in the route review and search; the editorial discovery pipeline adds sitemap, llms and Markdown twins.
 
