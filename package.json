@@ -22,7 +22,8 @@
     "preview:review": "astro preview --outDir dist-review",
     "check:guides": "node --experimental-strip-types --test tests/guide-build.test.ts",
     "indexnow": "node scripts/indexnow-ping.mjs dist",
-    "check:no-loss": "node scripts/no-loss-guard.mjs --base-dist ../mw-main-base/dist --dist dist --base-ref origin/main"
+    "check:no-loss": "node scripts/no-loss-guard.mjs --base-dist ../mw-main-base/dist --dist dist --base-ref origin/main",
+    "check:names": "node scripts/names-guard.mjs --repo"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
