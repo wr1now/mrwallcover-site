@@ -3,6 +3,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import WallpaperingNav from '../components/WallpaperingNav.astro';
 import Base from '../layouts/Base.astro';
 import { isConfirmed, makers, wallpapering } from '../lib/materials';
+import { formatGroups, formatLabel, formats, rollFormats } from '../lib/roll-formats';
 import { breadcrumbNode } from '../lib/schema';
 import '../styles/wallpapering.css';
 
@@ -10,18 +11,10 @@ const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'Calculator', href: '/calculator/' },
 ];
-// Roll formats the visitor can pick. Sizes are the common formats, not a product's own figures: the result says so.
-const formats = [
-  { id: 'standard', label: 'Standard roll, 53 cm × 10.05 m', width: 53, length: 10.05, soldBy: 'roll' },
-  { id: 'roll-52', label: 'Roll, 52 cm × 10 m', width: 52, length: 10, soldBy: 'roll' },
-  { id: 'us-double', label: 'US double roll, 20.5 in × 33 ft', width: 52.07, length: 10.0584, soldBy: 'double-roll' },
-  { id: 'us-double-27', label: 'US double roll, 27 in × 27 ft', width: 68.58, length: 8.2296, soldBy: 'double-roll' },
-  { id: 'bolt', label: 'Grasscloth bolt, 36 in × 8 yd', width: 91.44, length: 7.3152, soldBy: 'bolt' },
-  { id: 'length', label: 'Wide contract, sold by the metre (130 cm, 5 cm overlap)', width: 125, length: 30, soldBy: 'length' },
-  { id: 'mural', label: 'Made-to-measure mural, by the m²', width: 0, length: 0, soldBy: 'mural' },
-  { id: 'panel-set', label: 'Scenic or panel set', width: 0, length: 0, soldBy: 'panel-set' },
-  { id: 'custom', label: 'Other: I will type the sizes', width: 0, length: 0, soldBy: 'roll' },
-];
+// Roll sizes the visitor can pick, grouped by how the paper is sold. Each preset is a size a maker prints
+// (src/data/roll-formats.json); every group also takes any other size typed in (owner, 17 Oct 2026).
+const groups = formatGroups.map((group) => ({ ...group, presets: formats.filter((format) => format.group === group.id) }));
+const sizeless = (id: string) => id === 'mural' || id === 'panel-set';
 const makerOptions = makers.filter(isConfirmed).map((rule) => ({ id: rule.id, name: rule.name, noInfill: Boolean(rule.noOffcutInfill) }));
 const conditions = wallpapering.conditionQuestion.options;
 ---
@@ -61,18 +54,43 @@ const conditions = wallpapering.conditionQuestion.options;
             <p class="qc-hint form-note" data-link-note hidden></p>
           </div>
           <div class="field md:col-span-2">
-            <label for="qc-format">Roll</label>
+            <label for="qc-format">Roll size</label>
             <select id="qc-format" name="format">
-              {formats.map((format) => <option value={format.id} data-width={format.width} data-length={format.length} data-sold={format.soldBy}>{format.label}</option>)}
+              {groups.map((group) => (
+                <optgroup label={group.label}>
+                  {group.presets.map((format) => (
+                    <option value={format.id} data-group={group.id} data-width={format.width} data-wunit={format.widthUnit} data-length={format.length ?? ''} data-lunit={format.lengthUnit} data-overlap={format.overlapCm ?? 0} data-sets={format.rollsPerSet}>{formatLabel(format)}</option>
+                  ))}
+                  {!sizeless(group.id) && <option value={`other-${group.id}`} data-group={group.id} data-other="true">Another size: type it below</option>}
+                </optgroup>
+              ))}
             </select>
           </div>
           <div class="field" data-paper-size>
-            <label for="qc-roll-width">Usable width, cm</label>
-            <input id="qc-roll-width" name="rollWidth" type="number" inputmode="decimal" min="0" step="0.01" value="53" />
+            <label for="qc-roll-width">Width</label>
+            <div class="qc-unit">
+              <input id="qc-roll-width" name="rollWidth" type="number" inputmode="decimal" min="0" step="0.01" value="53" list="qc-widths" />
+              <select name="widthUnit" aria-label="Width unit"><option value="cm">cm</option><option value="in">in</option></select>
+            </div>
+            <datalist id="qc-widths" data-cm={rollFormats.widthSuggestions.cm.join(' ')} data-in={rollFormats.widthSuggestions.in.join(' ')}>
+              {rollFormats.widthSuggestions.cm.map((width) => <option value={width} />)}
+            </datalist>
           </div>
           <div class="field" data-paper-size>
-            <label for="qc-roll-length">Roll length, metres</label>
-            <input id="qc-roll-length" name="rollLength" type="number" inputmode="decimal" min="0" step="0.01" value="10.05" />
+            <label for="qc-roll-length">Roll length</label>
+            <div class="qc-unit">
+              <input id="qc-roll-length" name="rollLength" type="number" inputmode="decimal" min="0" step="0.01" value="10.05" />
+              <select name="lengthUnit" aria-label="Length unit"><option value="m">m</option><option value="ft">ft</option><option value="yd">yd</option></select>
+            </div>
+          </div>
+          <div class="field" data-overlap-field hidden>
+            <label for="qc-overlap">Overlap at each joint, cm</label>
+            <input id="qc-overlap" name="overlap" type="number" inputmode="decimal" min="0" step="0.5" value="0" />
+            <p class="qc-hint form-note">Wide goods are usually overlapped and cut through. Use the overlap on the maker's sheet, or 0 for butt joints.</p>
+          </div>
+          <div class="field" data-set-field hidden>
+            <label for="qc-sets">Rolls in each set</label>
+            <input id="qc-sets" name="rollsPerSet" type="number" inputmode="numeric" min="2" step="1" value="2" />
           </div>
           <div class="field" data-paper-size>
             <label for="qc-match">Pattern match</label>
@@ -94,7 +112,7 @@ const conditions = wallpapering.conditionQuestion.options;
             <input id="qc-margin" name="margin" type="number" inputmode="decimal" min="0" step="0.5" value="10" />
           </div>
         </div>
-        <p class="qc-hint form-note">Not sure? Leave the standard roll and free match: the result says what it assumed. The roll size, repeat and match are on the product page or the label.</p>
+        <p class="qc-hint form-note">Not sure? Leave the standard roll and free match: the result says what it assumed. The roll size, repeat and match are on the product page or the label. Any width can be typed, in centimetres or inches.</p>
       </fieldset>
 
       <fieldset class="qc-step">
@@ -208,6 +226,9 @@ const conditions = wallpapering.conditionQuestion.options;
   .qc-step legend .eyebrow, .qc-more summary .eyebrow { display: inline-block; margin: 0 .5rem 0 0; vertical-align: middle; font-family: var(--font-sans, inherit); }
   .qc-more > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: .25rem; flex-wrap: wrap; }
   .qc-hint { margin: 0; color: var(--color-stone); font-size: .9rem; }
+  .qc-unit { display: flex; gap: .5rem; }
+  .field .qc-unit input { flex: 1 1 auto; min-width: 0; }
+  .field .qc-unit select { flex: 0 0 auto; width: 5.25rem; }
   .qc-opening, .qc-return { border-left: 2px solid var(--color-line); padding-left: 1rem; }
   .quantity-measure { margin: 0; padding: 0; border: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; }
   .quantity-measure legend { padding: 0; margin-bottom: .5rem; font-weight: 500; }
