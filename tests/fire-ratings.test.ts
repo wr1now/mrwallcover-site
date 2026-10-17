@@ -146,7 +146,9 @@ test('public wording avoids absolute and misleading labels', () => {
   // "UK law" appears only to say that none of the four systems is it.
   for (const m of text.matchAll(/[^.]*\bUK law\b[^.]*/g)) assert.match(m[0], /\b(not|none)\b/i, m[0]);
   assert.match(page.scope.notice, /not project-specific fire-safety approval/);
-  assert.match(page.scope.notice, /responsible project professional/);
+  // Who confirms: the building-work route and, for redecorating a building in use, the responsible person.
+  assert.match(page.scope.notice, /for building work, the designer or fire engineer with the building-control body/);
+  assert.match(page.scope.notice, /building in use that is not building work, the responsible person/);
 });
 
 test('every source is a primary document with a checking date, and the library groups them all', () => {

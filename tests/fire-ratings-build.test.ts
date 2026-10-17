@@ -41,7 +41,7 @@ test('Article, BreadcrumbList and FAQPage match the visible page and the page da
   const faq = graph.find((n) => n['@type'] === 'FAQPage');
   assert.equal(faq.mainEntity.length, page.faq.length);
   for (const item of page.faq) assert.ok(text.includes(item.q) && text.includes(item.a), item.q);
-  assert.match(html, /<time datetime="2026-10-15" data-page-updated="updated">/);
+  assert.match(html, new RegExp(`<time datetime="${page.updated}" data-page-updated="updated">`));
 });
 
 test('in the sitemap with its own updated date, in llms.txt, search and the Markdown twin', () => {
