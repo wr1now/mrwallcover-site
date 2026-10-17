@@ -1,6 +1,7 @@
 import { sanitiseEvent } from '../lib/enquiry';
 import { maker, materialsFor, wallpapering } from '../lib/materials';
-import { calculate, closeCall, plural, type Bespoke, type Match, type OpeningInput, type PlanResult, type QuantityInput, type QuantityResult, type SoldBy } from '../lib/quantity';
+import { calculate, closeCall, plural, type Bespoke, type Match, type OpeningInput, type PlanResult, type QuantityInput, type QuantityResult } from '../lib/quantity';
+import { CM_PER, convert, formatGroups, soldByFor, toCm, type LengthUnit, type WidthUnit } from '../lib/roll-formats';
 
 /**
  * The calculator on /calculator/ (spec: docs/calculator/spec.md). Without JavaScript the page points to the
@@ -58,24 +59,132 @@ if (form && output) {
   const returnTemplate = document.querySelector<HTMLTemplateElement>('[data-return-template]')!;
   const measure = () => (form.querySelector<HTMLInputElement>('[name="measure"]:checked')?.value ?? 'wall') as 'wall' | 'walls' | 'room';
   const formatOption = () => formatSelect.selectedOptions[0];
-  const soldKind = () => formatOption()?.dataset.sold ?? 'roll';
+  const formatGroup = () => formatGroups.find((group) => group.id === formatOption()?.dataset.group) ?? formatGroups[0];
+  const soldKind = () => formatGroup().soldBy;
+  const widthUnit = () => value('widthUnit') as WidthUnit;
+  const lengthUnit = () => value('lengthUnit') as LengthUnit;
+  const widthList = $<HTMLDataListElement>('#qc-widths');
+  type Unit = keyof typeof CM_PER;
+  type Dim = 'measure' | 'small' | 'pwidth' | 'plength' | 'repeat';
+  // Walls, rooms and openings are in the unit they were measured in; small sizes (reveals, returns, trims,
+  // the mural margin) in centimetres or inches to match. The paper's sizes are in the units printed on it.
+  const measureUnit = () => (form.querySelector<HTMLInputElement>('[name="mu"]:checked')?.value ?? 'cm') as 'cm' | 'm' | 'in' | 'ft';
+  const smallFor = (mu: string): Unit => (mu === 'in' || mu === 'ft' ? 'in' : 'cm');
+  const repeatUnit = () => value('repeatUnit') as WidthUnit;
+  const unitFor = (dim: Dim): Unit => dim === 'measure' ? measureUnit() : dim === 'small' ? smallFor(measureUnit()) : dim === 'pwidth' ? widthUnit() : dim === 'plength' ? lengthUnit() : repeatUnit();
+  const imperial = () => ['in', 'ft'].includes(measureUnit()) || widthUnit() === 'in' || repeatUnit() === 'in';
+  /** A measurement in centimetres, whatever unit it was typed in. */
+  const cm = (input: Element | null) => {
+    const box = input as HTMLInputElement | null;
+    if (box?.dataset.exactCm && box.dataset.shown === box.value) return Math.round(Number(box.dataset.exactCm) * 100) / 100;
+    const raw = num(box);
+    const dim = (input as HTMLElement | null)?.dataset.dim as Dim | undefined;
+    return dim ? Math.round(raw * CM_PER[unitFor(dim)] * 100) / 100 : raw;
+  };
+  const fmtCm = (v: number) => (v >= 1000 ? `${fmtM(v / 100)} m` : `${fmt(Math.round(v * 10) / 10)} cm`);
+  /** Feet and inches to the nearest quarter inch, for a length in centimetres: 280 cm is 9 ft 2¼ in. */
+  const ftIn = (v: number) => {
+    const quarters = Math.round((v / 2.54) * 4);
+    const ft = Math.floor(quarters / 48);
+    const rest = quarters - ft * 48;
+    const inches = Math.floor(rest / 4);
+    const frac = ['', '¼', '½', '¾'][rest % 4];
+    const inPart = `${inches || !frac ? inches : ''}${frac} in`;
+    return ft ? `${ft} ft ${inPart}` : inPart;
+  };
+  // Under every size not typed in centimetres (or metres, for a roll length), its value in centimetres.
+  const syncUnits = () => {
+    form.querySelectorAll<HTMLElement>('[data-u]').forEach((span) => (span.textContent = unitFor(span.dataset.u as Dim)));
+    form.querySelectorAll<HTMLInputElement>('input[data-dim]').forEach((input) => {
+      const dim = input.dataset.dim as Dim;
+      const unit = unitFor(dim);
+      const anchor = input.closest('.qc-unit') ?? input;
+      let hint = anchor.nextElementSibling?.classList.contains('qc-cm') ? (anchor.nextElementSibling as HTMLElement) : null;
+      const metricAlready = unit === 'cm' || (dim === 'plength' && unit === 'm');
+      const v = num(input);
+      if (metricAlready || !(v > 0)) {
+        hint?.remove();
+        return;
+      }
+      if (!hint) {
+        hint = el('span', '', 'qc-cm');
+        anchor.after(hint);
+      }
+      const c = v * CM_PER[unit];
+      hint.textContent = dim === 'plength' ? `= ${fmtM(c / 100)} m` : `= ${fmtCm(c)}`;
+    });
+  };
+  // Changing a unit keeps the size: the number is converted. The exact size is remembered until the visitor
+  // types over it, so switching back and forth never drifts (400 cm stays 400 cm).
+  const reunit = (input: HTMLInputElement, from: Unit, to: Unit) => {
+    if (input.value.trim() === '' || from === to) return;
+    const exact = input.dataset.shown === input.value && input.dataset.exactCm ? Number(input.dataset.exactCm) : Number(input.value) * CM_PER[from];
+    input.value = String(convert(exact, 'cm', to));
+    input.dataset.exactCm = String(exact);
+    input.dataset.shown = input.value;
+  };
+  const convertAll = (dims: Dim[], from: (dim: Dim) => Unit, to: (dim: Dim) => Unit) => {
+    form.querySelectorAll<HTMLInputElement>('input[data-dim]').forEach((input) => {
+      const dim = input.dataset.dim as Dim;
+      if (dims.includes(dim)) reunit(input, from(dim), to(dim));
+    });
+  };
+  let lastMeasure = 'cm';
   // The wall question counts as answered only once the visitor changes it (or a shared link carries it).
   let conditionAnswered = false;
 
   /* ---------- step 1: the paper ---------- */
 
+  // The width suggestions follow the unit: centimetres or inches.
+  const syncWidthList = () => {
+    const values = (widthList.dataset[widthUnit()] ?? '').split(' ').filter(Boolean);
+    widthList.replaceChildren(...values.map((v) => Object.assign(document.createElement('option'), { value: v })));
+    for (const select of form.querySelectorAll<HTMLSelectElement>('[name="widthUnit"], [name="lengthUnit"]')) select.dataset.was = select.value;
+  };
   const syncFormat = (fill: boolean) => {
     const option = formatOption();
     const kind = soldKind();
     if (fill && Number(option.dataset.width) > 0) {
       (field('rollWidth') as HTMLInputElement).value = option.dataset.width!;
-      (field('rollLength') as HTMLInputElement).value = option.dataset.length!;
+      (field('widthUnit') as HTMLSelectElement).value = option.dataset.wunit ?? 'cm';
+      (field('rollLength') as HTMLInputElement).value = option.dataset.length ?? '';
+      (field('lengthUnit') as HTMLSelectElement).value = option.dataset.lunit ?? 'm';
+      (field('overlap') as HTMLInputElement).value = String(option.dataset.wunit === 'in' ? convert(Number(option.dataset.overlap ?? 0), 'cm', 'in') : Number(option.dataset.overlap ?? 0));
+      if (option.dataset.sets) (field('rollsPerSet') as HTMLInputElement).value = option.dataset.sets;
+      const printed = (option.dataset.wunit ?? 'cm') as WidthUnit;
+      const repeatSelect = field('repeatUnit') as HTMLSelectElement;
+      if (repeatSelect.value !== printed) {
+        const repeat = field('repeat') as HTMLInputElement;
+        reunit(repeat, repeatSelect.value as WidthUnit, printed);
+        repeatSelect.value = printed;
+      }
     }
     const sizeless = kind === 'mural' || kind === 'panel-set';
     form.querySelectorAll<HTMLElement>('[data-paper-size]').forEach((box) => (box.hidden = sizeless));
     $<HTMLElement>('[data-mural-field]').hidden = kind !== 'mural';
+    $<HTMLElement>('[data-overlap-field]').hidden = kind !== 'length';
+    $<HTMLElement>('[data-set-field]').hidden = kind !== 'set';
     const lengthLabel = form.querySelector('label[for="qc-roll-length"]');
-    if (lengthLabel) lengthLabel.textContent = kind === 'length' ? 'Longest piece supplied, metres' : kind === 'bolt' ? 'Bolt length, metres' : 'Roll length, metres';
+    if (lengthLabel) lengthLabel.textContent = kind === 'length' ? 'Longest piece supplied' : kind === 'bolt' ? 'Bolt length' : kind === 'double-roll' ? 'Double roll length' : 'Roll length';
+    syncWidthList();
+    syncUnits();
+  };
+  // A size typed over a preset is no longer that preset: the list moves to "Another size" in the same group.
+  const toOther = () => {
+    const option = formatOption();
+    if (option.dataset.other || !option.dataset.width) return;
+    const other = [...formatSelect.options].find((item) => item.dataset.other && item.dataset.group === option.dataset.group);
+    if (other) formatSelect.value = other.value;
+  };
+  const changeUnit = (select: HTMLSelectElement, input: HTMLInputElement) => {
+    const from = (select.dataset.was ?? select.value) as WidthUnit | LengthUnit;
+    const to = select.value as WidthUnit | LengthUnit;
+    // The same size in another unit: the preset still holds.
+    reunit(input, from, to);
+    // The overlap is part of the width, so it follows the width's unit.
+    if (select.name === 'widthUnit') reunit(field('overlap') as HTMLInputElement, from, to);
+    syncWidthList();
+    syncUnits();
   };
   const syncMatch = () => {
     const free = ['free', 'reverse'].includes(value('match'));
@@ -110,7 +219,7 @@ if (form && output) {
       row.querySelectorAll('label').forEach((label) => {
         const input = label.querySelector('input')!;
         const base = input.name === 'width' ? 'width' : 'Height to paper';
-        label.firstChild!.textContent = many ? `Wall ${index + 1} ${base === 'width' ? 'width' : 'height to paper'}, cm ` : `${base === 'width' ? 'Wall width' : 'Height to paper'}, cm `;
+        label.firstChild!.textContent = many ? `Wall ${index + 1} ${base === 'width' ? 'width' : 'height to paper'}, ` : `${base === 'width' ? 'Wall width' : 'Height to paper'}, `;
       });
       row.querySelector('[data-remove]')?.toggleAttribute('hidden', !many || index === 0);
     });
@@ -164,7 +273,7 @@ if (form && output) {
     row.querySelector('[data-opening-title]')!.textContent = kind === 'door' ? 'Door' : kind === 'window' ? 'Window' : 'Niche';
     const floor = row.querySelector<HTMLElement>('[data-from-floor]')!;
     floor.hidden = kind === 'door';
-    floor.querySelector('[data-from-floor-label]')!.textContent = kind === 'niche' ? 'Bottom of the niche above the skirting, cm' : 'Sill above the skirting, cm';
+    floor.querySelector('[data-from-floor-label]')!.textContent = kind === 'niche' ? 'Bottom of the niche above the skirting' : 'Sill above the skirting';
     row.querySelector<HTMLElement>('[data-reveals]')!.hidden = kind === 'niche';
     for (const [name, v] of Object.entries(values)) {
       const input = row.querySelector<HTMLInputElement | HTMLSelectElement>(`[name="${name}"]`);
@@ -172,6 +281,7 @@ if (form && output) {
     }
     openingsBox.append(row);
     syncWallChoices();
+    syncUnits();
     if (values['o-wall']) (row.querySelector('[name="o-wall"]') as HTMLSelectElement).value = values['o-wall'];
     return row;
   };
@@ -179,6 +289,7 @@ if (form && output) {
     const row = returnTemplate.content.firstElementChild!.cloneNode(true) as HTMLElement;
     returnsBox.append(row);
     syncWallChoices();
+    syncUnits();
     for (const [name, v] of Object.entries(values)) {
       const input = row.querySelector<HTMLInputElement | HTMLSelectElement>(`[name="${name}"]`);
       if (input && v !== undefined) input.value = v;
@@ -194,23 +305,20 @@ if (form && output) {
     const problems: string[] = [];
     const kind = soldKind();
     const match = (['mural', 'panel-set'].includes(kind) ? 'free' : value('match')) as Match;
-    const soldBy: SoldBy =
-      kind === 'double-roll' ? { kind: 'double-roll' }
-      : kind === 'bolt' ? { kind: 'bolt' }
-      : kind === 'length' ? { kind: 'length', unit: 'm' }
-      : kind === 'mural' ? { kind: 'mural', marginCm: num(field('margin')) || 0 }
-      : kind === 'panel-set' ? { kind: 'panel-set' }
-      : { kind: 'roll' };
+    const soldBy = soldByFor(formatGroup(), { rollsPerSet: num(field('rollsPerSet')), marginCm: cm(field('margin')) || 0 });
     const makerId = makerSelect.value;
     const rule = makerId ? maker(makerId) : undefined;
+    const overlapCm = kind === 'length' ? cm(field('overlap')) || 0 : 0;
+    const nominalCm = cm(field('rollWidth'));
+    if (overlapCm < 0 || (overlapCm > 0 && overlapCm >= nominalCm)) problems.push('The overlap must be less than the width, and not below zero.');
     const paper: QuantityInput['paper'] = {
-      widthCm: num(field('rollWidth')),
-      lengthCm: num(field('rollLength')) * 100,
-      repeatCm: ['free', 'reverse'].includes(match) ? 0 : num(field('repeat')),
+      widthCm: Math.round((nominalCm - overlapCm) * 100) / 100,
+      lengthCm: cm(field('rollLength')),
+      repeatCm: ['free', 'reverse'].includes(match) ? 0 : cm(field('repeat')),
       match,
       soldBy,
-      trimTopCm: num(field('trimTop')),
-      trimBottomCm: num(field('trimBottom')),
+      trimTopCm: cm(field('trimTop')),
+      trimBottomCm: cm(field('trimBottom')),
       noOffcutInfill: Boolean(rule?.noOffcutInfill),
     };
     const openingsByWall = new Map<number, OpeningInput[]>();
@@ -219,10 +327,10 @@ if (form && output) {
       const k = row.dataset.kind as OpeningInput['kind'];
       const opening: OpeningInput = {
         kind: k,
-        widthCm: num(row.querySelector('[name="o-width"]')),
-        heightCm: num(row.querySelector('[name="o-height"]')),
-        fromFloorCm: k === 'door' ? 0 : num(row.querySelector('[name="o-floor"]')),
-        depthCm: num(row.querySelector('[name="o-depth"]')) || 0,
+        widthCm: cm(row.querySelector('[name="o-width"]')),
+        heightCm: cm(row.querySelector('[name="o-height"]')),
+        fromFloorCm: k === 'door' ? 0 : cm(row.querySelector('[name="o-floor"]')),
+        depthCm: cm(row.querySelector('[name="o-depth"]')) || 0,
         reveals: k === 'niche' ? undefined : ((row.querySelector('[name="o-reveals"]') as HTMLSelectElement).value as OpeningInput['reveals']),
       };
       if (!(opening.widthCm > 0) || !(opening.heightCm > 0) || (k !== 'door' && !(opening.fromFloorCm! >= 0))) problems.push(`Fill in the ${k}'s width, height${k === 'door' ? '' : ' and height above the skirting'}, or remove it.`);
@@ -230,27 +338,33 @@ if (form && output) {
     }
     const returnsByWall = new Map<number, number[]>();
     for (const row of returnsBox.querySelectorAll<HTMLElement>('[data-return]')) {
-      const depth = num(row.querySelector('[name="r-depth"]'));
+      const depth = cm(row.querySelector('[name="r-depth"]'));
       if (!(depth > 0)) continue;
       const wall = Number((row.querySelector('[name="r-wall"]') as HTMLSelectElement).value || 1);
       returnsByWall.set(wall, [...(returnsByWall.get(wall) ?? []), depth]);
     }
     const bespoke = [...form.querySelectorAll<HTMLInputElement>('[name="bespoke"]:checked')].map((box) => box.value as Bespoke);
     const input: QuantityInput = { paper, bespoke };
-    const tooSmall = (cm: number) => cm > 0 && cm < 20;
+    const tooSmall = (v: number) => v > 0 && v < 20;
+    const unitHelp = (what: string) => ({
+      cm: `Enter the ${what} in centimetres: 2.7 m is 270 cm.`,
+      m: `Enter the ${what} in metres, for example 2.7.`,
+      in: `Enter the ${what} in inches, for example 106.`,
+      ft: `Enter the ${what} in feet, for example 8.9.`,
+    })[measureUnit()];
     if (measure() === 'room') {
-      input.room = { lengthCm: num(field('roomLength')), widthCm: num(field('roomWidth')), heightCm: num(field('roomHeight')), returnsCm: returnsByWall.get(1), openings: openingsByWall.get(1) };
-      if ([input.room.lengthCm, input.room.widthCm, input.room.heightCm].some(tooSmall)) problems.push('Enter the room in centimetres: 2.7 m is 270 cm.');
+      input.room = { lengthCm: cm(field('roomLength')), widthCm: cm(field('roomWidth')), heightCm: cm(field('roomHeight')), returnsCm: returnsByWall.get(1), openings: openingsByWall.get(1) };
+      if ([input.room.lengthCm, input.room.widthCm, input.room.heightCm].some(tooSmall)) problems.push(unitHelp('room'));
     } else {
       input.walls = wallRows().map((row, index) => ({
-        widthCm: num(row.querySelector('[name="width"]')),
-        heightCm: num(row.querySelector('[name="height"]')),
+        widthCm: cm(row.querySelector('[name="width"]')),
+        heightCm: cm(row.querySelector('[name="height"]')),
         returnsCm: returnsByWall.get(index + 1),
         openings: openingsByWall.get(index + 1),
       }));
-      if (input.walls.some((wall) => tooSmall(wall.widthCm) || tooSmall(wall.heightCm))) problems.push('Enter the wall in centimetres: 2.7 m is 270 cm.');
+      if (input.walls.some((wall) => tooSmall(wall.widthCm) || tooSmall(wall.heightCm))) problems.push(unitHelp('wall'));
     }
-    if (tooSmall(paper.widthCm) && !['mural', 'panel-set'].includes(kind)) problems.push('Enter the roll width in centimetres: 0.53 m is 53 cm.');
+    if (tooSmall(paper.widthCm) && !['mural', 'panel-set'].includes(kind)) problems.push(widthUnit() === 'in' ? 'Enter the roll width in inches, for example 20.5 or 27.' : 'Enter the roll width in centimetres: 0.53 m is 53 cm.');
     return { input, problems, makerId, condition: conditionAnswered ? value('condition') : '', link: value('link') };
   };
 
@@ -262,6 +376,12 @@ if (form && output) {
     if (makerSelect.value) q.set('mk', makerSelect.value);
     q.set('rw', value('rollWidth'));
     q.set('rl', value('rollLength'));
+    if (widthUnit() !== 'cm') q.set('wu', widthUnit());
+    if (lengthUnit() !== 'm') q.set('lu', lengthUnit());
+    if (soldKind() === 'length' && value('overlap') && value('overlap') !== '0') q.set('ov', value('overlap'));
+    if (soldKind() === 'set') q.set('rs', value('rollsPerSet'));
+    if (repeatUnit() !== 'cm') q.set('ru', repeatUnit());
+    if (measureUnit() !== 'cm') q.set('mu', measureUnit());
     q.set('m', value('match'));
     if (value('repeat') && value('repeat') !== '0') q.set('r', value('repeat'));
     if (soldKind() === 'mural') q.set('mg', value('margin'));
@@ -285,11 +405,23 @@ if (form && output) {
       const input = field(name);
       if (input && v !== null) input.value = v;
     };
-    if (q.get('f') && [...formatSelect.options].some((option) => option.value === q.get('f'))) formatSelect.value = q.get('f')!;
+    const f = q.get('f') === 'custom' ? 'other-roll' : q.get('f');
+    if (f && [...formatSelect.options].some((option) => option.value === f)) formatSelect.value = f;
     syncFormat(false);
     if (q.get('mk') && maker(q.get('mk')!)) makerSelect.value = q.get('mk')!;
     set('rollWidth', q.get('rw'));
     set('rollLength', q.get('rl'));
+    if (q.get('wu') === 'in') set('widthUnit', 'in');
+    if (['ft', 'yd'].includes(q.get('lu') ?? '')) set('lengthUnit', q.get('lu'));
+    set('overlap', q.get('ov'));
+    set('rollsPerSet', q.get('rs'));
+    if (q.get('ru') === 'in') set('repeatUnit', 'in');
+    const mu = form.querySelector<HTMLInputElement>(`[name="mu"][value="${q.get('mu') ?? 'cm'}"]`);
+    if (mu) {
+      mu.checked = true;
+      lastMeasure = mu.value;
+    }
+    syncWidthList();
     set('match', q.get('m'));
     set('repeat', q.get('r') ?? '0');
     set('margin', q.get('mg'));
@@ -333,6 +465,7 @@ if (form && output) {
     set('trimBottom', q.get('tb'));
     if (q.has('o') || q.has('rt') || q.has('c') || q.has('b') || q.has('tt') || q.has('tb')) more.open = true;
     syncMatch();
+    syncUnits();
     return true;
   };
 
@@ -344,8 +477,16 @@ if (form && output) {
     const rule = state.makerId ? maker(state.makerId) : undefined;
     const kind = soldKind();
     lines.push(`Wallpaper: ${rule ? rule.name : 'maker not given'}${state.link ? ` (${state.link})` : ''}.`);
-    if (!['mural', 'panel-set'].includes(kind)) lines.push(`Roll: ${fmt(paper.widthCm)} cm usable width × ${fmtM(paper.lengthCm / 100)} m, ${MATCH_LABEL[paper.match]}${paper.repeatCm ? `, repeat ${fmt(paper.repeatCm)} cm` : ''}.`);
+    if (!['mural', 'panel-set'].includes(kind)) {
+      const overlap = kind === 'length' ? Number(value('overlap')) || 0 : 0;
+      const width = `${value('rollWidth')} ${widthUnit()}${widthUnit() === 'in' ? ` (${fmt(toCm(Number(value('rollWidth')), 'in'))} cm)` : ''}${overlap ? `, overlapped ${value('overlap')} ${widthUnit()}, so ${fmt(paper.widthCm)} cm usable` : ''}`;
+      const length = value('rollLength') ? ` × ${value('rollLength')} ${lengthUnit()}` : '';
+      const sold = kind === 'set' ? `, sold in sets of ${value('rollsPerSet')}` : kind === 'length' ? `, sold by the ${formatGroup().unit === 'yd' ? 'yard' : 'metre'}` : kind === 'double-roll' ? ', US double rolls' : kind === 'bolt' ? ', bolts' : '';
+      const repeat = paper.repeatCm ? `, repeat ${repeatUnit() === 'in' ? `${value('repeat')} in (${fmt(paper.repeatCm)} cm)` : `${fmt(paper.repeatCm)} cm`}` : '';
+      lines.push(`Roll: ${width}${length}${sold}, ${MATCH_LABEL[paper.match]}${repeat}.`);
+    }
     else lines.push(`Format: ${formatOption().textContent}.`);
+    if (measureUnit() !== 'cm') lines.push(`Measured in ${({ m: 'metres', in: 'inches', ft: 'feet' } as Record<string, string>)[measureUnit()]}; every size below is in centimetres.`);
     if (state.input.room) lines.push(`Room: ${fmt(state.input.room.lengthCm)} × ${fmt(state.input.room.widthCm)} cm, height to paper ${fmt(state.input.room.heightCm)} cm.`);
     state.input.walls?.forEach((wall, index) => lines.push(`Wall${(state.input.walls?.length ?? 0) > 1 ? ` ${index + 1}` : ''}: ${fmt(wall.widthCm)} cm wide, height to paper ${fmt(wall.heightCm)} cm.`));
     const all = [...(state.input.room ? [state.input.room] : state.input.walls ?? [])];
@@ -406,13 +547,14 @@ if (form && output) {
     sentences.push(`${r.drops} ${r.drops === 1 ? 'drop' : 'drops'} across the ${measure() === 'room' ? 'room, counted as one run of ' + fmt(r.runs[0].widthCm) + ' cm' : r.runs.length > 1 ? 'walls, each rounded up' : 'wall'}.`);
     const over = r.drops - r.fullDrops;
     if (r.shortPieces) sentences.push(`${over ? `${over} of them ${over === 1 ? 'sits' : 'sit'} over an opening and ${over === 1 ? 'is' : 'are'} cut as shorter pieces. ` : ''}With any reveals and niche backs, that is ${r.fullDrops} full-height ${r.fullDrops === 1 ? 'drop' : 'drops'} and ${r.shortPieces} shorter ${r.shortPieces === 1 ? 'piece' : 'pieces'}, cut from offcuts where the pattern lines up.`);
-    sentences.push(`Each drop is cut at ${fmt(r.dropLengthCm)} cm, including ${fmt(r.trimTopCm)} cm at the top and ${fmt(r.trimBottomCm)} cm at the bottom.`);
+    const also = (v: number) => (imperial() ? ` (${ftIn(v)})` : '');
+    sentences.push(`Each drop is cut at ${fmt(r.dropLengthCm)} cm${also(r.dropLengthCm)}, including ${fmt(r.trimTopCm)} cm at the top and ${fmt(r.trimBottomCm)} cm at the bottom.`);
     if (r.match === 'straight') sentences.push(`The straight match moves the start of the next drop on by ${fmt(r.cutPitchCm)} cm.`);
     if (['half', 'third', 'quarter'].includes(r.match)) {
       const step = r.match === 'half' ? 'half' : r.match === 'third' ? 'a third' : 'a quarter';
       sentences.push(`Each drop starts ${step} of a repeat lower in the pattern than the one before. ${r.method === 'phase' ? 'The drops that start at the same point are cut together, which needs fewer rolls here.' : 'The drops are cut in order along the roll.'}`);
     }
-    if (r.startLossCm) sentences.push(`${fmt(r.startLossCm)} cm is allowed at the start of each roll to find the pattern.`);
+    if (r.startLossCm) sentences.push(`${fmt(r.startLossCm)} cm${also(r.startLossCm)} is allowed at the start of each roll to find the pattern.`);
     if (r.dropsPerRoll) sentences.push(`${r.dropsPerRoll} full ${r.dropsPerRoll === 1 ? 'drop fits' : 'drops fit'} on a ${r.working.unit.one === 'metre' ? 'piece' : r.working.unit.one}.`);
     if (r.noOffcutInfill) sentences.push('The maker asks for every piece to be cut and hung in order as it comes off the roll, so offcuts are not reused.');
     return sentences;
@@ -458,10 +600,12 @@ if (form && output) {
       div.append(el('dt', label), dd);
       dl.append(div);
     };
-    const what = r.working.unit.one === 'metre' || r.working.unit.one === 'yard' ? `The plan uses ${fmtM((r.usedCm ?? 0) / (r.working.unit.one === 'metre' ? 100 : 91.44))} ${r.working.unit.many}.` : `These cover the ${r.drops} ${r.drops === 1 ? 'drop' : 'drops'} in the plan.`;
-    row('Working', plural(r.working), what);
-    row('Spare', plural(r.spare), r.working.unit.one === 'metre' || r.working.unit.one === 'yard' ? 'One more drop, kept for a damaged length or a later repair, from the same batch.' : 'From the same batch, kept for a damaged length or a later repair.');
-    row('Order', plural(r.order), r.singleRollsPriced ? `US papers are priced by the single roll: that is ${r.singleRollsPriced} single rolls.` : 'Everything from one batch.', 'qc-total');
+    const byLength = r.working.unit.one === 'metre' || r.working.unit.one === 'yard';
+    const other = (count: number) => r.working.unit.one === 'yard' ? ` (${fmtM(count * 0.9144)} m)` : r.working.unit.one === 'metre' && imperial() ? ` (${fmtM(count / 0.9144)} yd)` : '';
+    const what = byLength ? `The plan uses ${fmtM((r.usedCm ?? 0) / (r.working.unit.one === 'metre' ? 100 : 91.44))} ${r.working.unit.many}${other((r.usedCm ?? 0) / (r.working.unit.one === 'metre' ? 100 : 91.44))}.` : `These cover the ${r.drops} ${r.drops === 1 ? 'drop' : 'drops'} in the plan.`;
+    row('Working', `${plural(r.working)}${other(r.working.count)}`, what);
+    row('Spare', `${plural(r.spare)}${other(r.spare.count)}`, r.working.unit.one === 'metre' || r.working.unit.one === 'yard' ? 'One more drop, kept for a damaged length or a later repair, from the same batch.' : 'From the same batch, kept for a damaged length or a later repair.');
+    row('Order', `${plural(r.order)}${other(r.order.count)}`, r.singleRollsPriced ? `US papers are priced by the single roll: that is ${r.singleRollsPriced} single rolls.` : 'Everything from one batch.', 'qc-total');
     return dl;
   };
 
@@ -499,7 +643,7 @@ if (form && output) {
     how.append(ul, el('p', 'The cutting plan:', 'qc-small mt-3'), rollList(r));
     const hasOpenings = Boolean(state.input.room?.openings?.length || state.input.walls?.some((wall) => wall.openings?.length));
     if (!hasOpenings) how.append(el('p', 'Windows and doors have not been taken out. Add them in step 3 if you want them counted.', 'qc-small mt-3'));
-    if (formatSelect.value !== 'custom') how.append(el('p', `Roll size: the common ${formatOption().textContent} format. Check it against the product page or the label.`, 'qc-small mt-3'));
+    if (!formatOption().dataset.other) how.append(el('p', `Roll size: ${formatOption().textContent}, a size makers print. Check it against your product's page or label.`, 'qc-small mt-3'));
     output.append(how);
 
     const materials = materialsFor(state.input, r, { condition: state.condition, makerId: state.makerId || undefined });
@@ -562,6 +706,21 @@ if (form && output) {
     syncFormat(true);
     syncMatch();
   });
+  for (const name of ['rollWidth', 'rollLength', 'overlap', 'rollsPerSet']) form.querySelector(`[name="${name}"]`)!.addEventListener('input', toOther);
+  form.querySelector<HTMLSelectElement>('[name="widthUnit"]')!.addEventListener('change', (event) => changeUnit(event.currentTarget as HTMLSelectElement, field('rollWidth') as HTMLInputElement));
+  form.querySelector<HTMLSelectElement>('[name="lengthUnit"]')!.addEventListener('change', (event) => changeUnit(event.currentTarget as HTMLSelectElement, field('rollLength') as HTMLInputElement));
+  form.querySelector<HTMLSelectElement>('[name="repeatUnit"]')!.addEventListener('change', (event) => changeUnit(event.currentTarget as HTMLSelectElement, field('repeat') as HTMLInputElement));
+  form.querySelectorAll<HTMLInputElement>('[name="mu"]').forEach((radio) =>
+    radio.addEventListener('change', () => {
+      const from = lastMeasure;
+      convertAll(['measure', 'small'], (dim) => (dim === 'measure' ? from : smallFor(from)) as Unit, (dim) => unitFor(dim));
+      lastMeasure = measureUnit();
+      syncUnits();
+    }),
+  );
+  form.addEventListener('input', (event) => {
+    if ((event.target as HTMLElement).matches('input[data-dim]')) syncUnits();
+  });
   form.querySelector('[name="match"]')!.addEventListener('change', syncMatch);
   form.querySelector('[name="condition"]')!.addEventListener('change', () => (conditionAnswered = true));
   form.querySelector('[name="link"]')!.addEventListener('change', readLink);
@@ -590,5 +749,6 @@ if (form && output) {
   syncFormat(false);
   syncMatch();
   syncMeasure();
+  syncUnits();
   if (fromQuery(new URLSearchParams(location.search))) run();
 }

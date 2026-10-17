@@ -37,8 +37,9 @@ A made-to-measure mural gets its order size (section 7.5) **and** the request bu
 | --- | --- | --- |
 | Units | centimetres | Metres, inches and feet are converted on entry. The engine works in whole millimetres. |
 | Height to paper | — | From the top of the skirting to where the paper stops: the ceiling, the cornice or the picture rail *(owner)*. |
-| Usable roll width `w` | 53 cm | Nominal width less any overlap or selvedge the maker prints. |
-| Roll length `L` | 1005 cm | |
+| Usable roll width `w` | 53 cm | Nominal width less any overlap or selvedge the maker prints. Any width is accepted, typed in cm or inches *(owner, 17 Oct 2026: 45, 55, 68, 80, 90 cm, 1 m and more)*. For paper sold by the metre or yard, the overlap at each joint is its own field (Muraspec prints 5 cm), and `w` = width − overlap. |
+| Roll length `L` | 1005 cm | Typed in metres, feet or yards. |
+| Roll size presets | Standard roll, 53 × 1005 cm | `src/data/roll-formats.json`: grouped by how the paper is sold (rolls, US double rolls, sets, bolts, by the metre, by the yard, murals, panel sets). Each preset is a size a maker prints, with the maker's page as its source. Every group also has "Another size", and typing over a preset moves the list to it. |
 | Pattern repeat `R` | 0 (none) | |
 | Match | free | free, reverse hang, straight, half-drop, ⅓ drop, ¼ drop |
 | Trim | 5 cm top + 5 cm bottom, so `t` = 10 cm *(owner)* | Added to every piece, short pieces included. |

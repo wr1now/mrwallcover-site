@@ -117,7 +117,8 @@ test('the ladder reads Light, Medium, Heavy, Extra-heavy (owner, 14 Oct 2026); a
   if (!result.ok || result.kind !== 'plan') return;
   const generic = materialsFor(input, result, { condition: 'sealed' });
   assert.deepEqual(generic.lines.map((line) => line.name), ['A vinyl-over-vinyl adhesive (VOV) made for sealed surfaces']);
-  assert.equal(generic.checks.length, 1, 'a sealed wall is checked with us');
+  assert.equal(generic.checks.length, 2, 'a sealed wall is checked with us, with the fire-rating warning (owner, 14 Oct 2026)');
+  assert.match(generic.checks.join(' '), /voids the makers\u2019 fire rating certification/);
   const muraspec = materialsFor(input, result, { condition: 'sealed', makerId: 'muraspec' });
   assert.equal(muraspec.lines[0].name, 'Murabond Sealed Surface Adhesive (vinyl-over-vinyl use)');
   assert.equal(muraspec.lines[0].amount, '1.43–1.67 kg: 1 × 5 kg', '10 m² at the label\'s 6/7 m² per kg');
