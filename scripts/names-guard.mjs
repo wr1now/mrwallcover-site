@@ -22,10 +22,14 @@
  *
  * Scope: every text file in the built site (default dist/), read three ways (as built, with HTML entities and
  * percent-escapes decoded, and with tags removed so a name split by markup is still found). With --repo, every
- * file git tracks as well, because this repository is public too.
+ * file git tracks as well, because this repository is public too. A file counts as text by its content, not its
+ * name (no NUL byte in its first 8 KB), so files such as CNAME, _headers or .gitignore are read too.
+ *
+ * A "re:" entry that is not a valid regular expression stops the guard with its entry number only, never the
+ * pattern, so a typo in the private list cannot print a name in a public log.
  */
 import { execFileSync } from 'node:child_process';
-import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { closeSync, existsSync, openSync, readFileSync, readSync, readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
 
 const args = process.argv.slice(2);
@@ -36,7 +40,6 @@ const opt = (name, fallback) => {
 const flag = (name) => args.includes(`--${name}`);
 const root = path.resolve(import.meta.dirname, '..');
 const dist = path.resolve(root, opt('dist', 'dist'));
-const TEXT = /\.(html?|xml|txt|md|mdx|json|js|mjs|cjs|ts|astro|css|svg|csv|webmanifest|ya?ml|map)$/i;
 
 function readList() {
   const file = opt('list') ?? process.env.MW_NAMES_FILE;
@@ -61,8 +64,14 @@ export function parseList(text) {
     const line = raw.trim();
     if (!line || line.startsWith('#')) continue;
     let pattern;
-    if (line.startsWith('re:')) pattern = new RegExp(line.slice(3).trim(), 'iu');
-    else {
+    if (line.startsWith('re:')) {
+      try {
+        pattern = new RegExp(line.slice(3).trim(), 'iu');
+      } catch {
+        // Never echo the pattern: the list is private and this may run in a public CI log.
+        throw new Error(`Names list entry ${entries.length + 1} is not a valid regular expression. Fix it in the private list.`);
+      }
+    } else {
       const words = fold(line).split(/[^\p{L}\p{N}]+/u).filter(Boolean);
       if (!words.length) continue;
       pattern = new RegExp(`(?<![\\p{L}\\p{N}])${words.map(escape).join('[\\s._-]*')}(?![\\p{L}\\p{N}])`, 'iu');
@@ -100,17 +109,41 @@ export function matches(entries, text) {
   return entries.filter((entry) => views.some((view) => entry.pattern.test(view))).map((entry) => entry.n);
 }
 
+/** True when a buffer looks like text: no NUL byte in its first 8 KB. */
+export function looksLikeText(head) {
+  return !head.subarray(0, 8192).includes(0);
+}
+
+/** A file's contents as UTF-8, or null for a binary file (only its first 8 KB are read to decide). */
+export function readText(file) {
+  const fd = openSync(file, 'r');
+  try {
+    const head = Buffer.alloc(8192);
+    const size = readSync(fd, head, 0, head.length, 0);
+    if (!looksLikeText(head.subarray(0, size))) return null;
+  } finally {
+    closeSync(fd);
+  }
+  return readFileSync(file, 'utf8');
+}
+
 function walk(dir, out = []) {
   for (const name of readdirSync(dir)) {
     const p = path.join(dir, name);
     if (statSync(p).isDirectory()) walk(p, out);
-    else if (TEXT.test(name)) out.push(p);
+    else out.push(p);
   }
   return out;
 }
 
 function main() {
-  const entries = parseList(readList());
+  let entries;
+  try {
+    entries = parseList(readList());
+  } catch (error) {
+    console.error(error.message);
+    return 2;
+  }
   if (!entries.length) {
     const message = 'No names list was given (--list, MW_NAMES_FILE or MW_NAMES), so other firms’ names were not checked.';
     if (flag('if-present')) {
@@ -128,16 +161,20 @@ function main() {
     return 2;
   }
   for (const file of walk(dist)) {
+    const text = readText(file);
+    if (text === null) continue;
     scanned += 1;
-    for (const n of matches(entries, readFileSync(file, 'utf8'))) hits.push(`${path.relative(root, file)}: list entry ${n}`);
+    for (const n of matches(entries, text)) hits.push(`${path.relative(root, file)}: list entry ${n}`);
   }
   if (flag('repo')) {
-    const tracked = execFileSync('git', ['ls-files', '-z'], { cwd: root, encoding: 'utf8' }).split('\0').filter((f) => f && TEXT.test(f));
+    const tracked = execFileSync('git', ['ls-files', '-z'], { cwd: root, encoding: 'utf8' }).split('\0').filter(Boolean);
     for (const file of tracked) {
       const full = path.join(root, file);
-      if (!existsSync(full) || file === 'package-lock.json') continue;
+      if (!existsSync(full) || statSync(full).isDirectory()) continue;
+      const text = readText(full);
+      if (text === null) continue;
       scanned += 1;
-      for (const n of matches(entries, readFileSync(full, 'utf8'))) hits.push(`${file} (tracked): list entry ${n}`);
+      for (const n of matches(entries, text)) hits.push(`${file} (tracked): list entry ${n}`);
     }
   }
 
