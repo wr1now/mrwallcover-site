@@ -98,3 +98,11 @@ These are fully visited local-page transfer totals, including decoded below-fold
 | `/services/timorous-beasties-installer/` | 1440 | 185 KiB | 217 KiB |
 
 The current branch preserves the conditional phone reveal from main. PR #63 removes it from the footer and changes Contact navigation; reconcile those placements when integrating that sibling PR. Future calculator, fire-reference and sourcing pages must inherit the standard when they are published.
+
+## Fire reference release — 17 October 2026
+
+The independent fire-reference branch inherits this visual standard and shared components. `/wallpapering/` is a small front door to existing published guides. `/advice/wallcovering-fire-ratings-uk/` uses the common footer/actions, its neutral typographic share card and a reusable schematic showing how substrate, fixing/preparation and product must match the evidence. An unrelated project photograph would not substantiate product ratings, so none is added beside the performance claims. The schematic explicitly describes checks, not an approved build-up.
+
+Both routes were inspected at 390px and 1440px, with automated overflow/interaction checks at 360, 390, 768, 1024, 1280 and 1440px. Classification text stays at least 14px. Essential table rows, caveats and source links remain in the initial HTML. Keyboard menu/Escape, decoder success/error paths and no-JavaScript content are checked. The header/footer retain the foundation's behaviour; this branch adds the Wallpapering destination and fire-reference links.
+
+Evidence: [release verification](../research/fire-ratings/release-review.md), including representative screenshots and the dependency boundary. The draft calculator and adhesive dataset are not included. No deployment or professional fire-safety approval is claimed.

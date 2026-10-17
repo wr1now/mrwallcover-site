@@ -106,6 +106,13 @@ export function computeLastmod(root) {
     set(`/advice/${fm.slug}/`, fm.updated);
     guideDates.push(fm.updated);
   }
+  // The fire-ratings reference: its own `updated` date (src/content/fire-ratings/page.json), set when the
+  // visible guidance changes. Data rechecks that change nothing on the page do not move it.
+  const fire = JSON.parse(readFileSync(rel('src/content/fire-ratings/page.json'), 'utf8'));
+  if (ISO.test(fire.updated ?? '')) {
+    set(`/advice/${fire.slug}/`, fire.updated);
+    guideDates.push(fire.updated);
+  }
   // Editorial pages.
   for (const name of readdirSync(rel('src/content/pages')).filter((n) => n.endsWith('.md'))) {
     const file = `src/content/pages/${name}`;
@@ -142,6 +149,7 @@ export function computeLastmod(root) {
     '/for-ai/': ['src/pages/for-ai.astro', 'src/data/facts.json', 'src/data/buyer-answers.json', 'src/lib/ai-layer-data.ts'],
     '/wallcovering-installation-ai-crawler/': ['src/pages/wallcovering-installation-ai-crawler.astro', 'src/lib/ai-crawler.ts', 'src/lib/ai-decision-guide.ts'],
     '/advice/': ['src/pages/advice/index.astro'],
+    '/wallpapering/': ['src/pages/wallpapering/index.astro'],
     '/advice/quantities/': ['src/pages/advice/quantities.astro', 'src/lib/quantity.ts'],
     '/areas/': ['src/pages/areas/index.astro', 'src/content/areas.json'],
     '/materials/': ['src/pages/materials/index.astro', 'src/content/materials.json', 'src/content/makers-installed.json'],

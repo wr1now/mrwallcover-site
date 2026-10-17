@@ -466,7 +466,8 @@ test('every media file the built pages point to exists', async () => {
   const missing = new Set<string>();
   for (const file of files) {
     const html = await readFile(file, 'utf8');
-    for (const match of html.matchAll(/\/media\/[^"'\s,)?#]+/g)) {
+    // A foreign source document's /media/ path is not a local asset.
+    for (const match of html.matchAll(/(?:(?<![\w.-])|(?<=https:\/\/www\.mrwallcover\.com))\/media\/[^"'\s,)?#]+/g)) {
       const asset = path.join('dist', match[0]);
       try {
         await stat(asset);

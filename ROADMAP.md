@@ -25,3 +25,12 @@
 - Obtain additional cleared original hotel photography before expanding official press imagery.
 - Publish verified insurance and procurement credentials only after current documents are supplied.
 - Approve the public GitHub release and domain destination separately; private Sites publication is not public search indexing.
+
+## Independent fire-reference release — 17 October 2026
+
+- [x] Extract reviewed #64 content onto the shared design foundation (#66), without the uncalibrated calculator.
+- [x] Preserve the existing public quantity guide; add a small Wallpapering hub and fire menu link.
+- [x] Record remaining product-specific evidence gaps and unresolved classifications beside the affected rows.
+- [x] Local browser, source/build, typography/contrast, phone, guide and no-loss checks pass.
+- [ ] Complete hosted checks, review and merge #66 followed by the independent fire release.
+- [ ] Verify production HTTP/canonical/sitemap after authorised deployment; indexing remains unconfirmed.

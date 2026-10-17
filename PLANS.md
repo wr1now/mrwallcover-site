@@ -104,3 +104,7 @@ Follow-up release gate: 70 source + 50 built-output + 2 phone + 4 guide tests pa
 - Hotel homepage photographs and all existing sections retained. Browser capture was briefly interrupted by a tool timeout, then recovered in a fresh normal-view tab. The live homepage screenshot `mrwallcover-live-home.jpg` and AI screenshot `mrwallcover-live-ai-crawler.jpg` were saved in the Codex visualization folder; the public homepage was left open.
 - Known limits: Chrome prevented automated attachment selection because extension file-URL access is disabled; validator tests passed. No CAPTCHA completion or delivery to the business inbox was attempted.
 - Temporary production preview server stopped. The bounded public release is complete; email delivery and native picker testing remain explicitly unverified checks, not false passes.
+
+## Independent fire-reference release — 17 October 2026
+
+Prepare `codex/fire-ratings-release` from PR #66 (`28bd059`), extracting the reviewed fire content from #64 (`6960fc2`). The draft calculator (#62) remains held for real-job calibration. The release contains a small Wallpapering hub, source-backed reference, original build-up schematic, shared actions/footer and the hotel wording corrections. Preserve the #64/#65 branches; reconcile their overlapping fire files after this release. No merge or deployment is authorised by this preparation. Evidence and remaining gates: `docs/research/fire-ratings/release-review.md`.

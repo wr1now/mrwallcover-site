@@ -1,0 +1,50 @@
+---
+import Base from '../../layouts/Base.astro';
+import Action from '../../components/Action.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import GuideCard from '../../components/GuideCard.astro';
+import WallpaperingNav from '../../components/WallpaperingNav.astro';
+import FireEvidenceDiagram from '../../components/FireEvidenceDiagram.astro';
+import { publishedGuides } from '../../lib/guides';
+import { breadcrumbNode } from '../../lib/schema';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallpapering', href: '/wallpapering/' }];
+const hangingSlugs = ['wall-preparation', 'set-out-and-pattern-matching', 'papered-ceilings-and-staircases', 'hand-painted-murals-set-out', 'grasscloth-seams-and-variation', 'wallcovering-problems-and-aftercare'];
+const hanging = hangingSlugs.map((slug) => {
+  const guide = publishedGuides.find((item) => item.frontmatter.slug === slug);
+  if (!guide) throw new Error(`Wallpapering links an unpublished guide: ${slug}`);
+  return guide.frontmatter;
+});
+---
+<Base title="Wallpapering: preparation and specification | Mr Wallcover" description="Plan the wall, quantity and installation: published preparation and hanging guides, with a source-backed reference to wallcovering fire ratings." path="/wallpapering/" extraSchema={[breadcrumbNode(crumbs)]}>
+  <div class="container-page pb-20">
+    <header class="page-head guide-intro">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Wallpapering</p>
+      <h1>Plan the wall. <br /><em>Then the finish.</em></h1>
+      <p class="lede mt-5">Start with the product, the wall and the room it is going into. These guides cover quantities, preparation and hanging; the wallcovering maker’s current instructions come first.</p>
+    </header>
+    <WallpaperingNav current="hub" />
+    <div class="guide-tools">
+      <a href="/advice/wall-preparation/"><span class="eyebrow">Prepare</span><strong>Understand the wall</strong><span>Substrate, existing finishes and preparation →</span></a>
+      <a href="/advice/quantities/"><span class="eyebrow">Plan</span><strong>Check a simple quantity</strong><span>The existing plain and straight-match guide →</span></a>
+      <a href="/advice/designer-specification-checklist/"><span class="eyebrow">Specify</span><strong>Prepare the brief</strong><span>Product references, drawings and responsibilities →</span></a>
+    </div>
+    <section class="hub-section" aria-labelledby="fire-ratings">
+      <p class="eyebrow">Technical reference</p>
+      <h2 id="fire-ratings">Fire ratings</h2>
+      <p>A class such as B-s1,d0 applies to the product in the documented build-up, within its permitted variations. Check the exact wallcovering, substrate and adhesive together. The separate reference explains the classes, the four UK nations and the evidence available for named products.</p>
+      <Action href="/advice/wallcovering-fire-ratings-uk/">Fire ratings &amp; standards</Action>
+      <FireEvidenceDiagram />
+    </section>
+    <section class="guide-library hub-section" id="hanging-guides" aria-labelledby="hanging-guides-heading">
+      <h2 id="hanging-guides-heading">Preparation and hanging guides</h2>
+      <div class="guide-grid">{hanging.map((guide) => <GuideCard guide={guide} />)}</div>
+    </section>
+    <section class="guide-next">
+      <p class="eyebrow">Your project</p><h2>Start with the product reference.</h2>
+      <p>Send the room, the material you are considering and any drawings or photographs you already have.</p>
+      <Action href="/contact/?intent=advice">Discuss your wallcovering</Action>
+    </section>
+  </div>
+</Base>
+<style>.hub-section { margin-top:4rem; } .hub-section > p:not(.eyebrow) { max-width:65ch; line-height:1.8; margin:1rem 0 1.5rem; }</style>

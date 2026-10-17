@@ -1,3 +1,5 @@
+import fireRatingsPage from '../content/fire-ratings/page.json';
+
 export interface GuideFaq {
   q: string;
   a: string;
@@ -88,5 +90,10 @@ export const quantityCalculatorCard: GuideCardData = {
   order: 4,
 };
 
+export const fireRatingsCard: GuideCardData = {
+  slug: fireRatingsPage.slug, shortTitle: fireRatingsPage.shortTitle,
+  description: fireRatingsPage.cardDescription, category: 'planning', order: 14,
+};
+
 /** Everything the advice hub lists, in the agreed order. */
-export const hubCards: GuideCardData[] = [...guides.map((guide) => guide.frontmatter), quantityCalculatorCard].sort((a, b) => a.order - b.order);
+export const hubCards: GuideCardData[] = [...guides.map((guide) => guide.frontmatter), quantityCalculatorCard, fireRatingsCard].sort((a, b) => a.order - b.order);
