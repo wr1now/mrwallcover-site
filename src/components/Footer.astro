@@ -1,7 +1,6 @@
 ---
 import '../styles/footer.css';
 import facts from '../data/facts.json';
-import PhoneReveal from './PhoneReveal.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
 import BookCallLink from './BookCallLink.astro';
 import Action from './Action.astro';
@@ -30,6 +29,7 @@ const installationSlugs = new Set([
 const installation = servicePages.filter((page) => installationSlugs.has(page.href.split('/')[2]));
 const specialistWork = servicePages.filter((page) => !installationSlugs.has(page.href.split('/')[2]));
 const explore = [
+  { href: '/get-in-touch/', label: 'Contact' },
   { href: '/projects/', label: 'Projects' },
   { href: '/projects/#hotels', label: 'Hotels' },
   { href: '/services/', label: 'Services' },
@@ -80,7 +80,6 @@ const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) =
           {facts.profiles.map((profile) => (
             <li><a href={profile.url}><Icon name="instagram" /><span>{profile.handle ?? profile.name}</span></a></li>
           ))}
-          {phoneAvailable && <li class="footer-phone"><Icon name="phone" /><PhoneReveal class="footer-reveal" /></li>}
         </ul>
       </section>
     </div>

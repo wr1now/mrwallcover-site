@@ -142,6 +142,7 @@ export function computeLastmod(root) {
     '/accessibility/': ['src/pages/accessibility.astro'],
     '/aftercare/': ['src/pages/aftercare.astro', 'src/content/aftercare.json'],
     '/details/': ['src/pages/details.astro'],
+    '/get-in-touch/': ['src/pages/get-in-touch.astro', 'src/content/get-in-touch.json'],
     '/contact/': ['src/pages/contact.astro', 'src/content/contact.json'],
     '/faq/': ['src/pages/faq.astro', 'src/content/faq.json'],
     '/privacy/': ['src/pages/privacy.astro', 'src/content/privacy.json'],

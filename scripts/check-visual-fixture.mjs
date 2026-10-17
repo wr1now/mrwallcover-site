@@ -50,8 +50,9 @@ try {
         assert.equal(await page.$eval('[data-dock]',(dock)=>getComputedStyle(dock).display),'none','phone-enabled dock hides for form focus');
       }
     }
-    await page.click('[data-footer] [data-phone-reveal]');
-    assert.ok(await page.$('[data-footer] a[href^="tel:"]'),'phone reveal becomes a dial link without placing a call');
+    await page.goto(server.origin+'/get-in-touch/',{waitUntil:'networkidle0'});
+    await page.click('main [data-phone-reveal]');
+    assert.ok(await page.$('main a[href^="tel:"]'),'phone reveal becomes a dial link without placing a call');
   } finally { await browser.close(); await server.close(); }
   console.log('New route fixture: shared footer/actions inherited without local CSS; native button and disabled-link semantics pass. Fixture removed from source and public output.');
   console.log('Phone-enabled browser fixture: six widths, WhatsApp href decoding, field-focus dock hiding and phone reveal pass; no call or message sent.');
