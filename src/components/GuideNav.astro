@@ -1,0 +1,17 @@
+---
+/** The Wallcovering Guide's stage bar, at the top of the Guide's own pages: each stage opens its row on /advice/. */
+import { guideStages, howWeCheck } from '../lib/guide-stages';
+
+interface Props {
+  current?: (typeof guideStages)[number]['id'] | 'check';
+}
+const { current } = Astro.props;
+---
+
+<nav aria-label="Wallcovering Guide">
+  <ul class="guide-subnav">
+    <li><a href="/advice/">Guide</a></li>
+    {guideStages.map((stage) => <li><a href={`/advice/#${stage.id}`} aria-current={stage.id === current ? 'true' : undefined}>{stage.label}</a></li>)}
+    <li><a href={howWeCheck.href} aria-current={current === 'check' ? 'page' : undefined}>{howWeCheck.label}</a></li>
+  </ul>
+</nav>
