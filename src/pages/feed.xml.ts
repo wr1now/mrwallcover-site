@@ -13,6 +13,7 @@ import { SITE_URL } from '../config';
 import facts from '../data/facts.json';
 import { caseStudies, projectHref } from '../lib/content';
 import { publishedGuides, guideHref } from '../lib/guides';
+import firePage from '../content/fire-ratings/page.json';
 
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 const rfc3339 = (iso: string) => `${iso}T00:00:00Z`;
@@ -38,6 +39,15 @@ export function feedEntries(): FeedEntry[] {
       updated: guide.frontmatter.updated,
       category: 'guide' as const,
     })),
+    // The fire-ratings reference is an .astro page with its own dated page.json, not a Markdown guide.
+    {
+      title: firePage.title,
+      url: `${SITE_URL}/advice/${firePage.slug}/`,
+      summary: firePage.description,
+      published: firePage.published,
+      updated: firePage.updated,
+      category: 'guide' as const,
+    },
     ...caseStudies.filter((study) => !study.frontmatter.draft).map((study) => ({
       title: study.frontmatter.title,
       url: `${SITE_URL}${projectHref(study.frontmatter.slug)}`,

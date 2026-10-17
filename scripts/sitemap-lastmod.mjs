@@ -106,6 +106,13 @@ export function computeLastmod(root) {
     set(`/advice/${fm.slug}/`, fm.updated);
     guideDates.push(fm.updated);
   }
+  // The fire-ratings reference: its own `updated` date (src/content/fire-ratings/page.json), set when the
+  // visible guidance changes. Data rechecks that change nothing on the page do not move it.
+  const fire = JSON.parse(readFileSync(rel('src/content/fire-ratings/page.json'), 'utf8'));
+  if (ISO.test(fire.updated ?? '')) {
+    set(`/advice/${fire.slug}/`, fire.updated);
+    guideDates.push(fire.updated);
+  }
   // Editorial pages.
   for (const name of readdirSync(rel('src/content/pages')).filter((n) => n.endsWith('.md'))) {
     const file = `src/content/pages/${name}`;

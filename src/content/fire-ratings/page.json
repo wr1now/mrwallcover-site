@@ -1,0 +1,84 @@
+{
+  "_note": "Editorial data for /advice/wallcovering-fire-ratings-uk/. Product claims and source details are NOT here: they live in src/data/fire-ratings/ (one source of truth). Dates are the edit that published and last changed the page, never the build time; update `updated` whenever the visible guidance changes, and `scope.sourcesChecked` when the sources are rechecked.",
+  "slug": "wallcovering-fire-ratings-uk",
+  "title": "Wallcovering Fire Ratings: British Standards and Commercial Specification",
+  "shortTitle": "Fire ratings & standards",
+  "metaTitle": "Wallcovering fire ratings: UK standards",
+  "description": "How reaction-to-fire classes such as B-s1,d0 are read, which standards and guidance apply in England, Wales, Scotland and Northern Ireland, and what makers' documents show for specific commercial wallcoverings.",
+  "cardDescription": "What B-s1,d0 and Class 0 mean, England's Table 6.1 and the other UK nations, and what named makers' documents show for specific commercial wallcoverings.",
+  "metaDescription": "Wallcovering fire ratings explained: Euroclass decoder, BS EN 13501-1, Approved Document B Table 6.1, Class 0 history, and product evidence from named makers.",
+  "published": "2026-10-15",
+  "updated": "2026-10-17",
+  "scope": {
+    "jurisdiction": "England first (Approved Document B), with Wales, Scotland and Northern Ireland set out separately. It is not legal advice, and it does not cover any country outside the UK.",
+    "sourcesChecked": "2026-10-15",
+    "review": "Makers and regulators can change their documents at any time. Each product row shows the date we last read its documents; ask the maker for its current declaration before relying on a row.",
+    "notice": "General specification guidance, not project-specific fire-safety approval. It has not been reviewed by a chartered fire engineer. Who confirms the class a wall or ceiling needs, and whether a proposed build-up achieves it, depends on the job: for building work, the designer or fire engineer with the building-control body. For redecorating a building in use that is not building work, the responsible person under fire-safety law confirms it, often with a fire risk assessor. That law does not apply inside a private home, or, in Scotland and Northern Ireland, to the shared parts of a block of flats."
+  },
+  "decoderIntro": "A European reaction-to-fire class has up to three parts: the main class (A1 to F), a smoke subclass (s1 to s3) and a flaming droplets subclass (d0 to d2). Read the notation exactly as the document prints it. For classes A2, B, C and D, a smoke or droplet subclass that is not printed is unknown, not assumed. Classes A1 and F carry no subclasses; class E carries no smoke subclass and is followed by d2 only if the filter paper ignited.",
+  "sourcesIntro": "Every document cited on this page, grouped by where it comes from. For standards we link the publisher's catalogue record, which confirms the title and edition; we have not reproduced paid standards. For manufacturers we link their own published documents rather than copying them. The checking date is when we last opened each source.",
+  "cta": "Send the product references, the rooms or areas they are for, and the fire requirement each area carries, if you know it. We will tell you which documents the maker publishes for that product, what build-up they describe, and the questions to put to the maker and the project's fire specialist before anything is ordered. We do not confirm whether a product meets your requirement.",
+  "checklists": [
+    {
+      "title": "Before ordering",
+      "intro": "Collect these for each wallcovering and each area it is going into.",
+      "items": [
+        "The exact product: maker, collection, product reference, colourway or design, and whether it is a stock or digitally printed version.",
+        "The construction as supplied: face material, backing, weight and any finish or protective coating.",
+        "The requirement for each area: the class set for it, and whether the area is a room, a small room or a circulation space. For building work, the project's fire strategy, designer or building-control body sets the class. For a building in use where the job is not building work, the responsible person sets it, through the fire risk assessment.",
+        "The evidence: the current declaration of performance and, where available, the classification report for that product, with their references and dates.",
+        "The tested build-up: the substrate, adhesive and any primer or lining named in the classification document, and the field of application it allows.",
+        "The proposed build-up on site: the actual wall, any existing finishes, the lining, primer and adhesive to be used, and any coating to be added.",
+        "Any difference between the two, with the maker's written position and any test or assessment report relied on. Record who accepted it: for building work, the designer, fire engineer or building-control body; where the job is not building work, the responsible person.",
+        "The maker's installation instructions for that product, current at the time of ordering."
+      ]
+    },
+    {
+      "title": "At handover",
+      "intro": "Keep a record of what was actually installed, so it can be checked later.",
+      "items": [
+        "A room-by-room or area-by-area schedule of the products installed: reference, colourway and batch number.",
+        "Copies of the declaration of performance, classification evidence and installation instructions relied on, with their dates.",
+        "The adhesive, primer and lining actually used, with batch numbers where practical, and the substrate each area was hung on.",
+        "Any accepted variation from the documented build-up, with the maker's written position, any test or assessment report relied on, and who accepted it.",
+        "Photographs of the prepared substrate before hanging, where the project calls for them.",
+        "Care and cleaning instructions, including any limit on later coatings or overpainting that would change the build-up.",
+        "Spare material from the same batch, labelled, for future repairs."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does B-s1,d0 mean on a wallcovering?",
+      "a": "It is a European reaction-to-fire classification under BS EN 13501-1: class B for the main fire behaviour, s1 for the lowest smoke production category and d0 for no flaming droplets or particles in the test. It applies to the product as tested, in the build-up the classification document describes."
+    },
+    {
+      "q": "Is B-s2,d0 good enough for a hotel corridor?",
+      "a": "That depends on the requirement set for that corridor. In England, Approved Document B Volume 2 (buildings other than dwellings) gives a minimum of B-s3,d2 for circulation spaces in its Table 6.1, which B-s2,d0 meets, but a project's fire strategy can set a higher requirement, and the product must be installed in the build-up its classification covers. The designer, fire engineer or building-control body decides, or, for a building in use where the job is not building work, the responsible person through the fire risk assessment."
+    },
+    {
+      "q": "A data sheet says only 'Euroclass B'. Is that the same as B-s1,d0?",
+      "a": "No. 'Euroclass B' without smoke and droplet subclasses tells you the main class only. Treat the subclasses as unknown and ask the maker for the declaration of performance or classification report, which will state them."
+    },
+    {
+      "q": "Is Class 0 the same as a Euroclass?",
+      "a": "No. Class 0 is an old British national classification: a material of limited combustibility throughout, or a BS 476 Part 7 Class 1 material that also meets BS 476 Part 6 fire propagation limits. It was defined in earlier editions of England's Approved Document B and is still printed in the Welsh and Northern Irish guidance. It is not the result of any single test, and there is no automatic conversion between Class 0 and a European class. England's guidance stopped offering national reaction-to-fire classes as an alternative from 2 March 2025, subject to transitional arrangements."
+    },
+    {
+      "q": "Does a fire-rated wallcovering make a wall fire resistant?",
+      "a": "No. A wallcovering's class describes its reaction to fire: how it contributes to the early growth of a fire. Fire resistance, expressed in minutes, belongs to walls, floors and doors as building elements, and a wallcovering does not provide it."
+    },
+    {
+      "q": "Can a classified wallcovering be hung over old wallpaper or lining paper?",
+      "a": "Only if the maker's documents cover it, or a test or assessment report covers that build-up. The designer, fire engineer or building-control body then has to accept it, or, for a building in use where the job is not building work, the responsible person. Hanging over an existing wallcovering adds an untested layer, and makers' instructions generally ask for old wallcoverings to be removed. Lining paper, a different adhesive or a later coating are also changes to the build-up."
+    },
+    {
+      "q": "Does Mr Wallcover certify the fire rating of what it installs?",
+      "a": "No. Classification comes from testing and classification of the product in a stated build-up, and the manufacturer declares the performance. We install the specified product to the maker's instructions and record what was installed. The designer, fire engineer or building-control body accepts the evidence, or, for a building in use where the job is not building work, the responsible person through the fire risk assessment."
+    },
+    {
+      "q": "Do these rules apply in Scotland, Wales and Northern Ireland?",
+      "a": "Wales applies the Building Regulations 2010 as amended for Wales, with its own Approved Document B. Scotland and Northern Ireland have their own building regulations, with the Technical Handbooks and Technical Booklet E as guidance. They use the same European classes, but their tables, terms and amendment dates differ, so check the guidance for where the building is."
+    }
+  ]
+}

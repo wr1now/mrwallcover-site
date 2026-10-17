@@ -104,3 +104,32 @@ Follow-up release gate: 70 source + 50 built-output + 2 phone + 4 guide tests pa
 - Hotel homepage photographs and all existing sections retained. Browser capture was briefly interrupted by a tool timeout, then recovered in a fresh normal-view tab. The live homepage screenshot `mrwallcover-live-home.jpg` and AI screenshot `mrwallcover-live-ai-crawler.jpg` were saved in the Codex visualization folder; the public homepage was left open.
 - Known limits: Chrome prevented automated attachment selection because extension file-URL access is disabled; validator tests passed. No CAPTCHA completion or delivery to the business inbox was attempted.
 - Temporary production preview server stopped. The bounded public release is complete; email delivery and native picker testing remain explicitly unverified checks, not false passes.
+
+## Fire ratings & British Standards reference — 15 October 2026
+
+Owner: the dedicated session "MrWallcover — Fire Ratings & British Standards". Branch `feat/wallcovering-fire-ratings-uk`, stacked on draft PR #62 (`claude/wallpaper-calculator`).
+
+**Objective.** A source-backed public reference page on wallcovering reaction-to-fire classes, British and UK-nation guidance and product evidence, with a short summary on the Wallpapering hub and a menu link.
+
+**Delivered (implemented locally; see the PR for push, merge and deployment state).**
+
+- Page `/advice/wallcovering-fire-ratings-uk/` (`src/pages/advice/wallcovering-fire-ratings-uk.astro`, prose in `src/content/fire-ratings/`). Decoder, standards, England's Table 6.1 with its note and paragraph 6.4, the 2025 and 2029 changes kept apart, Wales, Scotland and Northern Ireland, occupied buildings, 26 product rows from Muraspec, Tektura, Vescom, Arte International and Newmor, build-up questions, who does what, two checklists, FAQ (FAQPage) and a grouped source library.
+- One source of truth in `src/data/fire-ratings/` (sources, standards, regulations, products), validated at build time by `src/lib/fire-ratings.ts`.
+- Menu (owner, 15 Oct 2026): "Fire ratings & standards" in the Wallpapering sub-menu, the Guide hub card and the footer. No header link; the tenth header slot stays for Inspiration. The home page carries no fire content.
+- Wallpapering hub: a short "Fire ratings" summary linking to the page.
+- Hotel fire guide: "the manufacturer certifies" corrected to "classified by testing of a stated build-up and declared by the manufacturer; never certified by the installer", in the guide, the placed buyer answers (f-b5, f-c28), the facts addition and the hotel service paragraph. Links to the new page.
+- Discovery: sitemap with the page's own `updated` date, `llms.txt`, site search, Markdown twin, Article, BreadcrumbList and FAQPage.
+- Research in `docs/research/fire-ratings/` (README, UK regulations, standards, five manufacturer notes, claims register, conflicts and gaps, verification report).
+- Tests: `tests/fire-ratings.test.ts` (in `npm run check`), `tests/fire-ratings-build.test.ts` and `tests/hotel-fire-guide.test.ts` (in `npm run check:dist`). On-demand source check `npm run check:fire-sources`; no scheduled job.
+
+**Evidence gaps left open (published as gaps, not hidden).** No Tektura declaration of performance or classification report is published; Colour Choice+Protect's linked report describes a different vinyl; Arte Collines and other textiles have declarations and reports that disagree; several reports exclude paper-faced plasterboard; Muraspec has overlapping declarations with different smoke subclasses. Questions for each maker are in `docs/research/fire-ratings/conflicts-and-gaps.md`.
+
+**Owner's decisions (17 October 2026, relayed by the coordinating session).** Keep the corrected "who certifies" lines; the installer line now reads "installs to the wallcovering maker's instructions and the project's fire specification" (no compliance promise); keep the f-b5 "Class A" explanation; the page uses its own typographic share card (no client named); Dorin owns the review, run quarterly and at stated expiry or effective dates (2 September 2029 included), recorded in the research README and kept off the public page. Auto-fix is on for #64.
+
+**Publication state.** PR #64 is open on `wr1now/mrwallcover-site`, stacked on #62; #65 (information shop) is stacked on #64. CI's no-loss failure was fixed in 851cf1e.
+
+**Remaining publication steps (not done).**
+
+1. Merge #62 first, then #64, by the repository's normal route (merging stays with the owner). Deployment follows the merge to `main`.
+2. After deployment: check the live URL returns 200, is in the live sitemap and has no `noindex`; then, if the owner wants, request indexing in Search Console. Not crawled, submitted or indexed yet.
+3. Residential and wider UK coverage, then other countries: see the coverage audit of 17 October 2026.

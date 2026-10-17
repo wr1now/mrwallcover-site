@@ -25,3 +25,12 @@
 - Obtain additional cleared original hotel photography before expanding official press imagery.
 - Publish verified insurance and procurement credentials only after current documents are supplied.
 - Approve the public GitHub release and domain destination separately; private Sites publication is not public search indexing.
+
+## Fire ratings & British Standards — 15 October 2026
+- [x] Research UK regulations, standards and five makers' fire documents; independent AI review (`docs/research/fire-ratings/`).
+- [x] Build `/advice/wallcovering-fire-ratings-uk/` from one dataset, with tests, hub summary, Wallpapering sub-menu, Guide and footer links.
+- [x] Correct the hotel fire guide's "manufacturer certifies" wording.
+- [ ] Owner review of wording and product rows.
+- [ ] Push, PR stacked on #62, CI, merge after #62, deploy.
+- [ ] Live checks and, if wanted, a Search Console indexing request.
+- [ ] Ask makers the open questions in `docs/research/fire-ratings/conflicts-and-gaps.md`; set review owner and quarterly cadence.
