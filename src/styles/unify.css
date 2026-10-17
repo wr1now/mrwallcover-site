@@ -26,11 +26,14 @@ main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
 .site-header .nav-link, .site-header .menu-toggle, .site-header .header-mobile .nav-link { font-size:var(--text-nav); }
 
 /* The mobile dock: 14px like the header links. */
-.dock a, .dock .dock-phone { font-size:var(--text-meta); }
+.dock a { font-size:var(--text-meta); }
 /* With the booking cell the dock shares its width by content: every cell is at least as wide as its longest word, so "Book a 20-minute call" sits in full on three 14px lines. */
 .dock:has(.dock-book) { display:flex; }
 .dock:has(.dock-book) > * { flex:1 1 0; min-width:min-content; }
 .dock a.dock-book { text-align:center; padding-inline:4px; }
+/* These rules are unlayered, so they beat navigation.css's layered hide rules. Repeat the hide here: the dock goes while the
+   menu is open and while a text field has focus (an on-screen keyboard is likely up), booking cell or not (owner, 17 Oct 2026). */
+body.nav-open .dock, body.field-focus .dock { display:none; }
 
 /* ---- 4. One button system ----
  * Primary: ink fill (ivory fill on a photograph). Secondary: ink line. Ghost: ivory line on a photograph.
@@ -197,11 +200,12 @@ body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-f
 /* The case-study "At a glance" box: its heading is an eyebrow label, not a section title (src/components/CaseStudyGlance.astro). */
 main .glance-box h2 { font-family:var(--font-sans, inherit); font-size:var(--text-eyebrow); font-weight:500; line-height:1.4; letter-spacing:var(--tracking-eyebrow); text-transform:uppercase; color:var(--color-ink); }
 
-/* Header with nine menu links (Wallpapering and Calculator added 14 Oct 2026). Width-tested with SITE_PHONE set and
-   links at the 14px type floor: from 1280px the links, "Book a 20-minute call", WhatsApp and the action fit on one line
-   with 12px gaps; below 1280px the bar shows the menu button (navigation.css). When Inspiration makes ten links,
-   the owner's choice is to show "Book a 20-minute call" in the bar only from 1440px (it stays in the footer and the
-   dock). The action never wraps. */
+/* Header with nine menu links (Wallpapering and Calculator added 14 Oct 2026) and "Contact" (15 Oct 2026). Width-tested
+   with SITE_PHONE set and links at the 14px type floor: from 1280px the links, "Contact", WhatsApp and the action fit
+   on one line with 12px gaps; below 1280px the bar shows the menu button (navigation.css). The bar is capped at the
+   content width, so its row is 1200px at 1280 and at 1440: "Book a 20-minute call" left the bar to make room for
+   "Contact" and, later, Inspiration (owner, 15 Oct 2026; it stays in the dock, the footer and the contact pages).
+   The action never wraps. */
 @media (min-width:1280px) {
   .site-header .primary-nav { gap:12px; }
   .site-header .header-action { padding-inline:.9rem; white-space:nowrap; }

@@ -1,0 +1,39 @@
+{
+  "_note": "Copy for /get-in-touch/, the page the header's \"Contact\" link opens (owner, 15 Oct 2026). Every way to reach the practice directly; the quotation form stays on /contact/. Lines naming the phone, WhatsApp or the call are printed only when SITE_PHONE or BOOKING_URL is set for the build.",
+  "title": "Contact Mr Wallcover | Wallcovering Installer London",
+  "description": "Contact Mr Wallcover, the London wallcovering installer founded by Dorin Burcus. Email info@mrwallcover.com, or start a project with the enquiry form.",
+  "eyebrow": "Contact",
+  "heading": "Get in touch.",
+  "lede": "Write, call or send a message, whichever suits you. Dorin Burcus reads the email and answers the phone himself.",
+  "ledeNoPhone": "Email is the simplest way in. It is read by Dorin Burcus himself.",
+  "waysHeading": "Ways to reach us",
+  "email": {
+    "heading": "Email",
+    "text": "For questions, photographs, drawings and specifications. Attachments are welcome."
+  },
+  "phone": {
+    "heading": "Phone",
+    "text": "Answered by Dorin Burcus himself. The number is shown when you ask for it, which keeps it out of automated lists."
+  },
+  "whatsapp": {
+    "heading": "WhatsApp",
+    "text": "Send a message, with photographs of the walls or the paper label if you have them."
+  },
+  "call": {
+    "heading": "A 20-minute call",
+    "text": "Choose a time in the calendar to talk the project through."
+  },
+  "instagram": {
+    "heading": "Instagram",
+    "text": "Recent installations and work in progress."
+  },
+  "project": {
+    "heading": "Starting a project?",
+    "text": "For a quotation, the enquiry form asks for the few things that shape the price: the building, the rooms, the material and the timing. Photographs and drawings help, and are optional.",
+    "button": "Start your project"
+  },
+  "areas": {
+    "heading": "Where we work",
+    "all": "All areas"
+  }
+}

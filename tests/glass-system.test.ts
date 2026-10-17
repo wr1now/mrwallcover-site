@@ -118,6 +118,42 @@ test('nothing from the art-direction preview ships, and the phone hero keeps its
   assert.match(everything, /padding-bottom:var\(--dock-clearance\)/, 'body clearance');
 });
 
+/** The CSS outside every @layer block. An unlayered rule beats a layered one whatever its specificity. */
+function unlayered(css: string): string {
+  let out = '';
+  let i = 0;
+  while (i < css.length) {
+    const at = css.indexOf('@layer', i);
+    if (at < 0) return out + css.slice(i);
+    out += css.slice(i, at);
+    const open = css.indexOf('{', at);
+    const semi = css.indexOf(';', at);
+    if (open < 0 || (semi >= 0 && semi < open)) { i = semi + 1; continue; } // "@layer a, b;" names layers, no rules
+    let depth = 0;
+    let j = open;
+    for (; j < css.length; j++) {
+      if (css[j] === '{') depth++;
+      else if (css[j] === '}' && --depth === 0) break;
+    }
+    i = j + 1;
+  }
+  return out;
+}
+
+test('the dock hides while the menu is open and while a text field has focus, even when an unlayered rule shows it', async () => {
+  // unify.css is unlayered: `.dock:has(.dock-book) { display:flex }` once beat navigation.css's layered hide rules, so with
+  // the booking cell the dock stayed over the on-screen keyboard (owner, 17 Oct 2026). Every unlayered rule that shows the
+  // dock must be followed by unlayered hide rules for both states.
+  const rules = [...unlayered(await builtCss()).matchAll(/([^{}]+)\{([^{}]*)\}/g)].map((m, index) => ({ index, selectors: m[1].split(',').map((s) => s.trim()), body: m[2] }));
+  const shows = rules.filter((r) => /(?:^|;)\s*display\s*:\s*(?!none)/.test(r.body) && r.selectors.some((s) => /\.dock(?![\w-])[^\s>+~]*$/.test(s)));
+  assert.ok(shows.length > 0, 'the unlayered booking-cell rule that shows the dock is still in the built CSS');
+  const lastShow = Math.max(...shows.map((r) => r.index));
+  for (const state of ['nav-open', 'field-focus']) {
+    const hide = rules.find((r) => r.index > lastShow && /display\s*:\s*none/.test(r.body) && r.selectors.includes(`body.${state} .dock`));
+    assert.ok(hide, `an unlayered "body.${state} .dock { display:none }" after the last unlayered rule that shows the dock`);
+  }
+});
+
 test('mobile hero keeps the wallpaper in frame: phone object-position set, desktop untouched', async () => {
   const { readFile } = await import('node:fs/promises');
   const css = await readFile(new URL('../src/styles/hero-mobile.css', import.meta.url), 'utf8');

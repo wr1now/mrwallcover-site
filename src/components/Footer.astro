@@ -1,6 +1,5 @@
 ---
 import facts from '../data/facts.json';
-import PhoneReveal from './PhoneReveal.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
 import BookCallLink from './BookCallLink.astro';
 import { areaHref, areas, editorialPages, home, materials, specialismHref, specialisms } from '../lib/content';
@@ -44,6 +43,7 @@ const PUBLIC_EMAIL = facts.email;
         <li><a href="/advice/cost/">Installation cost</a></li>
         <li><a href="/aftercare/">Aftercare</a></li>
         <li><a href="/about/">About</a></li>
+        <li><a href="/get-in-touch/">Contact</a></li>
         <li><a href="/reviews/">Reviews</a></li>
         <li><a href="/faq/">Questions</a></li>
         <li><a href="/areas/">Areas</a></li>
@@ -62,8 +62,7 @@ const PUBLIC_EMAIL = facts.email;
     <div class="md:col-span-4">
       <p class="eyebrow">Contact</p>
       <p class="m-0">{FOUNDER_NAME}, founder</p>
-      <PhoneReveal wrap="m-0 mt-2" />
-      <p class="m-0">
+      <p class="m-0 mt-2">
         <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
       </p>
       <WhatsAppLink wrap="m-0" />

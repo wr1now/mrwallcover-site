@@ -136,6 +136,7 @@ export function computeLastmod(root) {
     '/aftercare/': ['src/pages/aftercare.astro', 'src/content/aftercare.json'],
     '/details/': ['src/pages/details.astro'],
     '/contact/': ['src/pages/contact.astro', 'src/content/contact.json'],
+    '/get-in-touch/': ['src/pages/get-in-touch.astro', 'src/content/get-in-touch.json'],
     '/faq/': ['src/pages/faq.astro', 'src/content/faq.json'],
     '/privacy/': ['src/pages/privacy.astro', 'src/content/privacy.json'],
     '/services/': ['src/pages/services.astro', 'src/content/services.json', 'src/content/specialisms.json'],
