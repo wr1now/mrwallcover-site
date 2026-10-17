@@ -45,12 +45,18 @@ test('every published and utility page has a visual decision and works at mobile
           broken:[...document.images].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.getAttribute('src')),
           icons:[...document.querySelectorAll('.mw-icon')].every(i=>i.getAttribute('aria-hidden')==='true'&&i.getAttribute('focusable')==='false'),
           actions:[...document.querySelectorAll<HTMLElement>('.mw-action')].filter(a=>a.getClientRects().length&&a.getBoundingClientRect().height<43).map(a=>a.textContent?.trim()),
+          questionVisuals:[...document.querySelectorAll<HTMLElement>('.question-heading-row, .faq summary')].every(row=>{
+            const drawing=row.querySelector('[data-question-visual]');
+            const heading=row.querySelector('h2,h3');
+            return drawing&&heading&&drawing.getBoundingClientRect().left>=heading.getBoundingClientRect().right;
+          }),
         }));
         assert.equal(result.overflow,false,`${path} @${width}: horizontal overflow`);
         assert.equal(result.h1,1,`${path}: one main heading`);
         assert.deepEqual(result.broken,[],`${path}: broken image`);
         assert.equal(result.icons,true,`${path}: decorative icon semantics`);
         assert.deepEqual(result.actions,[],`${path} @${width}: action height`);
+        assert.equal(result.questionVisuals,true,`${path} @${width}: relevant drawing remains to the right of each question`);
         assert.deepEqual(errors,[],`${path}: browser exceptions`);
         observations.push({path,width,...result});
         if(output) {

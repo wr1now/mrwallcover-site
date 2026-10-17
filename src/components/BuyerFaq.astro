@@ -6,6 +6,7 @@
  * describes exactly the questions shown here.
  */
 import type { BuyerAnswer } from '../lib/ai-layer-data';
+import QuestionVisual from './QuestionVisual.astro';
 /** eyebrow: optional small label above the heading, in the site's .eyebrow style (the professional pages pass "Questions"). */
 interface Props { items: BuyerAnswer[]; heading?: string; intro?: string; eyebrow?: string }
 const { items, heading = 'Questions buyers ask', intro, eyebrow } = Astro.props;
@@ -17,7 +18,7 @@ const { items, heading = 'Questions buyers ask', intro, eyebrow } = Astro.props;
     {intro && <p>{intro}</p>}
     {items.map((item) => (
       <div class="guide-faq-item" id={item.id}>
-        <h3>{item.question}</h3>
+        <div class="question-heading-row"><h3>{item.question}</h3><QuestionVisual question={item.question} id={item.id} /></div>
         <p>{item.answer}</p>
       </div>
     ))}

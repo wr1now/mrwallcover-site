@@ -6,6 +6,7 @@ import GuideCard from '../../components/GuideCard.astro';
 import TechnicalDiagram from '../../components/TechnicalDiagram.astro';
 import EvidenceFigure from '../../components/EvidenceFigure.astro';
 import Action from '../../components/Action.astro';
+import QuestionVisual from '../../components/QuestionVisual.astro';
 import { guides, guideHref } from '../../lib/guides';
 import { materials, media } from '../../lib/content';
 import { breadcrumbNode, guideArticleNode, guideFaqNode, imageObject } from '../../lib/schema';
@@ -50,7 +51,7 @@ const extraSchema = [breadcrumbNode(crumbs), ...(data.draft ? [] : [article, ...
         {data.diagram && <TechnicalDiagram kind={data.diagram} caption={data.diagramCaption} class="guide-opening-diagram" />}
         {data.evidence && <EvidenceFigure {...data.evidence} sizes="(min-width: 1024px) 46rem, calc(100vw - 2.5rem)" class="guide-opening-evidence" />}
         <Content />
-        {faq.length > 0 && <section class="guide-faq" aria-labelledby="questions"><h2 id="questions">Questions people ask</h2>{faq.map((item) => <div class="guide-faq-item" id={item.id}><h3>{item.q}</h3><p>{item.a}</p></div>)}</section>}
+        {faq.length > 0 && <section class="guide-faq" aria-labelledby="questions"><h2 id="questions">Questions people ask</h2>{faq.map((item) => <div class="guide-faq-item" id={item.id}><div class="question-heading-row"><h3>{item.q}</h3><QuestionVisual question={item.q} id={item.id} /></div><p>{item.a}</p></div>)}</section>}
         {data.sources.length > 0 && <aside class="guide-sources"><h2>Further reading</h2><ul>{data.sources.map((source) => <li><a href={source.url}>{source.label}</a></li>)}</ul></aside>}
         <div class="guide-next"><p class="eyebrow">Your next step</p><h2>Bring it back to your room.</h2><p>Send the material reference and what you already know. A photograph and a short note are enough to start.</p><Action href={data.ctaHref}>{data.ctaLabel}</Action></div>
       </article>

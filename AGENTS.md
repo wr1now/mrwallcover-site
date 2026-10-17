@@ -8,6 +8,8 @@ Assess whether relevant photography, a diagram or an icon helps visitors underst
 
 Add each new HTML route to [the route review](docs/design/route-review.json) with its specific visual decision. `check:dist` checks that this ledger covers every normal published and utility page, then opens each at mobile and desktop widths. Use the shared landing, guide, material and professional templates so new entries inherit their evidence, briefing and action patterns. Keep legal, factual and utility content text-led when imagery does not help.
 
+Question rows use `QuestionVisual.astro` with a relevant topic drawing on the right. Reuse the shared FAQ components and review `question-visual.ts` mappings when adding questions; retain existing answers and native disclosure behaviour.
+
 Preserve existing destinations, enquiry behaviour, accessibility, structured data and public content projections. Keep the shared footer on new routes. Include responsive screenshots and interaction checks proportionate to the change; passing builds do not establish visual quality. Keep verification status honest and list skipped checks with their reason.
 
 This is a public website repository. Do not import private research archives, private exclusion lists, leads, credentials or unpublished claims. Draft publication requires the existing editorial review; design changes do not clear content blockers. Do not merge or deploy unless the user has authorised that action.
