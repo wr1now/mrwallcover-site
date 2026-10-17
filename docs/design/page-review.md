@@ -59,12 +59,12 @@ The source inventory includes `/services/calico-wallpaper-installer/`, `/service
 
 | Check | Status / evidence |
 | --- | --- |
-| Before/after home, services, Guide, contact, Timorous Beasties at 390px and 1440px | Captured and inspected. Full-page plus footer crops: `.review-screens/` (reproducible with `npm run capture:visual`). Representative footer evidence is committed below. Lazy images are decoded before capture. |
+| Before/after home, services, Guide, contact, Timorous Beasties at 390px and 1440px | Captured and inspected. Full-page plus footer crops: `.review-screens/` (reproducible with `npm run capture:visual`). Representative footer evidence is committed below. Lazy images are decoded before capture. Off-screen sections are rendered and long pages use instant-scroll viewport tiles to avoid Chrome raster capture artifacts. |
 | Overflow and header/menu/dock checks at 360, 768, 1024 and 1280px | Real Chrome test passes for seven representative routes at these widths plus 390/1440; mobile groups collapse and desktop groups expand. |
 | Keyboard, focus, disclosures, contrast and reduced effects | Keyboard Enter opens native disclosure; effects preference survives reload; form/menu dock hides. Token contrast checks pass; hero contrast and type-floor browser tests pass on 12 pages at five widths. |
 | No-JavaScript footer navigation and article content | Chrome with JavaScript disabled sees expanded server-rendered footer groups and links. Article/diagram content is static HTML/SVG. |
 | Form/shortlist/calculator and query-intent regression checks | Existing source/unit/build checks pass; enquiry field focus checked in Chrome. No enquiry was submitted. Quantity algorithm and enquiry submission code were unchanged. |
-| Build, repository checks and no-loss comparison | `check`: 79; `check:dist`: 194 plus temporary new-route fixture; `check:type`: 2; `check:phone`: 2; `check:guides`: 5. Production/review builds and case-study date check pass. No-loss passes: 98 pages, 3,609 media files, 98 Markdown twins and 7,706 JSON-LD nodes preserved. `check:analytics` and private-list guard are absent on this main-based branch; no claim is made that they ran. |
+| Build, repository checks and no-loss comparison | `check`: 79; `check:dist`: 194 plus temporary new-route fixture; `check:type`: 2; `check:phone`: 2; `check:guides`: 5. Production/review builds and case-study date check pass. No-loss passes: 98 pages, 3,609 media files, 98 Markdown twins and JSON-LD node/property counts did not decrease (7,706 baseline nodes). `check:analytics` and private-list guard are absent on this main-based branch; no claim is made that they ran. |
 | Representative new route inherits Base/footer/action styling without local CSS | `scripts/check-visual-fixture.mjs` builds a new route in temporary output, verifies shared footer/actions and native/disabled semantics, then removes its source and output. The fixture is not published. |
 | Before/after performance on the same representative pages | Local transfer/resource/DOMContentLoaded observations collected for the same five pages at 390/1440, before and after. Images add transfer cost to Services/Guide; they remain lazy, sized and use existing responsive derivatives. See observations below. |
 
@@ -72,7 +72,7 @@ When adding or substantially changing a page, update its family row (or add a ro
 
 ## Footer evidence
 
-Component crops omit fixed header/dock overlays so the directory itself can be assessed. Captures use the no-phone build; conditional WhatsApp/phone behaviour is covered by both phone builds.
+Component crops omit fixed header/dock overlays so the directory itself can be assessed. Captures use the no-phone build; conditional WhatsApp/phone rendering and payload are covered by both phone builds. A separate phone-enabled browser fixture checks six widths, WhatsApp href decoding, field-focus dock hiding and phone reveal without opening a chat or dialling.
 
 | Before, desktop | After, desktop |
 | --- | --- |
@@ -82,16 +82,16 @@ Component crops omit fixed header/dock overlays so the directory itself can be a
 
 ## Local performance observations
 
-These are fully visited local-page transfer totals, including decoded below-fold images, recorded by the capture script. Local DOMContentLoaded timings are not a network-throttled performance score or field Core Web Vitals. The browser overflow checks passed for every captured route.
+These are fully visited local-page transfer totals, including decoded below-fold images, recorded by the capture script. Local DOMContentLoaded timings are not a network-throttled performance score or field Core Web Vitals. CLS, LCP, INP and throttled loading were not measured; no Core Web Vitals improvement is claimed. The browser overflow checks passed for every captured route.
 
 | Page | Width | Before transferred | After transferred |
 | --- | ---: | ---: | ---: |
-| `/` | 390 | 2045 KiB | 2060 KiB |
-| `/` | 1440 | 2739 KiB | 2755 KiB |
+| `/` | 390 | 2240 KiB | 2255 KiB |
+| `/` | 1440 | 2934 KiB | 2949 KiB |
 | `/services/` | 390 | 255 KiB | 413 KiB |
-| `/services/` | 1440 | 255 KiB | 750 KiB |
+| `/services/` | 1440 | 255 KiB | 678 KiB |
 | `/advice/` | 390 | 187 KiB | 274 KiB |
-| `/advice/` | 1440 | 187 KiB | 563 KiB |
+| `/advice/` | 1440 | 187 KiB | 623 KiB |
 | `/contact/` | 390 | 204 KiB | 220 KiB |
 | `/contact/` | 1440 | 204 KiB | 220 KiB |
 | `/services/timorous-beasties-installer/` | 390 | 185 KiB | 217 KiB |
