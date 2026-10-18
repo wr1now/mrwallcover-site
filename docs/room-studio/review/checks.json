@@ -1,9 +1,9 @@
 {
   "reviewedDate": "2026-10-18",
-  "baselineMain": "63567b831bd9e49369bf2141d2c653efefeac31d",
+  "baselineMain": "f71a587ba514f96d3b0c9852e951e94372eeff60",
   "sourceFingerprint": {
     "algorithm": "SHA-256 of sorted relative path, NUL, file contents, NUL for listed application/service/worker and shared integration inputs",
-    "sha256": "5f234d1940f6e0477164993c7675bf32670c193e899b8dfea11164492d503802",
+    "sha256": "415050a3ec7df190de1f0ae7e474b8ad0f5fefdd9973670911a1f5b4b01d3f15",
     "inputs": [
       "astro.config.mjs",
       "package-lock.json",
@@ -85,6 +85,13 @@
       "passed": 9,
       "failed": 0,
       "skipped": 0
+    },
+    "makers": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "responsiveCases": 48,
+      "scope": "Approved main directory, production/review boundaries, filters and no-JavaScript"
     }
   },
   "python": {
@@ -117,8 +124,8 @@
   },
   "noLoss": {
     "status": "passed",
-    "existingRoutes": 106,
-    "currentRoutes": 107,
+    "existingRoutes": 128,
+    "currentRoutes": 129,
     "mediaBefore": 3621,
     "mediaAfter": 3621,
     "existingProjectRecords": 5,

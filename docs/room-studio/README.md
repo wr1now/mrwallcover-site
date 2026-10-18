@@ -149,7 +149,7 @@ Local verification and representative images are recorded in [the review receipt
 Local acceptance:
 
 - [x] Integrated source, Studio types, built-site, catalogue and no-loss checks
-  pass against main `63567b8`; hosted checks are tracked on the PR.
+  pass against main `f71a587`; hosted checks are tracked on the PR.
 - [x] Manual measurements, custom/concave rooms, angle edits, doors/windows and
   overlapping/out-of-bounds validation work at mobile and desktop widths.
 - [x] Actual PDF/JPEG/PNG preview and tracing prove page selection, known-distance

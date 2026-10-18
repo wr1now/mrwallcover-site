@@ -1,8 +1,8 @@
 {
-  "reviewedAt": "2026-10-18T20:49:01.206Z",
+  "reviewedAt": "2026-10-18T20:54:07.928Z",
   "scope": "Current built dist, one isolated Chromium browser with separate Studio/Contact contexts, original rectangle technical fixture and locally generated PDF; 1440x900 and 390x844 responsive emulation.",
-  "buildRoomHtmlSha256": "55036494991e552a20e074dbf6dd93ae2dd3b76d0a28d964da2ec45f31662530",
-  "buildContactHtmlSha256": "1d4ad719dbfefa76440c834269c3f41836b7c94ed4352e8d9171abbaaa92481d",
+  "buildRoomHtmlSha256": "5cdd57fc2f39c0fa2e690f15b4e61736ce18838090736b225b940fe9efa1b607",
+  "buildContactHtmlSha256": "bb6e2a4ad76fc0de319cc9d3564b61c90ef7a077a40581396647f783ea5393cf",
   "compression": "Estimated gzip level 9 of each unique requested local JavaScript asset; the static review server sends uncompressed files. Cumulative phase totals count each requested path once. No latency claim.",
   "sceneChecks": [
     {
