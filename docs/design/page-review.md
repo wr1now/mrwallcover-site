@@ -436,3 +436,7 @@ The new reference family was independently inspected in the compiled integrated 
 | Hosted checks and publication | The PR checks and Pages deployment run record exact-head hosted results. Publish only after they succeed; verify the live classes, assets and pages before announcing completion. Standing owner publication authorisation applies. |
 
 No form is submitted, phone dialled, chat opened or message sent as part of visual inspection. Passing this design revision does not clear unrelated unpublished content or private-seed publication blockers.
+
+### Hosted screenshot portability follow-up
+
+The first integrated hosted run at `00df505` passed 278 of 279 built-site checks; the 390px gutter pixel assertion failed. Its fixed last-ten-screen-pixels crop can sample a classic desktop scrollbar rather than the CSS paper edge. The follow-up samples the actual edge rectangle within the layout viewport, waits for captured paint, and checks visible/hidden/restored pixels with the original difference threshold. No product graphic, geometry or motion preference is changed by this test-only repair. The three focused atmosphere tests pass, including an actual 16px scrollbar at 390px, with no skips. The browser helper retains its original launch defaults for every other caller. Exact-head hosted verification remains required.

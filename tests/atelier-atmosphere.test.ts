@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import sharp from 'sharp';
 import { serve, launchBrowser, loadPage, waitForPagePredicate } from '../scripts/visual-browser.mjs';
 let server:any, browser:any;
-before(async () => { server = await serve('dist'); browser = await launchBrowser(); });
+before(async () => { server = await serve('dist'); browser = await launchBrowser({ ignoreDefaultArgs:['--hide-scrollbars'] }); });
 after(async () => { await browser?.close(); await server?.close(); });
 
 async function session(check:(page:any, requests:string[]) => Promise<void>) {
@@ -21,29 +21,86 @@ async function session(check:(page:any, requests:string[]) => Promise<void>) {
   finally { await context.close(); }
 }
 
+async function assertGutterPaint(page:any, width:number) {
+  const selector = '[data-atelier-atmosphere]';
+  // A classic vertical scrollbar is inside the screenshot's innerWidth but outside the fixed
+  // paper's layout viewport. Sample the actual edge, never the browser's scrollbar pixels.
+  const clip = await page.$eval('.atelier-atmosphere__edge--right', (edge:HTMLElement) => {
+    const box = edge.getBoundingClientRect();
+    const left = Math.max(0, Math.ceil(box.left));
+    const right = Math.min(document.documentElement.clientWidth, innerWidth, Math.floor(box.right));
+    const top = Math.max(0, Math.ceil(box.top) + 180);
+    const bottom = Math.min(innerHeight, Math.floor(box.bottom), top + 600);
+    return { left, top, width:right - left, height:bottom - top };
+  });
+  assert.ok(clip.width > 0 && clip.height > 0, 'the actual paper gutter intersects the layout viewport');
+  const original = await page.$eval(selector, (layer:HTMLElement) => layer.style.visibility);
+  const settle = () => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  const capture = async (hidden:boolean) => {
+    await page.bringToFront();
+    await page.$eval(selector, (layer:HTMLElement, visibility:string) => {
+      if (visibility) layer.style.visibility = visibility;
+      else layer.style.removeProperty('visibility');
+    }, hidden ? 'hidden' : original);
+    await settle();
+    // Two DOM animation frames do not guarantee that a cold/background compositor surface has
+    // been captured. Flush one real viewport before sampling, as in the reviewed screenshot run.
+    await page.screenshot();
+    await settle();
+    assert.equal(await page.$eval(selector, (layer:HTMLElement) => getComputedStyle(layer).visibility), hidden ? 'hidden' : 'visible');
+    return sharp(await page.screenshot()).extract(clip).raw().toBuffer();
+  };
+  const difference = (left:Buffer, right:Buffer) => left.reduce((count:number, value:number, index:number) => count + (Math.abs(value - right[index]) > 2 ? 1 : 0), 0);
+  const observations:{ visibleToHidden:number; restoredToHidden:number; visibleToRestored:number }[] = [];
+  const deadline = Date.now() + 12000;
+  let painted = false;
+  try {
+    do {
+      const visible = await capture(false), hidden = await capture(true), restored = await capture(false);
+      const sample = { visibleToHidden:difference(visible, hidden), restoredToHidden:difference(restored, hidden), visibleToRestored:difference(visible, restored) };
+      observations.push(sample);
+      // Both visible views must contain the actual paper, and hiding/restoring it must reproduce
+      // the same static view. A permanently invisible product has zero A/B differences and fails.
+      painted = sample.visibleToHidden > 100 && sample.restoredToHidden > 100
+        && sample.visibleToRestored <= 10;
+      if (painted) break;
+    } while (Date.now() < deadline);
+  } finally {
+    await page.$eval(selector, (layer:HTMLElement, visibility:string) => {
+      if (visibility) layer.style.visibility = visibility;
+      else layer.style.removeProperty('visibility');
+    }, original);
+  }
+  const diagnostics = await page.evaluate(() => {
+    const describe = (selector:string) => {
+      const element = document.querySelector(selector)!, style = getComputedStyle(element), box = element.getBoundingClientRect();
+      return { rect:{ x:box.x, y:box.y, width:box.width, height:box.height }, display:style.display, visibility:style.visibility, opacity:style.opacity, transform:style.transform };
+    };
+    return { innerWidth, clientWidth:document.documentElement.clientWidth, effects:document.documentElement.dataset.effects ?? 'default', hidden:document.hidden, layer:describe('[data-atelier-atmosphere]'), edge:describe('.atelier-atmosphere__edge--right'), fan:describe('.atelier-atmosphere__fan') };
+  });
+  assert.ok(painted, `${width}px: actual paper pixels are visible in the outer gutter; ${JSON.stringify({ observations, diagnostics })}`);
+}
+
 test('the shared ambiance is visible in gutters without changing reading layout or hit testing', { timeout:60000 }, async () => {
   await session(async (page, requests) => {
     await page.emulateMediaFeatures([{ name:'prefers-reduced-motion', value:'reduce' }]);
-    for (const width of [390, 1440]) {
+    for (const { width, classicScrollbar } of [{ width:390, classicScrollbar:false }, { width:1440, classicScrollbar:false }, { width:390, classicScrollbar:true }]) {
       await page.setViewport({ width, height:1000, deviceScaleFactor:1 });
       await loadPage(page, server.origin + '/about/');
+      if (classicScrollbar) {
+        await page.addStyleTag({ content:'html { overflow-y:scroll!important; scrollbar-gutter:stable!important; } html::-webkit-scrollbar { width:16px!important; }' });
+        await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+        assert.ok(await page.evaluate(() => innerWidth - document.documentElement.clientWidth >= 15), 'the portability case really reserves a classic scrollbar gutter');
+      }
       const before = await page.evaluate(() => {
         const layer = document.querySelector<HTMLElement>('[data-atelier-atmosphere]')!;
         const rect = document.querySelector('main')!.getBoundingClientRect();
-        return { active:layer.dataset.atelierMotion, running:layer.hasAttribute('data-running'), overflow:document.documentElement.scrollWidth > innerWidth, hiddenFromAT:layer.getAttribute('aria-hidden'), inert:layer.inert, pointer:getComputedStyle(layer).pointerEvents, reading:{ x:rect.x, y:rect.y, width:rect.width, height:rect.height }, hits:[document.elementFromPoint(1, 300), document.elementFromPoint(innerWidth - 1, 300)].some(element => !!element?.closest('[data-atelier-atmosphere]')) };
+        return { active:layer.dataset.atelierMotion, running:layer.hasAttribute('data-running'), overflow:document.documentElement.scrollWidth > innerWidth, hiddenFromAT:layer.getAttribute('aria-hidden'), inert:layer.inert, pointer:getComputedStyle(layer).pointerEvents, reading:{ x:rect.x, y:rect.y, width:rect.width, height:rect.height }, hits:[document.elementFromPoint(1, 300), document.elementFromPoint(document.documentElement.clientWidth - 1, 300)].some(element => !!element?.closest('[data-atelier-atmosphere]')) };
       });
       assert.equal(before.active, 'active'); assert.equal(before.running, false);
       assert.equal(before.overflow, false); assert.equal(before.hiddenFromAT, 'true');
       assert.equal(before.inert, true); assert.equal(before.pointer, 'none'); assert.equal(before.hits, false);
-      const clip = { left:width - (width === 390 ? 10 : 100), top:180, width:width === 390 ? 10 : 100, height:600 };
-      const settle = () => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-      await settle();
-      const visible = await sharp(await page.screenshot()).extract(clip).raw().toBuffer();
-      await page.$eval('[data-atelier-atmosphere]', (layer:HTMLElement) => { layer.style.visibility = 'hidden'; });
-      await settle();
-      const hidden = await sharp(await page.screenshot()).extract(clip).raw().toBuffer();
-      const changed = visible.reduce((count:number, value:number, index:number) => count + (Math.abs(value - hidden[index]) > 2 ? 1 : 0), 0);
-      assert.ok(changed > 100, `${width}px: actual paper pixels are visible in the outer gutter`);
+      await assertGutterPaint(page, width);
       const after = await page.evaluate(() => { const rect = document.querySelector('main')!.getBoundingClientRect(); return { x:rect.x, y:rect.y, width:rect.width, height:rect.height }; });
       assert.deepEqual(after, before.reading, 'decoration has no influence on the reading layout');
     }
