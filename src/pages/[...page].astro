@@ -16,6 +16,7 @@
  *   beside the body. Use cleared library media and an existing linked project.
  * - featureDiagram: { kind, caption }; adds an original schematic where it explains the article.
  */
+import { directoryVisible } from '../lib/makers-directory';
 import GuideNav from '../components/GuideNav.astro';
 import type { GuideStage } from '../lib/guide-stages';
 import '../styles/guide.css';
@@ -116,6 +117,7 @@ const buyerFaq = professionalPage
         <div class="grid gap-10 pb-12 md:grid-cols-12">
           <article class="prose guide-prose md:col-span-7">
             <Content />
+      {page.path === "/where-to-buy/" && directoryVisible && <aside class="guide-next"><h2>Find a maker and a route</h2><p>Compare brand profiles and official sourcing contacts on their own pages.</p><Action href="/makers/" variant="secondary">Makers directory</Action><Action href="/buying-routes/" variant="quiet">Official buying routes</Action></aside>}
           </article>
           <div class="editorial-intake-column md:col-span-4 md:col-start-9">
             {page.featureMedia && <EvidenceFigure id={page.featureMedia.id} caption={page.featureMedia.caption} credit={page.featureMedia.credit} href={featureProject ? projectHref(featureProject.slug) : undefined} linkLabel={featureProject ? `View the ${featureProject.title} case study` : undefined} sizes="(min-width: 1024px) 24rem, calc(100vw - 2.5rem)" />}
@@ -126,6 +128,7 @@ const buyerFaq = professionalPage
         <div class:list={['editorial-body pb-12', (page.featureMedia || page.featureDiagram) && 'editorial-body-with-media']}>
           <article class:list={['prose guide-prose max-w-3xl', page.guideStage && 'guide-stage-page']}>
             <Content />
+      {page.path === "/where-to-buy/" && directoryVisible && <aside class="guide-next"><h2>Find a maker and a route</h2><p>Compare brand profiles and official sourcing contacts on their own pages.</p><Action href="/makers/" variant="secondary">Makers directory</Action><Action href="/buying-routes/" variant="quiet">Official buying routes</Action></aside>}
           </article>
           {page.featureMedia && <EvidenceFigure class="editorial-feature-media" id={page.featureMedia.id} caption={page.featureMedia.caption} credit={page.featureMedia.credit} href={featureProject ? projectHref(featureProject.slug) : undefined} linkLabel={featureProject ? `View the ${featureProject.title} case study` : undefined} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" />}
           {page.featureDiagram && <div class="editorial-feature-media"><TechnicalDiagram kind={page.featureDiagram.kind} caption={page.featureDiagram.caption} /></div>}

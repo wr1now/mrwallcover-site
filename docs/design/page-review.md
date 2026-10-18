@@ -305,6 +305,10 @@ The reviews page's title, heading and introduction now identify the two existing
 
 PR #77 was reconciled with published main `a26c1c0` before release. The shared dimensional rollout, its isolated browser checks and the corrected limewash/partner-provided lime-render scope remain intact. AI and reference utilities retain their static presentation. This integration imports no unpublished branch or private dataset. Exact-head checks are rerun before the authorised merge and deployment.
 
+## Makers and sourcing directory — 18 October 2026
+
+See [the directory review](../makers-directory-review.md). A shared static reference template serves a directory, twenty distinct profiles and a separate sourcing-route index in the noindex editorial review build. Shared navigation/actions and the existing footer carry discovery; the main header and homepage are unchanged. Text and source dates support the comparison task without copied logos, product imagery or simulated installation evidence. Search, maker filters, route terms and citations remain available without JavaScript. The two unresolved purchasing routes are absent, and normal builds contain no directory until owner approval is recorded. Draft route decisions are listed separately in route-review.json because the production route ledger must match actual published pages.
+
 ## Larger material studies — 18 October 2026
 
 The owner found the question graphics too small and requested more realistic depth throughout the website. This revision starts from published main `7d262267e0a17b158850c0d54a187d23e8a2e35d`, retaining the AI reference release and all existing service-scope corrections. No unpublished content branch is included.
@@ -351,3 +355,7 @@ Local production and review builds pass; source checks 153/153, production check
 Direct HTTP retrieval and browser tests establish public endpoint access only. They do not establish search indexing or universal reader access. The separate web reader's host-specific retrieval error has no exposed HTTP cause; this change does not claim to resolve it or justify relaxing DNS, TLS or crawler controls.
 
 Reconciled with main `90455ef` before release, retaining the shared larger material studies and their updated template instructions. Integrated-head checks are rerun against this source.
+
+## Makers publication — 18 October 2026
+
+Owner approved the reviewed copy and authorised publication and merge after checks. Enabled the curated 20 profiles and 42 routes, retaining both purchasing exclusions. Moved 22 visual decisions to the published route ledger. Static reference layouts, shared components and unchanged source check dates remain appropriate; no new imagery or claims were added. Repeat normal/review publication checks, responsive filtering and no-JS checks, source/name guards and hosted integrated checks before merge.

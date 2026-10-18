@@ -576,6 +576,10 @@ test('every published page shows one author and date line: the page\'s own date 
     const fm = JSON.parse((await readFile(`src/content/pages/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { path: string; draft?: boolean; updated?: string };
     if (!fm.draft && fm.updated) editorialDates.set(fm.path, fm.updated);
   }
+  const directory = JSON.parse(await readFile('src/data/makers-directory.json', 'utf8'));
+  if (directory.publication.approved && directory.publication.approved_by && directory.publication.approved_on) {
+    for (const route of ['/makers/', '/buying-routes/', ...directory.makers.map((m: {slug: string}) => `/makers/${m.slug}/`)]) editorialDates.set(route, directory.updated);
+  }
   const problems: string[] = [];
   for (const page of await publishedPages()) {
     const main = page.html.match(/<main id="main"[^>]*>([\s\S]*?)<\/main>/)![1];
