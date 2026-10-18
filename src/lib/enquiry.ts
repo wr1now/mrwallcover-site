@@ -1,3 +1,4 @@
+import { enquiryAudience, enquiryContext, EMAIL_MARKETING_VERSION, PRIVACY_NOTICE_VERSION } from './enquiry-context.ts';
 import { preferencesFromJSON } from './material-advice.ts';
 
 /**
@@ -12,11 +13,18 @@ export const FILE_LIMITS = {
 } as const;
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export const isReplyEmail = (value: string): boolean => EMAIL.test(value.trim());
 
 export type ReplyBy = 'email' | 'phone';
 export type EnquiryKind = 'enquiry' | 'aftercare';
 
 export interface EnquiryFields {
+  service: string;
+  topic: string;
+  topicOrigin: string;
+  sourceDeclared: string;
+  marketingTextVersion: string;
+  privacyNoticeVersion: string;
   kind: string;
   name: string;
   email: string;
@@ -44,6 +52,12 @@ export interface EnquiryFields {
 }
 
 export interface ValidEnquiry {
+  service: string;
+  topic: string;
+  topicOrigin: string;
+  sourceDeclared: string;
+  marketingTextVersion: string;
+  privacyNoticeVersion: string;
   kind: EnquiryKind;
   name: string;
   email: string;
@@ -72,7 +86,6 @@ export interface ValidEnquiry {
 export type EnquiryErrors = Partial<Record<'name' | 'email' | 'phone' | 'replyBy' | 'message' | 'form', string>>;
 
 export const PROFESSIONAL_AUDIENCES = ['designer', 'developer', 'hotel', 'commercial'] as const;
-const AUDIENCES = new Set(['', 'homeowner', ...PROFESSIONAL_AUDIENCES]);
 const INTENTS = new Set(['', 'install', 'source', 'advice', 'prepare', 'repair', 'aftercare']);
 
 function clip(value: string, max: number): string {
@@ -81,6 +94,12 @@ function clip(value: string, max: number): string {
 
 export function emptyEnquiry(partial: Partial<EnquiryFields> = {}): EnquiryFields {
   return {
+    service: '',
+    topic: '',
+    topicOrigin: '',
+    sourceDeclared: '',
+    marketingTextVersion: '',
+    privacyNoticeVersion: '',
     kind: 'enquiry',
     name: '',
     email: '',
@@ -132,8 +151,8 @@ export function validateEnquiry(input: EnquiryFields): { ok: true; value: ValidE
   }
   if (message.length < 8) errors.message = 'Add a short note about the project, or what you need us to look at.';
 
-  const kind: EnquiryKind = input.kind === 'aftercare' ? 'aftercare' : 'enquiry';
-  const audience = AUDIENCES.has(input.audience) ? input.audience : '';
+  const kind: EnquiryKind = input.kind === 'aftercare' || input.service === 'aftercare' ? 'aftercare' : 'enquiry';
+  const audience = enquiryAudience(input.audience);
   const intent = INTENTS.has(input.intent) ? input.intent : '';
   if (kind === 'enquiry' && !intent && !errors.message) {
     /* intent may be empty on a short note */
@@ -147,11 +166,19 @@ export function validateEnquiry(input: EnquiryFields): { ok: true; value: ValidE
     .filter((item) => /^[a-z0-9-]{2,60}$/.test(item))
     .slice(0, 12);
 
+  const context = enquiryContext({ ...input, service: kind === 'aftercare' ? 'aftercare' : input.service });
+  const privacyNoticeVersion = input.privacyNoticeVersion === PRIVACY_NOTICE_VERSION ? PRIVACY_NOTICE_VERSION : '';
+  const marketingTextVersion = input.marketingTextVersion === EMAIL_MARKETING_VERSION ? EMAIL_MARKETING_VERSION : '';
+  const emailMarketing = input.marketing === true && replyBy === 'email' && EMAIL.test(email)
+    && Boolean(privacyNoticeVersion && marketingTextVersion);
   const preferences = preferencesFromJSON(input.materialPreferences);
   const professional = PROFESSIONAL_AUDIENCES.some((value) => value === audience);
   return {
     ok: true,
     value: {
+      ...context,
+      privacyNoticeVersion,
+      marketingTextVersion,
       kind,
       name,
       email: replyBy === 'email' ? email : email && EMAIL.test(email) ? email : '',
@@ -171,7 +198,7 @@ export function validateEnquiry(input: EnquiryFields): { ok: true; value: ValidE
       specificationNotes: professional ? clip(input.specificationNotes, 1200) : '',
       materialPreferences: kind === 'enquiry' && preferences ? JSON.stringify(preferences) : '',
       budget: clip(input.budget, 80),
-      marketing: Boolean(input.marketing),
+      marketing: emailMarketing,
       shortlist,
       idempotencyKey: clip(input.idempotencyKey, 80),
       projectReference: clip(input.projectReference, 40),

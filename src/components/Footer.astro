@@ -44,7 +44,7 @@ const explore = [
   { href: '/wallpapering/preparation/', label: 'Wall preparation' },
   { href: '/wallpapering/lining-and-adhesives/', label: 'Lining & adhesives' },
   { href: '/advice/wallcovering-fire-ratings-uk/', label: 'Fire ratings & standards' },
-  { href: '/advice/cost/', label: 'Installation cost' },
+  { href: '/advice/cost/', label: 'Quotation checklist' },
   { href: '/aftercare/', label: 'Aftercare' },
   { href: '/about/', label: 'About' },
   { href: '/reviews/', label: 'Reviews' },
@@ -74,7 +74,7 @@ const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) =
             <h2 id="footer-contact-heading">Start a conversation.</h2>
             <p>{facts.founder.name}, founder</p>
           </div>
-          <Action href="/contact/" variant="primary" icon="arrow-right" class="footer-start">Start your project</Action>
+          <Action href="/contact/" contextualEnquiry={false} variant="primary" icon="arrow-right" class="footer-start">Start your project</Action>
         </div>
         <ul class="footer-contact-list">
           <li><a href={`mailto:${facts.email}`}><Icon name="mail" /><span>{facts.email}</span></a></li>

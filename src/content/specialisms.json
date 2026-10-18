@@ -291,6 +291,13 @@
       "imageId": null,
       "faq": [
         {
+          "id": "af-quotation",
+          "question": "What should I send for an architectural film quotation?",
+          "paragraphs": [
+            "Identify the doors, joinery, lifts, counters or furniture to be wrapped and the finish you have in mind. The survey checks the condition of the existing surface and plans the edges, corners and returns. A sample on a real door or panel lets the finish, edges and colour be agreed before the full run is ordered."
+          ]
+        },
+        {
           "id": "af-what",
           "question": "What can architectural film be applied to?",
           "paragraphs": [
@@ -343,6 +350,13 @@
       ],
       "imageId": "old-bailey-15",
       "faq": [
+        {
+          "id": "wf-quotation",
+          "question": "What should I send for a window film quotation?",
+          "paragraphs": [
+            "Tell us where the glazing is and whether you need decorative, privacy, solar control or safety film. The glazing type, frames and orientation need to be checked against the film maker's guidance before a product is recommended. Include whether you need film supplied as well as installed."
+          ]
+        },
         {
           "id": "wf-types",
           "question": "Which type of window film do I need?",
@@ -444,7 +458,7 @@
     {
       "slug": "exterior-works",
       "name": "Exterior works",
-      "title": "Exterior Works London | Mr Wallcover",
+      "title": "Exterior Painting & Decorating London | Mr Wallcover",
       "description": "Full exteriors in London: scaffolding supplied and managed, masonry and render painting, and windows. Public projects in Pimlico and Bayswater.",
       "heading": "Full exteriors, from scaffold to the finished elevation",
       "lede": "Scaffolding supplied and managed, with masonry and render painting, windows, cornices and railings. The public record is two full exteriors: St George's Square in Pimlico and Inverness Terrace in Bayswater.",

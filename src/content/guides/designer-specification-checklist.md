@@ -1,5 +1,6 @@
 ---
 title: "A designer's wallcovering specification checklist"
+seoTitle: "Designer Wallcovering Specification Checklist"
 slug: "designer-specification-checklist"
 audience: "designers-and-architects"
 category: "planning"
@@ -11,7 +12,7 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-17"
+updated: "2026-10-18"
 description: "What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, light, lining, free-issue responsibilities and change control."
 metaDescription: "What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, lining, free-issue roles and change control."
 shortTitle: "Designer checklist"
@@ -35,6 +36,8 @@ What should a wallcovering specification contain? Enough for the installer to se
 - Repeat, match type (free, straight, half-drop, panel sequence) and hanging direction, including whether alternate drops are reversed. Reversing is a direction, not a match: a half-drop hung with reversed drops is two separate instructions, and both belong on the schedule.
 - Backing, and the adhesive and primer the maker specifies for it.
 - Whether the item is confirmed or provisional, so a provisional reference is never mistaken for an order.
+
+Already specifying a maker? See the [papers we have installed](/materials/specified-papers/) and the published projects behind them. A maker appearing on that record means installation experience, not approval or endorsement.
 
 ## Elevations and design intent
 

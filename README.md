@@ -47,6 +47,8 @@ The phone number is not in the repository. See `SITE_PHONE` below.
 
 No award is mentioned on the site until its name is supplied (decided 9 October 2026). Do not add an award line, a rating, a review count or a partner status.
 
+Guide frontmatter can set `seoTitle` independently of `shortTitle`: use the former for a clear search title about the page’s subject, and keep the latter concise for cards and navigation. Professional profiles use the same optional `seoTitle` field. Use natural service language; do not add meta-keyword tags or repetitive keyword lists.
+
 Case studies live in `src/content/case-studies/`. Each carries `published` and `updated` dates in its frontmatter; they feed the Article structured data and the sitemap. After editing a case study, run `node scripts/stamp-case-study-dates.mjs` so the `updated` date follows the change. The build refuses a case study without both dates and never substitutes the build time.
 
 Editorial pages (maker installer pages, the trade page, the cost guide, the reviews page) live in `src/content/pages/`. A page with `"draft": true` stays in the repository for review and is never built, never in the sitemap or `llms.txt`, and never linked; `npm run check:dist` proves it. Each draft carries `TODO(Dorin)` markers where a figure, a maker's permission or a claim is still needed. Remove the draft flag only when every marker is resolved.
@@ -66,6 +68,8 @@ Check the changed route and shared template on mobile and desktop, preserve form
 ## Enquiry form
 
 The public site posts to FormSubmit, which forwards the note to `info@mrwallcover.com`. The endpoint in `src/config.ts` is FormSubmit’s alias, not a mailto link. The visitor chooses email or phone. There is no four-second wait. Attachments are optional: JPEG, PNG, WebP, HEIC, HEIF or PDF, up to eight files and 10 MB combined on FormSubmit. The optional private API retains its separate 12 MiB/file and 36 MiB total limits. Browser selection checks give feedback before submission; upload content inspection remains the receiving provider’s responsibility.
+
+Contact actions on reviewed service, material, professional and Guide pages carry a visible topic into the enquiry. Visitors can remove it, change the optional service and optionally tell us how they heard about the practice. No page history or campaign identifiers are saved. Email updates use a separate, versioned opt-in available only for an email reply. See [the enquiry intake contract](docs/enquiry-intake.md).
 
 A private lead store exists for when you run it yourself. It is off in the GitHub Pages build. Nothing on Pages can save a lead to disk.
 

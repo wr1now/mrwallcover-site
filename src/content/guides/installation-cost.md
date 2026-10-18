@@ -1,5 +1,6 @@
 ---
 title: "What changes the cost of wallpaper installation?"
+seoTitle: "Wallpaper Installation Cost: Quote Factors"
 slug: "installation-cost"
 audience: "homeowners-and-procurement"
 category: "planning"
@@ -11,7 +12,7 @@ author: "Dorin Burcus"
 authorRole: "founder"
 authorHref: "/about/#dorin"
 published: "2026-10-09"
-updated: "2026-10-17"
+updated: "2026-10-18"
 description: "Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include."
 metaDescription: "Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, material, access and protection, and what a quote should cover."
 shortTitle: "Installation cost"
@@ -61,3 +62,5 @@ Check whether a price includes the survey, preparation, lining and primers, adhe
 ## When does this guide stop being reliable?
 
 It cannot tell you what your room will cost, because it has not seen your room. Exterior work, listed buildings, acoustic systems and anything with a fire or specification requirement need their own scope. For a first discussion, send the location, room photographs, approximate dimensions, the product reference if you have one, whether it is already ordered and from one batch, and your preferred timing. The most useful photographs show each wall square-on, a stair from below and from the landing, the ceiling height, and the way into the building: lift, common parts or parking. Developers and main contractors tendering a package will find the measurement basis and scope matrix in our [developer package guide](/advice/developer-wallcovering-package/).
+
+Ready to ask for a quotation? Our [wallpaper quotation checklist](/advice/cost/) brings the room, material, access and timing information together. Leave unknown details open for the survey.

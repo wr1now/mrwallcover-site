@@ -1,6 +1,7 @@
+import { enquiryAudience, enquiryContext, enquiryTopicLabel } from '../lib/enquiry-context.ts';
 import { validateAttachments } from '../lib/enquiry-attachments.ts';
 import { preferencesFromJSON, preferenceSummary, PREFERENCE_KEY } from '../lib/material-advice.ts';
-import { emptyEnquiry, PROFESSIONAL_AUDIENCES, makeReference, sanitiseEvent, validateEnquiry, type EnquiryFields } from '../lib/enquiry.ts';
+import { emptyEnquiry, PROFESSIONAL_AUDIENCES, isReplyEmail, makeReference, sanitiseEvent, validateEnquiry, type EnquiryFields } from '../lib/enquiry.ts';
 
 const DRAFT_KEY = 'mw-brief-draft';
 
@@ -13,6 +14,12 @@ function readForm(form: HTMLFormElement): EnquiryFields {
   };
   const marketing = form.querySelector<HTMLInputElement>('input[name="marketing"]');
   return emptyEnquiry({
+    service: value('service'),
+    topic: value('topic'),
+    topicOrigin: value('topicOrigin'),
+    sourceDeclared: value('sourceDeclared'),
+    marketingTextVersion: value('marketingTextVersion'),
+    privacyNoticeVersion: value('privacyNoticeVersion'),
     kind: form.dataset.variant === 'aftercare' ? 'aftercare' : 'enquiry',
     name: value('name'),
     email: value('email'),
@@ -117,10 +124,34 @@ export function bindEnquiryForm(form: HTMLFormElement) {
   const intent = form.querySelector<HTMLSelectElement>('[name="intent"]');
   const audience = form.querySelector<HTMLSelectElement>('[name="audience"]');
   if (intent && params.get('intent')) intent.value = params.get('intent') || '';
-  if (audience && params.get('audience')) audience.value = params.get('audience') || '';
+  if (audience && params.get('audience')) audience.value = enquiryAudience(params.get('audience'));
   const shortlist = form.querySelector<HTMLInputElement>('[name="shortlist"]');
   if (shortlist) shortlist.value = form.dataset.variant === 'aftercare' ? '' : shortlistValue();
   restoreDraft(form);
+  // Context is the page/action the visitor chose. It is shown, removable, and never persisted as history.
+  const service = form.querySelector<HTMLSelectElement>('[name="service"]');
+  const topic = form.querySelector<HTMLInputElement>('[name="topic"]');
+  const topicOrigin = form.querySelector<HTMLInputElement>('[name="topicOrigin"]');
+  const contextPanel = form.querySelector<HTMLElement>('[data-enquiry-context]');
+  const contextText = form.querySelector<HTMLElement>('[data-enquiry-context-text]');
+  const context = enquiryContext({ service: params.get('service'), topic: params.get('topic'), topicOrigin: 'link' });
+  if (form.dataset.variant !== 'aftercare') {
+    if (service) service.value = context.service;
+    if (topic) topic.value = context.topic;
+    if (topicOrigin) topicOrigin.value = context.topicOrigin;
+    if (contextText) contextText.textContent = enquiryTopicLabel(context.topic);
+    if (contextPanel) contextPanel.hidden = !context.topic;
+  }
+  const clearContext = () => {
+    if (topic) topic.value = '';
+    if (topicOrigin) topicOrigin.value = '';
+    if (contextPanel) contextPanel.hidden = true;
+  };
+  service?.addEventListener('change', clearContext);
+  form.querySelector('[data-clear-enquiry-context]')?.addEventListener('click', () => {
+    clearContext();
+    if (service) { service.value = ''; service.focus(); }
+  });
   // "Send us your measurements" on the quantity calculator leaves a plain-text brief in this tab only.
   if (params.get('from') === 'calculator') {
     const message = form.querySelector<HTMLTextAreaElement>('[name="message"]');
@@ -200,8 +231,15 @@ export function bindEnquiryForm(form: HTMLFormElement) {
     const phone = form.querySelector<HTMLElement>('[data-reply="phone"]');
     if (email) email.hidden = reply === 'phone';
     if (phone) phone.hidden = reply === 'email';
+    const emailField = form.querySelector<HTMLInputElement>('[name="email"]');
+    const marketing = form.querySelector<HTMLInputElement>('[name="marketing"]');
+    const marketingControl = form.querySelector<HTMLElement>('[data-email-marketing]');
+    const emailPermissionAvailable = reply === 'email' && Boolean(emailField?.validity.valid && isReplyEmail(emailField.value));
+    if (marketingControl) marketingControl.hidden = !emailPermissionAvailable;
+    if (marketing) { marketing.disabled = !emailPermissionAvailable; if (!emailPermissionAvailable) marketing.checked = false; }
   };
   form.querySelectorAll('input[name="replyBy"]').forEach((input) => input.addEventListener('change', syncReply));
+  form.querySelector('[name="email"]')?.addEventListener('input', syncReply);
   syncReply();
 
   openBuilder?.addEventListener('click', () => {
@@ -275,6 +313,13 @@ export function bindEnquiryForm(form: HTMLFormElement) {
       return;
     }
     showErrors(form, {});
+    // Native FormSubmit receives the same allowlisted context and permission versions as the private API.
+    for (const key of ['kind', 'service', 'topic', 'topicOrigin', 'sourceDeclared', 'privacyNoticeVersion', 'marketingTextVersion'] as const) {
+      const field = form.elements.namedItem(key);
+      if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement) field.value = validated.value[key];
+    }
+    const marketing = form.querySelector<HTMLInputElement>('[name="marketing"]');
+    if (marketing) { marketing.checked = validated.value.marketing; marketing.disabled = validated.value.replyBy !== 'email'; }
     if (!idempotencyKey) idempotencyKey = crypto.randomUUID();
     const keyField = form.querySelector<HTMLInputElement>('[name="idempotencyKey"]');
     if (keyField) keyField.value = idempotencyKey;
