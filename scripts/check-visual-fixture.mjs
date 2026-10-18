@@ -29,6 +29,18 @@ try {
   assert.equal((html.match(/type="submit"/g)||[]).length,1,'native submit type rendered once');
   assert.equal((html.match(/type="reset"/g)||[]).length,1,'native reset type rendered once');
   assert.doesNotMatch(html,/<button\b[^>]*\btype="[^"]*"[^>]*\btype=/,'no duplicate native button types');
+  assert.match(html,/data-design-object="roll"/,'a new FAQ inherits a relevant dimensional study without an opt-in');
+  const poster=html.match(/<img\b[^>]*src="\/media\/design-objects\/roll\.webp"[^>]*>/)?.[0];
+  assert.ok(poster,'the default study includes its complete server-rendered poster');
+  assert.match(poster,/\bwidth="[1-9]\d*"/);
+  assert.match(poster,/\bheight="[1-9]\d*"/);
+  assert.match(poster,/\balt=""/,'the adjacent question supplies the meaning');
+  assert.match(poster,/\bloading="lazy"/);
+  const motion=html.match(/<button\b[^>]*data-object-motion[^>]*>/)?.[0];
+  assert.ok(motion,'the shared FAQ provides a native motion control');
+  assert.match(motion,/\btype="button"/);
+  assert.match(motion,/\baria-pressed="false"/);
+  assert.match(motion,/\bhidden(?:\s|>|=)/,'unavailable enhancement control starts hidden');
   const server=await serve(out);
   const browser=await launchBrowser();
   try {
@@ -39,6 +51,37 @@ try {
     assert.equal(await page.$eval('[data-action-form] input',input=>input.value),'Original','reset action performs a native form reset');
     await page.click('[data-action-form] button[type="submit"]');
     assert.equal(await page.$eval('[data-action-submissions]',output=>output.textContent),'1','submit action fires the native submit event');
+    await page.$eval('[data-design-object] img',async image=>{image.loading='eager';await image.decode();});
+    for(const width of [390,1440]) {
+      await page.setViewport({width,height:900});
+      await page.$eval('.faq summary',summary=>summary.scrollIntoView({block:'center',behavior:'instant'}));
+      await page.waitForFunction(()=>document.querySelector('[data-design-object][data-live]'));
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`new default-dimensional route @${width}`);
+      await page.focus('.faq summary');
+      await page.keyboard.press('Enter');
+      assert.equal(await page.$eval('.faq details',details=>details.open),true,'the new shared FAQ keeps native keyboard disclosure');
+      await page.keyboard.press('Enter');
+      assert.equal(await page.$eval('.faq details',details=>details.open),false);
+    }
+    await page.click('button[data-object-motion]');
+    await page.waitForFunction(()=>!document.querySelector('[data-design-object][data-live]')&&getComputedStyle(document.querySelector('[data-design-object] img')).visibility==='visible');
+    assert.equal(await page.$eval('button[data-object-motion]',button=>button.getAttribute('aria-pressed')),'true','new-route motion control pauses the shared enhancement');
+    await page.click('button[data-object-motion]');
+    await page.$eval('[data-design-object]',object=>object.scrollIntoView({block:'center',behavior:'instant'}));
+    await page.waitForFunction(()=>document.querySelector('[data-design-object][data-live]'));
+
+    const plain=await browser.newPage();
+    await plain.setJavaScriptEnabled(false);
+    await plain.setViewport({width:390,height:900});
+    await plain.goto(server.origin+'/visual-contract-fixture/',{waitUntil:'networkidle0'});
+    await plain.$eval('[data-design-object] img',async image=>{image.loading='eager';await image.decode();});
+    assert.equal(await plain.$eval('[data-design-object] img',image=>image.naturalWidth>0&&getComputedStyle(image).visibility==='visible'),true,'a genuinely new route keeps its complete illustration without JavaScript');
+    assert.equal(await plain.$$eval('button[data-object-motion]',buttons=>buttons.length>0&&buttons.every(button=>button.hidden&&button.getClientRects().length===0)),true,'no-JavaScript motion controls are actually hidden');
+    assert.equal(await plain.$$eval('[data-design-object] canvas',canvases=>canvases.length),0);
+    await plain.focus('.faq summary');
+    await plain.keyboard.press('Enter');
+    assert.equal(await plain.$eval('.faq details',details=>details.open),true,'the future-page FAQ works without JavaScript');
+    await plain.close();
     for (const width of [360,390,768,1024,1280,1440]) {
       await page.setViewport({width,height:900});
       await page.goto(server.origin+'/contact/',{waitUntil:'networkidle0'});
@@ -68,6 +111,6 @@ try {
     await page.click('main [data-phone-reveal]');
     assert.ok(await page.$('main a[href^="tel:"]'),'phone reveal becomes a dial link without placing a call');
   } finally { await browser.close(); await server.close(); }
-  console.log('New route fixture: shared footer/actions inherited without local CSS; native button and disabled-link semantics pass. Fixture removed from source and public output.');
+  console.log('New route fixture: shared footer/actions and default dimensional FAQ inherited without local CSS or opt-in; native controls, pause/resume, mobile/desktop layout and complete no-JavaScript poster/disclosure pass. Fixture removed from source and public output.');
   console.log('Phone-enabled browser fixture: six widths, single-line desktop contact action within the bar, booking outside the header, WhatsApp href decoding, field-focus dock hiding and phone reveal pass; no call or message sent.');
 } finally { await rm(fixture,{force:true}); await rm(out,{recursive:true,force:true}); }

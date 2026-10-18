@@ -50,6 +50,12 @@ test('every published and utility page has a visual decision and works at mobile
             const heading=row.querySelector('h2,h3');
             return drawing&&heading&&drawing.getBoundingClientRect().left>=heading.getBoundingClientRect().right;
           }),
+          objects:document.querySelectorAll('[data-design-object]').length,
+          objectContract:[...document.querySelectorAll<HTMLElement>('[data-design-object]')].every(object=>{
+            const poster=object.querySelector('img');
+            return object.getAttribute('aria-hidden')==='true'&&poster?.alt===''&&Number(poster.getAttribute('width'))>0&&Number(poster.getAttribute('height'))>0&&/\/media\/design-objects\/.+\.webp$/.test(poster.getAttribute('src')??'');
+          }),
+          objectControls:document.querySelectorAll('button[data-object-motion]').length,
         }));
         assert.equal(result.overflow,false,`${path} @${width}: horizontal overflow`);
         assert.equal(result.h1,1,`${path}: one main heading`);
@@ -57,6 +63,9 @@ test('every published and utility page has a visual decision and works at mobile
         assert.equal(result.icons,true,`${path}: decorative icon semantics`);
         assert.deepEqual(result.actions,[],`${path} @${width}: action height`);
         assert.equal(result.questionVisuals,true,`${path} @${width}: relevant drawing remains to the right of each question`);
+        assert.equal(result.objectContract,true,`${path}: original studies retain decorative, dimensioned SSR posters`);
+        if(result.objects>0)assert.ok(result.objectControls>0,`${path}: dimensional studies inherit shared motion controls`);
+        if(path==='/for-ai/')assert.equal(result.objects,0,'the factual AI page retains static question drawings');
         assert.deepEqual(errors,[],`${path}: browser exceptions`);
         observations.push({path,width,...result});
         if(output) {

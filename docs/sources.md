@@ -107,3 +107,7 @@ Generic purchasing checklist; no maker/seller research records are published. Co
 ## Joinery scope correction — 17 October 2026
 
 Owner clarification: Mr Wallcover creates panels for joinery and can work with trusted, vetted specialist partners for full joinery services. It is a wallcovering specialist, not a joinery company. This supersedes the earlier same-team joinery-manufacture claim in the joinery service and placed buyer answers. The service copy, FAQs, business schema description and machine-readable own-team flag are corrected together; existing records of applying wallcoverings to joinery remain valid.
+
+## Limewash and lime-render scope clarification — 18 October 2026
+
+Owner clarification: Mr Wallcover provides limewash directly through its own team. Lime render can be arranged through trusted specialist partners; it is not described as work performed by Mr Wallcover's own team. This makes the delivery distinction explicit in the earlier Q11 answer. The placed buyer answer, heritage page body and FAQ, exterior service detail and machine-readable lime-render fact are corrected together. FAQ schema, the public fact projection, Markdown twins and AI text outputs derive from those same sources. Existing references to old lime plaster describe the substrate and are unchanged. No training, project, media or consent claim is added or removed.

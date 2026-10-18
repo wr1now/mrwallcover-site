@@ -10,6 +10,7 @@ import PhoneReveal from '../components/PhoneReveal.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
 import BookCallLink from '../components/BookCallLink.astro';
 import Icon, { type IconName } from '../components/Icon.astro';
+import DesignStudy from '../components/DesignStudy.astro';
 import Base from '../layouts/Base.astro';
 import { contact } from '../lib/content';
 import quoteChecklist from '../content/quote-checklist.json';
@@ -52,6 +53,7 @@ const crumbs = [
       <aside class="md:col-span-4 md:col-start-9">
         <section aria-labelledby="brief-help" class="mb-10">
           <h2 id="brief-help" class="font-serif text-[2rem]">A useful first brief</h2>
+          <DesignStudy kind="document" caption="Illustrative project brief" />
           <p>Tell us the area, the rooms or rough scope, the paper or material you have in mind, and your preferred timing. Photographs or drawings can follow by email.</p>
           <p>You do not need every answer yet. We can establish the details together.</p>
         </section>

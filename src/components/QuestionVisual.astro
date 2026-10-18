@@ -3,11 +3,11 @@
 import Icon from './Icon.astro';
 import { questionIcon } from '../lib/question-visual';
 import DesignObject from './DesignObject.astro';
-import type { DesignObjectKind } from '../lib/design-object-kinds';
-interface Props { question: string; id?: string; variant?: 'drawing' | 'dimensional' }
+import { objectKindForIcon } from '../lib/design-object-presentation';
+import { questionVisualForPath, type QuestionVisualVariant } from '../lib/question-visual-policy';
+interface Props { question: string; id?: string; variant?: QuestionVisualVariant }
 const icon = questionIcon(Astro.props.question, Astro.props.id);
-const dimensional=Astro.props.variant==='dimensional';
-const kinds:Partial<Record<string,DesignObjectKind>>={panels:'panels',calendar:'calendar',roll:'roll',book:'folio',drawing:'document',tag:'price',lock:'privacy',room:'room',tools:'care',layers:'layers',swatch:'samples',ruler:'document',pin:'room',search:'samples'};
-const kind=Astro.props.id==='s-joinery'?'panels':kinds[icon]??'document';
+const dimensional=(Astro.props.variant ?? questionVisualForPath(Astro.url.pathname))==='dimensional';
+const kind=Astro.props.id==='s-joinery'?'panels':objectKindForIcon(icon);
 ---
 <span class:list={['question-visual', {'question-visual--dimensional':dimensional}]} data-question-visual={icon} aria-hidden="true">{dimensional?<DesignObject kind={kind} />:<Icon name={icon} />}</span>

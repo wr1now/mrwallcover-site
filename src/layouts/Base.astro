@@ -22,7 +22,7 @@ interface Props {
   preloadHero?: boolean;
   /** Preload this page's lead image (same srcset, sizes and type as its first <source>), at high priority. */
   preloadImage?: { srcset: string; sizes: string; type: string };
-  /** Preload the two faces the page head paints (Cormorant 500 for the H1, Outfit 400 for the lede) so the swap does not shift the layout. */
+  /** Preload the heading, body and navigation faces before first paint; opt out only for a page that does not use them. */
   preloadFonts?: boolean;
   /** Site-relative JPEG for social cards. Defaults to /og.jpg. */
   image?: string;
@@ -45,7 +45,7 @@ const {
   extraSchema = [],
   preloadHero = false,
   preloadImage,
-  preloadFonts = false,
+  preloadFonts = true,
   image: imagePath,
   imageAlt = "Corridor at Brown's Hotel, Mayfair, for Mr Wallcover.",
   imageCredit = null,
@@ -69,6 +69,7 @@ const heroSrcset = hero.sources.map(source => `${source.src} ${source.width}w`).
 // Same files the @fontsource CSS points at (Vite gives one hashed asset per file).
 import cormorant500 from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff2?url';
 import outfit400 from '@fontsource/outfit/files/outfit-latin-400-normal.woff2?url';
+import outfit500 from '@fontsource/outfit/files/outfit-latin-500-normal.woff2?url';
 ---
 
 <!doctype html>
@@ -145,8 +146,9 @@ import outfit400 from '@fontsource/outfit/files/outfit-latin-400-normal.woff2?ur
         <link rel="preload" as="image" type={preloadImage.type} imagesrcset={preloadImage.srcset} imagesizes={preloadImage.sizes} fetchpriority="high" />
       )
     }
-    {preloadFonts && <link rel="preload" as="font" type="font/woff2" href={cormorant500} crossorigin />}
-    {preloadFonts && <link rel="preload" as="font" type="font/woff2" href={outfit400} crossorigin />}
+    {preloadFonts && <link rel="preload" as="font" type="font/woff2" href={cormorant500} crossorigin="anonymous" />}
+    {preloadFonts && <link rel="preload" as="font" type="font/woff2" href={outfit400} crossorigin="anonymous" />}
+    {preloadFonts && <link rel="preload" as="font" type="font/woff2" href={outfit500} crossorigin="anonymous" />}
     <script type="application/ld+json" set:html={schema} />
     <!-- Page-specific critical CSS (the homepage inlines its own rules here, before first paint). -->
     <slot name="head" />

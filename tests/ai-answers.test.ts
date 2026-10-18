@@ -110,6 +110,51 @@ test('joinery scope distinguishes our panels from full joinery delivered through
   assert.deepEqual(regressions, [], 'visible copy, schema, Markdown and AI projections must all carry the correction');
 });
 
+const oldLimeRenderClaim = /lime render is carried out with|lime render[^.\n?<>"\r]{0,80}(?:by our own team|by Mr Wallcover's own team)|"limeRender"\s*:\s*"with trusted specialist partners"/i;
+
+test('the lime-render claim guard checks declarative clauses without crossing question or markup boundaries', () => {
+  for (const claim of [
+    'Lime render is carried out with trusted specialist partners.',
+    'Lime render is applied by our own team.',
+    "Lime render is applied by Mr Wallcover's own team.",
+    '"limeRender": "with trusted specialist partners"',
+  ]) assert.match(claim, oldLimeRenderClaim, claim);
+  for (const answer of [
+    "Do you offer limewash and lime render? Limewash is applied by Mr Wallcover's own team.",
+    '"name":"Do you offer limewash and lime render?","acceptedAnswer":{"text":"Limewash is applied by our own team."}',
+    '<summary>Lime render</summary><p>Limewash is applied by our own team.</p>',
+    'Lime render can be arranged through trusted specialist partners.',
+  ]) assert.doesNotMatch(answer, oldLimeRenderClaim, answer);
+});
+
+test('limewash and lime-render delivery scope agrees in visible answers, FAQ schema and public projections', async () => {
+  const expected = "Limewash is applied by Mr Wallcover's own team. Lime render can be arranged through trusted specialist partners.";
+  const pages = ['/for-ai/', '/professionals/designers/', '/services/exterior-works/', '/services/heritage-listed-buildings/'];
+  for (const page of pages) {
+    const html = await readFile(`dist${page}index.html`, 'utf8');
+    const visible = decode(html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ');
+    assert.ok(visible.includes(expected), `${page} visible scope`);
+    const faq = graphOf(html).find((node) => node['@type'] === 'FAQPage');
+    const question = faq?.mainEntity.find((item: { name: string }) => item.name === 'Do you offer limewash and lime render?');
+    assert.equal(question?.acceptedAnswer.text, expected, `${page} FAQ answer`);
+    const markdown = decode(await readFile(`dist${page}index.md`, 'utf8'));
+    assert.ok(markdown.includes(expected), `${page} Markdown twin`);
+  }
+  const known = JSON.parse(await readFile('dist/.well-known/facts.json', 'utf8'));
+  assert.deepEqual(known.limewash, {
+    limewash: "Mr Wallcover's own team",
+    limeRender: 'Can be arranged through trusted specialist partners.',
+  });
+  assert.equal(known.buyerQuestions.items.find((item: { id: string }) => item.id === 'f-q11')?.answer, expected);
+  for (const file of ['dist/llms.txt', 'dist/llms-full.txt']) assert.ok((await readFile(file, 'utf8')).includes(expected), file);
+  const regressions: string[] = [];
+  for (const file of await textFiles('dist')) {
+    const text = decode(await readFile(file, 'utf8'));
+    if (oldLimeRenderClaim.test(text)) regressions.push(file);
+  }
+  assert.deepEqual(regressions, [], 'no older ambiguous or own-team render claim survives in public output');
+});
+
 // The accreditation scheme Dorin keeps private (owner decision, 11 Oct 2026 20:58), matched with or without a space.
 const ACCREDITATION_SCHEME = new RegExp(['safe', 'contractor'].join('\\s*'), 'i');
 
