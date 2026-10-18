@@ -2,27 +2,27 @@
   "baseRef": "origin/main",
   "counts": {
     "base": {
-      "pages": 106,
+      "pages": 128,
       "projectRecords": 5,
       "projectGalleryEntries": 12,
       "mediaFiles": 3621,
       "imageFiles": 3617,
-      "markdownTwins": 106,
+      "markdownTwins": 128,
       "jsonLd": {
-        "nodes": 8181,
-        "props": 36741
+        "nodes": 9455,
+        "props": 42431
       }
     },
     "pr": {
-      "pages": 106,
+      "pages": 128,
       "projectRecords": 5,
       "projectGalleryEntries": 12,
       "mediaFiles": 3624,
       "imageFiles": 3620,
-      "markdownTwins": 106,
+      "markdownTwins": 128,
       "jsonLd": {
-        "nodes": 8181,
-        "props": 36741
+        "nodes": 9455,
+        "props": 42431
       }
     }
   },
@@ -363,26 +363,26 @@
     },
     "ai/index.json": {
       "base": {
-        "jsonLeaves": 1386,
-        "largestList": 106,
-        "entries.pages": 106
+        "jsonLeaves": 1672,
+        "largestList": 128,
+        "entries.pages": 128
       },
       "pr": {
-        "jsonLeaves": 1386,
-        "largestList": 106,
-        "entries.pages": 106
+        "jsonLeaves": 1672,
+        "largestList": 128,
+        "entries.pages": 128
       }
     },
     "ai/pages.json": {
       "base": {
-        "jsonLeaves": 51475,
+        "jsonLeaves": 58269,
         "largestList": 732,
-        "entries.pages": 106
+        "entries.pages": 128
       },
       "pr": {
-        "jsonLeaves": 51604,
+        "jsonLeaves": 58398,
         "largestList": 732,
-        "entries.pages": 106
+        "entries.pages": 128
       }
     },
     "ai/projects.json": {
@@ -455,12 +455,12 @@
     },
     "llms-full.txt": {
       "base": {
-        "lines": 10684,
-        "links": 3864
+        "lines": 12379,
+        "links": 4210
       },
       "pr": {
-        "lines": 10897,
-        "links": 3864
+        "lines": 12592,
+        "links": 4210
       }
     },
     "llms.txt": {

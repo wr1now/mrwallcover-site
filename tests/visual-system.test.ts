@@ -25,7 +25,7 @@ test('future FAQ pages inherit dimensional studies while factual and reference u
   for(const path of ['/services/future-finish/','/areas/future-area/','/materials/future-weave/','/advice/future-installation-note/','/professionals/future-specialist/','/a-new-briefing-page/','/visual-contract-fixture/']) {
     assert.equal(questionVisualForPath(path),'dimensional',`${path}: deliberate shared FAQ use inherits the dimensional default`);
   }
-  for(const path of ['/for-ai/','/for-ai/future-facts/','/wallcovering-installation-ai-crawler/','/privacy/','/accessibility/','/image-use/','/legal/future-notice/','/policies/future-policy/','/reference/future-table/','/search/','/thank-you/','/404.html','/calculator/','/wallpapering/preparation/','/wallpapering/lining-and-adhesives/']) {
+  for(const path of ['/for-ai/','/for-ai/future-facts/','/wallcovering-installation-ai-crawler/','/privacy/','/accessibility/','/image-use/','/legal/future-notice/','/policies/future-policy/','/reference/future-table/','/makers/future-maker/','/buying-routes/','/search/','/thank-you/','/404.html','/calculator/','/wallpapering/preparation/','/wallpapering/lining-and-adhesives/']) {
     assert.equal(questionVisualForPath(path),'drawing',`${path}: factual reading and utility controls stay static`);
   }
   assert.equal(questionVisualForPath('/for-ai/?view=facts#questions'),'drawing','query strings and fragments do not change the factual presentation');

@@ -105,7 +105,7 @@ test('new shared content families inherit the motif while utilities stay static 
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, path);
     }
     await page.emulateMediaFeatures([{ name:'prefers-reduced-motion', value:'no-preference' }]);
-    for (const path of ['/for-ai/', '/privacy/', '/wallcovering-installation-ai-crawler/', '/wallpapering/preparation/']) {
+    for (const path of ['/for-ai/', '/privacy/', '/wallcovering-installation-ai-crawler/', '/wallpapering/preparation/', '/makers/', '/makers/de-gournay/', '/buying-routes/']) {
       await loadPage(page, server.origin + path);
       assert.equal(await page.$eval('[data-atelier-atmosphere]', (layer:HTMLElement) => layer.dataset.atelierMotion), 'static', path);
       const stationary = await page.$eval('.atelier-atmosphere__fan', (element:HTMLElement) => ({
