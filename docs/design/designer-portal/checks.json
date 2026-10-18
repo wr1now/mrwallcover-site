@@ -1,0 +1,16 @@
+{
+  "fixture": "Synthetic draft; cloud disabled; no submission",
+  "observations": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "netArea": "8.10 m²"
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "netArea": "8.10 m²"
+    }
+  ],
+  "browserErrors": []
+}

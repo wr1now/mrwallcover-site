@@ -89,6 +89,10 @@ test('every page: the header is one Glass element with a real disclosure toggle,
     assert.match(html, /<div class="mobile-menu" id="mobile-menu" data-mobile-menu>/, `${file}: panel`);
     assert.doesNotMatch(html, /<details class="mobile-nav"/, `${file}: no <details> menu`);
     const dockTag = html.match(/<nav\b[^>]*data-dock[^>]*>/);
+    if (html.includes('data-private-workspace="true"')) {
+      assert.equal(dockTag, null, `${file}: private editing controls must not be covered by contact shortcuts`);
+      assert.match(html, /name="robots" content="noindex, nofollow"/, `${file}: private workspace is not indexed`);
+    } else {
     assert.ok(dockTag, `${file}: dock`);
     assert.match(dockTag![0], /aria-label="Contact shortcuts"/, `${file}: dock label`);
     const dockClass = dockTag![0].match(/class="([^"]*)"/)?.[1] ?? '';
@@ -97,6 +101,7 @@ test('every page: the header is one Glass element with a real disclosure toggle,
     const actions = dockInner.match(/<(a|button)\b/g)?.length ?? 0;
     assert.ok(actions >= 2 && actions <= 5, `${file}: ${actions} dock actions`);
     assert.match(dockInner, /^\s*<a class="dock-primary" href="\/contact\/">/, `${file}: Start first`);
+    }
     assert.match(html, /data-effects-toggle aria-pressed="false">Reduce visual effects<\/button>/, `${file}: footer toggle`);
     assert.match(html, /<head>[\s\S]*mwEffects === ['"]reduced['"][\s\S]*<\/head>/, `${file}: preference applied in <head>`);
   }

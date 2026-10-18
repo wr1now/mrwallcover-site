@@ -1,0 +1,16 @@
+project_id = "mrwallcover-designer-portal"
+
+[functions.designer-portal]
+# share.get/share.pdf use an explicit unguessable, expiring capability. Every
+# other action independently verifies the bearer token with Auth /user and
+# requires a confirmed email plus server-derived membership/staff permission.
+verify_jwt = false
+
+[auth]
+site_url = "http://localhost:4321/designer-portal/"
+additional_redirect_urls = ["http://localhost:4321/designer-portal/"]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true

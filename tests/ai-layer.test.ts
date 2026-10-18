@@ -51,7 +51,7 @@ async function publishedPages(): Promise<{ file: string; pathname: string; html:
   const out: { file: string; pathname: string; html: string }[] = [];
   for (const file of await htmlFiles('dist')) {
     const html = await readFile(file, 'utf8');
-    if (/<meta name="robots" content="noindex">/.test(html) || /http-equiv="refresh"/.test(html)) continue;
+    if (/<meta name="robots" content="[^"]*\bnoindex\b[^"]*">/.test(html) || /http-equiv="refresh"/.test(html)) continue;
     out.push({ file, pathname: file.replace(/^dist/, '').replace(/index\.html$/, ''), html });
   }
   assert.ok(out.length > 50, `only ${out.length} published pages found`);
@@ -81,7 +81,7 @@ test('/for-ai/ states the facts from facts.json, links every published case stud
     founder: { name: string; path: string; fragment: string };
   };
   const html = await readFile('dist/for-ai/index.html', 'utf8');
-  assert.doesNotMatch(html, /<meta name="robots" content="noindex">/);
+  assert.doesNotMatch(html, /<meta name="robots" content="[^"]*\bnoindex\b[^"]*">/);
   assert.equal(html.match(/<h1[\s>]/g)?.length, 1, 'one H1');
   assert.match(html, new RegExp(`<h1>${facts.brand} in plain facts\\.</h1>`));
   assert.ok(html.includes(`<p class="lede mt-5">${facts.description}</p>`), 'the lede is the fact-sheet sentence');

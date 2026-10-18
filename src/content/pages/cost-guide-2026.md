@@ -81,7 +81,9 @@ Preparation may include stripping old paper, filling, sanding, priming or lining
 
 The survey confirms the wall measurements, wall readiness, access and the material's set-out needs. Openings are taken out of the labour measure; the purchase quantity separately allows for full drops, repeat and wastage. A large repeat, a drop match or a room broken up by openings can change both the material order and the time on site.
 
-After the survey we write a scope of works by room. The quotation says what has been allowed for, including access, protection and making good. Every job is quoted after survey; Mr Wallcover publishes no price list or flat rate per roll or square metre.
+After the survey we write a scope of works by room. The quotation says what has been allowed for, including access, protection and making good. The [designer installation-cost guide](/professionals/designers/#installation-price-guide) gives qualified starting points for eligible standard fabric and large contract vinyl packages. A feature wall or single room is priced as a project package. These guides are not a universal rate per roll or square metre; a firm quotation follows a reviewed scope.
+
+All wallcovering, lining paper, primer and adhesive are supplied by the client. Normal preparation, lining and hanging labour are included only where the selected installation profile says so. Surveying, management time, access and logistics are stated separately, with VAT additional. [Prepare a project brief](/designer-portal/) for an indicative budget and its assumptions.
 
 Aftercare is included: a return visit about four to six weeks after completion and twelve months' cover on the workmanship of the hang. The [aftercare page](/aftercare/) explains the care advice and guarantee limits.
 

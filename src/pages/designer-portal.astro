@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Action from '../components/Action.astro';
+import DesignerPortal from '../designer-portal/DesignerPortal';
+import '../designer-portal/portal.css';
+const connection = { enabled: import.meta.env.PUBLIC_DESIGNER_PORTAL_ENABLED === 'true', url: import.meta.env.PUBLIC_DESIGNER_PORTAL_URL || '', anonKey: import.meta.env.PUBLIC_DESIGNER_PORTAL_ANON_KEY || '' };
+---
+<Base title="Designer Project Workspace | Mr Wallcover" description="Prepare a private wallcovering installation brief with rooms, specifications, drawings and programme for an indicative project budget." path="/designer-portal/" privateWorkspace={true}>
+  <div class="container-page pb-20 designer-portal-page">
+    <header class="page-head portal-opening">
+      <div><Breadcrumb items={[{name:'Home',href:'/'},{name:'For designers',href:'/professionals/designers/'},{name:'Project workspace',href:'/designer-portal/'}]} /><p class="eyebrow">For designers & architects</p><h1>The brief. <br />The scope. <br /><em>The numbers.</em></h1><p class="lede mt-5">Bring your drawings, material choices and programme into one project. Prepare a free indicative installation budget your client can understand.</p><Action variant="secondary" href="/professionals/designers/#installation-price-guide">Explore the installation cost guide</Action></div>
+      <aside class="portal-principles" aria-label="How project budgets work"><p class="eyebrow">From specification to decision</p><ol><li><span>01</span><div><strong>Send what the project needs.</strong><p>Rooms, exact product references, measured areas, drawings and dates.</p></div></li><li><span>02</span><div><strong>Make the scope explicit.</strong><p>One installation profile, clear preparation and time-based project services.</p></div></li><li><span>03</span><div><strong>Share a considered budget.</strong><p>An indicative Mr Wallcover document, with assumptions and a route to a firm quotation.</p></div></li></ol><p class="portal-materials-note">You supply the wallcovering, lining, primer and adhesive. We price the stated labour and project services.</p></aside>
+    </header>
+    <DesignerPortal connection={connection} client:load />
+    <noscript><p class="portal-noscript">The project editor needs JavaScript. <a href="/contact/?audience=designer&intent=install">Send your designer brief through the contact page</a>, or email <a href="mailto:info@mrwallcover.com">info@mrwallcover.com</a>.</p></noscript>
+  </div>
+</Base>
+<style>
+  .portal-opening { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); align-items:center; gap:clamp(2rem,6vw,6rem); padding-bottom:2rem; }
+  .portal-opening h1 { font-size:clamp(3.5rem,6.8vw,7rem); line-height:.96; margin:1.5rem 0; }
+  .portal-opening h1 em { font-weight:500; color:#49513b; }
+  .portal-opening .lede { max-width:37ch; }
+  .portal-opening :global(.mw-action) { margin-top:1.5rem; }
+  .portal-principles { padding:clamp(1.5rem,3vw,3rem); background:var(--color-ivory-deep); border:1px solid var(--color-line); }
+  .portal-principles ol { list-style:none; padding:0; margin:1.25rem 0; }
+  .portal-principles li { display:flex; gap:1.2rem; padding:1.25rem 0; border-bottom:1px solid #cbc3b5; }
+  .portal-principles li > span { color:var(--color-brass); font-size:.8125rem; padding-top:.25rem; }
+  .portal-principles strong { font-family:var(--font-serif); font-size:1.6rem; font-weight:500; line-height:1.15; }
+  .portal-principles li p { margin:.5rem 0 0; color:var(--color-stone); }
+  .portal-materials-note { font-size:.875rem; margin:1.5rem 0 0; }
+  .portal-noscript { padding:1.5rem; border:1px solid var(--color-field-border); }
+  @media(max-width:800px) { .portal-opening { grid-template-columns:minmax(0,1fr); } .portal-opening h1 br { display:none; } .portal-opening h1 { max-width:13ch; line-height:1.05; } }
+</style>

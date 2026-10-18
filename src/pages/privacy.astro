@@ -34,6 +34,15 @@ const lineFor = (paragraph: string) => {
       <p class="mt-4 mb-0 text-stone">Updated {privacy.updated}</p>
     </header>
     <div class="grid gap-10">
+      <section id="designer-workspace" class="max-w-2xl border-t border-line pt-6">
+        <h2 class="m-0 text-[2rem]">Designer project workspace</h2>
+        <div class="prose mt-4">
+          <p>The project form holds your draft in the current browser tab. It does not automatically save project information or sign-in credentials in browser storage. Downloading a draft creates a file on your device; closing an unsaved tab loses that draft.</p>
+          <p>Private saving and uploads are available only when the workspace says the service is active. Signing in and saving sends the selected project details to the private service. These may include your contact details, project address, specifications, programme, drawings and optional property-value context. Authorised studio members and Mr Wallcover staff use them to assess the work and prepare estimates. Uploaded files are checked before becoming available, and extracted information needs human confirmation.</p>
+          <p>The workspace does not load the public site's analytics. Original drawings, private notes and property values are excluded from public search and client budget links. A client link exposes the selected estimate, including its project name and site address, until it expires or is revoked. Revoking a link cannot recall files a recipient has already downloaded.</p>
+          <p>Contact <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a> to request access, correction or deletion of saved project information. Retention and any records needed for an agreed installation are handled with you by Mr Wallcover. The workspace does not promise automatic deletion when a tab closes.</p>
+        </div>
+      </section>
       {
         privacy.sections.map((section) => (
           <section class="max-w-2xl border-t border-line pt-6">
