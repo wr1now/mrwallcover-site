@@ -12,6 +12,20 @@ Private API variables: `DESIGNER_PORTAL_ENABLED=true`, `SUPABASE_URL`, `SUPABASE
 
 The public guide can build without cloud services. In that mode the workspace honestly supports preparing a draft and explicitly downloading/reopening it. It must not report saved cloud files, completed submissions or generated budgets.
 
+### Email-code templates for new and existing users
+
+Install the supplied code-bearing templates before enabling sign-in. The workspace requests an email OTP and verifies the entered value with `type: "email"`. Supabase documents using `{{ .Token }}` for this flow; the portal does not consume a magic-link callback. [Passwordless email sign-in](https://supabase.com/docs/guides/auth/auth-email-passwordless), [email template variables and verification](https://supabase.com/docs/guides/auth/auth-email-templates).
+
+`supabase/config.toml` binds `auth.email.template.confirmation` to [confirmation.html](../../supabase/templates/confirmation.html) and `auth.email.template.magic_link` to [magic-link.html](../../supabase/templates/magic-link.html). Both templates contain only generic workspace wording and the OTP; they include no user metadata, email address, project content, external images or authentication links. Existing signup/confirmation gates, expiry and rate limits are preserved. Restart the local Supabase stack after changing these files. [Local template configuration](https://supabase.com/docs/guides/local-development/customizing-email-templates).
+
+For **each hosted staging or production project**, select the exact project in the Supabase Dashboard and open **Authentication → Email Templates**:
+
+1. Open **Confirm sign up**. Set the subject to `Your Mr Wallcover email confirmation code`, replace the HTML body with `supabase/templates/confirmation.html`, and save. This covers the initial email confirmation when the account is new.
+2. Open **Magic Link** (the passwordless email/OTP template). Set the subject to `Your Mr Wallcover sign-in code`, replace the HTML body with `supabase/templates/magic-link.html`, and save. This covers returning verified users.
+3. Keep email confirmations enabled, configure the approved sender/SMTP service and the environment's actual Site URL/redirect allowlist, then inspect the saved templates. Retain the literal `{{ .Token }}` placeholder; do not paste a real code or add user/project metadata. Configuring local templates, applying database migrations or deploying the Edge Function does not install these hosted Dashboard templates. [Hosted template editing](https://supabase.com/docs/guides/auth/auth-email-templates).
+
+The offline cloud contract test renders each configured template with a synthetic code and checks that the portal submits that code through email verification. It sends no email. Before activation, an operator must separately verify both a new-account confirmation and a returning-account sign-in using owner-controlled staging recipients, including invalid, expired and reused code rejection. Do not infer actual delivery or hosted template installation from the offline check.
+
 ## Workers
 
 The `workers/designer_portal` Python service pulls jobs directly from the database. Its Modal definition uses UK containers and European routing. It passes no raw documents or OCR output as invocation arguments. Set the `mrwallcover-designer-portal` secret with `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` and `DESIGNER_PORTAL_WORKERS_ENABLED=false` until staging verification succeeds.

@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { createPortalCloud } from '../src/designer-portal/cloud.ts';
 
 const config = { enabled: true, url: 'https://portal.example.invalid', anonKey: 'synthetic-public-key' };
@@ -80,4 +81,32 @@ test('shared PDF is requested with its revocable token and no account credential
   const pdf = await cloud.sharedPdf('synthetic-share-token');
   assert.deepEqual(body, { action: 'share.pdf', payload: { token: 'synthetic-share-token' } });
   assert.equal(headers?.has('Authorization'), false); assert.equal(pdf.type, 'application/pdf');
+});
+
+test('both configured email flows render a generic OTP that the portal verifies as an email code', async () => {
+  const configuration = await readFile(new URL('../supabase/config.toml', import.meta.url), 'utf8');
+  assert.match(configuration, /\[auth\.email\][\s\S]*?enable_confirmations\s*=\s*true/);
+  for (const flow of ['confirmation', 'magic_link']) {
+    const section = configuration.match(new RegExp(`\\[auth\\.email\\.template\\.${flow}\\]([^\\[]*)`))?.[1];
+    assert.ok(section, `The ${flow} flow needs an explicit local template.`);
+    const contentPath = section.match(/content_path\s*=\s*"([^"]+)"/)?.[1];
+    assert.ok(contentPath?.startsWith('./supabase/templates/'));
+    const template = await readFile(new URL(`../${contentPath.slice(2)}`, import.meta.url), 'utf8');
+    assert.deepEqual(template.match(/\{\{[\s\S]*?\}\}/g), ['{{ .Token }}'], 'Only the actual OTP placeholder may inject content.');
+    assert.doesNotMatch(template, /\b(?:href|src)\s*=|<script|<form|<iframe|ConfirmationURL|TokenHash|\.Data|\.Email|\.SiteURL|\.RedirectTo/i);
+    const code = flow === 'confirmation' ? '573019' : '684120';
+    const rendered = template.replace('{{ .Token }}', code);
+    assert.match(rendered, /one-time code/); assert.equal(rendered.includes('{{'), false);
+    assert.equal(rendered.split(code).length, 2, 'The usable code appears exactly once.');
+    const requests: { url: string; body: any }[] = [];
+    const cloud = createPortalCloud(config, async (url, options) => {
+      const body = JSON.parse(String(options?.body)); requests.push({ url: String(url), body });
+      if (String(url).endsWith('/otp')) { assert.deepEqual(body, { email: identity.user.email, create_user: true }); return response({}); }
+      if (String(url).endsWith('/verify')) { assert.deepEqual(body, { email: identity.user.email, token: code, type: 'email' }); return response({ access_token: `synthetic-${flow}-access`, refresh_token: `synthetic-${flow}-refresh`, expires_in: 3600 }); }
+      assert.equal(body.action, 'session'); return response({ ok: true, data: identity });
+    });
+    await cloud.signIn(identity.user.email); await cloud.verify(identity.user.email, code);
+    assert.equal(cloud.signedIn, true); assert.equal(requests.length, 3);
+    assert.ok(requests.every(request => request.url.startsWith(config.url)));
+  }
 });
