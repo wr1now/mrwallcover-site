@@ -96,6 +96,7 @@ Record the decision, not an arbitrary exception:
 | Professional intake instructions | A small set of meaningful checklist icons may improve scanning; unrelated room imagery would add little. |
 | Material page without a cleared relevant close-up | Keep accurate decision guidance and real linked work; do not substitute a room image as evidence of material properties. |
 | Noindex confirmation or error page | A short status, clear next step and accessible action are enough. |
+| Machine reference resource | A static monospace terminal surface can distinguish the reading task; retain semantic HTML, ordinary file links, full source parity and the shared shell. Keep evidence expanded and avoid simulated command inputs or decorative motion. |
 
 ## Review and performance
 

@@ -411,7 +411,7 @@
     },
     {
       "path": "/wallcovering-installation-ai-crawler/",
-      "decision": "Keep fit/evidence tables, native disclosures and brief-building tools readable; no decorative image is needed."
+      "decision": "Use a static, monospace terminal reference surface with explicit file paths, semantic headings, definition lists and a labelled table. Expand evidence and terms by default. No decorative imagery helps machine reading; preserve the shared footer and canonical sources."
     },
     {
       "path": "/wallpapering/",

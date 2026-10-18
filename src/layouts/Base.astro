@@ -102,6 +102,7 @@ import outfit400 from '@fontsource/outfit/files/outfit-latin-400-normal.woff2?ur
     {noindex && <meta name="robots" content="noindex" />}
     {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
     <link rel="describedby" type="text/plain" href="/llms.txt" title="Public content index" />
+    {!noindex && <link rel="describedby" type="application/json" href="/ai/index.json" title="Complete published page manifest" />}
     <link rel="describedby" type="application/json" href="/ai/business.json" title="Business facts" />
     <link rel="describedby" type="application/json" href="/ai/decision-guide.json" title="Project fit and enquiry guide" />
     <link rel="alternate" type="application/atom+xml" href="/feed.xml" title={`${BRAND_NAME}: guides and case studies`} />
