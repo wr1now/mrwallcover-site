@@ -1,0 +1,789 @@
+{
+  "baseRef": "origin/main",
+  "counts": {
+    "base": {
+      "pages": 106,
+      "projectRecords": 5,
+      "projectGalleryEntries": 12,
+      "mediaFiles": 3621,
+      "imageFiles": 3617,
+      "markdownTwins": 106,
+      "jsonLd": {
+        "nodes": 8181,
+        "props": 36741
+      }
+    },
+    "pr": {
+      "pages": 106,
+      "projectRecords": 5,
+      "projectGalleryEntries": 12,
+      "mediaFiles": 3621,
+      "imageFiles": 3617,
+      "markdownTwins": 106,
+      "jsonLd": {
+        "nodes": 8181,
+        "props": 36741
+      }
+    }
+  },
+  "galleries": {
+    "biltmore-mayfair": {
+      "base": 7,
+      "pr": 7,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "browns-hotel-mayfair": {
+      "base": 14,
+      "pr": 14,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "calico-ahluwalia-estuary-rosewood": {
+      "base": 6,
+      "pr": 6,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "calico-beverly-1975-cadence": {
+      "base": 6,
+      "pr": 6,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "calico-lee-broom-overture": {
+      "base": 10,
+      "pr": 10,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "doubletree-victoria": {
+      "base": 1,
+      "pr": 1,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "doubletree-west-end": {
+      "base": 13,
+      "pr": 13,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "everyman-liverpool": {
+      "base": 13,
+      "pr": 13,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "four-seasons-ten-trinity-square": {
+      "base": 59,
+      "pr": 59,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "heathrow-terminal-4-calico": {
+      "base": 8,
+      "pr": 8,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "hilton-garden-inn-silverstone": {
+      "base": 4,
+      "pr": 4,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "hilton-london-metropole": {
+      "base": 7,
+      "pr": 7,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "house-of-hackney-st-michaels": {
+      "base": 23,
+      "pr": 23,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "huntsman-savile-row": {
+      "base": 12,
+      "pr": 12,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "imperfect-arches-external-corner-trim": {
+      "base": 11,
+      "pr": 11,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "inverness-terrace": {
+      "base": 10,
+      "pr": 10,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "jumeirah-carlton-tower": {
+      "base": 6,
+      "pr": 6,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "masterpiece-london-2019": {
+      "base": 3,
+      "pr": 3,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "mercedes-amg-showroom-london": {
+      "base": 6,
+      "pr": 6,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "north-london-residence": {
+      "base": 12,
+      "pr": 12,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "novotel-london-canary-wharf": {
+      "base": 5,
+      "pr": 5,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "old-bailey-hotel": {
+      "base": 19,
+      "pr": 19,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "oxygen-freejumping-the-o2": {
+      "base": 5,
+      "pr": 5,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "pendley-manor-hotel": {
+      "base": 15,
+      "pr": 15,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "penny-morrison-showroom": {
+      "base": 10,
+      "pr": 10,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "pimlico-st-georges-square": {
+      "base": 9,
+      "pr": 9,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "private-residence-little-venice": {
+      "base": 4,
+      "pr": 4,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "raffles-london-the-owo": {
+      "base": 6,
+      "pr": 6,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "scp-showroom-pimlico": {
+      "base": 5,
+      "pr": 5,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "tea-house-jaillon-studio": {
+      "base": 8,
+      "pr": 8,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    },
+    "trematon-castle": {
+      "base": 49,
+      "pr": 49,
+      "draft": {
+        "base": false,
+        "pr": false
+      }
+    }
+  },
+  "ai": {
+    ".well-known/facts.json": {
+      "base": {
+        "jsonLeaves": 639,
+        "largestList": 31,
+        "entries.profiles": 1,
+        "entries.programmeFigures": 6,
+        "entries.enquiryRoutes": 2,
+        "entries.snaggingSequence": 4,
+        "entries.handoverPack": 4
+      },
+      "pr": {
+        "jsonLeaves": 639,
+        "largestList": 31,
+        "entries.profiles": 1,
+        "entries.programmeFigures": 6,
+        "entries.enquiryRoutes": 2,
+        "entries.snaggingSequence": 4,
+        "entries.handoverPack": 4
+      }
+    },
+    "ai/business.json": {
+      "base": {
+        "jsonLeaves": 100,
+        "largestList": 12,
+        "entries.areas": 6,
+        "entries.profiles": 1,
+        "entries.workflow": 5,
+        "entries.services": 12
+      },
+      "pr": {
+        "jsonLeaves": 100,
+        "largestList": 12,
+        "entries.areas": 6,
+        "entries.profiles": 1,
+        "entries.workflow": 5,
+        "entries.services": 12
+      }
+    },
+    "ai/decision-guide.json": {
+      "base": {
+        "jsonLeaves": 546,
+        "largestList": 8,
+        "entries.shortlistReasons": 4,
+        "entries.fitMatrix": 8,
+        "entries.materialCapabilities": 7,
+        "entries.deliveryStages": 5,
+        "entries.briefInputs": 5,
+        "entries.professionalChecklists": 3,
+        "entries.confirmForCommission": 7
+      },
+      "pr": {
+        "jsonLeaves": 546,
+        "largestList": 8,
+        "entries.shortlistReasons": 4,
+        "entries.fitMatrix": 8,
+        "entries.materialCapabilities": 7,
+        "entries.deliveryStages": 5,
+        "entries.briefInputs": 5,
+        "entries.professionalChecklists": 3,
+        "entries.confirmForCommission": 7
+      }
+    },
+    "ai/fire-ratings.json": {
+      "base": {
+        "jsonLeaves": 3408,
+        "largestList": 133,
+        "entries.sourceCheckDates": 2,
+        "entries.standards": 9,
+        "entries.products": 26,
+        "entries.sources": 133,
+        "entries.checklists": 2,
+        "entries.faq": 8
+      },
+      "pr": {
+        "jsonLeaves": 3408,
+        "largestList": 133,
+        "entries.sourceCheckDates": 2,
+        "entries.standards": 9,
+        "entries.products": 26,
+        "entries.sources": 133,
+        "entries.checklists": 2,
+        "entries.faq": 8
+      }
+    },
+    "ai/index.json": {
+      "base": {
+        "jsonLeaves": 1386,
+        "largestList": 106,
+        "entries.pages": 106
+      },
+      "pr": {
+        "jsonLeaves": 1386,
+        "largestList": 106,
+        "entries.pages": 106
+      }
+    },
+    "ai/pages.json": {
+      "base": {
+        "jsonLeaves": 51351,
+        "largestList": 670,
+        "entries.pages": 106
+      },
+      "pr": {
+        "jsonLeaves": 51351,
+        "largestList": 670,
+        "entries.pages": 106
+      }
+    },
+    "ai/projects.json": {
+      "base": {
+        "jsonLeaves": 2309,
+        "largestList": 59,
+        "entries.projects": 31
+      },
+      "pr": {
+        "jsonLeaves": 2309,
+        "largestList": 59,
+        "entries.projects": 31
+      }
+    },
+    "ai/wallpapering.json": {
+      "base": {
+        "jsonLeaves": 1659,
+        "largestList": 51,
+        "entries.sourceUrls": 4,
+        "entries.houseRules": 5,
+        "entries.ladder": 4,
+        "entries.products": 51,
+        "entries.makers": 10,
+        "entries.wallTypes": 9,
+        "entries.conditions": 10
+      },
+      "pr": {
+        "jsonLeaves": 1659,
+        "largestList": 51,
+        "entries.sourceUrls": 4,
+        "entries.houseRules": 5,
+        "entries.ladder": 4,
+        "entries.products": 51,
+        "entries.makers": 10,
+        "entries.wallTypes": 9,
+        "entries.conditions": 10
+      }
+    },
+    "facts.json": {
+      "base": {
+        "jsonLeaves": 50,
+        "largestList": 6,
+        "entries.profiles": 1,
+        "entries.programmeFigures": 6
+      },
+      "pr": {
+        "jsonLeaves": 50,
+        "largestList": 6,
+        "entries.profiles": 1,
+        "entries.programmeFigures": 6
+      }
+    },
+    "feed.xml": {
+      "base": {
+        "items": 44
+      },
+      "pr": {
+        "items": 44
+      }
+    },
+    "for-ai/index.html": {
+      "base": {
+        "listItems": 305,
+        "links": 166
+      },
+      "pr": {
+        "listItems": 305,
+        "links": 166
+      }
+    },
+    "llms-full.txt": {
+      "base": {
+        "lines": 10650,
+        "links": 3802
+      },
+      "pr": {
+        "lines": 10650,
+        "links": 3802
+      }
+    },
+    "llms.txt": {
+      "base": {
+        "lines": 184,
+        "links": 207
+      },
+      "pr": {
+        "lines": 184,
+        "links": 207
+      }
+    },
+    "wallcovering-installation-ai-crawler/index.html": {
+      "base": {
+        "listItems": 622,
+        "links": 751
+      },
+      "pr": {
+        "listItems": 622,
+        "links": 751
+      }
+    },
+    "wallcovering-installation-ai-crawler/index.md": {
+      "base": {
+        "lines": 1933,
+        "links": 736
+      },
+      "pr": {
+        "lines": 1933,
+        "links": 736
+      }
+    },
+    "robots.txt": {
+      "base": {
+        "allowLines": 14
+      },
+      "pr": {
+        "allowLines": 14
+      }
+    }
+  },
+  "projects": {
+    "browns-hotel-mayfair": {
+      "gallery": {
+        "base": 12,
+        "pr": 12
+      },
+      "videos": {
+        "base": 3,
+        "pr": 3
+      }
+    },
+    "owo-whitehall": {
+      "gallery": {
+        "base": 0,
+        "pr": 0
+      },
+      "videos": {
+        "base": 0,
+        "pr": 0
+      }
+    },
+    "four-seasons-ten-trinity": {
+      "gallery": {
+        "base": 0,
+        "pr": 0
+      },
+      "videos": {
+        "base": 0,
+        "pr": 0
+      }
+    },
+    "old-bailey-hotel": {
+      "gallery": {
+        "base": 0,
+        "pr": 0
+      },
+      "videos": {
+        "base": 0,
+        "pr": 0
+      }
+    },
+    "hilton-silverstone": {
+      "gallery": {
+        "base": 0,
+        "pr": 0
+      },
+      "videos": {
+        "base": 0,
+        "pr": 0
+      }
+    }
+  },
+  "home": {
+    "baseline1b387c6": {
+      "commit": "1b387c6",
+      "sections": 13,
+      "headings": 12,
+      "projectLinks": 16,
+      "images": 19,
+      "projectSlugs": [
+        "browns-hotel-mayfair",
+        "calico-ahluwalia-estuary-rosewood",
+        "calico-beverly-1975-cadence",
+        "calico-lee-broom-overture",
+        "doubletree-victoria",
+        "doubletree-west-end",
+        "four-seasons-ten-trinity-square",
+        "heathrow-terminal-4-calico",
+        "hilton-garden-inn-silverstone",
+        "house-of-hackney-st-michaels",
+        "inverness-terrace",
+        "north-london-residence",
+        "old-bailey-hotel",
+        "pimlico-st-georges-square",
+        "raffles-london-the-owo",
+        "trematon-castle"
+      ],
+      "imageList": [
+        "ahluwalia-estuary-07",
+        "beverly-08",
+        "browns-hotel-mayfair-01",
+        "browns-hotel-mayfair-03",
+        "browns-hotel-mayfair-04",
+        "browns-hotel-mayfair-06",
+        "browns-hotel-mayfair-09",
+        "browns-hotel-mayfair-10",
+        "doubletree-victoria-commons-01",
+        "doubletree-west-end-commons-01",
+        "four-seasons-ten-trinity-commons-01",
+        "heathrow-05",
+        "hoh-official-01",
+        "inverness-terrace-exterior-10",
+        "lee-broom-08",
+        "north-london-residence-01",
+        "owo-official-classic",
+        "pimlico-st-georges-square-exterior-11",
+        "trematon-01"
+      ]
+    },
+    "main": {
+      "sections": 18,
+      "headings": 16,
+      "projectLinks": 31,
+      "images": 51,
+      "projectSlugs": [
+        "biltmore-mayfair",
+        "browns-hotel-mayfair",
+        "calico-ahluwalia-estuary-rosewood",
+        "calico-beverly-1975-cadence",
+        "calico-lee-broom-overture",
+        "doubletree-victoria",
+        "doubletree-west-end",
+        "everyman-liverpool",
+        "four-seasons-ten-trinity-square",
+        "heathrow-terminal-4-calico",
+        "hilton-garden-inn-silverstone",
+        "hilton-london-metropole",
+        "house-of-hackney-st-michaels",
+        "huntsman-savile-row",
+        "imperfect-arches-external-corner-trim",
+        "inverness-terrace",
+        "jumeirah-carlton-tower",
+        "masterpiece-london-2019",
+        "mercedes-amg-showroom-london",
+        "north-london-residence",
+        "novotel-london-canary-wharf",
+        "old-bailey-hotel",
+        "oxygen-freejumping-the-o2",
+        "pendley-manor-hotel",
+        "penny-morrison-showroom",
+        "pimlico-st-georges-square",
+        "private-residence-little-venice",
+        "raffles-london-the-owo",
+        "scp-showroom-pimlico",
+        "tea-house-jaillon-studio",
+        "trematon-castle"
+      ],
+      "imageList": [
+        "ahluwalia-estuary-03",
+        "ahluwalia-estuary-07",
+        "arch-trim-01",
+        "beverly-05",
+        "beverly-08",
+        "biltmore-02",
+        "browns-bedroom",
+        "browns-cornice",
+        "browns-facade-dusk",
+        "browns-hotel-mayfair-01",
+        "browns-hotel-mayfair-03",
+        "browns-hotel-mayfair-04",
+        "browns-hotel-mayfair-06",
+        "browns-hotel-mayfair-09",
+        "browns-hotel-mayfair-10",
+        "calendar",
+        "care",
+        "carlton-tower-official-superior",
+        "dorin-burcus-portrait",
+        "doubletree-victoria-commons-01",
+        "doubletree-west-end-commons-01",
+        "everyman-11",
+        "fs-residences-01",
+        "heathrow-05",
+        "hoh-official-01",
+        "house-of-hackney-st-michaels-06",
+        "huntsman-07",
+        "inverness-terrace-exterior-10",
+        "lee-broom-07",
+        "lee-broom-08",
+        "little-venice-03",
+        "masterpiece-01",
+        "masterpiece-04",
+        "mercedes-amg-06",
+        "metropole-05",
+        "north-london-residence-01",
+        "novotel-03",
+        "old-bailey-06",
+        "owo-official-classic",
+        "owo-official-junior-suite",
+        "oxygen-o2-01",
+        "pendley-manor-15",
+        "penny-morrison-showroom-01",
+        "pimlico-st-georges-square-exterior-11",
+        "price",
+        "roll",
+        "samples",
+        "scp-pimlico-01",
+        "tea-house-01",
+        "trematon-01",
+        "trematon-24"
+      ]
+    },
+    "pr": {
+      "sections": 18,
+      "headings": 16,
+      "projectLinks": 31,
+      "images": 51,
+      "projectSlugs": [
+        "biltmore-mayfair",
+        "browns-hotel-mayfair",
+        "calico-ahluwalia-estuary-rosewood",
+        "calico-beverly-1975-cadence",
+        "calico-lee-broom-overture",
+        "doubletree-victoria",
+        "doubletree-west-end",
+        "everyman-liverpool",
+        "four-seasons-ten-trinity-square",
+        "heathrow-terminal-4-calico",
+        "hilton-garden-inn-silverstone",
+        "hilton-london-metropole",
+        "house-of-hackney-st-michaels",
+        "huntsman-savile-row",
+        "imperfect-arches-external-corner-trim",
+        "inverness-terrace",
+        "jumeirah-carlton-tower",
+        "masterpiece-london-2019",
+        "mercedes-amg-showroom-london",
+        "north-london-residence",
+        "novotel-london-canary-wharf",
+        "old-bailey-hotel",
+        "oxygen-freejumping-the-o2",
+        "pendley-manor-hotel",
+        "penny-morrison-showroom",
+        "pimlico-st-georges-square",
+        "private-residence-little-venice",
+        "raffles-london-the-owo",
+        "scp-showroom-pimlico",
+        "tea-house-jaillon-studio",
+        "trematon-castle"
+      ],
+      "imageList": [
+        "ahluwalia-estuary-03",
+        "ahluwalia-estuary-07",
+        "arch-trim-01",
+        "beverly-05",
+        "beverly-08",
+        "biltmore-02",
+        "browns-bedroom",
+        "browns-cornice",
+        "browns-facade-dusk",
+        "browns-hotel-mayfair-01",
+        "browns-hotel-mayfair-03",
+        "browns-hotel-mayfair-04",
+        "browns-hotel-mayfair-06",
+        "browns-hotel-mayfair-09",
+        "browns-hotel-mayfair-10",
+        "calendar",
+        "care",
+        "carlton-tower-official-superior",
+        "dorin-burcus-portrait",
+        "doubletree-victoria-commons-01",
+        "doubletree-west-end-commons-01",
+        "everyman-11",
+        "fs-residences-01",
+        "heathrow-05",
+        "hoh-official-01",
+        "house-of-hackney-st-michaels-06",
+        "huntsman-07",
+        "inverness-terrace-exterior-10",
+        "lee-broom-07",
+        "lee-broom-08",
+        "little-venice-03",
+        "masterpiece-01",
+        "masterpiece-04",
+        "mercedes-amg-06",
+        "metropole-05",
+        "north-london-residence-01",
+        "novotel-03",
+        "old-bailey-06",
+        "owo-official-classic",
+        "owo-official-junior-suite",
+        "oxygen-o2-01",
+        "pendley-manor-15",
+        "penny-morrison-showroom-01",
+        "pimlico-st-georges-square-exterior-11",
+        "price",
+        "roll",
+        "samples",
+        "scp-pimlico-01",
+        "tea-house-01",
+        "trematon-01",
+        "trematon-24"
+      ]
+    }
+  }
+}
