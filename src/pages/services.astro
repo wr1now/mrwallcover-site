@@ -2,6 +2,7 @@
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Picture from '../components/Picture.astro';
 import Icon, { type IconName } from '../components/Icon.astro';
+import type { DesignObjectKind } from '../lib/design-object-kinds';
 import TechnicalDiagram, { type DiagramKind } from '../components/TechnicalDiagram.astro';
 import DesignStudy from '../components/DesignStudy.astro';
 import Base from '../layouts/Base.astro';
@@ -15,12 +16,14 @@ const crumbs = [
 ];
 // Published editorial pages that live under /services/ (e.g. heritage and listed buildings).
 const serviceEditorials = editorialPages.map((mod) => mod.frontmatter).filter((fm) => fm.path.startsWith('/services/'));
-const stageVisuals: Record<string, { icon: IconName; diagram: DiagramKind; caption: string; image?: string; imageCaption?: string }> = {
-  surveying: { icon: 'ruler', diagram: 'survey', caption: 'Record the wall, openings and a true vertical before setting out the paper.' },
-  management: { icon: 'calendar', diagram: 'programme', caption: 'Illustrative sequence only. Delivery, overlaps and working dates are agreed for each project.' },
-  supply: { icon: 'roll', diagram: 'supply', caption: 'Product, batch and delivered quantity are checked against the agreed schedule.' },
-  installation: { icon: 'layers', diagram: 'setout', caption: 'The focal point and the end panels guide the layout before any length is cut.', image: 'browns-hotel-mayfair-07', imageCaption: 'Adam’s Eden at Brown’s Hotel, Mayfair, during installation. Floors remain protected. Mr Wallcover project photograph.' },
-  aftercare: { icon: 'check', diagram: 'inspection', caption: 'Look at seams, edges and junctions once the paper has settled.', image: 'browns-hotel-mayfair-12', imageCaption: 'Wallcovering meeting the cornice and door case at Brown’s Hotel, Mayfair. Mr Wallcover project photograph.' },
+const heritageEditorials = serviceEditorials.filter((page) => page.path === '/services/heritage-listed-buildings/');
+const makerEditorials = serviceEditorials.filter((page) => !heritageEditorials.includes(page));
+const stageVisuals: Record<string, { icon: IconName; study: DesignObjectKind; diagram: DiagramKind; caption: string; image?: string; imageCaption?: string }> = {
+  surveying: { icon: 'ruler', study: 'measure', diagram: 'survey', caption: 'Record the wall, openings and a true vertical before setting out the paper.' },
+  management: { icon: 'calendar', study: 'calendar', diagram: 'programme', caption: 'Illustrative sequence only. Delivery, overlaps and working dates are agreed for each project.' },
+  supply: { icon: 'roll', study: 'roll', diagram: 'supply', caption: 'Product, batch and delivered quantity are checked against the agreed schedule.' },
+  installation: { icon: 'layers', study: 'junction', diagram: 'setout', caption: 'The focal point and the end panels guide the layout before any length is cut.', image: 'browns-hotel-mayfair-07', imageCaption: 'Adam’s Eden at Brown’s Hotel, Mayfair, during installation. Floors remain protected. Mr Wallcover project photograph.' },
+  aftercare: { icon: 'check', study: 'care', diagram: 'inspection', caption: 'Look at seams, edges and junctions once the paper has settled.', image: 'browns-hotel-mayfair-12', imageCaption: 'Wallcovering meeting the cornice and door case at Brown’s Hotel, Mayfair. Mr Wallcover project photograph.' },
 };
 ---
 
@@ -51,33 +54,29 @@ const stageVisuals: Record<string, { icon: IconName; diagram: DiagramKind; capti
   {
     services.pillars.map((pillar, index) => (
       <section id={pillar.id} class:list={['service-stage', index % 2 === 1 && 'bg-paper']}>
-        <div class="container-page grid gap-8 py-14 lg:grid-cols-12 md:py-20">
-          <div class="lg:col-span-5">
-            <p class="eyebrow">0{index + 1}</p>
-            <h2 class="m-0 text-[clamp(2rem,4vw,3rem)]">{pillar.title}</h2>
-            {pillar.id === 'supply'
-              ? <DesignStudy kind="roll" caption={`Illustrative wallpaper roll. ${stageVisuals[pillar.id].caption}`} />
-              : <TechnicalDiagram kind={stageVisuals[pillar.id].diagram} caption={stageVisuals[pillar.id].caption} class="service-stage-diagram" />}
+        <div class="container-page service-stage-layout">
+          <div class="service-stage-copy">
+            <header class="service-stage-heading">
+              <p class="eyebrow">0{index + 1} / 05</p>
+              <h2>{pillar.title}</h2>
+            </header>
+            <div class="prose">
+              {pillar.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              {pillar.id === 'installation' && <p>Specialist detailing: <a href="/projects/imperfect-arches-external-corner-trim/">how we finish an imperfect arch with a bespoke external-corner trim</a></p>}
+              {pillar.id === 'aftercare' && <p><a href="/aftercare/">The aftercare page</a></p>}
+            </div>
           </div>
-          <div class="prose lg:col-span-6 lg:col-start-7">
-            {pillar.paragraphs.map((paragraph) => (
-              <p class="m-0">{paragraph}</p>
-            ))}
-            {pillar.id === 'installation' && (
-              <p class="m-0">
-                Specialist detailing: <a href="/projects/imperfect-arches-external-corner-trim/">how we finish an imperfect arch with a bespoke external-corner trim</a>
-              </p>
-            )}
-            {pillar.id === 'aftercare' && (
-              <p class="m-0">
-                <a href="/aftercare/">The aftercare page</a>
-              </p>
-            )}
-            {stageVisuals[pillar.id].image && <figure class="service-stage-photo">
-              <Picture id={stageVisuals[pillar.id].image!} sizes="(min-width: 768px) 42rem, calc(100vw - 2.5rem)" />
-              <figcaption class="caption">{stageVisuals[pillar.id].imageCaption}</figcaption>
-            </figure>}
+          <div class="service-stage-visual">
+            <DesignStudy kind={stageVisuals[pillar.id].study} caption={`${pillar.id === 'supply' ? 'Illustrative wallpaper roll.' : 'Illustrative study.'} ${stageVisuals[pillar.id].caption}`} />
+            {pillar.id !== 'supply' && <details class="service-stage-schematic">
+              <summary>View the {pillar.title.toLowerCase()} schematic</summary>
+              <TechnicalDiagram kind={stageVisuals[pillar.id].diagram} caption={stageVisuals[pillar.id].caption} />
+            </details>}
           </div>
+          {stageVisuals[pillar.id].image && <figure class="service-stage-photo">
+            <Picture id={stageVisuals[pillar.id].image!} sizes="(min-width: 1024px) 66rem, calc(100vw - 2.5rem)" />
+            <figcaption class="caption">{stageVisuals[pillar.id].imageCaption}</figcaption>
+          </figure>}
         </div>
       </section>
     ))
@@ -96,12 +95,12 @@ const stageVisuals: Record<string, { icon: IconName; diagram: DiagramKind; capti
           <p class="caption">Adam’s Eden by Adam Calkin for Lewis &amp; Wood, photographed with its printed selvedge at Brown’s Hotel, Mayfair. Mr Wallcover project photograph.</p>
         </div>
       </div>
-      <div class="mt-12 grid gap-8 md:grid-cols-2">
+      <div class="service-material-directory">
         {
           services.materials.items.map((item) => {
             const page = specialisms.find((s) => s.materialKey === item.title);
             return (
-              <article class="border-t border-line pt-4">
+              <article class="service-directory-item">
                 <h3 class="m-0 text-[1.8rem]">{page ? <a href={specialismHref(page.slug)}>{item.title}</a> : item.title}</h3>
                 <p class="mt-3 mb-0 text-stone">{item.text}</p>
               </article>
@@ -111,11 +110,12 @@ const stageVisuals: Record<string, { icon: IconName; diagram: DiagramKind; capti
       </div>
     </div>
   </section>
-  <section class="border-t border-line" aria-labelledby="films-heading">
-    <div class="container-page py-14 md:py-20">
+  <div class="service-specialist-directory container-page">
+  <section aria-labelledby="films-heading">
+    <div>
       <p class="eyebrow">Panel finishes and films</p>
       <h2 id="films-heading" class="m-0 text-[clamp(2rem,4vw,3rem)]">Wallcoverings on joinery, bespoke panels and specialist films.</h2>
-      <div class="mt-8 grid gap-8 md:grid-cols-3">
+      <div class="service-film-links">
         {
           ['joinery-wallcoverings-and-panels', 'architectural-film-wrapping', 'window-film']
             .map((slug) => specialisms.find((s) => s.slug === slug)!)
@@ -129,8 +129,8 @@ const stageVisuals: Record<string, { icon: IconName; diagram: DiagramKind; capti
       </div>
     </div>
   </section>
-  <section class="border-t border-line" aria-labelledby="exterior-heading">
-    <div class="container-page py-14 md:py-20">
+  <section aria-labelledby="exterior-heading">
+    <div>
       <p class="eyebrow">Exteriors</p>
       <h2 id="exterior-heading" class="m-0 text-[clamp(2rem,4vw,3rem)]">Exterior works.</h2>
       <div class="mt-8 max-w-3xl border-t border-line pt-4">
@@ -140,13 +140,13 @@ const stageVisuals: Record<string, { icon: IconName; diagram: DiagramKind; capti
     </div>
   </section>
   {
-    serviceEditorials.length > 0 && (
-      <section class="border-t border-line" aria-labelledby="heritage-heading">
-        <div class="container-page py-14 md:py-20">
+    heritageEditorials.length > 0 && (
+      <section class="service-heritage-directory" aria-labelledby="heritage-heading">
+        <div>
           <p class="eyebrow">Heritage</p>
           <h2 id="heritage-heading" class="m-0 text-[clamp(2rem,4vw,3rem)]">Listed and heritage buildings.</h2>
-          <div class="mt-8 grid gap-8 md:grid-cols-2">
-            {serviceEditorials.map((fm) => (
+          <div class="service-heritage-links">
+            {heritageEditorials.map((fm) => (
               <article class="border-t border-line pt-4">
                 <h3 class="m-0 text-[1.8rem]"><a href={fm.path}>{fm.title}</a></h3>
                 <p class="mt-3 mb-0 text-stone">{fm.description}</p>
@@ -157,6 +157,18 @@ const stageVisuals: Record<string, { icon: IconName; diagram: DiagramKind; capti
       </section>
     )
   }
+  {makerEditorials.length > 0 && <section class="service-maker-directory" aria-labelledby="maker-services-heading">
+    <p class="eyebrow">Maker installation</p>
+    <h2 id="maker-services-heading" class="m-0">Specialist papers, installed with care.</h2>
+    <div class="service-maker-links">
+      {makerEditorials.map((fm) => <article class="border-t border-line pt-4">
+        <h3 class="m-0 text-[1.8rem]"><a href={fm.path}>{fm.title}</a></h3>
+        <p class="mt-3 mb-0 text-stone">{fm.description}</p>
+      </article>)}
+    </div>
+  </section>}
+
+  </div>
   <section class="border-t border-line" aria-labelledby="areas-heading">
     <div class="container-page py-14 md:py-20">
       <p class="eyebrow">Where we work</p>
@@ -171,13 +183,51 @@ const stageVisuals: Record<string, { icon: IconName; diagram: DiagramKind; capti
 </Base>
 
 <style>
-  .service-stage-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
-  .service-stage-nav a { display: inline-flex; align-items: center; gap: .55rem; min-height: 44px; padding: .65rem .9rem; border: 1px solid var(--color-line); border-radius: var(--radius-control); text-decoration: none; color: var(--color-ink); background: var(--color-paper); }
+  .service-stage-nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .65rem; margin-top: 2rem; }
+  .service-stage-nav a { display: flex; align-items: center; gap: .55rem; min-height: 52px; padding: .8rem; border: 1px solid var(--color-line); border-radius: var(--radius-control); text-decoration: none; color: var(--color-ink); background: var(--color-paper); line-height: 1.4; }
   .service-stage-nav a:hover { border-color: var(--color-brass); }
-  .service-stage { scroll-margin-top: 7rem; }
-  .service-stage :global(.service-stage-diagram) { max-width: 34rem; margin-top: 1.75rem; }
-  .service-stage-photo { margin: 2rem 0 0; }
-  .service-stage-photo :global(.media-img) { width: 100%; max-height: 29rem; object-fit: cover; }
-  .service-stage-photo figcaption { margin-top: .8rem; }
-  @media (min-width: 768px) and (max-width: 1023px) { .service-stage-nav { gap: .5rem; } }
+  .service-stage-nav :global(.mw-icon) { flex-shrink: 0; }
+  .service-stage { scroll-margin-top: 7rem; border-top: 1px solid var(--color-line); }
+  .service-stage-layout { display: grid; gap: 2rem; padding-block: clamp(3rem, 6vw, 5rem); }
+  .service-stage-copy { min-width: 0; }
+  .service-stage-heading { margin-bottom: 1.4rem; }
+  .service-stage-heading h2 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); }
+  .service-stage-copy .prose > p { margin: 0; }
+  .service-stage-copy .prose > p + p { margin-top: 1rem; }
+  .service-stage-visual { min-width: 0; padding: .5rem 1rem; background: color-mix(in srgb, var(--color-paper) 72%, transparent); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
+  .service-stage-visual :global(.design-study) { max-width: 31rem; margin: 0 auto; }
+  .service-stage-schematic { margin-top: .8rem; border-top: 1px solid var(--color-line); }
+  .service-stage-schematic summary { display: list-item; min-height: 48px; padding: .8rem .4rem; color: var(--color-ink); cursor: pointer; font-size: var(--text-button); }
+  .service-stage-schematic :global(.technical-diagram) { border: 0; background: transparent; padding-inline: 0; }
+  .service-stage-photo { margin: 0; min-width: 0; }
+  .service-stage-photo :global(.media-img) { width: 100%; max-height: 26rem; object-fit: cover; }
+  .service-stage-photo figcaption { margin-top: .8rem; max-width: 70ch; }
+  .service-material-directory { display: grid; gap: 0 2.5rem; margin-top: 2.5rem; }
+  .service-directory-item { padding-block: 1.5rem; border-top: 1px solid var(--color-line); }
+  .service-specialist-directory { display: grid; gap: 2.5rem; padding-block: clamp(3rem, 6vw, 5rem); border-top: 1px solid var(--color-line); }
+  .service-specialist-directory h2 { font-size: clamp(1.9rem, 3vw, 2.5rem); }
+  .service-specialist-directory h3 { font-size: 1.6rem; }
+  .service-film-links, .service-heritage-links, .service-maker-links { display: grid; gap: 1.5rem; margin-top: 2rem; }
+  .service-film-links article, .service-heritage-links article, .service-maker-links article { min-width: 0; }
+  @media (min-width: 768px) {
+    .service-stage-layout { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2.5rem clamp(2rem, 5vw, 5rem); align-items: start; }
+    .service-stage-photo { grid-column: 1 / -1; }
+    .service-stage-photo :global(.media-img) { aspect-ratio: 2.7 / 1; }
+    .service-material-directory { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .service-specialist-directory { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+    .service-specialist-directory > section:first-child { grid-column: 1 / -1; }
+    .service-film-links, .service-maker-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+    .service-maker-directory { grid-column: 1 / -1; }
+    .service-film-links > article:last-child, .service-maker-links > article:last-child { grid-column: 1 / -1; }
+    .service-film-links > article:last-child p, .service-maker-links > article:last-child p { max-width: 62ch; }
+  }
+  @media (min-width: 1100px) {
+    .service-specialist-directory { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3.5rem 2.5rem; }
+    .service-heritage-directory { grid-column: span 2; }
+    .service-film-links, .service-maker-links { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+    .service-film-links > article:last-child, .service-maker-links > article:last-child { grid-column: auto; }
+    .service-heritage-links p { max-width: 62ch; }
+  }
+  @media (max-width: 767px) { .service-stage-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 768px) and (max-width: 1023px) { .service-stage-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 </style>

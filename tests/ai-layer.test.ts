@@ -60,7 +60,7 @@ async function publishedPages(): Promise<{ file: string; pathname: string; html:
 
 function stripTags(html: string): string {
   return html
-    .replace(/<br\s*\/?>/g, ' ')
+    .replace(/<br\b[^>]*>/gi, ' ')
     .replace(/<[^>]+>/g, '')
     .replace(/&amp;/g, '&')
     .replace(/&#39;/g, "'")
@@ -515,7 +515,9 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
         if (crumbs.itemListElement[0].item !== `${SITE}/`) problems.push(`${page.pathname}: breadcrumb does not start at home`);
       }
     }
-    const faqVisible = /<details id="[a-z-]+">|<section class="guide-faq"/.test(page.html);
+    // Native question summaries carry a heading; unrelated disclosures such as the complete
+    // hotel record also have ids, but must not create a requirement for FAQPage schema.
+    const faqVisible = /<details\b[^>]*\bid="[a-z-]+"[^>]*>\s*<summary\b[^>]*>\s*<h[23]\b|<section\b(?=[^>]*\bclass="[^"]*\bguide-faq\b[^"]*")[^>]*>/.test(page.html);
     if (types.includes('FAQPage') !== faqVisible) problems.push(`${page.pathname}: FAQPage ${types.includes('FAQPage') ? 'without' : 'missing despite'} visible questions`);
     if (/^\/services\/[a-z-]+\/$/.test(page.pathname)) {
       const service = graph.find((node) => node['@type'] === 'Service' && node['@id'] === `${SITE}${page.pathname}#service`);

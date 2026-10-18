@@ -11,13 +11,14 @@ import '../../styles/guide.css';
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href: '/advice/' }];
 ---
 <Base title="Wallcovering Guide | Mr Wallcover" description="Choose, specify, source, prepare for and install a wallcovering: our guides, the roll calculator, how wallpaper is sold and how we check." path="/advice/" extraSchema={[breadcrumbNode(crumbs)]}>
-  <div class="container-page pb-20">
+  <div class="container-page guide-hub pb-20">
     <header class="page-head guide-intro">
       <Breadcrumb items={crumbs} />
       <p class="eyebrow">The Wallcovering Guide</p>
       <h1>Before the first<br /><em>length is cut.</em></h1>
       <p class="lede mt-5">The sample is only the start. Make sense of the material, the wall and the work before committing to a room.</p>
     </header>
+    <nav class="guide-stage-overview" aria-label="Choose a project stage">{guideStages.map((stage, index) => <a href={`#${stage.id}`}><span class="stage-overview-number">{String(index + 1).padStart(2, '0')}</span><span>{stage.label}</span><Icon name="arrow-right" /></a>)}</nav>
     <section class="guide-stages" aria-labelledby="stages-heading">
       <h2 id="stages-heading">Choose, specify, source, prepare, install.</h2>
       <p>Each stage has its own pages. Start where your project is.</p>
@@ -64,3 +65,52 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href:
     });
   }
 </script>
+
+<style>
+  .guide-intro { max-width: 58rem; }
+  .guide-intro .lede { max-width: 44rem; }
+  .guide-stage-overview { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: clamp(3rem, 6vw, 5rem); border-top: 1px solid var(--color-line); border-left: 1px solid var(--color-line); }
+  .guide-stage-overview > a { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: .65rem; min-width: 0; min-height: 64px; padding: 1rem; border-right: 1px solid var(--color-line); border-bottom: 1px solid var(--color-line); background: var(--color-paper); color: inherit; text-decoration: none; }
+  .guide-stage-overview > a:last-child { grid-column: 1 / -1; }
+  .stage-overview-number { color: var(--color-brass); font-size: var(--text-meta); font-variant-numeric: tabular-nums; }
+  .guide-stage-overview :global(.mw-icon) { width: 1.1rem; height: 1.1rem; color: var(--color-brass); }
+  .guide-stage-overview > a:hover { background: var(--color-ivory-deep); }
+  .guide-stages { margin-top: 0; }
+  .stage-list { display: grid; gap: 1.25rem; border-top: 0; }
+  .stage { display: flex; flex-direction: column; gap: 1.5rem; min-width: 0; padding: clamp(1.25rem, 2.5vw, 2rem); background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
+  .stage-head { min-width: 0; }
+  .stage-head > :global(.mw-icon) { display: block; width: 2rem; height: 2rem; margin-bottom: 1.25rem; }
+  .stage-head p { line-height: 1.65; }
+  .stage-links { grid-template-columns: minmax(0, 1fr); margin-top: auto; }
+  .stage-links a { gap: .45rem; padding-block: 1rem; }
+  .stage-links li:nth-child(2) a { border-top: 1px solid var(--color-line); }
+  .stage-links span { font-size: var(--text-body); line-height: 1.6; }
+  .stage-trust { padding: 1.5rem; background: var(--color-ivory-deep); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
+  .guide-library { padding-top: clamp(2.5rem, 5vw, 4rem); border-top: 1px solid var(--color-line); }
+  .guide-library > h2 { margin: 0; }
+  .guide-filters { padding: 1rem 0; gap: .65rem; }
+  .guide-filters button { background: var(--color-paper); }
+  .guide-filters button[aria-pressed="true"] { background:var(--color-ink); color:var(--color-ivory); border-color:var(--color-ink); }
+  .guide-grid { align-items: stretch; gap: 1.25rem; }
+  .guide-grid :global(.guide-card) { min-width: 0; }
+  .guide-hub > .guide-next { margin-top: clamp(3rem, 6vw, 5rem); border: 1px solid var(--color-line); }
+  .guide-hub > .guide-next > .eyebrow { margin-top: 0; }
+  @media (min-width: 768px) {
+    .guide-stage-overview { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .guide-stage-overview > a { gap: .45rem; padding-inline: .9rem; }
+    .guide-stage-overview > a:last-child { grid-column: auto; }
+    .stage-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stage:last-child { grid-column: 1 / -1; }
+    .stage:last-child .stage-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2rem; }
+    .stage:last-child .stage-links li:nth-child(2) a { border-top: 0; }
+    .stage-trust { grid-template-columns: minmax(10rem, 1fr) minmax(0, 3fr); align-items: center; gap: 2rem; }
+  }
+  @media (min-width: 1280px) {
+    .stage-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .stage { grid-column: span 2; }
+    .stage:nth-child(n + 4) { grid-column: span 3; }
+    .stage:last-child .stage-links { grid-template-columns: minmax(0, 1fr); }
+    .stage:last-child .stage-links li:nth-child(2) a { border-top: 1px solid var(--color-line); }
+    .guide-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+</style>

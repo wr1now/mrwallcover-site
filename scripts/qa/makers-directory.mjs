@@ -11,8 +11,8 @@ try{
   await page.setViewport({width,height:960});
   const paths=width===390||width===1440?['/makers/','/buying-routes/',...data.makers.map(m=>`/makers/${m.slug}/`)]:['/makers/','/buying-routes/'];
   for(const path of paths){const response=await page.goto(server.origin+path,{waitUntil:'load'});assert.equal(response.status(),200);await page.evaluate(()=>document.fonts.ready);
-   const result=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,h1:document.querySelectorAll('main h1').length,small:[...document.querySelectorAll('main .maker-card p:not(.eyebrow), main .maker-route p:not(.eyebrow), main .maker-route dd, main .lede')].filter(e=>parseFloat(getComputedStyle(e).fontSize)<16).length}));
-   assert.equal(result.overflow,false,path+' '+width);assert.equal(result.h1,1);assert.equal(result.small,0,path+' text floor');report.push({path,width,...result});
+   const result=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,h1:document.querySelectorAll('main h1').length,wideReading:[...document.querySelectorAll('.maker-intro p,.maker-section>p')].filter(e=>e.getBoundingClientRect().width>44*parseFloat(getComputedStyle(document.documentElement).fontSize)+1).length,small:[...document.querySelectorAll('main .maker-card p:not(.eyebrow), main .maker-route p:not(.eyebrow), main .maker-route dd, main .lede')].filter(e=>parseFloat(getComputedStyle(e).fontSize)<16).length}));
+   assert.equal(result.overflow,false,path+' '+width);assert.equal(result.h1,1);assert.equal(result.small,0,path+' text floor');assert.equal(result.wideReading,0,path+' reading measure');report.push({path,width,...result});
    if(output&&['/makers/','/buying-routes/','/makers/designers-guild/'].includes(path))await page.screenshot({path:`${output}/${path.replaceAll('/','-')}-${width}.png`,fullPage:false});
   }
  }

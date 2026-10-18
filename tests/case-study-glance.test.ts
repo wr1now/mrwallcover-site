@@ -33,7 +33,10 @@ for (const fm of studies) {
     const box = h.match(/<section class="glance-box"[^>]*data-glance[^>]*>([\s\S]*?)<\/section>/)?.[1];
     assert.ok(box, 'the box is on the page');
     assert.ok(h.indexOf('data-glance') < h.indexOf('class="prose case-study"'), 'the box sits above the story');
-    const rows = [...box!.matchAll(/<dt>([\s\S]*?)<\/dt>\s*<dd>([\s\S]*?)<\/dd>/g)].map((m) => [decode(m[1].replace(/<[^>]+>/g, '')), decode(m[2].replace(/<span aria-hidden="true">–<\/span><span class="sr-only">Not recorded<\/span>/, '').replace(/<[^>]+>/g, ''))]);
+    // Scoped styling may add attributes to any element; the semantic dt/dd rows and exact values
+    // remain the contract, including both accessible spans on every unrecorded field.
+    const blank = /<span\b(?=[^>]*\baria-hidden="true")[^>]*>–<\/span>\s*<span\b(?=[^>]*\bclass="[^"]*\bsr-only\b[^"]*")[^>]*>Not recorded<\/span>/;
+    const rows = [...box!.matchAll(/<dt\b[^>]*>([\s\S]*?)<\/dt>\s*<dd\b[^>]*>([\s\S]*?)<\/dd>/g)].map((m) => [decode(m[1].replace(/<[^>]+>/g, '')), decode(m[2].replace(blank, '').replace(/<[^>]+>/g, ''))]);
     assert.deepEqual(rows.map((r) => r[0]), LABELS);
     const get = (label: string) => rows.find((r) => r[0] === label)![1];
     const extra = glance[fm.slug];
@@ -48,7 +51,7 @@ for (const fm of studies) {
     else assert.equal(get('Year'), '', `"${fm.years}" is not a year, so the field stays blank`);
     // A blank field says so to screen readers instead of showing nothing.
     const blanks = rows.filter((r) => r[1] === '').length;
-    assert.equal((box!.match(/class="sr-only">Not recorded</g) ?? []).length, blanks);
+    assert.equal((box!.match(/<span\b(?=[^>]*\bclass="[^"]*\bsr-only\b[^"]*")[^>]*>Not recorded<\/span>/g) ?? []).length, blanks);
   });
 }
 

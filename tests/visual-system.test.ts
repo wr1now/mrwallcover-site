@@ -4,12 +4,28 @@ import { access, readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { questionIcon } from '../src/lib/question-visual.ts';
 import { questionVisualForPath } from '../src/lib/question-visual-policy.ts';
+import { objectKindForQuestion } from '../src/lib/design-object-presentation.ts';
+import { materialStudyKind, guideStudyKind } from '../src/lib/design-study-topic.ts';
+
+test('physical studies distinguish measurement, wrapped corners and thin applied film without implying approval',()=>{
+  assert.equal(objectKindForQuestion('What wall dimensions do you need?'),'measure');
+  assert.equal(objectKindForQuestion('How do you finish an external corner?'),'junction');
+  assert.equal(objectKindForQuestion('What is overlap and splice?'),'junction');
+  assert.equal(objectKindForQuestion('Can you wrap existing joinery in architectural film?'),'film');
+  assert.equal(objectKindForQuestion('What is the survey cost?'),'price');
+  assert.equal(objectKindForQuestion('What fire certification does this film have?'),'document');
+  assert.equal(objectKindForQuestion('What insurance do you hold?'),'document');
+  assert.equal(materialStudyKind('grasscloth-and-weaves'),'junction');
+  assert.equal(materialStudyKind('architectural-film'),'film');
+  assert.equal(guideStudyKind('set-out-and-pattern-matching','preparing'),'junction');
+  assert.equal(guideStudyKind('site-survey','preparing'),'measure');
+});
 
 test('future FAQ pages inherit dimensional studies while factual and reference utilities remain static',()=>{
   for(const path of ['/services/future-finish/','/areas/future-area/','/materials/future-weave/','/advice/future-installation-note/','/professionals/future-specialist/','/a-new-briefing-page/','/visual-contract-fixture/']) {
     assert.equal(questionVisualForPath(path),'dimensional',`${path}: deliberate shared FAQ use inherits the dimensional default`);
   }
-  for(const path of ['/for-ai/','/for-ai/future-facts/','/wallcovering-installation-ai-crawler/','/privacy/','/accessibility/','/image-use/','/legal/future-notice/','/policies/future-policy/','/reference/future-table/','/search/','/thank-you/','/404.html','/calculator/','/wallpapering/preparation/','/wallpapering/lining-and-adhesives/']) {
+  for(const path of ['/for-ai/','/for-ai/future-facts/','/wallcovering-installation-ai-crawler/','/privacy/','/accessibility/','/image-use/','/legal/future-notice/','/policies/future-policy/','/reference/future-table/','/makers/future-maker/','/buying-routes/','/search/','/thank-you/','/404.html','/calculator/','/wallpapering/preparation/','/wallpapering/lining-and-adhesives/']) {
     assert.equal(questionVisualForPath(path),'drawing',`${path}: factual reading and utility controls stay static`);
   }
   assert.equal(questionVisualForPath('/for-ai/?view=facts#questions'),'drawing','query strings and fragments do not change the factual presentation');

@@ -54,16 +54,17 @@ interface PageExtras {
 export function getStaticPaths() {
   return editorialPages.map((mod) => ({
     params: { page: mod.frontmatter.path.replace(/^\/|\/$/g, '') },
-    props: { page: mod.frontmatter, Content: mod.Content },
+    props: { page: mod.frontmatter, Content: mod.Content, headings: (mod as typeof mod & { getHeadings?: () => { depth: number; slug: string; text: string }[] }).getHeadings?.().filter((heading) => heading.depth === 2) ?? [] },
   }));
 }
 
 interface Props {
   page: EditorialPageData & PageExtras;
   Content: any;
+  headings: { depth: number; slug: string; text: string }[];
 }
 
-const { page, Content } = Astro.props;
+const { page, Content, headings } = Astro.props;
 const crumbs = [{ name: 'Home', href: '/' }, page.parent, { name: page.title, href: page.path }];
 const linked = linkedProjects(page.projects, `editorial page "${page.path}"`);
 const url = new URL(page.path, SITE_URL).href;
@@ -99,8 +100,8 @@ const buyerFaq = professionalPage
     breadcrumbNode(crumbs),
   ]}
 >
-  <div class="container-page">
-    <header class:list={['page-head', intake && 'guide-head']}>
+  <div class="container-page editorial-page">
+    <header class:list={['page-head editorial-head', intake && 'guide-head']}>
       <Breadcrumb items={crumbs} />
       <p class="eyebrow">{page.eyebrow}</p>
       <h1>{page.heading}</h1>
@@ -112,26 +113,29 @@ const buyerFaq = professionalPage
       </div>
     </header>
     {page.guideStage && <GuideNav current={page.guideStage} />}
+    {headings.length > 1 && <nav class="editorial-contents" aria-label="On this page"><p class="eyebrow">On this page</p><ol>{headings.map((heading) => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ol></nav>}
     {
       intake ? (
-        <div class="grid gap-10 pb-12 md:grid-cols-12">
-          <article class="prose guide-prose md:col-span-7">
+        <div class="editorial-body editorial-body-with-media pb-12">
+          <article class="prose guide-prose editorial-reading">
             <Content />
       {page.path === "/where-to-buy/" && directoryVisible && <aside class="guide-next"><h2>Find a maker and a route</h2><p>Compare brand profiles and official sourcing contacts on their own pages.</p><Action href="/makers/" variant="secondary">Makers directory</Action><Action href="/buying-routes/" variant="quiet">Official buying routes</Action></aside>}
           </article>
-          <div class="editorial-intake-column md:col-span-4 md:col-start-9">
+          <div class="editorial-intake-column editorial-evidence-rail">
             {page.featureMedia && <EvidenceFigure id={page.featureMedia.id} caption={page.featureMedia.caption} credit={page.featureMedia.credit} href={featureProject ? projectHref(featureProject.slug) : undefined} linkLabel={featureProject ? `View the ${featureProject.title} case study` : undefined} sizes="(min-width: 1024px) 24rem, calc(100vw - 2.5rem)" />}
             <ProfessionalBriefing items={intake.items} icons={intake.icons} heading={intake.heading} download={intake.download ? `/downloads/${intake.download}` : undefined} downloadLabel={intake.downloadLabel} guide={relatedGuide ? {href:guideHref(relatedGuide.frontmatter.slug), label:`${relatedGuide.frontmatter.shortTitle}: read the guide`} : undefined} />
           </div>
         </div>
       ) : (
         <div class:list={['editorial-body pb-12', (page.featureMedia || page.featureDiagram) && 'editorial-body-with-media']}>
-          <article class:list={['prose guide-prose max-w-3xl', page.guideStage && 'guide-stage-page']}>
+          <article class:list={['prose guide-prose editorial-reading', page.guideStage && 'guide-stage-page']}>
             <Content />
       {page.path === "/where-to-buy/" && directoryVisible && <aside class="guide-next"><h2>Find a maker and a route</h2><p>Compare brand profiles and official sourcing contacts on their own pages.</p><Action href="/makers/" variant="secondary">Makers directory</Action><Action href="/buying-routes/" variant="quiet">Official buying routes</Action></aside>}
           </article>
-          {page.featureMedia && <EvidenceFigure class="editorial-feature-media" id={page.featureMedia.id} caption={page.featureMedia.caption} credit={page.featureMedia.credit} href={featureProject ? projectHref(featureProject.slug) : undefined} linkLabel={featureProject ? `View the ${featureProject.title} case study` : undefined} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" />}
-          {page.featureDiagram && <div class="editorial-feature-media"><TechnicalDiagram kind={page.featureDiagram.kind} caption={page.featureDiagram.caption} /></div>}
+          {(page.featureMedia || page.featureDiagram) && <div class="editorial-evidence-rail">
+            {page.featureMedia && <EvidenceFigure class="editorial-feature-media" id={page.featureMedia.id} caption={page.featureMedia.caption} credit={page.featureMedia.credit} href={featureProject ? projectHref(featureProject.slug) : undefined} linkLabel={featureProject ? `View the ${featureProject.title} case study` : undefined} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" />}
+            {page.featureDiagram && <div class="editorial-feature-media"><TechnicalDiagram kind={page.featureDiagram.kind} caption={page.featureDiagram.caption} /></div>}
+          </div>}
         </div>
       )
     }
@@ -143,7 +147,7 @@ const buyerFaq = professionalPage
         </section>
       )
     }
-    {buyerFaq.length > 0 && <div class="prose guide-prose"><BuyerFaq items={buyerFaq} eyebrow="Questions" /></div>}
+    {buyerFaq.length > 0 && <div class="editorial-questions"><BuyerFaq items={buyerFaq} eyebrow="Questions" /></div>}
     {
       page.otherProfessionals && (
         <section class="guide-related pb-12">
@@ -164,13 +168,45 @@ const buyerFaq = professionalPage
 </Base>
 
 <style>
+  .editorial-head { max-width: 66rem; }
+  .editorial-head > .lede { max-width: var(--layout-reading); }
+  .editorial-contents { margin-bottom: 2.5rem; padding: clamp(1.25rem, 2.5vw, 2rem); background: var(--color-ivory-deep); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
+  .editorial-contents > p { margin: 0 0 .75rem; }
+  .editorial-contents ol { display: grid; gap: .25rem 2.5rem; list-style: decimal; margin: 0; padding-left: 1.2rem; }
+  .editorial-contents li { padding-left: .2rem; }
+  .editorial-contents a { display: inline-flex; align-items: center; min-height: 44px; color: inherit; text-decoration: underline; text-decoration-color: var(--color-brass); text-underline-offset: .2em; line-height: 1.5; }
+  .editorial-body { min-width: 0; }
+  .editorial-reading { min-width: 0; width: 100%; max-width: 50rem; margin-inline: auto; padding: clamp(1.25rem, 3vw, 2.5rem); background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
+  .editorial-reading > :global(:first-child) { margin-top: 0; }
+  .editorial-reading > :global(h2) { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-line); scroll-margin-top: 8rem; }
+  .editorial-reading > :global(h3) { margin: 2rem 0 .8rem; }
+  .editorial-reading > :global(ul), .editorial-reading > :global(ol) { margin-block: 1.25rem; padding-left: 1.3rem; }
+  .editorial-reading > :global(ul) { list-style: disc; }
+  .editorial-reading > :global(ol) { list-style: decimal; }
+  .editorial-reading :global(li) { padding-left: .2rem; line-height: 1.75; }
+  .editorial-reading :global(li + li) { margin-top: .7rem; }
+  .editorial-reading :global(table) { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin-block: 1.5rem; }
+  .editorial-reading :global(th), .editorial-reading :global(td) { min-width: 10ch; padding: .85rem 1rem; border: 1px solid var(--color-line); text-align: left; vertical-align: top; }
+  .editorial-reading :global(th) { background: var(--color-ivory-deep); font-weight: 500; }
   .editorial-feature-media { margin: 0; }
   .editorial-feature-media figcaption { display: grid; gap: .4rem; margin-top: .9rem; }
   .editorial-feature-media a { color: var(--color-brass); text-decoration: underline; text-underline-offset: .2em; }
   .editorial-body-with-media { display: grid; gap: 2rem; }
-  .editorial-intake-column { display:grid; gap:2rem; align-content:start; }
+  .editorial-evidence-rail { display: grid; gap: 2rem; align-content: start; min-width: 0; }
+  .editorial-questions { padding-bottom: 3rem; }
+  @media (min-width: 640px) {
+    .editorial-contents ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
   @media (min-width: 1024px) {
-    .editorial-body-with-media { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
-    .editorial-feature-media { position: sticky; top: 8rem; margin-top: 1.4rem; }
+    .editorial-contents ol { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .editorial-body-with-media { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(2rem, 4vw, 4rem); align-items: start; }
+    .editorial-body-with-media .editorial-reading { max-width: none; margin: 0; }
+    .editorial-evidence-rail { padding-left: 1.75rem; border-left: 1px solid var(--color-line); }
+  }
+  @media print {
+    .editorial-contents { display: none; }
+    .editorial-body-with-media { display: block; }
+    .editorial-reading { padding: 0; border: 0; max-width: none; }
+    .editorial-evidence-rail { padding: 0; border: 0; }
   }
 </style>

@@ -4,6 +4,7 @@ import { HERO_SIZES } from '../lib/hero-sizes';
 import '../styles/atelier.css';
 import '../styles/unify.css';
 import '../styles/visual-system.css';
+import '../styles/editorial-layout.css';
 import hero from '../content/hero.json';
 import { ANALYTICS_EVENTS, ANALYTICS_SRC, ANALYTICS_WEBSITE_ID, BRAND_NAME, GOOGLE_SITE_VERIFICATION, SITE_URL } from '../config';
 import { CONTACT_PAYLOAD } from '../lib/phone';
@@ -11,6 +12,7 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import MobileDock from '../components/MobileDock.astro';
 import PageMeta from '../components/PageMeta.astro';
+import AtelierAtmosphere from '../components/AtelierAtmosphere.astro';
 import { businessNode, founderNode, jsonLd, webPageNode, websiteNode } from '../lib/schema';
 
 interface Props {
@@ -184,6 +186,7 @@ import outfit500 from '@fontsource/outfit/files/outfit-latin-500-normal.woff2?ur
     }
   </head>
   <body class:list={[path === '/' && 'is-home']} data-private-workspace={privateWorkspace || undefined}>
+    {!privateWorkspace && !requestedNoindex && path !== '/404/' && path !== '/404.html' && <AtelierAtmosphere path={path} quiet={reviewBuild} />}
     <a class="skip-link" href="#main">Skip to content</a>
     <Header path={Astro.url.pathname} />
     <main id="main" tabindex="-1">

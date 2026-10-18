@@ -7,7 +7,7 @@ const route = '/professionals/designers/';
 const objectSelector = '.guide-faq-item [data-design-object]';
 const professionalRoutes = ['/professionals/designers/', '/professionals/developers/', '/professionals/hotels/', '/professionals/fit-out-contractors/', '/trade/'];
 const representativeRoutes = ['/services/grasscloth-installation/', '/materials/', '/materials/grasscloth-and-weaves/', '/advice/', '/advice/set-out-and-pattern-matching/', '/areas/chelsea/', '/faq/', '/contact/', ...professionalRoutes];
-const staticRoutes = ['/for-ai/', '/wallcovering-installation-ai-crawler/', '/privacy/', '/image-use/', '/accessibility/', '/calculator/', '/wallpapering/preparation/', '/wallpapering/lining-and-adhesives/'];
+const staticRoutes = ['/for-ai/', '/wallcovering-installation-ai-crawler/', '/privacy/', '/image-use/', '/accessibility/', '/calculator/', '/wallpapering/preparation/', '/wallpapering/lining-and-adhesives/', '/makers/', '/makers/de-gournay/', '/buying-routes/'];
 type Answer = { id: string; question: string; answer: string; pages: string[] };
 const source = JSON.parse(await readFile('src/data/buyer-answers.json', 'utf8')) as { answers: Answer[]; standing: Answer[] };
 type VisibleAnswer = Pick<Answer, 'id' | 'question' | 'answer'>;
@@ -222,6 +222,26 @@ test('large question studies retain readable text and a separate right-hand rail
         }
       }
     }
+  });
+});
+
+test('a buyer question in a narrow column sizes its study to the column rather than the desktop viewport', { timeout: 30000 }, async () => {
+  await withPage(async page => {
+    await page.setJavaScriptEnabled(false);
+    await load(page);
+    await page.$eval('.guide-faq', (section: HTMLElement) => { section.style.width = '384px'; });
+    const result = await page.$eval('.guide-faq-item', (item: HTMLElement) => {
+      const heading = item.querySelector('h3')!.getBoundingClientRect();
+      const study = item.querySelector('[data-question-visual]')!.getBoundingClientRect();
+      const answer = item.querySelector(':scope > p')!.getBoundingClientRect();
+      return { study:study.width, heading:heading.width, overlap:heading.right > study.left + 1, answer:answer.width, viewport:innerWidth, overflow:document.documentElement.scrollWidth > innerWidth };
+    });
+    assert.equal(result.viewport, 1440);
+    assert.equal(result.study, 144, 'the study fits a compact content column');
+    assert.ok(result.heading >= 144, 'the heading retains a readable column');
+    assert.equal(result.overlap, false);
+    assert.ok(result.answer >= 380, 'the open answer retains the column width beneath the heading');
+    assert.equal(result.overflow, false);
   });
 });
 

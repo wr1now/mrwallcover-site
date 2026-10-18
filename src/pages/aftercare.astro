@@ -4,6 +4,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import Action from '../components/Action.astro';
 import EvidenceFigure from '../components/EvidenceFigure.astro';
 import TechnicalDiagram from '../components/TechnicalDiagram.astro';
+import DesignStudy from '../components/DesignStudy.astro';
 import Icon, { type IconName } from '../components/Icon.astro';
 import Base from '../layouts/Base.astro';
 import { aftercare, media } from '../lib/content';
@@ -50,7 +51,10 @@ const detailImage = media('fs-residences-06');
     </header>
     <div class="aftercare-evidence">
       <EvidenceFigure id="fs-residences-06" caption="A woven wallcovering turning an external corner at the Four Seasons residences, Ten Trinity Square. A finished edge is part of the detail checked at handover and return inspection." credit="Mr Wallcover project photograph." href="/projects/four-seasons-ten-trinity-square/" linkLabel="See the Four Seasons project" sizes="(min-width: 768px) 36rem, calc(100vw - 2.5rem)" />
-      <TechnicalDiagram kind="inspection" caption="The return visit looks at seams, edges, corners and covered joinery. A visible natural seam and a seam that has lifted are different things." />
+      <div>
+        <DesignStudy kind="junction" caption="Illustrative detail. The return inspection includes the finished edges and the wallcovering's turn around a corner." />
+        <details class="inspection-schematic"><summary>View the inspection points</summary><TechnicalDiagram kind="inspection" caption="The return visit looks at seams, edges, corners and covered joinery. A visible natural seam and a seam that has lifted are different things." /></details>
+      </div>
     </div>
   </div>
 
@@ -90,7 +94,7 @@ const detailImage = media('fs-residences-06');
   {faq.length > 0 && (
     <section class="border-t border-line">
       <div class="container-page py-14 md:py-20">
-        <div class="prose guide-prose">
+        <div class="aftercare-questions">
           <BuyerFaq items={faq} />
         </div>
       </div>
@@ -143,5 +147,7 @@ const detailImage = media('fs-residences-06');
 <style>
   .aftercare-evidence { display: grid; gap: 2rem; align-items: center; padding-bottom: 3.5rem; }
   .care-material-icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-bottom: .9rem; color: var(--color-brass); border: 1px solid var(--color-line); border-radius: 50%; }
+  .inspection-schematic { margin-top:1rem; border-top:1px solid var(--color-line); }
+  .inspection-schematic summary { cursor:pointer; min-height:44px; padding-block:.75rem; }
   @media (min-width: 768px) { .aftercare-evidence { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); } }
 </style>
