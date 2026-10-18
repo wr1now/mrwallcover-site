@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
 import { promisify } from 'node:util';
+import { build as buildAiLayer } from '../scripts/build-ai-layer.mjs';
 
 /**
  * Builds the site twice, with and without SITE_PHONE, into temporary folders,
@@ -37,15 +38,26 @@ async function build(withPhone: boolean): Promise<{ dir: string; html: string }>
   // The phone build also sets a booking URL; the other build forces it empty, whatever src/config.ts holds.
   env.BOOKING_URL = withPhone ? BOOKING_FIXTURE : '';
   await run(path.join('node_modules', '.bin', 'astro'), ['build', '--outDir', dir], { env, maxBuffer: 64 * 1024 * 1024 });
+  await buildAiLayer(dir);
   const files = await htmlFiles(dir);
   assert.ok(files.length > 10, 'build produced pages');
   const html = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
   return { dir, html };
 }
 
+async function assertAiExportsHaveNoPhone(dir: string) {
+  for (const name of ['ai/index.json', 'ai/pages.json', 'llms-full.txt', 'get-in-touch/index.md', 'contact/index.md']) {
+    const text = await readFile(path.join(dir, name), 'utf8');
+    assert.doesNotMatch(text, PHONE_PATTERN, `${name}: no phone number in the machine-readable layer`);
+    assert.doesNotMatch(text, /data-phone-reveal|const payload|data-endpoint|"(?:telephone|phone)"\s*:/i, `${name}: no phone or form payload`);
+    assert.equal(text.includes(FAKE), false, `${name}: no input/default/reveal value`);
+  }
+}
+
 test('without SITE_PHONE no phone or WhatsApp control is rendered and no payload is printed', { timeout: 180_000 }, async () => {
   const { dir, html } = await build(false);
   try {
+    await assertAiExportsHaveNoPhone(dir);
     assert.doesNotMatch(html, /data-phone-reveal/);
     assert.doesNotMatch(html, /data-wa\b/);
     assert.doesNotMatch(html, /const payload =/);
@@ -68,6 +80,7 @@ test('without SITE_PHONE no phone or WhatsApp control is rendered and no payload
 test('with SITE_PHONE the reveal control and WhatsApp link render, and the number appears only in the reversed payload', { timeout: 180_000 }, async () => {
   const { dir, html } = await build(true);
   try {
+    await assertAiExportsHaveNoPhone(dir);
     assert.match(html, /data-phone-reveal/);
     assert.match(html, /<a href="\/contact\/" data-wa/);
     assert.doesNotMatch(html, PHONE_PATTERN, 'the number must never appear in clear');

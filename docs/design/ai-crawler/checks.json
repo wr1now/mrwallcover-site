@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-18",
+  "base": "6ca4411",
+  "observations": [
+    {
+      "width": 360,
+      "overflow": false,
+      "font": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+      "headingSize": "26px",
+      "mainHeadings": 1,
+      "allEvidenceExpanded": true,
+      "scriptsInMain": 0
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "font": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+      "headingSize": "26px",
+      "mainHeadings": 1,
+      "allEvidenceExpanded": true,
+      "scriptsInMain": 0
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "font": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+      "headingSize": "26px",
+      "mainHeadings": 1,
+      "allEvidenceExpanded": true,
+      "scriptsInMain": 0
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "font": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+      "headingSize": "26.624px",
+      "mainHeadings": 1,
+      "allEvidenceExpanded": true,
+      "scriptsInMain": 0
+    },
+    {
+      "width": 1280,
+      "overflow": false,
+      "font": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+      "headingSize": "33.28px",
+      "mainHeadings": 1,
+      "allEvidenceExpanded": true,
+      "scriptsInMain": 0
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "font": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+      "headingSize": "37.44px",
+      "mainHeadings": 1,
+      "allEvidenceExpanded": true,
+      "scriptsInMain": 0
+    }
+  ],
+  "pageCount": 106,
+  "transfer": {
+    "before": {
+      "htmlBytes": 355494,
+      "cssBytes": 100562,
+      "jsBytes": 0,
+      "scriptFiles": 0
+    },
+    "after": {
+      "htmlBytes": 359716,
+      "cssBytes": 102569,
+      "jsBytes": 0,
+      "scriptFiles": 0
+    }
+  },
+  "notes": "Local uncompressed HTML/direct CSS/JS inventory, not field performance. No forms submitted."
+}

@@ -7,19 +7,22 @@
  *                             each headed by its title and canonical URL
  *   dist/<path>/index.md      a Markdown twin of each published page
  *                             (the home page's twin is dist/index.md)
+ *   dist/ai/index.json        discoverable manifest of exactly those pages
+ *   dist/ai/pages.json        semantic page records, including Markdown,
+ *                             public JSON-LD and meaningful media descriptions
  *
  * A page is published when it is built, carries no noindex meta and is not a
  * redirect stub. Drafts are never built, so they never appear. The 404,
  * thank-you and search pages are noindex, so they are left out too.
  *
- * Only the <main> element is read. Scripts, styles, forms, media, buttons
- * and every <nav> (breadcrumbs, contents, related pages) are dropped;
- * headings, paragraphs, lists, definition lists, figure captions, tables and
- * links (made absolute) are kept.
+ * Main content is read without scripts, styles or navigation chrome. Public
+ * form guidance and choices, image alt text, diagram descriptions, media
+ * references, headings, lists, captions, tables and code are retained. No
+ * input values, submission endpoints or client-side state are exported.
  *
  * Runs as `npm run build`'s postbuild step. Usage: node scripts/build-ai-layer.mjs [distDir]
  */
-import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const SITE = 'https://www.mrwallcover.com';
@@ -39,18 +42,87 @@ function attr(tag, name) {
 }
 
 /** Elements whose whole subtree is dropped. None of them nests inside itself in this site. */
-const DROP = ['script', 'style', 'svg', 'noscript', 'template', 'video', 'audio', 'picture', 'form', 'button', 'nav', 'select', 'textarea', 'iframe', 'canvas', 'object'];
+const DROP = ['script', 'style', 'template', 'nav', 'textarea', 'datalist', 'iframe', 'canvas', 'object'];
 const VOID = new Set(['br', 'hr', 'img', 'input', 'source', 'meta', 'link', 'wbr', 'area', 'col', 'embed', 'track']);
-const BLOCK = new Set(['p', 'div', 'section', 'article', 'header', 'footer', 'aside', 'figure', 'figcaption', 'dl', 'dt', 'dd', 'details', 'summary', 'blockquote', 'main', 'table', 'thead', 'tbody', 'tr', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'pre', 'hr', 'fieldset', 'legend', 'address']);
+const BLOCK = new Set(['p', 'div', 'section', 'article', 'header', 'footer', 'aside', 'figure', 'figcaption', 'dl', 'dt', 'dd', 'details', 'summary', 'blockquote', 'main', 'table', 'thead', 'tbody', 'tr', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'pre', 'hr', 'form', 'fieldset', 'legend', 'label', 'select', 'optgroup', 'option', 'button', 'address']);
+
+const plainText = (html) => decode(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+const escapeHtml = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const markdownLabel = (text) => text.replace(/([\\\[\]])/g, '\\$1');
+
+function publicUrl(value, base, { mailto = false } = {}) {
+  if (!value) return null;
+  try {
+    const url = new URL(value, base);
+    return (['http:', 'https:', ...(mailto ? ['mailto:'] : [])].includes(url.protocol)) ? url.href : null;
+  } catch {
+    return null;
+  }
+}
+
+/** A diagram's accessible name/description is content; its drawing commands are not. */
+function diagramDescription(svg) {
+  const opening = svg.match(/^<svg\b[^>]*>/i)?.[0] ?? '';
+  if (attr(opening, 'aria-hidden') === 'true') return null;
+  const byId = new Map([...svg.matchAll(/<(title|desc)\b([^>]*)>([\s\S]*?)<\/\1>/gi)]
+    .map((match) => [attr(match[2], 'id'), plainText(match[3])]));
+  const labelled = (attr(opening, 'aria-labelledby') ?? '').split(/\s+/).map((id) => byId.get(id)).filter(Boolean);
+  const described = (attr(opening, 'aria-describedby') ?? '').split(/\s+/).map((id) => byId.get(id)).filter(Boolean);
+  const label = attr(opening, 'aria-label');
+  const fallback = [...byId.values()].filter(Boolean);
+  const description = [...new Set([...(label ? [label] : labelled.length ? labelled : fallback), ...described])].join(' ');
+  const labels = [...new Set([...svg.matchAll(/<text\b[^>]*>([\s\S]*?)<\/text>/gi)].map((match) => plainText(match[1])).filter(Boolean))];
+  return [description, labels.length ? `Labels: ${labels.join('; ')}.` : ''].filter(Boolean).join(' ') || null;
+}
+
+function mediaSources(tag, body, base) {
+  return [...new Set([attr(tag, 'src'), ...[...body.matchAll(/<source\b[^>]*>/gi)].map((match) => attr(match[0], 'src'))]
+    .map((value) => publicUrl(value, base)).filter(Boolean))];
+}
+
+/** Keep only content, never form input values, embedded payloads or telephone controls. */
+function contentHtml(html) {
+  let src = html.replace(/<!--[\s\S]*?-->/g, '');
+  for (const tag of DROP) src = src.replace(new RegExp(`<${tag}\\b[^>]*>[\\s\\S]*?<\\/${tag}>`, 'gi'), ' ');
+  src = src.replace(/<p\b[^>]*class=["'][^"']*\bhoneypot\b[^"']*["'][^>]*>[\s\S]*?<\/p>/gi, ' ');
+  src = src.replace(/<button\b[^>]*\bdata-phone-reveal\b[^>]*>[\s\S]*?<\/button>/gi, ' ');
+  src = src.replace(/<a\b[^>]*href=["']tel:[^"']*["'][^>]*>[\s\S]*?<\/a>/gi, ' ');
+  // These are empty/output templates, not assertions about a completed enquiry.
+  src = src.replace(/<div\b[^>]*\bdata-receipt\b[^>]*>[\s\S]*?<\/div>/gi, ' ');
+  return src;
+}
 
 /**
  * Convert one page's <main> HTML to Markdown. Deliberately small: it handles
  * the elements this site emits and treats anything else as inline text.
  */
 export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
-  let src = html.replace(/<!--[\s\S]*?-->/g, '');
-  for (const tag of DROP) src = src.replace(new RegExp(`<${tag}\\b[^>]*>[\\s\\S]*?<\\/${tag}>`, 'gi'), ' ');
-  src = src.replace(/<(img|input|source|meta|link)\b[^>]*>/gi, ' ');
+  let src = contentHtml(html);
+  const codeBlocks = [];
+  src = src.replace(/<pre\b[^>]*>([\s\S]*?)<\/pre>/gi, (_, body) => {
+    const language = attr(body.match(/<code\b[^>]*>/i)?.[0] ?? '', 'class')?.match(/(?:^|\s)language-([\w-]+)/)?.[1] ?? '';
+    const text = decode(body.replace(/<[^>]+>/g, '')).replace(/^\n|\n$/g, '');
+    const fence = '`'.repeat(Math.max(3, ...[...text.matchAll(/`+/g)].map((match) => match[0].length + 1)));
+    codeBlocks.push(`${fence}${language}\n${text}\n${fence}`);
+    return `<ai-code-block data-index="${codeBlocks.length - 1}"></ai-code-block>`;
+  });
+  src = src.replace(/<svg\b[^>]*>[\s\S]*?<\/svg>/gi, (svg) => {
+    const description = diagramDescription(svg);
+    return description ? `<p>Diagram: ${escapeHtml(description)}</p>` : ' ';
+  });
+  src = src.replace(/<(video|audio)\b([^>]*)>([\s\S]*?)<\/\1>|<(video|audio)\b([^>]*)\/>/gi, (match, kind, attributes, body = '', voidKind) => {
+    const tag = match.match(/^<[^>]+>/)[0];
+    const type = kind ?? voidKind;
+    const description = attr(tag, 'aria-label') ?? `${type[0].toUpperCase()}${type.slice(1)}`;
+    const sources = mediaSources(tag, body, base);
+    return `<p>${sources.length ? sources.map((url) => `[${markdownLabel(`${type[0].toUpperCase()}${type.slice(1)}: ${description}`)}](${url})`).join(' ') : escapeHtml(description)}</p>`;
+  });
+  src = src.replace(/<img\b[^>]*>/gi, (tag) => {
+    const alt = attr(tag, 'alt');
+    const url = publicUrl(attr(tag, 'src'), base);
+    return alt && url && attr(tag, 'aria-hidden') !== 'true' ? ` ![${markdownLabel(alt)}](${url}) ` : ' ';
+  });
+  src = src.replace(/<(input|source|meta|link)\b[^>]*>/gi, ' ');
 
   const blocks = [];
   let line = '';
@@ -159,7 +231,10 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
       }
     }
     if (!closing) {
-      if (/^h[1-6]$/.test(name)) {
+      if (name === 'ai-code-block') {
+        flush();
+        blocks.push({ kind: 'code', text: codeBlocks[Number(attr(token, 'data-index'))] });
+      } else if (/^h[1-6]$/.test(name)) {
         flush();
         kind = 'heading';
         prefix = '#'.repeat(Math.min(6, Number(name[1]) + demote)) + ' ';
@@ -172,6 +247,18 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
         list.index += 1;
         kind = 'li';
         prefix = `${indent()}${list.type === 'ol' ? `${list.index}.` : '-'} `;
+      } else if (name === 'option') {
+        flush();
+        kind = 'li';
+        prefix = '- ';
+      } else if (name === 'optgroup') {
+        flush();
+        line = attr(token, 'label') ?? '';
+        flush();
+      } else if (name === 'select') {
+        flush();
+        line = attr(token, 'aria-label') ?? '';
+        flush();
       } else if (name === 'dt') {
         flush();
         kind = 'dt';
@@ -223,7 +310,8 @@ export function toMarkdown(html, { base = SITE, demote = 0 } = {}) {
         if (!link) continue;
         const text = line.slice(link.start).replace(/\s+/g, ' ').trim();
         if (!link.href || link.href.startsWith('#') || !text) continue;
-        const href = /^(mailto:|tel:|https?:)/i.test(link.href) ? link.href : new URL(link.href, base).href;
+        const href = publicUrl(link.href, base, { mailto: true });
+        if (!href) continue;
         line = `${line.slice(0, link.start)}[${text}](${href})`;
         afterLink = true;
       } else if (name === 'strong' || name === 'b') {
@@ -278,18 +366,93 @@ function yamlString(value) {
   return `"${String(value).replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
 }
 
+/** Media is described and linked, never embedded or represented as invented visual evidence. */
+function pageSemantics(html, base) {
+  const src = contentHtml(html);
+  const figures = [...src.matchAll(/<figure\b[^>]*>([\s\S]*?)<\/figure>/gi)].map((match) => ({
+    start: match.index,
+    end: match.index + match[0].length,
+    caption: plainText(match[1].match(/<figcaption\b[^>]*>([\s\S]*?)<\/figcaption>/i)?.[1] ?? '') || null,
+  }));
+  const captionAt = (index) => figures.find((figure) => figure.start <= index && index < figure.end)?.caption ?? null;
+  const images = [...src.matchAll(/<img\b[^>]*>/gi)].flatMap((match) => {
+    const tag = match[0];
+    const url = publicUrl(attr(tag, 'src'), base);
+    const alt = attr(tag, 'alt');
+    if (!url || !alt || attr(tag, 'aria-hidden') === 'true') return [];
+    const dimension = (name) => /^\d+$/.test(attr(tag, name) ?? '') ? Number(attr(tag, name)) : null;
+    return [{ url, alt, caption: captionAt(match.index), width: dimension('width'), height: dimension('height') }];
+  });
+  const diagrams = [...src.matchAll(/<svg\b[^>]*>[\s\S]*?<\/svg>/gi)].flatMap((match) => {
+    const description = diagramDescription(match[0]);
+    return description ? [{ description, caption: captionAt(match.index) }] : [];
+  });
+  const media = [...src.matchAll(/<(video|audio)\b[^>]*>([\s\S]*?)<\/\1>/gi)].map((match) => {
+    const tag = match[0].match(/^<[^>]+>/)[0];
+    return {
+      type: match[1].toLowerCase(),
+      urls: mediaSources(tag, match[2], base),
+      description: attr(tag, 'aria-label') ?? null,
+      caption: captionAt(match.index),
+      poster: publicUrl(attr(tag, 'poster') ?? attr(tag, 'data-poster'), base),
+    };
+  });
+  const headings = [...src.matchAll(/<(h[1-6])\b([^>]*)>([\s\S]*?)<\/\1>/gi)].map((match) => ({
+    level: Number(match[1][1]),
+    id: attr(match[2], 'id') ?? null,
+    text: plainText(match[3]),
+  }));
+  const links = [...src.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)].flatMap((match) => {
+    const url = publicUrl(attr(match[1], 'href'), base, { mailto: true });
+    const text = plainText(match[2]) || attr(match[1], 'aria-label');
+    return url && text ? [{ url, text }] : [];
+  });
+  // Navigation is omitted from prose, but its public destinations remain discoverable.
+  for (const match of html.matchAll(/<nav\b[^>]*>[\s\S]*?<\/nav>/gi)) {
+    for (const link of match[0].matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
+      const url = publicUrl(attr(link[1], 'href'), base, { mailto: true });
+      const text = plainText(link[2]);
+      if (url && text) links.push({ url, text });
+    }
+  }
+  const unique = (items) => [...new Map(items.map((item) => [JSON.stringify(item), item])).values()];
+  return { headings, links: unique(links), images: unique(images), diagrams: unique(diagrams), media: unique(media) };
+}
+
+/** JSON-LD is already public; telephone/contact payload fields remain outside this export. */
+function publicStructuredData(value) {
+  if (Array.isArray(value)) return value.map(publicStructuredData);
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value)
+    .filter(([key]) => !/^_|^(?:phone|telephone|faxNumber|apiKey|token|manifestNote|placeholder)$/i.test(key))
+    .map(([key, item]) => [key, publicStructuredData(item)]));
+  return value;
+}
+
 /** Read a built page. Returns null for pages that are not published. */
 export async function readPage(file) {
   const html = await readFile(file, 'utf8');
-  if (/<meta name="robots" content="noindex">/.test(html) || /http-equiv="refresh"/.test(html)) return null;
-  const main = html.match(/<main id="main"[^>]*>([\s\S]*?)<\/main>/)?.[1];
+  const metas = [...html.matchAll(/<meta\b[^>]*>/gi)].map((match) => match[0]);
+  if (metas.some((tag) => (attr(tag, 'name')?.toLowerCase() === 'robots' && /\bnoindex\b/i.test(attr(tag, 'content') ?? ''))
+    || attr(tag, 'http-equiv')?.toLowerCase() === 'refresh')) return null;
+  const mainMatch = html.match(/<main\b([^>]*)>([\s\S]*?)<\/main>/i);
+  const main = attr(mainMatch?.[1] ?? '', 'id') === 'main' ? mainMatch[2] : null;
   if (!main) throw new Error(`${file}: no <main id="main">`);
-  const canonical = html.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
+  const canonicalTag = [...html.matchAll(/<link\b[^>]*>/gi)].map((match) => match[0]).find((tag) => attr(tag, 'rel')?.split(/\s+/).includes('canonical'));
+  const canonical = publicUrl(attr(canonicalTag ?? '', 'href'), SITE);
   if (!canonical) throw new Error(`${file}: no canonical`);
+  if (new URL(canonical).origin !== SITE) throw new Error(`${file}: canonical is outside ${SITE}`);
   const title = decode(html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '');
-  const description = decode(html.match(/<meta name="description" content="([^"]*)">/)?.[1] ?? '');
-  const author = decode(html.match(/<meta name="author" content="([^"]*)">/)?.[1] ?? '');
-  const stamp = main.match(/<time datetime="(\d{4}-\d{2}-\d{2})" data-page-updated="(updated|reviewed)">/);
+  const meta = (name) => attr(metas.find((tag) => attr(tag, 'name') === name) ?? '', 'content') ?? '';
+  const description = meta('description');
+  const author = meta('author');
+  const stamp = [...main.matchAll(/<time\b[^>]*>/gi)].map((match) => match[0]).find((tag) => /^(updated|reviewed)$/.test(attr(tag, 'data-page-updated') ?? ''));
+  const date = attr(stamp ?? '', 'datetime') ?? null;
+  const dateKind = attr(stamp ?? '', 'data-page-updated') ?? null;
+  const structuredData = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
+    .filter((match) => attr(match[1], 'type')?.toLowerCase() === 'application/ld+json')
+    .map((match) => publicStructuredData(JSON.parse(match[2])));
+  const nodes = structuredData.flatMap((value) => value['@graph'] ?? value);
+  const article = nodes.find((node) => node.url === canonical && (Array.isArray(node['@type']) ? node['@type'].includes('Article') : node['@type'] === 'Article'));
   return {
     file,
     pathname: new URL(canonical).pathname,
@@ -297,8 +460,16 @@ export async function readPage(file) {
     title,
     description,
     author,
-    dateKind: stamp?.[2] ?? null,
-    date: stamp?.[1] ?? null,
+    language: attr(html.match(/<html\b[^>]*>/i)?.[0] ?? '', 'lang') ?? null,
+    dateKind,
+    date,
+    dates: {
+      published: article?.datePublished ?? null,
+      modified: article?.dateModified ?? (dateKind === 'updated' ? date : null),
+      reviewed: dateKind === 'reviewed' ? date : null,
+    },
+    structuredData,
+    ...pageSemantics(main, canonical),
     main,
   };
 }
@@ -311,6 +482,7 @@ export async function build(distDir = dist) {
   }
   pages.sort((a, b) => (a.pathname === '/' ? -1 : b.pathname === '/' ? 1 : a.pathname.localeCompare(b.pathname)));
   if (pages.length < 50) throw new Error(`only ${pages.length} published pages found under ${distDir}`);
+  if (new Set(pages.map((page) => page.canonical)).size !== pages.length) throw new Error('published pages have duplicate canonical URLs');
 
   const facts = JSON.parse(await readFile(path.resolve('src/data/facts.json'), 'utf8'));
   const full = [
@@ -322,19 +494,61 @@ export async function build(distDir = dist) {
     '',
   ];
   let twins = 0;
-  for (const page of pages) {
-    const body = toMarkdown(page.main, { demote: 0 });
+  const records = [];
+  const manifestPages = [];
+  for (const [index, page] of pages.entries()) {
+    const body = toMarkdown(page.main, { base: page.canonical, demote: 0 });
     const dateLine = page.date ? `${page.dateKind === 'updated' ? 'last_updated' : 'last_reviewed'}: ${page.date}` : null;
     const front = ['---', `title: ${yamlString(page.title)}`, `url: ${page.canonical}`, ...(page.description ? [`description: ${yamlString(page.description)}`] : []), ...(page.author ? [`author: ${yamlString(page.author)}`] : []), ...(dateLine ? [dateLine] : []), '---', ''];
     const twinPath = path.join(distDir, page.pathname, 'index.md');
     await writeFile(twinPath, `${front.join('\n')}\n${body}`);
     twins += 1;
 
+    const metadata = {
+      id: page.canonical,
+      url: page.canonical,
+      path: page.pathname,
+      title: page.title,
+      description: page.description,
+      language: page.language,
+      author: page.author || null,
+      dates: page.dates,
+      formats: {
+        html: page.canonical,
+        markdown: `${page.canonical}index.md`,
+        json: `${SITE}/ai/pages.json#/pages/${index}`,
+      },
+    };
+    manifestPages.push(metadata);
+    records.push({
+      ...metadata,
+      headings: page.headings,
+      markdown: body,
+      links: page.links,
+      images: page.images,
+      diagrams: page.diagrams,
+      media: page.media,
+      structuredData: page.structuredData,
+    });
+
     full.push('---', '', `# ${page.title}`, `URL: ${page.canonical}`);
     if (page.date) full.push(`${page.dateKind === 'updated' ? 'Last updated' : 'Last reviewed'}: ${page.date}`);
-    full.push('', toMarkdown(page.main, { demote: 1 }));
+    full.push('', toMarkdown(page.main, { base: page.canonical, demote: 1 }));
   }
   await writeFile(path.join(distDir, 'llms-full.txt'), full.join('\n'));
+  await mkdir(path.join(distDir, 'ai'), { recursive: true });
+  const exportMetadata = {
+    schemaVersion: '1.0',
+    source: SITE,
+    manifestUrl: `${SITE}/ai/index.json`,
+    corpusUrl: `${SITE}/ai/pages.json`,
+    pageCount: pages.length,
+    contentPolicy: 'Generated from the built, indexable, canonical public HTML. Excludes noindex pages and redirects. Drafts are not built. Main content preserves public wording, headings, tables, code, form guidance and meaningful media descriptions; scripts, styles, navigation chrome, input values and submission endpoints are omitted. Link records retain public main-content navigation destinations. Media URLs are references, not embedded assets or transcripts.',
+    datePolicy: 'Dates are copied only from the published page byline and Article JSON-LD. Null means no corresponding date was published; build time is never used as a content date.',
+    recordPolicy: 'Each record id is its canonical HTML URL. The json format URL uses a JSON Pointer fragment into the corpus. Markdown matches the corresponding index.md body. Structured data is copied from public JSON-LD without telephone or private payload fields.',
+  };
+  await writeFile(path.join(distDir, 'ai', 'index.json'), `${JSON.stringify({ ...exportMetadata, pages: manifestPages }, null, 2)}\n`);
+  await writeFile(path.join(distDir, 'ai', 'pages.json'), `${JSON.stringify({ ...exportMetadata, pages: records }, null, 2)}\n`);
 
   // /sitemap.xml is the address crawlers and people try first. @astrojs/sitemap only writes
   // sitemap-index.xml, so serve an identical copy of the index at the conventional path too.

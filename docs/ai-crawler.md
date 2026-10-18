@@ -1,5 +1,25 @@
 # Wallcovering Installation AI Crawler
 
+## Complete published-site access
+
+The reference page uses a static monospace terminal surface with explicit file paths, semantic headings, definition lists and a labelled comparison table. Evidence, aftercare terms and the blank brief start expanded. Its contents require no JavaScript. The shared site shell and footer remain available. This presentation is identical for visitors and crawler user agents; terminal styling is a visual choice, not a crawler protocol.
+
+Every normal page links to `/ai/index.json` in its head. The reference page, `/for-ai/` and `/llms.txt` also link directly to the machine formats:
+
+- `/ai/index.json`: deterministic manifest of every published, indexable canonical HTML page in the build, with format addresses and actual source dates.
+- `/ai/pages.json`: the same complete page list, with readable Markdown, semantic headings, meaningful media descriptions and the page's JSON-LD. Use the individual canonical page as the citation source.
+- `/llms-full.txt` and each page's `index.md`: the same published main content as text, preserving meaningful image descriptions, diagram explanations, code blocks and static form guidance. Input values, executable scripts, form delivery configuration and private enquiries are excluded. Calculator output still requires the calculator and user measurements.
+- `/ai/wallpapering.json`: public product, preparation, maker and roll-format reference data. Retain the sources, evidence statuses and the distinction between house practice and maker instructions. It is a reference, not a calculation API.
+- `/ai/fire-ratings.json`: published fire product, standards, regulations and source records, with their documented gaps and limitations. These records never certify a project or replace the exact product/build-up evidence.
+
+The postbuild script derives the manifest, corpus and text from final published HTML. This makes a new page join the public projection automatically. Noindex pages, redirects and unpublished drafts are excluded using the same policy as Markdown twins. Original record dates remain original; an access-layer change does not make old project evidence newly reviewed. Unknowns remain explicit rather than receiving a build-time review date. Dataset endpoints separately allowlist only the fields and records exposed by their published pages; internal notes and unconfirmed hidden prescriptions stay out.
+
+The corpus describes public content, not every implementation asset or client-side state. Referenced media remain available at their original URLs and retain their reuse constraints. Images and technical diagrams receive semantic text where the source supplies it; no visual claim is invented from an asset filename.
+
+Ordinary crawlable HTML remains the foundation. Google documents [no additional technical requirements for AI features](https://developers.google.com/search/docs/appearance/ai-features); [llms.txt is an optional proposal](https://llmstxt.org/). OpenAI distinguishes [search, user-requested access and training crawlers](https://developers.openai.com/api/docs/bots). Existing robots preferences are preserved. Content is never switched by user agent, and no indexing or recommendation is guaranteed.
+
+`tests/ai-access.test.ts`, `tests/ai-datasets.test.ts` and the export tests run through `check:dist`. They cover discovery, no-JavaScript access, responsive overflow, public data boundaries and page/corpus parity. Production response status and hosting access controls must be checked separately after an authorised deployment.
+
 The resource at `/wallcovering-installation-ai-crawler/` supports a practical shortlisting decision: whether published experience fits a commission, what to confirm before appointment and how to prepare a useful enquiry. It uses ordinary, indexable HTML, readable without JavaScript or a special user agent. Deployment access controls are separate: a private Sites preview remains private. The same shared data produces three static JSON endpoints:
 
 - `/ai/business.json`: the public identity, founder, contact email, coverage, workflow and service pages.
