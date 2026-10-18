@@ -1,6 +1,10 @@
 {
-  "captured": "2026-10-18T20:22:01.461Z",
-  "source": "working final candidate dist before main integration",
+  "captured": "2026-10-18T20:27:00.724Z",
+  "source": "Compiled static dist from candidate d0b183538ebd9449ce4d48eaf969f47f71b596cb",
+  "sourceCommit": "d0b183538ebd9449ce4d48eaf969f47f71b596cb",
+  "baseline": "63567b8",
+  "artifact": "dist/projects/browns-hotel-mayfair/index.html",
+  "artifactModified": "2026-10-18T20:25:51.197Z",
   "observations": [
     {
       "width": 768,
@@ -8,18 +12,47 @@
       "initial": {
         "open": false,
         "fields": 7,
-        "visible": 7,
-        "overflow": 0
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": false,
+        "overflow": false
       },
       "expanded": {
         "open": true,
-        "visible": 7,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 437.9375,
         "focused": true,
-        "overflow": 0
+        "overflow": false
       },
-      "closed": true,
+      "closed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": true,
+        "overflow": false
+      },
       "printed": {
-        "visible": 7
+        "open": false,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 437.9375,
+        "focused": true,
+        "overflow": false
+      },
+      "restored": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": true,
+        "overflow": false
       }
     },
     {
@@ -28,18 +61,47 @@
       "initial": {
         "open": false,
         "fields": 7,
-        "visible": 7,
-        "overflow": 0
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": false,
+        "overflow": false
       },
       "expanded": {
         "open": true,
-        "visible": 7,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 738.5625,
         "focused": true,
-        "overflow": 0
+        "overflow": false
       },
-      "closed": true,
+      "closed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": true,
+        "overflow": false
+      },
       "printed": {
-        "visible": 7
+        "open": false,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 673.8125,
+        "focused": true,
+        "overflow": false
+      },
+      "restored": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": true,
+        "overflow": false
       }
     },
     {
@@ -48,18 +110,47 @@
       "initial": {
         "open": false,
         "fields": 7,
-        "visible": 7,
-        "overflow": 0
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": false,
+        "overflow": false
       },
       "expanded": {
         "open": true,
-        "visible": 7,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 437.9375,
         "focused": true,
-        "overflow": 0
+        "overflow": false
       },
-      "closed": true,
+      "closed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": true,
+        "overflow": false
+      },
       "printed": {
-        "visible": 7
+        "open": false,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 437.9375,
+        "focused": true,
+        "overflow": false
+      },
+      "restored": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": true,
+        "overflow": false
       }
     },
     {
@@ -68,40 +159,49 @@
       "initial": {
         "open": false,
         "fields": 7,
-        "visible": 7,
-        "overflow": 0
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": false,
+        "overflow": false
       },
       "expanded": {
         "open": true,
-        "visible": 7,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 738.5625,
         "focused": true,
-        "overflow": 0
+        "overflow": false
       },
-      "closed": true,
+      "closed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": true,
+        "overflow": false
+      },
       "printed": {
-        "visible": 7
+        "open": false,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 673.8125,
+        "focused": true,
+        "overflow": false
+      },
+      "restored": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": true,
+        "overflow": false
       }
     }
   ],
-  "paintVisibility": {
-    "closed": {
-      "open": false,
-      "detailsContent": "hidden",
-      "paintedFields": 0,
-      "boxHeight": 116.1875
-    },
-    "open": {
-      "open": true,
-      "detailsContent": "visible",
-      "paintedFields": 7,
-      "boxHeight": 510.125
-    },
-    "print": {
-      "open": false,
-      "detailsContent": "hidden",
-      "paintedFields": 0,
-      "boxHeight": 116.1875
-    }
-  },
-  "limitations": "Row rectangles persist inside a closed native details element; checkVisibility and actual screenshots establish painted visibility. Local candidate verification precedes final main integration."
+  "limitations": "Native details child rectangles persist when closed; paintedFields uses checkVisibility and ::details-content state, supported by a no-JavaScript print screenshot. Verification used an isolated Chromium browser and locally served compiled files."
 }

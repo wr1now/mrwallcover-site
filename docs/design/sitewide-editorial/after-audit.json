@@ -1,8 +1,8 @@
 {
   "summary": {
     "phase": "after",
-    "source": "sitewide-editorial-final-candidate",
-    "captured": "2026-10-18T20:21:05.610Z",
+    "source": "d0b1835",
+    "captured": "2026-10-18T20:26:30.455Z",
     "motion": "OS reduced motion for the layout inventory; live animation is checked separately.",
     "routeCount": 106,
     "viewportCount": 212,
@@ -10,10 +10,10 @@
       390,
       1440
     ],
-    "elapsedSeconds": 7,
+    "elapsedSeconds": 15,
     "failures": 0,
     "overflowCases": 0,
-    "wideReadingCases": 12,
+    "wideReadingCases": 1,
     "narrowReadingCases": 3,
     "clippedControlCases": 0,
     "uncontainedTableCases": 0,
@@ -105,16 +105,8 @@
       "documentWidth": 1440,
       "overflow": 0,
       "readingBlocks": 22,
-      "wideReadingCount": 1,
-      "wideReading": [
-        {
-          "text": "We work for interior designers and architects, hotel owners and operators, and main ",
-          "width": 768,
-          "font": 17,
-          "line": 28.05,
-          "classes": "mt-6 mb-0 max-w-3xl text-stone"
-        }
-      ],
+      "wideReadingCount": 0,
+      "wideReading": [],
       "narrowReadingCount": 0,
       "narrowReading": [],
       "clippedControls": [],
@@ -826,81 +818,8 @@
       "documentWidth": 1440,
       "overflow": 0,
       "readingBlocks": 219,
-      "wideReadingCount": 25,
-      "wideReading": [
-        {
-          "text": "England first (Approved Document B), with Wales, Scotland and Northern Ireland set o",
-          "width": 736,
-          "font": 17,
-          "line": 28.05
-        },
-        {
-          "text": "15 October 2026. Sources added later were checked on 17 October 2026. Makers and reg",
-          "width": 736,
-          "font": 17,
-          "line": 28.05
-        },
-        {
-          "text": "General specification guidance, not project-specific fire-safety approval. It has no",
-          "width": 736,
-          "font": 17,
-          "line": 28.05
-        },
-        {
-          "text": "Fire safety: Approved Document B (GOV.UK collection)Ministry of Housing, Communities",
-          "width": 832,
-          "font": 17,
-          "line": 28.05
-        },
-        {
-          "text": "Approved Document B: Fire safety, Volume 2: Buildings other than dwellingsMinistry o",
-          "width": 832,
-          "font": 17,
-          "line": 28.05
-        },
-        {
-          "text": "Approved Document B: Fire safety, Volume 1: DwellingsMinistry of Housing, Communitie",
-          "width": 832,
-          "font": 17,
-          "line": 28.05
-        },
-        {
-          "text": "Approved Document B: Fire safety, Volume 2, 2019 edition incorporating the 2020 amen",
-          "width": 832,
-          "font": 17,
-          "line": 28.05
-        },
-        {
-          "text": "Amendments to Approved Document B, Volumes 1 and 2: taking effect on 2 March 2025Min",
-          "width": 832,
-          "font": 17,
-          "line": 28.05
-        },
-        {
-          "text": "Amendments to Approved Document B, Volumes 1 and 2: taking effect on 30 September 20",
-          "width": 832,
-          "font": 17,
-          "line": 28.05
-        },
-        {
-          "text": "Amendments to Approved Document B, Volumes 1 and 2: taking effect on 2 September 202",
-          "width": 832,
-          "font": 17,
-          "line": 28.05
-        },
-        {
-          "text": "Approved Document B (fire safety): new updates to support enhanced fire safetyMinist",
-          "width": 832,
-          "font": 17,
-          "line": 28.05
-        },
-        {
-          "text": "Circular 03/2024: Approved Document B (sprinklers and reaction to fire)Ministry of H",
-          "width": 832,
-          "font": 17,
-          "line": 28.05
-        }
-      ],
+      "wideReadingCount": 0,
+      "wideReading": [],
       "narrowReadingCount": 80,
       "narrowReading": [
         {
@@ -1785,16 +1704,8 @@
       "documentWidth": 1440,
       "overflow": 0,
       "readingBlocks": 11,
-      "wideReadingCount": 1,
-      "wideReading": [
-        {
-          "text": "Each maker below is shown with one of our photographs of its product on the wall, li",
-          "width": 768,
-          "font": 17,
-          "line": 28.05,
-          "classes": "mt-4 mb-0 max-w-3xl text-stone"
-        }
-      ],
+      "wideReadingCount": 0,
+      "wideReading": [],
       "narrowReadingCount": 0,
       "narrowReading": [],
       "clippedControls": [],
@@ -1878,16 +1789,8 @@
       "documentWidth": 1440,
       "overflow": 0,
       "readingBlocks": 6,
-      "wideReadingCount": 1,
-      "wideReading": [
-        {
-          "text": "Each in our own photograph of its product on the wall. A maker named here means Mr W",
-          "width": 768,
-          "font": 17,
-          "line": 28.05,
-          "classes": "mt-4 mb-0 max-w-3xl text-stone"
-        }
-      ],
+      "wideReadingCount": 0,
+      "wideReading": [],
       "narrowReadingCount": 0,
       "narrowReading": [],
       "clippedControls": [],
@@ -1926,16 +1829,8 @@
       "documentWidth": 1440,
       "overflow": 0,
       "readingBlocks": 4,
-      "wideReadingCount": 1,
-      "wideReading": [
-        {
-          "text": "Each in our own photograph of its product on the wall. A maker named here means Mr W",
-          "width": 768,
-          "font": 17,
-          "line": 28.05,
-          "classes": "mt-4 mb-0 max-w-3xl text-stone"
-        }
-      ],
+      "wideReadingCount": 0,
+      "wideReading": [],
       "narrowReadingCount": 0,
       "narrowReading": [],
       "clippedControls": [],
@@ -1974,16 +1869,8 @@
       "documentWidth": 1440,
       "overflow": 0,
       "readingBlocks": 6,
-      "wideReadingCount": 1,
-      "wideReading": [
-        {
-          "text": "Each in our own photograph of its product on the wall. A maker named here means Mr W",
-          "width": 768,
-          "font": 17,
-          "line": 28.05,
-          "classes": "mt-4 mb-0 max-w-3xl text-stone"
-        }
-      ],
+      "wideReadingCount": 0,
+      "wideReading": [],
       "narrowReadingCount": 0,
       "narrowReading": [],
       "clippedControls": [],
@@ -2022,16 +1909,8 @@
       "documentWidth": 1440,
       "overflow": 0,
       "readingBlocks": 4,
-      "wideReadingCount": 1,
-      "wideReading": [
-        {
-          "text": "Each in our own photograph of its product on the wall. A maker named here means Mr W",
-          "width": 768,
-          "font": 17,
-          "line": 28.05,
-          "classes": "mt-4 mb-0 max-w-3xl text-stone"
-        }
-      ],
+      "wideReadingCount": 0,
+      "wideReading": [],
       "narrowReadingCount": 0,
       "narrowReading": [],
       "clippedControls": [],
@@ -2075,16 +1954,8 @@
       "documentWidth": 1440,
       "overflow": 0,
       "readingBlocks": 7,
-      "wideReadingCount": 1,
-      "wideReading": [
-        {
-          "text": "Each in our own photograph of its product on the wall. A maker named here means Mr W",
-          "width": 768,
-          "font": 17,
-          "line": 28.05,
-          "classes": "mt-4 mb-0 max-w-3xl text-stone"
-        }
-      ],
+      "wideReadingCount": 0,
+      "wideReading": [],
       "narrowReadingCount": 0,
       "narrowReading": [],
       "clippedControls": [],
@@ -2128,16 +1999,8 @@
       "documentWidth": 1440,
       "overflow": 0,
       "readingBlocks": 4,
-      "wideReadingCount": 1,
-      "wideReading": [
-        {
-          "text": "Each in our own photograph of its product on the wall. A maker named here means Mr W",
-          "width": 768,
-          "font": 17,
-          "line": 28.05,
-          "classes": "mt-4 mb-0 max-w-3xl text-stone"
-        }
-      ],
+      "wideReadingCount": 0,
+      "wideReading": [],
       "narrowReadingCount": 0,
       "narrowReading": [],
       "clippedControls": [],
@@ -2481,15 +2344,8 @@
       "documentWidth": 1440,
       "overflow": 0,
       "readingBlocks": 33,
-      "wideReadingCount": 1,
-      "wideReading": [
-        {
-          "text": "Specialist installations for Calico Wallpaper, from a Heathrow store to London Desig",
-          "width": 768,
-          "font": 17,
-          "line": 28.05
-        }
-      ],
+      "wideReadingCount": 0,
+      "wideReading": [],
       "narrowReadingCount": 0,
       "narrowReading": [],
       "clippedControls": [],
@@ -4562,38 +4418,38 @@
       "noindex": false,
       "documentWidth": 390,
       "overflow": 0,
-      "readingBlocks": 477,
+      "readingBlocks": 481,
       "wideReadingCount": 0,
       "wideReading": [],
       "narrowReadingCount": 5,
       "narrowReading": [
         {
           "text": "Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroomSurvey,",
-          "width": 155,
+          "width": 158,
           "font": 14,
           "line": 23.8
         },
         {
           "text": "Calico Wallpaper airside at Heathrow: a luxury fashion house's store, Terminal 4Spec",
-          "width": 155,
+          "width": 158,
           "font": 14,
           "line": 23.8
         },
         {
           "text": "Ahluwalia x Calico Wallpaper: 'Estuary' at Rosewood LondonSpecialist installation of",
-          "width": 155,
+          "width": 158,
           "font": 14,
           "line": 23.8
         },
         {
           "text": "Calico Wallpaper x BEVERLY 1975: Cadence at The Lavery, Brompton Design DistrictWall",
-          "width": 155,
+          "width": 158,
           "font": 14,
           "line": 23.8
         },
         {
           "text": "Hyde London City (the Old Bailey Hotel)Full decorating package: decoration, speciali",
-          "width": 155,
+          "width": 158,
           "font": 14,
           "line": 23.8
         }
@@ -4620,8 +4476,8 @@
       "noindex": false,
       "documentWidth": 1440,
       "overflow": 0,
-      "readingBlocks": 477,
-      "wideReadingCount": 472,
+      "readingBlocks": 481,
+      "wideReadingCount": 476,
       "wideReading": [
         {
           "text": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus, ",
@@ -4702,31 +4558,31 @@
       "narrowReading": [
         {
           "text": "Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroomSurvey,",
-          "width": 210,
+          "width": 217,
           "font": 14,
           "line": 23.8
         },
         {
           "text": "Calico Wallpaper airside at Heathrow: a luxury fashion house's store, Terminal 4Spec",
-          "width": 210,
+          "width": 217,
           "font": 14,
           "line": 23.8
         },
         {
           "text": "Ahluwalia x Calico Wallpaper: 'Estuary' at Rosewood LondonSpecialist installation of",
-          "width": 210,
+          "width": 217,
           "font": 14,
           "line": 23.8
         },
         {
           "text": "Calico Wallpaper x BEVERLY 1975: Cadence at The Lavery, Brompton Design DistrictWall",
-          "width": 210,
+          "width": 217,
           "font": 14,
           "line": 23.8
         },
         {
           "text": "Hyde London City (the Old Bailey Hotel)Full decorating package: decoration, speciali",
-          "width": 210,
+          "width": 217,
           "font": 14,
           "line": 23.8
         }
@@ -4774,21 +4630,8 @@
       "documentWidth": 1440,
       "overflow": 0,
       "readingBlocks": 9,
-      "wideReadingCount": 2,
-      "wideReading": [
-        {
-          "text": "Start with the wallcovering maker’s current instructions. Compare our preparation gu",
-          "width": 725,
-          "font": 17,
-          "line": 30.6
-        },
-        {
-          "text": "A class such as B-s1,d0 applies to the product in the documented build-up, within it",
-          "width": 725,
-          "font": 17,
-          "line": 30.6
-        }
-      ],
+      "wideReadingCount": 0,
+      "wideReading": [],
       "narrowReadingCount": 0,
       "narrowReading": [],
       "clippedControls": [],

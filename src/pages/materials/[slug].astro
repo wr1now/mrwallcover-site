@@ -101,10 +101,10 @@ const crumbs = [
       <header><p class="eyebrow">Installation experience</p><h2 id="material-record-heading">On the record</h2></header>
       <div class="prose">{depth.paragraphs.map((paragraph) => <p>{segments(paragraph).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</p>)}</div>
     </section>}
-    <nav class="material-further" aria-label="Related material reading and projects">
+    <div class="material-further" role="group" aria-label="Related material reading and projects">
       {relatedGuides.length > 0 && <section><p class="eyebrow">Plan the detail</p><h2>Useful reading</h2><ul>{relatedGuides.map((guide) => <li><a href={guideHref(guide.frontmatter.slug)}>{guide.frontmatter.shortTitle}</a></li>)}</ul></section>}
       <section><p class="eyebrow">From our portfolio</p><h2>Selected work</h2><ul>{related.map((project) => <li><a href={projectHref(project.slug)}>{project.title}</a></li>)}</ul></section>
-    </nav>
+    </div>
     {
       makers.length > 0 && (
         <section class="mt-16 border-t border-line pt-10" aria-labelledby="family-makers-heading">

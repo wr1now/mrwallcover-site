@@ -91,7 +91,7 @@ const hotelNames = [
         <li class="home-trust-wide"><a href={AWARD_URL} rel="noopener"><span class="home-trust-label">Recognised</span><span class="home-trust-value home-trust-small">{AWARD_TEXT}</span></a></li>
         {programmeFigures.map((item, i) => <li class={i === programmeFigures.length - 1 ? 'home-trust-wide' : undefined}><a href={item.href}><span class="home-trust-label">{item.where}</span><span class="home-trust-value">{item.figure}</span></a></li>)}
       </ul>
-      <nav class="home-trust-makers" aria-label="Makers we install"><span class="home-trust-label">Makers we install</span><ul role="list">{trustMakers.map((maker) => <li><a href={maker.href}>{maker.name}</a></li>)}<li><a class="home-trust-more" href="/materials/#makers-installed">and more</a></li></ul></nav>
+      <div class="home-trust-makers"><span class="home-trust-label">Makers we install</span><ul role="list" aria-label="Makers we install">{trustMakers.map((maker) => <li><a href={maker.href}>{maker.name}</a></li>)}<li><a class="home-trust-more" href="/materials/#makers-installed">and more</a></li></ul></div>
     </section>
 
     <section class="home-showcase" aria-labelledby="showcase-heading">

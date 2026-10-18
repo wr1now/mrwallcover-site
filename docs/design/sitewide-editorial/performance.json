@@ -1,7 +1,7 @@
 {
-  "captured": "2026-10-18T20:21:50.190Z",
+  "captured": "2026-10-18T20:27:25.714Z",
   "beforeSource": "90455ef frozen production build",
-  "afterSource": "sitewide-editorial-final-candidate",
+  "afterSource": "d0b1835",
   "method": "Fresh isolated context and disabled cache for each page. Same 390/1440 widths, OS no-preference, first relevant study scrolled into view and actual changing canvas pixels verified. GET-only local origin, no submissions. encodedBodySize is the exact uncompressed body served by this local static server; transfer timings are deliberately omitted. Initial CLS precedes scripted scrolling; final CLS includes lazy study activation.",
   "results": [
     {
@@ -186,13 +186,13 @@
       "width": 390,
       "initial": {
         "cls": 0,
-        "bytes": 482837
+        "bytes": 482859
       },
       "cls": 0,
       "documentBytes": 159684,
-      "resourceBytes": 1452743,
+      "resourceBytes": 1452765,
       "scriptBytes": 711980,
-      "cssBytes": 105505,
+      "cssBytes": 105527,
       "posterBytes": 225224,
       "photoBytes": 335238,
       "fontBytes": 74796,
@@ -208,13 +208,13 @@
       "width": 1440,
       "initial": {
         "cls": 0.0007998394097222223,
-        "bytes": 895348
+        "bytes": 895370
       },
       "cls": 0.0007998394097222223,
       "documentBytes": 159684,
-      "resourceBytes": 2224228,
+      "resourceBytes": 2224250,
       "scriptBytes": 711980,
-      "cssBytes": 105505,
+      "cssBytes": 105527,
       "posterBytes": 225224,
       "photoBytes": 1106723,
       "fontBytes": 74796,
@@ -230,13 +230,13 @@
       "width": 390,
       "initial": {
         "cls": 0,
-        "bytes": 318375
+        "bytes": 318397
       },
       "cls": 0,
       "documentBytes": 87539,
-      "resourceBytes": 1260293,
+      "resourceBytes": 1260315,
       "scriptBytes": 705349,
-      "cssBytes": 111014,
+      "cssBytes": 111036,
       "posterBytes": 238574,
       "photoBytes": 130560,
       "fontBytes": 74796,
@@ -252,13 +252,13 @@
       "width": 1440,
       "initial": {
         "cls": 0,
-        "bytes": 1351677
+        "bytes": 1351699
       },
       "cls": 0,
       "documentBytes": 87539,
-      "resourceBytes": 1790777,
+      "resourceBytes": 1790799,
       "scriptBytes": 705349,
-      "cssBytes": 111014,
+      "cssBytes": 111036,
       "posterBytes": 238574,
       "photoBytes": 661044,
       "fontBytes": 74796,
@@ -274,13 +274,13 @@
       "width": 390,
       "initial": {
         "cls": 0,
-        "bytes": 402148
+        "bytes": 402170
       },
       "cls": 0,
       "documentBytes": 73924,
-      "resourceBytes": 1139334,
+      "resourceBytes": 1139356,
       "scriptBytes": 705349,
-      "cssBytes": 105505,
+      "cssBytes": 105527,
       "posterBytes": 242838,
       "photoBytes": 10846,
       "fontBytes": 74796,
@@ -296,13 +296,13 @@
       "width": 1440,
       "initial": {
         "cls": 0,
-        "bytes": 537552
+        "bytes": 537574
       },
       "cls": 0,
       "documentBytes": 73924,
-      "resourceBytes": 1278212,
+      "resourceBytes": 1278234,
       "scriptBytes": 705349,
-      "cssBytes": 105505,
+      "cssBytes": 105527,
       "posterBytes": 381716,
       "photoBytes": 10846,
       "fontBytes": 74796,
@@ -318,13 +318,13 @@
       "width": 390,
       "initial": {
         "cls": 0,
-        "bytes": 250067
+        "bytes": 250089
       },
       "cls": 0,
       "documentBytes": 52947,
-      "resourceBytes": 950057,
+      "resourceBytes": 950079,
       "scriptBytes": 729466,
-      "cssBytes": 105505,
+      "cssBytes": 105527,
       "posterBytes": 40290,
       "photoBytes": 0,
       "fontBytes": 74796,
@@ -340,13 +340,13 @@
       "width": 1440,
       "initial": {
         "cls": 0,
-        "bytes": 250067
+        "bytes": 250089
       },
       "cls": 0,
       "documentBytes": 52947,
-      "resourceBytes": 950057,
+      "resourceBytes": 950079,
       "scriptBytes": 729466,
-      "cssBytes": 105505,
+      "cssBytes": 105527,
       "posterBytes": 40290,
       "photoBytes": 0,
       "fontBytes": 74796,
@@ -362,9 +362,9 @@
       "path": "/",
       "width": 390,
       "documentBytes": 1497,
-      "resourceBytes": 12719,
+      "resourceBytes": 12741,
       "scriptBytes": 4096,
-      "cssBytes": 8623,
+      "cssBytes": 8645,
       "posterBytes": 0,
       "photoBytes": 0,
       "cls": 0
@@ -373,9 +373,9 @@
       "path": "/",
       "width": 1440,
       "documentBytes": 1497,
-      "resourceBytes": 12719,
+      "resourceBytes": 12741,
       "scriptBytes": 4096,
-      "cssBytes": 8623,
+      "cssBytes": 8645,
       "posterBytes": 0,
       "photoBytes": 0,
       "cls": 0
@@ -384,9 +384,9 @@
       "path": "/services/",
       "width": 390,
       "documentBytes": 4636,
-      "resourceBytes": 210388,
+      "resourceBytes": 210410,
       "scriptBytes": 4096,
-      "cssBytes": 14132,
+      "cssBytes": 14154,
       "posterBytes": 192160,
       "photoBytes": 0,
       "cls": 0
@@ -395,9 +395,9 @@
       "path": "/services/",
       "width": 1440,
       "documentBytes": 4636,
-      "resourceBytes": 424896,
+      "resourceBytes": 424918,
       "scriptBytes": 4096,
-      "cssBytes": 14132,
+      "cssBytes": 14154,
       "posterBytes": 192160,
       "photoBytes": 214508,
       "cls": 0
@@ -406,9 +406,9 @@
       "path": "/professionals/designers/",
       "width": 390,
       "documentBytes": 2063,
-      "resourceBytes": 49915,
+      "resourceBytes": 49937,
       "scriptBytes": 4096,
-      "cssBytes": 8623,
+      "cssBytes": 8645,
       "posterBytes": 37196,
       "photoBytes": 0,
       "cls": 0
@@ -417,9 +417,9 @@
       "path": "/professionals/designers/",
       "width": 1440,
       "documentBytes": 2063,
-      "resourceBytes": 53389,
+      "resourceBytes": 53411,
       "scriptBytes": 4096,
-      "cssBytes": 8623,
+      "cssBytes": 8645,
       "posterBytes": 40670,
       "photoBytes": 0,
       "cls": 0
@@ -428,9 +428,9 @@
       "path": "/contact/",
       "width": 390,
       "documentBytes": 2304,
-      "resourceBytes": 12719,
+      "resourceBytes": 12741,
       "scriptBytes": 4096,
-      "cssBytes": 8623,
+      "cssBytes": 8645,
       "posterBytes": 0,
       "photoBytes": 0,
       "cls": 0
@@ -439,9 +439,9 @@
       "path": "/contact/",
       "width": 1440,
       "documentBytes": 2304,
-      "resourceBytes": 12719,
+      "resourceBytes": 12741,
       "scriptBytes": 4096,
-      "cssBytes": 8623,
+      "cssBytes": 8645,
       "posterBytes": 0,
       "photoBytes": 0,
       "cls": 0

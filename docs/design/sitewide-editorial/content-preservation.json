@@ -1,0 +1,64 @@
+{
+  "captured": "2026-10-18T20:27:51.017480+00:00",
+  "sourceCommit": "d0b183538ebd9449ce4d48eaf969f47f71b596cb",
+  "baseline": "63567b8",
+  "method": "Compare each normal route: original p/dt/dd/figcaption and leaf li text against candidate main text after Unicode/whitespace normalization; unique main anchor destinations; meaningful actual image src+alt; FAQ schema question/answer pairs. Decorative aria-hidden content and noindex pages excluded. Flagged block differences require editorial review, not automatic content-loss verdict. Explicitly check flagged no-JavaScript fallbacks, permit middle-dot list separators to change, and separately verify relocated title/link fragments. Every resolved difference is listed.",
+  "totals": {
+    "routes": 106,
+    "uniqueAuthoredBlocks": 7694,
+    "preservedAuthoredBlocks": 7694,
+    "uniqueLinks": 4020,
+    "preservedLinks": 4020,
+    "evidenceImages": 629,
+    "preservedEvidenceImages": 629,
+    "faqPairs": 221,
+    "preservedFaqPairs": 221,
+    "normalisedOrFallbackTextMatches": 7693,
+    "verifiedRelocatedBlocks": 1
+  },
+  "exceptions": [],
+  "resolvedStructuralDifferences": [
+    {
+      "path": "/about/index.html",
+      "tag": "p",
+      "sourceText": "The work, in order. Read the services.",
+      "resolution": "Original heading sentence and services link are both preserved; the existing disciplines description now sits between them."
+    },
+    {
+      "path": "/aftercare/index.html",
+      "tag": "p",
+      "sourceText": "This form needs JavaScript. Email info@mrwallcover.com instead.",
+      "resolution": "No-JavaScript fallback wording preserved in the original noscript content."
+    },
+    {
+      "path": "/calculator/index.html",
+      "tag": "p",
+      "sourceText": "The calculator needs JavaScript. Our guide to how much wallpaper to order shows the same method by hand, or send us your measurements .",
+      "resolution": "No-JavaScript fallback wording preserved in the original noscript content."
+    },
+    {
+      "path": "/contact/index.html",
+      "tag": "p",
+      "sourceText": "This form needs JavaScript. Email info@mrwallcover.com instead.",
+      "resolution": "No-JavaScript fallback wording preserved in the original noscript content."
+    },
+    {
+      "path": "/index.html",
+      "tag": "p",
+      "sourceText": "Makers we install de Gournay · Fromental · House of Hackney · Phillip Jeffries · Muraspec · Calico Wallpaper · Timorous Beasties and more",
+      "resolution": "Original wording preserved; only native list separators changed."
+    },
+    {
+      "path": "/materials/index.html",
+      "tag": "p",
+      "sourceText": "Explore the material families below, or ask about your room .",
+      "resolution": "No-JavaScript fallback wording preserved in the original noscript content."
+    },
+    {
+      "path": "/projects/index.html",
+      "tag": "p",
+      "sourceText": "Anaglypta · Andrew Martin · Arte · Barneby Gates · Bernard Thorp · Calico Wallpaper · Celerie Kemble · Chilewich · Christopher Farr Cloth · Cole & Son · Dedar · Eijffinger · Elitis · Fermoie · Fromental · Glamora · Gucci · Harlequin · Hermès · House of Hackney · Kelly Hoppen · Lincrusta · Muraspec · Omexco · Osborne & Little · Papiers de Paris · Phillip Jeffries · Ralph Lauren Home · Roberto Cavalli Home · Romo · Sahco · Schumacher · Soane Britain · Tektura · Thibaut · Timorous Beasties · Today Interiors (Zaniah) · Versace Home · Vescom · Wall&decò · Woodchip & Magnolia · Zoffany · de Gournay",
+      "resolution": "Original wording preserved; only native list separators changed."
+    }
+  ]
+}

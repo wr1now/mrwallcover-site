@@ -1,5 +1,5 @@
 {
-  "source": "sitewide-editorial-final-candidate",
+  "source": "d0b1835",
   "method": "Compiled dist; OS reduced motion keeps an exact static view. Compare actual full-viewport gutter pixels with the decorative layer visible/hidden. Capture an initial viewport to flush the headless compositor, then await two rendering frames between visibility mutations. Restore the layer before saving screenshots. No website or persisted browser settings changed.",
   "results": [
     {
