@@ -23,7 +23,7 @@ test('every content page advertises the same readable AI resources',async()=>{
  }
  for(const file of ['business','projects','decision-guide']){
   const record=JSON.parse(await readFile(`dist/ai/${file}.json`,'utf8')) as {schemaVersion:string;resourceReviewed:string};
-  assert.equal(record.schemaVersion,'1.1');assert.equal(record.resourceReviewed,'2026-10-10');
+  assert.equal(record.schemaVersion,file==='projects'?'1.2':'1.1');assert.equal(record.resourceReviewed,'2026-10-10');
  }
 });
 

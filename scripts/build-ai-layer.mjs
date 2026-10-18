@@ -10,6 +10,9 @@
  *   dist/ai/index.json        discoverable manifest of exactly those pages
  *   dist/ai/pages.json        semantic page records, including Markdown,
  *                             public JSON-LD and meaningful media descriptions
+ *   dist/ai/projects.json    existing project summary fields enriched with the
+ *                             exact corresponding semantic page record
+ *   dist/ai/projects/*.json  one complete record for selective retrieval
  *
  * A page is published when it is built, carries no noindex meta and is not a
  * redirect stub. Drafts are never built, so they never appear. The 404,
@@ -22,7 +25,7 @@
  *
  * Runs as `npm run build`'s postbuild step. Usage: node scripts/build-ai-layer.mjs [distDir]
  */
-import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const SITE = 'https://www.mrwallcover.com';
@@ -474,6 +477,37 @@ export async function readPage(file) {
   };
 }
 
+/** Reuse the canonical page corpus; a missing or excluded project page is a release error. */
+export function enrichProjects(payload, records) {
+  const byUrl = new Map(records.map((record) => [record.url, record]));
+  const seen = new Set();
+  if (!Array.isArray(payload.projects) || !payload.projects.length) throw new Error('project JSON has no published records');
+  return {
+    ...payload,
+    projects: payload.projects.map((project) => {
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(project.slug)) throw new Error(`invalid project JSON slug: ${project.slug}`);
+      if (seen.has(project.slug)) throw new Error(`duplicate project JSON slug: ${project.slug}`);
+      seen.add(project.slug);
+      const expectedUrl = `${SITE}/projects/${project.slug}/`;
+      const page = byUrl.get(expectedUrl);
+      if (project.url !== expectedUrl || !page || page.id !== expectedUrl || page.path !== `/projects/${project.slug}/`) {
+        throw new Error(`${project.slug}: project JSON requires its published, indexable canonical page ${expectedUrl}`);
+      }
+      return {
+        ...project,
+        published: page.dates.published,
+        updated: page.dates.modified,
+        formats: {
+          html: page.url,
+          markdown: page.formats.markdown,
+          json: `${SITE}/ai/projects/${project.slug}.json`,
+        },
+        pageContent: page,
+      };
+    }),
+  };
+}
+
 export async function build(distDir = dist) {
   const pages = [];
   for (const file of await htmlFiles(distDir)) {
@@ -549,6 +583,23 @@ export async function build(distDir = dist) {
   };
   await writeFile(path.join(distDir, 'ai', 'index.json'), `${JSON.stringify({ ...exportMetadata, pages: manifestPages }, null, 2)}\n`);
   await writeFile(path.join(distDir, 'ai', 'pages.json'), `${JSON.stringify({ ...exportMetadata, pages: records }, null, 2)}\n`);
+  const projectFile = path.join(distDir, 'ai', 'projects.json');
+  const projectPayload = enrichProjects(JSON.parse(await readFile(projectFile, 'utf8')), records);
+  await writeFile(projectFile, `${JSON.stringify(projectPayload, null, 2)}\n`);
+  // A second run must not retain a previously published project's shard after exclusion.
+  await rm(path.join(distDir, 'ai', 'projects'), { recursive: true, force: true });
+  await mkdir(path.join(distDir, 'ai', 'projects'), { recursive: true });
+  for (const project of projectPayload.projects) {
+    await writeFile(path.join(distDir, 'ai', 'projects', `${project.slug}.json`), `${JSON.stringify({
+      schemaVersion: projectPayload.schemaVersion,
+      resourceReviewed: projectPayload.resourceReviewed,
+      url: project.formats.json,
+      sourceUrl: project.url,
+      publisher: projectPayload.publisher,
+      fieldNotes: projectPayload.fieldNotes,
+      project,
+    }, null, 2)}\n`);
+  }
 
   // /sitemap.xml is the address crawlers and people try first. @astrojs/sitemap only writes
   // sitemap-index.xml, so serve an identical copy of the index at the conventional path too.

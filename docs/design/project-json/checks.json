@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "observations": [
+    {
+      "label": "before",
+      "width": 390,
+      "javaScript": true,
+      "overflow": false,
+      "projectRecords": 31,
+      "jsonLinks": 0,
+      "mainScripts": 0,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "width": 1440,
+      "javaScript": true,
+      "overflow": false,
+      "projectRecords": 31,
+      "jsonLinks": 0,
+      "mainScripts": 0,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "width": 390,
+      "javaScript": false,
+      "overflow": false,
+      "projectRecords": 31,
+      "jsonLinks": 0,
+      "mainScripts": 0,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "width": 1440,
+      "javaScript": false,
+      "overflow": false,
+      "projectRecords": 31,
+      "jsonLinks": 0,
+      "mainScripts": 0,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "width": 390,
+      "javaScript": true,
+      "overflow": false,
+      "projectRecords": 31,
+      "jsonLinks": 31,
+      "mainScripts": 0,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "width": 1440,
+      "javaScript": true,
+      "overflow": false,
+      "projectRecords": 31,
+      "jsonLinks": 31,
+      "mainScripts": 0,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "width": 390,
+      "javaScript": false,
+      "overflow": false,
+      "projectRecords": 31,
+      "jsonLinks": 31,
+      "mainScripts": 0,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "width": 1440,
+      "javaScript": false,
+      "overflow": false,
+      "projectRecords": 31,
+      "jsonLinks": 31,
+      "mainScripts": 0,
+      "noBrowserErrors": true
+    }
+  ],
+  "noFormsSubmitted": true
+}
