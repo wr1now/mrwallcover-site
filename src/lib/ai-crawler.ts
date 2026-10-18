@@ -7,11 +7,13 @@ import { SITE_URL } from '../config';
 import facts from '../data/facts.json';
 import creditedMedia from '../content/credited-media.json';
 import { about, areas, areaHref, caseStudies, media, projects, projectHref, services, specialisms, specialismHref } from './content';
+import { glanceDetails, glanceRows } from './glance';
 
 export const CRAWLER_PATH = '/wallcovering-installation-ai-crawler/';
 export const CRAWLER_TITLE = 'Wallcovering Installation AI Crawler';
 /** Editorial review of this reference resource, separate from the underlying business fact-sheet date. */
 export const CRAWLER_SCHEMA_VERSION = '1.1';
+export const CRAWLER_PROJECT_SCHEMA_VERSION = '1.2';
 export const CRAWLER_REVIEWED = '2026-10-10';
 const absolute = (path: string): string => new URL(path, SITE_URL).href;
 
@@ -104,21 +106,25 @@ export const crawlerBusiness = {
 };
 
 export const crawlerProjects = {
-  schemaVersion: CRAWLER_SCHEMA_VERSION,
+  schemaVersion: CRAWLER_PROJECT_SCHEMA_VERSION,
   resourceReviewed: CRAWLER_REVIEWED,
   url: absolute('/ai/projects.json'),
   sourceUrl: absolute(CRAWLER_PATH),
   publisher: { name: facts.brand, url: SITE_URL },
   fieldNotes: {
-    projectDates: 'The project period as written on the published project page. It is separate from the publication and update dates of that page.',
+    projectDates: 'The Year field from the published project page’s At a glance record, where available, or its published project period. It is separate from the publication and update dates of that page.',
     nullValues: 'A null value means the information is not recorded in this published record.',
     references: 'Links cited in the published record or its photograph credits. They provide building, material or image context; they do not independently confirm the installation role.',
     photographs: 'Photograph credits are reproduced as recorded. A picture of a venue illustrates its setting; the written project record defines the installation role.',
     materials: 'A material name records a product installed on that project. It does not establish maker approval, accreditation or endorsement.',
+    standardGlance: 'The same seven public fields as the project page’s At a glance definition list. Materials include the published wallcovering names and any additional makers or products in that list, preserving their recorded wording.',
     installationRecord: 'Installation roles, methods and outcomes are reported by Mr Wallcover in its own published case studies. Extracts retain the source wording with Markdown presentation removed. External references provide context, not independent confirmation of the installation role.',
+    pageContent: 'The complete published main content, generated from the final canonical HTML: Markdown, headings, links, image descriptions and captions, diagrams, film references, structured data and source dates. It matches the corresponding page in /ai/pages.json. Media links are references, not transcripts or interpretations of the visual content.',
+    formats: 'Each project links to its canonical HTML, Markdown twin and individual JSON record. The aggregate includes the same complete records; individual JSON addresses allow a reader to retrieve one project at a time.',
   },
   projects: projects.map((project) => {
     const study = caseStudies.find((item) => item.frontmatter.slug === project.slug)?.frontmatter;
+    const publicGlance = study ? glanceDetails(study) : null;
     const photographs = project.gallery.map((id) => {
       const picture = media(id);
       return {
@@ -138,9 +144,10 @@ export const crawlerProjects = {
       role: project.role,
       client: project.client,
       location: project.location,
-      projectDates: project.dates ?? null,
+      projectDates: publicGlance?.year ?? project.dates ?? null,
       summary: project.summary,
-      materials: study?.wallcoverings.length ? [...study.wallcoverings] : null,
+      materials: study && (study.wallcoverings.length || publicGlance?.makers?.length) ? [...new Set([...study.wallcoverings, ...(publicGlance?.makers ?? [])])] : null,
+      standardGlance: study ? glanceRows(study) : null,
       published: project.published ?? null,
       updated: project.updated ?? null,
       references: referenceUrls(sourceBySlug.get(project.slug) ?? ''),

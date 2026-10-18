@@ -26,6 +26,7 @@ interface CrawlerProject {
   updated: string | null;
   references: string[];
   photographs: Photo[];
+  standardGlance: { label: string; value: string | null }[] | null;
   installationRecord: { basis: string; sourceUrl: string; sections: { heading: string; kind: string; text: string }[] };
 }
 interface CaseStudy {
@@ -123,6 +124,7 @@ test('every published project preserves exact roles, material names, project per
   const html = await readFile(`dist${CRAWLER}index.html`, 'utf8');
   const text = visibleText(html);
   const credited = await readJson<Record<string, { manifestNote: string }>>('src/content/credited-media.json');
+  const glance = await readJson<{ items: Record<string, { makers?: string[]; year?: string }> }>('src/content/case-study-glance.json');
   for (const { data, body } of studies) {
     const project = payload.projects.find((item) => item.slug === data.slug);
     if (data.draft) {
@@ -135,8 +137,10 @@ test('every published project preserves exact roles, material names, project per
     assert.equal(project.role, data.role);
     assert.equal(project.client, data.client);
     assert.equal(project.location, data.location);
-    assert.equal(project.projectDates, data.years);
-    assert.deepEqual(project.materials, data.wallcoverings.length ? data.wallcoverings : null);
+    const publicYear = project.standardGlance?.find((row) => row.label === 'Year')?.value;
+    assert.equal(project.projectDates, publicYear ?? data.years);
+    const publishedMaterials = [...new Set([...data.wallcoverings, ...(glance.items[data.slug]?.makers ?? [])])];
+    assert.deepEqual(project.materials, publishedMaterials.length ? publishedMaterials : null);
     assert.equal(project.published, data.published);
     assert.equal(project.updated, data.updated);
     assert.equal(project.url, `${SITE}/projects/${data.slug}/`);
@@ -158,7 +162,7 @@ test('every published project preserves exact roles, material names, project per
     }
   }
   const silverstone = payload.projects.find((item) => item.slug === 'hilton-garden-inn-silverstone')!;
-  assert.equal(silverstone.projectDates, null, 'the name-only hotel list must not supply missing project dates');
+  assert.equal(silverstone.projectDates, '2022 (completed in time for the British Grand Prix)', 'use the year actually published in the project page’s standard glance, independently of the hotel index');
   assert.ok(payload.projects.some((project) => project.photographs.some((photo) => photo.credit === null)), 'unknown photograph credits remain null');
   const owo = payload.projects.find((project) => project.slug === 'raffles-london-the-owo')!;
   assert.ok(owo.references.includes('https://www.raffles.com/london/rooms-and-suites/'), 'case-study sources must be discoverable');
@@ -169,7 +173,9 @@ test('structured endpoints preserve privacy and record limitations without addin
   const projects = await readFile('dist/ai/projects.json', 'utf8');
   const decision = await readFile('dist/ai/decision-guide.json', 'utf8');
   for (const text of [business, projects, decision]) {
-    const scan = text === business ? text.replace('"award": "Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards"', '') : text;
+    const scan = text
+      .replace('"award": "Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards"', '')
+      .replaceAll('"award": "Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards"', '');
     assert.doesNotMatch(scan, /"(?:phone|telephone|price|aggregateRating|award|apiKey|token|_note|manifestNote|placeholder)"\s*:/i);
     assert.doesNotMatch(text, /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}|\b020\s?\d{4}\s?\d{4}\b/);
     assert.doesNotMatch(text, /\/Users\/|localhost|SITE_PHONE|data:image/);

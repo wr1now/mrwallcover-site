@@ -117,6 +117,9 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
     ...films.map((film) => videoNode(film, pageUrl)),
   ]}
 >
+  <Fragment slot="head">
+    {import.meta.env.MW_CONTENT_PREVIEW !== '1' && <link rel="alternate" type="application/json" href={new URL(`/ai/projects/${project.slug}.json`, SITE_URL).href} title="Complete project record as JSON" />}
+  </Fragment>
   <div class="container-page">
     <header class="page-head">
       <Breadcrumb items={crumbs} />

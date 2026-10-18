@@ -140,6 +140,8 @@ All of these are generated at build time from `src/data/facts.json` and the cont
 | `/for-ai/` | A plain-facts page for people and assistants | `src/pages/for-ai.astro` |
 | `/ai/index.json` | Every published page, canonical source, dates and format addresses | `scripts/build-ai-layer.mjs` (postbuild) |
 | `/ai/pages.json` | The complete published page corpus: Markdown, headings, media semantics and structured data | same script |
+| `/ai/projects.json` | Complete published project records, page content and individual JSON addresses | Astro public projection, completed by postbuild |
+| `/ai/projects/<slug>.json` | One complete project record for selective reading | `scripts/build-ai-layer.mjs` (postbuild) |
 | `/ai/wallpapering.json` | Public wallpapering and calculator reference data, retaining source/evidence limits | `src/pages/ai/wallpapering.json.ts` |
 | `/ai/fire-ratings.json` | Published fire-reference records, citations and limitations | `src/pages/ai/fire-ratings.json.ts` |
 | `/llms.txt` | A curated index in the llmstxt.org shape | `src/pages/llms.txt.ts` |
