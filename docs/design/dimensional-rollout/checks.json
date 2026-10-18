@@ -14,7 +14,7 @@
     },
     "builtSite": {
       "command": "npm run check:dist",
-      "passed": 238,
+      "passed": 239,
       "temporaryNewPageAndPhoneFixture": "passed"
     },
     "additionalRegression": {
@@ -23,7 +23,6 @@
       "passed": 1,
       "scope": "Scene import held while the control and shortlist positions are measured; this is separate from initial font-loading CLS."
     },
-    "nextHostedBuiltSiteTestCount": 239,
     "typographyAndContrast": {
       "command": "npm run check:type",
       "passed": 2
@@ -47,7 +46,14 @@
     "fontPreloadAndVisualContracts": {
       "passed": 10,
       "command": "node --experimental-strip-types --test tests/lead-image-preload.test.ts tests/visual-system.test.ts"
-    }
+    },
+    "guideResponsiveBrowser": {
+      "command": "npm run check:guide-browser",
+      "routeWidthCases": 18,
+      "sharedFooterCases": 8,
+      "keyboardDisclosureEffectsNoJavaScript": "passed"
+    },
+    "browserReadiness": "Use page load and bounded font/image/state predicates, polling outside the page for disabled-JavaScript contexts. No timeout increases or assertions removed."
   },
   "focusedBrowserCoverage": {
     "originalCasesPassed": 8,

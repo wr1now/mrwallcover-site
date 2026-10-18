@@ -1,7 +1,7 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { serve, launchBrowser } from '../scripts/visual-browser.mjs';
+import { serve, launchBrowser, loadPage, waitForPageContent, waitForPagePredicate } from '../scripts/visual-browser.mjs';
 
 const route = '/professionals/designers/';
 const objectSelector = '.guide-faq-item [data-design-object]';
@@ -44,16 +44,17 @@ async function withPage(check: (page: any, requests: string[]) => Promise<void>,
 }
 
 async function load(page: any, path = route) {
-  const response = await page.goto(server.origin + path, { waitUntil: 'networkidle0' });
-  assert.equal(response.status(), 200);
+  const response = await loadPage(page, server.origin + path);
+  assert.equal(response.status(), 200, path);
   await page.addStyleTag({ content: 'html { scroll-behavior:auto!important; }' });
-  await page.evaluate(async () => {
-    await document.fonts.ready;
-    await Promise.all([...document.querySelectorAll<HTMLImageElement>('[data-design-object] img')].map(async image => {
-      image.loading = 'eager';
-      try { await image.decode(); } catch {}
-    }));
+  await page.evaluate(() => {
+    document.querySelectorAll<HTMLImageElement>('[data-design-object] img').forEach(image => { image.loading = 'eager'; });
   });
+  try {
+    await waitForPagePredicate(page, () => [...document.querySelectorAll<HTMLImageElement>('[data-design-object] img')].every(image => image.complete), { timeout: 20000 });
+  } catch(cause) {
+    throw new Error(`${path} @${page.viewport()?.width}: illustration posters did not finish loading`, { cause });
+  }
 }
 
 async function content(page: any) {
@@ -117,7 +118,7 @@ function assertControls(actual: Awaited<ReturnType<typeof controls>>, state: 'ru
 async function staticPosters(page: any) {
   // Media-query changes can update attributes before the next style/rendering pass. Await the
   // actual fallback appearance as well as stopped live markers, without a fixed settling delay.
-  await page.waitForFunction(() => document.querySelectorAll('[data-design-object][data-live]').length === 0
+  await waitForPagePredicate(page, () => document.querySelectorAll('[data-design-object][data-live]').length === 0
     && [...document.querySelectorAll<HTMLImageElement>('[data-design-object] img')].every(image =>
       image.complete && image.naturalWidth > 0 && getComputedStyle(image).visibility === 'visible'
     ), { timeout: 10000 });
@@ -169,7 +170,7 @@ test('lazy scene activation preserves the material controls and shortlist positi
     const sceneRequested = new Promise<void>(resolve => { notifyRequest = resolve; });
     await withPage(async page => {
       await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
-      await page.goto(server.origin + '/materials/grasscloth-and-weaves/', { waitUntil: 'load' });
+      await loadPage(page, server.origin + '/materials/grasscloth-and-weaves/');
       await page.evaluate(async () => {
         await document.fonts.ready;
         const study = document.querySelector<HTMLElement>('.design-study')!;
@@ -261,13 +262,12 @@ test('the footer preference stops live scenes, persists after reload and restore
     await staticPosters(page);
     assertControls(await controls(page), 'reduced');
 
-    await page.reload({ waitUntil: 'networkidle0' });
-    await page.evaluate(async () => {
-      await Promise.all([...document.querySelectorAll<HTMLImageElement>('[data-design-object] img')].map(async image => {
-        image.loading = 'eager';
-        try { await image.decode(); } catch {}
-      }));
+    await page.reload({ waitUntil: 'load' });
+    await waitForPageContent(page);
+    await page.evaluate(() => {
+      document.querySelectorAll<HTMLImageElement>('[data-design-object] img').forEach(image => { image.loading = 'eager'; });
     });
+    await waitForPagePredicate(page, () => [...document.querySelectorAll<HTMLImageElement>('[data-design-object] img')].every(image => image.complete), { timeout: 20000 });
     assert.equal(await page.evaluate(() => document.documentElement.dataset.effects), 'reduced');
     assert.equal(await page.$$eval('[data-design-object] canvas', (canvases: HTMLCanvasElement[]) => canvases.length), 0, 'stored preference prevents renderer startup');
     await staticPosters(page);
@@ -364,7 +364,7 @@ test('native service, area and FAQ disclosures keep keyboard and drawing-click b
 test('AI facts, legal reading and reference utilities stay static and never request the 3D scene module', { timeout: 90000 }, async () => {
   await withPage(async (page, requests) => {
     for (const path of staticRoutes) {
-      const response = await page.goto(server.origin + path, { waitUntil: 'networkidle0' });
+      const response = await loadPage(page, server.origin + path);
       assert.equal(response.status(), 200, path);
       await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' }));
       assert.equal(await page.$$eval('[data-design-object]', (objects: HTMLElement[]) => objects.length), 0, path);

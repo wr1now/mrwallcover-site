@@ -35,10 +35,12 @@ test('every published and utility page has a visual decision and works at mobile
         errors.length=0;
         const response=await page.goto(server.origin+path,{waitUntil:'load'});
         assert.equal(response?.status(),200,path);
-        await page.evaluate(async()=>{
-          await document.fonts.ready;
-          await Promise.all([...document.images].map(async i=>{i.loading='eager';try {await i.decode();}catch{}}));
-        });
+        await page.evaluate(()=>{for(const image of document.images)image.loading='eager';});
+        try {
+          await page.waitForFunction(()=>document.fonts.status==='loaded'&&[...document.images].every(image=>image.complete),{polling:100,timeout:20000});
+        } catch(cause) {
+          throw new Error(`${path} @${width}: fonts or requested images did not finish loading`,{cause});
+        }
         const result=await page.evaluate(()=>({
           overflow:document.documentElement.scrollWidth>innerWidth,
           h1:document.querySelectorAll('main h1').length,

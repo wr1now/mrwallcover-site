@@ -26,3 +26,39 @@ export async function launchBrowser() {
   if (!chrome) throw new Error('Set CHROME_PATH to the test Chrome/Chromium executable.');
   return puppeteer.launch({ executablePath:chrome, headless:true, args:['--no-sandbox'] });
 }
+
+/** Poll outside the page: disabling JavaScript also suppresses its interval/animation callbacks. */
+export async function waitForPagePredicate(page, predicate, { timeout = 20000 } = {}, ...args) {
+  const deadline = Date.now() + timeout;
+  do {
+    if (await page.evaluate(predicate, ...args)) return;
+    await new Promise(resolve => setTimeout(resolve, 100));
+  } while (Date.now() < deadline);
+  throw new Error(`Page state did not become ready within ${timeout}ms`);
+}
+
+/** Static-page readiness is the actual reading surface, independent of optional after-load scenes. */
+export async function waitForPageContent(page) {
+  try {
+    await waitForPagePredicate(page, () => document.fonts.status === 'loaded'
+      && [...document.images].filter(image => image.loading !== 'lazy').every(image => image.complete));
+  } catch (cause) {
+    const state = await page.evaluate(() => ({
+      readyState: document.readyState, fontStatus: document.fonts.status,
+      loadingFonts: [...document.fonts].filter(font => font.status === 'loading').map(font => font.family),
+      pendingImages: [...document.images].filter(image => !image.complete).map(image => ({ src: image.currentSrc || image.src, loading: image.loading })),
+    }));
+    throw new Error(`Content readiness deadline exceeded: ${JSON.stringify(state)}`, { cause });
+  }
+}
+
+export async function loadPage(page, url, navigationOptions = {}) {
+  try {
+    const response = await page.goto(url, { ...navigationOptions, waitUntil: 'load' });
+    await waitForPageContent(page);
+    return response;
+  } catch (cause) {
+    const viewport = page.viewport();
+    throw new Error(`Page content not ready: ${url} @${viewport?.width ?? '?'}x${viewport?.height ?? '?'}`, { cause });
+  }
+}

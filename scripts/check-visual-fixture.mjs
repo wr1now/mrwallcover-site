@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { promisify } from 'node:util';
 import { execFile } from 'node:child_process';
 import assert from 'node:assert/strict';
-import { serve, launchBrowser } from './visual-browser.mjs';
+import { serve, launchBrowser, loadPage, waitForPagePredicate } from './visual-browser.mjs';
 const fixture='src/pages/visual-contract-fixture.astro';
 let exists=false;
 try { await access(fixture); exists=true; } catch {}
@@ -45,13 +45,14 @@ try {
   const browser=await launchBrowser();
   try {
     const page=await browser.newPage();
-    await page.goto(server.origin+'/visual-contract-fixture/',{waitUntil:'networkidle0'});
+    await loadPage(page,server.origin+'/visual-contract-fixture/');
     await page.type('[data-action-form] input',' changed');
     await page.click('[data-action-form] button[type="reset"]');
     assert.equal(await page.$eval('[data-action-form] input',input=>input.value),'Original','reset action performs a native form reset');
     await page.click('[data-action-form] button[type="submit"]');
     assert.equal(await page.$eval('[data-action-submissions]',output=>output.textContent),'1','submit action fires the native submit event');
-    await page.$eval('[data-design-object] img',async image=>{image.loading='eager';await image.decode();});
+    await page.$eval('[data-design-object] img',image=>{image.loading='eager';});
+    await waitForPagePredicate(page,()=>document.querySelector('[data-design-object] img').complete);
     for(const width of [390,1440]) {
       await page.setViewport({width,height:900});
       await page.$eval('.faq summary',summary=>summary.scrollIntoView({block:'center',behavior:'instant'}));
@@ -73,8 +74,9 @@ try {
     const plain=await browser.newPage();
     await plain.setJavaScriptEnabled(false);
     await plain.setViewport({width:390,height:900});
-    await plain.goto(server.origin+'/visual-contract-fixture/',{waitUntil:'networkidle0'});
-    await plain.$eval('[data-design-object] img',async image=>{image.loading='eager';await image.decode();});
+    await loadPage(plain,server.origin+'/visual-contract-fixture/');
+    await plain.$eval('[data-design-object] img',image=>{image.loading='eager';});
+    await waitForPagePredicate(plain,()=>document.querySelector('[data-design-object] img').complete);
     assert.equal(await plain.$eval('[data-design-object] img',image=>image.naturalWidth>0&&getComputedStyle(image).visibility==='visible'),true,'a genuinely new route keeps its complete illustration without JavaScript');
     assert.equal(await plain.$$eval('button[data-object-motion]',buttons=>buttons.length>0&&buttons.every(button=>button.hidden&&button.getClientRects().length===0)),true,'no-JavaScript motion controls are actually hidden');
     assert.equal(await plain.$$eval('[data-design-object] canvas',canvases=>canvases.length),0);
@@ -84,7 +86,7 @@ try {
     await plain.close();
     for (const width of [360,390,768,1024,1280,1440]) {
       await page.setViewport({width,height:900});
-      await page.goto(server.origin+'/contact/',{waitUntil:'networkidle0'});
+      await loadPage(page,server.origin+'/contact/');
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`phone-enabled layout @${width}`);
       assert.ok(await page.$('[data-wa]'),'phone-enabled WhatsApp control');
       assert.match(await page.$eval('[data-wa]',(link)=>link.href),/^https:\/\/wa\.me\//,'WhatsApp payload resolves without opening a chat');
@@ -107,7 +109,7 @@ try {
         assert.equal(await page.$eval('[data-dock]',(dock)=>getComputedStyle(dock).display),'none','phone-enabled dock hides for form focus');
       }
     }
-    await page.goto(server.origin+'/get-in-touch/',{waitUntil:'networkidle0'});
+    await loadPage(page,server.origin+'/get-in-touch/');
     await page.click('main [data-phone-reveal]');
     assert.ok(await page.$('main a[href^="tel:"]'),'phone reveal becomes a dial link without placing a call');
   } finally { await browser.close(); await server.close(); }
