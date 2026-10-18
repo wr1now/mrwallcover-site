@@ -1,8 +1,8 @@
 {
   "summary": {
     "phase": "after",
-    "source": "d0b1835",
-    "captured": "2026-10-18T20:26:30.455Z",
+    "source": "7159153-plus-guide-card-alignment",
+    "captured": "2026-10-18T20:41:18.077Z",
     "motion": "OS reduced motion for the layout inventory; live animation is checked separately.",
     "routeCount": 106,
     "viewportCount": 212,
@@ -10,7 +10,7 @@
       390,
       1440
     ],
-    "elapsedSeconds": 15,
+    "elapsedSeconds": 7,
     "failures": 0,
     "overflowCases": 0,
     "wideReadingCases": 1,

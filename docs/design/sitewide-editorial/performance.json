@@ -1,7 +1,7 @@
 {
-  "captured": "2026-10-18T20:27:25.714Z",
+  "captured": "2026-10-18T20:41:59.022Z",
   "beforeSource": "90455ef frozen production build",
-  "afterSource": "d0b1835",
+  "afterSource": "7159153-plus-guide-card-alignment",
   "method": "Fresh isolated context and disabled cache for each page. Same 390/1440 widths, OS no-preference, first relevant study scrolled into view and actual changing canvas pixels verified. GET-only local origin, no submissions. encodedBodySize is the exact uncompressed body served by this local static server; transfer timings are deliberately omitted. Initial CLS precedes scripted scrolling; final CLS includes lazy study activation.",
   "results": [
     {
@@ -446,5 +446,24 @@
       "photoBytes": 0,
       "cls": 0
     }
-  ]
+  ],
+  "guideCardStylesheetComparison": {
+    "method": "Sum exact uncompressed bytes of unique linked stylesheet files and inline style bodies in the frozen/final Guide index HTML. This supplements the four-route browser samples because the final Guide-card rules are scoped to Guide routes.",
+    "results": [
+      {
+        "build": "before",
+        "path": "/advice/",
+        "externalCssBytes": 96882,
+        "inlineCssBytes": 4791
+      },
+      {
+        "build": "after",
+        "path": "/advice/",
+        "externalCssBytes": 110307,
+        "inlineCssBytes": 5254
+      }
+    ],
+    "externalCssDelta": 13425,
+    "inlineCssDelta": 463
+  }
 }

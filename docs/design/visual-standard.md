@@ -55,6 +55,8 @@ This demonstrates inherited page chrome and action styling without local CSS. Re
 
 ## Photography and graphics
 
+Mixed Guide-card rows use the shared square media slot, consistent caption space and category row in `GuideCard.astro`. Keep photographic subjects legible and object geometry complete; reserve enough room for the real motion control so photo and 3D card titles align at tablet and desktop widths. New Guide entries inherit this composition without local sizing overrides.
+
 Check each image's subject, crop, alt text, caption and reuse terms before adding it to a new context. `src/data/image-rights.json` and [asset-rights.md](../asset-rights.md) record provenance; inclusion in a manifest alone does not grant unrestricted reuse. Retain required credits beside the image and the corresponding structured data. A venue's official photograph must remain identified as venue imagery. A maker's name means a product installed on a recorded project, never endorsement or accreditation.
 
 Use `Picture.astro` with a registered image id and realistic `sizes`. Keep intrinsic dimensions, responsive AVIF/WebP sources, deliberate focal points and lazy loading below the fold. Prioritise the actual lead image only. Do not upscale a small source into a large proof image. Material comparisons need photographs of that material rather than an unrelated finished room. Verify crops at mobile width so the relevant seam or detail is still visible.
