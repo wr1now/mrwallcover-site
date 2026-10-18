@@ -21,10 +21,10 @@
     "lead-api": "LEAD_API_ENABLED=1 node --experimental-strip-types server/index.ts",
     "build:review": "npm run prebuild && MW_CONTENT_PREVIEW=1 astro build --outDir dist-review",
     "preview:review": "astro preview --outDir dist-review",
-    "check:guides": "node --experimental-strip-types --test tests/guide-build.test.ts",
+    "check:guides": "node --experimental-strip-types --test tests/guide-build.test.ts && npm run check:makers",
     "indexnow": "node scripts/indexnow-ping.mjs dist",
     "check:no-loss": "node scripts/no-loss-guard.mjs --base-dist ../mw-main-base/dist --dist dist --base-ref origin/main",
-    "check:names": "node scripts/names-guard.mjs --repo",
+    "check:names": "node scripts/names-guard.mjs --repo && npm run build:review && node scripts/names-guard.mjs --dist dist-review --repo",
     "check:visual": "node --experimental-strip-types --test tests/footer-visual.test.ts tests/visual-system.test.ts tests/visual-browser.test.ts tests/visual-coverage.test.ts && node scripts/check-visual-fixture.mjs",
     "capture:visual": "node scripts/capture-visual-review.mjs",
     "check:fire-sources": "node scripts/check-fire-sources.mjs",
@@ -35,7 +35,8 @@
     "check:studio": "node --experimental-strip-types --test tests/room-studio-*.test.ts",
     "check:studio-types": "tsc --project tsconfig.room-studio.json && tsc --ignoreConfig --noEmit --strict --target ES2022 --module ESNext --moduleResolution Bundler --allowImportingTsExtensions --skipLibCheck --lib ES2022,DOM supabase/functions/room-studio/index.ts",
     "check:studio-browser": "node --experimental-strip-types scripts/qa/room-studio-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-plan-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-finishes-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-draft-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-panorama-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-draw-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-scene-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-results-browser.mjs",
-    "check:studio-plan-browser": "node --experimental-strip-types scripts/qa/room-studio-plan-browser.mjs"
+    "check:studio-plan-browser": "node --experimental-strip-types scripts/qa/room-studio-plan-browser.mjs",
+    "check:makers": "node --experimental-strip-types --test tests/makers-directory.test.ts && node scripts/qa/makers-directory.mjs"
   },
   "dependencies": {
     "@astrojs/react": "7.1.0",

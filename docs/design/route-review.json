@@ -440,6 +440,94 @@
     {
       "path": "/where-to-buy/",
       "decision": "Use a text-led ordering checklist and primary source links; no supplier record or product imagery is being published."
+    },
+    {
+      "path": "/makers/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/buying-routes/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/arte/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/phillip-jeffries/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/de-gournay/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/fromental/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/calico-wallpaper/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/house-of-hackney/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/brewster-home-fashions/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/cole-and-son/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/dedar/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/designers-guild/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/elitis/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/morris-and-co/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/omexco/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/osborne-and-little/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/pierre-frey/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/sanderson/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/sangetsu/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/vescom/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/york-wallcoverings/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
+    },
+    {
+      "path": "/makers/zoffany/",
+      "decision": "Static reference using shared Base, actions, labelled navigation and readable source cards. Typography and source dates support comparison; unrelated photography or simulated brand textures would imply evidence or rights we do not hold."
     }
   ]
 }

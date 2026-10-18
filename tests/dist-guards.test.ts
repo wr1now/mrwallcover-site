@@ -438,7 +438,7 @@ test('the homepage does not load the 3D engine up front', async () => {
   assert.match(studio, /import\(`\.\/three\.module/);
 });
 
-test('every indexable page has an https canonical, a description, JSON-LD, one H1 and no de Gournay title', async () => {
+test('every indexable page has an https canonical, a description, JSON-LD, one H1 and no de Gournay installation-service title', async () => {
   const files = await htmlFiles('dist');
   const problems: string[] = [];
   for (const file of files) {
@@ -455,9 +455,11 @@ test('every indexable page has an https canonical, a description, JSON-LD, one H
     const h1s = html.match(/<h1[\s>]/g)?.length ?? 0;
     if (h1s !== 1) problems.push(`${rel}: ${h1s} H1s`);
     const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '';
-    if (/gournay/i.test(title)) problems.push(`${rel}: title names de Gournay`);
-    if (/gournay/i.test(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] ?? '')) problems.push(`${rel}: H1 names de Gournay`);
-    for (const name of html.matchAll(/"name":"([^"]*gournay[^"]*)"/gi)) problems.push(`${rel}: schema name ${name[1]}`);
+    // The owner-approved supplier profile is distinct from an installation-service claim.
+    const approvedMakerProfile = rel === '/makers/de-gournay/index.html';
+    if (!approvedMakerProfile && /gournay/i.test(title)) problems.push(`${rel}: title names de Gournay`);
+    if (!approvedMakerProfile && /gournay/i.test(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] ?? '')) problems.push(`${rel}: H1 names de Gournay`);
+    for (const name of html.matchAll(/"name":"([^"]*gournay[^"]*)"/gi)) if (!approvedMakerProfile) problems.push(`${rel}: schema name ${name[1]}`);
   }
   assert.deepEqual(problems, []);
 });

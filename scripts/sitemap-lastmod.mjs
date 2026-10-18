@@ -135,6 +135,11 @@ export function computeLastmod(root) {
       childDates[prefix].push(date);
     }
   }
+  const directory = JSON.parse(readFileSync(rel('src/data/makers-directory.json'), 'utf8'));
+  if (directory.publication.approved === true) {
+    set('/makers/', directory.updated); set('/buying-routes/', directory.updated);
+    for (const maker of directory.makers) set(`/makers/${maker.slug}/`, directory.updated);
+  }
   // Single pages and hubs: their own source files (and, for hubs, their children).
   const pages = {
     '/': ['src/pages/index.astro', 'src/content/home.json', 'src/content/hero.json'],

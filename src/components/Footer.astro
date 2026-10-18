@@ -1,4 +1,5 @@
 ---
+import { directoryVisible } from '../lib/makers-directory';
 import '../styles/footer.css';
 import facts from '../data/facts.json';
 import WhatsAppLink from './WhatsAppLink.astro';
@@ -38,6 +39,7 @@ const explore = [
   { href: '/trade/', label: 'Trade and contractors' },
   { href: '/advice/', label: 'Wallcovering Guide' },
   { href: '/where-to-buy/', label: 'Where to buy' },
+  ...(directoryVisible ? [{href:'/makers/',label:'Makers directory'},{href:'/buying-routes/',label:'Buying routes'}] : []),
   { href: '/how-we-check/', label: 'How we check' },
   { href: '/wallpapering/', label: 'Wallpapering' },
   { href: '/calculator/', label: 'Wallpaper calculator' },
