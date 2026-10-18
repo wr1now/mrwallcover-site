@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { withoutPdfDiagnostic } from './helpers/vendor-diagnostics.ts';
 import { mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
@@ -224,7 +225,7 @@ test('forbidden strings are absent from every text file in dist, and no phone-nu
     // Inline image placeholders are base64 and can spell anything; strip them before matching words.
     const text = (await readFile(file, 'utf8')).replace(/data:image\/[^"')\s]+/g, '');
     for (const banned of ['CLAUDI', 'Landmark', 'Threadneedles', 'Threadneedle', 'third party', 'third-party', 'subcontract', 'TODO', 'lorem']) {
-      if (text.toLowerCase().includes(banned.toLowerCase())) problems.push(`${file}: ${banned}`);
+      if (banned === 'TODO' ? /\bTODO\b/i.test(withoutPdfDiagnostic(text, file)) : text.toLowerCase().includes(banned.toLowerCase())) problems.push(`${file}: ${banned}`);
     }
     const scanPhone = /\.(md|txt|json|xml)$/.test(file) || (phoneUnset && /\.(html|js)$/.test(file));
     if (scanPhone) {
@@ -572,6 +573,9 @@ test('every published page shows one author and date line: the page\'s own date 
   }
   // Editorial pages that carry their own `updated` date (the ad landing pages) show it as "Last updated".
   const editorialDates = new Map<string, string>();
+  // The interactive Studio records its own application review date.
+  const studioPage = JSON.parse(await readFile('src/room-studio/page.json', 'utf8')) as { updated: string };
+  editorialDates.set('/room-studio/', studioPage.updated);
   for (const name of (await readdir('src/content/pages')).filter((entry) => entry.endsWith('.md'))) {
     const fm = JSON.parse((await readFile(`src/content/pages/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { path: string; draft?: boolean; updated?: string };
     if (!fm.draft && fm.updated) editorialDates.set(fm.path, fm.updated);

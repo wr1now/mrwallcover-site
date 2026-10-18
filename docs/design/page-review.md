@@ -351,3 +351,48 @@ Local production and review builds pass; source checks 153/153, production check
 Direct HTTP retrieval and browser tests establish public endpoint access only. They do not establish search indexing or universal reader access. The separate web reader's host-specific retrieval error has no exposed HTTP cause; this change does not claim to resolve it or justify relaxing DNS, TLS or crawler controls.
 
 Reconciled with main `90455ef` before release, retaining the shared larger material studies and their updated template instructions. Integrated-head checks are rerun against this source.
+
+## Room Studio implementation review — 18 October 2026
+
+`/room-studio/` adds a measured one-room editor with a live 3D view, dimensioned
+plan, doors/windows, local PDF/image tracing and four visible stages. It reuses
+the shared site navigation, footer, type, palette and action treatment through a
+React Action counterpart. The room geometry and customer-uploaded artwork are
+the meaningful visual content. Test rooms and geometric wallpaper are original
+illustrations; no commissioned project, maker wallpaper photograph or completed
+installation is fabricated.
+
+Finish controls support custom HEX paint, physically calibrated repeat wallpaper
+and murals, per-wall/height-band placement, plus the complete dated Bauwerk UK
+snapshot: 358 published colours sourced on 18 October 2026. Only public factual
+product and website-preview colour metadata is retained. The original limewash
+texture and screen colour are explicitly approximate, with official physical
+sample links. [Catalogue provenance](../room-studio-catalogue.md) records source,
+refresh checks and the limits of this preview.
+
+The scene, finish library, palette and PDF handling load within this route as
+needed. The local editor uses IndexedDB drafts/confirmed versions and editable
+JSON export. It preserves damaged drafts for recovery rather than overwriting
+them. A confirmed version freezes the exact room, finishes, lighting and cameras;
+later edits require confirmation again. An installation enquiry uses copied
+readable finish text; a room is not submitted automatically.
+
+The browser preview is independent of the private backend and AI providers.
+Cloud saving, automatic plan interpretation and finished Blender rendering have
+implementation contracts but remain disabled and undeployed. The interface says
+so. Local tracing is available now; automatic interpretation still requires the
+separate staging verification described in the [backend runbook](../room-studio/backend.md).
+No paid service, real customer upload, email or model request is part of this
+review. The private research archive is not copied into the site.
+
+Focused automated journeys cover actual upload/crop/rotation and half-drop proof
+pixels, proportional murals, paint/palette/band application, measured outline
+drawing, angled-wall opening drags, reload and protected-draft recovery. The
+room preview is an essential editing view rendered on demand; it stays usable
+with reduced motion and has a no-JavaScript contact fallback. Live material
+replacement is checked through rendered pixels, and browser mesh/UV attributes
+are checked against the compiled package. The local renderer uses those same
+meshes, UVs and saved cameras. See the [browser review](../room-studio/review/browser-review.md),
+[checks](../room-studio/review/checks.json) and [render review](../room-studio/review/render-review.md).
+Production service and physical-device acceptance remains pending. See [Room Studio architecture and acceptance
+checklist](../room-studio/README.md).

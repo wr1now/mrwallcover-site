@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "fixture": {
+    "revisionId": "fixture-rectangle-revision-1",
+    "classification": "original illustrative technical room",
+    "roomDimensionsMm": [
+      4200,
+      3600,
+      2600
+    ],
+    "artwork": {
+      "description": "Original antialiased geometric repeat authored for software validation",
+      "widthPx": 512,
+      "heightPx": 512,
+      "widthMm": 530,
+      "heightMm": 640,
+      "sha256": "4a98a588ab4c2711a77c691e43d823158224b176949ff0341a4da301d90d72d7"
+    },
+    "limewash": {
+      "description": "Illustrative seeded procedural material using sourced Bauwerk Olive preview colour",
+      "colour": "#7A7455",
+      "seed": 52726496
+    }
+  },
+  "compilerVersion": "room-studio-geometry/1.0.0",
+  "geometry": {
+    "geometrySha256": "123b7a030fc75cfe63848745418bb570d83f81ec91c71ff4a3284b5f32c2e57d",
+    "meshes": 105,
+    "vertices": 420,
+    "triangles": 210,
+    "renderedGeometryVerified": true
+  },
+  "cameraFovUnits": "vertical degrees",
+  "runtime": {
+    "engine": "Blender Cycles",
+    "blenderVersion": "4.5.0",
+    "quality": "production",
+    "device": "GPU",
+    "backend": "Metal",
+    "measurementContext": "local Apple Silicon development machine",
+    "samples": 128,
+    "seed": 217,
+    "elapsedSeconds": 204.962
+  },
+  "outputs": [
+    {
+      "kind": "still-1",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "sourcePngSha256": "9b10d4bc43c836c5092939fec6797b7535c54c13f3beefa55c81a4cdf2a34a7e",
+      "renderSeconds": 31.979,
+      "reviewFile": "render-still-1.jpg",
+      "reviewDimensions": [
+        1280,
+        720
+      ],
+      "reviewBytes": 94388,
+      "reviewSha256": "9ff93b9835528ca7cb12aa037668b6488d741810488a5fe08ecba1a62f134372"
+    },
+    {
+      "kind": "still-2",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "sourcePngSha256": "356de0278697fc7b95c3f536dfe0925d449321d0a0766d0d04dee5433db6dd6f",
+      "renderSeconds": 29.124,
+      "reviewFile": "render-still-2.jpg",
+      "reviewDimensions": [
+        1280,
+        720
+      ],
+      "reviewBytes": 94212,
+      "reviewSha256": "1ee09e1bc27406c234bde0b6a1f03049b49170188828228c9aea7b779106f76f"
+    },
+    {
+      "kind": "panorama",
+      "sourceDimensions": [
+        4096,
+        2048
+      ],
+      "sourcePngSha256": "2ae57c5985bdf61b69fd84b13ecf2aa0ecd6e86ff1e33f19b4a4f7c97a6fbc6a",
+      "renderSeconds": 143.262,
+      "reviewFile": "render-panorama.jpg",
+      "reviewDimensions": [
+        2048,
+        1024
+      ],
+      "reviewBytes": 140732,
+      "reviewSha256": "5f2cab1589c1d9841516deaa3f71ca1a3ed8ff4894104787cec6001cbec9cbb1"
+    }
+  ],
+  "checks": {
+    "geometryAndUvVerifiedInBlender": true,
+    "fixturePngDimensionsAndChecksum": "passed",
+    "typescriptPythonLimewashByteParity": "passed",
+    "blenderCropRotationCapAndVerticalLens": "passed",
+    "floorCeilingOpeningsAndDoorThresholdVisualReview": "passed",
+    "panoramaBrowser": {
+      "source": "local Blender render",
+      "interiorVisible": true,
+      "turnControls": true,
+      "fullTurnMeanPixelDifference": 0,
+      "pointerPitch": true,
+      "errors": []
+    }
+  },
+  "reproduce": "node --experimental-strip-types scripts/room-studio-render-fixture.ts --shape rectangle --render --production --blender /absolute/path/to/blender"
+}

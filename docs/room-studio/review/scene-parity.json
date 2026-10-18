@@ -1,0 +1,14 @@
+{
+  "paintToWallpaperVisible": true,
+  "removeAndReapply": true,
+  "greenPixelRatio": {
+    "before": 0,
+    "after": 0.03283440081685696,
+    "removed": 0
+  },
+  "actualMeshAttributeParity": true,
+  "meshes": 105,
+  "lowCameraPosePreserved": true,
+  "verticalFov": 65,
+  "errors": []
+}

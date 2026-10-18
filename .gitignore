@@ -35,3 +35,9 @@ dist-review/
 
 # Local visual comparison evidence
 .review-screens/
+
+# Room Studio local fixtures and render outputs
+.tmp/
+__pycache__/
+*.pyc
+.venv/

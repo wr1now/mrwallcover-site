@@ -22,6 +22,10 @@ npm run preview
 
 `npm run build` writes the site to `dist/`.
 
+## Room Studio
+
+`/room-studio/` contains the isolated browser room editor. See [its architecture, local checks and acceptance status](docs/room-studio/README.md), [Bauwerk catalogue provenance](docs/room-studio-catalogue.md) and [private-service runbook](docs/room-studio/backend.md). Local editing and exports work without an account. Cloud saving, automatic plan analysis and finished processing remain disabled until separately configured and verified.
+
 ## Edit the copy
 
 Core business and service wording lives in `src/content/`. The Atelier homepage also contains editorial composition copy in `src/pages/index.astro`; its hero wording is in `src/content/home.json`. AI reference projections are documented in `docs/ai-crawler.md`.

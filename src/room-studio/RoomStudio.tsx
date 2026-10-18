@@ -1,0 +1,93 @@
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
+import Action from '../components/react/Action.tsx';
+import { compileRoom, createRectangle, suggestCameras } from './geometry.ts';
+import { validateProject } from './validation.ts';
+import { createCloudClient } from './cloud.ts';
+import { deleteLocalData, downloadJson, isProject, loadDraft, localRevisions, saveDraft, saveRevision } from './storage.ts';
+import RoomPanel from './components/RoomPanel.tsx';
+import PlanView from './components/PlanView.tsx';
+import PreviewPanel from './components/PreviewPanel.tsx';
+import type { RenderPackage, RoomProject, RoomRevision } from './types.ts';
+import { finishSummary } from './summary.ts';
+import './studio.css';
+const RoomScene=lazy(()=>import('./components/RoomScene.tsx'));
+const FinishPanel=lazy(()=>import('./components/FinishPanel.tsx'));
+const CloudPanel=lazy(()=>import('./components/CloudPanel.tsx'));
+const steps=['Room','Finishes','Preview','Save & render'];
+function blankProject():RoomProject {
+  const room=createRectangle(); room.confirmed=false;
+  room.openings=[{id:crypto.randomUUID(),wallId:room.vertices[0].wallId,kind:'window',offsetMm:1400,widthMm:1400,heightMm:1400,sillMm:850,revealMm:180},{id:crypto.randomUUID(),wallId:room.vertices[3].wallId,kind:'door',offsetMm:500,widthMm:850,heightMm:2100,sillMm:0,revealMm:140}];
+  return {schemaVersion:1,id:crypto.randomUUID(),ownerId:null,name:'My room',room,finishes:[{id:'paint-ivory',type:'paint',name:'Warm ivory',colour:'#e7e0d3',sheen:'matte'}],assignments:room.vertices.map(v=>({id:crypto.randomUUID(),wallId:v.wallId,finishId:'paint-ivory',fromMm:0,toMm:null,offsetXmm:0,offsetYmm:0})),cameras:suggestCameras(room),lighting:'daylight',schemes:[],revision:1,updatedAt:new Date().toISOString()};
+}
+/** Validation errors are editable draft state, not a reason to discard a room.
+ * Only reject shapes that the editor cannot safely traverse. Preserve those raw
+ * values for download rather than replacing them with the example room. */
+function editableDraft(value:unknown):value is RoomProject {
+  if(!isProject(value))return false;
+  const p=value, number=(n:unknown)=>typeof n==='number'&&Number.isFinite(n), text=(s:unknown)=>typeof s==='string';
+  const assignment=(a:any)=>a&&text(a.id)&&text(a.wallId)&&text(a.finishId)&&[a.fromMm,a.offsetXmm,a.offsetYmm].every(number)&&(a.toMm===null||number(a.toMm));
+  const finish=(f:any)=>{
+    if(!f||!text(f.id)||!text(f.name))return false;
+    if(f.type==='paint'||f.type==='bauwerk')return text(f.colour);
+    if(f.type!=='wallpaper'&&f.type!=='mural')return false;
+    return f.texture&&text(f.texture.id)&&text(f.texture.sha256)&&text(f.texture.mime)&&number(f.texture.widthPx)&&number(f.texture.heightPx)&&(!f.texture.dataUrl||text(f.texture.dataUrl))&&f.calibration&&[f.calibration.widthMm,f.calibration.heightMm,f.calibration.rotation].every(number)&&f.calibration.crop&&['x','y','width','height'].every(key=>number(f.calibration.crop[key]));
+  };
+  return p.room.vertices.length>=3&&p.room.vertices.length<=128&&p.room.vertices.every(v=>v&&text(v.wallId)&&number(v.x)&&number(v.z))&&
+    [p.room.heightMm,p.room.skirtingMm,p.room.corniceMm].every(number)&&p.room.openings.every(o=>o&&text(o.id)&&text(o.wallId)&&['door','window'].includes(o.kind)&&[o.offsetMm,o.widthMm,o.heightMm,o.sillMm,o.revealMm].every(number))&&
+    p.finishes.every(finish)&&p.assignments.every(assignment)&&p.schemes.every(s=>s&&text(s.id)&&text(s.name)&&Array.isArray(s.finishes)&&s.finishes.every(finish)&&Array.isArray(s.assignments)&&s.assignments.every(assignment))&&
+    p.cameras.every(c=>c&&text(c.id)&&['perspective','panorama'].includes(c.kind)&&Array.isArray(c.position)&&Array.isArray(c.target)&&c.position.length===3&&c.target.length===3&&[...c.position,...c.target,c.fov].every(number));
+}
+export default function RoomStudio() {
+  const [project,setProject]=useState<RoomProject>(blankProject),[ready,setReady]=useState(false),[step,setStep]=useState(0),[mobileView,setMobileView]=useState<'plan'|'3d'>('3d');
+  const [selectedWallId,setSelectedWallId]=useState(''),[openingId,setOpeningId]=useState<string|null>(null),[cameraId,setCameraId]=useState<string|null>(null);
+  const [saveStatus,setSaveStatus]=useState('Opening local room…'),[message,setMessage]=useState(''),[revision,setRevision]=useState<RoomRevision|null>(null),[revisions,setRevisions]=useState<RoomRevision[]>([]);
+  const [history,setHistory]=useState<RoomProject[]>([]),[future,setFuture]=useState<RoomProject[]>([]),[deleteConfirm,setDeleteConfirm]=useState(false),[newConfirm,setNewConfirm]=useState(false);
+  const [autosaveAllowed,setAutosaveAllowed]=useState(false),[recoveryDraft,setRecoveryDraft]=useState<{value:unknown;reason:string}|null>(null);
+  const [deletingLocal,setDeletingLocal]=useState(false),[summaryText,setSummaryText]=useState('');
+  const lastScene=useRef<RenderPackage|null>(null), cloud=useMemo(()=>createCloudClient(),[]), importFile=useRef<HTMLInputElement>(null),saveQueue=useRef(Promise.resolve());
+  const saveTimer=useRef<ReturnType<typeof setTimeout>|null>(null);
+  useEffect(()=>{let active=true;loadDraft().then(p=>{if(!active)return;if(p===undefined){setAutosaveAllowed(true);return;}if(editableDraft(p)){setProject(p);setSelectedWallId(p.room.vertices[0].wallId);setAutosaveAllowed(true);if(validateProject(p).length)setMessage('Your saved draft is restored. Correct the highlighted details to update its 3D preview.');}else{setRecoveryDraft({value:p,reason:'The saved room has an unsupported or damaged structure.'});setSaveStatus('Original saved room protected');}}).catch(e=>{if(active){setRecoveryDraft({value:undefined,reason:e.message});setSaveStatus('Saved room could not be read');}}).finally(()=>{if(active)setReady(true);});void localRevisions().then(r=>{if(active)setRevisions(r);}).catch(()=>{});return()=>{active=false;};},[]);
+  useEffect(()=>{if(!ready||!autosaveAllowed)return;setSaveStatus('Saving on this device…');const timer=setTimeout(()=>{saveTimer.current=null;saveQueue.current=saveQueue.current.catch(()=>{}).then(()=>saveDraft(project)).then(()=>setSaveStatus('Saved on this device')).catch(e=>{setSaveStatus('Local save unavailable');setMessage(e.message);});},350);saveTimer.current=timer;return()=>{clearTimeout(timer);if(saveTimer.current===timer)saveTimer.current=null;};},[project,ready,autosaveAllowed]);
+  useEffect(()=>{if(!project.room.vertices.some(v=>v.wallId===selectedWallId))setSelectedWallId(project.room.vertices[0].wallId);},[project.room.vertices,selectedWallId]);
+  const issues=useMemo(()=>{try{return validateProject(project);}catch{return [{path:'project',message:'This room contains invalid data. Restore an earlier version or start a new room.'}];}},[project]);
+  const scene=useMemo(()=>{try{if(issues.length)return lastScene.current;const compiled=compileRoom({id:'local-preview',projectId:project.id,number:project.revision,createdAt:project.updatedAt,project});lastScene.current=compiled;return compiled;}catch{return lastScene.current;}},[project,issues]);
+  function change(next:RoomProject){setHistory(h=>[...h.slice(-29),project]);setFuture([]);setProject({...next,revision:project.revision+1,updatedAt:new Date().toISOString()});}
+  function open(next:RoomProject){const errors=validateProject(next);if(errors.length)throw new Error(errors.map(x=>x.message).join(' '));change(next);setRecoveryDraft(null);setAutosaveAllowed(true);setRevision(null);setSelectedWallId(next.room.vertices[0].wallId);setCameraId(null);setOpeningId(null);setStep(0);}
+  async function importRoom(file:File|undefined){if(!file)return;try{if(file.size>120*1024*1024)throw new Error('This room file is too large. Choose a file under 120 MB.');const value=JSON.parse(await file.text());const p=value.project??value;if(!isProject(p))throw new Error('Choose a Room Studio JSON download.');open(p);setMessage('Your room has been opened.');}catch(e){setMessage(e instanceof Error?e.message:'The room file could not be opened.');}finally{if(importFile.current)importFile.current.value='';}}
+  const artworkReady=project.finishes.filter(f=>project.assignments.some(a=>a.finishId===f.id)).every(f=>f.type==='paint'||f.type==='bauwerk'||f.calibration.proofAccepted);
+  async function confirm(){if(issues.length||!project.room.confirmed||!artworkReady)return;const frozen:RoomRevision={id:crypto.randomUUID(),projectId:project.id,number:project.revision,createdAt:new Date().toISOString(),project:structuredClone(project)};try{await saveRevision(frozen);setRevision(frozen);setRevisions(await localRevisions());setMessage(`Version ${frozen.number} is confirmed. Later edits create a new version.`);}catch(e){setMessage(e instanceof Error?e.message:'The version could not be saved.');}}
+  async function copySummary(){const text=finishSummary(project);try{await navigator.clipboard.writeText(text);setMessage('Finish summary copied. Review it and paste it into your installation enquiry.');}catch{setSummaryText(text);setMessage('Select and copy the finish summary below.');}}
+  async function eraseLocalData(){
+    if(deletingLocal)return;const allowedBefore=autosaveAllowed;setDeletingLocal(true);setAutosaveAllowed(false);
+    if(saveTimer.current){clearTimeout(saveTimer.current);saveTimer.current=null;}
+    try{await saveQueue.current.catch(()=>{});await deleteLocalData();setRevisions([]);setRevision(null);setHistory([]);setFuture([]);setProject(blankProject());setRecoveryDraft(null);setAutosaveAllowed(true);setDeleteConfirm(false);setMessage('Local room data deleted. A new draft is ready.');}
+    catch(e){setAutosaveAllowed(allowedBefore);setMessage(e instanceof Error?e.message:'The local data could not be deleted.');}
+    finally{setDeletingLocal(false);}
+  }
+  const wallIndex=project.room.vertices.findIndex(v=>v.wallId===selectedWallId);
+  const confirmedIsCurrent=useMemo(()=>Boolean(revision?.projectId===project.id&&JSON.stringify(revision.project)===JSON.stringify(project)),[revision,project]);
+  return <section className="room-studio" aria-label="Room Studio editor" data-studio-ready={ready} data-studio-revision={project.revision}>
+    <div className="studio-toolbar"><label className="studio-title"><span className="sr-only">Room name</span><input value={project.name} maxLength={70} onChange={e=>change({...project,name:e.target.value})}/><span aria-live="polite">{saveStatus}</span></label><div className="studio-button-row"><Action disabled={!history.length} onClick={()=>{const previous=history.at(-1)!;setFuture(f=>[project,...f]);setHistory(h=>h.slice(0,-1));setProject(previous);}}>Undo</Action><Action disabled={!future.length} onClick={()=>{setHistory(h=>[...h,project]);setProject(future[0]);setFuture(f=>f.slice(1));}}>Redo</Action><Action onClick={()=>importFile.current?.click()}>Open room</Action><Action onClick={()=>setNewConfirm(true)}>New room</Action><input ref={importFile} hidden type="file" accept="application/json,.json" onChange={e=>void importRoom(e.target.files?.[0])}/></div></div>
+    {recoveryDraft&&<div className="studio-notice" role="alert"><p>{recoveryDraft.reason} Your original saved draft has not been overwritten. Open a room file or explicitly start a new room to enable saving.</p>{recoveryDraft.value!==undefined&&<Action onClick={()=>{try{downloadJson(recoveryDraft.value,'room-studio-original-draft.json');}catch{setMessage('This saved value could not be converted to JSON. Keep this browser data until it can be recovered.');}}}>Download original saved draft</Action>}</div>}
+    {newConfirm&&<div className="studio-notice"><p>Start a new room? Download your current room first if you want to keep editing it later.</p><div className="studio-button-row"><Action onClick={()=>downloadJson(project,`${project.name||'room'}.room.json`)}>Download current room</Action><Action onClick={()=>{open(blankProject());setNewConfirm(false);}}>Start new room</Action><Action variant="quiet" onClick={()=>setNewConfirm(false)}>Cancel</Action></div></div>}
+    <nav className="studio-steps" aria-label="Room Studio stages">{steps.map((s,i)=><button key={s} aria-current={step===i?'step':undefined} onClick={()=>setStep(i)}><span>{String(i+1).padStart(2,'0')}</span>{s}</button>)}</nav>
+    {!project.room.confirmed&&<p className="studio-draft-note">Draft dimensions · Replace the example measurements and check your room before confirming it.</p>}
+    {message&&<div className="studio-notice" role="status"><span>{message}</span><button type="button" aria-label="Dismiss message" onClick={()=>setMessage('')}>×</button></div>}
+    {issues.length>0&&<div className="studio-error" role="alert"><strong>Check these details to update the 3D view</strong><ul>{issues.slice(0,8).map((i,n)=><li key={n}>{i.message}</li>)}</ul></div>}
+    <div className="studio-workspace"><aside className="studio-controls" aria-label={`${steps[step]} controls`}>
+      {step===0&&<RoomPanel cloud={cloud} project={project} onChange={change} selectedWallId={selectedWallId} onSelect={setSelectedWallId} openingId={openingId} onOpeningSelect={setOpeningId}/>}
+      {step===1&&<Suspense fallback={<p>Opening finish library…</p>}><div className="studio-panel-content"><p className="eyebrow">02 / Finishes</p><h2>Make the walls yours</h2><label className="studio-field"><span>Selected wall</span><select value={selectedWallId} onChange={e=>setSelectedWallId(e.target.value)}>{project.room.vertices.map((v,i)=><option key={v.wallId} value={v.wallId}>Wall {i+1}</option>)}</select></label><FinishPanel project={project} selectedWallId={selectedWallId} onChange={change}/></div></Suspense>}
+      {step===2&&<PreviewPanel project={project} onChange={change} cameraId={cameraId} onCamera={setCameraId}/>}
+      {step===3&&<div className="studio-panel-content"><p className="eyebrow">04 / Save &amp; render</p><h2>A room to keep</h2><p>Download your editable room and finish choices, or confirm a version for finished rendering.</p><Action variant="primary" onClick={()=>downloadJson(project,`${project.name||'room'}.room.json`)}>Download editable room</Action><Action onClick={()=>downloadJson({name:project.name,revision:project.revision,dimensions:project.room,finishes:project.finishes.map(f=>('texture' in f?{...f,texture:{...f.texture,dataUrl:undefined}}:f)),walls:project.assignments},`${project.name||'room'}-finishes.json`)}>Download finish summary</Action>
+        <Action onClick={()=>void copySummary()}>Copy finish summary</Action>{summaryText&&<label className="studio-field"><span>Finish summary to copy</span><textarea rows={12} readOnly value={summaryText} onFocus={e=>e.currentTarget.select()}/></label>}<div className="studio-divider"/><h3>Confirm this version</h3><p className="studio-hint">The room, wall finishes, lighting and cameras are frozen together. You can keep editing afterward.</p>{!project.room.confirmed&&<p className="studio-notice">First check the measurements in the Room stage.</p>}{!artworkReady&&<p className="studio-notice">Confirm the wallpaper repeat proof before continuing.</p>}<Action disabled={issues.length>0||!project.room.confirmed||!artworkReady||Boolean(confirmedIsCurrent)} onClick={()=>void confirm()}>{confirmedIsCurrent?`Version ${revision!.number} confirmed`:'Confirm room version'}</Action>
+        {revision&&!confirmedIsCurrent&&<p className="studio-hint">Version {revision.number} is saved. Your current edits are a newer draft.</p>}
+        <Suspense fallback={<p>Opening save options…</p>}><CloudPanel cloud={cloud} project={project} revision={confirmedIsCurrent?revision:null} onOpen={open}/></Suspense>
+        <details className="studio-details"><summary>Confirmed versions on this device</summary>{revisions.filter(r=>r.projectId===project.id).sort((a,b)=>b.number-a.number).map(r=><div className="studio-saved-project" key={r.id}><p>Version {r.number} · {new Date(r.createdAt).toLocaleDateString()}</p><Action onClick={()=>open(structuredClone(r.project))}>Restore version {r.number}</Action><Action onClick={()=>downloadJson(r,`room-version-${r.number}.json`)}>Download version</Action></div>)}</details>
+        <a className="mw-action mw-action--secondary" href={`/contact/?intent=install&room_studio=1`}><span>Discuss installation</span></a><p className="studio-hint">Copy your finish summary and paste it into your enquiry. Your room is not sent automatically.</p>
+        <details className="studio-details"><summary>Local privacy &amp; deletion</summary><p>This browser stores your draft and confirmed versions. Clearing browser data can remove them. Source plans stay on this device unless you request automatic reading.</p><Action onClick={()=>setDeleteConfirm(true)}>Delete local room data</Action>{deleteConfirm&&<><p>Delete all Room Studio drafts and confirmed versions on this device?</p><Action disabled={deletingLocal} onClick={()=>void eraseLocalData()}>Delete local data</Action><Action disabled={deletingLocal} onClick={()=>setDeleteConfirm(false)}>Cancel</Action></>}</details>
+      </div>}
+    </aside>
+    <div className="studio-visuals"><div className="studio-view-heading"><span>{step===1?`Finishing wall ${wallIndex+1}`:'Your space, in perspective'}</span><span className="studio-local-badge">{cloud.enabled?'Private room project':'Private on this device'}</span></div><div className="studio-mobile-tabs" role="group" aria-label="Editor view"><button aria-pressed={mobileView==='3d'} onClick={()=>setMobileView('3d')}>3D room</button><button aria-pressed={mobileView==='plan'} onClick={()=>setMobileView('plan')}>Plan</button></div><div className={`studio-view-grid studio-view-${mobileView}`}><div className="studio-3d-pane"><Suspense fallback={<div className="studio-scene-fallback">Opening your 3D room…</div>}>{scene?<RoomScene scene={scene} selectedWallId={step===1?selectedWallId:null} onSelect={setSelectedWallId} cameraView={step===2?project.cameras.find(c=>c.id===cameraId)??null:null}/>:<p>Enter valid dimensions to preview your room.</p>}</Suspense></div><div className="studio-plan-pane"><PlanView project={project} selectedWallId={selectedWallId} onSelect={setSelectedWallId} onChange={change} onOpeningSelect={id=>{setOpeningId(id);setStep(0);}}/></div></div><div className="studio-view-foot"><p>One room. Your measurements. Your chosen finishes.</p><p>Colour and limewash movement are approximate. Test a sample in your room before ordering.</p></div><div className="studio-stage-actions">{step>0&&<Action onClick={()=>setStep(s=>s-1)}>Back</Action>}{step<3&&<Action variant="primary" onClick={()=>setStep(s=>s+1)}>Continue to {steps[step+1].toLowerCase()}</Action>}</div></div>
+    </div>
+  </section>;
+}

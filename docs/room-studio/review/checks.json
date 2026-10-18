@@ -1,0 +1,133 @@
+{
+  "reviewedDate": "2026-10-18",
+  "baselineMain": "63567b831bd9e49369bf2141d2c653efefeac31d",
+  "sourceFingerprint": {
+    "algorithm": "SHA-256 of sorted relative path, NUL, file contents, NUL for listed application/service/worker inputs",
+    "sha256": "5072537750eb6ad593c48b9c20d6b15bb6a2a082f0c42e31a9b0d3758ccf985c",
+    "inputs": [
+      "astro.config.mjs",
+      "package-lock.json",
+      "package.json",
+      "src/room-studio/RoomStudio.tsx",
+      "src/room-studio/catalogue/bauwerk-uk.json",
+      "src/room-studio/catalogue/index.ts",
+      "src/room-studio/cloud.ts",
+      "src/room-studio/components/CloudPanel.tsx",
+      "src/room-studio/components/FinishPanel.tsx",
+      "src/room-studio/components/NumberField.tsx",
+      "src/room-studio/components/OutlineSketch.tsx",
+      "src/room-studio/components/PanoramaViewer.tsx",
+      "src/room-studio/components/PlanImport.tsx",
+      "src/room-studio/components/PlanView.tsx",
+      "src/room-studio/components/PreviewPanel.tsx",
+      "src/room-studio/components/RoomPanel.tsx",
+      "src/room-studio/components/RoomScene.tsx",
+      "src/room-studio/finishes.ts",
+      "src/room-studio/fixtures.ts",
+      "src/room-studio/geometry.ts",
+      "src/room-studio/page.json",
+      "src/room-studio/storage.ts",
+      "src/room-studio/studio.css",
+      "src/room-studio/summary.ts",
+      "src/room-studio/types.ts",
+      "src/room-studio/validation.ts",
+      "supabase/functions/room-studio/guards.ts",
+      "supabase/functions/room-studio/index.ts",
+      "supabase/migrations/202610180001_room_studio.sql",
+      "workers/room_studio/import_plan.py",
+      "workers/room_studio/modal_app.py",
+      "workers/room_studio/render.py",
+      "workers/room_studio/test_asset_normalization.py",
+      "workers/room_studio/test_import_plan.py"
+    ]
+  },
+  "checks": {
+    "source": {
+      "passed": 153,
+      "failed": 0,
+      "skipped": 0
+    },
+    "studio": {
+      "passed": 49,
+      "failed": 0,
+      "skipped": 0
+    },
+    "builtSite": {
+      "passed": 273,
+      "failed": 0,
+      "skipped": 0
+    },
+    "typography": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "phone": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "analytics": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "guides": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    "guideRelease": {
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "python": {
+    "planFixtures": 12,
+    "assetNormalization": 4,
+    "liveModelCalls": 0
+  },
+  "browserSuites": {
+    "count": 7,
+    "status": "passed",
+    "scope": "Isolated desktop Chromium and responsive emulation; local browser/scene/panorama fixtures; no external processing"
+  },
+  "noLoss": {
+    "status": "passed",
+    "existingRoutes": 106,
+    "currentRoutes": 107,
+    "mediaBefore": 3621,
+    "mediaAfter": 3621,
+    "existingProjectRecords": 5,
+    "existingGalleryEntries": 12
+  },
+  "types": {
+    "browser": "passed",
+    "edge": "passed"
+  },
+  "catalogue": {
+    "shadeCount": 358,
+    "date": "2026-10-18",
+    "validation": "passed"
+  },
+  "localRendering": {
+    "rectangularFullSize": true,
+    "lShapeAndAngledSmokeRenders": true,
+    "blender": "4.5.0",
+    "fullPackageSeconds": 204.962,
+    "cloudCostsMeasured": false
+  },
+  "activation": {
+    "liveAi": false,
+    "paidProcessing": false,
+    "cloudDeployed": false
+  },
+  "pending": [
+    "Hosted PR checks",
+    "Deployed Supabase/Modal integration and operational verification",
+    "Pinned OCR worker image and real model accuracy",
+    "Physical iPhone Safari and Android Chrome",
+    "Cloud turnaround and cost measurement before setting pilot cap"
+  ]
+}

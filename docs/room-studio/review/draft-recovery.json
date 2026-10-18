@@ -1,0 +1,14 @@
+{
+  "editableInvalidRestored": true,
+  "unsupportedDraftProtected": true,
+  "originalDownload": true,
+  "explicitNewRoomUnblocksSaving": true,
+  "explicitDeletionUnblocksSaving": true,
+  "pendingSaveCannotRestoreDeletedData": true,
+  "customShapePreserved": true,
+  "camerasPreserved": true,
+  "savedHeightBandsAdapted": true,
+  "unsafeProductLinkOmitted": true,
+  "remoteArtworkNeverRequested": true,
+  "browserErrors": []
+}

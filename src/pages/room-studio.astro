@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Action from '../components/Action.astro';
+import RoomStudio from '../room-studio/RoomStudio.tsx';
+import studioPage from '../room-studio/page.json';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { breadcrumbNode } from '../lib/schema';
+const cloudEnabled = import.meta.env.PUBLIC_ROOM_STUDIO_CLOUD_ENABLED === 'true';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Room Studio', href: '/room-studio/' }];
+---
+<Base title="Room Studio — wallpaper, paint & limewash | Mr Wallcover" description="Build your measured room, position doors and windows, and explore your own wallpaper, paint and Bauwerk limewash in an editable 3D preview." path="/room-studio/" extraSchema={[breadcrumbNode(crumbs)]} updated={studioPage.updated}>
+  <div class="studio-page container-page pb-20">
+    <header class="studio-page-head">
+      <div><Breadcrumb items={crumbs} /><p class="eyebrow">Mr Wallcover / Room Studio</p><h1>Your room. <br /><em>Your finish.</em></h1></div>
+      <div><p class="lede">Bring your measurements. Try your wallpaper, a favourite paint colour or Bauwerk limewash. See how it all comes together.</p><p class="studio-page-note">Free local preview · No sign-up to start · One room at a time</p><Action href="#room-editor" variant="secondary">Start your room</Action></div>
+    </header>
+    <div id="room-editor"><RoomStudio client:only="react"><div slot="fallback" class="studio-page-loading"><p>Your interactive room editor is loading.</p><noscript><p>Room Studio needs JavaScript for measured editing and 3D. You can still <a href="/contact/">send us your room measurements and selected finishes</a>.</p></noscript></div></RoomStudio></div>
+    <section class="studio-explanation"><div><p class="eyebrow">A space you can edit</p><h2>From measured walls<br />to considered finishes.</h2></div><div><p>Start with measurements or trace one room on a floor plan. Set the ceiling height, add doors and windows, then try finishes wall by wall. Your wallpaper keeps its real pattern size as you adjust the room.</p><p>The preview is illustrative. Colour and limewash movement are approximate. Test a sample in your room before ordering. {cloudEnabled ? 'Cloud saving requires a verified email. Availability of automatic plan reading and finished renders is shown in the studio.' : 'Automatic plan reading, cloud saving and finished rendering are unavailable in this local preview.'}</p><Action href="/contact/?intent=install" variant="quiet">Talk to us about installation</Action></div></section>
+  </div>
+</Base>
+<style>
+  .studio-page{max-width:1500px}.studio-page-head{padding:64px 0 22px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.studio-page-head h1{font-size:clamp(64px,6vw,100px);line-height:.95;letter-spacing:-.035em;margin:18px 0}.studio-page-head h1 em{font-weight:400;color:#6d7755}.studio-page-head .lede{max-width:42ch;font-size:21px;line-height:1.55}.studio-page-note{font-size:13px;color:#58644e;margin:22px 0}.studio-explanation{display:grid;grid-template-columns:1fr 1fr;gap:80px;border-top:1px solid #c8cdbf;padding:48px 0 10px}.studio-explanation h2{font-size:48px;line-height:1.05;margin:15px 0}.studio-explanation p{max-width:60ch}.studio-page-loading{min-height:400px;display:grid;place-content:center;border:1px solid #d6d8ca;background:#f8f5ed;padding:24px}#room-editor{scroll-margin-top:100px}@media(max-width:760px){.studio-page-head{padding-top:36px;grid-template-columns:1fr;gap:12px}.studio-page-head h1{font-size:66px}.studio-page-head .lede{font-size:18px}.studio-explanation{grid-template-columns:1fr;gap:18px;padding-top:30px}.studio-explanation h2{font-size:38px}.studio-page-note{font-size:12px}}
+</style>

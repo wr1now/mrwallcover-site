@@ -1,0 +1,15 @@
+{
+  "preservedUntilUse": true,
+  "invalidCrossingBlocked": true,
+  "undoClearCancel": true,
+  "clockwiseLNormalized": true,
+  "measuredGrid": true,
+  "savedSchemesAdapted": true,
+  "originalRestoredByUndo": true,
+  "keyboardAlternative": true,
+  "widths": [
+    390,
+    1440
+  ],
+  "errors": []
+}
