@@ -11,7 +11,7 @@
     "name": "Services",
     "href": "/services/"
   },
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "service": {
     "name": "Heritage and listed-building wallcovering installation",
     "serviceType": "Wallcovering installation"
@@ -39,7 +39,7 @@
       "id": "heritage-lime",
       "question": "Do you offer limewash and lime render?",
       "paragraphs": [
-        "Limewash is applied by Mr Wallcover's own team. Lime render is carried out with trusted specialist partners."
+        "Limewash is applied by Mr Wallcover's own team. Lime render can be arranged through trusted specialist partners."
       ]
     },
     {
@@ -76,7 +76,7 @@ The survey covers the state of the walls as well as the measure, so the preparat
 
 ## Limewash and lime render
 
-Limewash is applied by Mr Wallcover's own team. Lime render is carried out with trusted specialist partners.
+Limewash is applied by Mr Wallcover's own team. Lime render can be arranged through trusted specialist partners.
 
 ## Consents and the specification
 

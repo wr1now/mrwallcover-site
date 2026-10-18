@@ -13,6 +13,7 @@ import WallpaperingNav from '../../components/WallpaperingNav.astro';
 import Base from '../../layouts/Base.astro';
 import Action from '../../components/Action.astro';
 import QuestionVisual from '../../components/QuestionVisual.astro';
+import ObjectMotionControls from '../../components/ObjectMotionControls.astro';
 import FireEvidenceDiagram from '../../components/FireEvidenceDiagram.astro';
 import { fireRatingsCard } from '../../lib/guides';
 import { SITE_URL } from '../../config';
@@ -341,9 +342,10 @@ const legacySources: [string, string | null][] = [
     </section>
 
     <div class="fr-section">
-      <section class="guide-faq" aria-labelledby="questions">
+      <section class="guide-faq" data-visual="dimensional" aria-labelledby="questions">
         <h2 id="questions">Questions people ask</h2>
-        {page.faq.map((item) => <div class="guide-faq-item"><div class="question-heading-row"><h3>{item.q}</h3><QuestionVisual question={item.q} /></div><p>{item.a}</p></div>)}
+        <ObjectMotionControls />
+        {page.faq.map((item) => <div class="guide-faq-item" data-design-hit><div class="question-heading-row"><h3>{item.q}</h3><QuestionVisual question={item.q} /></div><p>{item.a}</p></div>)}
       </section>
     </div>
 

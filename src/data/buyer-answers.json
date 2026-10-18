@@ -694,7 +694,7 @@
     {
       "id": "f-q11",
       "question": "Do you offer limewash and lime render?",
-      "answer": "Limewash is applied by Mr Wallcover's own team. Lime render is carried out with trusted specialist partners.",
+      "answer": "Limewash is applied by Mr Wallcover's own team. Lime render can be arranged through trusted specialist partners.",
       "status": "ready",
       "auditRows": [],
       "pendingOmitted": [],
@@ -704,6 +704,9 @@
       "sources": [
         {
           "note": "Dorin Burcus, answer to Q11 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        },
+        {
+          "note": "Owner clarification, 18 Oct 2026: Mr Wallcover provides limewash directly; lime render can be arranged through trusted specialist partners."
         }
       ],
       "pages": [
@@ -902,7 +905,7 @@
     "ndaPolicy": "NDAs are signed where the client requires them, and those projects are never named.",
     "limewash": {
       "limewash": "Mr Wallcover's own team",
-      "limeRender": "with trusted specialist partners"
+      "limeRender": "Can be arranged through trusted specialist partners."
     },
     "references": "Not on maker recommended-installer lists. Major main contractors recommend its work. Referees are not named.",
     "registration": {

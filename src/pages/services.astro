@@ -3,6 +3,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import Picture from '../components/Picture.astro';
 import Icon, { type IconName } from '../components/Icon.astro';
 import TechnicalDiagram, { type DiagramKind } from '../components/TechnicalDiagram.astro';
+import DesignStudy from '../components/DesignStudy.astro';
 import Base from '../layouts/Base.astro';
 import { areaHref, areas, editorialPages, services, specialismHref, specialisms } from '../lib/content';
 import { breadcrumbNode, serviceNodes, singleServiceNode } from '../lib/schema';
@@ -54,7 +55,9 @@ const stageVisuals: Record<string, { icon: IconName; diagram: DiagramKind; capti
           <div class="lg:col-span-5">
             <p class="eyebrow">0{index + 1}</p>
             <h2 class="m-0 text-[clamp(2rem,4vw,3rem)]">{pillar.title}</h2>
-            <TechnicalDiagram kind={stageVisuals[pillar.id].diagram} caption={stageVisuals[pillar.id].caption} class="service-stage-diagram" />
+            {pillar.id === 'supply'
+              ? <DesignStudy kind="roll" caption={`Illustrative wallpaper roll. ${stageVisuals[pillar.id].caption}`} />
+              : <TechnicalDiagram kind={stageVisuals[pillar.id].diagram} caption={stageVisuals[pillar.id].caption} class="service-stage-diagram" />}
           </div>
           <div class="prose lg:col-span-6 lg:col-start-7">
             {pillar.paragraphs.map((paragraph) => (

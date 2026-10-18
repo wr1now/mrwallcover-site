@@ -3,6 +3,8 @@ import { guideHref, type GuideCardData } from '../lib/guides';
 import Icon, { type IconName } from './Icon.astro';
 import Picture from './Picture.astro';
 import Action from './Action.astro';
+import DesignStudy from './DesignStudy.astro';
+import { guideStudyKind } from '../lib/design-study-topic';
 interface Props { guide: GuideCardData; }
 const { guide } = Astro.props;
 const categoryIcons: Record<GuideCardData['category'], IconName> = { choosing: 'swatch', preparing: 'tools', planning: 'drawing', caring: 'check' };
@@ -16,7 +18,8 @@ const photograph = photographs[guide.slug];
 ---
 <article class="guide-card" data-guide-category={guide.category}>
   {photograph && <figure class="guide-card-media"><Picture id={photograph.id} sizes="(min-width: 768px) 38rem, calc(100vw - 5rem)" /><figcaption>{photograph.caption}</figcaption></figure>}
-  <div class="guide-card-anchor"><span class="guide-card-icon"><Icon name={topicIcons[guide.slug] ?? categoryIcons[guide.category]} /></span><p class="eyebrow">{String(guide.order).padStart(2, '0')} / {guide.category}</p></div>
+  {!photograph && <DesignStudy kind={guideStudyKind(guide.slug, guide.category)} caption="Illustrative study" class="guide-card-study" />}
+  <div class="guide-card-anchor">{photograph && <span class="guide-card-icon"><Icon name={topicIcons[guide.slug] ?? categoryIcons[guide.category]} /></span>}<p class="eyebrow">{String(guide.order).padStart(2, '0')} / {guide.category}</p></div>
   <h2><a href={guideHref(guide.slug)}>{guide.shortTitle}</a></h2>
   <p>{guide.description}</p>
   <Action variant="quiet" class="guide-read" href={guideHref(guide.slug)} aria-label={`Read the guide: ${guide.shortTitle}`}>Read the guide</Action>
@@ -24,6 +27,8 @@ const photograph = photographs[guide.slug];
 
 <style>
   .guide-card-anchor { display: flex; align-items: center; gap: .8rem; margin-bottom: 1.2rem; }
+  .guide-card :global(.guide-card-study) { max-width: 100%; margin: 0 0 1rem; }
+  .guide-card :global(.guide-card-study .design-study-object) { max-width: 12rem; }
   .guide-card-anchor .eyebrow { margin: 0; }
   .guide-card-icon { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 44px; width: 44px; height: 44px; border: 1px solid var(--color-line); border-radius: 50%; color: var(--color-brass); }
   .guide-card-media { margin: 0 0 1.5rem; }

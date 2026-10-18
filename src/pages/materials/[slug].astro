@@ -7,6 +7,8 @@ import { breadcrumbNode } from '../../lib/schema';
 import Picture from '../../components/Picture.astro';
 import Action from '../../components/Action.astro';
 import EvidenceFigure from '../../components/EvidenceFigure.astro';
+import DesignStudy from '../../components/DesignStudy.astro';
+import { materialStudyKind } from '../../lib/design-study-topic';
 import materialDepthJson from '../../content/material-depth.json';
 import makersInstalled from '../../content/makers-installed.json';
 
@@ -88,6 +90,7 @@ const crumbs = [
         <p>Digital colour is a guide. Order a cutting or a sample before you commit to a room. We can install material you have already bought, or source a family and install it. Either way, the next step is a short note about the room.</p>
       </div>
       <aside class="md:col-span-4 md:col-start-9">
+        <DesignStudy kind={materialStudyKind(material.slug)} caption="Illustrative material study · confirm the actual finish with a sample" />
         <Action variant="secondary" type="button" data-shortlist={material.slug} aria-pressed="false">Save to shortlist</Action>
         <p class="mt-4 text-stone">Saved on this device only.</p>
         <p data-shortlist-status role="status"></p>

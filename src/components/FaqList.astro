@@ -1,6 +1,8 @@
 ---
 import type { FaqItem } from '../lib/types';
 import QuestionVisual from './QuestionVisual.astro';
+import ObjectMotionControls from './ObjectMotionControls.astro';
+import { questionVisualForPath, type QuestionVisualVariant } from '../lib/question-visual-policy';
 
 interface Props {
   items: FaqItem[];
@@ -8,14 +10,15 @@ interface Props {
   lede?: string;
   eyebrow?: string;
   titleLevel?: 'h1' | 'h2';
+  visual?: QuestionVisualVariant;
 }
 
-const { items, heading, lede, eyebrow, titleLevel = 'h2' } = Astro.props;
+const { items, heading, lede, eyebrow, titleLevel = 'h2', visual = questionVisualForPath(Astro.url.pathname) } = Astro.props;
 // Questions sit one level under the list's title: h2 on /faq/ (title is the h1), h3 elsewhere.
 const Question = titleLevel === 'h1' ? 'h2' : 'h3';
 ---
 
-<section class="faq" aria-labelledby="faq-heading">
+<section class="faq" aria-labelledby="faq-heading" data-visual={visual}>
   <div class="container-page py-16 md:py-24">
     <div class="grid gap-10 lg:grid-cols-12">
       <div class="lg:col-span-4">
@@ -34,6 +37,7 @@ const Question = titleLevel === 'h1' ? 'h2' : 'h3';
           )
         }
         {lede && <p class="lede mt-4">{lede}</p>}
+        {items.length > 0 && visual === 'dimensional' && <ObjectMotionControls />}
       </div>
       <div class="lg:col-span-8">
         {
@@ -41,7 +45,7 @@ const Question = titleLevel === 'h1' ? 'h2' : 'h3';
             <details id={item.id}>
               <summary>
                 <Question>{item.question}</Question>
-                <span class="question-row-tools"><QuestionVisual question={item.question} id={item.id} /><span class="plus" aria-hidden="true"></span></span>
+                <span class="question-row-tools"><QuestionVisual question={item.question} id={item.id} variant={visual} /><span class="plus" aria-hidden="true"></span></span>
               </summary>
               <div class="prose pb-5">
                 {item.paragraphs.map((paragraph) => (
