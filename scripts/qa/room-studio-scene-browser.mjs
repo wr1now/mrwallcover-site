@@ -3,7 +3,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { build } from 'vite';
 import sharp from 'sharp';
-import { serve, launchBrowser } from '../visual-browser.mjs';
+import { serve, launchBrowser, loadPage, waitForPageContent } from '../visual-browser.mjs';
 import { compileRoom } from '../../src/room-studio/geometry.ts';
 import { fixtureRevision } from '../../src/room-studio/fixtures.ts';
 
@@ -25,7 +25,7 @@ function App(){const[scene,setScene]=useState(plain),[camera,setCamera]=useState
 await build({root,configFile:false,logLevel:'error',esbuild:{jsx:'automatic'},build:{outDir:root+'/dist',emptyOutDir:true}});
 const server=await serve(root+'/dist'),browser=await launchBrowser(),errors=[];
 try {
-  const p=await browser.newPage();p.on('pageerror',e=>errors.push(e.message));await p.setViewport({width:1000,height:720});await p.goto(server.origin,{waitUntil:'networkidle0'});await p.waitForSelector('canvas');
+  const p=await browser.newPage();p.on('pageerror',e=>errors.push(e.message));await p.setViewport({width:1000,height:720});await loadPage(p,server.origin);await p.waitForSelector('canvas');
   const canvas=await p.$('canvas');const green=async buffer=>{const {data,info}=await sharp(buffer).removeAlpha().raw().toBuffer({resolveWithObject:true});let count=0;for(let i=0;i<data.length;i+=info.channels)if(data[i+1]>data[i]*1.15&&data[i+1]>data[i+2]*1.15)count++;return count/(info.width*info.height);};
   const before=await green(await canvas.screenshot());
   async function click(text){await p.evaluate(text=>[...document.querySelectorAll('button')].find(b=>b.textContent===text).click(),text);}

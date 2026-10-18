@@ -4,7 +4,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fixtureProject } from '../../src/room-studio/fixtures.ts';
 import { signedPlanArea, validateProject } from '../../src/room-studio/validation.ts';
-import { launchBrowser, serve } from '../visual-browser.mjs';
+import { launchBrowser, serve, loadPage, waitForPageContent } from '../visual-browser.mjs';
 
 const output = resolve('.review-screens/room-studio-drawing'); await mkdir(output, { recursive: true });
 const server = await serve(process.env.ROOM_STUDIO_DIST ?? 'dist'), browser = await launchBrowser();
@@ -17,7 +17,7 @@ try {
     else { blocked.push(request.url().split('?')[0]); request.abort(); }
   });
   await page.setViewport({ width: 1440, height: 1000 });
-  await page.goto(`${server.origin}/room-studio/`, { waitUntil: 'networkidle0' }); await page.waitForSelector('[data-studio-ready=true]');
+  await loadPage(page,`${server.origin}/room-studio/`); await page.waitForSelector('[data-studio-ready=true]');
   const original = fixtureProject('l-shape');
   original.schemes = [{ id: 'saved-scheme', name: 'Original walls', finishes: structuredClone(original.finishes), assignments: structuredClone(original.assignments) }];
   const roomFile = resolve(output, 'original-room.json'); await writeFile(roomFile, JSON.stringify(original));

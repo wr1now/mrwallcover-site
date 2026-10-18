@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import sharp from 'sharp';
-import { launchBrowser, serve, waitForPagePredicate } from '../visual-browser.mjs';
+import { launchBrowser, serve, waitForPagePredicate, loadPage, waitForPageContent } from '../visual-browser.mjs';
 import { fixtureProject } from '../../src/room-studio/fixtures.ts';
 import { bauwerkCatalogue } from '../../src/room-studio/catalogue/index.ts';
 
@@ -39,7 +39,7 @@ try {
     else { blocked.push({ method: request.method(), url: request.url().split('?')[0] }); request.abort(); }
   });
   await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 });
-  await page.goto(`${origin}/room-studio/`, { waitUntil: 'networkidle0' });
+  await loadPage(page,`${origin}/room-studio/`);
   await page.waitForSelector('[data-studio-ready="true"]');
   await (await page.$('input[type=file][accept*="application/json"]')).uploadFile(roomFile);
   await waitForPagePredicate(page, () => document.querySelector('.studio-title input')?.value === 'Illustrative rectangle room');
@@ -149,7 +149,7 @@ try {
   await upload.uploadFile(oversizedFile); await waitForPagePredicate(page, () => document.querySelector('.studio-finish-panel [role=alert]')?.textContent.includes('25 megapixels'));
   observations.push('Single mural accepted and centred; SVG content and oversized compressed dimension header rejected before decoding.');
 
-  await page.reload({ waitUntil: 'networkidle0' }); await page.waitForSelector('[data-studio-ready="true"]');
+  await page.reload({waitUntil:'load'});await waitForPageContent(page); await page.waitForSelector('[data-studio-ready="true"]');
   const step = await page.evaluateHandle(() => [...document.querySelectorAll('.studio-steps button')].find(button => button.textContent.endsWith('Finishes'))); await step.asElement().click(); await page.waitForSelector('.studio-finish-panel');
   await clickText('Bauwerk limewash'); await check('Show my favourites', true);
   assert.equal(await page.$$eval('.studio-shade', items => items.map(item => item.textContent.trim()).join()), 'Bone', 'Favourites survive reload');

@@ -3,7 +3,7 @@
   "baselineMain": "63567b831bd9e49369bf2141d2c653efefeac31d",
   "sourceFingerprint": {
     "algorithm": "SHA-256 of sorted relative path, NUL, file contents, NUL for listed application/service/worker inputs",
-    "sha256": "5072537750eb6ad593c48b9c20d6b15bb6a2a082f0c42e31a9b0d3758ccf985c",
+    "sha256": "32302102bcc6d722bfc8416568bcf656c64a4cfe384f56ce73bb21186c2cfff1",
     "inputs": [
       "astro.config.mjs",
       "package-lock.json",
@@ -129,5 +129,6 @@
     "Pinned OCR worker image and real model accuracy",
     "Physical iPhone Safari and Android Chrome",
     "Cloud turnaround and cost measurement before setting pilot cap"
-  ]
+  ],
+  "scope": "Local pre-PR review receipt; live hosted status is tracked on the pull request."
 }

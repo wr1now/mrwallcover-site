@@ -3,17 +3,17 @@ import { mkdir, writeFile, copyFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { build } from 'vite';
 import sharp from 'sharp';
-import { serve, launchBrowser } from '../visual-browser.mjs';
+import { serve, launchBrowser, loadPage, waitForPageContent } from '../visual-browser.mjs';
 // A private build harness, never an Astro route or a public application asset.
 const root=resolve('.tmp/room-studio-panorama-harness');await mkdir(root+'/public',{recursive:true});
 if(process.env.ROOM_STUDIO_PANORAMA)await copyFile(process.env.ROOM_STUDIO_PANORAMA,root+'/public/panorama.png');
 else await sharp(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512"><rect width="1024" height="512" fill="#e3d8c2"/><path d="M0 100h1024v300H0Z" fill="#6d7755"/><path d="M128 100h128v300H128Z M640 100h128v300H640Z" fill="#cfc2aa"/><path d="M450 220h50v180H450Z" fill="#443824"/></svg>')).png().toFile(root+'/public/panorama.png');
 await writeFile(root+'/index.html','<html><body><main id="root"></main><script type="module" src="/entry.tsx"></script></body></html>');
-await writeFile(root+'/entry.tsx',`import React from 'react';import {createRoot} from 'react-dom/client';import PanoramaViewer from '${resolve('src/room-studio/components/PanoramaViewer.tsx')}';import '${resolve('src/room-studio/studio.css')}';createRoot(document.getElementById('root')!).render(<div style={{width:800}}><PanoramaViewer url="/panorama.png"/></div>);`);
+await writeFile(root+'/entry.tsx',`import React from 'react';import {DefaultLoadingManager} from 'three';DefaultLoadingManager.onLoad=()=>document.body.dataset.panoramaReady='true';import {createRoot} from 'react-dom/client';import PanoramaViewer from '${resolve('src/room-studio/components/PanoramaViewer.tsx')}';import '${resolve('src/room-studio/studio.css')}';createRoot(document.getElementById('root')!).render(<div style={{width:800}}><PanoramaViewer url="/panorama.png"/></div>);`);
 await build({root,configFile:false,logLevel:'error',esbuild:{jsx:'automatic'},build:{outDir:root+'/dist',emptyOutDir:true}});
 const server=await serve(root+'/dist'),browser=await launchBrowser();const errors=[];
-try{const p=await browser.newPage();p.on('pageerror',e=>errors.push(e.message));await p.setViewport({width:1024,height:768});await p.goto(server.origin,{waitUntil:'networkidle0'});await p.waitForSelector('.studio-panorama canvas');
-  const canvas=await p.$('.studio-panorama canvas');await new Promise(r=>setTimeout(r,500));const before=await canvas.screenshot();
+try{const p=await browser.newPage();p.on('pageerror',e=>errors.push(e.message));await p.setViewport({width:1024,height:768});await loadPage(p,server.origin);await p.waitForSelector('.studio-panorama canvas');
+  const canvas=await p.$('.studio-panorama canvas');await p.waitForSelector('[data-panorama-ready=true]');const before=await canvas.screenshot();
   const pixels=await sharp(before).stats();assert(pixels.channels.slice(0,3).every(c=>c.mean>15),'Interior sphere is visible rather than black/back-face culled');assert(pixels.channels.some(c=>c.stdev>12),'Panorama contains image detail');
   async function button(text){await p.evaluate(text=>[...document.querySelectorAll('button')].find(e=>e.textContent.trim()===text).click(),text);await p.evaluate(()=>new Promise(requestAnimationFrame));}
   await button('Look right');const turned=await canvas.screenshot();assert(!before.equals(turned),'Look control changes the rendered view');

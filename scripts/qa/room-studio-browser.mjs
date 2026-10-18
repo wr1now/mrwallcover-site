@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { serve, launchBrowser } from '../visual-browser.mjs';
+import { serve, launchBrowser, loadPage, waitForPageContent } from '../visual-browser.mjs';
 import { fixtureProject } from '../../src/room-studio/fixtures.ts';
 const output=resolve('.review-screens/room-studio');await mkdir(output,{recursive:true});await mkdir('.tmp/room-studio',{recursive:true});
 const server=await serve(process.env.ROOM_STUDIO_DIST||'dist'),browser=await launchBrowser();const errors=[];const evidence=[];
@@ -9,14 +9,14 @@ async function button(page,name,scope='.room-studio'){const previous=await page.
 async function field(page,label,value){const previous=await page.$eval('.room-studio',e=>e.dataset.studioRevision);const h=await page.evaluateHandle(label=>[...document.querySelectorAll('.room-studio label')].find(l=>l.querySelector('span')?.textContent.trim().replace(/\s+(mm|°|px)$/,'')===label)?.querySelector('input'),label);const el=h.asElement();assert(el,`Field missing: ${label}`);await el.asLocator().fill(String(value));await el.press('Tab');await page.waitForFunction(previous=>document.querySelector('.room-studio').dataset.studioRevision!==previous,{},previous);await h.dispose();}
 async function draft(page){return page.evaluate(()=>new Promise((resolve,reject)=>{const r=indexedDB.open('mrwallcover-room-studio-v1',1);r.onsuccess=()=>{const db=r.result;const q=db.transaction('drafts').objectStore('drafts').get('current');q.onsuccess=()=>{resolve(q.result);db.close();};q.onerror=reject;};r.onerror=reject;}));}
 async function saved(page){await page.waitForFunction(()=>new Promise(resolve=>{if(document.querySelector('.studio-title>span:last-child')?.textContent!=='Saved on this device')return resolve(false);const r=indexedDB.open('mrwallcover-room-studio-v1');r.onsuccess=()=>{const db=r.result,q=db.transaction('drafts').objectStore('drafts').get('current');q.onsuccess=()=>{resolve(String(q.result?.revision)===document.querySelector('.room-studio').dataset.studioRevision);db.close();};};}));}
-async function newPage(width){const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));await page.setViewport({width,height:900,deviceScaleFactor:1});await page.goto(server.origin+'/room-studio/',{waitUntil:'networkidle0'});await page.waitForSelector('[data-studio-ready="true"]');return page;}
+async function newPage(width){const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));await page.setViewport({width,height:900,deviceScaleFactor:1});await loadPage(page,server.origin+'/room-studio/');await page.waitForSelector('[data-studio-ready="true"]');return page;}
 try{
   const page=await newPage(1440);await saved(page);
   assert.equal((await draft(page)).room.heightMm,2600);
   await field(page,'Width',4800);await saved(page);assert.equal((await draft(page)).room.vertices[1].x,4800);
   await button(page,'Undo');await saved(page);assert.equal((await draft(page)).room.vertices[1].x,4200);
   await button(page,'Redo');await saved(page);assert.equal((await draft(page)).room.vertices[1].x,4800);
-  await page.reload({waitUntil:'networkidle0'});await page.waitForSelector('[data-studio-ready="true"]');assert.equal((await draft(page)).room.vertices[1].x,4800);
+  await page.reload({waitUntil:'load'});await waitForPageContent(page);await page.waitForSelector('[data-studio-ready="true"]');assert.equal((await draft(page)).room.vertices[1].x,4800);
   await button(page,'Add door');await field(page,'Distance from wall start',5000);await page.waitForSelector('.studio-error');await field(page,'Distance from wall start',200);await page.waitForFunction(()=>!document.querySelector('.studio-error'));
   await page.locator('label.studio-check input').click();await saved(page);assert.equal((await draft(page)).room.confirmed,true);
   await page.$eval('.studio-steps button:nth-child(4)',b=>b.click());await button(page,'Confirm room version');await page.waitForFunction(()=>[...document.querySelectorAll('button')].some(b=>/Version \d+ confirmed/.test(b.textContent)));
@@ -48,7 +48,7 @@ try{
   await page.close();
   const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(server.origin+'/room-studio/');assert(await nojs.$eval('main',e=>e.textContent.includes('Room Studio needs JavaScript')));await nojs.close();
   // Ordinary marketing pages must not pull in the room engine or React runtime.
-  const marketing=await browser.newPage(),requests=[];marketing.on('request',r=>requests.push(r.url()));await marketing.goto(server.origin+'/contact/',{waitUntil:'networkidle0'});assert(!requests.some(u=>/RoomStudio|RoomScene|FinishPanel|pdf\.worker|client\.[a-zA-Z0-9_-]+\.js/.test(u)), 'Room application leaked into marketing route');await marketing.close();
+  const marketing=await browser.newPage(),requests=[];marketing.on('request',r=>requests.push(r.url()));await loadPage(marketing,server.origin+'/contact/');assert(!requests.some(u=>/RoomStudio|RoomScene|FinishPanel|pdf\.worker|client\.[a-zA-Z0-9_-]+\.js/.test(u)), 'Room application leaked into marketing route');await marketing.close();
   assert.deepEqual(errors,[]);
   await writeFile(`${output}/browser-results.json`,JSON.stringify({evidence,errors,scope:'Chromium desktop and responsive emulation. Not physical iPhone Safari or Android validation.'},null,2));console.log(`Room Studio browser journeys passed (${evidence.length} evidence items). Screenshots: ${output}`);
 }finally{await browser.close();await server.close();}

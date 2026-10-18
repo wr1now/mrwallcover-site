@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fixtureProject } from '../../src/room-studio/fixtures.ts';
-import { launchBrowser, serve, waitForPagePredicate } from '../visual-browser.mjs';
+import { launchBrowser, serve, waitForPagePredicate, loadPage, waitForPageContent } from '../visual-browser.mjs';
 
 const output = resolve('.review-screens/room-studio-drafts'); await mkdir(output, { recursive: true });
 const server = await serve(process.env.ROOM_STUDIO_DIST ?? 'dist');
@@ -14,10 +14,10 @@ try {
   await page.setRequestInterception(true);
   page.on('request', request => { if(request.url().startsWith(server.origin) && request.method() === 'GET' || request.url().startsWith('data:') || request.url().startsWith('blob:')) request.continue(); else { blocked.push(request.url().split('?')[0]); request.abort(); } });
   await page.setViewport({ width: 1440, height: 1000 });
-  await page.goto(`${server.origin}/room-studio/`, { waitUntil: 'networkidle0' }); await page.waitForSelector('[data-studio-ready=true]');
+  await loadPage(page,`${server.origin}/room-studio/`); await page.waitForSelector('[data-studio-ready=true]');
   async function seed(value) {
     await page.evaluate(value => new Promise((resolve, reject) => { const request = indexedDB.open('mrwallcover-room-studio-v1', 1); request.onsuccess = () => { const db = request.result, tx = db.transaction('drafts', 'readwrite'); tx.objectStore('drafts').put(value, 'current'); tx.oncomplete = () => { db.close(); resolve(); }; tx.onerror = () => reject(tx.error); }; request.onerror = () => reject(request.error); }), value);
-    await page.reload({ waitUntil: 'networkidle0' }); await page.waitForSelector('[data-studio-ready=true]');
+    await page.reload({waitUntil:'load'});await waitForPageContent(page); await page.waitForSelector('[data-studio-ready=true]');
   }
   async function stored() {
     return page.evaluate(() => new Promise((resolve, reject) => { const request = indexedDB.open('mrwallcover-room-studio-v1', 1); request.onsuccess = () => { const db = request.result, item = db.transaction('drafts').objectStore('drafts').get('current'); item.onsuccess = () => { db.close(); resolve(item.result); }; item.onerror = () => reject(item.error); }; request.onerror = () => reject(request.error); }));
