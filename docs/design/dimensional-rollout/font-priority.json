@@ -1,0 +1,217 @@
+[
+  {
+    "run": 1,
+    "cls": 0,
+    "shifts": [],
+    "frames": [
+      {
+        "time": 13.2,
+        "y": 572.5,
+        "height": 171.671875,
+        "fontStatus": "loading",
+        "outfit400": true,
+        "outfit500": true
+      },
+      {
+        "time": 23.1,
+        "y": 572.5,
+        "height": 171.671875,
+        "fontStatus": "loaded",
+        "outfit400": true,
+        "outfit500": true
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "start": 6,
+        "end": 7.699999988079071,
+        "bytes": 23612,
+        "initiator": "link"
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "start": 6.100000023841858,
+        "end": 8.800000011920929,
+        "bytes": 13828,
+        "initiator": "link"
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "start": 6.100000023841858,
+        "end": 8.100000023841858,
+        "bytes": 14332,
+        "initiator": "link"
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "start": 13.800000011920929,
+        "end": 14.399999976158142,
+        "bytes": 24224,
+        "initiator": "css"
+      }
+    ],
+    "preloads": [
+      {
+        "href": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "crossOrigin": "anonymous"
+      },
+      {
+        "href": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "crossOrigin": "anonymous"
+      },
+      {
+        "href": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "crossOrigin": "anonymous"
+      }
+    ],
+    "paint": [
+      {
+        "name": "first-paint",
+        "time": 60
+      },
+      {
+        "name": "first-contentful-paint",
+        "time": 60
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "cls": 0,
+    "shifts": [],
+    "frames": [
+      {
+        "time": 13.4,
+        "y": 572.5,
+        "height": 171.671875,
+        "fontStatus": "loaded",
+        "outfit400": true,
+        "outfit500": true
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "start": 4.299999952316284,
+        "end": 6.699999988079071,
+        "bytes": 23612,
+        "initiator": "link"
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "start": 4.399999976158142,
+        "end": 6.899999976158142,
+        "bytes": 14332,
+        "initiator": "link"
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "start": 4.399999976158142,
+        "end": 7.5,
+        "bytes": 13828,
+        "initiator": "link"
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "start": 12.899999976158142,
+        "end": 13.799999952316284,
+        "bytes": 24224,
+        "initiator": "css"
+      }
+    ],
+    "preloads": [
+      {
+        "href": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "crossOrigin": "anonymous"
+      },
+      {
+        "href": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "crossOrigin": "anonymous"
+      },
+      {
+        "href": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "crossOrigin": "anonymous"
+      }
+    ],
+    "paint": [
+      {
+        "name": "first-paint",
+        "time": 48
+      },
+      {
+        "name": "first-contentful-paint",
+        "time": 48
+      }
+    ]
+  },
+  {
+    "run": 3,
+    "cls": 0,
+    "shifts": [],
+    "frames": [
+      {
+        "time": 18.1,
+        "y": 572.5,
+        "height": 171.671875,
+        "fontStatus": "loaded",
+        "outfit400": true,
+        "outfit500": true
+      }
+    ],
+    "fonts": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "start": 4.399999976158142,
+        "end": 6.5,
+        "bytes": 23612,
+        "initiator": "link"
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "start": 4.5,
+        "end": 6.600000023841858,
+        "bytes": 14332,
+        "initiator": "link"
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "start": 4.600000023841858,
+        "end": 7.100000023841858,
+        "bytes": 13828,
+        "initiator": "link"
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "start": 12.300000011920929,
+        "end": 13.199999988079071,
+        "bytes": 24224,
+        "initiator": "css"
+      }
+    ],
+    "preloads": [
+      {
+        "href": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "crossOrigin": "anonymous"
+      },
+      {
+        "href": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "crossOrigin": "anonymous"
+      },
+      {
+        "href": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "crossOrigin": "anonymous"
+      }
+    ],
+    "paint": [
+      {
+        "name": "first-paint",
+        "time": 52
+      },
+      {
+        "name": "first-contentful-paint",
+        "time": 52
+      }
+    ]
+  }
+]

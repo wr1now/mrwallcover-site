@@ -92,3 +92,29 @@ body.nav-open .dock, body.field-focus .dock { display:none; }
   .question-row-tools .question-visual { flex-basis:48px; width:48px; height:48px; }
   .question-row-tools .question-visual > .mw-icon { width:26px; height:26px; }
 }
+
+/* Original object studies share one presentation on every opted-in question surface. */
+.object-motion-controls { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.5rem 1.5rem; min-height:52px; margin:.5rem 0 1rem; }
+.object-motion-controls > .object-study-label { margin:0; color:var(--color-stone); font-size:var(--text-meta); line-height:1.5; }
+.object-motion-slot { display:flex; align-items:center; flex:0 0 10rem; width:10rem; min-height:52px; }
+.object-motion-controls .mw-action { min-height:44px; font-size:var(--text-meta); }
+.object-motion-controls [hidden] { display:none!important; }
+.professional-questions { max-width:62rem; }
+.question-visual--dimensional { flex:0 0 104px; width:104px; height:104px; margin:-.5rem 0; border:0; background:transparent; border-radius:0; }
+.question-visual--dimensional::before, .question-visual--dimensional::after { display:none; }
+.guide-faq[data-visual="dimensional"] .guide-faq-item { position:relative; padding-block:2rem; }
+.guide-faq[data-visual="dimensional"] .question-heading-row { align-items:center; gap:1rem; }
+.faq[data-visual="dimensional"] .question-row-tools .question-visual--dimensional { flex-basis:96px; width:96px; height:96px; }
+.faq[data-visual="dimensional"] summary { gap:1rem; min-height:116px; }
+.faq[data-visual="dimensional"] summary h2, .faq[data-visual="dimensional"] summary h3 { flex:1; min-width:0; }
+.faq[data-visual="dimensional"] .question-row-tools { gap:.6rem; }
+@media (min-width:1024px) {
+  .guide-faq[data-visual="dimensional"] .guide-faq-item { padding-right:14rem; min-height:14rem; }
+  .guide-faq[data-visual="dimensional"] .question-heading-row { display:block; }
+  .guide-faq[data-visual="dimensional"] .question-visual--dimensional { position:absolute; width:200px; height:200px; top:50%; right:0; margin:0; transform:translateY(-50%); }
+  .faq[data-visual="dimensional"] .question-row-tools .question-visual--dimensional { flex-basis:160px; width:160px; height:160px; }
+  .faq[data-visual="dimensional"] summary { min-height:180px; }
+}
+@media print {
+  .object-motion-controls .mw-action { display:none; }
+}

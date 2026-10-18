@@ -1,6 +1,8 @@
 ---
 import Breadcrumb from '../../components/Breadcrumb.astro';
-import Icon from '../../components/Icon.astro';
+import DesignObject from '../../components/DesignObject.astro';
+import ObjectMotionControls from '../../components/ObjectMotionControls.astro';
+import { materialStudyKind } from '../../lib/design-study-topic';
 import Action from '../../components/Action.astro';
 import MaterialFinder from '../../components/MaterialFinder.astro';
 import MaterialStudio from '../../components/MaterialStudio.astro';
@@ -40,12 +42,13 @@ const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((
       <figure><Picture id="fs-residences-06" sizes="(min-width: 768px) 24rem, 90vw" /><figcaption>Woven grasscloth at an external corner. Four Seasons Private Residences, Ten Trinity Square. Photograph: Mr Wallcover.</figcaption></figure>
     </section>
     <MaterialFinder />
+    <ObjectMotionControls label="Illustrative material studies · confirm the actual finish with a sample" />
     <ul class="m-0 grid list-none gap-8 p-0 md:grid-cols-2">
       {materials.items.map((item) => {
         const service = specialisms.find((entry) => entry.slug === item.specialism);
         return (
-          <li class="border-t border-line pt-4">
-            <Icon name={item.slug === 'murals' ? 'room' : item.slug === 'contract-vinyl' ? 'layers' : 'swatch'} class="material-family-icon" />
+          <li class="border-t border-line pt-4" data-design-hit>
+            <div class="material-family-study"><DesignObject kind={materialStudyKind(item.slug)} /></div>
             <h2 class="m-0 text-[1.8rem]"><a href={`/materials/${item.slug}/`}>{item.name}</a></h2>
             <p class="mt-3 mb-0 text-stone">{item.appearance}</p>
             <p class="mt-3 mb-0">{item.joins}</p>
@@ -112,6 +115,10 @@ const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((
   </div>
   <MaterialStudio />
 </Base>
+
+<style>
+  .material-family-study { width: 11rem; margin: -1rem .5rem -1rem; }
+</style>
 
 <script>
   import '../../scripts/shortlist';

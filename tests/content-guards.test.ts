@@ -240,6 +240,26 @@ test('exterior works lists the two cleared projects and the Penny Morrison showr
   assert.doesNotMatch(hackney, /exterior-works/);
 });
 
+test('limewash remains our own-team work while lime render is explicitly arranged through specialists', async () => {
+  const expected = "Limewash is applied by Mr Wallcover's own team. Lime render can be arranged through trusted specialist partners.";
+  const buyer = JSON.parse(await readFile('src/data/buyer-answers.json', 'utf8'));
+  const answer = buyer.answers.find((item: { id: string }) => item.id === 'f-q11');
+  assert.equal(answer?.answer, expected);
+  assert.ok(answer.sources.some((source: { note?: string }) => source.note?.includes('Owner clarification, 18 Oct 2026')), 'the revised delivery scope has a current owner source');
+  assert.deepEqual(buyer.factsAdditions.limewash, {
+    limewash: "Mr Wallcover's own team",
+    limeRender: 'Can be arranged through trusted specialist partners.',
+  });
+  const heritage = await readFile('src/content/pages/heritage-listed-buildings.md', 'utf8');
+  const frontmatter = JSON.parse(heritage.match(/^---\r?\n([\s\S]*?)\r?\n---/s)![1]);
+  assert.equal(frontmatter.faq.find((item: { id: string }) => item.id === 'heritage-lime')?.paragraphs.join(' '), expected);
+  assert.ok(heritage.slice(heritage.indexOf('\n## Limewash and lime render')).includes(expected), 'the visible heritage section makes the same distinction');
+  const depth = JSON.parse(await readFile('src/content/service-depth.json', 'utf8'));
+  const section = depth.items['exterior-works'].sections.find((item: { heading: string }) => item.heading === 'Lime and heritage finishes');
+  assert.ok(section.paragraphs[0].startsWith(expected), 'the exterior service preserves the consent caveat after the corrected scope');
+  assert.match(section.paragraphs[0], /follow the specification and whatever the consents for the building allow/);
+});
+
 test('the hand-painted service names the Brown\'s paper its case study records', async () => {
   const data = JSON.parse(await readFile('src/content/specialisms.json', 'utf8')) as { items: { slug: string; paragraphs: string[] }[] };
   const page = data.items.find((item) => item.slug === 'hand-painted-wallpaper-installation');

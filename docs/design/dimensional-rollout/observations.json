@@ -1,0 +1,2912 @@
+[
+  {
+    "version": "before",
+    "name": "services",
+    "path": "/services/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 6,
+        "end": 6.800000011920929
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 12.599999964237213,
+        "end": 14.599999964237213
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 12.599999964237213,
+        "end": 14.399999976158142
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 12.699999988079071,
+        "end": 14.800000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 12.699999988079071,
+        "end": 15.199999988079071
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 21.19999998807907,
+        "end": 22.599999964237213
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "wallpaper",
+    "path": "/materials/paper-and-non-woven/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 4.399999976158142,
+        "end": 6.800000011920929
+      },
+      {
+        "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.5y8h2fRV.js",
+        "bytes": 332,
+        "start": 4.399999976158142,
+        "end": 6.399999976158142
+      },
+      {
+        "name": "/_astro/shortlist.EFDOIlMk.js",
+        "bytes": 1627,
+        "start": 7.800000011920929,
+        "end": 9.399999976158142
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 11.800000011920929,
+        "end": 14.5
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 11.800000011920929,
+        "end": 15.300000011920929
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 11.800000011920929,
+        "end": 14.899999976158142
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 11.800000011920929,
+        "end": 15.699999988079071
+      },
+      {
+        "name": "/media/img/thumbs/browns-hotel-mayfair-06-800.webp",
+        "bytes": 44992,
+        "start": 19,
+        "end": 21.30000001192093
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 19.19999998807907,
+        "end": 21.19999998807907
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "materials",
+    "path": "/materials/",
+    "width": 390,
+    "errors": [],
+    "cls": 0.0011906307692307692,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 3.599999964237213,
+        "end": 5.399999976158142
+      },
+      {
+        "name": "/_astro/MaterialFinder.astro_astro_type_script_index_0_lang.B2vZ3pP4.js",
+        "bytes": 1458,
+        "start": 3.699999988079071,
+        "end": 6
+      },
+      {
+        "name": "/_astro/index.astro_astro_type_script_index_0_lang.5y8h2fRV.js",
+        "bytes": 332,
+        "start": 3.699999988079071,
+        "end": 6.099999964237213
+      },
+      {
+        "name": "/_astro/MaterialStudio.astro_astro_type_script_index_0_lang.BbpUABIf.js",
+        "bytes": 6931,
+        "start": 3.699999988079071,
+        "end": 6.099999964237213
+      },
+      {
+        "name": "/_astro/material-advice.CXxSeqLS.js",
+        "bytes": 2928,
+        "start": 8.5,
+        "end": 10.399999976158142
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 8.5,
+        "end": 10.399999976158142
+      },
+      {
+        "name": "/_astro/shortlist.EFDOIlMk.js",
+        "bytes": 1627,
+        "start": 8.599999964237213,
+        "end": 10.099999964237213
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 13.599999964237213,
+        "end": 25
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 17,
+        "end": 25.099999964237213
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 17,
+        "end": 25.30000001192093
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 17,
+        "end": 25.5
+      },
+      {
+        "name": "/media/img/r/fs-residences-06-480.avif",
+        "bytes": 4787,
+        "start": 26.30000001192093,
+        "end": 27.80000001192093
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 30.19999998807907,
+        "end": 31
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "guide",
+    "path": "/advice/",
+    "width": 390,
+    "errors": [],
+    "cls": 0.0010984615384615386,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 4.100000023841858,
+        "end": 5.400000035762787
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 9.199999988079071,
+        "end": 11.5
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 9.300000011920929,
+        "end": 10.900000035762787
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 9.300000011920929,
+        "end": 11.100000023841858
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 9.300000011920929,
+        "end": 11.600000023841858
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 17.30000001192093,
+        "end": 18
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "contact",
+    "path": "/contact/",
+    "width": 390,
+    "errors": [],
+    "cls": 0.0007673076923076924,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 3.899999976158142,
+        "end": 5.099999964237213
+      },
+      {
+        "name": "/_astro/EnquiryForm.astro_astro_type_script_index_0_lang.CM7TeY9Z.js",
+        "bytes": 10214,
+        "start": 3.899999976158142,
+        "end": 5.099999964237213
+      },
+      {
+        "name": "/_astro/material-advice.CXxSeqLS.js",
+        "bytes": 2928,
+        "start": 7.399999976158142,
+        "end": 8.199999988079071
+      },
+      {
+        "name": "/_astro/enquiry.CbYmHLOR.js",
+        "bytes": 3012,
+        "start": 7.399999976158142,
+        "end": 8.099999964237213
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 9.099999964237213,
+        "end": 14.099999964237213
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 9.199999988079071,
+        "end": 13.5
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 9.199999988079071,
+        "end": 14.199999988079071
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 9.199999988079071,
+        "end": 14.099999964237213
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 18.19999998807907,
+        "end": 19
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "designers",
+    "path": "/professionals/designers/",
+    "width": 390,
+    "errors": [],
+    "cls": 0.024340396153846155,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 3.699999988079071,
+        "end": 4.600000023841858
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.lhqNk1mk.js",
+        "bytes": 3876,
+        "start": 3.800000011920929,
+        "end": 4.800000011920929
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 7.100000023841858,
+        "end": 7.800000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 9.699999988079071,
+        "end": 10.800000011920929
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 9.699999988079071,
+        "end": 10.800000011920929
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 9.699999988079071,
+        "end": 11.400000035762787
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 9.800000011920929,
+        "end": 11.100000023841858
+      },
+      {
+        "name": "/media/img/r/lee-broom-06-480.avif",
+        "bytes": 11146,
+        "start": 15.900000035762787,
+        "end": 17.400000035762787
+      },
+      {
+        "name": "/media/design-objects/samples.webp",
+        "bytes": 31214,
+        "start": 15.900000035762787,
+        "end": 17.69999998807907
+      },
+      {
+        "name": "/media/design-objects/document.webp",
+        "bytes": 28840,
+        "start": 15.900000035762787,
+        "end": 17.80000001192093
+      },
+      {
+        "name": "/media/design-objects/layers.webp",
+        "bytes": 30202,
+        "start": 16,
+        "end": 18
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 18.19999998807907,
+        "end": 18.80000001192093
+      }
+    ],
+    "objects": 18,
+    "overflow": false,
+    "live": 2,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.C92vKTl5.js",
+        "bytes": 10249,
+        "start": 552.9000000357628
+      }
+    ],
+    "motionControls": 2
+  },
+  {
+    "version": "before",
+    "name": "faq",
+    "path": "/faq/",
+    "width": 390,
+    "errors": [],
+    "cls": 0.11572262692307689,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 5.300000011920929,
+        "end": 5.899999976158142
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 9.5,
+        "end": 12.800000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 9.5,
+        "end": 13.100000023841858
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 9.5,
+        "end": 13
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 9.5,
+        "end": 12.899999976158142
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 16.80000001192093,
+        "end": 17.600000023841858
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "timorous",
+    "path": "/services/timorous-beasties-installer/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 4,
+        "end": 4.899999976158142
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 9,
+        "end": 11.099999964237213
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 9,
+        "end": 11.099999964237213
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 9,
+        "end": 11.299999952316284
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 9.099999964237213,
+        "end": 11.299999952316284
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 14.299999952316284,
+        "end": 15.099999964237213
+      },
+      {
+        "name": "/media/img/r/old-bailey-06-480.avif",
+        "bytes": 18238,
+        "start": 21.899999976158142,
+        "end": 23
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "home",
+    "path": "/",
+    "width": 390,
+    "errors": [],
+    "cls": 0.0018884942307692309,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 7.600000023841858,
+        "end": 9.700000047683716
+      },
+      {
+        "name": "/media/atelier/browns-bedroom-640.webp",
+        "bytes": 61416,
+        "start": 7.600000023841858,
+        "end": 10.300000011920929
+      },
+      {
+        "name": "/_astro/MaterialStudio.astro_astro_type_script_index_0_lang.BbpUABIf.js",
+        "bytes": 6931,
+        "start": 7.700000047683716,
+        "end": 9.900000035762787
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 14.700000047683716,
+        "end": 15.900000035762787
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 20.100000023841858,
+        "end": 22.80000001192093
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 20.200000047683716,
+        "end": 23.200000047683716
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 20.200000047683716,
+        "end": 22.900000035762787
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 20.200000047683716,
+        "end": 23.30000001192093
+      },
+      {
+        "name": "/media/img/thumbs/browns-hotel-mayfair-10-800.webp",
+        "bytes": 65210,
+        "start": 37.80000001192093,
+        "end": 41.5
+      },
+      {
+        "name": "/media/img/thumbs/owo-official-junior-suite-800.webp",
+        "bytes": 49102,
+        "start": 37.90000003576279,
+        "end": 41.40000003576279
+      },
+      {
+        "name": "/media/img/r/fs-residences-01-480.avif",
+        "bytes": 8256,
+        "start": 38,
+        "end": 41.700000047683716
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 48.40000003576279,
+        "end": 50
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "services",
+    "path": "/services/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 4,
+        "end": 5.300000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 10.800000011920929,
+        "end": 12.800000011920929
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 10.800000011920929,
+        "end": 13
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 10.800000011920929,
+        "end": 13.600000023841858
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 10.899999976158142,
+        "end": 13.5
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 20,
+        "end": 20.69999998807907
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "wallpaper",
+    "path": "/materials/paper-and-non-woven/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0.001903811969521605,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 4.100000023841858,
+        "end": 6.199999988079071
+      },
+      {
+        "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.5y8h2fRV.js",
+        "bytes": 332,
+        "start": 4.100000023841858,
+        "end": 5.699999988079071
+      },
+      {
+        "name": "/_astro/shortlist.EFDOIlMk.js",
+        "bytes": 1627,
+        "start": 7.400000035762787,
+        "end": 8.100000023841858
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 10.100000023841858,
+        "end": 20.900000035762787
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 10.199999988079071,
+        "end": 21.400000035762787
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 10.199999988079071,
+        "end": 21.69999998807907
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 10.199999988079071,
+        "end": 21.400000035762787
+      },
+      {
+        "name": "/media/img/thumbs/browns-hotel-mayfair-06-800.webp",
+        "bytes": 44992,
+        "start": 19.5,
+        "end": 21.600000023841858
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 25.19999998807907,
+        "end": 26.400000035762787
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "materials",
+    "path": "/materials/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0.005624294343171296,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 4,
+        "end": 5.800000011920929
+      },
+      {
+        "name": "/_astro/MaterialFinder.astro_astro_type_script_index_0_lang.B2vZ3pP4.js",
+        "bytes": 1458,
+        "start": 4,
+        "end": 5.5
+      },
+      {
+        "name": "/_astro/MaterialStudio.astro_astro_type_script_index_0_lang.BbpUABIf.js",
+        "bytes": 6931,
+        "start": 4,
+        "end": 6.399999976158142
+      },
+      {
+        "name": "/_astro/index.astro_astro_type_script_index_0_lang.5y8h2fRV.js",
+        "bytes": 332,
+        "start": 4.100000023841858,
+        "end": 6.800000011920929
+      },
+      {
+        "name": "/_astro/material-advice.CXxSeqLS.js",
+        "bytes": 2928,
+        "start": 9.199999988079071,
+        "end": 10.600000023841858
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 9.199999988079071,
+        "end": 10.800000011920929
+      },
+      {
+        "name": "/_astro/shortlist.EFDOIlMk.js",
+        "bytes": 1627,
+        "start": 9.199999988079071,
+        "end": 11.100000023841858
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 14.600000023841858,
+        "end": 20.80000001192093
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 14.699999988079071,
+        "end": 21.100000023841858
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 14.699999988079071,
+        "end": 20.899999976158142
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 14.699999988079071,
+        "end": 20.80000001192093
+      },
+      {
+        "name": "/media/img/r/fs-residences-06-480.avif",
+        "bytes": 4787,
+        "start": 18.5,
+        "end": 20.30000001192093
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 26.80000001192093,
+        "end": 27.69999998807907
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "guide",
+    "path": "/advice/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 3.699999988079071,
+        "end": 4.800000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 9.600000023841858,
+        "end": 11.199999988079071
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 9.600000023841858,
+        "end": 11.300000011920929
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 9.600000023841858,
+        "end": 11.400000035762787
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 9.699999988079071,
+        "end": 11.400000035762787
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 16.19999998807907,
+        "end": 17.30000001192093
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "contact",
+    "path": "/contact/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0.007921626865716628,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 4.199999988079071,
+        "end": 6.699999988079071
+      },
+      {
+        "name": "/_astro/EnquiryForm.astro_astro_type_script_index_0_lang.CM7TeY9Z.js",
+        "bytes": 10214,
+        "start": 4.300000011920929,
+        "end": 6.800000011920929
+      },
+      {
+        "name": "/_astro/material-advice.CXxSeqLS.js",
+        "bytes": 2928,
+        "start": 8.100000023841858,
+        "end": 9.300000011920929
+      },
+      {
+        "name": "/_astro/enquiry.CbYmHLOR.js",
+        "bytes": 3012,
+        "start": 8.100000023841858,
+        "end": 9.5
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 12.600000023841858,
+        "end": 16.80000001192093
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 12.699999988079071,
+        "end": 16.900000035762787
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 12.699999988079071,
+        "end": 17.19999998807907
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 12.800000011920929,
+        "end": 17.19999998807907
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 25.400000035762787,
+        "end": 27.400000035762787
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "designers",
+    "path": "/professionals/designers/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0.01984134521484375,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 3.899999976158142,
+        "end": 4.799999952316284
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.lhqNk1mk.js",
+        "bytes": 3876,
+        "start": 3.899999976158142,
+        "end": 4.799999952316284
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 7.399999976158142,
+        "end": 8.199999988079071
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 9.799999952316284,
+        "end": 15.899999976158142
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 9.799999952316284,
+        "end": 16.399999976158142
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 9.799999952316284,
+        "end": 17.099999964237213
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 9.799999952316284,
+        "end": 17
+      },
+      {
+        "name": "/media/img/r/lee-broom-06-480.avif",
+        "bytes": 11146,
+        "start": 13.599999964237213,
+        "end": 15.199999988079071
+      },
+      {
+        "name": "/media/design-objects/samples.webp",
+        "bytes": 31214,
+        "start": 13.599999964237213,
+        "end": 15.299999952316284
+      },
+      {
+        "name": "/media/design-objects/document.webp",
+        "bytes": 28840,
+        "start": 13.599999964237213,
+        "end": 15.899999976158142
+      },
+      {
+        "name": "/media/design-objects/layers.webp",
+        "bytes": 30202,
+        "start": 13.599999964237213,
+        "end": 16
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 22.5,
+        "end": 23.099999964237213
+      }
+    ],
+    "objects": 18,
+    "overflow": false,
+    "live": 3,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.C92vKTl5.js",
+        "bytes": 10249,
+        "start": 545.5
+      }
+    ],
+    "motionControls": 2
+  },
+  {
+    "version": "before",
+    "name": "faq",
+    "path": "/faq/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 5.199999988079071,
+        "end": 5.899999976158142
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 10,
+        "end": 11
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 10.100000023841858,
+        "end": 12.100000023841858
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 10.100000023841858,
+        "end": 12.100000023841858
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 10.100000023841858,
+        "end": 12.100000023841858
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 16.100000023841858,
+        "end": 16.899999976158142
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "timorous",
+    "path": "/services/timorous-beasties-installer/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 3.900000035762787,
+        "end": 4.600000023841858
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 9.400000035762787,
+        "end": 11.199999988079071
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 9.400000035762787,
+        "end": 11.5
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 9.400000035762787,
+        "end": 11.5
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 9.5,
+        "end": 11.600000023841858
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 14.900000035762787,
+        "end": 15.400000035762787
+      },
+      {
+        "name": "/media/img/r/old-bailey-06-480.avif",
+        "bytes": 18238,
+        "start": 20.30000001192093,
+        "end": 20.900000035762787
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "before",
+    "name": "home",
+    "path": "/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0.012977000325520837,
+    "resources": [
+      {
+        "name": "/media/atelier/browns-bedroom-1440.webp",
+        "bytes": 258992,
+        "start": 3.899999976158142,
+        "end": 7
+      },
+      {
+        "name": "/_astro/Base.HLXRqQ2C.css",
+        "bytes": 94800,
+        "start": 4,
+        "end": 6.300000011920929
+      },
+      {
+        "name": "/_astro/MaterialStudio.astro_astro_type_script_index_0_lang.BbpUABIf.js",
+        "bytes": 6931,
+        "start": 4,
+        "end": 6.5
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 10.399999976158142,
+        "end": 11.699999988079071
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 15,
+        "end": 36.19999998807907
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 15.100000023841858,
+        "end": 36.80000001192093
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 15.100000023841858,
+        "end": 37.30000001192093
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 15.100000023841858,
+        "end": 37.30000001192093
+      },
+      {
+        "name": "/media/img/thumbs/browns-hotel-mayfair-10-800.webp",
+        "bytes": 65210,
+        "start": 30.5,
+        "end": 33.60000002384186
+      },
+      {
+        "name": "/media/img/thumbs/owo-official-junior-suite-800.webp",
+        "bytes": 49102,
+        "start": 30.5,
+        "end": 34.10000002384186
+      },
+      {
+        "name": "/media/img/r/fs-residences-01-800.avif",
+        "bytes": 16536,
+        "start": 30.5,
+        "end": 35
+      },
+      {
+        "name": "/media/img/r/old-bailey-06-800.avif",
+        "bytes": 41803,
+        "start": 30.5,
+        "end": 35.19999998807907
+      },
+      {
+        "name": "/media/img/r/heathrow-05-800.avif",
+        "bytes": 52434,
+        "start": 30.600000023841858,
+        "end": 34.39999997615814
+      },
+      {
+        "name": "/media/img/r/trematon-01-800.avif",
+        "bytes": 148330,
+        "start": 30.600000023841858,
+        "end": 35.5
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 48.89999997615814,
+        "end": 49.80000001192093
+      }
+    ],
+    "objects": 0,
+    "overflow": false,
+    "live": 0,
+    "scene": [],
+    "motionControls": 0
+  },
+  {
+    "version": "after",
+    "name": "services",
+    "path": "/services/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 4,
+        "end": 5.699999988079071
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 4.099999964237213,
+        "end": 6.099999964237213
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 4.099999964237213,
+        "end": 6.099999964237213
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 4.099999964237213,
+        "end": 6.399999976158142
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 4.199999988079071,
+        "end": 6.699999988079071
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 8.699999988079071,
+        "end": 9.5
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 11.899999976158142,
+        "end": 12.800000011920929
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 17.80000001192093,
+        "end": 18.399999976158142
+      }
+    ],
+    "objects": 1,
+    "overflow": false,
+    "live": 1,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 1014.5
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "wallpaper",
+    "path": "/materials/paper-and-non-woven/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 6.099999964237213,
+        "end": 9
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 6.199999988079071,
+        "end": 9.599999964237213
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 6.199999988079071,
+        "end": 8.800000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 6.199999988079071,
+        "end": 9
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 6.199999988079071,
+        "end": 9.800000011920929
+      },
+      {
+        "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.5y8h2fRV.js",
+        "bytes": 332,
+        "start": 6.300000011920929,
+        "end": 10.099999964237213
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 10.599999964237213,
+        "end": 11.899999976158142
+      },
+      {
+        "name": "/_astro/shortlist.EFDOIlMk.js",
+        "bytes": 1627,
+        "start": 10.699999988079071,
+        "end": 11.899999976158142
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 14.300000011920929,
+        "end": 15.699999988079071
+      },
+      {
+        "name": "/media/img/thumbs/browns-hotel-mayfair-06-800.webp",
+        "bytes": 44992,
+        "start": 21.30000001192093,
+        "end": 22.69999998807907
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 23.30000001192093,
+        "end": 24.69999998807907
+      }
+    ],
+    "objects": 1,
+    "overflow": false,
+    "live": 1,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 570.3999999761581
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "materials",
+    "path": "/materials/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 5.399999976158142,
+        "end": 6.599999964237213
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 5.399999976158142,
+        "end": 7.199999988079071
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 5.399999976158142,
+        "end": 7.699999988079071
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 5.5,
+        "end": 7.599999964237213
+      },
+      {
+        "name": "/_astro/MaterialFinder.astro_astro_type_script_index_0_lang.B2vZ3pP4.js",
+        "bytes": 1458,
+        "start": 5.5,
+        "end": 8
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 5.5,
+        "end": 8.299999952316284
+      },
+      {
+        "name": "/_astro/index.astro_astro_type_script_index_0_lang.5y8h2fRV.js",
+        "bytes": 332,
+        "start": 5.599999964237213,
+        "end": 8.699999988079071
+      },
+      {
+        "name": "/_astro/MaterialStudio.astro_astro_type_script_index_0_lang.BbpUABIf.js",
+        "bytes": 6931,
+        "start": 5.599999964237213,
+        "end": 8.599999964237213
+      },
+      {
+        "name": "/_astro/material-advice.CXxSeqLS.js",
+        "bytes": 2928,
+        "start": 10.5,
+        "end": 11.5
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 10.5,
+        "end": 11.699999988079071
+      },
+      {
+        "name": "/_astro/shortlist.EFDOIlMk.js",
+        "bytes": 1627,
+        "start": 10.599999964237213,
+        "end": 11.699999988079071
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 15.899999976158142,
+        "end": 20.099999964237213
+      },
+      {
+        "name": "/media/img/r/fs-residences-06-480.avif",
+        "bytes": 4787,
+        "start": 23,
+        "end": 24.19999998807907
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 23.19999998807907,
+        "end": 23.799999952316284
+      }
+    ],
+    "objects": 7,
+    "overflow": false,
+    "live": 2,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 611.0999999642372
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "guide",
+    "path": "/advice/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 6.100000023841858,
+        "end": 8.800000011920929
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 6.200000047683716,
+        "end": 8.600000023841858
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 6.200000047683716,
+        "end": 8
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 6.200000047683716,
+        "end": 8.200000047683716
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 6.200000047683716,
+        "end": 8.700000047683716
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 9.900000035762787,
+        "end": 10.700000047683716
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 13.200000047683716,
+        "end": 14.100000023841858
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 18.200000047683716,
+        "end": 18.900000035762787
+      }
+    ],
+    "objects": 11,
+    "overflow": false,
+    "live": 1,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 697.5
+      }
+    ],
+    "motionControls": 11
+  },
+  {
+    "version": "after",
+    "name": "contact",
+    "path": "/contact/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 5,
+        "end": 6.5
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 5,
+        "end": 7.199999988079071
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 5.099999964237213,
+        "end": 7
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 5.099999964237213,
+        "end": 6.5
+      },
+      {
+        "name": "/_astro/EnquiryForm.astro_astro_type_script_index_0_lang.CM7TeY9Z.js",
+        "bytes": 10214,
+        "start": 5.099999964237213,
+        "end": 7.199999988079071
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 5.099999964237213,
+        "end": 7.199999988079071
+      },
+      {
+        "name": "/_astro/material-advice.CXxSeqLS.js",
+        "bytes": 2928,
+        "start": 8.5,
+        "end": 9.399999976158142
+      },
+      {
+        "name": "/_astro/enquiry.CbYmHLOR.js",
+        "bytes": 3012,
+        "start": 8.5,
+        "end": 9.399999976158142
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 8.5,
+        "end": 9.5
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 12.299999952316284,
+        "end": 14.799999952316284
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 17.799999952316284,
+        "end": 18.5
+      }
+    ],
+    "objects": 1,
+    "overflow": false,
+    "live": 1,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 652
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "designers",
+    "path": "/professionals/designers/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 4.800000011920929,
+        "end": 6.100000023841858
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 4.899999976158142,
+        "end": 6.699999988079071
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 4.899999976158142,
+        "end": 6.100000023841858
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 4.899999976158142,
+        "end": 6.100000023841858
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 4.899999976158142,
+        "end": 6.899999976158142
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 9,
+        "end": 9.5
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 11.5,
+        "end": 12.300000011920929
+      },
+      {
+        "name": "/media/img/r/lee-broom-06-480.avif",
+        "bytes": 11146,
+        "start": 16.100000023841858,
+        "end": 17.399999976158142
+      },
+      {
+        "name": "/media/design-objects/samples.webp",
+        "bytes": 31806,
+        "start": 16.100000023841858,
+        "end": 17.69999998807907
+      },
+      {
+        "name": "/media/design-objects/document.webp",
+        "bytes": 30194,
+        "start": 16.100000023841858,
+        "end": 18.100000023841858
+      },
+      {
+        "name": "/media/design-objects/layers.webp",
+        "bytes": 30756,
+        "start": 16.19999998807907,
+        "end": 18.19999998807907
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 18.19999998807907,
+        "end": 18.69999998807907
+      }
+    ],
+    "objects": 18,
+    "overflow": false,
+    "live": 2,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 550.6999999880791
+      }
+    ],
+    "motionControls": 2
+  },
+  {
+    "version": "after",
+    "name": "faq",
+    "path": "/faq/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 5,
+        "end": 6.800000011920929
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 5.100000023841858,
+        "end": 7.100000023841858
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 5.100000023841858,
+        "end": 6.800000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 5.100000023841858,
+        "end": 6.899999976158142
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 5.100000023841858,
+        "end": 6.699999988079071
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 8.300000011920929,
+        "end": 8.899999976158142
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 10.399999976158142,
+        "end": 11.100000023841858
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 13.699999988079071,
+        "end": 14.199999988079071
+      },
+      {
+        "name": "/media/design-objects/price.webp",
+        "bytes": 29682,
+        "start": 29.5,
+        "end": 31.5
+      },
+      {
+        "name": "/media/design-objects/calendar.webp",
+        "bytes": 30758,
+        "start": 29.600000023841858,
+        "end": 31.399999976158142
+      },
+      {
+        "name": "/media/design-objects/roll.webp",
+        "bytes": 31100,
+        "start": 29.600000023841858,
+        "end": 31.899999976158142
+      },
+      {
+        "name": "/media/design-objects/care.webp",
+        "bytes": 32594,
+        "start": 29.600000023841858,
+        "end": 32
+      },
+      {
+        "name": "/media/design-objects/samples.webp",
+        "bytes": 31806,
+        "start": 29.600000023841858,
+        "end": 32.10000002384186
+      },
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 29.80000001192093,
+        "end": 32.19999998807907
+      },
+      {
+        "name": "/_astro/three.module.DGYv-SGP.js",
+        "bytes": 679314,
+        "start": 29.899999976158142,
+        "end": 33
+      }
+    ],
+    "objects": 6,
+    "overflow": false,
+    "live": 4,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 29.80000001192093
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "timorous",
+    "path": "/services/timorous-beasties-installer/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 5.900000035762787,
+        "end": 7.300000011920929
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 6,
+        "end": 7.800000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 6,
+        "end": 7.199999988079071
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 6,
+        "end": 8.100000023841858
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 6.100000023841858,
+        "end": 8
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 9.600000023841858,
+        "end": 10.600000023841858
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 13.199999988079071,
+        "end": 13.900000035762787
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 17.19999998807907,
+        "end": 17.80000001192093
+      },
+      {
+        "name": "/media/img/r/old-bailey-06-480.avif",
+        "bytes": 18238,
+        "start": 19.80000001192093,
+        "end": 20.400000035762787
+      }
+    ],
+    "objects": 3,
+    "overflow": false,
+    "live": 3,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 605
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "home",
+    "path": "/",
+    "width": 390,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/media/atelier/browns-bedroom-640.webp",
+        "bytes": 61416,
+        "start": 7.699999988079071,
+        "end": 10
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 7.800000011920929,
+        "end": 9.899999976158142
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 7.800000011920929,
+        "end": 10.599999964237213
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 7.899999976158142,
+        "end": 10.5
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 7.899999976158142,
+        "end": 10.699999988079071
+      },
+      {
+        "name": "/_astro/MaterialStudio.astro_astro_type_script_index_0_lang.BbpUABIf.js",
+        "bytes": 6931,
+        "start": 8,
+        "end": 10.800000011920929
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 8,
+        "end": 10.899999976158142
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 14.599999964237213,
+        "end": 15.300000011920929
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 19.5,
+        "end": 21.5
+      },
+      {
+        "name": "/media/img/thumbs/browns-hotel-mayfair-10-800.webp",
+        "bytes": 65210,
+        "start": 34.39999997615814,
+        "end": 36.30000001192093
+      },
+      {
+        "name": "/media/img/thumbs/owo-official-junior-suite-800.webp",
+        "bytes": 49102,
+        "start": 34.5,
+        "end": 36.5
+      },
+      {
+        "name": "/media/img/r/fs-residences-01-480.avif",
+        "bytes": 8256,
+        "start": 34.5,
+        "end": 36.5
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 37.59999996423721,
+        "end": 38.69999998807907
+      }
+    ],
+    "objects": 6,
+    "overflow": false,
+    "live": 5,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 720.5
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "services",
+    "path": "/services/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 3.800000011920929,
+        "end": 5.400000035762787
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 3.900000035762787,
+        "end": 5.900000035762787
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 3.900000035762787,
+        "end": 5.400000035762787
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 3.900000035762787,
+        "end": 6.300000011920929
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 3.900000035762787,
+        "end": 6.199999988079071
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 8.600000023841858,
+        "end": 9.100000023841858
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 11.400000035762787,
+        "end": 12.199999988079071
+      },
+      {
+        "name": "/media/design-objects/roll.webp",
+        "bytes": 31100,
+        "start": 18.69999998807907,
+        "end": 19.80000001192093
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 19,
+        "end": 19.600000023841858
+      }
+    ],
+    "objects": 1,
+    "overflow": false,
+    "live": 1,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 1016.3000000119209
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "wallpaper",
+    "path": "/materials/paper-and-non-woven/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 5.5,
+        "end": 7.5
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 5.5,
+        "end": 6.699999988079071
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 5.5,
+        "end": 7.599999964237213
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 5.599999964237213,
+        "end": 8.300000011920929
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 5.599999964237213,
+        "end": 7.399999976158142
+      },
+      {
+        "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.5y8h2fRV.js",
+        "bytes": 332,
+        "start": 5.599999964237213,
+        "end": 8.399999976158142
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 9,
+        "end": 10.199999988079071
+      },
+      {
+        "name": "/_astro/shortlist.EFDOIlMk.js",
+        "bytes": 1627,
+        "start": 9.199999988079071,
+        "end": 10.399999976158142
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 12.5,
+        "end": 13.399999976158142
+      },
+      {
+        "name": "/media/img/thumbs/browns-hotel-mayfair-06-800.webp",
+        "bytes": 44992,
+        "start": 17.399999976158142,
+        "end": 18.69999998807907
+      },
+      {
+        "name": "/media/design-objects/roll.webp",
+        "bytes": 31100,
+        "start": 17.399999976158142,
+        "end": 18.80000001192093
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 17.5,
+        "end": 18.899999976158142
+      }
+    ],
+    "objects": 1,
+    "overflow": false,
+    "live": 1,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 558.6999999880791
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "materials",
+    "path": "/materials/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 5.100000023841858,
+        "end": 7.5
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 5.199999988079071,
+        "end": 6.400000035762787
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 5.199999988079071,
+        "end": 7.400000035762787
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 5.300000011920929,
+        "end": 7.199999988079071
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 5.300000011920929,
+        "end": 7.699999988079071
+      },
+      {
+        "name": "/_astro/MaterialFinder.astro_astro_type_script_index_0_lang.B2vZ3pP4.js",
+        "bytes": 1458,
+        "start": 5.300000011920929,
+        "end": 7.699999988079071
+      },
+      {
+        "name": "/_astro/MaterialStudio.astro_astro_type_script_index_0_lang.BbpUABIf.js",
+        "bytes": 6931,
+        "start": 5.300000011920929,
+        "end": 8.199999988079071
+      },
+      {
+        "name": "/_astro/index.astro_astro_type_script_index_0_lang.5y8h2fRV.js",
+        "bytes": 332,
+        "start": 5.300000011920929,
+        "end": 8.600000023841858
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 10.300000011920929,
+        "end": 11.300000011920929
+      },
+      {
+        "name": "/_astro/material-advice.CXxSeqLS.js",
+        "bytes": 2928,
+        "start": 10.400000035762787,
+        "end": 11.100000023841858
+      },
+      {
+        "name": "/_astro/shortlist.EFDOIlMk.js",
+        "bytes": 1627,
+        "start": 10.5,
+        "end": 11.300000011920929
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 15.199999988079071,
+        "end": 22.5
+      },
+      {
+        "name": "/media/img/r/fs-residences-06-480.avif",
+        "bytes": 4787,
+        "start": 23.600000023841858,
+        "end": 24.5
+      },
+      {
+        "name": "/media/design-objects/roll.webp",
+        "bytes": 31100,
+        "start": 23.600000023841858,
+        "end": 24.80000001192093
+      },
+      {
+        "name": "/media/design-objects/samples.webp",
+        "bytes": 31806,
+        "start": 23.600000023841858,
+        "end": 24.900000035762787
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 25.600000023841858,
+        "end": 26.100000023841858
+      }
+    ],
+    "objects": 7,
+    "overflow": false,
+    "live": 4,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 570.5
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "guide",
+    "path": "/advice/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0.009454969135802469,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 6.800000011920929,
+        "end": 9.5
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 6.899999976158142,
+        "end": 9.300000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 6.899999976158142,
+        "end": 8.800000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 6.899999976158142,
+        "end": 8.899999976158142
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 6.899999976158142,
+        "end": 9.5
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 10.699999988079071,
+        "end": 11.199999988079071
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 12.899999976158142,
+        "end": 17.399999976158142
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 21.80000001192093,
+        "end": 22.69999998807907
+      }
+    ],
+    "objects": 11,
+    "overflow": false,
+    "live": 2,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 754.8000000119209
+      }
+    ],
+    "motionControls": 11
+  },
+  {
+    "version": "after",
+    "name": "contact",
+    "path": "/contact/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 5.300000011920929,
+        "end": 6.699999988079071
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 5.300000011920929,
+        "end": 6.599999964237213
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 5.399999976158142,
+        "end": 7.399999976158142
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 5.399999976158142,
+        "end": 6.800000011920929
+      },
+      {
+        "name": "/_astro/EnquiryForm.astro_astro_type_script_index_0_lang.CM7TeY9Z.js",
+        "bytes": 10214,
+        "start": 5.5,
+        "end": 7.599999964237213
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 5.5,
+        "end": 7.599999964237213
+      },
+      {
+        "name": "/_astro/enquiry.CbYmHLOR.js",
+        "bytes": 3012,
+        "start": 8.899999976158142,
+        "end": 9.699999988079071
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 8.899999976158142,
+        "end": 9.699999988079071
+      },
+      {
+        "name": "/_astro/material-advice.CXxSeqLS.js",
+        "bytes": 2928,
+        "start": 8.899999976158142,
+        "end": 9.899999976158142
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 12.699999988079071,
+        "end": 15.5
+      },
+      {
+        "name": "/media/design-objects/document.webp",
+        "bytes": 30194,
+        "start": 19.099999964237213,
+        "end": 20.30000001192093
+      },
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 19.30000001192093,
+        "end": 20.399999976158142
+      },
+      {
+        "name": "/_astro/three.module.DGYv-SGP.js",
+        "bytes": 679314,
+        "start": 19.30000001192093,
+        "end": 21.80000001192093
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 19.399999976158142,
+        "end": 20.599999964237213
+      }
+    ],
+    "objects": 1,
+    "overflow": false,
+    "live": 1,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 19.30000001192093
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "designers",
+    "path": "/professionals/designers/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 5.300000011920929,
+        "end": 6.700000047683716
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 5.400000035762787,
+        "end": 6.700000047683716
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 5.400000035762787,
+        "end": 6.900000035762787
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 5.5,
+        "end": 6.800000011920929
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 5.5,
+        "end": 7.300000011920929
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 10,
+        "end": 10.600000023841858
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 13.100000023841858,
+        "end": 13.900000035762787
+      },
+      {
+        "name": "/media/img/r/lee-broom-06-480.avif",
+        "bytes": 11146,
+        "start": 20.400000035762787,
+        "end": 21.900000035762787
+      },
+      {
+        "name": "/media/design-objects/document.webp",
+        "bytes": 30194,
+        "start": 20.400000035762787,
+        "end": 21.900000035762787
+      },
+      {
+        "name": "/media/design-objects/samples.webp",
+        "bytes": 31806,
+        "start": 20.400000035762787,
+        "end": 22.100000023841858
+      },
+      {
+        "name": "/media/design-objects/layers.webp",
+        "bytes": 30756,
+        "start": 20.5,
+        "end": 22.30000001192093
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 20.600000023841858,
+        "end": 22.5
+      }
+    ],
+    "objects": 18,
+    "overflow": false,
+    "live": 3,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 563.9000000357628
+      }
+    ],
+    "motionControls": 2
+  },
+  {
+    "version": "after",
+    "name": "faq",
+    "path": "/faq/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 5.300000011920929,
+        "end": 6.599999964237213
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 5.399999976158142,
+        "end": 7.5
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 5.399999976158142,
+        "end": 6.800000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 5.399999976158142,
+        "end": 7.099999964237213
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 5.399999976158142,
+        "end": 7.5
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 8.5,
+        "end": 9.300000011920929
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 11.099999964237213,
+        "end": 12.099999964237213
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 15.199999988079071,
+        "end": 15.899999976158142
+      },
+      {
+        "name": "/media/design-objects/price.webp",
+        "bytes": 29682,
+        "start": 23.80000001192093,
+        "end": 25.399999976158142
+      },
+      {
+        "name": "/media/design-objects/calendar.webp",
+        "bytes": 30758,
+        "start": 23.80000001192093,
+        "end": 25.5
+      },
+      {
+        "name": "/media/design-objects/care.webp",
+        "bytes": 32594,
+        "start": 23.80000001192093,
+        "end": 25.899999976158142
+      },
+      {
+        "name": "/media/design-objects/roll.webp",
+        "bytes": 31100,
+        "start": 23.899999976158142,
+        "end": 26
+      },
+      {
+        "name": "/media/design-objects/samples.webp",
+        "bytes": 31806,
+        "start": 23.899999976158142,
+        "end": 26.30000001192093
+      },
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 24.099999964237213,
+        "end": 26.399999976158142
+      },
+      {
+        "name": "/_astro/three.module.DGYv-SGP.js",
+        "bytes": 679314,
+        "start": 24.099999964237213,
+        "end": 27.399999976158142
+      }
+    ],
+    "objects": 6,
+    "overflow": false,
+    "live": 4,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 24.099999964237213
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "timorous",
+    "path": "/services/timorous-beasties-installer/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 9.399999976158142,
+        "end": 10.800000011920929
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 9.599999964237213,
+        "end": 11.300000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 9.599999964237213,
+        "end": 10.599999964237213
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 9.599999964237213,
+        "end": 11.5
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 9.599999964237213,
+        "end": 11.399999976158142
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 13.099999964237213,
+        "end": 14.399999976158142
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 16.5,
+        "end": 17.399999976158142
+      },
+      {
+        "name": "/media/img/r/old-bailey-06-480.avif",
+        "bytes": 18238,
+        "start": 21.399999976158142,
+        "end": 22.5
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 21.5,
+        "end": 22.5
+      }
+    ],
+    "objects": 3,
+    "overflow": false,
+    "live": 3,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 555
+      }
+    ],
+    "motionControls": 1
+  },
+  {
+    "version": "after",
+    "name": "home",
+    "path": "/",
+    "width": 1440,
+    "errors": [],
+    "cls": 0,
+    "resources": [
+      {
+        "name": "/media/atelier/browns-bedroom-1440.webp",
+        "bytes": 258992,
+        "start": 6.199999988079071,
+        "end": 8.900000035762787
+      },
+      {
+        "name": "/_astro/Base.B_pWpWRK.css",
+        "bytes": 96642,
+        "start": 6.300000011920929,
+        "end": 7.800000011920929
+      },
+      {
+        "name": "/_astro/outfit-latin-400-normal.BGsTXAXT.woff2",
+        "bytes": 14332,
+        "start": 6.300000011920929,
+        "end": 8.100000023841858
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-normal.BsRWmXhO.woff2",
+        "bytes": 23612,
+        "start": 6.300000011920929,
+        "end": 8.100000023841858
+      },
+      {
+        "name": "/_astro/outfit-latin-500-normal.DKnIMDSk.woff2",
+        "bytes": 13828,
+        "start": 6.300000011920929,
+        "end": 8.699999988079071
+      },
+      {
+        "name": "/_astro/MaterialStudio.astro_astro_type_script_index_0_lang.BbpUABIf.js",
+        "bytes": 6931,
+        "start": 6.400000035762787,
+        "end": 8.800000011920929
+      },
+      {
+        "name": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3961,
+        "start": 6.400000035762787,
+        "end": 9.100000023841858
+      },
+      {
+        "name": "/_astro/preload-helper.DHhhL8Zf.js",
+        "bytes": 1965,
+        "start": 13.199999988079071,
+        "end": 13.800000011920929
+      },
+      {
+        "name": "/_astro/cormorant-garamond-latin-500-italic.Y14P-dkT.woff2",
+        "bytes": 24224,
+        "start": 17.69999998807907,
+        "end": 19.400000035762787
+      },
+      {
+        "name": "/media/img/thumbs/browns-hotel-mayfair-10-800.webp",
+        "bytes": 65210,
+        "start": 33.60000002384186,
+        "end": 36.30000001192093
+      },
+      {
+        "name": "/media/img/thumbs/owo-official-junior-suite-800.webp",
+        "bytes": 49102,
+        "start": 33.60000002384186,
+        "end": 36.19999998807907
+      },
+      {
+        "name": "/media/img/r/old-bailey-06-800.avif",
+        "bytes": 41803,
+        "start": 33.60000002384186,
+        "end": 36.60000002384186
+      },
+      {
+        "name": "/media/img/r/fs-residences-01-800.avif",
+        "bytes": 16536,
+        "start": 33.60000002384186,
+        "end": 37
+      },
+      {
+        "name": "/media/img/r/heathrow-05-800.avif",
+        "bytes": 52434,
+        "start": 33.60000002384186,
+        "end": 37.10000002384186
+      },
+      {
+        "name": "/media/img/r/trematon-01-800.avif",
+        "bytes": 148330,
+        "start": 33.69999998807907,
+        "end": 37.40000003576279
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 506,
+        "start": 33.90000003576279,
+        "end": 37.80000001192093
+      }
+    ],
+    "objects": 6,
+    "overflow": false,
+    "live": 4,
+    "scene": [
+      {
+        "name": "/_astro/design-object-scenes.BOhdqsUS.js",
+        "bytes": 12909,
+        "start": 816.8000000119209
+      }
+    ],
+    "motionControls": 1
+  }
+]

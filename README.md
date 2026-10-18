@@ -61,6 +61,8 @@ Follow [the visual standard](docs/design/visual-standard.md) and update [the pag
 
 Prefer the existing content template: service and area entries use `LandingBody.astro`; material families use `materials/[slug].astro`; case studies use `projects/[slug].astro`; Guide articles use `advice/[slug].astro` and `GuideCard.astro`; editorial Markdown pages use `[...page].astro`. Keep draft/publication rules, dates, schema and public text projections intact. Use a standalone `.astro` route only when the existing content model does not fit, and wrap it in `Base` without duplicating chrome or local button styles.
 
+Suitable service, material, Guide, FAQ and professional pages inherit the shared dimensional-object presentation policy. Use `DesignStudy` for a standalone captioned study, and the shared `DesignObject`, `QuestionVisual` and group motion controls in templates instead of a page-specific renderer. Keep server-rendered posters, visible illustrative labels, real project evidence and the existing question/answer or native-disclosure behaviour. Review topic mappings for new content and record its visual decision in `docs/design/route-review.json`; factual AI, legal and reference utilities remain static. Follow the standard's no-JavaScript, pause and reduced-motion requirements, and regenerate the shared posters when the underlying scene changes.
+
 Check the changed route and shared template on mobile and desktop, preserve form and navigation behaviour, and include screenshot evidence in the PR. Run the relevant checks listed in the standard; source checks and build success do not judge visual composition. Record skipped checks honestly and retain any content publication blockers.
 
 ## Enquiry form

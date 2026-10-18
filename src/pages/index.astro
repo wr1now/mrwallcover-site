@@ -4,6 +4,7 @@ import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Action from '../components/Action.astro';
 import QuestionVisual from '../components/QuestionVisual.astro';
+import ObjectMotionControls from '../components/ObjectMotionControls.astro';
 import Picture from '../components/Picture.astro';
 import MaterialStudio from '../components/MaterialStudio.astro';
 import Base from '../layouts/Base.astro';
@@ -250,7 +251,7 @@ const hotelNames = [
     <section class="atelier-section atelier-questions" aria-labelledby="questions-heading">
       <div><p class="atelier-kicker">BEFORE WE BEGIN</p><h2 id="questions-heading">A few good<br /><em>questions.</em></h2><p class="home-faq-links"><a class="atelier-text-link" href="/advice/">The Wallcovering Guide <Icon name="arrow-right" /></a><a class="atelier-text-link" href="/faq/">All questions answered <Icon name="arrow-right" /></a></p>
         <nav class="home-guides" aria-label="Wallcovering guides"><p class="home-guides-label">The guides</p><ul role="list">{guideList.map((guide) => <li><a href={guideHref(guide.frontmatter.slug)}>{guide.frontmatter.title}</a></li>)}</ul></nav></div>
-      <div class="faq">{faqItems.map(item => <details id={item.id}><summary><h3>{item.question}</h3><span class="question-row-tools"><QuestionVisual question={item.question} id={item.id} /><span class="plus" aria-hidden="true"></span></span></summary><div class="prose pb-5">{item.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div></details>)}</div>
+      <div class="faq" data-visual="dimensional"><ObjectMotionControls />{faqItems.map(item => <details id={item.id}><summary><h3>{item.question}</h3><span class="question-row-tools"><QuestionVisual question={item.question} id={item.id} /><span class="plus" aria-hidden="true"></span></span></summary><div class="prose pb-5">{item.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div></details>)}</div>
     </section>
 
     <section class="atelier-section home-needs" aria-labelledby="needs-heading">

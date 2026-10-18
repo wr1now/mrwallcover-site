@@ -1,0 +1,9 @@
+---
+import Action from './Action.astro';
+interface Props { label?: string; class?: string; }
+const { label = 'Illustrative material studies', class: className } = Astro.props;
+---
+<div class:list={['object-motion-controls', className]} data-object-controls>
+  <span class="object-study-label">{label}</span>
+  <span class="object-motion-slot"><Action variant="quiet" icon={false} data-object-motion aria-pressed="false" hidden><span data-motion-label>Pause motion</span></Action></span>
+</div>

@@ -1,0 +1,31 @@
+{
+  "baseRef": "origin/main",
+  "baseCommit": "6ca4411bdaa4ec31ca2357c8b1244ea81305eb4c",
+  "counts": {
+    "base": {
+      "pages": 106,
+      "projectRecords": 5,
+      "projectGalleryEntries": 12,
+      "mediaFiles": 3621,
+      "imageFiles": 3617,
+      "markdownTwins": 106,
+      "jsonLd": {
+        "nodes": 8181,
+        "props": 36741
+      }
+    },
+    "pr": {
+      "pages": 106,
+      "projectRecords": 5,
+      "projectGalleryEntries": 12,
+      "mediaFiles": 3621,
+      "imageFiles": 3617,
+      "markdownTwins": 106,
+      "jsonLd": {
+        "nodes": 8181,
+        "props": 36741
+      }
+    }
+  },
+  "result": "PASS: sitemap, media, project records, galleries, Markdown twins, AI projections and JSON-LD coverage retained"
+}

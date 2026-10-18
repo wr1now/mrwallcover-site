@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 
 // Case-study LCP and CLS (SEO fix pack C): every case study preloads its hero with the exact
-// srcset, sizes and type of the hero's first <source>, at high priority, and preloads the two
-// faces its head paints, so the font swap does not shift the page.
+// srcset, sizes and type of the hero's first <source>, at high priority, and preloads the
+// heading, body and navigation faces, so the font swap does not shift the page.
 const attr = (tag: string, name: string) => tag.match(new RegExp(`\\s${name}="([^"]*)"`))?.[1];
 
 test('each case study preloads its hero image exactly as the <picture> will choose it', () => {
@@ -23,8 +23,17 @@ test('each case study preloads its hero image exactly as the <picture> will choo
     assert.equal(attr(preload!, 'imagesizes'), attr(hero[1], 'sizes'), `${slug}: preload sizes`);
     assert.equal(attr(preload!, 'type'), attr(hero[1], 'type'), `${slug}: preload type`);
     assert.equal(attr(preload!, 'fetchpriority'), 'high', `${slug}: fetchpriority`);
-    const fonts = [...head.matchAll(/<link rel="preload" as="font" type="font\/woff2" href="([^"]+)" crossorigin>/g)].map((m) => m[1]);
-    assert.equal(fonts.length, 2, `${slug}: two font preloads`);
+    const fontTags = head.match(/<link rel="preload" as="font"[^>]*>/g) ?? [];
+    assert.equal(fontTags.length, 3, `${slug}: three font preloads`);
+    const fonts = fontTags.map((tag) => {
+      assert.equal(attr(tag, 'type'), 'font/woff2', `${slug}: WOFF2 preload type`);
+      assert.equal(attr(tag, 'crossorigin'), 'anonymous', `${slug}: anonymous font CORS`);
+      return attr(tag, 'href')!;
+    });
+    assert.equal(new Set(fonts).size, 3, `${slug}: unique font preloads`);
+    for (const face of ['cormorant-garamond-latin-500-normal', 'outfit-latin-400-normal', 'outfit-latin-500-normal']) {
+      assert.ok(fonts.some((href) => href.startsWith(`/_astro/${face}.`) && href.endsWith('.woff2')), `${slug}: ${face} preloaded`);
+    }
     for (const href of fonts) {
       assert.ok(existsSync(`dist${href}`), `${href} is built`);
       assert.ok(css.includes(href), `${href} is the file the stylesheet uses`);
