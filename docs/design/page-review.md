@@ -1,6 +1,6 @@
 # Page and template review
 
-Current review: the whole-site composition and paper-ambience revision is recorded in the final section, **Whole-site editorial composition — 18 October 2026**. Earlier passing receipts below belong to their named releases. The latest section records the integrated 128-page local verification; exact-head hosted checks and publication remain pending.
+Current review: the shared background revision is recorded in the final section, **Linen ground and original botanicals — 18 October 2026**. The earlier whole-site composition and CSS-paper receipts below belong to their named releases. The new theme's local visual, motion, coverage, loading, content-preservation, built-suite and environment checks pass; exact-head hosted CI, deployment and live verification remain pending.
 
 Review date: 17 October 2026. This record covers PR #66, including the second pass across all remaining page families. The branch was rebased onto public main 2849676, preserving the separate #67 privacy cleanup; open calculator/reference/Contact PRs were not merged into it. The user authorised completion and publication on 17 October. The route-by-route design decisions are recorded in [route-review.json](route-review.json), including the three noindex utility pages. Final validation results follow below.
 
@@ -440,3 +440,57 @@ No form is submitted, phone dialled, chat opened or message sent as part of visu
 ### Hosted screenshot portability follow-up
 
 The first integrated hosted run at `00df505` passed 278 of 279 built-site checks; the 390px gutter pixel assertion failed. Its fixed last-ten-screen-pixels crop can sample a classic desktop scrollbar rather than the CSS paper edge. The follow-up samples the actual edge rectangle within the layout viewport, waits for captured paint, and checks visible/hidden/restored pixels with the original difference threshold. No product graphic, geometry or motion preference is changed by this test-only repair. The three focused atmosphere tests pass, including an actual 16px scrollbar at 390px, with no skips. The browser helper retains its original launch defaults for every other caller. Exact-head hosted verification remains required.
+
+## Linen ground and original botanicals — 18 October 2026
+
+This follow-up starts from published main `8b8d9ea`, retaining the completed shared layouts, fourteen topic studies, 128 published routes, Makers directory, public projections and all genuine project photographs. It replaces the abstract CSS paper fan/curl with the owner's requested discreet ivory-linen background and original painterly leaves, blossoms and small birds perched on branches. The earlier paper-theme screenshots, image-free loading observations and passing checks above remain historical receipts for that release; they are not verification of this asset-backed revision.
+
+### Shared presentation and inheritance
+
+`Base.astro` continues to supply a single `AtelierAtmosphere.astro` below page content and the footer. A small tiled linen illustration forms the faint ground; separate transparent bird/branch and blossom illustrations sit within clipped, inward-fading outer margins. The reviewed margins are about 84px on a phone and 168px at 1440px. The bird branch's final crop is adjusted outward on desktop and inward enough to remain recognisable on phones; the artwork and opacities are unchanged. The centre remains a reading surface, and all real project photography, controls and article/card surfaces remain above the decoration. Existing page content, topic graphics, source captions and project evidence are not replaced by the background.
+
+Suitable pages inherit only slow CSS branch drift, on 32/38-second cycles with a few pixels of travel and restrained perspective. Birds remain perched rather than acquiring independent distracting animation. The implementation reuses the existing after-load preference controller, shared object Pause motion state, live OS/footer preferences and document-visibility handling; it adds no second controller, WebGL renderer or requestAnimationFrame loop. No JavaScript and OS reduced motion retain a static presentation. Footer reduced effects, forced colours and print hide the layer.
+
+The policy remains shared with future pages. Factual/legal/reference routes, including AI, Makers, Buying routes, the calculator and `/wallpapering/` references, retain faint static linen and the right-hand botanical treatment. The three noindex utility pages omit the layer. A compiled temporary new published page inherits and paints the actual three assets at 390/1440 without page-specific styling; the existing noindex/native-action/FAQ/phone fixture remains intact. New routes still need their own meaningful content/media decision in the route ledger; no image quota or page-specific animation is introduced.
+
+### Artwork, rights and loading cost
+
+The shared derivatives are `ivory-linen.webp` (26,912 bytes), `branch-birds.webp` (139,744 bytes) and `blossom-sprig.webp` (108,098 bytes) under `public/media/atelier-botanicals/`, totalling 274,754 bytes before HTTP compression. Linen is a complete tile; the two branch illustrations retain transparency. Full prompts, proportional derivative processing, dimensions and hashes are recorded in the [asset register](linen-botanicals/assets.md) and [machine-readable provenance](linen-botanicals/asset-provenance.json). No project photograph was edited.
+
+The [performance receipt](linen-botanicals/performance.json) contains sixteen cold, isolated local loads: eight matched before/after route/width pairs against the verified published `8b8d9ea` build, with normal OS motion and actual scene activation. Each pair adds 274,754 background-image bytes, no script bytes and 509 fewer shared CSS bytes, for a net 274,245-byte resource-body increase. Initial and final CLS are unchanged in every pair: zero except the same approximately 0.00080 homepage-desktop observation. These are exact locally served body sizes and layout observations; transfer timings and field performance claims are deliberately excluded. The artwork is a disclosed image cost replacing the earlier image-free CSS-paper approach. The receipt explicitly corrects a stale inherited source label; the actual served baseline was verified, and the capture script now accepts a caller-supplied source label.
+
+The artwork is original generated decorative illustration in a hand-painted textile tradition. It is not a named maker's pattern or logo, an affiliation, a photograph of installed linen/silk, a claim of human hand-painting or evidence of a completed commission. The background remains hidden from assistive technology and has no product/specification meaning. Genuine installation photographs and their real captions/credits remain the evidence of workmanship. Existing framed topic studies retain their visible illustrative labels.
+
+Full prompts, source/derivative provenance, dimensions and hashes belong in [the botanical asset register](linen-botanicals/assets.md); the current use/limits are also recorded in [asset rights](../asset-rights.md). Do not use this background art as a maker swatch, technical performance graphic or replacement project photograph.
+
+### Visual review and verification
+
+The final [route inventory](linen-botanicals/linen-audit.json) checks all 128 published routes at 390/1440: 256 cases, no navigation failures, horizontal overflow, clipped controls or uncontained tables, with forty selected content screenshots. Fourteen current shots were also independently inspected across home, Services, material detail, Guide, FAQ, Contact and the static preparation reference. Desktop artwork is recognisable within the margins; phone crops fade before reading content. Linen stays low contrast, genuine photographs/form fields remain separate, and Guide-card alignment is retained. No actionable composition or readability issue was found. The owner-facing 1280px right-hand view was also visually checked.
+
+| Surface | 390px | 1440px |
+| --- | --- | --- |
+| Home | [View](linen-botanicals/linen-home-390.jpg) | [View](linen-botanicals/linen-home-1440.jpg) |
+| Services / floral roll | [View](linen-botanicals/linen-services-390.jpg) | [View](linen-botanicals/linen-services-1440.jpg) |
+| Material reading and actions | [View](linen-botanicals/linen-materials-paper-and-non-woven-390.jpg) | [View](linen-botanicals/linen-materials-paper-and-non-woven-1440.jpg) |
+| Guide cards | [View](linen-botanicals/linen-advice-390.jpg) | [View](linen-botanicals/linen-advice-1440.jpg) |
+| Questions | [View](linen-botanicals/linen-faq-390.jpg) | [View](linen-botanicals/linen-faq-1440.jpg) |
+| Contact | [View](linen-botanicals/linen-contact-390.jpg) | [View](linen-botanicals/linen-contact-1440.jpg) |
+| Static preparation reference | [View](linen-botanicals/linen-wallpapering-preparation-390.jpg) | [View](linen-botanicals/linen-wallpapering-preparation-1440.jpg) |
+
+The [five focused compiled-browser tests](linen-botanicals/verification.json) pass without skips. Independent painted-pixel checks cover linen, the bird branch and blossom, including a classic scrollbar at 390px. They verify unchanged reading geometry, no pointer interception, body contrast at AA, unchanged real portrait pixels, actual branch-transform change, shared pause/resume, live OS/footer preferences, hidden-tab and restored-page behavior. Static/noindex policy, no-JavaScript painted fallback, print and forced colours also pass. These checks inspect the final layers rather than relying only on the earlier controller tests.
+
+The fresh [no-loss comparison](linen-botanicals/no-loss.json) against published `8b8d9ea` retains 128 routes and Markdown twins, all 9,455 JSON-LD nodes and 42,431 properties, five project records and twelve legacy gallery entries. Per-case-study gallery counts remain unchanged. Media grows only from 3,624 to 3,627 for the three new decorative assets; public data/corpus counts remain intact. A separate [authored-content comparison](linen-botanicals/content-preservation.json) retains all 8,618 authored blocks, 4,428 main-link references (unique per route), 629 meaningful image references and 221 exact FAQ question/answer pairs, with zero exceptions. These are the current `8b8d9ea` baseline counts; the older 8,455/4,368 figures above belong to the earlier composition release.
+
+| Check | Status |
+| --- | --- |
+| Shared implementation and future-page instructions | Implemented through Base/AtelierAtmosphere and the updated AGENTS, README, visual standard and route ledger. The new published-page fixture paints the actual theme at both widths; existing native/noindex/phone checks pass. |
+| Artwork provenance and derivative register | Complete: three proportionally encoded WebPs with source/derivative hashes, dimensions, transparent botanical alpha and recorded prompts. |
+| Representative composition and full-route coverage | All 128 routes/256 cases pass; forty content views captured, fourteen independently inspected, plus the 1280px right-hand view. No actionable visual issue found. |
+| Static/noindex boundaries, pause, OS/footer preferences, visibility and no JavaScript | All five focused atmosphere tests pass, including independent pixels, AA reading, portrait invariance, live preferences, lifecycle, no-JavaScript, print and forced colours. |
+| Asset transfer, image readiness and loading/performance comparison | Sixteen local loads/eight before-after pairs complete. Three images add 274,754 bytes; scripts are unchanged, CSS is 509 bytes smaller and sampled CLS is unchanged. No timing or field-performance claim. |
+| Content and no-loss | Fresh-main no-loss passes for all 128 routes/twins, unchanged galleries/public projections and all JSON-LD counts. All 8,618 authored blocks, 4,428 main-link references, 629 evidence-image references and 221 FAQ pairs remain exactly, with zero exceptions. |
+| Source/build and built-site suite | Source: 153 pass; case-study dates pass; full built suite: 281/281 pass with zero skips, plus both temporary new-route fixtures. Typography/contrast: 2/2 pass; Guide browser: 18 route/width and eight footer cases pass; Guide-release checks: 9/9 pass. |
+| Local environment/review checks | Phone: 2 pass; analytics: 2 pass; configured strict private-name checks pass on repository and review output without exposing the private input. Guide publication: 5 pass; Makers units: 3 pass; Makers responsive/filter/exclusion/no-JavaScript checks: 48 pass. |
+| Exact-head hosted checks, authorised publication and live view | Pending completion and verification; do not announce the theme as published from implementation alone. |
+
+Local validation is complete. Exact-head hosted checks, authorised deployment and live verification must still succeed before completion is announced. Earlier publication approvals and content boundaries remain intact; this artwork does not clear unrelated draft/private-seed blockers.

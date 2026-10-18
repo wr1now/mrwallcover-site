@@ -1,4 +1,4 @@
-/** Build a genuinely new route in a temporary output, then remove its temporary source. */
+/** Build genuinely new published/noindex routes in temporary output, then remove their sources. */
 import { readFile, writeFile, mkdtemp, rm, access } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -7,13 +7,29 @@ import { execFile } from 'node:child_process';
 import assert from 'node:assert/strict';
 import { serve, launchBrowser, loadPage, waitForPagePredicate } from './visual-browser.mjs';
 const fixture='src/pages/visual-contract-fixture.astro';
-let exists=false;
-try { await access(fixture); exists=true; } catch {}
-assert.equal(exists,false,'temporary fixture must never overwrite an existing route');
-const out=await mkdtemp(join(tmpdir(),'mw-visual-fixture-'));
+const publishedFixture='src/pages/published-visual-contract-fixture.astro';
+for (const file of [fixture,publishedFixture]) {
+  let exists=false;
+  try { await access(file); exists=true; } catch {}
+  assert.equal(exists,false,`temporary fixture must never overwrite an existing route: ${file}`);
+}
 const contact=JSON.parse(await readFile('tests/fixtures/contact.json','utf8'));
+const source=await readFile('tests/fixtures/visual-page.astro.txt','utf8');
+assert.doesNotMatch(source,/<style\b/i,'the new route inherits shared styles without local CSS');
+const publishedSource=source
+  .replaceAll('Visual contract test','Published visual contract test')
+  .replaceAll('/visual-contract-fixture/','/published-visual-contract-fixture/')
+  .replace(/\snoindex(?=\s|>)/,'');
+assert.match(publishedSource,/path="\/published-visual-contract-fixture\/"/);
+assert.doesNotMatch(publishedSource,/<Base\b[^>]*\bnoindex\b/,'the additional fixture follows normal published page defaults');
+assert.doesNotMatch(publishedSource,/<style\b/i);
+const out=await mkdtemp(join(tmpdir(),'mw-visual-fixture-'));
+const created=[];
 try {
-  await writeFile(fixture,await readFile('tests/fixtures/visual-page.astro.txt','utf8'),{flag:'wx'});
+  await writeFile(fixture,source,{flag:'wx'});
+  created.push(fixture);
+  await writeFile(publishedFixture,publishedSource,{flag:'wx'});
+  created.push(publishedFixture);
   await promisify(execFile)(process.execPath,['node_modules/astro/bin/astro.mjs','build','--outDir',out],{maxBuffer:32*1024*1024,env:{...process.env,SITE_PHONE:contact.phone}});
   const html=await readFile(join(out,'visual-contract-fixture/index.html'),'utf8');
   assert.match(html,/<footer\b[^>]*data-footer/);
@@ -26,6 +42,7 @@ try {
   assert.match(unavailable,/tabindex="-1"/);
   assert.match(html,/<button\b[^>]*aria-disabled="true"[^>]*disabled/,'unavailable button is natively disabled');
   assert.match(html,/noindex/);
+  assert.doesNotMatch(html,/\bdata-atelier-atmosphere(?:\s|>|=)/,'the noindex fixture omits the shared decorative layer');
   assert.equal((html.match(/type="submit"/g)||[]).length,1,'native submit type rendered once');
   assert.equal((html.match(/type="reset"/g)||[]).length,1,'native reset type rendered once');
   assert.doesNotMatch(html,/<button\b[^>]*\btype="[^"]*"[^>]*\btype=/,'no duplicate native button types');
@@ -41,6 +58,19 @@ try {
   assert.match(motion,/\btype="button"/);
   assert.match(motion,/\baria-pressed="false"/);
   assert.match(motion,/\bhidden(?:\s|>|=)/,'unavailable enhancement control starts hidden');
+  const publishedHtml=await readFile(join(out,'published-visual-contract-fixture/index.html'),'utf8');
+  assert.doesNotMatch(publishedHtml,/<meta\b[^>]*name="robots"[^>]*content="[^"]*noindex/,'the normal fixture remains indexable');
+  assert.match(publishedHtml,/<h1\b[^>]*>Published visual contract test<\/h1>/);
+  assert.match(publishedHtml,/<footer\b[^>]*data-footer/);
+  assert.equal((publishedHtml.match(/class="footer-group /g)||[]).length,4,'normal pages inherit all native footer groups');
+  assert.match(publishedHtml,/<a\b[^>]*href="\/contact\/"[^>]*class="mw-action mw-action--primary"/);
+  assert.match(publishedHtml,/<button\b[^>]*type="button"[^>]*class="mw-action mw-action--secondary"/);
+  const publishedLayer=publishedHtml.match(/<div\b[^>]*\bdata-atelier-atmosphere[^>]*>/)?.[0];
+  assert.ok(publishedLayer,'a normal new page inherits the shared decorative shell');
+  assert.match(publishedLayer,/data-atelier-style="linen-botanical"/);
+  assert.match(publishedLayer,/data-atelier-motion="active"/);
+  assert.equal((publishedHtml.match(/\bdata-atelier-linen(?:\s|>|=)/g)||[]).length,1);
+  assert.deepEqual([...publishedHtml.matchAll(/\bdata-atelier-botanical="([^"]+)"/g)].map(match=>match[1]).sort(),['birds','blossom']);
   const server=await serve(out);
   const browser=await launchBrowser();
   try {
@@ -84,6 +114,55 @@ try {
     await plain.keyboard.press('Enter');
     assert.equal(await plain.$eval('.faq details',details=>details.open),true,'the future-page FAQ works without JavaScript');
     await plain.close();
+    const published=await browser.newPage();
+    await published.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'no-preference'}]);
+    for (const width of [390,1440]) {
+      await published.setViewport({width,height:900});
+      await loadPage(published,server.origin+'/published-visual-contract-fixture/');
+      await waitForPagePredicate(published,()=>document.querySelector('[data-atelier-atmosphere]')?.hasAttribute('data-running'));
+      // Read the inherited CSS as rendered. No inline style, DOM or preference patches make the artwork appear.
+      const inherited=await published.evaluate(()=>{
+        const layer=document.querySelector('[data-atelier-atmosphere]');
+        const surface=(element,kind)=>{
+          const style=getComputedStyle(element);
+          const rect=element.getBoundingClientRect();
+          const edge=element.closest('.atelier-atmosphere__edge')?.getBoundingClientRect()??{left:0,top:0,right:innerWidth,bottom:innerHeight};
+          return {kind,background:style.backgroundImage,opacity:Number(style.opacity),inlineStyle:element.hasAttribute('style'),visible:element.checkVisibility()&&Math.min(rect.right,edge.right,innerWidth)>Math.max(rect.left,edge.left,0)&&Math.min(rect.bottom,edge.bottom,innerHeight)>Math.max(rect.top,edge.top,0)};
+        };
+        return {
+          theme:layer.dataset.atelierStyle,motion:layer.dataset.atelierMotion,
+          pointer:getComputedStyle(layer).pointerEvents,inert:layer.inert,
+          surfaces:[surface(layer.querySelector('[data-atelier-linen]'),'linen'),...Array.from(layer.querySelectorAll('[data-atelier-botanical]'),element=>surface(element,element.dataset.atelierBotanical))],
+          overflow:document.documentElement.scrollWidth>innerWidth,
+        };
+      });
+      assert.equal(inherited.theme,'linen-botanical');
+      assert.equal(inherited.motion,'active');
+      assert.equal(inherited.pointer,'none');
+      assert.equal(inherited.inert,true);
+      assert.equal(inherited.overflow,false,`normal new page @${width}`);
+      const backgrounds={linen:'ivory-linen.webp',birds:'branch-birds.webp',blossom:'blossom-sprig.webp'};
+      assert.equal(inherited.surfaces.length,3);
+      for (const surface of inherited.surfaces) {
+        assert.ok(surface.background.includes(`/media/atelier-botanicals/${backgrounds[surface.kind]}`),`${surface.kind}: shared background image @${width}`);
+        assert.ok(surface.visible&&surface.opacity>0&&surface.opacity<.5,`${surface.kind}: a visible, discreet shared surface @${width}`);
+        assert.equal(surface.inlineStyle,false,`${surface.kind}: no page-local style override`);
+      }
+      await waitForPagePredicate(published,names=>names.every(name=>performance.getEntriesByType('resource').some(entry=>entry.name.includes(`/media/atelier-botanicals/${name}`)&&entry.responseEnd>0)),{},Object.values(backgrounds));
+      await published.type('[data-action-form] input',' changed');
+      await published.click('[data-action-form] button[type="reset"]');
+      assert.equal(await published.$eval('[data-action-form] input',input=>input.value),'Original','normal new page inherits native reset');
+      await published.click('[data-action-form] button[type="submit"]');
+      assert.equal(await published.$eval('[data-action-submissions]',output=>output.textContent),'1','normal new page inherits native submit');
+      const footerOpen=await published.$eval('footer .footer-group',group=>group.open);
+      assert.equal(footerOpen,width>=1024,'normal new page keeps the shared mobile/desktop footer state');
+      await published.focus('footer .footer-group > summary');
+      await published.keyboard.press('Enter');
+      assert.equal(await published.$eval('footer .footer-group',group=>group.open),width>=1024?true:!footerOpen,'normal new page inherits native mobile disclosure and an expanded desktop directory');
+      if (width<1024) await published.keyboard.press('Enter');
+      assert.equal(await published.$eval('footer .footer-group',group=>group.open),footerOpen);
+    }
+    await published.close();
     for (const width of [360,390,768,1024,1280,1440]) {
       await page.setViewport({width,height:900});
       await loadPage(page,server.origin+'/contact/');
@@ -114,5 +193,6 @@ try {
     assert.ok(await page.$('main a[href^="tel:"]'),'phone reveal becomes a dial link without placing a call');
   } finally { await browser.close(); await server.close(); }
   console.log('New route fixture: shared footer/actions and default dimensional FAQ inherited without local CSS or opt-in; native controls, pause/resume, mobile/desktop layout and complete no-JavaScript poster/disclosure pass. Fixture removed from source and public output.');
+  console.log('Published new route fixture: active linen-botanical shell, one linen ground and both botanical backgrounds inherit shared CSS at 390/1440 without local styling or DOM patches; native footer and form actions pass. The noindex fixture omits the layer. Both temporary sources and isolated output removed.');
   console.log('Phone-enabled browser fixture: six widths, single-line desktop contact action within the bar, booking outside the header, WhatsApp href decoding, field-focus dock hiding and phone reveal pass; no call or message sent.');
-} finally { await rm(fixture,{force:true}); await rm(out,{recursive:true,force:true}); }
+} finally { for (const file of created) await rm(file,{force:true}); await rm(out,{recursive:true,force:true}); }
