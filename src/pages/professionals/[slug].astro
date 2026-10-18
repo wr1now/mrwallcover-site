@@ -27,7 +27,7 @@ const professionalEditorials = editorialPages.map((mod) => mod.frontmatter).filt
 const dimensional=item.visual?.objects===true;
 const sectionObjects:DesignObjectKind[]=['document','samples','layers'];
 ---
-<Base title={`${item.name} | Mr Wallcover`} description={item.description} path={path} extraSchema={[breadcrumbNode(crumbs), ...(faq.length ? [buyerFaqNode(faq)] : [])]}>
+<Base title={item.seoTitle ?? `${item.name} | Mr Wallcover`} description={item.description} path={path} extraSchema={[breadcrumbNode(crumbs), ...(faq.length ? [buyerFaqNode(faq)] : [])]}>
   <div class:list={['container-page pb-20',{'designer-dimensional':dimensional}]}>
     <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
@@ -36,7 +36,7 @@ const sectionObjects:DesignObjectKind[]=['document','samples','layers'];
           <p class="eyebrow">{item.name}</p><h1>{item.heading}</h1><p class="lede mt-5">{item.intro}</p>
           <Action class="mt-4" href={`/contact/?audience=${item.audience}&intent=install`}>{item.cta}</Action>
         </div>
-        {item.visual?.evidence && <EvidenceFigure {...item.visual.evidence} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" class="professional-opening-evidence" />}
+        {item.visual?.evidence && <EvidenceFigure {...item.visual.evidence} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" loading="eager" fetchpriority="high" class="professional-opening-evidence" />}
       </div>
     </header>
     {dimensional&&<div class="design-study-controls"><p>Material & detail studies <span>· Illustrative</span></p><Action variant="quiet" icon={false} data-object-motion aria-pressed="false" hidden><span data-motion-label>Pause motion</span></Action></div>}

@@ -50,3 +50,26 @@ test('new page instructions require the shared standard, not an image quota', as
   assert.match(action,/type=\{buttonType\}/,'explicit native submit/reset types survive rendering');
   assert.doesNotMatch(action,/role="button"/,'navigation anchors retain native semantics');
 });
+
+test('opening professional evidence is prioritized while other evidence remains lazy', async()=>{
+  const professionals=JSON.parse(await readFile('src/content/professionals.json','utf8'));
+  for (const item of professionals.filter((item:any)=>item.visual?.evidence)) {
+    const html=await readFile(`dist/professionals/${item.slug}/index.html`,'utf8');
+    const opening=html.match(/<figure\b[^>]*class="[^"]*professional-opening-evidence[^\"]*"[^>]*>[\s\S]*?<\/figure>/)?.[0];
+    assert.ok(opening,`${item.slug}: opening evidence remains rendered`);
+    const image=opening.match(/<img\b[^>]*>/)?.[0]??'';
+    assert.match(image,/loading="eager"/,`${item.slug}: opening project photograph is discoverable without layout`);
+    assert.match(image,/fetchpriority="high"/,`${item.slug}: opening photograph is prioritized`);
+    assert.match(image,/\bwidth="\d+"/);
+    assert.match(image,/\bheight="\d+"/);
+  }
+  // The shared component also serves lower-page evidence: do not make every photograph eager.
+  const aftercare=await readFile('dist/aftercare/index.html','utf8');
+  const evidence=aftercare.match(/<figure\b[^>]*class="[^"]*evidence-figure[^\"]*"[^>]*>[\s\S]*?<\/figure>/g)??[];
+  assert.ok(evidence.length,'exercise the default on a real lower-page photograph');
+  for(const figure of evidence) {
+    const image=figure.match(/<img\b[^>]*>/)?.[0]??'';
+    assert.match(image,/loading="lazy"/,'other evidence retains lazy loading');
+    assert.doesNotMatch(image,/fetchpriority="high"/);
+  }
+});

@@ -8,6 +8,8 @@ export interface GuideFaq {
 export interface GuideData {
   title: string;
   shortTitle: string;
+  /** Search title, separate from the compact navigation/card label. */
+  seoTitle?: string;
   slug: string;
   description: string;
   /** Optional search snippet (70-160 characters) when the visible description is longer. */

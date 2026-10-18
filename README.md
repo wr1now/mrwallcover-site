@@ -47,6 +47,8 @@ The phone number is not in the repository. See `SITE_PHONE` below.
 
 No award is mentioned on the site until its name is supplied (decided 9 October 2026). Do not add an award line, a rating, a review count or a partner status.
 
+Guide frontmatter can set `seoTitle` independently of `shortTitle`: use the former for a clear search title about the page’s subject, and keep the latter concise for cards and navigation. Professional profiles use the same optional `seoTitle` field. Use natural service language; do not add meta-keyword tags or repetitive keyword lists.
+
 Case studies live in `src/content/case-studies/`. Each carries `published` and `updated` dates in its frontmatter; they feed the Article structured data and the sitemap. After editing a case study, run `node scripts/stamp-case-study-dates.mjs` so the `updated` date follows the change. The build refuses a case study without both dates and never substitutes the build time.
 
 Editorial pages (maker installer pages, the trade page, the cost guide, the reviews page) live in `src/content/pages/`. A page with `"draft": true` stays in the repository for review and is never built, never in the sitemap or `llms.txt`, and never linked; `npm run check:dist` proves it. Each draft carries `TODO(Dorin)` markers where a figure, a maker's permission or a claim is still needed. Remove the draft flag only when every marker is resolved.

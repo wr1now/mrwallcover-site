@@ -12,11 +12,14 @@ interface Props extends EvidenceMedia {
   sizes?: string;
   class?: string;
   ratio?: 'natural' | 'landscape' | 'square';
+  /** Opening evidence can opt in; lower-page photography keeps native lazy loading. */
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
 }
-const { id, caption, credit, href, linkLabel = 'See the project record', sizes, class: className, ratio = 'natural' } = Astro.props;
+const { id, caption, credit, href, linkLabel = 'See the project record', sizes, class: className, ratio = 'natural', loading = 'lazy', fetchpriority = 'auto' } = Astro.props;
 ---
 <figure class:list={['evidence-figure', `evidence-figure--${ratio}`, className]} data-evidence-image={id}>
-  <Picture id={id} sizes={sizes} />
+  <Picture id={id} sizes={sizes} loading={loading} fetchpriority={fetchpriority} />
   <figcaption><span>{caption}</span><span class="evidence-credit">{credit}</span>{href && <a href={href}>{linkLabel}</a>}</figcaption>
 </figure>
 

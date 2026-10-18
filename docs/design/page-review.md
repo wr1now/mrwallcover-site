@@ -230,3 +230,12 @@ Local checks pass: source 141; built site 233, including six new browser cases; 
 | Cost and stability | Designers-only boot is about 1.6 kB gzip; the lazy scene module is about 4.2 kB gzip and reuses the existing 171 kB gzip Three.js chunk. The real photograph finishes before the scene request starts. Local initial CLS at 1440px is 0.00554; no performance improvement is claimed. Posters are lazy and do not change layout when enhanced. |
 
 See [the check receipt](dimensional/checks.json) for responsive observations, transfer sizes, visibility and fallback evidence. No calls, messages or form submissions were made during verification.
+
+
+## SEO relevance and opening evidence — 18 October 2026
+
+Based on public main `6ca4411`; no unpublished feature stack is included. Seven Guide pages now supply descriptive search titles independently of their short card/navigation labels. The three professional profiles name their service in search titles; Exterior works names painting/decorating. These metadata changes retain the existing layouts, relevant project evidence and diagrams. No additional imagery is needed to explain a search title.
+
+Window film and architectural film retain the shared landing layout, native FAQ disclosures, topic drawings and existing real evidence/illustrative diagram. Their quotation questions now describe the actual service, replacing misplaced wallpaper-only pricing in those two routes. The same visible questions feed structured data and text projections. The general wallpaper answer remains on the applicable pages.
+
+`EvidenceFigure.astro` retains lazy loading by default and exposes explicit loading/priority props. Only opening professional evidence requests eager/high priority; lower-page evidence remains lazy. This preserves captions, crops, credits, motion controls and every route. Screenshot/performance review and exact validation results are recorded with the review evidence and PR. This change activates no analytics, person-level tracking or email sending.
