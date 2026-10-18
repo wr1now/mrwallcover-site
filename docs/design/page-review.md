@@ -270,4 +270,3 @@ Reconciled with published public main `a26c1c0`, including its shared dimensiona
 Window film and architectural film retain the shared landing layout, native FAQ disclosures, shared topic studies and existing real evidence/illustrative diagram. Their quotation questions now describe the actual service, replacing misplaced wallpaper-only pricing in those two routes. The same visible questions feed structured data and text projections. The general wallpaper answer remains on the applicable pages.
 
 `EvidenceFigure.astro` retains lazy loading by default and exposes explicit loading/priority props. Only opening professional evidence requests eager/high priority; lower-page evidence remains lazy. This preserves captions, crops, credits, motion controls and every route. Screenshot/performance review and exact validation results are recorded with the review evidence and PR. This change activates no analytics, person-level tracking or email sending.
-
