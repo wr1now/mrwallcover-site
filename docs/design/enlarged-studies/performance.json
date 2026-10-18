@@ -1,0 +1,196 @@
+{
+  "base": "7d262267e0a17b158850c0d54a187d23e8a2e35d",
+  "bundles": {
+    "before": {
+      "scene": {
+        "file": "design-object-scenes.BOhdqsUS.js",
+        "bytes": 12609,
+        "gzip": 5145
+      },
+      "bootstrap": {
+        "file": "DesignObject.astro_astro_type_script_index_0_lang.Dm7kdbHh.js",
+        "bytes": 3661,
+        "gzip": 1607
+      },
+      "posterBytes": 337082
+    },
+    "after": {
+      "scene": {
+        "file": "design-object-scenes._2qakTck.js",
+        "bytes": 16880,
+        "gzip": 6792
+      },
+      "bootstrap": {
+        "file": "DesignObject.astro_astro_type_script_index_0_lang.CSxYpy-9.js",
+        "bytes": 3694,
+        "gzip": 1625
+      },
+      "posterBytes": 518442
+    }
+  },
+  "observations": [
+    {
+      "path": "/professionals/designers/",
+      "width": 390,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/faq/",
+      "width": 390,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/services/",
+      "width": 390,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/materials/paper-and-non-woven/",
+      "width": 390,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/advice/",
+      "width": 390,
+      "initialClsBefore": 0.0002187963551599915,
+      "initialClsAfter": 0.0002187963551599915,
+      "afterEnhancementCls": 0.0002187963551599915,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/contact/",
+      "width": 390,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/services/grasscloth-installation/",
+      "width": 390,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/services/timorous-beasties-installer/",
+      "width": 390,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/professionals/designers/",
+      "width": 1440,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/faq/",
+      "width": 1440,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/services/",
+      "width": 1440,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/materials/paper-and-non-woven/",
+      "width": 1440,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/advice/",
+      "width": 1440,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0.0017361111111111112,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/contact/",
+      "width": 1440,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/services/grasscloth-installation/",
+      "width": 1440,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/services/timorous-beasties-installer/",
+      "width": 1440,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "initialClsBefore": 0,
+      "initialClsAfter": 0,
+      "afterEnhancementCls": 0.0007271267361111111,
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "limitations": "Isolated local cold contexts. Concurrent QA can affect timings; no field or speed claim. Existing lazy renderer, visible-only 24fps animation and motion fallbacks are retained."
+}

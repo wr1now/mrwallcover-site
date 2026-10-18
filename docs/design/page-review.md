@@ -308,3 +308,36 @@ PR #77 was reconciled with published main `a26c1c0` before release. The shared d
 ## Makers and sourcing directory — 18 October 2026
 
 See [the directory review](../makers-directory-review.md). A shared static reference template serves a directory, twenty distinct profiles and a separate sourcing-route index in the noindex editorial review build. Shared navigation/actions and the existing footer carry discovery; the main header and homepage are unchanged. Text and source dates support the comparison task without copied logos, product imagery or simulated installation evidence. Search, maker filters, route terms and citations remain available without JavaScript. The two unresolved purchasing routes are absent, and normal builds contain no directory until owner approval is recorded. Draft route decisions are listed separately in route-review.json because the production route ledger must match actual published pages.
+
+## Larger material studies — 18 October 2026
+
+The owner found the question graphics too small and requested more realistic depth throughout the website. This revision starts from published main `7d262267e0a17b158850c0d54a187d23e8a2e35d`, retaining the AI reference release and all existing service-scope corrections. No unpublished content branch is included.
+
+Question frames now use shared tokens: 144px on phones, 192px from 640px, and 288px for open questions / 224px for native FAQs from 1024px. Open answers remain full-width on phones; larger layouts reserve a right-hand object rail. Standalone studies, material cards, Guide cards and professional sections also inherit larger shared sizes. All 57 existing dimensional routes and 270 placements use the same 11 scene models. New pages inherit the same defaults and public design instructions; legal, AI and reference utilities retain their justified static presentation.
+
+The models occupy substantially more of their frame, with silhouette-specific perspective cameras that allow for motion. Visible veneer and layered paper edges, cloth fibres, brushed metal, small bevels, paper stacks and original floral panels make the physical construction clearer. The broad floral wallpaper roll retains its small cardboard core, angled body and curled printed sheet. Directional lighting supplies shape and restrained reflections; independent visual review prompted softer, lighter ground shadows so the roll's shadow does not look like a solid support. All artwork and textures are original procedural illustrations, separate from project evidence. Actual photographs, credits, copy and FAQ answers are retained.
+
+Live rendering now matches each visible frame's capped device-pixel output instead of enlarging a fixed 320px source. Eleven 640px posters were regenerated from the same geometry. The [poster framing receipt](enlarged-studies/poster-framing.json) records complete unclipped opaque silhouettes occupying 68–76% of their square resting view. One lazy renderer still serves visible objects only, at the existing 24fps cap, with the existing pause, reduced-effects and disposal behaviour.
+
+The [before](enlarged-studies/before-observations.json) and [after](enlarged-studies/after-observations.json) observations cover nine pages at 390px and 1440px: home, Services, material detail, Guide, contact, designers, FAQ, a service detail and Timorous Beasties. None has overflow or browser exceptions. Examples:
+
+| Surface | Before | After |
+| --- | --- | --- |
+| Designers, phone | [390px](enlarged-studies/before-designers-390.jpg) | [390px](enlarged-studies/after-designers-390.jpg) |
+| Designers, desktop | [1440px](enlarged-studies/before-designers-1440.jpg) | [1440px](enlarged-studies/after-designers-1440.jpg) |
+| Native FAQ | [390px](enlarged-studies/before-faq-390.jpg) | [390px](enlarged-studies/after-faq-390.jpg) |
+| Floral roll | [390px](enlarged-studies/before-services-390.jpg) | [390px](enlarged-studies/after-services-390.jpg) |
+| Guide | [1440px](enlarged-studies/before-guide-1440.jpg) | [1440px](enlarged-studies/after-guide-1440.jpg) |
+| Contact | [390px](enlarged-studies/before-contact-390.jpg) | [390px](enlarged-studies/after-contact-390.jpg) |
+| Timorous Beasties | [1440px](enlarged-studies/before-timorous-1440.jpg) | [1440px](enlarged-studies/after-timorous-1440.jpg) |
+| Home | [390px](enlarged-studies/before-home-390.jpg) | [390px](enlarged-studies/after-home-390.jpg) |
+
+Independent intermediate-width review also passes: [designers at 688px](enlarged-studies/after-designers-688.jpg), [Guide detail at 768px](enlarged-studies/after-guide-detail-768.jpg) and [FAQ at 1024px](enlarged-studies/after-faq-1024.jpg). Heading columns remain 432px, 236px and 351px respectively. The new lightweight browser regression covers all question rows on designers and FAQ at 360, 390, 688, 768, 1024 and 1440px: minimum illustration size, readable heading width, right-hand placement and clearance from text and disclosure markers. Existing all-route mobile/desktop, native disclosure, actual animated-pixel, no-JavaScript, pause/resume and live OS/footer preference tests remain intact. A renderer-resolution assertion guards the larger output.
+
+Production/source checks, 263 built-site tests, typography/contrast, phone and analytics fixture builds, Guide publication boundaries and responsive Guide checks pass locally. The new-page fixture verifies the default style without local CSS or an opt-in. The strict names guard uses its real private input; no private entries are copied into this repository. [No-loss verification](enlarged-studies/no-loss.json) preserves all 106 published routes, 3,621 media files, 106 Markdown twins, five project records, 12 gallery entries and all 8,181 JSON-LD nodes / 36,741 properties.
+
+The [performance receipt](enlarged-studies/performance.json) records the asset cost and same-page loading observations. The lazy scene module grows from 5,145 to 6,792 bytes gzip; its bootstrap grows from 1,607 to 1,625 bytes gzip and the existing Three.js dependency is reused. Larger posters remain lazy. Initial local CLS stays 0 on the sampled services, material, designers, FAQ and contact routes, with an unchanged 0.00022 on the mobile Guide. These are isolated local observations, not field performance measurements or a speed claim. Hosted exact-head checks and authorised publication remain pending at this local review.
+
+### Release reconciliation
+
+While this visual revision was under review, PR #78 reached main as `7d8afe0de99f4720445626b7fb977f649fcf39b0`. The graphics branch was merged with that published source before release. Its content intent, enquiry context, action component refinements, current factual answers and new browser checks are retained. The renewed no-loss receipt uses a fresh build of that main commit rather than the earlier visual baseline. Exact integrated-head hosted checks remain required before publication; the screenshot pairs above document the visual change from the preceding production design.

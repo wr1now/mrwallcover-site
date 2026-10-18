@@ -1,6 +1,6 @@
 # Makers directory — owner review
 
-Based on public main `7d8afe0` (18 October 2026). Independent of open PRs. No merge or deployment is authorised by this change.
+Reconciled with public main `90455ef` (18 October 2026). Includes the published shared visual changes from main; independent of open PRs. No merge or deployment is authorised by this change.
 
 ## Review scope
 

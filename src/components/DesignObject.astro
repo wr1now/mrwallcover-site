@@ -5,7 +5,7 @@ interface Props { kind: DesignObjectKind; class?: string }
 const { kind, class: className } = Astro.props;
 ---
 <span class:list={['design-object', className]} data-design-object={kind} aria-hidden="true">
-  <img src={`/media/design-objects/${kind}.webp`} width="480" height="480" alt="" loading="lazy" decoding="async" />
+  <img src={`/media/design-objects/${kind}.webp`} width="640" height="640" alt="" loading="lazy" decoding="async" />
 </span>
 
 <script>
