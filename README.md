@@ -134,7 +134,12 @@ All of these are generated at build time from `src/data/facts.json` and the cont
 
 | File | What it is | Made by |
 | --- | --- | --- |
+| `/wallcovering-installation-ai-crawler/` | Static terminal-style semantic reference with direct data links and expanded evidence | `src/pages/wallcovering-installation-ai-crawler.astro` |
 | `/for-ai/` | A plain-facts page for people and assistants | `src/pages/for-ai.astro` |
+| `/ai/index.json` | Every published page, canonical source, dates and format addresses | `scripts/build-ai-layer.mjs` (postbuild) |
+| `/ai/pages.json` | The complete published page corpus: Markdown, headings, media semantics and structured data | same script |
+| `/ai/wallpapering.json` | Public wallpapering and calculator reference data, retaining source/evidence limits | `src/pages/ai/wallpapering.json.ts` |
+| `/ai/fire-ratings.json` | Published fire-reference records, citations and limitations | `src/pages/ai/fire-ratings.json.ts` |
 | `/llms.txt` | A curated index in the llmstxt.org shape | `src/pages/llms.txt.ts` |
 | `/llms-full.txt` | The main content of every published page as text | `scripts/build-ai-layer.mjs` (postbuild) |
 | `/<page>/index.md` | A Markdown twin of each published page, linked from its `<head>` | same script |
@@ -143,6 +148,8 @@ All of these are generated at build time from `src/data/facts.json` and the cont
 | `/robots.txt` | Named groups for search and AI crawlers, same rules each | `public/robots.txt` |
 
 Drafts, the 404, thank-you and search pages and the old redirect stubs never appear in any of them. `npm run check:dist` proves it (`tests/ai-layer.test.ts`).
+
+All formats are served to visitors and crawlers alike. The corpus exports published main content, including meaningful image descriptions, diagram text and static form guidance; it does not export input values, private enquiries or interactive calculation results. Keep source content authoritative and regenerate the representations with each build. See [the crawler contract](docs/ai-crawler.md) for fields and checks.
 
 ### IndexNow (off until the Cloudflare move)
 

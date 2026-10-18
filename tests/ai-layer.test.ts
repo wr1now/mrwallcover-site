@@ -1,7 +1,9 @@
 import assert from 'node:assert/strict';
-import { readdir, readFile } from 'node:fs/promises';
+import { mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
+import { readPage, toMarkdown } from '../scripts/build-ai-layer.mjs';
 
 /**
  * The AI-crawling layer, checked on the built site in dist/. Everything here
@@ -11,6 +13,25 @@ import { test } from 'node:test';
  */
 
 const SITE = 'https://www.mrwallcover.com';
+
+interface AiPageRecord {
+  id: string;
+  url: string;
+  path: string;
+  title: string;
+  description: string;
+  language: string | null;
+  author: string | null;
+  dates: { published: string | null; modified: string | null; reviewed: string | null };
+  formats: { html: string; markdown: string; json: string };
+  markdown: string;
+  headings: { level: number; id: string | null; text: string }[];
+  links: { url: string; text: string }[];
+  images: { url: string; alt: string; caption: string | null; width: number | null; height: number | null }[];
+  diagrams: { description: string; caption: string | null }[];
+  media: { type: string; urls: string[]; description: string | null; caption: string | null; poster: string | null }[];
+  structuredData: Record<string, any>[];
+}
 
 async function filesUnder(dir: string, keep: (name: string) => boolean): Promise<string[]> {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -215,7 +236,7 @@ test('forbidden strings are absent from every text file in dist, and no phone-nu
   if (phoneUnset) assert.ok(files.filter((file) => /\.(html|js)$/.test(file)).length > 70 && scannedForPhone > 140, `${scannedForPhone} files scanned for a phone number`);
 });
 
-test('no draft URL appears in the sitemap, llms.txt, llms-full.txt or the feed', async () => {
+test('no draft URL appears in the sitemap, llms.txt, llms-full.txt, AI corpus/manifest or the feed', async () => {
   const drafts: string[] = [];
   for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
     const fm = JSON.parse((await readFile(`src/content/case-studies/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { slug: string; draft?: boolean };
@@ -230,7 +251,7 @@ test('no draft URL appears in the sitemap, llms.txt, llms-full.txt or the feed',
   }
   // /reviews/ left draft on 11 Oct 2026 (Dorin cleared the Calico Wallpaper lines); zero drafts is allowed.
   assert.ok(drafts.length >= 0);
-  const outputs = Object.fromEntries(await Promise.all(['sitemap-0.xml', 'llms.txt', 'llms-full.txt', 'feed.xml'].map(async (name) => [name, await readFile(`dist/${name}`, 'utf8')])));
+  const outputs = Object.fromEntries(await Promise.all(['sitemap-0.xml', 'llms.txt', 'llms-full.txt', 'ai/index.json', 'ai/pages.json', 'feed.xml'].map(async (name) => [name, await readFile(`dist/${name}`, 'utf8')])));
   const problems: string[] = [];
   for (const draft of drafts) {
     // Any occurrence of the draft path is a leak: absolute or relative, quoted or bare, with or without its trailing slash.
@@ -582,4 +603,112 @@ test('every published page shows one author and date line: the page\'s own date 
   assert.deepEqual(problems, []);
   const full = await readFile('dist/llms-full.txt', 'utf8');
   assert.equal(full.match(/^Last (updated|reviewed): \d{4}-\d{2}-\d{2}$/gm)?.length, (await publishedPages()).length, 'every page in llms-full carries its date line');
+});
+
+test('AI manifest and corpus contain exactly every published canonical page and the same Markdown body as its twin', async () => {
+  const manifest = JSON.parse(await readFile('dist/ai/index.json', 'utf8')) as { schemaVersion: string; pageCount: number; corpusUrl: string; pages: Omit<AiPageRecord, 'markdown'>[] };
+  const corpus = JSON.parse(await readFile('dist/ai/pages.json', 'utf8')) as { schemaVersion: string; pageCount: number; pages: AiPageRecord[] };
+  const published = await publishedPages();
+  const expected = published.map((page) => `${SITE}${page.pathname}`).sort();
+  assert.equal(manifest.schemaVersion, '1.0');
+  assert.equal(corpus.schemaVersion, manifest.schemaVersion);
+  assert.equal(manifest.corpusUrl, `${SITE}/ai/pages.json`);
+  assert.equal(manifest.pageCount, expected.length);
+  assert.equal(corpus.pageCount, expected.length);
+  assert.deepEqual(manifest.pages.map((page) => page.id).sort(), expected);
+  assert.deepEqual(corpus.pages.map((page) => page.id).sort(), expected);
+  assert.equal(new Set(corpus.pages.map((page) => page.id)).size, expected.length, 'stable canonical IDs are unique');
+  for (const [index, record] of corpus.pages.entries()) {
+    const source = published.find((page) => `${SITE}${page.pathname}` === record.id)!;
+    const { markdown, headings, links, images, diagrams, media, structuredData, ...metadata } = record;
+    assert.deepEqual(manifest.pages[index], metadata, record.path);
+    assert.equal(record.url, record.id);
+    assert.equal(record.path, source.pathname);
+    assert.equal(record.title, stripTags(source.html.match(/<title>([^<]*)<\/title>/)![1]));
+    assert.equal(record.description, stripTags(source.html.match(/<meta name="description" content="([^"]*)">/)![1]));
+    assert.equal(record.language, 'en-GB');
+    assert.equal(record.formats.html, record.url);
+    assert.equal(record.formats.markdown, `${record.url}index.md`);
+    assert.equal(record.formats.json, `${SITE}/ai/pages.json#/pages/${index}`);
+    const twin = await readFile(path.join('dist', record.path, 'index.md'), 'utf8');
+    assert.equal(markdown, twin.replace(/^---\n[\s\S]*?\n---\n\n/, ''), `${record.path}: Markdown parity`);
+    assert.ok(headings.some((heading) => heading.level === 1), `${record.path}: main heading`);
+    const sourceGraphs = [...source.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((match) => JSON.parse(match[1]));
+    assert.deepEqual(structuredData, sourceGraphs, `${record.path}: published JSON-LD parity`);
+    const article = sourceGraphs.flatMap((graph) => graph['@graph'] ?? graph).find((node) => node['@type'] === 'Article' && node.url === record.url);
+    assert.equal(record.dates.published, article?.datePublished ?? null, `${record.path}: no invented publication date`);
+    const stamp = source.html.match(/<time datetime="([^"]+)" data-page-updated="(updated|reviewed)">/)!;
+    assert.equal(record.dates.reviewed, stamp[2] === 'reviewed' ? stamp[1] : null);
+    assert.equal(record.dates.modified, article?.dateModified ?? (stamp[2] === 'updated' ? stamp[1] : null));
+    for (const link of links) assert.match(link.url, /^(https?:|mailto:)/, 'no executable or telephone links');
+    for (const image of images) {
+      assert.ok(image.alt.trim());
+      assert.ok(markdown.replace(/\\([\[\]\\])/g, '$1').includes(image.alt), `${record.path}: image alt survives`);
+      if (new URL(image.url).origin === SITE) await readFile(path.join('dist', new URL(image.url).pathname));
+    }
+    for (const diagram of diagrams) assert.ok(markdown.includes(diagram.description), `${record.path}: diagram description survives`);
+    for (const item of media) {
+      for (const url of item.urls) assert.ok(markdown.includes(url), `${record.path}: media reference survives`);
+      if (item.description) assert.ok(markdown.replace(/\\([\[\]\\])/g, '$1').includes(item.description));
+    }
+  }
+  for (const pathname of ['/404/', '/search/', '/thank-you/', '/projects/owo-whitehall/']) {
+    assert.equal(corpus.pages.some((page) => page.path === pathname), false, `${pathname}: excluded utility or redirect`);
+  }
+  const crawler = corpus.pages.find((page) => page.path === '/wallcovering-installation-ai-crawler/')!;
+  const blankBrief = [...crawler.markdown.matchAll(/```[^\n]*\n([\s\S]*?)\n```/g)].map((match) => match[1]).find((code) => code.trim().startsWith('{'))!;
+  const decision = JSON.parse(await readFile('dist/ai/decision-guide.json', 'utf8')) as { handoff: { template: unknown } };
+  assert.deepEqual(JSON.parse(blankBrief), decision.handoff.template, 'the actual generated Markdown preserves the published JSON brief');
+  for (const name of ['index', 'pages']) {
+    const raw = await readFile(`dist/ai/${name}.json`, 'utf8');
+    assert.doesNotMatch(raw, /"(?:phone|telephone|apiKey|token|_note|manifestNote|placeholder)"\s*:/i);
+    assert.doesNotMatch(raw, /\/Users\/|localhost|SITE_PHONE|data:image|_honey|data-endpoint|<script\b/);
+  }
+});
+
+test('machine-readable main content retains captions, row meaning, diagrams, code and public form guidance without exporting state', () => {
+  const markdown = toMarkdown(`<h1>Reference</h1><nav><a href="/services/">Breadcrumb</a></nav>
+    <figure><picture><source srcset="/photo.webp 800w"><img src="/photo.jpg" alt="A lined wall" width="800" height="600"></picture><figcaption>Photograph: named photographer.</figcaption></figure>
+    <img src="/decorative.jpg" alt=""><svg aria-hidden="true"><text>Decoration only</text></svg>
+    <figure><svg role="img" aria-labelledby="diagram-title diagram-description"><title id="diagram-title">Wall construction</title><desc id="diagram-description">Check the substrate and adhesive.</desc><path d="M0 0"></path><text>Width W</text><text>Height H</text></svg><figcaption>Schematic, not to scale.</figcaption></figure>
+    <table><caption>Classification checks</caption><thead><tr><th>Class</th><th>Requirements</th></tr></thead><tbody><tr><th scope="row">B</th><td><ul><li>Exact product</li><li>Documented build-up</li></ul></td></tr></tbody></table>
+    <form action="https://invalid.example/secret-endpoint"><label for="width">Wall width</label><input id="width" value="private-input-state"><input type="hidden" value="07700900000"><select aria-label="Pattern"><optgroup label="Match types"><option>Free match</option><option>Half-drop</option></optgroup></select><p>Measure the full wall width.</p><textarea>private-note-state</textarea><button>Calculate quantity</button></form>
+    <button data-phone-reveal>07700 900000</button><a href="tel:+447700900000">07700 900000</a>
+    <p class="honeypot"><label>Leave this field empty<input name="_honey"></label></p>
+    <div data-receipt hidden><h2>Received. Reference</h2></div>
+    <pre><code class="language-json">{\n  &quot;requester&quot;: null,\n  &quot;permissionToShare&quot;: false\n}</code></pre>
+    <figure><video aria-label="On-site fitting"><source src="/film.mp4" type="video/mp4"></video><figcaption>Company film.</figcaption></figure>
+    <script>secretScript()</script><style>.hidden{display:none}</style>`);
+  for (const value of ['![A lined wall](https://www.mrwallcover.com/photo.jpg)', 'Photograph: named photographer.', 'Diagram: Wall construction Check the substrate and adhesive. Labels: Width W; Height H.', 'Schematic, not to scale.', 'Classification checks', '- **Class**: B', '- **Requirements**:', '  - Exact product', '  - Documented build-up', 'Wall width', 'Match types', '- Free match', '- Half-drop', 'Measure the full wall width.', 'Calculate quantity', '[Video: On-site fitting](https://www.mrwallcover.com/film.mp4)', 'Company film.']) assert.ok(markdown.includes(value), value);
+  const code = markdown.match(/```json\n([\s\S]*?)\n```/)![1];
+  assert.deepEqual(JSON.parse(code), { requester: null, permissionToShare: false });
+  assert.doesNotMatch(markdown, /Breadcrumb|Decoration only|decorative\.jpg|private-input-state|private-note-state|secret-endpoint|_honey|Received\. Reference|secretScript|display:none|07700|447700/);
+});
+
+test('page records read semantic metadata from published HTML and reject noindex/redirect pages regardless of attribute order', async () => {
+  const dir = await mkdtemp(path.join(tmpdir(), 'mw-ai-page-'));
+  const file = path.join(dir, 'index.html');
+  const structured = { '@context': 'https://schema.org', '@graph': [{ '@type': 'Article', url: `${SITE}/example/`, datePublished: '2026-10-09', dateModified: '2026-10-12', telephone: 'redacted-fixture', _note: 'private-fixture' }] };
+  const main = `<main class="content" id="main"><h1 id="example">Example page</h1><time data-page-updated="updated" datetime="2026-10-12">12 October 2026</time><figure><img src="image.jpg" alt="A sample wall" width="640" height="480"><figcaption>Company photograph.</figcaption></figure><figure><svg aria-label="Panel returns" role="img"></svg><figcaption>Illustrative.</figcaption></figure><nav><a href="../services/">Services</a></nav><a href="#example">Example heading</a></main>`;
+  const html = `<html lang="en-GB"><head><title>Example &amp; reference</title><link href="${SITE}/example/" rel="canonical"><meta content="Published description." name="description"><script type="application/ld+json">${JSON.stringify(structured)}</script></head>${main}</html>`;
+  try {
+    await writeFile(file, html);
+    const page = await readPage(file);
+    assert.ok(page);
+    assert.equal(page.title, 'Example & reference');
+    assert.equal(page.description, 'Published description.');
+    assert.equal(page.language, 'en-GB');
+    assert.deepEqual(page.dates, { published: '2026-10-09', modified: '2026-10-12', reviewed: null });
+    assert.deepEqual(page.images, [{ url: `${SITE}/example/image.jpg`, alt: 'A sample wall', caption: 'Company photograph.', width: 640, height: 480 }]);
+    assert.deepEqual(page.diagrams, [{ description: 'Panel returns', caption: 'Illustrative.' }]);
+    assert.ok(page.links.some((link: { url: string }) => link.url === `${SITE}/services/`));
+    assert.ok(page.links.some((link: { url: string }) => link.url === `${SITE}/example/#example`));
+    assert.doesNotMatch(JSON.stringify(page.structuredData), /telephone|redacted-fixture|private-fixture|_note/);
+    for (const excluded of ['<meta content="noindex, follow" name="robots">', '<meta content="0;url=/" http-equiv="refresh">']) {
+      await writeFile(file, html.replace('</head>', `${excluded}</head>`));
+      assert.equal(await readPage(file), null);
+    }
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
 });

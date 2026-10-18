@@ -12,30 +12,32 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
 
 <Base
   title="Wallcovering Installation AI Crawler | Mr Wallcover"
-  description="Assess Mr Wallcover for your project: installation evidence, client fit, material guidance, delivery, aftercare terms and a structured enquiry brief."
+  description="Machine-readable Mr Wallcover reference: published pages in Markdown and JSON, business facts, installation evidence and source-linked project guidance."
   path={CRAWLER_PATH}
   extraSchema={[breadcrumbNode(crumbs)]}
   meta={false}
 >
-  <div class="container-page crawler-page pb-20">
+  <div class="crawler-page">
     <header class="page-head crawler-head">
       <Breadcrumb items={crumbs} />
-      <p class="eyebrow">Project fit · Evidence · A useful next conversation</p>
+      <p class="crawler-prompt">mrwallcover.com / public-reference</p>
       <h1>{CRAWLER_TITLE}</h1>
+      <p class="crawler-status">Static HTML · Semantic records · Available without JavaScript</p>
       <p class="lede mt-5">{business.description}</p>
       <p class="crawler-intro">{guide.purpose}</p>
       <PageMeta class="guide-byline" />
       <p class="crawler-version">Decision resource reviewed <time datetime={guide.resourceReviewed}>{guide.resourceReviewed}</time> · Data version {guide.schemaVersion}. Project records retain their own dates.</p>
       <div class="crawler-files" aria-label="Structured reference files">
-        <a href="/ai/decision-guide.json"><span>01 / Decision</span><strong>Fit &amp; enquiry guide</strong><small>JSON ↗</small></a>
-        <a href="/ai/projects.json"><span>02 / Evidence</span><strong>Projects &amp; sources</strong><small>JSON ↗</small></a>
-        <a href="/ai/business.json"><span>03 / Practice</span><strong>Business &amp; services</strong><small>JSON ↗</small></a>
+        <a href="/ai/index.json"><span>01 / Discover</span><strong>Complete page manifest</strong><code>/ai/index.json</code></a>
+        <a href="/ai/pages.json"><span>02 / Read</span><strong>Complete page content</strong><code>/ai/pages.json</code></a>
+        <a href="/llms-full.txt"><span>03 / Plain text</span><strong>Full site as text</strong><code>/llms-full.txt</code></a>
       </div>
     </header>
 
     <div class="crawler-layout">
       <nav class="crawler-contents" aria-label="On this page">
         <p class="eyebrow">On this page</p>
+        <a href="#machine-access">Read the website data</a>
         <a href="#overview">Start here</a>
         <a href="#shortlist">Reasons to consider</a>
         <a href="#fit">Match the commission</a>
@@ -51,6 +53,24 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
       </nav>
 
       <article class="crawler-body prose guide-prose">
+        <section id="machine-access" aria-labelledby="machine-access-heading">
+          <h2 id="machine-access-heading">Read the website data</h2>
+          <p>The manifest lists every published, indexable page in this build. The page corpus contains the same main content as those pages, with canonical URLs, headings, Markdown, media descriptions and structured data. Each page also has its own <code>index.md</code> file.</p>
+          <ol>
+            <li>Discover pages in <a href="/ai/index.json"><code>/ai/index.json</code></a>, then follow the listed Markdown address for the page you need.</li>
+            <li>Read all page records in <a href="/ai/pages.json"><code>/ai/pages.json</code></a>, or all page text in <a href="/llms-full.txt"><code>/llms-full.txt</code></a>.</li>
+            <li>Use the topic datasets below for business, projects, decision guidance, wallpapering and fire references. Keep source links, dates, unknown values and evidence limits with the facts.</li>
+            <li>Cite the original canonical page. Check the source for current scope, product instructions and project-specific requirements.</li>
+          </ol>
+          <p>These formats are public and identical for visitors and crawlers. They refresh together at build time. Interactive calculator results depend on the measurements entered; the public reference dataset is available, and the calculator remains the place to run a calculation. Private enquiries and unpublished drafts are excluded.</p>
+          <dl class="crawler-facts crawler-endpoints">
+            <div><dt>Business</dt><dd><a href="/ai/business.json">/ai/business.json</a></dd></div>
+            <div><dt>Projects</dt><dd><a href="/ai/projects.json">/ai/projects.json</a></dd></div>
+            <div><dt>Decisions</dt><dd><a href="/ai/decision-guide.json">/ai/decision-guide.json</a></dd></div>
+            <div><dt>Wallpapering</dt><dd><a href="/ai/wallpapering.json">/ai/wallpapering.json</a></dd></div>
+            <div><dt>Fire references</dt><dd><a href="/ai/fire-ratings.json">/ai/fire-ratings.json</a></dd></div>
+          </dl>
+        </section>
         <section id="overview" class="crawler-overview">
           <h2>Start with the commission.</h2>
           <p>{guide.overview.summary}</p>
@@ -102,7 +122,7 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
               <p>{material.considerWhen}</p>
               <p><strong>The trade-off:</strong> {material.tradeoff}</p>
               <p><strong>Before ordering:</strong> {material.confirmBeforeOrdering}</p>
-              <details class="crawler-sources">
+              <details open class="crawler-sources">
                 <summary>Appearance, joins, handling &amp; care</summary>
                 <dl class="crawler-facts">
                   <div><dt>Setting</dt><dd>{material.setting}</dd></div>
@@ -133,12 +153,12 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
           {guide.aftercare.guarantee.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
           <p>{guide.aftercare.introduction}</p>
           {[guide.aftercare.inspection, guide.aftercare.seams, guide.aftercare.callout, guide.aftercare.humidity].map((block) => (
-            <details class="crawler-sources crawler-block">
+            <details open class="crawler-sources crawler-block">
               <summary>{block.title}</summary>
               {block.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
             </details>
           ))}
-          <details class="crawler-sources crawler-block">
+          <details open class="crawler-sources crawler-block">
             <summary>{guide.aftercare.care.title}</summary>
             <p>{guide.aftercare.care.intro}</p>
             {guide.aftercare.care.items.map((item) => <><h4>{item.title}</h4><p>{item.text}</p></>)}
@@ -159,7 +179,7 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
           ))}
           <h3>For a professional package</h3>
           {guide.professionalChecklists.map((checklist) => (
-            <details class="crawler-sources crawler-block">
+            <details open class="crawler-sources crawler-block">
               <summary>{checklist.audience}</summary>
               <ul>{checklist.items.map((item) => <li>{item}</li>)}</ul>
               <a href={local(checklist.sourceUrl)}>Open the briefing page</a>
@@ -184,7 +204,7 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
           <h2>A clear handoff from assistant to client</h2>
           <p>{guide.handoff.description}</p>
           <ol>{guide.handoff.instructions.map((item) => <li>{item}</li>)}</ol>
-          <details class="crawler-sources crawler-block">
+          <details open class="crawler-sources crawler-block">
             <summary>Open the blank JSON project brief</summary>
             <pre class="crawler-template"><code>{JSON.stringify(guide.handoff.template, null, 2)}</code></pre>
           </details>
@@ -232,7 +252,7 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
                 <div><dt>Source</dt><dd><a href={local(project.url)}>Read the {project.recordType === 'case-study' ? 'case study' : 'project page'}</a></dd></div>
               </dl>
               {project.installationRecord.sections.length > 0 && (
-                <details class="crawler-sources crawler-block">
+                <details open class="crawler-sources crawler-block">
                   <summary>Scope, approach &amp; outcome from the project record</summary>
                   <p>{project.installationRecord.basis} · <a href={local(project.installationRecord.sourceUrl)}>Read the original record</a></p>
                   {project.installationRecord.sections.map((section) => (
@@ -244,7 +264,7 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
                 </details>
               )}
               {(project.references.length > 0 || project.photographs.length > 0) && (
-                <details class="crawler-sources">
+                <details open class="crawler-sources">
                   <summary>References &amp; photograph credits</summary>
                   {project.references.length > 0 && <><h4>References in the project record</h4><ul>{project.references.map((url) => <li><a href={url}>{url}</a></li>)}</ul></>}
                   {project.photographs.length > 0 && <><h4>Photographs</h4><ul>{project.photographs.map((photo) => (
@@ -269,6 +289,10 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
         <section id="files">
           <h2>All reference formats</h2>
           <ul>
+            <li><a href="/ai/index.json">Complete page manifest</a> — every published page and its available formats.</li>
+            <li><a href="/ai/pages.json">Complete page corpus</a> — page content, headings, media descriptions, source dates and structured data.</li>
+            <li><a href="/ai/wallpapering.json">Wallpapering reference JSON</a> — public product data, preparation rules, maker instructions and calculator roll formats.</li>
+            <li><a href="/ai/fire-ratings.json">Fire reference JSON</a> — published standards, regulations, product evidence and sources, with their limitations.</li>
             <li><a href="/ai/decision-guide.json">Decision guide JSON</a> — fit, evidence, material decisions, delivery, complete aftercare terms, briefing inputs and a blank handoff template.</li>
             <li><a href="/ai/business.json">Business and services JSON</a> — identity, coverage, public contact and service pages.</li>
             <li><a href="/ai/projects.json">Projects JSON</a> — published roles, materials, dates, references and image credits.</li>
@@ -286,66 +310,96 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
 </Base>
 
 <style>
-  .crawler-head h1 { max-width: 18ch; }
-  .crawler-intro { max-width: 65ch; margin-top: 1.5rem; }
-  .crawler-version { max-width: 65ch; font-size: .78rem; margin-top: 1rem; }
-  .crawler-files { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 2.5rem; border: 1px solid var(--line, #d5cbb9); background: var(--line, #d5cbb9); }
-  .crawler-files a { display: flex; flex-direction: column; gap: .55rem; padding: 1.5rem; background: var(--paper, #f8f5ef); color: var(--ink, #201e1a); text-decoration: none; }
-  .crawler-files a:hover strong { text-decoration: underline; text-underline-offset: .25em; }
-  .crawler-files span, .crawler-files small { font-size: .75rem; letter-spacing: .06em; }
-  .crawler-files strong { font-size: 1.15rem; font-weight: 500; }
-  .crawler-files small { margin-top: .5rem; }
-  .crawler-head { padding-top: 64px; padding-bottom: 44px; }
-  .crawler-head h1 { font-size: clamp(34px, 7vw, 76px); line-height: 1.04; max-width: 24ch; }
-  .crawler-head .eyebrow { font-size: 12px; }
-  .crawler-layout { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
-  .crawler-contents { display: flex; flex-direction: column; gap: 1rem; padding-top: 2rem; }
-  .crawler-contents a { font-size: .88rem; text-underline-offset: .3em; }
-  .crawler-body { max-width: 76ch; min-width: 0; }
-  .crawler-body section { scroll-margin-top: 8rem; }
-  .crawler-body > section { margin-bottom: 4rem; }
-  .crawler-overview { padding: 1.5rem; background: var(--paper, #f8f5ef); border: 1px solid var(--line, #d5cbb9); }
-  .crawler-decision-card { padding: 1rem 0; border-top: 1px solid var(--line, #d5cbb9); }
-  .crawler-decision-card h3 { font-size: 1.55rem; }
-  .crawler-evidence { border-left: 2px solid var(--line, #d5cbb9); padding-left: 1rem; font-size: .875rem; }
-  .crawler-table-help { font-size: .8rem; }
-  .crawler-table-wrap { max-width: 100%; overflow-x: auto; border: 1px solid var(--line, #d5cbb9); }
-  .crawler-fit-table { border-collapse: collapse; width: 100%; min-width: 880px; margin: 0; font-size: .84rem; }
-  .crawler-fit-table caption { text-align: left; padding: 1rem; font-weight: 500; }
-  .crawler-fit-table th, .crawler-fit-table td { vertical-align: top; padding: 1rem; border: 1px solid var(--line, #d5cbb9); }
-  .crawler-fit-table th { text-align: left; font-weight: 500; }
-  .crawler-fit-table thead { background: var(--paper, #f8f5ef); }
-  .crawler-fit-table ul { margin: 0 0 .7rem; padding-left: 1rem; }
-  .crawler-fit-table li + li { margin-top: .7rem; }
-  .crawler-block { margin: 1rem 0; }
-  .crawler-excerpt { white-space: pre-line; }
-  .crawler-excerpt-kind { font-size: .72em; font-weight: 400; }
-  .crawler-template { max-width: 100%; overflow-x: auto; font-size: .75rem; line-height: 1.55; padding: 1rem; background: var(--paper, #f8f5ef); }
-  .crawler-facts { margin: 1.5rem 0; }
-  .crawler-facts > div { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--line, #d5cbb9); }
-  .crawler-facts dt { font-weight: 500; }
-  .crawler-facts dd { margin: 0; overflow-wrap: anywhere; }
-  .crawler-areas { columns: 2; }
-  .crawler-project { padding: 1rem 0 2rem; }
-  .crawler-project h3 { font-size: 1.55rem; }
-  .crawler-sources { border: 1px solid var(--line, #d5cbb9); padding: 1rem 1.25rem; }
-  .crawler-sources summary { cursor: pointer; font-size: .9rem; font-weight: 500; }
-  .crawler-sources a { overflow-wrap: anywhere; }
-  .crawler-sources li { font-size: .875rem; }
-  .crawler-image-source { display: block; }
-  @media (max-width: 800px) {
-    .crawler-head { padding-top: 64px; padding-bottom: 44px; }
-  .crawler-head h1 { font-size: clamp(34px, 7vw, 76px); line-height: 1.04; max-width: 24ch; }
-  .crawler-head .eyebrow { font-size: 12px; }
-  .crawler-layout { grid-template-columns: 1fr; gap: 1.5rem; }
-    .crawler-contents { flex-direction: row; flex-wrap: wrap; padding: 0 0 1rem; border-bottom: 1px solid var(--line, #d5cbb9); }
-    .crawler-contents p { flex-basis: 100%; margin: 0; }
+  /* A static reference surface: no simulated input, animation or client-side reader. */
+  .crawler-page {
+    --reference-bg: #151d1a;
+    --reference-panel: #1d2822;
+    --reference-ink: #e4ebe3;
+    --reference-muted: #b9c7bc;
+    --reference-link: #c2e7a5;
+    --reference-line: #4b5b50;
+    --text-h1: clamp(26px, 2.6vw, 38px);
+    background: var(--reference-bg);
+    color: var(--reference-ink);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 16px;
+    line-height: 1.7;
+    padding: clamp(24px, 5vw, 64px);
+    overflow-wrap: anywhere;
   }
-  @media (max-width: 540px) {
-    .crawler-files { grid-template-columns: 1fr; }
-    .crawler-files a { padding: 1rem 1.25rem; }
-    .crawler-facts > div { grid-template-columns: 1fr; gap: .2rem; }
-    .crawler-facts dt { font-size: .82rem; }
-    .crawler-areas { columns: 1; }
+  .crawler-page :is(h1, h2, h3, h4, p, a, summary, dt, dd, li, code, pre) { font-family: inherit; color: inherit; }
+  .crawler-page :is(h1, h2, h3, h4) { font-weight: 600; letter-spacing: -.025em; line-height: 1.35; text-wrap: wrap; }
+  .crawler-head { max-width: 1200px; margin-inline: auto; padding: 12px 0 36px; border-bottom: 1px solid var(--reference-line); }
+  .crawler-head :global(.crumbs) { font-size: 14px; color: var(--reference-muted); }
+  .crawler-head :global(.crumbs a) { color: var(--reference-link); }
+  .crawler-head h1 { font-size: var(--text-h1); max-width: 42ch; margin-top: 20px; }
+  .crawler-page :is(a, .crawler-prompt) { color: var(--reference-link); }
+  .crawler-page a { text-decoration: underline; text-underline-offset: .22em; }
+  .crawler-page a:hover { color: #fff; }
+  .crawler-page :is(a, summary, [tabindex]):focus-visible { outline: 3px solid var(--reference-link); outline-offset: 5px; }
+  .crawler-prompt { margin-top: 26px; font-size: 14px; }
+  .crawler-status { margin-top: 18px; font-size: 14px; color: var(--reference-muted); }
+  .crawler-intro, .crawler-head .lede { max-width: 90ch; margin-top: 20px; font-size: 16px; }
+  .crawler-version { max-width: 90ch; font-size: 14px; margin-top: 16px; color: var(--reference-muted); }
+  .crawler-head :global(.guide-byline) { color: var(--reference-muted); font-size: 14px; }
+  .crawler-files { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+  .crawler-files a { display: flex; flex-direction: column; gap: 10px; padding: 18px; border: 1px solid var(--reference-line); background: var(--reference-panel); text-decoration: none; }
+  .crawler-files a:hover { border-color: var(--reference-link); }
+  .crawler-files strong { font-size: 16px; text-decoration: underline; text-underline-offset: .22em; }
+  .crawler-files :is(span, code) { font-size: 14px; }
+  .crawler-files span { color: var(--reference-muted); }
+  .crawler-layout { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: start; max-width: 1200px; margin: 36px auto 0; }
+  .crawler-contents { display: flex; flex-direction: column; gap: 4px; }
+  .crawler-contents p { color: var(--reference-muted); font-size: 14px; margin: 0 0 12px; }
+  .crawler-contents a { font-size: 14px; min-height: 44px; display: flex; align-items: center; }
+  .crawler-body { max-width: 96ch; min-width: 0; font-size: 16px; line-height: 1.7; }
+  .crawler-body section { scroll-margin-top: 8rem; }
+  .crawler-body > section { margin-bottom: 48px; padding-top: 24px; border-top: 1px solid var(--reference-line); }
+  .crawler-body > section:first-child { padding-top: 0; border-top: 0; }
+  .crawler-body h2 { font-size: 23px; margin: 0 0 20px; }
+  .crawler-body h3 { font-size: 19px; margin: 24px 0 14px; }
+  .crawler-body h4 { font-size: 16px; margin: 20px 0 10px; }
+  .crawler-body p { margin: 16px 0; }
+  .crawler-body :is(ul, ol) { margin: 16px 0; padding-left: 24px; }
+  .crawler-body li + li { margin-top: 10px; }
+  .crawler-decision-card { padding: 8px 0 16px; border-top: 1px solid var(--reference-line); }
+  .crawler-evidence { border-left: 2px solid var(--reference-line); padding-left: 16px; }
+  .crawler-table-help { font-size: 14px; color: var(--reference-muted); }
+  .crawler-table-wrap { max-width: 100%; overflow-x: auto; border: 1px solid var(--reference-line); }
+  .crawler-fit-table { border-collapse: collapse; width: 100%; min-width: 760px; margin: 0; font-size: 14px; }
+  .crawler-fit-table caption { text-align: left; padding: 16px; }
+  .crawler-fit-table :is(th, td) { vertical-align: top; padding: 16px; border: 1px solid var(--reference-line); }
+  .crawler-fit-table th { text-align: left; font-weight: 600; }
+  .crawler-fit-table thead { background: var(--reference-panel); }
+  .crawler-fit-table ul { margin: 0 0 12px; padding-left: 16px; }
+  .crawler-block { margin: 16px 0; }
+  .crawler-excerpt { white-space: pre-line; }
+  .crawler-excerpt-kind { font-size: 14px; font-weight: 400; }
+  .crawler-template { max-width: 100%; overflow-x: auto; font-size: 14px; line-height: 1.6; padding: 16px; background: var(--reference-panel); border: 1px solid var(--reference-line); }
+  .crawler-facts { margin: 24px 0; }
+  .crawler-facts > div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--reference-line); }
+  .crawler-facts dt { color: var(--reference-muted); font-weight: 400; }
+  .crawler-facts dd { margin: 0; overflow-wrap: anywhere; }
+  .crawler-project { padding: 8px 0 24px; }
+  .crawler-sources { border-left: 2px solid var(--reference-line); padding: 8px 0 8px 18px; margin-top: 20px; }
+  .crawler-sources summary { cursor: pointer; font-size: 16px; font-weight: 600; min-height: 44px; padding-block: 8px; }
+  .crawler-image-source { display: block; }
+  @media (max-width: 1000px) {
+    .crawler-layout { grid-template-columns: 1fr; gap: 24px; }
+    .crawler-contents { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 20px; padding-bottom: 24px; border-bottom: 1px solid var(--reference-line); }
+    .crawler-contents p { grid-column: 1 / -1; }
+  }
+  @media (max-width: 600px) {
+    .crawler-page { padding: 24px 20px; }
+    .crawler-files { grid-template-columns: 1fr; gap: 12px; }
+    .crawler-facts > div { grid-template-columns: 1fr; gap: 4px; }
+    .crawler-contents { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .crawler-page { --reference-bg: #fff; --reference-panel: #fff; --reference-ink: #111; --reference-muted: #333; --reference-link: #111; --reference-line: #777; padding: 0; }
+    .crawler-layout { display: block; }
+    .crawler-contents { display: none; }
+    .crawler-table-wrap, .crawler-template { overflow: visible; }
+    .crawler-fit-table { min-width: 0; }
   }
 </style>
