@@ -3,7 +3,7 @@
   "path": "/advice/cost/",
   "title": "Wallpaper quotation checklist",
   "metaTitle": "Wallpaper Installation Quotation Checklist | Mr Wallcover",
-  "description": "Prepare a wallpaper installation enquiry with location, room photographs, approximate dimensions, material references and timing. The final scope follows a survey.",
+  "description": "Prepare a wallpaper installation enquiry with location, photographs, approximate dimensions, material references and timing. Final scope follows a survey.",
   "eyebrow": "Advice",
   "heading": "What to send for a wallpaper installation quotation",
   "lede": "Start with the location, the rooms and the finish you have in mind. Photographs, approximate dimensions and a product reference help us prepare for the survey; leave anything you do not yet know open.",

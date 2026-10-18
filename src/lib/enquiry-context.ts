@@ -8,7 +8,7 @@ export const ENQUIRY_SERVICES = [
 ] as const;
 export type EnquiryService = (typeof ENQUIRY_SERVICES)[number]['value'];
 export const ENQUIRY_SOURCES = [
-  { value: 'google', label: 'Google Search or Maps' },
+  { value: 'google', label: 'Google Search' },
   { value: 'instagram', label: 'Instagram' },
   { value: 'recommendation', label: 'A recommendation' },
   { value: 'returning-client', label: 'We have worked together before' },
