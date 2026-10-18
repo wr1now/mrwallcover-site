@@ -37,6 +37,8 @@ What should a wallcovering specification contain? Enough for the installer to se
 - Backing, and the adhesive and primer the maker specifies for it.
 - Whether the item is confirmed or provisional, so a provisional reference is never mistaken for an order.
 
+Already specifying a maker? See the [papers we have installed](/materials/specified-papers/) and the published projects behind them. A maker appearing on that record means installation experience, not approval or endorsement.
+
 ## Elevations and design intent
 
 - A drawn elevation for every wall that carries a scenic, a pronounced pattern, a natural weave or a textile, showing doors, windows, joinery, cornice, dado and services.

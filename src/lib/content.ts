@@ -67,6 +67,8 @@ interface CaseStudyData {
   metaTitle?: string | null;
   metaDescription?: string | null;
   group?: string | null;
+  /** Select the account of the work appropriate to this commission. */
+  method?: 'wallcovering' | 'exterior';
   /** Draft case studies stay in the repo for review and are never built or listed. */
   draft?: boolean;
   /** Interior photographs are not in the repo. The page shows a labelled placeholder. */

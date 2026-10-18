@@ -5,6 +5,7 @@ import test from 'node:test';
 import './case-study-arch.test.ts';
 import './case-studies-1b.test.ts';
 import './internal-links.test.ts';
+import './content-intent.test.ts';
 
 async function htmlFiles(directory: string): Promise<string[]> {
  const entries=await readdir(directory,{withFileTypes:true});

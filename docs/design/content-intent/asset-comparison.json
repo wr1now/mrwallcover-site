@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/advice/cost/",
+    "before_html_bytes": 50438,
+    "after_html_bytes": 52050,
+    "same_direct_style_script_assets": true
+  },
+  {
+    "path": "/advice/installation-cost/",
+    "before_html_bytes": 56021,
+    "after_html_bytes": 56232,
+    "same_direct_style_script_assets": true
+  },
+  {
+    "path": "/advice/designer-specification-checklist/",
+    "before_html_bytes": 54152,
+    "after_html_bytes": 54398,
+    "same_direct_style_script_assets": true
+  },
+  {
+    "path": "/wallpapering/preparation/",
+    "before_html_bytes": 48079,
+    "after_html_bytes": 48244,
+    "same_direct_style_script_assets": true
+  },
+  {
+    "path": "/projects/inverness-terrace/",
+    "before_html_bytes": 60104,
+    "after_html_bytes": 60669,
+    "same_direct_style_script_assets": true
+  },
+  {
+    "path": "/projects/pimlico-st-georges-square/",
+    "before_html_bytes": 59435,
+    "after_html_bytes": 60000,
+    "same_direct_style_script_assets": true
+  }
+]
