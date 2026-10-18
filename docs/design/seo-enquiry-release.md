@@ -1,6 +1,6 @@
 # Service search and enquiry review
 
-18 October 2026. Integrated with public main `a26c1c04534a07193f48702205f1104e2e9dcf5c`. This receipt describes the reviewed website source and local builds, not a deployment or a Google ranking result.
+18 October 2026. Integrated with current public main `7d262267e0a17b158850c0d54a187d23e8a2e35d`, preserving its complete public AI reference and shared presentation. This receipt describes the reviewed website source and local builds, not a deployment or a Google ranking result.
 
 Several Guide/profile titles did not identify their subject, film pages inherited wallpaper pricing answers, and exterior case studies inherited wallpaper-only process/guarantee terms. Contact actions also lost the specific service or material discussed. The change corrects those mismatches and keeps the chosen enquiry context visible and removable.
 
@@ -33,7 +33,7 @@ The final local production source/build checks pass:
 |---|---|
 | Source tests | 153 passed |
 | Production build | 114 generated routes; 106 published pages and Markdown twins |
-| Built-site suite | 257 passed, plus new-page/no-JavaScript and phone browser fixtures |
+| Built-site suite | 268 passed, plus new-page/no-JavaScript and phone browser fixtures |
 | Typography/contrast | 2 passed |
 | Phone builds | 2 passed |
 | Analytics on/off fixtures | 2 passed; no production activation |
@@ -43,5 +43,7 @@ The final local production source/build checks pass:
 The first integrated run found two existing metadata-length guards exceeded by the quotation description and reviews title. Both strings were shortened; no guard was relaxed. All 257 tests and fixtures pass after correction. The final source-label correction is included in the results above.
 
 After the reviews-policy wording/link correction, the production build and 37 focused source/built-output/content-projection checks passed again. The final hosted run covers the complete integrated commit.
+
+When main advanced with the AI reference release, both enquiry test entries and the additional AI test entries were retained during reconciliation. The complete local matrix above passed again against that main: 153 source, 268 built-site plus fixtures, phone/analytics/typography, editorial/release and Guide browser checks. A fresh exact-main comparison preserves 106 pages, 3,621 media files, 106 Markdown twins, project/gallery records, 8,181 JSON-LD nodes and 36,741 properties. The required private-input guard passes over 729 files without copying its input.
 
 Independent content, enquiry and integrated-diff reviews found no remaining actionable issue. Before publication, hosted CI and the strict private-input/no-loss checks must pass on the final integrated commit. Publication and real enquiry delivery remain separate evidence.
