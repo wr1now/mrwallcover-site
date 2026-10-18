@@ -15,7 +15,14 @@ POST JSON `{ "action": "project.get", "payload": { "projectId": "…" } }` to th
 | Client links | `share.create`, `.revoke` | A specific issued estimate, bounded expiry and a revocable hashed token. Reopening a project lists grants for revocation without recovering tokens. |
 | Client read | `share.get`, `.pdf` | Token capability, no account sign-in. Both recheck expiry/revocation. PDF is proxied after checking the grant, rather than exposing a reusable private Storage URL. |
 | Owner settings | `admin.config.get`, `.save`, `admin.agreement.save`, `admin.operations.get`, `.save` | Business owner only. Versioned, validated configuration; explicit project approvals; quota/processing flags. |
+| Private history | `admin.history.list`, `.import` | Business owner only. Reviewed, bounded records with source hash/citations and amount roles; idempotent by source/reference. No current rate changes or source-file fetch. |
+| Completion evidence | `admin.actuals.list`, `.save`, `.review` | Business staff can append revision-bound actual time/vehicle evidence and explicit correction chains. Only the business owner can review proposals. Selling rates are unchanged. |
+| Pilot comparisons | `admin.pilot.list`, `.save` | Business owner only. Immutable comparison of an issued estimate with an independent current-price breakdown; optional historical reference or verified project document. |
 
 The SQL migration implements the underlying transaction, role, revision, immutability and lease boundaries. The API keeps service-role credentials on the server. Direct anonymous/authenticated table writes or worker-function calls are not permitted.
 
 The worker's three job types are `document.verify`, `document.extract` and `estimate.pdf`. Workers claim a bounded lease, download/upload through private Storage, and finish with the current lease token. Source hashes, file counts and PDF paths are checked when publishing results. Job retry exhaustion becomes visible; it never changes a failed operation into a success message.
+
+Project drafts support `buildingType`, a wall/ceiling `surfaceKind`, dimensioned `ceiling` scope, `programme.materialReadiness`, and typed `resources` lists for material requirements, preparation, sample approvals and aftercare. Incomplete geometry is valid draft data but not complete pricing evidence. Resource document IDs cannot reference another project or turn a quarantined source into an approved sample.
+
+`admin.agreement.save` binds approval to the current source/profile/scope fingerprint. Without explicitly approved wider quantity bounds it binds exact measured quantities. Changing the address, product, instructions, preparation, access, programme or logistics requires review. Structured `serviceEntries` price current approved hours/days/visits for surveying, management or additional preparation; conflicting duplicate legacy allowances are rejected.

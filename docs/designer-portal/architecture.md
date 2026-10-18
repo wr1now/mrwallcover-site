@@ -15,10 +15,10 @@ This follows the existing website's cloud-service pattern without merging the un
 - Resolve one installation profile from the actual product/construction/instructions. Collection inheritance requires matching evidence. Velvet, relief and acoustic descriptions do not stack percentage surcharges.
 - Eligible standard fabric: £120/net covered m², including normal preparation, lining and hanging labour. Specialist fabric products require their own approved profile.
 - Wide contract vinyl: approximately £26/m² is public guidance only. The project must have an approved agreement for hanging on prepared walls.
-- Feature walls and single rooms use approved project packages, never a square-metre fallback.
+- Feature walls and single rooms use approved project packages, never a square-metre fallback. Setup, positive labour hours/rate, surveying and management components must all be configured. A legacy package total is retained only as reference; it cannot establish today's package price.
 - Wallcoverings, lining, primer and adhesives are client supplied. VAT is additional; the normal configured rate is 20%.
 - Deduct openings and include covered reveals. Ordered material/waste quantities are separate from labour area.
-- Survey and management are approved time/visit allowances. Property value is confidential assessment context, never a price multiplier.
+- Survey, management and additional preparation are approved hour/day/visit allowances. Property value is confidential assessment context, never a price multiplier. Package inclusions and separately charged services cannot overlap.
 - Road charges are deduplicated per actual vehicle/date/scheme. Installation days do not create vehicle attendance or parking automatically.
 - A missing price, unclear specification or unapproved allowance produces information/review required, never a completed zero-price estimate.
 - Issued estimates retain their source revision and rate version. A changed product, preparation or access condition cannot retain incompatible approval. Default budget validity is 30 days. Firm quotes remain reviewed.
@@ -32,6 +32,14 @@ Documents start in quarantine. Upload completion creates a verification job; it 
 Jobs use transactional leases, bounded attempts and idempotent identities. PDF output paths include the attempt's lease token so a stale attempt cannot delete another attempt's completed output. The queue carries references; document bytes are read and written directly in private Storage.
 
 An estimate share is a separate, expiring, revocable grant. Only the safe estimate projection is returned: work, assumptions, totals and project identification. Contact details, property value, internal cost/rate configuration and original documents are excluded. Share tokens use the URL fragment so they are not sent as website request paths. The application route is noindex, excluded from the sitemap/public corpus, and disables analytics.
+
+## Project scope and private learning
+
+The workspace retains building type, floors/rooms, measured walls or ceilings, openings/reveals, product references, programme phases, material readiness and vehicle attendance. Missing dimensions can be saved as incomplete placeholders; they cannot produce a complete budget. Material requirements, preparation actions, sample decisions and aftercare references are separate typed resources. Original-document references are checked against the current project; checked samples and issued aftercare require verified documents. Relevant changes invalidate the bound assessment, including a changed site address.
+
+Historical scopes, completion observations and pilot comparisons have separate private records. Owner-reviewed imports preserve source hashes and page/cell citations, distinguishing selling amounts, worker costs, alternatives, duplicate totals and genuinely unpriced work. The importer has no rate-card mutation path. Staff can append actual person-time and vehicle/cost observations; corrections preserve the previous record. Owner review can propose changes but never updates selling prices automatically. Package-time comparisons use the exact template identity and frozen configuration version, not a matching label or an inferred labour allowance from an area rate.
+
+An owner pilot comparison starts with a blank independent current-price breakdown and explicit scope checks. It preserves expected and calculated category totals, VAT, tolerance and differences against an immutable issued estimate. Offsetting errors between service categories cannot pass on the gross total alone. Synthetic local comparisons prove this mechanism; they do not constitute the required commercial pilot.
 
 ## Known activation requirements
 

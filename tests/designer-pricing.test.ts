@@ -12,7 +12,7 @@ function item(id = 'item-1', roomId = 'room-1'): ScopeItem {
   return { id, roomId, label: 'Wallcovering', scopeKind: 'multiple_rooms', confirmedMeasurements: true, walls: [{ id: 'wall-1', widthMm: 4000, heightMm: 2500, count: 1, openings: [], reveals: [] }], material: { groupId: 'standard-fabric', verifiedTypeId: 'standard-fabric', clientProvided: true, acoustic: 'no', velvet: 'no', specialist: 'no' }, preparation: 'normal-prep-lining-hanging', access: 'standard' };
 }
 function project(): ProjectDraft {
-  return { ...emptyProjectDraft(), name: 'Example design project', rooms: [{ id: 'room-1', label: 'Living room', floor: 'Ground' }, { id: 'room-2', label: 'Study', floor: 'First' }], items: [item(), item('item-2', 'room-2')], contact: { name: 'Example designer', email: 'designer@example.invalid', phone: '0000000000' }, address: { line1: 'Example site', town: 'London', postcode: 'TEST', country: 'UK' }, programme: { startDate: '2026-11-01', endDate: '2026-11-06', occupied: 'no', outOfHours: 'no', phases: 1 }, logistics: { vehicleDays: [], vehicleDaysConfirmed: true, deliveriesRequired: 'no', storageRequired: 'no', accessEquipmentRequired: 'no', wasteRemovalRequired: 'no' } };
+  return { ...emptyProjectDraft(), name: 'Example design project', buildingType: 'private-home', rooms: [{ id: 'room-1', label: 'Living room', floor: 'Ground' }, { id: 'room-2', label: 'Study', floor: 'First' }], items: [item(), item('item-2', 'room-2')], contact: { name: 'Example designer', email: 'designer@example.invalid', phone: '0000000000' }, address: { line1: 'Example site', town: 'London', postcode: 'TEST', country: 'UK' }, programme: { startDate: '2026-11-01', endDate: '2026-11-06', materialReadiness: { status: 'ordered', readyDate: '2026-10-30', scopeItemIds: [] }, occupied: 'no', outOfHours: 'no', phases: 1 }, logistics: { vehicleDays: [], vehicleDaysConfirmed: true, deliveriesRequired: 'no', storageRequired: 'no', accessEquipmentRequired: 'no', wasteRemovalRequired: 'no' } };
 }
 function config(): PricingConfig {
   const c = createDefaultPricingConfig();
@@ -76,7 +76,7 @@ test('single room and feature wall never fall back to area pricing, including a 
 });
 test('approved small-scope template applies to an eligible new project within bounds', () => {
   const p = project(), c = config(); p.items = [p.items[0]]; p.items[0].scopeKind = 'feature_wall'; p.items[0].packageId = 'feature-package';
-  c.packages.push({ id: 'feature-package', label: 'Approved example package', scopeKind: 'feature_wall', approved: true, pricePence: 90000, profileIds: ['standard-fabric'], maxNetAreaMm2: 12_000_000, maxWallHeightMm: 3000, maxWalls: 4, maxOpenings: 4, inclusion: 'Normal preparation, lining and hanging labour; materials client provided.' });
+  c.packages.push({ id: 'feature-package', label: 'Approved example package', scopeKind: 'feature_wall', approved: true, pricePence: null, setupPence: 10000, labourHours: 7, labourRatePencePerHour: 10000, surveyAllowancePence: 5000, managementAllowancePence: 5000, profileIds: ['standard-fabric'], maxNetAreaMm2: 12_000_000, maxWallHeightMm: 3000, maxWalls: 4, maxOpenings: 4, inclusion: 'Normal preparation, lining and hanging labour; materials client provided.' });
   const result = createEstimate(p, c, context); assert.equal(result.status, 'ready'); assert.equal(result.subtotalPence, 90000);
   p.items[0].walls[0].widthMm = 6000; assert.equal(createEstimate(p, c, context).status, 'review_required');
   p.items[0].walls[0].widthMm = 4000; p.items[0].material.specialist = 'yes'; assert.equal(createEstimate(p, c, context).status, 'review_required');
@@ -166,8 +166,12 @@ test('quantity approvals retain height, wall count, opening and reveal geometry 
   for (const change of [(x: ProjectDraft) => { x.items[0].walls[0].heightMm = 5000; }, (x: ProjectDraft) => { x.items[0].walls[0].count = 2; }, (x: ProjectDraft) => { x.items[0].walls[0].openings.push({ id: 'door', widthMm: 900, heightMm: 2000, count: 1 }); }, (x: ProjectDraft) => { x.items[0].walls[0].reveals.push({ id: 'return', widthMm: 200, heightMm: 2000, count: 1 }); }]) { const revised = structuredClone(p); change(revised); const result = createEstimate(revised, c, { ...context, projectRevision: 2 }); assert.equal(result.totalPence, null); assert.equal(result.reviewReasons.some(x => x.code === 'service-plan-required'), true); }
   const revised = structuredClone(p); revised.items[0].walls[0].widthMm = 5000; assert.equal(createEstimate(revised, c, { ...context, projectRevision: 2 }).status, 'ready');
 });
-test('zero fixed packages and zero calculated labour cannot become ready zero-price estimates', () => {
-  for (const fixed of [true, false]) { const p = project(), c = createDefaultPricingConfig(); p.items = [p.items[0]]; p.items[0].scopeKind = 'single_room'; calculatedPackage(c); const template = c.packages[0]; if (fixed) template.pricePence = 0; else { template.setupPence = 0; template.labourHours = 0; template.labourRatePencePerHour = 0; template.surveyAllowancePence = 0; template.managementAllowancePence = 0; } const result = createEstimate(p, c, context); assert.equal(result.totalPence, null); assert.equal(result.reviewReasons.some(x => x.code === 'positive-package-price-required'), true); }
+test('zero calculated labour is not approvable even when a legacy package amount is positive', () => {
+  for (const legacy of [null, 0, 85000]) {
+    const p = project(), c = createDefaultPricingConfig(); p.items = [p.items[0]]; p.items[0].scopeKind = 'single_room'; calculatedPackage(c);
+    Object.assign(c.packages[0], { pricePence: legacy, setupPence: 0, labourHours: 0, labourRatePencePerHour: 0, surveyAllowancePence: 0, managementAllowancePence: 0 });
+    assert.equal(validatePricingConfig(c).ok, false); const result = createEstimate(p, c, context); assert.equal(result.totalPence, null); assert.notEqual(result.status, 'ready');
+  }
 });
 function registeredFabric(c: PricingConfig) {
   c.products!.push({ id: 'verified-fabric', manufacturer: 'Example maker', name: 'Example fabric', code: 'FAB1', collection: 'Example collection', groupId: 'standard-fabric', approved: true, verified: true, construction: 'Verified standard fabric', faceMaterial: 'Fabric', backingMaterial: null, suppliedFormat: 'roll', widthMm: 1000, repeatMm: null, thicknessMm: null, hangingMethod: 'Follow the verified product instructions', sourceUrl: 'https://example.invalid/product', instructionsUrl: 'https://example.invalid/instructions', sourceReviewedOn: '2026-10-18', verifiedTypeId: 'standard-fabric', traits: { acoustic: false, velvet: false, specialist: false } });
@@ -212,9 +216,9 @@ test('installation and package breakdown identify their room and scope without p
   const result = createEstimate(p, c, context); assert.match(result.lines[0].label, /Living room · Chimney breast/); assert.match(result.lines[1].label, /Study · Desk wall/); assert.equal(result.lines.some(line => line.label.includes('999999999')), false);
   p.items = [p.items[0]]; p.items[0].scopeKind = 'single_room'; calculatedPackage(c); const packaged = createEstimate(p, c, context); assert.match(packaged.lines.find(line => line.category === 'package')!.label, /^Living room · /);
 });
-test('an approved removal and repair profile describes its actual preparation scope', () => {
+test('a removal and repair profile cannot hide an absent separately priced preparation scope', () => {
   const p = project(), c = config(); c.profiles.push({ ...c.profiles[0], id: 'repair-fabric', label: 'Approved removal and repair installation', verifiedTypeId: 'repair-fabric', preparations: ['removal-or-repair'], ratePencePerM2: 15000 }); p.items[0].material.verifiedTypeId = 'repair-fabric'; p.items[0].preparation = 'removal-or-repair';
-  const result = createEstimate(p, c, context); assert.equal(result.status, 'ready'); const line = result.lines.find(line => line.itemId === p.items[0].id)!; assert.match(line.inclusion, /owner-approved removal, repair and installation scope/); assert.doesNotMatch(line.inclusion, /ready walls|normal preparation/);
+  const result = createEstimate(p, c, context); assert.equal(result.status, 'review_required'); assert.equal(result.totalPence, null); assert.equal(result.reviewReasons.some(reason => reason.code === 'preparation-service-required'), true);
 });
 test('approving a product requires verified primary provenance, exact instructions, review date and a compatible mapping', () => {
   for (const key of ['sourceUrl', 'instructionsUrl', 'sourceReviewedOn', 'verifiedTypeId'] as const) {
@@ -276,4 +280,186 @@ test('wide contract vinyl keeps its project and ready-wall gate after profile re
   p.items = [p.items[0]]; p.items[0].scopeKind = 'commercial'; c.agreements = [{ id: 'renamed-profile-agreement', projectId: context.projectId, projectRevision: 1, itemId: p.items[0].id, profileId: 'renamed-contract-profile', approved: true, readyWallsVerified: false, allowAreaPricing: true }];
   assert.equal(createEstimate(p, c, context).totalPence, null); c.agreements[0].readyWallsVerified = true; assert.equal(createEstimate(p, c, context).totalPence, null); p.items[0].preparation = 'contract-ready'; const approved = createEstimate(p, c, context); assert.equal(approved.status, 'ready'); assert.equal(approved.subtotalPence, 26000);
   const ordinary = config(); ordinary.profiles[0].ratePencePerM2 = 2600; assert.equal(createEstimate(project(), ordinary, context).status, 'ready');
+});
+
+
+test('explicit product methods round-trip and changing any maker instruction invalidates quantity approval', () => {
+  const p = project(), c = config(); registeredFabric(c);
+  const record = c.products!.find(value => value.id === 'verified-fabric')!;
+  const fields = ['hangingDirection', 'pastingMethod', 'trimmingMethod', 'jointingMethod', 'cornerTreatment', 'handlingRequirements'] as const;
+  for (const key of fields) record[key] = `Verified ${key}`;
+  p.items.forEach(item => { item.material.productId = record.id; });
+  c.servicePlans[0] = { ...c.servicePlans[0], scopeFingerprint: computeApprovalScope(p, undefined, c), minNetAreaMm2: 1, maxNetAreaMm2: 50_000_000 };
+  assert.equal(validatePricingConfig(c).ok, true);
+  const publicRecord = getPublicProductCatalog(c).find(value => value.id === record.id)!;
+  for (const key of fields) assert.equal(publicRecord[key], record[key]);
+  assert.equal(createEstimate(p, c, context).status, 'ready');
+  for (const key of fields) {
+    const changed = structuredClone(c); changed.products!.find(value => value.id === record.id)![key] = 'Revised maker requirement';
+    assert.equal(createEstimate(p, changed, { ...context, projectRevision: 2 }).totalPence, null);
+  }
+  record.pastingMethod = null; assert.equal(validatePricingConfig(c).ok, true);
+  record.cornerTreatment = 'x'.repeat(2001); assert.equal(validatePricingConfig(c).ok, false);
+});
+test('structured services price the actual approved hours, days and visits with dated rates', () => {
+  const p = project(), c = config(); c.servicePlans[0].serviceEntries = [
+    { id: 'survey-visits', category: 'survey', label: 'Setting-out survey visits', quantity: 2, unit: 'visit', ratePence: 15000, rateReviewedOn: '2026-10-18', approved: true },
+    { id: 'management-days', category: 'management', label: 'Protection and trade coordination', quantity: 1.5, unit: 'day', ratePence: 40000, rateReviewedOn: '2026-10-18', approved: true },
+    { id: 'management-hours', category: 'management', label: 'Sample review', quantity: 0.75, unit: 'hour', ratePence: 8000, rateReviewedOn: '2026-10-18', approved: true },
+  ];
+  const result = createEstimate(p, c, context);
+  assert.equal(result.status, 'ready'); assert.equal(result.subtotalPence, 336000);
+  assert.deepEqual(result.lines.filter(line => ['survey', 'management'].includes(line.category)).map(line => [line.quantity, line.unit, line.amountPence]), [[2, 'visit', 30000], [1.5, 'day', 60000], [0.75, 'hour', 6000]]);
+});
+test('unapproved, missing, fractional visits and future-dated service prices never complete an estimate', () => {
+  for (const mutate of [
+    (entry: any) => { entry.approved = false; }, (entry: any) => { entry.ratePence = null; },
+    (entry: any) => { delete entry.rateReviewedOn; }, (entry: any) => { entry.quantity = 0.5; },
+    (entry: any) => { entry.rateReviewedOn = '2027-01-01'; },
+  ]) {
+    const c = config(); c.servicePlans[0].serviceEntries = [{ id: 'survey', category: 'survey', label: 'Survey visit', quantity: 1, unit: 'visit', ratePence: 15000, rateReviewedOn: '2026-10-18', approved: true }]; mutate(c.servicePlans[0].serviceEntries[0]);
+    assert.equal(createEstimate(project(), c, context).totalPence, null);
+  }
+});
+test('structured service entries cannot duplicate legacy hours or included package services', () => {
+  const p = project(), c = config(); c.servicePlans[0].serviceEntries = [{ id: 'management', category: 'management', label: 'Supervision', quantity: 1, unit: 'day', ratePence: 40000, rateReviewedOn: '2026-10-18', approved: true }];
+  c.servicePlans[0].managementHours = 8; c.servicePlans[0].managementRatePence = 5000;
+  assert.equal(createEstimate(p, c, context).totalPence, null);
+  c.servicePlans[0].managementHours = 0; p.items = [p.items[0]]; p.items[0].scopeKind = 'single_room'; calculatedPackage(c);
+  assert.equal(createEstimate(p, c, context).totalPence, null);
+  c.servicePlans[0].additionalServicesOnly = true; const result = createEstimate(p, c, context);
+  assert.equal(result.status, 'ready'); assert.equal(result.subtotalPence, 125000); assert.equal(result.lines.filter(line => line.category === 'management').length, 1);
+});
+test('declared nonstandard access requires a bound owner assessment and can then be estimated', () => {
+  const p = project(), c = config(); p.items[0].access = 'high-level';
+  assert.equal(createEstimate(p, c, context).totalPence, null);
+  c.servicePlans[0].accessReviewed = true; assert.equal(createEstimate(p, c, context).status, 'ready');
+  assert.equal(createEstimate(p, c, { ...context, projectRevision: 2 }).totalPence, null);
+  p.items[0].access = 'unknown'; assert.equal(createEstimate(p, c, context).status, 'information_required');
+});
+test('removal and repair require a separately approved linked preparation allowance', () => {
+  const p = project(), c = config(); p.items[0].preparation = 'removal-or-repair';
+  assert.equal(createEstimate(p, c, context).totalPence, null);
+  c.servicePlans[0].serviceEntries = [{ id: 'prep', category: 'preparation', label: 'Remove old paper and repair living-room substrate', quantity: 1.5, unit: 'day', ratePence: 30000, rateReviewedOn: '2026-10-18', approved: true, itemIds: ['item-1'] }];
+  const result = createEstimate(p, c, context); assert.equal(result.status, 'ready'); assert.equal(result.subtotalPence, 285000);
+  assert.equal(result.lines.filter(line => line.category === 'preparation').length, 1); assert.equal(result.lines.find(line => line.category === 'preparation')!.amountPence, 45000);
+  assert.match(result.lines.find(line => line.itemId === 'item-1')!.inclusion, /separately approved removal or repair/);
+  c.servicePlans[0].serviceEntries[0].itemIds = ['item-2']; assert.equal(createEstimate(p, c, context).totalPence, null);
+});
+test('unknown material readiness stays explicit while known future supply can receive a desk budget', () => {
+  const p = project(), c = config(); delete p.programme.materialReadiness;
+  const missing = createEstimate(p, c, context); assert.equal(missing.status, 'information_required'); assert.equal(missing.totalPence, null);
+  c.servicePlans[0].materialReadinessReviewed = true; const provisional = createEstimate(p, c, context); assert.equal(provisional.status, 'ready'); assert.equal(provisional.assumptions.some(note => /availability is provisional/.test(note)), true);
+  delete c.servicePlans[0].materialReadinessReviewed;
+  p.programme.materialReadiness = { status: 'ordered', readyDate: '2026-10-30', scopeItemIds: [] };
+  assert.equal(createEstimate(p, c, context).status, 'ready');
+  p.programme.materialReadiness.readyDate = '2026-11-10'; assert.equal(createEstimate(p, c, context).totalPence, null);
+  p.programme.materialReadiness = { status: 'checked-ready', scopeItemIds: ['item-1'] }; assert.equal(createEstimate(p, c, context).totalPence, null);
+});
+test('ceilings need explicitly approved surface coverage and cannot inherit an ordinary wall profile', () => {
+  const p = project(), c = config(); p.items[0].surfaceKind = 'ceiling'; p.items[0].walls = []; p.items[0].ceilings = [{ id: 'ceiling', widthMm: 4000, lengthMm: 3000, count: 1, openings: [] }];
+  assert.equal(createEstimate(p, c, context).totalPence, null);
+  c.profiles[0].surfaceKinds = ['wall', 'ceiling']; const result = createEstimate(p, c, context);
+  assert.equal(result.status, 'ready'); assert.equal(result.lines.find(line => line.itemId === 'item-1')!.quantity, 12);
+  c.servicePlans[0] = { ...c.servicePlans[0], scopeFingerprint: computeApprovalScope(p, undefined, c), minNetAreaMm2: 1, maxNetAreaMm2: 50_000_000 };
+  p.items[0].ceilings[0].lengthMm = 3500; assert.equal(createEstimate(p, c, { ...context, projectRevision: 2 }).totalPence, null);
+});
+test('ceiling packages require their own approved geometry bounds', () => {
+  const p = project(), c = config(); p.items = [p.items[0]]; p.items[0].scopeKind = 'single_room'; p.items[0].surfaceKind = 'ceiling'; p.items[0].walls = []; p.items[0].ceilings = [{ id: 'ceiling', widthMm: 4000, lengthMm: 3000, count: 1, openings: [] }];
+  c.profiles[0].surfaceKinds = ['wall', 'ceiling']; calculatedPackage(c);
+  assert.equal(createEstimate(p, c, context).totalPence, null);
+  Object.assign(c.packages[0], { surfaceKinds: ['ceiling'], maxCeilings: 1, maxCeilingWidthMm: 4000, maxCeilingLengthMm: 3000 });
+  assert.equal(createEstimate(p, c, context).status, 'ready');
+  p.items[0].ceilings[0].widthMm = 4500; assert.equal(createEstimate(p, c, context).totalPence, null);
+});
+test('building, resource approvals and readiness revisions invalidate a quantity-only service approval', () => {
+  const p = project(), c = config(); p.buildingType = 'hotel'; p.resources = { materialRequirements: [], preparationChecklist: [], sampleApprovals: [], aftercareReferences: [] };
+  c.servicePlans[0] = { ...c.servicePlans[0], scopeFingerprint: computeApprovalScope(p, undefined, c), minNetAreaMm2: 1, maxNetAreaMm2: 50_000_000 };
+  for (const mutate of [
+    (value: ProjectDraft) => { value.buildingType = 'private-home'; },
+    (value: ProjectDraft) => { value.programme.materialReadiness!.status = 'part-delivered'; },
+    (value: ProjectDraft) => { value.resources!.sampleApprovals.push({ id: 'sample', label: 'New sample', scopeItemIds: [], status: 'requested' }); },
+  ]) { const changed = structuredClone(p); mutate(changed); assert.equal(createEstimate(changed, c, { ...context, projectRevision: 2 }).totalPence, null); }
+});
+
+test('unmeasured openings and reveals remain saveable but owner approval cannot price them as zero area', () => {
+  for (const surface of ['wall-opening', 'wall-reveal', 'ceiling-opening'] as const) for (const missing of ['width', 'second-dimension'] as const) for (const mode of ['area', 'package'] as const) {
+    const p = project(), c = config(), first = p.items[0];
+    c.profiles[0].surfaceKinds = ['wall', 'ceiling'];
+    if (surface === 'ceiling-opening') {
+      first.surfaceKind = 'ceiling'; first.walls = []; first.ceilings = [{ id: 'ceiling', widthMm: 4000, lengthMm: 3000, count: 1, openings: [{ id: 'rooflight', widthMm: missing === 'width' ? 0 : 500, lengthMm: missing === 'second-dimension' ? 0 : 500, count: 1 }] }];
+    } else first.walls[0][surface === 'wall-opening' ? 'openings' : 'reveals'] = [{ id: 'part', widthMm: missing === 'width' ? 0 : 500, heightMm: missing === 'second-dimension' ? 0 : 500, count: 1 }];
+    if (mode === 'package') {
+      p.items = [first]; first.scopeKind = 'single_room'; calculatedPackage(c);
+      Object.assign(c.packages[0], { surfaceKinds: ['wall', 'ceiling'], maxCeilings: 1, maxCeilingWidthMm: 4000, maxCeilingLengthMm: 3000 });
+    } else c.agreements.push({ id: 'owner-agreement', projectId: context.projectId, projectRevision: 1, itemId: first.id, profileId: 'standard-fabric', approved: true, readyWallsVerified: true, allowAreaPricing: true, agreedRatePencePerM2: 12000, scopeFingerprint: computeApprovalScope(p, first.id, c), minNetAreaMm2: 1, maxNetAreaMm2: 50_000_000 });
+    c.servicePlans[0] = { ...c.servicePlans[0], scopeFingerprint: computeApprovalScope(p, undefined, c), minNetAreaMm2: 1, maxNetAreaMm2: 50_000_000, accessReviewed: true, materialReadinessReviewed: true };
+    assert.equal(validateProjectDraft(p).ok, true, `${surface}/${missing}/${mode}: incomplete dimensions are saveable`);
+    const result = createEstimate(p, c, context);
+    assert.equal(result.status, 'information_required', `${surface}/${missing}/${mode}`); assert.equal(result.totalPence, null);
+    assert.ok(result.reviewReasons.some(reason => reason.itemId === first.id && reason.code === 'measurements-required'));
+    assert.equal(result.lines.some(line => line.itemId === first.id || line.category === 'package'), false, 'no installation or package line can price the unmeasured scope');
+  }
+});
+test('measured inner rectangles continue to price after all unknown dimensions are resolved', () => {
+  const p = project(), c = config();
+  p.items[0].walls[0].openings = [{ id: 'opening', widthMm: 500, heightMm: 1000, count: 1 }];
+  p.items[0].walls[0].reveals = [{ id: 'reveal', widthMm: 100, heightMm: 1000, count: 2 }];
+  c.profiles[0].surfaceKinds = ['wall', 'ceiling']; p.items[1].surfaceKind = 'ceiling'; p.items[1].walls = []; p.items[1].ceilings = [{ id: 'ceiling', widthMm: 4000, lengthMm: 2500, count: 1, openings: [{ id: 'rooflight', widthMm: 500, lengthMm: 1000, count: 1 }] }];
+  const result = createEstimate(p, c, context); assert.equal(result.status, 'ready'); assert.equal(result.totalPence, 276480);
+  assert.deepEqual(result.lines.filter(line => line.category === 'installation').map(line => line.quantity), [9.7, 9.5]);
+});
+
+
+test('small wide-vinyl work uses its approved component package before large-contract area pricing', () => {
+  for (const kind of ['feature_wall', 'single_room'] as const) {
+    const p = project(), c = config(); p.items = [p.items[0]]; const scope = p.items[0]; scope.scopeKind = kind; scope.preparation = 'contract-ready'; scope.material.groupId = 'wide-contract-vinyl'; scope.material.verifiedTypeId = 'contract-ready-vinyl';
+    calculatedPackage(c, kind); c.packages[0].profileIds = ['contract-ready-vinyl']; c.packages[0].inclusion = 'Prepared-wall hanging labour and approved project service allowances; client materials.';
+    c.agreements.push({ id: 'small-vinyl', projectId: context.projectId, projectRevision: 1, itemId: scope.id, profileId: 'contract-ready-vinyl', approved: true, readyWallsVerified: true, allowAreaPricing: false, agreedRatePencePerM2: 2600 });
+    const packaged = createEstimate(p, c, context); assert.equal(packaged.status, 'ready'); assert.equal(packaged.subtotalPence, 85000); assert.equal(packaged.lines.filter(line => line.category === 'package').length, 1); assert.equal(packaged.lines.some(line => line.category === 'installation'), false);
+    c.agreements[0].readyWallsVerified = false; assert.equal(createEstimate(p, c, context).totalPence, null, 'prepared-wall verification is still required'); c.agreements[0].readyWallsVerified = true;
+    c.packages[0].approved = false; const missingPackage = createEstimate(p, c, context); assert.equal(missingPackage.totalPence, null); assert.equal(missingPackage.lines.some(line => line.category === 'installation'), false, 'missing packages never fall back to £26/m²'); c.packages[0].approved = true;
+    c.agreements = []; assert.equal(createEstimate(p, c, context).totalPence, null, 'the profile still requires explicit project approval');
+  }
+});
+test('legacy fixed package amounts are review data and cannot replace missing component allowances', () => {
+  const p = project(), c = config(); p.items = [p.items[0]]; p.items[0].scopeKind = 'feature_wall';
+  c.packages = [{ id: 'legacy-package', label: 'Legacy reference awaiting current allowances', scopeKind: 'feature_wall', approved: false, pricePence: 90000, profileIds: ['standard-fabric'], maxNetAreaMm2: 12_000_000, maxWallHeightMm: 3000, maxWalls: 4, maxOpenings: 4, inclusion: 'Historical fixed amount retained for review only.' }];
+  assert.equal(validatePricingConfig(c).ok, true, 'unapproved legacy records may be saved for review'); assert.equal(createEstimate(p, c, context).totalPence, null);
+  c.packages[0].approved = true; const invalid = validatePricingConfig(c); assert.equal(invalid.ok, false); if (!invalid.ok) for (const key of ['setupPence', 'labourHours', 'labourRatePencePerHour', 'surveyAllowancePence', 'managementAllowancePence']) assert.ok(invalid.issues.some(issue => issue.path === `packages.0.${key}`), `missing ${key} needs explicit configuration`);
+  assert.equal(createEstimate(p, c, context).totalPence, null, 'a positive legacy amount cannot make the estimate ready');
+});
+test('automatic packages always calculate approved components even when a different legacy amount is present', () => {
+  for (const legacy of [0, 1, 90000]) {
+    const p = project(), c = createDefaultPricingConfig(); p.items = [p.items[0]]; p.items[0].scopeKind = 'single_room'; calculatedPackage(c); c.packages[0].pricePence = legacy;
+    assert.equal(validatePricingConfig(c).ok, true); const result = createEstimate(p, c, context); assert.equal(result.status, 'ready'); assert.equal(result.subtotalPence, 85000); assert.equal(result.lines[0].amountPence, 85000);
+  }
+  for (const field of ['setupPence', 'labourHours', 'labourRatePencePerHour', 'surveyAllowancePence', 'managementAllowancePence'] as const) {
+    const c = config(); calculatedPackage(c); delete c.packages[0][field]; assert.equal(validatePricingConfig(c).ok, false, `approved ${field} cannot be omitted`);
+  }
+});
+test('a changed site address invalidates bounded survey, management and parking approvals', () => {
+  const p = project(), c = config();
+  p.logistics.vehicleDays = [{ date: '2026-11-01', vehicleId: 'van', congestionZone: 'no', congestionChargeApplies: 'no', ulezZone: 'no', ulezChargeApplies: 'no', parkingRequired: 'yes' }];
+  c.servicePlans[0] = { ...c.servicePlans[0], managementHours: 1, managementRatePence: 10000, surveyHours: 1, surveyRatePence: 10000, parking: [{ date: '2026-11-01', vehicleId: 'van', amountPence: 2000 }], scopeFingerprint: computeApprovalScope(p, undefined, c), minNetAreaMm2: 1, maxNetAreaMm2: 50_000_000 };
+  const sameSite = structuredClone(p); sameSite.items[0].walls[0].widthMm = 4500; assert.equal(createEstimate(sameSite, c, { ...context, projectRevision: 2 }).status, 'ready', 'bounded quantity change still works at the approved site');
+  for (const mutate of [(value: ProjectDraft) => { value.address.line1 = 'A different project address'; }, (value: ProjectDraft) => { value.address.postcode = 'OTHER'; }, (value: ProjectDraft) => { value.address.line2 = 'A different access entrance'; }]) {
+    const moved = structuredClone(p); mutate(moved); assert.notEqual(computeApprovalScope(moved, undefined, c), c.servicePlans[0].scopeFingerprint);
+    const result = createEstimate(moved, c, { ...context, projectRevision: 2 }); assert.equal(result.totalPence, null); assert.ok(result.reviewReasons.some(reason => reason.code === 'service-plan-required')); assert.equal(result.lines.some(line => ['management', 'survey'].includes(line.category) || line.label === 'Parking allowance'), false, 'site-specific service and parking allowances cannot silently transfer');
+  }
+});
+test('known preparation actions require priced repair scope, while planned repairs can receive an honest early budget', () => {
+  for (const status of ['action-required', 'needs-review'] as const) for (const wholeProject of [false, true]) {
+    const p = project(), c = config(); p.resources = { materialRequirements: [], sampleApprovals: [], aftercareReferences: [], preparationChecklist: [{ id: 'repair-check', label: 'Substrate repair actions identified', scopeItemIds: wholeProject ? [] : ['item-1'], status }] };
+    const unresolved = createEstimate(p, c, context); assert.equal(unresolved.totalPence, null); assert.ok(unresolved.reviewReasons.some(reason => reason.itemId === 'item-1' && reason.code === 'preparation-check-review-required')); assert.equal(unresolved.lines.some(line => line.itemId === 'item-1'), false);
+    const affected = wholeProject ? p.items : [p.items[0]]; affected.forEach(scope => { scope.preparation = 'removal-or-repair'; });
+    assert.equal(createEstimate(p, c, context).totalPence, null, 'declaring repairs without an approved allowance is insufficient');
+    c.servicePlans[0].serviceEntries = [{ id: 'planned-prep', label: 'Planned substrate repairs before hanging', category: 'preparation', quantity: 1, unit: 'day', ratePence: 40000, rateReviewedOn: '2026-10-18', approved: true, itemIds: affected.map(scope => scope.id) }];
+    const budget = createEstimate(p, c, context); assert.equal(budget.status, 'ready'); assert.equal(budget.subtotalPence, 280000); assert.equal(budget.lines.filter(line => line.category === 'preparation').length, 1); assert.ok(budget.assumptions.some(note => /Planned preparation actions/.test(note) && /does not assert that repair work is finished/.test(note)));
+    assert.equal(budget.project.resources!.preparationChecklist[0].status, status, 'pricing planned repairs does not mark the physical checklist ready');
+  }
+});
+test('unapproved sample decisions remain clear early-budget assumptions rather than an invented approval', () => {
+  const p = project(), c = config(); p.resources = { materialRequirements: [], preparationChecklist: [], aftercareReferences: [], sampleApprovals: [{ id: 'sample', label: 'Setting-out sample awaiting decision', scopeItemIds: [], status: 'changes-required' }] };
+  const result = createEstimate(p, c, context); assert.equal(result.status, 'ready'); assert.ok(result.assumptions.some(note => /Sample or setting-out approvals remain outstanding/.test(note))); assert.equal(result.project.resources!.sampleApprovals[0].status, 'changes-required');
 });

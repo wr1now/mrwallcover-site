@@ -24,8 +24,23 @@ async function field(page: any, label: string, value: string, root = '') {
   throw new Error(`Field not found: ${label}`);
 }
 async function section(page: any, index: number) {
-  await page.click(`.dp-steps button:nth-of-type(${index})`);
-  await page.waitForFunction((n: number) => document.querySelector('.dp-steps button[aria-current="step"]') === document.querySelector(`.dp-steps button:nth-of-type(${n})`), {}, index);
+  const selector = `.dp-steps button:nth-of-type(${index})`;
+  const target = await page.waitForSelector(selector, { visible: true });
+  // Long forms may leave the section menu above a sticky header. Center the
+  // actual target and verify its hit area before dispatching the native click.
+  await target.evaluate((button: HTMLElement) => button.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'instant' }));
+  await page.waitForFunction((selector: string) => {
+    const button = document.querySelector<HTMLElement>(selector); if (!button) return false;
+    const rect = button.getBoundingClientRect(), hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+    return rect.width > 0 && rect.height > 0 && hit !== null && button.contains(hit);
+  }, {}, selector);
+  await target.click();
+  await page.waitForFunction((selector: string) => {
+    const button = document.querySelector(selector), heading = document.querySelector('#dp-section-title');
+    // Missing nodes must fail; comparing two missing nodes previously allowed
+    // an unexpected page navigation to masquerade as a completed section change.
+    return button !== null && heading !== null && button.getAttribute('aria-current') === 'step' && heading.textContent === button.querySelector('span:last-child')?.textContent;
+  }, {}, selector);
 }
 async function noOverflow(page: any) {
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'page must fit viewport');
@@ -114,4 +129,74 @@ test('private workspace stays out of indexing and public content exports', async
   assert.match(html, /name="referrer" content="no-referrer"/);
   assert.doesNotMatch(await readFile('dist/sitemap-0.xml', 'utf8'), /\/designer-portal\//);
   assert.equal((await readdir('dist/designer-portal')).includes('index.md'), false);
+});
+
+test('intake validation accepts incomplete legacy drafts and measured ceilings, rejects mixed surfaces and unsafe references', async () => {
+  const { emptyProjectDraft, measureScopeArea, validateProjectDraft, draftInformationNeeded } = await import('../src/designer-portal/validation.ts');
+  const project = emptyProjectDraft();
+  delete project.buildingType; delete project.resources; delete project.programme.materialReadiness;
+  assert.equal(validateProjectDraft(project).ok, true, 'old incomplete drafts remain readable');
+  project.rooms = [{ id: 'room', label: 'Study', floor: 'Ground' }];
+  project.items = [{ id: 'ceiling', roomId: 'room', label: 'Ceiling textile', scopeKind: 'single_room', surfaceKind: 'ceiling', confirmedMeasurements: false, walls: [], ceilings: [{ id: 'face', widthMm: 4000, lengthMm: 5000, count: 2, openings: [{ id: 'rooflight', widthMm: 1000, lengthMm: 500, count: 1 }] }], material: { groupId: 'standard-fabric', clientProvided: true, acoustic: 'no', velvet: 'no', specialist: 'no' }, preparation: 'unknown', access: 'unknown' }];
+  assert.equal(validateProjectDraft(project).ok, true);
+  assert.equal(measureScopeArea(project.items[0]).netM2, 39);
+  assert.ok(draftInformationNeeded(project).some(reason => reason.key === 'ceiling-confirmation'));
+  const mixed = structuredClone(project); mixed.items[0].walls = [{ id: 'wall', widthMm: 1000, heightMm: 2000, count: 1, openings: [], reveals: [] }];
+  const mixedResult = validateProjectDraft(mixed); assert.equal(mixedResult.ok, false); if (!mixedResult.ok) assert.ok(mixedResult.issues.some(issue => issue.code === 'mixed-surfaces'));
+  project.resources = { materialRequirements: [], preparationChecklist: [], sampleApprovals: [], aftercareReferences: [{ id: 'care', label: 'Maker care', scopeItemIds: ['missing-scope'], status: 'to-confirm', url: 'javascript:alert(1)' }] };
+  const unsafe = validateProjectDraft(project); assert.equal(unsafe.ok, false); if (!unsafe.ok) { assert.ok(unsafe.issues.some(issue => issue.code === 'scope')); assert.ok(unsafe.issues.some(issue => issue.code === 'url')); }
+  project.resources.aftercareReferences[0].scopeItemIds = ['ceiling']; project.resources.aftercareReferences[0].url = 'https://example.invalid/care';
+  assert.equal(validateProjectDraft(project).ok, true, 'unconfirmed project records are saveable without claiming readiness');
+  project.items[0].ceilings![0].openings[0].lengthMm = 0; project.items[0].confirmedMeasurements = true; assert.equal(validateProjectDraft(project).ok, true, 'an explicitly unknown opening remains an incomplete draft'); assert.ok(draftInformationNeeded(project).some(reason => reason.key === 'ceiling-parts' && /Zero-sized rectangles/.test(reason.message)), 'confirmation cannot hide an unknown ceiling opening'); project.items[0].ceilings![0].openings[0].lengthMm = 500; assert.equal(draftInformationNeeded(project).some(reason => reason.key === 'ceiling-parts'), false);
+  project.programme.materialReadiness = { status: 'ordered', scopeItemIds: ['ceiling'], readyDate: '2026-02-30' }; assert.equal(validateProjectDraft(project).ok, false, 'invalid material dates cannot be saved');
+  project.programme.materialReadiness.readyDate = '2026-11-10'; project.programme.startDate = '2026-11-01'; assert.equal(validateProjectDraft(project).ok, true, 'a late delivery plan is saveable but requires review'); assert.ok(draftInformationNeeded(project).some(reason => reason.key === 'readiness-programme'));
+});
+
+test('ceiling intake and project-specific resources round-trip; changed scope invalidates approvals and readiness', async () => {
+  const server = await serve('dist'), browser = await launchBrowser(), downloads = await mkdtemp(join(tmpdir(), 'mw-designer-resources-'));
+  try {
+    const page = await browser.newPage(), errors: string[] = [], external: string[] = [];
+    page.on('pageerror', (error: Error) => errors.push(error.message));
+    page.on('request', (request: any) => { if (/^https?:/.test(request.url()) && !request.url().startsWith(server.origin)) external.push(request.url()); });
+    const cdp = await page.createCDPSession(); await cdp.send('Browser.setDownloadBehavior', { behavior: 'allow', downloadPath: downloads });
+    for (const width of [1440, 390]) {
+      await page.setViewport({ width, height: 920 }); await loadPage(page, server.origin + '/designer-portal/'); await page.waitForSelector('[data-designer-portal]');
+      await field(page, 'Building type', 'hotel');
+      await section(page, 2); await clickText(page, 'button', 'Add a room / area'); await field(page, 'Room / area', 'Ceiling study');
+      await field(page, 'Surface to cover', 'ceiling');
+      assert.equal(await page.$$eval('.dp-scope label > span:first-child', (labels: HTMLElement[]) => labels.some(label => label.textContent === 'Covered height')), false, 'ceiling input must use plane length rather than wall height');
+      assert.equal(await page.$eval('.dp-ceiling input[type="number"]', (input: HTMLInputElement) => input.value), '', 'surface change must not invent dimensions');
+      await field(page, 'Ceiling covered width', '4000'); await field(page, 'Ceiling covered length', '5000');
+      await clickText(page, 'summary', 'Uncovered ceiling openings to deduct · 0'); await clickText(page, 'button', 'Add a ceiling opening');
+      await field(page, 'Ceiling opening width', '1000'); await field(page, 'Ceiling opening length', '500');
+      assert.equal(await page.$eval('.dp-area strong', (el: HTMLElement) => el.textContent), '19.50 m²');
+      await page.click('.dp-scope > .dp-checkbox input'); assert.equal(await page.$eval('.dp-scope > .dp-checkbox input', (input: HTMLInputElement) => input.checked), true);
+      await section(page, 3); await field(page, 'Material readiness', 'checked-ready'); await field(page, 'Material constraints / outstanding items', 'Materials checked for this ceiling scope.');
+      await section(page, 6); await clickText(page, 'button', 'Add a material requirement'); await field(page, 'Material requirement', 'Maker ceiling panels'); await field(page, 'Ordering quantity', '12'); await field(page, 'Ordering unit', 'panel'); await field(page, 'Quantity source / drawing revision', 'Reviewed panel schedule C-02'); await field(page, 'Supply status', 'client-confirmed');
+      await clickText(page, 'button', 'Add a preparation check'); await field(page, 'Preparation check', 'Ceiling substrate inspection'); await field(page, 'Checked by', 'Synthetic reviewer'); await field(page, 'Preparation status', 'ready');
+      await clickText(page, 'button', 'Add a sample approval'); await field(page, 'Sample / setting-out reference', 'Panel setting-out C-02'); await field(page, 'Approved by', 'Synthetic designer'); await field(page, 'Sample status', 'approved');
+      await clickText(page, 'button', 'Add an aftercare reference'); await field(page, 'Aftercare reference', 'Maker ceiling care instructions'); await field(page, 'Product-specific aftercare / handover notes', 'Care instructions to be confirmed against exact finish.');
+      await noOverflow(page);
+      await section(page, 2); await field(page, 'Product code / colourway', 'REVISED-CEILING');
+      await field(page, 'Ceiling covered length', '5100');
+      assert.equal(await page.$eval('.dp-scope > .dp-checkbox input', (input: HTMLInputElement) => input.checked), false);
+      await section(page, 3); assert.equal(await page.$eval('.dp-readiness select', (select: HTMLSelectElement) => select.value), 'unknown');
+      await section(page, 6); assert.equal(await page.$eval('[data-resource-group="materials"] select', (select: HTMLSelectElement) => select.value), 'wallcovering');
+      assert.equal(await page.$eval('[data-resource-group="preparation"] select', (select: HTMLSelectElement) => select.value), 'needs-review');
+      assert.equal(await page.$eval('[data-resource-group="samples"] select', (select: HTMLSelectElement) => select.value), 'needs-review');
+      assert.equal(await page.$eval('[data-resource-group="samples"] input', (input: HTMLInputElement) => input.value), 'Panel setting-out C-02');
+      await noOverflow(page);
+    }
+    await clickText(page, 'button', 'Download draft');
+    let files: string[] = []; for (let i = 0; i < 100; i++) { files = (await readdir(downloads)).filter(name => name.endsWith('.json')); if (files.length) break; await new Promise(resolve => setTimeout(resolve, 30)); }
+    assert.equal(files.length, 1); const path = join(downloads, files[0]), draft = JSON.parse(await readFile(path, 'utf8'));
+    assert.equal(draft.buildingType, 'hotel'); assert.equal(draft.items[0].surfaceKind, 'ceiling'); assert.deepEqual(draft.items[0].walls, []); assert.equal(draft.items[0].ceilings[0].lengthMm, 5100);
+    assert.equal(draft.resources.materialRequirements[0].status, 'to-confirm'); assert.equal(draft.resources.sampleApprovals[0].approvedBy, undefined); assert.equal(draft.resources.preparationChecklist[0].checkedBy, undefined); assert.equal(draft.programme.materialReadiness.status, 'unknown');
+    await page.reload({ waitUntil: 'load' }); await page.waitForSelector('[data-designer-portal]'); const upload = await page.$('input[aria-label="Open a project draft JSON file"]'); await upload.uploadFile(path);
+    await page.waitForFunction(() => document.querySelector('.dp-live-message')?.textContent?.includes('Draft opened')); await section(page, 6);
+    assert.equal(await page.$eval('[data-resource-group="materials"] input', (input: HTMLInputElement) => input.value), 'Maker ceiling panels');
+    await clickText(page, 'summary', (await page.$eval('.dp-missing summary', (element: HTMLElement) => element.textContent)));
+    assert.match(await page.$eval('.dp-missing', (element: HTMLElement) => element.textContent), /Incomplete briefs can be saved|Material readiness|material readiness/);
+    assert.deepEqual(external, []); assert.deepEqual(errors, []); assert.deepEqual(await page.evaluate(() => ({ local: localStorage.length, session: sessionStorage.length })), { local: 0, session: 0 });
+  } finally { await browser.close(); await server.close(); await rm(downloads, { recursive: true, force: true }); }
 });

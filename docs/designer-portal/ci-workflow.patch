@@ -2,6 +2,12 @@ diff --git a/.github/workflows/pages.yml b/.github/workflows/pages.yml
 index fe49cd8..ba08235 100644
 --- a/.github/workflows/pages.yml
 +++ b/.github/workflows/pages.yml
+@@ -14,3 +14,4 @@ permissions:
+ concurrency:
+-  group: pages
++  # PR checks have independent queues; production deployments stay serialized.
++  group: pages-${{ github.event.pull_request.number || 'production' }}
+   cancel-in-progress: false
 @@ -36,6 +36,18 @@ jobs:
          run: node scripts/stamp-case-study-dates.mjs --check
        - name: Check

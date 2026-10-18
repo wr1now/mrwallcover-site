@@ -4,7 +4,7 @@
 
 Use separate staging and production Supabase projects. Select the specific London region `eu-west-2`; a general European region does not guarantee London. Review provider data handling rather than treating region selection as a compliance certificate.
 
-Apply the designer migrations in order: `202610180002_designer_portal.sql`, then `202610180003_designer_notifications.sql`. Set up verified email OTP with a real transactional sender and the approved website origin. Bootstrap the business owner through the private SQL `designer_set_staff` function after checking the actual verified Auth user ID/email. A studio owner is not automatically a Mr Wallcover pricing administrator.
+Apply the designer migrations in order: `202610180002_designer_portal.sql`, `202610180003_designer_notifications.sql`, then `202610180004_designer_learning.sql`. Set up verified email OTP with a real transactional sender and the approved website origin. Bootstrap the business owner through the private SQL `designer_set_staff` function after checking the actual verified Auth user ID/email. A studio owner is not automatically a Mr Wallcover pricing administrator.
 
 Deploy `supabase/functions/designer-portal/index.ts`. Keep private service credentials in platform secrets. Configure exact allowed origins, public site URL and the disabled/enabled switches documented in that entry point. Build-time browser variables are only `PUBLIC_DESIGNER_PORTAL_ENABLED`, `PUBLIC_DESIGNER_PORTAL_URL` and `PUBLIC_DESIGNER_PORTAL_ANON_KEY`. The URL is the Supabase project origin, not a service key or storage URL.
 
@@ -30,11 +30,23 @@ Use the owner configuration screen to publish a versioned rate card. Review prod
 
 Product approvals require the source instructions, date and explicit installation profile. Unknown technical facts remain blank; they are not inferred from a product photograph. Quantity-only approvals bind the product instructions and handling assumptions, wall height, openings, access, programme and logistics; changing those requires fresh review. Small-package labour uses fixed approved hours and an hourly rate, plus the approved setup/service allowances. Area limits determine eligibility, not package labour cost.
 
+The legacy fixed package-price field is reference only. An approved package requires explicit setup, positive labour hours/rate, surveying and management components, including zero where genuinely included/not required. A small wide-vinyl scope can use an eligible approved package with project/prepared-wall approval; it cannot inherit the large-contract £26 area rate. Additional preparation uses linked, approved scope/service entries. Known unresolved preparation checklist actions cannot silently price as ordinary preparation.
+
 Standard road charges require an approved effective-date window. Defaults deliberately have no approved end date, so an owner must establish the usable tariff window or approve a sourced vehicle/day amount. Discounts and exemptions never silently become standard charges. The public price guide is separately reviewed source content; changing private rates does not automatically publish new public prices.
 
 Reprice representative historical *scopes* with the current card and compare the result with a fresh owner-prepared estimate. Do not use an old quotation total as the target for today's prices. Enable profile coverage incrementally after those comparisons. The older quantity-calculator calibration waiver does not establish pricing calibration for this new system.
 
+### Historical imports and pilot evidence
+
+Use `scripts/prepare-designer-history.py --review /private/review.json --out /private/import.json` with the worker Python dependencies available. The input is an explicitly reviewed list of original `.xlsx` paths, source-cell references and amount roles; it is not a folder-wide crawler or a current-rate extractor. The preparer reads cached values, records the original SHA-256 and exact sheet/cell locations, bounds archives, rejects macros/active embedded content, and never follows external workbook links. Missing numeric caches require review. Output must be outside this public repository, is created exclusively with private permissions, and is not printed to the console.
+
+The owner's Private historical scopes panel reviews the local JSON before an explicit import. It requires classification/provenance acknowledgment and preserves alternatives, worker costs, unpriced values and duplicate totals. It does not fetch archive paths, upload original workbooks or set selling rates. A successful local preparation is not proof of database import. Keep the real source review/export and import receipt in private research.
+
+Use the Current-price pilot panel against a complete issued budget. Enter the owner's independently prepared current labour/service breakdown, scope checks, VAT and tolerance; do not prefill it from the calculated result or an old quotation. Preserve mismatch reviews as well as matches. Completed-project observations record actual person-time, installation dates and separately attended vehicle dates/costs. Corrections append to the evidence chain. Owner review produces proposals only; changing selling rates still requires a separate approved configuration version.
+
 ## Staging acceptance
+
+Run the bounded [staging verification harness](staging-verification.md) against an isolated synthetic-data project after provisioning. Its automatic checks complement the following provider/manual scenarios and cannot establish full acceptance alone. Keep receipt files private; no credentials, signed URLs, file contents or customer fields belong in a public CI artifact.
 
 Use synthetic documents and separate test users, never customer recipients, for delivery tests:
 

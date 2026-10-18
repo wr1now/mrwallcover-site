@@ -11,6 +11,18 @@ export interface LogisticsConfig {
   ulezEffectiveFrom?: string;
   ulezEffectiveUntil?: string | null;
 }
+export interface ServiceEntry {
+  id: string;
+  category: 'survey' | 'management' | 'preparation';
+  label: string;
+  quantity: number;
+  unit: 'hour' | 'day' | 'visit';
+  ratePence: number | null;
+  rateReviewedOn?: string;
+  approved: boolean;
+  /** Preparation work must identify the scope it adds to the installation. */
+  itemIds?: string[];
+}
 export interface ServicePlan {
   id: string;
   projectId: string;
@@ -21,6 +33,11 @@ export interface ServicePlan {
   approved: boolean;
   programmeReviewed: boolean;
   propertyContextReviewed: boolean;
+  /** Owner assessment of the declared stairs, high-level or restricted access. */
+  accessReviewed?: boolean;
+  /** Explicit provisional assessment; does not assert physical material readiness. */
+  materialReadinessReviewed?: boolean;
+  serviceEntries?: ServiceEntry[];
   managementHours?: number;
   managementRatePence?: number;
   surveyHours?: number;

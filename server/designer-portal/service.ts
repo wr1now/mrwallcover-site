@@ -1,10 +1,11 @@
 /** Private API orchestration. No service credentials or configuration are imported
  * into the browser bundle. All actor identities come from Supabase Auth /user. */
-import { validateProjectDraft } from '../../src/designer-portal/validation.ts';
+import { measureScopeArea, validateProjectDraft } from '../../src/designer-portal/validation.ts';
 import { computeApprovalScope, createEstimate, getPublicProductCatalog, toSharedEstimate, validatePricingConfig } from './pricing.ts';
 import { createDefaultPricingConfig } from './defaults.ts';
 import type { PricingConfig } from './pricing.ts';
-import type { ProjectDraft } from '../../src/designer-portal/types.ts';
+import type { EstimateSnapshot, ProjectDraft } from '../../src/designer-portal/types.ts';
+import { analyseActualWork, comparePilot, ObservationError, validateActualWork, validateHistoricalScope, validatePilotInput } from './learning.ts';
 
 type Row = Record<string, any>;
 export type PortalEnvironment = { get(name: string): string | undefined };
@@ -94,11 +95,15 @@ export async function tokenHash(token: string): Promise<string> {
   return [...new Uint8Array(hash)].map(byte => byte.toString(16).padStart(2, '0')).join('');
 }
 function newToken(): string { return [...crypto.getRandomValues(new Uint8Array(32))].map(byte => byte.toString(16).padStart(2, '0')).join(''); }
-function projectView(row: Row) { return { id: row.id, studioId: row.studio_id, name: row.name, revision: row.revision, draft: row.draft, createdAt: row.created_at, updatedAt: row.updated_at }; }
+function projectView(row: Row) { return { id: row.id, studioId: row.studio_id, name: row.name, revision: row.revision, draft: row.draft, createdAt: row.created_at, updatedAt: row.updated_at, completedOn: row.completed_on || null }; }
 function documentView(row: Row) { return { id: row.id, projectId: row.project_id, revision: row.revision, supersedesDocumentId: row.supersedes_document_id || null, fileName: row.file_name, mime: row.actual_mime || row.declared_mime, bytes: row.bytes, sha256: row.sha256, status: row.state, state: row.state, verified: row.verified, reviewRequired: row.review_required, error: row.error, createdAt: row.created_at }; }
 function jobView(row: Row) { return { id: row.id, projectId: row.project_id, type: row.type, state: row.state, status: row.state, attempts: row.attempts, maxAttempts: row.max_attempts, error: row.error, createdAt: row.created_at, updatedAt: row.updated_at }; }
 function shareView(row: Row) { return { id: row.id, estimateId: row.estimate_id, expiresAt: row.expires_at, revokedAt: row.revoked_at, createdAt: row.created_at }; }
 function operationsView(row: Row) { return { uploadsEnabled: row.uploads_enabled === true, workerEnabled: row.worker_enabled === true, monthlyBudgetPence: row.monthly_budget_pence ?? null, worstCaseJobPence: row.worst_case_job_pence ?? null }; }
+function actualView(row: Row) { return { id: row.id, projectRevision: row.project_revision, estimateId: row.estimate_id, supersedesId: row.supersedes_id, body: row.body, analysis: row.analysis, createdAt: row.created_at }; }
+function actualReviewView(row: Row) { return { id: row.id, actualId: row.actual_id, decision: row.decision, note: row.note, createdAt: row.created_at }; }
+function historyView(row: Row) { return { id: row.id, body: row.body, createdAt: row.created_at }; }
+function pilotView(row: Row) { return { id: row.id, estimateId: row.estimate_id, historicalScopeId: row.historical_scope_id, body: row.body, comparison: row.comparison, createdAt: row.created_at }; }
 function notificationConfiguration(row: Row) { return { enabled: row.notifications_enabled === true, provider: 'resend', sender: row.notification_sender ?? null, workspaceUrl: row.notification_workspace_url ?? null, monthlyCap: row.notification_monthly_cap ?? null, dailyStudioCap: row.notification_daily_studio_cap ?? null, monthlyBudgetPence: row.notification_monthly_budget_pence ?? null, worstCaseAttemptPence: row.notification_worst_case_attempt_pence ?? null }; }
 function notificationView(row: Row) { return { id: row.id, state: row.state, recipientUserId: row.recipient_user_id, attempts: row.attempts, providerAcceptedAt: row.provider_accepted_at, deliveredAt: row.delivered_at, providerEvent: row.provider_event, error: row.error, createdAt: row.created_at }; }
 function processingReason(row: Row, usage?: Row): string | null {
@@ -213,6 +218,7 @@ export function createDesignerPortalHandler(options: PortalServiceOptions) {
         const member = (await db.select('designer_memberships', `studio_id=eq.${studioId}&user_id=eq.${actor}`))[0];
         if (!member || (write && !['owner', 'editor'].includes(member.role)) || (ownerOnly && member.role !== 'owner')) throw new PortalError(404, 'not_found', 'This private workspace is unavailable.');
       }
+      function staffAdmin() { if (!staffRole) throw new PortalError(403, 'forbidden', 'Only Mr Wallcover staff can access private operational evidence.'); }
       function ownerAdmin() { if (staffRole !== 'owner') throw new PortalError(403, 'forbidden', 'Only the owner administrator can approve pricing configuration.'); }
       async function project(id: unknown, write = false) {
         const row = (await db.select('designer_projects', `id=eq.${uuid(id, 'project ID')}`))[0];
@@ -283,6 +289,12 @@ export function createDesignerPortalHandler(options: PortalServiceOptions) {
           const studioId = existing?.studio_id || uuid(payload.studioId); await access(studioId, true);
           const id = existing?.id || crypto.randomUUID();
           const draft = validatedDraft(payload.draft);
+          const resourceSources = [...(draft.resources?.sampleApprovals || []).map(row => ({ id: row.sourceDocumentId, checked: row.status === 'approved' })), ...(draft.resources?.aftercareReferences || []).map(row => ({ id: row.sourceDocumentId, checked: row.status !== 'to-confirm' }))];
+          for (const source of resourceSources) if (source.id) {
+            if (!existing) throw new PortalError(400, 'invalid_draft', 'Save the new project and upload its own source documents before linking resource approvals.');
+            const sourceDocument = await document(existing, source.id);
+            if (source.checked && !sourceDocument.verified) throw new PortalError(400, 'source_not_verified', 'The resource source document must pass verification before it supports an approval or issued reference.');
+          }
           const row = await db.rpc('designer_save_project', { p_actor: actor, p_studio: studioId, p_id: id, p_name: textValue(payload.name || draft.name), p_draft: { ...draft, id }, p_expected_revision: existing ? integer(payload.expectedRevision, 1) : 0 });
           result = { project: projectView(row) }; break;
         }
@@ -364,6 +376,47 @@ export function createDesignerPortalHandler(options: PortalServiceOptions) {
           if (!s) throw new PortalError(404, 'not_found', 'Share unavailable.');
           await db.rpc('designer_revoke_share', { p_actor: actor, p_share: s.id }); result = { revoked: true }; break;
         }
+        case 'admin.history.list': {
+          fields(payload, []); ownerAdmin(); result = { records: (await db.select('designer_historical_scopes', 'order=created_at.desc&limit=200')).map(historyView), ratesImported: false }; break;
+        }
+        case 'admin.history.import': {
+          fields(payload, ['entries']); ownerAdmin();
+          if (!Array.isArray(payload.entries) || !payload.entries.length || payload.entries.length > 50) throw new PortalError(400, 'invalid_evidence', 'Import between one and fifty reviewed historical scope records.');
+          const entries = payload.entries.map(validateHistoricalScope);
+          const imported = await db.rpc('designer_import_historical_scopes', { p_actor: actor, p_entries: entries });
+          result = { records: imported.records.map(historyView), count: imported.count, ratesImported: false }; break;
+        }
+        case 'admin.actuals.list': {
+          fields(payload, ['projectId']); staffAdmin(); const p = await project(payload.projectId); const query = `project_id=eq.${p.id}&studio_id=eq.${p.studio_id}`;
+          const [actuals, reviews] = await Promise.all([db.select('designer_actuals', `${query}&order=created_at.desc,id.desc&limit=100`), db.select('designer_actual_reviews', `${query}&order=created_at.desc&limit=200`)]);
+          result = { actuals: actuals.map(actualView), reviews: reviews.map(actualReviewView) }; break;
+        }
+        case 'admin.actuals.save': {
+          fields(payload, ['projectId', 'expectedRevision', 'estimateId', 'supersedesId', 'idempotencyKey', 'body']); staffAdmin(); const p = await project(payload.projectId, true);
+          const reference = payload.estimateId ? await estimate(p, payload.estimateId) : null;
+          const sourceProject = reference ? validatedDraft(reference.snapshot.project) : validatedDraft(p.draft);
+          const body = validateActualWork(payload.body, sourceProject, now().toISOString().slice(0, 10));
+          const configRow = reference ? (await db.select('designer_configs', `id=eq.${reference.config_id}`))[0] : null;
+          const checked = configRow ? validatePricingConfig(configRow.config) : null;
+          const analysis = analyseActualWork(body, reference?.snapshot as EstimateSnapshot || null, checked?.ok ? checked.value : null);
+          const saved = await db.rpc('designer_record_actuals', { p_actor: actor, p_project: p.id, p_expected_revision: integer(payload.expectedRevision, 1), p_estimate: reference?.id || null, p_supersedes: payload.supersedesId ? uuid(payload.supersedesId) : null, p_key: textValue(payload.idempotencyKey, 1, 120), p_body: body, p_analysis: analysis });
+          result = { actual: actualView(saved) }; break;
+        }
+        case 'admin.actuals.review': {
+          fields(payload, ['projectId', 'actualId', 'decision', 'note']); ownerAdmin(); const p = await project(payload.projectId);
+          if (!['reviewed', 'rate-card-review-needed'].includes(payload.decision)) throw new PortalError(400, 'invalid_evidence', 'Choose a recorded review outcome.');
+          const row = await db.rpc('designer_review_actuals', { p_actor: actor, p_project: p.id, p_actual: uuid(payload.actualId), p_decision: payload.decision, p_note: textValue(payload.note, 1, 4000) }); result = { review: actualReviewView(row) }; break;
+        }
+        case 'admin.pilot.list': {
+          fields(payload, ['projectId']); ownerAdmin(); const p = await project(payload.projectId); result = { comparisons: (await db.select('designer_pilot_comparisons', `project_id=eq.${p.id}&studio_id=eq.${p.studio_id}&order=created_at.desc&limit=100`)).map(pilotView) }; break;
+        }
+        case 'admin.pilot.save': {
+          fields(payload, ['projectId', 'estimateId', 'historicalScopeId', 'body']); ownerAdmin(); const p = await project(payload.projectId), e = await estimate(p, payload.estimateId);
+          const body = validatePilotInput(payload.body, now().toISOString().slice(0, 10));
+          if (body.sourceDocumentId && !(await document(p, body.sourceDocumentId)).verified) throw new PortalError(400, 'source_not_verified', 'Verify the independent comparison document first.');
+          const comparison = comparePilot(body, e.snapshot as EstimateSnapshot);
+          const row = await db.rpc('designer_record_pilot', { p_actor: actor, p_project: p.id, p_estimate: e.id, p_history: payload.historicalScopeId ? uuid(payload.historicalScopeId) : null, p_body: body, p_comparison: comparison }); result = { comparison: pilotView(row) }; break;
+        }
         case 'admin.notifications.get': {
           fields(payload, []); ownerAdmin(); result = { configuration: notificationConfiguration(settings), usage: await db.select('designer_notification_usage', 'order=month.desc&limit=12') }; break;
         }
@@ -403,8 +456,14 @@ export function createDesignerPortalHandler(options: PortalServiceOptions) {
             if (!payload.agreement && !payload.servicePlan) throw new PortalError(400, 'invalid_configuration', 'Provide an agreement or a service plan.');
             const agreement: Row | null = payload.agreement ? { ...object(payload.agreement), projectId: p.id, projectRevision: p.revision } : null;
             const servicePlan: Row | null = payload.servicePlan ? { ...object(payload.servicePlan), projectId: p.id, projectRevision: p.revision } : null;
-            if (agreement?.scopeFingerprint === 'current') agreement.scopeFingerprint = computeApprovalScope(validatedDraft(p.draft), agreement.itemId, trusted.value);
-            if (servicePlan?.scopeFingerprint === 'current') servicePlan.scopeFingerprint = computeApprovalScope(validatedDraft(p.draft), undefined, trusted.value);
+            const currentDraft = validatedDraft(p.draft);
+            if (agreement?.itemId && !currentDraft.items.some(item => item.id === agreement.itemId)) throw new PortalError(400, 'invalid_configuration', 'Choose a scope item in the saved project.');
+            for (const approval of [agreement, servicePlan]) if (approval && (!approval.scopeFingerprint || approval.scopeFingerprint === 'current')) {
+              const selected = currentDraft.items.filter(item => !approval.itemId || item.id === approval.itemId);
+              const exactArea = selected.reduce((sum, item) => sum + measureScopeArea(item).netMm2, 0);
+              approval.scopeFingerprint = computeApprovalScope(currentDraft, approval.itemId, trusted.value);
+              approval.minNetAreaMm2 ??= exactArea; approval.maxNetAreaMm2 ??= exactArea;
+            }
             candidate = { ...trusted.value,
               agreements: agreement ? [...trusted.value.agreements.filter((a: any) => a.id !== agreement.id), agreement] : trusted.value.agreements,
               servicePlans: servicePlan ? [...trusted.value.servicePlans.filter((a: any) => a.id !== servicePlan.id), servicePlan] : trusted.value.servicePlans };
@@ -417,7 +476,7 @@ export function createDesignerPortalHandler(options: PortalServiceOptions) {
       }
       return reply(200, { ok: true, data: result });
     } catch (error) {
-      const known = error instanceof PortalError ? error : new PortalError(503, 'service_unavailable', 'The private service could not complete this action.');
+      const known = error instanceof ObservationError ? new PortalError(400, 'invalid_evidence', error.message) : error instanceof PortalError ? error : new PortalError(503, 'service_unavailable', 'The private service could not complete this action.');
       return reply(known.status, { ok: false, error: { code: known.code, message: known.message } });
     }
   };

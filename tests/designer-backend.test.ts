@@ -3,6 +3,10 @@ import test from 'node:test';
 import { readFileSync } from 'node:fs';
 import { PGlite } from '@electric-sql/pglite';
 import { createDesignerPortalHandler, safeStorageUrl, tokenHash, uploadSpecification } from '../server/designer-portal/service.ts';
+import { emptyProjectDraft, measureScopeArea } from '../src/designer-portal/validation.ts';
+import type { ProjectDraft } from '../src/designer-portal/types.ts';
+import { createDefaultPricingConfig } from '../server/designer-portal/defaults.ts';
+import { computeApprovalScope, validatePricingConfig } from '../server/designer-portal/pricing.ts';
 
 const OWNER = '10000000-0000-4000-8000-000000000001';
 const OTHER = '20000000-0000-4000-8000-000000000002';
@@ -30,6 +34,7 @@ async function database() {
       ('${OTHER}','other@example.test',now(),'{}'),('${VIEWER}','viewer@example.test',now(),'{}'),('${EDITOR}','editor@example.test',now(),'{}');`);
   await db.exec(readFileSync(new URL('../supabase/migrations/202610180002_designer_portal.sql', import.meta.url), 'utf8'));
   await db.exec(readFileSync(new URL('../supabase/migrations/202610180003_designer_notifications.sql', import.meta.url), 'utf8'));
+  await db.exec(readFileSync(new URL('../supabase/migrations/202610180004_designer_learning.sql', import.meta.url), 'utf8'));
   return db;
 }
 async function setup(db: PGlite) {
@@ -384,4 +389,190 @@ test('API verifies email with Auth, derives roles server-side and rejects client
   assert.equal((await handler(request('project.get', { projectId: PROJECT }))).status, 404);
   const forged = await handler(request('estimate.issue', { projectId: PROJECT, expectedRevision: 1, idempotencyKey: 'synthetic-1', totalPence: 1 }));
   assert.equal(forged.status, 400); assert.equal(mutations.some(url => url.includes('designer_issue_estimate')), false);
+});
+
+test('historical scope imports are owner-only, immutable and idempotent without becoming current rates', async () => {
+  const db = await database();
+  try {
+    await setup(db); await db.query('select designer_set_staff($1,$2,$3)', [OWNER, 'owner@example.test', 'owner']);
+    const entry = { externalRef: 'synthetic-old-scope', title: 'Synthetic old scope', classification: 'mixed-schedule', source: { fileName: 'old-schedule.xlsx', sha256: SHA, reviewedOn: '2026-10-18', locations: [{ sheet: 'Scope', range: 'B4:F8' }] }, scopeNotes: 'Historical labour and delivery structure only', quantityBasis: 'm2/item', amounts: [{ label: 'Selling', role: 'selling', valuePence: 10000, locationIndex: 0 }, { label: 'Worker payment', role: 'worker-cost', valuePence: 5000, locationIndex: 0 }], warnings: ['Current prices require separate approval.'] };
+    await assert.rejects(() => db.query('select designer_import_historical_scopes($1,$2::jsonb)', [VIEWER, JSON.stringify([entry])]), /Owner permission/);
+    const first = (await db.query<any>('select designer_import_historical_scopes($1,$2::jsonb) as result', [OWNER, JSON.stringify([entry])])).rows[0].result;
+    const again = (await db.query<any>('select designer_import_historical_scopes($1,$2::jsonb) as result', [OWNER, JSON.stringify([entry])])).rows[0].result;
+    assert.equal(first.records[0].id, again.records[0].id); assert.equal(first.ratesImported, false); assert.equal((await db.query('select * from designer_configs')).rows.length, 0);
+    await assert.rejects(() => db.query('select designer_import_historical_scopes($1,$2::jsonb)', [OWNER, JSON.stringify([{ ...entry, title: 'Changed source under same identity' }])]), /conflict/);
+    await assert.rejects(() => db.exec("update designer_historical_scopes set body='{}'"), /immutable/);
+    await db.exec(`set role authenticated;select set_config('request.jwt.claim.sub','${OWNER}',false)`);
+    await assert.rejects(() => db.exec('select * from designer_historical_scopes'), /permission denied/);
+    await assert.rejects(() => db.query('select designer_import_historical_scopes($1,$2::jsonb)', [OWNER, JSON.stringify([entry])]), /permission denied/);
+  } finally { await db.close(); }
+});
+
+test('actual work is staff-only, correction-linked and immutable; review never alters rate versions', async () => {
+  const db = await database();
+  try {
+    await setup(db); await db.query('select designer_set_staff($1,$2,$3)', [OWNER, 'owner@example.test', 'owner']);
+    const body = { completedOn: '2026-10-18', installationDates: ['2026-10-17','2026-10-18'], labour: [{ id: 'person-time', category: 'installation', label: 'Actual person-minutes', minutes: 960 }], vehicles: [] };
+    const save = (actor: string, key: string, supersedes: string | null = null, data = body) => db.query<any>('select * from designer_record_actuals($1,$2,1,null,$3,$4,$5::jsonb,$6::jsonb)', [actor, PROJECT, supersedes, key, JSON.stringify(data), '{"rateChangesApplied":false}']);
+    await assert.rejects(() => save(VIEWER, 'forbidden'), /staff permission/);
+    const first = (await save(OWNER, 'first')).rows[0]; assert.equal((await save(OWNER, 'first')).rows[0].id, first.id);
+    await assert.rejects(() => save(OWNER, 'no-correction-parent'), /conflict/);
+    const next = (await save(OWNER, 'correction', first.id, { ...body, labour: [{ ...body.labour[0], minutes: 1020 }] })).rows[0]; assert.equal(next.supersedes_id, first.id);
+    await assert.rejects(() => db.exec("update designer_actuals set body='{}'"), /immutable/);
+    await assert.rejects(() => db.query('select designer_review_actuals($1,$2,$3,$4,$5)', [VIEWER, PROJECT, next.id, 'reviewed', 'Attempt']), /Owner permission/);
+    await db.query('select designer_review_actuals($1,$2,$3,$4,$5)', [OWNER, PROJECT, next.id, 'rate-card-review-needed', 'Review package person-time; rates stay unchanged.']);
+    assert.equal((await db.query('select * from designer_configs')).rows.length, 0); assert.equal((await db.query<any>('select completed_on::text as day from designer_projects')).rows[0].day, '2026-10-18');
+    await db.query('select designer_save_project($1,$2,$3,$4,$5::jsonb,1)', [OWNER, next.studio_id, PROJECT, 'Revised project', '{"newScope":true}']);
+    assert.equal((await db.query<any>('select completed_on from designer_projects')).rows[0].completed_on, null, 'a changed scope is no longer marked completed');
+    await db.exec(`set role authenticated;select set_config('request.jwt.claim.sub','${VIEWER}',false)`);
+    await assert.rejects(() => db.exec('select * from designer_actuals'), /permission denied/);
+  } finally { await db.close(); }
+});
+
+test('pilot comparisons preserve owner evidence and cannot mutate issued estimates or selling prices', async () => {
+  const db = await database();
+  try {
+    const studio = await setup(db), { config, e } = await issue(db, studio.id);
+    const body = { independentlyPrepared: true, scopeChecked: true, priceBasis: 'current-owner-prices', expectedLines: [{ label: 'Synthetic independent labour', category: 'installation', amountPence: 10000 }] };
+    await assert.rejects(() => db.query('select designer_record_pilot($1,$2,$3,null,$4::jsonb,$5::jsonb)', [VIEWER, PROJECT, ESTIMATE, JSON.stringify(body), '{"withinTolerance":true}']), /Owner permission/);
+    const saved = (await db.query<any>('select * from designer_record_pilot($1,$2,$3,null,$4::jsonb,$5::jsonb)', [OWNER, PROJECT, ESTIMATE, JSON.stringify(body), '{"withinTolerance":false,"rateChangesApplied":false}'])).rows[0];
+    assert.equal(saved.estimate_id, e.id); assert.equal(saved.comparison.withinTolerance, false);
+    assert.deepEqual((await db.query<any>('select config from designer_configs where id=$1', [config.id])).rows[0].config, config.config);
+    assert.deepEqual((await db.query<any>('select snapshot from designer_estimates where id=$1', [e.id])).rows[0].snapshot, e.snapshot);
+    await assert.rejects(() => db.exec("update designer_pilot_comparisons set comparison='{}'"), /immutable/);
+    await assert.rejects(() => db.query('select designer_record_pilot($1,$2,$3,null,$4::jsonb,$5::jsonb)', [OWNER, PROJECT, ESTIMATE, JSON.stringify({ ...body, priceBasis: 'old-quotation' }), '{}']), /Current owner comparison/);
+  } finally { await db.close(); }
+});
+
+/** Offline PostgREST adapter: real handler orchestration and migrated Postgres RPCs,
+ * with every network request intercepted and every unsupported query rejected. */
+function offlineDatabaseApi(db: PGlite, actor = OWNER) {
+  const env: Record<string, string> = { DESIGNER_PORTAL_ENABLED: 'true', SUPABASE_URL: 'https://fixture.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'synthetic-service', SUPABASE_ANON_KEY: 'synthetic-publishable' };
+  const reads: string[] = [], writes: string[] = [], adapterErrors: string[] = [];
+  const identifier = (value: string) => { assert.match(value, /^[a-z_][a-z0-9_]*$/); return value; };
+  const fetcher: typeof fetch = async (input, init) => {
+    const url = new URL(String(input)); assert.equal(url.origin, env.SUPABASE_URL, 'all test requests remain inside the offline adapter');
+    try {
+      if (url.pathname === '/auth/v1/user') return Response.json((await db.query('select id,email,email_confirmed_at from auth.users where id=$1', [actor])).rows[0]);
+      if (url.pathname.startsWith('/rest/v1/rpc/')) {
+        const name = identifier(url.pathname.slice('/rest/v1/rpc/'.length)), body = JSON.parse(String(init?.body || '{}')), keys = Object.keys(body); writes.push(name);
+        const parameters = keys.map(key => typeof body[key] === 'object' && body[key] !== null ? JSON.stringify(body[key]) : body[key]);
+        const result = await db.query(`select * from ${name}(${keys.map((key, i) => `${identifier(key)} => $${i + 1}`).join(',')})`, parameters);
+        return Response.json(result.rows);
+      }
+      assert.ok(url.pathname.startsWith('/rest/v1/'), 'only Auth and PostgREST fixtures are supported');
+      const table = identifier(url.pathname.slice('/rest/v1/'.length)); reads.push(table);
+      const clauses: string[] = [], parameters: unknown[] = [];
+      for (const [key, value] of url.searchParams) {
+        if (['select', 'order', 'limit'].includes(key)) continue;
+        assert.ok(value.startsWith('eq.'), `unsupported fixture filter: ${key}`); parameters.push(value.slice(3)); clauses.push(`${identifier(key)}=$${parameters.length}`);
+      }
+      const order = url.searchParams.get('order')?.split(',').map(term => { const [column, direction] = term.split('.'); assert.ok(['asc', 'desc'].includes(direction)); return `${identifier(column)} ${direction}`; }).join(',');
+      const limit = url.searchParams.get('limit'); if (limit) assert.match(limit, /^\d+$/);
+      const result = await db.query(`select * from ${table}${clauses.length ? ` where ${clauses.join(' and ')}` : ''}${order ? ` order by ${order}` : ''}${limit ? ` limit ${limit}` : ''}`, parameters);
+      return Response.json(result.rows);
+    } catch (error) { adapterErrors.push(String(error)); return Response.json({ message: error instanceof Error ? error.message : String(error) }, { status: 400 }); }
+  };
+  const handler = createDesignerPortalHandler({ env: { get: key => env[key] }, fetch: fetcher, now: () => new Date('2026-10-18T12:00:00Z') });
+  return { reads, writes, adapterErrors, async call(action: string, payload: unknown = {}) {
+    const response = await handler(new Request(`${env.SUPABASE_URL}/functions/v1/designer-portal`, { method: 'POST', headers: { Authorization: 'Bearer synthetic-session', 'Content-Type': 'application/json', Origin: 'https://www.mrwallcover.com' }, body: JSON.stringify({ action, payload }) }));
+    return { status: response.status, body: await response.json() };
+  } };
+}
+function readyApiDraft(): ProjectDraft {
+  const draft = emptyProjectDraft();
+  return { ...draft, id: PROJECT, name: 'Synthetic API project', buildingType: 'private-home', contact: { name: 'Synthetic designer', email: 'designer@example.invalid' }, address: { line1: 'Synthetic site', town: 'London', postcode: 'TEST', country: 'UK' }, rooms: [{ id: 'room-one', label: 'Living room', floor: 'Ground' }, { id: 'room-two', label: 'Study', floor: 'First' }], items: ['one', 'two'].map(suffix => ({ id: `scope-${suffix}`, roomId: `room-${suffix}`, label: 'Fabric scope', scopeKind: 'multiple_rooms', confirmedMeasurements: true, walls: [{ id: `wall-${suffix}`, widthMm: 4000, heightMm: 2500, count: 1, openings: [], reveals: [] }], material: { groupId: 'standard-fabric', verifiedTypeId: 'standard-fabric', clientProvided: true, acoustic: 'no', velvet: 'no', specialist: 'no' }, preparation: 'normal-prep-lining-hanging', access: 'standard' })), programme: { startDate: '2026-11-01', endDate: '2026-11-06', phases: 1, occupied: 'no', outOfHours: 'no', materialReadiness: { status: 'ordered', readyDate: '2026-10-30', scopeItemIds: [] } }, logistics: { ...draft.logistics, vehicleDaysConfirmed: true, deliveriesRequired: 'no', storageRequired: 'no', accessEquipmentRequired: 'no', wasteRemovalRequired: 'no' } };
+}
+
+test('API resource approvals reject foreign and unverified source documents; new projects cannot reuse old-source IDs', async () => {
+  const db = await database();
+  try {
+    const studio = await setup(db); await enable(db); await reserve(db);
+    const secondProject = '30000000-0000-4000-8000-000000000002', foreignDoc = '40000000-0000-4000-8000-000000000002';
+    await db.query('select designer_save_project($1,$2,$3,$4,$5::jsonb,0)', [OWNER, studio.id, secondProject, 'Other project same studio', '{}']);
+    await db.query('select designer_reserve_document($1,$2,$3,$4,$5,$6,$7,$8)', [OWNER, secondProject, foreignDoc, 'foreign.pdf', 'application/pdf', 8, SHA, 'pdf']);
+    await db.query("update designer_documents set verified=true,state='ready' where id=$1", [foreignDoc]);
+    const api = offlineDatabaseApi(db), draft = readyApiDraft();
+    const referenceDraft = (kind: 'sample' | 'aftercare', sourceDocumentId: string) => {
+      const result = structuredClone(draft); result.resources = { materialRequirements: [], preparationChecklist: [], sampleApprovals: [], aftercareReferences: [] };
+      if (kind === 'sample') result.resources.sampleApprovals.push({ id: 'sample', label: 'Approved setting-out', scopeItemIds: ['scope-one'], status: 'approved', approvedBy: 'Synthetic designer', approvedOn: '2026-10-18', sourceDocumentId });
+      else result.resources.aftercareReferences.push({ id: 'care', label: 'Issued maker care', scopeItemIds: ['scope-one'], status: 'issued', sourceDocumentId });
+      return result;
+    };
+    for (const kind of ['sample', 'aftercare'] as const) {
+      const foreign = await api.call('project.save', { projectId: PROJECT, expectedRevision: 1, name: draft.name, draft: referenceDraft(kind, foreignDoc) });
+      assert.equal(foreign.status, 404); assert.equal(foreign.body.error.code, 'not_found');
+      const unverified = await api.call('project.save', { projectId: PROJECT, expectedRevision: 1, name: draft.name, draft: referenceDraft(kind, DOC) });
+      assert.equal(unverified.status, 400); assert.equal(unverified.body.error.code, 'source_not_verified');
+      const reused = await api.call('project.create', { studioId: studio.id, name: 'Copied source reference', draft: referenceDraft(kind, foreignDoc) });
+      assert.equal(reused.status, 400); assert.equal(reused.body.error.code, 'invalid_draft');
+    }
+    assert.equal(api.writes.filter(name => name === 'designer_save_project').length, 0);
+    assert.equal((await db.query<any>('select revision from designer_projects where id=$1', [PROJECT])).rows[0].revision, 1);
+    await db.query("update designer_documents set verified=true,state='ready' where id=$1", [DOC]);
+    const accepted = await api.call('project.save', { projectId: PROJECT, expectedRevision: 1, name: draft.name, draft: referenceDraft('sample', DOC) });
+    assert.equal(accepted.status, 200); assert.equal(accepted.body.data.project.revision, 2);
+    const aftercare = await api.call('project.save', { projectId: PROJECT, expectedRevision: 2, name: draft.name, draft: referenceDraft('aftercare', DOC) });
+    assert.equal(aftercare.status, 200); assert.equal(aftercare.body.data.project.revision, 3);
+    assert.deepEqual(api.adapterErrors, []);
+  } finally { await db.close(); }
+});
+
+test('API owner approval binds exact-product scope to fingerprint and exact area when wider quantity changes are not requested', async () => {
+  const db = await database();
+  try {
+    const studio = await setup(db), draft = readyApiDraft(), config = createDefaultPricingConfig();
+    await db.query('select designer_set_staff($1,$2,$3)', [OWNER, 'owner@example.test', 'owner']);
+    config.products!.push({ id: 'synthetic-fabric', manufacturer: 'Synthetic maker', name: 'Synthetic fabric', code: 'FAB-API', collection: 'Synthetic collection', groupId: 'standard-fabric', approved: true, verified: true, construction: 'Verified fabric face', faceMaterial: 'Fabric', suppliedFormat: 'roll', sourceUrl: 'https://example.invalid/fabric', instructionsUrl: 'https://example.invalid/fabric-instructions', sourceReviewedOn: '2026-10-18', verifiedTypeId: 'standard-fabric', traits: { acoustic: false, velvet: false, specialist: false } });
+    draft.items[0].material.productId = 'synthetic-fabric';
+    config.logistics.congestionEffectiveUntil = '2026-12-31'; config.logistics.ulezEffectiveUntil = '2026-12-31'; config.version = 'v1';
+    assert.equal(validatePricingConfig(config).ok, true);
+    await db.query('select designer_save_project($1,$2,$3,$4,$5::jsonb,1)', [OWNER, studio.id, PROJECT, draft.name, JSON.stringify(draft)]);
+    await db.query('select designer_save_config($1,0,$2::jsonb)', [OWNER, JSON.stringify(config)]);
+    const api = offlineDatabaseApi(db), revision = 2;
+    const saved = await api.call('admin.agreement.save', { expectedVersion: 1, projectId: PROJECT, projectRevision: revision, agreement: { id: 'exact-fabric-agreement', itemId: 'scope-one', profileId: 'standard-fabric', approved: true, readyWallsVerified: false, allowAreaPricing: true }, servicePlan: { id: 'exact-fabric-service', approved: true, programmeReviewed: true, propertyContextReviewed: true, managementHours: 0, surveyHours: 0, parking: [] } });
+    assert.equal(saved.status, 200, JSON.stringify(saved.body));
+    const approved = saved.body.data.config, agreement = approved.agreements[0], plan = approved.servicePlans[0];
+    assert.equal(agreement.scopeFingerprint, computeApprovalScope(draft, 'scope-one', config)); assert.equal(agreement.minNetAreaMm2, 10_000_000); assert.equal(agreement.maxNetAreaMm2, 10_000_000);
+    assert.equal(plan.scopeFingerprint, computeApprovalScope(draft, undefined, config)); assert.equal(plan.minNetAreaMm2, 20_000_000); assert.equal(plan.maxNetAreaMm2, 20_000_000);
+    assert.equal(agreement.projectRevision, revision); assert.equal(plan.projectRevision, revision); assert.equal(approved.version, 'v2');
+    const preview = await api.call('estimate.preview', { projectId: PROJECT }); assert.equal(preview.status, 200);
+    assert.equal(preview.body.data.estimate.status, 'ready'); assert.equal(preview.body.data.estimate.lines.find((line: any) => line.itemId === 'scope-one').profileId, 'standard-fabric');
+    let savedRevision = revision;
+    for (const mutate of [(value: ProjectDraft) => { value.items[0].walls[0].widthMm = 4500; }, (value: ProjectDraft) => { value.items[0].material.productCode = 'REVISED-FABRIC'; }]) {
+      const changed = structuredClone(draft); mutate(changed);
+      const changedSave = await api.call('project.save', { projectId: PROJECT, expectedRevision: savedRevision, name: changed.name, draft: changed }); assert.equal(changedSave.status, 200); savedRevision++;
+      const revised = await api.call('estimate.preview', { projectId: PROJECT }); assert.equal(revised.status, 200);
+      assert.equal(revised.body.data.estimate.totalPence, null, 'exact approval cannot silently cover quantity or specification changes');
+      assert.notEqual(revised.body.data.estimate.status, 'ready');
+    }
+    const persisted = (await db.query<any>('select config from designer_configs where active=true')).rows[0].config;
+    assert.deepEqual(persisted, approved); assert.equal(measureScopeArea(draft.items[0]).netMm2, agreement.maxNetAreaMm2); assert.deepEqual(api.adapterErrors, []);
+  } finally { await db.close(); }
+});
+
+test('API business roles keep history and pilot owner-only and actuals staff-only even for a studio owner', async () => {
+  const db = await database();
+  try {
+    const studio = await setup(db); await issue(db, studio.id);
+    await db.query('insert into designer_historical_scopes(external_ref,source_sha256,body,imported_by) values($1,$2,$3::jsonb,$4)', ['synthetic-role-history', SHA, '{"privateNote":"Synthetic historical evidence"}', OWNER]);
+    await db.query('insert into designer_actuals(project_id,studio_id,project_revision,idempotency_key,body,analysis,recorded_by) values($1,$2,1,$3,$4::jsonb,$5::jsonb,$6)', [PROJECT, studio.id, 'synthetic-role-actual', '{"privateNote":"Synthetic actual labour"}', '{"rateChangesApplied":false}', OWNER]);
+    await db.query('insert into designer_pilot_comparisons(project_id,studio_id,estimate_id,body,comparison,reviewed_by) values($1,$2,$3,$4::jsonb,$5::jsonb,$6)', [PROJECT, studio.id, ESTIMATE, '{"privateNote":"Synthetic independent comparison"}', '{"withinTolerance":true}', OWNER]);
+    await db.query('delete from designer_staff where user_id=$1', [OWNER]);
+    const api = offlineDatabaseApi(db), sensitiveTables = ['designer_historical_scopes', 'designer_actuals', 'designer_actual_reviews', 'designer_pilot_comparisons'];
+    assert.equal((await db.query<any>('select role from designer_memberships where studio_id=$1 and user_id=$2', [studio.id, OWNER])).rows[0].role, 'owner');
+    for (const [action, payload] of [['admin.history.list', {}], ['admin.actuals.list', { projectId: PROJECT }], ['admin.pilot.list', { projectId: PROJECT }]] as const) {
+      const result = await api.call(action, payload); assert.equal(result.status, 403, action); assert.equal(result.body.error.code, 'forbidden');
+    }
+    assert.equal(api.reads.some(table => sensitiveTables.includes(table)), false, 'role checks happen before reading private business evidence');
+    await db.query('select designer_set_staff($1,$2,$3)', [OWNER, 'owner@example.test', 'staff']);
+    const actuals = await api.call('admin.actuals.list', { projectId: PROJECT }); assert.equal(actuals.status, 200); assert.equal(actuals.body.data.actuals[0].body.privateNote, 'Synthetic actual labour');
+    assert.equal((await api.call('admin.history.list')).status, 403); assert.equal((await api.call('admin.pilot.list', { projectId: PROJECT })).status, 403);
+    await db.query('select designer_set_staff($1,$2,$3)', [OWNER, 'owner@example.test', 'owner']);
+    const history = await api.call('admin.history.list'), pilot = await api.call('admin.pilot.list', { projectId: PROJECT });
+    assert.equal(history.status, 200); assert.equal(history.body.data.records[0].body.privateNote, 'Synthetic historical evidence'); assert.equal(pilot.status, 200); assert.equal(pilot.body.data.comparisons[0].body.privateNote, 'Synthetic independent comparison');
+    assert.deepEqual(api.adapterErrors, []);
+    await db.exec(`set role authenticated; select set_config('request.jwt.claim.sub','${OWNER}',false)`);
+    for (const table of sensitiveTables) await assert.rejects(() => db.exec(`select * from ${table}`), /permission denied/);
+  } finally { await db.close(); }
 });

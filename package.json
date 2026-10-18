@@ -33,11 +33,12 @@
     "check:calculator-browser": "node --experimental-strip-types --test tests/calculator-browser.test.ts",
     "capture:calculator": "node scripts/qa/calculator-review.mjs",
     "check:makers": "node --experimental-strip-types --test tests/makers-directory.test.ts && node scripts/qa/makers-directory.mjs",
-    "check:designer": "node --experimental-strip-types --test tests/designer-pricing.test.ts tests/designer-backend.test.ts tests/designer-cloud.test.ts",
+    "check:designer": "node --experimental-strip-types --test tests/designer-pricing.test.ts tests/designer-backend.test.ts tests/designer-cloud.test.ts tests/designer-learning.test.ts tests/designer-staging-harness.test.ts",
     "check:designer-types": "tsc -p tsconfig.designer-portal.json",
     "check:designer-browser": "node --experimental-strip-types --test tests/designer-portal-browser.test.ts",
     "check:designer-workers": "python3 -m unittest discover -s workers/designer_portal -p 'test_*.py'",
-    "check:designer-connected": "node --experimental-strip-types --test tests/designer-connected-browser.test.ts"
+    "check:designer-connected": "node --experimental-strip-types --test tests/designer-connected-browser.test.ts",
+    "verify:designer-staging": "node scripts/qa/designer-staging.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
