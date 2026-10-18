@@ -2,17 +2,18 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 
-// "What to send for a fast quote" (competitor-analysis follow-up c): copy above the enquiry form,
-// outside the form stack, each item resting on something the site already says, and no reply-time
+// "What to send for a fast quote": supporting copy follows the enquiry form in the
+// adjacent briefing rail, each item resting on something the site already says, and no reply-time
 // promise until Dorin states one.
 const decode = (s: string) => s.replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
 const checklist = JSON.parse(readFileSync('src/content/quote-checklist.json', 'utf8'));
 const contact = readFileSync('dist/contact/index.html', 'utf8');
 
-test('/contact/: the checklist sits above the enquiry form, every item rendered, every link built', () => {
+test('/contact/: the enquiry form comes first and its adjacent checklist retains every item and link', () => {
   const at = contact.indexOf('data-quote-checklist');
   assert.ok(at > 0, 'checklist on the contact page');
-  assert.ok(at < contact.indexOf('<form'), 'above the enquiry form');
+  assert.ok(contact.indexOf('<form') > 0 && contact.indexOf('</form>') < at, 'the form precedes the supporting checklist');
+  assert.match(contact.slice(contact.indexOf('</form>'), at), /<aside\b[^>]*class="contact-aside"/, 'the checklist lives in the adjacent briefing rail');
   const section = decode(contact.slice(at, contact.indexOf('</section>', at)));
   assert.ok(section.includes(`>${checklist.heading}</h2>`));
   const items = [...section.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/g)].map((match) => match[1]);

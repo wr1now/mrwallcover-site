@@ -191,6 +191,95 @@ export function createObjectStudio() {
         model.add(layer);moving.push(layer);
       }
       model.rotation.y=-.22;model.rotation.x=.04;
+    } else if(kind==='measure') {
+      // A real tape form with a concave metal blade, hook and mechanical casing, resting on a sample surface.
+      box(model,2.62,.16,.86,boardFaces(wood,wood),.20,-.59,-.06,.012);
+      box(model,2.60,.025,.84,whitePaper,.20,-.497,-.06,.004);
+      const surface=new T.Mesh(own(new T.PlaneGeometry(2.57,.81)),textile);surface.rotation.x=-Math.PI/2;surface.position.set(.20,-.480,-.06);model.add(surface);
+      const casing=new T.Group();casing.position.set(-.64,-.015,.055);
+      box(casing,.89,.86,.49,olive,0,0,0,.13);
+      box(casing,.75,.72,.022,dark,0,0,.255,.11);
+      const badge=new T.Mesh(own(new T.CylinderGeometry(.255,.255,.024,64)),brushed);badge.rotation.x=Math.PI/2;badge.position.set(-.025,.015,.279);casing.add(badge);
+      const badgeInset=new T.Mesh(own(new T.CylinderGeometry(.224,.224,.028,64)),paper);badgeInset.rotation.x=Math.PI/2;badgeInset.position.set(-.025,.015,.289);casing.add(badgeInset);
+      box(casing,.16,.018,.008,ink,-.025,.055,.306,.002);box(casing,.10,.012,.008,edge,-.025,-.015,.306,.002);
+      box(casing,.25,.12,.32,dark,.055,.42,-.005,.025);
+      for(let i=0;i<5;i++)box(casing,.22,.008,.012,brushed,.055,.462,-.112+i*.052,.002);
+      box(casing,.18,.21,.38,dark,.444,-.24,.035,.02);
+      for(const x of [-.31,.31])for(const y of [-.28,.28]){
+        const screw=new T.Mesh(own(new T.CylinderGeometry(.018,.018,.012,20)),brushed);screw.rotation.x=Math.PI/2;screw.position.set(x,y,.272);casing.add(screw);
+        box(casing,.022,.003,.005,dark,x,y,.280,.001);
+      }
+      box(casing,.24,.48,.035,brushed,-.13,.01,-.267,.025);box(casing,.24,.075,.10,brushed,-.13,.23,-.29,.015);
+      model.add(casing);
+      const canvas=document.createElement('canvas');canvas.width=1536;canvas.height=256;
+      const c=canvas.getContext('2d')!;c.fillStyle='#dccb8d';c.fillRect(0,0,1536,256);
+      const sheen=c.createLinearGradient(0,0,0,256);sheen.addColorStop(0,'rgba(255,255,238,.45)');sheen.addColorStop(.45,'rgba(255,255,238,0)');sheen.addColorStop(1,'rgba(78,59,22,.15)');c.fillStyle=sheen;c.fillRect(0,0,1536,256);
+      c.strokeStyle='#2d352b';c.fillStyle='#2d352b';c.font='500 63px sans-serif';c.textAlign='center';
+      for(let i=0;i<=100;i++){
+        const x=14+i*15.05,major=i%10===0,medium=i%5===0;c.lineWidth=major?3:2;c.beginPath();c.moveTo(x,0);c.lineTo(x,major?87:medium?61:37);c.moveTo(x,256);c.lineTo(x,major?169:medium?195:219);c.stroke();
+        if(major&&i>0)c.fillText(String(i/10),x,151);
+      }
+      const tapeTexture=own(new T.CanvasTexture(canvas));tapeTexture.colorSpace=T.SRGBColorSpace;tapeTexture.anisotropy=4;
+      const tapeMaterial=mat(0xffffff,.40,.30);tapeMaterial.map=tapeTexture;tapeMaterial.side=T.DoubleSide;
+      const blade=own(new T.PlaneGeometry(1.67,.30,80,16)),p=blade.attributes.position;
+      for(let i=0;i<p.count;i++){
+        const across=p.getY(i)/.15;p.setXYZ(i,p.getX(i)+.635,-.345+across*across*.022,.055+p.getY(i));
+      }
+      blade.computeVertexNormals();model.add(new T.Mesh(blade,tapeMaterial));
+      const hook=new T.Group();hook.position.set(1.475,-.355,.055);
+      box(hook,.055,.20,.34,brushed,0,-.045,0,.008);box(hook,.14,.024,.32,brushed,-.048,.065,0,.004);
+      for(const z of [-.075,.075]){
+        const rivet=new T.Mesh(own(new T.CylinderGeometry(.015,.015,.008,20)),dark);rivet.position.set(-.045,.082,z);hook.add(rivet);
+      }
+      model.add(hook);model.rotation.set(.035,-.16,-.035);
+    } else if(kind==='junction') {
+      // One woven face turns around an actual external corner; cut edges show the thickness behind it.
+      box(model,1.34,1.80,.20,boardFaces(wood,wood),-.24,0,-.13,.008);
+      box(model,.20,1.80,1.00,wood,.33,0,-.53,.008);
+      box(model,1.32,1.76,.022,whitePaper,-.24,0,-.018,.003);
+      box(model,.022,1.76,.98,whitePaper,.441,0,-.52,.003);
+      const frontLength=1.32,returnLength=.98,cornerRadius=.036,arcLength=Math.PI*cornerRadius/2,total=frontLength+arcLength+returnLength;
+      const covering=(start:number,end:number)=>{
+        const geometry=own(new T.PlaneGeometry(end-start,1.72,64,32)),p=geometry.attributes.position,uv=geometry.attributes.uv;
+        for(let i=0;i<p.count;i++){
+          const s=start+p.getX(i)+(end-start)/2,y=p.getY(i);let x:number,z:number;
+          if(s<=frontLength){x=-.90+s;z=.012;}
+          else if(s<=frontLength+arcLength){const angle=(s-frontLength)/cornerRadius;x=.42+Math.sin(angle)*cornerRadius;z=-.024+Math.cos(angle)*cornerRadius;}
+          else{x=.456;z=-.024-(s-frontLength-arcLength);}
+          // A small lifted lower edge exposes the paper backing rather than a thick decorative tile.
+          const lift=Math.pow(Math.max(0,1-s/.44),2)*Math.pow(Math.max(0,(-y-.38)/.48),2)*.13;
+          p.setXYZ(i,x,y+lift*.22,z+lift);uv.setXY(i,s/total,uv.getY(i));
+        }
+        geometry.computeVertexNormals();model.add(new T.Mesh(geometry,textile));
+        const backing=mat(0xe8ddc7,.96);backing.side=T.BackSide;backing.bumpMap=whitePaper.map;backing.bumpScale=.005;
+        model.add(new T.Mesh(own(geometry.clone().translate(-.003,0,-.003)),backing));
+      };
+      covering(0,.66);covering(.665,total);
+      box(model,.025,1.78,.025,brushed,.468,0,-1.005,.004);
+      box(model,1.43,.105,.060,paper,-.24,-.817,.045,.007);
+      box(model,.060,.105,1.08,paper,.475,-.817,-.465,.007);
+      model.rotation.set(.025,-.21,.015);
+    } else if(kind==='film') {
+      // A thin applied architectural film peels away from a timber panel and shows its separate backing.
+      box(model,1.48,1.94,.22,boardFaces(wood,wood),0,0,-.055,.018);
+      const finish=mat(0xffffff,.43,.07);finish.map=grain(0x85927c);finish.bumpMap=finish.map;finish.bumpScale=.0015;
+      const film=own(new T.PlaneGeometry(1.39,1.85,80,80)),p=film.attributes.position;
+      const normal=new T.Vector2(1,1).normalize(),foldLine=.50,radius=.34;
+      for(let i=0;i<p.count;i++){
+        const x=p.getX(i),y=p.getY(i),distance=x*normal.x+y*normal.y-foldLine;
+        if(distance<=0){p.setZ(i,.066);continue;}
+        const angle=distance/radius,along=radius*Math.sin(angle),lift=radius*(1-Math.cos(angle));
+        p.setXYZ(i,x+normal.x*(along-distance),y+normal.y*(along-distance),.066+lift);
+      }
+      film.computeVertexNormals();model.add(new T.Mesh(film,finish));
+      const backing=mat(0xe8e4d7,.85);backing.side=T.BackSide;backing.bumpMap=whitePaper.map;backing.bumpScale=.002;
+      model.add(new T.Mesh(own(film.clone().translate(0,0,-.004)),backing));
+      box(model,.014,1.79,.13,finish,-.736,-.045,-.006,.003);
+      box(model,1.42,.014,.13,finish,0,-.962,-.006,.003);
+      const squeegee=new T.Group();box(squeegee,.73,.30,.07,olive,0,0,0,.025);box(squeegee,.73,.048,.075,pale,0,-.12,.006,.008);
+      for(let i=0;i<4;i++)box(squeegee,.43,.008,.012,dark,0,-.055+i*.045,.040,.002);
+      squeegee.rotation.set(-.05,-.12,-.28);squeegee.position.set(-.40,-.79,.39);model.add(squeegee);
+      model.rotation.set(.025,-.15,-.07);
     } else if(kind==='roll') {
       const roll=new T.Group();
       // A broad wallcovering roll, with a small cardboard core and a continuous unrolled printed face.

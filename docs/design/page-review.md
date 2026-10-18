@@ -1,5 +1,7 @@
 # Page and template review
 
+Current working review: the whole-site composition and paper-ambience revision is recorded in the final section, **Whole-site editorial composition — 18 October 2026**. Earlier passing receipts below belong to their named releases; they do not establish final validation of this working revision. Its integrated checks, updated inventory, exact-head no-loss comparison and hosted release are still pending.
+
 Review date: 17 October 2026. This record covers PR #66, including the second pass across all remaining page families. The branch was rebased onto public main 2849676, preserving the separate #67 privacy cleanup; open calculator/reference/Contact PRs were not merged into it. The user authorised completion and publication on 17 October. The route-by-route design decisions are recorded in [route-review.json](route-review.json), including the three noindex utility pages. Final validation results follow below.
 
 ## Template inheritance
@@ -359,3 +361,71 @@ Reconciled with main `90455ef` before release, retaining the shared larger mater
 ## Makers publication — 18 October 2026
 
 Owner approved the reviewed copy and authorised publication and merge after checks. Enabled the curated 20 profiles and 42 routes, retaining both purchasing exclusions. Moved 22 visual decisions to the published route ledger. Static reference layouts, shared components and unchanged source check dates remain appropriate; no new imagery or claims were added. Repeat normal/review publication checks, responsive filtering and no-JS checks, source/name guards and hosted integrated checks before merge.
+## Whole-site editorial composition — 18 October 2026
+
+The owner asked for a coherent website-wide composition, more useful graphics than repeated generic objects, better placement of factual content and a very discreet active wallcovering theme. This revision starts from the published larger-studies release `90455ef`. Public main advanced to `63567b8` while this work was underway; its canonical-JSON/AI-projection changes must be preserved during integration. This design revision clears no draft, private-seed or editorial publication blocker, changes no service qualification and introduces no private research record.
+
+The scope is the existing 106 published routes plus the three noindex utility pages in [route-review.json](route-review.json). This is shared-shell and template coverage, not a claim that every page receives another image or a bespoke 3D scene. Normal routes inherit `Base.astro`, the shared actions/footer and `editorial-layout.css`. Factual, legal and reference routes remain static reading resources; noindex pages omit the new ambience. No image quota applies.
+
+### Current family decisions
+
+| Family / shared source | Implemented composition and graphic decision |
+| --- | --- |
+| Home / shared `editorial-layout.css` | Retain the genuine hero, project photographs, hotel record and existing headings. Group factual copy, enquiry routes, service stages and questions with deliberate reading measures and aligned section rhythm. |
+| Services index / `services.astro` | Align each numbered service stage with a substantial relevant object: measuring tape, calendar, floral wallpaper roll, woven junction and care tools. Keep the original technical schematics in native disclosures and retain the two genuine installation photographs/captions. Material, film and specialist destinations form clear directories. |
+| Service and area details / `LandingBody.astro` | Align the introduction with its genuine photograph/diagram; add section navigation where there are several sections, numbered heading/copy rows and organised related service/area groups. Keep all public paragraphs, maker links, local project records and native FAQ behavior. |
+| Materials hub / `materials/index.astro` | Provide library navigation and numbered family cards with deliberate appearance/joins guidance, relevant shared studies and separate save/read/enquiry actions. Keep the finder, studio, shortlist, comparison and genuine installed-maker records. |
+| Seven material families / `materials/[slug].astro` | Separate the material decision and illustrative study from practical joins, setting, handling and care; organise save/enquiry actions in their own rail. Preserve actual close-ups, project links, maker qualifications and exact-product caveats. Woven/textile families use the physical junction; film subjects use the curled film where applicable. |
+| Guide index / `advice/index.astro` | Lead with five-stage navigation and responsive grouped stage cards, followed by a clearer filtered library. Retain all stage destinations, topic descriptions, photographic cards and shared study choices. |
+| Markdown Guide articles / `advice/[slug].astro` | Use a readable paper surface and contents navigation that stacks safely at intermediate widths. Move open questions outside the narrow article rail; organise further reading and the next step as endmatter. Keep existing technical drawings, real evidence, paragraphs, headings, answers, sources, dates and schema. |
+| Quantities, calculator and fire/reference resources | Inherit the shared reading/list/table rhythm while retaining their dedicated calculations, evidence tables, sources and native controls. No second ordering algorithm or decorative measurement/certification result is introduced. The calculator and `/wallpapering/` reference family retain the static ambient policy. |
+| Editorial Markdown / `[...page].astro` | Generate section navigation from actual Markdown headings, use a readable article and aligned evidence/briefing column, contain tables and keep professional questions full-width. Maker, heritage, trade, reviews, sourcing and evidence-policy copy retains its original publication/endorsement distinctions. |
+| Project index / `projects/index.astro` | Separate the introduction and filters from genuine project photography and the hotel record. Keep all existing project destinations and filter behavior. |
+| Case studies / `projects/[slug].astro`, `CaseStudyGlance.astro` | Put the authored story beside a compact native disclosure containing the standard seven facts, so repeated glance information does not dominate the initial layout. All fields remain server-rendered, keyboard/no-JavaScript accessible and available in print. Use natural-proportion gallery columns with each caption/credit kept in its figure, and retain every photograph, film, date and related destination. Legacy records retain a clear facts/copy layout. |
+| Professional profiles and trade/fit-out intake | Align introduction, genuine opening evidence and optional briefing/download guidance; give buyer questions their own full-width section. Preserve audience/query-intent handoffs, downloads and the approved partner-service qualifications. |
+| About | Align the founder/practice story, real photographs, values and timeline. A substantial calendar study accompanies programme guidance; the original programme schematic remains in a native disclosure. |
+| Aftercare | Align care terms, next steps and actual evidence. A woven-junction study introduces the inspection detail; the original inspection schematic remains in a native disclosure. Preserve guarantee limits and the repair enquiry. |
+| Contact / existing enquiry form | Align the optional project brief and form without changing actual submission, attachments, intent, reply choice, optional discovery source or email-updates consent. Meaningful existing brief graphics remain illustrative. |
+| FAQ and shared question components | Preserve native FAQ disclosures and keep buyer/Guide answers open. Topic-matched models remain substantial, with a separate disclosure marker and readable answer column. |
+| Details, reviews, privacy, accessibility, image use, AI and utilities | Keep genuine workmanship evidence and verbatim quotations where relevant; factual/legal/reference content stays text-led and static. Shared reading/action styling applies without adding decorative evidence. Search/confirmation/error pages retain their concise noindex purpose and omit ambience. |
+
+### Shared question and object contract
+
+Open buyer/Guide questions now use a named CSS container rather than viewport width alone. Compact containers use a 144px object beside the heading with the answer full-width below; content widths of 600px and 896px enable 192px and 288px right-hand rails. Long question/answer text stops at the shared 44rem measure. Native FAQ rows retain their shared frames and separate disclosure marker. A page inside a narrow article or homepage column therefore cannot accidentally inherit a desktop-sized rail that leaves only a few words per line.
+
+The original family now contains fourteen physical studies. The added `measure` models a tape casing, concave numbered blade, hook and sample surface; `junction` models woven paper around an actual corner/return with a join, lifted backing, substrate and trim; `film` shows a thin curled film face over timber with its separate reverse and application tool. Shared question/material/Guide maps select these when they explain the actual topic. Insurance, training, approvals and fire paperwork retain neutral documents. The existing eleven scenes, especially the broad angled floral wallpaper roll, remain intact.
+
+All fourteen 640px WebP posters are present, and the three new posters have been visually inspected for complete, unclipped geometry and clear material depth. [Object provenance](sitewide-editorial/object-provenance.json) records actual dimensions, bytes and SHA-256 values. [Asset rights](../asset-rights.md) and [media provenance](../atelier-media-provenance.md) distinguish these original illustrations from the genuine project photographs. The tape is not a site measurement, the modelled layers are not a prescribed/tested assembly and no maker artwork, endorsement or project evidence is invented.
+
+### Shared paper atmosphere
+
+`AtelierAtmosphere.astro` renders an original CSS paper fan and curl in the clipped outer gutters, behind main content and the footer. It creates no WebGL renderer and downloads no image. Normal suitable pages inherit slow motion after load; live OS/footer preferences, the shared object pause state and document visibility stop it. Reduced effects, forced colours and print hide the layer; OS reduced motion and no JavaScript leave it static. Factual/legal/reference-policy routes retain a faint static right edge; noindex routes omit it entirely. The shared placement keeps reading surfaces, controls and genuine photographs above the decoration. New routes inherit this policy through Base, not a separate local background.
+
+### Review evidence and pending release verification
+
+[Before inventory](sitewide-editorial/before-audit.json), [working after inventory](sitewide-editorial/after-audit.json) and selected 390/1440 screenshots are available in `sitewide-editorial/`. They are diagnostic working artifacts; the integrated audit must be rerun after the final composition adjustments and public-main integration. Historical receipts elsewhere in this document are not substituted for that final run.
+
+Ten additional Guide/project/editorial regions were captured and visually inspected at 768px and 1024px: [boundary observations](sitewide-editorial/editorial-boundaries.json). The inspected regions had no horizontal overflow. The Guide question heading columns measured 488px and 624px at those widths, and the illustration rail stayed separate from the answer. Project-story captures were then refreshed for the native facts disclosure. [Project-facts interaction](sitewide-editorial/project-facts-interaction.json) verifies Enter opens/closes it at both widths with JavaScript enabled and disabled, keeps keyboard focus and retains all seven server-rendered fields. Actual screenshots and painted-visibility checks distinguish collapsed content from its retained DOM rectangles. Print expansion needs the final correction/rerun recorded below; final integration still requires renewed shared verification.
+
+| Region | 768px | 1024px |
+| --- | --- | --- |
+| Guide reading | [View](sitewide-editorial/boundary-guide-reading-768.jpg) | [View](sitewide-editorial/boundary-guide-reading-1024.jpg) |
+| Guide questions | [View](sitewide-editorial/boundary-guide-questions-768.jpg) | [View](sitewide-editorial/boundary-guide-questions-1024.jpg) |
+| Project story/facts | [View](sitewide-editorial/boundary-project-story-768.jpg) | [View](sitewide-editorial/boundary-project-story-1024.jpg) |
+| Project facts expanded by keyboard | [View](sitewide-editorial/boundary-project-facts-open-768.jpg) | [View](sitewide-editorial/boundary-project-facts-open-1024.jpg) |
+| Project gallery | [View](sitewide-editorial/boundary-project-gallery-768.jpg) | [View](sitewide-editorial/boundary-project-gallery-1024.jpg) |
+| Editorial reading/evidence | [View](sitewide-editorial/boundary-editorial-reading-768.jpg) | [View](sitewide-editorial/boundary-editorial-reading-1024.jpg) |
+
+| Final receipt | Current status |
+| --- | --- |
+| Public-main integration and exact final source | Pending; preserve published canonical-JSON/AI-projection changes from `63567b8`. |
+| Full source/build/built-site and future-page fixture checks | Pending final integrated run; implementation and historical pass counts do not establish a pass. |
+| All-route layout audit, intermediate widths, contained tables and clipped controls | Pending final audit rerun; preliminary artifacts guide the remaining corrections. |
+| Native project facts, FAQ/schematic disclosures, keyboard/no-JavaScript behavior | Project Enter/open/close passes at 768/1024 with and without JavaScript on the working candidate; all seven fields remain. Chromium print expansion needs its final correction/rerun. Final integrated shared-disclosure checks remain pending. |
+| Live animation, shared pause, preferences, visibility and static-policy boundaries | Pending final live-motion run, including the CSS-only ambience. |
+| Same-page loading/performance comparison | Pending final asset and loading receipt; no field performance or speed improvement is claimed. |
+| Exact-base no-loss, media/credits, paragraphs/answers/anchors, Markdown/JSON-LD projections | Pending fresh-main comparison; public content preservation remains required. |
+| Phone/analytics fixtures, Guide publication boundaries and configured private names guard | Pending final integrated run. A missing private input must be reported as skipped, never a pass; no private list may be copied here. |
+| Hosted checks, authorised publication and live verification | Pending final commit; the owner has authorised publishing this finished change after validation. |
+
+The root release review replaces these pending statuses with concrete receipts once the final integrated source is checked. No form is submitted, phone dialled, chat opened or message sent as part of visual inspection.

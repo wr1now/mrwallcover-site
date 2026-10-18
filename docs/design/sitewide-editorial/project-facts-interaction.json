@@ -1,0 +1,107 @@
+{
+  "captured": "2026-10-18T20:22:01.461Z",
+  "source": "working final candidate dist before main integration",
+  "observations": [
+    {
+      "width": 768,
+      "javaScript": true,
+      "initial": {
+        "open": false,
+        "fields": 7,
+        "visible": 7,
+        "overflow": 0
+      },
+      "expanded": {
+        "open": true,
+        "visible": 7,
+        "focused": true,
+        "overflow": 0
+      },
+      "closed": true,
+      "printed": {
+        "visible": 7
+      }
+    },
+    {
+      "width": 1024,
+      "javaScript": true,
+      "initial": {
+        "open": false,
+        "fields": 7,
+        "visible": 7,
+        "overflow": 0
+      },
+      "expanded": {
+        "open": true,
+        "visible": 7,
+        "focused": true,
+        "overflow": 0
+      },
+      "closed": true,
+      "printed": {
+        "visible": 7
+      }
+    },
+    {
+      "width": 768,
+      "javaScript": false,
+      "initial": {
+        "open": false,
+        "fields": 7,
+        "visible": 7,
+        "overflow": 0
+      },
+      "expanded": {
+        "open": true,
+        "visible": 7,
+        "focused": true,
+        "overflow": 0
+      },
+      "closed": true,
+      "printed": {
+        "visible": 7
+      }
+    },
+    {
+      "width": 1024,
+      "javaScript": false,
+      "initial": {
+        "open": false,
+        "fields": 7,
+        "visible": 7,
+        "overflow": 0
+      },
+      "expanded": {
+        "open": true,
+        "visible": 7,
+        "focused": true,
+        "overflow": 0
+      },
+      "closed": true,
+      "printed": {
+        "visible": 7
+      }
+    }
+  ],
+  "paintVisibility": {
+    "closed": {
+      "open": false,
+      "detailsContent": "hidden",
+      "paintedFields": 0,
+      "boxHeight": 116.1875
+    },
+    "open": {
+      "open": true,
+      "detailsContent": "visible",
+      "paintedFields": 7,
+      "boxHeight": 510.125
+    },
+    "print": {
+      "open": false,
+      "detailsContent": "hidden",
+      "paintedFields": 0,
+      "boxHeight": 116.1875
+    }
+  },
+  "limitations": "Row rectangles persist inside a closed native details element; checkVisibility and actual screenshots establish painted visibility. Local candidate verification precedes final main integration."
+}

@@ -1,0 +1,103 @@
+/* Sculptural paper at the edges of the shared shell. Reading and photography stay above it. */
+body:has(> .atelier-atmosphere) { isolation:isolate; }
+body:has(> .atelier-atmosphere) > :is(main, .site-footer) { position:relative; z-index:1; }
+.atelier-atmosphere {
+  position:fixed;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+  user-select:none;
+  contain:strict;
+}
+.atelier-atmosphere__edge {
+  position:absolute;
+  inset-block:0;
+  width:clamp(.625rem, calc((100vw - 80rem) / 2 + 1.25rem), 9rem);
+  overflow:hidden;
+  perspective:900px;
+}
+.atelier-atmosphere__edge--right { right:0; }
+.atelier-atmosphere__edge--left { left:0; }
+.atelier-atmosphere__fan {
+  position:absolute;
+  top:17%;
+  right:-9.75rem;
+  width:17rem;
+  height:29rem;
+  transform:rotateX(10deg) rotateY(-24deg) rotateZ(-11deg);
+  transform-style:preserve-3d;
+  animation:atelier-paper-breathe 26s ease-in-out infinite alternate;
+  animation-play-state:paused;
+}
+.atelier-atmosphere__sheet {
+  position:absolute;
+  inset:0;
+  display:block;
+  border-radius:48% 3% 3% 8% / 11% 2% 2% 5%;
+  border-left:1px solid #b9af98;
+  border-bottom:2px solid #cbc0a9;
+  background:
+    repeating-linear-gradient(88deg, transparent 0 5px, #8f84630b 5px 6px),
+    linear-gradient(100deg, #a69b82 0%, #dfd8c8 5%, #f7f4ee 19%, #faf7f0 51%, #e5dfd2 86%, #b4a68a 100%);
+  box-shadow:-12px 16px 21px #68583b16, inset 3px 0 5px #fffdf8cc;
+  transform-origin:95% 50%;
+  backface-visibility:hidden;
+}
+.atelier-atmosphere__sheet--back {
+  transform:translate3d(10px,8px,-32px) rotateY(12deg) rotateZ(9deg);
+  background:linear-gradient(97deg, #8e927d, #d4d4c3 12%, #e8e7db 64%, #c1c0a9);
+}
+.atelier-atmosphere__sheet--middle { transform:translate3d(1px,3px,-15px) rotateY(5deg) rotateZ(4deg); }
+.atelier-atmosphere__sheet--front { transform:translateZ(8px) rotateY(-5deg); }
+.atelier-atmosphere__curl {
+  position:absolute;
+  bottom:14%;
+  left:-11.75rem;
+  width:17rem;
+  height:21rem;
+  border-radius:18% 56% 49% 18% / 5% 22% 22% 5%;
+  border-right:2px solid #c0b294;
+  background:
+    repeating-linear-gradient(2deg, transparent 0 5px, #8f846309 5px 6px),
+    linear-gradient(92deg, #eee8dc 15%, #faf7f0 52%, #e4dcce 76%, #bcaf95 94%, #e4dccb 100%);
+  box-shadow:9px 15px 22px #68583b13, inset -4px 0 6px #fffdf899;
+  transform:rotateX(-7deg) rotateY(23deg) rotateZ(13deg);
+  transform-style:preserve-3d;
+  animation:atelier-paper-curl 30s ease-in-out infinite alternate;
+  animation-play-state:paused;
+}
+.atelier-atmosphere__curl > span {
+  position:absolute;
+  top:7%;
+  right:-6px;
+  width:25px;
+  height:86%;
+  border-radius:0 90% 90% 0 / 0 15% 15% 0;
+  background:linear-gradient(90deg, #b5a78b, #e8dfce 35%, #f6f0e4 71%, #cec1a7);
+  transform:translateZ(-9px) rotateY(23deg);
+  box-shadow:6px 8px 12px #68583b0c;
+}
+.atelier-atmosphere[data-running] .atelier-atmosphere__fan,
+.atelier-atmosphere[data-running] .atelier-atmosphere__curl { animation-play-state:running; }
+.atelier-atmosphere--quiet { opacity:.35; }
+.atelier-atmosphere--quiet .atelier-atmosphere__edge--left { display:none; }
+@keyframes atelier-paper-breathe {
+  from { transform:translate3d(0,-5px,0) rotateX(10deg) rotateY(-24deg) rotateZ(-11deg); }
+  to { transform:translate3d(-5px,5px,0) rotateX(15deg) rotateY(-18deg) rotateZ(-9deg); }
+}
+@keyframes atelier-paper-curl {
+  from { transform:translate3d(0,4px,0) rotateX(-7deg) rotateY(23deg) rotateZ(13deg); }
+  to { transform:translate3d(4px,-5px,0) rotateX(-11deg) rotateY(29deg) rotateZ(11deg); }
+}
+@media (max-width:1023px) {
+  .atelier-atmosphere__fan { top:23%; right:-12.5rem; opacity:.65; }
+  .atelier-atmosphere__curl { left:-14rem; opacity:.65; }
+}
+html[data-effects="reduced"] .atelier-atmosphere { display:none; }
+html[data-object-motion-state="paused"] .atelier-atmosphere__fan,
+html[data-object-motion-state="paused"] .atelier-atmosphere__curl { animation-play-state:paused!important; }
+@media (prefers-reduced-motion:reduce) {
+  .atelier-atmosphere__fan, .atelier-atmosphere__curl { animation:none!important; }
+}
+@media (forced-colors:active), print { .atelier-atmosphere { display:none; } }

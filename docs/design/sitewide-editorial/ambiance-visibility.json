@@ -1,0 +1,48 @@
+{
+  "source": "sitewide-editorial-final-candidate",
+  "method": "Compiled dist; OS reduced motion keeps an exact static view. Compare actual full-viewport gutter pixels with the decorative layer visible/hidden. Capture an initial viewport to flush the headless compositor, then await two rendering frames between visibility mutations. Restore the layer before saving screenshots. No website or persisted browser settings changed.",
+  "results": [
+    {
+      "path": "/about/",
+      "width": 390,
+      "file": "ambiance-about-390.jpg",
+      "changedGutterChannels": 7871,
+      "overflow": false
+    },
+    {
+      "path": "/services/",
+      "width": 390,
+      "file": "ambiance-services-390.jpg",
+      "changedGutterChannels": 7871,
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "file": "ambiance-home-390.jpg",
+      "changedGutterChannels": 7871,
+      "overflow": false
+    },
+    {
+      "path": "/about/",
+      "width": 1440,
+      "file": "ambiance-about-1440.jpg",
+      "changedGutterChannels": 140723,
+      "overflow": false
+    },
+    {
+      "path": "/services/",
+      "width": 1440,
+      "file": "ambiance-services-1440.jpg",
+      "changedGutterChannels": 140723,
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "file": "ambiance-home-1440.jpg",
+      "changedGutterChannels": 140723,
+      "overflow": false
+    }
+  ]
+}

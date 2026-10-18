@@ -120,8 +120,8 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
   <Fragment slot="head">
     {import.meta.env.MW_CONTENT_PREVIEW !== '1' && <link rel="alternate" type="application/json" href={new URL(`/ai/projects/${project.slug}.json`, SITE_URL).href} title="Complete project record as JSON" />}
   </Fragment>
-  <div class="container-page">
-    <header class="page-head">
+  <div class="container-page project-page">
+    <header class="page-head project-head">
       <Breadcrumb items={crumbs} />
       <p class="eyebrow">{project.location}</p>
       <h1>{project.title}</h1>
@@ -138,19 +138,21 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
     {StudyContent ? (
       <div class="pb-12">
         {project.imageId && (
-          <figure class:list={['m-0 mb-10', project.modest && 'modest-hero']} style={project.modest ? `max-width:${modestHeroWidth}px` : undefined}>
+          <figure class:list={['project-lead-image m-0 mb-10', project.modest && 'modest-hero']} style={project.modest ? `max-width:${modestHeroWidth}px` : undefined}>
             <Picture id={project.imageId} loading="eager" fetchpriority="high" thumbOnly={project.modest} sizes={heroSizes} />
             {project.credits?.[project.imageId] && <figcaption class="caption">{project.credits[project.imageId]}</figcaption>}
           </figure>
         )}
-        {study && <CaseStudyGlance study={{ slug: project.slug, client: study.frontmatter.client, role: study.frontmatter.role, years: study.frontmatter.years, wallcoverings: study.frontmatter.wallcoverings ?? [] }} />}
-        <article class="prose case-study">
-          <StudyContent />
-        </article>
+        <div class="project-story-layout">
+          {study && <CaseStudyGlance study={{ slug: project.slug, client: study.frontmatter.client, role: study.frontmatter.role, years: study.frontmatter.years, wallcoverings: study.frontmatter.wallcoverings ?? [] }} />}
+          <article class="prose case-study">
+            <StudyContent />
+          </article>
+        </div>
         {project.gallery.length > 1 && (
-          <section class="mt-14" aria-labelledby="gallery-heading">
+          <section class="project-gallery-section mt-14" aria-labelledby="gallery-heading">
             <h2 id="gallery-heading" class="m-0 text-[clamp(2rem,3vw,2.7rem)]">Photographs</h2>
-            <div class:list={['mt-6 grid gap-4', project.modest ? 'modest-gallery sm:grid-cols-2 md:grid-cols-3' : 'sm:grid-cols-2']}>
+            <div class:list={['project-gallery mt-6', project.modest && 'modest-gallery']}>
               {project.gallery.filter((id) => id !== project.imageId).map((id) => (
                 <figure class="m-0">
                   <Picture id={id} thumbOnly={project.modest} sizes={project.modest ? '(min-width: 768px) 360px, (min-width: 640px) 50vw, 100vw' : '(min-width: 768px) 36rem, 100vw'} />
@@ -160,7 +162,7 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
             </div>
           </section>
         )}
-        <section class="mt-14 border-t border-line pt-10" aria-labelledby="method-heading">
+        <section class="project-method mt-14 border-t border-line pt-10" aria-labelledby="method-heading">
           <p class="eyebrow">{projectMethod.eyebrow}</p>
           <h2 id="method-heading" class="m-0 max-w-xl text-[clamp(2rem,3vw,2.7rem)]">{projectMethod.title}</h2>
           <p class="lede mt-4 max-w-2xl">{projectMethod.text}</p>
@@ -208,7 +210,7 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
             </script>
           </section>
         )}
-        <nav class="mt-14 grid gap-10 border-t border-line pt-10 md:grid-cols-3" aria-label="Related pages">
+        <nav class="project-related mt-14 grid gap-10 border-t border-line pt-10 md:grid-cols-3" aria-label="Related pages">
           <div>
             <p class="eyebrow">More case studies</p>
             <ul class="m-0 grid list-none gap-1 p-0">
@@ -233,8 +235,8 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
       </div>
     ) : (
     <>
-    <div class="grid gap-10 pb-12 md:grid-cols-12">
-      <dl class="meta-list md:col-span-4">
+    <div class="project-record-layout pb-12">
+      <dl class="meta-list">
         <div>
           <dt>Role</dt>
           <dd>{project.role}</dd>
@@ -256,7 +258,7 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
           )
         }
       </dl>
-      <div class="prose md:col-span-7 md:col-start-6">
+      <div class="prose project-record-copy">
         {project.paragraphs.map((paragraph) => <p class="m-0">{paragraph}</p>)}
       </div>
     </div>
@@ -336,3 +338,48 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
   </div>
 </Base>
 )}
+
+<style>
+  .project-head { max-width: 65rem; }
+  .project-head .lede { max-width: var(--layout-reading); }
+  .project-lead-image { margin-bottom: clamp(2rem, 5vw, 4rem); }
+  .project-lead-image :global(.media-frame) { overflow: hidden; border-radius: var(--radius-control); }
+  .project-lead-image .caption { max-width: 56rem; margin-top: 1rem; }
+  .project-story-layout { display: grid; gap: 2rem; align-items: start; }
+  .project-story-layout .case-study { min-width: 0; max-width: none; padding: clamp(1.25rem, 3vw, 2.5rem); background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
+  .case-study > :global(:first-child) { margin-top: 0; }
+  .case-study > :global(h2) { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-line); scroll-margin-top: 8rem; }
+  .case-study > :global(h2:first-child) { padding-top: 0; border-top: 0; }
+  .case-study > :global(p), .case-study > :global(ul), .case-study > :global(ol) { max-width: 44rem; }
+  .case-study > :global(ul) { list-style: disc; }
+  .case-study > :global(ol) { list-style: decimal; }
+  .case-study :global(li) { line-height: 1.75; }
+  .case-study :global(li + li) { margin-top: .7rem; }
+  .case-study :global(th), .case-study :global(td) { padding: .85rem 1rem; border: 1px solid var(--color-line); text-align: left; vertical-align: top; }
+  .case-study :global(th) { background: var(--color-ivory-deep); font-weight: 500; }
+  .project-gallery-section { padding-top: 2.5rem; border-top: 1px solid var(--color-line); }
+  .project-gallery { columns: 1; column-gap: 1.5rem; }
+  .project-gallery > figure { margin: 0 0 1.5rem; break-inside: avoid; }
+  .project-gallery :global(.media-frame) { overflow: hidden; border-radius: var(--radius-control); }
+  .project-gallery .caption { padding: .25rem .15rem 0; }
+  .project-method .method-list { margin-bottom: 0; }
+  .project-method .method-list > li { padding: 1.5rem 0 0 !important; border-top: 1px solid var(--color-line); }
+  .project-related > div { min-width: 0; padding: 1.5rem; background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
+  .project-related .eyebrow { margin-top: 0; }
+  .project-related li > a { display: inline-flex; align-items: center; min-height: 44px; line-height: 1.5; }
+  .project-record-layout { display: grid; gap: 2rem; align-items: start; }
+  .project-record-layout .meta-list { min-width: 0; padding: 1.5rem; background: var(--color-ivory-deep); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
+  .project-record-copy { min-width: 0; max-width: 46rem; padding: clamp(1.25rem, 3vw, 2.5rem); background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
+  @media (min-width: 640px) {
+    .project-gallery { columns: 2; }
+  }
+  @media (min-width: 1024px) {
+    .project-story-layout, .project-record-layout { grid-template-columns: minmax(15rem, 1fr) minmax(0, 2.5fr); gap: clamp(2rem, 4vw, 4rem); }
+    .project-gallery.modest-gallery { columns: 3; }
+  }
+  @media print {
+    .project-story-layout, .project-record-layout { display: block; }
+    .project-story-layout .case-study, .project-record-copy { max-width: none; padding: 0; border: 0; }
+    .project-gallery { columns: 2; }
+  }
+</style>

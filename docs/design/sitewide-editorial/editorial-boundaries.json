@@ -1,0 +1,317 @@
+{
+  "captured": "2026-10-18T20:17:35.282Z",
+  "source": "working dist before release integration",
+  "motion": "OS reduced motion; static layout inspection",
+  "observations": [
+    {
+      "path": "/advice/wall-preparation/",
+      "width": 768,
+      "region": "guide-reading",
+      "overflow": 0,
+      "regionWidth": 704,
+      "reading": [
+        {
+          "width": 656,
+          "text": "Is the wall ready? It is ready when it is sound, dry, smooth enou"
+        },
+        {
+          "width": 656,
+          "text": "The surface has to hold. Old paint that is chalky or poorly bonde"
+        },
+        {
+          "width": 656,
+          "text": "Fresh plaster, new filler and recent repairs need time and the ri"
+        },
+        {
+          "width": 656,
+          "text": "Smooth enough depends on the covering. A textured grasscloth forg"
+        },
+        {
+          "width": 656,
+          "text": "Lining paper is a plain paper hung before the finish. It does thr"
+        },
+        {
+          "width": 656,
+          "text": "Whether it is needed is the maker’s call. de Gournay says “all wa"
+        },
+        {
+          "width": 656,
+          "text": "A primer or size controls suction so the adhesive dries at the ri"
+        },
+        {
+          "width": 656,
+          "text": "What none of them asks for is neat PVA brushed on as a universal "
+        }
+      ],
+      "headingWidths": [],
+      "screenshot": "boundary-guide-reading-768.jpg"
+    },
+    {
+      "path": "/advice/wall-preparation/",
+      "width": 768,
+      "region": "guide-questions",
+      "overflow": 0,
+      "regionWidth": 704,
+      "reading": [
+        {
+          "width": 488,
+          "text": "Not reliably. Old paper, and the backing left after stripping, ca"
+        },
+        {
+          "width": 488,
+          "text": "Lining paper is a plain paper hung before the finish to give it a"
+        },
+        {
+          "width": 488,
+          "text": "The one the maker's instruction names for that product and substr"
+        },
+        {
+          "width": 488,
+          "text": "By a moisture reading, not by the calendar. New plaster, fresh fi"
+        }
+      ],
+      "headingWidths": [
+        488,
+        488,
+        488,
+        488
+      ],
+      "screenshot": "boundary-guide-questions-768.jpg"
+    },
+    {
+      "path": "/projects/browns-hotel-mayfair/",
+      "width": 768,
+      "region": "project-story",
+      "overflow": 0,
+      "regionWidth": 704,
+      "reading": [
+        {
+          "width": 656,
+          "text": "Client / brand: Brown’s Hotel, Rocco Forte Hotels\nLocation: Albem"
+        },
+        {
+          "width": 656,
+          "text": "Brown’s needs little introduction in Mayfair. Long celebrated as "
+        },
+        {
+          "width": 656,
+          "text": "Its guest book reads like a syllabus. Alexander Graham Bell made "
+        },
+        {
+          "width": 656,
+          "text": "To act as main decorating contractor across a sequence of rooms a"
+        },
+        {
+          "width": 656,
+          "text": "Preparation and priming. Period walls were filled, made good and "
+        },
+        {
+          "width": 656,
+          "text": "Setting out. Adam’s Eden is a large-scale design with a 108.5 cm "
+        },
+        {
+          "width": 656,
+          "text": "Ceilings. The ornate moulded ceilings were spray-finished to give"
+        },
+        {
+          "width": 656,
+          "text": "Fine finishes. Fine painting, French polishing and specialist fin"
+        }
+      ],
+      "headingWidths": [],
+      "screenshot": "boundary-project-story-768.jpg"
+    },
+    {
+      "path": "/projects/browns-hotel-mayfair/",
+      "width": 768,
+      "region": "project-gallery",
+      "overflow": 0,
+      "regionWidth": 704,
+      "reading": [],
+      "headingWidths": [],
+      "screenshot": "boundary-project-gallery-768.jpg"
+    },
+    {
+      "path": "/services/timorous-beasties-installer/",
+      "width": 768,
+      "region": "editorial-reading",
+      "overflow": 0,
+      "regionWidth": 704,
+      "reading": [
+        {
+          "width": 656,
+          "text": "We install Timorous Beasties papers. The project on the public re"
+        },
+        {
+          "width": 656,
+          "text": "Two Timorous Beasties designs, produced as custom-printed vinyl w"
+        },
+        {
+          "width": 656,
+          "text": "As the case study records it: a sample room first, with the headb"
+        },
+        {
+          "width": 656,
+          "text": "Hyde London City, the former Old Bailey Hotel: 111 guest rooms ac"
+        }
+      ],
+      "headingWidths": [],
+      "screenshot": "boundary-editorial-reading-768.jpg"
+    },
+    {
+      "path": "/advice/wall-preparation/",
+      "width": 1024,
+      "region": "guide-reading",
+      "overflow": 0,
+      "regionWidth": 677,
+      "reading": [
+        {
+          "width": 614,
+          "text": "Is the wall ready? It is ready when it is sound, dry, smooth enou"
+        },
+        {
+          "width": 614,
+          "text": "The surface has to hold. Old paint that is chalky or poorly bonde"
+        },
+        {
+          "width": 614,
+          "text": "Fresh plaster, new filler and recent repairs need time and the ri"
+        },
+        {
+          "width": 614,
+          "text": "Smooth enough depends on the covering. A textured grasscloth forg"
+        },
+        {
+          "width": 614,
+          "text": "Lining paper is a plain paper hung before the finish. It does thr"
+        },
+        {
+          "width": 614,
+          "text": "Whether it is needed is the maker’s call. de Gournay says “all wa"
+        },
+        {
+          "width": 614,
+          "text": "A primer or size controls suction so the adhesive dries at the ri"
+        },
+        {
+          "width": 614,
+          "text": "What none of them asks for is neat PVA brushed on as a universal "
+        }
+      ],
+      "headingWidths": [],
+      "screenshot": "boundary-guide-reading-1024.jpg"
+    },
+    {
+      "path": "/advice/wall-preparation/",
+      "width": 1024,
+      "region": "guide-questions",
+      "overflow": 0,
+      "regionWidth": 944,
+      "reading": [
+        {
+          "width": 624,
+          "text": "Not reliably. Old paper, and the backing left after stripping, ca"
+        },
+        {
+          "width": 624,
+          "text": "Lining paper is a plain paper hung before the finish to give it a"
+        },
+        {
+          "width": 624,
+          "text": "The one the maker's instruction names for that product and substr"
+        },
+        {
+          "width": 624,
+          "text": "By a moisture reading, not by the calendar. New plaster, fresh fi"
+        }
+      ],
+      "headingWidths": [
+        624,
+        624,
+        624,
+        624
+      ],
+      "screenshot": "boundary-guide-questions-1024.jpg"
+    },
+    {
+      "path": "/projects/browns-hotel-mayfair/",
+      "width": 1024,
+      "region": "project-story",
+      "overflow": 0,
+      "regionWidth": 944,
+      "reading": [
+        {
+          "width": 582,
+          "text": "Client / brand: Brown’s Hotel, Rocco Forte Hotels\nLocation: Albem"
+        },
+        {
+          "width": 582,
+          "text": "Brown’s needs little introduction in Mayfair. Long celebrated as "
+        },
+        {
+          "width": 582,
+          "text": "Its guest book reads like a syllabus. Alexander Graham Bell made "
+        },
+        {
+          "width": 582,
+          "text": "To act as main decorating contractor across a sequence of rooms a"
+        },
+        {
+          "width": 582,
+          "text": "Preparation and priming. Period walls were filled, made good and "
+        },
+        {
+          "width": 582,
+          "text": "Setting out. Adam’s Eden is a large-scale design with a 108.5 cm "
+        },
+        {
+          "width": 582,
+          "text": "Ceilings. The ornate moulded ceilings were spray-finished to give"
+        },
+        {
+          "width": 582,
+          "text": "Fine finishes. Fine painting, French polishing and specialist fin"
+        }
+      ],
+      "headingWidths": [],
+      "screenshot": "boundary-project-story-1024.jpg"
+    },
+    {
+      "path": "/projects/browns-hotel-mayfair/",
+      "width": 1024,
+      "region": "project-gallery",
+      "overflow": 0,
+      "regionWidth": 944,
+      "reading": [],
+      "headingWidths": [],
+      "screenshot": "boundary-project-gallery-1024.jpg"
+    },
+    {
+      "path": "/services/timorous-beasties-installer/",
+      "width": 1024,
+      "region": "editorial-reading",
+      "overflow": 0,
+      "regionWidth": 944,
+      "reading": [
+        {
+          "width": 511,
+          "text": "We install Timorous Beasties papers. The project on the public re"
+        },
+        {
+          "width": 511,
+          "text": "Two Timorous Beasties designs, produced as custom-printed vinyl w"
+        },
+        {
+          "width": 511,
+          "text": "As the case study records it: a sample room first, with the headb"
+        },
+        {
+          "width": 511,
+          "text": "Hyde London City, the former Old Bailey Hotel: 111 guest rooms ac"
+        }
+      ],
+      "headingWidths": [],
+      "screenshot": "boundary-editorial-reading-1024.jpg"
+    }
+  ]
+}
