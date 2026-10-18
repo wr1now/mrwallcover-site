@@ -28,6 +28,11 @@ No paid model or cloud job is required to review the local editor.
    enquiry handoff uses a copied readable summary pasted into the contact form.
    A room is never sent automatically.
 
+Completed cloud results provide their own editable room and plain-text finish
+summary, both taken from the render job's confirmed revision. Later draft edits
+do not change those downloads. Historical room exports embed the original artwork
+so they remain editable after private links expire.
+
 The initial room contains example dimensions and openings. It remains marked as
 a draft until the customer checks it. Screen colours, limewash texture and
 lighting are approximate; physical samples in the actual room remain necessary.

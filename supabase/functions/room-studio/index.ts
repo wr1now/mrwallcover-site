@@ -140,6 +140,12 @@ Deno.serve(async request=>{
       return reply(cloudProject(await rpc(action==='prepareProject'?'room_prepare_project':'room_save_project',{p_owner:owner,p_id:p.id,p_name:p.name,p_snapshot:p,...(action==='saveProject'?{p_expected_revision:p.revision}:{})})));
     }
     if(action==='getProject')return reply(cloudProject(await projectRow(owner,input.projectId)));
+    if(action==='getRevision') {
+      const project=uuid(input.projectId);await projectRow(owner,project);
+      const rows=await db('room_revisions',`id=eq.${uuid(input.revisionId)}&owner_id=eq.${owner}&project_id=eq.${project}`);
+      if(rows.length!==1)throw new Error('Confirmed room version unavailable');
+      return reply(cloudRevision(rows[0]));
+    }
     if(action==='confirmRevision') {
       const p=cleanProject(input.project,owner);await projectRow(owner,p.id);await verifyTextures(p,owner);
       if(!p.room.confirmed)throw new Error('Confirm room dimensions and openings first');

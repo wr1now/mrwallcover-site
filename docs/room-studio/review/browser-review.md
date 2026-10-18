@@ -2,7 +2,9 @@
 
 The original illustrative rooms use authored test artwork and sourced colour metadata. They do not represent a completed Mr Wallcover installation or a Bauwerk-approved rendering.
 
-The seven focused Chromium suites cover manual dimensions, outline drawing, angled-wall opening dragging, actual PDF/JPEG/PNG preview and tracing, upload/crop/rotation, repeat-proof pixels, proportional murals, paint and full-catalogue selection. Undo/redo, frozen versions, reload, invalid-draft recovery, original-data export and deletion during a pending save are exercised. WebGL loss is forced and recovered with the same project. A no-JavaScript visitor receives the contact fallback.
+The eight focused Chromium suites cover manual dimensions, outline drawing, angled-wall opening dragging, actual PDF/JPEG/PNG preview and tracing, upload/crop/rotation, repeat-proof pixels, proportional murals, paint and full-catalogue selection. Undo/redo, frozen versions, reload, invalid-draft recovery, original-data export and deletion during a pending save are exercised. WebGL loss is forced and recovered with the same project. A no-JavaScript visitor receives the contact fallback.
+
+The completed-results suite uses the real cloud-results component with typed offline service fixtures. It changes the active draft before and after opening a completed render, downloads real JSON/TXT files, and proves both retain the rendered revision's dimensions, finishes and original artwork. The [results receipt](results-package.json) records correct revision requests and responsive layouts; this is local UI/API-contract evidence, not deployed cloud verification.
 
 The scene test changes existing paint surfaces to textured finishes and checks rendered pixels, removes/reapplies the finishes, compares actual browser mesh/normal/UV/index data with the compiler's 105-mesh fixture, and verifies a low saved camera pose and vertical field of view. The panorama test uses the real 4K Blender result locally: interior visibility, pointer and keyboard-accessible viewing controls, and complete-turn continuity pass.
 

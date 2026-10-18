@@ -1,8 +1,9 @@
 import { wallLength } from './geometry.ts';
-import type { RoomProject } from './types.ts';
+import type { RoomProject, RoomRevision } from './types.ts';
 /** Plain text for a customer to review and paste into the existing enquiry form. */
-export function finishSummary(project:RoomProject):string {
-  const lines=[`Mr Wallcover Room Studio — ${project.name}`,`Draft revision ${project.revision}`,`Ceiling height: ${project.room.heightMm} mm`,project.room.confirmed?'Measurements checked by customer.':'Measurements remain provisional.',''];
+export function finishSummary(project:RoomProject,confirmed?:Pick<RoomRevision,'id'|'number'>):string {
+  const version=confirmed?`Confirmed version ${confirmed.number}\nRevision ID: ${confirmed.id}`:`Draft revision ${project.revision}`;
+  const lines=[`Mr Wallcover Room Studio — ${project.name}`,version,`Ceiling height: ${project.room.heightMm} mm`,project.room.confirmed?'Measurements checked by customer.':'Measurements remain provisional.',''];
   for(const [i,wall] of project.room.vertices.entries()){
     lines.push(`Wall ${i+1}: ${Math.round(wallLength(project.room,wall.wallId))} mm`);
     for(const assignment of project.assignments.filter(a=>a.wallId===wall.wallId)){

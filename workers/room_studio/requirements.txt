@@ -1,5 +1,5 @@
 # Worker image only; the website has no Python or model runtime dependency.
-modal>=1.0,<2
+modal==1.6.2
 pdfplumber==0.11.7
 Pillow==11.3.0
 numpy==1.26.4

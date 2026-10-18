@@ -1,26 +1,27 @@
 {
-  "reviewedAt": "2026-10-18T20:09:36.497Z",
-  "scope": "Current built dist, one isolated Chromium browser, original rectangle technical fixture;1440x900 and390x844 responsive emulation",
-  "buildRoomHtmlSha256": "46600829e9eaaa63ccab473ff4710d4cf956be91435dc2325e02d2358d11db9b",
-  "compression": "Estimated gzip level9 of requested local JavaScript assets; static review server sends uncompressed files. No latency claim.",
+  "reviewedAt": "2026-10-18T20:49:01.206Z",
+  "scope": "Current built dist, one isolated Chromium browser with separate Studio/Contact contexts, original rectangle technical fixture and locally generated PDF; 1440x900 and 390x844 responsive emulation.",
+  "buildRoomHtmlSha256": "55036494991e552a20e074dbf6dd93ae2dd3b76d0a28d964da2ec45f31662530",
+  "buildContactHtmlSha256": "1d4ad719dbfefa76440c834269c3f41836b7c94ed4352e8d9171abbaaa92481d",
+  "compression": "Estimated gzip level 9 of each unique requested local JavaScript asset; the static review server sends uncompressed files. Cumulative phase totals count each requested path once. No latency claim.",
   "sceneChecks": [
     {
       "name": "overview-1440",
-      "width": 593,
+      "width": 593.21875,
       "height": 482,
       "horizontalOverflow": false,
       "sceneFallback": false
     },
     {
       "name": "overview-rotated-1440",
-      "width": 593,
+      "width": 593.21875,
       "height": 482,
       "horizontalOverflow": false,
       "sceneFallback": false
     },
     {
       "name": "saved-camera-1440",
-      "width": 593,
+      "width": 593.21875,
       "height": 482,
       "horizontalOverflow": false,
       "sceneFallback": false
@@ -40,36 +41,139 @@
       "sceneFallback": false
     }
   ],
-  "visualReview": "Reviewed: wallpaper and limewash are visible across complete wall surfaces; cutaway walls and trims stay together; saved views keep floor and ceiling. Original illustrative fixture only.",
   "roomStudio": {
     "initial": {
-      "rawBytes": 1191086,
-      "gzipBytes": 331571,
-      "assets": 12
+      "rawBytes": 1192254,
+      "gzipBytes": 332762,
+      "assets": 12,
+      "requestedAssets": [
+        "/_astro/Action.CjBmKu7U.js",
+        "/_astro/RoomScene.CSHhBWVq.js",
+        "/_astro/RoomStudio.DR-AqkEe.js",
+        "/_astro/client.CjNmLVdr.js",
+        "/_astro/finishes.BYMA1kZo.js",
+        "/_astro/preload-helper.DHhhL8Zf.js",
+        "/_astro/react.azht8Kvo.js",
+        "/_astro/rolldown-runtime.hePW80VL.js",
+        "/_astro/scheduler.D2Nb7Y0d.js",
+        "/_astro/summary.CxHByVoC.js",
+        "/_astro/three.module.CWLT2Xhn.js",
+        "/_astro/validation.C46eQLLQ.js"
+      ]
     },
     "afterOriginalFixtureAndCamera": {
-      "rawBytes": 1191086,
-      "gzipBytes": 331571,
-      "assets": 12
+      "rawBytes": 1192254,
+      "gzipBytes": 332762,
+      "assets": 12,
+      "requestedAssets": [
+        "/_astro/Action.CjBmKu7U.js",
+        "/_astro/RoomScene.CSHhBWVq.js",
+        "/_astro/RoomStudio.DR-AqkEe.js",
+        "/_astro/client.CjNmLVdr.js",
+        "/_astro/finishes.BYMA1kZo.js",
+        "/_astro/preload-helper.DHhhL8Zf.js",
+        "/_astro/react.azht8Kvo.js",
+        "/_astro/rolldown-runtime.hePW80VL.js",
+        "/_astro/scheduler.D2Nb7Y0d.js",
+        "/_astro/summary.CxHByVoC.js",
+        "/_astro/three.module.CWLT2Xhn.js",
+        "/_astro/validation.C46eQLLQ.js"
+      ]
+    },
+    "afterFinishes": {
+      "rawBytes": 1347395,
+      "gzipBytes": 350774,
+      "assets": 13,
+      "requestedAssets": [
+        "/_astro/Action.CjBmKu7U.js",
+        "/_astro/FinishPanel.CBSACkZk.js",
+        "/_astro/RoomScene.CSHhBWVq.js",
+        "/_astro/RoomStudio.DR-AqkEe.js",
+        "/_astro/client.CjNmLVdr.js",
+        "/_astro/finishes.BYMA1kZo.js",
+        "/_astro/preload-helper.DHhhL8Zf.js",
+        "/_astro/react.azht8Kvo.js",
+        "/_astro/rolldown-runtime.hePW80VL.js",
+        "/_astro/scheduler.D2Nb7Y0d.js",
+        "/_astro/summary.CxHByVoC.js",
+        "/_astro/three.module.CWLT2Xhn.js",
+        "/_astro/validation.C46eQLLQ.js"
+      ]
+    },
+    "afterSaveAndRender": {
+      "rawBytes": 1356834,
+      "gzipBytes": 354120,
+      "assets": 14,
+      "requestedAssets": [
+        "/_astro/Action.CjBmKu7U.js",
+        "/_astro/CloudPanel.DO0oCMdf.js",
+        "/_astro/FinishPanel.CBSACkZk.js",
+        "/_astro/RoomScene.CSHhBWVq.js",
+        "/_astro/RoomStudio.DR-AqkEe.js",
+        "/_astro/client.CjNmLVdr.js",
+        "/_astro/finishes.BYMA1kZo.js",
+        "/_astro/preload-helper.DHhhL8Zf.js",
+        "/_astro/react.azht8Kvo.js",
+        "/_astro/rolldown-runtime.hePW80VL.js",
+        "/_astro/scheduler.D2Nb7Y0d.js",
+        "/_astro/summary.CxHByVoC.js",
+        "/_astro/three.module.CWLT2Xhn.js",
+        "/_astro/validation.C46eQLLQ.js"
+      ]
+    },
+    "afterLocalPdfOpen": {
+      "rawBytes": 3164493,
+      "gzipBytes": 892298,
+      "assets": 16,
+      "requestedAssets": [
+        "/_astro/Action.CjBmKu7U.js",
+        "/_astro/CloudPanel.DO0oCMdf.js",
+        "/_astro/FinishPanel.CBSACkZk.js",
+        "/_astro/RoomScene.CSHhBWVq.js",
+        "/_astro/RoomStudio.DR-AqkEe.js",
+        "/_astro/client.CjNmLVdr.js",
+        "/_astro/finishes.BYMA1kZo.js",
+        "/_astro/pdf.DUZHkVnJ.js",
+        "/_astro/pdf.worker.min.Dkey6ZUl.mjs",
+        "/_astro/preload-helper.DHhhL8Zf.js",
+        "/_astro/react.azht8Kvo.js",
+        "/_astro/rolldown-runtime.hePW80VL.js",
+        "/_astro/scheduler.D2Nb7Y0d.js",
+        "/_astro/summary.CxHByVoC.js",
+        "/_astro/three.module.CWLT2Xhn.js",
+        "/_astro/validation.C46eQLLQ.js"
+      ]
     },
     "assets": [
       {
-        "asset": "/_astro/Action.7aLkwXbt.js",
-        "rawBytes": 268,
-        "gzipBytes": 202,
-        "sha256": "a174485f1606428c6f984900a5144e6400ba8950d2a7623b9a7fc6e78d91da4f"
+        "asset": "/_astro/Action.CjBmKu7U.js",
+        "rawBytes": 267,
+        "gzipBytes": 204,
+        "sha256": "9c5b95d70318952aa18ddde1518762b9ed954c56ac85d29da3871b4b08225fb9"
       },
       {
-        "asset": "/_astro/RoomScene.Db7gUF1M.js",
-        "rawBytes": 200497,
-        "gzipBytes": 61137,
-        "sha256": "8299bb34b7b6b945fc0e8afdbc274aa7e929096dab0511b296f20da69f030c04"
+        "asset": "/_astro/CloudPanel.DO0oCMdf.js",
+        "rawBytes": 9439,
+        "gzipBytes": 3346,
+        "sha256": "9f4e49adb1b65b0d9e1228c25171e42437f776759f1980829d2544b588d88e05"
       },
       {
-        "asset": "/_astro/RoomStudio.DGzk1jUu.js",
-        "rawBytes": 61923,
-        "gzipBytes": 19515,
-        "sha256": "dd75b6409541c339c569de71867550880924a7a81e4fa934df666f96251e36d7"
+        "asset": "/_astro/FinishPanel.CBSACkZk.js",
+        "rawBytes": 155141,
+        "gzipBytes": 18012,
+        "sha256": "dcb28319f41402cceb9a7798b152741f7f0d00e407da201dcf27481953c9eecd"
+      },
+      {
+        "asset": "/_astro/RoomScene.CSHhBWVq.js",
+        "rawBytes": 200496,
+        "gzipBytes": 61139,
+        "sha256": "f535a3b5720a83c6361fa95d0f7884c12eb5aee3aa8bd76e1c7051c3263091d7"
+      },
+      {
+        "asset": "/_astro/RoomStudio.DR-AqkEe.js",
+        "rawBytes": 52519,
+        "gzipBytes": 16257,
+        "sha256": "983185aa3a676f765daf4d56ccf88dee53d8fe2e629206d57b714d7962a86bbc"
       },
       {
         "asset": "/_astro/client.CjNmLVdr.js",
@@ -78,16 +182,22 @@
         "sha256": "3cb152d6e10de84a2456489f6e816733a578250764a18db461c9007bd1e2433a"
       },
       {
-        "asset": "/_astro/finishes.cNUzgvcx.js",
-        "rawBytes": 23734,
-        "gzipBytes": 8776,
-        "sha256": "ca8b3aad4d878da0aeca06b931095e5cd8295c3177ff1d3d082b27492f1610e4"
+        "asset": "/_astro/finishes.BYMA1kZo.js",
+        "rawBytes": 9841,
+        "gzipBytes": 4097,
+        "sha256": "1b61e5fbba0807c3e49629e7396c449d6900d5002266aa0052c960323d7a808f"
       },
       {
-        "asset": "/_astro/jsx-runtime.CWLBoBiw.js",
-        "rawBytes": 435,
-        "gzipBytes": 306,
-        "sha256": "a0af655ce8ae08e0e8fda327a1bbae89ed0d21a2993d74a96cfa462f1710fd59"
+        "asset": "/_astro/pdf.DUZHkVnJ.js",
+        "rawBytes": 486352,
+        "gzipBytes": 146034,
+        "sha256": "4085bc1eed8599fcb76cd33b72198c9b56cd5697c9e46a28196959e69f5666c4"
+      },
+      {
+        "asset": "/_astro/pdf.worker.min.Dkey6ZUl.mjs",
+        "rawBytes": 1321307,
+        "gzipBytes": 392144,
+        "sha256": "145d2dd3ab0c86151011dba95acfa2d5336e2accd59388ea43dbee0efddaaec6"
       },
       {
         "asset": "/_astro/preload-helper.DHhhL8Zf.js",
@@ -114,24 +224,40 @@
         "sha256": "37047d8cb74fe4088db98aa4c126e92172364695d7248c389ddd19a957226ed3"
       },
       {
-        "asset": "/_astro/storage.o8p3nTPT.js",
-        "rawBytes": 1563,
-        "gzipBytes": 767,
-        "sha256": "aa1ae08ca66289a898b7c86a41a6d9d5fc5ca0b3afd49a4a3461c3aa5aeda3c4"
+        "asset": "/_astro/summary.CxHByVoC.js",
+        "rawBytes": 12095,
+        "gzipBytes": 4736,
+        "sha256": "feea41b133f4bdbb04f4dd8e0919022f9f6afdf082a143539c4e3930261a9311"
       },
       {
         "asset": "/_astro/three.module.CWLT2Xhn.js",
         "rawBytes": 679433,
         "gzipBytes": 170512,
         "sha256": "46897cb56326db0b4f8385dfebfd1bc6e1778b5da0bd29f7d3deb2743861454e"
+      },
+      {
+        "asset": "/_astro/validation.C46eQLLQ.js",
+        "rawBytes": 14370,
+        "gzipBytes": 5461,
+        "sha256": "fe81fd03b351421f3af9b2081669b24556b76c319470822ff73fc04c73fe21fb"
       }
     ]
   },
   "contact": {
     "total": {
-      "rawBytes": 29516,
-      "gzipBytes": 10898,
-      "assets": 5
+      "rawBytes": 726276,
+      "gzipBytes": 188495,
+      "assets": 8,
+      "requestedAssets": [
+        "/_astro/DesignObject.astro_astro_type_script_index_0_lang.DPwJZMbc.js",
+        "/_astro/EnquiryForm.astro_astro_type_script_index_0_lang.DCPzppGc.js",
+        "/_astro/design-object-scenes.CxLyk2cO.js",
+        "/_astro/enquiry.DhuYNuZ8.js",
+        "/_astro/material-advice.CXxSeqLS.js",
+        "/_astro/preload-helper.DHhhL8Zf.js",
+        "/_astro/rolldown-runtime.hePW80VL.js",
+        "/_astro/three.module.CWLT2Xhn.js"
+      ]
     },
     "assets": [
       {
@@ -145,6 +271,12 @@
         "rawBytes": 11427,
         "gzipBytes": 4176,
         "sha256": "b9e1d9bdbf3b9c42dd8f32030bb012ca6716006ee8ac58eebbfc213076702714"
+      },
+      {
+        "asset": "/_astro/design-object-scenes.CxLyk2cO.js",
+        "rawBytes": 16611,
+        "gzipBytes": 6657,
+        "sha256": "9581948d260d8e164dec3e643ef1102f4393a527eb9acdc253350cd5fa56f216"
       },
       {
         "asset": "/_astro/enquiry.DhuYNuZ8.js",
@@ -163,10 +295,24 @@
         "rawBytes": 1665,
         "gzipBytes": 852,
         "sha256": "616967e76046f7a294c7ad1643f1ab9993561d942fd47c439a02f58b0569e70c"
+      },
+      {
+        "asset": "/_astro/rolldown-runtime.hePW80VL.js",
+        "rawBytes": 716,
+        "gzipBytes": 428,
+        "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021"
+      },
+      {
+        "asset": "/_astro/three.module.CWLT2Xhn.js",
+        "rawBytes": 679433,
+        "gzipBytes": 170512,
+        "sha256": "46897cb56326db0b4f8385dfebfd1bc6e1778b5da0bd29f7d3deb2743861454e"
       }
     ],
     "reactRequests": 0,
-    "pdfRequests": 0
+    "pdfRequests": 0,
+    "roomStudioRequests": 0,
+    "scope": "Separate fresh context and default-motion Contact visit, including its existing dimensional study and shared Three.js. No Room Studio, React or PDF requests."
   },
   "lazyPdfAssets": [
     {
@@ -182,5 +328,10 @@
       "sha256": "145d2dd3ab0c86151011dba95acfa2d5336e2accd59388ea43dbee0efddaaec6"
     }
   ],
-  "errors": []
+  "errors": [],
+  "consoleErrors": [],
+  "blockedExternalOrNonGetRequests": [],
+  "failedResponses": [],
+  "serviceScope": "Cloud remains disabled. No account, sign-in, cloud, AI, email or paid processing request was made.",
+  "visualReview": "Fresh screenshots reviewed: original illustrative wallpaper and limewash are visible in the overview; the rotated overview retains trims with wall surfaces; saved camera views retain floor and ceiling at desktop and mobile widths. Original technical fixture only."
 }

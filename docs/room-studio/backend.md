@@ -11,7 +11,8 @@ on GitHub Pages; it cannot host the private API or workers.
 - `src/room-studio/cloud.ts` provides a dependency-free Supabase Auth/Edge REST
   client. `createCloudClient()` exposes `enabled`, `session`, email OTP sign-in,
   capabilities, project CRUD/export, private uploads, immutable confirmation,
-  asynchronous job submission/status and five-minute asset links. Nothing reads a
+  historical revision reads/portable exports, asynchronous job submission/status
+  and five-minute asset links. Nothing reads a
   service or model key in browser code. Sessions live in tab-local sessionStorage.
 - `supabase/functions/room-studio/index.ts` verifies the access token against Auth
   and requires a verified non-anonymous email. It then performs short actions,
@@ -59,6 +60,13 @@ a second room geometry. The renderer returns two 1920×1080 stills and one
 4096×2048 panorama. No image-generation rewrite is part of this pipeline.
 Only finishes assigned in the confirmed active combination enter that package;
 unused library items and historical saved combinations do not add render assets.
+
+Completed render results resolve `job.revisionId` through an owned immutable
+revision read. Their finish summary uses that snapshot, and the editable room
+download embeds its historical artwork. Neither operation reads the current
+mutable draft or changes the optimistic save head. The API checks project
+availability and filters revisions by owner, project and revision ID; the client
+also checks the returned identity before exposing either companion download.
 
 A cloud project has database revision zero until its first confirmed snapshot.
 The API accepts that draft head explicitly; the browser keeps it separately for
@@ -118,7 +126,8 @@ explicit database **and** Edge/worker flags; having a model key is insufficient.
    `PUBLIC_ROOM_STUDIO_SUPABASE_ANON_KEY`. These are public connection values, never
    service credentials. Enabling cloud saving does not enable paid jobs or AI.
 4. Build/deploy the Modal app only when authorised. The worker image installs the
-   pinned requirements and official Blender 4.5.0. PaddleOCR weights must be warmed
+   pinned requirements (including Modal 1.6.2) and official Blender 4.5.0, checking
+   its pinned SHA-256 before extraction. PaddleOCR weights must be warmed
    and the pinned OCR dependency combination smoke-tested in that image before a
    customer job. This repository has not downloaded those weights or run Modal.
 5. Supply worker-only values in a Modal secret named `mrwallcover-room-studio`:
@@ -182,6 +191,14 @@ crossed polygons, unsupported files, unsafe asset paths and escaping crops.
 These tests do not constitute deployed Supabase/RLS/storage, email, OCR-model,
 Modal GPU or live vision-provider verification. Those services are deliberately
 unconfigured. Live AI remains disabled.
+
+Historical revision API tests additionally check owner/project isolation, portable
+artwork and unchanged optimistic save heads. The offline browser results suite
+downloads actual files from the real results component after editing the current
+draft, proving that its room/finish companions still identify the rendered version.
+The [worker preparation review](review/worker-dependencies.md) records Linux
+dependency resolution, the isolated SDK definition check and archive integrity;
+it does not replace the pending real worker-image smoke test.
 
 `python3 workers/room_studio/test_import_plan.py` generates original temporary
 schematic PDFs and a PNG. Twelve fixture tests passed using the bundled Python

@@ -10,6 +10,7 @@ import hashlib
 import json
 import os
 import re
+import shlex
 import subprocess
 import tempfile
 import urllib.error
@@ -22,6 +23,17 @@ from typing import Any
 MAX_BYTES=20*1024*1024
 BUCKET="room-studio"
 ROOT=Path(__file__).resolve().parent
+# Official Blender 4.5.0 release checksum, checked 18 October 2026:
+# https://download.blender.org/release/Blender4.5/blender-4.5.0.sha256
+BLENDER_SHA256="1188b95cc12321c770b631939f7c25a096910b6f884a990bf9c0f62d52b38aec"
+BLENDER_VERIFY_CODE="""import hashlib, sys
+digest = hashlib.sha256()
+with open(sys.argv[1], 'rb') as archive:
+    for chunk in iter(lambda: archive.read(1024 * 1024), b''):
+        digest.update(chunk)
+if digest.hexdigest() != sys.argv[2]:
+    raise SystemExit('Blender archive checksum mismatch; extraction stopped')
+"""
 
 
 class TransientWorkerError(RuntimeError):
@@ -249,7 +261,7 @@ if modal is not None:
     image=(modal.Image.debian_slim(python_version="3.11")
         .apt_install("libgl1","libglib2.0-0","libxrender1","libxi6","libxkbcommon0","curl","xz-utils")
         .pip_install_from_requirements(str(ROOT/"requirements.txt"))
-        .run_commands("curl --fail --location https://download.blender.org/release/Blender4.5/blender-4.5.0-linux-x64.tar.xz -o /tmp/blender.tar.xz", "mkdir -p /opt/blender && tar -xJf /tmp/blender.tar.xz --strip-components=1 -C /opt/blender && rm /tmp/blender.tar.xz")
+        .run_commands("curl --fail --location https://download.blender.org/release/Blender4.5/blender-4.5.0-linux-x64.tar.xz -o /tmp/blender.tar.xz", f"python -c {shlex.quote(BLENDER_VERIFY_CODE)} /tmp/blender.tar.xz {BLENDER_SHA256} && mkdir -p /opt/blender && tar -xJf /tmp/blender.tar.xz --strip-components=1 -C /opt/blender && rm /tmp/blender.tar.xz")
         .add_local_dir(str(ROOT),remote_path="/root/room_studio"))
     secret=modal.Secret.from_name("mrwallcover-room-studio")
 

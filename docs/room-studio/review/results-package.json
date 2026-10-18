@@ -1,0 +1,76 @@
+{
+  "source": "original offline fixtures and actual CloudPanel",
+  "immutableRevision": "fixture-rectangle-revision-1",
+  "editablePortableDownload": true,
+  "importerValidation": true,
+  "frozenGeometryFinishesArtwork": true,
+  "confirmedPlainTextSummary": true,
+  "laterDraftExcluded": true,
+  "completedImages": 3,
+  "apiCalls": [
+    {
+      "method": "listProjects",
+      "args": []
+    },
+    {
+      "method": "capabilities",
+      "args": []
+    },
+    {
+      "method": "listJobs",
+      "args": [
+        "fixture-rectangle"
+      ]
+    },
+    {
+      "method": "signedAssetUrl",
+      "args": [
+        "fixture-rectangle",
+        "offline-fixture/results/still-1.png"
+      ]
+    },
+    {
+      "method": "signedAssetUrl",
+      "args": [
+        "fixture-rectangle",
+        "offline-fixture/results/still-2.png"
+      ]
+    },
+    {
+      "method": "signedAssetUrl",
+      "args": [
+        "fixture-rectangle",
+        "offline-fixture/results/panorama.png"
+      ]
+    },
+    {
+      "method": "getRevision",
+      "args": [
+        "fixture-rectangle",
+        "fixture-rectangle-revision-1"
+      ]
+    },
+    {
+      "method": "exportRevision",
+      "args": [
+        "fixture-rectangle",
+        "fixture-rectangle-revision-1"
+      ]
+    }
+  ],
+  "widths": [
+    {
+      "viewport": 1440,
+      "document": 1440,
+      "panel": 670
+    },
+    {
+      "viewport": 390,
+      "document": 390,
+      "panel": 316
+    }
+  ],
+  "browserErrors": [],
+  "consoleErrors": [],
+  "blockedRequests": []
+}

@@ -24,9 +24,15 @@ export const localRevisions = () => access<RoomRevision[]>('revisions', 'readonl
 export async function deleteLocalData() {
   await new Promise<void>((resolve,reject) => { const r=indexedDB.deleteDatabase(NAME); r.onsuccess=()=>resolve(); r.onerror=r.onblocked=()=>reject(new Error('Close other Room Studio tabs and try again.')); });
 }
-export function downloadJson(value: unknown, name: string) {
-  const url = URL.createObjectURL(new Blob([JSON.stringify(value, null, 2)], { type: 'application/json' }));
+function downloadBlob(blob: Blob, name: string) {
+  const url = URL.createObjectURL(blob);
   const link = document.createElement('a'); link.href=url; link.download=name; link.click(); setTimeout(()=>URL.revokeObjectURL(url), 1000);
+}
+export function downloadJson(value: unknown, name: string) {
+  downloadBlob(new Blob([JSON.stringify(value, null, 2)], { type: 'application/json' }), name);
+}
+export function downloadText(value: string, name: string) {
+  downloadBlob(new Blob([value], { type: 'text/plain;charset=utf-8' }), name);
 }
 /** Only our own closed data format is accepted; never execute anything in imports. */
 export function isProject(value: unknown): value is RoomProject {

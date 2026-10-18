@@ -108,6 +108,18 @@ export function createCloudClient(config: CloudConfiguration=configuration(), fe
     saved.project.revision=Math.max(1,saved.project.revision);
     return saved;
   }
+  async function getRevision(projectId:string,revisionId:string):Promise<RoomRevision> {
+    const revision=await action<RoomRevision>('getRevision',{projectId,revisionId});
+    const sameId=(value:unknown,expected:string)=>typeof value==='string'&&value.toLowerCase()===expected.toLowerCase();
+    if(!revision||!sameId(revision.id,revisionId)||!sameId(revision.projectId,projectId)||
+      !sameId(revision.project?.id,projectId)||!sameId(revision.project?.ownerId,session?.user.id??'')||
+      !Number.isSafeInteger(revision.number)||revision.number<1||revision.project.revision!==revision.number) {
+      throw new Error('The confirmed room version did not match this request. Open the results again.');
+    }
+    // Reading a historical snapshot must not replace the mutable head used by
+    // optimistic cloud saves, or require downloading its source artwork.
+    return revision;
+  }
   async function hydrateProject(project:RoomProject,loaded:Map<string,string>,portable=false):Promise<void> {
     for(const finish of [...project.finishes,...project.schemes.flatMap(s=>s.finishes)]) {
       if((finish.type!=='wallpaper'&&finish.type!=='mural')||!finish.texture.storagePath)continue;
@@ -133,6 +145,11 @@ export function createCloudClient(config: CloudConfiguration=configuration(), fe
     for(const revision of value.revisions)await hydrateProject(revision.project,loaded,true);
     return {...value,exportedAt:new Date().toISOString(),editableArtworkIncluded:true,outputLinksExpireInSeconds:300};
   }
+  async function exportRevision(projectId:string,revisionId:string):Promise<RoomRevision> {
+    const revision=await getRevision(projectId,revisionId);
+    await hydrateProject(revision.project,new Map(),true);
+    return revision;
+  }
   return {
     enabled, configured:enabled,
     get session(){return session;},
@@ -141,6 +158,7 @@ export function createCloudClient(config: CloudConfiguration=configuration(), fe
     async signOut():Promise<void>{try{if(session)await auth('logout',{},await token());}finally{store(null);}},
     listProjects:()=>action<CloudProject[]>('listProjects'),
     getProject,
+    getRevision,
     capabilities:()=>action<CloudCapabilities>('capabilities'),
     saveProject,
     confirmRevision:async(project:RoomProject)=>{const saved=await saveProject(project);const revision=await action<RoomRevision>('confirmRevision',{project:saved.project});heads.set(project.id,revision.number);return revision;},
@@ -151,6 +169,7 @@ export function createCloudClient(config: CloudConfiguration=configuration(), fe
     getJob:(jobId:string)=>action<CloudJob>('getJob',{jobId}),
     signedAssetUrl:(projectId:string,storagePath:string)=>action<{url:string;expiresIn:number}>('signedAssetUrl',{projectId,storagePath}),
     exportProject,
+    exportRevision,
     deleteProject:(projectId:string)=>action<{deleted:true}>('deleteProject',{projectId}),
   };
 }

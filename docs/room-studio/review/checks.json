@@ -3,7 +3,7 @@
   "baselineMain": "63567b831bd9e49369bf2141d2c653efefeac31d",
   "sourceFingerprint": {
     "algorithm": "SHA-256 of sorted relative path, NUL, file contents, NUL for listed application/service/worker and shared integration inputs",
-    "sha256": "10677df1d839194f0531a275e2a5d81745344d2a69e4c043c026f4de9c0f5573",
+    "sha256": "5f234d1940f6e0477164993c7675bf32670c193e899b8dfea11164492d503802",
     "inputs": [
       "astro.config.mjs",
       "package-lock.json",
@@ -38,8 +38,10 @@
       "workers/room_studio/import_plan.py",
       "workers/room_studio/modal_app.py",
       "workers/room_studio/render.py",
+      "workers/room_studio/requirements.txt",
       "workers/room_studio/test_asset_normalization.py",
-      "workers/room_studio/test_import_plan.py"
+      "workers/room_studio/test_import_plan.py",
+      "workers/room_studio/test_worker_image.py"
     ]
   },
   "checks": {
@@ -49,10 +51,10 @@
       "skipped": 0
     },
     "studio": {
-      "passed": 51,
+      "passed": 58,
       "failed": 0,
       "skipped": 0,
-      "scope": "50 pass in the standard suite plus the optional Blender test executed separately with Blender 4.5.0; hosted CI skips Blender when unavailable"
+      "scope": "57 pass in the standard suite plus the unchanged optional Blender test executed separately with Blender 4.5.0; hosted CI skips Blender when unavailable"
     },
     "builtSite": {
       "passed": 273,
@@ -88,10 +90,11 @@
   "python": {
     "planFixtures": 12,
     "assetNormalization": 4,
-    "liveModelCalls": 0
+    "liveModelCalls": 0,
+    "workerArchiveIntegrity": 1
   },
   "browserSuites": {
-    "count": 7,
+    "count": 8,
     "status": "passed",
     "scope": "Isolated desktop Chromium and responsive emulation; local browser/scene/panorama fixtures; no external processing",
     "additionalWebKit": {
@@ -105,6 +108,11 @@
       "status": "passed",
       "receipt": "accessibility.json",
       "scope": "320px, 640×450 CSS effective200% layout, native macOS Option+Tab, field edits, Space opening activation and focused dock clearance; no screen reader"
+    },
+    "immutableResults": {
+      "status": "passed",
+      "receipt": "results-package.json",
+      "scope": "Actual CloudPanel with typed offline service fixtures; real JSON/TXT downloads, frozen revision and embedded artwork; no live service calls"
     }
   },
   "noLoss": {
@@ -148,6 +156,16 @@
   "regressions": [
     "Repeated finish-band splits retain bounded unique IDs and complete adjacent coverage",
     "Repeated cloud saves reuse freshly verified owner/project artwork across sessions; stale paths recover and corrupt files fail closed",
-    "Keyboard opening activation, contrasting field borders and shared dock clearance for focused editing workspaces"
-  ]
+    "Keyboard opening activation, contrasting field borders and shared dock clearance for focused editing workspaces",
+    "Completed render results export their own immutable room and finish summary even after later draft edits"
+  ],
+  "workerPreparation": {
+    "modal": "1.6.2",
+    "linuxPython": "3.11",
+    "resolvedWheels": 92,
+    "blenderArchiveHashVerifiedBeforeExtraction": true,
+    "offlineIntegrityRegression": "passed",
+    "realLinuxImageAndOcr": "pending",
+    "review": "worker-dependencies.md"
+  }
 }
