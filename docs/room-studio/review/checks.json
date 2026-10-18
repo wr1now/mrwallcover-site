@@ -2,12 +2,13 @@
   "reviewedDate": "2026-10-18",
   "baselineMain": "63567b831bd9e49369bf2141d2c653efefeac31d",
   "sourceFingerprint": {
-    "algorithm": "SHA-256 of sorted relative path, NUL, file contents, NUL for listed application/service/worker inputs",
-    "sha256": "ab4fc069b82938fb32e3e3bae09b6a3388f4d4172842b33930faf4093db6615a",
+    "algorithm": "SHA-256 of sorted relative path, NUL, file contents, NUL for listed application/service/worker and shared integration inputs",
+    "sha256": "10677df1d839194f0531a275e2a5d81745344d2a69e4c043c026f4de9c0f5573",
     "inputs": [
       "astro.config.mjs",
       "package-lock.json",
       "package.json",
+      "src/components/MobileDock.astro",
       "src/room-studio/RoomStudio.tsx",
       "src/room-studio/catalogue/bauwerk-uk.json",
       "src/room-studio/catalogue/index.ts",
@@ -99,6 +100,11 @@
       "build": 2336,
       "receipt": "webkit.json",
       "scope": "Automated desktop Playwright WebKit with desktop and touch/narrow viewport contexts. Not installed Safari, physical iPhone Safari or Android Chrome acceptance."
+    },
+    "accessibility": {
+      "status": "passed",
+      "receipt": "accessibility.json",
+      "scope": "320px, 640×450 CSS effective200% layout, native macOS Option+Tab, field edits, Space opening activation and focused dock clearance; no screen reader"
     }
   },
   "noLoss": {
@@ -141,6 +147,7 @@
   "scope": "Local implementation review receipt; live hosted status is tracked on the pull request.",
   "regressions": [
     "Repeated finish-band splits retain bounded unique IDs and complete adjacent coverage",
-    "Repeated cloud saves reuse freshly verified owner/project artwork across sessions; stale paths recover and corrupt files fail closed"
+    "Repeated cloud saves reuse freshly verified owner/project artwork across sessions; stale paths recover and corrupt files fail closed",
+    "Keyboard opening activation, contrasting field borders and shared dock clearance for focused editing workspaces"
   ]
 }

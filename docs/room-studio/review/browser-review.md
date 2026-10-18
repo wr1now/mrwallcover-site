@@ -8,6 +8,8 @@ The scene test changes existing paint surfaces to textured finishes and checks r
 
 A separate [desktop WebKit 26.5 receipt](webkit.json) covers the live WebGL editor at 1440px and 390px, local persistence and undo/redo, crop/rotation proof, actual JSON download and re-import, and PNG/JPEG/two-page PDF calibration and tracing. No browser errors or external requests occurred. The narrow context uses a coarse pointer and dispatched touch events; it remains desktop WebKit, not an iPhone or Android device result.
 
+The [focused accessibility review](accessibility.md) adds 320px and effective 200% layouts, computed contrast, keyboard activation and dock clearance for focused editor controls. Screen-reader testing remains pending.
+
 The [test receipt](checks.json) records local source/build/type/worker checks and their scope. The [performance receipt](performance.json) lists requested script sizes and confirms that the Contact page requests no React editor or PDF runtime. The PDF compatibility runtime and worker are lazy; byte sizes are gzip estimates, not network speed measurements.
 
 | Review surface | Image |

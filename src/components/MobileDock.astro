@@ -6,8 +6,8 @@
  * is a fourth cell only when BOOKING_URL is set in src/config.ts. Opaque champagne (no
  * blur), so on a phone the header is the only blurred surface. Hidden while
  * the mobile menu is open and while a text field has focus (an on-screen
- * keyboard is likely up); body padding (--dock-clearance) keeps it off the
- * footer's last line.
+ * keyboard is likely up) or an opted-in editing workspace has focus. Body
+ * padding (--dock-clearance) keeps it off the footer's last line.
  */
 import Glass from './Glass.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
@@ -32,14 +32,18 @@ import BookCallLink from './BookCallLink.astro';
     el instanceof HTMLTextAreaElement ||
     el instanceof HTMLSelectElement ||
     (el instanceof HTMLElement && el.isContentEditable);
+  // Interactive workspaces also need clear buttons and canvas controls when
+  // keyboard navigation scrolls them into view at narrow/zoomed layouts.
+  const needsDockClearance = (el: EventTarget | null) => isTextField(el) ||
+    (el instanceof Element && Boolean(el.closest('[data-dock-clearance]')));
   document.addEventListener('focusin', (event) => {
-    document.body.classList.toggle('field-focus', isTextField(event.target));
+    document.body.classList.toggle('field-focus', needsDockClearance(event.target));
   });
-  // Moving between two fields fires focusout then focusin; only remove the class when focus is really leaving a field.
+  // Focusout precedes focusin; keep clearance between fields/workspace controls.
   document.addEventListener('focusout', (event) => {
-    if (isTextField(event.relatedTarget)) return;
+    if (needsDockClearance(event.relatedTarget)) return;
     requestAnimationFrame(() => {
-      if (!isTextField(document.activeElement)) document.body.classList.remove('field-focus');
+      if (!needsDockClearance(document.activeElement)) document.body.classList.remove('field-focus');
     });
   });
 </script>

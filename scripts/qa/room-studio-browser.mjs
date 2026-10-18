@@ -37,6 +37,10 @@ try{
   await page.mouse.move(positions.start.x,positions.start.y);await page.mouse.down();await page.mouse.move(positions.end.x,positions.end.y,{steps:8});await page.mouse.up();await saved(page);
   assert.equal((await draft(page)).room.openings.find(o=>o.id===windowOpening.id).offsetMm,Math.floor(wallLength-windowOpening.widthMm));assert.equal(await page.$('.studio-error'),null);evidence.push('Pointer drag clamps window to integer-mm boundary on an angled wall');
 
+  const doorButton=await page.$('.studio-plan g[aria-label^="Select door,"]');assert(doorButton);await doorButton.evaluate(button=>button.focus());await page.keyboard.press('Space');
+  await page.waitForFunction(()=>document.querySelector('.studio-inset h3')?.textContent==='Door position');
+  assert.equal(await page.$$eval('.studio-controls label',labels=>labels.find(label=>label.querySelector('span')?.textContent==='Opening to edit')?.querySelector('select')?.value),angled.room.openings.find(o=>o.kind==='door').id);evidence.push('Space on a focused plan opening exposes its numeric controls');
+
   // Keyboard camera controls do not depend on dragging the canvas.
   const reset=await page.$('.studio-scene-tools button:last-child');await reset.focus();await page.keyboard.press('Enter');await page.keyboard.press('Tab');
   for(const width of [360,390,768,1024,1280,1440]){await page.setViewport({width,height:900,deviceScaleFactor:1});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:`${output}/editor-${width}.png`,fullPage:true});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`Overflow at ${width}px`);evidence.push(`No overflow and screenshot at ${width}px`);}
@@ -44,6 +48,9 @@ try{
   await page.$eval('.studio-scene canvas',canvas=>{const gl=canvas.getContext('webgl2')||canvas.getContext('webgl');const extension=gl?.getExtension('WEBGL_lose_context');if(!extension)throw new Error('Context loss extension unavailable');extension.loseContext();});
   await page.waitForFunction(()=>document.querySelector('.studio-scene')?.textContent.includes('Restore 3D view'));await button(page,'Restore 3D view');await page.waitForSelector('.studio-scene canvas');assert.equal((await draft(page)).id,beforeLoss);evidence.push('Forced WebGL loss recovers with the same saved room');
   await page.setViewport({width:390,height:844,deviceScaleFactor:1});await button(page,'Plan');assert(await page.$eval('.studio-plan-pane',e=>getComputedStyle(e).display!=='none'));await button(page,'3D room');assert(await page.$eval('.studio-3d-pane',e=>getComputedStyle(e).display!=='none'));
+  assert.equal(await page.$eval('[data-dock]',dock=>getComputedStyle(dock).display),'none','Dock clears focused workspace controls');
+  await page.focus('.site-header a[href="/"]');await page.waitForFunction(()=>!document.body.classList.contains('field-focus'));
+  assert.notEqual(await page.$eval('[data-dock]',dock=>getComputedStyle(dock).display),'none','Dock returns after workspace focus leaves');evidence.push('Shared dock clears focused editor controls and returns outside the workspace');
   await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);assert(await page.$('.studio-scene canvas'),'Essential 3D remains available under reduced motion');
   await page.close();
   const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(server.origin+'/room-studio/');assert(await nojs.$eval('main',e=>e.textContent.includes('Room Studio needs JavaScript')));await nojs.close();
