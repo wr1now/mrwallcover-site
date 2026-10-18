@@ -85,3 +85,30 @@ Prepared 10 October 2026 from the owner’s local iCloud Drive project archive. 
 | `public/media/atelier/browns-corridor-960.webp` | 960 × 1280 | 139,920 | `724ea7733e3f0e7d356abde3fce350a28024948720b298f2f50853f602322479` |
 | `public/media/atelier/browns-corridor-1440.webp` | 1440 × 1920 | 341,380 | `c2ef1bcdbc1bf54209bf2d30a4ba99f5a62c4e0db9cbd076484f27ce081fd526` |
 | `public/media/atelier/browns-corridor-960.jpg` | 960 × 1280 | 208,516 | `cf13c44cadba5e7f3845c4a225fccb203aba860b132efa279bc0ce76e2e06701` |
+
+## Original dimensional studies and CSS paper forms — 18 October 2026
+
+The fourteen object studies in `src/lib/design-object-kinds.ts` are original procedural illustrations, separate from the authentic project photographs documented above. Geometry, the original botanical repeat and deterministic fibre/veneer/tape textures are authored in `src/lib/design-object-scenes.ts`; `scripts/capture-design-object-posters.mjs` renders the static 640 × 640 WebP posters from the same scene, camera and lighting as the live view. No downloaded product artwork, branded model, stock photograph or generated project image is used. The previous eleven scenes remain, including the broad angled floral wallpaper roll.
+
+The added `measure` study models a tape casing, concave numbered blade, hook and sample surface. `junction` turns a woven covering around a physical return, with a join, lifted backing, substrate thickness and finishing trim. `film` shows thin film curling away from timber with its separate reverse and an application tool. These clarify the adjacent task; the tape scale is not a recorded site measurement, and the wall/film assembly is not a specified or tested system. Shared question, material and Guide maps select the relevant subject without implying maker endorsement or certification. Keep visible illustrative group labels and retain real project captions/credits separately.
+
+The shared gutter ambience is an original CSS paper fan and curl from `AtelierAtmosphere.astro` / `atelier-atmosphere.css`. It contains no raster/vector media download or WebGL renderer, and makes no product, project or performance claim. Its decorative forms stay behind content and obey the shared static/motion policy.
+
+The following hashes bind the current posters to their local files; final release/interaction checks are recorded separately in the page review. A machine-readable copy is [object-provenance.json](design/sitewide-editorial/object-provenance.json).
+
+| Poster in `public/media/design-objects/` | Dimensions | Bytes | SHA-256 |
+| --- | --- | ---: | --- |
+| `calendar.webp` | 640 × 640 | 37,196 | `aae19290cb707f581374e3c6c32e7799cb0c5f2057ccd13482d282995e36f800` |
+| `care.webp` | 640 × 640 | 49,692 | `0ad46af6e692acfa9ba99da66c521e767c6211cb5b9faf5a4f53827f7c320350` |
+| `document.webp` | 640 × 640 | 40,290 | `592b0f43d0b541cff0c2ff95b39d929b84c822a3bb0df1e08ab1eaf692c9b87c` |
+| `film.webp` | 640 × 640 | 39,156 | `f5ae375a84c9b2b128caa0dbda73d73e83b3c596cbf52c5181091536c6ad245d` |
+| `folio.webp` | 640 × 640 | 51,794 | `a501a1966532acca8dbaf369ae4c0528afc1d85d589ede5d4fc7fdf9b3e20b00` |
+| `junction.webp` | 640 × 640 | 61,676 | `0b3a7dc6af013f316346d13a3a0d937092064615475968f0191975836376e78a` |
+| `layers.webp` | 640 × 640 | 66,648 | `a2a729aa242d803e77642c9c137744e467cb3415428f3951359c9b64f9eb5193` |
+| `measure.webp` | 640 × 640 | 43,596 | `f4f5086a5956d180c6806613935092699e6127140e4c98aa047a8b082f80e8d2` |
+| `panels.webp` | 640 × 640 | 47,452 | `20d08bf1595a7ffec95a921a784f123a6e35d2ad27758698fa3792e9bfc14b5c` |
+| `price.webp` | 640 × 640 | 40,670 | `455699d9ec6c5e17d2878f10858f90aa803952ec88d13ccfc50dd5543deb54bf` |
+| `privacy.webp` | 640 × 640 | 27,742 | `1e59302b0f330cb7927c73e879259fc3d5c3e6eaf449b47963adc0554a48d61c` |
+| `roll.webp` | 640 × 640 | 46,414 | `2039fc2da5e5bae85a3fe9e776f8e275ad2de2f1d747c3f477e83745178d87be` |
+| `room.webp` | 640 × 640 | 59,292 | `1d038aa325fa10f88be754846ec50a74ccc437bc51584ecc8ea1a02434f87541` |
+| `samples.webp` | 640 × 640 | 51,252 | `c5b9b2adb5509f82a47fe3afe41c6fb6a506d3b62251f968a32382366f8cd72c` |

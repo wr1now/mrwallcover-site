@@ -41,14 +41,17 @@ const dimensional=item.visual?.objects!==false;
     </header>
     {dimensional&&<ObjectMotionControls label="Material & detail studies · Illustrative" />}
     <div class="professional-body grid gap-10 lg:grid-cols-12">
-      <div class="professional-sections prose guide-prose lg:col-span-7">{item.sections.map((section, index) => <section data-design-hit>
-        {dimensional?<div class="professional-section-object"><DesignObject kind={objectKindForIcon(item.visual?.sectionIcons?.[index]??'drawing')} /><span>{String(index+1).padStart(2,'0')}</span></div>:<div class="professional-section-mark"><Icon name={(item.visual?.sectionIcons?.[index] ?? 'drawing') as IconName} /><span>{String(index + 1).padStart(2, '0')}</span></div>}
-        <h2>{section.title}</h2><p>{section.text}</p>
+      <div class="professional-sections lg:col-span-7">{item.sections.map((section, index) => <section data-design-hit>
+        <div class="professional-step-heading">
+          <div><p class="eyebrow">{String(index+1).padStart(2,'0')}</p><h2>{section.title}</h2></div>
+          {dimensional?<div class="professional-section-object"><DesignObject kind={objectKindForIcon(item.visual?.sectionIcons?.[index]??'drawing')} /></div>:<div class="professional-section-mark"><Icon name={(item.visual?.sectionIcons?.[index] ?? 'drawing') as IconName} /></div>}
+        </div>
+        <p>{section.text}</p>
       </section>)}</div>
       <ProfessionalBriefing dimensional={dimensional} items={item.checklist} icons={item.visual?.checklistIcons as IconName[]} download={`/downloads/${item.download}`} downloadLabel={item.downloadLabel} guide={related ? { href: guideHref(related.frontmatter.slug), label: `${related.frontmatter.shortTitle}: read the guide` } : undefined} class="lg:col-span-4 lg:col-start-9" />
     </div>
     {item.slug === 'hotels' && <HotelGroups />}
-    {faq.length > 0 && <div class="prose guide-prose professional-questions"><BuyerFaq items={faq} eyebrow="Questions" visual={dimensional?'dimensional':'drawing'} /></div>}
+    {faq.length > 0 && <div class="professional-questions"><BuyerFaq items={faq} eyebrow="Questions" visual={dimensional?'dimensional':'drawing'} /></div>}
     {item.slug === 'designers' && <DesignersStrip />}
     <section class="guide-related"><h2>Other ways we can help</h2><div class="flex flex-wrap gap-3">{professionals.filter((other) => other.slug !== item.slug).map((other) => <Action variant="secondary" href={`/professionals/${other.slug}/`}>{other.name}</Action>)}{professionalEditorials.map((fm) => <Action variant="secondary" href={fm.path}>{fm.title}</Action>)}<Action variant="secondary" href="/projects/">Explore our work</Action></div></section>
   </div>
@@ -57,13 +60,16 @@ const dimensional=item.visual?.objects!==false;
 <style>
   .professional-opening { display: grid; gap: 2.5rem; align-items: center; margin-top: 1rem; }
   .professional-opening :global(.professional-opening-evidence) { min-width: 0; }
-  .professional-body { padding-block: 1rem 2rem; border-top: 1px solid var(--color-line); }
-  .professional-sections section { padding-block: 1.7rem; border-bottom: 1px solid var(--color-line); }
+  .professional-body { padding-block:1rem 2rem; border-top:1px solid var(--color-line); align-items:start; gap:var(--layout-gap); }
+  .professional-sections section { padding-block:1.75rem; border-bottom:1px solid var(--color-line); }
   .professional-sections section:last-child { border-bottom: 0; }
   .professional-section-mark { display: flex; align-items: center; gap: .9rem; margin-bottom: 1rem; color: var(--color-brass); font-size: var(--text-meta); letter-spacing: var(--tracking-label); }
-  .professional-sections h2 { margin: 0 0 1rem; font-size: var(--text-h3); line-height: 1.15; }
-  .professional-sections p { margin: 0; }
-  .professional-section-object { position:relative; width:100%; max-width:var(--object-card-size); margin:0 0 1rem; }
-  .professional-section-object > span { position:absolute; bottom:1rem; right:0; color:var(--color-stone); font-size:var(--text-meta); }
+  .professional-step-heading { display:grid; grid-template-columns:minmax(0,1fr) 9rem; align-items:center; gap:1rem; margin-bottom:1rem; }
+  .professional-step-heading .eyebrow { margin:0 0 .7rem; color:var(--color-brass); }
+  .professional-sections h2 { margin:0; font-size:var(--text-h3); line-height:1.15; }
+  .professional-sections > section > p { margin:0; max-width:var(--layout-reading); line-height:1.75; }
+  .professional-section-object { width:100%; margin:0; }
+  .professional-questions { max-width:none; padding-top:1rem; }
+  @media (min-width:640px) { .professional-step-heading { grid-template-columns:minmax(0,1fr) 12rem; } }
   @media (min-width: 1024px) { .professional-opening { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(2rem, 5vw, 5rem); } }
 </style>

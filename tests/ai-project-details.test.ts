@@ -41,9 +41,9 @@ test('every project JSON carries the complete canonical page with corpus, Markdo
     for (const name of ['headings', 'links', 'images', 'diagrams', 'media', 'structuredData']) assert.deepEqual(project.pageContent[name], page[name], `${project.slug}: complete ${name}`);
     // Compare the standard public box, rather than assuming frontmatter contains its fuller fields.
     const box = html.match(/<section class="glance-box"[^>]*data-glance[^>]*>([\s\S]*?)<\/section>/)![1];
-    const rows = [...box.matchAll(/<dt>([\s\S]*?)<\/dt>\s*<dd>([\s\S]*?)<\/dd>/g)].map((match) => ({
+    const rows = [...box.matchAll(/<dt\b[^>]*>([\s\S]*?)<\/dt>\s*<dd\b[^>]*>([\s\S]*?)<\/dd>/g)].map((match) => ({
       label: visible(match[1]),
-      value: visible(match[2].replace(/<span aria-hidden="true">–<\/span><span class="sr-only">Not recorded<\/span>/, '')) || null,
+      value: visible(match[2].replace(/<span\b[^>]*aria-hidden="true"[^>]*>–<\/span><span\b[^>]*class="sr-only"[^>]*>Not recorded<\/span>/, '')) || null,
     }));
     assert.deepEqual(project.standardGlance, rows, `${project.slug}: public glance parity`);
     for (const section of record.headings) {

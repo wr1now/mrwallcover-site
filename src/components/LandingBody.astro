@@ -23,6 +23,12 @@ const linked = linkedProjects(landingProjectSlugs(page), `${kind} page "${page.s
 const otherAreas = areas.filter((a) => a.slug !== page.slug);
 const otherSpecialisms = specialisms.filter((s) => s.slug !== page.slug);
 const photographCredit = page.imageId ? imageRights(media(page.imageId).jpg).creditText : null;
+const materialServices = new Set(['hand-painted-wallpaper-installation', 'grasscloth-installation', 'silk-wallcovering-installation', 'fabric-walling', 'mural-installation', 'acoustic-wallcovering-installation']);
+const relatedServices = kind === 'area' ? specialisms : otherSpecialisms;
+const serviceGroups = [
+  { title: 'Material installation', items: relatedServices.filter((service) => materialServices.has(service.slug)) },
+  { title: 'Specialist work', items: relatedServices.filter((service) => !materialServices.has(service.slug)) },
+].filter((group) => group.items.length > 0);
 
 /** Split a paragraph into text and [label](href) link segments. Content is our own JSON. */
 function segments(text: string) {
@@ -54,8 +60,8 @@ function segments(text: string) {
     <p class="eyebrow">On this page</p>
     <ul>{page.sections.map((section, index) => <li><a href={`#landing-section-${index + 1}`}><Icon name="arrow-right" /><span>{section.heading}</span></a></li>)}</ul>
   </nav>}
-  <div class="landing-introduction grid gap-10 pb-12 md:grid-cols-12">
-    <div class="prose md:col-span-7">
+  <div class:list={['landing-introduction', (page.imageId || page.visualDiagram) && 'landing-introduction--illustrated']}>
+    <div class="prose landing-introduction-copy">
       {page.paragraphs.map((paragraph) => (
         <p>{segments(paragraph).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</p>
       ))}
@@ -75,24 +81,29 @@ function segments(text: string) {
     </div>
     {
       page.imageId && (
-        <figure class="landing-photograph m-0 md:col-span-4 md:col-start-9">
-          <Picture id={page.imageId} sizes="(min-width: 768px) 22rem, calc(100vw - 2.5rem)" />
+        <figure class="landing-photograph">
+          <Picture id={page.imageId} sizes="(min-width: 1024px) 30rem, (min-width: 768px) 42vw, calc(100vw - 2.5rem)" />
           <figcaption class="caption mt-3"><span>{segments(page.imageCaption ?? media(page.imageId).alt).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</span><span>Photograph: {photographCredit}.</span></figcaption>
         </figure>
       )
     }
-    {page.visualDiagram === 'film-wrap' && <div class="md:col-span-4 md:col-start-9"><FilmWrapDiagram /></div>}
+    {page.visualDiagram === 'film-wrap' && <div class="landing-process-visual"><FilmWrapDiagram /></div>}
   </div>
 
   {
     page.sections && page.sections.length > 0 && (
-      <div class="landing-sections prose border-t border-line pt-12 pb-4">
+      <div class="landing-sections">
         {page.sections.map((section, index) => (
-          <section class="mb-10" id={`landing-section-${index + 1}`}>
-            <h2 class="mb-4 text-[clamp(2rem,3vw,2.7rem)]">{section.heading}</h2>
-            {section.paragraphs.map((paragraph) => (
-              <p>{segments(paragraph).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</p>
-            ))}
+          <section class="landing-section" id={`landing-section-${index + 1}`}>
+            <header>
+              <span class="landing-section-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+              <h2>{section.heading}</h2>
+            </header>
+            <div class="prose">
+              {section.paragraphs.map((paragraph) => (
+                <p>{segments(paragraph).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</p>
+              ))}
+            </div>
           </section>
         ))}
       </div>
@@ -111,37 +122,61 @@ function segments(text: string) {
 </div>
 
 <style>
-  .landing-photograph figcaption { display:grid; gap:.45rem; line-height:1.6; color:var(--color-stone); }
-  .landing-photograph figcaption a { text-decoration:underline; text-underline-offset:.2em; }
-  .landing-contents { padding:1.2rem 1.5rem; border:1px solid var(--color-line); border-radius:var(--radius-control); background:var(--color-paper); margin-bottom:2.5rem; }
-  .landing-contents > p { margin:0 0 .6rem; }
-  .landing-contents ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:2rem; list-style:none; margin:0; padding:0; }
-  .landing-contents a { display:flex; align-items:center; gap:.7rem; min-height:44px; font-size:var(--text-button); line-height:1.45; padding-block:.45rem; }
-  .landing-contents :global(.mw-icon) { width:1.15rem; height:1.15rem; color:var(--color-brass); flex-shrink:0; }
-  .landing-sections > section { scroll-margin-top:8rem; }
-  @media (max-width:639px) { .landing-contents ul { grid-template-columns:1fr; } }
+  .landing-introduction { display: grid; gap: 2.5rem; padding-bottom: clamp(2.5rem, 5vw, 4rem); align-items: start; }
+  .landing-introduction-copy { min-width: 0; }
+  .landing-introduction-copy > p:first-child { margin-top: 0; }
+  .landing-photograph { margin: 0; min-width: 0; }
+  .landing-photograph :global(.media-img) { display: block; width: 100%; height: auto; max-height: 34rem; object-fit: cover; }
+  .landing-photograph figcaption { display: grid; gap: .45rem; line-height: 1.6; color: var(--color-stone); }
+  .landing-photograph figcaption a { text-decoration: underline; text-underline-offset: .2em; }
+  .landing-contents { padding: 1.2rem 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-control); background: var(--color-paper); margin-bottom: 2.5rem; }
+  .landing-contents > p { margin: 0 0 .6rem; }
+  .landing-contents ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2rem; list-style: none; margin: 0; padding: 0; }
+  .landing-contents a { display: flex; align-items: center; gap: .7rem; min-height: 44px; font-size: var(--text-button); line-height: 1.45; padding-block: .45rem; }
+  .landing-contents :global(.mw-icon) { width: 1.15rem; height: 1.15rem; color: var(--color-brass); flex-shrink: 0; }
+  .landing-sections { padding-bottom: 1rem; }
+  .landing-section { display: grid; gap: 1.5rem; padding-block: clamp(2rem, 4vw, 3.5rem); border-top: 1px solid var(--color-line); scroll-margin-top: 8rem; }
+  .landing-section header { min-width: 0; }
+  .landing-section-number { display: block; margin-bottom: .75rem; color: var(--color-brass); font-size: var(--text-label); letter-spacing: .12em; }
+  .landing-section h2 { max-width: 20ch; margin: 0; font-size: clamp(2rem, 3vw, 2.7rem); }
+  .landing-section .prose { min-width: 0; }
+  .landing-section .prose > p { margin: 0; }
+  .landing-section .prose > p + p { margin-top: 1rem; }
+  .landing-related { display: grid; gap: 2.5rem; border-top: 1px solid var(--color-line); padding-block: 3rem; }
+  .landing-service-groups { display: grid; gap: 2rem; }
+  .landing-service-groups h3 { margin: 0 0 .75rem; font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 500; }
+  .landing-related ul { margin: 0; padding: 0; list-style: none; }
+  .landing-related li { border-bottom: 1px solid var(--color-line); }
+  .landing-related li a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 48px; padding-block: .65rem; line-height: 1.5; text-decoration: none; }
+  .landing-related li a:hover { text-decoration: underline; text-underline-offset: .2em; }
+  .landing-related li :global(.mw-icon) { flex-shrink: 0; width: 1rem; height: 1rem; color: var(--color-brass); }
+  .landing-related-aftercare { margin: 1.5rem 0 0; }
+  @media (min-width: 768px) {
+    .landing-introduction--illustrated { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); }
+    .landing-section { grid-template-columns: minmax(0, .8fr) minmax(0, 1.35fr); gap: clamp(2rem, 5vw, 5rem); }
+    .landing-service-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1024px) { .landing-related { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); } }
+  @media (max-width: 639px) { .landing-contents ul { grid-template-columns: 1fr; } }
 </style>
 
 <FaqList items={page.faq} eyebrow="Questions" heading={`Asked about ${page.name.replace(/^the /, '')}`} />
 
 <div class="container-page">
-  <nav class="grid gap-10 border-t border-line py-12 md:grid-cols-2" aria-label="Related pages">
+  <nav class="landing-related" aria-label="Related pages">
     <div>
       <p class="eyebrow">{kind === 'area' ? 'What we hang' : 'Materials'}</p>
-      <ul class="m-0 grid list-none gap-1 p-0">
-        {(kind === 'area' ? specialisms : otherSpecialisms).map((s) => (
-          <li><a href={specialismHref(s.slug)}>{s.name}</a></li>
-        ))}
-        <li><a href="/aftercare/">Aftercare and the twelve-month guarantee</a></li>
-      </ul>
+      <div class="landing-service-groups">
+        {serviceGroups.map((group) => <section>
+          <h3>{group.title}</h3>
+          <ul>{group.items.map((s) => <li><a href={specialismHref(s.slug)}><span>{s.name}</span><Icon name="arrow-right" /></a></li>)}</ul>
+        </section>)}
+      </div>
+      <p class="landing-related-aftercare"><a href="/aftercare/">Aftercare and the twelve-month guarantee</a></p>
     </div>
-    <div>
+    <section>
       <p class="eyebrow">Where we work</p>
-      <ul class="m-0 grid list-none gap-1 p-0">
-        {(kind === 'area' ? otherAreas : areas).map((a) => (
-          <li><a href={areaHref(a.slug)}>Wallpaper installer, {a.name.replace(/^the /, '')}</a></li>
-        ))}
-      </ul>
-    </div>
+      <ul>{(kind === 'area' ? otherAreas : areas).map((a) => <li><a href={areaHref(a.slug)}><span>Wallpaper installer, {a.name.replace(/^the /, '')}</span><Icon name="arrow-right" /></a></li>)}</ul>
+    </section>
   </nav>
 </div>

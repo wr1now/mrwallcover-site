@@ -259,7 +259,7 @@ test('the fact-sheet sentence appears identically in the footer, the JSON-LD and
   assert.equal(person.url, 'https://www.mrwallcover.com/about/');
   assert.match(about, /about\/#dorin/);
   // The Person @id fragment must resolve: the About page element that introduces Dorin carries id="dorin" and holds the H1.
-  assert.match(about, /<header[^>]*\sid="dorin"[^>]*>[\s\S]*?<h1>/, 'About page: the founder header must carry id="dorin"');
+  assert.match(about, /<header[^>]*\sid="dorin"[^>]*>[\s\S]*?<h1\b[^>]*>/, 'About page: the founder header must carry id="dorin"');
   assert.equal(about.match(/\sid="dorin"/g)?.length, 1, 'id="dorin" must appear exactly once');
   const llms = await readFile('dist/llms.txt', 'utf8');
   assert.ok(llms.split('\n').includes(`> ${sentence}`), 'llms.txt');
@@ -416,7 +416,10 @@ test('each published guide carries an Article with the founder as author, the bu
     // FAQPage only where the page shows the questions.
     const faqPage = graph['@graph'].find((node) => node['@type'] === 'FAQPage');
     assert.equal(Boolean(faqPage), html.includes('id="questions"'), `${slug} FAQPage must match a visible question block`);
-    if (faqPage) for (const q of faqPage.mainEntity) assert.ok(html.includes(`<h3>${q.name}</h3>`), `${slug}: ${q.name} is not visible`);
+    if (faqPage) {
+      const headings = [...html.matchAll(/<h3\b[^>]*>([\s\S]*?)<\/h3>/g)].map(match => match[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"'));
+      for (const q of faqPage.mainEntity) assert.ok(headings.includes(q.name), `${slug}: ${q.name} is not visible`);
+    }
     assert.match(html, /By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · Last updated/);
     articles += 1;
   }

@@ -1,0 +1,92 @@
+/* Shared composition: content and evidence use the same reading rhythm on every page. */
+:root {
+  --layout-gap:clamp(1.5rem,3.5vw,3.5rem);
+  --layout-space:clamp(3rem,5vw,5.5rem);
+  --layout-reading:44rem;
+  --layout-panel:var(--color-paper);
+}
+.page-head { padding-bottom:clamp(2rem,4vw,3.5rem); }
+body main p.lede { max-width:var(--layout-reading); }
+body main p.max-w-3xl { max-width:var(--layout-reading); }
+.page-head > .lede { max-width:var(--layout-reading); }
+:where(main .container-page, main .prose, main .grid > *) { min-width:0; }
+.prose :where(p,li,dd,td,th) { overflow-wrap:break-word; }
+.prose :where(ul,ol) { padding-left:1.3rem; }
+.prose :where(li + li) { margin-top:.5rem; }
+.prose :where(ul,ol) ::marker { color:var(--color-brass); }
+.prose table:not(.wp-table,.fr-table,.crawler-fit-table) { display:block; max-width:100%; overflow:auto; border-collapse:collapse; margin-block:1.75rem; }
+.prose table:not(.wp-table,.fr-table,.crawler-fit-table) :where(th,td) { padding:.8rem 1rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--color-line); }
+.prose table:not(.wp-table,.fr-table,.crawler-fit-table) th { background:var(--layout-panel); font-weight:500; }
+.prose :where(blockquote) { margin:2rem 0; padding:1rem 1.5rem; border-left:2px solid var(--color-brass); background:var(--layout-panel); }
+.fr-scope dd, .fr-sources { max-width:var(--layout-reading); }
+
+/* Question composition follows the available reading surface, not the viewport alone. */
+.guide-faq[data-visual="dimensional"] { container-name:buyer-questions; container-type:inline-size; }
+.guide-faq[data-visual="dimensional"] .guide-faq-item { --object-question-size:9rem; padding-right:0; min-height:0; }
+.guide-faq[data-visual="dimensional"] .question-heading-row { display:flex; align-items:center; }
+.guide-faq[data-visual="dimensional"] .guide-faq-item > p,
+.guide-faq[data-visual="dimensional"] .question-heading-row > h3 { max-width:var(--layout-reading); }
+.guide-faq[data-visual="dimensional"] .question-visual--dimensional { position:relative; top:auto; right:auto; transform:none; }
+@container buyer-questions (min-width:37.5rem) {
+  .guide-faq[data-visual="dimensional"] .guide-faq-item { --object-question-size:12rem; padding-right:calc(var(--object-question-size) + 1.5rem); min-height:calc(var(--object-question-size) + 4rem); }
+  .guide-faq[data-visual="dimensional"] .question-heading-row { display:block; }
+  .guide-faq[data-visual="dimensional"] .question-visual--dimensional { position:absolute; top:2rem; right:0; }
+}
+@container buyer-questions (min-width:56rem) {
+  .guide-faq[data-visual="dimensional"] .guide-faq-item { --object-question-size:18rem; padding-right:calc(var(--object-question-size) + 2rem); }
+}
+
+/* The homepage keeps its real photographs; its dense factual areas become useful groups. */
+body .atelier-intro { grid-template-columns:minmax(0,1fr); gap:1rem; }
+body .atelier-intro-bottom { gap:var(--layout-gap); max-width:none; }
+body .home-facts { margin-top:2rem; gap:1rem 2rem; }
+body .home-facts > div { min-width:0; padding:1rem 0; }
+body .home-facts dd { margin-top:.5rem; }
+body .home-trust-makers { display:flex; align-items:baseline; flex-wrap:wrap; gap:.5rem 1.5rem; }
+body .home-trust-makers > .home-trust-label { margin:0; }
+body .home-trust-makers > ul { display:flex; flex-wrap:wrap; gap:.25rem 1.25rem; list-style:none; margin:0; padding:0; }
+body .home-trust-makers li { margin:0; }
+body .home-trust-makers a { display:inline-flex; align-items:center; min-height:44px; }
+body .home-pillars { display:block; line-height:1.9; max-width:50rem; }
+body .home-team-grid { align-items:start; gap:var(--layout-gap); }
+body .home-team-facts { margin:0; padding:0; list-style:none; display:grid; gap:1rem; }
+body .home-team-facts > li { margin:0; padding:1rem 0 0; border-top:1px solid var(--color-line); }
+body .home-needs-grid { grid-template-columns:1fr; gap:0; margin-top:2rem; border-top:1px solid var(--color-line); }
+body .home-needs-grid > a { display:grid; grid-template-columns:2.25rem minmax(0,1fr); gap:.65rem 1rem; padding:1.5rem 0; border-top:0; border-bottom:1px solid var(--color-line); }
+body .home-needs-grid > a > .mw-icon { grid-row:1 / span 2; margin:0; width:1.8rem; height:1.8rem; }
+body .home-needs-grid h3, body .home-needs-grid p { margin:0; }
+body .home-needs-grid p { grid-column:2; max-width:38rem; }
+body .home-process > ol:not(.home-steps) { grid-template-columns:1fr; gap:0; margin-top:2rem; }
+body .home-process > ol:not(.home-steps) > li { display:grid; grid-template-columns:2.25rem minmax(0,1fr); gap:.5rem 1rem; padding:1.5rem 0; }
+body .home-process > ol:not(.home-steps) .atelier-service-number { grid-row:1 / span 2; padding-top:.2rem; }
+body .home-process > ol:not(.home-steps) h3 { margin:0; }
+body .home-process > ol:not(.home-steps) p { grid-column:2; }
+body .home-guides ul { grid-template-columns:1fr; }
+body .home-guides a { min-height:44px; }
+body .atelier-questions { grid-template-columns:1fr; gap:var(--layout-gap); }
+body .atelier-questions > div { min-width:0; }
+body .atelier-service { grid-template-columns:1fr; gap:var(--layout-gap); }
+body .atelier-service ol a { align-items:start; }
+body .atelier-service li a > .mw-icon:last-child { margin-left:auto; }
+body .home-record ul { gap:1rem 2rem; }
+body .home-record li { min-width:0; }
+body .home-record li a { display:inline; }
+body .home-praise { align-items:start; gap:var(--layout-gap); }
+body .hub-section > p:not(.eyebrow) { max-width:var(--layout-reading); }
+@media (min-width:640px) {
+  body .home-needs-grid { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:2rem; }
+  body .home-process > ol:not(.home-steps) { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:2rem; }
+  body .home-guides ul { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:1.5rem; }
+}
+@media (min-width:1024px) {
+  body .atelier-intro { grid-template-columns:minmax(0,2fr) minmax(0,10fr); gap:var(--layout-gap); }
+  body .atelier-service { grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:var(--layout-gap); }
+  body .atelier-questions { grid-template-columns:minmax(0,4fr) minmax(0,8fr); }
+  body .home-needs-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  body .home-process > ol:not(.home-steps) { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  body .home-guides ul { grid-template-columns:1fr; }
+}
+@media print {
+  .guide-faq[data-visual="dimensional"] .guide-faq-item { padding-right:0; min-height:0; }
+  .guide-faq[data-visual="dimensional"] .question-visual--dimensional { display:none; }
+}
