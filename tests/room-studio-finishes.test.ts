@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { test } from 'node:test';
 import { artworkHeaderDimensions, artworkIsAnimated, artworkUVAt, assignFinishBand, calibrationErrors, checkArtworkDimensions, checkEmbeddedArtwork, createLimewashPixels, detectArtworkMime, halfDropOffset, normaliseHex, proportionalMuralCalibration, rotatedCropSize, saveFinish } from '../src/room-studio/finishes.ts';
 import { bauwerkCatalogue, findBauwerkShades } from '../src/room-studio/catalogue/index.ts';
+import { validateProject } from '../src/room-studio/validation.ts';
 import type { ArtworkCalibration, RoomProject } from '../src/room-studio/types.ts';
 
 const calibration = (): ArtworkCalibration => ({ widthMm: 530, heightMm: 640, crop: { x: 0, y: 0, width: 1, height: 1 }, rotation: 0, repeatKind: 'strip', match: 'half-drop', offsetAlreadyIncluded: false, proofAccepted: false });
@@ -43,6 +44,23 @@ test('horizontal finish band replaces its intersection and preserves adjacent pa
   assert.equal(replaced.assignments.length, 1);
   assert.throws(() => assignFinishBand(before, { ...after.assignments[2], toMm: 2500 }), /floor and ceiling/);
   assert.throws(() => assignFinishBand(before, { ...after.assignments[2], wallId: 'missing' }), /wall/);
+});
+
+test('repeated band edits retain valid unique identifiers and adjacent coverage', () => {
+  let current = project();
+  current.assignments[0].id = crypto.randomUUID();
+  const place = (fromMm: number, toMm: number) => {
+    current = assignFinishBand(current, { id: crypto.randomUUID(), wallId: 'a', finishId: 'accent', fromMm, toMm, offsetXmm: 0, offsetYmm: 0 });
+    assert.deepEqual(validateProject(current), []);
+    assert.equal(new Set(current.assignments.map(band => band.id)).size, current.assignments.length);
+  };
+  place(500, 1000);
+  place(100, 200);
+  for (let fromMm = 1100; fromMm < 2100; fromMm += 100) place(fromMm, fromMm + 50);
+  const sorted = [...current.assignments].sort((a, b) => a.fromMm - b.fromMm);
+  assert.equal(sorted[0].fromMm, 0);
+  assert.equal(sorted.at(-1)!.toMm, null);
+  sorted.slice(1).forEach((band, index) => assert.equal(sorted[index].toMm, band.fromMm));
 });
 
 test('paint colours and uploaded image contents are validated rather than trusting filenames', () => {

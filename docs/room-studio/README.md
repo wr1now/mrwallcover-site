@@ -159,8 +159,10 @@ Local acceptance:
 - [x] Local Blender stills and panorama use the approved fixture package; exact
   crop/rotation and deterministic limewash bake agree with the browser.
 
-Physical iPhone Safari and Android Chrome testing remains pending. Responsive
-Chromium emulation is recorded separately and does not replace those checks.
+Desktop WebKit 26.5 also passes the focused editor, local export/reopen, artwork
+proof and plan-tracing checks at desktop and narrow widths. Physical iPhone
+Safari and Android Chrome testing remains pending. Desktop WebKit and responsive
+Chromium emulation are recorded separately and do not replace those checks.
 
 Service activation remains pending:
 

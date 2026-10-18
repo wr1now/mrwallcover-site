@@ -52,7 +52,14 @@ export function createCloudClient(config: CloudConfiguration=configuration(), fe
     if(!file.size||file.size>20*1024*1024) throw new Error('Choose a file no larger than 20 MB.');
     const digest=await crypto.subtle.digest('SHA-256',await file.arrayBuffer());
     const sha256=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
-    const upload=await action<{asset:CloudAsset;url:string}>('prepareUpload',{projectId,kind,mime:file.type,bytes:file.size,sha256});
+    const upload=await action<{asset:CloudAsset;url?:string;reused?:boolean}>('prepareUpload',{projectId,kind,mime:file.type,bytes:file.size,sha256});
+    if(upload.reused===true) {
+      // The service has freshly verified this immutable object. Do not retain a
+      // path cache: a later save must recheck ownership and object availability.
+      if(upload.asset.sha256!==sha256||upload.asset.mime!==file.type||upload.asset.bytes!==file.size)throw new Error('Private artwork did not match this file. Try saving again.');
+      return upload.asset;
+    }
+    if(!upload.url)throw new Error('Invalid private upload destination.');
     const url=new URL(upload.url,base);
     if(url.origin!==new URL(base).origin || !url.pathname.startsWith('/storage/v1/object/upload/sign/')) throw new Error('Invalid private upload destination.');
     try {
@@ -75,7 +82,9 @@ export function createCloudClient(config: CloudConfiguration=configuration(), fe
     const uploaded=new Map<string,CloudAsset>();
     for(const finish of [...copy.finishes,...copy.schemes.flatMap(s=>s.finishes)]) {
       if(finish.type!=='wallpaper'&&finish.type!=='mural') continue;
-      if(finish.texture.storagePath) { delete finish.texture.dataUrl; continue; }
+      // Hydrated artwork has both fields. Resolve the embedded original again
+      // so a stale/deleted cloud path cannot silently survive a later save.
+      if(!finish.texture.dataUrl&&finish.texture.storagePath) continue;
       if(finish.texture.dataUrl) {
         let asset=uploaded.get(finish.texture.sha256);
         if(!asset) {

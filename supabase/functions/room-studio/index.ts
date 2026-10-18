@@ -66,8 +66,16 @@ async function assetRow(owner:string,project:string,id?:string,path?:string):Pro
   const rows=await db('room_assets',`${filter}&owner_id=eq.${owner}&project_id=eq.${uuid(project)}`);
   if(rows.length!==1)throw new Error('Private asset unavailable');return rows[0];
 }
-async function downloadPrivate(path:string):Promise<Uint8Array> {
+async function downloadPrivate(path:string):Promise<Uint8Array>;
+async function downloadPrivate(path:string,missingOk:true):Promise<Uint8Array|null>;
+async function downloadPrivate(path:string,missingOk=false):Promise<Uint8Array|null> {
   const response=await fetch(`${SUPABASE}/storage/v1/object/authenticated/${BUCKET}/${path}`,{headers:{apikey:SERVICE,Authorization:`Bearer ${SERVICE}`}});
+  if(missingOk&&response.status===404)return null;
+  if(missingOk&&response.status===400) {
+    // Older Storage versions wrap their missing-object status in a 400 body.
+    const error=await response.json().catch(()=>({}));
+    if(String(error.statusCode)==='404')return null;
+  }
   if(!response.ok)throw new Error('Private upload has not completed');
   const contentLength=Number(response.headers.get('content-length'));
   if(contentLength>LIMITS.fileBytes)throw new Error('File is too large');
@@ -140,6 +148,16 @@ Deno.serve(async request=>{
     }
     if(action==='prepareUpload') {
       const project=uuid(input.projectId);await projectRow(owner,project);const spec=uploadSpec(input);
+      if(spec.kind==='artwork') {
+        const matches:Row[]=await db('room_assets',`owner_id=eq.${owner}&project_id=eq.${project}&kind=eq.artwork&state=eq.ready&mime=eq.${eq(spec.mime)}&bytes=eq.${spec.bytes}&sha256=eq.${spec.sha256}&order=created_at.asc`);
+        for(const candidate of matches) {
+          const path=ownedPath(candidate.storage_path,owner,project);
+          const bytes=await downloadPrivate(path,true);
+          if(bytes===null)continue; // Missing storage cannot be reused or signed for overwrite.
+          if(bytes.length!==spec.bytes||sniffMime(bytes)!==spec.mime||await digest(bytes)!==spec.sha256)throw new Error('Saved artwork failed its integrity check. Reattach the original file or contact support.');
+          return reply({asset:cloudAsset(candidate),reused:true});
+        }
+      }
       // Signing an existing immutable object must never permit overwrites. Use a
       // fresh asset ID for uploads; application-level texture saves reuse paths.
       const row=await rpc('room_reserve_asset',{p_owner:owner,p_project:project,p_id:crypto.randomUUID(),p_kind:spec.kind,p_mime:spec.mime,p_bytes:spec.bytes,p_sha:spec.sha256,p_extension:spec.extension});

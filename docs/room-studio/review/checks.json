@@ -3,7 +3,7 @@
   "baselineMain": "63567b831bd9e49369bf2141d2c653efefeac31d",
   "sourceFingerprint": {
     "algorithm": "SHA-256 of sorted relative path, NUL, file contents, NUL for listed application/service/worker inputs",
-    "sha256": "32302102bcc6d722bfc8416568bcf656c64a4cfe384f56ce73bb21186c2cfff1",
+    "sha256": "ab4fc069b82938fb32e3e3bae09b6a3388f4d4172842b33930faf4093db6615a",
     "inputs": [
       "astro.config.mjs",
       "package-lock.json",
@@ -48,9 +48,10 @@
       "skipped": 0
     },
     "studio": {
-      "passed": 49,
+      "passed": 51,
       "failed": 0,
-      "skipped": 0
+      "skipped": 0,
+      "scope": "50 pass in the standard suite plus the optional Blender test executed separately with Blender 4.5.0; hosted CI skips Blender when unavailable"
     },
     "builtSite": {
       "passed": 273,
@@ -91,7 +92,14 @@
   "browserSuites": {
     "count": 7,
     "status": "passed",
-    "scope": "Isolated desktop Chromium and responsive emulation; local browser/scene/panorama fixtures; no external processing"
+    "scope": "Isolated desktop Chromium and responsive emulation; local browser/scene/panorama fixtures; no external processing",
+    "additionalWebKit": {
+      "status": "passed",
+      "version": "26.5",
+      "build": 2336,
+      "receipt": "webkit.json",
+      "scope": "Automated desktop Playwright WebKit with desktop and touch/narrow viewport contexts. Not installed Safari, physical iPhone Safari or Android Chrome acceptance."
+    }
   },
   "noLoss": {
     "status": "passed",
@@ -130,5 +138,9 @@
     "Physical iPhone Safari and Android Chrome",
     "Cloud turnaround and cost measurement before setting pilot cap"
   ],
-  "scope": "Local pre-PR review receipt; live hosted status is tracked on the pull request."
+  "scope": "Local implementation review receipt; live hosted status is tracked on the pull request.",
+  "regressions": [
+    "Repeated finish-band splits retain bounded unique IDs and complete adjacent coverage",
+    "Repeated cloud saves reuse freshly verified owner/project artwork across sessions; stale paths recover and corrupt files fail closed"
+  ]
 }

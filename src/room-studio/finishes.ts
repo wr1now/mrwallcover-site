@@ -61,8 +61,10 @@ export function assignFinishBand(project: RoomProject, assignment: WallFinishAss
     const existingEnd = existing.toMm ?? project.room.heightMm;
     if (existing.wallId !== assignment.wallId || existingEnd <= start || existing.fromMm >= end) return [existing];
     const pieces: WallFinishAssignment[] = [];
-    if (existing.fromMm < start) pieces.push({ ...existing, id: `${existing.id}-below-${assignment.id}`, toMm: start });
-    if (existingEnd > end) pieces.push({ ...existing, id: `${existing.id}-above-${assignment.id}`, fromMm: end });
+    // A band may be split repeatedly. Ancestry in its identifier would grow
+    // beyond the document's 100-character limit after just a few edits.
+    if (existing.fromMm < start) pieces.push({ ...existing, id: crypto.randomUUID(), toMm: start });
+    if (existingEnd > end) pieces.push({ ...existing, id: crypto.randomUUID(), fromMm: end });
     return pieces;
   });
   return { ...project, assignments: [...assignments, { ...assignment }] };

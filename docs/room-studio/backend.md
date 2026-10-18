@@ -17,6 +17,11 @@ on GitHub Pages; it cannot host the private API or workers.
   and requires a verified non-anonymous email. It then performs short actions,
   validates the shared room model and checks ownership for every asset/revision.
   Finish artwork is uploaded privately; data URLs never enter database snapshots.
+  Repeated saves reuse ready artwork with the same owner, project, MIME, byte
+  count and checksum after freshly checking the stored file. Missing objects
+  fall back to a new immutable upload; corrupt objects fail the integrity check.
+  Local originals remain embedded for offline editing, without a permanent
+  upload-path cache or permission to overwrite an existing object.
   Imported projects and saved combinations use the same closed, bounded schema;
   source links must use the official Bauwerk UK HTTPS product route. Unknown
   metadata, remote artwork URLs, invalid timestamps and malformed nested schemes
@@ -33,14 +38,16 @@ on GitHub Pages; it cannot host the private API or workers.
   raster crop, pdfplumber text/lines, OpenCV segments and PaddleOCR when needed.
   One structured vision proposal and at most one repair are checked for finite,
   bounded geometry, crossing walls, opening extents and evidence-grounded scale.
-  Printed metric units must be explicit for automatic scale; the complete label
-  must appear in extracted text and both reference endpoints stay inside the crop.
+  Printed metric or feet/inches units must be explicit for automatic scale;
+  the complete label must appear in extracted text and both reference endpoints
+  stay inside the crop.
   Missing scale never silently becomes metres. Unknown ceiling height uses an
   invalid zero marker until the customer enters its measured value. Floor-plan
   openings lack measured head/sill/reveal evidence, so they are omitted with a
   separate instruction for each detected opening to add its measured dimensions.
   No plausible door/window sizes are manufactured. A source ceiling height must
-  match an explicit height label and metric dimension. Imported rooms always
+  match an explicit height label and dimension. Imperial values are converted
+  to millimetres before geometry validation. Imported rooms always
   remain unconfirmed until the customer checks them.
 
 The render Edge action compiles the approved immutable `RoomRevision` using the
