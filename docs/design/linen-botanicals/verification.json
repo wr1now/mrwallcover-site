@@ -1,0 +1,107 @@
+{
+  "checkedAt": "2026-10-18T21:51:06.918Z",
+  "sourceBase": "8b8d9eac2de609d7285c258e45d8f12f310005a5",
+  "sourceLabel": "linen-botanical working candidate; root-built dist after branch-position adjustment",
+  "scope": "Isolated compiled local browser verification; publication and live checks are separate",
+  "command": "CHROME_PATH=<Chrome headless shell155> node --experimental-strip-types --test tests/atelier-atmosphere.test.ts",
+  "result": {
+    "tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 13384.750042
+  },
+  "checks": {
+    "independentPaint": {
+      "linen": true,
+      "rightBirdBranch": true,
+      "leftBlossom": true,
+      "viewports": [
+        390,
+        1440
+      ],
+      "classicScrollbar": {
+        "viewportWidth": 390,
+        "forcedCssGutterWidth": 16,
+        "minimumVerifiedLayoutReservation": 15
+      },
+      "criterion": "Both A/B/A visible states differ from the hidden state by more than 100 channels; restored visible state differs by at most 10 channels"
+    },
+    "reading": {
+      "unchangedMainGeometry": true,
+      "noHorizontalOverflow": true,
+      "inertAndAriaHidden": true,
+      "noPointerHitInterception": true,
+      "textFreeLinenProbe": true,
+      "realPortraitPixelsIdentical": true,
+      "maximumAllowedLinenChannelChange": 32,
+      "minimumRequiredBodyContrastRatio": 4.5
+    },
+    "motion": {
+      "actualTransformChange": true,
+      "liveOsPreference": true,
+      "footerReducedEffects": true,
+      "sharedPauseResume": true,
+      "hiddenDocument": true,
+      "pagehidePageshow": true
+    },
+    "policy": {
+      "normalFamilies": [
+        "/",
+        "/services/",
+        "/materials/",
+        "/advice/",
+        "/professionals/",
+        "/projects/",
+        "/contact/"
+      ],
+      "staticFamilies": [
+        "/for-ai/",
+        "/privacy/",
+        "/wallcovering-installation-ai-crawler/",
+        "/wallpapering/preparation/",
+        "/makers/",
+        "/makers/de-gournay/",
+        "/buying-routes/"
+      ],
+      "omitted": [
+        "/404.html",
+        "/thank-you/",
+        "/search/"
+      ],
+      "noJavaScriptStaticAndPainted": true,
+      "printHidden": true,
+      "forcedColoursHidden": true
+    },
+    "resources": {
+      "decorativeImages": [
+        {
+          "path": "media/atelier-botanicals/ivory-linen.webp",
+          "bytes": 26912,
+          "sha256": "a6265ab3d2717bd46cc8a25fe6aadb9c2fdc20408783804ab17ad069c17d8079"
+        },
+        {
+          "path": "media/atelier-botanicals/branch-birds.webp",
+          "bytes": 139744,
+          "sha256": "a345da11f4929ba5aa0a24ecbc2e90a5f48a018ce0e3b7061c36852b3dfa63ab"
+        },
+        {
+          "path": "media/atelier-botanicals/blossom-sprig.webp",
+          "bytes": 108098,
+          "sha256": "7678d8d6455ac524554409dc7d6cf1ed95b49ae7f3d68e7207bd59b5c4b0bc6b"
+        }
+      ],
+      "aggregateBytes": 274754,
+      "maximumAggregateBytes": 307200,
+      "transparentBotanicalAlpha": true,
+      "additionalWebGlSceneRequestedForAtmosphere": false
+    }
+  },
+  "sourceHashes": {
+    "src/components/AtelierAtmosphere.astro": "ec71eddd7a27ca439a8c68b9f0f897d4fb8f431c5361a30cb27b9c00bf17171f",
+    "src/styles/atelier-atmosphere.css": "e2fbb2c2d8b7d7fd94d6613834051e090afc75cf7181309bda2a6ea0731ee49a",
+    "src/scripts/atelier-atmosphere.ts": "da5d0b6c46547b188acd25a7cc357da8ee606887583d2f1ab6291830b4a6e691",
+    "tests/atelier-atmosphere.test.ts": "e8019a58a3825f3f060bf574808d4e22e1737784125d8bff69d49bd8239a7856"
+  },
+  "log": "/tmp/mw-linen-atmosphere-tests.log"
+}

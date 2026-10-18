@@ -1,0 +1,38 @@
+{
+  "created": "2026-10-18",
+  "method": "OpenAI built-in image generation; original decorative artwork. Proportional downscaling and WebP encoding only; no downloaded maker artwork or project evidence.",
+  "assets": [
+    {
+      "path": "public/media/atelier-botanicals/branch-birds.webp",
+      "width": 640,
+      "height": 960,
+      "bytes": 139744,
+      "alpha": true,
+      "sha256": "a345da11f4929ba5aa0a24ecbc2e90a5f48a018ce0e3b7061c36852b3dfa63ab",
+      "sourceFile": "exec-e17defbe-8b4a-4ad4-bf2a-ef40566fc5e3.png",
+      "sourceSha256": "413f6c0a1d9a983d4d19506fbbf54cd575613106a6ddd71d6904875994c7dc0c"
+    },
+    {
+      "path": "public/media/atelier-botanicals/ivory-linen.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 26912,
+      "alpha": false,
+      "sha256": "a6265ab3d2717bd46cc8a25fe6aadb9c2fdc20408783804ab17ad069c17d8079",
+      "sourceFile": "exec-8090d8f1-8247-497c-8996-c4657376dfb6.png",
+      "sourceSha256": "dad5a6058d9867d509bd750f6d18473d242f42a8d76dbd517252ce71195fd392"
+    },
+    {
+      "path": "public/media/atelier-botanicals/blossom-sprig.webp",
+      "width": 640,
+      "height": 960,
+      "bytes": 108098,
+      "alpha": true,
+      "sha256": "7678d8d6455ac524554409dc7d6cf1ed95b49ae7f3d68e7207bd59b5c4b0bc6b",
+      "sourceFile": "exec-7c7f4a7f-442e-46d8-bc3f-491897426d17.png",
+      "sourceSha256": "3aa14b2d72d4343319070ea0c9323bab5455b38733c0a3218ad86f1448c7660f"
+    }
+  ],
+  "totalBytes": 274754,
+  "encoding": "Linen384px/WebP75; botanical640px/WebP82/alpha78, effort6. Entire generated composition and alpha retained."
+}
