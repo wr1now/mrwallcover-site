@@ -1,0 +1,134 @@
+[
+  {
+    "name": "calendar.webp",
+    "width": 640,
+    "height": 640,
+    "opaqueBounds": {
+      "left": 178,
+      "top": 93,
+      "right": 512,
+      "bottom": 548
+    },
+    "silhouetteFraction": 0.7109375
+  },
+  {
+    "name": "care.webp",
+    "width": 640,
+    "height": 640,
+    "opaqueBounds": {
+      "left": 122,
+      "top": 89,
+      "right": 533,
+      "bottom": 535
+    },
+    "silhouetteFraction": 0.696875
+  },
+  {
+    "name": "document.webp",
+    "width": 640,
+    "height": 640,
+    "opaqueBounds": {
+      "left": 176,
+      "top": 86,
+      "right": 517,
+      "bottom": 547
+    },
+    "silhouetteFraction": 0.7203125
+  },
+  {
+    "name": "folio.webp",
+    "width": 640,
+    "height": 640,
+    "opaqueBounds": {
+      "left": 165,
+      "top": 103,
+      "right": 534,
+      "bottom": 550
+    },
+    "silhouetteFraction": 0.6984375
+  },
+  {
+    "name": "layers.webp",
+    "width": 640,
+    "height": 640,
+    "opaqueBounds": {
+      "left": 113,
+      "top": 130,
+      "right": 551,
+      "bottom": 546
+    },
+    "silhouetteFraction": 0.684375
+  },
+  {
+    "name": "panels.webp",
+    "width": 640,
+    "height": 640,
+    "opaqueBounds": {
+      "left": 81,
+      "top": 123,
+      "right": 569,
+      "bottom": 528
+    },
+    "silhouetteFraction": 0.7625
+  },
+  {
+    "name": "price.webp",
+    "width": 640,
+    "height": 640,
+    "opaqueBounds": {
+      "left": 180,
+      "top": 76,
+      "right": 530,
+      "bottom": 546
+    },
+    "silhouetteFraction": 0.734375
+  },
+  {
+    "name": "privacy.webp",
+    "width": 640,
+    "height": 640,
+    "opaqueBounds": {
+      "left": 179,
+      "top": 117,
+      "right": 468,
+      "bottom": 551
+    },
+    "silhouetteFraction": 0.678125
+  },
+  {
+    "name": "roll.webp",
+    "width": 640,
+    "height": 640,
+    "opaqueBounds": {
+      "left": 102,
+      "top": 104,
+      "right": 573,
+      "bottom": 561
+    },
+    "silhouetteFraction": 0.7359375
+  },
+  {
+    "name": "room.webp",
+    "width": 640,
+    "height": 640,
+    "opaqueBounds": {
+      "left": 92,
+      "top": 114,
+      "right": 540,
+      "bottom": 568
+    },
+    "silhouetteFraction": 0.709375
+  },
+  {
+    "name": "samples.webp",
+    "width": 640,
+    "height": 640,
+    "opaqueBounds": {
+      "left": 166,
+      "top": 101,
+      "right": 534,
+      "bottom": 547
+    },
+    "silhouetteFraction": 0.696875
+  }
+]

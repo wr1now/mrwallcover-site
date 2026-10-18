@@ -11,7 +11,7 @@ export function mountDesignObjects() {
   const active=new Set<HTMLElement>();
   const canvases=new Map<HTMLElement,HTMLCanvasElement>();
   const controls=[...document.querySelectorAll<HTMLButtonElement>('button[data-object-motion]')];
-  let studio:Studio|undefined, loading:Promise<void>|undefined, frame=0, last=0, disposed=false, failed=false, paused=document.documentElement.dataset.objectMotionState==='paused', ready=false;
+  let studio:Studio|undefined, loading:Promise<void>|undefined, studioSize=0, frame=0, last=0, disposed=false, failed=false, paused=document.documentElement.dataset.objectMotionState==='paused', ready=false;
   let pointer={x:0,y:0}, pointerRow:Element|null=null;
   const reduced=()=>motion.matches || document.documentElement.dataset.effects==='reduced';
   const running=()=>!disposed&&!failed&&!paused&&!reduced()&&!document.hidden&&active.size>0;
@@ -34,10 +34,13 @@ export function mountDesignObjects() {
           if(rect.bottom<=0||rect.top>=innerHeight||!rect.width)return;
           let canvas=canvases.get(object);
           if(!canvas){canvas=document.createElement('canvas');canvas.setAttribute('aria-hidden','true');object.append(canvas);canvases.set(object,canvas);}
-          const size=Math.min(420,Math.round(rect.width*Math.min(devicePixelRatio||1,1.5)));
+          const size=Math.min(640,Math.round(rect.width*Math.min(devicePixelRatio||1,1.5)));
           if(canvas.width!==size){canvas.width=size;canvas.height=size;}
           const context=canvas.getContext('2d');if(!context)return;
           const row=object.closest('[data-design-hit], .guide-faq-item, .professional-sections section, .professional-briefing, details');
+          // Render at the actual output resolution: enlarging a 320px source blurred the
+          // paper fibres and cut edges on the larger shared study frames.
+          if(studioSize!==size){studio!.resize(size);studioSize=size;}
           const image=studio!.render(object.dataset.designObject as DesignObjectKind,time/1000,row===pointerRow?pointer:{x:0,y:0});
           context.clearRect(0,0,size,size);context.drawImage(image,0,0,size,size);
           if(!object.hasAttribute('data-live'))object.setAttribute('data-live','');
