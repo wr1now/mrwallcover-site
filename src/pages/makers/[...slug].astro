@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Action from '../../components/Action.astro';
+import MakerRoute from '../../components/MakerRoute.astro';
+import MakerDirectoryNav from '../../components/MakerDirectoryNav.astro';
+import MakerDirectoryFilter from '../../components/MakerDirectoryFilter.astro';
+import { makerDirectory, directoryVisible, directoryReview, type MakerProfile } from '../../lib/makers-directory';
+import { breadcrumbNode } from '../../lib/schema';
+import '../../styles/makers-directory.css';
+export function getStaticPaths(){return directoryVisible?[{params:{slug:undefined},props:{maker:null}},...makerDirectory.makers.map(maker=>({params:{slug:maker.slug},props:{maker}}))]:[];}
+interface Props {maker:MakerProfile|null}
+const {maker}=Astro.props;
+const path=maker?`/makers/${maker.slug}/`:'/makers/';
+const crumbs=[{name:'Home',href:'/'},{name:'Wallcovering Guide',href:'/advice/'},{name:'Makers',href:'/makers/'},...(maker?[{name:maker.name,href:path}]:[])];
+const title=maker?`${maker.name} Wallcoverings | Mr Wallcover`:'Wallcovering Makers Directory | Mr Wallcover';
+const description=maker?`Explore ${maker.name} wallcoverings and official sourcing contacts, with source dates, purchasing limits and product-specific checks before ordering.`:'Explore twenty international wallcovering brands, their official sourcing routes and the evidence to check before choosing and ordering.';
+---
+<Base title={title} description={description} path={path} updated={makerDirectory.updated} noindex={directoryReview} extraSchema={[breadcrumbNode(crumbs)]}>
+<div class="container-page pb-20">
+<header class="page-head maker-intro"><Breadcrumb items={crumbs}/><p class="eyebrow">The Wallcovering Guide · Choose and source</p><h1>{maker?maker.name:'The Makers directory.'}</h1><p class="lede mt-5">{maker?maker.summary:'Find a material, a design approach and the right official contact before you commit to a wallcovering.'}</p>
+{!maker&&<p>{makerDirectory.selection} Inclusion does not imply an endorsement, supplier relationship or installation by Mr Wallcover.</p>}
+{directoryReview&&<p class="maker-review-note">Draft for owner review. Source checks are by AI; no independent human sign-off or publication approval is recorded.</p>}
+</header><MakerDirectoryNav/>
+{maker?<>
+<section class="maker-section"><h2>Source evidence</h2><p>Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.</p><ul class="maker-sources">{maker.sources.map(source=><li><a href={source.url} target="_blank" rel="noopener noreferrer">Official source</a> — checked <time datetime={source.checked_on}>{source.checked_on}</time></li>)}</ul><Action href={maker.website} variant="secondary" target="_blank" rel="noopener noreferrer">Visit maker website</Action></section>
+<section class="maker-section" id="routes"><h2>Official sourcing routes</h2>{maker.routes.length?<><p>Check the route’s scope before ordering. Showrooms, samples and finder links do not establish a roll checkout or delivery promise.</p><div class="maker-route-grid">{maker.routes.map(route=><MakerRoute route={route}/>)}</div></>:<p>No purchasing route is listed for this brand. This profile provides brand information only.</p>}</section>
+<div class="maker-back"><Action href="/makers/" variant="secondary">All makers</Action></div>
+</>:<><MakerDirectoryFilter kind="makers"/><div class="maker-grid">{makerDirectory.makers.map(m=><article class="maker-card" data-directory-item data-search={`${m.name} ${m.summary}`.toLowerCase()}><p class="eyebrow">Maker reference</p><h2><a href={`/makers/${m.slug}/`}>{m.name}</a></h2><p>{m.summary}</p><p class="maker-date">{m.routes.length?`${m.routes.length} official sourcing ${m.routes.length===1?'route':'routes'}`:'Brand information only'} · source check {m.checked_on}</p><Action href={`/makers/${m.slug}/`} variant="quiet">Explore {m.name}</Action></article>)}</div></>}
+<section class="maker-section"><h2>From sample to specification</h2><p>Record the exact design and product code, check current instructions and establish the wall preparation before quantities and installation are agreed.</p><Action href="/contact/?intent=source">Discuss your wallcovering</Action></section>
+</div></Base>

@@ -7,6 +7,7 @@
  * that is not on the hub stops the build rather than leaving a dead link.
  */
 import { guideHref, hubCards } from './guides';
+import { directoryVisible } from './makers-directory';
 
 export interface StageLink {
   href: string;
@@ -56,6 +57,7 @@ export const guideStages: GuideStage[] = [
     question: 'Where do I buy it, and from whom?',
     links: [
       { href: '/where-to-buy/', label: 'Where to buy', note: 'How wallpaper is sold, samples, lead times and duty.' },
+      ...(directoryVisible ? [{ href: '/makers/', label: 'Makers directory', note: 'Design approaches, material families and official sources.' }, { href: '/buying-routes/', label: 'Official buying routes', note: 'Shops, showroom enquiries, trade access and samples.' }] : []),
       { href: '/materials/#makers-installed', label: 'Makers we have hung', note: 'In our own photographs, with the projects.' },
       { href: '/contact/?intent=source', label: 'Help choosing the paper', note: 'We help you choose, then hang it.' },
     ],

@@ -1,0 +1,1018 @@
+{
+  "publication": {
+    "approved": false,
+    "approved_by": null,
+    "approved_on": null
+  },
+  "updated": "2026-10-18",
+  "selection": "An editorial selection of twenty international wallcovering brands, not a ranking by revenue or market share.",
+  "makers": [
+    {
+      "slug": "arte",
+      "name": "Arte",
+      "website": "https://www.arte-international.com/",
+      "summary": "Arte designs, manufactures and distributes wallcoverings for residential and contract interiors. Its ranges include natural surfaces, textiles, vinyl, non-woven and metallic finishes. Use the material and product reference to identify the relevant specification.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://www.arte-international.com/en/about-arte",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.arte-international.com/en/surprising-materials-1",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.arte-international.com/en/contact",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "arte-uk-contact",
+          "type": "brand_showroom_contact",
+          "url": "https://www.arte-international.com/en/contact",
+          "action": "Use the maker's UK customer-service contacts to enquire; view wallcoverings in its London corporate showroom.",
+          "region": "UK",
+          "uk_access": "Explicit UK contact and London showroom.",
+          "overseas_access": "Other country contacts are separately listed; no UK shipping promise inferred.",
+          "terms": "Retail and contract enquiry channels stated. Account eligibility and sample terms: not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "arte-dealer-finder",
+          "type": "maker_stockist_finder",
+          "url": "https://www.arte-international.com/en/where-to-buy",
+          "action": "Open Arte’s official finder page. Check the country selection. Individual sellers and UK availability have not been verified.",
+          "region": "Country-dependent; UK results unverified",
+          "uk_access": "UK dealer coverage not verified.",
+          "overseas_access": "Country-dependent; no individual overseas listing verified.",
+          "terms": "Official finder link only; no seller, purchase eligibility, sample or delivery terms are endorsed.",
+          "checked_on": "2026-10-18",
+          "scope": "Official link only; individual results and purchasing terms are not verified."
+        }
+      ]
+    },
+    {
+      "slug": "phillip-jeffries",
+      "name": "Phillip Jeffries",
+      "website": "https://www.phillipjeffries.com/",
+      "summary": "Phillip Jeffries offers grasscloth, textiles, paper weaves, prints and scenic wallcoverings. It supplies members of the design trade and selected design retailers; homeowners should arrange purchasing through an eligible designer or retailer.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://landing.phillipjeffries.com/about",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.phillipjeffries.com/contact-us",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "pj-uk-trade-contact",
+          "type": "brand_showroom_contact",
+          "url": "https://www.phillipjeffries.com/contact-us",
+          "action": "Contact UK sales at the London headquarters/showroom to discuss a trade purchase.",
+          "region": "UK / Europe",
+          "uk_access": "Explicit London UK/European sales contact.",
+          "overseas_access": "Use separately listed regional offices; UK delivery terms not stated.",
+          "terms": "Sales restricted to design-trade members and selected design retailers per About page. Trade sampling can be requested by email; charges and approval criteria not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "pj-overseas-trade-contact",
+          "type": "brand_contact_trade_path",
+          "url": "https://www.phillipjeffries.com/contact-us",
+          "action": "Use the US or Asia headquarters contact for regional trade enquiries and sampling requests.",
+          "region": "US / Asia",
+          "uk_access": "UK buyers have the separate London route; overseas route does not verify UK shipping.",
+          "overseas_access": "Explicit US and Singapore contact offices.",
+          "terms": "Design trade / selected retailers sales model; sample charges, account approval and cross-border terms not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "de-gournay",
+      "name": "de Gournay",
+      "website": "https://degournay.com/",
+      "summary": "de Gournay offers hand-painted wallpaper and embroidered wallcoverings. Its made-to-measure service allows designs and colours to be adapted to a project. Bespoke enquiries and stock information are separate starting points.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://degournay.com/how-to-order",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://degournay.com/contactus",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://degournay.com/stock",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "degournay-showroom-enquiry",
+          "type": "brand_showroom_contact",
+          "url": "https://degournay.com/contactus",
+          "action": "Contact or visit the London showroom; enquire about made-to-measure or bespoke wallcovering.",
+          "region": "UK; overseas showrooms separately listed",
+          "uk_access": "Explicit London showroom.",
+          "overseas_access": "Maker lists overseas showrooms and offers nearest-representative enquiries; cross-border fulfilment not verified.",
+          "terms": "Account eligibility and sample conditions: not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "degournay-stock-shop",
+          "type": "brand_stock_information_enquiry",
+          "url": "https://degournay.com/stock",
+          "action": "Browse the maker’s stock information and enquire about available wallpaper. Confirm availability, ordering and destination delivery directly.",
+          "region": "Destination-dependent; UK shipping unverified",
+          "uk_access": "UK delivery not established by stock page.",
+          "overseas_access": "International website alone does not establish overseas purchase eligibility.",
+          "terms": "Account, sample and destination shipping terms: not established; ask the maker.",
+          "checked_on": "2026-10-18",
+          "scope": "Official link only; individual results and purchasing terms are not verified."
+        }
+      ]
+    },
+    {
+      "slug": "fromental",
+      "name": "Fromental",
+      "website": "https://fromental.com/",
+      "summary": "Fromental creates hand-painted, embroidered and printed wallcoverings. Bespoke panels can be tailored to a room; its separate Shop offers standard formats and colourways. Sample arrangements differ between bespoke and Shop collections.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://fromental.com/pages/about-fromental",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://fromental.com/pages/frequently-asked-questions",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://fromental.com/pages/representatives",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://fromental.com/collections/shop",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "fromental-bespoke-contact",
+          "type": "brand_showroom_contact",
+          "url": "https://fromental.com/pages/representatives",
+          "action": "Enquire through London showroom or regional contact about bespoke wallcovering; arrange head-office visit by appointment.",
+          "region": "UK / Europe; regional overseas contacts",
+          "uk_access": "Explicit London showroom and UK/Europe head office.",
+          "overseas_access": "Regional contacts listed; FAQ expressly offers international shipping with fees depending on location.",
+          "terms": "Bespoke sample loans require an approved trade account and return within the allocated period. Ask the sales representative for the applicable return date. Head-office visits are by appointment; separate London showroom details appear on the official Visit us page.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "fromental-shop",
+          "type": "brand_owned_webshop",
+          "url": "https://fromental.com/collections/shop",
+          "action": "Browse and purchase the separate Shop's printed wallpaper in standard formats and colourways.",
+          "region": "UK destination check required; international shipping stated",
+          "uk_access": "UK contact exists, but specific UK checkout acceptance was not tested.",
+          "overseas_access": "FAQ explicitly states international shipping; country-specific exclusions and fees need confirmation.",
+          "terms": "Shop wallpaper samples are purchasable in bundles of six. Samples are indicative and may vary by batch; the FAQ recommends replacing older samples without the current QR code. Trade pricing requires an approved account. UK destination eligibility must be confirmed for the selected order.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "calico-wallpaper",
+      "name": "Calico Wallpaper",
+      "website": "https://calicowallpaper.com/",
+      "summary": "Calico Wallpaper creates non-repeating murals from handmade patterns and digital enlargement. Its designs explore marbling, gradients, metallic effects and woven natural fibres. Mural panels, samples and custom layouts follow different ordering processes.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://calicowallpaper.com/about/our-story/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://calicowallpaper.com/about/faqs/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://calicowallpaper.com/about/contact/",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "calico-webshop",
+          "type": "brand-owned webshop",
+          "url": "https://calicowallpaper.com/",
+          "action": "Use the maker's mural and sample ordering process described in its FAQ.",
+          "region": "US; international mural orders stated, UK acceptance unconfirmed",
+          "uk_access": "International statement is not specific proof of UK delivery.",
+          "overseas_access": "International mural shipping expressly stated; destinations require confirmation.",
+          "terms": "Samples selectable by style, substrate and size. Trade discounts and complimentary samples are for qualifying accounts; international taxes/duties may be payable by purchaser.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "calico-contact",
+          "type": "brand showroom/contact",
+          "url": "https://calicowallpaper.com/about/contact/",
+          "action": "Contact the sales team or schedule a showroom appointment.",
+          "region": "New York, US; remote sales enquiry",
+          "uk_access": "UK visitors can use the contact channel to ask; UK supply remains unconfirmed.",
+          "overseas_access": "New York visit route evidenced; overseas fulfilment must be agreed.",
+          "terms": "Bespoke enquiries available through sales; appointment required for showroom per FAQ.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "house-of-hackney",
+      "name": "House of Hackney",
+      "website": "https://www.houseofhackney.com/",
+      "summary": "House of Hackney designs nature-inspired wallpapers and interior collections. Its wallcovering materials include paper and cork, with composition and origin checked for each design. The official website offers wallpaper and samples alongside showroom consultations.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://www.houseofhackney.com/en-intl/pages/our-story",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.houseofhackney.com/pages/our-materials",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/troop-wallpaper-birch",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "hackney-webshop",
+          "type": "brand-owned webshop",
+          "url": "https://www.houseofhackney.com/products/troop-wallpaper-birch",
+          "action": "Select wallpaper and order it or a sample through the official product page.",
+          "region": "UK; international delivery described",
+          "uk_access": "UK delivery is expressly described, rather than inferred from currency or cart.",
+          "overseas_access": "International delivery section states duties-paid treatment; country eligibility still needs checking.",
+          "terms": "Paid sample ordering shown; trade pricing requires login, with application offered. Page states printed-to-order wallpaper cannot be returned or cancelled. Delivery cost confirmed at checkout.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "hackney-showroom",
+          "type": "brand showroom/contact",
+          "url": "https://www.houseofhackney.com/en-intl/pages/our-story",
+          "action": "Use the official story page's showroom links to plan a visit or consultation.",
+          "region": "London, UK; New York, US",
+          "uk_access": "London flagship and store provide an evidenced UK physical enquiry route.",
+          "overseas_access": "New York showroom is separately evidenced; it does not prove shipment to other countries.",
+          "terms": "Official story says both London and New York showrooms are open to the public and offer complimentary design consultations. Confirm visit arrangements using the current showroom page; sample and order terms are separate.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "brewster-home-fashions",
+      "name": "Brewster Home Fashions",
+      "website": "https://www.brewsterwallcovering.com/",
+      "summary": "Brewster Home Fashions offers a multi-brand wallpaper catalogue and an in-house design service. It shares York Design Group with York Wallcoverings. Its direct online store excludes orders outside North America; UK sourcing requires a separate enquiry.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://www.brewsterwallcovering.com/about-brewster",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.brewsterwallcovering.com/shop-all-brewster-home-fashions-wallpaper",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.brewsterwallcovering.com/shipping-policy",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://yorkdesigngroup.com/pages/about-us",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "brewster-webshop",
+          "type": "brand_owned_webshop",
+          "url": "https://www.brewsterwallcovering.com/shop-all-brewster-home-fashions-wallpaper",
+          "action": "Browse catalogue and order eligible products online.",
+          "region": "North America; policy sections for USA and Canada",
+          "uk_access": "UK online orders excluded: UK is outside North America.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "Checkout/account requirements not established; ask the maker Policy describes paid sample shipping and Canada sample shipments; UK sample delivery not established",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "brewster-international",
+          "type": "brand_contact_distributor_referral",
+          "url": "https://www.brewsterwallcovering.com/shipping-policy",
+          "action": "Use the published contact to request the international distributor/retailer list; no message sent.",
+          "region": "International; country-specific seller not verified",
+          "uk_access": "A possible UK enquiry route only; no named UK seller or UK delivery verified.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "not established; ask the maker not established; ask the maker",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "cole-and-son",
+      "name": "Cole & Son",
+      "website": "https://cole-and-son.com/",
+      "summary": "Cole & Son develops wallpaper and fabric collections through archive references and its artistic team. Buyers can use its product shop, contact client services or consult its official partner finder. Confirm country selection and sample terms separately.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://cole-and-son.com/pages/our-heritage",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://cole-and-son.com/pages/frequently-asked-questions",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://cole-and-son.com/pages/contact-us",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://cole-and-son.com/en-ww/collections/wallpapers/products/diamond-maze-roll",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "cole-webshop",
+          "type": "brand-owned webshop",
+          "url": "https://cole-and-son.com/en-ww/collections/wallpapers/products/diamond-maze-roll",
+          "action": "Use the official Diamond Maze product page to select a roll or sample. Check the selected country and delivery terms before ordering.",
+          "region": "UK; international subject to delivery-country acceptance",
+          "uk_access": "UK shipping is explicitly described.",
+          "overseas_access": "International wallpaper shipping is explicit but conditional on destination; unavailable countries directed to partner finder.",
+          "terms": "Samples are purchased; overseas sample duties may apply. Wallpaper-roll international duty treatment differs from samples. Account requirement and trade approval criteria not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "cole-contact",
+          "type": "brand showroom/contact",
+          "url": "https://cole-and-son.com/pages/contact-us",
+          "action": "Visit or contact flagship/showroom; contact client service for trade enquiries.",
+          "region": "London, UK",
+          "uk_access": "London physical contact and showroom routes evidenced.",
+          "overseas_access": "Remote contact possible; destination supply requires confirmation.",
+          "terms": "Trade enquiry channel is evidenced; account eligibility and showroom sample terms not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "cole-stockists",
+          "type": "maker's stockist finder",
+          "url": "https://cole-and-son.com/pages/where-to-buy",
+          "action": "Open Cole & Son’s official finder page. Check the country selection. Individual sellers and UK availability have not been verified.",
+          "region": "UK and international search; individual listings unverified",
+          "uk_access": "Intended local retailer search route; no individual UK listing verified.",
+          "overseas_access": "FAQ explicitly includes international distributor lookup; individual access remains unverified.",
+          "terms": "Official finder link only; no seller, purchase eligibility, sample or delivery terms are endorsed.",
+          "checked_on": "2026-10-18",
+          "scope": "Official link only; individual results and purchasing terms are not verified."
+        }
+      ]
+    },
+    {
+      "slug": "dedar",
+      "name": "Dedar",
+      "website": "https://dedar.com/",
+      "summary": "Dedar is a family-run fabric house whose catalogue also includes textile wallcoverings. Examples use silk, linen, cotton and velvet. Its London showroom and customer-service contacts provide starting points for product enquiries.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://dedar.com/company/about_us/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://dedar.com/products/wallcovering/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://dedar.com/company/contacts/",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "dedar-london",
+          "type": "brand_showroom_contact",
+          "url": "https://dedar.com/company/contacts/",
+          "action": "Contact the London showroom listed at Chelsea Harbour, Unit C7, using showroomuk@dedar.com.",
+          "region": "United Kingdom — London",
+          "uk_access": "UK showroom contact verified; UK fulfilment terms are not.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "Direct retail purchase, trade eligibility and sample charges: not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "dedar-international-contact",
+          "type": "brand_showroom_contact",
+          "url": "https://dedar.com/company/contacts/",
+          "action": "Use customer service at customerservice@dedar.com or the listed Milan showroom contact.",
+          "region": "Italy and international enquiries",
+          "uk_access": "Use London for a verified local contact; no overseas UK shipping inference.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "Milan showroom visits are listed as by appointment. Account and sample terms: not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "designers-guild",
+      "name": "Designers Guild",
+      "website": "https://www.designersguild.com/en-gb/",
+      "summary": "Designers Guild is a furnishing and wallcovering design brand established in 1970, according to its official company profile. This profile describes the brand only; no purchasing, ownership, licensing or fulfilment claim is made here.",
+      "checked_on": "2026-10-18",
+      "sources": [
+        {
+          "url": "https://www.designersguild.com/en-gb/company-profile/l1004",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "routes": []
+    },
+    {
+      "slug": "elitis",
+      "name": "Élitis",
+      "website": "https://elitis.fr/en/",
+      "summary": "Élitis offers wallpapers, wallcoverings and fabrics exploring woven, vinyl, textile and handcrafted surfaces. Its official guidance separates retailer enquiries, professional representatives and swatch requests. Product availability access is restricted to its professional extranet.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://elitis.fr/en/collections/walls?qa=new",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://elitis.fr/en/expertise/our-signature",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://elitis.fr/en/faq",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://elitis.fr/en/retail-outlets/london-showroom",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "elitis-london",
+          "type": "brand_showroom_contact",
+          "url": "https://elitis.fr/en/retail-outlets/london-showroom",
+          "action": "View collections or use the listed showroom contact to enquire.",
+          "region": "United Kingdom — London",
+          "uk_access": "A UK physical contact route is evidenced; delivery terms are not.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "Account eligibility, direct retail ordering and sample costs: not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "elitis-retailer-trade",
+          "type": "maker_stockist_finder_or_trade_contact",
+          "url": "https://elitis.fr/en/faq",
+          "action": "Use the FAQ’s Retailers link to find a showroom/retailer; professionals are directed to their country agent/distributor.",
+          "region": "Country-dependent; international",
+          "uk_access": "UK visitors can use the London route; an international finder does not establish UK shipping.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "Professionals: country representative route. Private individuals: direct contact permitted. Online availability requires professional extranet access.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "elitis-swatches",
+          "type": "brand_sample_request",
+          "url": "https://elitis.fr/en/faq",
+          "action": "Follow the product-reference swatch request described by the FAQ, or ask a retailer.",
+          "region": "Website; delivery territory not stated",
+          "uk_access": "UK sample fulfilment not verified.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "FAQ describes an online swatch action. Charges, eligibility and UK sample delivery: not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "morris-and-co",
+      "name": "Morris & Co.",
+      "website": "https://www.wmorrisandco.com/uk/",
+      "summary": "Morris & Co. adapts archive designs into wallpaper and fabric collections. Its official history describes a London design studio and UK production. Product-specific ordering and technical information should be confirmed before quantities are settled.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://www.wmorrisandco.com/uk/about-us/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.wmorrisandco.com/uk/owl-willow-wallpaper-bayleaf-orange-44043-217055/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.wmorrisandco.com/eu/showrooms/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.wmorrisandco.com/uk/terms-conditions/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.wmorrisandco.com/uk/sample-service/",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "morris-uk-shop",
+          "type": "brand-owned webshop",
+          "url": "https://www.wmorrisandco.com/uk/owl-willow-wallpaper-bayleaf-orange-44043-217055/",
+          "action": "Browse the selected wallpaper and sample information. The page asks customers to phone to place an order and also displays bag controls; confirm the current ordering process with the maker.",
+          "region": "UK regional store; mainland UK delivery explicitly evidenced",
+          "uk_access": "UK regional route and mainland delivery are explicit.",
+          "overseas_access": "US page directs UK customers here; no UK-store overseas shipment assumed.",
+          "terms": "UK consumer terms govern; commercial use excluded for purchases on that site. Sample service offers five free samples; account necessity not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "morris-showroom",
+          "type": "brand showroom/contact",
+          "url": "https://www.wmorrisandco.com/eu/showrooms/",
+          "action": "Use the official showroom directory to contact or visit the relevant showroom.",
+          "region": "London, UK; Netherlands and US showroom contacts also listed",
+          "uk_access": "London showroom contact evidenced; retail purchase terms require human confirmation.",
+          "overseas_access": "Overseas showroom contacts evidenced; local account and retail terms require confirmation.",
+          "terms": "Retail ordering access, appointment requirements, trade qualification and samples not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "omexco",
+      "name": "Omexco",
+      "website": "https://www.omexco.com/",
+      "summary": "Omexco designs and manufactures wall decorations in an atelier near Brussels. Its collections include printed, woven and natural surfaces. UK ordering goes through representatives; other territories use regional distributors. Website sample requests are for interior professionals.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://www.omexco.com/belgian-savoir-faire",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.omexco.com/wallcoverings/whisper",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.omexco.com/contact",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.omexco.com/faq",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "omexco-uk",
+          "type": "brand_contact_representative",
+          "url": "https://www.omexco.com/contact",
+          "action": "Contact Omexco UK at uk@omexco.com; ask for the regional representative to place an order.",
+          "region": "United Kingdom",
+          "uk_access": "UK explicitly covered by maker’s direct/representative route.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "FAQ explicitly gives UK representative ordering. Consumer account eligibility and sample costs: not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "omexco-worldwide",
+          "type": "maker_distributor_finder",
+          "url": "https://www.omexco.com/contact",
+          "action": "Find the regional distributor in the maker’s directory; United States listing names Romo.",
+          "region": "Outside UK, Ireland and France; United States example",
+          "uk_access": "Overseas route is separate from the UK direct contact.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "FAQ directs overseas orders through regional distributors. Directory entries are listed by maker; no authorised label asserted.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "omexco-samples",
+          "type": "brand_sample_request",
+          "url": "https://www.omexco.com/faq",
+          "action": "Select designs and use the website sample-request form as described in the FAQ.",
+          "region": "Interior professionals; territory limits not stated",
+          "uk_access": "UK sample delivery not explicitly verified.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "For interior professionals; maximum five samples. Charges and UK sample delivery: not established; ask the maker.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "osborne-and-little",
+      "name": "Osborne & Little",
+      "website": "https://www.osborneandlittle.com/",
+      "summary": "Osborne & Little provides wallcovering, fabric and trimming collections through worldwide stockists. Its official contact page lists a London showroom. Direct online samples are available only within the United Kingdom; this is separate from buying wallpaper rolls.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://www.osborneandlittle.com/stockists",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.osborneandlittle.com/contact_us/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.osborneandlittle.com/samples/",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "osborne-little-stockists",
+          "type": "maker stockist finder",
+          "url": "https://www.osborneandlittle.com/stockists",
+          "action": "Choose a country to look for stockists through whom products may be ordered.",
+          "region": "UK and overseas: country selector includes United Kingdom and other countries",
+          "uk_access": "UK and overseas: country selector includes United Kingdom and other countries",
+          "overseas_access": "Country selector supports overseas stockist discovery; no UK shipping inferred.",
+          "terms": "Stockists described as an ordering route; neutral maker-listed terminology only.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "osborne-little-showroom",
+          "type": "brand showroom/contact",
+          "url": "https://www.osborneandlittle.com/contact_us/",
+          "action": "Use London showroom contact details to enquire about products or visiting.",
+          "region": "UK London; US showroom contacts separately listed, without implied UK fulfilment",
+          "uk_access": "UK London; US showroom contacts separately listed, without implied UK fulfilment",
+          "overseas_access": "Not established for this route—human check required.",
+          "terms": "Maker lists London showroom and contact details.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "osborne-little-samples",
+          "type": "brand-owned webshop—samples only",
+          "url": "https://www.osborneandlittle.com/samples/",
+          "action": "Use Order Sample on colourways or saved Favourites to request samples.",
+          "region": "United Kingdom only; page explicitly excludes orders and delivery outside UK",
+          "uk_access": "Official sample service explicitly serves the United Kingdom.",
+          "overseas_access": "Direct sample service excludes customers and delivery outside the United Kingdom.",
+          "terms": "Samples are available to order directly from this site only within the United Kingdom. Up to ten samples per order; the published sample cost includes delivery and VAT. Samples may be unavailable and are not guaranteed to match production batches exactly.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "pierre-frey",
+      "name": "Pierre Frey",
+      "website": "https://www.pierrefrey.com/en/",
+      "summary": "Pierre Frey creates fabrics, wallpapers, rugs and furniture. Product constructions differ: Ciel reve uses vinyl on a non-woven backing. Its professional London showroom and official finder provide distinct contact routes for professionals and private individuals.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://www.pierrefrey.com/en/wallpapers/FP846003-ciel-reve",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.pierrefrey.com/en/points-of-sale/pierre-frey-london-professional-showroom",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.pierrefrey.com/en/points-of-sale",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "pierre-frey-london-lead",
+          "type": "brand_showroom_contact",
+          "url": "https://www.pierrefrey.com/en/points-of-sale/pierre-frey-london-professional-showroom",
+          "action": "Contact the maker’s London professional showroom at contact.uk@pierrefrey.com about wallpapers or arranging a visit.",
+          "region": "London, United Kingdom — professional showroom",
+          "uk_access": "Official London professional-showroom page opened in the browser.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "Professional showroom contact only. No private walk-in purchase, stock availability or delivery promise is made.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "pierre-frey-finder-lead",
+          "type": "maker_stockist_finder",
+          "url": "https://www.pierrefrey.com/en/points-of-sale",
+          "action": "Open the official finder and choose professional or private-individual access to seek a showroom, agent or partner.",
+          "region": "International; country results unverified",
+          "uk_access": "Finder is readable; no individual UK partner result verified.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "Professional path directs to showrooms/agents; private path to partners or a showroom. This is a finder link, not an established purchase or delivery route.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "sanderson",
+      "name": "Sanderson",
+      "website": "https://www.sanderson.design/",
+      "summary": "Sanderson brings wallpaper, fabric, paint and trimmings together within Sanderson Design Group. Its history describes archive-led design and UK wallpaper production. Consumer shopping and the group trade programme have separate eligibility and sample terms.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://www.sanderson.design/about-us",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.sanderson.design/faqs",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.sanderson.design/information/delivery",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.sanderson.design/t-cs",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://info.sandersondesigngroup.com/tailored-for-trade",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "sanderson-consumer",
+          "type": "brand-owned webshop",
+          "url": "https://www.sanderson.design/",
+          "action": "Browse wallpaper and submit a consumer order; guest checkout and separate sample checkout are described.",
+          "region": "UK mainland expressly stated in FAQ; overseas delivery not established by this UK route",
+          "uk_access": "UK mainland expressly stated in FAQ; overseas delivery not established by this UK route",
+          "overseas_access": "Not established for this route—human check required.",
+          "terms": "Guest checkout stated. Homepage describes complimentary samples; delivery page states a separate sample delivery charge. Consumer terms exclude commercial use.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "sanderson-trade",
+          "type": "trade account path",
+          "url": "https://info.sandersondesigngroup.com/tailored-for-trade",
+          "action": "Apply for a trade account or use member login for portal ordering.",
+          "region": "UK-relevant group programme with UK contracts contact; overseas account service not established",
+          "uk_access": "UK-relevant group programme with UK contracts contact; overseas account service not established",
+          "overseas_access": "Not established for this route—human check required.",
+          "terms": "Programme advertises wallpaper/fabric/sample ordering and complimentary samples.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "sangetsu",
+      "name": "Sangetsu",
+      "website": "https://www.sangetsu.co.jp/english/",
+      "summary": "Sangetsu develops interior decorating products, including XSELECT, FAITH, Reserve and FINE wallpapers. Its material guides cover paper weave, Japanese paper, foil, cork and textile surfaces. Japanese showrooms provide viewing and guidance rather than direct sales.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://www.sangetsu.co.jp/english/companyprofile/overview.html",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.sangetsu.co.jp/english/products/wallpaper.html",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.sangetsu.co.jp/english/pdfdownload/xselect25_texture_material/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://www.sangetsu.co.jp/english/showroom/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://qa.sangetsu.co.jp/public/faq_detail.html?id=10765",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://qa.sangetsu.co.jp/public/",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "sangetsu-showroom",
+          "type": "brand_showroom_purchase_guidance",
+          "url": "https://www.sangetsu.co.jp/english/showroom/",
+          "action": "Use the showroom directory to plan product viewing and ask staff about purchase routes.",
+          "region": "Japan",
+          "uk_access": "Overseas viewing/guidance route; no UK delivery or UK stockist established.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "not established; ask the maker not established; ask the maker",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "sangetsu-enquiry",
+          "type": "brand_contact",
+          "url": "https://qa.sangetsu.co.jp/public/",
+          "action": "Read the maker’s Japanese-language FAQ/enquiry hub for product and contact guidance. This is not a verified English-language or UK purchasing service.",
+          "region": "Japan-based enquiry; international eligibility unconfirmed",
+          "uk_access": "Potential enquiry only; UK purchase, shipping and sample access not stated—human check required.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "not established; ask the maker not established; ask the maker",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "vescom",
+      "name": "Vescom",
+      "website": "https://vescom.com/",
+      "summary": "Vescom designs, produces and distributes wallcovering, upholstery and curtain fabrics for contract interiors. Its London showroom provides a viewing and contact route. The textile sample offer is for professional customers and excludes direct private-customer sales.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://vescom.com/en/inspiration/about-us",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://vescom.com/en/resources/visual-material",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://vescom.com/en/contact/showrooms/london",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://vescom.com/en/contact/sales-offices-distributors",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://pages.vescom.com/en/sample-pack/textile-wallcovering",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "vescom-london",
+          "type": "brand_showroom_contact",
+          "url": "https://vescom.com/en/contact/showrooms/london",
+          "action": "Use the official Vescom X Tektura London showroom page to schedule a visit via info@tektura.com. Showroom viewing does not establish private purchasing.",
+          "region": "United Kingdom",
+          "uk_access": "Confirmed UK viewing/contact path; direct consumer purchasing is not established.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "Showroom visitor eligibility not established; ask the maker Professional restriction stated on textile sample page; showroom-specific sample terms not established; ask the maker",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "vescom-directory",
+          "type": "maker_sales_distributor_directory",
+          "url": "https://vescom.com/en/contact/sales-offices-distributors",
+          "action": "Open regional sales/distributor directories to locate a sales contact.",
+          "region": "Regional worldwide directories",
+          "uk_access": "Europe directory is a lead; no specific UK distributor entry was verified.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "not established; ask the maker not established; ask the maker",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "vescom-textile-samples",
+          "type": "brand_contact_sample_information",
+          "url": "https://pages.vescom.com/en/sample-pack/textile-wallcovering",
+          "action": "Read the professional textile sample offer and use its listed brand contact; no request was submitted.",
+          "region": "Geography not stated",
+          "uk_access": "UK sample delivery not stated—human check required.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "Samples reserved for professional customers; products not sold directly to individuals for private use Free textile sample pack offered; eligibility and delivery geography require human confirmation",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    },
+    {
+      "slug": "york-wallcoverings",
+      "name": "York Wallcoverings",
+      "website": "https://yorkwallcoverings.com/",
+      "summary": "York Wallcoverings describes a Pennsylvania manufacturing history and a catalogue of printed and natural wallcoverings. It shares York Design Group with Brewster Home Fashions. Its own online shipping policy excludes destinations outside the United States.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://yorkwallcoverings.com/pages/about",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://yorkdesigngroup.com/pages/about-us",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://yorkwallcoverings.com/",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://yorkwallcoverings.com/policies/shipping-policy",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "york-webshop",
+          "type": "brand_owned_webshop",
+          "url": "https://yorkwallcoverings.com/",
+          "action": "Browse products and order through the official website.",
+          "region": "United States",
+          "uk_access": "Not a UK delivery route.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "Checkout/account requirements not established; ask the maker Most residential patterns have samples for online purchase, per FAQ",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        },
+        {
+          "id": "york-locator-guidance",
+          "type": "maker_stockist_finder_guidance",
+          "url": "https://yorkwallcoverings.com/pages/store-locator",
+          "action": "Open York’s official finder page. Check the country selection. Individual sellers and UK availability have not been verified.",
+          "region": "Locator geography not verified",
+          "uk_access": "No UK listing or UK stockholding verified.",
+          "overseas_access": "Not established; ask the maker about the selected destination.",
+          "terms": "Official finder link only; no seller, purchase eligibility, sample or delivery terms are endorsed.",
+          "checked_on": "2026-10-18",
+          "scope": "Official link only; individual results and purchasing terms are not verified."
+        }
+      ]
+    },
+    {
+      "slug": "zoffany",
+      "name": "Zoffany",
+      "website": "https://www.zoffany.design/",
+      "summary": "Zoffany develops wallpapers, murals, fabrics and paint, drawing on an archive associated with Temple Newsam. The brand is part of Sanderson Design Group. This directory includes the group trade route; consumer purchasing is not listed.",
+      "checked_on": "2026-10-17",
+      "sources": [
+        {
+          "url": "https://www.zoffany.design/about-us",
+          "checked_on": "2026-10-17"
+        },
+        {
+          "url": "https://info.sandersondesigngroup.com/tailored-for-trade",
+          "checked_on": "2026-10-17"
+        }
+      ],
+      "routes": [
+        {
+          "id": "zoffany-trade",
+          "type": "trade account path",
+          "url": "https://info.sandersondesigngroup.com/tailored-for-trade",
+          "action": "Apply for trade account or use existing member login.",
+          "region": "UK-relevant group programme; overseas eligibility not established",
+          "uk_access": "UK-relevant group programme; overseas eligibility not established",
+          "overseas_access": "Not established for this route—human check required.",
+          "terms": "Group programme advertises portal ordering and complimentary samples; Zoffany homepage links group trade signup.",
+          "checked_on": "2026-10-17",
+          "scope": "Maker-published information; confirm current eligibility and destination before ordering."
+        }
+      ]
+    }
+  ]
+}

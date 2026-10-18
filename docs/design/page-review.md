@@ -304,3 +304,7 @@ The reviews page's title, heading and introduction now identify the two existing
 ### AI reference release integration — 18 October 2026
 
 PR #77 was reconciled with published main `a26c1c0` before release. The shared dimensional rollout, its isolated browser checks and the corrected limewash/partner-provided lime-render scope remain intact. AI and reference utilities retain their static presentation. This integration imports no unpublished branch or private dataset. Exact-head checks are rerun before the authorised merge and deployment.
+
+## Makers and sourcing directory — 18 October 2026
+
+See [the directory review](../makers-directory-review.md). A shared static reference template serves a directory, twenty distinct profiles and a separate sourcing-route index in the noindex editorial review build. Shared navigation/actions and the existing footer carry discovery; the main header and homepage are unchanged. Text and source dates support the comparison task without copied logos, product imagery or simulated installation evidence. Search, maker filters, route terms and citations remain available without JavaScript. The two unresolved purchasing routes are absent, and normal builds contain no directory until owner approval is recorded. Draft route decisions are listed separately in route-review.json because the production route ledger must match actual published pages.
