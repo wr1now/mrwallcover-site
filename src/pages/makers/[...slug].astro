@@ -20,7 +20,7 @@ const description=maker?`Explore ${maker.name} wallcoverings and official sourci
 <div class="container-page pb-20">
 <header class="page-head maker-intro"><Breadcrumb items={crumbs}/><p class="eyebrow">The Wallcovering Guide · Choose and source</p><h1>{maker?maker.name:'The Makers directory.'}</h1><p class="lede mt-5">{maker?maker.summary:'Find a material, a design approach and the right official contact before you commit to a wallcovering.'}</p>
 {!maker&&<p>{makerDirectory.selection} Inclusion does not imply an endorsement, supplier relationship or installation by Mr Wallcover.</p>}
-{directoryReview&&<p class="maker-review-note">Draft for owner review. Source checks are by AI; no independent human sign-off or publication approval is recorded.</p>}
+{directoryReview&&<p class="maker-review-note">Editorial review preview. Copy approved by the owner on 18 October 2026. Source checks use website evidence; no test order or fulfilment guarantee is implied.</p>}
 </header><MakerDirectoryNav/>
 {maker?<>
 <section class="maker-section"><h2>Source evidence</h2><p>Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.</p><ul class="maker-sources">{maker.sources.map(source=><li><a href={source.url} target="_blank" rel="noopener noreferrer">Official source</a> — checked <time datetime={source.checked_on}>{source.checked_on}</time></li>)}</ul><Action href={maker.website} variant="secondary" target="_blank" rel="noopener noreferrer">Visit maker website</Action></section>

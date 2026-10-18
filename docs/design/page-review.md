@@ -355,3 +355,7 @@ Local production and review builds pass; source checks 153/153, production check
 Direct HTTP retrieval and browser tests establish public endpoint access only. They do not establish search indexing or universal reader access. The separate web reader's host-specific retrieval error has no exposed HTTP cause; this change does not claim to resolve it or justify relaxing DNS, TLS or crawler controls.
 
 Reconciled with main `90455ef` before release, retaining the shared larger material studies and their updated template instructions. Integrated-head checks are rerun against this source.
+
+## Makers publication — 18 October 2026
+
+Owner approved the reviewed copy and authorised publication and merge after checks. Enabled the curated 20 profiles and 42 routes, retaining both purchasing exclusions. Moved 22 visual decisions to the published route ledger. Static reference layouts, shared components and unchanged source check dates remain appropriate; no new imagery or claims were added. Repeat normal/review publication checks, responsive filtering and no-JS checks, source/name guards and hosted integrated checks before merge.

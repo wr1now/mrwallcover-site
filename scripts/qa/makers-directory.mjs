@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';
 import {serve,launchBrowser} from '../visual-browser.mjs';
 const data=JSON.parse(readFileSync('src/data/makers-directory.json','utf8'));
-const server=await serve('dist-review'),browser=await launchBrowser();
+const server=await serve(process.env.MW_MAKERS_DIST || 'dist-review'),browser=await launchBrowser();
 const report=[];const output=process.env.MW_MAKERS_SCREENSHOTS;
 if(output)mkdirSync(output,{recursive:true});
 try{

@@ -1,6 +1,6 @@
 # Makers directory — owner review
 
-Reconciled with public main `90455ef` (18 October 2026). Includes the published shared visual changes from main; independent of open PRs. No merge or deployment is authorised by this change.
+Reconciled with public main `90455ef` (18 October 2026). Includes the published shared visual changes from main; independent of open PRs. Owner authorised publication and merge after passing release checks on 18 October 2026.
 
 ## Review scope
 
@@ -8,11 +8,11 @@ Twenty editorial maker profiles and 42 official sourcing links: brand shops, sto
 
 The Designers Guild sample purchasing route and Zoffany consumer purchasing route are absent from the curated dataset and rendered pages. Designers Guild remains a short brand-information profile with no buying routes. Zoffany has the group trade route only. Individual results from finder links have not been verified and are labelled accordingly. No private research archive, exclusion list, review forms, local notes, unverified leads or original packets are included.
 
-## Publication boundary
+## Publication approval
 
-`src/data/makers-directory.json` has `publication.approved: false`, with no approving person or date. Normal builds generate no `/makers/` or `/buying-routes/` pages, no links to them and no directory dataset in the browser bundles or public AI projections. `npm run build:review` renders the directory using the existing `MW_CONTENT_PREVIEW` convention. The review build is noindex, has no sitemap and is supplied as the existing CI review artifact. Its server-rendered footer, Guide, search and Where to buy links let the reviewer discover the pages.
+Dorin Burcus approved the copy in this chat on 18 October 2026 and authorised publication, checks and merge of PR #81 if passing. The 20 profiles and 42 routes are enabled in normal builds; the two unresolved purchasing routes remain excluded. This records owner editorial approval, not an independent technical audit or test purchase. Source check dates remain unchanged.
 
-Owner approval is a remaining publication condition. After the copy is approved, record the approving person/date, enable the publication flag and move the 22 `draftRoutes` decisions into the published route ledger; then repeat the normal build, names, sitemap, crawler projection and no-loss checks. Do not interpret an AI source check as a completed human sign-off.
+All 22 route decisions now belong to the published ledger. Production pages must be indexable, present in the sitemap and discoverable through Guide, search, footer and Where to buy. Review builds remain noindex. Release checks cover both modes and strict private-name scans.
 
 ## Visual decision
 
@@ -25,7 +25,7 @@ CI uses its existing check:names and check:guides commands to validate the revie
 ## Verification
 
 - Source tests and normal/review builds.
-- Directory boundary tests: 20 profiles, 42 routes; both excluded purchasing routes absent; no directory output or links in production; noindex and dated citations in review.
+- Directory boundary tests: 20 profiles, 42 routes; both excluded purchasing routes absent; indexable production pages and sitemap coverage; noindex and dated citations in review.
 - 48 responsive cases across 390, 1024, 1280 and 1440px; each profile at mobile and desktop, no horizontal overflow or browser errors. Search, maker query filters, zero-route brand, shared actions and no-JS terms disclosures checked.
 - Existing built-site, typography/contrast, Guide, phone and analytics fixtures; no-loss comparison against a fresh build of the stated main revision.
 - Required private-input names scan on production, review and tracked source; the list is never committed or printed.
