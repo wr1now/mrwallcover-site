@@ -94,26 +94,38 @@ body.nav-open .dock, body.field-focus .dock { display:none; }
 }
 
 /* Original object studies share one presentation on every opted-in question surface. */
+:root {
+  --object-question-size:9rem;
+  --object-faq-size:9rem;
+  --object-study-size:18rem;
+  --object-card-size:16rem;
+  --object-question-gap:1.5rem;
+}
 .object-motion-controls { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.5rem 1.5rem; min-height:52px; margin:.5rem 0 1rem; }
 .object-motion-controls > .object-study-label { margin:0; color:var(--color-stone); font-size:var(--text-meta); line-height:1.5; }
 .object-motion-slot { display:flex; align-items:center; flex:0 0 10rem; width:10rem; min-height:52px; }
 .object-motion-controls .mw-action { min-height:44px; font-size:var(--text-meta); }
 .object-motion-controls [hidden] { display:none!important; }
 .professional-questions { max-width:62rem; }
-.question-visual--dimensional { flex:0 0 104px; width:104px; height:104px; margin:-.5rem 0; border:0; background:transparent; border-radius:0; }
+.question-visual--dimensional { flex:0 0 var(--object-question-size); width:var(--object-question-size); height:var(--object-question-size); margin:0; border:0; background:transparent; border-radius:0; }
 .question-visual--dimensional::before, .question-visual--dimensional::after { display:none; }
 .guide-faq[data-visual="dimensional"] .guide-faq-item { position:relative; padding-block:2rem; }
-.guide-faq[data-visual="dimensional"] .question-heading-row { align-items:center; gap:1rem; }
-.faq[data-visual="dimensional"] .question-row-tools .question-visual--dimensional { flex-basis:96px; width:96px; height:96px; }
-.faq[data-visual="dimensional"] summary { gap:1rem; min-height:116px; }
+.guide-faq[data-visual="dimensional"] .question-heading-row { align-items:center; gap:.625rem; }
+.faq[data-visual="dimensional"] .question-row-tools .question-visual--dimensional { flex-basis:var(--object-faq-size); width:var(--object-faq-size); height:var(--object-faq-size); }
+.faq[data-visual="dimensional"] summary { gap:.625rem; min-height:calc(var(--object-faq-size) + 2rem); }
 .faq[data-visual="dimensional"] summary h2, .faq[data-visual="dimensional"] summary h3 { flex:1; min-width:0; }
-.faq[data-visual="dimensional"] .question-row-tools { gap:.6rem; }
-@media (min-width:1024px) {
-  .guide-faq[data-visual="dimensional"] .guide-faq-item { padding-right:14rem; min-height:14rem; }
+.faq[data-visual="dimensional"] .question-row-tools { gap:.375rem; }
+@media (min-width:640px) {
+  :root { --object-question-size:12rem; --object-faq-size:12rem; --object-study-size:22rem; --object-card-size:18rem; }
+  /* The full answer keeps its own reading column beside the larger object. */
+  .guide-faq[data-visual="dimensional"] .guide-faq-item { padding-right:calc(var(--object-question-size) + var(--object-question-gap)); min-height:calc(var(--object-question-size) + 4rem); }
   .guide-faq[data-visual="dimensional"] .question-heading-row { display:block; }
-  .guide-faq[data-visual="dimensional"] .question-visual--dimensional { position:absolute; width:200px; height:200px; top:50%; right:0; margin:0; transform:translateY(-50%); }
-  .faq[data-visual="dimensional"] .question-row-tools .question-visual--dimensional { flex-basis:160px; width:160px; height:160px; }
-  .faq[data-visual="dimensional"] summary { min-height:180px; }
+  .guide-faq[data-visual="dimensional"] .question-visual--dimensional { position:absolute; top:50%; right:0; transform:translateY(-50%); }
+  .faq[data-visual="dimensional"] summary { gap:1rem; }
+  .faq[data-visual="dimensional"] .question-row-tools { gap:.75rem; }
+}
+@media (min-width:1024px) {
+  :root { --object-question-size:18rem; --object-faq-size:14rem; --object-study-size:24rem; --object-question-gap:2rem; }
 }
 @media print {
   .object-motion-controls .mw-action { display:none; }

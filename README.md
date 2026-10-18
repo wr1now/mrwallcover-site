@@ -61,6 +61,8 @@ Prefer the existing content template: service and area entries use `LandingBody.
 
 Suitable service, material, Guide, FAQ and professional pages inherit the shared dimensional-object presentation policy. Use `DesignStudy` for a standalone captioned study, and the shared `DesignObject`, `QuestionVisual` and group motion controls in templates instead of a page-specific renderer. Keep server-rendered posters, visible illustrative labels, real project evidence and the existing question/answer or native-disclosure behaviour. Review topic mappings for new content and record its visual decision in `docs/design/route-review.json`; factual AI, legal and reference utilities remain static. Follow the standard's no-JavaScript, pause and reduced-motion requirements, and regenerate the shared posters when the underlying scene changes.
 
+Use the shared large question frames and right-hand rail on new pages. Keep headings readable and answers or native disclosure markers clear at narrow and intermediate widths. The shared scene family supplies the same material depth, realistic detail and lighting to question, service, material, Guide and contact graphics; avoid smaller or flatter page-specific substitutes.
+
 Check the changed route and shared template on mobile and desktop, preserve form and navigation behaviour, and include screenshot evidence in the PR. Run the relevant checks listed in the standard; source checks and build success do not judge visual composition. Record skipped checks honestly and retain any content publication blockers.
 
 ## Enquiry form

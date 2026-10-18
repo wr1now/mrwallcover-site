@@ -163,6 +163,68 @@ test('shared page families ship complete SSR studies and preserve responsive que
   });
 });
 
+test('large question studies retain readable text and a separate right-hand rail between breakpoints', { timeout: 60000 }, async () => {
+  // The poster defines the same stable frame as the live object. Exercise the narrow and
+  // intermediate compositions without starting a software WebGL scene for each width.
+  await withPage(async page => {
+    await page.setJavaScriptEnabled(false);
+    for (const path of [route, '/faq/']) {
+      await load(page, path);
+      for (const width of [360, 390, 688, 768, 1024, 1440]) {
+        await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
+        await page.evaluate(() => document.fonts.ready);
+        const result = await page.evaluate(() => {
+          const rect = (element: Element) => {
+            const box = element.getBoundingClientRect();
+            return { left: box.left, right: box.right, top: box.top, bottom: box.bottom, width: box.width, height: box.height };
+          };
+          const overlaps = (a: ReturnType<typeof rect>, b: ReturnType<typeof rect>) =>
+            Math.min(a.right, b.right) - Math.max(a.left, b.left) > 1
+            && Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 1;
+          return {
+            overflow: document.documentElement.scrollWidth > innerWidth,
+            questions: [...document.querySelectorAll<HTMLElement>('.question-heading-row, .faq summary')].map(row => {
+              const heading = row.querySelector<HTMLElement>('h2,h3')!;
+              const visual = row.querySelector<HTMLElement>('[data-question-visual]')!;
+              const object = visual.querySelector<HTMLElement>('[data-design-object]')!;
+              const headingBox = rect(heading), visualBox = rect(visual), objectBox = rect(object);
+              const item = row.closest('.guide-faq-item, details')!;
+              const itemBox = rect(item);
+              const paragraphs = [...item.querySelectorAll('p')].map(rect).filter(box => box.width && box.height);
+              const marker = row.querySelector('.plus');
+              const style = getComputedStyle(visual);
+              return {
+                question: heading.textContent?.trim(), headingWidth: headingBox.width,
+                width: visualBox.width, height: visualBox.height,
+                visible: style.display !== 'none' && style.visibility === 'visible' && Number(style.opacity) > 0,
+                rightOfHeading: visualBox.left >= headingBox.right - 1,
+                insideItem: visualBox.left >= itemBox.left - 1 && visualBox.right <= itemBox.right + 1
+                  && visualBox.top >= itemBox.top - 1 && visualBox.bottom <= itemBox.bottom + 1,
+                insideViewport: visualBox.left >= 0 && visualBox.right <= innerWidth + 1,
+                objectFillsFrame: objectBox.width >= visualBox.width - 1 && objectBox.height >= visualBox.height - 1,
+                overlapsText: overlaps(headingBox, visualBox) || paragraphs.some(paragraph => overlaps(paragraph, visualBox)),
+                overlapsMarker: marker ? overlaps(rect(marker), visualBox) : false,
+                textOverflows: heading.scrollWidth > heading.clientWidth + 1,
+              };
+            }),
+          };
+        });
+        assert.equal(result.overflow, false, `${path}: no horizontal overflow at ${width}px`);
+        assert.ok(result.questions.length > 0, `${path}: representative question rows are present`);
+        const minimumFrame = width < 640 ? 144 : width < 1024 ? 192 : path === route ? 288 : 224;
+        for (const question of result.questions) {
+          const context = `${path} at ${width}px: ${question.question}`;
+          assert.ok(question.width >= minimumFrame - 1 && question.height >= minimumFrame - 1, `${context}: the illustration retains its large readable frame`);
+          assert.ok(question.headingWidth >= (width < 640 ? 144 : 220), `${context}: the graphic leaves a readable heading column`);
+          assert.equal(question.visible && question.objectFillsFrame, true, `${context}: the actual study fills the visible frame`);
+          assert.equal(question.rightOfHeading && question.insideItem && question.insideViewport, true, `${context}: the study stays on the right inside its question`);
+          assert.equal(question.overlapsText || question.overlapsMarker || question.textOverflows, false, `${context}: the study does not cover text or the native disclosure marker`);
+        }
+      }
+    }
+  });
+});
+
 test('lazy scene activation preserves the material controls and shortlist position', { timeout: 60000 }, async () => {
   for (const width of [390, 1440]) {
     let sceneRequest: any;
@@ -223,6 +285,10 @@ test('real rendered pixels animate and all local controls pause and resume every
     await focusObject(page);
     const first = await pixels(page);
     assert.ok(first.visible > 100 && first.width > 0 && first.height > 0, 'the live scene renders actual nonempty pixels');
+    const outputSize = await page.$eval(objectSelector, (object: HTMLElement) =>
+      Math.min(640, Math.round(object.getBoundingClientRect().width * Math.min(devicePixelRatio || 1, 1.5))));
+    assert.equal(first.width, outputSize, 'the enlarged study renders at its display resolution');
+    assert.equal(first.height, outputSize, 'the output remains square without stretching');
     await waitForPixelChange(page, first.hash);
     assert.ok(requests.some(url => /\/design-object-scenes\.[^/]+\.js(?:\?|$)/.test(url)), 'the production scene module is lazy loaded');
     assertControls(await controls(page), 'running');
