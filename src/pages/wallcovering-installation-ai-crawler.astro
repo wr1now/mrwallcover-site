@@ -8,6 +8,7 @@ import { breadcrumbNode } from '../lib/schema';
 
 const crumbs = [{ name: 'Home', href: '/' }, { name: CRAWLER_TITLE, href: CRAWLER_PATH }];
 const local = (url: string) => new URL(url).pathname + new URL(url).hash;
+const publishedExports = import.meta.env.MW_CONTENT_PREVIEW !== '1';
 ---
 
 <Base
@@ -241,6 +242,7 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
             <section class="crawler-project" id={`project-${project.slug}`}>
               <h3><a href={local(project.url)}>{project.title}</a></h3>
               <p>{project.summary}</p>
+              {publishedExports && <p><a href={`/ai/projects/${project.slug}.json`}>Complete project JSON</a> · <a href={`${local(project.url)}index.md`}>Complete project Markdown</a></p>}
               <dl class="crawler-facts">
                 <div><dt>Role</dt><dd>{project.role}</dd></div>
                 <div><dt>Client / brand</dt><dd>{project.client}</dd></div>
@@ -295,7 +297,7 @@ const local = (url: string) => new URL(url).pathname + new URL(url).hash;
             <li><a href="/ai/fire-ratings.json">Fire reference JSON</a> — published standards, regulations, product evidence and sources, with their limitations.</li>
             <li><a href="/ai/decision-guide.json">Decision guide JSON</a> — fit, evidence, material decisions, delivery, complete aftercare terms, briefing inputs and a blank handoff template.</li>
             <li><a href="/ai/business.json">Business and services JSON</a> — identity, coverage, public contact and service pages.</li>
-            <li><a href="/ai/projects.json">Projects JSON</a> — published roles, materials, dates, references and image credits.</li>
+            <li><a href="/ai/projects.json">Projects JSON</a> — all published project-page content, structured project facts, media, sources and individual JSON record links.</li>
             <li><a href="/llms.txt">Short text index</a> — a compact starting point for the site.</li>
             <li><a href="/llms-full.txt">Full site text</a> — the main content of all published pages.</li>
             <li><a href={`${CRAWLER_PATH}index.md`}>This page as Markdown</a> — the same content in a text format.</li>

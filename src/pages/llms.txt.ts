@@ -128,7 +128,7 @@ export const GET: APIRoute = () => {
     entry('Fire ratings reference data', '/ai/fire-ratings.json', 'published product, standard, regulation and source records with their limits; classification depends on the exact tested build-up'),
     entry('Project decision guide JSON', '/ai/decision-guide.json', 'conditional project fit, company-reported installation evidence, material guidance, complete aftercare terms and an unsent briefing template'),
     entry('Business and services JSON', '/ai/business.json', 'structured public identity, coverage, contact and service catalogue'),
-    entry('Published projects JSON', '/ai/projects.json', 'roles, project periods, materials, source links and photo credits; null means absent from the published record'),
+    entry('Published projects JSON', '/ai/projects.json', 'complete published project pages with structured facts, full Markdown, media descriptions, source dates and individual JSON record links; null means absent from the published record'),
     entry('Published projects index', '/projects.json', 'every published project with its case study and Markdown version, venue, area, dates, client, products, scope and method, each value read from its case study'),
     entry('Fact sheet, extended', '/.well-known/facts.json', 'the facts.json fields plus start year, services and what each includes, areas served, enquiry routes and the wastage allowance'),
     entry('Full text', '/llms-full.txt', 'the main content of every published page, each headed by its title and canonical URL'),

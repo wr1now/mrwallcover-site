@@ -44,13 +44,27 @@ export function approvedFigure(slug: string): string | null {
 /** A plain year or range (2019, 2016–2019) or a sentence that starts with one; anything else is not a year. */
 const YEARISH = /^(c\. )?\d{4}(–\d{4})?\b/;
 
-export function glanceRows(study: GlanceSource): GlanceRow[] {
+/** Public fields used by both the visible definition list and machine-readable project records. */
+export function glanceDetails(study: GlanceSource) {
   const extra = extras[study.slug];
   if (!extra) throw new Error(`case-study-glance.json has no entry for ${study.slug}; add one (an empty {} is fine).`);
   if (extra.size && !approvedFigure(study.slug)) throw new Error(`${study.slug}: an area or room figure needs an approved programme figure in facts.json`);
   const makers = extra.makers ?? study.wallcoverings;
   const year = extra.year ?? (study.years && YEARISH.test(study.years) ? study.years : null);
-  const values = [study.client, extra.designer, extra.mainContractor, makers.length ? makers.join('; ') : null, extra.size, study.role, year];
+  return {
+    client: study.client,
+    designer: extra.designer ?? null,
+    mainContractor: extra.mainContractor ?? null,
+    makers: makers.length ? [...makers] : null,
+    size: extra.size ?? null,
+    scope: study.role,
+    year: year ?? null,
+  };
+}
+
+export function glanceRows(study: GlanceSource): GlanceRow[] {
+  const details = glanceDetails(study);
+  const values = [details.client, details.designer, details.mainContractor, details.makers?.join('; '), details.size, details.scope, details.year];
   return GLANCE_LABELS.map((label, i) => ({ label, value: values[i]?.trim() || null }));
 }
 
