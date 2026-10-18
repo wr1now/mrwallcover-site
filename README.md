@@ -69,6 +69,8 @@ Check the changed route and shared template on mobile and desktop, preserve form
 
 The public site posts to FormSubmit, which forwards the note to `info@mrwallcover.com`. The endpoint in `src/config.ts` is FormSubmit’s alias, not a mailto link. The visitor chooses email or phone. There is no four-second wait. Attachments are optional: JPEG, PNG, WebP, HEIC, HEIF or PDF, up to eight files and 10 MB combined on FormSubmit. The optional private API retains its separate 12 MiB/file and 36 MiB total limits. Browser selection checks give feedback before submission; upload content inspection remains the receiving provider’s responsibility.
 
+Contact actions on reviewed service, material, professional and Guide pages carry a visible topic into the enquiry. Visitors can remove it, change the optional service and optionally tell us how they heard about the practice. No page history or campaign identifiers are saved. Email updates use a separate, versioned opt-in available only for an email reply. See [the enquiry intake contract](docs/enquiry-intake.md).
+
 A private lead store exists for when you run it yourself. It is off in the GitHub Pages build. Nothing on Pages can save a lead to disk.
 
 ```bash

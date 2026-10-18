@@ -74,7 +74,7 @@ const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) =
             <h2 id="footer-contact-heading">Start a conversation.</h2>
             <p>{facts.founder.name}, founder</p>
           </div>
-          <Action href="/contact/" variant="primary" icon="arrow-right" class="footer-start">Start your project</Action>
+          <Action href="/contact/" contextualEnquiry={false} variant="primary" icon="arrow-right" class="footer-start">Start your project</Action>
         </div>
         <ul class="footer-contact-list">
           <li><a href={`mailto:${facts.email}`}><Icon name="mail" /><span>{facts.email}</span></a></li>

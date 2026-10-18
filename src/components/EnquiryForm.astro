@@ -1,5 +1,6 @@
 ---
 import Action from './Action.astro';
+import { ENQUIRY_SERVICES, ENQUIRY_SOURCES, EMAIL_MARKETING_TEXT, EMAIL_MARKETING_VERSION, PRIVACY_NOTICE_VERSION } from '../lib/enquiry-context';
 import { LEAD_API_URL, FORM_ENDPOINT, FORM_PROVIDER, PUBLIC_EMAIL, SITE_URL } from '../config';
 import { attachmentLimits } from '../lib/enquiry-attachments';
 
@@ -32,6 +33,10 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
   <input type="hidden" name="idempotencyKey" value="" />
   <input type="hidden" name="reference" value="" />
   <input type="hidden" name="shortlist" value="" />
+  <input type="hidden" name="topic" value="" />
+  <input type="hidden" name="topicOrigin" value="" />
+  <input type="hidden" name="privacyNoticeVersion" value={PRIVACY_NOTICE_VERSION} />
+  <input type="hidden" name="marketingTextVersion" value={EMAIL_MARKETING_VERSION} />
   <input type="hidden" name="materialPreferences" value="" />
   {isFormSubmit && (
     <>
@@ -43,6 +48,19 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
   )}
 
   <div data-hide-on-success>
+    {variant === 'enquiry' ? <>
+      <div class="selection-summary mb-5" data-enquiry-context hidden>
+        <p class="eyebrow">About the page you chose</p>
+        <p data-enquiry-context-text></p>
+        <p class="form-note text-stone">Include this topic with your note, or remove it. You can change the service below.</p>
+        <Action variant="secondary" type="button" data-clear-enquiry-context>Remove this topic</Action>
+      </div>
+      <div class="field mb-5">
+        <label for="service">Which service? <span class="text-stone">Optional</span></label>
+        <select id="service" name="service"><option value="">Not sure yet</option>{ENQUIRY_SERVICES.map((item) => <option value={item.value}>{item.label}</option>)}</select>
+      </div>
+    </> : <input type="hidden" name="service" value="aftercare" />}
+
     <div class="selection-summary" data-selection-summary hidden><p class="eyebrow">Your material choices</p><p data-selection-text></p><Action variant="secondary" type="button" data-clear-selection>Remove these choices</Action></div>
     <div data-error-summary class="form-summary" tabindex="-1" hidden></div>
 
@@ -74,7 +92,7 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
               <label for="intent">What do you need?</label>
               <select id="intent" name="intent">
                 <option value="">Not sure</option>
-                <option value="install">I already have the wallpaper</option>
+                <option value="install">I already have the material</option>
                 <option value="source">Help me choose, then install it</option>
                 <option value="advice">Advice</option>
                 <option value="prepare">Removal or preparation</option>
@@ -201,15 +219,23 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
         <p id="attachment-error" class="form-error" data-error="attachment" aria-live="polite"></p>
         <ul class="file-list" data-file-list></ul>
       </div>
-      <label class="inline-flex min-h-12 items-center gap-2">
-        <input type="checkbox" name="marketing" value="yes" />
-        Send occasional notes about the practice. This is separate from the enquiry.
-      </label>
+      <div class="field">
+        <label for="source-declared">How did you hear about us? <span class="text-stone">Optional</span></label>
+        <select id="source-declared" name="sourceDeclared"><option value="">Prefer not to say / not sure</option>{ENQUIRY_SOURCES.map((item) => <option value={item.value}>{item.label}</option>)}</select>
+      </div>
+      <div data-email-marketing hidden>
+        <label class="inline-flex min-h-12 items-start gap-2">
+          <input class="mt-1" type="checkbox" name="marketing" value="yes" disabled />
+          <span>{EMAIL_MARKETING_TEXT}</span>
+        </label>
+        <p class="form-note m-0 text-stone">Separate from your enquiry. You can withdraw by <a href={`mailto:${PUBLIC_EMAIL}`}>emailing us</a>.</p>
+      </div>
       <p class="form-note m-0 text-stone">
         {LEAD_API_URL
           ? `Your enquiry is saved with a reference before this page confirms it. Dorin Burcus reads it. If you have not heard back, email ${PUBLIC_EMAIL} and quote the reference.`
           : `Your note is sent to ${PUBLIC_EMAIL} with a reference. Dorin Burcus reads it. If you have not heard back, email that address directly.`}
       </p>
+      <p class="form-note m-0 text-stone">We use the details you send to respond to this request. <a href="/privacy/">Read the privacy notice</a>.</p>
       <Action variant="primary" type="submit">{variant === 'aftercare' ? 'Send the note' : 'Start your project'}</Action>
     </fieldset>
   </div>

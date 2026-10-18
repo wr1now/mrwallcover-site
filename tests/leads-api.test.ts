@@ -158,3 +158,63 @@ test('developer and hotel context survives storage with specification and materi
     assert.deepEqual(stored.enquiry.shortlist, ['contract-vinyl', 'paper-and-non-woven']);
   }
 });
+
+test('explicit service context and email permission evidence survive private storage with server receipt time', async () => {
+  const { EMAIL_MARKETING_TEXT, EMAIL_MARKETING_VERSION, PRIVACY_NOTICE_VERSION } = await import('../src/lib/enquiry-context.ts');
+  const started = Date.now();
+  const response = await post(form((body) => {
+    body.set('service', 'window-film');
+    body.set('topic', 'service:window-film');
+    body.set('topicOrigin', 'link');
+    body.set('sourceDeclared', 'instagram');
+    body.set('marketing', 'yes');
+    body.set('marketingTextVersion', EMAIL_MARKETING_VERSION);
+    body.set('privacyNoticeVersion', PRIVACY_NOTICE_VERSION);
+    body.set('receivedAt', '1900-01-01T00:00:00Z');
+    body.set('marketingWording', 'arbitrary client statement');
+  }));
+  assert.equal(response.status, 201);
+  const { reference } = await response.json() as { reference: string };
+  const stored = JSON.parse(await readFile(path.join(dir, reference, 'lead.json'), 'utf8'));
+  assert.equal(stored.schemaVersion, 2);
+  assert.equal(stored.enquiry.service, 'window-film');
+  assert.equal(stored.enquiry.topic, 'service:window-film');
+  assert.equal(stored.enquiry.sourceDeclared, 'instagram');
+  assert.equal(stored.permissions.emailMarketing.state, 'granted');
+  assert.equal(stored.permissions.emailMarketing.textVersion, EMAIL_MARKETING_VERSION);
+  assert.equal(stored.permissions.emailMarketing.noticeVersion, PRIVACY_NOTICE_VERSION);
+  assert.equal(stored.permissions.emailMarketing.wording, EMAIL_MARKETING_TEXT);
+  assert.equal(stored.permissions.emailMarketing.receivedAt, stored.createdAt);
+  assert.ok(Date.parse(stored.permissions.emailMarketing.receivedAt) >= started);
+});
+
+test('legacy Boolean, forged versions and phone-only replies cannot grant email marketing', async () => {
+  const { EMAIL_MARKETING_VERSION, PRIVACY_NOTICE_VERSION } = await import('../src/lib/enquiry-context.ts');
+  for (const variant of ['legacy', 'wrong-version', 'phone']) {
+    const response = await post(form((body) => {
+      body.set('marketing', 'yes');
+      body.set('sourceDeclared', 'private@example.invalid');
+      body.set('topic', 'private@example.invalid');
+      if (variant !== 'legacy') {
+        body.set('marketingTextVersion', variant === 'wrong-version' ? 'forged' : EMAIL_MARKETING_VERSION);
+        body.set('privacyNoticeVersion', PRIVACY_NOTICE_VERSION);
+      }
+      if (variant === 'phone') { body.set('replyBy', 'phone'); body.set('phone', '07700900000'); }
+    }));
+    assert.equal(response.status, 201);
+    const { reference } = await response.json() as { reference: string };
+    const stored = JSON.parse(await readFile(path.join(dir, reference, 'lead.json'), 'utf8'));
+    assert.equal(stored.enquiry.marketing, false);
+    assert.equal(stored.permissions.emailMarketing.state, 'not-granted');
+    assert.equal(stored.enquiry.topic, '');
+    assert.equal(stored.enquiry.sourceDeclared, '');
+  }
+});
+
+test('JSON objects and non-string field types return 400 rather than failing inside validation', async () => {
+  for (const body of [null, [], { name: 7 }, { name: 'Ada', message: { private: 'brief' } }]) {
+    const response = await fetch(`${base}/api/leads`, { method: 'POST', headers: { origin: 'http://127.0.0.1:4321', 'content-type': 'application/json' }, body: JSON.stringify(body) });
+    assert.equal(response.status, 400);
+    assert.doesNotMatch(await response.text(), /private|TypeError|lead\.json/);
+  }
+});

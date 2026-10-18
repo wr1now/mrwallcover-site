@@ -1,15 +1,18 @@
 ---
+import { enquiryHrefForPage } from '../lib/enquiry-context';
 import type { HTMLAttributes } from 'astro/types';
 import Icon, { type IconName } from './Icon.astro';
-type Shared = { variant?: 'primary' | 'secondary' | 'quiet'; icon?: IconName | false; class?: string; };
+type Shared = { variant?: 'primary' | 'secondary' | 'quiet'; icon?: IconName | false; class?: string; contextualEnquiry?: boolean; };
 type Props = Shared & ((HTMLAttributes<'a'> & { href: string }) | (HTMLAttributes<'button'> & { href?: never }));
-const { href, variant = 'primary', icon = href ? 'arrow-right' : false, class: className, ...attributes } = Astro.props;
+const { href, contextualEnquiry = true, variant = 'primary', icon = href ? 'arrow-right' : false, class: className, ...attributes } = Astro.props;
+// Shared contact actions carry only the explicitly chosen public topic, never prior page history.
+const destination = href && contextualEnquiry ? enquiryHrefForPage(Astro.url.pathname, href) : href;
 const unavailable = attributes['aria-disabled'] === true || attributes['aria-disabled'] === 'true';
 const classes = ['mw-action', `mw-action--${variant}`, className];
 const { type: buttonType = 'button', disabled, ...buttonAttributes } = attributes as HTMLAttributes<'button'>;
 ---
 {href ? (
-  <a {...attributes as HTMLAttributes<'a'>} href={unavailable ? undefined : href} role={unavailable ? 'link' : undefined} tabindex={unavailable ? -1 : (attributes as HTMLAttributes<'a'>).tabindex} class:list={classes}><span><slot /></span>{icon && <Icon name={icon} />}</a>
+  <a {...attributes as HTMLAttributes<'a'>} href={unavailable ? undefined : destination} role={unavailable ? 'link' : undefined} tabindex={unavailable ? -1 : (attributes as HTMLAttributes<'a'>).tabindex} class:list={classes}><span><slot /></span>{icon && <Icon name={icon} />}</a>
 ) : (
   <button {...buttonAttributes} type={buttonType} disabled={unavailable || disabled} class:list={classes}><span><slot /></span>{icon && <Icon name={icon} />}</button>
 )}
