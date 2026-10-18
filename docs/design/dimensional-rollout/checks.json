@@ -14,7 +14,7 @@
     },
     "builtSite": {
       "command": "npm run check:dist",
-      "passed": 239,
+      "passed": 251,
       "temporaryNewPageAndPhoneFixture": "passed"
     },
     "additionalRegression": {
@@ -53,7 +53,14 @@
       "sharedFooterCases": 8,
       "keyboardDisclosureEffectsNoJavaScript": "passed"
     },
-    "browserReadiness": "Use page load and bounded font/image/state predicates, polling outside the page for disabled-JavaScript contexts. No timeout increases or assertions removed."
+    "browserReadiness": "Use page load and bounded font/image/state predicates, polling outside the page for disabled-JavaScript contexts. No timeout increases or assertions removed.",
+    "animationCases": {
+      "routes": 13,
+      "isolatedContexts": true,
+      "perCaseDeadlineMs": 60000,
+      "stateAndPixelDeadlines": "unchanged",
+      "reason": "The prior successful hosted aggregate took118.26s and the production aggregate crossed its120s deadline. Independent route cases retain all assertions and scale with new routes."
+    }
   },
   "focusedBrowserCoverage": {
     "originalCasesPassed": 8,

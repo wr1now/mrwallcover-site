@@ -312,9 +312,11 @@ test('without JavaScript each shared family keeps complete posters and readable 
   });
 });
 
-test('representative families animate actual pixels and share usable pause and reduced-motion fallbacks', { timeout: 120000 }, async () => {
-  await withPage(async page => {
-    for (const path of representativeRoutes) {
+// A growing route inventory must not share one aggregate deadline on software-rendered CI.
+// Each route keeps the same bounded readiness/pixel checks and an isolated browser context.
+for (const path of representativeRoutes) {
+  test(`${path}: actual animated pixels, pause and reduced-motion fallbacks`, { timeout: 60000 }, async () => {
+    await withPage(async page => {
       await load(page, path);
       await focusObject(page, '[data-design-object]');
       const first = await pixels(page, '[data-design-object]');
@@ -332,9 +334,9 @@ test('representative families animate actual pixels and share usable pause and r
       assertControls(await controls(page), 'reduced');
       await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'no-preference' }]);
       await focusObject(page, '[data-design-object]');
-    }
+    });
   });
-});
+}
 
 test('native service, area and FAQ disclosures keep keyboard and drawing-click behaviour with and without JavaScript', { timeout: 90000 }, async () => {
   await withPage(async page => {
