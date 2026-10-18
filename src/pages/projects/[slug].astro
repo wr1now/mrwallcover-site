@@ -11,6 +11,7 @@ import { SITE_URL } from '../../config';
 import { breadcrumbNode, caseStudyArticleNode, projectNode, videoNode } from '../../lib/schema';
 import type { Project } from '../../lib/types';
 import method from '../../content/method.json';
+import exteriorMethod from '../../content/method-exterior.json';
 import retired from '../../content/retired-projects.json';
 const methodIcons: IconName[] = ['ruler', 'layers', 'room', 'tag', 'drawing', 'check'];
 
@@ -43,6 +44,9 @@ interface Props {
 
 const { project, redirectTo } = Astro.props;
 const study = project.caseStudy ? caseStudyBySlug(project.slug) : undefined;
+const isExterior = study?.frontmatter.method === 'exterior';
+const projectMethod = isExterior ? exteriorMethod : method;
+const projectMethodIcons: IconName[] = isExterior ? ['ruler', 'room', 'layers', 'drawing', 'swatch', 'calendar'] : methodIcons;
 /* Modest (preview-only) heroes are shown at their own pixel width, never stretched past it. */
 const modestHeroWidth = project.modest && project.imageId ? media(project.imageId).thumbWidth : 360;
 const StudyContent = study?.Content;
@@ -154,19 +158,20 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
           </section>
         )}
         <section class="mt-14 border-t border-line pt-10" aria-labelledby="method-heading">
-          <p class="eyebrow">{method.eyebrow}</p>
-          <h2 id="method-heading" class="m-0 max-w-xl text-[clamp(2rem,3vw,2.7rem)]">{method.title}</h2>
-          <p class="lede mt-4 max-w-2xl">{method.text}</p>
+          <p class="eyebrow">{projectMethod.eyebrow}</p>
+          <h2 id="method-heading" class="m-0 max-w-xl text-[clamp(2rem,3vw,2.7rem)]">{projectMethod.title}</h2>
+          <p class="lede mt-4 max-w-2xl">{projectMethod.text}</p>
           <ol class="method-list mt-8 grid md:grid-cols-2" style="list-style:none;padding:0;margin-left:0;column-gap:2.5rem;row-gap:1.5rem">
-            {method.items.map((item, index) => (
+            {projectMethod.items.map((item, index) => (
               <li style="padding-top:0.25rem">
-                <p class="eyebrow method-marker m-0"><Icon name={methodIcons[index]} />{String(index + 1).padStart(2, '0')}</p>
+                <p class="eyebrow method-marker m-0"><Icon name={projectMethodIcons[index]} />{String(index + 1).padStart(2, '0')}</p>
                 <h3 style="margin:0.25rem 0 0.5rem;font-size:1.25rem;line-height:1.4">{item.title}</h3>
                 <p class="m-0">{item.text}</p>
               </li>
             ))}
           </ol>
-          <p class="mt-8 mb-0"><a href="/details/">See the finish up close: seams, internal corners, edges and joins from our own installations</a></p>
+          {isExterior && <p class="mt-8 mb-0"><a href="/services/exterior-works/">Discuss exterior decorating, repairs and scaffolded access</a></p>}
+          <p class="mt-8 mb-0">{isExterior && 'For our wallcovering work: '}<a href="/details/">See the finish up close: seams, internal corners, edges and joins from our own installations</a></p>
         </section>
         {films.length > 0 && (
           <section class="mt-14">

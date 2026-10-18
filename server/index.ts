@@ -11,6 +11,7 @@ import { timingSafeEqual } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import { emptyEnquiry, makeReference, validateEnquiry, FILE_LIMITS, type EnquiryFields, type ValidEnquiry } from '../src/lib/enquiry.ts';
 import { extensionFor, prepareUpload } from '../src/lib/files.ts';
+import { INTAKE_SCHEMA_VERSION, EMAIL_MARKETING_TEXT, EMAIL_MARKETING_VERSION, PRIVACY_NOTICE_VERSION } from '../src/lib/enquiry-context.ts';
 
 interface StoredFile {
   name: string;
@@ -26,6 +27,7 @@ interface NotificationAttempt {
 }
 
 interface StoredLead {
+  schemaVersion: typeof INTAKE_SCHEMA_VERSION;
   reference: string;
   idempotencyKey: string;
   createdAt: string;
@@ -34,6 +36,14 @@ interface StoredLead {
   notification: { state: 'pending' | 'sent' | 'failed'; attempts: NotificationAttempt[] };
   enquiry: ValidEnquiry;
   files: StoredFile[];
+  permissions: { emailMarketing: {
+    state: 'granted' | 'not-granted';
+    receivedAt: string;
+    textVersion: string;
+    noticeVersion: string;
+    wording: string;
+    source: 'website-form';
+  } };
 }
 
 const MAX_ATTEMPTS = 3;
@@ -161,7 +171,16 @@ function parseMultipart(body: Buffer, contentType: string): { fields: Record<str
 }
 
 function fieldsFrom(raw: Record<string, string>): EnquiryFields {
+  // JSON is untrusted too: never call string methods on an arbitrary object/number.
+  const text = (name: string) => typeof raw[name] === 'string' ? raw[name] : '';
+  raw = Object.fromEntries(Object.keys(raw).map((key) => [key, text(key)]));
   return emptyEnquiry({
+    service: raw.service,
+    topic: raw.topic,
+    topicOrigin: raw.topicOrigin,
+    sourceDeclared: raw.sourceDeclared,
+    marketingTextVersion: raw.marketingTextVersion,
+    privacyNoticeVersion: raw.privacyNoticeVersion,
     kind: raw.kind || 'enquiry',
     name: raw.name || '',
     email: raw.email || '',
@@ -242,6 +261,7 @@ async function findByKey(key: string): Promise<StoredLead | null> {
 
 function publicLead(lead: StoredLead) {
   return {
+    schemaVersion: lead.schemaVersion,
     reference: lead.reference,
     createdAt: lead.createdAt,
     kind: lead.kind,
@@ -251,6 +271,7 @@ function publicLead(lead: StoredLead) {
       ...lead.enquiry,
     },
     files: lead.files,
+    permissions: lead.permissions,
   };
 }
 
@@ -290,15 +311,25 @@ async function acceptLead(rawFields: Record<string, string>, uploads: { filename
   }
 
   const reference = makeReference();
+  const createdAt = new Date().toISOString();
   const lead: StoredLead = {
+    schemaVersion: INTAKE_SCHEMA_VERSION,
     reference,
     idempotencyKey: validated.value.idempotencyKey,
-    createdAt: new Date().toISOString(),
+    createdAt,
     kind: validated.value.kind,
     status: 'new',
     notification: { state: 'pending', attempts: [] },
     enquiry: validated.value,
     files: [],
+    permissions: { emailMarketing: {
+      state: validated.value.marketing ? 'granted' : 'not-granted',
+      receivedAt: createdAt,
+      textVersion: validated.value.marketingTextVersion === EMAIL_MARKETING_VERSION ? EMAIL_MARKETING_VERSION : '',
+      noticeVersion: validated.value.privacyNoticeVersion === PRIVACY_NOTICE_VERSION ? PRIVACY_NOTICE_VERSION : '',
+      wording: validated.value.marketingTextVersion === EMAIL_MARKETING_VERSION ? EMAIL_MARKETING_TEXT : '',
+      source: 'website-form',
+    } },
   };
   const dir = path.join(dataDir(), reference, 'files');
   await mkdir(dir, { recursive: true });
@@ -420,7 +451,12 @@ async function handle(req: IncomingMessage, res: ServerResponse) {
         raw = parsed.fields;
         files = parsed.files;
       } else if (type.includes('application/json')) {
-        raw = JSON.parse(body.toString('utf8')) as Record<string, string>;
+        const parsed: unknown = JSON.parse(body.toString('utf8'));
+        if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed) || Object.values(parsed).some((value) => typeof value !== 'string')) {
+          json(res, 400, { error: 'Send form fields as text.' });
+          return;
+        }
+        raw = parsed as Record<string, string>;
       } else {
         json(res, 415, { error: 'Send the enquiry as a form.' });
         return;

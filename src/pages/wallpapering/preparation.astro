@@ -25,8 +25,8 @@ const lining = (grade: number | null) => {
 ---
 
 <Base
-  title="Preparing walls for wallpaper | Mr Wallcover"
-  description="Wall types and conditions for wallpaper: the treatment, primer, lining grade and paste for each, and when the wall needs a site inspection first."
+  title="Wallpaper Preparation Tables by Wall Type | Mr Wallcover"
+  description="Look up wall types and conditions before wallpapering: preparation, primer, lining and when inspection is needed. Product instructions take precedence."
   path="/wallpapering/preparation/"
   extraSchema={[breadcrumbNode(crumbs)]}
 >
@@ -34,8 +34,9 @@ const lining = (grade: number | null) => {
     <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
       <p class="eyebrow">Wallpapering / preparation</p>
-      <h1>Preparing the wall for wallpaper</h1>
-      <p class="lede mt-5">Every wall is judged on two things: what it is made of, and the state it is in. Find both below to see the treatment, the primer, the lining grade, and when we need to see the wall before anything is ordered. The wallpaper maker's instruction for the product always comes first.</p>
+      <h1>Wallpaper preparation tables</h1>
+      <p class="lede mt-5">Use these tables to look up a wall's substrate and condition. They record Mr Wallcover's house practice where the wallpaper maker is silent; the product's current instructions and the actual wall take precedence.</p>
+      <p class="mt-5">For the reasons behind the checks, read our guide to <a href={guideHref('wall-preparation')}>assessing whether a wall is ready for wallpaper</a>.</p>
     </header>
     <WallpaperingNav current="preparation" />
 

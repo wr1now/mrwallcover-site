@@ -33,7 +33,7 @@ if (evidenceImage) article.image = [imageObject(new URL(evidenceImage.src, SITE_
 // FAQPage only when the questions are rendered on the page below; drafts carry no Article so the review build cannot be mistaken for publication.
 const extraSchema = [breadcrumbNode(crumbs), ...(data.draft ? [] : [article, ...(faq.length ? [guideFaqNode(faq)] : [])])];
 ---
-<Base title={`${data.shortTitle} | Mr Wallcover`} description={metaDescription} path={path} author={data.author} ogType="article" extraSchema={extraSchema} updated={data.updated} meta={false} image={evidenceImage?.src} imageAlt={evidenceImage?.alt}>
+<Base title={`${data.seoTitle ?? data.shortTitle} | Mr Wallcover`} description={metaDescription} path={path} author={data.author} ogType="article" extraSchema={extraSchema} updated={data.updated} meta={false} image={evidenceImage?.src} imageAlt={evidenceImage?.alt}>
   <div class="container-page pb-20">
     <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />

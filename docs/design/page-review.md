@@ -275,6 +275,32 @@ The initial hosted run stopped on five `networkidle0` navigation timeouts. Brows
 
 The first production workflow stopped only at the 120-second combined animation-test deadline; the same case took 118.26 seconds in the successful PR run. Each of the 13 routes now has an independent isolated test and a 60-second case deadline, while all existing readiness, rendered-pixel and motion-state limits/assertions remain unchanged. An independent review confirms no coverage loss. The final 251 production tests and the new-page/phone fixture pass locally; this release follow-up changes test scheduling and its receipt only.
 
+## SEO relevance and opening evidence — 18 October 2026
+
+Reconciled with published public main `a26c1c0`, including its shared dimensional presentation and isolated animation checks; no unpublished feature stack is included. Seven Guide pages now supply descriptive search titles independently of their short card/navigation labels. The three professional profiles name their service in search titles; Exterior works names painting/decorating. These metadata changes retain the existing layouts, relevant project evidence and diagrams. No additional imagery is needed to explain a search title.
+
+Window film and architectural film retain the shared landing layout, native FAQ disclosures, shared topic studies and existing real evidence/illustrative diagram. Their quotation questions now describe the actual service, replacing misplaced wallpaper-only pricing in those two routes. The same visible questions feed structured data and text projections. The general wallpaper answer remains on the applicable pages.
+
+`EvidenceFigure.astro` retains lazy loading by default and exposes explicit loading/priority props. Only opening professional evidence requests eager/high priority; lower-page evidence remains lazy. This preserves captions, crops, credits, motion controls and every route. Screenshot/performance review and exact validation results are recorded with the review evidence and PR. This change activates no analytics, person-level tracking or email sending.
+
+## Quotation and exterior content intent — 18 October 2026
+
+The existing short cost route now provides a quotation checklist, while the long installation-cost guide retains the detailed explanation. URLs, the original FAQ answers/schema, diagram and enquiry action remain; the footer label matches the checklist. Preparation tables have a distinct lookup title and a visible link to the explanatory readiness guide. The designer checklist links to published installed-maker evidence without implying endorsement.
+
+The two exterior records now explicitly select a shared exterior method based on their public scope. Their original article prose, photographs and credits remain. Wallpaper-only batch, set-out and guarantee terms stay on wallcovering commissions, with the detail destination preserved under a wallcovering label. Existing shared layout, icons and photography are sufficient; no decorative asset or animation is added.
+
+[Responsive screenshots, visual decisions and verification](content-intent/README.md). Source checks 142/142, focused output/projection/shared-contract checks 50/50, production build, exact-base no-loss and 24 before/after responsive observations pass. All twelve after cases also pass without JavaScript, with native quotation FAQ keyboard activation retained. Full integrated and hosted checks remain required; the focused worker did not have the private names input and does not claim that check passed.
+
+## Enquiry context and permission — 18 October 2026
+
+The shared action component passes reviewed service/material/professional/Guide topics to the existing contact form. The form shows the topic with a remove control, an optional service choice and optional self-reported discovery source. The email-updates choice is specific, unchecked by default, available only for an email reply and cleared on switching to phone. A privacy link sits with the submit action. Existing contact/brief illustrations, shared actions, layout and footer remain appropriate; the new controls are text-led because more imagery would not explain their choices.
+
+Source/receiver details and remaining production dependencies: [enquiry intake](../enquiry-intake.md). Captures in [enquiry-release](enquiry-release/) use a synthetic example address, with no form submission. The reviewed widths are 360, 390, 768, 1024, 1280 and 1440 pixels. Browser tests intercept the real native form POST before it can leave the test browser. Analytics remains off in the default build. Final test evidence is recorded in the release PR; snapshots are visual review evidence, not proof of mailbox delivery or a production CRM.
+
+The reviews page's title, heading and introduction now identify the two existing Calico Wallpaper notes. Their exact words, attribution, permission statement, project cards and links remain. Its existing real installation photographs provide the evidence; no new rating, endorsement or image is introduced. This text correction uses the shared page layout and is included in the integrated responsive coverage check.
+
+[Integrated source, built-site, fixture and review checks](seo-enquiry-release.md) record the combined SEO/content/enquiry batch against current main, including the metadata-length correction and operational boundaries.
+
 ### AI reference release integration — 18 October 2026
 
 PR #77 was reconciled with published main `a26c1c0` before release. The shared dimensional rollout, its isolated browser checks and the corrected limewash/partner-provided lime-render scope remain intact. AI and reference utilities retain their static presentation. This integration imports no unpublished branch or private dataset. Exact-head checks are rerun before the authorised merge and deployment.
