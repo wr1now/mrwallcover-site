@@ -13,6 +13,7 @@ import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
 import puppeteer, { type Browser } from 'puppeteer-core';
 import sharp from 'sharp';
+import { loadPage } from '../scripts/visual-browser.mjs';
 
 const DIST = 'dist';
 const PAGES = ['/', '/projects/', '/projects/calico-lee-broom-overture/', '/about/', '/faq/',
@@ -48,7 +49,7 @@ test('type floors: 14px text, 13px labels and credits, 16px paragraphs, on twelv
   for (const path of PAGES) for (const [width, height] of SIZES) {
     const page = await browser.newPage();
     await page.setViewport({ width, height, deviceScaleFactor: 1 });
-    await page.goto(origin + path, { waitUntil: 'networkidle0' });
+    await loadPage(page, origin + path);
     // content-visibility:auto skips layout far below the fold; measure every section, rendered.
     await page.addStyleTag({ content: '* { content-visibility: visible !important; }' });
     const found = await page.evaluate(() => {
@@ -94,8 +95,8 @@ test('hero text holds 4.5:1 against the photograph at every width', async () => 
   for (const [width, height] of [...SIZES, [375, 667], [412, 915]] as [number, number][]) {
     const page = await browser.newPage();
     await page.setViewport({ width, height, deviceScaleFactor: 1 });
-    await page.goto(origin + '/', { waitUntil: 'networkidle0' });
-    await page.evaluate(async () => { const img = document.querySelector('.atelier-hero img') as HTMLImageElement | null; if (img && !img.complete) await new Promise((ok) => img.addEventListener('load', ok, { once: true })); });
+    await loadPage(page, origin + '/');
+    await page.evaluate(async () => { const img = document.querySelector<HTMLImageElement>('.atelier-hero img'); if (img) await img.decode(); });
     const boxes = await page.evaluate((sel: string[]) => sel.map((s) => {
       const el = document.querySelector(s) as HTMLElement | null; if (!el) return null;
       if (getComputedStyle(el).display === 'none') return null;

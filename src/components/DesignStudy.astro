@@ -1,0 +1,17 @@
+---
+import DesignObject from './DesignObject.astro';
+import ObjectMotionControls from './ObjectMotionControls.astro';
+import type { DesignObjectKind } from '../lib/design-object-kinds';
+interface Props { kind: DesignObjectKind; caption?: string; class?: string; }
+const { kind, caption = 'Illustrative material study', class: className } = Astro.props;
+---
+<figure class:list={['design-study', className]} data-design-hit>
+  <div class="design-study-object"><DesignObject kind={kind} /></div>
+  <figcaption><ObjectMotionControls label={caption} /></figcaption>
+</figure>
+
+<style>
+  .design-study { width: 100%; max-width: 23rem; margin: 1.5rem 0; }
+  .design-study-object { width: 100%; max-width: 17rem; margin: 0 auto; }
+  .design-study figcaption { margin-top: .3rem; }
+</style>

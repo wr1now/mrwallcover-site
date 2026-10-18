@@ -37,10 +37,10 @@ export function mountDesignObjects() {
           const size=Math.min(420,Math.round(rect.width*Math.min(devicePixelRatio||1,1.5)));
           if(canvas.width!==size){canvas.width=size;canvas.height=size;}
           const context=canvas.getContext('2d');if(!context)return;
-          const row=object.closest('.guide-faq-item, .professional-sections section, .professional-briefing');
+          const row=object.closest('[data-design-hit], .guide-faq-item, .professional-sections section, .professional-briefing, details');
           const image=studio!.render(object.dataset.designObject as DesignObjectKind,time/1000,row===pointerRow?pointer:{x:0,y:0});
           context.clearRect(0,0,size,size);context.drawImage(image,0,0,size,size);
-          object.setAttribute('data-live','');
+          if(!object.hasAttribute('data-live'))object.setAttribute('data-live','');
         });
       } catch {failed=true;stop();paintControls();return;}
     }
@@ -68,7 +68,7 @@ export function mountDesignObjects() {
   document.addEventListener('pointermove',event=>{
     if(!running()||!fine.matches)return;
     const target=event.target instanceof Element?event.target:null;
-    pointerRow=target?.closest('.guide-faq-item, .professional-sections section, .professional-briefing')??null;
+    pointerRow=target?.closest('[data-design-hit], .guide-faq-item, .professional-sections section, .professional-briefing, details')??null;
     if(pointerRow){const rect=pointerRow.getBoundingClientRect();pointer={x:Math.max(-1,Math.min(1,(event.clientX-rect.left)/rect.width*2-1)),y:Math.max(-1,Math.min(1,(event.clientY-rect.top)/rect.height*2-1))};}
   },{passive:true,signal:events.signal});
   controls.forEach(button=>button.addEventListener('click',()=>{paused=!paused;if(paused)document.documentElement.dataset.objectMotionState='paused';else delete document.documentElement.dataset.objectMotionState;sync();},{signal:events.signal}));

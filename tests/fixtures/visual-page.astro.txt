@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Action from '../components/Action.astro';
 import Icon from '../components/Icon.astro';
+import FaqList from '../components/FaqList.astro';
 ---
 <Base title="Visual contract test" description="Temporary test of a new route inheriting the shared design system." path="/visual-contract-fixture/" noindex>
   <div class="container-page page-head">
@@ -19,6 +20,10 @@ import Icon from '../components/Icon.astro';
       <output data-action-submissions>0</output>
     </form>
   </div>
+  <FaqList
+    heading="A future page inherits the shared question treatment"
+    items={[{ id: 'fixture-rolls', question: 'How many rolls should I order?', paragraphs: ['Use the exact product format and the measured walls before confirming a quantity. This fixture illustrates the shared question layout.'] }]}
+  />
   <script is:inline>
     document.querySelector('[data-action-form]').addEventListener('submit', event => {
       event.preventDefault();

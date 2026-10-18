@@ -1,0 +1,154 @@
+{
+  "reviewDate": "2026-10-18",
+  "baseCommit": "6ca4411bdaa4ec31ca2357c8b1244ea81305eb4c",
+  "status": "local-checks-passed-hosted-release-pending",
+  "build": {
+    "status": "passed",
+    "generatedPages": 114,
+    "publishedRoutes": 106
+  },
+  "validation": {
+    "source": {
+      "command": "npm run check",
+      "passed": 142
+    },
+    "builtSite": {
+      "command": "npm run check:dist",
+      "passed": 239,
+      "temporaryNewPageAndPhoneFixture": "passed"
+    },
+    "additionalRegression": {
+      "file": "tests/design-objects-browser.test.ts",
+      "name": "lazy scene activation preserves the material controls and shortlist position",
+      "passed": 1,
+      "scope": "Scene import held while the control and shortlist positions are measured; this is separate from initial font-loading CLS."
+    },
+    "typographyAndContrast": {
+      "command": "npm run check:type",
+      "passed": 2
+    },
+    "phoneBuilds": {
+      "command": "npm run check:phone",
+      "passed": 2
+    },
+    "analytics": {
+      "command": "npm run check:analytics",
+      "passed": 2
+    },
+    "guideBoundaries": {
+      "command": "npm run check:guides",
+      "passed": 5
+    },
+    "guideRelease": {
+      "command": "npm run check:guide-release",
+      "passed": 9
+    },
+    "fontPreloadAndVisualContracts": {
+      "passed": 10,
+      "command": "node --experimental-strip-types --test tests/lead-image-preload.test.ts tests/visual-system.test.ts"
+    },
+    "guideResponsiveBrowser": {
+      "command": "npm run check:guide-browser",
+      "routeWidthCases": 18,
+      "sharedFooterCases": 8,
+      "keyboardDisclosureEffectsNoJavaScript": "passed"
+    },
+    "browserReadiness": "Use page load and bounded font/image/state predicates, polling outside the page for disabled-JavaScript contexts. No timeout increases or assertions removed."
+  },
+  "focusedBrowserCoverage": {
+    "originalCasesPassed": 8,
+    "representativeRoutes": 13,
+    "checks": [
+      "SSR posters and responsive right-hand question placement",
+      "Exact professional and editorial answers remain open",
+      "Actual nonempty rendered pixels change during animation",
+      "Shared pause/resume and paused restored-page lifecycle",
+      "Stored footer preference and live operating-system reduced-motion changes",
+      "Complete no-JavaScript posters and hidden unavailable controls",
+      "Native FAQ keyboard activation and drawing-click behaviour",
+      "Static AI, legal and reference routes avoid the scene module"
+    ],
+    "futurePageFixture": {
+      "status": "passed",
+      "defaultDimensionalWithoutOptIn": true,
+      "serverRenderedPosterAndNativeControl": true,
+      "widths": [
+        390,
+        1440
+      ],
+      "pauseAndResume": "passed",
+      "noJavaScriptPosterAndNativeDisclosure": "passed",
+      "temporarySourceAndOutputRemoved": true
+    }
+  },
+  "visualEvidence": {
+    "observations": "observations.json",
+    "beforeAfterScreenshots": 36,
+    "pages": [
+      "/",
+      "/services/",
+      "/materials/paper-and-non-woven/",
+      "/materials/",
+      "/advice/",
+      "/contact/",
+      "/professionals/designers/",
+      "/faq/",
+      "/services/timorous-beasties-installer/"
+    ],
+    "widths": [
+      390,
+      1440
+    ],
+    "overflowFailures": 0,
+    "browserExceptions": 0,
+    "additionalResponsiveQa": {
+      "observations": 25,
+      "widths": [
+        320,
+        360,
+        768,
+        1024,
+        1280
+      ],
+      "status": "passed"
+    }
+  },
+  "preservation": {
+    "receipt": "no-loss.json",
+    "status": "passed",
+    "publishedPages": 106,
+    "mediaFiles": 3621,
+    "markdownTwins": 106,
+    "projectRecords": 5,
+    "projectGalleryEntries": 12,
+    "jsonLdNodes": 8181,
+    "jsonLdProperties": 36741
+  },
+  "illustrationPosters": {
+    "officialScenePosters": 11,
+    "regeneratedOn": "2026-10-18",
+    "provenance": "Original procedural scenes, deterministic textures and floral artwork; illustrative rather than evidence of named products or completed work."
+  },
+  "performance": {
+    "receipt": "performance.json",
+    "receiptStatus": "final-font-priority-correction-verified",
+    "lazySceneGzipBytes": 5145,
+    "previousSceneGzipBytesApprox": 4200,
+    "existingThreeGzipBytes": 171199,
+    "finalBootstrapGzipBytes": 1607,
+    "fontPriorityVerification": "Three independent cold 390px service contexts: CLS 0, final navigation geometry on first sample, each critical font fetched once.",
+    "observedFontSwapRegression": {
+      "path": "/services/",
+      "viewport": "mobile",
+      "clsApprox": 0.125,
+      "correction": "Shared Base font priority",
+      "finalVerification": "Fixed: cold 390/1440 Services, material detail, Contact and FAQ all show initial CLS 0 in the final performance receipt."
+    },
+    "limitations": "Local browser observations are not field Core Web Vitals; no performance improvement is claimed.",
+    "fontPriorityReceipt": "font-priority.json"
+  },
+  "release": {
+    "hostedFinalCommitChecks": "pending",
+    "deployment": "pending"
+  }
+}

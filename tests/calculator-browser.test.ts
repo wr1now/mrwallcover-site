@@ -1,6 +1,6 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { serve, launchBrowser } from '../scripts/visual-browser.mjs';
+import { serve, launchBrowser, loadPage, waitForPageContent } from '../scripts/visual-browser.mjs';
 
 let server: any, browser: any;
 before(async () => { server = await serve('dist'); browser = await launchBrowser(); });
@@ -22,7 +22,7 @@ async function withCalculator(query: Record<string, string>, check: (page: any) 
   });
   try {
     await page.setViewport({ width: 1440, height: 1000 });
-    const response = await page.goto(`${server.origin}/calculator/?${new URLSearchParams(query)}`, { waitUntil: 'networkidle0' });
+    const response = await loadPage(page, `${server.origin}/calculator/?${new URLSearchParams(query)}`);
     assert.equal(response.status(), 200);
     await page.waitForSelector('[name="widthUnit"][data-was]');
     await check(page);
@@ -118,7 +118,8 @@ test('measurement-unit changes and shared-link reload retain millimetres at a ro
     await page.waitForFunction(() => new URLSearchParams(location.search).get('mu') === 'ft');
     const shared = new URL(page.url());
     assert.ok(Math.abs(Number(shared.searchParams.get('w')!.split('x')[0]) * 30.48 - 318) < 0.000001);
-    await page.reload({ waitUntil: 'networkidle0' });
+    await page.reload({ waitUntil: 'load' });
+    await waitForPageContent(page);
     assert.deepEqual(await ledger(page), ['2 rolls', '1 roll', '3 rolls']);
     assert.match(await working(page), /Wall: 318 cm wide/);
     await page.click('label:has([name="mu"][value="cm"])');
@@ -140,7 +141,8 @@ test('measurement hand-off preserves the calculation and product link in the loc
   const product = 'https://example.com/wallpaper/sample';
   await withCalculator({ ...ownerExample, link: product }, async (page) => {
     const next = '[data-docket-body] a[href^="/contact/?intent=install"]';
-    await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click(next)]);
+    await Promise.all([page.waitForNavigation({ waitUntil: 'load' }), page.click(next)]);
+    await waitForPageContent(page);
     assert.match(page.url(), /\/contact\/\?intent=install&from=calculator/);
     await page.waitForFunction(() => (document.querySelector<HTMLTextAreaElement>('[name="message"]')?.value ?? '').includes('From the quantity calculator'));
     const message = await page.$eval('[name="message"]', (input: HTMLTextAreaElement) => input.value);
@@ -218,7 +220,8 @@ test('pattern guide follows each match and stays explanatory rather than changin
 test('worked-example shortcut fills a transparent example and shows working, spare and total on mobile', async () => {
   await withCalculator({}, async (page) => {
     await page.setViewport({ width: 390, height: 844 });
-    await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('.qc-start-options a')]);
+    await Promise.all([page.waitForNavigation({ waitUntil: 'load' }), page.click('.qc-start-options a')]);
+    await waitForPageContent(page);
     await page.waitForSelector('[data-docket-body] .qc-order');
     assert.deepEqual(await ledger(page), ['2 rolls', '1 roll', '3 rolls']);
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);

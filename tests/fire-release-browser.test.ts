@@ -2,7 +2,7 @@ import { test, before, after } from 'node:test';
 import { existsSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
-import { serve, launchBrowser } from '../scripts/visual-browser.mjs';
+import { serve, launchBrowser, loadPage } from '../scripts/visual-browser.mjs';
 
 let server: any, browser: any;
 before(async () => { server = await serve('dist'); browser = await launchBrowser(); });
@@ -19,7 +19,7 @@ test('fire reference and hub: responsive reading, real evidence, decoder and key
     for (const width of [360, 390, 768, 1024, 1280, 1440]) {
       await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
       for (const path of ['/wallpapering/', route]) {
-        const response = await page.goto(server.origin + path, { waitUntil: 'networkidle0' });
+        const response = await loadPage(page, server.origin + path);
         assert.equal(response.status(), 200);
         const reading = await page.evaluate(() => ({
           overflow: document.documentElement.scrollWidth > innerWidth,
@@ -46,7 +46,7 @@ test('fire reference and hub: responsive reading, real evidence, decoder and key
       }
     }
     await page.setViewport({ width: 390, height: 844 });
-    await page.goto(server.origin + route, { waitUntil: 'networkidle0' });
+    await loadPage(page, server.origin + route);
     for (const [input, expected] of [['B-s2,d0', 'Read as B-s2,d0'], ['A1-s1,d0', 'Not a valid combination'], ['Class 0', 'not a European reaction-to-fire class']]) {
       await page.$eval('[name="notation"]', (el: HTMLInputElement, value: string) => { el.value = value; }, input);
       await page.$eval('[data-fr-decoder]', (form: HTMLFormElement) => form.requestSubmit());
@@ -60,7 +60,7 @@ test('fire reference and hub: responsive reading, real evidence, decoder and key
     await page.keyboard.press('Escape');
     assert.equal(await page.$eval('[data-menu-toggle]', (el: HTMLElement) => el.getAttribute('aria-expanded')), 'false');
     await page.setJavaScriptEnabled(false);
-    await page.goto(server.origin + route, { waitUntil: 'networkidle0' });
+    await loadPage(page, server.origin + route);
     assert.equal(await page.$$eval('.fr-products tbody tr', (rows: Element[]) => rows.length), 26);
     const conflicting = await page.$eval('#product-muraspec-fbv-woven-type-i-360', (row: HTMLElement) => row.textContent);
     assert.match(conflicting, /not resolved/);

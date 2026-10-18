@@ -103,7 +103,7 @@ for (const page of PAGES) {
     // ("trusted specialist partners") is about a trade, not a maker, and is the one other use of the word.
     const sentences = text.split(/(?<=[.!?])\s+/).filter((sentence) => /partner/i.test(sentence));
     for (const sentence of sentences) {
-      const ok = /Calico Wallpaper/.test(sentence) || /^Lime render is carried out with trusted specialist partners\.?$/.test(sentence.trim());
+      const ok = /Calico Wallpaper/.test(sentence) || /^Lime render can be arranged through trusted specialist partners\.?$/.test(sentence.trim());
       assert.ok(ok, `${page.path}: a partnership claim other than Calico Wallpaper: "${sentence.trim()}"`);
     }
     assert.doesNotMatch(text, /TODO|TBC/);
@@ -138,6 +138,7 @@ test('the heritage page links its case studies and the fit-out page carries the 
     assert.ok(heritage.includes(`href="/projects/${slug}/"`), slug);
   }
   assert.match(visibleText(heritage), /Limewash is applied by Mr Wallcover's own team/);
+  assert.match(visibleText(heritage), /Lime render can be arranged through trusted specialist partners/);
   const fitout = visibleText(await readFile('dist/professionals/fit-out-contractors/index.html', 'utf8'));
   for (const fact of [
     /RAMS\) are issued for every package/,
