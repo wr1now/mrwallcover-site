@@ -662,3 +662,11 @@ Hotel record: Waldorf Astoria London Admiralty Arch and London Marriott Hotel Ca
 | No-loss against published main | Pass: 129 → 129 pages, JSON-LD unchanged, media files 3,629 → 5,609 (new record photographs only) |
 | Typography/contrast, phone, analytics, Guide release and browser | Pass |
 | Exact-head hosted checks and live verification | Pending until the owner approves the push |
+
+## Wallpaper my room application — 19 October 2026
+
+The application adds two explicit starts inside the existing Room Studio route: a guided room-photo compositor and the measured 3D editor. The page uses Base, the shared footer/actions and original rendered example cards. Its wording distinguishes free browser work, the optional paid output package and disabled cloud/AI/payment services. The owner subsequently requested all eleven navigation destinations plus Start your project; a separate menu release handles public access while the interactive application stays under review.
+
+Original numbered-panel fixtures show scale, sequence, clipping and camera behavior; photo fixtures show perspective, protected room pixels and comparison controls. They explain the product without implying supplier permission or completed work. The [delivery record](../room-studio/wallpaper-my-room.md) includes [desktop/phone screenshots and the local receipt](../room-studio/review/wallpaper-my-room/checks.json). The two HD stills and complete 4K panorama from an actual fresh customer-confirmed version were inspected. Rendered detail remains limited by the supplied artwork; unverified material response stays illustrative.
+
+Local browser journeys cover manual room editing/tracing, upload/proof, finite panels, palette/paint/Bauwerk controls, camera placement/rejection, comparison/export/reopen, protected draft recovery, delayed photo deletion and real panorama controls. Actual browser GPU data and Blender mesh/UV/camera data are checked. Both editors inherit mobile dock clearance and keyboard controls. Hosted payments/processing, actual phones and operating costs remain explicit gates; this record does not authorise activating those services.

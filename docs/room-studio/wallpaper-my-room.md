@@ -34,3 +34,19 @@ Production activation requires all of the following:
 - Physical mobile verification, current-head CI and release review. Manufacturer assets require separately documented permissions and calibration.
 
 The existing website's sitemap and canonical route cover the public landing page. Private projects/results are not public indexable content. Search Console submission follows an authorised release and requires property access; it cannot guarantee indexing.
+
+## Executed local evidence
+
+The [implementation receipt](review/wallpaper-my-room/checks.json) records 156 core tests and 141 Studio tests passing, with the optional Blender cases enabled and zero skips. Both browser/Edge TypeScript entries pass. Browser acceptance covers a fresh photo project and a fresh measured room rather than importing prepared developer projects. Chromium exercises desktop and phone widths; cached desktop WebKit also covers photo upload, orientation, masking, export and deletion. Physical phones remain a release gate.
+
+The fresh measured-room journey uploaded six original numbered panels through the customer controls, established physical sizes, accepted the proof, applied one connected wall run, adjusted materials/cameras and confirmed an immutable revision. Local Blender 4.5/Cycles consumed that exact package: 147 meshes, 13,047 vertices, 17,798 triangles; two 1920 × 1080 PNGs and one 4096 × 2048 panorama completed in 219.452 seconds on the local GPU at 128 samples. The worker verified actual geometry against the compiler, and both stills and the full panorama were inspected. The numbered 512px artwork is a deliberately low-detail test source and triggers the customer detail acknowledgement; it is not a premium presentation example or evidence of hosted turnaround.
+
+Portable JSON has one compact 160 MiB import/export limit, independently of the unchanged 20 MiB image and 100 MiB unique-source quotas. Every snapshot occurrence is budgeted before edits and cloud saves. Existing oversized local drafts stay recoverable and accept reductions; rejected edits keep uploaded proofs and previous projects. Original v1 backups download individually. Serialized photo autosave prevents delayed writes or upload callbacks from recreating deleted source photos.
+
+| Actual editor evidence | View |
+| --- | --- |
+| Fresh numbered-panel room, customer camera controls | [Browser](review/wallpaper-my-room/finite-panels-browser.jpg) |
+| Exact confirmed revision, local production renderer | [Render](review/wallpaper-my-room/finite-panels-render.jpg) |
+| Guided photo wall selection and finish preview | [Desktop](review/wallpaper-my-room/photo-editor.jpg) / [Phone](review/wallpaper-my-room/photo-editor-phone.jpg) |
+
+All review imagery uses original generated fixtures. Supplier studies and customer files are excluded. Hosted compute, storage/transfer, payment fees, failure allowance and support costs are still unmeasured; the retail price and spending settings remain unset. The observed local render is not a production cost quotation or service guarantee.
