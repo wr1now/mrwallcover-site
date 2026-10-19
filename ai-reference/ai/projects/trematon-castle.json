@@ -1,0 +1,2378 @@
+{
+  "schemaVersion": "1.2",
+  "resourceReviewed": "2026-10-10",
+  "url": "https://www.mrwallcover.com/ai/projects/trematon-castle.json",
+  "sourceUrl": "https://www.mrwallcover.com/projects/trematon-castle/",
+  "publisher": {
+    "name": "Mr Wallcover",
+    "url": "https://www.mrwallcover.com"
+  },
+  "fieldNotes": {
+    "projectDates": "The Year field from the published project page’s At a glance record, where available, or its published project period. It is separate from the publication and update dates of that page.",
+    "nullValues": "A null value means the information is not recorded in this published record.",
+    "references": "Links cited in the published record or its photograph credits. They provide building, material or image context; they do not independently confirm the installation role.",
+    "photographs": "Photograph credits are reproduced as recorded. A picture of a venue illustrates its setting; the written project record defines the installation role.",
+    "materials": "A material name records a product installed on that project. It does not establish maker approval, accreditation or endorsement.",
+    "standardGlance": "The same seven public fields as the project page’s At a glance definition list. Materials include the published wallcovering names and any additional makers or products in that list, preserving their recorded wording.",
+    "installationRecord": "Installation roles, methods and outcomes are reported by Mr Wallcover in its own published case studies. Extracts retain the source wording with Markdown presentation removed. External references provide context, not independent confirmation of the installation role.",
+    "pageContent": "The complete published main content, generated from the final canonical HTML: Markdown, headings, links, image descriptions and captions, diagrams, film references, structured data and source dates. It matches the corresponding page in /ai/pages.json. Media links are references, not transcripts or interpretations of the visual content.",
+    "formats": "Each project links to its canonical HTML, Markdown twin and individual JSON record. The aggregate includes the same complete records; individual JSON addresses allow a reader to retrieve one project at a time."
+  },
+  "project": {
+    "id": "https://www.mrwallcover.com/projects/trematon-castle/#project",
+    "slug": "trematon-castle",
+    "title": "Castle of Trematon, Cornwall",
+    "url": "https://www.mrwallcover.com/projects/trematon-castle/",
+    "recordType": "case-study",
+    "role": "Wallcovering installation contractor across the Georgian house and estate",
+    "client": "Trematon Castle",
+    "location": "Castle of Trematon, near Saltash, Cornwall",
+    "projectDates": "2019–2022",
+    "summary": "Nearly three years inside a Norman castle's Georgian heart, hanging the prints of the house that made maximalism modern.",
+    "materials": [
+      "House of Hackney – PLANTASIA",
+      "House of Hackney – GAIA, Prussian Blue",
+      "House of Hackney – FLORA DELANICA",
+      "House of Hackney – COSMOS, Celestial Blue",
+      "House of Hackney – FLORA FANTASIA, Noir Stripe and Ecru",
+      "House of Hackney – ARTEMIS",
+      "House of Hackney – HOLLYHOCKS",
+      "Lincrusta heritage relief wallcovering"
+    ],
+    "standardGlance": [
+      {
+        "label": "Client",
+        "value": "Trematon Castle"
+      },
+      {
+        "label": "Designer",
+        "value": null
+      },
+      {
+        "label": "Main contractor",
+        "value": null
+      },
+      {
+        "label": "Maker and paper",
+        "value": "House of Hackney – PLANTASIA; House of Hackney – GAIA, Prussian Blue; House of Hackney – FLORA DELANICA; House of Hackney – COSMOS, Celestial Blue; House of Hackney – FLORA FANTASIA, Noir Stripe and Ecru; House of Hackney – ARTEMIS; House of Hackney – HOLLYHOCKS; Lincrusta heritage relief wallcovering"
+      },
+      {
+        "label": "Area or rooms",
+        "value": null
+      },
+      {
+        "label": "Scope",
+        "value": "Wallcovering installation contractor across the Georgian house and estate"
+      },
+      {
+        "label": "Year",
+        "value": "2019–2022"
+      }
+    ],
+    "published": "2026-10-09",
+    "updated": "2026-10-11",
+    "references": [
+      "https://www.houseofhackney.com/products/plantasia-wallpaper-sage",
+      "https://www.houseofhackney.com/products/gaia-wallpaper-prussian-blue",
+      "https://www.houseofhackney.com/products/flora-delanica-wallpaper-clay",
+      "https://www.houseofhackney.com/products/cosmos-wallpaper-celestial-blue",
+      "https://www.houseofhackney.com/products/flora-fantasia-wallpaper-noir-stripe",
+      "https://www.houseofhackney.com/products/artemis-wallpaper-petrol",
+      "https://www.houseofhackney.com/products/hollyhocks-wallpaper-summer",
+      "https://www.lincrusta.com/",
+      "https://www.houseofhackney.com/products/flora-fantasia-wallpaper-ecru",
+      "https://www.houseofhackney.com/products/artemis-wallpaper-blush",
+      "https://www.houseofhackney.com/products/floralia-wallpaper-ecru",
+      "https://www.houseofhackney.com/products/galanthi-wallpaper-viridis",
+      "https://www.houseofhackney.com/products/phantasia-wallpaper-selenite-orange",
+      "https://www.houseofhackney.com/products/trematonia-wallpaper-ecru",
+      "https://www.instagram.com/mrwallcover/",
+      "https://www.instagram.com/p/CWksjiaKBnq/",
+      "https://www.instagram.com/p/CW5IdnPKgTP/"
+    ],
+    "installationRecord": {
+      "basis": "Company-reported project record",
+      "sourceUrl": "https://www.mrwallcover.com/projects/trematon-castle/",
+      "sections": [
+        {
+          "heading": "At a glance",
+          "kind": "scope",
+          "text": "- Client: Trematon Castle\n- Location: Castle of Trematon, above the Lynher and Tamar near Saltash, Cornwall\n- Years: 2019–2022. Our own site photographs run from 24 April 2019 to 7 January 2022\n- Role: Wallcovering installation across the house and estate\n- Wallcoverings: House of Hackney PLANTASIA, GAIA Prussian Blue, FLORA DELANICA, COSMOS, FLORA FANTASIA, ARTEMIS, HOLLYHOCKS, plus heritage Lincrusta relief\n- Scope: strip-out and wall preparation, lining, papered ceilings including the atrium ceiling around its oval lantern, large-scale mural setting-out, pattern-matched full-height drops in bedrooms, bathrooms and a powder room, and laser-aligned Lincrusta relief"
+        },
+        {
+          "heading": "The brief",
+          "kind": "scope",
+          "text": "To hang House of Hackney wallpapers across the Georgian house. That meant large-scale murals, densely drawn florals and ceiling-to-ceiling \"print drenching\", in a house where every wall is a little out of true and every ceiling a little out of level."
+        },
+        {
+          "heading": "Our approach",
+          "kind": "approach",
+          "text": "Strip-out and preparation. Our photographs from 2019 and early 2020 show rooms taken back to bare plaster, old finishes scraped off and the atrium stripped and lined. Reinforced lining materials (Wallrock and Anaglypta cartons appear on site in June 2019) were used to give the hand-printed papers a true, stable ground.\n\nCeilings as a fifth wall. Several rooms were papered overhead. That includes the skylit atrium, where the print had to be cut around a decorative oval lantern and a chandelier rose, and the small box room, papered on all four walls and the ceiling.\n\nMurals and setting-out. PLANTASIA is a panoramic forest landscape that does not forgive an error. Each drop was set out to plan, and photographs from June 2020 show the crew working on ladders across the full height of the room.\n\nPattern and seam control. Digitally printed papers in deep, saturated colours were batch-checked from the roll labels, and pattern matches were carried across corners, chimney breasts and door heads.\n\nHeritage relief. In November 2021 the team installed Lincrusta, the embossed heritage wallcovering made since 1877. Panels were laid out on the table, then hung to a laser line for perfect vertical alignment.\n\nLiving house, long programme. The work ran in phases between 2019 and 2022, around a family home, a working estate and a house that was opening its doors to guests."
+        },
+        {
+          "heading": "Outcome",
+          "kind": "outcome",
+          "text": "A Georgian house within a Norman castle, dressed wall by wall and ceiling by ceiling in the prints of the brand that lives there, across nearly three years of phased work. For a wallcovering contractor there are few sterner tests than hanging a designer's own paper in the designer's own home."
+        }
+      ]
+    },
+    "photographs": [
+      {
+        "id": "trematon-01",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-01-2400.webp",
+        "alt": "Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-03",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-03-1600.webp",
+        "alt": "PLANTASIA panoramic mural part-hung on a full-height wall at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-11",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-11-1600.webp",
+        "alt": "Terracotta floral wallpaper on a fireplace wall at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-16",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-16-1600.webp",
+        "alt": "Papered atrium ceiling around an oval skylight at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-13",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-13-1600.webp",
+        "alt": "Small box room at the Castle of Trematon papered on the walls and ceiling.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-18",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-18-1600.webp",
+        "alt": "Lincrusta relief wallcovering hung to a laser line at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-06",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-06-1600.webp",
+        "alt": "Close view of a celestial blue wallpaper at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-07",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-07-1600.webp",
+        "alt": "Close view of a dark floral stripe wallpaper hung at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-08",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-08-1600.webp",
+        "alt": "Powder room at the Castle of Trematon papered in a floral stripe.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-09",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-09-1600.webp",
+        "alt": "Bathroom with a roll-top bath and floral stripe wallpaper at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-10",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-10-1600.webp",
+        "alt": "Bedroom at the Castle of Trematon being papered in a pale floral design.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-12",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-12-1600.webp",
+        "alt": "Terracotta floral wallpaper being hung at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-14",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-14-1600.webp",
+        "alt": "Close view of a hollyhock wallpaper at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-15",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-15-1600.webp",
+        "alt": "Bedroom at the Castle of Trematon in a large floral wallpaper.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-17",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-17-1600.webp",
+        "alt": "Papered atrium ceiling with a chandelier at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-19",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-19-1600.webp",
+        "alt": "Lincrusta embossed relief panel at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-21",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-21-1600.webp",
+        "alt": "Floral wallpaper on a ceiling at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-23",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-23-1600.webp",
+        "alt": "Gothic-style bed against a dark floral wallpaper at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-24",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-24-1600.webp",
+        "alt": "Atrium at the Castle of Trematon stripped and lined before papering.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-25",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-25-1600.webp",
+        "alt": "The Georgian house within the walls of the Castle of Trematon, Cornwall.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-26",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-26-1600.webp",
+        "alt": "The Norman keep of the Castle of Trematon seen from the house.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-04",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-04-1600.webp",
+        "alt": "Roll label for House of Hackney PLANTASIA wallpaper on site at the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-05",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-05-1600.webp",
+        "alt": "Roll label for House of Hackney GAIA wallpaper in Prussian Blue, delivered to the Castle of Trematon.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-20",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-20-1600.webp",
+        "alt": "Lincrusta leaflet on site at the Castle of Trematon, November 2021.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-01",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-01-1440.webp",
+        "alt": "The Georgian house at Trematon Castle, Cornwall, under a blue sky.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-02",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-02-1440.webp",
+        "alt": "Gardens at Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-03",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-03-1440.webp",
+        "alt": "Old stone fireplace at Trematon Castle before restoration.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-04",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-04-1440.webp",
+        "alt": "Faded red embroidered textile hanging at Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-06",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-06-1440.webp",
+        "alt": "Stone arched gateway at Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-08",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-08-1440.webp",
+        "alt": "Trematon Castle bedroom with a large floral House of Hackney wallpaper and a four-poster bed.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-09",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-09-1440.webp",
+        "alt": "Ceiling and wall prepared with lining paper at Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-11",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-11-1440.webp",
+        "alt": "Pink basin and wall light against a striped floral wallpaper, Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-12",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-12-1440.webp",
+        "alt": "'Castle of Trematon' sign at the entrance to the estate.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-13",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-13-1440.webp",
+        "alt": "The Gate House at Trematon Castle lit at night.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-14",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-14-1440.webp",
+        "alt": "Arched alcove papered in a pale grey leaf-pattern wallpaper, Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-15",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-15-1440.webp",
+        "alt": "Close-up of grey-green leaf-pattern wallpaper in an arch, the Castle of Trematon, Cornwall.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-17",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-17-1440.webp",
+        "alt": "Interior of the House of Hackney-designed caravan at Trematon Castle with patterned walls.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-18",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-18-1440.webp",
+        "alt": "Caravan bedroom with floral wallpaper and a window, Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-19",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-19-1440.webp",
+        "alt": "Caravan dining nook with patterned wallpaper and yellow upholstery, Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-20",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-20-1440.webp",
+        "alt": "Caravan interior with floral wallpaper and fitted seating, Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-21",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-21-1440.webp",
+        "alt": "Ceiling of a stair hall papered in a dark ornamental House of Hackney design, Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-22",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-22-1440.webp",
+        "alt": "Ornate mirror on a striped floral wallpaper, Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-23",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-23-1440.webp",
+        "alt": "Close-up of a striped floral wallpaper with blooms and leaves, the Castle of Trematon, Cornwall.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-24",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-24-1440.webp",
+        "alt": "Fringed table lamp against a red floral wallpaper, the Castle of Trematon, Cornwall.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-25",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-25-1440.webp",
+        "alt": "Bathroom with floral wallpaper, sash window and bath, Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-26",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-26-1440.webp",
+        "alt": "Bathroom mirror and wall lights on a blue striped floral wallpaper, Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-27",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-27-1440.webp",
+        "alt": "Sitting room with fully papered walls and ceiling, Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-28",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-28-1440.webp",
+        "alt": "Curved staircase wall during Lincrusta installation, Trematon Castle.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "trematon-ig-29",
+        "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-29-1440.webp",
+        "alt": "A length of Lincrusta relief panel offered up to the wall with a green laser line for setting out, Trematon Castle, November 2021.",
+        "credit": null,
+        "sourceUrls": []
+      }
+    ],
+    "formats": {
+      "html": "https://www.mrwallcover.com/projects/trematon-castle/",
+      "markdown": "https://www.mrwallcover.com/projects/trematon-castle/index.md",
+      "json": "https://www.mrwallcover.com/ai/projects/trematon-castle.json"
+    },
+    "pageContent": {
+      "id": "https://www.mrwallcover.com/projects/trematon-castle/",
+      "url": "https://www.mrwallcover.com/projects/trematon-castle/",
+      "path": "/projects/trematon-castle/",
+      "title": "Castle of Trematon, Cornwall | Case Study | Mr Wallcover",
+      "description": "Wallcovering installation contractor across the Georgian house and estate at Castle of Trematon, Cornwall, 2019–2022. Nearly three years inside a Norman…",
+      "language": "en-GB",
+      "author": "Dorin Burcus",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "formats": {
+        "html": "https://www.mrwallcover.com/projects/trematon-castle/",
+        "markdown": "https://www.mrwallcover.com/projects/trematon-castle/index.md",
+        "json": "https://www.mrwallcover.com/ai/pages/projects/trematon-castle/index.json",
+        "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/103"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "id": null,
+          "text": "Castle of Trematon, Cornwall"
+        },
+        {
+          "level": 2,
+          "id": "glance-heading",
+          "text": "At a glance"
+        },
+        {
+          "level": 2,
+          "id": "at-a-glance",
+          "text": "At a glance"
+        },
+        {
+          "level": 2,
+          "id": "the-castle",
+          "text": "The castle"
+        },
+        {
+          "level": 2,
+          "id": "the-brief",
+          "text": "The brief"
+        },
+        {
+          "level": 2,
+          "id": "our-approach",
+          "text": "Our approach"
+        },
+        {
+          "level": 2,
+          "id": "materials",
+          "text": "Materials"
+        },
+        {
+          "level": 2,
+          "id": "more-from-site",
+          "text": "More from site"
+        },
+        {
+          "level": 2,
+          "id": "outcome",
+          "text": "Outcome"
+        },
+        {
+          "level": 2,
+          "id": "gallery-heading",
+          "text": "Photographs"
+        },
+        {
+          "level": 2,
+          "id": "method-heading",
+          "text": "The same standards, on every commission."
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Survey and scope, room by room"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Preparation decides the finish"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Protection and containment"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Batch and shade control"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Set out from the room's focal points"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "One team, then the return visit"
+        }
+      ],
+      "markdown": "Castle of Trematon, near Saltash, Cornwall\n\n# Castle of Trematon, Cornwall\n\nNearly three years inside a Norman castle's Georgian heart, hanging the prints of the house that made maximalism modern.\n\n![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp)\n\n## At a glance\n\nClient, materials & project facts\n\n**Client**\n: Trematon Castle\n\n**Designer**\n: –Not recorded\n\n**Main contractor**\n: –Not recorded\n\n**Maker and paper**\n: House of Hackney – PLANTASIA; House of Hackney – GAIA, Prussian Blue; House of Hackney – FLORA DELANICA; House of Hackney – COSMOS, Celestial Blue; House of Hackney – FLORA FANTASIA, Noir Stripe and Ecru; House of Hackney – ARTEMIS; House of Hackney – HOLLYHOCKS; Lincrusta heritage relief wallcovering\n\n**Area or rooms**\n: –Not recorded\n\n**Scope**\n: Wallcovering installation contractor across the Georgian house and estate\n\n**Year**\n: 2019–2022\n\n## At a glance\n\n- **Client:** Trematon Castle\n- **Location:** Castle of Trematon, above the Lynher and Tamar near Saltash, Cornwall\n- **Years:** 2019–2022. Our own site photographs run from **24 April 2019 to 7 January 2022**\n- **Role:** Wallcovering installation across the house and estate\n- **Wallcoverings:** House of Hackney [PLANTASIA](https://www.houseofhackney.com/products/plantasia-wallpaper-sage), [GAIA Prussian Blue](https://www.houseofhackney.com/products/gaia-wallpaper-prussian-blue), [FLORA DELANICA](https://www.houseofhackney.com/products/flora-delanica-wallpaper-clay), [COSMOS](https://www.houseofhackney.com/products/cosmos-wallpaper-celestial-blue), [FLORA FANTASIA](https://www.houseofhackney.com/products/flora-fantasia-wallpaper-noir-stripe), [ARTEMIS](https://www.houseofhackney.com/products/artemis-wallpaper-petrol), [HOLLYHOCKS](https://www.houseofhackney.com/products/hollyhocks-wallpaper-summer), plus heritage [Lincrusta](https://www.lincrusta.com/) relief\n- **Scope:** strip-out and wall preparation, lining, papered ceilings including the atrium ceiling around its oval lantern, large-scale mural setting-out, pattern-matched full-height drops in bedrooms, bathrooms and a powder room, and laser-aligned Lincrusta relief\n\n## The castle\n\nTrematon is one of Cornwall’s oldest fortifications: a Norman motte-and-bailey, built in 1068 and granted to the Duchy of Cornwall in 1337. The Duchy still owns it today. A 13th-century gatehouse still guards the bailey. Within the walls, an 11,000 sq ft Georgian manor with nine bedrooms was added in the early 1800s, its windows looking out over nine acres of gardens and the estuary beyond.\n\nThe house has beautiful proportions, and it needed a lot of restoration: paint stripped back to a blank canvas, then a multi-year, foundational renovation. Trematon is also the setting of House of Hackney’s campaigns and gives its name to the TREMATONIA print.\n\n## The brief\n\nTo hang House of Hackney wallpapers across the Georgian house. That meant large-scale murals, densely drawn florals and ceiling-to-ceiling “print drenching”, in a house where every wall is a little out of true and every ceiling a little out of level.\n\n## Our approach\n\n**Strip-out and preparation.** Our photographs from 2019 and early 2020 show rooms taken back to bare plaster, old finishes scraped off and the atrium stripped and lined. Reinforced lining materials (Wallrock and Anaglypta cartons appear on site in June 2019) were used to give the hand-printed papers a true, stable ground.\n\n**Ceilings as a fifth wall.** Several rooms were papered overhead. That includes the skylit atrium, where the print had to be cut around a decorative oval lantern and a chandelier rose, and the small box room, papered on all four walls and the ceiling.\n\n**Murals and setting-out.** PLANTASIA is a panoramic forest landscape that does not forgive an error. Each drop was set out to plan, and photographs from June 2020 show the crew working on ladders across the full height of the room.\n\n**Pattern and seam control.** Digitally printed papers in deep, saturated colours were batch-checked from the roll labels, and pattern matches were carried across corners, chimney breasts and door heads.\n\n**Heritage relief.** In November 2021 the team installed Lincrusta, the embossed heritage wallcovering made since 1877. Panels were laid out on the table, then hung to a laser line for perfect vertical alignment.\n\n**Living house, long programme.** The work ran in phases between 2019 and 2022, around a family home, a working estate and a house that was opening its doors to guests.\n\n## Materials\n\n- **[PLANTASIA](https://www.houseofhackney.com/products/plantasia-wallpaper-sage)**: panoramic forest-landscape mural\n- **[GAIA – Prussian Blue](https://www.houseofhackney.com/products/gaia-wallpaper-prussian-blue)**\n- ** [FLORA DELANICA](https://www.houseofhackney.com/products/flora-delanica-wallpaper-clay)** (Clay) (identified from our site photographs)\n- **[COSMOS – Celestial Blue](https://www.houseofhackney.com/products/cosmos-wallpaper-celestial-blue)** (identified from our site photographs)\n- **[FLORA FANTASIA – Noir Stripe](https://www.houseofhackney.com/products/flora-fantasia-wallpaper-noir-stripe)** (identified from our site photographs)\n- **[FLORA FANTASIA – Ecru](https://www.houseofhackney.com/products/flora-fantasia-wallpaper-ecru)** (identified from our site photographs)\n- **[ARTEMIS](https://www.houseofhackney.com/products/artemis-wallpaper-petrol)** (Petrol / [Blush](https://www.houseofhackney.com/products/artemis-wallpaper-blush)) (identified from our site photographs)\n- **[HOLLYHOCKS](https://www.houseofhackney.com/products/hollyhocks-wallpaper-summer)** (identified from our site photographs)\n- **[Lincrusta](https://www.lincrusta.com/)** heritage relief (not House of Hackney)\n\nOther House of Hackney designs that the press records at Trematon, but which we have **not** matched to our photos: [FLORALIA](https://www.houseofhackney.com/products/floralia-wallpaper-ecru) (bedroom, per AD), [GALANTHI](https://www.houseofhackney.com/products/galanthi-wallpaper-viridis) (guest bedroom, per AD) and [PHANTASIA – Selenite Orange](https://www.houseofhackney.com/products/phantasia-wallpaper-selenite-orange) (powder room, per AD). The brand’s [TREMATONIA](https://www.houseofhackney.com/products/trematonia-wallpaper-ecru) print is named after the castle; we have not seen it in our photos.\n\n*Since we completed, some rooms have been refreshed with newer House of Hackney designs. Today’s interiors will not all match our photographs.*\n\n## More from site\n\nThe later photographs on this page are our own, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), between June 2019 and November 2021: the house and the castle walls, rooms during strip-out, finished bedrooms and bathrooms, the caravan papered and fitted out to a House of Hackney design in May 2021, and the Lincrusta going up the curved stair walls in November 2021 ([CWksjiaKBnq](https://www.instagram.com/p/CWksjiaKBnq/)), set out panel by panel with a laser line ([CW5IdnPKgTP](https://www.instagram.com/p/CW5IdnPKgTP/)).\n\n## Outcome\n\nA Georgian house within a Norman castle, dressed wall by wall and ceiling by ceiling in the prints of the brand that lives there, across nearly three years of phased work. For a wallcovering contractor there are few sterner tests than hanging a designer’s own paper in the designer’s own home.\n\n## Photographs\n\n![PLANTASIA panoramic mural part-hung on a full-height wall at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-03-800.webp)\n\n![Terracotta floral wallpaper on a fireplace wall at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-11-800.webp)\n\n![Papered atrium ceiling around an oval skylight at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-16-800.webp)\n\n![Small box room at the Castle of Trematon papered on the walls and ceiling.](https://www.mrwallcover.com/media/img/r/trematon-13-800.webp)\n\n![Lincrusta relief wallcovering hung to a laser line at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-18-800.webp)\n\n![Close view of a celestial blue wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-06-800.webp)\n\n![Close view of a dark floral stripe wallpaper hung at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-07-800.webp)\n\n![Powder room at the Castle of Trematon papered in a floral stripe.](https://www.mrwallcover.com/media/img/r/trematon-08-800.webp)\n\n![Bathroom with a roll-top bath and floral stripe wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-09-800.webp)\n\n![Bedroom at the Castle of Trematon being papered in a pale floral design.](https://www.mrwallcover.com/media/img/r/trematon-10-800.webp)\n\n![Terracotta floral wallpaper being hung at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-12-800.webp)\n\n![Close view of a hollyhock wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-14-800.webp)\n\n![Bedroom at the Castle of Trematon in a large floral wallpaper.](https://www.mrwallcover.com/media/img/r/trematon-15-800.webp)\n\n![Papered atrium ceiling with a chandelier at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-17-800.webp)\n\n![Lincrusta embossed relief panel at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-19-800.webp)\n\n![Floral wallpaper on a ceiling at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-21-800.webp)\n\n![Gothic-style bed against a dark floral wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-23-800.webp)\n\n![Atrium at the Castle of Trematon stripped and lined before papering.](https://www.mrwallcover.com/media/img/r/trematon-24-800.webp)\n\n![The Georgian house within the walls of the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-25-800.webp)\n\n![The Norman keep of the Castle of Trematon seen from the house.](https://www.mrwallcover.com/media/img/r/trematon-26-800.webp)\n\n![Roll label for House of Hackney PLANTASIA wallpaper on site at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-04-800.webp)\n\n![Roll label for House of Hackney GAIA wallpaper in Prussian Blue, delivered to the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-05-800.webp)\n\n![Lincrusta leaflet on site at the Castle of Trematon, November 2021.](https://www.mrwallcover.com/media/img/r/trematon-20-800.webp)\n\n![The Georgian house at Trematon Castle, Cornwall, under a blue sky.](https://www.mrwallcover.com/media/img/r/trematon-ig-01-800.webp)\n\n![Gardens at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-02-800.webp)\n\n![Old stone fireplace at Trematon Castle before restoration.](https://www.mrwallcover.com/media/img/r/trematon-ig-03-800.webp)\n\n![Faded red embroidered textile hanging at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-04-800.webp)\n\n![Stone arched gateway at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-06-800.webp)\n\n![Trematon Castle bedroom with a large floral House of Hackney wallpaper and a four-poster bed.](https://www.mrwallcover.com/media/img/r/trematon-ig-08-800.webp)\n\n![Ceiling and wall prepared with lining paper at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-09-800.webp)\n\n![Pink basin and wall light against a striped floral wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-11-800.webp)\n\n!['Castle of Trematon' sign at the entrance to the estate.](https://www.mrwallcover.com/media/img/r/trematon-ig-12-800.webp)\n\n![The Gate House at Trematon Castle lit at night.](https://www.mrwallcover.com/media/img/r/trematon-ig-13-800.webp)\n\n![Arched alcove papered in a pale grey leaf-pattern wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-14-800.webp)\n\n![Close-up of grey-green leaf-pattern wallpaper in an arch, the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-ig-15-800.webp)\n\n![Interior of the House of Hackney-designed caravan at Trematon Castle with patterned walls.](https://www.mrwallcover.com/media/img/r/trematon-ig-17-800.webp)\n\n![Caravan bedroom with floral wallpaper and a window, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-18-800.webp)\n\n![Caravan dining nook with patterned wallpaper and yellow upholstery, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-19-800.webp)\n\n![Caravan interior with floral wallpaper and fitted seating, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-20-800.webp)\n\n![Ceiling of a stair hall papered in a dark ornamental House of Hackney design, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-21-800.webp)\n\n![Ornate mirror on a striped floral wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-22-800.webp)\n\n![Close-up of a striped floral wallpaper with blooms and leaves, the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-ig-23-800.webp)\n\n![Fringed table lamp against a red floral wallpaper, the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-ig-24-800.webp)\n\n![Bathroom with floral wallpaper, sash window and bath, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-25-800.webp)\n\n![Bathroom mirror and wall lights on a blue striped floral wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-26-800.webp)\n\n![Sitting room with fully papered walls and ceiling, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-27-800.webp)\n\n![Curved staircase wall during Lincrusta installation, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-28-800.webp)\n\n![A length of Lincrusta relief panel offered up to the wall with a green laser line for setting out, Trematon Castle, November 2021.](https://www.mrwallcover.com/media/img/r/trematon-ig-29-800.webp)\n\nHow the commission ran\n\n## The same standards, on every commission.\n\nWhether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.\n\n01\n\n### Survey and scope, room by room\n\nWe measure the wall that will actually be hung, allow for the repeat and the wastage, and write a scope of works room by room before anyone orders paper.\n\n02\n\n### Preparation decides the finish\n\nWalls are filled, made good and primed until they are true. If a wall is not ready for the material specified, we say so before the last drop is ordered.\n\n03\n\n### Protection and containment\n\nFloors, furniture and finished joinery are protected as part of the hang. Work is contained and the place is left tidy each evening. In a home we are visitors; in a hotel we work around the house.\n\n04\n\n### Batch and shade control\n\nDeliveries are checked against the measure, and batches and shading are managed so that a corridor of rooms reads as one surface.\n\n05\n\n### Set out from the room's focal points\n\nPattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.\n\n06\n\n### One team, then the return visit\n\nThe people who start are the people who finish. Four to six weeks after completion we come back to look at every seam and edge, and the workmanship is guaranteed for twelve months.\n\n[See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)\n\nBy [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026\n",
+      "links": [
+        {
+          "url": "https://www.houseofhackney.com/products/plantasia-wallpaper-sage",
+          "text": "PLANTASIA"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/gaia-wallpaper-prussian-blue",
+          "text": "GAIA Prussian Blue"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/flora-delanica-wallpaper-clay",
+          "text": "FLORA DELANICA"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/cosmos-wallpaper-celestial-blue",
+          "text": "COSMOS"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/flora-fantasia-wallpaper-noir-stripe",
+          "text": "FLORA FANTASIA"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/artemis-wallpaper-petrol",
+          "text": "ARTEMIS"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/hollyhocks-wallpaper-summer",
+          "text": "HOLLYHOCKS"
+        },
+        {
+          "url": "https://www.lincrusta.com/",
+          "text": "Lincrusta"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/gaia-wallpaper-prussian-blue",
+          "text": "GAIA – Prussian Blue"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/cosmos-wallpaper-celestial-blue",
+          "text": "COSMOS – Celestial Blue"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/flora-fantasia-wallpaper-noir-stripe",
+          "text": "FLORA FANTASIA – Noir Stripe"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/flora-fantasia-wallpaper-ecru",
+          "text": "FLORA FANTASIA – Ecru"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/artemis-wallpaper-blush",
+          "text": "Blush"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/floralia-wallpaper-ecru",
+          "text": "FLORALIA"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/galanthi-wallpaper-viridis",
+          "text": "GALANTHI"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/phantasia-wallpaper-selenite-orange",
+          "text": "PHANTASIA – Selenite Orange"
+        },
+        {
+          "url": "https://www.houseofhackney.com/products/trematonia-wallpaper-ecru",
+          "text": "TREMATONIA"
+        },
+        {
+          "url": "https://www.instagram.com/mrwallcover/",
+          "text": "@mrwallcover"
+        },
+        {
+          "url": "https://www.instagram.com/p/CWksjiaKBnq/",
+          "text": "CWksjiaKBnq"
+        },
+        {
+          "url": "https://www.instagram.com/p/CW5IdnPKgTP/",
+          "text": "CW5IdnPKgTP"
+        },
+        {
+          "url": "https://www.mrwallcover.com/details/",
+          "text": "See the finish up close: seams, internal corners, edges and joins from our own installations"
+        },
+        {
+          "url": "https://www.mrwallcover.com/about/#dorin",
+          "text": "Dorin Burcus"
+        },
+        {
+          "url": "https://www.mrwallcover.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/",
+          "text": "Work"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/browns-hotel-mayfair/",
+          "text": "Brown's Hotel, Mayfair"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/raffles-london-the-owo/",
+          "text": "Raffles London at The OWO, Whitehall"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+          "text": "Four Seasons Hotel London at Ten Trinity Square"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/old-bailey-hotel/",
+          "text": "Hyde London City (the Old Bailey Hotel)"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/doubletree-west-end/",
+          "text": "DoubleTree by Hilton London – West End"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+          "text": "DoubleTree by Hilton London – Victoria"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/biltmore-mayfair/",
+          "text": "The Biltmore Mayfair"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/",
+          "text": "House of Hackney showroom, St Michael's Clergy House"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/penny-morrison-showroom/",
+          "text": "Penny Morrison showroom, Chelsea"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/pimlico-st-georges-square/",
+          "text": "St George's Square, Pimlico"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/inverness-terrace/",
+          "text": "Inverness Terrace, Bayswater"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/north-london-residence/",
+          "text": "A Georgian house in North London"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/",
+          "text": "Ahluwalia x Calico Wallpaper: 'Estuary' at Rosewood London"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/",
+          "text": "Calico Wallpaper x BEVERLY 1975: Cadence at The Lavery, Brompton Design District"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/calico-lee-broom-overture/",
+          "text": "Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroom"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/",
+          "text": "Hilton Garden Inn Silverstone"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/pendley-manor-hotel/",
+          "text": "Pendley Manor Hotel, Tring"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/hilton-london-metropole/",
+          "text": "Hilton London Metropole"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/novotel-london-canary-wharf/",
+          "text": "Novotel London Canary Wharf"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/huntsman-savile-row/",
+          "text": "Huntsman, Savile Row"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/",
+          "text": "Mercedes-AMG showroom, London"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/everyman-liverpool/",
+          "text": "Everyman cinema, Liverpool"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/oxygen-freejumping-the-o2/",
+          "text": "Oxygen Freejumping, The O2"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/masterpiece-london-2019/",
+          "text": "Masterpiece London 2019"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/private-residence-little-venice/",
+          "text": "Private residence, Little Venice"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/jumeirah-carlton-tower/",
+          "text": "Jumeirah Carlton Tower, Knightsbridge"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/",
+          "text": "Calico Wallpaper airside at Heathrow: a luxury fashion house's store, Terminal 4"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/imperfect-arches-external-corner-trim/",
+          "text": "How we solve imperfect arches: bespoke external-corner trim for wallcoverings"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/scp-showroom-pimlico/",
+          "text": "SCP showroom, Pimlico"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/tea-house-jaillon-studio/",
+          "text": "A tea house in West London, for Jaillon Studio"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/mural-installation/",
+          "text": "Mural installation"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+          "text": "Joinery wallcoverings & bespoke panels"
+        },
+        {
+          "url": "https://www.mrwallcover.com/aftercare/",
+          "text": "Aftercare"
+        },
+        {
+          "url": "https://www.mrwallcover.com/areas/mayfair/",
+          "text": "Wallpaper installation in Mayfair"
+        },
+        {
+          "url": "https://www.mrwallcover.com/areas/belgravia/",
+          "text": "Wallpaper installation in Belgravia"
+        },
+        {
+          "url": "https://www.mrwallcover.com/areas/chelsea/",
+          "text": "Wallpaper installation in Chelsea"
+        },
+        {
+          "url": "https://www.mrwallcover.com/contact/",
+          "text": "Request a quotation"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-01-800.webp",
+          "alt": "Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.",
+          "caption": null,
+          "width": 2400,
+          "height": 3200
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-03-800.webp",
+          "alt": "PLANTASIA panoramic mural part-hung on a full-height wall at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-11-800.webp",
+          "alt": "Terracotta floral wallpaper on a fireplace wall at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-16-800.webp",
+          "alt": "Papered atrium ceiling around an oval skylight at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 1600
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-13-800.webp",
+          "alt": "Small box room at the Castle of Trematon papered on the walls and ceiling.",
+          "caption": null,
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-18-800.webp",
+          "alt": "Lincrusta relief wallcovering hung to a laser line at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-06-800.webp",
+          "alt": "Close view of a celestial blue wallpaper at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-07-800.webp",
+          "alt": "Close view of a dark floral stripe wallpaper hung at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-08-800.webp",
+          "alt": "Powder room at the Castle of Trematon papered in a floral stripe.",
+          "caption": null,
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-09-800.webp",
+          "alt": "Bathroom with a roll-top bath and floral stripe wallpaper at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-10-800.webp",
+          "alt": "Bedroom at the Castle of Trematon being papered in a pale floral design.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-12-800.webp",
+          "alt": "Terracotta floral wallpaper being hung at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-14-800.webp",
+          "alt": "Close view of a hollyhock wallpaper at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-15-800.webp",
+          "alt": "Bedroom at the Castle of Trematon in a large floral wallpaper.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-17-800.webp",
+          "alt": "Papered atrium ceiling with a chandelier at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-19-800.webp",
+          "alt": "Lincrusta embossed relief panel at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-21-800.webp",
+          "alt": "Floral wallpaper on a ceiling at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-23-800.webp",
+          "alt": "Gothic-style bed against a dark floral wallpaper at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-24-800.webp",
+          "alt": "Atrium at the Castle of Trematon stripped and lined before papering.",
+          "caption": null,
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-25-800.webp",
+          "alt": "The Georgian house within the walls of the Castle of Trematon, Cornwall.",
+          "caption": null,
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-26-800.webp",
+          "alt": "The Norman keep of the Castle of Trematon seen from the house.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-04-800.webp",
+          "alt": "Roll label for House of Hackney PLANTASIA wallpaper on site at the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-05-800.webp",
+          "alt": "Roll label for House of Hackney GAIA wallpaper in Prussian Blue, delivered to the Castle of Trematon.",
+          "caption": null,
+          "width": 1600,
+          "height": 2133
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-20-800.webp",
+          "alt": "Lincrusta leaflet on site at the Castle of Trematon, November 2021.",
+          "caption": null,
+          "width": 1600,
+          "height": 2000
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-01-800.webp",
+          "alt": "The Georgian house at Trematon Castle, Cornwall, under a blue sky.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-02-800.webp",
+          "alt": "Gardens at Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-03-800.webp",
+          "alt": "Old stone fireplace at Trematon Castle before restoration.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-04-800.webp",
+          "alt": "Faded red embroidered textile hanging at Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-06-800.webp",
+          "alt": "Stone arched gateway at Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-08-800.webp",
+          "alt": "Trematon Castle bedroom with a large floral House of Hackney wallpaper and a four-poster bed.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-09-800.webp",
+          "alt": "Ceiling and wall prepared with lining paper at Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-11-800.webp",
+          "alt": "Pink basin and wall light against a striped floral wallpaper, Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-12-800.webp",
+          "alt": "'Castle of Trematon' sign at the entrance to the estate.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-13-800.webp",
+          "alt": "The Gate House at Trematon Castle lit at night.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-14-800.webp",
+          "alt": "Arched alcove papered in a pale grey leaf-pattern wallpaper, Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-15-800.webp",
+          "alt": "Close-up of grey-green leaf-pattern wallpaper in an arch, the Castle of Trematon, Cornwall.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-17-800.webp",
+          "alt": "Interior of the House of Hackney-designed caravan at Trematon Castle with patterned walls.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-18-800.webp",
+          "alt": "Caravan bedroom with floral wallpaper and a window, Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1436
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-19-800.webp",
+          "alt": "Caravan dining nook with patterned wallpaper and yellow upholstery, Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-20-800.webp",
+          "alt": "Caravan interior with floral wallpaper and fitted seating, Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1436
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-21-800.webp",
+          "alt": "Ceiling of a stair hall papered in a dark ornamental House of Hackney design, Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1800
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-22-800.webp",
+          "alt": "Ornate mirror on a striped floral wallpaper, Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1800
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-23-800.webp",
+          "alt": "Close-up of a striped floral wallpaper with blooms and leaves, the Castle of Trematon, Cornwall.",
+          "caption": null,
+          "width": 1440,
+          "height": 1800
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-24-800.webp",
+          "alt": "Fringed table lamp against a red floral wallpaper, the Castle of Trematon, Cornwall.",
+          "caption": null,
+          "width": 1440,
+          "height": 1800
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-25-800.webp",
+          "alt": "Bathroom with floral wallpaper, sash window and bath, Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1800
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-26-800.webp",
+          "alt": "Bathroom mirror and wall lights on a blue striped floral wallpaper, Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1800
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-27-800.webp",
+          "alt": "Sitting room with fully papered walls and ceiling, Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1800
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-28-800.webp",
+          "alt": "Curved staircase wall during Lincrusta installation, Trematon Castle.",
+          "caption": null,
+          "width": 1440,
+          "height": 1800
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-29-800.webp",
+          "alt": "A length of Lincrusta relief panel offered up to the wall with a green laser line for setting out, Trematon Castle, November 2021.",
+          "caption": null,
+          "width": 1440,
+          "height": 1800
+        }
+      ],
+      "diagrams": [],
+      "media": [],
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": [
+                "HomeAndConstructionBusiness",
+                "ProfessionalService"
+              ],
+              "@id": "https://www.mrwallcover.com/#business",
+              "name": "Mr Wallcover",
+              "url": "https://www.mrwallcover.com",
+              "image": "https://www.mrwallcover.com/og.jpg",
+              "logo": "https://www.mrwallcover.com/logo-512.png",
+              "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus, in the trade since 2012: survey to aftercare for hotels, homes and makers.",
+              "email": "info@mrwallcover.com",
+              "founder": {
+                "@id": "https://www.mrwallcover.com/about/#dorin"
+              },
+              "award": "Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "London",
+                "addressRegion": "Greater London",
+                "addressCountry": "GB"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "London"
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "London and the surrounding areas"
+                },
+                {
+                  "@type": "Country",
+                  "name": "United Kingdom",
+                  "description": "UK-wide for selected projects"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mayfair",
+                  "url": "https://www.mrwallcover.com/areas/mayfair/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Belgravia",
+                  "url": "https://www.mrwallcover.com/areas/belgravia/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Chelsea",
+                  "url": "https://www.mrwallcover.com/areas/chelsea/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Kensington",
+                  "url": "https://www.mrwallcover.com/areas/kensington/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "the City of London",
+                  "url": "https://www.mrwallcover.com/areas/city-of-london/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "the Cotswolds",
+                  "url": "https://www.mrwallcover.com/areas/cotswolds/"
+                }
+              ],
+              "slogan": "Premium wallcoverings services: surveying, management, supply, install and aftercare.",
+              "knowsAbout": [
+                "Wallpaper installation",
+                "Wallcovering installation for hotels",
+                "Grasscloth installation",
+                "Hand-painted wallcoverings",
+                "Acoustic wallcoverings",
+                "Silk wallcovering installation",
+                "Fabric walling",
+                "Wallpaper mural installation",
+                "Contract vinyl wallcoverings",
+                "Wallcoverings on joinery",
+                "Bespoke wallcovering panels",
+                "Architectural and furniture film wrapping",
+                "Window film installation"
+              ],
+              "sameAs": [
+                "https://www.instagram.com/mrwallcover/"
+              ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Mr Wallcover services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/#service",
+                      "name": "Hand-painted wallpaper installation",
+                      "serviceType": "Hand-painted wallpaper installation",
+                      "url": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/grasscloth-installation/#service",
+                      "name": "Grasscloth installation",
+                      "serviceType": "Grasscloth installation",
+                      "url": "https://www.mrwallcover.com/services/grasscloth-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/silk-wallcovering-installation/#service",
+                      "name": "Silk wallcovering installation",
+                      "serviceType": "Silk wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/silk-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/fabric-walling/#service",
+                      "name": "Fabric walling",
+                      "serviceType": "Fabric walling",
+                      "url": "https://www.mrwallcover.com/services/fabric-walling/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/#service",
+                      "name": "Hotel wallcovering installation",
+                      "serviceType": "Hotel wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/mural-installation/#service",
+                      "name": "Mural installation",
+                      "serviceType": "Mural installation",
+                      "url": "https://www.mrwallcover.com/services/mural-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/#service",
+                      "name": "Acoustic wallcovering installation",
+                      "serviceType": "Acoustic wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/architectural-film-wrapping/#service",
+                      "name": "Architectural & furniture film wrapping",
+                      "serviceType": "Architectural film installation",
+                      "url": "https://www.mrwallcover.com/services/architectural-film-wrapping/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/window-film/#service",
+                      "name": "Window film installation",
+                      "serviceType": "Window film installation",
+                      "url": "https://www.mrwallcover.com/services/window-film/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/#service",
+                      "name": "Joinery wallcoverings & bespoke panels",
+                      "serviceType": "Wallcovering on joinery and bespoke wall panels",
+                      "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/exterior-works/#service",
+                      "name": "Exterior works",
+                      "serviceType": "Exterior decorating",
+                      "url": "https://www.mrwallcover.com/services/exterior-works/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/#service",
+                      "name": "Commercial and showroom wallcovering installation",
+                      "serviceType": "Commercial wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  }
+                ]
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "info@mrwallcover.com",
+                "url": "https://www.mrwallcover.com/contact/",
+                "contactType": "quotations",
+                "areaServed": [
+                  {
+                    "@type": "City",
+                    "name": "London"
+                  },
+                  {
+                    "@type": "AdministrativeArea",
+                    "name": "London and the surrounding areas"
+                  },
+                  {
+                    "@type": "Country",
+                    "name": "United Kingdom",
+                    "description": "UK-wide for selected projects"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Mayfair",
+                    "url": "https://www.mrwallcover.com/areas/mayfair/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Belgravia",
+                    "url": "https://www.mrwallcover.com/areas/belgravia/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Chelsea",
+                    "url": "https://www.mrwallcover.com/areas/chelsea/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Kensington",
+                    "url": "https://www.mrwallcover.com/areas/kensington/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "the City of London",
+                    "url": "https://www.mrwallcover.com/areas/city-of-london/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "the Cotswolds",
+                    "url": "https://www.mrwallcover.com/areas/cotswolds/"
+                  }
+                ],
+                "availableLanguage": [
+                  "English"
+                ]
+              }
+            },
+            {
+              "@type": "Person",
+              "@id": "https://www.mrwallcover.com/about/#dorin",
+              "name": "Dorin Burcus",
+              "jobTitle": "Founder",
+              "url": "https://www.mrwallcover.com/about/",
+              "image": {
+                "@type": "ImageObject",
+                "url": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+                "contentUrl": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+                "creditText": "Dorin Burcus / Mr Wallcover",
+                "creator": {
+                  "@type": "Person",
+                  "@id": "https://www.mrwallcover.com/about/#dorin",
+                  "name": "Dorin Burcus",
+                  "url": "https://www.mrwallcover.com/about/"
+                },
+                "copyrightNotice": "© Mr Wallcover",
+                "license": "https://www.mrwallcover.com/image-use/",
+                "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+              },
+              "worksFor": {
+                "@id": "https://www.mrwallcover.com/#business"
+              }
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://www.mrwallcover.com/#website",
+              "url": "https://www.mrwallcover.com",
+              "name": "Mr Wallcover",
+              "inLanguage": "en-GB",
+              "publisher": {
+                "@id": "https://www.mrwallcover.com/#business"
+              }
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://www.mrwallcover.com/projects/trematon-castle/#webpage",
+              "url": "https://www.mrwallcover.com/projects/trematon-castle/",
+              "name": "Castle of Trematon, Cornwall | Case Study | Mr Wallcover",
+              "description": "Wallcovering installation contractor across the Georgian house and estate at Castle of Trematon, Cornwall, 2019–2022. Nearly three years inside a Norman…",
+              "inLanguage": "en-GB",
+              "isPartOf": {
+                "@id": "https://www.mrwallcover.com/#website"
+              },
+              "about": {
+                "@id": "https://www.mrwallcover.com/#business"
+              },
+              "primaryImageOfPage": {
+                "@type": "ImageObject",
+                "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-01-preview.jpg",
+                "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-01-preview.jpg",
+                "creditText": "Dorin Burcus / Mr Wallcover",
+                "creator": {
+                  "@type": "Person",
+                  "@id": "https://www.mrwallcover.com/about/#dorin",
+                  "name": "Dorin Burcus",
+                  "url": "https://www.mrwallcover.com/about/"
+                },
+                "copyrightNotice": "© Mr Wallcover",
+                "license": "https://www.mrwallcover.com/image-use/",
+                "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+              }
+            },
+            {
+              "@type": "Article",
+              "@id": "https://www.mrwallcover.com/projects/trematon-castle/#article",
+              "headline": "Castle of Trematon, Cornwall",
+              "description": "Wallcovering installation contractor across the Georgian house and estate at Castle of Trematon, Cornwall, 2019–2022. Nearly three years inside a Norman…",
+              "url": "https://www.mrwallcover.com/projects/trematon-castle/",
+              "mainEntityOfPage": {
+                "@id": "https://www.mrwallcover.com/projects/trematon-castle/#webpage"
+              },
+              "inLanguage": "en-GB",
+              "datePublished": "2026-10-09",
+              "dateModified": "2026-10-11",
+              "author": {
+                "@type": "Person",
+                "@id": "https://www.mrwallcover.com/about/#dorin",
+                "name": "Dorin Burcus",
+                "url": "https://www.mrwallcover.com/about/"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "@id": "https://www.mrwallcover.com/#business",
+                "name": "Mr Wallcover",
+                "url": "https://www.mrwallcover.com",
+                "logo": "https://www.mrwallcover.com/logo-512.png"
+              },
+              "image": [
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-01-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-01-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-03-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-03-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-11-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-11-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-16-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-16-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-13-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-13-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-18-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-18-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-06-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-06-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-07-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-07-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-08-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-08-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-09-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-09-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-10-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-10-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-12-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-12-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-14-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-14-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-15-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-15-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-17-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-17-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-19-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-19-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-21-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-21-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-23-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-23-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-24-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-24-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-25-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-25-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-26-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-26-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-04-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-04-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-05-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-05-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/thumbs/trematon-20-preview.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/thumbs/trematon-20-preview.jpg",
+                  "creditText": "Dorin Burcus / Mr Wallcover",
+                  "creator": {
+                    "@type": "Person",
+                    "@id": "https://www.mrwallcover.com/about/#dorin",
+                    "name": "Dorin Burcus",
+                    "url": "https://www.mrwallcover.com/about/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-01-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-01-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-02-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-02-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-03-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-03-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-04-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-04-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-06-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-06-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-08-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-08-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-09-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-09-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-11-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-11-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-12-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-12-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-13-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-13-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-14-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-14-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-15-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-15-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-17-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-17-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-18-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-18-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-19-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-19-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-20-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-20-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-21-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-21-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-22-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-22-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-23-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-23-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-24-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-24-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-25-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-25-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-26-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-26-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-27-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-27-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-28-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-28-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/trematon-ig-29-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/trematon-ig-29-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                }
+              ],
+              "about": {
+                "@type": "CreativeWork",
+                "@id": "https://www.mrwallcover.com/projects/trematon-castle/#project",
+                "name": "Castle of Trematon, Cornwall",
+                "creator": {
+                  "@id": "https://www.mrwallcover.com/#business"
+                },
+                "locationCreated": {
+                  "@type": "Place",
+                  "name": "Castle of Trematon, near Saltash, Cornwall"
+                },
+                "temporalCoverage": "2019/2022"
+              },
+              "mentions": [
+                {
+                  "@type": "Thing",
+                  "name": "House of Hackney – PLANTASIA"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "House of Hackney – GAIA, Prussian Blue"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "House of Hackney – FLORA DELANICA"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "House of Hackney – COSMOS, Celestial Blue"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "House of Hackney – FLORA FANTASIA, Noir Stripe and Ecru"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "House of Hackney – ARTEMIS"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "House of Hackney – HOLLYHOCKS"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "Lincrusta heritage relief wallcovering"
+                }
+              ]
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.mrwallcover.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Work",
+                  "item": "https://www.mrwallcover.com/projects/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Castle of Trematon, Cornwall",
+                  "item": "https://www.mrwallcover.com/projects/trematon-castle/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -8,6 +8,7 @@ import facts from '../data/facts.json';
 import creditedMedia from '../content/credited-media.json';
 import { about, areas, areaHref, caseStudies, media, projects, projectHref, services, specialisms, specialismHref } from './content';
 import { glanceDetails, glanceRows } from './glance';
+import { commissionScope } from './commission-scope';
 
 export const CRAWLER_PATH = '/wallcovering-installation-ai-crawler/';
 export const CRAWLER_TITLE = 'Wallcovering Installation AI Crawler';
@@ -92,6 +93,7 @@ export const crawlerBusiness = {
   },
   base: facts.place,
   coverage: facts.coverage,
+  commissionScope,
   areas: areas.map((area) => ({ name: area.name, url: absolute(areaHref(area.slug)) })),
   contact: { email: facts.email, url: absolute('/contact/') },
   profiles: facts.profiles.map((profile) => ({ name: profile.name, handle: profile.handle, url: profile.url })),

@@ -24,7 +24,7 @@ interface AiPageRecord {
   language: string | null;
   author: string | null;
   dates: { published: string | null; modified: string | null; reviewed: string | null };
-  formats: { html: string; markdown: string; json: string };
+  formats: { html: string; markdown: string; json: string; corpus: string };
   markdown: string;
   headings: { level: number; id: string | null; text: string }[];
   links: { url: string; text: string }[];
@@ -639,7 +639,8 @@ test('AI manifest and corpus contain exactly every published canonical page and 
     assert.equal(record.language, 'en-GB');
     assert.equal(record.formats.html, record.url);
     assert.equal(record.formats.markdown, `${record.url}index.md`);
-    assert.equal(record.formats.json, `${SITE}/ai/pages.json#/pages/${index}`);
+    assert.equal(record.formats.json, `${SITE}/ai/pages${record.path}index.json`);
+    assert.equal(record.formats.corpus, `${SITE}/ai/pages.json#/pages/${index}`);
     const twin = await readFile(path.join('dist', record.path, 'index.md'), 'utf8');
     assert.equal(markdown, twin.replace(/^---\n[\s\S]*?\n---\n\n/, ''), `${record.path}: Markdown parity`);
     assert.ok(headings.some((heading) => heading.level === 1), `${record.path}: main heading`);

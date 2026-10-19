@@ -1,0 +1,270 @@
+{
+  "passed": true,
+  "observations": [
+    {
+      "label": "before",
+      "route": "/wallcovering-installation-ai-crawler/",
+      "width": 390,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "route": "/for-ai/",
+      "width": 390,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "route": "/services/",
+      "width": 390,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "route": "/wallcovering-installation-ai-crawler/",
+      "width": 1440,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "route": "/for-ai/",
+      "width": 1440,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "route": "/services/",
+      "width": 1440,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "route": "/wallcovering-installation-ai-crawler/",
+      "width": 390,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "route": "/for-ai/",
+      "width": 390,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "route": "/services/",
+      "width": 390,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "route": "/wallcovering-installation-ai-crawler/",
+      "width": 1440,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "route": "/for-ai/",
+      "width": 1440,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "before",
+      "route": "/services/",
+      "width": 1440,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 0,
+      "policyConfirmed": null,
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/wallcovering-installation-ai-crawler/",
+      "width": 390,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/for-ai/",
+      "width": 390,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/services/",
+      "width": 390,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/wallcovering-installation-ai-crawler/",
+      "width": 1440,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/for-ai/",
+      "width": 1440,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/services/",
+      "width": 1440,
+      "javaScript": true,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/wallcovering-installation-ai-crawler/",
+      "width": 390,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/for-ai/",
+      "width": 390,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/services/",
+      "width": 390,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/wallcovering-installation-ai-crawler/",
+      "width": 1440,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/for-ai/",
+      "width": 1440,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    },
+    {
+      "label": "after",
+      "route": "/services/",
+      "width": 1440,
+      "javaScript": false,
+      "overflow": false,
+      "mainHeadings": 1,
+      "scope": 1,
+      "policyConfirmed": "2026-10-19",
+      "noBrowserErrors": true
+    }
+  ],
+  "noFormsSubmitted": true
+}

@@ -1,0 +1,127 @@
+---
+title: "Designer Wallcovering Specification Checklist | Mr Wallcover"
+url: https://www.mrwallcover.com/advice/designer-specification-checklist/
+description: "What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, lining, free-issue roles and change control."
+author: "Dorin Burcus"
+last_updated: 2026-10-18
+---
+
+The Wallcovering Guide / planning
+
+# A designer's wallcovering specification checklist
+
+What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, light, lining, free-issue responsibilities and change control.
+
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 18 October 2026
+
+[Send a specification](https://www.mrwallcover.com/contact/?intent=install&audience=designer&service=wallcovering&topic=guide%3Adesigner-specification-checklist) [Download the specification schedule](https://www.mrwallcover.com/downloads/wallcovering-specification-schedule.csv)
+
+Diagram: Wall elevation showing overall width, height, an opening and a vertical datum. Labels: Width W; Height H; Door; True vertical.
+
+Schematic · not to scaleAn elevation locates openings, overall dimensions and a true vertical. Add the actual product, focal point, seam positions and drawing revision to the project schedule.
+
+What should a wallcovering specification contain? Enough for the installer to set out the room without a phone call: the exact product, the elevations with the focal points marked, the repeat and match, what has been sampled, who supplies the material and who signs off the wall. The sample is often approved long before anyone decides where the first seam will fall. The checklist below brings that decision forward, so the design survives contact with the site. It is also available as a blank [specification schedule](https://www.mrwallcover.com/downloads/wallcovering-specification-schedule.csv) to fill in per room.
+
+## Product identity
+
+- Maker, collection, product code and colourway, with the current hanging instruction attached and its date or revision noted, so everyone works from the same sheet. For Phillip Jeffries that is their [hanging instructions page](https://www.phillipjeffries.com/hanging-instructions); every maker has an equivalent.
+- Usable width, trimmed or untrimmed edges, roll or panel length, sale unit and minimum order.
+- Repeat, match type (free, straight, half-drop, panel sequence) and hanging direction, including whether alternate drops are reversed. Reversing is a direction, not a match: a half-drop hung with reversed drops is two separate instructions, and both belong on the schedule.
+- Backing, and the adhesive and primer the maker specifies for it.
+- Whether the item is confirmed or provisional, so a provisional reference is never mistaken for an order.
+
+Already specifying a maker? See the [papers we have installed](https://www.mrwallcover.com/materials/specified-papers/) and the published projects behind them. A maker appearing on that record means installation experience, not approval or endorsement.
+
+## Elevations and design intent
+
+- A drawn elevation for every wall that carries a scenic, a pronounced pattern, a natural weave or a textile, showing doors, windows, joinery, cornice, dado and services.
+- The focal point and the intended centreline: chimney breast, bed wall or window, so the set-out starts from the right place. Our guide to [hand-painted papers and murals](https://www.mrwallcover.com/advice/hand-painted-murals-set-out/) shows why this has to precede production.
+- Where seams may fall and where they must not, including internal and external corners and returns.
+- Whether visible natural panels are expected or a uniform finish is wanted; see [grasscloth seams and variation](https://www.mrwallcover.com/advice/grasscloth-seams-and-variation/).
+- How the covering meets joinery, and whether it continues onto it; our [joinery and panels](https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/) page describes that detail.
+
+## Conditions
+
+- Room use, expected cleaning regime and the light: a textile wall lit from the side needs a truer substrate than one lit from the front. See [wall preparation](https://www.mrwallcover.com/advice/wall-preparation/).
+- Lining: specified, not specified, or to the maker’s instruction.
+- Any fire, acoustic or wet-area requirement, with the document for the exact product rather than the collection. An [acoustic system](https://www.mrwallcover.com/materials/acoustic/) is only acoustic as installed to its own detail.
+- Whether a sample area, strike-off or mock-up is required, its purpose and who accepts it.
+
+## Responsibilities
+
+- Who confirms the purchase quantity, and on what measurement basis. Our [quantities page](https://www.mrwallcover.com/advice/quantities/) explains drops, repeat and batch.
+- Who orders, who receives and checks the delivery, and who approves the batch. On many hotel and flagship jobs the material is free-issue from the designer, the brand or the client; we manage delivery and check it against the measure.
+- Who signs off wall readiness and the set-out before cutting starts.
+- Who decides whether a substitution is acceptable, and what evidence it needs.
+
+## Lead times and site readiness
+
+- The order date as well as the hang date. For free-issue material the supplier’s lead time sits inside the programme, and the hang is planned around the delivery.
+- For a scenic paper or a mural, the installer’s site measure before the dimensions go to production. The panels are made to the finished walls, so a new lining, skirting or cornice changes them.
+- Who receives the delivery and checks it against the measure, and when scenic panels will be checked dry against the maker’s layout, before any paste and before anything is cut.
+- The wall-readiness standard for each room: dry to a reading, filled and sanded, lined or not, with filling, lining and drying time in the programme rather than found on the day the material arrives.
+- The set-out for any pronounced pattern agreed on the elevation before cutting starts; our [set-out and pattern matching guide](https://www.mrwallcover.com/advice/set-out-and-pattern-matching/) shows what that decides.
+
+## Change control
+
+- A dated revision on the schedule and the affected elevation whenever a colourway, dimension or wall position changes.
+- A rule that an approved sample is not enough if the final order carries a different reference.
+- A record of what remains unresolved, marked clearly, so the first site conversation can go straight to the decisions still needed.
+
+## When does this checklist stop being enough?
+
+It covers what an installer needs. It does not establish a product’s fire or acoustic performance, does not replace the maker’s own specification sheet, and does not turn a family description into a product approval. For a first review, send the specification, the elevations, the project location, the programme and the procurement responsibilities to the [designers and architects page](https://www.mrwallcover.com/professionals/designers/). Where a main contractor is procuring the package, the [developer package guide](https://www.mrwallcover.com/advice/developer-wallcovering-package/) sets out the tender side.
+
+## Further reading
+
+- [Phillip Jeffries: hanging instructions](https://www.phillipjeffries.com/hanging-instructions)
+
+Your next step
+
+## Bring it back to your room.
+
+Send the material reference and what you already know. A photograph and a short note are enough to start.
+
+[Send a specification](https://www.mrwallcover.com/contact/?intent=install&audience=designer&service=wallcovering&topic=guide%3Adesigner-specification-checklist)
+
+## Explore the materials
+
+[Grasscloth and natural weaves](https://www.mrwallcover.com/materials/grasscloth-and-weaves/) [Silk and textiles](https://www.mrwallcover.com/materials/silk-and-textiles/) [Hand-painted scenic papers](https://www.mrwallcover.com/materials/hand-painted/) [Acoustic wallcoverings](https://www.mrwallcover.com/materials/acoustic/)
+
+## Keep reading
+
+![Close detail of a woven grasscloth wallcovering turning an external corner, the weave running straight and tight to the edge.](https://www.mrwallcover.com/media/img/r/fs-residences-06-800.webp)
+
+Natural weave at an external corner, Four Seasons residences. Mr Wallcover photograph.
+
+02 / choosing
+
+## [Grasscloth seams and variation](https://www.mrwallcover.com/advice/grasscloth-seams-and-variation/)
+
+Grasscloth seams show and panels vary in shade. What is normal, what is a fault, how the set-out and the batch change the result, and what to settle before you order.
+
+[Read the guide](https://www.mrwallcover.com/advice/grasscloth-seams-and-variation/)
+
+Illustrative study
+
+Pause motion
+
+06 / planning
+
+## [Hand-painted papers and murals](https://www.mrwallcover.com/advice/hand-painted-murals-set-out/)
+
+How a scenic or hand-painted paper is set out: elevations, the focal point, panel sequence, doors and corners, finished dimensions and when the survey has to happen.
+
+[Read the guide](https://www.mrwallcover.com/advice/hand-painted-murals-set-out/)
+
+Illustrative study
+
+Pause motion
+
+09 / planning
+
+## [Developer package](https://www.mrwallcover.com/advice/developer-wallcovering-package/)
+
+What a wallcovering package needs to be priced, programmed and handed over: scope, measurement basis, substrate handover, programme, changes, snagging and spares.
+
+[Read the guide](https://www.mrwallcover.com/advice/developer-wallcovering-package/)

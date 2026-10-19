@@ -1,0 +1,182 @@
+---
+title: "Hyde London City (the Old Bailey Hotel) | Mr Wallcover"
+url: https://www.mrwallcover.com/projects/old-bailey-hotel/
+description: "Full decorating package: decoration, specialist wallcoverings and window film at Hyde London City (the Old Bailey Hotel), c. 2 years. A complete…"
+author: "Dorin Burcus"
+last_updated: 2026-10-10
+---
+
+15 Old Bailey, City of London EC4M 7EF
+
+# Hyde London City (the Old Bailey Hotel)
+
+A complete decorating package for 111 guest rooms across seven storeys: paint, specialist wallcoverings and window film, delivered over about two years inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.
+
+![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)
+
+## At a glance
+
+Client, materials & project facts
+
+**Client**
+: 15 Old Bailey, opened 2 September 2024 as Hyde London City
+
+**Designer**
+: Studio Moren (interior design)
+
+**Main contractor**
+: –Not recorded
+
+**Maker and paper**
+: Timorous Beasties – Tropical Clouded Leopard, Vanilla; Timorous Beasties – Totem Damask, Black & Blue; House of Hackney – LIMERENCE, Galapagos; Solar Screen window film
+
+**Area or rooms**
+: –Not recorded
+
+**Scope**
+: Full decorating package: decoration, specialist wallcoverings and window film
+
+**Year**
+: 2022–2024 (about two years on site; opened 2 September 2024)
+
+**As featured by Timorous Beasties:** [Studio Moren x Timorous Beasties at Hyde London City](https://www.timorousbeasties.com/story/studio-moren-x-timorous-beasties-at-hyde-london-city). Their story shows the two designs in the finished bedrooms.
+
+## At a glance
+
+- **Building:** 15 Old Bailey, City of London. Grade II listed, completed 1874
+- **Opened:** 2 September 2024 as Hyde London City
+- **Duration:** about two years on site (our photographs run from a sample room in November 2022 to final touches in August 2024)
+- **Rooms:** 111 guest rooms across seven storeys
+- **Interior design:** Studio Moren
+- **Our package:** full decoration, specialist wallcoverings and window film
+- **Wallcoverings:** Timorous Beasties Tropical Clouded Leopard and Totem Damask (custom-printed vinyl), and House of Hackney LIMERENCE
+- **Window film:** Solar Screen
+
+## The building
+
+Old Bailey takes its name from the line of the City’s ancient wall, its “bailey”, just beyond which the street runs. For centuries the name has meant justice: the old sessions house stood beside Newgate Prison, and both were swept away for E. W. Mountford’s Central Criminal Court, opened by King Edward VII in 1907.
+
+Number 15 is older than its famous neighbour. Completed in 1874 by Evans Cronk as the Spiers & Pond hotel, it is recorded as the first hotel in London to have electric lighting. It later spent decades as offices. In 2024, after a full restoration, it returned to its first purpose: on 2 September 2024 it opened as Hyde London City, an Ennismore hotel.
+
+It is a building of carved stone bays, arched and round oculus windows, a sweeping timber-railed staircase and rooftop views of St Paul’s. Every one of those features had to be decorated around, protected and finished to a standard that suits both a listed building and a design-led hotel.
+
+## The design
+
+The interiors were designed by Studio Moren. For the bedrooms they selected two Timorous Beasties designs, produced as custom-printed vinyl wallpaper: Totem Damask in Black & Blue, and Tropical Clouded Leopard in Vanilla. Vinyl lets the patterns stand up to the daily wear of a busy hotel while keeping their colour and detail. Timorous Beasties describe the result as “bold pattern with atmosphere” ([Timorous Beasties](https://www.timorousbeasties.com/story/studio-moren-x-timorous-beasties-at-hyde-london-city)).
+
+## The brief
+
+One team, one standard, from the first sample room to handover: the complete decorating package for 111 guest rooms across seven storeys and the circulation spaces, the specialist wallcoverings that give each room its character, and the window film to the glazing.
+
+## Our approach
+
+**Sample room first.** Our record starts in November 2022 with a finished sample room: Timorous Beasties’ Tropical Clouded Leopard set behind the bed as a shaped headboard panel. Agreeing the finish, the setting out and the detailing in one room first meant that the next 110 could be repeated with confidence.
+
+**Preparation.** A building of this age moves and varies from room to room. New and old surfaces were filled, made good and primed so that the paint and wallcoverings sit on a sound, even base. Our photographs show walls taken back to a smooth finish before a single drop was hung.
+
+**Setting out large-scale pattern.** Tropical Clouded Leopard is a large-scale, quarter-drop design. Hung as a shaped panel behind each bed, its placement has to be judged room by room so the composition sits centrally and reads as intended. Totem Damask runs differently: a single ten-metre repeat with no horizontal match, so every drop has to be chosen by eye to keep a feature wall balanced.
+
+**The suite.** In the suite, House of Hackney’s LIMERENCE in the Galapagos colourway wraps the room in lush, painterly palms, including the bedroom and the dressing area. It is supplied as four 45 cm panels per roll, so the panels had to be hung in sequence and aligned precisely around joinery and windows.
+
+**Window film.** Alongside the decoration, we fitted [Solar Screen](https://solarscreen.eu/en/) window film to the glazing. See our [window film service](https://www.mrwallcover.com/services/window-film/).
+
+**Decoration throughout.** The decorating package ran through corridors, stair cores and rooms: deep greens and warm terracottas in the circulation spaces, crisp finishes to the panelling, and careful cutting-in around period mouldings, balustrades and the timber handrail of the main stair.
+
+## Materials
+
+- Timorous Beasties – Tropical Clouded Leopard, Vanilla, custom-printed vinyl: guest-room headboard walls
+- Timorous Beasties – Totem Damask, Black & Blue, custom-printed vinyl: guest-room feature walls
+- House of Hackney – LIMERENCE, Galapagos: the suite
+- Solar Screen window film: glazing
+
+## Outcome
+
+On 2 September 2024 the first hotel in London to be lit by electricity reopened as a hotel, 150 years after it was built. Guests walk into bedrooms dressed in Timorous Beasties’ leopards and kaleidoscopic damasks, a suite wrapped in House of Hackney palms, and corridors and stairs finished to match, all of it delivered by our team.
+
+## Notes and sources
+
+1. 111 guest rooms across seven storeys, Grade II-listed Spiers & Pond building of 1874, opened 2 September 2024, Studio Moren: Ennismore, “Hyde London City has officially opened its doors”, 2 September 2024: [https://ennismore.com/stories/hyde-london-city-has-officially-opened-its-doors/](https://ennismore.com/stories/hyde-london-city-has-officially-opened-its-doors/) and the Ennismore press release: [https://ennismore.com/wp-content/uploads/sites/9/2024/09/Hyde-London-City-Hotel-Now-Open.pdf](https://ennismore.com/wp-content/uploads/sites/9/2024/09/Hyde-London-City-Hotel-Now-Open.pdf)
+
+## Photographs
+
+![Suite bedroom at Hyde London City wrapped in House of Hackney Limerence palm wallpaper.](https://www.mrwallcover.com/media/img/r/old-bailey-12-800.webp)
+
+![Timorous Beasties Tropical Clouded Leopard wallpaper hung as a headboard panel.](https://www.mrwallcover.com/media/img/r/old-bailey-07-800.webp)
+
+![Guest room in progress with a shaped Tropical Clouded Leopard headboard panel.](https://www.mrwallcover.com/media/img/r/old-bailey-08-800.webp)
+
+![Timorous Beasties Totem Damask feature wall in a guest room.](https://www.mrwallcover.com/media/img/r/old-bailey-09-800.webp)
+
+![Detail of Totem Damask wallpaper beside a wall light.](https://www.mrwallcover.com/media/img/r/old-bailey-10-800.webp)
+
+![Detail of House of Hackney Limerence wallpaper in the Galapagos colourway.](https://www.mrwallcover.com/media/img/r/old-bailey-11-800.webp)
+
+![Dressing area of the suite in House of Hackney Limerence wallpaper.](https://www.mrwallcover.com/media/img/r/old-bailey-13-800.webp)
+
+![Limerence wallpaper meeting joinery in the suite.](https://www.mrwallcover.com/media/img/r/old-bailey-14-800.webp)
+
+![Stair landing with terracotta walls at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-16-800.webp)
+
+![The stair balustrade and timber handrail seen from above.](https://www.mrwallcover.com/media/img/r/old-bailey-17-800.webp)
+
+![Green-painted guest corridor at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-18-800.webp)
+
+![Corner façade of 15 Old Bailey, the 1874 hotel building in the City of London.](https://www.mrwallcover.com/media/img/r/old-bailey-01-800.webp)
+
+![Carved stone entrance doorway at 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-02-800.webp)
+
+![Window detail on the façade of 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-03-800.webp)
+
+![Carved stone bay window on the façade of 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-04-800.webp)
+
+![The dome of St Paul's Cathedral seen through a round window at 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-05-800.webp)
+
+![Rolls of Solar Screen window film on site before installation.](https://www.mrwallcover.com/media/img/r/old-bailey-15-800.webp)
+
+![A neighbouring church tower seen from an upper-floor window.](https://www.mrwallcover.com/media/img/r/old-bailey-19-800.webp)
+
+How the commission ran
+
+## The same standards, on every commission.
+
+Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+
+01
+
+### Survey and scope, room by room
+
+We measure the wall that will actually be hung, allow for the repeat and the wastage, and write a scope of works room by room before anyone orders paper.
+
+02
+
+### Preparation decides the finish
+
+Walls are filled, made good and primed until they are true. If a wall is not ready for the material specified, we say so before the last drop is ordered.
+
+03
+
+### Protection and containment
+
+Floors, furniture and finished joinery are protected as part of the hang. Work is contained and the place is left tidy each evening. In a home we are visitors; in a hotel we work around the house.
+
+04
+
+### Batch and shade control
+
+Deliveries are checked against the measure, and batches and shading are managed so that a corridor of rooms reads as one surface.
+
+05
+
+### Set out from the room's focal points
+
+Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+
+06
+
+### One team, then the return visit
+
+The people who start are the people who finish. Four to six weeks after completion we come back to look at every seam and edge, and the workmanship is guaranteed for twelve months.
+
+[See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
+
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 10 October 2026
