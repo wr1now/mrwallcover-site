@@ -488,7 +488,7 @@ The fuller record
 
 ## More of the work, job by job.
 
-Hotels, restaurants, shops, workplaces and homes we have papered and decorated, beyond the case studies above. Each is shown with our own site photographs. Private homes are named by area only.
+Hotels, restaurants, shops, workplaces and homes we have papered and decorated, beyond the case studies above. Most are shown with our own site photographs. Private homes are named by area only.
 
 ### Hotels
 
@@ -519,8 +519,6 @@ Passenger lift car interiors refinished in architectural film, linen texture abo
 London · 2022
 
 Guest bedrooms papered in a green tree-branch design, carried across the bed-alcove soffits and round joinery and window reveals.
-
-![Round column wrapped in a pale textured wallcovering, with a metal trim where it meets a marble counter.](https://www.mrwallcover.com/media/img/r/record-the-westminster-london-curio-collection-by-hilto-01-800.webp)
 
 ![Close detail of a dark mica-effect wallcovering with a granular, glinting surface.](https://www.mrwallcover.com/media/img/r/record-the-westminster-london-curio-collection-by-hilto-02-800.webp)
 
