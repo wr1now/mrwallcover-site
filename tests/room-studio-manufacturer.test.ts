@@ -104,6 +104,30 @@ test('Caisson preserves its whole source with assumed 3690 × 2300 mm framing an
   for (let i = 1; i < papered.length; i++) assert.ok(Math.abs(wallLength(result.project.room, papered[i - 1].wallId) - papered[i - 1].offsetXmm + papered[i].offsetXmm) <= 1, 'Tile set-out continues across angled bay corners within integer-mm tolerance');
 });
 
+test('assumption groups preserve every original note exactly once across all three private studies', async () => {
+  const cases = [
+    ['degournay-plum-blossom', { texture: await texture(1250, 789) }],
+    ['phillip-jeffries-3163', { texture: await texture(340, 330), coverage: pjCoverage }],
+    ['arte-caisson-61533', { texture: await texture(400, 225), coverage: caissonCoverage }],
+  ] as const;
+  for (const [id, options] of cases) {
+    const { assumptions, assumptionGroups } = createManufacturerPreviewProject(id, options);
+    assert.deepEqual(assumptionGroups.map(({ id, title }) => ({ id, title })), [
+      { id: 'scale', title: 'Source and scale' },
+      { id: 'layout', title: 'Room set-out' },
+      { id: 'appearance', title: 'Material appearance' },
+      { id: 'status', title: 'Review and permissions' },
+    ]);
+    assert.ok(assumptionGroups.every(group => group.notes.length > 0));
+    const groupedNotes = assumptionGroups.flatMap(group => group.notes);
+    assert.deepEqual([...groupedNotes].sort(), [...assumptions].sort(), 'Grouped and flat notes retain complete string and occurrence parity');
+    assert.equal(new Set(groupedNotes).size, groupedNotes.length, 'Every original note appears in exactly one group');
+    assert.equal(assumptionGroups[0].notes[0], assumptions[1]);
+    assert.equal(assumptionGroups[2].notes[0], assumptions[2]);
+    assert.deepEqual(assumptionGroups[3].notes, [assumptions[0], assumptions[3], assumptions[4]], 'Private review and permission boundaries remain together');
+  }
+});
+
 test('private concepts remain valid portable detached drafts and cannot clear permission or proof gates', async () => {
   const cases = [
     ['degournay-plum-blossom', { texture: await texture(1250, 789) }],
