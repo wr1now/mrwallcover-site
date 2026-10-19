@@ -14,8 +14,8 @@ try{
   assert.equal(check.overflow,false,`${route} ${width}: overflow`);assert.equal(check.h1,1);assert.ok(check.footer);assert.deepEqual(errors,[]);assert.deepEqual(check.smallParagraphs,[],`${route} ${width}: small body paragraphs`);
   if(captures&&[390,1440].includes(width)){await page.screenshot({path:`docs/design/guide-release/${route.split('/')[1]}-${width}.jpg`,type:'jpeg',quality:75});}
   if(width===390){
-   const summary=await page.$('.footer-group summary');await summary.evaluate(e=>e.scrollIntoView());await summary.click();assert.equal(await page.$eval('.footer-group',e=>e.open),true);await summary.click();
-   const button=await page.$('[data-effects-toggle]');await button.evaluate(e=>e.scrollIntoView());await button.click();assert.equal(await button.evaluate(e=>e.getAttribute('aria-pressed')),'true');await button.click();
+   await page.focus('.footer-group summary');await page.keyboard.press('Enter');assert.equal(await page.$eval('.footer-group',e=>e.open),true);await page.keyboard.press('Enter');
+   await page.focus('[data-effects-toggle]');await page.keyboard.press('Space');assert.equal(await page.$eval('[data-effects-toggle]',e=>e.getAttribute('aria-pressed')),'true');await page.keyboard.press('Space');
   }
   results.push({route,width,...check});await page.close();
  }

@@ -1,0 +1,174 @@
+{
+  "context": "Cold local uncompressed static builds; transferred bytes and length are reproducible diagnostics, not field speed scores.",
+  "baseline": "40ee3d7e1985a360d2241855ce6aa13bc7ea801a",
+  "results": [
+    {
+      "build": "before",
+      "width": 1440,
+      "height": 900,
+      "mainHeight": 19247,
+      "pageHeight": 20435,
+      "screens": 21.39,
+      "sections": 18,
+      "headings": [
+        "London wallcovering installers, since 2012.",
+        "Rooms we have finished.",
+        "A beautiful wall beginslong before the first drop.",
+        "Dorin Burcus",
+        "On the wall.",
+        "Light on a material, before a sample.",
+        "Places with presence.",
+        "The room is the vision.The finish is our craft.",
+        "One practice.Every stage.",
+        "Five steps, and the same people throughout.",
+        "Find the characterof your room.",
+        "Work delivered in partnership with Calico Wallpaper.",
+        "The hang is not finished when we leave.",
+        "A few goodquestions.",
+        "Five ways to begin.",
+        "Let’s make itsomething remarkable."
+      ],
+      "nav": [
+        "Projects",
+        "Expertise",
+        "Materials",
+        "Wallpapering",
+        "Wallpaper calculator",
+        "For designers",
+        "Guide",
+        "About",
+        "AI Crawler",
+        "Contact"
+      ],
+      "cls": 0.0008887104552469136,
+      "htmlBytes": 160351,
+      "resourceBytes": 1180366,
+      "scriptBytes": 11990,
+      "overflow": false,
+      "botanicalSurfaces": [
+        "block",
+        "block",
+        "block"
+      ]
+    },
+    {
+      "build": "before",
+      "width": 390,
+      "height": 844,
+      "mainHeight": 30994,
+      "pageHeight": 32208,
+      "screens": 36.72,
+      "sections": 18,
+      "headings": [
+        "London wallcovering installers, since 2012.",
+        "Rooms we have finished.",
+        "A beautiful wall beginslong before the first drop.",
+        "Dorin Burcus",
+        "On the wall.",
+        "Light on a material, before a sample.",
+        "Places with presence.",
+        "The room is the vision.The finish is our craft.",
+        "One practice.Every stage.",
+        "Five steps, and the same people throughout.",
+        "Find the characterof your room.",
+        "Work delivered in partnership with Calico Wallpaper.",
+        "The hang is not finished when we leave.",
+        "A few goodquestions.",
+        "Five ways to begin.",
+        "Let’s make itsomething remarkable."
+      ],
+      "nav": [
+        "Projects",
+        "Expertise",
+        "Materials",
+        "Wallpapering",
+        "Wallpaper calculator",
+        "For designers",
+        "Guide",
+        "About",
+        "AI Crawler",
+        "Contact"
+      ],
+      "cls": 0,
+      "htmlBytes": 160351,
+      "resourceBytes": 751875,
+      "scriptBytes": 11990,
+      "overflow": false,
+      "botanicalSurfaces": [
+        "block",
+        "block",
+        "block"
+      ]
+    },
+    {
+      "build": "after",
+      "width": 1440,
+      "height": 900,
+      "mainHeight": 4213,
+      "pageHeight": 5429,
+      "screens": 4.68,
+      "sections": 7,
+      "headings": [
+        "London wallcovering installers, since 2012.",
+        "Rooms we have finished.",
+        "Dorin Burcus",
+        "Five steps, and the same people throughout.",
+        "The hang is not finished when we leave.",
+        "Let’s make itsomething remarkable."
+      ],
+      "nav": [
+        "Projects",
+        "Services",
+        "Materials",
+        "For professionals",
+        "Guide",
+        "Contact"
+      ],
+      "cls": 0.000958521412037037,
+      "htmlBytes": 53061,
+      "resourceBytes": 871211,
+      "scriptBytes": 0,
+      "overflow": false,
+      "botanicalSurfaces": [
+        "block",
+        "block",
+        "block"
+      ]
+    },
+    {
+      "build": "after",
+      "width": 390,
+      "height": 844,
+      "mainHeight": 5821,
+      "pageHeight": 7160,
+      "screens": 6.9,
+      "sections": 7,
+      "headings": [
+        "London wallcovering installers, since 2012.",
+        "Rooms we have finished.",
+        "Dorin Burcus",
+        "Five steps, and the same people throughout.",
+        "The hang is not finished when we leave.",
+        "Let’s make itsomething remarkable."
+      ],
+      "nav": [
+        "Projects",
+        "Services",
+        "Materials",
+        "For professionals",
+        "Guide",
+        "Contact"
+      ],
+      "cls": 0,
+      "htmlBytes": 53061,
+      "resourceBytes": 415743,
+      "scriptBytes": 0,
+      "overflow": false,
+      "botanicalSurfaces": [
+        "none",
+        "none",
+        "none"
+      ]
+    }
+  ]
+}

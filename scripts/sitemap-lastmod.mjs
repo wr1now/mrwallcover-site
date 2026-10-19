@@ -143,6 +143,7 @@ export function computeLastmod(root) {
   // Single pages and hubs: their own source files (and, for hubs, their children).
   const pages = {
     '/': ['src/pages/index.astro', 'src/content/home.json', 'src/content/hero.json'],
+    '/practice/': ['src/pages/practice.astro', 'src/data/home-editorial.ts', 'src/content/home.json'],
     '/about/': ['src/pages/about.astro', 'src/content/about.json', 'src/content/team.json', 'src/content/hotels.json'],
     '/accessibility/': ['src/pages/accessibility.astro'],
     '/aftercare/': ['src/pages/aftercare.astro', 'src/content/aftercare.json'],

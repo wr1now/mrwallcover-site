@@ -48,9 +48,11 @@ test('every published and utility page has a visual decision and works at mobile
           icons:[...document.querySelectorAll('.mw-icon')].every(i=>i.getAttribute('aria-hidden')==='true'&&i.getAttribute('focusable')==='false'),
           actions:[...document.querySelectorAll<HTMLElement>('.mw-action')].filter(a=>a.getClientRects().length&&a.getBoundingClientRect().height<43).map(a=>a.textContent?.trim()),
           questionVisuals:[...document.querySelectorAll<HTMLElement>('.question-heading-row, .faq summary')].every(row=>{
-            const drawing=row.querySelector('[data-question-visual]');
+            const drawing=row.querySelector<HTMLElement>('[data-question-visual]');
             const heading=row.querySelector('h2,h3');
-            return drawing&&heading&&drawing.getBoundingClientRect().left>=heading.getBoundingClientRect().right;
+            if(!drawing||!heading)return false;
+            if(drawing.classList.contains('question-visual--typographic'))return getComputedStyle(drawing).display==='none'&&!drawing.querySelector('[data-design-object],svg')&&heading.getBoundingClientRect().width>0;
+            return drawing.getBoundingClientRect().left>=heading.getBoundingClientRect().right;
           }),
           objects:document.querySelectorAll('[data-design-object]').length,
           objectContract:[...document.querySelectorAll<HTMLElement>('[data-design-object]')].every(object=>{
@@ -64,7 +66,7 @@ test('every published and utility page has a visual decision and works at mobile
         assert.deepEqual(result.broken,[],`${path}: broken image`);
         assert.equal(result.icons,true,`${path}: decorative icon semantics`);
         assert.deepEqual(result.actions,[],`${path} @${width}: action height`);
-        assert.equal(result.questionVisuals,true,`${path} @${width}: relevant drawing remains to the right of each question`);
+        assert.equal(result.questionVisuals,true,`${path} @${width}: useful question studies keep their right rail and routine questions read without a graphic placeholder`);
         assert.equal(result.objectContract,true,`${path}: original studies retain decorative, dimensioned SSR posters`);
         if(result.objects>0)assert.ok(result.objectControls>0,`${path}: dimensional studies inherit shared motion controls`);
         if(path==='/for-ai/')assert.equal(result.objects,0,'the factual AI page retains static question drawings');

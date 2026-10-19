@@ -49,6 +49,7 @@ const explore = [
   { href: '/advice/cost/', label: 'Quotation checklist' },
   { href: '/aftercare/', label: 'Aftercare' },
   { href: '/about/', label: 'About' },
+  { href: '/practice/', label: 'The practice' },
   { href: '/reviews/', label: 'Reviews' },
   { href: '/faq/', label: 'Questions' },
   { href: '/areas/', label: 'All areas' },
@@ -58,6 +59,7 @@ const utility = [
   { href: '/privacy/', label: 'Privacy' },
   { href: '/image-use/', label: 'Image use' },
   { href: '/for-ai/', label: 'For AI assistants' },
+  { href: '/wallcovering-installation-ai-crawler/', label: 'AI Crawler' },
 ];
 const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) => c.toUpperCase());
 ---
@@ -81,7 +83,7 @@ const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) =
         <ul class="footer-contact-list">
           <li><a href={`mailto:${facts.email}`}><Icon name="mail" /><span>{facts.email}</span></a></li>
           {phoneAvailable && <li><WhatsAppLink /></li>}
-          {BOOKING_URL && <li><BookCallLink><Icon name="calendar" /><span>Book a <span class="whitespace-nowrap">20-minute</span> call</span></BookCallLink></li>}
+          {BOOKING_URL && <li><BookCallLink><Icon name="calendar" /><span>Book a call</span></BookCallLink></li>}
           {facts.profiles.map((profile) => (
             <li><a href={profile.url}><Icon name="instagram" /><span>{profile.handle ?? profile.name}</span></a></li>
           ))}

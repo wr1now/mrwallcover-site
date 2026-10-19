@@ -1,0 +1,374 @@
+[
+  {
+    "name": "makers",
+    "path": "/makers/",
+    "width": 390,
+    "overflow": false,
+    "linen": "0.16",
+    "botanicals": [
+      "none",
+      "none",
+      "none"
+    ],
+    "makers": {
+      "cards": 20,
+      "photos": 20,
+      "direct": 13,
+      "context": 7,
+      "headings": [
+        {
+          "text": "Arte",
+          "size": "24px"
+        },
+        {
+          "text": "Phillip Jeffries",
+          "size": "24px"
+        },
+        {
+          "text": "de Gournay",
+          "size": "24px"
+        },
+        {
+          "text": "Fromental",
+          "size": "24px"
+        },
+        {
+          "text": "Calico Wallpaper",
+          "size": "24px"
+        },
+        {
+          "text": "House of Hackney",
+          "size": "24px"
+        },
+        {
+          "text": "Brewster Home Fashions",
+          "size": "24px"
+        },
+        {
+          "text": "Cole & Son",
+          "size": "24px"
+        },
+        {
+          "text": "Dedar",
+          "size": "24px"
+        },
+        {
+          "text": "Designers Guild",
+          "size": "24px"
+        },
+        {
+          "text": "Élitis",
+          "size": "24px"
+        },
+        {
+          "text": "Morris & Co.",
+          "size": "24px"
+        },
+        {
+          "text": "Omexco",
+          "size": "24px"
+        },
+        {
+          "text": "Osborne & Little",
+          "size": "24px"
+        },
+        {
+          "text": "Pierre Frey",
+          "size": "24px"
+        },
+        {
+          "text": "Sanderson",
+          "size": "24px"
+        },
+        {
+          "text": "Sangetsu",
+          "size": "24px"
+        },
+        {
+          "text": "Vescom",
+          "size": "24px"
+        },
+        {
+          "text": "York Wallcoverings",
+          "size": "24px"
+        },
+        {
+          "text": "Zoffany",
+          "size": "24px"
+        }
+      ],
+      "broken": 0,
+      "lazy": true
+    },
+    "questions": {
+      "all": 0,
+      "typographic": 0,
+      "studies": 0,
+      "closed": 0,
+      "genericObjects": 0
+    },
+    "guides": {
+      "cards": 0,
+      "photos": 0,
+      "studies": 0,
+      "references": 0
+    },
+    "errors": []
+  },
+  {
+    "name": "questions",
+    "path": "/professionals/designers/",
+    "width": 390,
+    "overflow": false,
+    "linen": "0.25",
+    "botanicals": [
+      "none",
+      "none",
+      "none"
+    ],
+    "makers": {
+      "cards": 0,
+      "photos": 0,
+      "direct": 0,
+      "context": 0,
+      "headings": [],
+      "broken": 0,
+      "lazy": true
+    },
+    "questions": {
+      "all": 14,
+      "typographic": 4,
+      "studies": 10,
+      "closed": 0,
+      "genericObjects": 0
+    },
+    "guides": {
+      "cards": 0,
+      "photos": 0,
+      "studies": 0,
+      "references": 0
+    },
+    "errors": []
+  },
+  {
+    "name": "guides",
+    "path": "/advice/",
+    "width": 390,
+    "overflow": false,
+    "linen": "0.25",
+    "botanicals": [
+      "none",
+      "none",
+      "none"
+    ],
+    "makers": {
+      "cards": 0,
+      "photos": 0,
+      "direct": 0,
+      "context": 0,
+      "headings": [],
+      "broken": 0,
+      "lazy": true
+    },
+    "questions": {
+      "all": 0,
+      "typographic": 0,
+      "studies": 0,
+      "closed": 0,
+      "genericObjects": 0
+    },
+    "guides": {
+      "cards": 14,
+      "photos": 6,
+      "studies": 7,
+      "references": 1
+    },
+    "errors": []
+  },
+  {
+    "name": "makers",
+    "path": "/makers/",
+    "width": 1440,
+    "overflow": false,
+    "linen": "0.16",
+    "botanicals": [
+      "block",
+      "none",
+      "none"
+    ],
+    "makers": {
+      "cards": 20,
+      "photos": 20,
+      "direct": 13,
+      "context": 7,
+      "headings": [
+        {
+          "text": "Arte",
+          "size": "30.08px"
+        },
+        {
+          "text": "Phillip Jeffries",
+          "size": "30.08px"
+        },
+        {
+          "text": "de Gournay",
+          "size": "30.08px"
+        },
+        {
+          "text": "Fromental",
+          "size": "30.08px"
+        },
+        {
+          "text": "Calico Wallpaper",
+          "size": "30.08px"
+        },
+        {
+          "text": "House of Hackney",
+          "size": "30.08px"
+        },
+        {
+          "text": "Brewster Home Fashions",
+          "size": "30.08px"
+        },
+        {
+          "text": "Cole & Son",
+          "size": "30.08px"
+        },
+        {
+          "text": "Dedar",
+          "size": "30.08px"
+        },
+        {
+          "text": "Designers Guild",
+          "size": "30.08px"
+        },
+        {
+          "text": "Élitis",
+          "size": "30.08px"
+        },
+        {
+          "text": "Morris & Co.",
+          "size": "30.08px"
+        },
+        {
+          "text": "Omexco",
+          "size": "30.08px"
+        },
+        {
+          "text": "Osborne & Little",
+          "size": "30.08px"
+        },
+        {
+          "text": "Pierre Frey",
+          "size": "30.08px"
+        },
+        {
+          "text": "Sanderson",
+          "size": "30.08px"
+        },
+        {
+          "text": "Sangetsu",
+          "size": "30.08px"
+        },
+        {
+          "text": "Vescom",
+          "size": "30.08px"
+        },
+        {
+          "text": "York Wallcoverings",
+          "size": "30.08px"
+        },
+        {
+          "text": "Zoffany",
+          "size": "30.08px"
+        }
+      ],
+      "broken": 0,
+      "lazy": true
+    },
+    "questions": {
+      "all": 0,
+      "typographic": 0,
+      "studies": 0,
+      "closed": 0,
+      "genericObjects": 0
+    },
+    "guides": {
+      "cards": 0,
+      "photos": 0,
+      "studies": 0,
+      "references": 0
+    },
+    "errors": []
+  },
+  {
+    "name": "questions",
+    "path": "/professionals/designers/",
+    "width": 1440,
+    "overflow": false,
+    "linen": "0.25",
+    "botanicals": [
+      "block",
+      "block",
+      "block"
+    ],
+    "makers": {
+      "cards": 0,
+      "photos": 0,
+      "direct": 0,
+      "context": 0,
+      "headings": [],
+      "broken": 0,
+      "lazy": true
+    },
+    "questions": {
+      "all": 14,
+      "typographic": 4,
+      "studies": 10,
+      "closed": 0,
+      "genericObjects": 0
+    },
+    "guides": {
+      "cards": 0,
+      "photos": 0,
+      "studies": 0,
+      "references": 0
+    },
+    "errors": []
+  },
+  {
+    "name": "guides",
+    "path": "/advice/",
+    "width": 1440,
+    "overflow": false,
+    "linen": "0.25",
+    "botanicals": [
+      "block",
+      "block",
+      "block"
+    ],
+    "makers": {
+      "cards": 0,
+      "photos": 0,
+      "direct": 0,
+      "context": 0,
+      "headings": [],
+      "broken": 0,
+      "lazy": true
+    },
+    "questions": {
+      "all": 0,
+      "typographic": 0,
+      "studies": 0,
+      "closed": 0,
+      "genericObjects": 0
+    },
+    "guides": {
+      "cards": 14,
+      "photos": 6,
+      "studies": 7,
+      "references": 1
+    },
+    "errors": []
+  }
+]

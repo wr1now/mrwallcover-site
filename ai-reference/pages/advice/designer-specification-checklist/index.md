@@ -114,9 +114,9 @@ How a scenic or hand-painted paper is set out: elevations, the focal point, pane
 
 [Read the guide](https://www.mrwallcover.com/advice/hand-painted-murals-set-out/)
 
-Illustrative study
+![Green-painted guest corridor at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-18-800.webp)
 
-Pause motion
+Guest corridor at 15 Old Bailey, where we delivered the decorating package. Photograph: Dorin Burcus.
 
 09 / planning
 

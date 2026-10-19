@@ -106,9 +106,9 @@ How to tell whether a wall is ready for wallcovering: old coatings, dryness, sou
 
 [Read the guide](https://www.mrwallcover.com/advice/wall-preparation/)
 
-Illustrative study
+![Green-painted guest corridor at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-18-800.webp)
 
-Pause motion
+Guest corridor at 15 Old Bailey, where we delivered the decorating package. Photograph: Dorin Burcus.
 
 09 / planning
 

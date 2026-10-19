@@ -143,7 +143,7 @@ Or go direct. The phone is answered by Dorin Burcus himself; the number is shown
 
 [info@mrwallcover.com](mailto:info@mrwallcover.com)
 
-[WhatsApp us](https://www.mrwallcover.com/contact/) [Book a 20-minute call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk)
+[WhatsApp us](https://www.mrwallcover.com/contact/) [Book a call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk)
 
 Calls Mon–Fri, 9am–5pm UK.
 
@@ -176,5 +176,29 @@ Pause motion
 Tell us the area, the rooms or rough scope, the paper or material you have in mind, and your preferred timing. Photographs or drawings can follow by email.
 
 You do not need every answer yet. We can establish the details together.
+
+What do you need?
+
+## Five ways to begin.
+
+### I already have the wallpaper
+
+Installation, with the product you have bought. Measurements can wait.
+
+### Help me choose and install it
+
+A material family, a sample in the room, then the hang.
+
+### I am specifying a project
+
+Send the room schedule, drawings and the specification. Unknowns can stay blank.
+
+### A hotel or contractor package
+
+Access, programme and who supplies the material.
+
+### Aftercare or a repair
+
+A separate note for existing work. A photograph tells us whether it is the hang or the building.
 
 By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
