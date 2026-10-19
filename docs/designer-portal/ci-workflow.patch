@@ -1,14 +1,8 @@
 diff --git a/.github/workflows/pages.yml b/.github/workflows/pages.yml
-index fe49cd8..ba08235 100644
+index af7af67..45d8f98 100644
 --- a/.github/workflows/pages.yml
 +++ b/.github/workflows/pages.yml
-@@ -14,3 +14,4 @@ permissions:
- concurrency:
--  group: pages
-+  # PR checks have independent queues; production deployments stay serialized.
-+  group: pages-${{ github.event.pull_request.number || 'production' }}
-   cancel-in-progress: false
-@@ -36,6 +36,18 @@ jobs:
+@@ -38,6 +38,18 @@
          run: node scripts/stamp-case-study-dates.mjs --check
        - name: Check
          run: npm run check
@@ -27,7 +21,7 @@ index fe49cd8..ba08235 100644
        - name: Build
          env:
            # Build-time only. The phone number is never in the repository.
-@@ -46,6 +58,10 @@ jobs:
+@@ -48,6 +60,10 @@
          env:
            SITE_PHONE: ${{ secrets.SITE_PHONE }}
          run: npm run check:dist

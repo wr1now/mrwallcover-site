@@ -13,6 +13,7 @@ import uuid
 from pathlib import Path
 from documents import MAX_BYTES, extract_evidence, verify_document
 from pdf import render_estimate
+from scanner_config import CLAMSCAN_EXECUTABLE, SCANNER_DATABASE_DIRECTORY
 
 BUCKET = 'designer-portal'
 
@@ -66,7 +67,8 @@ def scan(data: bytes, filename: str):
         path = Path(temporary)/('source'+Path(filename).suffix.lower())
         path.write_bytes(data)
         try:
-            result = subprocess.run(['clamscan', '--no-summary', '--stdout', str(path)], capture_output=True, timeout=90)
+            result = subprocess.run([CLAMSCAN_EXECUTABLE, '--database='+SCANNER_DATABASE_DIRECTORY,
+                                     '--no-summary', '--stdout', str(path)], capture_output=True, timeout=90)
         except (FileNotFoundError, subprocess.TimeoutExpired) as error:
             raise TemporaryFailure('Document scanner unavailable; file remains quarantined') from error
         if result.returncode == 1:

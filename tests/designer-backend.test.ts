@@ -16,7 +16,8 @@ const PROJECT = '30000000-0000-4000-8000-000000000001';
 const DOC = '40000000-0000-4000-8000-000000000001';
 const ESTIMATE = '50000000-0000-4000-8000-000000000001';
 const SHA = 'a'.repeat(64);
-async function database() {
+const PRIVATE_HELPERS_MIGRATION = new URL('../supabase/migrations/20261019144646_designer_private_rls_helpers.sql', import.meta.url);
+async function database(options: { privateHelpers?: boolean } = {}) {
   const db = new PGlite();
   await db.exec(`create role anon; create role authenticated; create role service_role bypassrls;
     create schema auth; create schema storage;
@@ -35,6 +36,7 @@ async function database() {
   await db.exec(readFileSync(new URL('../supabase/migrations/202610180002_designer_portal.sql', import.meta.url), 'utf8'));
   await db.exec(readFileSync(new URL('../supabase/migrations/202610180003_designer_notifications.sql', import.meta.url), 'utf8'));
   await db.exec(readFileSync(new URL('../supabase/migrations/202610180004_designer_learning.sql', import.meta.url), 'utf8'));
+  if (options.privateHelpers !== false) await db.exec(readFileSync(PRIVATE_HELPERS_MIGRATION, 'utf8'));
   return db;
 }
 async function setup(db: PGlite) {
@@ -106,6 +108,69 @@ test('RLS isolates studios and blocks direct writes/RPCs/storage even with broad
     await assert.rejects(() => db.exec('select * from designer_shares'), /permission denied/);
     await db.exec(`select set_config('request.jwt.claim.sub','${VIEWER}',false)`);
     assert.equal((await db.query('select * from designer_projects')).rows.length, 1);
+  } finally { await db.close(); }
+});
+
+test('private RLS helper migration preserves identity, policies and caller-bound studio access', async () => {
+  const db = await database({ privateHelpers: false });
+  try {
+    const studio = await setup(db);
+    const original = (await db.query<any>(`select oid::text,proowner::text,proacl::text from pg_proc
+      where oid='public.designer_my_studio(uuid)'::regprocedure`)).rows[0];
+    const policyDependencies = async () => (await db.query<any>(`select p.oid::text,p.polname,p.polrelid::text
+      from pg_policy p join pg_depend d on d.classid='pg_policy'::regclass and d.objid=p.oid
+      where d.refclassid='pg_proc'::regclass and d.refobjid=$1::oid order by p.polname`, [original.oid])).rows;
+    const originalPolicies = await policyDependencies();
+    assert.equal(originalPolicies.length, 9);
+
+    await db.exec(readFileSync(PRIVATE_HELPERS_MIGRATION, 'utf8'));
+    assert.equal((await db.query<any>("select to_regprocedure('public.designer_my_studio(uuid)') as helper")).rows[0].helper, null);
+    const moved = (await db.query<any>(`select oid::text,proowner::text,proacl::text,prosecdef,provolatile,pronargs,proconfig
+      from pg_proc where oid='designer_private.designer_my_studio(uuid)'::regprocedure`)).rows[0];
+    assert.deepEqual({ oid: moved.oid, proowner: moved.proowner, proacl: moved.proacl }, original);
+    assert.equal(moved.prosecdef, true); assert.equal(moved.provolatile, 's'); assert.equal(moved.pronargs, 1);
+    assert.deepEqual(moved.proconfig, ['search_path=""']);
+    assert.deepEqual(await policyDependencies(), originalPolicies);
+
+    for (const role of ['anon', 'authenticated', 'service_role']) {
+      const privileges = (await db.query<any>(`select has_schema_privilege($1,'designer_private','USAGE') as usage,
+        has_schema_privilege($1,'designer_private','CREATE') as create,
+        has_function_privilege($1,'designer_private.designer_my_studio(uuid)','EXECUTE') as execute`, [role])).rows[0];
+      assert.deepEqual(privileges, { usage: role !== 'anon', create: false, execute: role !== 'anon' });
+    }
+    const triggerPaths = (await db.query<any>(`select proname,proconfig from pg_proc where pronamespace='public'::regnamespace
+      and proname in ('designer_immutable','designer_config_immutable_body','designer_notification_payload_immutable','designer_reopen_changed_project')
+      order by proname`)).rows;
+    assert.equal(triggerPaths.length, 4);
+    assert.ok(triggerPaths.every(row => JSON.stringify(row.proconfig) === JSON.stringify(['search_path=""'])));
+
+    await db.exec(`set role authenticated; select set_config('request.jwt.claim.sub','${VIEWER}',false)`);
+    assert.equal((await db.query<any>('select designer_private.designer_my_studio($1) as allowed', [studio.id])).rows[0].allowed, true);
+    assert.equal((await db.query('select * from designer_projects')).rows.length, 1);
+    await assert.rejects(() => db.exec('create table designer_private.client_injection(id integer)'), /permission denied/);
+    await assert.rejects(() => db.query('select public.designer_has_access($1,$2,false,false)', [OWNER, studio.id]), /permission denied/);
+    await db.exec(`select set_config('request.jwt.claim.sub','${OTHER}',false)`);
+    assert.equal((await db.query<any>('select designer_private.designer_my_studio($1) as allowed', [studio.id])).rows[0].allowed, false);
+    assert.equal((await db.query('select * from designer_projects')).rows.length, 0);
+    await db.exec("select set_config('request.jwt.claim.sub','',false)");
+    assert.equal((await db.query<any>('select designer_private.designer_my_studio($1) as allowed', [studio.id])).rows[0].allowed, false);
+    await db.exec('reset role; set role anon');
+    await assert.rejects(() => db.query('select designer_private.designer_my_studio($1)', [studio.id]), /permission denied/);
+  } finally { await db.close(); }
+});
+
+test('operator SQL smoke exercises both studios without DDL and rolls synthetic fixtures back to baseline', async () => {
+  const db = await database();
+  try {
+    const smoke = readFileSync(new URL('../supabase/tests/designer_private_rls_smoke.sql', import.meta.url), 'utf8');
+    assert.doesNotMatch(smoke, /\b(?:create|alter|drop)\s+(?:temporary\s+|temp\s+)?(?:table|schema|function)\b/i);
+    await db.exec(smoke);
+    assert.equal((await db.query<any>('select count(*)::integer as users from auth.users')).rows[0].users, 4);
+    for (const table of ['designer_studios', 'designer_memberships', 'designer_projects']) {
+      assert.equal((await db.query(`select * from ${table}`)).rows.length, 0);
+    }
+    const state = (await db.query<any>("select current_setting('designer_smoke.state',true) as state")).rows[0].state;
+    assert.ok(state === null || state === '');
   } finally { await db.close(); }
 });
 

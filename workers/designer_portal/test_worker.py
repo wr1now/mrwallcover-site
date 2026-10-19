@@ -2,6 +2,7 @@
 import hashlib
 import os
 import unittest
+from types import SimpleNamespace
 from unittest.mock import patch
 import worker
 
@@ -49,6 +50,14 @@ class WorkerTest(unittest.TestCase):
             output = rpc.call_args.args[1]
             self.assertFalse(output['p_success'])
             self.assertTrue(output['p_retryable'])
+
+    def test_scan_uses_reviewed_executable_and_common_database_directory(self):
+        with patch.object(worker.subprocess, 'run', return_value=SimpleNamespace(returncode=0)) as command:
+            worker.scan(b'synthetic scan input', 'synthetic.txt')
+        args = command.call_args.args[0]
+        self.assertEqual(args[0], '/usr/local/bin/clamscan')
+        self.assertIn('--database=/var/lib/clamav', args)
+        self.assertEqual(command.call_args.kwargs['timeout'], 90)
 
     def test_pdf_output_is_unique_to_lease(self):
         data = job('estimate.pdf')

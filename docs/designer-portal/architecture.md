@@ -27,6 +27,8 @@ This follows the existing website's cloud-service pattern without merging the un
 
 The API authenticates against Supabase Auth rather than trusting decoded client claims. Studio membership controls project access; staff privileges come from the separate staff allowlist. Only staff with the required owner role can approve commercial configuration. Client-supplied drafts cannot supply their own rates or approval flags.
 
+Direct authenticated reads use the caller-bound `designer_private.designer_my_studio` RLS helper. Its schema stays outside the Data API's exposed schemas; authenticated users receive usage/execution only. The additive helper migration preserves the function identity and existing policy bindings, with an empty fixed search path and fully qualified calls. The immutable-record and project-reopening trigger functions also have fixed empty paths.
+
 Documents start in quarantine. Upload completion creates a verification job; it does not declare the file safe. A bounded parser and local ClamAV scan must pass before extraction/download. Native CAD/BIM/programme sources remain marked for specialist review. Office macros/embedded executable objects are rejected; formulas without cached values are never converted to zero. Extraction returns cited, unconfirmed evidence. It never derives geometry from a printed scale alone or treats source instructions as commands.
 
 Jobs use transactional leases, bounded attempts and idempotent identities. PDF output paths include the attempt's lease token so a stale attempt cannot delete another attempt's completed output. The queue carries references; document bytes are read and written directly in private Storage.
