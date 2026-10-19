@@ -18,7 +18,9 @@ test('the built site keeps private names and the verification token out of the w
   const files = await htmlFiles('dist');
   assert.ok(files.length > 10);
   const html = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
-  for (const banned of ['CLAUDI', 'Landmark', 'Samantha', 'Koroseal', 'Admiralty', 'Marriott', 'subcontract', 'third party', 'third-party', 'Threadneedle', 'Mulberry', 'Aethos']) {
+  // Admiralty (Waldorf Astoria London Admiralty Arch), Marriott (London Marriott Hotel Canary Wharf) and the Mulberry
+  // Regent Street store were cleared for publication by Dorin on 19 Oct 2026. Landmark stays off.
+  for (const banned of ['CLAUDI', 'Landmark', 'Samantha', 'Koroseal', 'Mulberry Square', 'subcontract', 'third party', 'third-party', 'Threadneedle', 'Aethos']) {
     assert.equal(html.toLowerCase().includes(banned.toLowerCase()), false, banned);
   }
   // The two private residential buildings: street only, never a house number or a full postcode.

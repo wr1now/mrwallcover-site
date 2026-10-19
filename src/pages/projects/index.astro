@@ -1,6 +1,7 @@
 ---
 import Icon from '../../components/Icon.astro';
 import HomeProjectEditorial from '../../components/HomeProjectEditorial.astro';
+import ProjectRecord from '../../components/ProjectRecord.astro';
 import { moreWork } from '../../data/home-editorial';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Picture from '../../components/Picture.astro';
@@ -71,6 +72,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
         <a class="work-record-link" href="#hotels">View the complete hotel record <span aria-hidden="true">↓</span></a>
       </div>
       <p class="work-stories-link"><a href="#commission-stories-heading">Inside the commissions: photographs, films and Calico collaborations</a></p>
+      <p class="work-stories-link"><a href="#project-record">The fuller project record: more hotels, restaurants, shops, workplaces and homes</a></p>
     </header>
     <div class="work-controls" data-project-controls hidden>
       <div class="work-filters" role="group" aria-label="Filter projects by setting">
@@ -119,6 +121,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
         <button type="button" data-project-reset>Show all projects</button>
       </div>
     </div>
+    <ProjectRecord />
     <details id="hotels" class="hotel-record" data-hotel-record>
       <summary><span>Complete hotel record</span><span class="hotel-record-count">{hotels.length} named hotels</span></summary>
       <div class="hotel-record-body">

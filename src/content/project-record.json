@@ -1,0 +1,1660 @@
+{
+  "_note": "Smaller jobs and earlier stages without a case study, approved one by one by Dorin on 19 October 2026 from his own photographs (review in the private research repository). Private homes are named by area only. Photographs: own, re-encoded without metadata (scripts/originals/project-record-2026-10.json).",
+  "eyebrow": "The fuller record",
+  "title": "More of the work, job by job.",
+  "intro": "Hotels, restaurants, shops, workplaces and homes we have papered and decorated, beyond the case studies above. Each is shown with our own site photographs. Private homes are named by area only.",
+  "note": "Photographs were taken on site by us or our installation team; some show work in progress. Hotel and business names appear with the owner's approval; private clients are never named.",
+  "groups": [
+    {
+      "id": "hotels",
+      "label": "Hotels"
+    },
+    {
+      "id": "restaurants",
+      "label": "Restaurants and bars"
+    },
+    {
+      "id": "shops",
+      "label": "Shops, showrooms and galleries"
+    },
+    {
+      "id": "workplaces",
+      "label": "Workplaces"
+    },
+    {
+      "id": "homes",
+      "label": "Homes"
+    },
+    {
+      "id": "other",
+      "label": "Events and heritage"
+    }
+  ],
+  "items": [
+    {
+      "id": "waldorf-astoria-london-admiralty-arch-2026",
+      "group": "hotels",
+      "name": "Waldorf Astoria London Admiralty Arch",
+      "place": "Trafalgar Square",
+      "years": "2026",
+      "text": "Wall preparation, lining and wallpapering in panelled guest suites and corridors before opening, including a blue-grey leaf-trail stripe.",
+      "images": [
+        "record-waldorf-astoria-london-admiralty-arch-2026-01"
+      ]
+    },
+    {
+      "id": "london-marriott-hotel-canary-wharf-2026",
+      "group": "hotels",
+      "name": "London Marriott Hotel Canary Wharf",
+      "place": "Canary Wharf",
+      "years": "2026",
+      "text": "A large textured mural of historic dock warehouses hung along a ground-floor corridor, and a lobby feature wall stripped and prepared.",
+      "images": []
+    },
+    {
+      "id": "heythrop-park-2022",
+      "group": "hotels",
+      "name": "Heythrop Park",
+      "place": "Enstone, Oxfordshire",
+      "years": "2022",
+      "text": "Passenger lift car interiors refinished in architectural film, linen texture above dark wood grain, fitted at night over several visits.",
+      "images": [
+        "record-heythrop-park-2022-01",
+        "record-heythrop-park-2022-02"
+      ]
+    },
+    {
+      "id": "a-hotel-in-london-2022",
+      "group": "hotels",
+      "name": "A hotel in London",
+      "place": "London",
+      "years": "2022",
+      "text": "Guest bedrooms papered in a green tree-branch design, carried across the bed-alcove soffits and round joinery and window reveals.",
+      "images": [
+        "record-a-hotel-in-london-2022-01",
+        "record-a-hotel-in-london-2022-02"
+      ]
+    },
+    {
+      "id": "the-westminster-london-curio-collection-by-hilto",
+      "group": "hotels",
+      "name": "The Westminster London, Curio Collection by Hilton",
+      "place": "Westminster",
+      "years": "2021",
+      "text": "Round columns wrapped in a textured natural wallcovering, a textured paper on the long bar wall and a dark mica-effect wallcovering.",
+      "images": [
+        "record-the-westminster-london-curio-collection-by-hilto-01",
+        "record-the-westminster-london-curio-collection-by-hilto-02"
+      ]
+    },
+    {
+      "id": "a-hotel-function-floor-2020",
+      "group": "hotels",
+      "name": "A hotel function floor",
+      "place": "",
+      "years": "2020",
+      "text": "Printed striated wallcovering along a function-floor corridor, with a dark striated feature wall by the washrooms.",
+      "images": [
+        "record-a-hotel-function-floor-2020-01",
+        "record-a-hotel-function-floor-2020-02"
+      ]
+    },
+    {
+      "id": "the-marylebone-2020",
+      "group": "hotels",
+      "name": "The Marylebone",
+      "place": "Marylebone",
+      "years": "2020",
+      "text": "Off-white woven-texture vinyl wallcovering in guest rooms, including the window reveals, and on a staircase during a refurbishment.",
+      "images": [
+        "record-the-marylebone-2020-01",
+        "record-the-marylebone-2020-02",
+        "record-the-marylebone-2020-03"
+      ]
+    },
+    {
+      "id": "the-lensbury-teddington-201819",
+      "group": "hotels",
+      "name": "The Lensbury, Teddington",
+      "place": "Teddington",
+      "years": "2018–19",
+      "text": "Redecoration in phases, including guest-bedroom corridors with the carpets kept under protective film, and walls around newly fitted wall lights.",
+      "images": [
+        "record-the-lensbury-teddington-201819-01"
+      ]
+    },
+    {
+      "id": "a-hotel-in-london-2017",
+      "group": "hotels",
+      "name": "A hotel in London",
+      "place": "London",
+      "years": "2017",
+      "text": "Grey textured vinyl wallcovering hung along guest corridors during the hotel's fit-out.",
+      "images": [
+        "record-a-hotel-in-london-2017-01",
+        "record-a-hotel-in-london-2017-02"
+      ]
+    },
+    {
+      "id": "hilton-london-hyde-park-2016",
+      "group": "hotels",
+      "name": "Hilton London Hyde Park",
+      "place": "Bayswater",
+      "years": "2016",
+      "text": "Guest-corridor wallcovering above and below the dado rail.",
+      "images": [
+        "record-hilton-london-hyde-park-2016-01"
+      ]
+    },
+    {
+      "id": "premier-inn-london-heathrow-airport-terminal-4-2",
+      "group": "hotels",
+      "name": "Premier Inn London Heathrow Airport Terminal 4",
+      "place": "Heathrow",
+      "years": "2016",
+      "text": "Wallcovering installation at the airport hotel.",
+      "images": []
+    },
+    {
+      "id": "motcombs-st-john-s-wood-2024",
+      "group": "restaurants",
+      "name": "Motcombs, St John's Wood",
+      "place": "St John's Wood",
+      "years": "2024",
+      "text": "Decorating for the restaurant's refit: a scenic grisaille mural wallpaper in a WC, painted panelled WCs and a navy-painted shopfront.",
+      "images": []
+    },
+    {
+      "id": "a-venue-in-soho-2021",
+      "group": "restaurants",
+      "name": "A venue in Soho",
+      "place": "Soho",
+      "years": "2021",
+      "text": "Wallcoverings through a multi-room refit, including art deco geometric, trellis, animal-print and marble-effect designs, floral paper over WC walls and ceilings, and quilted corridor panels.",
+      "images": [
+        "record-a-venue-in-soho-2021-01",
+        "record-a-venue-in-soho-2021-02",
+        "record-a-venue-in-soho-2021-03"
+      ]
+    },
+    {
+      "id": "motcombs-belgravia-202123",
+      "group": "restaurants",
+      "name": "Motcombs, Belgravia",
+      "place": "Belgravia",
+      "years": "2021–23",
+      "text": "Patterned wallpaper over the dining-room walls and ceilings, booths and private dining room, with floral papers in the bar and WC corridor.",
+      "images": [
+        "record-motcombs-belgravia-202123-01",
+        "record-motcombs-belgravia-202123-02",
+        "record-motcombs-belgravia-202123-03"
+      ]
+    },
+    {
+      "id": "a-bar-and-restaurant-in-chislehurst-2019",
+      "group": "restaurants",
+      "name": "A bar and restaurant in Chislehurst",
+      "place": "Chislehurst",
+      "years": "2019",
+      "text": "Engraved-style murals of trees and geese in the lobby, stairwell and WCs, with floral papers and a patterned paper behind the bar.",
+      "images": [
+        "record-a-bar-and-restaurant-in-chislehurst-2019-01",
+        "record-a-bar-and-restaurant-in-chislehurst-2019-02",
+        "record-a-bar-and-restaurant-in-chislehurst-2019-03"
+      ]
+    },
+    {
+      "id": "agile-rabbit-herne-hill-2018",
+      "group": "restaurants",
+      "name": "Agile Rabbit, Herne Hill",
+      "place": "Herne Hill",
+      "years": "2018",
+      "text": "Ultramarine walls and ceilings cut in round exposed services, geometric floor graphics painted to a supplied scheme, sanded boards and dark-painted joinery.",
+      "images": [
+        "record-agile-rabbit-herne-hill-2018-01"
+      ]
+    },
+    {
+      "id": "everyman-cinema-altrincham-2018",
+      "group": "restaurants",
+      "name": "Everyman cinema, Altrincham",
+      "place": "Altrincham",
+      "years": "2018",
+      "text": "Walls prepared and large black-and-white photographic murals hung in the lounge bar and a feature corridor before opening.",
+      "images": [
+        "record-everyman-cinema-altrincham-2018-01",
+        "record-everyman-cinema-altrincham-2018-02",
+        "record-everyman-cinema-altrincham-2018-03"
+      ]
+    },
+    {
+      "id": "a-commercial-unit-in-chelsea-2026",
+      "group": "shops",
+      "name": "A commercial unit in Chelsea",
+      "place": "Chelsea",
+      "years": "2026",
+      "text": "Wall stripping and preparation, a silk-effect strié wallcovering, then remedial priming and making good.",
+      "images": []
+    },
+    {
+      "id": "a-salon-and-a-showroom-on-the-king-s-road-202325",
+      "group": "shops",
+      "name": "A salon and a showroom on the King's Road",
+      "place": "Chelsea and Fulham",
+      "years": "2023–25",
+      "text": "A salon's joinery and columns wrapped in concrete-effect film, then a furniture showroom with sepia Venice murals, a gold-leaf botanical mural and textured wallcoverings.",
+      "images": [
+        "record-a-salon-and-a-showroom-on-the-king-s-road-202325-01",
+        "record-a-salon-and-a-showroom-on-the-king-s-road-202325-02"
+      ]
+    },
+    {
+      "id": "scp-shoreditch-2019",
+      "group": "shops",
+      "name": "SCP, Shoreditch",
+      "place": "Shoreditch",
+      "years": "2019",
+      "text": "Large digital-print wallpapers in gradient, marbled and iridescent designs, hung on freestanding display panels for a showroom installation.",
+      "images": [
+        "record-scp-shoreditch-2019-02",
+        "record-scp-shoreditch-2019-03"
+      ]
+    },
+    {
+      "id": "mulberry-regent-street-2018",
+      "group": "shops",
+      "name": "Mulberry, Regent Street",
+      "place": "West End",
+      "years": "2018",
+      "text": "Scenic sky and landscape mural wallcoverings hung on curved and double-height walls, with wall preparation and decorating, mostly overnight.",
+      "images": [
+        "record-mulberry-regent-street-2018-01"
+      ]
+    },
+    {
+      "id": "mango-victoria-street-2018",
+      "group": "shops",
+      "name": "Mango, Victoria Street",
+      "place": "Victoria",
+      "years": "2018",
+      "text": "Night-shift refit of lit display bays: textured vinyl wallcovering on panelled bays with aluminium joint trims, and metallic feature panels.",
+      "images": [
+        "record-mango-victoria-street-2018-01",
+        "record-mango-victoria-street-2018-02",
+        "record-mango-victoria-street-2018-03"
+      ]
+    },
+    {
+      "id": "house-of-hackney-s-former-flagship-shoreditch-hi",
+      "group": "shops",
+      "name": "House of Hackney's former flagship, Shoreditch High Street",
+      "place": "Shoreditch",
+      "years": "2018–20",
+      "text": "The brand's own papers above and below the dado throughout the store, striped and snakeskin-print fitting rooms, and ceiling and joinery repainting.",
+      "images": [
+        "record-house-of-hackney-s-former-flagship-shoreditch-hi-01",
+        "record-house-of-hackney-s-former-flagship-shoreditch-hi-02",
+        "record-house-of-hackney-s-former-flagship-shoreditch-hi-03"
+      ]
+    },
+    {
+      "id": "a-shop-in-kensington-2018",
+      "group": "shops",
+      "name": "A shop in Kensington",
+      "place": "Kensington",
+      "years": "2018",
+      "text": "Night-shift decorating during a shop fit-out: display niches, bulkheads, ceilings and window reveals filled and painted.",
+      "images": []
+    },
+    {
+      "id": "an-office-in-mayfair-2023",
+      "group": "workplaces",
+      "name": "An office in Mayfair",
+      "place": "Mayfair",
+      "years": "2023",
+      "text": "Dark textured wallcovering in the boardroom, grey textured vinyl in corridors and tea points, and a tile-effect palm-shadow mural in two washrooms.",
+      "images": [
+        "record-an-office-in-mayfair-2023-01",
+        "record-an-office-in-mayfair-2023-02",
+        "record-an-office-in-mayfair-2023-03"
+      ]
+    },
+    {
+      "id": "an-office-at-new-street-square-2021",
+      "group": "workplaces",
+      "name": "An office at New Street Square",
+      "place": "City of London",
+      "years": "2021",
+      "text": "A red pixel-pattern feature wall in a meeting room and grey textured wallcovering along the corridors, as part of an office fit-out.",
+      "images": [
+        "record-an-office-at-new-street-square-2021-01",
+        "record-an-office-at-new-street-square-2021-02",
+        "record-an-office-at-new-street-square-2021-03"
+      ]
+    },
+    {
+      "id": "an-office-in-holborn-2020",
+      "group": "workplaces",
+      "name": "An office in Holborn",
+      "place": "Holborn",
+      "years": "2020",
+      "text": "Sound-absorbent acoustic felt wallcovering on a boardroom wall, wrapped around free-standing columns and on a feature wall in an open-plan office.",
+      "images": [
+        "record-an-office-in-holborn-2020-01",
+        "record-an-office-in-holborn-2020-02",
+        "record-an-office-in-holborn-2020-03"
+      ]
+    },
+    {
+      "id": "an-office-in-south-kensington-202021",
+      "group": "workplaces",
+      "name": "An office in South Kensington",
+      "place": "South Kensington",
+      "years": "2020–21",
+      "text": "Small maintenance works: loose cabling moved into dado trunking, and the walls and skirtings made good around it.",
+      "images": []
+    },
+    {
+      "id": "a-studio-office-in-shoreditch-2019",
+      "group": "workplaces",
+      "name": "A studio office in Shoreditch",
+      "place": "Shoreditch",
+      "years": "2019",
+      "text": "Bamboo-print wallpaper above a snake-and-trellis dado paper and painted dado rail, hung over an old mural wall that was first lined.",
+      "images": [
+        "record-a-studio-office-in-shoreditch-2019-01",
+        "record-a-studio-office-in-shoreditch-2019-02",
+        "record-a-studio-office-in-shoreditch-2019-03"
+      ]
+    },
+    {
+      "id": "an-office-in-islington-2018",
+      "group": "workplaces",
+      "name": "An office in Islington",
+      "place": "Islington",
+      "years": "2018",
+      "text": "Plaid woven-vinyl wallcovering hung full height in the lobby and corridors, set out with a laser level.",
+      "images": [
+        "record-an-office-in-islington-2018-01",
+        "record-an-office-in-islington-2018-02",
+        "record-an-office-in-islington-2018-03"
+      ]
+    },
+    {
+      "id": "enterprise-rent-a-car-northampton-2018",
+      "group": "workplaces",
+      "name": "Enterprise Rent-A-Car, Northampton",
+      "place": "Northampton",
+      "years": "2018",
+      "text": "A printed mural in the company's green and black livery, hung across a feature wall in the branch office.",
+      "images": [
+        "record-enterprise-rent-a-car-northampton-2018-01"
+      ]
+    },
+    {
+      "id": "an-office-in-the-city-of-london-2017",
+      "group": "workplaces",
+      "name": "An office in the City of London",
+      "place": "City of London",
+      "years": "2017",
+      "text": "Grey felt-textured wallcovering in a small office room with a built-in desk.",
+      "images": [
+        "record-an-office-in-the-city-of-london-2017-01",
+        "record-an-office-in-the-city-of-london-2017-02"
+      ]
+    },
+    {
+      "id": "an-office-in-st-katharine-docks-2017",
+      "group": "workplaces",
+      "name": "An office in St Katharine Docks",
+      "place": "St Katharine Docks",
+      "years": "2017",
+      "text": "Fromental Essentials, a woven-texture wallcovering.",
+      "images": []
+    },
+    {
+      "id": "a-home-in-belgravia-2025",
+      "group": "homes",
+      "name": "A home in Belgravia",
+      "place": "Belgravia",
+      "years": "2025",
+      "text": "A herringbone-weave textile-effect wallcovering hung over lining paper in a marble bathroom, a full-height stairwell and under-stair panelling with flush doors.",
+      "images": [
+        "record-a-home-in-belgravia-2025-01",
+        "record-a-home-in-belgravia-2025-02"
+      ]
+    },
+    {
+      "id": "a-georgian-house-in-hackney-2025",
+      "group": "homes",
+      "name": "A Georgian house in Hackney",
+      "place": "Hackney",
+      "years": "2025",
+      "text": "Strip-out, wall preparation and redecoration around the period cornice, shutters and ceiling rose.",
+      "images": []
+    },
+    {
+      "id": "a-home-in-maida-vale-2025",
+      "group": "homes",
+      "name": "A home in Maida Vale",
+      "place": "Maida Vale",
+      "years": "2025",
+      "text": "A chinoiserie-style scenic wallpaper of flowering trees, birds and butterflies over a green lawn with animals, hung round a playroom.",
+      "images": [
+        "record-a-home-in-maida-vale-2025-01",
+        "record-a-home-in-maida-vale-2025-02",
+        "record-a-home-in-maida-vale-2025-03"
+      ]
+    },
+    {
+      "id": "a-country-house-near-chichester-2025",
+      "group": "homes",
+      "name": "A country house near Chichester",
+      "place": "Chichester",
+      "years": "2025",
+      "text": "Whole-house redecoration: trailing-leaf paper over an attic bedroom's walls and ceiling slopes, striped paper in the hall and garden room, and paintwork throughout.",
+      "images": [
+        "record-a-country-house-near-chichester-2025-01",
+        "record-a-country-house-near-chichester-2025-02"
+      ]
+    },
+    {
+      "id": "a-house-in-mill-hill-2025",
+      "group": "homes",
+      "name": "A house in Mill Hill",
+      "place": "Mill Hill",
+      "years": "2025",
+      "text": "Arte wallpaper for the hallway, lounge and dining room, and an upstairs bedroom.",
+      "images": []
+    },
+    {
+      "id": "an-apartment-in-kensington-2025",
+      "group": "homes",
+      "name": "An apartment in Kensington",
+      "place": "Kensington",
+      "years": "2025",
+      "text": "Botanical-print wallpaper, textured wallcovering in the door reveals and silver metal-leaf coffered ceilings.",
+      "images": []
+    },
+    {
+      "id": "a-mansion-flat-in-knightsbridge-2025",
+      "group": "homes",
+      "name": "A mansion flat in Knightsbridge",
+      "place": "Knightsbridge",
+      "years": "2025",
+      "text": "A dressing room with shagreen-effect wallcovering panels divided by slim brass trims, beside a fine linen-texture wallcovering around mirrored wardrobes.",
+      "images": []
+    },
+    {
+      "id": "a-home-in-hackney-2025",
+      "group": "homes",
+      "name": "A home in Hackney",
+      "place": "Hackney",
+      "years": "2025",
+      "text": "A moulded panel around a bedroom ceiling rose, papered in a grisaille tapestry-style print.",
+      "images": []
+    },
+    {
+      "id": "a-home-in-fulham-2025",
+      "group": "homes",
+      "name": "A home in Fulham",
+      "place": "Fulham",
+      "years": "2025",
+      "text": "A pictorial animal-and-palm wallpaper hung across a sloped-ceiling loft bedroom wall, around a sash window.",
+      "images": [
+        "record-a-home-in-fulham-2025-01"
+      ]
+    },
+    {
+      "id": "a-home-in-bayswater-2025",
+      "group": "homes",
+      "name": "A home in Bayswater",
+      "place": "Bayswater",
+      "years": "2025",
+      "text": "Walls skimmed and sanded in preparation for a microcement decorative finish.",
+      "images": []
+    },
+    {
+      "id": "a-house-in-dalston-2024",
+      "group": "homes",
+      "name": "A house in Dalston",
+      "place": "Dalston",
+      "years": "2024",
+      "text": "A scallop-pattern paper set against deep green paintwork in the cloakroom, a townhouse-motif feature wall in the boot room, and papered shelf alcoves.",
+      "images": [
+        "record-a-house-in-dalston-2024-01",
+        "record-a-house-in-dalston-2024-02",
+        "record-a-house-in-dalston-2024-03"
+      ]
+    },
+    {
+      "id": "a-house-in-queen-s-park-2024",
+      "group": "homes",
+      "name": "A house in Queen's Park",
+      "place": "Queen's Park",
+      "years": "2024",
+      "text": "Decorating in a house refurbishment: painted fluted dado panelling on the stairs and landing, shelving, a dark green WC and making good after electrical work.",
+      "images": []
+    },
+    {
+      "id": "a-flat-in-camden-town-2024",
+      "group": "homes",
+      "name": "A flat in Camden Town",
+      "place": "Camden Town",
+      "years": "2024",
+      "text": "Walls filled and made good, then repainted, over two visits.",
+      "images": []
+    },
+    {
+      "id": "a-country-house-in-wiltshire-2024",
+      "group": "homes",
+      "name": "A country house in Wiltshire",
+      "place": "Wiltshire",
+      "years": "2024",
+      "text": "Refurbishment work from strip-out to first fix, including the panelling set-out, carried out alongside other trades.",
+      "images": []
+    },
+    {
+      "id": "a-house-in-fulham-2024",
+      "group": "homes",
+      "name": "A house in Fulham",
+      "place": "Fulham",
+      "years": "2024",
+      "text": "A hand-drawn stripe wallpaper in the principal bedroom and a geometric mural paper above the panelled dado in the cloakroom.",
+      "images": [
+        "record-a-house-in-fulham-2024-01"
+      ]
+    },
+    {
+      "id": "a-cottage-near-chichester-202426",
+      "group": "homes",
+      "name": "A cottage near Chichester",
+      "place": "Chichester",
+      "years": "2024–26",
+      "text": "Bedrooms under sloping ceilings stripped, plaster made good and papered, with a later visit for a bedroom feature wall and the hall and stairs.",
+      "images": []
+    },
+    {
+      "id": "a-flat-in-st-john-s-wood-2023",
+      "group": "homes",
+      "name": "A flat in St John's Wood",
+      "place": "St John's Wood",
+      "years": "2023",
+      "text": "A period flat refurbishment, with oak floors relaid, partitions rebuilt, marble-effect kitchen splashbacks, a seamless mineral wall coating in the bathroom and redecoration.",
+      "images": []
+    },
+    {
+      "id": "an-apartment-in-kensington-2023",
+      "group": "homes",
+      "name": "An apartment in Kensington",
+      "place": "Kensington",
+      "years": "2023",
+      "text": "Phillip Jeffries woven wallcovering in panels with brass trims, wisteria mural panels, metal-leaf and woven-finish ceiling coffers and a fern-and-leaf wallpaper.",
+      "images": [
+        "record-an-apartment-in-kensington-2023-01",
+        "record-an-apartment-in-kensington-2023-02"
+      ]
+    },
+    {
+      "id": "an-apartment-in-marylebone-2023",
+      "group": "homes",
+      "name": "An apartment in Marylebone",
+      "place": "Marylebone",
+      "years": "2023",
+      "text": "Shower-grade murals over the bath and in a walk-in shower, and a scenic tree mural in the dining area.",
+      "images": [
+        "record-an-apartment-in-marylebone-2023-01",
+        "record-an-apartment-in-marylebone-2023-02",
+        "record-an-apartment-in-marylebone-2023-03"
+      ]
+    },
+    {
+      "id": "a-retirement-village-in-henley-on-thames-2023",
+      "group": "homes",
+      "name": "A retirement village in Henley-on-Thames",
+      "place": "Henley-on-Thames",
+      "years": "2023",
+      "text": "Communal corridors, stairwells and lift lobbies in textured vinyl above painted panelling, with a pearlescent patterned paper and painted ceilings.",
+      "images": [
+        "record-a-retirement-village-in-henley-on-thames-2023-01",
+        "record-a-retirement-village-in-henley-on-thames-2023-02",
+        "record-a-retirement-village-in-henley-on-thames-2023-03"
+      ]
+    },
+    {
+      "id": "a-house-in-cornwall-2022",
+      "group": "homes",
+      "name": "A house in Cornwall",
+      "place": "Cornwall",
+      "years": "2022",
+      "text": "A Calico Wallpaper scenic of moorland and standing stones, hung floor to ceiling in a period bathroom and carried around the window.",
+      "images": []
+    },
+    {
+      "id": "a-country-house-near-ascot-2022",
+      "group": "homes",
+      "name": "A country house near Ascot",
+      "place": "Ascot",
+      "years": "2022",
+      "text": "Wall preparation and lining paper in classical rooms with gilded cornices and Corinthian pilasters.",
+      "images": []
+    },
+    {
+      "id": "a-house-in-primrose-hill-2022",
+      "group": "homes",
+      "name": "A house in Primrose Hill",
+      "place": "Primrose Hill",
+      "years": "2022",
+      "text": "A cloakroom WC papered in a dark large-scale floral, then sealed with a clear protective lacquer.",
+      "images": []
+    },
+    {
+      "id": "an-apartment-in-victoria-2022",
+      "group": "homes",
+      "name": "An apartment in Victoria",
+      "place": "Victoria",
+      "years": "2022",
+      "text": "Grey and white linen-texture wallcovering wrapped onto wall panels on site, with wall preparation and decorating.",
+      "images": []
+    },
+    {
+      "id": "a-country-house-in-hampshire-202122",
+      "group": "homes",
+      "name": "A country house in Hampshire",
+      "place": "Hampshire",
+      "years": "2021–22",
+      "text": "A scenic landscape mural wallcovering wrapped round a period bathroom, and a large monochrome mural in the stair hall.",
+      "images": [
+        "record-a-country-house-in-hampshire-202122-01",
+        "record-a-country-house-in-hampshire-202122-02",
+        "record-a-country-house-in-hampshire-202122-03"
+      ]
+    },
+    {
+      "id": "a-mews-house-in-belgravia-202123",
+      "group": "homes",
+      "name": "A mews house in Belgravia",
+      "place": "Belgravia",
+      "years": "2021–23",
+      "text": "Grisaille scenic panels set in wall mouldings, hand-painted chinoiserie bird panels in a bedroom and grasscloth in the corridors.",
+      "images": [
+        "record-a-mews-house-in-belgravia-202123-01",
+        "record-a-mews-house-in-belgravia-202123-02",
+        "record-a-mews-house-in-belgravia-202123-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-belgravia-2021",
+      "group": "homes",
+      "name": "An apartment in Belgravia",
+      "place": "Belgravia",
+      "years": "2021",
+      "text": "Walls filled and prepared, then a woven grasscloth-effect wallcovering and a fine radial-texture wallcovering hung.",
+      "images": [
+        "record-an-apartment-in-belgravia-2021-01"
+      ]
+    },
+    {
+      "id": "a-house-in-bayswater-2021",
+      "group": "homes",
+      "name": "A house in Bayswater",
+      "place": "Bayswater",
+      "years": "2021",
+      "text": "Hand-painted chinoiserie papers, including a willow-tree mural on a metallic ground, plum blossom in a study and a paper carried across a concealed cupboard door.",
+      "images": [
+        "record-a-house-in-bayswater-2021-01",
+        "record-a-house-in-bayswater-2021-02",
+        "record-a-house-in-bayswater-2021-03"
+      ]
+    },
+    {
+      "id": "a-house-in-fitzrovia-202124",
+      "group": "homes",
+      "name": "A house in Fitzrovia",
+      "place": "Fitzrovia",
+      "years": "2021–24",
+      "text": "Tropical-leaf and floral papers in the WCs, bathroom and a bedroom, a grisaille scenic paper in the hall and stairs, and decorating throughout.",
+      "images": [
+        "record-a-house-in-fitzrovia-202124-01",
+        "record-a-house-in-fitzrovia-202124-02"
+      ]
+    },
+    {
+      "id": "a-house-in-kensington-2021",
+      "group": "homes",
+      "name": "A house in Kensington",
+      "place": "Kensington",
+      "years": "2021",
+      "text": "Interior repainting and touch-ups in a period house, including the panelled hall and staircase.",
+      "images": []
+    },
+    {
+      "id": "a-house-in-bricket-wood-2021",
+      "group": "homes",
+      "name": "A house in Bricket Wood",
+      "place": "Bricket Wood, Hertfordshire",
+      "years": "2021",
+      "text": "A paintable embossed panel-effect wallpaper for a living room.",
+      "images": []
+    },
+    {
+      "id": "a-flat-in-the-city-of-london-202122",
+      "group": "homes",
+      "name": "A flat in the City of London",
+      "place": "City of London",
+      "years": "2021–22",
+      "text": "Grey-blue damask wallpaper in two bedrooms, textured feature walls in the dining room and second bedroom, and repainting.",
+      "images": [
+        "record-a-flat-in-the-city-of-london-202122-01",
+        "record-a-flat-in-the-city-of-london-202122-02"
+      ]
+    },
+    {
+      "id": "a-house-in-north-london-2020",
+      "group": "homes",
+      "name": "A house in North London",
+      "place": "North London",
+      "years": "2020",
+      "text": "Large-scale dark floral wallpaper through a living room, halls, staircase and bedroom, with bamboo-print and leopard-print papers elsewhere and dark painted ceilings.",
+      "images": [
+        "record-a-house-in-north-london-2020-01",
+        "record-a-house-in-north-london-2020-02"
+      ]
+    },
+    {
+      "id": "an-apartment-in-london-2020",
+      "group": "homes",
+      "name": "An apartment in London",
+      "place": "London",
+      "years": "2020",
+      "text": "Glamora wet-area wallcovering hung to dado height around a bathroom, under a marble capping.",
+      "images": []
+    },
+    {
+      "id": "a-home-in-east-finchley-2020",
+      "group": "homes",
+      "name": "A home in East Finchley",
+      "place": "East Finchley",
+      "years": "2020",
+      "text": "House of Hackney's Artemis wallpaper, in a light colourway, on a feature wall.",
+      "images": []
+    },
+    {
+      "id": "new-build-apartments-in-erith-2020",
+      "group": "homes",
+      "name": "New-build apartments in Erith",
+      "place": "Erith",
+      "years": "2020",
+      "text": "Natural grasscloth and a geometric woven-effect wallcovering hung on living-room feature walls, set out with a laser line.",
+      "images": [
+        "record-new-build-apartments-in-erith-2020-01",
+        "record-new-build-apartments-in-erith-2020-02",
+        "record-new-build-apartments-in-erith-2020-03"
+      ]
+    },
+    {
+      "id": "a-house-in-dalston-2020",
+      "group": "homes",
+      "name": "A house in Dalston",
+      "place": "Dalston",
+      "years": "2020",
+      "text": "Bamboo-pattern wallpaper wrapped round a small cloakroom and matched over the door frame, with a dark botanical paper in the bathroom.",
+      "images": [
+        "record-a-house-in-dalston-2020-01",
+        "record-a-house-in-dalston-2020-02",
+        "record-a-house-in-dalston-2020-03"
+      ]
+    },
+    {
+      "id": "a-house-in-hackney-202021",
+      "group": "homes",
+      "name": "A house in Hackney",
+      "place": "Hackney",
+      "years": "2020–21",
+      "text": "Large-scale floral and palm-leaf wallpapers, cut round wall lights and switch plates.",
+      "images": [
+        "record-a-house-in-hackney-202021-01",
+        "record-a-house-in-hackney-202021-02"
+      ]
+    },
+    {
+      "id": "a-home-in-snaresbrook-2020",
+      "group": "homes",
+      "name": "A home in Snaresbrook",
+      "place": "Snaresbrook",
+      "years": "2020",
+      "text": "A media room in olive-green grasscloth around the door, AV wall and linear fireplace, with a diamond-quilted wallcovering opposite.",
+      "images": []
+    },
+    {
+      "id": "an-apartment-in-mill-hill-202021",
+      "group": "homes",
+      "name": "An apartment in Mill Hill",
+      "place": "Mill Hill",
+      "years": "2020–21",
+      "text": "Textured wallcovering inside wood-effect panel frames and in a bedroom in 2020, and a natural textured wallcovering in 2021.",
+      "images": []
+    },
+    {
+      "id": "a-house-in-hackney-2020",
+      "group": "homes",
+      "name": "A house in Hackney",
+      "place": "Hackney",
+      "years": "2020",
+      "text": "A large-scale weeping-willow wallpaper along the bathroom and shower-room walls, pattern-matched with butt joins above a pale glass splashback.",
+      "images": [
+        "record-a-house-in-hackney-2020-01",
+        "record-a-house-in-hackney-2020-02",
+        "record-a-house-in-hackney-2020-03"
+      ]
+    },
+    {
+      "id": "a-house-in-kensington-2020",
+      "group": "homes",
+      "name": "A house in Kensington",
+      "place": "Kensington",
+      "years": "2020",
+      "text": "Decorating during a house renovation: ceilings, an under-stair soffit and the external window pediments painted.",
+      "images": []
+    },
+    {
+      "id": "an-apartment-in-hammersmith-202021",
+      "group": "homes",
+      "name": "An apartment in Hammersmith",
+      "place": "Hammersmith",
+      "years": "2020–21",
+      "text": "Natural grasscloth and woven metallic wallcoverings through the living areas, and a gold-leaf-to-indigo ombre feature wall set out by laser.",
+      "images": [
+        "record-an-apartment-in-hammersmith-202021-02",
+        "record-an-apartment-in-hammersmith-202021-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-clerkenwell-2020",
+      "group": "homes",
+      "name": "An apartment in Clerkenwell",
+      "place": "Clerkenwell",
+      "years": "2020",
+      "text": "A large-scale botanical wallpaper of parrots and tropical flowers, hung along a corridor wall in a single day.",
+      "images": [
+        "record-an-apartment-in-clerkenwell-2020-01",
+        "record-an-apartment-in-clerkenwell-2020-02",
+        "record-an-apartment-in-clerkenwell-2020-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-holland-park-2020",
+      "group": "homes",
+      "name": "An apartment in Holland Park",
+      "place": "Holland Park",
+      "years": "2020",
+      "text": "Decorating and snagging in an apartment, with ceilings made good under full wall and floor protection.",
+      "images": []
+    },
+    {
+      "id": "a-house-in-de-beauvoir-2020",
+      "group": "homes",
+      "name": "A house in De Beauvoir",
+      "place": "De Beauvoir",
+      "years": "2020",
+      "text": "A feature wall in a burgundy and white ikat-print wallpaper.",
+      "images": [
+        "record-a-house-in-de-beauvoir-2020-01",
+        "record-a-house-in-de-beauvoir-2020-02"
+      ]
+    },
+    {
+      "id": "a-house-in-richmond-2020",
+      "group": "homes",
+      "name": "A house in Richmond",
+      "place": "Richmond",
+      "years": "2020",
+      "text": "Large-scale floral wallpaper up a full-height stairwell and across several landings, set out with laser levels, and a patterned paper in a bedroom.",
+      "images": [
+        "record-a-house-in-richmond-2020-01",
+        "record-a-house-in-richmond-2020-02"
+      ]
+    },
+    {
+      "id": "a-house-in-notting-hill-2020",
+      "group": "homes",
+      "name": "A house in Notting Hill",
+      "place": "Notting Hill",
+      "years": "2020",
+      "text": "A pink-to-blue ombre mural wallpaper hung around a cloakroom WC, with the joinery reveals made good first.",
+      "images": [
+        "record-a-house-in-notting-hill-2020-01",
+        "record-a-house-in-notting-hill-2020-02"
+      ]
+    },
+    {
+      "id": "an-apartment-in-marylebone-2020",
+      "group": "homes",
+      "name": "An apartment in Marylebone",
+      "place": "Marylebone",
+      "years": "2020",
+      "text": "A mustard and white large-scale botanical wallpaper hung across a top-floor stairwell landing, with the pattern matched at the seams.",
+      "images": [
+        "record-an-apartment-in-marylebone-2020-01",
+        "record-an-apartment-in-marylebone-2020-02"
+      ]
+    },
+    {
+      "id": "a-mews-house-in-kensington-202021",
+      "group": "homes",
+      "name": "A mews house in Kensington",
+      "place": "Kensington",
+      "years": "2020–21",
+      "text": "Woven wave-pattern wallcovering wrapped onto full-height wardrobe doors and plinths, a silver-leaf botanical paper in a cloakroom and a figurative mural paper.",
+      "images": [
+        "record-a-mews-house-in-kensington-202021-01",
+        "record-a-mews-house-in-kensington-202021-02",
+        "record-a-mews-house-in-kensington-202021-03"
+      ]
+    },
+    {
+      "id": "a-home-in-hampstead-2020",
+      "group": "homes",
+      "name": "A home in Hampstead",
+      "place": "Hampstead",
+      "years": "2020",
+      "text": "A large trailing-floral wallpaper hung by the paste-the-wall method on one wall of a glass-roofed dining extension.",
+      "images": [
+        "record-a-home-in-hampstead-2020-01"
+      ]
+    },
+    {
+      "id": "an-apartment-in-perivale-2019",
+      "group": "homes",
+      "name": "An apartment in Perivale",
+      "place": "Perivale",
+      "years": "2019",
+      "text": "A marble-effect mural wallcovering hung in large panels in a WC, cut around the concealed cistern frame, niche and flush plate.",
+      "images": [
+        "record-an-apartment-in-perivale-2019-01",
+        "record-an-apartment-in-perivale-2019-02",
+        "record-an-apartment-in-perivale-2019-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-battersea-2019",
+      "group": "homes",
+      "name": "An apartment in Battersea",
+      "place": "Battersea",
+      "years": "2019",
+      "text": "Speckled textured wallcovering in the open-plan living and dining room, and cork with gold and silver leaf on a bedroom wall.",
+      "images": [
+        "record-an-apartment-in-battersea-2019-01",
+        "record-an-apartment-in-battersea-2019-02"
+      ]
+    },
+    {
+      "id": "a-home-in-primrose-hill-2019",
+      "group": "homes",
+      "name": "A home in Primrose Hill",
+      "place": "Primrose Hill",
+      "years": "2019",
+      "text": "A made-to-measure metallic marbled mural by Calico Wallpaper, hung in panels across a dining-room wall to the maker's drawings.",
+      "images": [
+        "record-a-home-in-primrose-hill-2019-01",
+        "record-a-home-in-primrose-hill-2019-02",
+        "record-a-home-in-primrose-hill-2019-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-covent-garden-2019",
+      "group": "homes",
+      "name": "An apartment in Covent Garden",
+      "place": "Covent Garden",
+      "years": "2019",
+      "text": "Pink and dove-grey floral wallpaper through the living area, kitchen and hallways, and a bamboo-pattern feature wall in a navy bedroom.",
+      "images": [
+        "record-an-apartment-in-covent-garden-2019-01"
+      ]
+    },
+    {
+      "id": "a-house-in-kingston-vale-2019",
+      "group": "homes",
+      "name": "A house in Kingston Vale",
+      "place": "Kingston Vale",
+      "years": "2019",
+      "text": "Damask, metallic stripe, small-diamond and textured wallcoverings through the hall, curved stairwell, dining and living rooms.",
+      "images": [
+        "record-a-house-in-kingston-vale-2019-01",
+        "record-a-house-in-kingston-vale-2019-02",
+        "record-a-house-in-kingston-vale-2019-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-kensington-2020",
+      "group": "homes",
+      "name": "An apartment in Kensington",
+      "place": "Kensington",
+      "years": "2020",
+      "text": "Cornices, coffered ceiling borders, ceiling roses, doors and alcove joinery picked out in gold, with walls and ceilings repainted.",
+      "images": [
+        "record-an-apartment-in-kensington-2020-01",
+        "record-an-apartment-in-kensington-2020-02",
+        "record-an-apartment-in-kensington-2020-03"
+      ]
+    },
+    {
+      "id": "a-house-in-hampstead-2019",
+      "group": "homes",
+      "name": "A house in Hampstead",
+      "place": "Hampstead",
+      "years": "2019",
+      "text": "Reception rooms stripped and lined, then hung with Phillip Jeffries and Fromental wallcoverings, including wrapped arched window reveals.",
+      "images": [
+        "record-a-house-in-hampstead-2019-01",
+        "record-a-house-in-hampstead-2019-02",
+        "record-a-house-in-hampstead-2019-03"
+      ]
+    },
+    {
+      "id": "a-flat-in-shoreditch-201920",
+      "group": "homes",
+      "name": "A flat in Shoreditch",
+      "place": "Shoreditch",
+      "years": "2019–20",
+      "text": "A full redecoration, with spray-finished doors and joinery, painted walls, gloss black floorboards and two feature wallpapers: a dark floral and a bird-and-branch design.",
+      "images": [
+        "record-a-flat-in-shoreditch-201920-01"
+      ]
+    },
+    {
+      "id": "a-home-in-knightsbridge-2019",
+      "group": "homes",
+      "name": "A home in Knightsbridge",
+      "place": "Knightsbridge",
+      "years": "2019",
+      "text": "Painting of a study with built-in shelving, with the furniture, floors and staircase protected.",
+      "images": []
+    },
+    {
+      "id": "a-house-in-kensington-2019",
+      "group": "homes",
+      "name": "A house in Kensington",
+      "place": "Kensington",
+      "years": "2019",
+      "text": "Dark woven grasscloth in the dining room, and gilded chinoiserie blossom panels in a cloakroom, cut around a round mirror and a shuttered window.",
+      "images": [
+        "record-a-house-in-kensington-2019-01",
+        "record-a-house-in-kensington-2019-02",
+        "record-a-house-in-kensington-2019-03"
+      ]
+    },
+    {
+      "id": "a-home-in-kensington-2019",
+      "group": "homes",
+      "name": "A home in Kensington",
+      "place": "Kensington",
+      "years": "2019",
+      "text": "A marble-effect wallcovering set out by laser and hung in a panelled room.",
+      "images": []
+    },
+    {
+      "id": "two-apartments-in-southwark-201920",
+      "group": "homes",
+      "name": "Two apartments in Southwark",
+      "place": "Southwark",
+      "years": "2019–20",
+      "text": "LED-integrated Meystyle wallpaper on curved walls in a show apartment, and a Roberto Cavalli Home leather-effect wallcovering on walls and ceilings in a private apartment.",
+      "images": [
+        "record-two-apartments-in-southwark-201920-01",
+        "record-two-apartments-in-southwark-201920-02"
+      ]
+    },
+    {
+      "id": "a-house-in-stroud-green-2019",
+      "group": "homes",
+      "name": "A house in Stroud Green",
+      "place": "Stroud Green",
+      "years": "2019",
+      "text": "A green wallpaper with a gold and pearl cow-parsley print, hung in a period room and matched round the corners and bookcase alcove.",
+      "images": [
+        "record-a-house-in-stroud-green-2019-01",
+        "record-a-house-in-stroud-green-2019-02",
+        "record-a-house-in-stroud-green-2019-03"
+      ]
+    },
+    {
+      "id": "a-home-in-notting-hill-201920",
+      "group": "homes",
+      "name": "A home in Notting Hill",
+      "place": "Notting Hill",
+      "years": "2019–20",
+      "text": "Cole & Son Miami in a top-floor bedroom, woven grasscloth on a long wall, and printed raffia above navy panelling in a cloakroom.",
+      "images": [
+        "record-a-home-in-notting-hill-201920-01",
+        "record-a-home-in-notting-hill-201920-02",
+        "record-a-home-in-notting-hill-201920-03"
+      ]
+    },
+    {
+      "id": "a-country-house-in-gloucestershire-2019",
+      "group": "homes",
+      "name": "A country house in Gloucestershire",
+      "place": "Gloucestershire",
+      "years": "2019",
+      "text": "Linen wallcoverings including Phillip Jeffries: charcoal-blue around a shuttered window and up a vaulted bedroom wall, and pale linen around a stone fireplace.",
+      "images": [
+        "record-a-country-house-in-gloucestershire-2019-01",
+        "record-a-country-house-in-gloucestershire-2019-02"
+      ]
+    },
+    {
+      "id": "an-apartment-in-chelsea-2018",
+      "group": "homes",
+      "name": "An apartment in Chelsea",
+      "place": "Chelsea",
+      "years": "2018",
+      "text": "Linen-texture wallcoverings in the bedrooms and a dressing alcove, and a metallic floral feature wall beneath a chandelier.",
+      "images": [
+        "record-an-apartment-in-chelsea-2018-01",
+        "record-an-apartment-in-chelsea-2018-02",
+        "record-an-apartment-in-chelsea-2018-03"
+      ]
+    },
+    {
+      "id": "a-show-apartment-in-covent-garden-2018",
+      "group": "homes",
+      "name": "A show apartment in Covent Garden",
+      "place": "Covent Garden",
+      "years": "2018",
+      "text": "Broad stripe wallpaper in the dining and study areas, and a textured metallic-effect wallcovering on the stairs and landings.",
+      "images": [
+        "record-a-show-apartment-in-covent-garden-2018-01",
+        "record-a-show-apartment-in-covent-garden-2018-02",
+        "record-a-show-apartment-in-covent-garden-2018-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-knightsbridge-2018",
+      "group": "homes",
+      "name": "An apartment in Knightsbridge",
+      "place": "Knightsbridge",
+      "years": "2018",
+      "text": "A herringbone woven-texture wallcovering in a warm taupe.",
+      "images": [
+        "record-an-apartment-in-knightsbridge-2018-01",
+        "record-an-apartment-in-knightsbridge-2018-02",
+        "record-an-apartment-in-knightsbridge-2018-03"
+      ]
+    },
+    {
+      "id": "a-house-in-hillingdon-2018",
+      "group": "homes",
+      "name": "A house in Hillingdon",
+      "place": "Hillingdon",
+      "years": "2018",
+      "text": "Two Wall&decò Wet System murals in a bathroom: a watercolour lotus behind the bath and a sketched-tree landscape inside the shower.",
+      "images": [
+        "record-a-house-in-hillingdon-2018-01",
+        "record-a-house-in-hillingdon-2018-02"
+      ]
+    },
+    {
+      "id": "a-home-in-kensington-2018",
+      "group": "homes",
+      "name": "A home in Kensington",
+      "place": "Kensington",
+      "years": "2018",
+      "text": "A grasscloth-style wallcovering carried across flush jib cupboard doors in a living room, the texture kept level across the door gaps.",
+      "images": [
+        "record-a-home-in-kensington-2018-01",
+        "record-a-home-in-kensington-2018-02",
+        "record-a-home-in-kensington-2018-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-marylebone-2018",
+      "group": "homes",
+      "name": "An apartment in Marylebone",
+      "place": "Marylebone",
+      "years": "2018",
+      "text": "Neutral textured vinyl wallcoverings in fine-stripe, woven and grasscloth-effect finishes, hung room by room.",
+      "images": [
+        "record-an-apartment-in-marylebone-2018-01",
+        "record-an-apartment-in-marylebone-2018-02",
+        "record-an-apartment-in-marylebone-2018-03"
+      ]
+    },
+    {
+      "id": "a-house-in-bayswater-2018",
+      "group": "homes",
+      "name": "A house in Bayswater",
+      "place": "Bayswater",
+      "years": "2018",
+      "text": "Black-and-grey geometric wallpaper above a dark panelled dado in a period entrance hall, and wide blue-and-white striped paper in the cloakroom.",
+      "images": [
+        "record-a-house-in-bayswater-2018-01",
+        "record-a-house-in-bayswater-2018-02",
+        "record-a-house-in-bayswater-2018-03"
+      ]
+    },
+    {
+      "id": "a-house-in-east-dulwich-2018",
+      "group": "homes",
+      "name": "A house in East Dulwich",
+      "place": "East Dulwich",
+      "years": "2018",
+      "text": "A full-height photographic mural of Earth over the lunar surface, hung on a bedroom chimney breast in a day.",
+      "images": [
+        "record-a-house-in-east-dulwich-2018-01"
+      ]
+    },
+    {
+      "id": "a-home-in-london-2018",
+      "group": "homes",
+      "name": "A home in London",
+      "place": "London",
+      "years": "2018",
+      "text": "Hermès chain-link wallpaper hung through a hallway and carried around door reveals and a stepped ceiling.",
+      "images": [
+        "record-a-home-in-london-2018-01",
+        "record-a-home-in-london-2018-02"
+      ]
+    },
+    {
+      "id": "a-house-in-west-kensington-201822",
+      "group": "homes",
+      "name": "A house in West Kensington",
+      "place": "West Kensington",
+      "years": "2018–22",
+      "text": "Muraspec textured vinyl in the hall and stairs, a bookshelf-print wallpaper on the top landing and a chevron stripe around a dormer.",
+      "images": [
+        "record-a-house-in-west-kensington-201822-01",
+        "record-a-house-in-west-kensington-201822-02",
+        "record-a-house-in-west-kensington-201822-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-south-kensington-2018",
+      "group": "homes",
+      "name": "An apartment in South Kensington",
+      "place": "South Kensington",
+      "years": "2018",
+      "text": "Schumacher grasscloth in the living room, entrance and hall, with a printed floral grasscloth on the feature wall and plain grasscloth elsewhere.",
+      "images": [
+        "record-an-apartment-in-south-kensington-2018-01",
+        "record-an-apartment-in-south-kensington-2018-02",
+        "record-an-apartment-in-south-kensington-2018-03"
+      ]
+    },
+    {
+      "id": "a-show-house-in-chiswick-2018",
+      "group": "homes",
+      "name": "A show house in Chiswick",
+      "place": "Chiswick",
+      "years": "2018",
+      "text": "Grasscloth-effect wallcoverings, an Italian hillside-village mural, faux-bookcase paper in the study and a spot-pattern paper in a children's room.",
+      "images": [
+        "record-a-show-house-in-chiswick-2018-01",
+        "record-a-show-house-in-chiswick-2018-02",
+        "record-a-show-house-in-chiswick-2018-03"
+      ]
+    },
+    {
+      "id": "a-house-in-mayfair-2018",
+      "group": "homes",
+      "name": "A house in Mayfair",
+      "place": "Mayfair",
+      "years": "2018",
+      "text": "Dark embossed wallcoverings in a basement media room, a metallic leaf-pattern paper in the powder room, and hessian and papered joinery panels.",
+      "images": [
+        "record-a-house-in-mayfair-2018-01",
+        "record-a-house-in-mayfair-2018-03"
+      ]
+    },
+    {
+      "id": "new-build-apartments-in-soho-2018",
+      "group": "homes",
+      "name": "New-build apartments in Soho",
+      "place": "Soho",
+      "years": "2018",
+      "text": "Grasscloth-effect paper in open-plan living areas and halls, with starburst-texture, linen-look and subtle metallic papers in bedrooms and reception rooms.",
+      "images": [
+        "record-new-build-apartments-in-soho-2018-01",
+        "record-new-build-apartments-in-soho-2018-02",
+        "record-new-build-apartments-in-soho-2018-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-battersea-2018",
+      "group": "homes",
+      "name": "An apartment in Battersea",
+      "place": "Battersea",
+      "years": "2018",
+      "text": "Grasscloth-effect and herringbone-weave wallcoverings in the bedrooms and living area of a new-build apartment, including a column wrapped to a laser line.",
+      "images": [
+        "record-an-apartment-in-battersea-2018-01",
+        "record-an-apartment-in-battersea-2018-02"
+      ]
+    },
+    {
+      "id": "a-house-in-north-kensington-2018",
+      "group": "homes",
+      "name": "A house in North Kensington",
+      "place": "North Kensington",
+      "years": "2018",
+      "text": "Kelly Wearstler Graffito panel wallpaper, from Lee Jofa Groundworks, for a bedroom.",
+      "images": []
+    },
+    {
+      "id": "a-bedroom-in-a-private-house-2018",
+      "group": "homes",
+      "name": "A bedroom in a private house",
+      "place": "",
+      "years": "2018",
+      "text": "Banana-leaf wallpaper on all the walls of a small bedroom, pattern-matched around the window and radiator.",
+      "images": [
+        "record-a-bedroom-in-a-private-house-2018-01"
+      ]
+    },
+    {
+      "id": "an-apartment-in-vauxhall-2018",
+      "group": "homes",
+      "name": "An apartment in Vauxhall",
+      "place": "Vauxhall",
+      "years": "2018",
+      "text": "Metallic geometric wallcovering in the kitchen, dining room and hall, with textured, diamond-embossed and snakeskin-effect wallcoverings in the bedrooms.",
+      "images": [
+        "record-an-apartment-in-vauxhall-2018-01",
+        "record-an-apartment-in-vauxhall-2018-02"
+      ]
+    },
+    {
+      "id": "a-mews-house-in-marylebone-2018",
+      "group": "homes",
+      "name": "A mews house in Marylebone",
+      "place": "Marylebone",
+      "years": "2018",
+      "text": "Metallic leaf-pattern wallpaper hung up a three-storey spiral stairwell, and painterly and world-map murals in two bedrooms.",
+      "images": [
+        "record-a-mews-house-in-marylebone-2018-01",
+        "record-a-mews-house-in-marylebone-2018-02",
+        "record-a-mews-house-in-marylebone-2018-03"
+      ]
+    },
+    {
+      "id": "a-flat-in-kensington-2018",
+      "group": "homes",
+      "name": "A flat in Kensington",
+      "place": "Kensington",
+      "years": "2018",
+      "text": "Fardis Naturale, a textured-print wallpaper, hung on the dining wall, with the living-room wall stripped and prepared.",
+      "images": [
+        "record-a-flat-in-kensington-2018-01"
+      ]
+    },
+    {
+      "id": "a-mews-house-in-battersea-2018",
+      "group": "homes",
+      "name": "A mews house in Battersea",
+      "place": "Battersea",
+      "years": "2018",
+      "text": "Plain textured Muraspec vinyl wallcoverings hung in the living room, stairwell and other rooms, after a measured survey.",
+      "images": [
+        "record-a-mews-house-in-battersea-2018-01"
+      ]
+    },
+    {
+      "id": "show-apartments-in-wimbledon-2018",
+      "group": "homes",
+      "name": "Show apartments in Wimbledon",
+      "place": "Wimbledon",
+      "years": "2018",
+      "text": "Textured and striated vinyl wallcoverings, including Harlequin Anthology and Romo, hung in the bedrooms of new-build show apartments.",
+      "images": [
+        "record-show-apartments-in-wimbledon-2018-01",
+        "record-show-apartments-in-wimbledon-2018-02",
+        "record-show-apartments-in-wimbledon-2018-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-highbury-2018",
+      "group": "homes",
+      "name": "An apartment in Highbury",
+      "place": "Highbury",
+      "years": "2018",
+      "text": "A living room papered in a large-scale red Jacobean-style floral wallpaper.",
+      "images": [
+        "record-an-apartment-in-highbury-2018-01",
+        "record-an-apartment-in-highbury-2018-02"
+      ]
+    },
+    {
+      "id": "a-show-apartment-in-hammersmith-2018",
+      "group": "homes",
+      "name": "A show apartment in Hammersmith",
+      "place": "Hammersmith",
+      "years": "2018",
+      "text": "Harlequin linen-look wallcovering on the bedroom feature walls and window piers of a high-rise show apartment.",
+      "images": [
+        "record-a-show-apartment-in-hammersmith-2018-01",
+        "record-a-show-apartment-in-hammersmith-2018-02",
+        "record-a-show-apartment-in-hammersmith-2018-03"
+      ]
+    },
+    {
+      "id": "show-homes-in-ham-2018",
+      "group": "homes",
+      "name": "Show homes in Ham",
+      "place": "Ham",
+      "years": "2018",
+      "text": "Wallcoverings in new-build show homes: branch-pattern paper in a study nook, grasscloth-effect vinyl up the staircase, and textured wallcoverings in bedrooms and living areas.",
+      "images": [
+        "record-show-homes-in-ham-2018-01",
+        "record-show-homes-in-ham-2018-02",
+        "record-show-homes-in-ham-2018-03"
+      ]
+    },
+    {
+      "id": "a-house-in-chelsea-2018",
+      "group": "homes",
+      "name": "A house in Chelsea",
+      "place": "Chelsea",
+      "years": "2018",
+      "text": "Natural grasscloth hung panel by panel between timber reveals, on the walls and wardrobe doors of a dressing area.",
+      "images": [
+        "record-a-house-in-chelsea-2018-01",
+        "record-a-house-in-chelsea-2018-02",
+        "record-a-house-in-chelsea-2018-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-haggerston-201819",
+      "group": "homes",
+      "name": "An apartment in Haggerston",
+      "place": "Haggerston",
+      "years": "2018–19",
+      "text": "Grey ombré murals behind the bed and sofa, a dark palm-leaf wallpaper in the living areas and a whale-and-stripe paper in the bathroom.",
+      "images": [
+        "record-an-apartment-in-haggerston-201819-01",
+        "record-an-apartment-in-haggerston-201819-02",
+        "record-an-apartment-in-haggerston-201819-03"
+      ]
+    },
+    {
+      "id": "a-flat-in-south-kensington-2019",
+      "group": "homes",
+      "name": "A flat in South Kensington",
+      "place": "South Kensington",
+      "years": "2019",
+      "text": "A blistered living-room media wall lined with a foil barrier and repainted in a colour-matched flat matt finish.",
+      "images": []
+    },
+    {
+      "id": "a-home-in-chelsea-2018",
+      "group": "homes",
+      "name": "A home in Chelsea",
+      "place": "Chelsea",
+      "years": "2018",
+      "text": "A black-and-white illustrated bird wallpaper in a mirrored lobby, and a Morris & Co bird-and-rabbit design in a cove-lit cloakroom.",
+      "images": [
+        "record-a-home-in-chelsea-2018-01",
+        "record-a-home-in-chelsea-2018-02",
+        "record-a-home-in-chelsea-2018-03"
+      ]
+    },
+    {
+      "id": "a-house-in-battersea-2018",
+      "group": "homes",
+      "name": "A house in Battersea",
+      "place": "Battersea",
+      "years": "2018",
+      "text": "Entrance hall, staircase and landings papered in a willow-and-egret chinoiserie design over three floors of a Victorian terrace.",
+      "images": [
+        "record-a-house-in-battersea-2018-01",
+        "record-a-house-in-battersea-2018-02",
+        "record-a-house-in-battersea-2018-03"
+      ]
+    },
+    {
+      "id": "a-mews-house-in-belgravia-201722",
+      "group": "homes",
+      "name": "A mews house in Belgravia",
+      "place": "Belgravia",
+      "years": "2017–22",
+      "text": "A WC papered in a black-and-white geometric design carried across a concealed door, textured wallcoverings in the cinema, and later repair visits.",
+      "images": [
+        "record-a-mews-house-in-belgravia-201722-01",
+        "record-a-mews-house-in-belgravia-201722-02",
+        "record-a-mews-house-in-belgravia-201722-03"
+      ]
+    },
+    {
+      "id": "an-apartment-building-in-the-city-of-london-2017",
+      "group": "homes",
+      "name": "An apartment building in the City of London",
+      "place": "City of London",
+      "years": "2017",
+      "text": "Vescom Seneca, a ribbed vinyl wallcovering, on the common stairs, corridors and lift lobbies, with painted dado rails and window boards.",
+      "images": [
+        "record-an-apartment-building-in-the-city-of-london-2017-01",
+        "record-an-apartment-building-in-the-city-of-london-2017-02",
+        "record-an-apartment-building-in-the-city-of-london-2017-03"
+      ]
+    },
+    {
+      "id": "an-apartment-block-in-fitzrovia-201718",
+      "group": "homes",
+      "name": "An apartment block in Fitzrovia",
+      "place": "Fitzrovia",
+      "years": "2017–18",
+      "text": "Art deco arch-pattern and geometric wallcoverings in the communal corridors and lift lobbies, with bronze-finished lift surrounds and painted doors and woodwork.",
+      "images": [
+        "record-an-apartment-block-in-fitzrovia-201718-01",
+        "record-an-apartment-block-in-fitzrovia-201718-02",
+        "record-an-apartment-block-in-fitzrovia-201718-03"
+      ]
+    },
+    {
+      "id": "a-house-in-carshalton-201720",
+      "group": "homes",
+      "name": "A house in Carshalton",
+      "place": "Carshalton",
+      "years": "2017–20",
+      "text": "Metallic-leaf effect wallcovering above oak panelling with a blossom mural on the stair wall, and later a grey grasscloth-effect paper in the living room.",
+      "images": [
+        "record-a-house-in-carshalton-201720-01",
+        "record-a-house-in-carshalton-201720-02",
+        "record-a-house-in-carshalton-201720-03"
+      ]
+    },
+    {
+      "id": "a-home-in-little-venice-201718",
+      "group": "homes",
+      "name": "A home in Little Venice",
+      "place": "Little Venice",
+      "years": "2017–18",
+      "text": "Hand-painted chinoiserie panels on green and teal grounds, hung as bed and feature walls.",
+      "images": [
+        "record-a-home-in-little-venice-201718-01",
+        "record-a-home-in-little-venice-201718-02",
+        "record-a-home-in-little-venice-201718-03"
+      ]
+    },
+    {
+      "id": "an-apartment-in-the-city-of-london-2016",
+      "group": "homes",
+      "name": "An apartment in the City of London",
+      "place": "City of London",
+      "years": "2016",
+      "text": "Woven fabric-look wallcovering on full-height walls, wrapped over concealed jib-door panels and media walls with dark joinery.",
+      "images": [
+        "record-an-apartment-in-the-city-of-london-2016-01"
+      ]
+    },
+    {
+      "id": "a-home-in-belgravia-2021",
+      "group": "homes",
+      "name": "A home in Belgravia",
+      "place": "Belgravia",
+      "years": "2021",
+      "text": "External redecoration of a stucco front, interior repainting, and a black-and-white wide-stripe wallpaper in a hallway and cloakroom.",
+      "images": [
+        "record-a-home-in-belgravia-2021-01"
+      ]
+    },
+    {
+      "id": "an-apartment-block-in-fulham-201617",
+      "group": "homes",
+      "name": "An apartment block in Fulham",
+      "place": "Fulham",
+      "years": "2016–17",
+      "text": "Communal maintenance and redecoration: making good in the hallways, clear wall-protection panels, gutter and lead-flashing repairs and re-stained window joinery.",
+      "images": []
+    },
+    {
+      "id": "a-gallery-stand-at-frieze-london-2022",
+      "group": "other",
+      "name": "A gallery stand at Frieze London",
+      "place": "Regent's Park",
+      "years": "2022",
+      "text": "A printed geometric wallcovering hung across every stand wall, with a matching printed floor covering laid and trimmed during the build-up.",
+      "images": [
+        "record-a-gallery-stand-at-frieze-london-2022-01",
+        "record-a-gallery-stand-at-frieze-london-2022-02"
+      ]
+    },
+    {
+      "id": "joinery-panels-faced-in-marbled-wallpaper-2020",
+      "group": "other",
+      "name": "Joinery panels faced in marbled wallpaper",
+      "place": "Essex",
+      "years": "2020",
+      "text": "Marbled wallpapers by Calico laminated onto large joinery panels in a workshop, for installation elsewhere.",
+      "images": [
+        "record-joinery-panels-faced-in-marbled-wallpaper-2020-01",
+        "record-joinery-panels-faced-in-marbled-wallpaper-2020-02",
+        "record-joinery-panels-faced-in-marbled-wallpaper-2020-03"
+      ]
+    },
+    {
+      "id": "a-property-in-covent-garden-2019",
+      "group": "other",
+      "name": "A property in Covent Garden",
+      "place": "Covent Garden",
+      "years": "2019",
+      "text": "Two Gucci wallpapers hung as feature walls: a tiger-and-blossom design and a tiger and panther-head design.",
+      "images": [
+        "record-a-property-in-covent-garden-2019-01",
+        "record-a-property-in-covent-garden-2019-02"
+      ]
+    },
+    {
+      "id": "a-fit-out-in-bloomsbury-2017",
+      "group": "other",
+      "name": "A fit-out in Bloomsbury",
+      "place": "Bloomsbury",
+      "years": "2017",
+      "text": "A dark patterned feature wall and a plain textured wallcovering, hung in a room during a fit-out.",
+      "images": [
+        "record-a-fit-out-in-bloomsbury-2017-01",
+        "record-a-fit-out-in-bloomsbury-2017-02"
+      ]
+    }
+  ]
+}
