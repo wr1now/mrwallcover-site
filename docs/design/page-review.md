@@ -494,3 +494,20 @@ The fresh [no-loss comparison](linen-botanicals/no-loss.json) against published 
 | Exact-head hosted checks, authorised publication and live view | Pending completion and verification; do not announce the theme as published from implementation alone. |
 
 Local validation is complete. Exact-head hosted checks, authorised deployment and live verification must still succeed before completion is announced. Earlier publication approvals and content boundaries remain intact; this artwork does not clear unrelated draft/private-seed blockers.
+
+## AI reader access — 19 October 2026
+
+This change starts from published main `8db3d53`, preserving all 128 canonical pages, 3,627 media files, 128 Markdown twins, 9,455 JSON-LD nodes and 42,431 properties. Every page gains a complete individual JSON record; the corpus remains available. A generated public-repository mirror contains the same published Markdown, page JSON, topic data and complete project records, retaining canonical sources, original dates, credits and evidence limits. It introduces no new business claims or unpublished records.
+
+The crawler and `/for-ai/` gain a short fallback explanation and a normal text link. The shared layout advertises each published page's mirrored Markdown. Both pages deliberately remain text-led: headings, semantic links and machine formats serve this reference task directly. No additional photograph, illustration, CSS, JavaScript or dependency is warranted. Existing shared navigation, focus treatment, footer, static AI-page policy and mobile dock are inherited.
+
+The [responsive receipt](ai-reader-access/checks.json) covers both routes at 390px and 1440px, with and without JavaScript: 16 observations pass, with one main heading, no horizontal overflow or browser errors, and discoverable mirror links. Screenshots of the added text and keyboard focus were inspected; the terminal reference and the standard facts page remain legible. No form or contact action was submitted.
+
+| Surface | 390px before / after | 1440px before / after |
+| --- | --- | --- |
+| AI crawler | [Before](ai-reader-access/before-crawler-390.jpg) / [After](ai-reader-access/after-crawler-390.jpg) | [Before](ai-reader-access/before-crawler-1440.jpg) / [After](ai-reader-access/after-crawler-1440.jpg) |
+| Facts for assistants | [Before](ai-reader-access/before-facts-390.jpg) / [After](ai-reader-access/after-facts-390.jpg) | [Before](ai-reader-access/before-facts-1440.jpg) / [After](ai-reader-access/after-facts-1440.jpg) |
+
+Source checks pass (153 tests), as do all 292 built-site tests, typography/contrast, phone, analytics, Guide, Makers and both strict configured private-name scans. Fresh-main no-loss retains all the counts above, including legacy project galleries. The mirror has 293 files (9,144,927 bytes), served only when requested; there is no added script, stylesheet or image transfer. Individual page records avoid downloading the 5,737,520-byte corpus for a single page. They range from 17,442 to 383,623 bytes in this build.
+
+Exact-head hosted checks and actual reader/live deployment verification must complete before announcing release. The alternate route is not a claim that the custom-domain reader failure is repaired or that any assistant will index or recommend the business. The owner's existing release authorisation applies; unrelated draft and private-seed publication boundaries remain.

@@ -1,0 +1,57 @@
+---
+title: "Wallcovering FAQ | Mr Wallcover"
+url: https://www.mrwallcover.com/faq/
+description: "What London wallcovering installation costs, how lead times work, who supplies the paper, how walls are prepared, and what the aftercare guarantee covers."
+author: "Dorin Burcus"
+last_reviewed: 2026-10-09
+---
+
+Questions
+
+# Before you book the hang.
+
+The questions that decide a quotation: cost, time, preparation, who buys the paper, and what happens after we leave.
+
+Illustrative material studies
+
+Pause motion
+
+## What does wallcovering installation cost in London?
+
+There is no honest flat rate per roll. The figure follows the measured area after openings are taken off, the pattern repeat and the wastage it creates, the state of the walls, and the material. A plain contract vinyl in an empty room is a different day's work from a hand-painted scenic in an occupied house, or a hotel corridor that can only be reached between guests.
+
+Access, protection and making good are written into the scope. They are not discovered at the end. We estimate from a site survey or from drawings, and we say what has been allowed for.
+
+## How far ahead do you need to be booked?
+
+We give a date after the survey. We focus on whole residences and hotel packages, and will take on one- or two-room commissions; a smaller private commission can often be scheduled sooner than a hotel package that has to move floor by floor around guests.
+
+If the paper is free-issue, the supplier's lead time sits inside the programme and we plan the hang around delivery. Tell us the date you have in mind and we will say whether it is realistic.
+
+## Do you prepare the walls before hanging?
+
+Where the specification includes it, preparation means stripping old paper, sanding with dust extraction, and making good cracks and uneven surfaces before anything decorative goes up.
+
+Some papers are specified without a lining. Others need one. We follow the specification, and we will say if a wall is not ready to take the material. Joinery can be covered where the drawings show it.
+
+## Who supplies the wallpaper?
+
+Usually the designer, the brand or the client supplies the wallcovering, and we manage delivery and quantities. That is the ordinary arrangement on a hotel or a flagship, and it keeps the specification where the designer left it.
+
+We can procure when you want us to. Either way, the order has to cover pattern repeat and wastage. That allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey.
+
+## What aftercare and warranty do you offer?
+
+Aftercare is included. About four to six weeks after completion we return, at no call-out charge, and look at seams, edges and corners once the paper has settled. Touch-ups that belong to the hang are done then. During the guarantee, a repair to our workmanship is a priority call-out.
+
+The workmanship guarantee lasts twelve months from completion. It covers how the material was hung. It does not cover building movement, damp, leaks, later damage or unsuitable cleaning. The care notes for silk, grasscloth, fabric, vinyl, hand-painted papers, murals and acoustic panels are on the aftercare page.
+
+## Which materials do you hang, and where?
+
+Silk, grasscloth and other natural weaves, fabric walling, vinyl and contract wallcoverings, hand-painted papers in the manner of de Gournay and Fromental, murals, and acoustic wallcoverings and panels. We also hang to joinery when that is specified.
+
+London and the surrounding areas; UK-wide for selected projects. The practice is based in London, and most of the work is in central London.
+
+[Ask about your project](https://www.mrwallcover.com/contact/?intent=advice)
+
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

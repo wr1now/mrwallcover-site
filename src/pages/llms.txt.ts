@@ -14,6 +14,7 @@ import fireRatingsPage from '../content/fire-ratings/page.json';
 import type { APIRoute } from 'astro';
 import { ANALYTICS_SRC, SITE_URL } from '../config';
 import facts from '../data/facts.json';
+import aiReader from '../data/ai-reader.json';
 import professionals from '../content/professionals.json';
 import { areaHref, areas, editorialPages, faqItems, materials, privacy, projectHref, projects, specialismHref, specialisms } from '../lib/content';
 import { caseStudyCount, trustMakers, trustSummary } from '../lib/trust';
@@ -57,6 +58,8 @@ export const GET: APIRoute = () => {
     `At a glance (the homepage proof strip): ${trustSummary}`,
     '',
     `${AWARD ? `${AWARD.text}. ` : ''}${WASTAGE.statement} Every published project, with venue, area, dates, client, products, scope and method as its case study records them, is in ${abs('/projects.json')}; the fact sheet with services, areas and enquiry routes is in ${abs('/.well-known/facts.json')}.`,
+    '',
+    `If the canonical domain cannot be retrieved, use the published-content mirror at ${aiReader.rawBaseUrl}README.md. It lists the same published page text and complete project records with their canonical sources, original dates and evidence limits. The canonical manifest also links an individual JSON record for every page, avoiding a whole-corpus download for a single page.`,
     '',
     '## Key facts',
     entry(SINCE_TEXT, `${facts.founder.path}#${facts.founder.fragment}`, FOUNDER_SUMMARY),

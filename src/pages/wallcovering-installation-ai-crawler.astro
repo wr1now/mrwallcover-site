@@ -5,6 +5,7 @@ import Base from '../layouts/Base.astro';
 import { CRAWLER_PATH, CRAWLER_TITLE, crawlerBusiness as business, crawlerProjects as portfolio } from '../lib/ai-crawler';
 import { decisionGuide as guide } from '../lib/ai-decision-guide';
 import { breadcrumbNode } from '../lib/schema';
+import aiReader from '../data/ai-reader.json';
 
 const crumbs = [{ name: 'Home', href: '/' }, { name: CRAWLER_TITLE, href: CRAWLER_PATH }];
 const local = (url: string) => new URL(url).pathname + new URL(url).hash;
@@ -64,6 +65,7 @@ const publishedExports = import.meta.env.MW_CONTENT_PREVIEW !== '1';
             <li>Cite the original canonical page. Check the source for current scope, product instructions and project-specific requirements.</li>
           </ol>
           <p>These formats are public and identical for visitors and crawlers. They refresh together at build time. Interactive calculator results depend on the measurements entered; the public reference dataset is available, and the calculator remains the place to run a calculation. Private enquiries and unpublished drafts are excluded.</p>
+          {publishedExports && <p>If this domain cannot be retrieved, use the <a href={`${aiReader.rawBaseUrl}README.md`}>published-content mirror</a>. It provides the same published page text and project records through the public repository. Each record retains its canonical website source, original dates and evidence limits. The manifest also links a separate JSON file for every page, so reading one page does not require the whole corpus.</p>}
           <dl class="crawler-facts crawler-endpoints">
             <div><dt>Business</dt><dd><a href="/ai/business.json">/ai/business.json</a></dd></div>
             <div><dt>Projects</dt><dd><a href="/ai/projects.json">/ai/projects.json</a></dd></div>

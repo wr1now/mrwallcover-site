@@ -10,6 +10,7 @@
  *   dist/ai/index.json        discoverable manifest of exactly those pages
  *   dist/ai/pages.json        semantic page records, including Markdown,
  *                             public JSON-LD and meaningful media descriptions
+ *   dist/ai/pages/<path>/index.json one complete page record for selective retrieval
  *   dist/ai/projects.json    existing project summary fields enriched with the
  *                             exact corresponding semantic page record
  *   dist/ai/projects/*.json  one complete record for selective retrieval
@@ -27,6 +28,7 @@
  */
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { buildReaderMirror } from './ai-reader-mirror.mjs';
 
 const SITE = 'https://www.mrwallcover.com';
 const dist = path.resolve(process.argv[2] ?? 'dist');
@@ -508,6 +510,26 @@ export function enrichProjects(payload, records) {
   };
 }
 
+/** Only canonical directory paths become generated record paths; never decode or normalise traversal. */
+export function pageRecordPath(pathname) {
+  if (typeof pathname !== 'string' || !/^\/(?:[a-z0-9]+(?:-[a-z0-9]+)*\/)*$/.test(pathname)) {
+    throw new Error(`invalid canonical page path: ${pathname}`);
+  }
+  return `/ai/pages${pathname}index.json`;
+}
+
+/** Replace only this generator's metadata, preserving project-specific and other alternates. */
+function pageRecordAlternate(html, jsonUrl) {
+  let foundHead = false;
+  const result = html.replace(/(<head\b[^>]*>)([\s\S]*?)(<\/head>)/i, (_, open, body, close) => {
+    foundHead = true;
+    const clean = body.replace(/<link\b[^>]*\bdata-ai-page-record(?=[\s=>])[^>]*>/gi, '');
+    return `${open}${clean}<link rel="alternate" type="application/json" href="${jsonUrl}" title="Complete page record as JSON" data-ai-page-record>${close}`;
+  });
+  if (!foundHead) throw new Error('published canonical page has no head for JSON discovery');
+  return result;
+}
+
 export async function build(distDir = dist) {
   const pages = [];
   for (const file of await htmlFiles(distDir)) {
@@ -517,6 +539,7 @@ export async function build(distDir = dist) {
   pages.sort((a, b) => (a.pathname === '/' ? -1 : b.pathname === '/' ? 1 : a.pathname.localeCompare(b.pathname)));
   if (pages.length < 50) throw new Error(`only ${pages.length} published pages found under ${distDir}`);
   if (new Set(pages.map((page) => page.canonical)).size !== pages.length) throw new Error('published pages have duplicate canonical URLs');
+  for (const page of pages) pageRecordPath(page.pathname);
 
   const facts = JSON.parse(await readFile(path.resolve('src/data/facts.json'), 'utf8'));
   const full = [
@@ -530,6 +553,8 @@ export async function build(distDir = dist) {
   let twins = 0;
   const records = [];
   const manifestPages = [];
+  // Remove only generated individual page records, so an excluded page cannot leave a stale shard.
+  await rm(path.join(distDir, 'ai', 'pages'), { recursive: true, force: true });
   for (const [index, page] of pages.entries()) {
     const body = toMarkdown(page.main, { base: page.canonical, demote: 0 });
     const dateLine = page.date ? `${page.dateKind === 'updated' ? 'last_updated' : 'last_reviewed'}: ${page.date}` : null;
@@ -550,11 +575,12 @@ export async function build(distDir = dist) {
       formats: {
         html: page.canonical,
         markdown: `${page.canonical}index.md`,
-        json: `${SITE}/ai/pages.json#/pages/${index}`,
+        json: `${SITE}${pageRecordPath(page.pathname)}`,
+        corpus: `${SITE}/ai/pages.json#/pages/${index}`,
       },
     };
     manifestPages.push(metadata);
-    records.push({
+    const record = {
       ...metadata,
       headings: page.headings,
       markdown: body,
@@ -563,7 +589,12 @@ export async function build(distDir = dist) {
       diagrams: page.diagrams,
       media: page.media,
       structuredData: page.structuredData,
-    });
+    };
+    records.push(record);
+    const recordFile = path.join(distDir, pageRecordPath(page.pathname));
+    await mkdir(path.dirname(recordFile), { recursive: true });
+    await writeFile(recordFile, `${JSON.stringify(record, null, 2)}\n`);
+    await writeFile(page.file, pageRecordAlternate(await readFile(page.file, 'utf8'), metadata.formats.json));
 
     full.push('---', '', `# ${page.title}`, `URL: ${page.canonical}`);
     if (page.date) full.push(`${page.dateKind === 'updated' ? 'Last updated' : 'Last reviewed'}: ${page.date}`);
@@ -579,7 +610,7 @@ export async function build(distDir = dist) {
     pageCount: pages.length,
     contentPolicy: 'Generated from the built, indexable, canonical public HTML. Excludes noindex pages and redirects. Drafts are not built. Main content preserves public wording, headings, tables, code, form guidance and meaningful media descriptions; scripts, styles, navigation chrome, input values and submission endpoints are omitted. Link records retain public main-content navigation destinations. Media URLs are references, not embedded assets or transcripts.',
     datePolicy: 'Dates are copied only from the published page byline and Article JSON-LD. Null means no corresponding date was published; build time is never used as a content date.',
-    recordPolicy: 'Each record id is its canonical HTML URL. The json format URL uses a JSON Pointer fragment into the corpus. Markdown matches the corresponding index.md body. Structured data is copied from public JSON-LD without telephone or private payload fields.',
+    recordPolicy: 'Each record id is its canonical HTML URL. The json format URL retrieves that individual complete page record; the corpus format URL retains its JSON Pointer address in the aggregate. Markdown matches the corresponding index.md body. Structured data is copied from public JSON-LD without telephone or private payload fields.',
   };
   await writeFile(path.join(distDir, 'ai', 'index.json'), `${JSON.stringify({ ...exportMetadata, pages: manifestPages }, null, 2)}\n`);
   await writeFile(path.join(distDir, 'ai', 'pages.json'), `${JSON.stringify({ ...exportMetadata, pages: records }, null, 2)}\n`);
@@ -604,6 +635,7 @@ export async function build(distDir = dist) {
   // /sitemap.xml is the address crawlers and people try first. @astrojs/sitemap only writes
   // sitemap-index.xml, so serve an identical copy of the index at the conventional path too.
   await writeFile(path.join(distDir, 'sitemap.xml'), await readFile(path.join(distDir, 'sitemap-index.xml'), 'utf8'));
+  await buildReaderMirror({ distDir, production: true });
   return { pages: pages.length, twins };
 }
 

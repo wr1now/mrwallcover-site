@@ -1,0 +1,2678 @@
+{
+  "schemaVersion": "1.2",
+  "resourceReviewed": "2026-10-10",
+  "url": "https://www.mrwallcover.com/ai/projects/four-seasons-ten-trinity-square.json",
+  "sourceUrl": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+  "publisher": {
+    "name": "Mr Wallcover",
+    "url": "https://www.mrwallcover.com"
+  },
+  "fieldNotes": {
+    "projectDates": "The Year field from the published project page’s At a glance record, where available, or its published project period. It is separate from the publication and update dates of that page.",
+    "nullValues": "A null value means the information is not recorded in this published record.",
+    "references": "Links cited in the published record or its photograph credits. They provide building, material or image context; they do not independently confirm the installation role.",
+    "photographs": "Photograph credits are reproduced as recorded. A picture of a venue illustrates its setting; the written project record defines the installation role.",
+    "materials": "A material name records a product installed on that project. It does not establish maker approval, accreditation or endorsement.",
+    "standardGlance": "The same seven public fields as the project page’s At a glance definition list. Materials include the published wallcovering names and any additional makers or products in that list, preserving their recorded wording.",
+    "installationRecord": "Installation roles, methods and outcomes are reported by Mr Wallcover in its own published case studies. Extracts retain the source wording with Markdown presentation removed. External references provide context, not independent confirmation of the installation role.",
+    "pageContent": "The complete published main content, generated from the final canonical HTML: Markdown, headings, links, image descriptions and captions, diagrams, film references, structured data and source dates. It matches the corresponding page in /ai/pages.json. Media links are references, not transcripts or interpretations of the visual content.",
+    "formats": "Each project links to its canonical HTML, Markdown twin and individual JSON record. The aggregate includes the same complete records; individual JSON addresses allow a reader to retrieve one project at a time."
+  },
+  "project": {
+    "id": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/#project",
+    "slug": "four-seasons-ten-trinity-square",
+    "title": "Four Seasons Hotel London at Ten Trinity Square",
+    "url": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+    "recordType": "case-study",
+    "role": "Guest room, suite and private residence wallpapering",
+    "client": "Four Seasons Hotels and Resorts (now Four Seasons Hotel London at Tower Bridge)",
+    "location": "10 Trinity Square, Tower Hill, City of London EC3N 4AJ",
+    "projectDates": "2016–2019",
+    "summary": "Three years of guest room and suite wallpapering, 2016 to 2019, through the opening of one of the City's great Beaux-Arts conversions, and the walls of the Four Seasons Private Residences upstairs.",
+    "materials": [
+      "Phillip Jeffries – Tweed",
+      "Omexco (Belgium)",
+      "Fromental",
+      "Dedar",
+      "Vescom",
+      "Tektura",
+      "Muraspec"
+    ],
+    "standardGlance": [
+      {
+        "label": "Client",
+        "value": "Four Seasons Hotels and Resorts (now Four Seasons Hotel London at Tower Bridge)"
+      },
+      {
+        "label": "Designer",
+        "value": null
+      },
+      {
+        "label": "Main contractor",
+        "value": null
+      },
+      {
+        "label": "Maker and paper",
+        "value": "Phillip Jeffries – Tweed; Omexco (Belgium); Fromental; Dedar; Vescom; Tektura; Muraspec"
+      },
+      {
+        "label": "Area or rooms",
+        "value": "About 5,000 m² of hotel wallcoverings (2019)"
+      },
+      {
+        "label": "Scope",
+        "value": "Guest room, suite and private residence wallpapering"
+      },
+      {
+        "label": "Year",
+        "value": "2016–2019"
+      }
+    ],
+    "published": "2026-10-09",
+    "updated": "2026-10-11",
+    "references": [
+      "https://www.phillipjeffries.com/",
+      "https://www.omexco.com/",
+      "https://www.telegraph.co.uk/finance/property/luxury-homes/11354656/Ten-Trinity-Square-a-home-in-one-of-Londons-greatest-buildings.html",
+      "https://www.instagram.com/mrwallcover/",
+      "https://www.instagram.com/p/BxBEIajB-d5/",
+      "https://www.instagram.com/p/BwS1XkFhWv6/",
+      "https://www.instagram.com/p/B2U2Ry8F0rE/",
+      "https://www.instagram.com/p/B2U12SXFLHE/",
+      "https://www.instagram.com/p/BdNs0wagJs9/",
+      "https://www.phillipjeffries.com/shop/CARD-TW-LINEN",
+      "https://www.phillipjeffries.com/shop/CARD-N-TWEED",
+      "https://www.omexco.com/wallcoverings",
+      "https://www.omexco.com/contract",
+      "https://creativecommons.org/licenses/by-sa/4.0",
+      "https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_London,_at_night.jpg",
+      "https://creativecommons.org/licenses/by/4.0",
+      "https://commons.wikimedia.org/wiki/File:10_Trinity_Square_in_2026.jpg",
+      "https://creativecommons.org/licenses/by/2.0",
+      "https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_Tower_Hill_-_City_Of_London._(16459952029"
+    ],
+    "installationRecord": {
+      "basis": "Company-reported project record",
+      "sourceUrl": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+      "sections": [
+        {
+          "heading": "At a glance",
+          "kind": "scope",
+          "text": "- Client / brand: Four Seasons Hotel London at Ten Trinity Square (renamed Four Seasons Hotel London at Tower Bridge in October 2024)\n- Location: 10 Trinity Square, Tower Hill, City of London\n- Years: 2016–2019\n- Role: Guest room and suite wallpapering, and wallcoverings in the Four Seasons Private Residences\n- Wallcoverings: Phillip Jeffries Tweed; Omexco\n- Scope: Survey, wall preparation and priming, setting out, installation with full pattern and seam control\n- Photographs: our own, of finished private residences and residents' lift lobbies in the building, April and May 2019. We do not identify any residence: no flat or floor numbers, no owners, no views, and lift floor indicators and signs are blurred. Then our own photographs of the hotel's lift lobbies, corridors and wallcoverings, December 2017 to September 2019, first posted on our Instagram\n- Hotel wallcoverings, 2019: about 5,000 m², including Fromental silks, Dedar, Vescom, Tektura and Muraspec"
+        },
+        {
+          "heading": "The brief",
+          "kind": "scope",
+          "text": "To paper the guest rooms and suites: premium finishes, among them Phillip Jeffries' tailored Tweed, that had to sit comfortably beside restored heritage fabric, fine joinery and polished timber, and to read as one surface from the first room to the last."
+        },
+        {
+          "heading": "Our approach",
+          "kind": "approach",
+          "text": "Survey. Every space was surveyed before a single roll was opened, so that substrates, junctions and sight lines were understood rather than discovered.\n\nPreparation and priming. Walls were prepared and primed to suit each material. With textile wallcoverings the substrate is everything; any flaw beneath a tweed or woven surface will eventually show.\n\nSetting out. Drops were planned around windows, doors and joinery so that seams fell where the eye would not look for them, and so that each run began and ended with intent.\n\nPattern and seam control. Natural textiles vary from roll to roll. Batches, shading and seams were checked continuously so that walls read as one continuous surface.\n\nCoordination. Across the years on site the team worked hand in hand with the electricians, the French polishers and the main contractor, sequencing our work around second-fix electrics and polished joinery so that no trade compromised another. The team's organisation was as much a part of the finish as the craft itself."
+        },
+        {
+          "heading": "Outcome",
+          "kind": "outcome",
+          "text": "Guest room and suite wallpapering from 2016 to 2019 on one of London's most significant hotel conversions, through the opening in 2017 and the rooms that followed. Quiet, tailored walls that let Sir Edwin Cooper's architecture take the applause."
+        }
+      ]
+    },
+    "photographs": [
+      {
+        "id": "fs-residences-01",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-01-2400.webp",
+        "alt": "Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-residences-02",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-02-1600.webp",
+        "alt": "The same entrance hall seen along its length: the banded wallcovering runs the full wall under a lit cove ceiling, past the mirror and bench to the front door.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-residences-03",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-03-1600.webp",
+        "alt": "Close detail of the entrance-hall wallcovering: soft horizontal bands of charcoal, silver and ochre, laid with no visible seam.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-residences-04",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-04-1600.webp",
+        "alt": "Finished dining room in a private residence: a round table and gold armchairs under a cloud of glass discs, with a black sideboard, a round clock and walnut shelving beyond.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-residences-05",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-05-1600.webp",
+        "alt": "Finished living room in the same residence: a pale sofa, a blue rug and walnut bookshelves, with a brass-framed screen dividing it from the dining room.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-residences-06",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-06-1600.webp",
+        "alt": "Close detail of a woven grasscloth wallcovering turning an external corner, the weave running straight and tight to the edge.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-residences-07",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-07-1600.webp",
+        "alt": "A residents’ lift lobby: walls in a warm, banded veneer-effect finish, bronze lift doors and a glazed screen, with the stair rail in the foreground.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-residences-08",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-08-1600.webp",
+        "alt": "The banded lobby walls turning a corner towards a pair of glazed doors, with bronze lift doors on the right.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-residences-09",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-09-1600.webp",
+        "alt": "A pale lift lobby seen between two stone-effect walls: bronze lift doors either side and a glazed door at the far end.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-residences-10",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-10-1600.webp",
+        "alt": "The same lobby from the top of the steps: matched stone-effect walls, bronze lift doors and a glazed door at the end of the corridor.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-residences-11",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-11-1600.webp",
+        "alt": "A corner of the lobby: an antiqued mirror panel between two crystal wall lights on the stone-effect walls.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-residences-12",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-residences-12-1600.webp",
+        "alt": "The lobby beside the stair: stone-effect walls, a bronze lift door, a ventilation grille and the antiqued mirror beyond.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-01",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-01-1080.webp",
+        "alt": "Collage of Fromental silk wallcovering details in a hotel room, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-02",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-02-1080.webp",
+        "alt": "Collage of Fromental silk wallcovering in hotel corridors, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-03",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-03-1080.webp",
+        "alt": "Hotel guest-room door set in a tweed-like Phillip Jeffries fabric wallcovering, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-05",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-05-1080.webp",
+        "alt": "Collage of a vinyl wallcovering in a hotel bathroom and room, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-06",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-06-1080.webp",
+        "alt": "Close-up of a lustrous Dedar wallcovering with horizontal sheen, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-08",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-08-1080.webp",
+        "alt": "Grid of wallcovering samples: silk, linen and painted-landscape designs, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-09",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-09-1080.webp",
+        "alt": "Close-up of Fromental hand-painted silk with dark marbled waves, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-10",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-10-1080.webp",
+        "alt": "Fromental silk wallcovering in a corner showing seamless pattern match, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-11",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-11-1440.webp",
+        "alt": "Close-up of a blue-grey hand-dyed Fromental silk, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-12",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-12-1440.webp",
+        "alt": "Hotel lobby with Fromental hand-dyed silk in warm amber tones around a glazed door, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-13",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-13-1440.webp",
+        "alt": "Lift lobby with stair balustrades and amber hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-14",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-14-1440.webp",
+        "alt": "Hotel lobby lined with amber hand-dyed silk leading to double doors, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-15",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-15-1440.webp",
+        "alt": "Corridor with warm hand-dyed silk walls and a full-height mirrored door, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-16",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-16-1440.webp",
+        "alt": "Lobby with double doors framed by hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-17",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-17-1440.webp",
+        "alt": "Lift lobby lined with iridescent dark Fromental silk around a mirrored door, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-18",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-18-1440.webp",
+        "alt": "Close-up of iridescent brown-and-gold Fromental silk in a lobby, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-19",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-19-1440.webp",
+        "alt": "Lobby with dark iridescent silk walls and a stair balustrade, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-20",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-20-1440.webp",
+        "alt": "Mirrored lift door framed by iridescent silk walls, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-21",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-21-1440.webp",
+        "alt": "Lift lobby in iridescent Fromental silk with warm downlights, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-22",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-22-1440.webp",
+        "alt": "Lift lobby lined with pale hand-dyed Fromental silk and warm wall lights, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-23",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-23-1440.webp",
+        "alt": "Lobby with hand-dyed silk walls leading to glazed doors, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-24",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-24-1440.webp",
+        "alt": "Stair balustrades and glazed doors in a hand-dyed silk lobby, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-25",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-25-1440.webp",
+        "alt": "Lobby with hand-dyed silk walls and a full-height mirrored panel, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-26",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-26-1440.webp",
+        "alt": "Lift doors set in pale hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-27",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-27-1440.webp",
+        "alt": "Lobby with hand-dyed silk walls and a curved stair rail, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-28",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-28-1440.webp",
+        "alt": "Hotel corridor with dark silk wallcovering, round mirror and chandelier, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-29",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-29-1440.webp",
+        "alt": "Lift lobby with warm-toned silk wall panels and recessed lighting, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-30",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-30-1440.webp",
+        "alt": "Lobby with amber silk walls and a view through to a stair hall, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-31",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-31-1440.webp",
+        "alt": "Close-up of a grey and gold wave-pattern silk wallcovering, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-32",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-32-1440.webp",
+        "alt": "Dark wave-pattern silk wall with a round mirror and upholstered bench, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-33",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-33-1440.webp",
+        "alt": "Hotel lounge with a chandelier, yellow armchairs and silk-covered walls, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-34",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-34-1440.webp",
+        "alt": "Round mirror between table lamps on a dark silk-covered wall, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-35",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-35-1440.webp",
+        "alt": "Hotel meeting room with long table, chandelier and fabric-covered walls, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-36",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-36-1440.webp",
+        "alt": "Fabric-wrapped wall panels beneath two framed artworks in a hotel room, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-37",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-37-1440.webp",
+        "alt": "Fabric-wrapped joinery wall with two framed gold artworks, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-38",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-38-1440.webp",
+        "alt": "Close-up of a woven linen-texture wallcovering, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-39",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-39-1440.webp",
+        "alt": "Sculptural wall light on a pale textured wallcovering, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-41",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-41-1440.webp",
+        "alt": "Teal fabric-wrapped wall with two framed artworks, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-43",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-43-1440.webp",
+        "alt": "Lobby corridor with Fromental silk walls and wall lights, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-44",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-44-1440.webp",
+        "alt": "Lift lobby in warm Fromental silk with dark lift doors, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-45",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-45-1440.webp",
+        "alt": "Stair lobby with Fromental silk walls and black balustrades, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-46",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-46-1440.webp",
+        "alt": "Mirrored panel framed by warm silk walls with wall lights, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-48",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-48-1440.webp",
+        "alt": "Hotel lobby with lustrous Dedar wallcovering and warm downlights, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "fs-ig-49",
+        "url": "https://www.mrwallcover.com/media/img/r/fs-ig-49-1440.webp",
+        "alt": "Lobby with Dedar wallcovering and dark doors, Four Seasons Hotel London at Ten Trinity Square.",
+        "credit": null,
+        "sourceUrls": []
+      },
+      {
+        "id": "four-seasons-ten-trinity-commons-01",
+        "url": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-01.webp",
+        "alt": "Ten Trinity Square at night, seen from Trinity Square Gardens, with the tower and portico lit.",
+        "credit": "Ten Trinity Square at night, from Trinity Square Gardens. A view of the building, not of our work. Photography: The wub / Wikimedia Commons (CC BY-SA 4.0).",
+        "sourceUrls": [
+          "https://creativecommons.org/licenses/by-sa/4.0",
+          "https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_London,_at_night.jpg"
+        ]
+      },
+      {
+        "id": "four-seasons-ten-trinity-commons-02",
+        "url": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-02.webp",
+        "alt": "The Portland stone tower and columned front of Ten Trinity Square, framed by trees on Trinity Square.",
+        "credit": "Ten Trinity Square from Trinity Square, 2026. A view of the building, not of our work. Photography: APK / Wikimedia Commons (CC BY 4.0).",
+        "sourceUrls": [
+          "https://creativecommons.org/licenses/by/4.0",
+          "https://commons.wikimedia.org/wiki/File:10_Trinity_Square_in_2026.jpg"
+        ]
+      },
+      {
+        "id": "four-seasons-ten-trinity-commons-03",
+        "url": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-03.webp",
+        "alt": "The full front of Ten Trinity Square on Tower Hill, with its central tower and Corinthian columns.",
+        "credit": "The front of Ten Trinity Square on Tower Hill, 2015. A view of the building, not of our work. Photography: Jim Linwood from London / Wikimedia Commons (CC BY 2.0).",
+        "sourceUrls": [
+          "https://creativecommons.org/licenses/by/2.0",
+          "https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_Tower_Hill_-_City_Of_London._(16459952029"
+        ]
+      }
+    ],
+    "formats": {
+      "html": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+      "markdown": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/index.md",
+      "json": "https://www.mrwallcover.com/ai/projects/four-seasons-ten-trinity-square.json"
+    },
+    "pageContent": {
+      "id": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+      "url": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+      "path": "/projects/four-seasons-ten-trinity-square/",
+      "title": "Four Seasons Hotel London, Ten Trinity Square | Mr Wallcover",
+      "description": "Guest room, suite and private residence wallpapering at Four Seasons Hotel London at Ten Trinity Square, 2016–2019. Three years of guest room and suite…",
+      "language": "en-GB",
+      "author": "Dorin Burcus",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "formats": {
+        "html": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+        "markdown": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/index.md",
+        "json": "https://www.mrwallcover.com/ai/pages/projects/four-seasons-ten-trinity-square/index.json",
+        "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/81"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "id": null,
+          "text": "Four Seasons Hotel London at Ten Trinity Square"
+        },
+        {
+          "level": 2,
+          "id": "glance-heading",
+          "text": "At a glance"
+        },
+        {
+          "level": 2,
+          "id": "at-a-glance",
+          "text": "At a glance"
+        },
+        {
+          "level": 2,
+          "id": "the-building",
+          "text": "The building"
+        },
+        {
+          "level": 2,
+          "id": "the-brief",
+          "text": "The brief"
+        },
+        {
+          "level": 2,
+          "id": "our-approach",
+          "text": "Our approach"
+        },
+        {
+          "level": 2,
+          "id": "the-private-residences",
+          "text": "The private residences"
+        },
+        {
+          "level": 2,
+          "id": "the-hotel-2017-to-2019",
+          "text": "The hotel, 2017 to 2019"
+        },
+        {
+          "level": 2,
+          "id": "materials",
+          "text": "Materials"
+        },
+        {
+          "level": 2,
+          "id": "outcome",
+          "text": "Outcome"
+        },
+        {
+          "level": 2,
+          "id": "photographs-on-this-page",
+          "text": "Photographs on this page"
+        },
+        {
+          "level": 2,
+          "id": "gallery-heading",
+          "text": "Photographs"
+        },
+        {
+          "level": 2,
+          "id": "method-heading",
+          "text": "The same standards, on every commission."
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Survey and scope, room by room"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Preparation decides the finish"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Protection and containment"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Batch and shade control"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Set out from the room's focal points"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "One team, then the return visit"
+        }
+      ],
+      "markdown": "10 Trinity Square, Tower Hill, City of London EC3N 4AJ\n\n# Four Seasons Hotel London at Ten Trinity Square\n\nThree years of guest room and suite wallpapering, 2016 to 2019, through the opening of one of the City's great Beaux-Arts conversions, and the walls of the Four Seasons Private Residences upstairs.\n\n![Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp)\n\n## At a glance\n\nClient, materials & project facts\n\n**Client**\n: Four Seasons Hotels and Resorts (now Four Seasons Hotel London at Tower Bridge)\n\n**Designer**\n: –Not recorded\n\n**Main contractor**\n: –Not recorded\n\n**Maker and paper**\n: Phillip Jeffries – Tweed; Omexco (Belgium); Fromental; Dedar; Vescom; Tektura; Muraspec\n\n**Area or rooms**\n: About 5,000 m² of hotel wallcoverings (2019)\n\n**Scope**\n: Guest room, suite and private residence wallpapering\n\n**Year**\n: 2016–2019\n\n## At a glance\n\n- **Client / brand:** Four Seasons Hotel London at Ten Trinity Square (renamed Four Seasons Hotel London at Tower Bridge in October 2024)\n- **Location:** 10 Trinity Square, Tower Hill, City of London\n- **Years:** 2016–2019\n- **Role:** Guest room and suite wallpapering, and wallcoverings in the Four Seasons Private Residences\n- **Wallcoverings:** [Phillip Jeffries](https://www.phillipjeffries.com/) Tweed; [Omexco](https://www.omexco.com/)\n- **Scope:** Survey, wall preparation and priming, setting out, installation with full pattern and seam control\n- **Photographs:** our own, of finished private residences and residents’ lift lobbies in the building, April and May 2019. We do not identify any residence: no flat or floor numbers, no owners, no views, and lift floor indicators and signs are blurred. Then our own photographs of the hotel’s lift lobbies, corridors and wallcoverings, December 2017 to September 2019, first posted on our Instagram\n- **Hotel wallcoverings, 2019:** about 5,000 m², including Fromental silks, Dedar, Vescom, Tektura and Muraspec\n\n## The building\n\nFew addresses in London speak so eloquently of trade and empire. Designed by Sir Edwin Cooper, Ten Trinity Square was opened by the Prime Minister, David Lloyd George, in 1922 as the headquarters of the Port of London Authority. In 1946 it hosted a reception marking the inaugural meeting of the General Assembly of the United Nations, an occasion held in the building’s ballroom. The building also appeared in the 2012 James Bond film [*Skyfall*](https://www.telegraph.co.uk/finance/property/luxury-homes/11354656/Ten-Trinity-Square-a-home-in-one-of-Londons-greatest-buildings.html).\n\nAcquired by Reignwood Group in 2010, the Grade II*-listed building underwent a seven-year restoration and conversion, led architecturally by Aukett Swanke, before opening as a Four Seasons hotel and private residences in 2017. It stands a short walk from the Tower of London and Tower Bridge, the neighbourhood whose name the hotel took in 2024.\n\n## The brief\n\nTo paper the guest rooms and suites: premium finishes, among them Phillip Jeffries’ tailored Tweed, that had to sit comfortably beside restored heritage fabric, fine joinery and polished timber, and to read as one surface from the first room to the last.\n\n## Our approach\n\n**Survey.** Every space was surveyed before a single roll was opened, so that substrates, junctions and sight lines were understood rather than discovered.\n\n**Preparation and priming.** Walls were prepared and primed to suit each material. With textile wallcoverings the substrate is everything; any flaw beneath a tweed or woven surface will eventually show.\n\n**Setting out.** Drops were planned around windows, doors and joinery so that seams fell where the eye would not look for them, and so that each run began and ended with intent.\n\n**Pattern and seam control.** Natural textiles vary from roll to roll. Batches, shading and seams were checked continuously so that walls read as one continuous surface.\n\n**Coordination.** Across the years on site the team worked hand in hand with the electricians, the French polishers and the main contractor, sequencing our work around second-fix electrics and polished joinery so that no trade compromised another. The team’s organisation was as much a part of the finish as the craft itself.\n\n## The private residences\n\nThe same building holds the Four Seasons Private Residences, and our work at Ten Trinity Square went beyond the hotel floors. The photographs at the top of this page are ours, taken in the residences in the spring of 2019.\n\n**Entrance halls.** A long entrance wall hung in a dark, banded wallcovering, its streaks of silver and ochre running the full length of the hall without a visible seam, framed in pale panelling so it reads as one inset field. Banded patterns are unforgiving: every drop has to meet its neighbour on the line, or the bands step at the joins.\n\n**Living and dining rooms.** Quiet, tailored walls behind walnut joinery, sculptural lighting and a brass-framed screen, the wallcovering finished cleanly into reveals and around fittings.\n\n**Woven grasscloth.** A natural grasscloth turning an external corner, the weave kept straight and tight right to the edge, where a natural fibre is most likely to fray.\n\n**Residents’ lift lobbies.** Warm, banded veneer- and stone-effect walls around the lift cores, matched from panel to panel so the figure flows around corners and past the lift doors.\n\n## The hotel, 2017 to 2019\n\nOur own photographs from the hotel floors, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), record the scale of the work. In May 2019 our team completed the installation of about 5,000 m² of wallcoverings at Four Seasons Hotel London, in Fromental, Vescom, Tektura and Dedar ([BxBEIajB-d5](https://www.instagram.com/p/BxBEIajB-d5/)). The silks were Fromental’s, including hand-dyed silk feature walls ([BwS1XkFhWv6](https://www.instagram.com/p/BwS1XkFhWv6/)); several lift lobbies were finished in Dedar ([B2U2Ry8F0rE](https://www.instagram.com/p/B2U2Ry8F0rE/)) and others in Muraspec ([B2U12SXFLHE](https://www.instagram.com/p/B2U12SXFLHE/)). Phillip Jeffries’ tweed-like fabric appears in our posts from December 2017 ([BdNs0wagJs9](https://www.instagram.com/p/BdNs0wagJs9/)).\n\n## Materials\n\n- **[Phillip Jeffries Tweed](https://www.phillipjeffries.com/shop/CARD-TW-LINEN):** a tailored textile wallcovering with the soft, flecked texture of classic suiting. Phillip Jeffries also offers a [Vinyl Tweed](https://www.phillipjeffries.com/shop/CARD-N-TWEED); the exact Tweed reference used at Ten Trinity Square is not recorded here.\n- **[Omexco](https://www.omexco.com/wallcoverings):** fine Belgian wallcoverings with a long heritage in textiles. Omexco’s [contract offer](https://www.omexco.com/contract) includes its High Performance range for hospitality; the specific collection used on this project is not recorded here.\n\n## Outcome\n\nGuest room and suite wallpapering from 2016 to 2019 on one of London’s most significant hotel conversions, through the opening in 2017 and the rooms that followed. Quiet, tailored walls that let Sir Edwin Cooper’s architecture take the applause.\n\n## Photographs on this page\n\nThe first twelve photographs are our own, of finished work in the private residences and residents’ lift lobbies (April and May 2019). Nothing in them identifies a residence or its owner.\n\nThe next forty-four are our own photographs of the hotel’s lift lobbies, corridors and wallcoverings, December 2017 to September 2019, first posted on our Instagram. A few of those posts do not name the hotel; they show the same lift lobbies, balustrades and doors as the posts that do.\n\nThe last three are photographs of the building by other photographers, credited below. They show the building, not our work.\n\n- Ten Trinity Square at night, from Trinity Square Gardens: photograph by The wub, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_London,_at_night.jpg). Resized for the web.\n- Ten Trinity Square from Trinity Square, 2026: photograph by APK, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:10_Trinity_Square_in_2026.jpg). Resized for the web.\n- The front of Ten Trinity Square on Tower Hill, 2015: photograph by Jim Linwood from London, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_Tower_Hill_-_City_Of_London._(16459952029).jpg). Resized for the web.\n\n## Photographs\n\n![The same entrance hall seen along its length: the banded wallcovering runs the full wall under a lit cove ceiling, past the mirror and bench to the front door.](https://www.mrwallcover.com/media/img/r/fs-residences-02-800.webp)\n\n![Close detail of the entrance-hall wallcovering: soft horizontal bands of charcoal, silver and ochre, laid with no visible seam.](https://www.mrwallcover.com/media/img/r/fs-residences-03-800.webp)\n\n![Finished dining room in a private residence: a round table and gold armchairs under a cloud of glass discs, with a black sideboard, a round clock and walnut shelving beyond.](https://www.mrwallcover.com/media/img/r/fs-residences-04-800.webp)\n\n![Finished living room in the same residence: a pale sofa, a blue rug and walnut bookshelves, with a brass-framed screen dividing it from the dining room.](https://www.mrwallcover.com/media/img/r/fs-residences-05-800.webp)\n\n![Close detail of a woven grasscloth wallcovering turning an external corner, the weave running straight and tight to the edge.](https://www.mrwallcover.com/media/img/r/fs-residences-06-800.webp)\n\n![A residents’ lift lobby: walls in a warm, banded veneer-effect finish, bronze lift doors and a glazed screen, with the stair rail in the foreground.](https://www.mrwallcover.com/media/img/r/fs-residences-07-800.webp)\n\n![The banded lobby walls turning a corner towards a pair of glazed doors, with bronze lift doors on the right.](https://www.mrwallcover.com/media/img/r/fs-residences-08-800.webp)\n\n![A pale lift lobby seen between two stone-effect walls: bronze lift doors either side and a glazed door at the far end.](https://www.mrwallcover.com/media/img/r/fs-residences-09-800.webp)\n\n![The same lobby from the top of the steps: matched stone-effect walls, bronze lift doors and a glazed door at the end of the corridor.](https://www.mrwallcover.com/media/img/r/fs-residences-10-800.webp)\n\n![A corner of the lobby: an antiqued mirror panel between two crystal wall lights on the stone-effect walls.](https://www.mrwallcover.com/media/img/r/fs-residences-11-800.webp)\n\n![The lobby beside the stair: stone-effect walls, a bronze lift door, a ventilation grille and the antiqued mirror beyond.](https://www.mrwallcover.com/media/img/r/fs-residences-12-800.webp)\n\n![Collage of Fromental silk wallcovering details in a hotel room, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-01-800.webp)\n\n![Collage of Fromental silk wallcovering in hotel corridors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-02-800.webp)\n\n![Hotel guest-room door set in a tweed-like Phillip Jeffries fabric wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-03-800.webp)\n\n![Collage of a vinyl wallcovering in a hotel bathroom and room, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-05-800.webp)\n\n![Close-up of a lustrous Dedar wallcovering with horizontal sheen, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-06-800.webp)\n\n![Grid of wallcovering samples: silk, linen and painted-landscape designs, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-08-800.webp)\n\n![Close-up of Fromental hand-painted silk with dark marbled waves, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-09-800.webp)\n\n![Fromental silk wallcovering in a corner showing seamless pattern match, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-10-800.webp)\n\n![Close-up of a blue-grey hand-dyed Fromental silk, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-11-800.webp)\n\n![Hotel lobby with Fromental hand-dyed silk in warm amber tones around a glazed door, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-12-800.webp)\n\n![Lift lobby with stair balustrades and amber hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-13-800.webp)\n\n![Hotel lobby lined with amber hand-dyed silk leading to double doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-14-800.webp)\n\n![Corridor with warm hand-dyed silk walls and a full-height mirrored door, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-15-800.webp)\n\n![Lobby with double doors framed by hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-16-800.webp)\n\n![Lift lobby lined with iridescent dark Fromental silk around a mirrored door, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-17-800.webp)\n\n![Close-up of iridescent brown-and-gold Fromental silk in a lobby, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-18-800.webp)\n\n![Lobby with dark iridescent silk walls and a stair balustrade, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-19-800.webp)\n\n![Mirrored lift door framed by iridescent silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-20-800.webp)\n\n![Lift lobby in iridescent Fromental silk with warm downlights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-21-800.webp)\n\n![Lift lobby lined with pale hand-dyed Fromental silk and warm wall lights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-22-800.webp)\n\n![Lobby with hand-dyed silk walls leading to glazed doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-23-800.webp)\n\n![Stair balustrades and glazed doors in a hand-dyed silk lobby, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-24-800.webp)\n\n![Lobby with hand-dyed silk walls and a full-height mirrored panel, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-25-800.webp)\n\n![Lift doors set in pale hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-26-800.webp)\n\n![Lobby with hand-dyed silk walls and a curved stair rail, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-27-800.webp)\n\n![Hotel corridor with dark silk wallcovering, round mirror and chandelier, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-28-800.webp)\n\n![Lift lobby with warm-toned silk wall panels and recessed lighting, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-29-800.webp)\n\n![Lobby with amber silk walls and a view through to a stair hall, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-30-800.webp)\n\n![Close-up of a grey and gold wave-pattern silk wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-31-800.webp)\n\n![Dark wave-pattern silk wall with a round mirror and upholstered bench, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-32-800.webp)\n\n![Hotel lounge with a chandelier, yellow armchairs and silk-covered walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-33-800.webp)\n\n![Round mirror between table lamps on a dark silk-covered wall, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-34-800.webp)\n\n![Hotel meeting room with long table, chandelier and fabric-covered walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-35-800.webp)\n\n![Fabric-wrapped wall panels beneath two framed artworks in a hotel room, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-36-800.webp)\n\n![Fabric-wrapped joinery wall with two framed gold artworks, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-37-800.webp)\n\n![Close-up of a woven linen-texture wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-38-800.webp)\n\n![Sculptural wall light on a pale textured wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-39-800.webp)\n\n![Teal fabric-wrapped wall with two framed artworks, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-41-800.webp)\n\n![Lobby corridor with Fromental silk walls and wall lights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-43-800.webp)\n\n![Lift lobby in warm Fromental silk with dark lift doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-44-800.webp)\n\n![Stair lobby with Fromental silk walls and black balustrades, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-45-800.webp)\n\n![Mirrored panel framed by warm silk walls with wall lights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-46-800.webp)\n\n![Hotel lobby with lustrous Dedar wallcovering and warm downlights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-48-800.webp)\n\n![Lobby with Dedar wallcovering and dark doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-49-800.webp)\n\n![Ten Trinity Square at night, seen from Trinity Square Gardens, with the tower and portico lit.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-01.jpg)\n\nTen Trinity Square at night, from Trinity Square Gardens. A view of the building, not of our work. Photography: The wub / Wikimedia Commons (CC BY-SA 4.0).\n\n![The Portland stone tower and columned front of Ten Trinity Square, framed by trees on Trinity Square.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-02.jpg)\n\nTen Trinity Square from Trinity Square, 2026. A view of the building, not of our work. Photography: APK / Wikimedia Commons (CC BY 4.0).\n\n![The full front of Ten Trinity Square on Tower Hill, with its central tower and Corinthian columns.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-03.jpg)\n\nThe front of Ten Trinity Square on Tower Hill, 2015. A view of the building, not of our work. Photography: Jim Linwood from London / Wikimedia Commons (CC BY 2.0).\n\nHow the commission ran\n\n## The same standards, on every commission.\n\nWhether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.\n\n01\n\n### Survey and scope, room by room\n\nWe measure the wall that will actually be hung, allow for the repeat and the wastage, and write a scope of works room by room before anyone orders paper.\n\n02\n\n### Preparation decides the finish\n\nWalls are filled, made good and primed until they are true. If a wall is not ready for the material specified, we say so before the last drop is ordered.\n\n03\n\n### Protection and containment\n\nFloors, furniture and finished joinery are protected as part of the hang. Work is contained and the place is left tidy each evening. In a home we are visitors; in a hotel we work around the house.\n\n04\n\n### Batch and shade control\n\nDeliveries are checked against the measure, and batches and shading are managed so that a corridor of rooms reads as one surface.\n\n05\n\n### Set out from the room's focal points\n\nPattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.\n\n06\n\n### One team, then the return visit\n\nThe people who start are the people who finish. Four to six weeks after completion we come back to look at every seam and edge, and the workmanship is guaranteed for twelve months.\n\n[See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)\n\nBy [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026\n",
+      "links": [
+        {
+          "url": "https://www.phillipjeffries.com/",
+          "text": "Phillip Jeffries"
+        },
+        {
+          "url": "https://www.omexco.com/",
+          "text": "Omexco"
+        },
+        {
+          "url": "https://www.telegraph.co.uk/finance/property/luxury-homes/11354656/Ten-Trinity-Square-a-home-in-one-of-Londons-greatest-buildings.html",
+          "text": "Skyfall"
+        },
+        {
+          "url": "https://www.instagram.com/mrwallcover/",
+          "text": "@mrwallcover"
+        },
+        {
+          "url": "https://www.instagram.com/p/BxBEIajB-d5/",
+          "text": "BxBEIajB-d5"
+        },
+        {
+          "url": "https://www.instagram.com/p/BwS1XkFhWv6/",
+          "text": "BwS1XkFhWv6"
+        },
+        {
+          "url": "https://www.instagram.com/p/B2U2Ry8F0rE/",
+          "text": "B2U2Ry8F0rE"
+        },
+        {
+          "url": "https://www.instagram.com/p/B2U12SXFLHE/",
+          "text": "B2U12SXFLHE"
+        },
+        {
+          "url": "https://www.instagram.com/p/BdNs0wagJs9/",
+          "text": "BdNs0wagJs9"
+        },
+        {
+          "url": "https://www.phillipjeffries.com/shop/CARD-TW-LINEN",
+          "text": "Phillip Jeffries Tweed"
+        },
+        {
+          "url": "https://www.phillipjeffries.com/shop/CARD-N-TWEED",
+          "text": "Vinyl Tweed"
+        },
+        {
+          "url": "https://www.omexco.com/wallcoverings",
+          "text": "Omexco"
+        },
+        {
+          "url": "https://www.omexco.com/contract",
+          "text": "contract offer"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "text": "CC BY-SA 4.0"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_London,_at_night.jpg",
+          "text": "Wikimedia Commons"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0",
+          "text": "CC BY 4.0"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:10_Trinity_Square_in_2026.jpg",
+          "text": "Wikimedia Commons"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/2.0",
+          "text": "CC BY 2.0"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_Tower_Hill_-_City_Of_London._(16459952029).jpg",
+          "text": "Wikimedia Commons"
+        },
+        {
+          "url": "https://www.mrwallcover.com/details/",
+          "text": "See the finish up close: seams, internal corners, edges and joins from our own installations"
+        },
+        {
+          "url": "https://www.mrwallcover.com/about/#dorin",
+          "text": "Dorin Burcus"
+        },
+        {
+          "url": "https://www.mrwallcover.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/",
+          "text": "Work"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/browns-hotel-mayfair/",
+          "text": "Brown's Hotel, Mayfair"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/raffles-london-the-owo/",
+          "text": "Raffles London at The OWO, Whitehall"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/trematon-castle/",
+          "text": "Castle of Trematon, Cornwall"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/old-bailey-hotel/",
+          "text": "Hyde London City (the Old Bailey Hotel)"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/doubletree-west-end/",
+          "text": "DoubleTree by Hilton London – West End"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+          "text": "DoubleTree by Hilton London – Victoria"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/biltmore-mayfair/",
+          "text": "The Biltmore Mayfair"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/",
+          "text": "House of Hackney showroom, St Michael's Clergy House"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/penny-morrison-showroom/",
+          "text": "Penny Morrison showroom, Chelsea"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/pimlico-st-georges-square/",
+          "text": "St George's Square, Pimlico"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/inverness-terrace/",
+          "text": "Inverness Terrace, Bayswater"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/north-london-residence/",
+          "text": "A Georgian house in North London"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/",
+          "text": "Ahluwalia x Calico Wallpaper: 'Estuary' at Rosewood London"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/",
+          "text": "Calico Wallpaper x BEVERLY 1975: Cadence at The Lavery, Brompton Design District"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/calico-lee-broom-overture/",
+          "text": "Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroom"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/",
+          "text": "Hilton Garden Inn Silverstone"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/pendley-manor-hotel/",
+          "text": "Pendley Manor Hotel, Tring"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/hilton-london-metropole/",
+          "text": "Hilton London Metropole"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/novotel-london-canary-wharf/",
+          "text": "Novotel London Canary Wharf"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/huntsman-savile-row/",
+          "text": "Huntsman, Savile Row"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/",
+          "text": "Mercedes-AMG showroom, London"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/everyman-liverpool/",
+          "text": "Everyman cinema, Liverpool"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/oxygen-freejumping-the-o2/",
+          "text": "Oxygen Freejumping, The O2"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/masterpiece-london-2019/",
+          "text": "Masterpiece London 2019"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/private-residence-little-venice/",
+          "text": "Private residence, Little Venice"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/jumeirah-carlton-tower/",
+          "text": "Jumeirah Carlton Tower, Knightsbridge"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/",
+          "text": "Calico Wallpaper airside at Heathrow: a luxury fashion house's store, Terminal 4"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/imperfect-arches-external-corner-trim/",
+          "text": "How we solve imperfect arches: bespoke external-corner trim for wallcoverings"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/scp-showroom-pimlico/",
+          "text": "SCP showroom, Pimlico"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/tea-house-jaillon-studio/",
+          "text": "A tea house in West London, for Jaillon Studio"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/",
+          "text": "Hand-painted wallpaper installation"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/grasscloth-installation/",
+          "text": "Grasscloth installation"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/silk-wallcovering-installation/",
+          "text": "Silk wallcovering installation"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/fabric-walling/",
+          "text": "Fabric walling"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/",
+          "text": "Hotel wallcovering installation"
+        },
+        {
+          "url": "https://www.mrwallcover.com/aftercare/",
+          "text": "Aftercare"
+        },
+        {
+          "url": "https://www.mrwallcover.com/areas/city-of-london/",
+          "text": "Wallcovering installation in the City of London"
+        },
+        {
+          "url": "https://www.mrwallcover.com/contact/",
+          "text": "Request a quotation"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp",
+          "alt": "Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.",
+          "caption": null,
+          "width": 2400,
+          "height": 1600
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-02-800.webp",
+          "alt": "The same entrance hall seen along its length: the banded wallcovering runs the full wall under a lit cove ceiling, past the mirror and bench to the front door.",
+          "caption": null,
+          "width": 1600,
+          "height": 2400
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-03-800.webp",
+          "alt": "Close detail of the entrance-hall wallcovering: soft horizontal bands of charcoal, silver and ochre, laid with no visible seam.",
+          "caption": null,
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-04-800.webp",
+          "alt": "Finished dining room in a private residence: a round table and gold armchairs under a cloud of glass discs, with a black sideboard, a round clock and walnut shelving beyond.",
+          "caption": null,
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-05-800.webp",
+          "alt": "Finished living room in the same residence: a pale sofa, a blue rug and walnut bookshelves, with a brass-framed screen dividing it from the dining room.",
+          "caption": null,
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-06-800.webp",
+          "alt": "Close detail of a woven grasscloth wallcovering turning an external corner, the weave running straight and tight to the edge.",
+          "caption": null,
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-07-800.webp",
+          "alt": "A residents’ lift lobby: walls in a warm, banded veneer-effect finish, bronze lift doors and a glazed screen, with the stair rail in the foreground.",
+          "caption": null,
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-08-800.webp",
+          "alt": "The banded lobby walls turning a corner towards a pair of glazed doors, with bronze lift doors on the right.",
+          "caption": null,
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-09-800.webp",
+          "alt": "A pale lift lobby seen between two stone-effect walls: bronze lift doors either side and a glazed door at the far end.",
+          "caption": null,
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-10-800.webp",
+          "alt": "The same lobby from the top of the steps: matched stone-effect walls, bronze lift doors and a glazed door at the end of the corridor.",
+          "caption": null,
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-11-800.webp",
+          "alt": "A corner of the lobby: an antiqued mirror panel between two crystal wall lights on the stone-effect walls.",
+          "caption": null,
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-residences-12-800.webp",
+          "alt": "The lobby beside the stair: stone-effect walls, a bronze lift door, a ventilation grille and the antiqued mirror beyond.",
+          "caption": null,
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-01-800.webp",
+          "alt": "Collage of Fromental silk wallcovering details in a hotel room, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-02-800.webp",
+          "alt": "Collage of Fromental silk wallcovering in hotel corridors, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-03-800.webp",
+          "alt": "Hotel guest-room door set in a tweed-like Phillip Jeffries fabric wallcovering, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-05-800.webp",
+          "alt": "Collage of a vinyl wallcovering in a hotel bathroom and room, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-06-800.webp",
+          "alt": "Close-up of a lustrous Dedar wallcovering with horizontal sheen, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-08-800.webp",
+          "alt": "Grid of wallcovering samples: silk, linen and painted-landscape designs, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-09-800.webp",
+          "alt": "Close-up of Fromental hand-painted silk with dark marbled waves, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-10-800.webp",
+          "alt": "Fromental silk wallcovering in a corner showing seamless pattern match, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-11-800.webp",
+          "alt": "Close-up of a blue-grey hand-dyed Fromental silk, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-12-800.webp",
+          "alt": "Hotel lobby with Fromental hand-dyed silk in warm amber tones around a glazed door, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-13-800.webp",
+          "alt": "Lift lobby with stair balustrades and amber hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-14-800.webp",
+          "alt": "Hotel lobby lined with amber hand-dyed silk leading to double doors, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-15-800.webp",
+          "alt": "Corridor with warm hand-dyed silk walls and a full-height mirrored door, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-16-800.webp",
+          "alt": "Lobby with double doors framed by hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-17-800.webp",
+          "alt": "Lift lobby lined with iridescent dark Fromental silk around a mirrored door, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-18-800.webp",
+          "alt": "Close-up of iridescent brown-and-gold Fromental silk in a lobby, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-19-800.webp",
+          "alt": "Lobby with dark iridescent silk walls and a stair balustrade, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-20-800.webp",
+          "alt": "Mirrored lift door framed by iridescent silk walls, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-21-800.webp",
+          "alt": "Lift lobby in iridescent Fromental silk with warm downlights, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-22-800.webp",
+          "alt": "Lift lobby lined with pale hand-dyed Fromental silk and warm wall lights, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-23-800.webp",
+          "alt": "Lobby with hand-dyed silk walls leading to glazed doors, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-24-800.webp",
+          "alt": "Stair balustrades and glazed doors in a hand-dyed silk lobby, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-25-800.webp",
+          "alt": "Lobby with hand-dyed silk walls and a full-height mirrored panel, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-26-800.webp",
+          "alt": "Lift doors set in pale hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-27-800.webp",
+          "alt": "Lobby with hand-dyed silk walls and a curved stair rail, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-28-800.webp",
+          "alt": "Hotel corridor with dark silk wallcovering, round mirror and chandelier, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-29-800.webp",
+          "alt": "Lift lobby with warm-toned silk wall panels and recessed lighting, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-30-800.webp",
+          "alt": "Lobby with amber silk walls and a view through to a stair hall, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-31-800.webp",
+          "alt": "Close-up of a grey and gold wave-pattern silk wallcovering, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-32-800.webp",
+          "alt": "Dark wave-pattern silk wall with a round mirror and upholstered bench, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-33-800.webp",
+          "alt": "Hotel lounge with a chandelier, yellow armchairs and silk-covered walls, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-34-800.webp",
+          "alt": "Round mirror between table lamps on a dark silk-covered wall, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-35-800.webp",
+          "alt": "Hotel meeting room with long table, chandelier and fabric-covered walls, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-36-800.webp",
+          "alt": "Fabric-wrapped wall panels beneath two framed artworks in a hotel room, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-37-800.webp",
+          "alt": "Fabric-wrapped joinery wall with two framed gold artworks, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-38-800.webp",
+          "alt": "Close-up of a woven linen-texture wallcovering, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-39-800.webp",
+          "alt": "Sculptural wall light on a pale textured wallcovering, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-41-800.webp",
+          "alt": "Teal fabric-wrapped wall with two framed artworks, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-43-800.webp",
+          "alt": "Lobby corridor with Fromental silk walls and wall lights, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-44-800.webp",
+          "alt": "Lift lobby in warm Fromental silk with dark lift doors, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-45-800.webp",
+          "alt": "Stair lobby with Fromental silk walls and black balustrades, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-46-800.webp",
+          "alt": "Mirrored panel framed by warm silk walls with wall lights, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-48-800.webp",
+          "alt": "Hotel lobby with lustrous Dedar wallcovering and warm downlights, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1439
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/r/fs-ig-49-800.webp",
+          "alt": "Lobby with Dedar wallcovering and dark doors, Four Seasons Hotel London at Ten Trinity Square.",
+          "caption": null,
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-01.jpg",
+          "alt": "Ten Trinity Square at night, seen from Trinity Square Gardens, with the tower and portico lit.",
+          "caption": "Ten Trinity Square at night, from Trinity Square Gardens. A view of the building, not of our work. Photography: The wub / Wikimedia Commons (CC BY-SA 4.0).",
+          "width": 1800,
+          "height": 1350
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-02.jpg",
+          "alt": "The Portland stone tower and columned front of Ten Trinity Square, framed by trees on Trinity Square.",
+          "caption": "Ten Trinity Square from Trinity Square, 2026. A view of the building, not of our work. Photography: APK / Wikimedia Commons (CC BY 4.0).",
+          "width": 1800,
+          "height": 2204
+        },
+        {
+          "url": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-03.jpg",
+          "alt": "The full front of Ten Trinity Square on Tower Hill, with its central tower and Corinthian columns.",
+          "caption": "The front of Ten Trinity Square on Tower Hill, 2015. A view of the building, not of our work. Photography: Jim Linwood from London / Wikimedia Commons (CC BY 2.0).",
+          "width": 1800,
+          "height": 1820
+        }
+      ],
+      "diagrams": [],
+      "media": [],
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": [
+                "HomeAndConstructionBusiness",
+                "ProfessionalService"
+              ],
+              "@id": "https://www.mrwallcover.com/#business",
+              "name": "Mr Wallcover",
+              "url": "https://www.mrwallcover.com",
+              "image": "https://www.mrwallcover.com/og.jpg",
+              "logo": "https://www.mrwallcover.com/logo-512.png",
+              "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus, in the trade since 2012: survey to aftercare for hotels, homes and makers.",
+              "email": "info@mrwallcover.com",
+              "founder": {
+                "@id": "https://www.mrwallcover.com/about/#dorin"
+              },
+              "award": "Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "London",
+                "addressRegion": "Greater London",
+                "addressCountry": "GB"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "London"
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "London and the surrounding areas"
+                },
+                {
+                  "@type": "Country",
+                  "name": "United Kingdom",
+                  "description": "UK-wide for selected projects"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mayfair",
+                  "url": "https://www.mrwallcover.com/areas/mayfair/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Belgravia",
+                  "url": "https://www.mrwallcover.com/areas/belgravia/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Chelsea",
+                  "url": "https://www.mrwallcover.com/areas/chelsea/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Kensington",
+                  "url": "https://www.mrwallcover.com/areas/kensington/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "the City of London",
+                  "url": "https://www.mrwallcover.com/areas/city-of-london/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "the Cotswolds",
+                  "url": "https://www.mrwallcover.com/areas/cotswolds/"
+                }
+              ],
+              "slogan": "Premium wallcoverings services: surveying, management, supply, install and aftercare.",
+              "knowsAbout": [
+                "Wallpaper installation",
+                "Wallcovering installation for hotels",
+                "Grasscloth installation",
+                "Hand-painted wallcoverings",
+                "Acoustic wallcoverings",
+                "Silk wallcovering installation",
+                "Fabric walling",
+                "Wallpaper mural installation",
+                "Contract vinyl wallcoverings",
+                "Wallcoverings on joinery",
+                "Bespoke wallcovering panels",
+                "Architectural and furniture film wrapping",
+                "Window film installation"
+              ],
+              "sameAs": [
+                "https://www.instagram.com/mrwallcover/"
+              ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Mr Wallcover services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/#service",
+                      "name": "Hand-painted wallpaper installation",
+                      "serviceType": "Hand-painted wallpaper installation",
+                      "url": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/grasscloth-installation/#service",
+                      "name": "Grasscloth installation",
+                      "serviceType": "Grasscloth installation",
+                      "url": "https://www.mrwallcover.com/services/grasscloth-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/silk-wallcovering-installation/#service",
+                      "name": "Silk wallcovering installation",
+                      "serviceType": "Silk wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/silk-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/fabric-walling/#service",
+                      "name": "Fabric walling",
+                      "serviceType": "Fabric walling",
+                      "url": "https://www.mrwallcover.com/services/fabric-walling/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/#service",
+                      "name": "Hotel wallcovering installation",
+                      "serviceType": "Hotel wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/mural-installation/#service",
+                      "name": "Mural installation",
+                      "serviceType": "Mural installation",
+                      "url": "https://www.mrwallcover.com/services/mural-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/#service",
+                      "name": "Acoustic wallcovering installation",
+                      "serviceType": "Acoustic wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/architectural-film-wrapping/#service",
+                      "name": "Architectural & furniture film wrapping",
+                      "serviceType": "Architectural film installation",
+                      "url": "https://www.mrwallcover.com/services/architectural-film-wrapping/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/window-film/#service",
+                      "name": "Window film installation",
+                      "serviceType": "Window film installation",
+                      "url": "https://www.mrwallcover.com/services/window-film/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/#service",
+                      "name": "Joinery wallcoverings & bespoke panels",
+                      "serviceType": "Wallcovering on joinery and bespoke wall panels",
+                      "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/exterior-works/#service",
+                      "name": "Exterior works",
+                      "serviceType": "Exterior decorating",
+                      "url": "https://www.mrwallcover.com/services/exterior-works/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/#service",
+                      "name": "Commercial and showroom wallcovering installation",
+                      "serviceType": "Commercial wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  }
+                ]
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "info@mrwallcover.com",
+                "url": "https://www.mrwallcover.com/contact/",
+                "contactType": "quotations",
+                "areaServed": [
+                  {
+                    "@type": "City",
+                    "name": "London"
+                  },
+                  {
+                    "@type": "AdministrativeArea",
+                    "name": "London and the surrounding areas"
+                  },
+                  {
+                    "@type": "Country",
+                    "name": "United Kingdom",
+                    "description": "UK-wide for selected projects"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Mayfair",
+                    "url": "https://www.mrwallcover.com/areas/mayfair/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Belgravia",
+                    "url": "https://www.mrwallcover.com/areas/belgravia/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Chelsea",
+                    "url": "https://www.mrwallcover.com/areas/chelsea/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Kensington",
+                    "url": "https://www.mrwallcover.com/areas/kensington/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "the City of London",
+                    "url": "https://www.mrwallcover.com/areas/city-of-london/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "the Cotswolds",
+                    "url": "https://www.mrwallcover.com/areas/cotswolds/"
+                  }
+                ],
+                "availableLanguage": [
+                  "English"
+                ]
+              }
+            },
+            {
+              "@type": "Person",
+              "@id": "https://www.mrwallcover.com/about/#dorin",
+              "name": "Dorin Burcus",
+              "jobTitle": "Founder",
+              "url": "https://www.mrwallcover.com/about/",
+              "image": {
+                "@type": "ImageObject",
+                "url": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+                "contentUrl": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+                "creditText": "Dorin Burcus / Mr Wallcover",
+                "creator": {
+                  "@type": "Person",
+                  "@id": "https://www.mrwallcover.com/about/#dorin",
+                  "name": "Dorin Burcus",
+                  "url": "https://www.mrwallcover.com/about/"
+                },
+                "copyrightNotice": "© Mr Wallcover",
+                "license": "https://www.mrwallcover.com/image-use/",
+                "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+              },
+              "worksFor": {
+                "@id": "https://www.mrwallcover.com/#business"
+              }
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://www.mrwallcover.com/#website",
+              "url": "https://www.mrwallcover.com",
+              "name": "Mr Wallcover",
+              "inLanguage": "en-GB",
+              "publisher": {
+                "@id": "https://www.mrwallcover.com/#business"
+              }
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/#webpage",
+              "url": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+              "name": "Four Seasons Hotel London, Ten Trinity Square | Mr Wallcover",
+              "description": "Guest room, suite and private residence wallpapering at Four Seasons Hotel London at Ten Trinity Square, 2016–2019. Three years of guest room and suite…",
+              "inLanguage": "en-GB",
+              "isPartOf": {
+                "@id": "https://www.mrwallcover.com/#website"
+              },
+              "about": {
+                "@id": "https://www.mrwallcover.com/#business"
+              },
+              "primaryImageOfPage": {
+                "@type": "ImageObject",
+                "url": "https://www.mrwallcover.com/media/img/r/fs-residences-01-1600.jpg",
+                "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-01-1600.jpg",
+                "creditText": "Mr Wallcover",
+                "creator": {
+                  "@type": "Organization",
+                  "@id": "https://www.mrwallcover.com/#business",
+                  "name": "Mr Wallcover",
+                  "url": "https://www.mrwallcover.com/"
+                },
+                "copyrightNotice": "© Mr Wallcover",
+                "license": "https://www.mrwallcover.com/image-use/",
+                "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+              }
+            },
+            {
+              "@type": "Article",
+              "@id": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/#article",
+              "headline": "Four Seasons Hotel London at Ten Trinity Square",
+              "description": "Guest room, suite and private residence wallpapering at Four Seasons Hotel London at Ten Trinity Square, 2016–2019. Three years of guest room and suite…",
+              "url": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+              "mainEntityOfPage": {
+                "@id": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/#webpage"
+              },
+              "inLanguage": "en-GB",
+              "datePublished": "2026-10-09",
+              "dateModified": "2026-10-11",
+              "author": {
+                "@type": "Person",
+                "@id": "https://www.mrwallcover.com/about/#dorin",
+                "name": "Dorin Burcus",
+                "url": "https://www.mrwallcover.com/about/"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "@id": "https://www.mrwallcover.com/#business",
+                "name": "Mr Wallcover",
+                "url": "https://www.mrwallcover.com",
+                "logo": "https://www.mrwallcover.com/logo-512.png"
+              },
+              "image": [
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-01-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-01-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-02-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-02-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-03-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-03-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-04-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-04-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-05-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-05-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-06-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-06-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-07-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-07-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-08-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-08-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-09-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-09-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-10-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-10-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-11-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-11-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-residences-12-1600.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-residences-12-1600.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-01-1080.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-01-1080.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-02-1080.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-02-1080.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-03-1080.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-03-1080.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-05-1080.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-05-1080.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-06-1080.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-06-1080.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-08-1080.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-08-1080.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-09-1080.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-09-1080.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-10-1080.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-10-1080.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-11-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-11-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-12-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-12-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-13-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-13-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-14-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-14-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-15-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-15-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-16-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-16-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-17-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-17-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-18-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-18-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-19-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-19-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-20-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-20-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-21-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-21-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-22-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-22-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-23-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-23-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-24-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-24-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-25-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-25-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-26-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-26-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-27-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-27-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-28-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-28-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-29-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-29-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-30-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-30-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-31-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-31-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-32-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-32-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-33-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-33-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-34-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-34-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-35-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-35-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-36-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-36-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-37-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-37-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-38-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-38-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-39-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-39-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-41-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-41-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-43-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-43-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-44-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-44-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-45-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-45-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-46-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-46-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-48-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-48-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/r/fs-ig-49-1440.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/r/fs-ig-49-1440.jpg",
+                  "creditText": "Mr Wallcover",
+                  "creator": {
+                    "@type": "Organization",
+                    "@id": "https://www.mrwallcover.com/#business",
+                    "name": "Mr Wallcover",
+                    "url": "https://www.mrwallcover.com/"
+                  },
+                  "copyrightNotice": "© Mr Wallcover",
+                  "license": "https://www.mrwallcover.com/image-use/",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-01.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-01.jpg",
+                  "creditText": "Photo: The wub / Wikimedia Commons (CC BY-SA 4.0)",
+                  "creator": {
+                    "@type": "Person",
+                    "name": "The wub"
+                  },
+                  "copyrightNotice": "© The wub",
+                  "license": "https://creativecommons.org/licenses/by-sa/4.0",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-02.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-02.jpg",
+                  "creditText": "Photo: APK / Wikimedia Commons (CC BY 4.0)",
+                  "creator": {
+                    "@type": "Person",
+                    "name": "APK"
+                  },
+                  "copyrightNotice": "© APK",
+                  "license": "https://creativecommons.org/licenses/by/4.0",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                },
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-03.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-03.jpg",
+                  "creditText": "Photo: Jim Linwood from London / Wikimedia Commons (CC BY 2.0)",
+                  "creator": {
+                    "@type": "Person",
+                    "name": "Jim Linwood from London"
+                  },
+                  "copyrightNotice": "© Jim Linwood from London",
+                  "license": "https://creativecommons.org/licenses/by/2.0",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                }
+              ],
+              "about": {
+                "@type": "CreativeWork",
+                "@id": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/#project",
+                "name": "Four Seasons Hotel London at Ten Trinity Square",
+                "creator": {
+                  "@id": "https://www.mrwallcover.com/#business"
+                },
+                "locationCreated": {
+                  "@type": "Place",
+                  "name": "10 Trinity Square, Tower Hill, City of London EC3N 4AJ"
+                },
+                "temporalCoverage": "2016/2019"
+              },
+              "mentions": [
+                {
+                  "@type": "Thing",
+                  "name": "Phillip Jeffries – Tweed"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "Omexco (Belgium)"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "Fromental"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "Dedar"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "Vescom"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "Tektura"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "Muraspec"
+                }
+              ]
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.mrwallcover.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Work",
+                  "item": "https://www.mrwallcover.com/projects/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Four Seasons Hotel London at Ten Trinity Square",
+                  "item": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

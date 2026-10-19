@@ -1,0 +1,172 @@
+{
+  "schemaVersion": "1.1",
+  "resourceReviewed": "2026-10-10",
+  "id": "https://www.mrwallcover.com/#business",
+  "url": "https://www.mrwallcover.com/ai/business.json",
+  "sourceUrl": "https://www.mrwallcover.com/wallcovering-installation-ai-crawler/",
+  "website": "https://www.mrwallcover.com",
+  "name": "Mr Wallcover",
+  "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus, in the trade since 2012: survey to aftercare for hotels, homes and makers.",
+  "lastReviewed": "2026-10-09",
+  "award": "Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards",
+  "founder": {
+    "name": "Dorin Burcus",
+    "jobTitle": "Founder",
+    "url": "https://www.mrwallcover.com/about/#dorin",
+    "summary": "He has worked in the trade since 2012, starting as a labourer and going on to run wallcovering packages in prime London hotels."
+  },
+  "base": "London",
+  "coverage": "London and the surrounding areas; UK-wide for selected projects",
+  "areas": [
+    {
+      "name": "Mayfair",
+      "url": "https://www.mrwallcover.com/areas/mayfair/"
+    },
+    {
+      "name": "Belgravia",
+      "url": "https://www.mrwallcover.com/areas/belgravia/"
+    },
+    {
+      "name": "Chelsea",
+      "url": "https://www.mrwallcover.com/areas/chelsea/"
+    },
+    {
+      "name": "Kensington",
+      "url": "https://www.mrwallcover.com/areas/kensington/"
+    },
+    {
+      "name": "the City of London",
+      "url": "https://www.mrwallcover.com/areas/city-of-london/"
+    },
+    {
+      "name": "the Cotswolds",
+      "url": "https://www.mrwallcover.com/areas/cotswolds/"
+    }
+  ],
+  "contact": {
+    "email": "info@mrwallcover.com",
+    "url": "https://www.mrwallcover.com/contact/"
+  },
+  "profiles": [
+    {
+      "name": "Instagram",
+      "handle": "@mrwallcover",
+      "url": "https://www.instagram.com/mrwallcover/"
+    }
+  ],
+  "workflow": [
+    {
+      "name": "Surveying",
+      "description": "We measure on site, or from drawings when that is what the programme needs. Skirting, joinery, doors and windows come out of the area. What is left is the wall that will actually be hung.",
+      "paragraphs": [
+        "We measure on site, or from drawings when that is what the programme needs. Skirting, joinery, doors and windows come out of the area. What is left is the wall that will actually be hung.",
+        "Quantities include wastage and pattern repeat. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey. A roll that looks generous on a plan can run short on the last pier.",
+        "The survey is also a judgement on the wall. If it is not ready for the material specified, we say so before anyone orders the last drop."
+      ],
+      "url": "https://www.mrwallcover.com/services/#surveying"
+    },
+    {
+      "name": "Project management",
+      "description": "Every project has a project leader on the ground. That person is the day-to-day contact for the craft, the progress and the expectations that have been set.",
+      "paragraphs": [
+        "Every project has a project leader on the ground. That person is the day-to-day contact for the craft, the progress and the expectations that have been set.",
+        "On a longer commission, senior oversight quality-controls the work and agrees a forward plan with you, in person, each week. Frequent and plain communication is part of the method, not a courtesy added at the end.",
+        "The team you meet on the first day is the core team that finishes. Disruption is kept low: work is contained, floors and joinery are protected, and the place is left tidy every evening. In a home we are visitors. In a hotel we work around the house."
+      ],
+      "url": "https://www.mrwallcover.com/services/#management"
+    },
+    {
+      "name": "Supply",
+      "description": "On many hotel and flagship jobs the wallcovering is free-issue from the designer, the brand or the client. We manage delivery, check the delivery against the measure, and hang what was specified.",
+      "paragraphs": [
+        "On many hotel and flagship jobs the wallcovering is free-issue from the designer, the brand or the client. We manage delivery, check the delivery against the measure, and hang what was specified.",
+        "We can also procure. Either way, the order has to cover the repeat and the wastage, or the last wall is the one that waits.",
+        "Delivery is timed to the hang. Paper sitting in a corridor for days is a risk to the goods and a nuisance to the building."
+      ],
+      "url": "https://www.mrwallcover.com/services/#supply"
+    },
+    {
+      "name": "Installation",
+      "description": "This is the craft the practice is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.",
+      "paragraphs": [
+        "This is the craft the practice is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.",
+        "Preparation, where it is in the specification, includes stripping old paper, dustless sanding, and making good cracks and uneven surfaces. Some materials are specified with a lining paper. Some, including certain mural installs, are specified without one. We follow the specification.",
+        "Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Where Mr Wallcover is appointed as main decorating contractor, the package can include fine painting, French polishing and other specialist finishes, as it did at Brown's Hotel, Mayfair."
+      ],
+      "url": "https://www.mrwallcover.com/services/#installation"
+    },
+    {
+      "name": "Aftercare",
+      "description": "Aftercare is the fifth part of the service. A return inspection is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.",
+      "paragraphs": [
+        "Aftercare is the fifth part of the service. A return inspection is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.",
+        "The detail, including care by material and what the guarantee does not cover, is on the aftercare page."
+      ],
+      "url": "https://www.mrwallcover.com/services/#aftercare"
+    }
+  ],
+  "services": [
+    {
+      "name": "Hand-painted wallpaper installation",
+      "description": "Installation of hand-painted, scenic and chinoiserie wallpapers in London, in the manner of de Gournay and Fromental. Survey, set-out, hang and aftercare.",
+      "url": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/"
+    },
+    {
+      "name": "Grasscloth installation",
+      "description": "Grasscloth and natural weave wallcovering installation in London. Seams, colour variation and weave direction agreed before the first length is cut.",
+      "url": "https://www.mrwallcover.com/services/grasscloth-installation/"
+    },
+    {
+      "name": "Silk wallcovering installation",
+      "description": "Silk wallcovering installation in London houses and hotels. Clean hands, the right adhesive and seams planned so the light does not catch a ridge.",
+      "url": "https://www.mrwallcover.com/services/silk-wallcovering-installation/"
+    },
+    {
+      "name": "Fabric walling",
+      "description": "Fabric walling and textile wallcovering installation in London. Wider goods, careful edges at joinery, skirtings and reveals.",
+      "url": "https://www.mrwallcover.com/services/fabric-walling/"
+    },
+    {
+      "name": "Hotel wallcovering installation",
+      "description": "Hotel wallcovering contractor in London: contract vinyl, Vescom and specialist papers for bedrooms and corridors. The OWO, Brown's Hotel, Four Seasons.",
+      "url": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/"
+    },
+    {
+      "name": "Mural installation",
+      "description": "Printed and hand-made wallpaper mural installation in London. Set out from a fixed point so the scene meets around doors and corners.",
+      "url": "https://www.mrwallcover.com/services/mural-installation/"
+    },
+    {
+      "name": "Acoustic wallcovering installation",
+      "description": "Acoustic wallcovering and acoustic panel installation in London hotels, offices and homes. Hung to the maker's instruction so the face keeps its performance.",
+      "url": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/"
+    },
+    {
+      "name": "Architectural & furniture film wrapping",
+      "description": "Architectural and furniture film wrapping in London: doors, joinery, lift interiors, reception desks and furniture refinished in place. Survey to aftercare.",
+      "url": "https://www.mrwallcover.com/services/architectural-film-wrapping/"
+    },
+    {
+      "name": "Window film installation",
+      "description": "Window film installation in London: decorative, privacy, solar control and safety films for homes, hotels, offices and shopfronts. Survey to aftercare.",
+      "url": "https://www.mrwallcover.com/services/window-film/"
+    },
+    {
+      "name": "Joinery wallcoverings & bespoke panels",
+      "description": "Wallcoverings and bespoke panels for doors, wardrobes and joinery in London. Full joinery services through trusted, vetted specialist partners.",
+      "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/"
+    },
+    {
+      "name": "Exterior works",
+      "description": "Full exteriors in London: scaffolding supplied and managed, masonry and render painting, and windows. Public projects in Pimlico and Bayswater.",
+      "url": "https://www.mrwallcover.com/services/exterior-works/"
+    },
+    {
+      "name": "Commercial and showroom wallcovering installation",
+      "description": "Wallcoverings for London showrooms, shops, venues and launches: Huntsman on Savile Row, Mercedes-AMG, SCP, House of Hackney and Calico Wallpaper.",
+      "url": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/"
+    }
+  ],
+  "projectsUrl": "https://www.mrwallcover.com/ai/projects.json",
+  "decisionGuideUrl": "https://www.mrwallcover.com/ai/decision-guide.json"
+}
