@@ -32,9 +32,10 @@ export const localProjectBackups = () => access<RoomProject[]>('drafts', 'readon
 export async function loadDraft(): Promise<RoomProject | undefined> {
   const draft = await access<RoomProject | undefined>('drafts', 'readonly', store => store.get('current'));
   // Invalid recovery drafts must stay visible to the existing recovery UI.
-  if (!draft || !isProject(draft) || validateProject(draft).length || draft.schemaVersion !== 1) return draft;
+  if (!draft || !isProject(draft) || draft.schemaVersion !== 1) return draft;
+  // Preserve readable v1 drafts before either migration or customer correction.
   await backupImportedProject(draft);
-  return migrateProject(draft);
+  return validateProject(draft).length ? draft : migrateProject(draft);
 }
 export const saveDraft = (p: RoomProject) => access('drafts', 'readwrite', s => s.put(p, 'current'));
 export const deleteDraft = () => access('drafts', 'readwrite', s => s.delete('current'));

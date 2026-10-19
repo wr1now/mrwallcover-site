@@ -52,6 +52,13 @@ try {
   assert.equal(await page.$eval('.studio-title input', input => input.value), invalid.name);
   assert.ok(await page.$('.room-studio>.studio-error'), 'Invalid editable room is restored with correction guidance');
   assert.deepEqual(await stored(), invalid, 'Invalid saved room is not overwritten with a blank room');
+  const originals=await page.evaluate(()=>new Promise((resolve,reject)=>{const request=indexedDB.open('mrwallcover-room-studio-v1',1);request.onsuccess=()=>{const db=request.result,get=db.transaction('drafts','readonly').objectStore('drafts').getAll(IDBKeyRange.bound('backup-v1-','backup-v1-\uffff'));get.onsuccess=()=>{db.close();resolve(get.result);};get.onerror=()=>reject(get.error);};}));
+  assert.ok(originals.some(original=>JSON.stringify(original)===JSON.stringify(invalid)), 'Readable v1 data is backed up before correcting an invalid wall assignment');
+  await (await page.$$('.studio-steps button'))[3].click();
+  await page.evaluate(()=>[...document.querySelectorAll('.studio-details summary')].find(summary=>summary.textContent==='Local privacy & deletion').parentElement.open=true);
+  await click('Show pre-migration backups');
+  await exactDownload(`original-v1-${invalid.id}-1.room.json`,invalid,()=>click('Download original backup 1'));
+
 
   const corrupt = { schemaVersion: 1, name: 'Preserve original bytes', room: null, sentinel: 'original unsupported fixture' };
   await seed(corrupt); await pause();

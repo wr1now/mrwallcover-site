@@ -22,7 +22,7 @@ Measured rooms. Visible pattern.
 
 Explore a chimney breast, an L-shaped room and an angled bay. These original illustrative designs show how the repeat sits around openings and corners. Open any example to change it yourself.
 
-![Willow lattice: rendered illustrative chimney breast · 8 wall segments](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-preview.webp)
+[![Willow lattice: rendered illustrative chimney breast · 8 wall segments](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-preview.webp)](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-1.webp)
 
 01 / Original illustrative design
 
@@ -34,7 +34,7 @@ Repeat 640 × 640 mm · straight match
 
 Explore this room [View full-resolution render](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-1.webp)
 
-![Ochre cadence: rendered illustrative l-shaped room · 6 wall segments](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-preview.webp)
+[![Ochre cadence: rendered illustrative l-shaped room · 6 wall segments](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-preview.webp)](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-1.webp)
 
 02 / Original illustrative design
 
@@ -46,7 +46,7 @@ Repeat 530 × 640 mm · half-drop match
 
 Explore this room [View full-resolution render](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-1.webp)
 
-![Indigo arcade: rendered illustrative angled bay room · 6 wall segments](https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-preview.webp)
+[![Indigo arcade: rendered illustrative angled bay room · 6 wall segments](https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-preview.webp)](https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-1.webp)
 
 03 / Original illustrative design
 
@@ -77,6 +77,8 @@ Upload a complete repeating tile or a measured strip repeat. Check the tiled pro
 The preview is illustrative. Colour and limewash movement are approximate. Test a sample in your room before ordering. The three example render packages are available here. Automatic plan reading, cloud saving and finished rendering of your own room are unavailable until the private services are configured. Finished 3D rendering will be a standalone paid package; pricing remains unset while costs are measured.
 
 [Talk to us about installation](https://www.mrwallcover.com/contact/?intent=install)
+
+[Explore wallcovering materials](https://www.mrwallcover.com/materials/) [Wallpaper calculator](https://www.mrwallcover.com/calculator/)
 
 Optional finished rendering
 

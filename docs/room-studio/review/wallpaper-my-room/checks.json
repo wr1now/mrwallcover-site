@@ -123,5 +123,32 @@
     "paidProcessingEnabled": false,
     "liveAIEnabled": false
   },
-  "publication": "The separate full-menu release publishes an honest introduction. The interactive editor remains in PR #83 until its release gates are cleared."
+  "publication": "The separate full-menu release publishes an honest introduction. The interactive editor remains in PR #83 until its release gates are cleared.",
+  "postMenuIntegration": {
+    "publicMainBaseline": "caed6d913deddd7803b8a7e03d6d7f37465fe4fb",
+    "builtSiteTests": 300,
+    "failures": 0,
+    "sharedFixtures": "pass",
+    "fullNavigation": "12 destinations, six widths, keyboard/no-JS and real routes pass",
+    "roomStudioBrowserSuites": "All eleven pass",
+    "noLoss": {
+      "pages": [
+        130,
+        130
+      ],
+      "media": [
+        5615,
+        5624
+      ],
+      "markdownTwins": [
+        130,
+        130
+      ],
+      "legacyProjects": [
+        5,
+        5
+      ]
+    },
+    "recovery": "Invalid but readable v1 drafts are backed up before correction and the original file downloads through the customer controls."
+  }
 }
