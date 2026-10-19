@@ -1,6 +1,6 @@
 import { useEffect, useId, useMemo, useState } from 'react';
 import type { ArtworkCalibration, ArtworkFinish, FinishAsset, PaintFinish, RoomProject } from '../types.ts';
-import { artworkProofDataUrl, assignFinishBand, calibrationErrors, checkEmbeddedArtwork, normaliseHex, proportionalMuralCalibration, readArtworkFile, rotatedCropSize, saveFinish } from '../finishes.ts';
+import { artworkProofDataUrl, assignFinishBand, calibrationErrors, checkEmbeddedArtwork, continueWallpaperAroundCorners, normaliseHex, proportionalMuralCalibration, readArtworkFile, rotatedCropSize, saveFinish } from '../finishes.ts';
 import { bauwerkCatalogue, bauwerkFamilies, findBauwerkShades, type BauwerkShade } from '../catalogue/index.ts';
 import { isBauwerkProductUrl } from '../validation.ts';
 
@@ -50,6 +50,7 @@ export default function FinishPanel({ project, selectedWallId, onChange }: Props
 
   const selectedFinish = project.finishes.find(finish => finish.id === finishId);
   const safeDraftImage = useMemo(() => { if (!draft) return false; try { checkEmbeddedArtwork(draft.texture); return true; } catch { return false; } }, [draft?.texture]);
+  const sourceDetail = draft && safeDraftImage && !calibrationErrors(draft.calibration).length ? rotatedCropSize(draft.texture.widthPx, draft.texture.heightPx, draft.calibration) : null;
   const wallIndex = project.room.vertices.findIndex(vertex => vertex.wallId === selectedWallId);
   const shades = useMemo(() => findBauwerkShades(query, family, favouritesOnly ? favourites : undefined), [query, family, favouritesOnly, favourites]);
   const say = (text: string) => { setMessage(text); setError(''); };
@@ -122,6 +123,16 @@ export default function FinishPanel({ project, selectedWallId, onChange }: Props
     say('Artwork centred on the selected wall or band. Apply to save the placement.');
   }
 
+  function continuePattern() {
+    if (selectedFinish?.type !== 'wallpaper') return;
+    try {
+      const next = continueWallpaperAroundCorners(project, selectedFinish.id, selectedWallId);
+      if (next === project) { say('No placement change needed. Only adjoining walls already using this wallpaper in the same height band are linked.'); return; }
+      onChange(next);
+      say('Pattern placement continues from this wall through adjoining walls with the same wallpaper and height band. Vertical placement is unchanged; check the closing join.');
+    } catch (reason) { setError(reason instanceof Error ? reason.message : 'The wallpaper run could not be continued.'); }
+  }
+
   return <section className="studio-finish-panel" aria-labelledby={`${uid}-title`}>
     <h3 id={`${uid}-title`}>Choose your finish</h3>
     <div className="studio-button-row" role="group" aria-label="Finish type">
@@ -154,6 +165,11 @@ export default function FinishPanel({ project, selectedWallId, onChange }: Props
         {safeDraftImage && <figure className="studio-crop-source"><svg viewBox={`0 0 ${draft.texture.widthPx} ${draft.texture.heightPx}`} role="img" aria-label="Original artwork with selected crop outlined"><image href={draft.texture.dataUrl} width={draft.texture.widthPx} height={draft.texture.heightPx} /><rect x={draft.calibration.crop.x * draft.texture.widthPx} y={draft.calibration.crop.y * draft.texture.heightPx} width={draft.calibration.crop.width * draft.texture.widthPx} height={draft.calibration.crop.height * draft.texture.heightPx} fill="none" stroke="#fff" strokeWidth={Math.max(draft.texture.widthPx, draft.texture.heightPx) / 100} /><rect x={draft.calibration.crop.x * draft.texture.widthPx} y={draft.calibration.crop.y * draft.texture.heightPx} width={draft.calibration.crop.width * draft.texture.widthPx} height={draft.calibration.crop.height * draft.texture.heightPx} fill="none" stroke="#26352a" strokeWidth={Math.max(draft.texture.widthPx, draft.texture.heightPx) / 220} /></svg><figcaption>Original image; outlined area becomes the selected crop.</figcaption></figure>}
         <div className="studio-row">{(['x', 'y', 'width', 'height'] as const).map(key => <label className="studio-field" key={key}>{({ x: 'Crop left', y: 'Crop top', width: 'Crop width', height: 'Crop height' })[key]} (%)<input type="number" min={key === 'x' || key === 'y' ? 0 : .1} max={100} step={.1} value={Math.round(draft.calibration.crop[key] * 1000) / 10} onChange={event => updateCrop(key, Number(event.target.value))} /></label>)}</div>
         <div className="studio-row"><label className="studio-field">Real width (mm)<input type="number" min={1} max={30000} value={draft.calibration.widthMm} onChange={event => updateCalibration({ widthMm: Number(event.target.value) })} /></label><label className="studio-field">Real height (mm)<input type="number" min={1} max={30000} value={draft.calibration.heightMm} onChange={event => updateCalibration({ heightMm: Number(event.target.value) })} /></label></div>
+        {sourceDetail && <div className="studio-source-detail" aria-label="Artwork source detail">
+          <p className="studio-help">Selected crop: {sourceDetail.width} × {sourceDetail.height} pixels over {draft.calibration.widthMm} × {draft.calibration.heightMm} mm ({Math.round(sourceDetail.width * 1000 / draft.calibration.widthMm)} × {Math.round(sourceDetail.height * 1000 / draft.calibration.heightMm)} pixels per metre).</p>
+          {(sourceDetail.width < 1024 || sourceDetail.height < 1024) && <p className="studio-notice">Below our 1,024-pixel detail guide on at least one side. A larger original may look clearer in close views. This is an illustrative guide, not a print-quality assessment.</p>}
+          <p className="studio-help">Final stills are 1920 × 1080 pixels and the panorama is 4096 × 2048 pixels. Larger exports cannot restore detail missing from the original artwork.</p>
+        </div>}
         {draft.type === 'mural' && <p className="studio-help">Mural proportions stay linked to the selected crop. Change either real dimension to resize it; orientation swaps width and height.</p>}
         {draft.type === 'wallpaper' && <>
           <label className="studio-field">Image represents<select value={draft.calibration.repeatKind} onChange={event => updateCalibration({ repeatKind: event.target.value as ArtworkCalibration['repeatKind'] })}><option value="tile">A complete seamless repeat tile</option><option value="strip">One wallpaper strip / repeat</option></select></label>
@@ -195,6 +211,7 @@ export default function FinishPanel({ project, selectedWallId, onChange }: Props
       {(selectedFinish?.type === 'wallpaper' || selectedFinish?.type === 'mural') && <>
         <div className="studio-row"><label className="studio-field">Horizontal start from wall left (mm)<input type="number" value={offsetX} onChange={event => setOffsetX(Number(event.target.value))} /></label><label className="studio-field">Vertical start above floor (mm)<input type="number" value={offsetY} onChange={event => setOffsetY(Number(event.target.value))} /></label></div>
         <button type="button" className={action('secondary')} disabled={wallIndex < 0 || allWalls} onClick={centre}>Centre artwork on selected wall</button>
+        {selectedFinish.type === 'wallpaper' && <><button type="button" className={action('secondary')} disabled={wallIndex < 0 || !project.assignments.some(assignment => assignment.wallId === selectedWallId && assignment.finishId === selectedFinish.id)} onClick={continuePattern}>Continue pattern around corners</button><p className="studio-help">Starts from this wall’s saved placement and links adjoining walls already using the same wallpaper and height band.</p></>}
       </>}
       <button type="button" className={action('primary')} disabled={!selectedFinish || (!allWalls && wallIndex < 0)} onClick={apply}>Apply finish</button>
     </fieldset>

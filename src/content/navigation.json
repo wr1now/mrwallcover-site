@@ -13,11 +13,16 @@
   },
   {
     "href": "/wallpapering/",
-    "label": "Wallpapering"
+    "label": "Wallpapering",
+    "secondary": true
   },
   {
     "href": "/calculator/",
     "label": "Wallpaper calculator"
+  },
+  {
+    "href": "/room-studio/",
+    "label": "Wallpaper my room"
   },
   {
     "href": "/professionals/",
@@ -29,10 +34,12 @@
   },
   {
     "href": "/about/",
-    "label": "About"
+    "label": "About",
+    "secondary": true
   },
   {
     "href": "/wallcovering-installation-ai-crawler/",
-    "label": "AI Crawler"
+    "label": "AI Crawler",
+    "secondary": true
   }
 ]

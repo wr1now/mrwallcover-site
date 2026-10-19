@@ -2,6 +2,15 @@
   "editableInvalidRestored": true,
   "unsupportedDraftProtected": true,
   "originalDownload": true,
+  "protectedExamples": {
+    "unsupportedObject": true,
+    "nullValue": true,
+    "exactOriginalDownload": true,
+    "readFailureNoPlaceholderDownload": true,
+    "selectFocus": true,
+    "cancelRestoresToggleFocus": true,
+    "reloadPreservesOriginal": true
+  },
   "explicitNewRoomUnblocksSaving": true,
   "explicitDeletionUnblocksSaving": true,
   "pendingSaveCannotRestoreDeletedData": true,

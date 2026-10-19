@@ -63,6 +63,14 @@
     align-items: center;
   }
 
+  .nav-more { position: relative; }
+  .nav-more > summary { cursor: pointer; gap: .4rem; list-style: none; }
+  .nav-more > summary::after { content: '⌄'; font-size: 1em; }
+  .nav-more > summary::-webkit-details-marker { display: none; }
+  .nav-more-links { position: absolute; top: calc(100% + .5rem); right: 0; min-width: 13rem; padding: .5rem; border: 1px solid var(--color-line); background: var(--color-ivory); box-shadow: 0 10px 30px #0002; }
+  .nav-more-links a { display: flex; align-items: center; min-height: 44px; padding: .4rem .75rem; text-decoration: none; color: inherit; }
+  .nav-more-links a:hover, .nav-more-links a[aria-current="page"] { background: #e5e8dc; }
+
   .nav-link[aria-current="page"] {
     box-shadow: inset 0 -1px 0 var(--color-brass);
   }

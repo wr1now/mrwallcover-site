@@ -24,6 +24,29 @@ try {
   }
   async function click(text, selector = '.room-studio button') { const target = await page.evaluateHandle((text, selector) => [...document.querySelectorAll(selector)].find(button => button.textContent.trim() === text), text, selector); assert.ok(target.asElement(), `Button: ${text}`); await target.asElement().click(); await target.dispose(); }
   const pause = () => new Promise(resolve => setTimeout(resolve, 700));
+  const client = await page.createCDPSession(); await client.send('Page.setDownloadBehavior', { behavior: 'allow', downloadPath: output });
+  async function exactDownload(name, expected, action) {
+    const file = resolve(output, name); await rm(file, { force: true }); await action();
+    for (let attempt = 0; attempt < 30; attempt++) {
+      try { assert.deepEqual(JSON.parse(await readFile(file, 'utf8')), expected); return; }
+      catch (error) { if (attempt === 29) throw error; await new Promise(resolve => setTimeout(resolve, 100)); }
+    }
+  }
+  async function protectedExample(value) {
+    await seed(value); await click('Try an example'); await page.waitForSelector('#studio-examples');
+    await page.waitForFunction(() => document.activeElement?.matches('#studio-examples select'));
+    assert.equal(await page.$eval('#studio-examples button', button => button.disabled), true, 'Protected original blocks example replacement');
+    assert.ok(await page.$eval('#studio-examples', panel => panel.innerText.includes('Download the protected draft')));
+    // A disabled example action must leave the original IndexedDB value intact.
+    await page.$eval('#studio-examples button', button => button.click()); await pause();
+    assert.deepEqual(await stored(), value, 'Opening the chooser cannot overwrite a protected saved value');
+    await exactDownload('My room-before-example.room.json', value, () => click('Download protected draft'));
+    await click('Cancel'); await page.waitForFunction(() => document.activeElement?.matches('[data-studio-examples-toggle]'));
+    assert.equal(await page.$('#studio-examples'), null, 'Cancel closes the inline chooser');
+    await pause(); assert.deepEqual(await stored(), value, 'Cancellation preserves the exact protected saved value');
+    await page.reload({waitUntil:'load'}); await waitForPageContent(page); await page.waitForSelector('[data-studio-ready=true]');
+    assert.deepEqual(await stored(), value, 'Protected saved value survives reopening the editor');
+  }
   const invalid = fixtureProject(); invalid.name = 'Recoverable invalid draft'; invalid.assignments[0].toMm = invalid.room.heightMm + 400;
   await seed(invalid); await pause();
   assert.equal(await page.$eval('.studio-title input', input => input.value), invalid.name);
@@ -35,13 +58,29 @@ try {
   assert.ok(await page.$eval('.room-studio', element => element.innerText.includes('original saved draft has not been overwritten')));
   await page.$eval('.studio-title input', input => { const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(input, 'Temporary recovery screen edit'); input.dispatchEvent(new Event('input', { bubbles: true })); });
   await pause(); assert.deepEqual(await stored(), corrupt, 'Unrecoverable original is protected even after editing the placeholder');
-  const downloaded = resolve(output, 'room-studio-original-draft.json');
-  await rm(downloaded, { force: true });
-  const client = await page.createCDPSession(); await client.send('Page.setDownloadBehavior', { behavior: 'allow', downloadPath: output });
-  await click('Download original saved draft');
-  for (let attempt = 0; attempt < 30; attempt++) { try { assert.deepEqual(JSON.parse(await readFile(downloaded, 'utf8')), corrupt); break; } catch (error) { if (attempt === 29) throw error; await new Promise(resolve => setTimeout(resolve, 100)); } }
+  await exactDownload('room-studio-original-draft.json', corrupt, () => click('Download original saved draft'));
+  // Examples are an exploration path, not permission to discard raw recovery
+  // data. Null is deliberately distinct from the editable fallback project.
+  await protectedExample(corrupt); await protectedExample(null);
+  await seed(corrupt);
   await click('New room'); await click('Start new room'); await pause();
   assert.equal((await stored()).name, 'My room', 'Explicit new room releases the recovery save gate');
+
+  // A read failure has no downloadable value (undefined). Simulate it only in
+  // this disposable page; do not change browser storage settings or profiles.
+  const unreadable = await browser.newPage(); unreadable.on('pageerror', error => errors.push(error.message));
+  await unreadable.setRequestInterception(true);
+  unreadable.on('request', request => { if(request.url().startsWith(server.origin) && request.method() === 'GET' || /^(data|blob):/.test(request.url())) request.continue(); else { blocked.push(request.url().split('?')[0]); request.abort(); } });
+  await unreadable.evaluateOnNewDocument(() => { IDBFactory.prototype.open = () => { throw new DOMException('Simulated local read failure', 'InvalidStateError'); }; });
+  await loadPage(unreadable, `${server.origin}/room-studio/`); await unreadable.waitForSelector('[data-studio-ready=true]');
+  await unreadable.click('[data-studio-examples-toggle]'); await unreadable.waitForSelector('#studio-examples');
+  await unreadable.waitForFunction(() => document.activeElement?.matches('#studio-examples select'));
+  assert.equal(await unreadable.$eval('#studio-examples button', button => button.disabled), true);
+  assert.ok(await unreadable.$eval('#studio-examples', panel => panel.innerText.includes('could not be read and remains protected')));
+  assert.equal(await unreadable.$$eval('#studio-examples button', buttons => buttons.some(button => /Download (protected draft|current room)/.test(button.textContent))), false, 'Read failure cannot download the placeholder as the missing original');
+  await unreadable.$eval('#studio-examples button:last-child', button => button.click());
+  await unreadable.waitForFunction(() => document.activeElement?.matches('[data-studio-examples-toggle]'));
+  assert.equal(await unreadable.$('#studio-examples'), null); await unreadable.close();
 
   // Explicit local deletion releases a blocked recovery state and cancels any
   // old debounced save before the database is removed.
@@ -100,6 +139,6 @@ try {
   assert.equal(await page.$('.studio-crop-source image'),null,'Remote image metadata is not rendered by the crop SVG');
   await pause(); assert.deepEqual(blocked,[],'Damaged texture never initiates an external request');
   assert.deepEqual(errors, []);
-  await writeFile(resolve(output, 'review.json'), JSON.stringify({ editableInvalidRestored: true, unsupportedDraftProtected: true, originalDownload: true, explicitNewRoomUnblocksSaving: true, explicitDeletionUnblocksSaving: true, pendingSaveCannotRestoreDeletedData: true, customShapePreserved: true, camerasPreserved: true, savedHeightBandsAdapted:true,unsafeProductLinkOmitted:true,remoteArtworkNeverRequested:true,browserErrors: errors }, null, 2));
+  await writeFile(resolve(output, 'review.json'), JSON.stringify({ editableInvalidRestored: true, unsupportedDraftProtected: true, originalDownload: true, protectedExamples:{unsupportedObject:true,nullValue:true,exactOriginalDownload:true,readFailureNoPlaceholderDownload:true,selectFocus:true,cancelRestoresToggleFocus:true,reloadPreservesOriginal:true}, explicitNewRoomUnblocksSaving: true, explicitDeletionUnblocksSaving: true, pendingSaveCannotRestoreDeletedData: true, customShapePreserved: true, camerasPreserved: true, savedHeightBandsAdapted:true,unsafeProductLinkOmitted:true,remoteArtworkNeverRequested:true,browserErrors: errors }, null, 2));
   console.log('Room Studio draft recovery, original download, custom outline and camera-preservation regressions passed.');
 } finally { await browser.close(); await server.close(); }

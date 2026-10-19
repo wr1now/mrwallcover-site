@@ -1,5 +1,11 @@
 # Local Blender render review
 
+The 19 October customer-facing follow-up adds [three different wallpaper and room
+examples](examples.md), each with two full HD views and a 4K panorama. Their actual
+full-resolution WebP files and checksum/quality manifests are in
+`public/media/room-studio/examples/`. The fixture below remains the historical
+geometry/material integration example.
+
 These images show the original illustrative Room Studio fixture: a 4,200 × 3,600 × 2,600 mm room with a door, a window, an authored geometric wallpaper repeat, ivory paint and a seeded limewash preview using the sourced Bauwerk Olive colour. The wallpaper artwork is 512 × 512 px, calibrated to 530 × 640 mm. The procedural limewash is an illustrative material preview.
 
 Blender 4.5.0/Cycles produced two 1,920 × 1,080 stills and one 4,096 × 2,048 equirectangular panorama using the compiled package's mesh positions, winding, normals, UVs and saved cameras. The worker checked those arrays against Blender's actual mesh data. The perspective lens uses vertical degrees to match the browser camera. Door recess flooring, window reveals, floor and ceiling were visually reviewed.

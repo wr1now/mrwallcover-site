@@ -1,8 +1,8 @@
 {
-  "reviewedAt": "2026-10-18T20:54:07.928Z",
+  "reviewedAt": "2026-10-19T13:59:50.712Z",
   "scope": "Current built dist, one isolated Chromium browser with separate Studio/Contact contexts, original rectangle technical fixture and locally generated PDF; 1440x900 and 390x844 responsive emulation.",
-  "buildRoomHtmlSha256": "5cdd57fc2f39c0fa2e690f15b4e61736ce18838090736b225b940fe9efa1b607",
-  "buildContactHtmlSha256": "bb6e2a4ad76fc0de319cc9d3564b61c90ef7a077a40581396647f783ea5393cf",
+  "buildRoomHtmlSha256": "2aa44317a8c98e3f5fc40d34003f6c5819ff081a5c6106c6a6728f1a1372cd84",
+  "buildContactHtmlSha256": "d6902464ad778572b121cfedc4987ccc469573970f689473e3d3fb41aa2a2f35",
   "compression": "Estimated gzip level 9 of each unique requested local JavaScript asset; the static review server sends uncompressed files. Cumulative phase totals count each requested path once. No latency claim.",
   "sceneChecks": [
     {
@@ -43,137 +43,155 @@
   ],
   "roomStudio": {
     "initial": {
-      "rawBytes": 1192254,
-      "gzipBytes": 332762,
-      "assets": 12,
+      "rawBytes": 1198040,
+      "gzipBytes": 334916,
+      "assets": 14,
       "requestedAssets": [
-        "/_astro/Action.CjBmKu7U.js",
-        "/_astro/RoomScene.CSHhBWVq.js",
-        "/_astro/RoomStudio.DR-AqkEe.js",
+        "/_astro/Action.7aLkwXbt.js",
+        "/_astro/RoomScene.zd294YBo.js",
+        "/_astro/RoomStudio.DwEOnbIy.js",
         "/_astro/client.CjNmLVdr.js",
-        "/_astro/finishes.BYMA1kZo.js",
+        "/_astro/example-metadata.Rm4QQnqD.js",
+        "/_astro/finishes.C2PtU3Ym.js",
+        "/_astro/jsx-runtime.CWLBoBiw.js",
         "/_astro/preload-helper.DHhhL8Zf.js",
         "/_astro/react.azht8Kvo.js",
         "/_astro/rolldown-runtime.hePW80VL.js",
         "/_astro/scheduler.D2Nb7Y0d.js",
-        "/_astro/summary.CxHByVoC.js",
-        "/_astro/three.module.CWLT2Xhn.js",
-        "/_astro/validation.C46eQLLQ.js"
+        "/_astro/summary.D6gpCBH3.js",
+        "/_astro/three.module.BNMdN3mT.js",
+        "/_astro/validation.CdqFOZnC.js"
       ]
     },
     "afterOriginalFixtureAndCamera": {
-      "rawBytes": 1192254,
-      "gzipBytes": 332762,
-      "assets": 12,
+      "rawBytes": 1198040,
+      "gzipBytes": 334916,
+      "assets": 14,
       "requestedAssets": [
-        "/_astro/Action.CjBmKu7U.js",
-        "/_astro/RoomScene.CSHhBWVq.js",
-        "/_astro/RoomStudio.DR-AqkEe.js",
+        "/_astro/Action.7aLkwXbt.js",
+        "/_astro/RoomScene.zd294YBo.js",
+        "/_astro/RoomStudio.DwEOnbIy.js",
         "/_astro/client.CjNmLVdr.js",
-        "/_astro/finishes.BYMA1kZo.js",
+        "/_astro/example-metadata.Rm4QQnqD.js",
+        "/_astro/finishes.C2PtU3Ym.js",
+        "/_astro/jsx-runtime.CWLBoBiw.js",
         "/_astro/preload-helper.DHhhL8Zf.js",
         "/_astro/react.azht8Kvo.js",
         "/_astro/rolldown-runtime.hePW80VL.js",
         "/_astro/scheduler.D2Nb7Y0d.js",
-        "/_astro/summary.CxHByVoC.js",
-        "/_astro/three.module.CWLT2Xhn.js",
-        "/_astro/validation.C46eQLLQ.js"
+        "/_astro/summary.D6gpCBH3.js",
+        "/_astro/three.module.BNMdN3mT.js",
+        "/_astro/validation.CdqFOZnC.js"
       ]
     },
     "afterFinishes": {
-      "rawBytes": 1347395,
-      "gzipBytes": 350774,
-      "assets": 13,
+      "rawBytes": 1355053,
+      "gzipBytes": 353518,
+      "assets": 15,
       "requestedAssets": [
-        "/_astro/Action.CjBmKu7U.js",
-        "/_astro/FinishPanel.CBSACkZk.js",
-        "/_astro/RoomScene.CSHhBWVq.js",
-        "/_astro/RoomStudio.DR-AqkEe.js",
+        "/_astro/Action.7aLkwXbt.js",
+        "/_astro/FinishPanel.C8_QaSfh.js",
+        "/_astro/RoomScene.zd294YBo.js",
+        "/_astro/RoomStudio.DwEOnbIy.js",
         "/_astro/client.CjNmLVdr.js",
-        "/_astro/finishes.BYMA1kZo.js",
+        "/_astro/example-metadata.Rm4QQnqD.js",
+        "/_astro/finishes.C2PtU3Ym.js",
+        "/_astro/jsx-runtime.CWLBoBiw.js",
         "/_astro/preload-helper.DHhhL8Zf.js",
         "/_astro/react.azht8Kvo.js",
         "/_astro/rolldown-runtime.hePW80VL.js",
         "/_astro/scheduler.D2Nb7Y0d.js",
-        "/_astro/summary.CxHByVoC.js",
-        "/_astro/three.module.CWLT2Xhn.js",
-        "/_astro/validation.C46eQLLQ.js"
+        "/_astro/summary.D6gpCBH3.js",
+        "/_astro/three.module.BNMdN3mT.js",
+        "/_astro/validation.CdqFOZnC.js"
       ]
     },
     "afterSaveAndRender": {
-      "rawBytes": 1356834,
-      "gzipBytes": 354120,
-      "assets": 14,
+      "rawBytes": 1364752,
+      "gzipBytes": 357198,
+      "assets": 17,
       "requestedAssets": [
-        "/_astro/Action.CjBmKu7U.js",
-        "/_astro/CloudPanel.DO0oCMdf.js",
-        "/_astro/FinishPanel.CBSACkZk.js",
-        "/_astro/RoomScene.CSHhBWVq.js",
-        "/_astro/RoomStudio.DR-AqkEe.js",
+        "/_astro/Action.7aLkwXbt.js",
+        "/_astro/CloudPanel.BcJfJnco.js",
+        "/_astro/FinishPanel.C8_QaSfh.js",
+        "/_astro/PanoramaViewer.DTyBYEKX.js",
+        "/_astro/RoomScene.zd294YBo.js",
+        "/_astro/RoomStudio.DwEOnbIy.js",
         "/_astro/client.CjNmLVdr.js",
-        "/_astro/finishes.BYMA1kZo.js",
+        "/_astro/example-metadata.Rm4QQnqD.js",
+        "/_astro/finishes.C2PtU3Ym.js",
+        "/_astro/jsx-runtime.CWLBoBiw.js",
         "/_astro/preload-helper.DHhhL8Zf.js",
         "/_astro/react.azht8Kvo.js",
         "/_astro/rolldown-runtime.hePW80VL.js",
         "/_astro/scheduler.D2Nb7Y0d.js",
-        "/_astro/summary.CxHByVoC.js",
-        "/_astro/three.module.CWLT2Xhn.js",
-        "/_astro/validation.C46eQLLQ.js"
+        "/_astro/summary.D6gpCBH3.js",
+        "/_astro/three.module.BNMdN3mT.js",
+        "/_astro/validation.CdqFOZnC.js"
       ]
     },
     "afterLocalPdfOpen": {
-      "rawBytes": 3164493,
-      "gzipBytes": 892298,
-      "assets": 16,
+      "rawBytes": 3172411,
+      "gzipBytes": 895376,
+      "assets": 19,
       "requestedAssets": [
-        "/_astro/Action.CjBmKu7U.js",
-        "/_astro/CloudPanel.DO0oCMdf.js",
-        "/_astro/FinishPanel.CBSACkZk.js",
-        "/_astro/RoomScene.CSHhBWVq.js",
-        "/_astro/RoomStudio.DR-AqkEe.js",
+        "/_astro/Action.7aLkwXbt.js",
+        "/_astro/CloudPanel.BcJfJnco.js",
+        "/_astro/FinishPanel.C8_QaSfh.js",
+        "/_astro/PanoramaViewer.DTyBYEKX.js",
+        "/_astro/RoomScene.zd294YBo.js",
+        "/_astro/RoomStudio.DwEOnbIy.js",
         "/_astro/client.CjNmLVdr.js",
-        "/_astro/finishes.BYMA1kZo.js",
+        "/_astro/example-metadata.Rm4QQnqD.js",
+        "/_astro/finishes.C2PtU3Ym.js",
+        "/_astro/jsx-runtime.CWLBoBiw.js",
         "/_astro/pdf.DUZHkVnJ.js",
         "/_astro/pdf.worker.min.Dkey6ZUl.mjs",
         "/_astro/preload-helper.DHhhL8Zf.js",
         "/_astro/react.azht8Kvo.js",
         "/_astro/rolldown-runtime.hePW80VL.js",
         "/_astro/scheduler.D2Nb7Y0d.js",
-        "/_astro/summary.CxHByVoC.js",
-        "/_astro/three.module.CWLT2Xhn.js",
-        "/_astro/validation.C46eQLLQ.js"
+        "/_astro/summary.D6gpCBH3.js",
+        "/_astro/three.module.BNMdN3mT.js",
+        "/_astro/validation.CdqFOZnC.js"
       ]
     },
     "assets": [
       {
-        "asset": "/_astro/Action.CjBmKu7U.js",
-        "rawBytes": 267,
-        "gzipBytes": 204,
-        "sha256": "9c5b95d70318952aa18ddde1518762b9ed954c56ac85d29da3871b4b08225fb9"
+        "asset": "/_astro/Action.7aLkwXbt.js",
+        "rawBytes": 268,
+        "gzipBytes": 202,
+        "sha256": "a174485f1606428c6f984900a5144e6400ba8950d2a7623b9a7fc6e78d91da4f"
       },
       {
-        "asset": "/_astro/CloudPanel.DO0oCMdf.js",
-        "rawBytes": 9439,
-        "gzipBytes": 3346,
-        "sha256": "9f4e49adb1b65b0d9e1228c25171e42437f776759f1980829d2544b588d88e05"
+        "asset": "/_astro/CloudPanel.BcJfJnco.js",
+        "rawBytes": 7013,
+        "gzipBytes": 2452,
+        "sha256": "2f5b24422b88fcc920e0b8a9078510c4f65e27e7a461b0d2629bb9229b7fdb9b"
       },
       {
-        "asset": "/_astro/FinishPanel.CBSACkZk.js",
-        "rawBytes": 155141,
-        "gzipBytes": 18012,
-        "sha256": "dcb28319f41402cceb9a7798b152741f7f0d00e407da201dcf27481953c9eecd"
+        "asset": "/_astro/FinishPanel.C8_QaSfh.js",
+        "rawBytes": 157013,
+        "gzipBytes": 18602,
+        "sha256": "33b4c36c17de4a57f742b71d64302f33c48a3b5be4988af1624bed5522d7fdff"
       },
       {
-        "asset": "/_astro/RoomScene.CSHhBWVq.js",
-        "rawBytes": 200496,
-        "gzipBytes": 61139,
-        "sha256": "f535a3b5720a83c6361fa95d0f7884c12eb5aee3aa8bd76e1c7051c3263091d7"
+        "asset": "/_astro/PanoramaViewer.DTyBYEKX.js",
+        "rawBytes": 2686,
+        "gzipBytes": 1228,
+        "sha256": "e31f6ec507b3f0b5fb9fd4839a55a0f94e29b1e17589c9c4674a7a5b30f863e6"
       },
       {
-        "asset": "/_astro/RoomStudio.DR-AqkEe.js",
-        "rawBytes": 52519,
-        "gzipBytes": 16257,
-        "sha256": "983185aa3a676f765daf4d56ccf88dee53d8fe2e629206d57b714d7962a86bbc"
+        "asset": "/_astro/RoomScene.zd294YBo.js",
+        "rawBytes": 200954,
+        "gzipBytes": 61304,
+        "sha256": "52d37033167ee81f0aaecfb7d66162a581723f946ea964a8f4f6232db752a0e9"
+      },
+      {
+        "asset": "/_astro/RoomStudio.DwEOnbIy.js",
+        "rawBytes": 54941,
+        "gzipBytes": 17109,
+        "sha256": "9e9a68fcdc1d60130f1523f5287d12221a030a4bbe0673db78456eb1be898063"
       },
       {
         "asset": "/_astro/client.CjNmLVdr.js",
@@ -182,10 +200,22 @@
         "sha256": "3cb152d6e10de84a2456489f6e816733a578250764a18db461c9007bd1e2433a"
       },
       {
-        "asset": "/_astro/finishes.BYMA1kZo.js",
-        "rawBytes": 9841,
-        "gzipBytes": 4097,
-        "sha256": "1b61e5fbba0807c3e49629e7396c449d6900d5002266aa0052c960323d7a808f"
+        "asset": "/_astro/example-metadata.Rm4QQnqD.js",
+        "rawBytes": 1895,
+        "gzipBytes": 670,
+        "sha256": "295cc1e3e5683143929f86d73f92c295c58ac34c093826d2ce524d256ade0ac8"
+      },
+      {
+        "asset": "/_astro/finishes.C2PtU3Ym.js",
+        "rawBytes": 10839,
+        "gzipBytes": 4456,
+        "sha256": "2ba8683ec0485367f1c22511ae4629fe100f3b5f0aa8c8cb85eaa5383810a2dd"
+      },
+      {
+        "asset": "/_astro/jsx-runtime.CWLBoBiw.js",
+        "rawBytes": 435,
+        "gzipBytes": 306,
+        "sha256": "a0af655ce8ae08e0e8fda327a1bbae89ed0d21a2993d74a96cfa462f1710fd59"
       },
       {
         "asset": "/_astro/pdf.DUZHkVnJ.js",
@@ -224,59 +254,50 @@
         "sha256": "37047d8cb74fe4088db98aa4c126e92172364695d7248c389ddd19a957226ed3"
       },
       {
-        "asset": "/_astro/summary.CxHByVoC.js",
+        "asset": "/_astro/summary.D6gpCBH3.js",
         "rawBytes": 12095,
         "gzipBytes": 4736,
-        "sha256": "feea41b133f4bdbb04f4dd8e0919022f9f6afdf082a143539c4e3930261a9311"
+        "sha256": "4852b3eb48fe2109452b8bb7bc11d3592da8cc0032460e474aa133a995e71c57"
       },
       {
-        "asset": "/_astro/three.module.CWLT2Xhn.js",
+        "asset": "/_astro/three.module.BNMdN3mT.js",
         "rawBytes": 679433,
         "gzipBytes": 170512,
-        "sha256": "46897cb56326db0b4f8385dfebfd1bc6e1778b5da0bd29f7d3deb2743861454e"
+        "sha256": "9c49b458f1a654e89e246bbe11d909c4261fcfcbdb08f431518601740b3ebb12"
       },
       {
-        "asset": "/_astro/validation.C46eQLLQ.js",
-        "rawBytes": 14370,
-        "gzipBytes": 5461,
-        "sha256": "fe81fd03b351421f3af9b2081669b24556b76c319470822ff73fc04c73fe21fb"
+        "asset": "/_astro/validation.CdqFOZnC.js",
+        "rawBytes": 13947,
+        "gzipBytes": 5265,
+        "sha256": "55d202ff910d63966ab12b25898c451d6a39cd7ef8f18ea667dd8e93ea9d084e"
       }
     ]
   },
   "contact": {
     "total": {
-      "rawBytes": 726276,
-      "gzipBytes": 188495,
-      "assets": 8,
+      "rawBytes": 29516,
+      "gzipBytes": 10899,
+      "assets": 5,
       "requestedAssets": [
-        "/_astro/DesignObject.astro_astro_type_script_index_0_lang.DPwJZMbc.js",
+        "/_astro/DesignObject.astro_astro_type_script_index_0_lang.CPrfJgHh.js",
         "/_astro/EnquiryForm.astro_astro_type_script_index_0_lang.DCPzppGc.js",
-        "/_astro/design-object-scenes.CxLyk2cO.js",
         "/_astro/enquiry.DhuYNuZ8.js",
         "/_astro/material-advice.CXxSeqLS.js",
-        "/_astro/preload-helper.DHhhL8Zf.js",
-        "/_astro/rolldown-runtime.hePW80VL.js",
-        "/_astro/three.module.CWLT2Xhn.js"
+        "/_astro/preload-helper.DHhhL8Zf.js"
       ]
     },
     "assets": [
       {
-        "asset": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.DPwJZMbc.js",
+        "asset": "/_astro/DesignObject.astro_astro_type_script_index_0_lang.CPrfJgHh.js",
         "rawBytes": 3734,
-        "gzipBytes": 1647,
-        "sha256": "cc3ed81e6e1c282877b951c325de1f0b88d351b08f3fd8e07e0068604dc340e9"
+        "gzipBytes": 1648,
+        "sha256": "6d6eb0315047c318f6c37516d1ec7124d0aa76514b634ae242eca1c8ed73b1f4"
       },
       {
         "asset": "/_astro/EnquiryForm.astro_astro_type_script_index_0_lang.DCPzppGc.js",
         "rawBytes": 11427,
         "gzipBytes": 4176,
         "sha256": "b9e1d9bdbf3b9c42dd8f32030bb012ca6716006ee8ac58eebbfc213076702714"
-      },
-      {
-        "asset": "/_astro/design-object-scenes.CxLyk2cO.js",
-        "rawBytes": 16611,
-        "gzipBytes": 6657,
-        "sha256": "9581948d260d8e164dec3e643ef1102f4393a527eb9acdc253350cd5fa56f216"
       },
       {
         "asset": "/_astro/enquiry.DhuYNuZ8.js",
@@ -295,24 +316,11 @@
         "rawBytes": 1665,
         "gzipBytes": 852,
         "sha256": "616967e76046f7a294c7ad1643f1ab9993561d942fd47c439a02f58b0569e70c"
-      },
-      {
-        "asset": "/_astro/rolldown-runtime.hePW80VL.js",
-        "rawBytes": 716,
-        "gzipBytes": 428,
-        "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021"
-      },
-      {
-        "asset": "/_astro/three.module.CWLT2Xhn.js",
-        "rawBytes": 679433,
-        "gzipBytes": 170512,
-        "sha256": "46897cb56326db0b4f8385dfebfd1bc6e1778b5da0bd29f7d3deb2743861454e"
       }
     ],
     "reactRequests": 0,
     "pdfRequests": 0,
-    "roomStudioRequests": 0,
-    "scope": "Separate fresh context and default-motion Contact visit, including its existing dimensional study and shared Three.js. No Room Studio, React or PDF requests."
+    "roomStudioRequests": 0
   },
   "lazyPdfAssets": [
     {
@@ -332,6 +340,5 @@
   "consoleErrors": [],
   "blockedExternalOrNonGetRequests": [],
   "failedResponses": [],
-  "serviceScope": "Cloud remains disabled. No account, sign-in, cloud, AI, email or paid processing request was made.",
-  "visualReview": "Fresh screenshots reviewed: original illustrative wallpaper and limewash are visible in the overview; the rotated overview retains trims with wall surfaces; saved camera views retain floor and ceiling at desktop and mobile widths. Original technical fixture only."
+  "serviceScope": "Cloud remains disabled. No account, sign-in, cloud, AI, email or paid processing request was made."
 }

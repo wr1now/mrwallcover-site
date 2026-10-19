@@ -70,6 +70,31 @@ export function assignFinishBand(project: RoomProject, assignment: WallFinishAss
   return { ...project, assignments: [...assignments, { ...assignment }] };
 }
 
+/** Continue existing wallpaper bands in surveyed wall order. Paint, murals and
+ * different bands break a run; no finish or vertical placement is changed. */
+export function continueWallpaperAroundCorners(project: RoomProject, finishId: string, startingWallId: string): RoomProject {
+  const finish = project.finishes.find(value => value.id === finishId);
+  if (finish?.type !== 'wallpaper') throw new Error('Only repeating wallpaper can continue around corners.');
+  const start = project.room.vertices.findIndex(vertex => vertex.wallId === startingWallId);
+  if (start < 0) throw new Error('Select the first wall of the wallpaper run.');
+  const seeds = project.assignments.filter(assignment => assignment.wallId === startingWallId && assignment.finishId === finishId);
+  if (!seeds.length) throw new Error('Apply this wallpaper to the selected wall first.');
+  const offsets = new Map<string, number>(), vertices = project.room.vertices;
+  for (const seed of seeds) {
+    let distance = 0;
+    for (let step = 1; step < vertices.length; step++) {
+      const previous = vertices[(start + step - 1) % vertices.length], current = vertices[(start + step) % vertices.length];
+      distance += Math.hypot(current.x - previous.x, current.z - previous.z);
+      const next = project.assignments.find(assignment => assignment.wallId === current.wallId && assignment.finishId === finishId && assignment.fromMm === seed.fromMm && (assignment.toMm ?? project.room.heightMm) === (seed.toMm ?? project.room.heightMm));
+      if (!next) break;
+      const offset = Math.round(seed.offsetXmm - distance);
+      if (Math.abs(offset) > 60000) throw new Error('This wallpaper run exceeds the 60,000 mm placement limit. Choose a later starting wall.');
+      if (offset !== next.offsetXmm) offsets.set(next.id, offset);
+    }
+  }
+  return offsets.size ? { ...project, assignments: project.assignments.map(assignment => offsets.has(assignment.id) ? { ...assignment, offsetXmm: offsets.get(assignment.id)! } : assignment) } : project;
+}
+
 export function saveFinish(project: RoomProject, finish: FinishAsset): RoomProject {
   if (!project.finishes.some(existing => existing.id === finish.id) && project.finishes.length >= 48) throw new Error('This room has 48 saved finishes. Remove an unused finish before adding another.');
   return { ...project, finishes: [...project.finishes.filter(existing => existing.id !== finish.id), finish] };

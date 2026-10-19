@@ -1,0 +1,830 @@
+{
+  "reviewedAt": "2026-10-19T13:57:25.042Z",
+  "scope": "Actual local Blender renders of three original illustrative fixtures; no customer or supplier artwork, live AI, paid service or deployment used.",
+  "reproduce": "node --experimental-strip-types scripts/room-studio-render-examples.ts --render --blender /absolute/path/to/blender",
+  "pipeline": {
+    "compiler": "Shared compileRoom TypeScript geometry/material/UV package",
+    "blender": "4.5.0",
+    "engine": "Cycles",
+    "samples": 128,
+    "seed": 217,
+    "geometryUvsNormalsVerifiedAgainstActualBlenderMeshes": true,
+    "technicalSnapshotsConfirmed": true,
+    "customerFactoryExamplesRemainUnconfirmed": true
+  },
+  "verification": {
+    "examples": 3,
+    "fullResolutionOutputs": 9,
+    "stills": 6,
+    "stillDimensions": [
+      1920,
+      1080
+    ],
+    "panoramas": 3,
+    "panoramaDimensions": [
+      4096,
+      2048
+    ],
+    "previews": 3,
+    "previewDimensions": [
+      960,
+      540
+    ],
+    "allPublicAndOriginalOutputHashesAndDimensionsVerified": true,
+    "allCurrentFactoriesMatchIdentityIndependentRenderedSourceAndMeshUvHashes": true,
+    "allNineFinalImagesVisuallyReviewed": true,
+    "uiAcceptance": "Separate browser/UI review; this receipt does not approve mobile card layout or physical devices."
+  },
+  "encodingPolicy": {
+    "allNineLosslessMeasuredBytes": 21264314,
+    "reviewedFullAssetBudgetBytes": 15000000,
+    "decision": "All nine lossless assets exceeded the budget; Indigo full-resolution views use exact lossless RGB, while Willow and Ochre retain quality-96 WebP. The three previews remain quality-88 at 960 by 540.",
+    "fullResolutionBytes": 9495122,
+    "previewBytes": 184952,
+    "totalPublicImageBytes": 9680074,
+    "indigoPixelIdenticalToOriginalBlenderPng": true,
+    "indigoRmse": 0,
+    "indigoPsnr": "unbounded; represented by null psnrDb plus psnrUnbounded:true in per-output metrics"
+  },
+  "visualAssessment": {
+    "judgement": "Clear HD architectural material studies with strong geometry, physical-repeat and pattern-detail fidelity. They demonstrate the tool more usefully than the untextured starting room.",
+    "ceilingAndNormals": "All three panoramas show a continuous enclosed ceiling and floor, with no visible reversed-normal holes, missing room surfaces or black gaps. Actual Blender meshes were also checked against compiled normals/winding/UVs.",
+    "panoramaSeams": "No obvious longitude join observed in the three final equirectangular images; first/last column metrics are included for adjacent angular samples. Interactive full-turn continuity belongs to the separate viewer checks.",
+    "windows": "Window positions, widths, sills and reveal depths are visible. Openings show uniform neutral environment colour; there is no exterior photograph, glazing detail or conventional window frame. This is a visual simplification, not photographic window evidence.",
+    "limits": "The plain floor, simplified trim, unframed openings and softbox lighting keep these below furnished architectural photography. They should remain labelled original illustrative material studies. Screen colour is approximate; physical samples are still needed."
+  },
+  "examples": [
+    {
+      "id": "willow-chimney",
+      "sourceSha256": "1586cf420a36bbe3646d7e4f6c4f26280115a106189361a9acc4f696db8cd680",
+      "meshUvSha256": "8a5ece155eede7a37bd27aed12f8697f8acd1430ef053db8b0724f69fce9400e",
+      "packageSha256": "62c841a784fe378108b2f7a8bb6c4f650b5b55d552f8e8ae3a092e576ba2f943",
+      "currentFactoryMatchesSourceAndMeshUv": true,
+      "room": {
+        "corners": 8,
+        "heightMm": 2800,
+        "doors": 1,
+        "windows": 3
+      },
+      "wallpaper": [
+        {
+          "name": "Original illustrative Willow lattice wallpaper",
+          "sourcePixels": [
+            1536,
+            1536
+          ],
+          "sourceSha256": "f4fd41423047815e1c719d97824a4a978555eaf15c0949ba6244caff717bd529",
+          "physicalMm": [
+            640,
+            640
+          ],
+          "repeatKind": "tile",
+          "match": "straight",
+          "offsetAlreadyIncluded": false,
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1
+          },
+          "rotation": 0,
+          "nativePixelsPerInch": [
+            61,
+            61
+          ]
+        }
+      ],
+      "sourceArtReview": {
+        "id": "willow-chimney",
+        "sourceSvgSha256": "6bfe32e7d72a33c6443fb7c7f3fa9a36efcac4cc565e080de4ffa34392621588",
+        "embeddedPngSha256": "f4fd41423047815e1c719d97824a4a978555eaf15c0949ba6244caff717bd529",
+        "pngBytes": 249601,
+        "pixels": {
+          "width": 1536,
+          "height": 1536
+        },
+        "repeatMm": {
+          "width": 640,
+          "height": 640
+        },
+        "calibration": {
+          "widthMm": 640,
+          "heightMm": 640,
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1
+          },
+          "rotation": 0,
+          "repeatKind": "tile",
+          "match": "straight",
+          "offsetAlreadyIncluded": false,
+          "proofAccepted": true
+        },
+        "compiledContentSha256": "f76f282e624b8329152067cad0ac9b1d3226c8bb3a1eec83d990fd69c3278e07",
+        "meshCount": 217,
+        "maxCornerDiscontinuityMm": 0,
+        "oppositeEdgeMeanAbsoluteChannelDelta": {
+          "horizontal": 0.015190972222222222,
+          "vertical": 0.025607638888888888
+        },
+        "repeatEdgeProofVisuallyReviewed": true
+      },
+      "repeatPhase": {
+        "maxCornerDiscontinuityMm": 0,
+        "toleranceMm": 1,
+        "passes": true,
+        "halfDropShiftMm": 0,
+        "offsetAlreadyIncluded": false
+      },
+      "setOut": [
+        {
+          "wallId": "willow-east",
+          "lengthMm": 4600,
+          "offsetXmm": 0,
+          "offsetYmm": 0,
+          "startU": 0,
+          "endU": 7.1875
+        },
+        {
+          "wallId": "willow-north-right",
+          "lengthMm": 2100,
+          "offsetXmm": -4600,
+          "offsetYmm": 0,
+          "startU": 7.1875,
+          "endU": 10.46875
+        },
+        {
+          "wallId": "willow-chimney-right",
+          "lengthMm": 400,
+          "offsetXmm": -6700,
+          "offsetYmm": 0,
+          "startU": 10.46875,
+          "endU": 11.09375
+        },
+        {
+          "wallId": "willow-chimney-front",
+          "lengthMm": 1800,
+          "offsetXmm": -7100,
+          "offsetYmm": 0,
+          "startU": 11.09375,
+          "endU": 13.90625
+        },
+        {
+          "wallId": "willow-chimney-left",
+          "lengthMm": 400,
+          "offsetXmm": -8900,
+          "offsetYmm": 0,
+          "startU": 13.90625,
+          "endU": 14.53125
+        },
+        {
+          "wallId": "willow-north-left",
+          "lengthMm": 2300,
+          "offsetXmm": -9300,
+          "offsetYmm": 0,
+          "startU": 14.53125,
+          "endU": 18.125
+        },
+        {
+          "wallId": "willow-west",
+          "lengthMm": 4600,
+          "offsetXmm": -11600,
+          "offsetYmm": 0,
+          "startU": 18.125,
+          "endU": 25.3125
+        }
+      ],
+      "renderer": {
+        "blenderVersion": "4.5.0",
+        "device": "GPU",
+        "samples": 128,
+        "seed": 217,
+        "elapsedSeconds": 214.035,
+        "renderedGeometryVerified": true,
+        "geometrySha256": "d9bf6ef10e37c0abdf46dc8dbe4cb59d2981f078aeb0788493bcc57a76a5b944"
+      },
+      "preview": {
+        "file": "willow-chimney-preview.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 67682,
+        "sha256": "ed77c19d55e796219832d56640aa7bc636e2d0d1badcfea3dfc3542d8e4c0172"
+      },
+      "outputs": [
+        {
+          "kind": "still-1",
+          "file": "willow-chimney-1.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 299788,
+          "sha256": "becff0268e8ec7f30b8fa3181b79b8b12bc90790ae68fbc9b862e5b3aa2634af",
+          "originalPng": {
+            "file": "still-1.png",
+            "bytes": 2377871,
+            "sha256": "ede1db0d9be6e9992d25909cfca4a933f359987f3dd8477281a7658adf6a4196",
+            "width": 1920,
+            "height": 1080
+          },
+          "renderSeconds": 34.35,
+          "compression": {
+            "encoding": "lossy",
+            "webpQuality": 96,
+            "pixelIdentical": false,
+            "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+            "meanAbsoluteError": 0.9362,
+            "rmse": 1.506,
+            "psnrDb": 44.574,
+            "psnrUnbounded": false,
+            "maximumChannelError": 17
+          },
+          "encoding": "lossy",
+          "pixelIdentical": false,
+          "publicPath": "/media/room-studio/examples/willow-chimney-1.webp",
+          "visualReview": {
+            "reviewed": true,
+            "observation": "The chimney breast and both returns are readable; botanical repeat remains continuous around the breast."
+          }
+        },
+        {
+          "kind": "still-2",
+          "file": "willow-chimney-2.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 281400,
+          "sha256": "efa923a108d9713db7ff2ed3fe445960a5207e0bc15d4310b3bc7fa1b67d7091",
+          "originalPng": {
+            "file": "still-2.png",
+            "bytes": 2429257,
+            "sha256": "d5f19f0017ad1a4b8c8917297aeb67f4b4b1ce6686e77d451fff266cfd05cd9b",
+            "width": 1920,
+            "height": 1080
+          },
+          "renderSeconds": 35.408,
+          "compression": {
+            "encoding": "lossy",
+            "webpQuality": 96,
+            "pixelIdentical": false,
+            "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+            "meanAbsoluteError": 0.9085,
+            "rmse": 1.463,
+            "psnrDb": 44.826,
+            "psnrUnbounded": false,
+            "maximumChannelError": 16
+          },
+          "encoding": "lossy",
+          "pixelIdentical": false,
+          "publicPath": "/media/room-studio/examples/willow-chimney-2.webp",
+          "visualReview": {
+            "reviewed": true,
+            "observation": "Close view shows clean leaf/vein detail, return depth and a wall opening."
+          }
+        },
+        {
+          "kind": "panorama",
+          "file": "willow-chimney-panorama.webp",
+          "width": 4096,
+          "height": 2048,
+          "bytes": 467572,
+          "sha256": "4db678c0c6752e7d9f60ffc58dca17813ced6ace25e61499442d7d8f492e66ae",
+          "originalPng": {
+            "file": "panorama.png",
+            "bytes": 7746684,
+            "sha256": "df2b3876ba82213a7c8eba909ad45816cde9d2524cd43d81ace38204a3b34c22",
+            "width": 4096,
+            "height": 2048
+          },
+          "renderSeconds": 144.029,
+          "compression": {
+            "encoding": "lossy",
+            "webpQuality": 96,
+            "pixelIdentical": false,
+            "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+            "meanAbsoluteError": 0.7492,
+            "rmse": 1.1424,
+            "psnrDb": 46.975,
+            "psnrUnbounded": false,
+            "maximumChannelError": 20
+          },
+          "encoding": "lossy",
+          "pixelIdentical": false,
+          "publicPath": "/media/room-studio/examples/willow-chimney-panorama.webp",
+          "visualReview": {
+            "reviewed": true,
+            "observation": "All three window apertures, entry door and the chimney breast are visible across the complete room."
+          },
+          "panoramaJoin": {
+            "comparison": "Last and first equirectangular columns are adjacent angular samples, not duplicate pixels.",
+            "meanAbsoluteChannelDifference": 0.8102,
+            "maximumChannelDifference": 11,
+            "visuallyObviousJoin": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "ochre-lshape",
+      "sourceSha256": "1cb9cdd29a535300701e572376bf4135ff40c0591c0b5f24b72ecaf6825b8630",
+      "meshUvSha256": "35bdde25395d723de0505138a821eef92c000f2b221362051a7769a90befde1d",
+      "packageSha256": "671a9cbb2a3196d0652602ad3af0f903e0d2eda0f6666cbe1e04979888ec9bfb",
+      "currentFactoryMatchesSourceAndMeshUv": true,
+      "room": {
+        "corners": 6,
+        "heightMm": 2700,
+        "doors": 2,
+        "windows": 3
+      },
+      "wallpaper": [
+        {
+          "name": "Original illustrative Ochre cadence wallpaper",
+          "sourcePixels": [
+            1536,
+            1536
+          ],
+          "sourceSha256": "c063856b04982ba09d94842ae15821941dc214185a4ba24712535e8902a05d70",
+          "physicalMm": [
+            530,
+            640
+          ],
+          "repeatKind": "strip",
+          "match": "half-drop",
+          "offsetAlreadyIncluded": false,
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1
+          },
+          "rotation": 0,
+          "nativePixelsPerInch": [
+            73.6,
+            61
+          ]
+        }
+      ],
+      "sourceArtReview": {
+        "id": "ochre-lshape",
+        "sourceSvgSha256": "defb048ecc9535ba0543b7abc0dea6698bfb5a8b633450e93ee8cbc8145efdd3",
+        "embeddedPngSha256": "c063856b04982ba09d94842ae15821941dc214185a4ba24712535e8902a05d70",
+        "pngBytes": 190911,
+        "pixels": {
+          "width": 1536,
+          "height": 1536
+        },
+        "repeatMm": {
+          "width": 530,
+          "height": 640
+        },
+        "calibration": {
+          "widthMm": 530,
+          "heightMm": 640,
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1
+          },
+          "rotation": 0,
+          "repeatKind": "strip",
+          "match": "half-drop",
+          "offsetAlreadyIncluded": false,
+          "proofAccepted": true
+        },
+        "compiledContentSha256": "27b91c48eba3e9950623bea4257cfe9114eb4682ef3b95d74dd9d15f03dbd1d6",
+        "meshCount": 586,
+        "maxCornerDiscontinuityMm": 0,
+        "oppositeEdgeMeanAbsoluteChannelDelta": {
+          "horizontal": 0.014105902777777778,
+          "vertical": 0.06640625
+        },
+        "repeatEdgeProofVisuallyReviewed": true
+      },
+      "repeatPhase": {
+        "maxCornerDiscontinuityMm": 0,
+        "toleranceMm": 1,
+        "passes": true,
+        "halfDropShiftMm": 320,
+        "offsetAlreadyIncluded": false
+      },
+      "setOut": [
+        {
+          "wallId": "ochre-east",
+          "lengthMm": 3000,
+          "offsetXmm": 0,
+          "offsetYmm": 0,
+          "startU": 0,
+          "endU": 5.660377
+        },
+        {
+          "wallId": "ochre-return-north",
+          "lengthMm": 2200,
+          "offsetXmm": -3000,
+          "offsetYmm": 0,
+          "startU": 5.660377,
+          "endU": 9.811321
+        },
+        {
+          "wallId": "ochre-return-east",
+          "lengthMm": 2000,
+          "offsetXmm": -5200,
+          "offsetYmm": 0,
+          "startU": 9.811321,
+          "endU": 13.584906
+        },
+        {
+          "wallId": "ochre-north",
+          "lengthMm": 3800,
+          "offsetXmm": -7200,
+          "offsetYmm": 0,
+          "startU": 13.584906,
+          "endU": 20.754717
+        },
+        {
+          "wallId": "ochre-west",
+          "lengthMm": 5000,
+          "offsetXmm": -11000,
+          "offsetYmm": 0,
+          "startU": 20.754717,
+          "endU": 30.188679
+        }
+      ],
+      "renderer": {
+        "blenderVersion": "4.5.0",
+        "device": "GPU",
+        "samples": 128,
+        "seed": 217,
+        "elapsedSeconds": 201.863,
+        "renderedGeometryVerified": true,
+        "geometrySha256": "6040c5930e0d5f62eb171f5c38360e1535bdc961228e72b85c86c223c37c480d"
+      },
+      "preview": {
+        "file": "ochre-lshape-preview.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 50772,
+        "sha256": "df21b0f12c1af00502edaea1644b171e43ae5ef29c32505ecf0b90141cdb096a"
+      },
+      "outputs": [
+        {
+          "kind": "still-1",
+          "file": "ochre-lshape-1.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 229670,
+          "sha256": "9712e3ae6bb72e4f2e369ced23a58ce49b86574f7fdedaa9b0b3dcc119a584c8",
+          "originalPng": {
+            "file": "still-1.png",
+            "bytes": 2233657,
+            "sha256": "8f794a100a3a79415b9d136ed26bc7cc34f69665915589ab145275f2c5275e0e",
+            "width": 1920,
+            "height": 1080
+          },
+          "renderSeconds": 34.127,
+          "compression": {
+            "encoding": "lossy",
+            "webpQuality": 96,
+            "pixelIdentical": false,
+            "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+            "meanAbsoluteError": 0.9519,
+            "rmse": 1.59,
+            "psnrDb": 44.103,
+            "psnrUnbounded": false,
+            "maximumChannelError": 24
+          },
+          "encoding": "lossy",
+          "pixelIdentical": false,
+          "publicPath": "/media/room-studio/examples/ochre-lshape-1.webp",
+          "visualReview": {
+            "reviewed": true,
+            "observation": "The L-shaped return, doorway and two window apertures are readable; half-drop pattern continues across the corner."
+          }
+        },
+        {
+          "kind": "still-2",
+          "file": "ochre-lshape-2.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 212082,
+          "sha256": "751e6ca0847a7b3cdac00ba92982778c8e8b55662ff8d4591b0790410c22ac0f",
+          "originalPng": {
+            "file": "still-2.png",
+            "bytes": 2200030,
+            "sha256": "339fcbd2c1ed6d908294d00624c3df52f816564a85c4443514574e937f96ef63",
+            "width": 1920,
+            "height": 1080
+          },
+          "renderSeconds": 35.581,
+          "compression": {
+            "encoding": "lossy",
+            "webpQuality": 96,
+            "pixelIdentical": false,
+            "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+            "meanAbsoluteError": 0.9134,
+            "rmse": 1.487,
+            "psnrDb": 44.685,
+            "psnrUnbounded": false,
+            "maximumChannelError": 20
+          },
+          "encoding": "lossy",
+          "pixelIdentical": false,
+          "publicPath": "/media/room-studio/examples/ochre-lshape-2.webp",
+          "visualReview": {
+            "reviewed": true,
+            "observation": "Close return view shows motif edges and the adjoining patterned wall at the saved scale."
+          }
+        },
+        {
+          "kind": "panorama",
+          "file": "ochre-lshape-panorama.webp",
+          "width": 4096,
+          "height": 2048,
+          "bytes": 437912,
+          "sha256": "877c7a81bafbe0eb1ef65289b7d2c9e8ae4c18bad8829aa4728fc85414110f91",
+          "originalPng": {
+            "file": "panorama.png",
+            "bytes": 7627135,
+            "sha256": "9eded9124d3da03091458b713d133b3a31427747c885489efbaabb5994ebc7e5",
+            "width": 4096,
+            "height": 2048
+          },
+          "renderSeconds": 131.818,
+          "compression": {
+            "encoding": "lossy",
+            "webpQuality": 96,
+            "pixelIdentical": false,
+            "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+            "meanAbsoluteError": 0.7328,
+            "rmse": 1.2053,
+            "psnrDb": 46.509,
+            "psnrUnbounded": false,
+            "maximumChannelError": 22
+          },
+          "encoding": "lossy",
+          "pixelIdentical": false,
+          "publicPath": "/media/room-studio/examples/ochre-lshape-panorama.webp",
+          "visualReview": {
+            "reviewed": true,
+            "observation": "The L return remains present; three window apertures and both doors are visible across the room."
+          },
+          "panoramaJoin": {
+            "comparison": "Last and first equirectangular columns are adjacent angular samples, not duplicate pixels.",
+            "meanAbsoluteChannelDifference": 0.6919,
+            "maximumChannelDifference": 8,
+            "visuallyObviousJoin": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "indigo-bay",
+      "sourceSha256": "1dc531ee55ec94158ae8f4c26fc0e1c2dedd8d8e4939b4201fe750df4780119f",
+      "meshUvSha256": "af4d056508377dc35f064d5e07d55f09b97b4ffe270bb4fd914e7318ca56b280",
+      "packageSha256": "b1a45f45e088b2f37b56fdec683aa200a5e96bcde1f770789232a03c229ceeef",
+      "currentFactoryMatchesSourceAndMeshUv": true,
+      "room": {
+        "corners": 6,
+        "heightMm": 2750,
+        "doors": 1,
+        "windows": 4
+      },
+      "wallpaper": [
+        {
+          "name": "Original illustrative Indigo arcade wallpaper",
+          "sourcePixels": [
+            1536,
+            1536
+          ],
+          "sourceSha256": "51f03e215600f23434c69f8fe647015acd11f37d1cd9d4523bb4b1154e9aa202",
+          "physicalMm": [
+            600,
+            600
+          ],
+          "repeatKind": "tile",
+          "match": "half-drop",
+          "offsetAlreadyIncluded": true,
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1
+          },
+          "rotation": 0,
+          "nativePixelsPerInch": [
+            65,
+            65
+          ]
+        }
+      ],
+      "sourceArtReview": {
+        "id": "indigo-bay",
+        "sourceSvgSha256": "1c7c53b2aca876332be9b22947a7e391802dc4e66b1ad2a4be75ad71baf77390",
+        "embeddedPngSha256": "51f03e215600f23434c69f8fe647015acd11f37d1cd9d4523bb4b1154e9aa202",
+        "pngBytes": 425654,
+        "pixels": {
+          "width": 1536,
+          "height": 1536
+        },
+        "repeatMm": {
+          "width": 600,
+          "height": 600
+        },
+        "calibration": {
+          "widthMm": 600,
+          "heightMm": 600,
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1
+          },
+          "rotation": 0,
+          "repeatKind": "tile",
+          "match": "half-drop",
+          "offsetAlreadyIncluded": true,
+          "proofAccepted": true
+        },
+        "compiledContentSha256": "7240802b43cc80f30da23163aef334b2b23e2e00fafcce536c854fd38fbe8f77",
+        "meshCount": 229,
+        "maxCornerDiscontinuityMm": 0.049935181330511114,
+        "oppositeEdgeMeanAbsoluteChannelDelta": {
+          "horizontal": 0.017578125,
+          "vertical": 7.210286458333333
+        },
+        "repeatEdgeProofVisuallyReviewed": true
+      },
+      "repeatPhase": {
+        "maxCornerDiscontinuityMm": 0.049935181330511114,
+        "toleranceMm": 1,
+        "passes": true,
+        "halfDropShiftMm": 0,
+        "offsetAlreadyIncluded": true
+      },
+      "setOut": [
+        {
+          "wallId": "indigo-east",
+          "lengthMm": 3600,
+          "offsetXmm": 0,
+          "offsetYmm": 0,
+          "startU": 0,
+          "endU": 6
+        },
+        {
+          "wallId": "indigo-bay-right",
+          "lengthMm": 1562.05,
+          "offsetXmm": -3600,
+          "offsetYmm": 0,
+          "startU": 6,
+          "endU": 8.603417
+        },
+        {
+          "wallId": "indigo-bay-centre",
+          "lengthMm": 3200,
+          "offsetXmm": -5162,
+          "offsetYmm": 0,
+          "startU": 8.603333,
+          "endU": 13.936667
+        },
+        {
+          "wallId": "indigo-bay-left",
+          "lengthMm": 1562.05,
+          "offsetXmm": -8362,
+          "offsetYmm": 0,
+          "startU": 13.936667,
+          "endU": 16.540083
+        },
+        {
+          "wallId": "indigo-west",
+          "lengthMm": 3600,
+          "offsetXmm": -9924,
+          "offsetYmm": 0,
+          "startU": 16.54,
+          "endU": 22.54
+        }
+      ],
+      "renderer": {
+        "blenderVersion": "4.5.0",
+        "device": "GPU",
+        "samples": 128,
+        "seed": 217,
+        "elapsedSeconds": 158.575,
+        "renderedGeometryVerified": true,
+        "geometrySha256": "01b370ffd5e3a2e32d9bb7e41454a82d56667fd8d726758d29763e285fe58fe8"
+      },
+      "preview": {
+        "file": "indigo-bay-preview.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 66498,
+        "sha256": "674adae7498008119925d31ce08f76e69c740783db4103a2cf07262869e61031"
+      },
+      "outputs": [
+        {
+          "kind": "still-1",
+          "file": "indigo-bay-1.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 1536702,
+          "sha256": "b324a49c6087fa7ea9b522b9334a84c6afd304dc8f24bdbba3d1516554948f7f",
+          "originalPng": {
+            "file": "still-1.png",
+            "bytes": 2561353,
+            "sha256": "6dc4699b8cdd603ea06475951730ea9c4d9ef5492544fed77c0379a6ff761039",
+            "width": 1920,
+            "height": 1080
+          },
+          "renderSeconds": 20.424,
+          "compression": {
+            "encoding": "lossless",
+            "pixelIdentical": true,
+            "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+            "meanAbsoluteError": 0,
+            "rmse": 0,
+            "psnrDb": null,
+            "psnrUnbounded": true,
+            "maximumChannelError": 0
+          },
+          "encoding": "lossless",
+          "pixelIdentical": true,
+          "publicPath": "/media/room-studio/examples/indigo-bay-1.webp",
+          "visualReview": {
+            "reviewed": true,
+            "observation": "Three bay windows and the chamfered wall geometry are visible; fine fan lines remain distinct."
+          }
+        },
+        {
+          "kind": "still-2",
+          "file": "indigo-bay-2.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 1520186,
+          "sha256": "c9c9c07521d161099f5d28f468e851ac700b7f99aba0d49059b240721dbdf6ad",
+          "originalPng": {
+            "file": "still-2.png",
+            "bytes": 2608629,
+            "sha256": "8f87f6c0bf45393f017b3e413a474650a7eca168f5a0fab753101b8072423c8f",
+            "width": 1920,
+            "height": 1080
+          },
+          "renderSeconds": 19.526,
+          "compression": {
+            "encoding": "lossless",
+            "pixelIdentical": true,
+            "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+            "meanAbsoluteError": 0,
+            "rmse": 0,
+            "psnrDb": null,
+            "psnrUnbounded": true,
+            "maximumChannelError": 0
+          },
+          "encoding": "lossless",
+          "pixelIdentical": true,
+          "publicPath": "/media/room-studio/examples/indigo-bay-2.webp",
+          "visualReview": {
+            "reviewed": true,
+            "observation": "Oblique view shows the side aperture and angled bay walls with the same included-stagger tile."
+          }
+        },
+        {
+          "kind": "panorama",
+          "file": "indigo-bay-panorama.webp",
+          "width": 4096,
+          "height": 2048,
+          "bytes": 4509810,
+          "sha256": "8bcf44fcc257b9be9a992e436e4722b8a364bb97764466b88eb34d1d5063f7c5",
+          "originalPng": {
+            "file": "panorama.png",
+            "bytes": 8115087,
+            "sha256": "b2739f48afbb0173129c52f77dd7f2c0b0bc61d71bf23faf8190695b37439768",
+            "width": 4096,
+            "height": 2048
+          },
+          "renderSeconds": 118.324,
+          "compression": {
+            "encoding": "lossless",
+            "pixelIdentical": true,
+            "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+            "meanAbsoluteError": 0,
+            "rmse": 0,
+            "psnrDb": null,
+            "psnrUnbounded": true,
+            "maximumChannelError": 0
+          },
+          "encoding": "lossless",
+          "pixelIdentical": true,
+          "publicPath": "/media/room-studio/examples/indigo-bay-panorama.webp",
+          "visualReview": {
+            "reviewed": true,
+            "observation": "The bay and four window apertures are visible; ceiling and floor enclose the room throughout."
+          },
+          "panoramaJoin": {
+            "comparison": "Last and first equirectangular columns are adjacent angular samples, not duplicate pixels.",
+            "meanAbsoluteChannelDifference": 0.8797,
+            "maximumChannelDifference": 7,
+            "visuallyObviousJoin": false
+          }
+        }
+      ]
+    }
+  ]
+}

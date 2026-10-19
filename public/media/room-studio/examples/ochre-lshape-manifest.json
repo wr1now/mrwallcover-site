@@ -1,0 +1,184 @@
+{
+  "id": "ochre-lshape",
+  "provenance": "Original illustrative room and wallpaper artwork. No supplier endorsement or completed-project claim.",
+  "revisionId": "b3a821ee-87d1-4c81-9313-4365f1d8099b-revision-1",
+  "packageSha256": "671a9cbb2a3196d0652602ad3af0f903e0d2eda0f6666cbe1e04979888ec9bfb",
+  "compilerVersion": "room-studio-geometry/1.0.0",
+  "sourceSha256": "1cb9cdd29a535300701e572376bf4135ff40c0591c0b5f24b72ecaf6825b8630",
+  "meshUvSha256": "35bdde25395d723de0505138a821eef92c000f2b221362051a7769a90befde1d",
+  "room": {
+    "corners": 6,
+    "heightMm": 2700,
+    "doors": 2,
+    "windows": 3
+  },
+  "wallpaper": [
+    {
+      "name": "Original illustrative Ochre cadence wallpaper",
+      "sourcePixels": [
+        1536,
+        1536
+      ],
+      "sourceSha256": "c063856b04982ba09d94842ae15821941dc214185a4ba24712535e8902a05d70",
+      "physicalMm": [
+        530,
+        640
+      ],
+      "repeatKind": "strip",
+      "match": "half-drop",
+      "offsetAlreadyIncluded": false,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "rotation": 0,
+      "nativePixelsPerInch": [
+        73.6,
+        61
+      ]
+    }
+  ],
+  "setOut": [
+    {
+      "wallId": "ochre-east",
+      "lengthMm": 3000,
+      "offsetXmm": 0,
+      "offsetYmm": 0,
+      "startU": 0,
+      "endU": 5.660377
+    },
+    {
+      "wallId": "ochre-return-north",
+      "lengthMm": 2200,
+      "offsetXmm": -3000,
+      "offsetYmm": 0,
+      "startU": 5.660377,
+      "endU": 9.811321
+    },
+    {
+      "wallId": "ochre-return-east",
+      "lengthMm": 2000,
+      "offsetXmm": -5200,
+      "offsetYmm": 0,
+      "startU": 9.811321,
+      "endU": 13.584906
+    },
+    {
+      "wallId": "ochre-north",
+      "lengthMm": 3800,
+      "offsetXmm": -7200,
+      "offsetYmm": 0,
+      "startU": 13.584906,
+      "endU": 20.754717
+    },
+    {
+      "wallId": "ochre-west",
+      "lengthMm": 5000,
+      "offsetXmm": -11000,
+      "offsetYmm": 0,
+      "startU": 20.754717,
+      "endU": 30.188679
+    }
+  ],
+  "renderer": {
+    "blenderVersion": "4.5.0",
+    "device": "GPU",
+    "samples": 128,
+    "seed": 217,
+    "elapsedSeconds": 201.863,
+    "renderedGeometryVerified": true,
+    "geometrySha256": "6040c5930e0d5f62eb171f5c38360e1535bdc961228e72b85c86c223c37c480d"
+  },
+  "preview": {
+    "file": "ochre-lshape-preview.webp",
+    "width": 960,
+    "height": 540,
+    "bytes": 50772,
+    "sha256": "df21b0f12c1af00502edaea1644b171e43ae5ef29c32505ecf0b90141cdb096a"
+  },
+  "outputs": [
+    {
+      "kind": "still-1",
+      "file": "ochre-lshape-1.webp",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 229670,
+      "sha256": "9712e3ae6bb72e4f2e369ced23a58ce49b86574f7fdedaa9b0b3dcc119a584c8",
+      "originalPng": {
+        "file": "still-1.png",
+        "bytes": 2233657,
+        "sha256": "8f794a100a3a79415b9d136ed26bc7cc34f69665915589ab145275f2c5275e0e"
+      },
+      "renderSeconds": 34.127,
+      "compression": {
+        "encoding": "lossy",
+        "webpQuality": 96,
+        "pixelIdentical": false,
+        "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+        "meanAbsoluteError": 0.9519,
+        "rmse": 1.59,
+        "psnrDb": 44.103,
+        "psnrUnbounded": false,
+        "maximumChannelError": 24
+      },
+      "encoding": "lossy",
+      "pixelIdentical": false
+    },
+    {
+      "kind": "still-2",
+      "file": "ochre-lshape-2.webp",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 212082,
+      "sha256": "751e6ca0847a7b3cdac00ba92982778c8e8b55662ff8d4591b0790410c22ac0f",
+      "originalPng": {
+        "file": "still-2.png",
+        "bytes": 2200030,
+        "sha256": "339fcbd2c1ed6d908294d00624c3df52f816564a85c4443514574e937f96ef63"
+      },
+      "renderSeconds": 35.581,
+      "compression": {
+        "encoding": "lossy",
+        "webpQuality": 96,
+        "pixelIdentical": false,
+        "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+        "meanAbsoluteError": 0.9134,
+        "rmse": 1.487,
+        "psnrDb": 44.685,
+        "psnrUnbounded": false,
+        "maximumChannelError": 20
+      },
+      "encoding": "lossy",
+      "pixelIdentical": false
+    },
+    {
+      "kind": "panorama",
+      "file": "ochre-lshape-panorama.webp",
+      "width": 4096,
+      "height": 2048,
+      "bytes": 437912,
+      "sha256": "877c7a81bafbe0eb1ef65289b7d2c9e8ae4c18bad8829aa4728fc85414110f91",
+      "originalPng": {
+        "file": "panorama.png",
+        "bytes": 7627135,
+        "sha256": "9eded9124d3da03091458b713d133b3a31427747c885489efbaabb5994ebc7e5"
+      },
+      "renderSeconds": 131.818,
+      "compression": {
+        "encoding": "lossy",
+        "webpQuality": 96,
+        "pixelIdentical": false,
+        "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+        "meanAbsoluteError": 0.7328,
+        "rmse": 1.2053,
+        "psnrDb": 46.509,
+        "psnrUnbounded": false,
+        "maximumChannelError": 22
+      },
+      "encoding": "lossy",
+      "pixelIdentical": false
+    }
+  ]
+}

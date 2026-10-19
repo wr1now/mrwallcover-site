@@ -247,6 +247,10 @@ test('new shared content families inherit the motif while utilities stay static 
     assert.equal(await page.$eval('[data-atelier-atmosphere]', (layer:HTMLElement) => layer.hasAttribute('data-running')), false);
     assert.equal(await page.$eval('[data-atelier-atmosphere]', (element:HTMLElement) => element.getAnimations({ subtree:true }).filter(animation => animation.playState === 'running').length), 0);
     assert.ok(await page.$eval('main h1', (heading:HTMLElement) => !!heading.textContent?.trim()), 'server-rendered reading remains complete without enhancement');
+    // The complete no-JS menu grows when a real destination is added. Test
+    // the reading ground after scrolling past it, clear of the sticky header,
+    // rather than sampling whichever texture phase happens to meet the fold.
+    await page.$eval('main', (main:HTMLElement) => window.scrollTo({ top:window.scrollY + main.getBoundingClientRect().top - 112, behavior:'instant' }));
     await assertGutterPaint(page, 390, { scripts:false });
     await assertLinenPaint(page, 390, { scripts:false });
   });

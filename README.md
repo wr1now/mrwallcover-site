@@ -173,7 +173,7 @@ The script does nothing unless `INDEXNOW_ENABLED=1`, so it cannot fire by accide
 2. Add a deploy hook or a final build step that runs `INDEXNOW_ENABLED=1 npm run indexnow` after `npm run build` has produced `dist/`.
 3. Watch the first run's output: `200` or `202` means accepted. Anything else is printed and the step fails.
 
-Google does not use IndexNow. It reads the sitemap, so nothing else is needed for Google.
+Google does not use IndexNow. The published sitemap and crawlable internal links help Google discover pages; they do not guarantee indexing. A verified Search Console owner can inspect a published URL and request indexing. See [Google’s crawl-request guidance](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl).
 
 ## Pages
 

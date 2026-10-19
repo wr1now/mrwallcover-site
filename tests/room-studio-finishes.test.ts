@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { test } from 'node:test';
-import { artworkHeaderDimensions, artworkIsAnimated, artworkUVAt, assignFinishBand, calibrationErrors, checkArtworkDimensions, checkEmbeddedArtwork, createLimewashPixels, detectArtworkMime, halfDropOffset, normaliseHex, proportionalMuralCalibration, rotatedCropSize, saveFinish } from '../src/room-studio/finishes.ts';
+import { artworkHeaderDimensions, artworkIsAnimated, artworkUVAt, assignFinishBand, calibrationErrors, checkArtworkDimensions, checkEmbeddedArtwork, continueWallpaperAroundCorners, createLimewashPixels, detectArtworkMime, halfDropOffset, normaliseHex, proportionalMuralCalibration, rotatedCropSize, saveFinish } from '../src/room-studio/finishes.ts';
 import { bauwerkCatalogue, findBauwerkShades } from '../src/room-studio/catalogue/index.ts';
 import { validateProject } from '../src/room-studio/validation.ts';
 import type { ArtworkCalibration, RoomProject } from '../src/room-studio/types.ts';
+import { fixtureProject } from '../src/room-studio/fixtures.ts';
 
 const calibration = (): ArtworkCalibration => ({ widthMm: 530, heightMm: 640, crop: { x: 0, y: 0, width: 1, height: 1 }, rotation: 0, repeatKind: 'strip', match: 'half-drop', offsetAlreadyIncluded: false, proofAccepted: false });
 const project = (): RoomProject => ({ schemaVersion: 1, id: 'test', ownerId: null, name: 'Test room', room: { vertices: [{ x: 0, z: 0, wallId: 'a' }, { x: 4000, z: 0, wallId: 'b' }, { x: 4000, z: 3000, wallId: 'c' }, { x: 0, z: 3000, wallId: 'd' }], heightMm: 2400, openings: [], skirtingMm: 0, corniceMm: 0, confirmed: false }, finishes: [{ id: 'paint', type: 'paint', name: 'Ivory', colour: '#EEE8DB', sheen: 'matte' }, { id: 'accent', type: 'paint', name: 'Olive', colour: '#747D5B', sheen: 'matte' }], assignments: [{ id: 'original', wallId: 'a', finishId: 'paint', fromMm: 0, toMm: null, offsetXmm: 0, offsetYmm: 0 }], cameras: [], lighting: 'daylight', schemes: [], revision: 1, updatedAt: '2026-10-18T00:00:00Z' });
@@ -61,6 +62,50 @@ test('repeated band edits retain valid unique identifiers and adjacent coverage'
   assert.equal(sorted[0].fromMm, 0);
   assert.equal(sorted.at(-1)!.toMm, null);
   sorted.slice(1).forEach((band, index) => assert.equal(sorted[index].toMm, band.fromMm));
+});
+
+test('continuing wallpaper preserves physical phase, half-drop parity and vertical placement around corners', () => {
+  const before = fixtureProject('angled'), paper = before.finishes[0];
+  assert.ok(paper.type === 'wallpaper'); paper.calibration = calibration();
+  before.assignments.forEach((assignment, index) => { assignment.finishId = paper.id; assignment.offsetXmm = index === 0 ? 110 : 0; assignment.offsetYmm = 200; });
+  const original = structuredClone(before), after = continueWallpaperAroundCorners(before, paper.id, before.room.vertices[0].wallId);
+  let distance = 0;
+  for (const [index, vertex] of before.room.vertices.entries()) {
+    const assignment = after.assignments.find(value => value.wallId === vertex.wallId)!;
+    assert.equal(assignment.offsetXmm, Math.round(110 - distance));
+    assert.equal(assignment.offsetYmm, 200);
+    const actual = artworkUVAt(0, 200, paper.calibration, assignment.offsetXmm, assignment.offsetYmm);
+    const expected = artworkUVAt(distance, 200, paper.calibration, 110, 200);
+    assert.ok(Math.abs(actual.u - expected.u) <= .5 / paper.calibration.widthMm);
+    assert.equal(actual.v, expected.v, 'Continuing across a corner must preserve odd-strip half-drop parity');
+    const next = before.room.vertices[(index + 1) % before.room.vertices.length];
+    distance += Math.hypot(next.x - vertex.x, next.z - vertex.z);
+    assert.deepEqual({ ...assignment, offsetXmm: original.assignments[index].offsetXmm }, original.assignments[index], 'Only horizontal placement may change');
+  }
+  assert.deepEqual(before, original, 'The source project remains available to undo');
+});
+
+test('corner continuation rounds the exact surveyed run once at each boundary', () => {
+  const before = fixtureProject(), paper = before.finishes[0];
+  before.room.vertices = [[0,0],[3000,0],[4000,1000],[5000,2000],[6000,3000],[0,3000]].map(([x,z],index)=>({x,z,wallId:'corner-'+index}));
+  before.assignments = before.room.vertices.map(vertex=>({...before.assignments[0],id:'assignment-'+vertex.wallId,wallId:vertex.wallId,finishId:paper.id,offsetXmm:0}));
+  const after = continueWallpaperAroundCorners(before,paper.id,'corner-0');
+  assert.equal(after.assignments[4].offsetXmm,-Math.round(3000+3*Math.hypot(1000,1000)));
+  assert.notEqual(after.assignments[4].offsetXmm,-(3000+3*Math.round(Math.hypot(1000,1000))),'Rounding individual return walls would drift the pattern');
+});
+
+test('corner continuation stops at paint or different bands and never wraps a mural', () => {
+  const before = fixtureProject(), paper = before.finishes[0];
+  before.assignments.forEach(assignment => { assignment.finishId = paper.id; });
+  before.assignments[2].finishId = 'fixture-paint';
+  const after = continueWallpaperAroundCorners(before,paper.id,before.room.vertices[0].wallId);
+  assert.equal(after.assignments[1].offsetXmm,-4200);
+  assert.deepEqual(after.assignments.slice(2),before.assignments.slice(2),'Paint breaks the run before the later wallpaper wall');
+  before.assignments[1].fromMm=800;before.assignments[1].toMm=1500;
+  assert.equal(continueWallpaperAroundCorners(before,paper.id,before.room.vertices[0].wallId),before,'A different height band is not reassigned');
+  assert.throws(()=>continueWallpaperAroundCorners(before,'fixture-paint',before.room.vertices[0].wallId),/Only repeating wallpaper/);
+  if(paper.type==='wallpaper')paper.type='mural';
+  assert.throws(()=>continueWallpaperAroundCorners(before,paper.id,before.room.vertices[0].wallId),/Only repeating wallpaper/);
 });
 
 test('paint colours and uploaded image contents are validated rather than trusting filenames', () => {

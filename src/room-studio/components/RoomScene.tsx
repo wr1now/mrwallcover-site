@@ -1,7 +1,7 @@
 import { Component, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { BufferAttribute, BufferGeometry, Group, CanvasTexture, Color, FrontSide, LinearFilter, PerspectiveCamera, RepeatWrapping, ClampToEdgeWrapping, SRGBColorSpace, TextureLoader, Vector3 } from 'three';
+import { BufferAttribute, BufferGeometry, Group, CanvasTexture, FrontSide, LinearMipmapLinearFilter, PerspectiveCamera, RepeatWrapping, ClampToEdgeWrapping, SRGBColorSpace, Vector3 } from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { CompiledMaterial, CompiledMesh, RenderPackage, StudioCamera, TextureAsset } from '../types.ts';
 import Action from '../../components/react/Action.tsx';
@@ -19,27 +19,30 @@ function Navigation({cameraView,reset,rotate,zoom,roomSize}:{cameraView:StudioCa
   useEffect(()=>{const c=control.current;const changed=zoom!==previousZoom.current;previousZoom.current=zoom;if(!c||!changed)return;const delta=camera.position.clone().sub(c.target);delta.multiplyScalar(zoom>0?.85:1.18);camera.position.copy(c.target).add(delta);c.update();invalidate();},[zoom]);
   return null;
 }
-function useMaterialMaps(scene:RenderPackage) {
+function useMaterialMaps(scene:RenderPackage,maximumAnisotropy:number|null) {
   const [maps,setMaps]=useState<Record<string,CanvasTexture>>({});
+  const [narrow,setNarrow]=useState(()=>typeof window!=='undefined'&&window.innerWidth<761);
+  useEffect(()=>{const query=window.matchMedia('(max-width:760px)'),update=()=>setNarrow(query.matches);update();query.addEventListener('change',update);return()=>query.removeEventListener('change',update);},[]);
   const used=new Set(scene.meshes.map(m=>m.materialId));
   const active=scene.materials.filter(m=>used.has(m.id));
   const signature=JSON.stringify(active)+scene.textures.map(t=>`${t.id}:${t.sha256}:${Boolean(t.dataUrl)}`).join();
-  useEffect(()=>{let disposed=false;const owned:CanvasTexture[]=[];
+  useEffect(()=>{if(maximumAnisotropy===null)return;let disposed=false;const owned:CanvasTexture[]=[];const anisotropy=Math.max(1,Math.min(16,maximumAnisotropy));
     async function prepare(){const entries:Record<string,CanvasTexture>={};
-      // Decode sequentially and bound total preview pixels, including rooms with
-      // several finish bands. Source uploads keep their original resolution.
-      const narrow=window.innerWidth<761;
+      // Reserve a quarter of the total GPU pixel budget for mipmaps, including
+      // each used limewash map. Decode originals sequentially; never upscale.
       const count=Math.max(1,active.filter(m=>m.textureId).length);
-      const edge=Math.max(128,Math.min(narrow?768:1024,Math.floor(Math.sqrt((narrow?6_000_000:12_000_000)/count))));
+      const baseBudget=Math.floor((narrow?6_000_000:12_000_000)*.75);
+      const limewashPixels=active.filter(m=>m.type==='bauwerk'&&!m.textureId).length*256*256;
+      const edge=Math.max(128,Math.min(narrow?1024:2048,Math.floor(Math.sqrt(Math.max(0,baseBudget-limewashPixels)/count))));
       for(const material of active){if(disposed)return;const texture=scene.textures.find(t=>t.id===material.textureId);let canvas:HTMLCanvasElement|undefined;
         try{if(texture?.dataUrl)canvas=await prepareArtworkCanvas(texture,material.texturePreparation??{crop:{x:0,y:0,width:1,height:1},rotation:0},edge);
         else if(material.type==='bauwerk')canvas=createLimewashCanvas(material.colour,material.seed??17);}catch{continue;}
-        if(!canvas||disposed)continue;const map=new CanvasTexture(canvas);map.colorSpace=SRGBColorSpace;map.wrapS=map.wrapT=material.repeat||material.type==='bauwerk'?RepeatWrapping:ClampToEdgeWrapping;map.anisotropy=4;map.minFilter=LinearFilter;owned.push(map);entries[material.id]=map;
+        if(!canvas||disposed)continue;const map=new CanvasTexture(canvas);map.colorSpace=SRGBColorSpace;map.wrapS=map.wrapT=material.repeat||material.type==='bauwerk'?RepeatWrapping:ClampToEdgeWrapping;map.anisotropy=anisotropy;map.minFilter=LinearMipmapLinearFilter;map.generateMipmaps=true;owned.push(map);entries[material.id]=map;
       }
       if(!disposed)setMaps(entries);
     }
     void prepare();return()=>{disposed=true;owned.forEach(t=>t.dispose());};
-  },[signature]);return maps;
+  },[signature,narrow,maximumAnisotropy]);return maps;
 }
 function Surface({mesh,material,map,selected,onSelect}:{mesh:CompiledMesh;material:CompiledMaterial;map?:CanvasTexture;selected:boolean;onSelect:(id:string)=>void}) {
   const geometry=useMemo(()=>{const g=new BufferGeometry();g.setAttribute('position',new BufferAttribute(new Float32Array(mesh.positions),3));g.setAttribute('normal',new BufferAttribute(new Float32Array(mesh.normals),3));g.setAttribute('uv',new BufferAttribute(new Float32Array(mesh.uvs),2));g.setIndex(mesh.indices);return g;},[mesh]);
@@ -55,11 +58,12 @@ function CutawayWall({meshes,interior,children}:{meshes:CompiledMesh[];interior:
 }
 export default function RoomScene({scene,selectedWallId,onSelect,cameraView=null}:{scene:RenderPackage;selectedWallId:string|null;onSelect:(id:string)=>void;cameraView?:StudioCamera|null}) {
   const [retry,setRetry]=useState(0),[lost,setLost]=useState(false),[reset,setReset]=useState(0),[rotation,setRotation]=useState(0),[zoom,setZoom]=useState(0);
-  const maps=useMaterialMaps(scene);
+  const [maximumAnisotropy,setMaximumAnisotropy]=useState<number|null>(null);
+  const maps=useMaterialMaps(scene,maximumAnisotropy);
   const size=useMemo(()=>Math.max(3,...scene.meshes.flatMap(m=>m.positions.map(Math.abs))),[scene]);
   const warm=scene.lighting==='warm';
   return <div className="studio-scene"><div className="studio-view-label"><span>{cameraView?'Camera preview':'Interactive 3D'}</span><small>Illustrative · {warm?'warm light':'daylight'}</small></div>
-    <SceneBoundary key={retry} onRetry={()=>{setLost(false);setRetry(n=>n+1);}}>{lost?<div className="studio-scene-fallback"><p>The graphics connection was interrupted. Your room remains saved.</p><Action onClick={()=>{setLost(false);setRetry(n=>n+1);}}>Restore 3D view</Action></div>:<Canvas frameloop="demand" dpr={[1,1.6]} shadows camera={{position:[6,5,6],fov:44,near:.02,far:120}} gl={{antialias:true,alpha:false,powerPreference:'low-power'}} onCreated={({gl})=>{gl.setClearColor('#e8e4db');const canvas=gl.domElement;canvas.setAttribute('aria-label','Interactive room preview. Drag to rotate, pinch to zoom, or use the buttons below.');canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();setLost(true);},{once:true});}}>
+    <SceneBoundary key={retry} onRetry={()=>{setLost(false);setRetry(n=>n+1);}}>{lost?<div className="studio-scene-fallback"><p>The graphics connection was interrupted. Your room remains saved.</p><Action onClick={()=>{setLost(false);setRetry(n=>n+1);}}>Restore 3D view</Action></div>:<Canvas frameloop="demand" dpr={[1,1.6]} shadows camera={{position:[6,5,6],fov:44,near:.02,far:120}} gl={{antialias:true,alpha:false,powerPreference:'low-power'}} onCreated={({gl})=>{gl.setClearColor('#e8e4db');setMaximumAnisotropy(gl.capabilities.getMaxAnisotropy());const canvas=gl.domElement;canvas.setAttribute('aria-label','Interactive room preview. Drag to rotate, pinch to zoom, or use the buttons below.');canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();setLost(true);},{once:true});}}>
       <ambientLight intensity={warm?.45:.55} color={warm?'#ffe3bc':'#ffffff'}/><hemisphereLight args={[warm?'#ffe0af':'#e7f0ff','#a49b87',.65]}/><directionalLight position={[-2,6,1]} intensity={warm?1.8:2.4} color={warm?'#ffd5a0':'#fff7e9'} castShadow shadow-mapSize={[1024,1024]} shadow-camera-left={-10} shadow-camera-right={10} shadow-camera-top={10} shadow-camera-bottom={-10} shadow-bias={-.001}/><pointLight position={[size*.5,2.2,size*.4]} intensity={warm?12:2} color={warm?'#ffe0aa':'#ffffff'}/>
       <Navigation cameraView={cameraView} reset={reset} rotate={rotation} zoom={zoom} roomSize={size}/>
       <Suspense fallback={null}>{[...new Set(scene.meshes.map(m=>m.wallId??'room'))].map(wall=>{const meshes=scene.meshes.filter(m=>(m.wallId??'room')===wall);return <CutawayWall key={wall} meshes={meshes} interior={Boolean(cameraView)}>{meshes.filter(m=>cameraView||(m.surface!=='ceiling'&&!m.id.endsWith('-outside'))).map(mesh=>{const mat=scene.materials.find(m=>m.id===mesh.materialId)!;return <Surface key={mesh.id} mesh={mesh} material={mat} map={maps[mat.id]} selected={Boolean(selectedWallId&&mesh.wallId===selectedWallId)} onSelect={onSelect}/>;})}</CutawayWall>;})}</Suspense>

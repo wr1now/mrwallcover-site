@@ -1,19 +1,38 @@
 {
-  "reviewedDate": "2026-10-18",
-  "baselineMain": "f71a587ba514f96d3b0c9852e951e94372eeff60",
+  "reviewedDate": "2026-10-19",
+  "baselineMain": "9f60ffc7b03bd529873704611dbea2052ed38a40",
   "sourceFingerprint": {
     "algorithm": "SHA-256 of sorted relative path, NUL, file contents, NUL for listed application/service/worker and shared integration inputs",
-    "sha256": "415050a3ec7df190de1f0ae7e474b8ad0f5fefdd9973670911a1f5b4b01d3f15",
+    "sha256": "9f636a265bdb9bfa737f02cb53b629bcbc07cb3ae951f6195b4c028be76bb470",
     "inputs": [
       "astro.config.mjs",
       "package-lock.json",
       "package.json",
+      "scripts/generate-room-studio-example-artwork.mjs",
+      "scripts/qa/room-studio-browser.mjs",
+      "scripts/qa/room-studio-draft-browser.mjs",
+      "scripts/qa/room-studio-draw-browser.mjs",
+      "scripts/qa/room-studio-examples-browser.mjs",
+      "scripts/qa/room-studio-finishes-browser.mjs",
+      "scripts/qa/room-studio-panorama-browser.mjs",
+      "scripts/qa/room-studio-plan-browser.mjs",
+      "scripts/qa/room-studio-private-studies-browser.mjs",
+      "scripts/qa/room-studio-results-browser.mjs",
+      "scripts/qa/room-studio-scene-browser.mjs",
+      "scripts/room-studio-private-studies.ts",
+      "scripts/room-studio-render-examples.ts",
+      "src/components/Footer.astro",
+      "src/components/Header.astro",
       "src/components/MobileDock.astro",
+      "src/content/navigation.json",
+      "src/data/image-rights.json",
+      "src/pages/room-studio.astro",
       "src/room-studio/RoomStudio.tsx",
       "src/room-studio/catalogue/bauwerk-uk.json",
       "src/room-studio/catalogue/index.ts",
       "src/room-studio/cloud.ts",
       "src/room-studio/components/CloudPanel.tsx",
+      "src/room-studio/components/ExamplePanel.tsx",
       "src/room-studio/components/FinishPanel.tsx",
       "src/room-studio/components/NumberField.tsx",
       "src/room-studio/components/OutlineSketch.tsx",
@@ -23,15 +42,24 @@
       "src/room-studio/components/PreviewPanel.tsx",
       "src/room-studio/components/RoomPanel.tsx",
       "src/room-studio/components/RoomScene.tsx",
+      "src/room-studio/example-artwork.generated.ts",
+      "src/room-studio/example-artwork/indigo-bay.svg",
+      "src/room-studio/example-artwork/ochre-lshape.svg",
+      "src/room-studio/example-artwork/willow-chimney.svg",
+      "src/room-studio/example-metadata.ts",
+      "src/room-studio/examples.ts",
       "src/room-studio/finishes.ts",
       "src/room-studio/fixtures.ts",
       "src/room-studio/geometry.ts",
+      "src/room-studio/manufacturer-preview.ts",
+      "src/room-studio/manufacturer-selections.ts",
       "src/room-studio/page.json",
       "src/room-studio/storage.ts",
       "src/room-studio/studio.css",
       "src/room-studio/summary.ts",
       "src/room-studio/types.ts",
       "src/room-studio/validation.ts",
+      "src/styles/navigation.css",
       "supabase/functions/room-studio/guards.ts",
       "supabase/functions/room-studio/index.ts",
       "supabase/migrations/202610180001_room_studio.sql",
@@ -51,13 +79,13 @@
       "skipped": 0
     },
     "studio": {
-      "passed": 58,
+      "passed": 76,
       "failed": 0,
       "skipped": 0,
-      "scope": "57 pass in the standard suite plus the unchanged optional Blender test executed separately with Blender 4.5.0; hosted CI skips Blender when unavailable"
+      "scope": "75 pass in the standard suite plus the unchanged optional Blender 4.5.0 test executed separately; seven manufacturer metadata/private concept contract tests included."
     },
     "builtSite": {
-      "passed": 273,
+      "passed": 281,
       "failed": 0,
       "skipped": 0
     },
@@ -101,9 +129,9 @@
     "workerArchiveIntegrity": 1
   },
   "browserSuites": {
-    "count": 8,
+    "count": 9,
     "status": "passed",
-    "scope": "Isolated desktop Chromium and responsive emulation; local browser/scene/panorama fixtures; no external processing",
+    "scope": "Original illustrative examples and local manual workflows in isolated desktop Chromium and responsive emulation; no external processing. Manufacturer references are a separate private review.",
     "additionalWebKit": {
       "status": "passed",
       "version": "26.5",
@@ -114,20 +142,24 @@
     "accessibility": {
       "status": "passed",
       "receipt": "accessibility.json",
-      "scope": "320px, 640×450 CSS effective200% layout, native macOS Option+Tab, field edits, Space opening activation and focused dock clearance; no screen reader"
+      "scope": "320px, 640\u00d7450 CSS effective200% layout, native macOS Option+Tab, field edits, Space opening activation and focused dock clearance; no screen reader"
     },
     "immutableResults": {
       "status": "passed",
       "receipt": "results-package.json",
       "scope": "Actual CloudPanel with typed offline service fixtures; real JSON/TXT downloads, frozen revision and embedded artwork; no live service calls"
+    },
+    "examples": {
+      "status": "passed",
+      "scope": "All three original artworks loaded through real UI, editable exports/reimports, Undo/Redo, cancelled lazy import, protected draft recovery, exact compiler mesh/UV parity and actual WebGL; 390/768/1024/1280/1440 layouts."
     }
   },
   "noLoss": {
     "status": "passed",
     "existingRoutes": 128,
     "currentRoutes": 129,
-    "mediaBefore": 3621,
-    "mediaAfter": 3621,
+    "mediaBefore": 3629,
+    "mediaAfter": 3644,
     "existingProjectRecords": 5,
     "existingGalleryEntries": 12
   },
@@ -145,7 +177,24 @@
     "lShapeAndAngledSmokeRenders": true,
     "blender": "4.5.0",
     "fullPackageSeconds": 204.962,
-    "cloudCostsMeasured": false
+    "cloudCostsMeasured": false,
+    "threeOriginalFullSizePackages": true,
+    "examplesReceipt": "examples-render.json",
+    "exampleSeconds": [
+      214.035,
+      201.863,
+      158.575
+    ],
+    "outputsPerExample": {
+      "stills": [
+        1920,
+        1080
+      ],
+      "panorama": [
+        4096,
+        2048
+      ]
+    }
   },
   "activation": {
     "liveAi": false,
@@ -157,14 +206,20 @@
     "Deployed Supabase/Modal integration and operational verification",
     "Pinned OCR worker image and real model accuracy",
     "Physical iPhone Safari and Android Chrome",
-    "Cloud turnaround and cost measurement before setting pilot cap"
+    "Cloud turnaround and cost measurement before setting pilot cap",
+    "Manufacturer preview artwork calibration, physical material maps and public reuse scope; current branded studies remain local-only",
+    "Public page deployment and Google Search Console index request"
   ],
   "scope": "Local implementation review receipt; live hosted status is tracked on the pull request.",
   "regressions": [
     "Repeated finish-band splits retain bounded unique IDs and complete adjacent coverage",
     "Repeated cloud saves reuse freshly verified owner/project artwork across sessions; stale paths recover and corrupt files fail closed",
     "Keyboard opening activation, contrasting field borders and shared dock clearance for focused editing workspaces",
-    "Completed render results export their own immutable room and finish summary even after later draft edits"
+    "Completed render results export their own immutable room and finish summary even after later draft edits",
+    "Opening an example cannot overwrite unreadable protected raw drafts; cancelling a slow example import preserves the current room",
+    "Wallpaper corner continuation keeps physical phase and applies half-drop once",
+    "Source texture resolution retained within mip-inclusive responsive memory budgets; never upscales missing detail",
+    "Phone example copy and actions remain inside their cards and reachable"
   ],
   "workerPreparation": {
     "modal": "1.6.2",

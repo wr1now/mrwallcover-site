@@ -144,6 +144,13 @@ the public repository and generated crawler datasets.
 
 ## Acceptance and release status
 
+The 19 October follow-up adds the **Wallpaper my room** menu entry, three original
+measured examples, full HD/4K example packages, continuous wallpaper set-out around
+corners and source-resolution feedback. See the [example review](review/examples.md)
+for physical calibration, provenance and the distinction between resolution and
+photographic realism. The examples are available without enabling customer cloud
+processing.
+
 Local verification and representative images are recorded in [the review receipt](review/checks.json), [browser review](review/browser-review.md) and [Blender review](review/render-review.md). These are implementation checks; service activation remains pending.
 
 Local acceptance:

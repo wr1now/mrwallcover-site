@@ -16,6 +16,7 @@ const roomFile = resolve(output, 'original-test-room.json');
 const artworkFile = resolve(output, 'original-quadrant-test.png');
 const rejectedFile = resolve(output, 'rejected-svg-content.png');
 const oversizedFile = resolve(output, 'rejected-dimension-header.png');
+const detailedFile = resolve(output, 'original-1024-detail-test.png');
 await writeFile(roomFile, JSON.stringify(fixtureProject()));
 const original = Buffer.alloc(400 * 200 * 3);
 for (let y = 0; y < 200; y++) for (let x = 0; x < 400; x++) {
@@ -24,6 +25,7 @@ for (let y = 0; y < 200; y++) for (let x = 0; x < 400; x++) {
 }
 const png = await sharp(original, { raw: { width: 400, height: 200, channels: 3 } }).png().toBuffer();
 await writeFile(artworkFile, png);
+await sharp(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024"><rect width="1024" height="1024" fill="#e8dec9"/><path d="M100 0h80v1024h-80zM420 0h80v1024h-80zM740 0h80v1024h-80z" fill="#52684d"/></svg>')).png().toFile(detailedFile);
 await writeFile(rejectedFile, '<svg xmlns="http://www.w3.org/2000/svg"><rect width="10" height="10"/></svg>');
 const oversized = Buffer.from(png); oversized.writeUInt32BE(20000, 16); oversized.writeUInt32BE(20000, 20); await writeFile(oversizedFile, oversized);
 
@@ -117,8 +119,14 @@ try {
   await clickText('Wallpaper / mural');
   const upload = await page.waitForSelector('.studio-finish-panel input[type=file]'); await upload.uploadFile(artworkFile);
   await page.waitForSelector('.studio-artwork-calibration'); await proofReady();
+  const detailText = () => page.$eval('.studio-source-detail', element => element.textContent);
+  assert.ok((await detailText()).includes('Selected crop: 400 × 200 pixels'));
+  assert.ok(await page.$('.studio-source-detail .studio-notice'), 'A small original receives the illustrative source-detail prompt');
+  assert.ok((await detailText()).includes('Larger exports cannot restore detail missing from the original artwork.'));
   await fill('Artwork name', 'QA repeating artwork');
-  await fill('Crop width', 50); await select('Orientation', 90); await fill('Real width', 100); await fill('Real height', 100); await proofReady();
+  await select('Orientation', 90); await proofReady(); assert.ok((await detailText()).includes('Selected crop: 200 × 400 pixels'), 'Source dimensions follow the prepared orientation');
+  await fill('Crop width', 50); await fill('Real width', 100); await fill('Real height', 100); await proofReady();
+  assert.ok((await detailText()).includes('Selected crop: 200 × 200 pixels over 100 × 100 mm (2000 × 2000 pixels per metre)'), 'Crop pixel density uses calibrated physical size');
   assert.ok(predominantly(await pixel(45, 45), 2), 'Clockwise prepared crop has blue on the left');
   assert.ok(predominantly(await pixel(135, 45), 0), 'Clockwise prepared crop has red on the right');
   await fill('Crop width', 100); await select('Orientation', 0); await fill('Real height', 200); await select('Image represents', 'strip'); await select('Pattern match', 'half-drop'); await proofReady();
@@ -137,7 +145,21 @@ try {
   const paper = project.finishes.find(f => f.name === 'QA repeating artwork'); assert.equal(paper.calibration.proofAccepted, true); assert.equal(paper.calibration.match, 'half-drop'); assert.equal(paper.calibration.widthMm, 110);
   const band = project.assignments.find(a => a.finishId === paper.id); assert.equal(band.offsetXmm, 120); assert.equal(band.offsetYmm, 200);
   assert.ok(project.assignments.some(a => a.wallId === band.wallId && a.toMm === 800)); assert.ok(project.assignments.some(a => a.wallId === band.wallId && a.fromMm === 1500));
+  await check('Apply to all walls', true); await clickText('Apply finish');
+  project = await saved(p => p.assignments.filter(assignment => assignment.finishId === paper.id).length === p.room.vertices.length);
+  const beforeContinue = structuredClone(project);
+  await clickText('Continue pattern around corners');
+  project = await saved(p => p.assignments.find(assignment => assignment.wallId === p.room.vertices[1].wallId && assignment.finishId === paper.id)?.offsetXmm === -4080);
+  let run = 0;
+  for (const [index, vertex] of project.room.vertices.entries()) {
+    const placed = project.assignments.find(assignment => assignment.wallId === vertex.wallId && assignment.finishId === paper.id);
+    assert.equal(placed.offsetXmm, Math.round(120 - run)); assert.equal(placed.offsetYmm, 200); assert.equal(placed.fromMm, 800); assert.equal(placed.toMm, 1500);
+    const next = project.room.vertices[(index + 1) % project.room.vertices.length]; run += Math.hypot(next.x - vertex.x, next.z - vertex.z);
+  }
+  assert.deepEqual(project.assignments.filter(assignment => assignment.finishId !== paper.id), beforeContinue.assignments.filter(assignment => assignment.finishId !== paper.id), 'Continuing wallpaper leaves adjacent paint/bands untouched');
+  await check('Apply to all walls', false);
   observations.push('Actual upload, crop, clockwise rotation, real scale, half-drop proof pixels, no double-drop, acknowledgement reset and non-overlapping band saved.');
+  observations.push('Explicit corner continuation preserves exact horizontal run, half-drop origin, vertical set-out and surrounding finishes; source-detail prompt follows crop, rotation and physical calibration.');
 
   await select('Artwork type', 'mural'); await upload.uploadFile(artworkFile); await page.waitForSelector('.studio-artwork-calibration'); await fill('Artwork name', 'QA mural'); await fill('Real width', 3000); await fill('Real height', 2000); await proofReady(); await check(acknowledgement, true); await clickText('Accept proof and save artwork');
   await check('Apply within a horizontal band', false); await clickText('Centre artwork on selected wall'); await clickText('Apply finish');
@@ -145,6 +167,10 @@ try {
   const mural = project.finishes.find(f => f.name === 'QA mural'), placement = project.assignments.find(a => a.finishId === mural.id);
   const wallIndex = project.room.vertices.findIndex(v => v.wallId === placement.wallId), a = project.room.vertices[wallIndex], b = project.room.vertices[(wallIndex + 1) % project.room.vertices.length];
   assert.equal(mural.type, 'mural'); assert.equal(mural.calibration.widthMm, 4000); assert.equal(mural.calibration.heightMm, 2000); assert.equal(placement.toMm, null); assert.equal(placement.offsetXmm, Math.round((Math.hypot(b.x - a.x, b.z - a.z) - mural.calibration.widthMm) / 2)); assert.equal(placement.offsetYmm, Math.round((project.room.heightMm - mural.calibration.heightMm) / 2));
+  assert.equal(await page.evaluate(() => [...document.querySelectorAll('.studio-finish-panel button')].some(button => button.textContent === 'Continue pattern around corners')), false, 'A mural is never offered automatic repeating placement');
+  await upload.uploadFile(detailedFile); await page.waitForSelector('.studio-artwork-calibration'); await proofReady();
+  assert.ok((await detailText()).includes('Selected crop: 1024 × 1024 pixels')); assert.equal(await page.$('.studio-source-detail .studio-notice'), null, 'A source at the illustrative threshold does not receive the small-source prompt');
+  await fill('Crop width', 50); await proofReady(); assert.ok((await detailText()).includes('Selected crop: 512 × 1024 pixels')); assert.ok(await page.$('.studio-source-detail .studio-notice'), 'Cropping can reduce available detail even when the full source met the guide');
   await upload.uploadFile(rejectedFile); await waitForPagePredicate(page, () => document.querySelector('.studio-finish-panel [role=alert]')?.textContent.includes('Only PNG'));
   await upload.uploadFile(oversizedFile); await waitForPagePredicate(page, () => document.querySelector('.studio-finish-panel [role=alert]')?.textContent.includes('25 megapixels'));
   observations.push('Single mural accepted and centred; SVG content and oversized compressed dimension header rejected before decoding.');

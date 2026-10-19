@@ -31,6 +31,8 @@ interface Props {
 }
 
 const { path } = Astro.props;
+const primary = navigation.filter(item => !('secondary' in item && item.secondary));
+const more = navigation.filter(item => 'secondary' in item && item.secondary);
 
 function isCurrent(href: string) {
   if (href === '/') return path === '/';
@@ -45,12 +47,18 @@ function isCurrent(href: string) {
     </a>
     <nav class="primary-nav" aria-label="Primary">
       {
-        navigation.map((item) => (
+        primary.map((item) => (
           <a class="nav-link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
             {item.label}
           </a>
         ))
       }
+      <details class="nav-more" data-nav-more>
+        <summary class="nav-link">More</summary>
+        <div class="nav-more-links" role="group" aria-label="More pages">
+          {more.map(item => <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>)}
+        </div>
+      </details>
       <a class="nav-link" href="/get-in-touch/" aria-current={isCurrent('/get-in-touch/') ? 'page' : undefined}>Contact</a>
       <WhatsAppLink class="nav-link" icon />
       <Action class="header-action" href="/contact/">Start your project</Action>
@@ -84,6 +92,13 @@ function isCurrent(href: string) {
   const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
   const panel = document.querySelector<HTMLElement>('[data-mobile-menu]');
   const desktop = window.matchMedia('(min-width: 1280px)');
+  const more = document.querySelector<HTMLDetailsElement>('[data-nav-more]');
+  document.addEventListener('click', event => {
+    if (more?.open && event.target instanceof Node && !more.contains(event.target)) more.open = false;
+  });
+  more?.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { more.open = false; more.querySelector('summary')?.focus(); }
+  });
   const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
   let open = false;
 
