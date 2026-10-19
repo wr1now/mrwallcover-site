@@ -663,6 +663,15 @@ Hotel record: Waldorf Astoria London Admiralty Arch and London Marriott Hotel Ca
 | Typography/contrast, phone, analytics, Guide release and browser | Pass |
 | Exact-head hosted checks and live verification | Pending until the owner approves the push |
 
+
+## Full owner-requested menu — 19 October 2026
+
+The owner explicitly requested publishing the fuller local menu, superseding the six-link direction. The shared desktop header now shows eleven destinations in two rows plus Start your project. The mobile menu and its no-JavaScript fallback include the same complete list. Expertise keeps `/services/`; For designers keeps `/professionals/`; Contact and Start your project retain their separate existing destinations. The header height follows the shared token and keeps its action at 44px, avoiding an inherited fixed-height clipping rule.
+
+The new `/room-studio/` introduction prevents the menu link opening a missing page. Three original Blender room studies explain the intended service and are labelled as illustrations. The page explicitly says the interactive photo/3D application is still completing testing; payment and AI services are not enabled by this release. The [artwork provenance](full-menu/room-study-provenance.md) records original sources, physical calibration and image hashes. No private manufacturer studies or customer files are included.
+
+Focused browser checks pass all twelve links at 360, 390, 768, 1024, 1280 and 1440px, including real destination responses, 44px clickable controls, mobile Enter/Escape/focus return, no horizontal overflow and both no-JavaScript layouts. Phone and desktop screenshots were visually inspected. Full-source and release-suite results follow in the final receipt before publication.
+
 ## Wallpaper my room application — 19 October 2026
 
 The application adds two explicit starts inside the existing Room Studio route: a guided room-photo compositor and the measured 3D editor. The page uses Base, the shared footer/actions and original rendered example cards. Its wording distinguishes free browser work, the optional paid output package and disabled cloud/AI/payment services. The owner subsequently requested all eleven navigation destinations plus Start your project; a separate menu release handles public access while the interactive application stays under review.
