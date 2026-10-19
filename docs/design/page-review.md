@@ -609,6 +609,6 @@ Hotel record: Waldorf Astoria London Admiralty Arch and London Marriott Hotel Ca
 | Production build and AI reader mirror | Pass; mirror regenerated for /projects/, /for-ai/ and /professionals/hotels/ |
 | Built-site tests (`check:dist`, full route coverage at 390/1440px) | 300 pass |
 | Private names (`check:names`, repo and review build) | Pass, no entry found |
-| No-loss against published main | Pass: 129 → 129 pages, JSON-LD unchanged, media 3,629 → 5,6xx |
+| No-loss against published main | Pass: 129 → 129 pages, JSON-LD unchanged, media files 3,629 → 5,609 (new record photographs only) |
 | Typography/contrast, phone, analytics, Guide release and browser | Pass |
 | Exact-head hosted checks and live verification | Pending until the owner approves the push |
