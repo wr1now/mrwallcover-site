@@ -174,15 +174,18 @@ All formats are served to visitors and crawlers alike. The corpus exports publis
 
 The production postbuild also regenerates tracked `ai-reference/` from those sanitized outputs. Stage its changes when changing public content. `check:dist` verifies exact source parity and that no generated changes are left unstaged; CI therefore fails if the committed mirror is stale. Review, phone and other fixture output directories do not overwrite it. Every normal published page advertises its mirrored Markdown in head metadata, and the AI entry pages and `llms.txt` link the mirror index. This is an alternative reading route, not a claim that every reader can reach the canonical domain or that a search engine has indexed it.
 
-### IndexNow (off until the Cloudflare move)
+### IndexNow (after each deploy)
 
-`scripts/indexnow-ping.mjs` tells Bing, Yandex and the other IndexNow engines which URLs changed by posting the sitemap URLs to `api.indexnow.org`. The key file `public/<key>.txt` is already in the repository and is served at `https://www.mrwallcover.com/<key>.txt`; do not rename it, and if you ever change the key, change the file name and its content together.
+`scripts/indexnow-ping.mjs` tells Bing, Yandex and the other IndexNow engines which URLs changed by posting them to `api.indexnow.org`. The key file `public/<key>.txt` is already in the repository and is served at `https://www.mrwallcover.com/<key>.txt`; do not rename it, and if you ever change the key, change the file name and its content together.
 
-The script does nothing unless `INDEXNOW_ENABLED=1`, so it cannot fire by accident. It is not in the GitHub Pages workflow. To enable it when the site moves to Cloudflare Pages:
+The GitHub Pages workflow runs it on every deploy from `main`, in two halves:
 
-1. Confirm the key file is live: open `https://www.mrwallcover.com/<key>.txt` and check it shows the key.
-2. Add a deploy hook or a final build step that runs `INDEXNOW_ENABLED=1 npm run indexnow` after `npm run build` has produced `dist/`.
-3. Watch the first run's output: `200` or `202` means accepted. Anything else is printed and the step fails.
+1. **Plan, in the build job, before deploy.** `node scripts/indexnow-ping.mjs plan dist` compares the new sitemap with the one still live. It lists only the URLs that are new or carry a new `<lastmod>`. Those dates are honest content dates, so an unchanged page is never resubmitted. This step sends nothing. If it fails, the release still deploys and only the ping is skipped.
+2. **Send, in the `indexnow` job, after deploy.** The job checks the key file is live, then posts the list. `200` or `202` means accepted. Anything else is printed and the job fails without affecting the deployment. The job is skipped when nothing changed.
+
+To send every sitemap URL once (for example the first time, or after a key change), open Actions → Deploy to GitHub Pages → Run workflow, and tick "Send every sitemap URL to IndexNow".
+
+The script posts nothing unless `INDEXNOW_ENABLED=1`, so it cannot fire by accident. Only the `indexnow` job sets it. By hand, after `npm run build`, `INDEXNOW_ENABLED=1 npm run indexnow` posts every URL in `dist/`'s sitemap.
 
 Google does not use IndexNow. The published sitemap and crawlable internal links help Google discover pages; they do not guarantee indexing. A verified Search Console owner can inspect a published URL and request indexing. See [Google’s crawl-request guidance](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl).
 

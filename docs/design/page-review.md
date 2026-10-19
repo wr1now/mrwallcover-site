@@ -643,3 +643,22 @@ All twenty Makers cards have a real Mr Wallcover work photograph from the regist
 | Route coverage, visual inspection and performance | Full published/utility route ledger covered at 390/1440px; representative composition, Makers, Guide and question screenshots inspected. Matched local before/after composition is recorded in clearer-home/composition.json: 21.39→4.68 laptop screens and 36.72→6.90 phone screens; final cold CLS 0. |
 | Source/build, environment and no-loss checks | Production build passes; 153 source and 300 built-site tests pass, including real new-page fixtures, compatibility fragments, native actions, keyboard/no-JavaScript/motion and full route coverage. Type/contrast: 2 pass; Guide release: 9 pass; Guide browser: 18 route/width and 8 footer cases pass. Phone and analytics: 2 each pass; configured strict private-name guard passes on staged source, production and review output. Guide publication: 5 pass; Makers: 4 units plus 48 browser cases, including all 20 loaded photos and exact 13/7 provenance categories. No-loss: 128→129 pages/twins, all 3,629 public media files retained; no skipped required local check. |
 | Exact-head hosted checks, publication and live verification | Pending. Do not claim a release from local implementation alone. |
+
+
+## Fuller project record on /projects/ — 19 October 2026
+
+Dorin asked for the portfolio to show the full body of work rather than the 31 case studies alone. Every job found in his own photo library and notes was put in front of him on a private review page, and he approved projects and photographs one by one. The Projects page now ends with **The fuller record**: 141 approved jobs grouped by setting (hotels, restaurants and bars, shops/showrooms/galleries, workplaces, homes, events and heritage), each with up to three of his own site photographs at thumbnail size and one plain line. 35 entries have no presentable photograph and are listed as text in their group.
+
+Photography decision: real site photographs are the evidence, so the record is photo-led, but deliberately compact (no new routes, no galleries, no image quota). Images are registered through `scripts/originals/project-record-2026-10.json` with alt text written from each photograph, re-encoded without metadata at 480/800/1200 px. Photographs from a photographer or matching a held set were left out; frames with people, documents or house numbers were not offered. Private homes are named by area only, enforced by `tests/project-record.test.ts`.
+
+Hotel record: Waldorf Astoria London Admiralty Arch and London Marriott Hotel Canary Wharf leave the held list (cleared by Dorin on 19 Oct 2026), joined by Hilton London Hyde Park, Premier Inn London Heathrow Airport Terminal 4, The Lensbury, Heythrop Park, The Marylebone and The Westminster London. The name guards follow the clearance; Landmark and the Mulberry Square address stay blocked.
+
+| Check | Status |
+| --- | --- |
+| Source tests (`npm run check`) | 156 pass |
+| Production build and AI reader mirror | Pass; mirror regenerated for /projects/, /for-ai/ and /professionals/hotels/ |
+| Built-site tests (`check:dist`, full route coverage at 390/1440px) | 300 pass |
+| Private names (`check:names`, repo and review build) | Pass, no entry found |
+| No-loss against published main | Pass: 129 → 129 pages, JSON-LD unchanged, media files 3,629 → 5,609 (new record photographs only) |
+| Typography/contrast, phone, analytics, Guide release and browser | Pass |
+| Exact-head hosted checks and live verification | Pending until the owner approves the push |

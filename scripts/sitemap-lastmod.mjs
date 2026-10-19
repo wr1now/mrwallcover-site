@@ -165,7 +165,7 @@ export function computeLastmod(root) {
     '/areas/': ['src/pages/areas/index.astro', 'src/content/areas.json'],
     '/materials/': ['src/pages/materials/index.astro', 'src/content/materials.json', 'src/content/makers-installed.json'],
     '/professionals/': ['src/pages/professionals.astro', 'src/content/professionals.json'],
-    '/projects/': ['src/pages/projects/index.astro', 'src/content/projects.json', 'src/content/makers-installed.json'],
+    '/projects/': ['src/pages/projects/index.astro', 'src/content/projects.json', 'src/content/makers-installed.json', 'src/content/project-record.json', 'src/components/ProjectRecord.astro', 'src/content/hotels.json'],
   };
   for (const [p, files] of Object.entries(pages)) set(p, ...files.map(fileDate));
   set('/advice/', ...guideDates);
