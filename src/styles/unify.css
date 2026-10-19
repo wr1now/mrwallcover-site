@@ -57,7 +57,7 @@ main form label, main .field label, main .form-note, main .guide-byline, main .g
   font-family:var(--font-sans); font-size:var(--text-button); font-weight:500; letter-spacing:.01em; line-height:1.2;
   gap:.9rem;
 }
-.site-header .header-action { min-height:calc(var(--header-height) - 14px); padding-inline:1.1rem; }
+.site-header .header-action { min-height:44px; padding-inline:1.1rem; }
 .btn span[aria-hidden], .atelier-button span[aria-hidden] { font-size:1.15em; line-height:1; }
 .btn-solid-ink, .atelier-button.ink, .work-filters button[aria-pressed="true"] { background:var(--color-ink); border-color:var(--color-ink); color:var(--color-ivory); }
 .btn-solid, .atelier-button.cream { background:var(--color-ivory); border-color:var(--color-ivory); color:var(--color-ink); }

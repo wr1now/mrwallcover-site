@@ -26,7 +26,7 @@ import {fixtureRevision} from '${resolve('src/room-studio/fixtures.ts')}';import
 import {createExampleProject,roomStudioExamples} from '${resolve('src/room-studio/examples.ts')}';
 const revision=fixtureRevision(),finished=compileRoom(revision),plainRevision=structuredClone(revision);
 plainRevision.project.finishes=[{id:'plain-paint',type:'paint',name:'Plain test paint',colour:'#eeeeee',sheen:'matte'}];plainRevision.project.assignments.forEach(a=>a.finishId='plain-paint');
-const plain=compileRoom(plainRevision),low={...finished.cameras[1],position:[3.85,.3,3.3],target:[2,1.2,1.8]};
+const plain=compileRoom(plainRevision),low={...finished.cameras[1],position:[3.85,.3,3.3],target:[2,1.2,1.8],fov:65};
 const highRevision=structuredClone(revision);highRevision.project.finishes[0].texture=${JSON.stringify(highDetailTexture)};
 // An unused library image must not reduce the active image's detail allowance.
 highRevision.project.finishes.push({...structuredClone(highRevision.project.finishes[0]),id:'unused-high-detail',texture:{...structuredClone(highRevision.project.finishes[0].texture),id:'unused-high-detail'}});

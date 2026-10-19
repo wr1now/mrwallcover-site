@@ -3,7 +3,7 @@
  * champagne-glass header, the mobile menu panel and the mobile dock.
  * Imported by global.css after glass.css. Geometry comes from tokens.css:
  *
- *   header 1440  top 16px, sides 24px, width min(80rem, 100% - 48px), height 64px, radius 18px
+ *   header 1440  top 16px, sides 24px, width min(80rem, 100% - 48px), height 104px for two navigation rows, radius 18px
  *   header 390   top 8px + safe area, sides 12px, height 56px, radius 16px; wordmark, Start, Menu only
  *   dock 390     sides 12px, bottom 12px + safe area, height 56px, radius 16px, opaque champagne, "Start" cell in ink
  */
@@ -63,19 +63,9 @@
     align-items: center;
   }
 
-  .nav-more { position: relative; }
-  .nav-materials { display: inline-flex; align-items: center; gap: 0; }
-  .nav-material-tools { justify-content: center; min-width: 44px; }
-  .nav-material-tools::after { display: none; }
-  .nav-materials .nav-more-links { left: 0; right: auto; min-width: 15rem; }
-  .mobile-link-group { display: grid; }
-  .mobile-links .mobile-material-tool { font-size: var(--text-button); padding-left: 1rem; min-height: 44px; }
-  .nav-more > summary { cursor: pointer; gap: .4rem; list-style: none; }
-  .nav-more > summary::after { content: '⌄'; font-size: 1em; }
-  .nav-more > summary::-webkit-details-marker { display: none; }
-  .nav-more-links { position: absolute; top: calc(100% + .5rem); right: 0; min-width: 13rem; padding: .5rem; border: 1px solid var(--color-line); background: var(--color-ivory); box-shadow: 0 10px 30px #0002; }
-  .nav-more-links a { display: flex; align-items: center; min-height: 44px; padding: .4rem .75rem; text-decoration: none; color: inherit; }
-  .nav-more-links a:hover, .nav-more-links a[aria-current="page"] { background: #e5e8dc; }
+  .header-nav-links { display: grid; grid-template-columns: repeat(6, max-content); column-gap: .75rem; }
+  .header-nav-links .nav-link { white-space: nowrap; }
+  .wordmark, .header-action { flex-shrink: 0; }
 
   .nav-link[aria-current="page"] {
     box-shadow: inset 0 -1px 0 var(--color-brass);
@@ -320,7 +310,7 @@
     width: 18px;
     height: 18px;
   }
-  /* Booking stays in the phone dock, footer and contact pages; the desktop bar has six buyer links and one project action. */
+  /* Booking stays in the phone dock, footer and contact pages; the desktop bar shows every requested destination and one project action. */
   .primary-nav .header-book {
     display: none;
   }

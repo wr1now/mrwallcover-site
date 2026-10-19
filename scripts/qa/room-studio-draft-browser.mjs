@@ -22,7 +22,7 @@ try {
   async function stored() {
     return page.evaluate(() => new Promise((resolve, reject) => { const request = indexedDB.open('mrwallcover-room-studio-v1', 1); request.onsuccess = () => { const db = request.result, item = db.transaction('drafts').objectStore('drafts').get('current'); item.onsuccess = () => { db.close(); resolve(item.result); }; item.onerror = () => reject(item.error); }; request.onerror = () => reject(request.error); }));
   }
-  async function click(text, selector = '.room-studio button') { const target = await page.evaluateHandle((text, selector) => [...document.querySelectorAll(selector)].find(button => button.textContent.trim() === text), text, selector); assert.ok(target.asElement(), `Button: ${text}`); await target.asElement().click(); await target.dispose(); }
+  async function click(text, selector = '.room-studio button') { await page.waitForFunction((text, selector) => [...document.querySelectorAll(selector)].some(button => button.textContent.trim() === text), {}, text, selector); const target = await page.evaluateHandle((text, selector) => [...document.querySelectorAll(selector)].find(button => button.textContent.trim() === text), text, selector); assert.ok(target.asElement(), `Button: ${text}`); await target.asElement().evaluate(element => element.scrollIntoView({block:'center',behavior:'instant'})); await target.asElement().click(); await target.dispose(); await page.evaluate(() => new Promise(requestAnimationFrame)); }
   const pause = () => new Promise(resolve => setTimeout(resolve, 700));
   const client = await page.createCDPSession(); await client.send('Page.setDownloadBehavior', { behavior: 'allow', downloadPath: output });
   async function exactDownload(name, expected, action) {

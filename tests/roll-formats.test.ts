@@ -83,10 +83,10 @@ test('the calculator page takes any width, in cm or inches, and suggests the com
   assert.equal((page.match(/data-dim="/g) ?? []).length, 17, 'every size on the form is converted to cm');
 });
 
-test('the retained footer calls it Wallpaper calculator after the six-link navigation change', () => {
+test('the shared navigation and footer both expose Wallpaper calculator', () => {
   const menu = JSON.parse(readFileSync(new URL('../src/content/navigation.json', import.meta.url), 'utf8')) as { href: string; label: string }[];
-  assert.equal(menu.length,6);
-  assert.equal(menu.some(item=>item.href==='/calculator/'),false);
+  assert.equal(menu.length,11);
+  assert.equal(menu.find(item=>item.href==='/calculator/')?.label,'Wallpaper calculator');
   const footer=readFileSync(new URL('../src/components/Footer.astro',import.meta.url),'utf8');
   assert.match(footer,/href:\s*['"]\/calculator\/['"],\s*label:\s*['"]Wallpaper calculator['"]/);
 });

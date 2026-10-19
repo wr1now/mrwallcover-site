@@ -25,7 +25,7 @@ try {
   await page.waitForFunction(() => document.querySelector('.studio-title input').value === 'Illustrative l-shape room');
   const pause = () => new Promise(resolve => setTimeout(resolve, 600));
   async function stored() { return page.evaluate(() => new Promise((resolve, reject) => { const request = indexedDB.open('mrwallcover-room-studio-v1', 1); request.onsuccess = () => { const db = request.result, item = db.transaction('drafts').objectStore('drafts').get('current'); item.onsuccess = () => { db.close(); resolve(item.result); }; item.onerror = () => reject(item.error); }; })); }
-  async function click(text) { const handle = await page.evaluateHandle(text => [...document.querySelectorAll('.room-studio button')].find(button => button.textContent.trim() === text), text); assert.ok(handle.asElement(), text); await handle.asElement().click(); await handle.dispose(); }
+  async function click(text) { const handle = await page.evaluateHandle(text => [...document.querySelectorAll('.room-studio button')].find(button => button.textContent.trim() === text), text); assert.ok(handle.asElement(), text); await handle.asElement().evaluate(element=>element.scrollIntoView({block:'center',behavior:'instant'})); await handle.asElement().click(); await handle.dispose(); await page.evaluate(()=>new Promise(requestAnimationFrame)); }
   async function disabled(text) { return page.evaluate(text => [...document.querySelectorAll('.room-studio button')].find(button => button.textContent.trim() === text)?.disabled, text); }
   async function extent(label, value) {
     const handle = await page.evaluateHandle(label => [...document.querySelectorAll('.studio-outline-sketch .studio-field')].find(field => field.textContent.startsWith(label)).querySelector('input'), label);
@@ -39,7 +39,8 @@ try {
     await page.mouse.click(position.x, position.y);
     await page.waitForFunction(count => document.querySelectorAll('.studio-outline-sketch circle').length === count, {}, previousCount + 1).catch(async e=>{await page.screenshot({path:resolve(output,'failed.png')});throw e;});
   }
-  await pause(); const before = await stored();
+  async function waitStored(predicate) { const deadline=Date.now()+15000; let value; do { value=await stored(); if(value&&predicate(value))return value; await new Promise(resolve=>setTimeout(resolve,100)); } while(Date.now()<deadline); throw new Error('Draft did not persist: '+await page.$eval('.room-studio',element=>element.innerText)); }
+  const before = await waitStored(value=>value.id===original.id);
   await click('Draw a new outline'); await extent('Drawing width', 5000); await extent('Drawing depth', 4000);
   await point(0, 0); await point(5000, 4000);
   assert.equal(await disabled('Use drawn outline'), true, 'A two-corner sketch cannot replace the room');
@@ -61,14 +62,14 @@ try {
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `Drawing layout at ${width}px`);
     await page.screenshot({ path: resolve(output, `sketch-${width}.png`), fullPage: false });
   }
-  await click('Use drawn outline'); await pause(); const after = await stored();
+  await click('Use drawn outline'); const after = await waitStored(value=>Math.max(...value.room.vertices.map(vertex=>vertex.x))===5000);
   assert.equal(after.room.vertices.length, 6); assert.equal(after.room.openings.length, 0); assert.equal(after.room.confirmed, false);
   assert.ok(signedPlanArea(after.room.vertices) > 0); assert.deepEqual(validateProject(after), []);
   assert.deepEqual(after.schemes[0].assignments, [], 'Saved combinations discard replaced wall references');
   assert.equal(Math.max(...after.room.vertices.map(v => v.x)), 5000); assert.equal(Math.max(...after.room.vertices.map(v => v.z)), 4000);
   assert.equal(after.room.vertices.every(v => v.x % 50 === 0 && v.z % 50 === 0), true);
   assert.equal(await page.$$eval('.studio-vertex', vertices => vertices.length), 6, 'Keyboard coordinate fields remain after applying');
-  await click('Undo'); await pause(); assert.deepEqual((await stored()).room, before.room, 'Undo restores original geometry and openings');
+  await click('Undo'); await waitStored(value=>JSON.stringify(value.room)===JSON.stringify(before.room)); assert.deepEqual((await stored()).room, before.room, 'Undo restores original geometry and openings');
   assert.deepEqual((await stored()).schemes, before.schemes);
   assert.deepEqual(errors, []); assert.deepEqual(blocked, []);
   await writeFile(resolve(output, 'review.json'), JSON.stringify({ preservedUntilUse: true, invalidCrossingBlocked: true, undoClearCancel: true, clockwiseLNormalized: true, measuredGrid: true, savedSchemesAdapted: true, originalRestoredByUndo: true, keyboardAlternative: true, widths: [390, 1440], errors }, null, 2));

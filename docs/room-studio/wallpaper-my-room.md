@@ -1,6 +1,6 @@
 # Wallpaper my room — delivery record
 
-Implemented on the Room Studio branch after integrating public main's concise homepage and shared design on 19 October 2026. The route remains `/room-studio/`. The six primary buyer links remain; Materials has a native, keyboard-accessible tools disclosure, and the mobile menu, Materials hub and footer link to the studio.
+Implemented on the Room Studio branch after integrating public main's concise homepage and shared design on 19 October 2026. The route remains `/room-studio/`. The owner subsequently requested full menu access: all eleven destinations now appear in the two-row desktop header and mobile menu, with a separate Start your project action. The Materials hub and shared footer also link to the studio.
 
 ## Customer journeys
 
