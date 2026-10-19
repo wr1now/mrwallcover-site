@@ -35,7 +35,10 @@ try {
     }
     await page.setViewport({width:1440,height:1000});return captures;
   }
-  const title=await page.$('.studio-title input');await title.asLocator().fill('Preserved customer draft');await title.press('Tab');
+  // Locator.fill clears the DOM value without an input event before typing;
+  // an autosave rerender can restore this controlled field in that gap.
+  const title=await page.$('.studio-title input');await title.focus();await title.evaluate(input=>input.select());await title.type('Preserved customer draft');await title.press('Tab');
+  assert.equal(await title.evaluate(input=>input.value),'Preserved customer draft','Draft name setup replaces the default before testing cancellation');
   // A slow artwork chunk must not replace a draft after the customer cancels.
   holdExamples=true;await page.click('.studio-example-card [data-room-example="willow-chimney"]');await page.waitForSelector('#studio-examples');await click('Open this example in 3D');
   const heldDeadline=Date.now()+10000;while(!heldExample&&Date.now()<heldDeadline)await new Promise(resolve=>setTimeout(resolve,100));assert(heldExample,'Held the actual lazy example module');await click('Cancel');holdExamples=false;await heldExample.continue();await page.waitForNetworkIdle({idleTime:500,timeout:20000});assert.equal(await page.$eval('.studio-title input',element=>element.value),'Preserved customer draft','Cancelled lazy import must leave the draft unchanged');

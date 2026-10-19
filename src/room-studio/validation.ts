@@ -74,13 +74,14 @@ export function validateRoom(room: RoomDefinition): ValidationIssue[] {
   room.openings.forEach((o, i) => {
     const p = `openings.${i}`;
     if (!o || typeof o !== 'object') { add(p, 'Supply a door or window definition.'); return; }
-    if (!knownKeys(o, ['id', 'wallId', 'kind', 'offsetMm', 'widthMm', 'heightMm', 'sillMm', 'revealMm'])) add(p, 'Opening data contains unsupported fields.');
+    if (!knownKeys(o, ['id', 'wallId', 'kind', 'offsetMm', 'widthMm', 'heightMm', 'sillMm', 'revealMm', 'frameMm'])) add(p, 'Opening data contains unsupported fields.');
     if (!identifier(o.id) || openingIds.has(o.id)) add(`${p}.id`, 'Each opening needs a unique safe identifier.'); openingIds.add(o.id);
     if (!ids.includes(o.wallId)) add(`${p}.wallId`, 'Choose an existing wall for this opening.');
     if (!['door', 'window'].includes(o.kind)) add(`${p}.kind`, 'Choose door or window.');
     for (const key of ['offsetMm', 'widthMm', 'heightMm', 'sillMm', 'revealMm'] as const) if (!integer(o[key])) add(`${p}.${key}`, 'Opening dimensions must be integer millimetres.');
     if (o.widthMm < 100 || o.heightMm < 100 || o.offsetMm < 0 || o.sillMm < 0 || o.revealMm < 0 || o.revealMm > 600) add(p, 'Use positive opening sizes, a non-negative position and a reveal no deeper than 600 mm.');
     if (o.kind === 'door' && o.sillMm !== 0) add(`${p}.sillMm`, 'A door starts at finished floor level.');
+    if (o.frameMm !== undefined && (!integer(o.frameMm) || o.frameMm < 0 || o.frameMm > 100 || o.frameMm * 2 >= Math.min(o.widthMm, o.heightMm) || (o.kind !== 'window' && o.frameMm > 0))) add(`${p}.frameMm`, 'Use a simple window frame from 0 to 100 mm, leaving a clear opening. Door frames are not supported.');
     if (validPoints && o.offsetMm + o.widthMm > wallLength(room, o.wallId) + 0.001) add(p, 'The opening extends past the end of its wall.');
     if (o.sillMm + o.heightMm > room.heightMm) add(p, 'The opening extends above the ceiling.');
     for (let j = 0; j < i; j++) {
@@ -114,7 +115,15 @@ function validateFinishSet(finishes: FinishAsset[], assignments: WallFinishAssig
       }
       return;
     }
-    if (!knownKeys(f, ['id', 'type', 'name', 'texture', 'calibration'])) add(path, 'Artwork data contains unsupported fields.');
+    if (!knownKeys(f, ['id', 'type', 'name', 'texture', 'calibration', 'appearance'])) add(path, 'Artwork data contains unsupported fields.');
+    if (f.appearance !== undefined) {
+      const a = f.appearance;
+      if (!knownKeys(a, ['roughness', 'metalness', 'relief']) || ![a.roughness, a.metalness].every(value => finite(value) && value >= 0 && value <= 1)) add(`${path}.appearance`, 'Illustrative roughness and metalness must both be numbers from 0 to 1, without unsupported fields.');
+      if (record(a) && a.relief !== undefined) {
+        const r = a.relief;
+        if (!knownKeys(r, ['kind', 'depthMm', 'columns', 'rows']) || !['coffered', 'faceted'].includes(r.kind) || !finite(r.depthMm) || r.depthMm < .1 || r.depthMm > 20 || ![r.columns, r.rows].every(value => integer(value) && value >= 1 && value <= 24)) add(`${path}.appearance.relief`, 'Illustrative relief needs a supported profile, depth of 0.1–20 mm, and 1–24 whole columns and rows.');
+      }
+    }
     const c = f.calibration, t = f.texture;
     if (!t || typeof t.id !== 'string' || !/^[a-z0-9_-]{1,100}$/i.test(t.id) || typeof t.sha256 !== 'string' || !/^[a-f0-9]{64}$/i.test(t.sha256) || !['image/png', 'image/jpeg', 'image/webp'].includes(t.mime) || !integer(t.widthPx) || !integer(t.heightPx) || t.widthPx < 1 || t.heightPx < 1 || t.widthPx > TEXTURE_LIMITS.maxEdge || t.heightPx > TEXTURE_LIMITS.maxEdge || t.widthPx * t.heightPx > TEXTURE_LIMITS.maxPixels) add(`${path}.texture`, 'Use an identified artwork image up to 8,192 px per side and 25 megapixels.');
     if (t) {

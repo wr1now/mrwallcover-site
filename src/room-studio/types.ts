@@ -8,6 +8,8 @@ export type RoomVertex = Point2 & { wallId: string };
 export interface Opening {
   id: string; wallId: string; kind: 'door' | 'window';
   offsetMm: number; widthMm: number; heightMm: number; sillMm: number; revealMm: number;
+  /** Optional simple window frame inside the measured opening; 0/absent is bare. */
+  frameMm?: number;
 }
 export interface RoomDefinition {
   vertices: RoomVertex[]; heightMm: number; openings: Opening[];
@@ -29,9 +31,16 @@ export interface ArtworkCalibration {
 export interface PaintFinish {
   id: string; type: 'paint'; name: string; colour: string; sheen: 'matte' | 'eggshell';
 }
+/** Illustrative response controls, never a claim of manufacturer measurements. */
+export interface ArtworkAppearance {
+  roughness: number; metalness: number;
+  /** Optional parametric geometry; compiled mesh positions remain authoritative. */
+  relief?: { kind: 'coffered' | 'faceted'; depthMm: number; columns: number; rows: number };
+}
 export interface ArtworkFinish {
   id: string; type: 'wallpaper' | 'mural'; name: string;
   texture: TextureAsset; calibration: ArtworkCalibration;
+  appearance?: ArtworkAppearance;
 }
 export interface BauwerkFinish {
   id: string; type: 'bauwerk'; name: string; colour: string;
@@ -69,6 +78,7 @@ export interface CompiledMesh {
 }
 export interface CompiledMaterial {
   id: string; type: FinishAsset['type'] | 'neutral'; colour: string; roughness: number;
+  appearance?: ArtworkAppearance;
   textureId?: string; repeat?: boolean; seed?: number;
   texturePreparation?: { crop: ArtworkCalibration['crop']; rotation: ArtworkCalibration['rotation'] };
 }

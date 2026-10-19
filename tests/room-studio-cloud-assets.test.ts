@@ -81,8 +81,12 @@ test('cloud saves reuse freshly verified owned artwork across sessions and recov
   try{
     await import('../supabase/functions/room-studio/index.ts');
     const original={...fixtureProject(),id:PROJECT};
+    const response={roughness:.42,metalness:.7,relief:{kind:'faceted' as const,depthMm:1.2,columns:4,rows:3}};
+    artwork(original).appearance=structuredClone(response);
     const first=client();await first.completeSignIn('fixture@example.test','123456');
     const saved1=await first.saveProject(original),path1=artwork(saved1.project).texture.storagePath!;
+    assert.deepEqual(artwork(saved1.project).appearance,response,'Cloud metadata preserves illustrative response while only artwork bytes are moved');
+    assert.deepEqual((projects.get(PROJECT)!.snapshot.finishes[0] as any).appearance,response);
     assert.equal(uploads,1);assert.equal(signatures,1);
     const saved2=await first.saveProject(original);
     assert.equal(uploads,1,'unchanged repeated saves do not use another upload or reservation');
@@ -96,6 +100,7 @@ test('cloud saves reuse freshly verified owned artwork across sessions and recov
     const reuseQueries=queries.filter(url=>url.searchParams.has('sha256'));
     for(const url of reuseQueries){assert.equal(url.searchParams.get('owner_id'),'eq.'+OWNER);assert.equal(url.searchParams.get('project_id'),'eq.'+PROJECT);assert.equal(url.searchParams.get('kind'),'eq.artwork');assert.equal(url.searchParams.get('state'),'eq.ready');}
     const hydrated=await first.getProject(PROJECT);
+    assert.deepEqual(artwork(hydrated.project).appearance,response,'Private image hydration preserves the complete response profile');
     objects.delete(path1);
     const restored=await first.saveProject(hydrated.project),path2=artwork(restored.project).texture.storagePath!;
     assert.equal(uploads,2,'a hydrated but missing storage path is uploaded to a fresh path');assert.notEqual(path2,path1);assert.ok(objects.has(path2));

@@ -1,8 +1,9 @@
+import { createReliefWall } from './relief.ts';
 import type { ArtworkFinish, CompiledMaterial, CompiledMesh, FinishAsset, Point2, RenderPackage, RoomDefinition, RoomRevision, StudioCamera, Vec3 } from './types.ts';
 import { pointInsideRoom, validateProject, validateRoom, wallLength } from './validation.ts';
 export { pointInsideRoom, wallLength } from './validation.ts';
 
-export const COMPILER_VERSION = 'room-studio-geometry/1.0.0';
+export const COMPILER_VERSION = 'room-studio-geometry/1.1.0';
 const mm = (value: number) => value / 1000;
 const EPS = 0.00001;
 type Pair = [number, number];
@@ -68,7 +69,7 @@ export function suggestCameras(room: RoomDefinition): StudioCamera[] {
 function material(f: FinishAsset): CompiledMaterial {
   if (f.type === 'paint') return { id: f.id, type: f.type, colour: f.colour, roughness: f.sheen === 'matte' ? 0.92 : 0.66 };
   if (f.type === 'bauwerk') return { id: f.id, type: f.type, colour: f.colour, roughness: 0.98, seed: f.seed };
-  return { id: f.id, type: f.type, colour: '#ffffff', roughness: 0.88, textureId: f.texture.id, repeat: f.type === 'wallpaper', texturePreparation: { crop: { ...f.calibration.crop }, rotation: f.calibration.rotation } };
+  return { id: f.id, type: f.type, colour: '#ffffff', roughness: 0.88, textureId: f.texture.id, repeat: f.type === 'wallpaper', texturePreparation: { crop: { ...f.calibration.crop }, rotation: f.calibration.rotation }, ...(f.appearance ? { appearance: { ...f.appearance, ...(f.appearance.relief ? { relief: { ...f.appearance.relief } } : {}) } } : {}) };
 }
 function addQuad(meshes: CompiledMesh[], id: string, surface: CompiledMesh['surface'], materialId: string, points: Vec3[], normal: Vec3, uv: Pair[] = [[0, 0], [1, 0], [1, 1], [0, 1]], wallId?: string): void {
   if (meshes.length >= 30000) throw new Error('Room geometry is too complex. Reduce the number of openings or finish bands.');
@@ -134,7 +135,12 @@ export function compileRoom(revision: RoomRevision): RenderPackage {
       };
       if (finish?.type === 'mural' && assignment && (mx < assignment.offsetXmm || mx > assignment.offsetXmm + finish.calibration.widthMm || my < assignment.offsetYmm || my > assignment.offsetYmm + finish.calibration.heightMm)) materialId = 'neutral-wall';
       const cell = `${a.wallId}-${i}-${j}`;
-      addQuad(meshes, `${cell}-inside`, 'wall', materialId, [point(x0, y0), point(x1, y0), point(x1, y1), point(x0, y1)], inward, [uvAt(x0, y0), uvAt(x1, y0), uvAt(x1, y1), uvAt(x0, y1)], a.wallId);
+      const relief = isArtwork(finish) && materialId === finish.id && y1 > room.skirtingMm && y0 < room.heightMm - room.corniceMm ? finish.appearance?.relief : undefined;
+      if (relief) {
+        meshes.push(createReliefWall(`${cell}-inside`, materialId, [point(x0, y0), point(x1, y0), point(x1, y1), point(x0, y1)], inward, [uvAt(x0, y0), uvAt(x1, y0), uvAt(x1, y1), uvAt(x0, y1)], a.wallId, relief));
+        if (meshes.reduce((sum, mesh) => sum + mesh.positions.length / 3, 0) > 250000) throw new Error('Room relief exceeds the shared 250,000 vertex budget. Reduce its detail or covered area.');
+      }
+      else addQuad(meshes, `${cell}-inside`, 'wall', materialId, [point(x0, y0), point(x1, y0), point(x1, y1), point(x0, y1)], inward, [uvAt(x0, y0), uvAt(x1, y0), uvAt(x1, y1), uvAt(x0, y1)], a.wallId);
       if (thickness > 0) addQuad(meshes, `${cell}-outside`, 'wall', 'neutral-wall', [point(x1, y0, -thickness), point(x0, y0, -thickness), point(x0, y1, -thickness), point(x1, y1, -thickness)], outward, undefined, a.wallId);
       if (y1 <= room.skirtingMm + EPS || y0 >= room.heightMm - room.corniceMm - EPS) {
         const skirting = y1 <= room.skirtingMm + EPS, surface = skirting ? 'skirting' : 'cornice', inset = skirting ? 14 : 22;
@@ -155,9 +161,26 @@ export function compileRoom(revision: RoomRevision): RenderPackage {
         if (o.kind === 'door') addQuad(meshes, `${o.id}-threshold`, 'floor', 'neutral-floor', [point(x0, 0), point(x1, 0), point(x1, 0, -depth), point(x0, 0, -depth)], [0, 1, 0], undefined, a.wallId);
       }
       if (o.kind === 'door') addQuad(meshes, `${o.id}-door`, 'reveal', 'neutral-door', [point(x0, y0, -depth), point(x1, y0, -depth), point(x1, y1, -depth), point(x0, y1, -depth)], inward, undefined, a.wallId);
+      if (o.kind === 'window' && o.frameMm) {
+        // A generic frame occupies the existing opening at the back of its
+        // reveal. The surveyed wall/cut-out and artwork UVs stay authoritative.
+        const f = o.frameMm, back = -depth, front = back + 35;
+        const beam = (name: string, left: number, right: number, bottom: number, top: number) => {
+          const face = (suffix: string, points: Vec3[], normal: Vec3) => addQuad(meshes, `${o.id}-frame-${name}-${suffix}`, 'reveal', 'neutral-trim', points, normal, undefined, a.wallId);
+          face('front', [point(left,bottom,front),point(right,bottom,front),point(right,top,front),point(left,top,front)], inward);
+          face('back', [point(right,bottom,back),point(left,bottom,back),point(left,top,back),point(right,top,back)], outward);
+          face('left', [point(left,bottom,front),point(left,top,front),point(left,top,back),point(left,bottom,back)], [-dx,0,-dz]);
+          face('right', [point(right,bottom,front),point(right,bottom,back),point(right,top,back),point(right,top,front)], [dx,0,dz]);
+          face('bottom', [point(left,bottom,front),point(left,bottom,back),point(right,bottom,back),point(right,bottom,front)], [0,-1,0]);
+          face('top', [point(left,top,front),point(right,top,front),point(right,top,back),point(left,top,back)], [0,1,0]);
+        };
+        beam('left',x0,x0+f,y0,y1); beam('right',x1-f,x1,y0,y1);
+        beam('bottom',x0+f,x1-f,y0,y0+f); beam('top',x0+f,x1-f,y1-f,y1);
+      }
     });
   });
   if (meshes.length > 30000) throw new Error('Room geometry is too complex. Reduce the number of openings or finish bands.');
+  if (meshes.reduce((sum, mesh) => sum + mesh.positions.length / 3, 0) > 250000) throw new Error('Room relief exceeds the shared 250,000 vertex budget. Reduce its detail or covered area.');
   const textures = new Map<string, ArtworkFinish['texture']>();
   usedFinishes.filter(isArtwork).forEach(f => textures.set(f.texture.id, structuredClone(f.texture)));
   return { schemaVersion: 1, compilerVersion: COMPILER_VERSION, revisionId: revision.id, projectId: project.id, units: 'metres', meshes, materials, textures: [...textures.values()], cameras: project.cameras.length ? structuredClone(project.cameras) : suggestCameras(room), lighting: project.lighting, outputs: { stills: [1920, 1080], panorama: [4096, 2048] } };

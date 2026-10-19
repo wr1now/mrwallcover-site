@@ -52,6 +52,14 @@ def validate_package(package):
     for material in materials:
         if material.get('type') not in ('neutral', 'paint', 'bauwerk', 'wallpaper', 'mural') or not re.fullmatch(r'#[a-fA-F0-9]{6}', material.get('colour', '')) or not finite(material.get('roughness')) or not 0 <= material['roughness'] <= 1:
             raise ValueError('Invalid material parameters')
+        if 'appearance' in material:
+            appearance = material['appearance']
+            if material['type'] not in ('wallpaper', 'mural') or not isinstance(appearance, dict) or set(appearance) - {'roughness', 'metalness', 'relief'} or not all(finite(appearance.get(key)) and 0 <= appearance[key] <= 1 for key in ('roughness', 'metalness')):
+                raise ValueError('Invalid illustrative material appearance')
+            if 'relief' in appearance:
+                relief = appearance['relief']
+                if not isinstance(relief, dict) or set(relief) != {'kind', 'depthMm', 'columns', 'rows'} or relief.get('kind') not in ('coffered', 'faceted') or not finite(relief.get('depthMm')) or not .1 <= relief['depthMm'] <= 20 or not all(isinstance(relief.get(key), int) and not isinstance(relief[key], bool) and 1 <= relief[key] <= 24 for key in ('columns', 'rows')):
+                    raise ValueError('Invalid illustrative material relief')
         if material.get('textureId') and material['textureId'] not in texture_ids:
             raise ValueError('Material refers to an unknown texture')
     for mesh in meshes:
@@ -194,8 +202,11 @@ def _material(bpy, data, textures, texture_dir, scratch):
     node = mat.node_tree.nodes.get("Principled BSDF")
     rgb = tuple(_linear_srgb(int(data["colour"][i:i + 2], 16) / 255) for i in (1, 3, 5))
     node.inputs["Base Color"].default_value = (*rgb, 1)
-    node.inputs["Roughness"].default_value = data["roughness"]
-    node.inputs["Metallic"].default_value = 0
+    # These optional controls are illustrative, not manufacturer BRDF measurements.
+    # Relief is already in the compiled positions; never deform it a second time.
+    appearance = data.get('appearance', {})
+    node.inputs["Roughness"].default_value = appearance.get('roughness', data["roughness"])
+    node.inputs["Metallic"].default_value = appearance.get('metalness', 0)
     texture_image = None
     if data.get("textureId"):
         path = _texture_file(textures[data["textureId"]], texture_dir, scratch)
@@ -241,6 +252,17 @@ def _configure_camera_projection(camera_data, saved_camera):
             raise ValueError('Blender vertical lens differs from the approved camera')
 
 
+def _apply_compiled_normals(mesh, item):
+    """Preserve non-flat compiler normals without changing legacy flat meshes."""
+    normals = item['normals']
+    varying = any(abs(value - normals[index % 3]) > 1e-9 for index, value in enumerate(normals))
+    precision_sensitive = any(any(abs(actual - expected) > 2e-6 for actual, expected in zip(polygon.normal, blender_point(normals[polygon.vertices[0] * 3:polygon.vertices[0] * 3 + 3]))) for polygon in mesh.polygons)
+    if varying or precision_sensitive:
+        for polygon in mesh.polygons:
+            polygon.use_smooth = True
+        mesh.normals_split_custom_set_from_vertices([blender_point(normals[i:i + 3]) for i in range(0, len(normals), 3)])
+
+
 def _verify_compiled_mesh(mesh, item):
     """Check Blender's actual mesh, rather than only hashing the input package."""
     close = lambda a, b: math.isclose(a, b, rel_tol=2e-7, abs_tol=2e-6)
@@ -255,11 +277,20 @@ def _verify_compiled_mesh(mesh, item):
         indices = item['indices'][polygon.index * 3:polygon.index * 3 + 3]
         if list(polygon.vertices) != indices:
             raise ValueError('Blender winding differs from the approved geometry')
-        expected_normal = blender_point(item['normals'][indices[0] * 3:indices[0] * 3 + 3])
-        if not all(close(a, b) for a, b in zip(polygon.normal, expected_normal)):
-            raise ValueError('Blender normal differs from the approved geometry')
+        expected_normals = [blender_point(item['normals'][vertex * 3:vertex * 3 + 3]) for vertex in indices]
+        average = [sum(normal[axis] for normal in expected_normals) for axis in range(3)]
+        if sum(actual * expected for actual, expected in zip(polygon.normal, average)) <= 0:
+            raise ValueError('Blender face points against the approved vertex normals')
         for loop_index in polygon.loop_indices:
             vertex = mesh.loops[loop_index].vertex_index
+            expected_normal = blender_point(item['normals'][vertex * 3:vertex * 3 + 3])
+            # Blender's compact split normals introduce angular quantisation.
+            # Verify finite unit vectors and a strict 0.05-degree direction bound;
+            # zero normals or collapsed faces must fail rather than be tolerated.
+            actual_normal = mesh.corner_normals[loop_index].vector
+            actual_length, expected_length = math.sqrt(sum(value * value for value in actual_normal)), math.sqrt(sum(value * value for value in expected_normal))
+            if not all(finite(value) for value in actual_normal) or not math.isclose(actual_length, 1, abs_tol=1e-5) or not math.isclose(expected_length, 1, abs_tol=1e-5) or sum(a * b for a, b in zip(actual_normal, expected_normal)) / (actual_length * expected_length) < math.cos(math.radians(.05)):
+                raise ValueError('Blender corner normal differs from the approved geometry')
             expected_uv = item['uvs'][vertex * 2:vertex * 2 + 2]
             if not all(close(a, b) for a, b in zip(uv_layer.data[loop_index].uv, expected_uv)):
                 raise ValueError('Blender UV differs from the approved geometry')
@@ -319,6 +350,7 @@ def render_package(package: dict, output_dir: str, texture_dir: str | None = Non
             for loop_index in polygon.loop_indices:
                 vertex = mesh.loops[loop_index].vertex_index
                 layer.data[loop_index].uv = item['uvs'][vertex * 2:vertex * 2 + 2]
+        _apply_compiled_normals(mesh, item)
         _verify_compiled_mesh(mesh, item)
         obj = bpy.data.objects.new(item['id'], mesh)
         scene.collection.objects.link(obj)
@@ -331,11 +363,22 @@ def render_package(package: dict, output_dir: str, texture_dir: str | None = Non
     world.use_nodes = True
     world.node_tree.nodes['Background'].inputs['Color'].default_value = (0.7, 0.77, .9, 1) if package['lighting'] == 'daylight' else (1, .75, .48, 1)
     world.node_tree.nodes['Background'].inputs['Strength'].default_value = .35 if package['lighting'] == 'daylight' else .12
+    # A brighter visible sky through openings does not add energy to the room.
+    # Lighting/reflection rays retain the existing neutral world contribution.
+    camera_background = world.node_tree.nodes.new('ShaderNodeBackground')
+    camera_background.inputs['Color'].default_value = world.node_tree.nodes['Background'].inputs['Color'].default_value
+    camera_background.inputs['Strength'].default_value = 1
+    light_path = world.node_tree.nodes.new('ShaderNodeLightPath')
+    world_mix = world.node_tree.nodes.new('ShaderNodeMixShader')
+    world.node_tree.links.new(light_path.outputs['Is Camera Ray'], world_mix.inputs[0])
+    world.node_tree.links.new(world.node_tree.nodes['Background'].outputs['Background'], world_mix.inputs[1])
+    world.node_tree.links.new(camera_background.outputs['Background'], world_mix.inputs[2])
+    world.node_tree.links.new(world_mix.outputs['Shader'], world.node_tree.nodes['World Output'].inputs['Surface'])
     scene.world = world
     light = bpy.data.lights.new('Room Studio ceiling softbox', 'AREA')
     light.energy = 90 if package['lighting'] == 'daylight' else 65
     light.shape = 'DISK'
-    light.size = min(hi[0] - lo[0], hi[2] - lo[2]) * .6
+    light.size = min(hi[0] - lo[0], hi[2] - lo[2]) * .9
     light.color = (1, .98, .95) if package['lighting'] == 'daylight' else (1, .79, .6)
     lamp = bpy.data.objects.new(light.name, light)
     scene.collection.objects.link(lamp)

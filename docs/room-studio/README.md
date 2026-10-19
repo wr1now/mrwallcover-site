@@ -60,6 +60,42 @@ strips unless the artwork already contains its stagger. Murals do not repeat.
 The original deterministic limewash texture is reproduced from its saved seed;
 the Python bake is checked against the browser algorithm.
 
+Artwork may optionally carry `appearance: { roughness, metalness, relief? }`.
+Both scalar values are finite numbers from 0 to 1; the object rejects unsupported
+fields. These are **illustrative response controls**, not manufacturer physical
+measurements, metallic certification or an accepted material proof. Omitting the
+object retains the previous artwork roughness of 0.88 and metalness of zero.
+The compiled material preserves this optional object; local JSON, saved schemes,
+immutable revisions and private cloud metadata retain it with the artwork.
+
+An optional relief profile contains only `kind` (`coffered` or `faceted`),
+`depthMm` (0.1–20), and whole `columns`/`rows` (1–24). It describes a bounded
+parametric study, never a relief scan inferred from photographed shading. The
+compiler produces the displaced surfaces and vertex normals once; Three.js and
+Blender consume those positions, normals, UVs and indices without re-deforming
+them. Blender installs the approved normals as custom split normals where needed,
+checks finite unit corner normals within 0.05 degrees (its compact storage has
+angular quantisation), and independently checks face winding. Collapsed faces or
+zero normals fail verification.
+
+Reflective artwork enables a neutral, locally generated Three.js `RoomEnvironment`
+and PMREM reflection map only while an active material has positive metalness.
+Cutaway visibility follows the surveyed wall plane, including zero-reveal openings; relief shading normals do not move that boundary.
+No remote HDR, normal map or supplier PBR file is downloaded. Replaced artwork
+maps detach before disposal; generated reflection targets, temporary geometry and
+materials are released. This generic environment illustrates reflections rather
+than measuring the customer's room. The Blender world uses a brighter background
+only for camera rays through openings; lighting and reflection rays keep the
+existing daylight/warm world energy. Its ceiling softbox spans 0.9 of the room's
+smaller plan dimension, spreading the same energy to soften concentrated
+highlights. This lighting refinement changes rendered pixels independently of
+the optional material controls.
+
+Window openings may additionally carry `frameMm`, a whole number from 0 to 100
+(windows only, default zero). It adds a generic plain frame with 35 mm depth
+inside the existing opening. It does not change the surveyed opening bounds or
+wallpaper UVs, and is not a manufacturer joinery specification.
+
 Validation errors keep a structurally editable local draft available for repair.
 An unreadable/unsupported draft is preserved for original-data download and
 cannot be overwritten by automatic saving until the customer explicitly opens
