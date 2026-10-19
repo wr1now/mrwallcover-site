@@ -484,6 +484,327 @@ Explore all published projects or [tell us about your plans](https://www.mrwallc
 
 Show all projects
 
+Complete hotel record22 named hotels
+
+Hotels on the public record, with the years and the scope where we can state them. The Lanesborough and Moxy London ExCeL are listed by name only.
+
+- [Brown's Hotel](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
+
+Mayfair · 2022–2024 · Decorating package, including wallcoverings
+
+- [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/)
+
+15 Old Bailey · 2022–2024 · Decorating package, including specialist wallcoverings
+
+- [Raffles London at The OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
+
+Whitehall · 2020–2023 · Guest room wallcoverings
+
+- [Four Seasons Hotel London at Tower Bridge](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
+
+Ten Trinity Square · 2016–2019 · Guest room and suite wallpapering
+
+- [DoubleTree by Hilton London – West End](https://www.mrwallcover.com/projects/doubletree-west-end/)
+
+Holborn · 2019 · Guest room wallcoverings
+
+DoubleTree by Hilton London – Victoria
+
+Victoria · 2023 · Guest room wallcoverings
+
+- [Hilton Garden Inn Silverstone](https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/)
+
+Silverstone · 2022 · Wallcoverings
+
+- [The Biltmore Mayfair](https://www.mrwallcover.com/projects/biltmore-mayfair/)
+
+Grosvenor Square · 2018 · Wallcoverings, including Phillip Jeffries
+
+- [Pendley Manor Hotel](https://www.mrwallcover.com/projects/pendley-manor-hotel/)
+
+Tring · December 2019 – January 2020 · Wallpapering, including damask and patterned papers
+
+- [Hilton London Metropole](https://www.mrwallcover.com/projects/hilton-london-metropole/)
+
+Paddington · 2019 · Wallcoverings, including conference-room wall panels
+
+- [Novotel London Canary Wharf](https://www.mrwallcover.com/projects/novotel-london-canary-wharf/)
+
+Canary Wharf · 2016 · Wallcovering installation
+
+Moxy London ExCeL
+
+The Lanesborough
+
+- [Jumeirah Carlton Tower](https://www.mrwallcover.com/projects/jumeirah-carlton-tower/)
+
+Knightsbridge · 2020 · Wallcovering installation
+
+- [Waldorf Astoria London Admiralty Arch](https://www.mrwallcover.com/projects/#record-waldorf-astoria-london-admiralty-arch-2026)
+
+Trafalgar Square · 2026 · Guest-suite and corridor wallpapering
+
+- [London Marriott Hotel Canary Wharf](https://www.mrwallcover.com/projects/#record-london-marriott-hotel-canary-wharf-2026)
+
+Canary Wharf · 2026 · Corridor mural wallcovering
+
+- [Heythrop Park](https://www.mrwallcover.com/projects/#record-heythrop-park-2022)
+
+Enstone, Oxfordshire · 2022 · Lift car interiors in architectural film
+
+- [The Westminster London, Curio Collection by Hilton](https://www.mrwallcover.com/projects/#record-the-westminster-london-curio-collection-by-hilto)
+
+Westminster · 2021 · Bar and lobby wallcoverings
+
+- [The Marylebone](https://www.mrwallcover.com/projects/#record-the-marylebone-2020)
+
+Marylebone · 2020 · Guest-room and staircase wallcovering
+
+- [The Lensbury](https://www.mrwallcover.com/projects/#record-the-lensbury-teddington-201819)
+
+Teddington · 2018–19 · Corridor and room decorating
+
+- [Hilton London Hyde Park](https://www.mrwallcover.com/projects/#record-hilton-london-hyde-park-2016)
+
+Bayswater · 2016 · Corridor wallcovering
+
+- [Premier Inn London Heathrow Airport Terminal 4](https://www.mrwallcover.com/projects/#record-premier-inn-london-heathrow-airport-terminal-4-2)
+
+Heathrow · 2016 · Wallcovering installation
+
+## Makers on our projects
+
+Wallcovering makers we have installed, each shown with our own photograph on [the Materials page](https://www.mrwallcover.com/materials/#makers-installed). A maker named here is not an endorsement.
+
+- [Anaglypta](https://www.mrwallcover.com/materials/#maker-anaglypta)
+- [Andrew Martin](https://www.mrwallcover.com/materials/#maker-andrew-martin)
+- [Arte](https://www.mrwallcover.com/materials/#maker-arte)
+- [Barneby Gates](https://www.mrwallcover.com/materials/#maker-barneby-gates)
+- [Bernard Thorp](https://www.mrwallcover.com/materials/#maker-bernard-thorp)
+- [Calico Wallpaper](https://www.mrwallcover.com/materials/#maker-calico-wallpaper)
+- [Celerie Kemble](https://www.mrwallcover.com/materials/#maker-celerie-kemble)
+- [Chilewich](https://www.mrwallcover.com/materials/#maker-chilewich)
+- [Christopher Farr Cloth](https://www.mrwallcover.com/materials/#maker-christopher-farr-cloth)
+- [Cole & Son](https://www.mrwallcover.com/materials/#maker-cole-son)
+- [Dedar](https://www.mrwallcover.com/materials/#maker-dedar)
+- [Eijffinger](https://www.mrwallcover.com/materials/#maker-eijffinger)
+- [Elitis](https://www.mrwallcover.com/materials/#maker-elitis)
+- [Fermoie](https://www.mrwallcover.com/materials/#maker-fermoie)
+- [Fromental](https://www.mrwallcover.com/materials/#maker-fromental)
+- [Glamora](https://www.mrwallcover.com/materials/#maker-glamora)
+- [Gucci](https://www.mrwallcover.com/materials/#maker-gucci)
+- [Harlequin](https://www.mrwallcover.com/materials/#maker-harlequin)
+- [Hermès](https://www.mrwallcover.com/materials/#maker-hermes)
+- [House of Hackney](https://www.mrwallcover.com/materials/#maker-house-of-hackney)
+- [Kelly Hoppen](https://www.mrwallcover.com/materials/#maker-kelly-hoppen)
+- [Lincrusta](https://www.mrwallcover.com/materials/#maker-lincrusta)
+- [Muraspec](https://www.mrwallcover.com/materials/#maker-muraspec)
+- [Omexco](https://www.mrwallcover.com/materials/#maker-omexco)
+- [Osborne & Little](https://www.mrwallcover.com/materials/#maker-osborne-little)
+- [Papiers de Paris](https://www.mrwallcover.com/materials/#maker-papiers-de-paris)
+- [Phillip Jeffries](https://www.mrwallcover.com/materials/#maker-phillip-jeffries)
+- [Ralph Lauren Home](https://www.mrwallcover.com/materials/#maker-ralph-lauren-home)
+- [Roberto Cavalli Home](https://www.mrwallcover.com/materials/#maker-roberto-cavalli-home)
+- [Romo](https://www.mrwallcover.com/materials/#maker-romo)
+- [Sahco](https://www.mrwallcover.com/materials/#maker-sahco)
+- [Schumacher](https://www.mrwallcover.com/materials/#maker-schumacher)
+- [Soane Britain](https://www.mrwallcover.com/materials/#maker-soane-britain)
+- [Tektura](https://www.mrwallcover.com/materials/#maker-tektura)
+- [Thibaut](https://www.mrwallcover.com/materials/#maker-thibaut)
+- [Timorous Beasties](https://www.mrwallcover.com/materials/#maker-timorous-beasties)
+- [Today Interiors (Zaniah)](https://www.mrwallcover.com/materials/#maker-today-interiors-zaniah)
+- [Versace Home](https://www.mrwallcover.com/materials/#maker-versace-home)
+- [Vescom](https://www.mrwallcover.com/materials/#maker-vescom)
+- [Wall&decò](https://www.mrwallcover.com/materials/#maker-wall-deco)
+- [Woodchip & Magnolia](https://www.mrwallcover.com/materials/#maker-woodchip-magnolia)
+- [Zoffany](https://www.mrwallcover.com/materials/#maker-zoffany)
+- [de Gournay](https://www.mrwallcover.com/materials/#maker-de-gournay)
+
+## Inside the commissions.
+
+Finished-room photographs, scope and on-site records from the projects above.
+
+Hotels and historic interiors: rooms, scope and on-site films
+
+Hotels and historic commissions
+
+## Rooms we have *finished.*
+
+- [![Narrow bedside at Brown's Hotel, Mayfair, papered in pale tree-and-leaf wallcovering, with a sculptural bronze lamp, a wall light and a green patterned headboard.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-10.jpg)](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
+
+Mayfair
+
+### [Brown’s Hotel](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
+
+- [![Junior Suite at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/owo-official-junior-suite.jpg)](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
+
+Whitehall
+
+### [Raffles London at The OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
+
+Image: Raffles London at The OWO (official)
+
+- [![Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp)](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
+
+Private Residences, City of London
+
+### [Four Seasons, Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
+
+- [![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
+
+Old Bailey
+
+### [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/)
+
+- [![The mural wrapped around an internal corner, full height.](https://www.mrwallcover.com/media/img/r/heathrow-05-800.webp)](https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/)
+
+Terminal 4
+
+### [Calico Wallpaper at Heathrow](https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/)
+
+- [![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp)](https://www.mrwallcover.com/projects/trematon-castle/)
+
+Cornwall
+
+### [The Castle of Trematon](https://www.mrwallcover.com/projects/trematon-castle/)
+
+- [![Finished room at the House of Hackney showroom, with floral wallpaper, a fireplace and printed sofas.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-06.jpg)](https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/)
+
+St Michael’s Clergy House
+
+### [House of Hackney](https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/)
+
+OUR WORK HAS A PLACE IN EXTRAORDINARY ADDRESSES
+
+[Brown’s HotelMAYFAIR](https://www.mrwallcover.com/projects/browns-hotel-mayfair/) [Raffles LondonTHE OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/) [Four SeasonsTEN TRINITY SQUARE](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/) [Hyde London CityOLD BAILEY](https://www.mrwallcover.com/projects/old-bailey-hotel/)
+
+Work delivered in partnership with Calico Wallpaper
+
+On the record
+
+## Programmes, in figures.
+
+- [Recognised**Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards**](https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg)
+- [The OWO**About 17,500 m² in 18 months**](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
+- [Four Seasons Ten Trinity Square**About 5,000 m²**](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
+- [The Biltmore Mayfair**15,000+ m²**](https://www.mrwallcover.com/projects/biltmore-mayfair/)
+- [Pendley Manor, 20 papers**30 rooms in 30 days**](https://www.mrwallcover.com/projects/pendley-manor-hotel/)
+- [DoubleTree West End, while open**30 rooms on 2 floors**](https://www.mrwallcover.com/projects/doubletree-west-end/)
+
+Brown's Hotel, Mayfair
+
+## On the wall.
+
+Photographs and short films taken on site during the decorating package, 2022–2024.
+
+![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)
+
+![Bedside in a finished guest room at Brown's Hotel, Mayfair: a dark wood chest, a wavy-stemmed table lamp and yellow cushions against pale grey painted walls.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-04.jpg)
+
+![Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-01.jpg)
+
+![Narrow bedside at Brown's Hotel, Mayfair, papered in pale tree-and-leaf wallcovering, with a sculptural bronze lamp, a wall light and a green patterned headboard.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-10.jpg)
+
+![Guest bedroom at Brown's Hotel, Mayfair, with tall sash windows, full-length linen curtains, a red armchair and an upholstered bench at the foot of the bed.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-03.jpg)
+
+![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-06.jpg)
+
+### On location: short films from Brown’s Hotel
+
+[Video: Silent 15-second film walking through a finished room at Brown's Hotel, Mayfair, papered in a cream wallcovering with a white botanical trail: the bed, a sofa under a mirror, the window and the desk.](https://www.mrwallcover.com/media/video/browns-hotel-mayfair-video-02.mp4)
+
+Silent film, 15 seconds. A walk through a finished room papered in a cream wallcovering with a white botanical trail, past the bed, a sofa under a mirror, the window and the desk.
+
+[Video: Silent 6-second film panning around a finished guest room at Brown's Hotel, Mayfair: a desk and mirror, the bed, and two armchairs by curtained windows.](https://www.mrwallcover.com/media/video/browns-hotel-mayfair-video-01.mp4)
+
+Silent film, 6 seconds. A slow pan around a finished guest room: the desk and mirror, the bed, then two armchairs by the curtained windows.
+
+[Video: Silent 7-second film of a bedroom at Brown's Hotel, Mayfair, during the works: sage wallcovering with a white leaf pattern on the walls, the floor protected, a laser level and stepladders in the room.](https://www.mrwallcover.com/media/video/browns-hotel-mayfair-video-03.mp4)
+
+Silent film, 7 seconds. A bedroom during the works, hung in a sage wallcovering with a white leaf pattern, with the floor protected and a laser level and stepladders in the room.
+
+SELECTED COMMISSIONS
+
+## Places with *presence.*
+
+[View the full portfolio](https://www.mrwallcover.com/projects/)
+
+[![Brown's Hotel in Mayfair at dusk, its entrance illuminated beneath the flags. Our photograph of the hotel exterior.](https://www.mrwallcover.com/media/atelier/browns-facade-dusk-1600.jpg) ↗](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
+
+HOSPITALITY · MAYFAIR
+
+### [Brown’s Hotel](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
+
+2022–2024
+
+A full decorating package, delivered while the hotel continued welcoming guests.
+
+Our photograph of the hotel exterior. See the commission for completed interiors.
+
+[![Classic room at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/owo-official-classic.jpg) ↗](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
+
+Hospitality
+
+### [Raffles London at The OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
+
+2020–2023
+
+Wallcovering installation
+
+Venue photograph · Raffles London at The OWO (official)
+
+[![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp) ↗](https://www.mrwallcover.com/projects/trematon-castle/)
+
+Historic interiors
+
+### [The Castle of Trematon](https://www.mrwallcover.com/projects/trematon-castle/)
+
+2019–2022
+
+Wallcovering installation contractor across the Georgian house and estate
+
+[![Cadence Oxblood behind BEVERLY 1975's tables during Brompton Design District.](https://www.mrwallcover.com/media/img/r/beverly-08-800.webp) ↗](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
+
+Design & culture
+
+### [Calico × BEVERLY 1975](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
+
+2026
+
+Wallcovering installation (feature wall)
+
+Selected work · More commissions
+
+### Hotels, a flagship, and the rooms between.
+
+Commissions already on the public record. Private clients are not named. Residential work appears only by street or area, with the owner's agreement.
+
+Also on the record
+
+- [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/). A complete decorating package for 111 guest rooms across seven storeys: paint, specialist wallcoverings and window film, delivered over about two years inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.
+- [Hilton Garden Inn Silverstone](https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/). Main wallcoverings contractor for the only hotel on the Silverstone Circuit, its rooms finished to one standard in time for the 2022 British Grand Prix.
+
+Calico Wallpaper: collaborations and installation record
+
+Calico Wallpaper
+
+## Work delivered in partnership with Calico Wallpaper.
+
+Calico Wallpaper murals and papers installed for public events and stores in London, each with its own case study.
+
+- [Ahluwalia x Calico Wallpaper: Estuary](https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/)
+- [Calico Wallpaper x BEVERLY 1975: Cadence](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
+- [Lee Broom x Calico Wallpaper: Overture](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
+- [Calico Wallpaper at Heathrow Terminal 4](https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/)
+
+“Gorgeous! Thank you so much!”
+
+[Calico Wallpaper, on the Beverly 1975 installation](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
+
+“Thank you for the update Dorin and for your hard work!”
+
+Calico Wallpaper
+
 The fuller record
 
 ## More of the work, job by job.
@@ -1665,326 +1986,5 @@ Bloomsbury · 2017
 A dark patterned feature wall and a plain textured wallcovering, hung in a room during a fit-out.
 
 Photographs were taken on site by us or our installation team; some show work in progress. Hotel and business names appear with the owner's approval; private clients are never named.
-
-Complete hotel record22 named hotels
-
-Hotels on the public record, with the years and the scope where we can state them. The Lanesborough and Moxy London ExCeL are listed by name only.
-
-- [Brown's Hotel](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
-
-Mayfair · 2022–2024 · Decorating package, including wallcoverings
-
-- [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/)
-
-15 Old Bailey · 2022–2024 · Decorating package, including specialist wallcoverings
-
-- [Raffles London at The OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
-
-Whitehall · 2020–2023 · Guest room wallcoverings
-
-- [Four Seasons Hotel London at Tower Bridge](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
-
-Ten Trinity Square · 2016–2019 · Guest room and suite wallpapering
-
-- [DoubleTree by Hilton London – West End](https://www.mrwallcover.com/projects/doubletree-west-end/)
-
-Holborn · 2019 · Guest room wallcoverings
-
-DoubleTree by Hilton London – Victoria
-
-Victoria · 2023 · Guest room wallcoverings
-
-- [Hilton Garden Inn Silverstone](https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/)
-
-Silverstone · 2022 · Wallcoverings
-
-- [The Biltmore Mayfair](https://www.mrwallcover.com/projects/biltmore-mayfair/)
-
-Grosvenor Square · 2018 · Wallcoverings, including Phillip Jeffries
-
-- [Pendley Manor Hotel](https://www.mrwallcover.com/projects/pendley-manor-hotel/)
-
-Tring · December 2019 – January 2020 · Wallpapering, including damask and patterned papers
-
-- [Hilton London Metropole](https://www.mrwallcover.com/projects/hilton-london-metropole/)
-
-Paddington · 2019 · Wallcoverings, including conference-room wall panels
-
-- [Novotel London Canary Wharf](https://www.mrwallcover.com/projects/novotel-london-canary-wharf/)
-
-Canary Wharf · 2016 · Wallcovering installation
-
-Moxy London ExCeL
-
-The Lanesborough
-
-- [Jumeirah Carlton Tower](https://www.mrwallcover.com/projects/jumeirah-carlton-tower/)
-
-Knightsbridge · 2020 · Wallcovering installation
-
-- [Waldorf Astoria London Admiralty Arch](https://www.mrwallcover.com/projects/#record-waldorf-astoria-london-admiralty-arch-2026)
-
-Trafalgar Square · 2026 · Guest-suite and corridor wallpapering
-
-- [London Marriott Hotel Canary Wharf](https://www.mrwallcover.com/projects/#record-london-marriott-hotel-canary-wharf-2026)
-
-Canary Wharf · 2026 · Corridor mural wallcovering
-
-- [Heythrop Park](https://www.mrwallcover.com/projects/#record-heythrop-park-2022)
-
-Enstone, Oxfordshire · 2022 · Lift car interiors in architectural film
-
-- [The Westminster London, Curio Collection by Hilton](https://www.mrwallcover.com/projects/#record-the-westminster-london-curio-collection-by-hilto)
-
-Westminster · 2021 · Bar and lobby wallcoverings
-
-- [The Marylebone](https://www.mrwallcover.com/projects/#record-the-marylebone-2020)
-
-Marylebone · 2020 · Guest-room and staircase wallcovering
-
-- [The Lensbury](https://www.mrwallcover.com/projects/#record-the-lensbury-teddington-201819)
-
-Teddington · 2018–19 · Corridor and room decorating
-
-- [Hilton London Hyde Park](https://www.mrwallcover.com/projects/#record-hilton-london-hyde-park-2016)
-
-Bayswater · 2016 · Corridor wallcovering
-
-- [Premier Inn London Heathrow Airport Terminal 4](https://www.mrwallcover.com/projects/#record-premier-inn-london-heathrow-airport-terminal-4-2)
-
-Heathrow · 2016 · Wallcovering installation
-
-## Makers on our projects
-
-Wallcovering makers we have installed, each shown with our own photograph on [the Materials page](https://www.mrwallcover.com/materials/#makers-installed). A maker named here is not an endorsement.
-
-- [Anaglypta](https://www.mrwallcover.com/materials/#maker-anaglypta)
-- [Andrew Martin](https://www.mrwallcover.com/materials/#maker-andrew-martin)
-- [Arte](https://www.mrwallcover.com/materials/#maker-arte)
-- [Barneby Gates](https://www.mrwallcover.com/materials/#maker-barneby-gates)
-- [Bernard Thorp](https://www.mrwallcover.com/materials/#maker-bernard-thorp)
-- [Calico Wallpaper](https://www.mrwallcover.com/materials/#maker-calico-wallpaper)
-- [Celerie Kemble](https://www.mrwallcover.com/materials/#maker-celerie-kemble)
-- [Chilewich](https://www.mrwallcover.com/materials/#maker-chilewich)
-- [Christopher Farr Cloth](https://www.mrwallcover.com/materials/#maker-christopher-farr-cloth)
-- [Cole & Son](https://www.mrwallcover.com/materials/#maker-cole-son)
-- [Dedar](https://www.mrwallcover.com/materials/#maker-dedar)
-- [Eijffinger](https://www.mrwallcover.com/materials/#maker-eijffinger)
-- [Elitis](https://www.mrwallcover.com/materials/#maker-elitis)
-- [Fermoie](https://www.mrwallcover.com/materials/#maker-fermoie)
-- [Fromental](https://www.mrwallcover.com/materials/#maker-fromental)
-- [Glamora](https://www.mrwallcover.com/materials/#maker-glamora)
-- [Gucci](https://www.mrwallcover.com/materials/#maker-gucci)
-- [Harlequin](https://www.mrwallcover.com/materials/#maker-harlequin)
-- [Hermès](https://www.mrwallcover.com/materials/#maker-hermes)
-- [House of Hackney](https://www.mrwallcover.com/materials/#maker-house-of-hackney)
-- [Kelly Hoppen](https://www.mrwallcover.com/materials/#maker-kelly-hoppen)
-- [Lincrusta](https://www.mrwallcover.com/materials/#maker-lincrusta)
-- [Muraspec](https://www.mrwallcover.com/materials/#maker-muraspec)
-- [Omexco](https://www.mrwallcover.com/materials/#maker-omexco)
-- [Osborne & Little](https://www.mrwallcover.com/materials/#maker-osborne-little)
-- [Papiers de Paris](https://www.mrwallcover.com/materials/#maker-papiers-de-paris)
-- [Phillip Jeffries](https://www.mrwallcover.com/materials/#maker-phillip-jeffries)
-- [Ralph Lauren Home](https://www.mrwallcover.com/materials/#maker-ralph-lauren-home)
-- [Roberto Cavalli Home](https://www.mrwallcover.com/materials/#maker-roberto-cavalli-home)
-- [Romo](https://www.mrwallcover.com/materials/#maker-romo)
-- [Sahco](https://www.mrwallcover.com/materials/#maker-sahco)
-- [Schumacher](https://www.mrwallcover.com/materials/#maker-schumacher)
-- [Soane Britain](https://www.mrwallcover.com/materials/#maker-soane-britain)
-- [Tektura](https://www.mrwallcover.com/materials/#maker-tektura)
-- [Thibaut](https://www.mrwallcover.com/materials/#maker-thibaut)
-- [Timorous Beasties](https://www.mrwallcover.com/materials/#maker-timorous-beasties)
-- [Today Interiors (Zaniah)](https://www.mrwallcover.com/materials/#maker-today-interiors-zaniah)
-- [Versace Home](https://www.mrwallcover.com/materials/#maker-versace-home)
-- [Vescom](https://www.mrwallcover.com/materials/#maker-vescom)
-- [Wall&decò](https://www.mrwallcover.com/materials/#maker-wall-deco)
-- [Woodchip & Magnolia](https://www.mrwallcover.com/materials/#maker-woodchip-magnolia)
-- [Zoffany](https://www.mrwallcover.com/materials/#maker-zoffany)
-- [de Gournay](https://www.mrwallcover.com/materials/#maker-de-gournay)
-
-## Inside the commissions.
-
-Finished-room photographs, scope and on-site records from the projects above.
-
-Hotels and historic interiors: rooms, scope and on-site films
-
-Hotels and historic commissions
-
-## Rooms we have *finished.*
-
-- [![Narrow bedside at Brown's Hotel, Mayfair, papered in pale tree-and-leaf wallcovering, with a sculptural bronze lamp, a wall light and a green patterned headboard.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-10.jpg)](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
-
-Mayfair
-
-### [Brown’s Hotel](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
-
-- [![Junior Suite at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/owo-official-junior-suite.jpg)](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
-
-Whitehall
-
-### [Raffles London at The OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
-
-Image: Raffles London at The OWO (official)
-
-- [![Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp)](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
-
-Private Residences, City of London
-
-### [Four Seasons, Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
-
-- [![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
-
-Old Bailey
-
-### [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/)
-
-- [![The mural wrapped around an internal corner, full height.](https://www.mrwallcover.com/media/img/r/heathrow-05-800.webp)](https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/)
-
-Terminal 4
-
-### [Calico Wallpaper at Heathrow](https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/)
-
-- [![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp)](https://www.mrwallcover.com/projects/trematon-castle/)
-
-Cornwall
-
-### [The Castle of Trematon](https://www.mrwallcover.com/projects/trematon-castle/)
-
-- [![Finished room at the House of Hackney showroom, with floral wallpaper, a fireplace and printed sofas.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-06.jpg)](https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/)
-
-St Michael’s Clergy House
-
-### [House of Hackney](https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/)
-
-OUR WORK HAS A PLACE IN EXTRAORDINARY ADDRESSES
-
-[Brown’s HotelMAYFAIR](https://www.mrwallcover.com/projects/browns-hotel-mayfair/) [Raffles LondonTHE OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/) [Four SeasonsTEN TRINITY SQUARE](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/) [Hyde London CityOLD BAILEY](https://www.mrwallcover.com/projects/old-bailey-hotel/)
-
-Work delivered in partnership with Calico Wallpaper
-
-On the record
-
-## Programmes, in figures.
-
-- [Recognised**Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards**](https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg)
-- [The OWO**About 17,500 m² in 18 months**](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
-- [Four Seasons Ten Trinity Square**About 5,000 m²**](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
-- [The Biltmore Mayfair**15,000+ m²**](https://www.mrwallcover.com/projects/biltmore-mayfair/)
-- [Pendley Manor, 20 papers**30 rooms in 30 days**](https://www.mrwallcover.com/projects/pendley-manor-hotel/)
-- [DoubleTree West End, while open**30 rooms on 2 floors**](https://www.mrwallcover.com/projects/doubletree-west-end/)
-
-Brown's Hotel, Mayfair
-
-## On the wall.
-
-Photographs and short films taken on site during the decorating package, 2022–2024.
-
-![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)
-
-![Bedside in a finished guest room at Brown's Hotel, Mayfair: a dark wood chest, a wavy-stemmed table lamp and yellow cushions against pale grey painted walls.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-04.jpg)
-
-![Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-01.jpg)
-
-![Narrow bedside at Brown's Hotel, Mayfair, papered in pale tree-and-leaf wallcovering, with a sculptural bronze lamp, a wall light and a green patterned headboard.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-10.jpg)
-
-![Guest bedroom at Brown's Hotel, Mayfair, with tall sash windows, full-length linen curtains, a red armchair and an upholstered bench at the foot of the bed.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-03.jpg)
-
-![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-06.jpg)
-
-### On location: short films from Brown’s Hotel
-
-[Video: Silent 15-second film walking through a finished room at Brown's Hotel, Mayfair, papered in a cream wallcovering with a white botanical trail: the bed, a sofa under a mirror, the window and the desk.](https://www.mrwallcover.com/media/video/browns-hotel-mayfair-video-02.mp4)
-
-Silent film, 15 seconds. A walk through a finished room papered in a cream wallcovering with a white botanical trail, past the bed, a sofa under a mirror, the window and the desk.
-
-[Video: Silent 6-second film panning around a finished guest room at Brown's Hotel, Mayfair: a desk and mirror, the bed, and two armchairs by curtained windows.](https://www.mrwallcover.com/media/video/browns-hotel-mayfair-video-01.mp4)
-
-Silent film, 6 seconds. A slow pan around a finished guest room: the desk and mirror, the bed, then two armchairs by the curtained windows.
-
-[Video: Silent 7-second film of a bedroom at Brown's Hotel, Mayfair, during the works: sage wallcovering with a white leaf pattern on the walls, the floor protected, a laser level and stepladders in the room.](https://www.mrwallcover.com/media/video/browns-hotel-mayfair-video-03.mp4)
-
-Silent film, 7 seconds. A bedroom during the works, hung in a sage wallcovering with a white leaf pattern, with the floor protected and a laser level and stepladders in the room.
-
-SELECTED COMMISSIONS
-
-## Places with *presence.*
-
-[View the full portfolio](https://www.mrwallcover.com/projects/)
-
-[![Brown's Hotel in Mayfair at dusk, its entrance illuminated beneath the flags. Our photograph of the hotel exterior.](https://www.mrwallcover.com/media/atelier/browns-facade-dusk-1600.jpg) ↗](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
-
-HOSPITALITY · MAYFAIR
-
-### [Brown’s Hotel](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
-
-2022–2024
-
-A full decorating package, delivered while the hotel continued welcoming guests.
-
-Our photograph of the hotel exterior. See the commission for completed interiors.
-
-[![Classic room at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/owo-official-classic.jpg) ↗](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
-
-Hospitality
-
-### [Raffles London at The OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
-
-2020–2023
-
-Wallcovering installation
-
-Venue photograph · Raffles London at The OWO (official)
-
-[![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp) ↗](https://www.mrwallcover.com/projects/trematon-castle/)
-
-Historic interiors
-
-### [The Castle of Trematon](https://www.mrwallcover.com/projects/trematon-castle/)
-
-2019–2022
-
-Wallcovering installation contractor across the Georgian house and estate
-
-[![Cadence Oxblood behind BEVERLY 1975's tables during Brompton Design District.](https://www.mrwallcover.com/media/img/r/beverly-08-800.webp) ↗](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
-
-Design & culture
-
-### [Calico × BEVERLY 1975](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
-
-2026
-
-Wallcovering installation (feature wall)
-
-Selected work · More commissions
-
-### Hotels, a flagship, and the rooms between.
-
-Commissions already on the public record. Private clients are not named. Residential work appears only by street or area, with the owner's agreement.
-
-Also on the record
-
-- [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/). A complete decorating package for 111 guest rooms across seven storeys: paint, specialist wallcoverings and window film, delivered over about two years inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.
-- [Hilton Garden Inn Silverstone](https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/). Main wallcoverings contractor for the only hotel on the Silverstone Circuit, its rooms finished to one standard in time for the 2022 British Grand Prix.
-
-Calico Wallpaper: collaborations and installation record
-
-Calico Wallpaper
-
-## Work delivered in partnership with Calico Wallpaper.
-
-Calico Wallpaper murals and papers installed for public events and stores in London, each with its own case study.
-
-- [Ahluwalia x Calico Wallpaper: Estuary](https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/)
-- [Calico Wallpaper x BEVERLY 1975: Cadence](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
-- [Lee Broom x Calico Wallpaper: Overture](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
-- [Calico Wallpaper at Heathrow Terminal 4](https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/)
-
-“Gorgeous! Thank you so much!”
-
-[Calico Wallpaper, on the Beverly 1975 installation](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
-
-“Thank you for the update Dorin and for your hard work!”
-
-Calico Wallpaper
 
 By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
