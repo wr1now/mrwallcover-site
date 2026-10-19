@@ -65,7 +65,7 @@ Prefer the existing content template: service and area entries use `LandingBody.
 
 The homepage has seven sections: hero, trust strip, selected hotels, Dorin Burcus, five stages, aftercare and one closing call to action. Keep longer explanations on the relevant Practice, Projects, Contact, FAQ or Materials page. Preserve their authored text, genuine photographs/films, links, credits and factual boundaries in indexable destinations; the committed public-content snapshot and relocation receipts support this check. A shorter homepage must not mean less published information.
 
-Header and mobile-menu links share `src/content/navigation.json`: Projects, Services, Materials, For professionals, Guide and Contact. Keep the AI Crawler in the footer alongside other reference utilities. The shared booking label is **Book a call**; its destination and twenty-minute duration remain unchanged. Use three text roles consistently: 18px reading text, 15px labels/controls/captions, and the established responsive serif display hierarchy. Technical/code references may retain their justified specialist treatment.
+Header and mobile-menu links share `src/content/navigation.json`: Projects, Expertise, Materials, Wallpapering, Wallpaper calculator, Wallpaper my room, For designers, Guide, About, AI Crawler and Contact. Show every destination in the two-row desktop navigation and the mobile menu, alongside the separate Start your project action; retain footer access. The shared booking label is **Book a call**; its destination and twenty-minute duration remain unchanged. Use three text roles consistently: 18px reading text, 15px labels/controls/captions, and the established responsive serif display hierarchy. Technical/code references may retain their justified specialist treatment.
 
 Suitable content routes inherit the shared question-visual policy. Physical materials, measuring, junctions and installation details can earn a useful dimensional study; generic calendar, folio and document questions use a clean typographic row without an empty right-hand rail. Keep buyer answers open and preserve native disclosure behavior elsewhere. Registered photography takes priority in Guide cards; a text-led reference card is appropriate when an object adds no explanation. Review the topic mapping and route ledger for new content.
 
@@ -183,7 +183,7 @@ To send every sitemap URL once (for example the first time, or after a key chang
 
 The script posts nothing unless `INDEXNOW_ENABLED=1`, so it cannot fire by accident. Only the `indexnow` job sets it. By hand, after `npm run build`, `INDEXNOW_ENABLED=1 npm run indexnow` posts every URL in `dist/`'s sitemap.
 
-Google does not use IndexNow. It reads the sitemap, so nothing else is needed for Google.
+Google does not use IndexNow. The published sitemap and crawlable internal links help Google discover pages; they do not guarantee indexing. A verified Search Console owner can inspect a published URL and request indexing. See [Google’s crawl-request guidance](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl).
 
 ## Pages
 

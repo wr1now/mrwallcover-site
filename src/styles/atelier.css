@@ -100,7 +100,7 @@
 .site-header .header-action { border-radius:0; font-size:12px; padding-inline:20px; min-height:40px; }
 .site-header .wordmark { font-size:29px; white-space:nowrap; }
 .site-header .reveal-phone { display:none; }
-@media(min-width:1024px){.site-header{max-width:none;width:calc(100% - 48px);height:64px}.site-header .primary-nav{gap:clamp(12px,1.7vw,27px)}}
+@media(min-width:1024px){.site-header{max-width:none;width:calc(100% - 48px);height:var(--header-height)}.site-header .primary-nav{gap:clamp(12px,1.7vw,27px)}}
 @media(max-width:1023px){.atelier-hotel-band{grid-template-columns:1fr}.atelier-hotel-band>p{text-align:center}.atelier-intro{grid-template-columns:1fr;gap:12px}.atelier-craft-image{min-height:640px}.atelier-craft-copy{padding:50px 9%}.atelier-section{padding-block:70px}.atelier-work{padding-top:15px}}
 @media(max-width:767px){
  .atelier h2{font-size:2.8rem}.atelier-section{padding:60px 24px}.atelier-kicker{font-size:9px;margin-bottom:16px}

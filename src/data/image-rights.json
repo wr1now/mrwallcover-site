@@ -60,6 +60,10 @@
     {
       "prefix": "/og-wallcovering-fire-ratings.jpg",
       "source": "scripts/og/fire-ratings-card.swift: our own typographic share card for the fire-ratings page (site colours and the site's Cormorant Garamond and Outfit fonts, both SIL Open Font Licence); no photograph."
+    },
+    {
+      "prefix": "/media/room-studio/examples/",
+      "source": "Original procedural wallpaper artwork and measured empty-room Blender illustrations, 19 October 2026; no manufacturer wallpaper, customer photograph or installation evidence. Original SVGs, calibration and image hashes are recorded in docs/design/full-menu/room-study-provenance.md."
     }
   ]
 }

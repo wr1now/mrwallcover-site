@@ -177,3 +177,8 @@
     --radius-bar: 18px;
   }
 }
+
+/* Full owner-requested desktop menu: two rows of accessible links. */
+@media (min-width: 1280px) {
+  :root { --header-height: 6.5rem; }
+}

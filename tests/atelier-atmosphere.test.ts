@@ -251,6 +251,8 @@ test('new shared content families inherit the motif while utilities stay static 
     assert.equal(await page.$eval('[data-atelier-atmosphere]', (layer:HTMLElement) => layer.hasAttribute('data-running')), false);
     assert.equal(await page.$eval('[data-atelier-atmosphere]', (element:HTMLElement) => element.getAnimations({ subtree:true }).filter(animation => animation.playState === 'running').length), 0);
     assert.ok(await page.$eval('main h1', (heading:HTMLElement) => !!heading.textContent?.trim()), 'server-rendered reading remains complete without enhancement');
+    // The full no-JS menu can occupy the first viewport; inspect the actual reading surface.
+    await page.$eval('main h1', (heading:HTMLElement) => heading.scrollIntoView({block:'center',behavior:'instant'}));
     await assertGutterPaint(page, 390, { scripts:false });
     await assertLinenPaint(page, 390, { scripts:false });
   });

@@ -35,3 +35,7 @@ dist-review/
 
 # Local visual comparison evidence
 .review-screens/
+
+# Local implementation evidence and scratch builds.
+/.tmp/
+/.review-screens/

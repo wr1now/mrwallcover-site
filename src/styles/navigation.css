@@ -3,7 +3,7 @@
  * champagne-glass header, the mobile menu panel and the mobile dock.
  * Imported by global.css after glass.css. Geometry comes from tokens.css:
  *
- *   header 1440  top 16px, sides 24px, width min(80rem, 100% - 48px), height 64px, radius 18px
+ *   header 1440  top 16px, sides 24px, width min(80rem, 100% - 48px), height 104px for two navigation rows, radius 18px
  *   header 390   top 8px + safe area, sides 12px, height 56px, radius 16px; wordmark, Start, Menu only
  *   dock 390     sides 12px, bottom 12px + safe area, height 56px, radius 16px, opaque champagne, "Start" cell in ink
  */
@@ -62,6 +62,10 @@
     display: inline-flex;
     align-items: center;
   }
+
+  .header-nav-links { display: grid; grid-template-columns: repeat(6, max-content); column-gap: .75rem; }
+  .header-nav-links .nav-link { white-space: nowrap; }
+  .wordmark, .header-action { flex-shrink: 0; }
 
   .nav-link[aria-current="page"] {
     box-shadow: inset 0 -1px 0 var(--color-brass);
@@ -306,7 +310,7 @@
     width: 18px;
     height: 18px;
   }
-  /* Booking stays in the phone dock, footer and contact pages; the desktop bar has six buyer links and one project action. */
+  /* Booking stays in the phone dock, footer and contact pages; the desktop bar shows every requested destination and one project action. */
   .primary-nav .header-book {
     display: none;
   }

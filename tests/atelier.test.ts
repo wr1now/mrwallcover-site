@@ -13,7 +13,7 @@ test('editorial homepage serves the real room first, with matching preload and p
  assert.match(work,/Our photograph of the hotel exterior/);
  assert.match(html,/href="\/wallcovering-installation-ai-crawler\/"/);
  const primary=html.match(/<nav[^>]+aria-label="Primary"[\s\S]*?<\/nav>/)![0];
- assert.doesNotMatch(primary,/AI Crawler/);
+ assert.match(primary,/href="\/wallcovering-installation-ai-crawler\/"[^>]*>AI Crawler/, 'owner requested AI Crawler in the full header menu');
  assert.match(html,/<footer[\s\S]*?href="\/wallcovering-installation-ai-crawler\/"[\s\S]*?<\/footer>/);
  assert.match(html,/prefers-reduced-motion/);
 });
