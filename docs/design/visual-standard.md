@@ -115,7 +115,7 @@ Suitable normal pages use the shared slow CSS motion after the page loads. The e
 
 ## Footer and responsive navigation
 
-The header and mobile menu share all eleven destinations from `src/content/navigation.json`: Projects, Expertise, Materials, Wallpapering, Wallpaper calculator, Wallpaper my room, For designers, Guide, About, AI Crawler and Contact. The owner explicitly requested full menu access on 19 October 2026, replacing the previous six-link direction. Show them in two desktop rows and one mobile list, with the separate Start your project action. Retain footer access and existing routes. Shared booking controls use **Book a call**, preserving the twenty-minute appointment destination and accessible duration.
+The header and mobile menu share all eleven destinations from `src/content/navigation.json`: Projects, Expertise, Materials, Wallpapering, Wallpaper calculator, Mr Wallcover Atelier, For designers, Guide, About, AI Crawler and Contact. The owner explicitly requested full menu access on 19 October 2026, replacing the previous six-link direction. Show them in two desktop rows and one mobile list, with the separate Start your project action. Retain footer access and existing routes. Shared booking controls use **Book a call**, preserving the twenty-minute appointment destination and accessible duration.
 
 `Footer.astro` is the only site footer. Keep brand and workflow concise; put contact actions next; organise short, vertical navigation lists by Explore, Expertise, Materials and Areas. Expertise may use separate Material installation and Specialist work groups. Keep legal/accessibility/image-use/AI links and the labelled Reduce visual effects preference in a compact utility area.
 

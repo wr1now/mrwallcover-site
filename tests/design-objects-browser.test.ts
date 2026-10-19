@@ -10,7 +10,7 @@ const representativeRoutes = ['/services/grasscloth-installation/', '/materials/
 // This briefing's questions concern programme, paperwork and coordination: its complete
 // answers are the useful content, with no physical detail that earns an illustrative scene.
 const typographicOnlyRoutes = ['/professionals/fit-out-contractors/'];
-const staticRoutes = ['/for-ai/', '/wallcovering-installation-ai-crawler/', '/privacy/', '/image-use/', '/accessibility/', '/calculator/', '/wallpapering/preparation/', '/wallpapering/lining-and-adhesives/', '/makers/', '/makers/de-gournay/', '/buying-routes/'];
+const staticRoutes = ['/for-ai/', '/wallcovering-installation-ai-crawler/', '/privacy/', '/image-use/', '/accessibility/', '/calculator/', '/atelier/', '/wallpapering/preparation/', '/wallpapering/lining-and-adhesives/', '/makers/', '/makers/de-gournay/', '/buying-routes/'];
 type Answer = { id: string; question: string; answer: string; pages: string[] };
 const source = JSON.parse(await readFile('src/data/buyer-answers.json', 'utf8')) as { answers: Answer[]; standing: Answer[] };
 type VisibleAnswer = Pick<Answer, 'id' | 'question' | 'answer'>;

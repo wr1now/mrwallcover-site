@@ -152,11 +152,14 @@ export function bindEnquiryForm(form: HTMLFormElement) {
     clearContext();
     if (service) { service.value = ''; service.focus(); }
   });
-  // "Send us your measurements" on the quantity calculator leaves a plain-text brief in this tab only.
-  if (params.get('from') === 'calculator') {
+  // "Send us your measurements" on the quantity calculator and "Send us this wall" on the room preview leave a
+  // plain-text brief in this tab only.
+  const briefKeys: Record<string, string> = { calculator: 'mw-quantity-brief', 'room-preview': 'mw-room-preview-brief' };
+  const briefKey = briefKeys[params.get('from') || ''];
+  if (briefKey) {
     const message = form.querySelector<HTMLTextAreaElement>('[name="message"]');
     try {
-      const brief = sessionStorage.getItem('mw-quantity-brief');
+      const brief = sessionStorage.getItem(briefKey);
       if (message && brief && !message.value) message.value = brief.slice(0, 3500);
     } catch {
       /* private mode: the note starts empty */

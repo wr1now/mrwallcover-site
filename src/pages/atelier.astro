@@ -1,0 +1,207 @@
+---
+import Action from '../components/Action.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Picture from '../components/Picture.astro';
+import WallpaperingNav from '../components/WallpaperingNav.astro';
+import Base from '../layouts/Base.astro';
+import { LINK_API_URL } from '../config';
+import { media } from '../lib/content';
+import { breadcrumbNode } from '../lib/schema';
+import '../styles/wallpapering.css';
+import '../styles/room-preview.css';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Mr Wallcover Atelier', href: '/atelier/' },
+];
+// One real, unfurnished room from a recorded commission, photographed before the works. The wall corners are
+// fractions of the photo (top-left, top-right, bottom-right, bottom-left), set by eye on 19 Oct 2026, and the
+// wall size is an estimate for the demonstration only: the visitor's own measurement replaces it.
+const demo = {
+  id: 'house-of-hackney-st-michaels-03',
+  corners: [[0.24, 0.239], [0.744, 0.222], [0.744, 0.67], [0.24, 0.693]],
+  widthCm: 420,
+  heightCm: 280,
+};
+const demoFile = media(demo.id);
+---
+
+<Base
+  title="Mr Wallcover Atelier: wallpaper in your room at true scale"
+  description="Photograph your wall, give its size and see a pattern on it at the real repeat. Made on your device, nothing uploaded; then work out the rolls or ask us."
+  path="/atelier/"
+  extraSchema={[breadcrumbNode(crumbs)]}
+>
+  <div class="container-page pb-20">
+    <header class="page-head guide-head">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Your room, your wallpaper</p>
+      <h1>Mr Wallcover Atelier</h1>
+      <p class="lede mt-5">Photograph the wall, tell us how wide it is, and see a pattern on it at its real size. The preview is made on your device and never leaves it. It shows scale and layout; a sample in the room shows colour and texture.</p>
+    </header>
+    <WallpaperingNav current="preview" />
+
+    <section class="rp" data-room-preview data-link-api={LINK_API_URL} aria-labelledby="rp-heading">
+      <h2 id="rp-heading" class="sr-only">Room preview</h2>
+      <noscript><p class="rp-warning">The preview needs JavaScript. Without it, <a href="/contact/?intent=install">send us a photo of the wall</a> with its width and height and we will advise on the pattern and the quantity, or work the rolls out in the <a href="/calculator/">calculator</a>.</p></noscript>
+
+      <div class="rp-steps">
+        <fieldset class="rp-step">
+          <legend><span class="rp-num">1</span> The room</legend>
+          <ul class="rp-ways">
+            <li class="rp-way" data-way="photo">
+              <strong>Your photo</strong>
+              <p>Stand square to the wall in daylight with the whole wall in the frame. The photo stays in this browser tab.</p>
+              <div class="field">
+                <label for="rp-photo">Choose or take a photo</label>
+                <input id="rp-photo" type="file" accept="image/*" data-photo />
+              </div>
+            </li>
+            <li class="rp-way" data-way="demo">
+              <strong>Or try our room</strong>
+              <Picture id={demo.id} sizes="(min-width: 48rem) 24rem, 100vw" />
+              <p>A room photographed before our works, so the wall is bare. Wall size for the demonstration: about {demo.widthCm} × {demo.heightCm} cm.</p>
+              <Action variant="secondary" icon="room" data-demo data-src={demoFile.jpg} data-corners={JSON.stringify(demo.corners)} data-width={demo.widthCm} data-height={demo.heightCm}>Use this room</Action>
+            </li>
+          </ul>
+
+          <div class="rp-stage" data-stage hidden>
+            <canvas data-canvas aria-label="Preview of the pattern on the wall"></canvas>
+            <svg class="rp-handles" data-handles aria-hidden="true"></svg>
+            <span class="rp-label">Illustrative preview — not a colour match</span>
+          </div>
+          <p class="rp-status" data-status aria-live="polite"></p>
+          <div class="rp-stage-actions" data-stage-actions hidden>
+            <Action variant="quiet" icon="drawing" data-detect>Find the wall for me</Action>
+            <p class="rp-note">Drag the four handles to the corners of the wall (arrow keys move a focused handle). “Find the wall” fetches a small recognition model and its runtime, about 15 MB in all, from public code libraries the first time, then runs on your device; check its result, it is a guess.</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="rp-step">
+          <legend><span class="rp-num">2</span> The wall</legend>
+          <div class="rp-fields">
+            <div class="field">
+              <label for="rp-wall-width">Width of the wall, cm</label>
+              <div class="rp-unit"><input id="rp-wall-width" name="wallWidth" type="number" inputmode="decimal" min="30" max="3000" step="1" value={demo.widthCm} data-wall-width /><span>cm</span></div>
+            </div>
+            <div class="field">
+              <label for="rp-wall-height">Height, floor to ceiling or cornice, cm</label>
+              <div class="rp-unit"><input id="rp-wall-height" name="wallHeight" type="number" inputmode="decimal" min="30" max="1000" step="1" value={demo.heightCm} data-wall-height /><span>cm</span></div>
+            </div>
+          </div>
+          <p class="rp-note">The size sets the scale of the pattern. One real measurement is enough: a standard internal door is 198 cm high, a skirting board is often 12 to 15 cm.</p>
+        </fieldset>
+
+        <fieldset class="rp-step">
+          <legend><span class="rp-num">3</span> The pattern</legend>
+          <p class="rp-note">Five ways to bring a pattern in. Each is laid on the wall at the width and repeat you set below.</p>
+          <ul class="rp-tiles" data-tiles aria-label="Illustrative patterns"></ul>
+          <div class="rp-fields">
+            <div class="field">
+              <label for="rp-link">A link to the wallpaper</label>
+              <div class="rp-unit"><input id="rp-link" type="url" inputmode="url" placeholder="https://" autocomplete="off" spellcheck="false" data-link /><Action variant="quiet" icon="search" data-link-read>Read the link</Action></div>
+              {LINK_API_URL ? (
+                <p class="form-note rp-note">The maker's or shop's product page. The address is sent to our link reader, which fetches that page, keeps no record of the address, may hold a fetched image in its cache for up to five minutes, and returns the product image and, where the page states them, the roll width, repeat and match. If the page cannot be read that way, save its image and upload or paste it; the link still goes with your enquiry. Pasting the page's text with the sizes into this box fills the fields too.</p>
+              ) : (
+                <p class="form-note rp-note">A link straight to the wallpaper image works where the maker's site allows it. For a product page, save its image and upload or paste it here, then type the roll width and repeat the page states; the link still goes with your enquiry. Pasting the page's text with the sizes into this box fills the fields too.</p>
+              )}
+            </div>
+            <div class="field">
+              <label for="rp-swatch">Your own sample or a saved image</label>
+              <input id="rp-swatch" type="file" accept="image/*" data-swatch />
+              <p class="form-note rp-note">A straight-on photo of a sample, or the maker's image of one repeat. You can also paste an image from anywhere with Ctrl or ⌘ V.</p>
+            </div>
+            <div class="field">
+              <label for="rp-type">What it is</label>
+              <select id="rp-type" data-type>
+                <option value="wallpaper">Wallpaper, repeating</option>
+                <option value="mural">Mural, one image fitted to the wall</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="rp-paint">Or a paint colour</label>
+              <input id="rp-paint" type="color" value="#7d8c6b" data-paint />
+              <p class="form-note rp-note">A flat colour on the wall, keeping the room's light. Screen colour is not a paint match.</p>
+            </div>
+          </div>
+          <div class="rp-fields rp-fields--3">
+            <div class="field">
+              <label for="rp-roll-width">Roll width, cm</label>
+              <div class="rp-unit"><input id="rp-roll-width" name="rollWidth" type="number" inputmode="decimal" min="5" max="400" step="0.5" value="53" data-roll-width /><span>cm</span></div>
+            </div>
+            <div class="field">
+              <label for="rp-repeat">Pattern repeat, cm</label>
+              <div class="rp-unit"><input id="rp-repeat" name="repeat" type="number" inputmode="decimal" min="1" max="400" step="0.5" value="64" data-repeat /><span>cm</span></div>
+            </div>
+            <div class="field">
+              <label for="rp-match">Match</label>
+              <select id="rp-match" name="match" data-match>
+                <option value="straight">Straight match</option>
+                <option value="half">Half-drop</option>
+                <option value="free">Free match</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="rp-image-width">The image shows, cm wide</label>
+              <div class="rp-unit"><input id="rp-image-width" type="number" inputmode="decimal" min="1" max="2000" step="0.5" value="53" data-image-width /><span>cm</span></div>
+            </div>
+            <div class="field">
+              <label for="rp-image-height">The image shows, cm high</label>
+              <div class="rp-unit"><input id="rp-image-height" type="number" inputmode="decimal" min="1" max="2000" step="0.5" value="64" data-image-height /><span>cm</span></div>
+              <p class="form-note rp-note">Follows the roll until you change it. Makers' pictures often show two or three drops side by side, or a square crop: say what the picture really covers.</p>
+            </div>
+            <div class="field rp-range">
+              <label for="rp-shift-x">Move the pattern across</label>
+              <input id="rp-shift-x" type="range" min="-100" max="100" step="1" value="0" data-shift-x aria-valuetext="0 cm" />
+            </div>
+            <div class="field rp-range">
+              <label for="rp-shift-y">Move the pattern up or down</label>
+              <input id="rp-shift-y" type="range" min="-100" max="100" step="1" value="0" data-shift-y aria-valuetext="0 cm" />
+            </div>
+            <div class="field rp-range">
+              <label for="rp-light">Keep the room's light and shade</label>
+              <input id="rp-light" type="range" min="0" max="1" step="0.05" value="0.85" data-light />
+            </div>
+          </div>
+          <p class="rp-note">The illustrative patterns are drawn by us for scale only; they are not products. Use your own sample for the real design. A plain border around a picture is trimmed off. Makers' pictures are rarely a seamless repeat, so joins can show between tiles in the preview that will not show on the wall; the scale is what to judge.</p>
+        </fieldset>
+
+        <fieldset class="rp-step">
+          <legend><span class="rp-num">4</span> Next</legend>
+          <p class="rp-summary" data-summary></p>
+          <div class="rp-next">
+            <Action variant="quiet" icon="download" data-download>Download the preview</Action>
+            <Action variant="secondary" icon="roll" href="/calculator/" data-calculator>Rolls for this wall</Action>
+            <Action variant="primary" href="/contact/?intent=install&from=room-preview" data-enquire>Send us this wall</Action>
+          </div>
+          <p class="rp-note">The calculator takes this wall and roll with you and works out the drops and rolls the way we cut them. The enquiry carries the wall size and pattern as a note; attach the downloaded preview if you like.</p>
+        </fieldset>
+      </div>
+    </section>
+
+    <section class="rp-how">
+      <h2>How the preview is made</h2>
+      <p>Your photo is loaded in the browser only; it is not sent to us or to anyone. If you paste a link to a product page and our link reader is switched on, that address alone is sent to it so it can fetch the page. The four corners you place on the wall tell the preview where the wall's rectangle sits in the picture, and the width and height you give turn that rectangle into real centimetres. The pattern is then laid across it drop by drop, at the roll width and repeat you set, with a half-drop staggered on alternate drops, and the light and shade of your own photograph are kept on top. Nothing is uploaded, no account is made and no cookie is set.</p>
+      <h3>What it can show</h3>
+      <ul>
+        <li>How big a repeat really is on your wall, and how many drops run across it.</li>
+        <li>Where the pattern falls at a corner, a dado or a door case, and what moving it by a few centimetres does.</li>
+        <li>A large-scale design against a small one, in the same room and the same light.</li>
+      </ul>
+      <h3>What it cannot show</h3>
+      <ul>
+        <li>Colour. Screens, phone cameras and printed paper all differ; a sample in the room, in daylight and at night, is the only colour check.</li>
+        <li>Texture and sheen. Grasscloth, silk, vinyl and flock all catch light in ways a flat image does not.</li>
+        <li>The set-out we would choose. Where the first drop goes, how the pattern is centred and how corners are turned are decisions made on site; see our guide to <a href="/advice/set-out-and-pattern-matching/">set-out and pattern matching</a>.</li>
+        <li>Anything in front of the wall. Furniture, radiators and pictures inside the four corners are papered over unless “Find the wall” has cut them out; otherwise crop the photo or move the corners.</li>
+      </ul>
+      <h3>Why we built it this way</h3>
+      <p>Room visualisers offered by makers apply their own catalogue to a photo; the small print of one widely used visualiser says the scale may vary on your own picture. We are installers: the questions we get are about scale, repeat and where the pattern lands, so this preview asks for one real measurement and is honest about the rest. For a measured room with doors, windows and several walls, <a href="/calculator/">the calculator</a> gives the quantity and cutting plan, and <a href="/contact/?intent=install">a conversation</a> gives the set-out.</p>
+      <p class="mt-5"><Action href="/contact/?intent=install" variant="primary">Discuss your room</Action></p>
+    </section>
+  </div>
+</Base>
+
+<script>
+  import '../scripts/room-preview';
+</script>
