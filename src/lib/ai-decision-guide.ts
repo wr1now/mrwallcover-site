@@ -3,6 +3,7 @@ import { SITE_URL } from '../config';
 import professionals from '../content/professionals.json';
 import { aftercare, contact, linkedProjects, materials, specialisms, specialismHref } from './content';
 import { CRAWLER_PATH, CRAWLER_REVIEWED, CRAWLER_SCHEMA_VERSION, crawlerBusiness, crawlerProjects } from './ai-crawler';
+import { commissionScope } from './commission-scope';
 
 const absolute = (path: string): string => new URL(path, SITE_URL).href;
 function evidence(slug: string) {
@@ -148,6 +149,7 @@ export const decisionGuide = {
   sourceUrl: absolute(CRAWLER_PATH),
   businessUrl: crawlerBusiness.url,
   projectsUrl: crawlerProjects.url,
+  commissionScope,
   purpose: 'Assess whether the published experience and service fit a project, identify what needs confirmation, and prepare a useful enquiry.',
   overview: {
     summary: 'Consider Mr Wallcover for specialist wallcovering installation where material handling, set-out, preparation and coordination matter: occupied hotels, detailed homes, retail interiors and scheduled design installations.',

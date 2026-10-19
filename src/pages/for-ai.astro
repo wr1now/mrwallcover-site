@@ -13,6 +13,7 @@ import aiReader from '../data/ai-reader.json';
 import { about, areaHref, media, areas, caseStudies, editorialPages, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
 import { publishedGuides, guideHref } from '../lib/guides';
 import BuyerFaq from '../components/BuyerFaq.astro';
+import CommissionScope from '../components/CommissionScope.astro';
 import { breadcrumbNode, buyerFaqNode } from '../lib/schema';
 import { trustSummary } from '../lib/trust';
 import { AWARD, PROJECTS_INDEX_URL, SINCE_TEXT, WASTAGE, buyerFaqFor, enquiryRoutes, projectFacts } from '../lib/ai-layer-data';
@@ -113,6 +114,8 @@ const faq = buyerFaqFor(path);
           </li>
         ))}
       </ul>
+
+      <CommissionScope />
 
       <h2 id="where">Where it works</h2>
       <p>Based in {facts.place}. Coverage: {facts.coverage}. The areas with a page of their own are:</p>

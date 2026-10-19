@@ -15,6 +15,7 @@ import type { APIRoute } from 'astro';
 import { ANALYTICS_SRC, SITE_URL } from '../config';
 import facts from '../data/facts.json';
 import aiReader from '../data/ai-reader.json';
+import { commissionScope } from '../lib/commission-scope';
 import professionals from '../content/professionals.json';
 import { areaHref, areas, editorialPages, faqItems, materials, privacy, projectHref, projects, specialismHref, specialisms } from '../lib/content';
 import { caseStudyCount, trustMakers, trustSummary } from '../lib/trust';
@@ -66,6 +67,7 @@ export const GET: APIRoute = () => {
     entry('Founder portrait', facts.founder.image, `${FOUNDER_NAME}, founder of ${BRAND_NAME}; photograph © ${BRAND_NAME}, reuse terms at ${abs('/image-use/')}`),
     ...(AWARD ? [entry(AWARD.text, '/about/', 'as named on the trophy; the About page shows it')] : []),
     entry('Wastage allowance', '/services/#surveying', WASTAGE.statement),
+    entry('Commission size', commissionScope.sourceUrl, `${commissionScope.minimumInstallationScope} ${commissionScope.programmeRange} ${commissionScope.confirmation} Owner-confirmed ${commissionScope.ownerConfirmed}.`),
     entry(`${caseStudyCount} published case studies`, '/projects/', 'every case study names the venue, the dates, the products and the scope; counted from the published pages'),
     entry('Makers installed', '/materials/#makers-installed', `${trustMakers.map((m) => m.name).join(', ')} and others, each linked to real install photographs`),
     ...facts.programmeFigures.map((figure) => `- [${figure.fact}](${figure.url}): source, our Instagram post ${figure.source}`),

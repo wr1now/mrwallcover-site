@@ -5,6 +5,7 @@ import Icon, { type IconName } from '../components/Icon.astro';
 import type { DesignObjectKind } from '../lib/design-object-kinds';
 import TechnicalDiagram, { type DiagramKind } from '../components/TechnicalDiagram.astro';
 import DesignStudy from '../components/DesignStudy.astro';
+import CommissionScope from '../components/CommissionScope.astro';
 import Base from '../layouts/Base.astro';
 import { areaHref, areas, editorialPages, services, specialismHref, specialisms } from '../lib/content';
 import { breadcrumbNode, serviceNodes, singleServiceNode } from '../lib/schema';
@@ -49,6 +50,7 @@ const stageVisuals: Record<string, { icon: IconName; study: DesignObjectKind; di
         {services.pillars.map((pillar) => <a href={`#${pillar.id}`}><Icon name={stageVisuals[pillar.id].icon} /><span>{pillar.title}</span></a>)}
       </nav>
     </header>
+    <div class="prose pb-12"><CommissionScope /></div>
   </div>
 
   {

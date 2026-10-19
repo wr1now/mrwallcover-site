@@ -12,6 +12,21 @@ Services
 
 Mr Wallcover is a wallpaper installer in London for hotels and prime homes. One practice can take the survey, the management, the supply and the aftercare, or join a package that already has a main contractor, as it did at The OWO.
 
+## From one room to a multi-year programme
+
+The minimum installation commission is one room. Mr Wallcover takes on single-room installations through to large programmes, including programmes spanning multiple years.
+
+Confirm the particular scope, phasing, crew and proposed start with the practice for each commission.
+
+Public rates are not stated here. Request a quotation for the particular commission.
+
+Owner-confirmed commission-scope policy. Confirmed by the owner on 19 October 2026. [Published scope policy](https://www.mrwallcover.com/wallcovering-installation-ai-crawler/#commission-scope).
+
+### Recorded programmes
+
+- [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/) — 2022–2024. Recorded role: Main decorating contractor. Company-reported project record.
+- [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/) — 2022–2024 (about two years on site; opened 2 September 2024). Recorded role: Full decorating package: decoration, specialist wallcoverings and window film. Company-reported project record.
+
 01 / 05
 
 ## Surveying

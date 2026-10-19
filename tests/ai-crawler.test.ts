@@ -341,3 +341,57 @@ test('project extracts preserve the installation wording and keep external conte
   const event = projects.find((project) => project.slug === 'calico-ahluwalia-estuary-rosewood')!;
   assert.ok(event.installationRecord.sections.some((section) => section.text.includes('We did not hang them at the hotel.')), 'workshop/venue distinction must survive extraction');
 });
+
+test('owner-confirmed one-room minimum and multi-year scope reach shared public pages and both decision datasets without changing review dates', async () => {
+  const source = await readJson<any>('src/data/commission-scope.json');
+  const business = await readJson<any>('dist/ai/business.json');
+  const guide = await readJson<any>('dist/ai/decision-guide.json');
+  const scope = business.commissionScope;
+  assert.ok(scope, 'business data carries the owner-confirmed scope policy');
+  assert.deepEqual(guide.commissionScope, scope, 'the decision guide uses the same public projection');
+  assert.equal(scope.minimumInstallationRooms, 1);
+  assert.equal(scope.minimumInstallationScope, 'The minimum installation commission is one room.');
+  assert.match(scope.programmeRange, /single-room installations.*large programmes.*multiple years/);
+  assert.equal(scope.ownerConfirmed, '2026-10-19');
+  assert.equal(scope.ownerConfirmed, source.ownerConfirmed);
+  assert.equal(scope.sourceUrl, `${SITE}${CRAWLER}#commission-scope`);
+  assert.equal(scope.basis, 'Owner-confirmed commission-scope policy');
+  assert.match(scope.confirmation, /scope, phasing, crew and proposed start/);
+  assert.match(scope.pricing, /rates are not stated.*quotation/);
+  assert.doesNotMatch(JSON.stringify(scope), /largest|unlimited|guaranteed availability|£|GBP|survey fee|response time/i);
+  for (const payload of [business, guide]) assert.equal(payload.resourceReviewed, '2026-10-10', 'a new policy confirmation is not a resource-wide content review');
+  assert.equal(business.lastReviewed, (await readJson<any>('src/data/facts.json')).lastReviewed);
+  for (const pathname of ['/services/', '/for-ai/', CRAWLER]) {
+    const html = await readFile(`dist${pathname}index.html`, 'utf8');
+    const section = html.match(/<section\b[^>]*id="commission-scope"[^>]*>([\s\S]*?)<\/section>/)?.[1];
+    assert.ok(section, `${pathname}: shared scope section`);
+    assert.match(section, /<h2\b[^>]*id="commission-scope-heading"/);
+    const text = visibleText(section);
+    for (const field of ['heading', 'minimumInstallationScope', 'programmeRange', 'confirmation', 'pricing', 'basis']) assert.ok(text.includes(scope[field]), `${pathname}: ${field}`);
+    assert.match(section, /<time datetime="2026-10-19">19 October 2026<\/time>/);
+    assert.doesNotMatch(section, /data-page-updated/, 'field confirmation does not replace the page review date');
+    const markdown = await readFile(`dist${pathname}index.md`, 'utf8');
+    assert.ok(markdown.includes(scope.minimumInstallationScope));
+    for (const project of scope.supportingProjects) {
+      for (const value of [project.title, project.projectDates, project.role, project.basis]) assert.ok(text.includes(value), `${pathname}: published project evidence`);
+      assert.ok(section.includes(`href="${project.url}"`));
+    }
+  }
+  const llms = await readFile('dist/llms.txt', 'utf8');
+  for (const field of ['minimumInstallationScope', 'programmeRange', 'confirmation', 'ownerConfirmed', 'sourceUrl']) assert.ok(llms.includes(scope[field]), `llms.txt carries ${field}`);
+});
+
+test('multi-year examples preserve the exact public installation roles and periods as company-reported evidence', async () => {
+  const scope = (await readJson<any>('dist/ai/business.json')).commissionScope;
+  assert.deepEqual(scope.supportingProjects.map((project: any) => project.url), [`${SITE}/projects/browns-hotel-mayfair/`, `${SITE}/projects/old-bailey-hotel/`]);
+  const projects = (await readJson<any>('dist/ai/projects.json')).projects;
+  for (const project of scope.supportingProjects) {
+    const record = projects.find((item: any) => item.url === project.url);
+    assert.ok(record);
+    assert.equal(project.title, record.title);
+    assert.equal(project.role, record.role);
+    assert.equal(project.projectDates, record.projectDates);
+    assert.match(project.projectDates, /^2022–2024/);
+    assert.equal(project.basis, record.installationRecord.basis);
+  }
+});
