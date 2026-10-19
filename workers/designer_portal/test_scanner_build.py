@@ -2,6 +2,7 @@
 import hashlib
 import io
 from pathlib import Path
+import subprocess
 import tempfile
 from types import SimpleNamespace
 import unittest
@@ -76,6 +77,47 @@ class ScannerBuildTest(unittest.TestCase):
                 else:
                     with self.assertRaisesRegex(RuntimeError, 'version mismatch'):
                         scanner_build._verify_executables()
+
+    def test_configuration_exists_before_freshclam_version_and_update(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            configuration = Path(temporary)/'freshclam.conf'
+            calls = []
+            def command(arguments, **_kwargs):
+                calls.append(arguments)
+                if arguments[0] == scanner_config.FRESHCLAM_EXECUTABLE:
+                    self.assertTrue(configuration.is_file(), 'FreshClam parses its config even for --version')
+                    self.assertIn('--config-file='+str(configuration), arguments)
+                return SimpleNamespace(stdout='ClamAV 1.4.6\n')
+            with patch.object(scanner_build, '_validate_architecture'), patch.object(scanner_build, '_download'), \
+                 patch.object(scanner_build, '_validate_package'), \
+                 patch.object(scanner_build, 'FRESHCLAM_CONFIGURATION', str(configuration)), \
+                 patch.object(scanner_build, '_configure', side_effect=lambda: configuration.write_text(scanner_config.FRESHCLAM_CONFIGURATION_TEXT)), \
+                 patch.object(scanner_build, '_command', side_effect=command):
+                scanner_build.install_scanner()
+            self.assertEqual(calls[1], ['/usr/local/bin/clamscan', '--version'])
+            self.assertEqual(calls[2], ['/usr/local/bin/freshclam', '--version', '--config-file='+str(configuration)])
+            self.assertEqual(calls[3], ['/usr/local/bin/freshclam', '--config-file='+str(configuration), '--stdout'])
+
+    def test_build_failure_reports_command_and_safe_bounded_stderr(self):
+        private = 'PRIVATE-CREDENTIAL-OR-PROJECT-CONTENT'
+        for stderr, expected in (("ERROR: Can't open/parse the config file /private/"+private, 'cannot open or parse scanner configuration'),
+                                  ('loader: error while loading shared libraries: libclamav.so.12: cannot open shared object file: '+private, 'shared library unavailable: libclamav.so.12'),
+                                  (private*1000, 'unrecognized diagnostic withheld')):
+            with self.subTest(expected=expected), \
+                 patch.object(scanner_build.subprocess, 'run', side_effect=subprocess.CalledProcessError(1, ['ignored'], stderr=stderr)):
+                with self.assertRaises(RuntimeError) as failure:
+                    scanner_build._command(['/usr/local/bin/freshclam', '--version'])
+                message = str(failure.exception)
+                self.assertIn('freshclam exited 1', message)
+                self.assertIn(expected, message)
+                self.assertNotIn(private, message)
+                self.assertLess(len(message), 300)
+
+    def test_unapproved_commands_cannot_reuse_public_build_diagnostics(self):
+        with patch.object(scanner_build.subprocess, 'run') as command:
+            with self.assertRaisesRegex(RuntimeError, 'Unapproved'):
+                scanner_build._command(['/unapproved/show-private-environment'])
+            command.assert_not_called()
 
     def test_dedicated_freshclam_config_preserves_database_validation(self):
         text = scanner_config.FRESHCLAM_CONFIGURATION_TEXT

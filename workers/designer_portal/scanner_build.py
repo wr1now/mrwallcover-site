@@ -21,11 +21,36 @@ from scanner_config import (
 )
 
 
+def _safe_build_diagnostic(stderr):
+    """Summarize known public setup failures; never echo arbitrary child output."""
+    if isinstance(stderr, bytes):
+        stderr = stderr.decode('utf-8', errors='replace')
+    text = (stderr or '')[:4096]
+    missing = re.search(r'error while loading shared libraries: ([A-Za-z0-9_.+-]{1,96}): cannot open shared object file', text)
+    if missing:
+        return 'shared library unavailable: '+missing.group(1)
+    version = re.search(r"version [`']((?:GLIBC|GLIBCXX|CXXABI)_[0-9.]{1,24})['`] not found", text)
+    if version:
+        return 'required library ABI unavailable: '+version.group(1)
+    if "Can't open/parse the config file" in text:
+        return 'cannot open or parse scanner configuration'
+    if 'Permission denied' in text:
+        return 'permission denied during image setup'
+    return 'unrecognized diagnostic withheld' if text else 'no stderr diagnostic'
+
+
 def _command(arguments, *, timeout=120):
+    label = Path(arguments[0]).name
+    if label not in {'dpkg', 'dpkg-deb', 'clamscan', 'freshclam', 'groupadd', 'useradd'}:
+        raise RuntimeError('Unapproved scanner image setup command')
     try:
         return subprocess.run(arguments, check=True, capture_output=True, text=True, timeout=timeout)
-    except (OSError, subprocess.SubprocessError):
-        raise RuntimeError('Scanner image setup command failed; image must not be deployed') from None
+    except subprocess.CalledProcessError as error:
+        raise RuntimeError(f'Scanner image setup {label} exited {error.returncode}: {_safe_build_diagnostic(error.stderr)}; image must not be deployed') from None
+    except subprocess.TimeoutExpired:
+        raise RuntimeError(f'Scanner image setup {label} timed out; image must not be deployed') from None
+    except OSError:
+        raise RuntimeError(f'Scanner image setup {label} could not start; image must not be deployed') from None
 
 
 def _validate_architecture():
@@ -64,7 +89,11 @@ def _validate_package(package):
 
 def _verify_executables():
     for executable in (CLAMSCAN_EXECUTABLE, FRESHCLAM_EXECUTABLE):
-        version = _command([executable, '--version']).stdout
+        arguments = [executable, '--version']
+        if executable == FRESHCLAM_EXECUTABLE:
+            # FreshClam parses its configuration before handling --version.
+            arguments.append('--config-file='+FRESHCLAM_CONFIGURATION)
+        version = _command(arguments).stdout
         if not re.match(r'^ClamAV '+re.escape(CLAMAV_VERSION)+r'(?:/|\s|$)', version):
             raise RuntimeError('Scanner executable version mismatch; image must not be deployed')
 
@@ -98,8 +127,8 @@ def install_scanner():
         _download(package)
         _validate_package(package)
         _command(['dpkg', '--install', str(package)])
-    _verify_executables()
     _configure()
+    _verify_executables()
     # Dedicated CLI-only configuration: no NotifyClamd or daemon, and retain
     # FreshClam's signature verification and database load testing.
     _command([FRESHCLAM_EXECUTABLE, '--config-file='+FRESHCLAM_CONFIGURATION, '--stdout'], timeout=300)
