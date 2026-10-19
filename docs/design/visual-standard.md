@@ -33,6 +33,8 @@ Use an anchor with `href` for navigation and a button for an action. Keep ordina
 
 Keep controls at least 44px tall where practical, with generous hit areas, consistent padding and icon alignment. Show distinct hover, focus-visible, active, selected and disabled states as relevant. Preserve an obvious keyboard focus ring and WCAG AA contrast. Check controls over actual photographs: a transparent border alone is not enough against a busy image.
 
+Interactive editing workspaces can set `data-dock-clearance` on their container. The shared mobile dock then hides while a control in that workspace has focus, preserving keyboard access at narrow and zoomed layouts, and returns when focus leaves. Use this shared behaviour instead of a route-specific dock override.
+
 Icons accompany text labels and use the shared stroke family. Use an arrow for navigation, a download symbol for a file, a contact symbol for email or booking and plus/minus or a native marker for disclosure. Do not give every control the same diagonal arrow. Decorative icons are hidden from assistive technology. An icon-only control requires an accessible name and a real need for that compact treatment.
 
 Question rows use `QuestionVisual.astro` and the shared topic/presentation policy. A physical material or detail can earn a substantial right-hand study, such as measuring, quantities, joins or repairs. Generic timing, folio and document questions are typographic through `dimensionalStudyHelps`; they must not reserve an empty study frame or rail. Static factual routes retain their drawing policy. All question treatments remain decorative, hidden from assistive technology and separate from the actual answer and native disclosure marker. Do not add a certification badge or illustration as evidence of a performance claim.
@@ -113,7 +115,7 @@ Suitable normal pages use the shared slow CSS motion after the page loads. The e
 
 ## Footer and responsive navigation
 
-The header and mobile menu share six buyer links from `src/content/navigation.json`: Projects, Services, Materials, For professionals, Guide and Contact. Keep AI Crawler in the footer utility area and retain access to all former destinations in relevant hubs/footer groups. Shared booking controls use **Book a call**, preserving the twenty-minute appointment destination and accessible duration.
+The header and mobile menu share all eleven destinations from `src/content/navigation.json`: Projects, Expertise, Materials, Wallpapering, Wallpaper calculator, Wallpaper my room, For designers, Guide, About, AI Crawler and Contact. The owner explicitly requested full menu access on 19 October 2026, replacing the previous six-link direction. Show them in two desktop rows and one mobile list, with the separate Start your project action. Retain footer access and existing routes. Shared booking controls use **Book a call**, preserving the twenty-minute appointment destination and accessible duration.
 
 `Footer.astro` is the only site footer. Keep brand and workflow concise; put contact actions next; organise short, vertical navigation lists by Explore, Expertise, Materials and Areas. Expertise may use separate Material installation and Specialist work groups. Keep legal/accessibility/image-use/AI links and the labelled Reduce visual effects preference in a compact utility area.
 

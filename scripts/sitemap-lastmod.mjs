@@ -158,6 +158,7 @@ export function computeLastmod(root) {
     '/advice/': ['src/pages/advice/index.astro'],
     '/wallpapering/': ['src/pages/wallpapering/index.astro', 'src/data/wallpapering.json'],
     '/calculator/': ['src/pages/calculator.astro', 'src/lib/quantity.ts', 'src/lib/materials.ts', 'src/data/wallpapering.json'],
+    '/room-studio/': ['src/pages/room-studio.astro', 'src/room-studio/page.json', 'src/data/room-studio-previews.json'],
     '/wallpapering/preparation/': ['src/pages/wallpapering/preparation.astro', 'src/data/wallpapering.json'],
     '/wallpapering/lining-and-adhesives/': ['src/pages/wallpapering/lining-and-adhesives.astro', 'src/data/wallpapering.json'],
     '/advice/quantities/': ['src/pages/advice/quantities.astro'],

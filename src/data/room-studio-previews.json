@@ -1,0 +1,20 @@
+[
+  {
+    "id": "willow-chimney",
+    "name": "Willow lattice",
+    "layout": "Chimney breast and three windows",
+    "description": "A sage botanical repeat follows the wall faces and chimney returns."
+  },
+  {
+    "id": "ochre-lshape",
+    "name": "Ochre cadence",
+    "layout": "L-shaped room",
+    "description": "A measured half-drop pattern continues around the inner corner and openings."
+  },
+  {
+    "id": "indigo-bay",
+    "name": "Indigo arcade",
+    "layout": "Angled bay and four windows",
+    "description": "An original indigo fan pattern retains its scale across angled walls."
+  }
+]

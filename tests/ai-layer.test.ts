@@ -608,6 +608,8 @@ test('every published page shows one author and date line: the page\'s own date 
   }
   // Editorial pages that carry their own `updated` date (the ad landing pages) show it as "Last updated".
   const editorialDates = new Map<string, string>();
+  const studioPage = JSON.parse(await readFile('src/room-studio/page.json', 'utf8')) as { updated: string };
+  editorialDates.set('/room-studio/', studioPage.updated);
   for (const name of (await readdir('src/content/pages')).filter((entry) => entry.endsWith('.md'))) {
     const fm = JSON.parse((await readFile(`src/content/pages/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { path: string; draft?: boolean; updated?: string };
     if (!fm.draft && fm.updated) editorialDates.set(fm.path, fm.updated);
