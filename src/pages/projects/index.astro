@@ -1,6 +1,7 @@
 ---
 import Icon from '../../components/Icon.astro';
 import HomeProjectEditorial from '../../components/HomeProjectEditorial.astro';
+import ProjectRecord from '../../components/ProjectRecord.astro';
 import { moreWork } from '../../data/home-editorial';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Picture from '../../components/Picture.astro';
@@ -71,6 +72,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
         <a class="work-record-link" href="#hotels">View the complete hotel record <span aria-hidden="true">↓</span></a>
       </div>
       <p class="work-stories-link"><a href="#commission-stories-heading">Inside the commissions: photographs, films and Calico collaborations</a></p>
+      <p class="work-stories-link"><a href="#project-record">The fuller project record: more hotels, restaurants, shops, workplaces and homes</a></p>
     </header>
     <div class="work-controls" data-project-controls hidden>
       <div class="work-filters" role="group" aria-label="Filter projects by setting">
@@ -196,10 +198,13 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
     })();
   </script>
   <HomeProjectEditorial />
+  <!-- The fuller record closes the page, after the hotel record, makers and commission stories. -->
+  <div class="container-page project-record-close"><ProjectRecord /></div>
 </Base>
 
 <style>
   .work-explorer { padding-bottom: 6rem; }
+  .project-record-close { padding-bottom: 6rem; }
   .work-heading { padding-bottom: 2.5rem; }
   .work-introduction { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
   .work-introduction .lede { max-width: 43rem; margin: 1.25rem 0 0; }

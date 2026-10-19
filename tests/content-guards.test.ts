@@ -44,7 +44,9 @@ const forbidden = [
   /third[\s-]party/i,
   /subcontract/i,
   /Threadneedle/i,
-  /Mulberry/i,
+  // The Mulberry Regent Street store was cleared for publication by Dorin on 19 Oct 2026; the street address
+  // of a private residence that shares the word stays out.
+  /Mulberry\s+Square/i,
   /\bAethos\b/i,
   /\b\d{1,4}[a-z]?\s+St\.?\s?George'?s?\s+Square/i,
   /\b\d{1,4}[a-z]?\s+Inverness\s+Terrace/i,
@@ -204,8 +206,11 @@ test('held hotels stay out of the public content module', async () => {
   assert.match(hotels, /The Lanesborough/);
   assert.match(hotels, /Pendley Manor Hotel/);
   assert.match(hotels, /Moxy London ExCeL/);
-  // Metropole and Novotel Canary Wharf were cleared by Dorin on 11 Oct 2026; the held Marriott stays out.
-  assert.doesNotMatch(hotels, /Admiralty|Marriott|Koroseal|Landmark|Threadneedle/);
+  // Metropole and Novotel Canary Wharf were cleared by Dorin on 11 Oct 2026. Waldorf Astoria London Admiralty Arch and
+  // London Marriott Hotel Canary Wharf were cleared on 19 Oct 2026 and moved from the held list to the record.
+  assert.doesNotMatch(hotels, /Koroseal|Landmark|Threadneedle/);
+  assert.match(hotels, /Waldorf Astoria London Admiralty Arch/);
+  assert.match(hotels, /London Marriott Hotel Canary Wharf/);
   assert.equal((JSON.parse(held).items as { name: string }[]).some((item) => /Metropole/.test(item.name)), false);
   const hotelItems = JSON.parse(hotels).items as { name: string; nameOnly: boolean; years: string; scope: string }[];
   const moxy = hotelItems.find((item) => item.name === 'Moxy London ExCeL');
@@ -216,7 +221,7 @@ test('held hotels stay out of the public content module', async () => {
   assert.equal(pendley?.nameOnly, false);
   assert.match(pendley?.scope ?? '', /Wallpapering/);
   assert.doesNotMatch(held, /"publish": true/);
-  assert.match(held, /Waldorf Astoria London Admiralty Arch/);
+  assert.equal((JSON.parse(held).items as { name: string }[]).some((item) => /Waldorf Astoria|Marriott/.test(item.name)), false, 'cleared hotels leave the held list');
 });
 
 test('exterior works lists the two cleared projects and the Penny Morrison showroom, published 11 Oct 2026', async () => {

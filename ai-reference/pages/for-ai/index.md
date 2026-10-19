@@ -358,6 +358,14 @@ Hotels listed on [the projects page](https://www.mrwallcover.com/projects/#hotel
 - [Hilton London Metropole](https://www.mrwallcover.com/projects/hilton-london-metropole/), 2019, Paddington. Wallcoverings, including conference-room wall panels
 - [Novotel London Canary Wharf](https://www.mrwallcover.com/projects/novotel-london-canary-wharf/), 2016, Canary Wharf. Wallcovering installation
 - [Jumeirah Carlton Tower](https://www.mrwallcover.com/projects/jumeirah-carlton-tower/), 2020, Knightsbridge. Wallcovering installation
+- [Waldorf Astoria London Admiralty Arch](https://www.mrwallcover.com/projects/#record-waldorf-astoria-london-admiralty-arch-2026), 2026, Trafalgar Square. Guest-suite and corridor wallpapering
+- [London Marriott Hotel Canary Wharf](https://www.mrwallcover.com/projects/#record-london-marriott-hotel-canary-wharf-2026), 2026, Canary Wharf. Corridor mural wallcovering
+- [Heythrop Park](https://www.mrwallcover.com/projects/#record-heythrop-park-2022), 2022, Enstone, Oxfordshire. Lift car interiors in architectural film
+- [The Westminster London, Curio Collection by Hilton](https://www.mrwallcover.com/projects/#record-the-westminster-london-curio-collection-by-hilto), 2021, Westminster. Bar and lobby wallcoverings
+- [The Marylebone](https://www.mrwallcover.com/projects/#record-the-marylebone-2020), 2020, Marylebone. Guest-room and staircase wallcovering
+- [The Lensbury](https://www.mrwallcover.com/projects/#record-the-lensbury-teddington-201819), 2018–19, Teddington. Corridor and room decorating
+- [Hilton London Hyde Park](https://www.mrwallcover.com/projects/#record-hilton-london-hyde-park-2016), 2016, Bayswater. Corridor wallcovering
+- [Premier Inn London Heathrow Airport Terminal 4](https://www.mrwallcover.com/projects/#record-premier-inn-london-heathrow-airport-terminal-4-2), 2016, Heathrow. Wallcovering installation
 
 ## Guides
 
@@ -406,7 +414,7 @@ There is no flat rate per roll. The quotation comes from a site survey or from d
 
 ### Which London hotels has Mr Wallcover worked on?
 
-There are 11 named hotels on the public record: Brown's Hotel, Mayfair (main decorating contractor, 2022–2024, Rocco Forte Hotels); Hyde London City, 15 Old Bailey (full decorating package, specialist wallcoverings and window film, 111 rooms, sample room November 2022 to August 2024); Raffles London at The OWO (wallcovering installation, 2020–2023); Four Seasons Hotel London at Ten Trinity Square, now at Tower Bridge (guest room and suite wallpapering, 2016–2019); DoubleTree by Hilton London – West End (2019); DoubleTree by Hilton London – Victoria (March to September 2023); Hilton Garden Inn Silverstone (main wallcoverings contractor, 2022); The Biltmore Mayfair (2018, including Phillip Jeffries); and Pendley Manor Hotel (December 2019 – January 2020). The Lanesborough and Moxy London ExCeL are listed by name only.
+There are 22 named hotels on the public record: Brown's Hotel, Mayfair (main decorating contractor, 2022–2024, Rocco Forte Hotels); Hyde London City, 15 Old Bailey (full decorating package, specialist wallcoverings and window film, 111 rooms, sample room November 2022 to August 2024); Raffles London at The OWO (wallcovering installation, 2020–2023); Four Seasons Hotel London at Ten Trinity Square, now at Tower Bridge (guest room and suite wallpapering, 2016–2019); DoubleTree by Hilton London – West End (2019); DoubleTree by Hilton London – Victoria (March to September 2023); Hilton Garden Inn Silverstone (main wallcoverings contractor, 2022); The Biltmore Mayfair (2018, including Phillip Jeffries); Pendley Manor Hotel (December 2019 – January 2020); Hilton London Metropole, Paddington (2019); Novotel London Canary Wharf (2016); Jumeirah Carlton Tower, Knightsbridge (2020); Waldorf Astoria London Admiralty Arch (2026); London Marriott Hotel Canary Wharf (2026); Heythrop Park, Oxfordshire (2022); The Westminster London, Curio Collection by Hilton (2021); The Marylebone (2020); The Lensbury, Teddington (2018–2019); Hilton London Hyde Park (2016); and Premier Inn London Heathrow Airport Terminal 4 (2016). The Lanesborough and Moxy London ExCeL are listed by name only.
 
 ### Can you work nights or out of hours?
 
