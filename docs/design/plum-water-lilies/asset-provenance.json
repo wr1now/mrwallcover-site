@@ -1,0 +1,34 @@
+{
+  "created": "2026-10-19",
+  "method": "Original OpenAI built-in generated transparent artwork. Complete compositions proportionally reduced to576px width and single-encoded WebP quality78/alpha78/effort6. Original PNGs retained locally; no maker reference or project image supplied.",
+  "assets": [
+    {
+      "path": "public/media/atelier-botanicals/plum-blossom.webp",
+      "width": 576,
+      "height": 864,
+      "bytes": 84132,
+      "alpha": true,
+      "sha256": "195765e30591192e68bdc6532330c260bca6617a6b89b11ca4b67df066f195d8",
+      "sourceFile": "exec-77c07593-9569-4b7d-b027-36ee0ef9ff47.png",
+      "sourceSha256": "3acf25acad2dff4cbc1fb99e88521e356ccf5632511f7e97be9f03ee28eec684"
+    },
+    {
+      "path": "public/media/atelier-botanicals/water-lilies.webp",
+      "width": 576,
+      "height": 384,
+      "bytes": 34016,
+      "alpha": true,
+      "sha256": "e4db37b396a0ad659302b044500d3f4f8a53a6a8690c852c2ddc392cc80c4b34",
+      "sourceFile": "exec-f79d14e5-c7e6-4d17-84f6-5edcc743c11e.png",
+      "sourceSha256": "77850dae9e8812a6fb6fbbc3657d79726109c9880b7253c3b98362902bdfa648"
+    }
+  ],
+  "activeBackgroundBytes": 284804,
+  "activeAssets": [
+    "ivory-linen.webp",
+    "branch-birds.webp",
+    "plum-blossom.webp",
+    "water-lilies.webp"
+  ],
+  "retainedUnusedAsset": "blossom-sprig.webp is retained at its public URL for no-loss; no longer requested by the shared theme."
+}
