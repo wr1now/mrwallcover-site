@@ -374,7 +374,7 @@ test('robots.txt names every required crawler with the same Disallow lines as th
   assert.doesNotMatch(robots, /Disallow: \/\s*$/m, 'nothing is blocked site-wide');
 });
 
-test('IndexNow: one 32-hex key file served from the site root, a script that is a no-op unless enabled, and no call from the Pages workflow', async () => {
+test('IndexNow: one 32-hex key file served from the site root, a script that is a no-op unless enabled, and a ping only after the Pages deploy', async () => {
   const keyFiles = (await readdir('public')).filter((name) => /^[0-9a-f]{32}\.txt$/.test(name));
   assert.equal(keyFiles.length, 1, 'exactly one key file');
   const key = keyFiles[0].slice(0, -4);
@@ -388,16 +388,50 @@ test('IndexNow: one 32-hex key file served from the site root, a script that is 
   const pkg = JSON.parse(await readFile('package.json', 'utf8')) as { scripts: Record<string, string> };
   assert.equal(pkg.scripts.indexnow, 'node scripts/indexnow-ping.mjs dist');
   for (const lifecycle of ['build', 'postbuild', 'prebuild']) assert.doesNotMatch(pkg.scripts[lifecycle] ?? '', /indexnow/, `${lifecycle} must not ping`);
+
+  // Workflow: the plan step sends nothing and cannot hold back a deploy; only the post-deploy job may send.
   const workflow = await readFile('.github/workflows/pages.yml', 'utf8');
-  assert.doesNotMatch(workflow, /indexnow/i, 'not wired into GitHub Pages yet');
-  assert.match(await readFile('README.md', 'utf8'), /INDEXNOW_ENABLED=1 npm run indexnow/, 'README documents how to enable it');
-  // Dry run: without the flag the script sends nothing and exits 0.
+  const jobs = workflow.slice(workflow.indexOf('\njobs:'));
+  const build = jobs.slice(jobs.indexOf('\n  build:'), jobs.indexOf('\n  deploy:'));
+  const deploy = jobs.slice(jobs.indexOf('\n  deploy:'), jobs.indexOf('\n  indexnow:'));
+  const indexnow = jobs.slice(jobs.indexOf('\n  indexnow:'));
+  assert.ok(jobs.indexOf('\n  build:') < jobs.indexOf('\n  deploy:') && jobs.indexOf('\n  deploy:') < jobs.indexOf('\n  indexnow:'), 'build, deploy, indexnow');
+  const plan = build.slice(build.indexOf('- name: IndexNow plan'), build.indexOf('- name: Upload Pages artifact'));
+  assert.match(plan, /if: github\.event_name != 'pull_request'/, 'no plan on pull requests');
+  assert.match(plan, /continue-on-error: true/, 'a failed plan never blocks the deploy');
+  assert.match(plan, /node scripts\/indexnow-ping\.mjs plan dist/);
+  assert.doesNotMatch(build, /INDEXNOW_ENABLED/, 'the build job cannot send');
+  assert.doesNotMatch(deploy, /indexnow/i, 'the deploy job is untouched');
+  assert.match(indexnow, /needs: \[build, deploy\]/, 'sends only after the deploy');
+  assert.match(indexnow, /if: github\.event_name != 'pull_request'/, 'never on pull requests');
+  assert.match(indexnow, /permissions:\n      contents: read\n/, 'no Pages or token permissions');
+  assert.match(indexnow, /INDEXNOW_ENABLED: '1'/);
+  assert.match(indexnow, /INDEXNOW_URLS: \$\{\{ needs\.build\.outputs\.indexnow_urls \}\}/, 'the list reaches the shell as an environment variable, not interpolated');
+  assert.match(indexnow, /node scripts\/indexnow-ping\.mjs send/);
+  assert.match(await readFile('README.md', 'utf8'), /INDEXNOW_ENABLED=1 npm run indexnow/, 'README documents the manual run');
+
+  // Plan logic: only new or re-dated URLs on this host.
+  const { parseSitemap, changedUrls } = await import('../scripts/indexnow-ping.mjs');
+  const sitemap = (rows: string[][]) =>
+    `<urlset>${rows.map(([loc, lastmod]) => `<url><loc>${loc}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`).join('')}</urlset>`;
+  const previous = parseSitemap(sitemap([['https://www.mrwallcover.com/a/', '2026-10-01'], ['https://www.mrwallcover.com/b/', '2026-10-01'], ['https://www.mrwallcover.com/gone/', '2026-10-01']]));
+  const next = parseSitemap(sitemap([['https://www.mrwallcover.com/a/', '2026-10-01'], ['https://www.mrwallcover.com/b/', '2026-10-19'], ['https://www.mrwallcover.com/new/', ''], ['https://example.com/x/', '2026-10-19']]));
+  assert.equal(next.size, 3, 'other hosts are ignored');
+  assert.deepEqual(changedUrls(next, previous), ['https://www.mrwallcover.com/b/', 'https://www.mrwallcover.com/new/']);
+  assert.deepEqual(changedUrls(next, next), [], 'an unchanged release sends nothing');
+  const built = parseSitemap(await readFile('dist/sitemap-0.xml', 'utf8'));
+  assert.ok(built.size > 0 && [...built.values()].every((lastmod) => lastmod !== ''), 'every built sitemap URL carries a lastmod to compare');
+
+  // Dry runs: without the flag the script sends nothing and exits 0.
   const { execFile } = await import('node:child_process');
   const { promisify } = await import('node:util');
   const env = { ...process.env };
   delete env.INDEXNOW_ENABLED;
   const { stdout } = await promisify(execFile)('node', ['scripts/indexnow-ping.mjs', 'dist'], { env });
   assert.match(stdout, /nothing sent/);
+  const sent = await promisify(execFile)('node', ['scripts/indexnow-ping.mjs', 'send'], { env: { ...env, INDEXNOW_URLS: '["https://www.mrwallcover.com/"]' } });
+  assert.match(sent.stdout, /nothing sent/);
+  await assert.rejects(promisify(execFile)('node', ['scripts/indexnow-ping.mjs', 'send'], { env: { ...env, INDEXNOW_URLS: '["https://example.com/"]' } }), /JSON array of https:\/\/www\.mrwallcover\.com URLs/, 'send refuses other hosts');
 });
 
 test('/feed.xml is Atom with exactly the published guides and case studies, their frontmatter dates and no drafts; every page links it', async () => {
