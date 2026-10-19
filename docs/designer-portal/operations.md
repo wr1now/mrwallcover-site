@@ -117,8 +117,8 @@ The [Resend idempotency contract](https://resend.com/docs/dashboard/emails/idemp
 
 Staging must use synthetic, owner-controlled recipients: verify recipient removal, stable-key retry after an ambiguous request, lease fencing, count/money caps, permanent provider rejection, the 23-hour cutoff, accepted-versus-delivered status and provider-event reconciliation. No notification was sent or provider account created during local verification.
 
-## CI workflow installation
+## Hosted CI verification
 
-The application and local checks are included in this branch. The intended additional pricing/database, Python-worker and portal browser CI steps are supplied in [ci-workflow.patch](ci-workflow.patch). GitHub rejected the original push because the connected OAuth credential lacked the `workflow` scope. The active workflow therefore remains the published main version; this patch has not been applied to GitHub's workflow.
+The additional checks are installed in [the branch workflow](../../.github/workflows/pages.yml). They run the pricing/API/database checks and designer TypeScript check, install the pinned Python worker requirements and run worker tests offline, then exercise the public guide and private workspace with browser fixtures. The connected GitHub App accepted the reviewed workflow update on 19 October 2026 using its existing authorisation; no new sign-in or permission change was needed. The previously supplied installation patch has been retired.
 
-Apply it from the repository root using `git apply docs/designer-portal/ci-workflow.patch`, review the result, then commit/push with a credential authorised to update workflows. Run the dedicated commands in README locally until the hosted steps are installed. Do not treat an existing site CI pass as evidence that the additional private-service checks ran.
+Hosted verification is pending. Inspect the Actions run for the current pull-request head and confirm that each added step completed; an earlier site CI pass does not establish that these checks ran. The dedicated commands in README remain available locally. These offline checks do not prove provider deployment, real document processing or current-price calibration.

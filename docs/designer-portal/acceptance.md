@@ -24,7 +24,7 @@ This is a source implementation for review, with local verification. It is not a
 
 ## Required before activation
 
-Install the additional hosted CI steps from [ci-workflow.patch](ci-workflow.patch) using a workflow-authorised credential; the connected OAuth credential cannot publish workflow changes. Dedicated checks have passed locally, but the existing hosted workflow does not yet execute all of them.
+The additional pricing/database, Python-worker and portal browser CI steps are now installed in [the branch workflow](../../.github/workflows/pages.yml). The connected GitHub App accepted the update on 19 October 2026 without an authentication or permission change. Hosted verification is pending: check every added step on the current pull-request head before treating this gate as complete. Local passes do not establish hosted execution.
 
 Provision and verify the selected UK/European private services; configure OTP email, owner identity, upload/worker budgets, backup and retention procedures; load and approve actual package/service rates; then run the staging scenarios in [operations](operations.md). Production stays disabled until those checks and the owner-prepared pricing comparisons pass.
 
