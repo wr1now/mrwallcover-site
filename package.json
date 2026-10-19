@@ -32,7 +32,13 @@
     "check:guide-browser": "node scripts/qa/guide-release-browser.mjs",
     "check:calculator-browser": "node --experimental-strip-types --test tests/calculator-browser.test.ts",
     "capture:calculator": "node scripts/qa/calculator-review.mjs",
-    "check:makers": "node --experimental-strip-types --test tests/makers-directory.test.ts && node scripts/qa/makers-directory.mjs"
+    "check:makers": "node --experimental-strip-types --test tests/makers-directory.test.ts && node scripts/qa/makers-directory.mjs",
+    "check:designer": "node --experimental-strip-types --test tests/designer-pricing.test.ts tests/designer-backend.test.ts tests/designer-cloud.test.ts tests/designer-learning.test.ts tests/designer-staging-harness.test.ts",
+    "check:designer-types": "tsc -p tsconfig.designer-portal.json",
+    "check:designer-browser": "node --experimental-strip-types --test tests/designer-portal-browser.test.ts",
+    "check:designer-workers": "python3 -m unittest discover -s workers/designer_portal -p 'test_*.py'",
+    "check:designer-connected": "node --experimental-strip-types --test tests/designer-connected-browser.test.ts",
+    "verify:designer-staging": "node scripts/qa/designer-staging.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -41,11 +47,18 @@
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.8",
     "tailwindcss": "^4.3.3",
-    "three": "^0.170.0"
+    "three": "^0.170.0",
+    "@astrojs/react": "7.1.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
     "@resvg/resvg-js": "^2.6.2",
     "puppeteer-core": "^25.13.0",
-    "sharp": "^0.35.5"
+    "sharp": "^0.35.5",
+    "@electric-sql/pglite": "0.5.10",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2"
   }
 }

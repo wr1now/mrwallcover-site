@@ -28,12 +28,14 @@ faq:
   - q: "Is there a price per roll for wallpaper installation?"
     a: "No. The figure follows the measured wall area after openings are taken off, the pattern repeat and the wastage it creates, the state of the walls, the material, and the access and protection the room needs. A quotation prices a surveyed scope, not a roll."
   - q: "What should a wallpaper installation quotation include?"
-    a: "Whether the survey, preparation, lining and primers, adhesive, protection, access equipment, waste removal and the aftercare visit are included, with material supply shown separately from installation, and parking, travel and VAT treatment made clear."
+    a: "The labour scope, preparation and lining work, survey, management time, protection, access equipment, waste removal and aftercare. For this estimating service, the client supplies wallcovering, lining, primer and adhesive. Parking, travel and VAT treatment must be clear."
   - q: "Does the pattern repeat change the cost?"
     a: "Yes. A large or half-drop repeat wastes material at the top of each drop, so the order is larger, and matching each drop by eye and setting the room out from its focal points takes longer than a plain paper run from a corner."
 ---
 
-What does wallpaper installation cost? There is no honest flat rate per roll. The figure follows the measured wall area after openings are taken off, the pattern repeat and the wastage it creates, the state of the walls, the material, and the access and protection the room needs. Two rooms with the same floor area can be quite different days of work: a plain contract vinyl in an empty flat is not a hand-painted scenic in an occupied house, or a hotel corridor that can only be reached between guests. This guide explains each factor so you can compare quotations on the same basis. It deliberately contains no price bands.
+What does wallpaper installation cost? There is no universal rate per roll. The figure follows the covered wall area, the exact material and its hanging method, the state of the walls, and the access, protection and programme. Two rooms with the same floor area can require different days of work. This guide explains each factor so you can compare quotations on the same basis. The [designer installation-cost guide](/professionals/designers/#installation-price-guide) gives qualified starting points by wallpaper type; a project estimate applies the actual scope.
+
+For eligible standard fabric, the guide basis is £120 per net covered square metre for normal preparation, lining and hanging labour. Around £26 per square metre is a guide only for an approved large contract vinyl package, hanging onto verified prepared walls. All materials, including lining, primer and adhesive, are supplied by the client; VAT is additional. Small commissions use an approved project package, with labour, survey, management and logistics allowances, rather than either area rate. Specialist products need their own approved installation profile.
 
 ## How is the area measured?
 
@@ -57,10 +59,10 @@ Stair access, high walls, deep reveals, small returns, paper on joinery and junc
 
 ## What should a complete quotation include?
 
-Check whether a price includes the survey, preparation, lining and primers, adhesive, protection, access equipment, waste removal, and the aftercare visit. Material supply and installation should be shown separately, so a free-issue paper and a sourced one are comparable. Parking, travel and VAT treatment should be clear. A low headline rate is not a useful comparison if essential work sits outside it; a premium price needs a clear scope rather than vague promises.
+Check whether the labour scope includes the survey, preparation, lining, protection, access equipment, waste removal and the aftercare visit. For this estimating service, the client supplies all materials: wallcovering, lining, primer and adhesive. Management is based on scoped hours or days; property value does not create a percentage surcharge. Parking, travel and VAT treatment should be clear. An area guide is useful only with its eligible product, project size and preparation conditions stated.
 
 ## When does this guide stop being reliable?
 
 It cannot tell you what your room will cost, because it has not seen your room. Exterior work, listed buildings, acoustic systems and anything with a fire or specification requirement need their own scope. For a first discussion, send the location, room photographs, approximate dimensions, the product reference if you have one, whether it is already ordered and from one batch, and your preferred timing. The most useful photographs show each wall square-on, a stair from below and from the landing, the ceiling height, and the way into the building: lift, common parts or parking. Developers and main contractors tendering a package will find the measurement basis and scope matrix in our [developer package guide](/advice/developer-wallcovering-package/).
 
-Ready to ask for a quotation? Our [wallpaper quotation checklist](/advice/cost/) brings the room, material, access and timing information together. Leave unknown details open for the survey.
+Ready to prepare a budget? The [designer project workspace](/designer-portal/) brings rooms, product references, drawings and programme into one brief for an indicative estimate. Its private services are enabled only after configuration and verification. Our [wallpaper quotation checklist](/advice/cost/) remains available for a short enquiry. Leave unknown details open for the survey; a firm quotation is reviewed separately.

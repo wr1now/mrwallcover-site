@@ -1,0 +1,77 @@
+---
+import Action from './Action.astro';
+import { PUBLIC_PRICE_GROUPS, PUBLIC_PRODUCTS, PUBLIC_GUIDE_REVIEWED_ON } from '../designer-portal/catalog';
+---
+<section class="designer-price-guide" id="installation-price-guide" data-designer-price-guide aria-labelledby="designer-price-title">
+  <header class="price-guide-heading">
+    <div><p class="eyebrow">A useful starting point</p><h2 id="designer-price-title">The material changes the work.</h2></div>
+    <p>A conventional printed paper, a velvet face and a thick formed panel need different installation plans. Start with the exact product, then build a budget around the room and programme.</p>
+  </header>
+  <div class="price-guide-filters">
+    <label>Find a wallpaper type, maker or product<input type="search" data-price-search placeholder="Try fabric, vinyl or Arte Grandeur" /></label>
+    <label>Wallpaper type<select data-price-group><option value="">All nine groups</option>{PUBLIC_PRICE_GROUPS.map(group => <option value={group.id}>{group.label}</option>)}</select></label>
+  </div>
+  <p class="price-guide-count" data-price-count role="status" aria-live="polite">{PUBLIC_PRICE_GROUPS.length} wallpaper groups</p>
+  <div class="price-guide-grid">
+    {PUBLIC_PRICE_GROUPS.map((group, index) => {
+      const products = PUBLIC_PRODUCTS.filter(product => product.groupId === group.id);
+      const search = [group.label, group.description, ...products.flatMap(product => [product.manufacturer, product.name, product.code, product.notes])].join(' ').toLowerCase();
+      return <article class="price-guide-card" data-price-card data-group={group.id} data-search={search}>
+        <span class="price-guide-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+        <h3>{group.label}</h3><p>{group.description}</p>
+        <div class="price-guide-rate">{group.priceGuide ? <><strong>{group.id === 'wide-contract-vinyl' ? 'Around ' : ''}£{group.priceGuide.amountPence / 100}<span> / m²</span></strong><p>{group.priceGuide.qualification}</p></> : <><strong>Project assessment required</strong><p>Budget from an approved installation profile or small-project package after the product and scope are established.</p></>}</div>
+        {products.map(product => <details class="price-guide-product"><summary>{product.manufacturer} · {product.name}{product.code ? ` ${product.code}` : ''}</summary><p>{product.notes}</p>{product.sourceUrl && <a href={product.sourceUrl} target="_blank" rel="noopener noreferrer">Maker’s product information <span class="sr-only">(opens in a new tab)</span></a>}</details>)}
+      </article>;
+    })}
+  </div>
+  <p data-price-empty hidden>No matching type or verified product record. Send the exact manufacturer and product reference with your brief.</p>
+  <div class="price-guide-basis"><div><h3>One product. One considered profile.</h3><p>A wallcovering may be textile-faced, three-dimensional and acoustic at the same time. Its exact construction and hanging instructions determine one installation profile. These descriptions do not create three separate price premiums. A fabric backing does not make a vinyl product a standard fabric.</p></div><div><h3>Small rooms are priced as projects.</h3><p>A feature wall or single room uses a project package with scoped labour, survey, management and logistics allowances. The area guides above are not a small-job formula. Retail roll value does not set the installation price.</p></div></div>
+  <div class="price-guide-footer"><p><strong>Labour guide · VAT additional.</strong> All materials are supplied by the client, including wallcovering, lining paper, primer and adhesive. Surveying, management time, logistics and exceptional preparation are scoped separately. A guide is not a quotation. Reviewed {new Date(`${PUBLIC_GUIDE_REVIEWED_ON}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}.</p><Action href="/designer-portal/">Prepare a free project estimate</Action></div>
+</section>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-designer-price-guide]').forEach(guide => {
+    const search = guide.querySelector<HTMLInputElement>('[data-price-search]');
+    const group = guide.querySelector<HTMLSelectElement>('[data-price-group]');
+    const cards = [...guide.querySelectorAll<HTMLElement>('[data-price-card]')];
+    function filter() {
+      const words = (search?.value || '').toLowerCase().trim().split(/\s+/).filter(Boolean);
+      let count = 0;
+      for (const card of cards) { const show = (!group?.value || group.value === card.dataset.group) && words.every(word => (card.dataset.search || '').includes(word)); card.hidden = !show; if (show) count++; }
+      const status = guide.querySelector('[data-price-count]'); if (status) status.textContent = `${count} matching wallpaper ${count === 1 ? 'group' : 'groups'}`;
+      const empty = guide.querySelector<HTMLElement>('[data-price-empty]'); if (empty) empty.hidden = count !== 0;
+    }
+    search?.addEventListener('input', filter); group?.addEventListener('change', filter);
+  });
+</script>
+<style>
+  .designer-price-guide { padding-block:clamp(3rem,7vw,6rem); border-top:1px solid var(--color-line); }
+  .price-guide-heading { display:grid; grid-template-columns:1.2fr 1fr; gap:2rem; align-items:end; margin-bottom:2rem; }
+  .price-guide-heading h2 { font-size:var(--text-h2); line-height:1.1; margin:0; max-width:12ch; }
+  .price-guide-heading > p { margin:0; max-width:42ch; color:var(--color-stone); }
+  .price-guide-filters { display:grid; grid-template-columns:1.5fr 1fr; gap:1rem; padding-block:1.5rem; border-block:1px solid var(--color-line); }
+  .price-guide-filters label { display:flex; flex-direction:column; gap:.6rem; font-size:.95rem; }
+  .price-guide-filters input, .price-guide-filters select { min-height:48px; padding:.75rem; width:100%; min-width:0; border:1px solid var(--color-field-border); border-radius:var(--button-radius); background:var(--color-panel); color:var(--color-ink); font:inherit; }
+  .price-guide-filters input:focus-visible, .price-guide-filters select:focus-visible { outline:2px solid var(--color-brass); outline-offset:3px; }
+  .price-guide-count { color:var(--color-stone); font-size:.875rem; margin-block:1rem; }
+  .price-guide-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--color-line); border:1px solid var(--color-line); }
+  .price-guide-card { padding:clamp(1.25rem,2.5vw,2rem); background:var(--color-paper); min-width:0; }
+  .price-guide-card[hidden] { display:none; }
+  .price-guide-number { display:block; font-size:.8125rem; letter-spacing:.12em; color:var(--color-brass); margin-bottom:1.5rem; }
+  .price-guide-card h3 { font-size:var(--text-h3); margin:0 0 1rem; line-height:1.15; }
+  .price-guide-card p { margin:.7rem 0; font-size:1rem; }
+  .price-guide-card > p { color:var(--color-stone); }
+  .price-guide-rate { border-top:1px solid var(--color-line); padding-top:1.2rem; margin-top:1.4rem; }
+  .price-guide-rate > strong { display:block; font-family:var(--font-serif); font-size:1.8rem; line-height:1.2; font-weight:500; }
+  .price-guide-rate > strong > span { font-family:var(--font-sans); font-size:1rem; }
+  .price-guide-rate > p { font-size:.875rem; color:var(--color-stone); }
+  .price-guide-product { border-top:1px solid var(--color-line); padding-top:.75rem; margin-top:1rem; font-size:.9rem; }
+  .price-guide-product summary { cursor:pointer; min-height:44px; padding-block:.6rem; }
+  .price-guide-product a { display:inline-flex; align-items:center; min-height:44px; text-decoration:underline; text-underline-offset:.25em; }
+  .price-guide-basis { display:grid; grid-template-columns:1fr 1fr; gap:3rem; padding-block:2rem; }
+  .price-guide-basis h3 { font-size:1.8rem; margin:0 0 1rem; }
+  .price-guide-basis p { margin:0; color:var(--color-stone); }
+  .price-guide-footer { display:flex; flex-wrap:wrap; gap:1.5rem 3rem; align-items:center; justify-content:space-between; padding:1.5rem 0; border-top:1px solid var(--color-line); }
+  .price-guide-footer p { font-size:.875rem; max-width:75ch; margin:0; }
+  @media(max-width:1000px) { .price-guide-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media(max-width:650px) { .price-guide-heading, .price-guide-filters, .price-guide-grid, .price-guide-basis { grid-template-columns:minmax(0,1fr); } .price-guide-heading h2 { max-width:17ch; } .price-guide-basis { gap:2rem; } }
+</style>

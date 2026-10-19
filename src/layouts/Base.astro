@@ -21,6 +21,8 @@ interface Props {
   description: string;
   path: string;
   noindex?: boolean;
+  /** Private application pages never load analytics or advertise public projections. */
+  privateWorkspace?: boolean;
   extraSchema?: object[];
   preloadHero?: boolean;
   /** Preload this page's lead image (same srcset, sizes and type as its first <source>), at high priority. */
@@ -45,6 +47,7 @@ const {
   description,
   path,
   noindex: requestedNoindex = false,
+  privateWorkspace = false,
   extraSchema = [],
   preloadHero = false,
   preloadImage,
@@ -58,7 +61,7 @@ const {
   meta = true,
 } = Astro.props;
 const reviewBuild = import.meta.env.MW_CONTENT_PREVIEW === '1';
-const noindex = requestedNoindex || reviewBuild;
+const noindex = requestedNoindex || reviewBuild || privateWorkspace;
 const canonical = new URL(path, SITE_URL).href;
 const readerMirror = new URL(`pages${new URL(canonical).pathname}index.md`, aiReader.rawBaseUrl).href;
 const image = new URL(imagePath ?? '/og.jpg', SITE_URL).href;
@@ -104,7 +107,7 @@ import outfit500 from '@fontsource/outfit/files/outfit-latin-500-normal.woff2?ur
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {noindex && <meta name="robots" content="noindex" />}
+    {noindex && <meta name="robots" content={privateWorkspace ? 'noindex, nofollow' : 'noindex'} />}
     {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
     <link rel="describedby" type="text/plain" href="/llms.txt" title="Public content index" />
     {!noindex && <link rel="describedby" type="application/json" href="/ai/index.json" title="Complete published page manifest" />}
@@ -116,7 +119,7 @@ import outfit500 from '@fontsource/outfit/files/outfit-latin-500-normal.woff2?ur
     {!noindex && <link rel="alternate" type="text/markdown" href={readerMirror} title="Published Markdown mirror" />}
     <meta name="theme-color" content="#141210" />
     <meta name="author" content={author} />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="referrer" content={privateWorkspace ? 'no-referrer' : 'strict-origin-when-cross-origin'} />
     {GOOGLE_SITE_VERIFICATION && <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />}
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={BRAND_NAME} />
@@ -161,7 +164,7 @@ import outfit500 from '@fontsource/outfit/files/outfit-latin-500-normal.woff2?ur
     <!-- Cookie-free analytics (Umami). No script loads, and the site sets no cookies, unless PUBLIC_ANALYTICS_SRC is set at build time.
          It runs only on the live host, honours Do Not Track, and ignores the query string and hash, where the calculator keeps measurements. -->
     {
-      ANALYTICS_SRC && (
+      ANALYTICS_SRC && !privateWorkspace && (
         <script
           is:inline
           defer
@@ -175,7 +178,7 @@ import outfit500 from '@fontsource/outfit/files/outfit-latin-500-normal.woff2?ur
       )
     }
     {
-      ANALYTICS_SRC && (
+      ANALYTICS_SRC && !privateWorkspace && (
         <script is:inline define:vars={{ allowed: ANALYTICS_EVENTS }}>
           window.__mwTrack = function (name, detail) {
             if (allowed.indexOf(name) === -1 || !window.umami || typeof window.umami.track !== 'function') return;
@@ -185,8 +188,8 @@ import outfit500 from '@fontsource/outfit/files/outfit-latin-500-normal.woff2?ur
       )
     }
   </head>
-  <body class:list={[path === '/' && 'is-home']}>
-    {!requestedNoindex && path !== '/404/' && path !== '/404.html' && <AtelierAtmosphere path={path} quiet={reviewBuild} />}
+  <body class:list={[path === '/' && 'is-home']} data-private-workspace={privateWorkspace || undefined}>
+    {!privateWorkspace && !requestedNoindex && path !== '/404/' && path !== '/404.html' && <AtelierAtmosphere path={path} quiet={reviewBuild} />}
     <a class="skip-link" href="#main">Skip to content</a>
     <Header path={Astro.url.pathname} />
     <main id="main" tabindex="-1">
@@ -199,7 +202,7 @@ import outfit500 from '@fontsource/outfit/files/outfit-latin-500-normal.woff2?ur
       )}
     </main>
     <Footer />
-    <MobileDock />
+    {!privateWorkspace && <MobileDock />}
     {CONTACT_PAYLOAD && (
       <script is:inline define:vars={{ payload: CONTACT_PAYLOAD }}>
         (function () {

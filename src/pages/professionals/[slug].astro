@@ -16,6 +16,7 @@ import DesignersStrip from '../../components/DesignersStrip.astro';
 import DesignObject from '../../components/DesignObject.astro';
 import { objectKindForIcon } from '../../lib/design-object-presentation';
 import ObjectMotionControls from '../../components/ObjectMotionControls.astro';
+import DesignerPriceGuide from '../../components/DesignerPriceGuide.astro';
 export function getStaticPaths() { return professionals.map((item) => ({ params: { slug: item.slug }, props: { item } })); }
 const { item } = Astro.props;
 const path = `/professionals/${item.slug}/`;
@@ -34,7 +35,7 @@ const dimensional=item.visual?.objects!==false;
       <div class="professional-opening">
         <div>
           <p class="eyebrow">{item.name}</p><h1>{item.heading}</h1><p class="lede mt-5">{item.intro}</p>
-          <Action class="mt-4" href={`/contact/?audience=${item.audience}&intent=install`}>{item.cta}</Action>
+          {item.slug === 'designers' ? <div class="professional-designer-actions"><Action href="/designer-portal/">Get a free project estimate</Action><Action variant="secondary" href={`/contact/?audience=${item.audience}&intent=install`}>{item.cta}</Action></div> : <Action class="mt-4" href={`/contact/?audience=${item.audience}&intent=install`}>{item.cta}</Action>}
         </div>
         {item.visual?.evidence && <EvidenceFigure {...item.visual.evidence} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" loading="eager" fetchpriority="high" class="professional-opening-evidence" />}
       </div>
@@ -51,6 +52,7 @@ const dimensional=item.visual?.objects!==false;
       <ProfessionalBriefing dimensional={dimensional} items={item.checklist} icons={item.visual?.checklistIcons as IconName[]} download={`/downloads/${item.download}`} downloadLabel={item.downloadLabel} guide={related ? { href: guideHref(related.frontmatter.slug), label: `${related.frontmatter.shortTitle}: read the guide` } : undefined} class="lg:col-span-4 lg:col-start-9" />
     </div>
     {item.slug === 'hotels' && <HotelGroups />}
+    {item.slug === 'designers' && <DesignerPriceGuide />}
     {faq.length > 0 && <div class="professional-questions"><BuyerFaq items={faq} eyebrow="Questions" visual={dimensional?'dimensional':'drawing'} /></div>}
     {item.slug === 'designers' && <DesignersStrip />}
     <section class="guide-related"><h2>Other ways we can help</h2><div class="flex flex-wrap gap-3">{professionals.filter((other) => other.slug !== item.slug).map((other) => <Action variant="secondary" href={`/professionals/${other.slug}/`}>{other.name}</Action>)}{professionalEditorials.map((fm) => <Action variant="secondary" href={fm.path}>{fm.title}</Action>)}<Action variant="secondary" href="/projects/">Explore our work</Action></div></section>
@@ -59,6 +61,7 @@ const dimensional=item.visual?.objects!==false;
 
 <style>
   .professional-opening { display: grid; gap: 2.5rem; align-items: center; margin-top: 1rem; }
+  .professional-designer-actions { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1.5rem; }
   .professional-opening :global(.professional-opening-evidence) { min-width: 0; }
   .professional-body { padding-block:1rem 2rem; border-top:1px solid var(--color-line); align-items:start; gap:var(--layout-gap); }
   .professional-sections section { padding-block:1.75rem; border-bottom:1px solid var(--color-line); }

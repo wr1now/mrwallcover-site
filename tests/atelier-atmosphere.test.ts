@@ -150,6 +150,16 @@ test('linen paints on phones and desktop botanicals paint without changing readi
         await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
         assert.ok(await page.evaluate(() => innerWidth - document.documentElement.clientWidth >= 15), 'the portability case really reserves a classic scrollbar gutter');
       }
+      // This A/B assertion measures the whole reading surface. Settle its images
+      // first: a lazy derivative can acquire a slightly different intrinsic ratio
+      // after the initial HTML dimensions, independently of the fixed decoration.
+      await page.evaluate(async () => {
+        const images = [...document.querySelectorAll<HTMLImageElement>('main img')];
+        images.forEach(image => { image.loading = 'eager'; });
+        await Promise.all(images.map(image => image.decode()));
+        await document.fonts.ready;
+        await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      });
       const before = await page.evaluate(() => {
         const layer = document.querySelector<HTMLElement>('[data-atelier-atmosphere]')!;
         const rect = document.querySelector('main')!.getBoundingClientRect();

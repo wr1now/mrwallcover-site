@@ -1,0 +1,98 @@
+{
+  "generatedAt": "2026-10-18T21:26:27.271Z",
+  "baseMain": "8b8d9eac2de609d7285c258e45d8f12f310005a5",
+  "fixture": "Local built pages only; no input, account, upload or submission. External HTTP intercepted and blocked.",
+  "observations": [
+    {
+      "path": "/professionals/designers/",
+      "viewport": 1440,
+      "overflow": false,
+      "ambienceCount": 1,
+      "ambienceMotion": "active",
+      "container": {
+        "left": 80,
+        "width": 1280,
+        "height": 10750.15625
+      },
+      "containerContentWidth": 1200,
+      "questions": {
+        "left": 120,
+        "width": 1200,
+        "height": 5283.84375
+      },
+      "faq": {
+        "left": 120,
+        "width": 1200,
+        "height": 5227.84375
+      },
+      "guide": {
+        "left": 120,
+        "width": 1200,
+        "height": 2369.28125
+      },
+      "opening": {
+        "left": 120,
+        "width": 1200,
+        "height": 740.578125
+      },
+      "visiblePriceCards": 9
+    },
+    {
+      "path": "/professionals/designers/",
+      "viewport": 390,
+      "overflow": false,
+      "ambienceCount": 1,
+      "ambienceMotion": "active",
+      "container": {
+        "left": 0,
+        "width": 390,
+        "height": 18277.140625
+      },
+      "containerContentWidth": 350,
+      "questions": {
+        "left": 20,
+        "width": 350,
+        "height": 7400.28125
+      },
+      "faq": {
+        "left": 20,
+        "width": 350,
+        "height": 7344.28125
+      },
+      "guide": {
+        "left": 20,
+        "width": 350,
+        "height": 5360.28125
+      },
+      "opening": {
+        "left": 20,
+        "width": 350,
+        "height": 1100.28125
+      },
+      "visiblePriceCards": 9
+    },
+    {
+      "path": "/designer-portal/",
+      "viewport": 390,
+      "overflow": false,
+      "ambienceCount": 0,
+      "privateWorkspace": "true",
+      "sectionCount": 6,
+      "analytics": 0,
+      "cloudActivation": "Prepare your brief here.Private saving, document uploads and automatic budgets are awaiting activation. The form works in this tab; download your draft to keep it. No project data is sent or stored automatically.Send an enquiry through the existing contact form"
+    }
+  ],
+  "browserErrors": [],
+  "externalRequestsBlocked": [],
+  "rateCardVisuals": {
+    "desktop": "designers-guide-rates-1440.jpg",
+    "mobile": [
+      "designers-guide-wide-contract-vinyl-390.jpg",
+      "designers-guide-standard-fabric-390.jpg"
+    ],
+    "method": "Public filter only; no project data or network submission.",
+    "overflow": false,
+    "browserErrors": [],
+    "externalRequestsBlocked": []
+  }
+}

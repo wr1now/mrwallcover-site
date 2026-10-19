@@ -104,6 +104,16 @@ Then build the site with `PUBLIC_LEAD_API` set to that server’s origin, for ex
 
 Do not put lead files, room photographs or the staff token in the repository.
 
+## Designer workspace
+
+The public installation guide is on `/professionals/designers/`; `/designer-portal/` contains the private project editor. Cloud features default off. Without configuration it supports an in-tab draft and explicit JSON download/import; it does not claim an uploaded document or issued estimate.
+
+See [architecture](docs/designer-portal/architecture.md), [API contract](docs/designer-portal/api.md) and [staging/activation instructions](docs/designer-portal/operations.md). Pricing runs on the private server against approved, versioned product profiles and packages. Never copy historical client files, private research or service credentials into this website repository.
+
+Run `npm run check:designer`, `npm run check:designer-types` and `npm run check:designer-workers` for the domain/API/database/worker checks. After building, run `npm run check:designer-browser`; `npm run check:designer-connected` builds a separate synthetic cloud-enabled fixture and intercepts every external request. Set `CHROME_PATH` when Chrome is not in the standard test location. Worker dependencies are in `workers/designer_portal/requirements.txt`.
+
+The owner panels separately manage reviewed historical scopes, actual labour/logistics observations and independently prepared current-price pilot comparisons. Historical source files and prepared import JSON stay outside this public repository. Use `npm run verify:designer-staging` with the [staging runner instructions](docs/designer-portal/staging-verification.md) only after an isolated staging account and synthetic fixtures exist; offline checks do not prove provider deployment or commercial calibration. Missing configuration or remaining manual acceptance checks produce a nonzero exit.
+
 ## Deploy to GitHub Pages
 
 This is the intended host. DNS stays at names.co.uk.

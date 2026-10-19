@@ -1,0 +1,27 @@
+project_id = "mrwallcover-designer-portal"
+
+[functions.designer-portal]
+# share.get/share.pdf use an explicit unguessable, expiring capability. Every
+# other action independently verifies the bearer token with Auth /user and
+# requires a confirmed email plus server-derived membership/staff permission.
+verify_jwt = false
+
+[auth]
+site_url = "http://localhost:4321/designer-portal/"
+additional_redirect_urls = ["http://localhost:4321/designer-portal/"]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+
+# The workspace verifies an entered email OTP; it does not consume a magic-link
+# callback. These local templates must also be installed in each hosted project's
+# Auth email templates as described in docs/designer-portal/operations.md.
+[auth.email.template.confirmation]
+subject = "Your Mr Wallcover email confirmation code"
+content_path = "./supabase/templates/confirmation.html"
+
+[auth.email.template.magic_link]
+subject = "Your Mr Wallcover sign-in code"
+content_path = "./supabase/templates/magic-link.html"

@@ -12,6 +12,16 @@ Privacy
 
 Updated 18 October 2026
 
+## Designer project workspace
+
+The project form holds your draft in the current browser tab. It does not automatically save project information or sign-in credentials in browser storage. Downloading a draft creates a file on your device; closing an unsaved tab loses that draft.
+
+Private saving and uploads are available only when the workspace says the service is active. Signing in and saving sends the selected project details to the private service. These may include your contact details, project address, specifications, programme, drawings and optional property-value context. Authorised studio members and Mr Wallcover staff use them to assess the work and prepare estimates. Uploaded files are checked before becoming available, and extracted information needs human confirmation.
+
+The workspace does not load the public site's analytics. Original drawings, private notes and property values are excluded from public search and client budget links. A client link exposes the selected estimate, including its project name and site address, until it expires or is revoked. Revoking a link cannot recall files a recipient has already downloaded.
+
+Contact [info@mrwallcover.com](mailto:info@mrwallcover.com) to request access, correction or deletion of saved project information. Retention and any records needed for an agreed installation are handled with you by Mr Wallcover. The workspace does not promise automatic deletion when a tab closes.
+
 ## Who we are
 
 This website is operated by Dorin Burcus, trading as Mr Wallcover, in London, United Kingdom. He is the controller of personal information sent through this site.

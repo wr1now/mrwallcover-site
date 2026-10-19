@@ -12,7 +12,7 @@ Designers & architects
 
 Bring the material, elevations and design intent together before installation begins. Pattern placement, natural panel variation and the junctions with joinery all deserve a decision before the first length is cut.
 
-[Submit a designer brief](https://www.mrwallcover.com/contact/?intent=install&audience=designer&service=wallcovering&topic=professional%3Adesigners)
+[Get a free project estimate](https://www.mrwallcover.com/designer-portal/) [Submit a designer brief](https://www.mrwallcover.com/contact/?intent=install&audience=designer&service=wallcovering&topic=professional%3Adesigners)
 
 ![Setting out an Overture panel against a laser line.](https://www.mrwallcover.com/media/img/r/lee-broom-06-800.webp)
 
@@ -57,6 +57,139 @@ A useful starting point
 CSV · opens in Excel or Numbers. Leave unknown items blank. This is a planning schedule, not an ordering calculation.
 
 [Designer checklist: read the guide](https://www.mrwallcover.com/advice/designer-specification-checklist/)
+
+A useful starting point
+
+## The material changes the work.
+
+A conventional printed paper, a velvet face and a thick formed panel need different installation plans. Start with the exact product, then build a budget around the room and programme.
+
+Find a wallpaper type, maker or product
+
+Wallpaper type
+
+- All nine groups
+- Conventional printed paper
+- Printed nonwoven
+- Vinyl-coated paper
+- Domestic vinyl
+- Wide contract vinyl
+- Standard fabric
+- Velvet, flock and pile
+- Thick, formed, 3D and acoustic
+- Naturals, metallics, murals and other specialists
+
+9 wallpaper groups
+
+01
+
+### Conventional printed paper
+
+Paper-backed printed wallcoverings. Exact product, preparation and access determine the review.
+
+**Project assessment required**
+
+Budget from an approved installation profile or small-project package after the product and scope are established.
+
+02
+
+### Printed nonwoven
+
+Printed nonwoven wallcoverings; confirm the exact maker and product instructions.
+
+**Project assessment required**
+
+Budget from an approved installation profile or small-project package after the product and scope are established.
+
+03
+
+### Vinyl-coated paper
+
+A coated paper product; confirm its backing and hanging instructions.
+
+**Project assessment required**
+
+Budget from an approved installation profile or small-project package after the product and scope are established.
+
+04
+
+### Domestic vinyl
+
+Domestic vinyl products require a product-specific scope.
+
+**Project assessment required**
+
+Budget from an approved installation profile or small-project package after the product and scope are established.
+
+05
+
+### Wide contract vinyl
+
+Large contract packages with verified ready walls and an approved project agreement.
+
+**Around £26 / m²**
+
+Approximately £26/m² applies only to an approved large contract package with verified ready walls. It is not a general wallpaper rate or a small-job price. All materials are client provided.
+
+06
+
+### Standard fabric
+
+Eligible standard fabric wallcoverings with normal preparation, lining and hanging.
+
+**£120 / m²**
+
+£120/m² for eligible standard fabric, including normal preparation, lining and hanging. Specialist, velvet, flock, pile, formed and acoustic products need review. All materials, including wallcovering, lining, adhesives and primers, are client provided. Logistics and management are additional; small scopes require an approved package. VAT is shown separately.
+
+07
+
+### Velvet, flock and pile
+
+Special handling and the precise construction need review; no automatic premium is stacked onto another profile.
+
+**Project assessment required**
+
+Budget from an approved installation profile or small-project package after the product and scope are established.
+
+08
+
+### Thick, formed, 3D and acoustic
+
+Product construction and required system determine the installation profile. No universal thickness or acoustic performance is assumed.
+
+**Project assessment required**
+
+Budget from an approved installation profile or small-project package after the product and scope are established.
+
+Arte · Grandeur 44001
+
+3D textile wallcovering on nonwoven backing; panel 2980 × 1200 mm. Actual thickness is not established. Product-specific installation review required; no automatic price is approved.
+
+[Maker’s product information (opens in a new tab)](https://www.arte-international.com/en/collections/objet/grandeur/44001)
+
+09
+
+### Naturals, metallics, murals and other specialists
+
+Natural weaves, silk, metallics, hand-painted panels and murals are reviewed against their exact specification.
+
+**Project assessment required**
+
+Budget from an approved installation profile or small-project package after the product and scope are established.
+
+No matching type or verified product record. Send the exact manufacturer and product reference with your brief.
+
+### One product. One considered profile.
+
+A wallcovering may be textile-faced, three-dimensional and acoustic at the same time. Its exact construction and hanging instructions determine one installation profile. These descriptions do not create three separate price premiums. A fabric backing does not make a vinyl product a standard fabric.
+
+### Small rooms are priced as projects.
+
+A feature wall or single room uses a project package with scoped labour, survey, management and logistics allowances. The area guides above are not a small-job formula. Retail roll value does not set the installation price.
+
+**Labour guide · VAT additional.** All materials are supplied by the client, including wallcovering, lining paper, primer and adhesive. Surveying, management time, logistics and exceptional preparation are scoped separately. A guide is not a quotation. Reviewed 18 October 2026.
+
+[Prepare a free project estimate](https://www.mrwallcover.com/designer-portal/)
 
 Questions
 

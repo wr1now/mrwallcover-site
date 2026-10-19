@@ -38,6 +38,18 @@ jobs:
         run: node scripts/stamp-case-study-dates.mjs --check
       - name: Check
         run: npm run check
+      - name: Designer pricing, private API and database isolation
+        run: npm run check:designer && npm run check:designer-types
+      - name: Setup private worker test runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: workers/designer_portal/requirements.txt
+      - name: Check document verification and PDF workers offline
+        run: |
+          python -m pip install -r workers/designer_portal/requirements.txt
+          npm run check:designer-workers
       - name: Build
         env:
           # Build-time only. The phone number is never in the repository.
@@ -48,6 +60,10 @@ jobs:
         env:
           SITE_PHONE: ${{ secrets.SITE_PHONE }}
         run: npm run check:dist
+      - name: Designer guide and workspace browser checks
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: npm run check:designer-browser && npm run check:designer-connected
       - name: Names guard (required private list)
         env:
           MW_NAMES: ${{ secrets.MW_NAMES }}
