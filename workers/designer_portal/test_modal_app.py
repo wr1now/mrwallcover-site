@@ -89,6 +89,38 @@ class ModalPolicyTest(unittest.TestCase):
             self.assertEqual((options['region'], options['routing_region']), ('uk', 'eu-west'))
             self.assertEqual(options['secrets'], [('secret', 'mrwallcover-designer-portal')])
 
+    def test_every_function_bounds_resources_and_scales_to_zero_without_platform_retries(self):
+        module = load_definition({})
+        expected = {
+            'process_next': ((1, 1), (4096, 4096), 660, 2),
+            'dispatch': ((0.125, 0.25), (256, 256), 750, 1),
+            'process_notification': ((1, 1), (512, 512), 150, 1),
+            'dispatch_notifications': ((0.125, 0.25), (256, 256), 240, 1),
+            'diagnose_runtime': ((0.125, 0.25), (256, 256), 15, 1),
+        }
+        self.assertEqual(set(module.app.functions), set(expected))
+        for name, (cpu, memory, timeout, containers) in expected.items():
+            with self.subTest(function=name):
+                options = module.app.functions[name][1]
+                self.assertEqual(options['cpu'], cpu, 'a scalar request is not a CPU limit')
+                self.assertEqual(options['memory'], memory, 'a scalar request is not a memory limit')
+                self.assertEqual(options['timeout'], timeout)
+                self.assertEqual(options['max_containers'], containers)
+                self.assertEqual(options['startup_timeout'], 60)
+                self.assertEqual(options['scaledown_window'], 2)
+                self.assertEqual(options['min_containers'], 0)
+                self.assertEqual(options['buffer_containers'], 0)
+                self.assertEqual(options['retries'], 0, 'database leases own bounded retries')
+
+    def test_dispatch_timeout_covers_child_startup_execution_and_response_margin(self):
+        module = load_definition({})
+        for dispatcher, worker in (('dispatch', 'process_next'),
+                                   ('dispatch_notifications', 'process_notification')):
+            with self.subTest(dispatcher=dispatcher):
+                parent = module.app.functions[dispatcher][1]
+                child = module.app.functions[worker][1]
+                self.assertGreaterEqual(parent['timeout'], child['startup_timeout'] + child['timeout'] + 30)
+
     def test_image_installs_verified_upstream_scanner_not_stale_distribution_package(self):
         module = load_definition({})
         self.assertNotIn('clamav', module.image.packages)
