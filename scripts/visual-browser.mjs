@@ -21,10 +21,10 @@ export async function serve(directory) {
   return { origin:`http://127.0.0.1:${server.address().port}`, close:() => new Promise((ok) => server.close(ok)) };
 }
 
-export async function launchBrowser() {
+export async function launchBrowser({ ignoreDefaultArgs = [] } = {}) {
   const chrome = [process.env.CHROME_PATH, '/usr/bin/google-chrome', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'].find((p) => p && existsSync(p));
   if (!chrome) throw new Error('Set CHROME_PATH to the test Chrome/Chromium executable.');
-  return puppeteer.launch({ executablePath:chrome, headless:true, args:['--no-sandbox'] });
+  return puppeteer.launch({ executablePath:chrome, headless:true, args:['--no-sandbox'], ignoreDefaultArgs });
 }
 
 /** Poll outside the page: disabling JavaScript also suppresses its interval/animation callbacks. */

@@ -1,0 +1,207 @@
+{
+  "captured": "2026-10-18T20:27:00.724Z",
+  "source": "Compiled static dist from candidate d0b183538ebd9449ce4d48eaf969f47f71b596cb",
+  "sourceCommit": "d0b183538ebd9449ce4d48eaf969f47f71b596cb",
+  "baseline": "63567b8",
+  "artifact": "dist/projects/browns-hotel-mayfair/index.html",
+  "artifactModified": "2026-10-18T20:25:51.197Z",
+  "observations": [
+    {
+      "width": 768,
+      "javaScript": true,
+      "initial": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": false,
+        "overflow": false
+      },
+      "expanded": {
+        "open": true,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 437.9375,
+        "focused": true,
+        "overflow": false
+      },
+      "closed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": true,
+        "overflow": false
+      },
+      "printed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 437.9375,
+        "focused": true,
+        "overflow": false
+      },
+      "restored": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 1024,
+      "javaScript": true,
+      "initial": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": false,
+        "overflow": false
+      },
+      "expanded": {
+        "open": true,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 738.5625,
+        "focused": true,
+        "overflow": false
+      },
+      "closed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": true,
+        "overflow": false
+      },
+      "printed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 673.8125,
+        "focused": true,
+        "overflow": false
+      },
+      "restored": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 768,
+      "javaScript": false,
+      "initial": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": false,
+        "overflow": false
+      },
+      "expanded": {
+        "open": true,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 437.9375,
+        "focused": true,
+        "overflow": false
+      },
+      "closed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": true,
+        "overflow": false
+      },
+      "printed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 437.9375,
+        "focused": true,
+        "overflow": false
+      },
+      "restored": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 44,
+        "focused": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 1024,
+      "javaScript": false,
+      "initial": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": false,
+        "overflow": false
+      },
+      "expanded": {
+        "open": true,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 738.5625,
+        "focused": true,
+        "overflow": false
+      },
+      "closed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": true,
+        "overflow": false
+      },
+      "printed": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 7,
+        "detailsContent": "visible",
+        "disclosureHeight": 673.8125,
+        "focused": true,
+        "overflow": false
+      },
+      "restored": {
+        "open": false,
+        "fields": 7,
+        "paintedFields": 0,
+        "detailsContent": "hidden",
+        "disclosureHeight": 54.375,
+        "focused": true,
+        "overflow": false
+      }
+    }
+  ],
+  "limitations": "Native details child rectangles persist when closed; paintedFields uses checkVisibility and ::details-content state, supported by a no-JavaScript print screenshot. Verification used an isolated Chromium browser and locally served compiled files."
+}

@@ -43,7 +43,10 @@ test('the arch case study is built with one H1, an answer-first opening and a la
 test('nothing on the arch case study identifies the home or its owner', async () => {
   const html = await readFile(PAGE, 'utf8');
   // The page's own content: from its header to the related-pages nav (which lists other studies by name).
-  const own = html.slice(html.indexOf('<header class="page-head"'), html.indexOf('aria-label="Related pages"'));
+  const start = html.search(/<header\b(?=[^>]*\bclass="[^"]*\bpage-head\b[^"]*")[^>]*>/);
+  const end = html.search(/<nav\b[^>]*\baria-label="Related pages"[^>]*>/);
+  assert.ok(start >= 0 && end > start, 'the page header and related-pages boundary are present in order');
+  const own = html.slice(start, end);
   assert.ok(own.length > 2000, 'page content found');
   // The page's own schema node (the site-wide business node lists the areas served, which is fine).
   const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap((m) => {

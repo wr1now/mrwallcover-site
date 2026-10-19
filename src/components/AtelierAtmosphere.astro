@@ -1,0 +1,24 @@
+---
+import '../styles/atelier-atmosphere.css';
+import { questionVisualForPath } from '../lib/question-visual-policy';
+
+interface Props { path: string; quiet?: boolean; }
+const { path, quiet = false } = Astro.props;
+const active = !quiet && questionVisualForPath(path) === 'dimensional';
+---
+
+{/* Original textile and painted botanicals, always behind the reading surface. */}
+<div class:list={['atelier-atmosphere', !active && 'atelier-atmosphere--quiet']} data-atelier-atmosphere data-atelier-style="linen-botanical" data-atelier-motion={active ? 'active' : 'static'} aria-hidden="true" inert>
+  <div class="atelier-atmosphere__linen" data-atelier-linen></div>
+  <div class="atelier-atmosphere__edge atelier-atmosphere__edge--right">
+    <div class="atelier-atmosphere__botanical atelier-atmosphere__botanical--birds" data-atelier-botanical="birds" data-atelier-moving></div>
+  </div>
+  <div class="atelier-atmosphere__edge atelier-atmosphere__edge--left">
+    <div class="atelier-atmosphere__botanical atelier-atmosphere__botanical--blossom" data-atelier-botanical="blossom" data-atelier-moving></div>
+  </div>
+</div>
+
+<script>
+  import { mountAtelierAtmosphere } from '../scripts/atelier-atmosphere';
+  mountAtelierAtmosphere();
+</script>

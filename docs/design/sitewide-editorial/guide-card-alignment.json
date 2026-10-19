@@ -1,0 +1,478 @@
+{
+  "captured": "2026-10-18T20:38:48.633Z",
+  "source": "final compiled GuideCard square media / 60px caption / compact motion slot revision",
+  "summary": {
+    "cases": 8,
+    "widths": [
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "motion": [
+      "reduce",
+      "no-preference"
+    ],
+    "failures": 0,
+    "maxRowHeadingDelta": 0.01999999999998181,
+    "maxRowCategoryDelta": 0.009999999999990905
+  },
+  "observations": [
+    {
+      "motion": "reduce",
+      "width": 390,
+      "overflow": 0,
+      "captionsClipped": false,
+      "captionHeights": [
+        60
+      ],
+      "firstThree": [
+        {
+          "title": "Choosing wallcoverings",
+          "media": {
+            "top": 29,
+            "width": 292,
+            "height": 292
+          },
+          "categoryTop": 415.39,
+          "headingTop": 478.58,
+          "live": false
+        },
+        {
+          "title": "Grasscloth seams and variation",
+          "media": {
+            "top": 29,
+            "width": 292,
+            "height": 292
+          },
+          "categoryTop": 415.39,
+          "headingTop": 478.58,
+          "live": false
+        },
+        {
+          "title": "Wall preparation",
+          "media": {
+            "top": 29,
+            "width": 292,
+            "height": 292
+          },
+          "categoryTop": 415.39,
+          "headingTop": 478.58,
+          "live": false
+        }
+      ],
+      "mixedRows": [],
+      "maxRowCategoryDelta": 0,
+      "maxRowHeadingDelta": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 768,
+      "overflow": 0,
+      "captionsClipped": false,
+      "captionHeights": [
+        60
+      ],
+      "firstThree": [
+        {
+          "title": "Choosing wallcoverings",
+          "media": {
+            "top": 29,
+            "width": 284,
+            "height": 284
+          },
+          "categoryTop": 407.39,
+          "headingTop": 470.58,
+          "live": false
+        },
+        {
+          "title": "Grasscloth seams and variation",
+          "media": {
+            "top": 29,
+            "width": 284,
+            "height": 284
+          },
+          "categoryTop": 407.39,
+          "headingTop": 470.58,
+          "live": false
+        },
+        {
+          "title": "Wall preparation",
+          "media": {
+            "top": 29,
+            "width": 284,
+            "height": 284
+          },
+          "categoryTop": 407.39,
+          "headingTop": 470.58,
+          "live": false
+        }
+      ],
+      "mixedRows": [
+        {
+          "indexes": [
+            13,
+            14
+          ],
+          "mixed": true,
+          "categoryDelta": 0,
+          "headingDelta": 0
+        }
+      ],
+      "maxRowCategoryDelta": 0,
+      "maxRowHeadingDelta": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 1024,
+      "overflow": 0,
+      "captionsClipped": false,
+      "captionHeights": [
+        60
+      ],
+      "firstThree": [
+        {
+          "title": "Choosing wallcoverings",
+          "media": {
+            "top": 29,
+            "width": 404,
+            "height": 404
+          },
+          "categoryTop": 527.39,
+          "headingTop": 590.58,
+          "live": false
+        },
+        {
+          "title": "Grasscloth seams and variation",
+          "media": {
+            "top": 29,
+            "width": 404,
+            "height": 404
+          },
+          "categoryTop": 527.39,
+          "headingTop": 590.58,
+          "live": false
+        },
+        {
+          "title": "Wall preparation",
+          "media": {
+            "top": 29,
+            "width": 404,
+            "height": 404
+          },
+          "categoryTop": 527.39,
+          "headingTop": 590.58,
+          "live": false
+        }
+      ],
+      "mixedRows": [
+        {
+          "indexes": [
+            13,
+            14
+          ],
+          "mixed": true,
+          "categoryDelta": 0,
+          "headingDelta": 0
+        }
+      ],
+      "maxRowCategoryDelta": 0,
+      "maxRowHeadingDelta": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 1440,
+      "overflow": 0,
+      "captionsClipped": false,
+      "captionHeights": [
+        60
+      ],
+      "firstThree": [
+        {
+          "title": "Choosing wallcoverings",
+          "media": {
+            "top": 29,
+            "width": 328.66,
+            "height": 328.66
+          },
+          "categoryTop": 452.05,
+          "headingTop": 515.23,
+          "live": false
+        },
+        {
+          "title": "Grasscloth seams and variation",
+          "media": {
+            "top": 29,
+            "width": 328.67,
+            "height": 328.67
+          },
+          "categoryTop": 452.06,
+          "headingTop": 515.25,
+          "live": false
+        },
+        {
+          "title": "Wall preparation",
+          "media": {
+            "top": 29,
+            "width": 328.66,
+            "height": 328.66
+          },
+          "categoryTop": 452.05,
+          "headingTop": 515.23,
+          "live": false
+        }
+      ],
+      "mixedRows": [
+        {
+          "indexes": [
+            1,
+            2,
+            3
+          ],
+          "mixed": true,
+          "categoryDelta": 0.009999999999990905,
+          "headingDelta": 0.01999999999998181
+        },
+        {
+          "indexes": [
+            13,
+            14
+          ],
+          "mixed": true,
+          "categoryDelta": 0.009999999999990905,
+          "headingDelta": 0.01999999999998181
+        }
+      ],
+      "maxRowCategoryDelta": 0.009999999999990905,
+      "maxRowHeadingDelta": 0.01999999999998181
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "overflow": 0,
+      "captionsClipped": false,
+      "captionHeights": [
+        60
+      ],
+      "firstThree": [
+        {
+          "title": "Choosing wallcoverings",
+          "media": {
+            "top": 29,
+            "width": 292,
+            "height": 292
+          },
+          "categoryTop": 415.39,
+          "headingTop": 478.58,
+          "live": false
+        },
+        {
+          "title": "Grasscloth seams and variation",
+          "media": {
+            "top": 29,
+            "width": 292,
+            "height": 292
+          },
+          "categoryTop": 415.39,
+          "headingTop": 478.58,
+          "live": false
+        },
+        {
+          "title": "Wall preparation",
+          "media": {
+            "top": 29,
+            "width": 292,
+            "height": 292
+          },
+          "categoryTop": 415.39,
+          "headingTop": 478.58,
+          "live": true
+        }
+      ],
+      "mixedRows": [],
+      "maxRowCategoryDelta": 0,
+      "maxRowHeadingDelta": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 768,
+      "overflow": 0,
+      "captionsClipped": false,
+      "captionHeights": [
+        60
+      ],
+      "firstThree": [
+        {
+          "title": "Choosing wallcoverings",
+          "media": {
+            "top": 29,
+            "width": 284,
+            "height": 284
+          },
+          "categoryTop": 407.39,
+          "headingTop": 470.58,
+          "live": false
+        },
+        {
+          "title": "Grasscloth seams and variation",
+          "media": {
+            "top": 29,
+            "width": 284,
+            "height": 284
+          },
+          "categoryTop": 407.39,
+          "headingTop": 470.58,
+          "live": false
+        },
+        {
+          "title": "Wall preparation",
+          "media": {
+            "top": 29,
+            "width": 284,
+            "height": 284
+          },
+          "categoryTop": 407.39,
+          "headingTop": 470.58,
+          "live": true
+        }
+      ],
+      "mixedRows": [
+        {
+          "indexes": [
+            13,
+            14
+          ],
+          "mixed": true,
+          "categoryDelta": 0,
+          "headingDelta": 0
+        }
+      ],
+      "maxRowCategoryDelta": 0,
+      "maxRowHeadingDelta": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 1024,
+      "overflow": 0,
+      "captionsClipped": false,
+      "captionHeights": [
+        60
+      ],
+      "firstThree": [
+        {
+          "title": "Choosing wallcoverings",
+          "media": {
+            "top": 29,
+            "width": 404,
+            "height": 404
+          },
+          "categoryTop": 527.39,
+          "headingTop": 590.58,
+          "live": false
+        },
+        {
+          "title": "Grasscloth seams and variation",
+          "media": {
+            "top": 29,
+            "width": 404,
+            "height": 404
+          },
+          "categoryTop": 527.39,
+          "headingTop": 590.58,
+          "live": false
+        },
+        {
+          "title": "Wall preparation",
+          "media": {
+            "top": 29,
+            "width": 404,
+            "height": 404
+          },
+          "categoryTop": 527.39,
+          "headingTop": 590.58,
+          "live": true
+        }
+      ],
+      "mixedRows": [
+        {
+          "indexes": [
+            13,
+            14
+          ],
+          "mixed": true,
+          "categoryDelta": 0,
+          "headingDelta": 0
+        }
+      ],
+      "maxRowCategoryDelta": 0,
+      "maxRowHeadingDelta": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 1440,
+      "overflow": 0,
+      "captionsClipped": false,
+      "captionHeights": [
+        60
+      ],
+      "firstThree": [
+        {
+          "title": "Choosing wallcoverings",
+          "media": {
+            "top": 29,
+            "width": 328.66,
+            "height": 328.66
+          },
+          "categoryTop": 452.05,
+          "headingTop": 515.23,
+          "live": false
+        },
+        {
+          "title": "Grasscloth seams and variation",
+          "media": {
+            "top": 29,
+            "width": 328.67,
+            "height": 328.67
+          },
+          "categoryTop": 452.06,
+          "headingTop": 515.25,
+          "live": false
+        },
+        {
+          "title": "Wall preparation",
+          "media": {
+            "top": 29,
+            "width": 328.66,
+            "height": 328.66
+          },
+          "categoryTop": 452.05,
+          "headingTop": 515.23,
+          "live": true
+        }
+      ],
+      "mixedRows": [
+        {
+          "indexes": [
+            1,
+            2,
+            3
+          ],
+          "mixed": true,
+          "categoryDelta": 0.009999999999990905,
+          "headingDelta": 0.01999999999998181
+        },
+        {
+          "indexes": [
+            13,
+            14
+          ],
+          "mixed": true,
+          "categoryDelta": 0.009999999999990905,
+          "headingDelta": 0.01999999999998181
+        }
+      ],
+      "maxRowCategoryDelta": 0.009999999999990905,
+      "maxRowHeadingDelta": 0.01999999999998181
+    }
+  ]
+}

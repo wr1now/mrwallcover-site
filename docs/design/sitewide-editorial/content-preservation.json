@@ -1,0 +1,42 @@
+{
+  "captured": "2026-10-18T20:55:00.653858+00:00",
+  "sourceCommit": "120f22ff78b707759a8c952df57e9d70ef59eaa0",
+  "source": "Integrated compiled candidate, including the final static Makers presentation policy, based on published main f71a587.",
+  "baseline": "f71a587ba514f96d3b0c9852e951e94372eeff60",
+  "method": "Compare every normal route: original p/dt/dd/figcaption and leaf li text against candidate main text after Unicode/whitespace normalization, retaining noscript fallback content. Check unique main anchor destinations, meaningful actual image src+alt references and FAQ schema question/answer pairs. Decorative aria-hidden text and noindex pages excluded. Middle-dot separators may become semantic lists; separately verify relocated About title/link fragments. All resolved structural differences are documented. Counts are sums of per-route unique references.",
+  "totals": {
+    "routes": 128,
+    "uniqueAuthoredBlocks": 8455,
+    "preservedAuthoredBlocks": 8455,
+    "uniqueLinks": 4368,
+    "preservedLinks": 4368,
+    "evidenceImages": 629,
+    "preservedEvidenceImages": 629,
+    "faqPairs": 221,
+    "preservedFaqPairs": 221,
+    "normalisedOrFallbackTextMatches": 8454,
+    "verifiedRelocatedBlocks": 1
+  },
+  "resolvedStructuralDifferences": [
+    {
+      "path": "/about/index.html",
+      "tag": "p",
+      "sourceText": "The work, in order. Read the services.",
+      "resolution": "Original heading sentence and services link retained; existing disciplines description now sits between them."
+    },
+    {
+      "path": "/index.html",
+      "tag": "p",
+      "sourceText": "Makers we install de Gournay · Fromental · House of Hackney · Phillip Jeffries · Muraspec · Calico Wallpaper · Timorous Beasties and more",
+      "resolution": "All original wording and ordering preserved; middle-dot separators replaced by semantic list structure."
+    },
+    {
+      "path": "/projects/index.html",
+      "tag": "p",
+      "sourceText": "Anaglypta · Andrew Martin · Arte · Barneby Gates · Bernard Thorp · Calico Wallpaper · Celerie Kemble · Chilewich · Christopher Farr Cloth · Cole & Son · Dedar · Eijffinger · Elitis · Fermoie · Fromental · Glamora · Gucci · Harlequin · Hermès · House of Hackney · Kelly Hoppen · Lincrusta · Muraspec · Omexco · Osborne & Little · Papiers de Paris · Phillip Jeffries · Ralph Lauren Home · Roberto Cavalli Home · Romo · Sahco · Schumacher · Soane Britain · Tektura · Thibaut · Timorous Beasties · Today Interiors (Zaniah) · Versace Home · Vescom · Wall&decò · Woodchip & Magnolia · Zoffany · de Gournay",
+      "resolution": "All original wording and ordering preserved; middle-dot separators replaced by semantic list structure."
+    }
+  ],
+  "exceptions": [],
+  "limitations": "This HTML content and reference comparison complements the standard route/media/schema/Markdown no-loss guard. It does not assess visual composition, external link availability or new claims."
+}

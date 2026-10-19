@@ -133,7 +133,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
     <section class="hotel-record" aria-labelledby="makers-heading">
       <h2 id="makers-heading" class="m-0 text-[1.6rem]">Makers on our projects</h2>
       <p class="lede">Wallcovering makers we have installed, each shown with our own photograph on <a href="/materials/#makers-installed">the Materials page</a>. A maker named here is not an endorsement.</p>
-      <p class="m-0">{makersInstalled.items.map((item, i) => <>{i > 0 && ' · '}<a href={`/materials/#${makerId(item.brand)}`}>{item.brand}</a></>)}</p>
+      <ul class="project-maker-links">{makersInstalled.items.map((item) => <li><a href={`/materials/#${makerId(item.brand)}`}>{item.brand}<Icon name="arrow-right" /></a></li>)}</ul>
     </section>
   </div>
   <script is:inline data-project-explorer-script>
@@ -209,7 +209,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
   .work-group { padding-bottom: 4.5rem; }
   .work-group-heading { margin-bottom: 2rem; }
   .work-group h2 { font-size: var(--text-h2); margin: 0; }
-  .work-group-heading > p { max-width: 48rem; color: var(--color-stone); font-size: var(--text-body); margin: 1rem 0 0; }
+  .work-group-heading > p { max-width: var(--layout-reading); color: var(--color-stone); font-size: var(--text-body); margin: 1rem 0 0; }
   .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.8rem 3rem; align-items: stretch; }
   .work-item { min-width: 0; }
   .work-figure { margin: 0; width: 100%; }
@@ -233,6 +233,11 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
   .work-empty { padding: 2rem; border: 1px solid var(--color-line); margin-bottom: 3rem; }
   .work-empty h2 { margin-top: 0; }
   .hotel-record { border-block: 1px solid var(--color-line); }
+  section.hotel-record { padding-block:2rem; }
+  .project-maker-links { list-style:none; padding:0; margin:1.5rem 0 0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.25rem 2rem; }
+  .project-maker-links a { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:44px; padding-block:.5rem; border-bottom:1px solid var(--color-line); text-decoration:none; }
+  .project-maker-links :global(.mw-icon) { width:1rem; height:1rem; color:var(--color-brass); }
+  @media (min-width:768px) { .project-maker-links { grid-template-columns:repeat(3,minmax(0,1fr)); } }
   .hotel-record > summary { cursor: pointer; padding: 1.6rem .4rem; font-family: var(--font-serif); font-size: var(--text-h3); }
   .hotel-record-count { display: inline-block; font-family: var(--font-sans); font-size: var(--text-meta); margin-left: 1.5rem; color: var(--color-stone); }
   .hotel-record-body { padding: 0 .4rem 2rem; }

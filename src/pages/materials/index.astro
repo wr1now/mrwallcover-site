@@ -30,7 +30,13 @@ const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((
       <p class="eyebrow">{materials.eyebrow}</p>
       <h1>{materials.heading}</h1>
       <p class="lede mt-5">{materials.lede}</p>
-      <p class="m-0 mt-4 text-stone">Saved materials stay on this device. There is no account. If you send an enquiry from this browser, the shortlist is attached.</p>
+      <p class="material-shortlist-note">Saved materials stay on this device. There is no account. If you send an enquiry from this browser, the shortlist is attached.</p>
+      <nav class="material-library-nav" aria-label="Explore the material library">
+        <a href="#material-finder">Find a family for your room</a>
+        <a href="#material-families">Browse the seven families</a>
+        <a href="#compare-heading">Compare your shortlist</a>
+        <a href="#makers-installed">Makers installed</a>
+      </nav>
     </header>
     <section class="material-evidence" aria-labelledby="material-evidence-heading">
       <div>
@@ -42,24 +48,47 @@ const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((
       <figure><Picture id="fs-residences-06" sizes="(min-width: 768px) 24rem, 90vw" /><figcaption>Woven grasscloth at an external corner. Four Seasons Private Residences, Ten Trinity Square. Photograph: Mr Wallcover.</figcaption></figure>
     </section>
     <MaterialFinder />
-    <ObjectMotionControls label="Illustrative material studies · confirm the actual finish with a sample" />
-    <ul class="m-0 grid list-none gap-8 p-0 md:grid-cols-2">
-      {materials.items.map((item) => {
-        const service = specialisms.find((entry) => entry.slug === item.specialism);
-        return (
-          <li class="border-t border-line pt-4" data-design-hit>
-            <div class="material-family-study"><DesignObject kind={materialStudyKind(item.slug)} /></div>
-            <h2 class="m-0 text-[1.8rem]"><a href={`/materials/${item.slug}/`}>{item.name}</a></h2>
-            <p class="mt-3 mb-0 text-stone">{item.appearance}</p>
-            <p class="mt-3 mb-0">{item.joins}</p>
-            <div class="mt-4 flex flex-wrap gap-3">
-              <Action variant="secondary" type="button" data-shortlist={item.slug} aria-pressed="false">Save to shortlist</Action>
-              {service && <Action variant="secondary" href={specialismHref(service.slug)}>Installation</Action>}
-            </div>
-          </li>
-        );
-      })}
-    </ul>
+    <section class="material-families" id="material-families" aria-labelledby="material-families-heading">
+      <header class="material-section-heading">
+        <div><p class="eyebrow">The material library</p><h2 id="material-families-heading">Seven families. Different decisions.</h2></div>
+        <ObjectMotionControls label="Illustrative material studies · confirm the actual finish with a sample" />
+      </header>
+      <ul class="material-family-grid">
+        {materials.items.map((item, index) => {
+          const service = specialisms.find((entry) => entry.slug === item.specialism);
+          return (
+            <li class="material-family-card" data-design-hit>
+              <header><span class="material-family-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><h3><a href={`/materials/${item.slug}/`}>{item.name}</a></h3></header>
+              <div class:list={['material-family-overview', item.appearance.length > 150 && 'material-family-overview--extended']}>
+                <p>{item.appearance}</p>
+                <div class="material-family-study"><DesignObject kind={materialStudyKind(item.slug)} /></div>
+              </div>
+              <div class="material-family-joins"><p class="eyebrow">The joins</p><p>{item.joins}</p></div>
+              <div class="material-family-actions">
+                <Action variant="secondary" type="button" data-shortlist={item.slug} aria-pressed="false">Save to shortlist</Action>
+                {service && <Action variant="quiet" href={specialismHref(service.slug)}>Installation</Action>}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+    <section class="material-compare" aria-labelledby="compare-heading">
+      <p data-shortlist-status role="status"></p>
+      <div class="material-compare-heading"><h2 id="compare-heading" class="m-0 text-[2rem]">Compare the shortlist <span data-shortlist-count>0</span></h2><Action variant="secondary" type="button" data-shortlist-clear>Clear shortlist</Action></div>
+      <p data-compare-empty class="lede mt-4">Save two or more families to compare joins, care and where they belong.</p>
+      <div class="material-compare-grid">
+        {materials.items.map((item) => (
+          <article data-compare-row={item.slug} hidden class="border-t border-line pt-4">
+            <h3 class="m-0 text-[1.6rem]">{item.name}</h3>
+            <p class="m-0 mt-2"><strong>Setting.</strong> {item.setting}</p>
+            <p class="m-0 mt-2"><strong>Joins.</strong> {item.joins}</p>
+            <p class="m-0 mt-2"><strong>Care.</strong> {item.care}</p>
+          </article>
+        ))}
+      </div>
+      <p class="mt-8"><Action variant="primary" href="/contact/?intent=source">Discuss this shortlist</Action></p>
+    </section>
     {
       materialEditorials.length > 0 && (
         <section class="mt-16 border-t border-line pt-10" aria-labelledby="makers-heading">
@@ -80,7 +109,7 @@ const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((
       <p class="eyebrow">Makers installed</p>
       <h2 id="installed-heading" class="m-0 text-[2rem]">Makers we have installed, in our own photographs.</h2>
       <p class="mt-4 mb-0 max-w-3xl text-stone">Each maker below is shown with one of our photographs of its product on the wall, linked to the project where the project is public. Private projects are named only by area. A maker named here means Mr Wallcover installed that maker's product; it is not an approval, accreditation or endorsement.</p>
-      <ul class="m-0 mt-8 grid list-none gap-8 p-0 sm:grid-cols-2 lg:grid-cols-4">
+      <ul class="material-makers-grid">
         {makersInstalled.items.map((item) => (
           <li class="border-t border-line pt-4" id={makerId(item.brand)}>
             <Picture id={item.image} sizes="(min-width: 1024px) 18rem, (min-width: 640px) 45vw, 100vw" />
@@ -95,29 +124,49 @@ const materialEditorials = editorialPages.map((mod) => mod.frontmatter).filter((
         ))}
       </ul>
     </section>
-    <section class="mt-16 border-t border-line pt-10" aria-labelledby="compare-heading">
-      <p data-shortlist-status role="status"></p>
-      <Action variant="secondary" type="button" class="mb-5" data-shortlist-clear>Clear shortlist</Action>
-      <h2 id="compare-heading" class="m-0 text-[2rem]">Compare the shortlist <span data-shortlist-count>0</span></h2>
-      <p data-compare-empty class="lede mt-4">Save two or more families to compare joins, care and where they belong.</p>
-      <div class="mt-6 grid gap-6">
-        {materials.items.map((item) => (
-          <article data-compare-row={item.slug} hidden class="border-t border-line pt-4">
-            <h3 class="m-0 text-[1.6rem]">{item.name}</h3>
-            <p class="m-0 mt-2"><strong>Setting.</strong> {item.setting}</p>
-            <p class="m-0 mt-2"><strong>Joins.</strong> {item.joins}</p>
-            <p class="m-0 mt-2"><strong>Care.</strong> {item.care}</p>
-          </article>
-        ))}
-      </div>
-      <p class="mt-8"><Action variant="primary" href="/contact/?intent=source">Discuss this shortlist</Action></p>
-    </section>
+
   </div>
   <MaterialStudio />
 </Base>
 
 <style>
-  .material-family-study { width:100%; max-width:var(--object-card-size); margin:0 auto 1rem; }
+  .material-shortlist-note { max-width: 64ch; margin: 1.25rem 0 0; color: var(--color-stone); }
+  .material-library-nav { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; padding-block: 1rem; border-block: 1px solid var(--color-line); margin-top: 2rem; }
+  .material-library-nav a { display: inline-flex; align-items: center; min-height: 44px; color: var(--color-ink); font-size: var(--text-button); text-underline-offset: .2em; }
+  .material-section-heading { display: grid; align-items: end; gap: 1rem; padding-bottom: 1.5rem; }
+  .material-section-heading h2 { margin: 0; max-width: 24ch; font-size: clamp(2rem, 3vw, 2.7rem); }
+  .material-families { scroll-margin-top: 8rem; }
+  .material-family-grid { display: grid; gap: 1.5rem; list-style: none; padding: 0; margin: 0; }
+  .material-family-card { container-type: inline-size; display: flex; flex-direction: column; padding: clamp(1.25rem, 3vw, 2rem); background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-control); min-width: 0; }
+  .material-family-card header { display: flex; align-items: baseline; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-line); }
+  .material-family-number { flex-shrink: 0; color: var(--color-brass); font-size: var(--text-label); letter-spacing: .08em; }
+  .material-family-card h3 { margin: 0; font-size: clamp(1.7rem, 2.3vw, 2rem); }
+  .material-family-overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 1rem; align-items: center; }
+  .material-family-overview > p { margin: 1rem 0; color: var(--color-stone); }
+  .material-family-study { min-width: 0; width: 100%; max-width: var(--object-card-size); margin: .5rem auto; }
+  .material-family-joins { margin-block: .5rem 1.5rem; }
+  .material-family-joins > p { margin: 0; }
+  .material-family-joins > .eyebrow { margin-bottom: .6rem; }
+  .material-family-actions { display: flex; flex-wrap: wrap; gap: .65rem; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-line); }
+  .material-compare { padding: clamp(1.25rem, 3vw, 2rem); margin-top: 2.5rem; border: 1px solid var(--color-line); background: var(--color-paper); scroll-margin-top: 8rem; }
+  .material-compare > [data-shortlist-status]:empty { display: none; }
+  .material-compare-heading { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+  .material-compare-grid { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
+  .material-compare-grid > article { min-width: 0; }
+  .material-makers-grid { display: grid; gap: 2rem; margin: 2rem 0 0; padding: 0; list-style: none; }
+  .material-makers-grid :global(.media-img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  @media (min-width: 640px) { .material-makers-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 900px) {
+    .material-section-heading { grid-template-columns: minmax(0, 1fr) minmax(0, .8fr); gap: 3rem; }
+    .material-family-grid, .material-compare-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .material-makers-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  @container (max-width: 28rem) {
+    .material-family-overview--extended { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .material-family-overview--extended > p { margin-bottom: 0; }
+    .material-family-overview--extended .material-family-study { max-width: 18rem; margin-block: .75rem; }
+  }
+  @media (max-width: 374px) { .material-family-overview:not(.material-family-overview--extended) { grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: .6rem; } }
 </style>
 
 <script>

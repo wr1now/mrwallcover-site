@@ -1,0 +1,121 @@
+{
+  "recorded": "2026-10-18",
+  "source": "Original procedural geometry and deterministic Canvas textures in src/lib/design-object-scenes.ts",
+  "generator": "scripts/capture-design-object-posters.mjs",
+  "rights": "Original illustrations created for Mr Wallcover; no downloaded maker artwork or project photography.",
+  "limits": "Not named products, project evidence, endorsements, certified/tested assemblies or real measurements.",
+  "posters": [
+    {
+      "kind": "calendar",
+      "path": "public/media/design-objects/calendar.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 37196,
+      "sha256": "aae19290cb707f581374e3c6c32e7799cb0c5f2057ccd13482d282995e36f800"
+    },
+    {
+      "kind": "care",
+      "path": "public/media/design-objects/care.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 49692,
+      "sha256": "0ad46af6e692acfa9ba99da66c521e767c6211cb5b9faf5a4f53827f7c320350"
+    },
+    {
+      "kind": "document",
+      "path": "public/media/design-objects/document.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 40290,
+      "sha256": "592b0f43d0b541cff0c2ff95b39d929b84c822a3bb0df1e08ab1eaf692c9b87c"
+    },
+    {
+      "kind": "film",
+      "path": "public/media/design-objects/film.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 39156,
+      "sha256": "f5ae375a84c9b2b128caa0dbda73d73e83b3c596cbf52c5181091536c6ad245d"
+    },
+    {
+      "kind": "folio",
+      "path": "public/media/design-objects/folio.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 51794,
+      "sha256": "a501a1966532acca8dbaf369ae4c0528afc1d85d589ede5d4fc7fdf9b3e20b00"
+    },
+    {
+      "kind": "junction",
+      "path": "public/media/design-objects/junction.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 61676,
+      "sha256": "0b3a7dc6af013f316346d13a3a0d937092064615475968f0191975836376e78a"
+    },
+    {
+      "kind": "layers",
+      "path": "public/media/design-objects/layers.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 66648,
+      "sha256": "a2a729aa242d803e77642c9c137744e467cb3415428f3951359c9b64f9eb5193"
+    },
+    {
+      "kind": "measure",
+      "path": "public/media/design-objects/measure.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 43596,
+      "sha256": "f4f5086a5956d180c6806613935092699e6127140e4c98aa047a8b082f80e8d2"
+    },
+    {
+      "kind": "panels",
+      "path": "public/media/design-objects/panels.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 47452,
+      "sha256": "20d08bf1595a7ffec95a921a784f123a6e35d2ad27758698fa3792e9bfc14b5c"
+    },
+    {
+      "kind": "price",
+      "path": "public/media/design-objects/price.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 40670,
+      "sha256": "455699d9ec6c5e17d2878f10858f90aa803952ec88d13ccfc50dd5543deb54bf"
+    },
+    {
+      "kind": "privacy",
+      "path": "public/media/design-objects/privacy.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 27742,
+      "sha256": "1e59302b0f330cb7927c73e879259fc3d5c3e6eaf449b47963adc0554a48d61c"
+    },
+    {
+      "kind": "roll",
+      "path": "public/media/design-objects/roll.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 46414,
+      "sha256": "2039fc2da5e5bae85a3fe9e776f8e275ad2de2f1d747c3f477e83745178d87be"
+    },
+    {
+      "kind": "room",
+      "path": "public/media/design-objects/room.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 59292,
+      "sha256": "1d038aa325fa10f88be754846ec50a74ccc437bc51584ecc8ea1a02434f87541"
+    },
+    {
+      "kind": "samples",
+      "path": "public/media/design-objects/samples.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 51252,
+      "sha256": "c5b9b2adb5509f82a47fe3afe41c6fb6a506d3b62251f968a32382366f8cd72c"
+    }
+  ]
+}
