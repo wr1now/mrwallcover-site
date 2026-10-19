@@ -8230,25 +8230,6 @@
       ]
     }
   },
-  "record-the-westminster-london-curio-collection-by-hilto-01": {
-    "width": 1200,
-    "height": 1600,
-    "src": "/media/img/r/record-the-westminster-london-curio-collection-by-hilto-01-1200.webp",
-    "jpg": "/media/img/r/record-the-westminster-london-curio-collection-by-hilto-01-1200.jpg",
-    "thumb": "/media/img/r/record-the-westminster-london-curio-collection-by-hilto-01-800.webp",
-    "thumbJpg": "/media/img/r/record-the-westminster-london-curio-collection-by-hilto-01-800.jpg",
-    "thumbWidth": 800,
-    "thumbHeight": 1067,
-    "hasFull": true,
-    "variants": {
-      "base": "/media/img/r/record-the-westminster-london-curio-collection-by-hilto-01",
-      "widths": [
-        480,
-        800,
-        1200
-      ]
-    }
-  },
   "record-the-westminster-london-curio-collection-by-hilto-02": {
     "width": 1200,
     "height": 1600,
