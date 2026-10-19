@@ -1,6 +1,6 @@
 # Page and template review
 
-Current review: the shared background revision is recorded in the final section, **Linen ground and original botanicals — 18 October 2026**. The earlier whole-site composition and CSS-paper receipts below belong to their named releases. The new theme's local visual, motion, coverage, loading, content-preservation, built-suite and environment checks pass; exact-head hosted CI, deployment and live verification remain pending.
+Current review: the latest background revision is recorded in the final section, **Plum blossom, water lilies and stronger linen — 19 October 2026**. Earlier whole-site, CSS-paper and first-botanical receipts below belong to their named releases. The new shared treatment and all current-candidate local visual, motion, coverage, loading, content-preservation, built-suite and environment checks pass. Exact-head hosted CI, deployment and live verification remain pending.
 
 Review date: 17 October 2026. This record covers PR #66, including the second pass across all remaining page families. The branch was rebased onto public main 2849676, preserving the separate #67 privacy cleanup; open calculator/reference/Contact PRs were not merged into it. The user authorised completion and publication on 17 October. The route-by-route design decisions are recorded in [route-review.json](route-review.json), including the three noindex utility pages. Final validation results follow below.
 
@@ -539,3 +539,52 @@ The fresh [no-loss comparison](linen-botanicals/no-loss.json) against published 
 | Exact-head hosted checks, authorised publication and live view | Pending completion and verification; do not announce the theme as published from implementation alone. |
 
 Local validation is complete. Exact-head hosted checks, authorised deployment and live verification must still succeed before completion is announced. Earlier publication approvals and content boundaries remain intact; this artwork does not clear unrelated draft/private-seed blockers.
+
+
+## Plum blossom, water lilies and stronger linen — 19 October 2026
+
+This follow-up starts from published main `8db3d53`. It retains the existing page compositions, fourteen topic studies, 128 published routes, Makers directory, public projections, genuine photographs and the separate email-logo additions. The owner requested plum blossom, water lilies and a more prominent linen weave. The first-botanical review above remains the historical record for its three-asset theme; its passing checks do not verify this revision.
+
+### Shared treatment and inheritance
+
+`Base.astro` continues to supply the same `AtelierAtmosphere.astro`. The existing 18rem linen tile increases from .16 to .25 opacity on normal pages, and from .10 to .16 on quiet reference pages. The right-hand bird branch remains unchanged. An original plum-blossom branch replaces the former blossom illustration at the left edge; a separate water-lily composition adds a quieter lower-right accent at 70% of the branch opacity. Masked margins, opaque reading surfaces and the existing stacking keep text, controls and real photographs separate from the artwork. The theme adds no renderer, animation loop or preference controller.
+
+Bird, plum and water-lily layers use restrained CSS drift over 32, 38 and 42 seconds. They retain the shared after-load, Pause motion, live OS/footer preference and visibility behavior. Reduced visual effects, print and forced colours hide the atmosphere; OS reduced motion and no JavaScript leave it static. Factual/legal/reference routes, including Makers and Buying routes, use the stronger quiet linen and static right-hand bird branch, with plum and water lilies omitted. The three noindex utilities omit the entire atmosphere. Future pages inherit the same policy through Base; their content/media decisions still belong in the route ledger, without an image quota or a page-specific background.
+
+### Assets and rights
+
+Four active derivatives under `public/media/atelier-botanicals/` form the normal theme: `ivory-linen.webp` (26,912 bytes), `branch-birds.webp` (139,744 bytes), `plum-blossom.webp` (84,132 bytes, 576×864) and `water-lilies.webp` (34,016 bytes, 576×384). Their combined encoded size is 284,804 bytes, 10,050 bytes more than the previous three-asset theme. The old `blossom-sprig.webp` URL remains available for compatibility but is no longer requested by this theme. The [loading receipt](plum-water-lilies/performance.json) records sixteen isolated local loads/eight matched before-after pairs against `8db3d53`, with actual scene activation. Each pair adds 10,050 background-image bytes and 701 CSS bytes, with no added script bytes: 10,751 resource-body bytes plus 195 document bytes. Sampled after-build initial/final CLS is zero; seven baseline pairs were also zero and the homepage at 1440px was approximately .00080. These are local body-size/layout observations, not timing or field-performance claims.
+
+The two new transparent illustrations are original generated decorative artwork, proportionally encoded from their complete compositions. Current prompts, source/derivative hashes and dimensions are in the [plum/water-lily asset register](plum-water-lilies/assets.md) and [provenance record](plum-water-lilies/asset-provenance.json); retained linen/bird sources remain in the [first botanical register](linen-botanicals/assets.md). No project photograph is edited. The art is not a named maker's pattern or logo, an affiliation, an installed product, a claim of human hand-painting or completed-project evidence. These limits remain in the shared instructions and [asset-rights register](../asset-rights.md).
+
+### Visual review and current verification
+
+The final compiled [route inventory](plum-water-lilies/plum-audit.json) covers all 128 published routes at 390/1440: 256 cases with no navigation failures, horizontal overflow, clipped controls or uncontained tables, and forty selected screenshots. Fourteen were independently inspected across the seven surfaces below. The weave is more visible without competing with body text; plum stays at the left edge and the water lily is a faint lower-right accent. Phone crops remain readable, form fields and genuine photographs stay separate, and Guide cards retain their alignment. The static preparation reference omits plum and water lilies. No actionable composition issue was found. The inventory was refreshed after the final single-encode correction; four selected views were independently rechecked with the final assets, with the same composition result.
+
+| Surface | 390px | 1440px |
+| --- | --- | --- |
+| Home | [View](plum-water-lilies/plum-home-390.jpg) | [View](plum-water-lilies/plum-home-1440.jpg) |
+| Services / floral roll | [View](plum-water-lilies/plum-services-390.jpg) | [View](plum-water-lilies/plum-services-1440.jpg) |
+| Material reading and actions | [View](plum-water-lilies/plum-materials-paper-and-non-woven-390.jpg) | [View](plum-water-lilies/plum-materials-paper-and-non-woven-1440.jpg) |
+| Guide cards | [View](plum-water-lilies/plum-advice-390.jpg) | [View](plum-water-lilies/plum-advice-1440.jpg) |
+| Questions | [View](plum-water-lilies/plum-faq-390.jpg) | [View](plum-water-lilies/plum-faq-1440.jpg) |
+| Contact | [View](plum-water-lilies/plum-contact-390.jpg) | [View](plum-water-lilies/plum-contact-1440.jpg) |
+| Static preparation reference | [View](plum-water-lilies/plum-wallpapering-preparation-390.jpg) | [View](plum-water-lilies/plum-wallpapering-preparation-1440.jpg) |
+
+The [five focused compiled-browser tests](plum-water-lilies/verification.json) pass with zero skips. Independent A/B/A paint checks cover linen, birds, plum and water lilies at 390/1440, including a classic scrollbar. They verify the stronger linen range, unchanged reading geometry, body contrast of at least 4.5:1, no pointer interception and identical real-portrait pixels. Actual transforms change for all three botanicals and stop under shared pause, OS/footer preferences and visibility/lifecycle changes. Static/noindex policy, no-JavaScript painted fallback, print and forced colours pass. Public and compiled asset hashes match; the active four assets total 284,804 bytes and the former blossom is not requested.
+
+The [fresh-main no-loss comparison](plum-water-lilies/no-loss.json) retains all 128 pages and Markdown twins, 9,455 JSON-LD nodes and 42,431 properties, five project records, twelve legacy gallery entries and all case-study galleries/public projections. Media changes only from 3,627 to 3,629 for the two new assets; the earlier blossom remains. The primary proof in the [authored-content comparison](plum-water-lilies/content-preservation.json) is byte-for-byte identity of all 128 compiled `<main>` fragments against `8db3d53`, with per-route SHA-256 pairs. A supporting reconstructed parser also retains all 8,964 authored blocks, 4,428 main-link references, 629 meaningful image references and 221 exact FAQ pairs, with zero exceptions. The block parser differs from the earlier unpersisted helper, so its block total is not a cross-release content-growth comparison; exact main-HTML identity is authoritative.
+
+| Check | Current-candidate status |
+| --- | --- |
+| Shared implementation, future-page instructions and asset rights | Implemented; the current standard covers four active assets, stronger linen, shared controls and unchanged static/noindex boundaries. |
+| Asset provenance and exact derivative sizes | Complete: current register, hashes and compiled/public parity confirm the four active assets total 284,804 bytes; the old blossom remains available and unused. |
+| Composition and full-route inventory | Final 128-route/256-case inventory passes with forty screenshots; fourteen views independently inspected and four rechecked after final encoding. No actionable visual issue found. |
+| Painted layers, AA reading, unchanged real photography, motion, preferences and fallbacks | Five focused compiled-browser tests pass, zero skips, including all four painted parts, three moving botanical layers, AA reading, unchanged portrait pixels, static/noindex, no JavaScript, print and forced colours. |
+| Future-page fixture and static/noindex boundaries | Both temporary new-route fixtures and the phone-control fixture pass; the new published route paints the actual four-asset theme at both widths. Static/noindex behavior also passes the focused browser suite. |
+| Loading/performance and content/no-loss | Sixteen local loads/eight matched pairs complete: background images +10,050 bytes, CSS +701, scripts unchanged, sampled after CLS zero. Fresh-main no-loss passes. All 128 compiled main-content fragments are byte-identical to the baseline; supporting parity retains 8,964 blocks, 4,428 links, 629 meaningful image references and 221 FAQ pairs, with zero exceptions. |
+| Source/build and built-site suite | Source: 153 pass; case-study dates pass; full built-site suite: 281/281 pass with zero skips, plus both temporary new-route fixtures and the phone-control fixture. |
+| Typography, Guide and environment/review checks | Typography/contrast: 2/2 pass; Guide browser: 18 route/width and eight footer cases pass; Guide-release: 9/9 pass. Phone: 2/2; analytics: 2/2; Guide publication: 5; Makers units: 3 and responsive/filter/exclusion/no-JavaScript: 48 pass. Configured strict-name checks pass on repository and review output without exposing the private input. |
+| Exact-head hosted checks, authorised publication and live view | Pending. Do not announce publication from implementation or local screenshots alone. |
+
+Local validation is complete against the freshly confirmed `8db3d53` baseline. Exact-head hosted checks, authorised publication and live verification remain pending. Existing editorial/publication approvals and private-seed blockers are unchanged; decorative artwork does not clear unrelated content for publication.
