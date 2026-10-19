@@ -1,0 +1,18 @@
+---
+import { commissionScope as scope } from '../lib/commission-scope';
+const confirmed = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${scope.ownerConfirmed}T00:00:00Z`));
+---
+
+<section id="commission-scope" aria-labelledby="commission-scope-heading">
+  <h2 id="commission-scope-heading">{scope.heading}</h2>
+  <p>{scope.minimumInstallationScope} {scope.programmeRange}</p>
+  <p>{scope.confirmation}</p>
+  <p>{scope.pricing}</p>
+  <p>{scope.basis}. Confirmed by the owner on <time datetime={scope.ownerConfirmed}>{confirmed}</time>. <a href={scope.sourceUrl}>Published scope policy</a>.</p>
+  <h3>Recorded programmes</h3>
+  <ul>
+    {scope.supportingProjects.map(project => (
+      <li><a href={project.url}>{project.title}</a> — {project.projectDates}. Recorded role: {project.role}. {project.basis}.</li>
+    ))}
+  </ul>
+</section>

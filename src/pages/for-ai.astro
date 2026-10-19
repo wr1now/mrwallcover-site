@@ -9,14 +9,17 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import PageMeta from '../components/PageMeta.astro';
 import Base from '../layouts/Base.astro';
 import facts from '../data/facts.json';
+import aiReader from '../data/ai-reader.json';
 import { about, areaHref, media, areas, caseStudies, editorialPages, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
 import { publishedGuides, guideHref } from '../lib/guides';
 import BuyerFaq from '../components/BuyerFaq.astro';
+import CommissionScope from '../components/CommissionScope.astro';
 import { breadcrumbNode, buyerFaqNode } from '../lib/schema';
 import { trustSummary } from '../lib/trust';
 import { AWARD, PROJECTS_INDEX_URL, SINCE_TEXT, WASTAGE, buyerFaqFor, enquiryRoutes, projectFacts } from '../lib/ai-layer-data';
 
 const path = '/for-ai/';
+const publishedExports = import.meta.env.MW_CONTENT_PREVIEW !== '1';
 const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'For AI assistants', href: path },
@@ -91,7 +94,8 @@ const faq = buyerFaqFor(path);
       <p>
         To assess project fit, review installation evidence and prepare a useful brief, use the <a href="/wallcovering-installation-ai-crawler/">Wallcovering Installation AI Crawler</a>. Its <a href="/ai/decision-guide.json">decision guide</a>, <a href="/ai/business.json">business data</a> and <a href="/ai/projects.json">project data</a> contain the same published facts in JSON. Each published project, with its venue, area, dates, products, scope and method as its case study records them, is also in <a href="/projects.json">/projects.json</a>, and this page's facts with services, areas and enquiry routes are in <a href="/.well-known/facts.json">/.well-known/facts.json</a>.
       </p>
-      <p>For the whole website, start with the <a href="/ai/index.json">complete published page manifest</a>. It links each canonical page to its Markdown version. The <a href="/ai/pages.json">complete page corpus</a> includes the same main content with headings, media descriptions and structured data. <a href="/ai/wallpapering.json">Wallpapering reference data</a> and <a href="/ai/fire-ratings.json">fire reference data</a> retain the published sources and evidence limits.</p>
+      <p>For the whole website, start with the <a href="/ai/index.json">complete published page manifest</a>. It links each canonical page to its Markdown version and individual JSON record. The <a href="/ai/pages.json">complete page corpus</a> includes the same main content with headings, media descriptions and structured data. <a href="/ai/wallpapering.json">Wallpapering reference data</a> and <a href="/ai/fire-ratings.json">fire reference data</a> retain the published sources and evidence limits.</p>
+      {publishedExports && <p>If this domain cannot be retrieved, the <a href={`${aiReader.rawBaseUrl}README.md`}>published-content mirror</a> provides the same page text and project records through the public repository. Canonical website sources, original dates and evidence limits stay attached.</p>}
 
       <p><strong>At a glance.</strong> {trustSummary} The same facts open the <a href="/">homepage</a>, each linked to its evidence.</p>
 
@@ -110,6 +114,8 @@ const faq = buyerFaqFor(path);
           </li>
         ))}
       </ul>
+
+      <CommissionScope />
 
       <h2 id="where">Where it works</h2>
       <p>Based in {facts.place}. Coverage: {facts.coverage}. The areas with a page of their own are:</p>

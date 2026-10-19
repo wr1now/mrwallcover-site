@@ -7,17 +7,17 @@ const { path, quiet = false } = Astro.props;
 const active = !quiet && questionVisualForPath(path) === 'dimensional';
 ---
 
-{/* Original paper forms, confined to the outer gutters and always behind the page. */}
-<div class:list={['atelier-atmosphere', !active && 'atelier-atmosphere--quiet']} data-atelier-atmosphere data-atelier-motion={active ? 'active' : 'static'} aria-hidden="true" inert>
+{/* Original textile and painted botanicals, always behind the reading surface. */}
+<div class:list={['atelier-atmosphere', !active && 'atelier-atmosphere--quiet']} data-atelier-atmosphere data-atelier-style="linen-botanical" data-atelier-motion={active ? 'active' : 'static'} aria-hidden="true" inert>
+  <div class="atelier-atmosphere__linen" data-atelier-linen></div>
   <div class="atelier-atmosphere__edge atelier-atmosphere__edge--right">
-    <div class="atelier-atmosphere__fan">
-      <span class="atelier-atmosphere__sheet atelier-atmosphere__sheet--back"></span>
-      <span class="atelier-atmosphere__sheet atelier-atmosphere__sheet--middle"></span>
-      <span class="atelier-atmosphere__sheet atelier-atmosphere__sheet--front"></span>
-    </div>
+    <div class="atelier-atmosphere__botanical atelier-atmosphere__botanical--birds" data-atelier-botanical="birds" data-atelier-moving></div>
   </div>
   <div class="atelier-atmosphere__edge atelier-atmosphere__edge--left">
-    <div class="atelier-atmosphere__curl"><span></span></div>
+    <div class="atelier-atmosphere__botanical atelier-atmosphere__botanical--blossom" data-atelier-botanical="blossom" data-atelier-moving></div>
+  </div>
+  <div class="atelier-atmosphere__pond">
+    <div class="atelier-atmosphere__botanical atelier-atmosphere__botanical--water-lilies" data-atelier-botanical="water-lilies" data-atelier-moving></div>
   </div>
 </div>
 

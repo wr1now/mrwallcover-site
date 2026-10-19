@@ -1,7 +1,9 @@
-/* Sculptural paper at the edges of the shared shell. Reading and photography stay above it. */
+/* A quiet linen ground and original painted branches, kept below all page content. */
 body:has(> .atelier-atmosphere) { isolation:isolate; }
 body:has(> .atelier-atmosphere) > :is(main, .site-footer) { position:relative; z-index:1; }
 .atelier-atmosphere {
+  --linen-opacity:.25;
+  --botanical-opacity:.31;
   position:fixed;
   inset:0;
   z-index:0;
@@ -10,94 +12,100 @@ body:has(> .atelier-atmosphere) > :is(main, .site-footer) { position:relative; z
   user-select:none;
   contain:strict;
 }
+.atelier-atmosphere__linen {
+  position:absolute;
+  inset:0;
+  background:url('/media/atelier-botanicals/ivory-linen.webp') repeat;
+  background-size:18rem 18rem;
+  opacity:var(--linen-opacity);
+}
 .atelier-atmosphere__edge {
   position:absolute;
   inset-block:0;
-  width:clamp(.625rem, calc((100vw - 80rem) / 2 + 1.25rem), 9rem);
+  width:clamp(5.25rem, calc((100vw - 80rem) / 2 + 5.5rem), 16rem);
   overflow:hidden;
-  perspective:900px;
+  perspective:1100px;
 }
-.atelier-atmosphere__edge--right { right:0; }
-.atelier-atmosphere__edge--left { left:0; }
-.atelier-atmosphere__fan {
+.atelier-atmosphere__edge--right {
+  right:0;
+  mask-image:linear-gradient(to right, transparent, #000 85%);
+}
+.atelier-atmosphere__edge--left {
+  left:0;
+  mask-image:linear-gradient(to left, transparent, #000 85%);
+}
+.atelier-atmosphere__botanical {
   position:absolute;
-  top:17%;
+  background-repeat:no-repeat;
+  background-size:contain;
+  opacity:var(--botanical-opacity);
+  transform-origin:50% 70%;
+  animation-duration:32s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;
+  animation-direction:alternate;
+  animation-play-state:paused;
+}
+.atelier-atmosphere__botanical--birds {
+  top:16%;
   right:-9.75rem;
-  width:17rem;
-  height:29rem;
-  transform:rotateX(10deg) rotateY(-24deg) rotateZ(-11deg);
-  transform-style:preserve-3d;
-  animation:atelier-paper-breathe 26s ease-in-out infinite alternate;
-  animation-play-state:paused;
+  width:22rem;
+  height:33rem;
+  background-image:url('/media/atelier-botanicals/branch-birds.webp');
+  transform:rotateX(2deg) rotateY(-6deg) rotateZ(-3deg);
+  animation-name:atelier-branch-breathe;
 }
-.atelier-atmosphere__sheet {
+.atelier-atmosphere__botanical--blossom {
+  bottom:-3rem;
+  left:-8rem;
+  width:20rem;
+  height:30rem;
+  background-image:url('/media/atelier-botanicals/plum-blossom.webp');
+  transform:rotateX(-2deg) rotateY(5deg) rotateZ(5deg);
+  animation-name:atelier-blossom-breathe;
+  animation-duration:38s;
+}
+.atelier-atmosphere__pond {
   position:absolute;
+  right:-2rem;
+  bottom:2.5rem;
+  width:clamp(11rem, 20vw, 22rem);
+  aspect-ratio:3 / 2;
+  overflow:hidden;
+  perspective:1100px;
+  mask-image:linear-gradient(120deg, transparent 5%, #000 80%);
+}
+.atelier-atmosphere__botanical--water-lilies {
   inset:0;
-  display:block;
-  border-radius:48% 3% 3% 8% / 11% 2% 2% 5%;
-  border-left:1px solid #b9af98;
-  border-bottom:2px solid #cbc0a9;
-  background:
-    repeating-linear-gradient(88deg, transparent 0 5px, #8f84630b 5px 6px),
-    linear-gradient(100deg, #a69b82 0%, #dfd8c8 5%, #f7f4ee 19%, #faf7f0 51%, #e5dfd2 86%, #b4a68a 100%);
-  box-shadow:-12px 16px 21px #68583b16, inset 3px 0 5px #fffdf8cc;
-  transform-origin:95% 50%;
-  backface-visibility:hidden;
+  background-image:url('/media/atelier-botanicals/water-lilies.webp');
+  opacity:calc(var(--botanical-opacity) * .7);
+  transform:rotateX(3deg) rotateY(-3deg) rotateZ(-2deg);
+  animation-name:atelier-water-lilies-breathe;
+  animation-duration:42s;
 }
-.atelier-atmosphere__sheet--back {
-  transform:translate3d(10px,8px,-32px) rotateY(12deg) rotateZ(9deg);
-  background:linear-gradient(97deg, #8e927d, #d4d4c3 12%, #e8e7db 64%, #c1c0a9);
+.atelier-atmosphere[data-running] [data-atelier-moving] { animation-play-state:running; }
+.atelier-atmosphere--quiet { --linen-opacity:.16; --botanical-opacity:.12; }
+.atelier-atmosphere--quiet :is(.atelier-atmosphere__edge--left, .atelier-atmosphere__pond) { display:none; }
+@keyframes atelier-branch-breathe {
+  from { transform:translate3d(0,-2px,0) rotateX(2deg) rotateY(-6deg) rotateZ(-3deg); }
+  to { transform:translate3d(-3px,3px,0) rotateX(3deg) rotateY(-4deg) rotateZ(-2deg); }
 }
-.atelier-atmosphere__sheet--middle { transform:translate3d(1px,3px,-15px) rotateY(5deg) rotateZ(4deg); }
-.atelier-atmosphere__sheet--front { transform:translateZ(8px) rotateY(-5deg); }
-.atelier-atmosphere__curl {
-  position:absolute;
-  bottom:14%;
-  left:-11.75rem;
-  width:17rem;
-  height:21rem;
-  border-radius:18% 56% 49% 18% / 5% 22% 22% 5%;
-  border-right:2px solid #c0b294;
-  background:
-    repeating-linear-gradient(2deg, transparent 0 5px, #8f846309 5px 6px),
-    linear-gradient(92deg, #eee8dc 15%, #faf7f0 52%, #e4dcce 76%, #bcaf95 94%, #e4dccb 100%);
-  box-shadow:9px 15px 22px #68583b13, inset -4px 0 6px #fffdf899;
-  transform:rotateX(-7deg) rotateY(23deg) rotateZ(13deg);
-  transform-style:preserve-3d;
-  animation:atelier-paper-curl 30s ease-in-out infinite alternate;
-  animation-play-state:paused;
+@keyframes atelier-blossom-breathe {
+  from { transform:translate3d(0,2px,0) rotateX(-2deg) rotateY(5deg) rotateZ(5deg); }
+  to { transform:translate3d(3px,-3px,0) rotateX(-3deg) rotateY(7deg) rotateZ(4deg); }
 }
-.atelier-atmosphere__curl > span {
-  position:absolute;
-  top:7%;
-  right:-6px;
-  width:25px;
-  height:86%;
-  border-radius:0 90% 90% 0 / 0 15% 15% 0;
-  background:linear-gradient(90deg, #b5a78b, #e8dfce 35%, #f6f0e4 71%, #cec1a7);
-  transform:translateZ(-9px) rotateY(23deg);
-  box-shadow:6px 8px 12px #68583b0c;
-}
-.atelier-atmosphere[data-running] .atelier-atmosphere__fan,
-.atelier-atmosphere[data-running] .atelier-atmosphere__curl { animation-play-state:running; }
-.atelier-atmosphere--quiet { opacity:.35; }
-.atelier-atmosphere--quiet .atelier-atmosphere__edge--left { display:none; }
-@keyframes atelier-paper-breathe {
-  from { transform:translate3d(0,-5px,0) rotateX(10deg) rotateY(-24deg) rotateZ(-11deg); }
-  to { transform:translate3d(-5px,5px,0) rotateX(15deg) rotateY(-18deg) rotateZ(-9deg); }
-}
-@keyframes atelier-paper-curl {
-  from { transform:translate3d(0,4px,0) rotateX(-7deg) rotateY(23deg) rotateZ(13deg); }
-  to { transform:translate3d(4px,-5px,0) rotateX(-11deg) rotateY(29deg) rotateZ(11deg); }
+@keyframes atelier-water-lilies-breathe {
+  from { transform:translate3d(0,1px,0) rotateX(3deg) rotateY(-3deg) rotateZ(-2deg); }
+  to { transform:translate3d(-2px,-1px,0) rotateX(4deg) rotateY(-2deg) rotateZ(-1deg); }
 }
 @media (max-width:1023px) {
-  .atelier-atmosphere__fan { top:23%; right:-12.5rem; opacity:.65; }
-  .atelier-atmosphere__curl { left:-14rem; opacity:.65; }
+  .atelier-atmosphere:not(.atelier-atmosphere--quiet) { --botanical-opacity:.22; }
+  .atelier-atmosphere__botanical--birds { top:22%; right:-7rem; width:18rem; height:27rem; }
+  .atelier-atmosphere__botanical--blossom { bottom:8%; left:-7.75rem; width:18rem; height:27rem; }
 }
 html[data-effects="reduced"] .atelier-atmosphere { display:none; }
-html[data-object-motion-state="paused"] .atelier-atmosphere__fan,
-html[data-object-motion-state="paused"] .atelier-atmosphere__curl { animation-play-state:paused!important; }
+html[data-object-motion-state="paused"] [data-atelier-moving] { animation-play-state:paused!important; }
 @media (prefers-reduced-motion:reduce) {
-  .atelier-atmosphere__fan, .atelier-atmosphere__curl { animation:none!important; }
+  [data-atelier-moving] { animation:none!important; }
 }
 @media (forced-colors:active), print { .atelier-atmosphere { display:none; } }

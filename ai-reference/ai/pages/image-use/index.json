@@ -1,0 +1,481 @@
+{
+  "id": "https://www.mrwallcover.com/image-use/",
+  "url": "https://www.mrwallcover.com/image-use/",
+  "path": "/image-use/",
+  "title": "Image Use and Photo Credits | Mr Wallcover",
+  "description": "Our photographs are © Mr Wallcover and may not be reused without permission. Photographs by others belong to their credited owners. Email info@mrwallcover.com.",
+  "language": "en-GB",
+  "author": "Dorin Burcus",
+  "dates": {
+    "published": null,
+    "modified": "2026-10-11",
+    "reviewed": null
+  },
+  "formats": {
+    "html": "https://www.mrwallcover.com/image-use/",
+    "markdown": "https://www.mrwallcover.com/image-use/index.md",
+    "json": "https://www.mrwallcover.com/ai/pages/image-use/index.json",
+    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/35"
+  },
+  "headings": [
+    {
+      "level": 1,
+      "id": null,
+      "text": "Using our photographs"
+    },
+    {
+      "level": 2,
+      "id": "our-own-photographs",
+      "text": "Our own photographs"
+    },
+    {
+      "level": 2,
+      "id": "photographs-by-others",
+      "text": "Photographs by others"
+    },
+    {
+      "level": 2,
+      "id": "corrections",
+      "text": "Corrections"
+    }
+  ],
+  "markdown": "Image use\n\n# Using our photographs\n\nBy [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026\n\nOur photographs are © Mr Wallcover and may not be reused without permission. Photographs by anyone else belong to the owner named in their credit. To ask about using an image, email info@mrwallcover.com.\n\n[Ask about an image](https://www.mrwallcover.com/contact/) [See the work](https://www.mrwallcover.com/projects/)\n\n## Our own photographs\n\nMost photographs on this site were taken by Mr Wallcover on our own projects, many of them by Dorin Burcus, the founder. They are © Mr Wallcover. You may not copy, publish, crop or adapt them without our permission.\n\nTo ask permission, email [info@mrwallcover.com](mailto:info@mrwallcover.com) with the page address of the photograph and how you would like to use it.\n\n## Photographs by others\n\nSome photographs belong to other people, and each one is credited where it appears. They include the official room photographs of Raffles London at The OWO, House of Hackney’s photographs of its St Michael’s Clergy House showroom, Hilton’s press photographs of Hilton Garden Inn Silverstone, and views of buildings from Wikimedia Commons. Those owners hold the rights, not us, and we cannot license their photographs to anyone. Ask the credited owner.\n\nWikimedia Commons photographs are used under the Creative Commons licence named in their credit, which sets the terms for reusing them. Where a photographer’s name is not recorded, the photograph is still not ours, and we do not claim it.\n\n## Corrections\n\nIf a credit is wrong or missing, or you own a photograph shown here and want it changed or removed, email [info@mrwallcover.com](mailto:info@mrwallcover.com) and say which page.\n",
+  "links": [
+    {
+      "url": "https://www.mrwallcover.com/about/#dorin",
+      "text": "Dorin Burcus"
+    },
+    {
+      "url": "https://www.mrwallcover.com/contact/",
+      "text": "Ask about an image"
+    },
+    {
+      "url": "https://www.mrwallcover.com/projects/",
+      "text": "See the work"
+    },
+    {
+      "url": "mailto:info@mrwallcover.com",
+      "text": "info@mrwallcover.com"
+    },
+    {
+      "url": "https://www.mrwallcover.com/",
+      "text": "Home"
+    },
+    {
+      "url": "https://www.mrwallcover.com/about/",
+      "text": "About"
+    },
+    {
+      "url": "https://www.mrwallcover.com/image-use/#our-own-photographs",
+      "text": "Our own photographs"
+    },
+    {
+      "url": "https://www.mrwallcover.com/image-use/#photographs-by-others",
+      "text": "Photographs by others"
+    },
+    {
+      "url": "https://www.mrwallcover.com/image-use/#corrections",
+      "text": "Corrections"
+    }
+  ],
+  "images": [],
+  "diagrams": [],
+  "media": [],
+  "structuredData": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": [
+            "HomeAndConstructionBusiness",
+            "ProfessionalService"
+          ],
+          "@id": "https://www.mrwallcover.com/#business",
+          "name": "Mr Wallcover",
+          "url": "https://www.mrwallcover.com",
+          "image": "https://www.mrwallcover.com/og.jpg",
+          "logo": "https://www.mrwallcover.com/logo-512.png",
+          "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus, in the trade since 2012: survey to aftercare for hotels, homes and makers.",
+          "email": "info@mrwallcover.com",
+          "founder": {
+            "@id": "https://www.mrwallcover.com/about/#dorin"
+          },
+          "award": "Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "London",
+            "addressRegion": "Greater London",
+            "addressCountry": "GB"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "London"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "London and the surrounding areas"
+            },
+            {
+              "@type": "Country",
+              "name": "United Kingdom",
+              "description": "UK-wide for selected projects"
+            },
+            {
+              "@type": "Place",
+              "name": "Mayfair",
+              "url": "https://www.mrwallcover.com/areas/mayfair/"
+            },
+            {
+              "@type": "Place",
+              "name": "Belgravia",
+              "url": "https://www.mrwallcover.com/areas/belgravia/"
+            },
+            {
+              "@type": "Place",
+              "name": "Chelsea",
+              "url": "https://www.mrwallcover.com/areas/chelsea/"
+            },
+            {
+              "@type": "Place",
+              "name": "Kensington",
+              "url": "https://www.mrwallcover.com/areas/kensington/"
+            },
+            {
+              "@type": "Place",
+              "name": "the City of London",
+              "url": "https://www.mrwallcover.com/areas/city-of-london/"
+            },
+            {
+              "@type": "Place",
+              "name": "the Cotswolds",
+              "url": "https://www.mrwallcover.com/areas/cotswolds/"
+            }
+          ],
+          "slogan": "Premium wallcoverings services: surveying, management, supply, install and aftercare.",
+          "knowsAbout": [
+            "Wallpaper installation",
+            "Wallcovering installation for hotels",
+            "Grasscloth installation",
+            "Hand-painted wallcoverings",
+            "Acoustic wallcoverings",
+            "Silk wallcovering installation",
+            "Fabric walling",
+            "Wallpaper mural installation",
+            "Contract vinyl wallcoverings",
+            "Wallcoverings on joinery",
+            "Bespoke wallcovering panels",
+            "Architectural and furniture film wrapping",
+            "Window film installation"
+          ],
+          "sameAs": [
+            "https://www.instagram.com/mrwallcover/"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Mr Wallcover services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/#service",
+                  "name": "Hand-painted wallpaper installation",
+                  "serviceType": "Hand-painted wallpaper installation",
+                  "url": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/grasscloth-installation/#service",
+                  "name": "Grasscloth installation",
+                  "serviceType": "Grasscloth installation",
+                  "url": "https://www.mrwallcover.com/services/grasscloth-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/silk-wallcovering-installation/#service",
+                  "name": "Silk wallcovering installation",
+                  "serviceType": "Silk wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/silk-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/fabric-walling/#service",
+                  "name": "Fabric walling",
+                  "serviceType": "Fabric walling",
+                  "url": "https://www.mrwallcover.com/services/fabric-walling/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/#service",
+                  "name": "Hotel wallcovering installation",
+                  "serviceType": "Hotel wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/mural-installation/#service",
+                  "name": "Mural installation",
+                  "serviceType": "Mural installation",
+                  "url": "https://www.mrwallcover.com/services/mural-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/#service",
+                  "name": "Acoustic wallcovering installation",
+                  "serviceType": "Acoustic wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/architectural-film-wrapping/#service",
+                  "name": "Architectural & furniture film wrapping",
+                  "serviceType": "Architectural film installation",
+                  "url": "https://www.mrwallcover.com/services/architectural-film-wrapping/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/window-film/#service",
+                  "name": "Window film installation",
+                  "serviceType": "Window film installation",
+                  "url": "https://www.mrwallcover.com/services/window-film/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/#service",
+                  "name": "Joinery wallcoverings & bespoke panels",
+                  "serviceType": "Wallcovering on joinery and bespoke wall panels",
+                  "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/exterior-works/#service",
+                  "name": "Exterior works",
+                  "serviceType": "Exterior decorating",
+                  "url": "https://www.mrwallcover.com/services/exterior-works/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/#service",
+                  "name": "Commercial and showroom wallcovering installation",
+                  "serviceType": "Commercial wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              }
+            ]
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@mrwallcover.com",
+            "url": "https://www.mrwallcover.com/contact/",
+            "contactType": "quotations",
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "London"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "London and the surrounding areas"
+              },
+              {
+                "@type": "Country",
+                "name": "United Kingdom",
+                "description": "UK-wide for selected projects"
+              },
+              {
+                "@type": "Place",
+                "name": "Mayfair",
+                "url": "https://www.mrwallcover.com/areas/mayfair/"
+              },
+              {
+                "@type": "Place",
+                "name": "Belgravia",
+                "url": "https://www.mrwallcover.com/areas/belgravia/"
+              },
+              {
+                "@type": "Place",
+                "name": "Chelsea",
+                "url": "https://www.mrwallcover.com/areas/chelsea/"
+              },
+              {
+                "@type": "Place",
+                "name": "Kensington",
+                "url": "https://www.mrwallcover.com/areas/kensington/"
+              },
+              {
+                "@type": "Place",
+                "name": "the City of London",
+                "url": "https://www.mrwallcover.com/areas/city-of-london/"
+              },
+              {
+                "@type": "Place",
+                "name": "the Cotswolds",
+                "url": "https://www.mrwallcover.com/areas/cotswolds/"
+              }
+            ],
+            "availableLanguage": [
+              "English"
+            ]
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.mrwallcover.com/about/#dorin",
+          "name": "Dorin Burcus",
+          "jobTitle": "Founder",
+          "url": "https://www.mrwallcover.com/about/",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+            "contentUrl": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+            "creditText": "Dorin Burcus / Mr Wallcover",
+            "creator": {
+              "@type": "Person",
+              "@id": "https://www.mrwallcover.com/about/#dorin",
+              "name": "Dorin Burcus",
+              "url": "https://www.mrwallcover.com/about/"
+            },
+            "copyrightNotice": "© Mr Wallcover",
+            "license": "https://www.mrwallcover.com/image-use/",
+            "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+          },
+          "worksFor": {
+            "@id": "https://www.mrwallcover.com/#business"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.mrwallcover.com/#website",
+          "url": "https://www.mrwallcover.com",
+          "name": "Mr Wallcover",
+          "inLanguage": "en-GB",
+          "publisher": {
+            "@id": "https://www.mrwallcover.com/#business"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.mrwallcover.com/image-use/#webpage",
+          "url": "https://www.mrwallcover.com/image-use/",
+          "name": "Image Use and Photo Credits | Mr Wallcover",
+          "description": "Our photographs are © Mr Wallcover and may not be reused without permission. Photographs by others belong to their credited owners. Email info@mrwallcover.com.",
+          "inLanguage": "en-GB",
+          "isPartOf": {
+            "@id": "https://www.mrwallcover.com/#website"
+          },
+          "about": {
+            "@id": "https://www.mrwallcover.com/#business"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://www.mrwallcover.com/og.jpg",
+            "contentUrl": "https://www.mrwallcover.com/og.jpg",
+            "creditText": "Mr Wallcover",
+            "creator": {
+              "@type": "Organization",
+              "@id": "https://www.mrwallcover.com/#business",
+              "name": "Mr Wallcover",
+              "url": "https://www.mrwallcover.com/"
+            },
+            "copyrightNotice": "© Mr Wallcover",
+            "license": "https://www.mrwallcover.com/image-use/",
+            "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.mrwallcover.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About",
+              "item": "https://www.mrwallcover.com/about/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Image use",
+              "item": "https://www.mrwallcover.com/image-use/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

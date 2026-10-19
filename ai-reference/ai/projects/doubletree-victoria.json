@@ -1,0 +1,816 @@
+{
+  "schemaVersion": "1.2",
+  "resourceReviewed": "2026-10-10",
+  "url": "https://www.mrwallcover.com/ai/projects/doubletree-victoria.json",
+  "sourceUrl": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+  "publisher": {
+    "name": "Mr Wallcover",
+    "url": "https://www.mrwallcover.com"
+  },
+  "fieldNotes": {
+    "projectDates": "The Year field from the published project page’s At a glance record, where available, or its published project period. It is separate from the publication and update dates of that page.",
+    "nullValues": "A null value means the information is not recorded in this published record.",
+    "references": "Links cited in the published record or its photograph credits. They provide building, material or image context; they do not independently confirm the installation role.",
+    "photographs": "Photograph credits are reproduced as recorded. A picture of a venue illustrates its setting; the written project record defines the installation role.",
+    "materials": "A material name records a product installed on that project. It does not establish maker approval, accreditation or endorsement.",
+    "standardGlance": "The same seven public fields as the project page’s At a glance definition list. Materials include the published wallcovering names and any additional makers or products in that list, preserving their recorded wording.",
+    "installationRecord": "Installation roles, methods and outcomes are reported by Mr Wallcover in its own published case studies. Extracts retain the source wording with Markdown presentation removed. External references provide context, not independent confirmation of the installation role.",
+    "pageContent": "The complete published main content, generated from the final canonical HTML: Markdown, headings, links, image descriptions and captions, diagrams, film references, structured data and source dates. It matches the corresponding page in /ai/pages.json. Media links are references, not transcripts or interpretations of the visual content.",
+    "formats": "Each project links to its canonical HTML, Markdown twin and individual JSON record. The aggregate includes the same complete records; individual JSON addresses allow a reader to retrieve one project at a time."
+  },
+  "project": {
+    "id": "https://www.mrwallcover.com/projects/doubletree-victoria/#project",
+    "slug": "doubletree-victoria",
+    "title": "DoubleTree by Hilton London – Victoria",
+    "url": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+    "recordType": "case-study",
+    "role": "Guest room wallcoverings",
+    "client": "DoubleTree by Hilton London – Victoria",
+    "location": "2 Bridge Place, Victoria, London SW1",
+    "projectDates": "2023",
+    "summary": "Guest room wallcoverings at the Victoria hotel, spring and summer 2023.",
+    "materials": null,
+    "standardGlance": [
+      {
+        "label": "Client",
+        "value": "DoubleTree by Hilton London – Victoria"
+      },
+      {
+        "label": "Designer",
+        "value": null
+      },
+      {
+        "label": "Main contractor",
+        "value": null
+      },
+      {
+        "label": "Maker and paper",
+        "value": null
+      },
+      {
+        "label": "Area or rooms",
+        "value": null
+      },
+      {
+        "label": "Scope",
+        "value": "Guest room wallcoverings"
+      },
+      {
+        "label": "Year",
+        "value": "2023"
+      }
+    ],
+    "published": "2026-10-09",
+    "updated": "2026-10-10",
+    "references": [
+      "https://creativecommons.org/licenses/by-sa/2.0",
+      "https://commons.wikimedia.org/wiki/File:Bridge_Place,_Victoria,_London_SW1V_-_geograph.org.uk_-_1766428.jpg"
+    ],
+    "installationRecord": {
+      "basis": "Company-reported project record",
+      "sourceUrl": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+      "sections": [
+        {
+          "heading": "At a glance",
+          "kind": "scope",
+          "text": "- Hotel: DoubleTree by Hilton London – Victoria\n- Address: 2 Bridge Place, Victoria\n- Years on site: March to September 2023\n- Scope: guest room wallcoverings"
+        },
+        {
+          "heading": "The work",
+          "kind": "scope",
+          "text": "The rooms were hung while the hotel stayed in use. Access, protection and the order of floors were agreed so a finished room could be handed back without the next room waiting on a guess."
+        }
+      ]
+    },
+    "photographs": [
+      {
+        "id": "doubletree-victoria-commons-01",
+        "url": "https://www.mrwallcover.com/media/img/doubletree-victoria-commons-01.webp",
+        "alt": "The hotel building on Bridge Place, Victoria, in 2010, when it traded as the Hesperia London Victoria; it is now the DoubleTree by Hilton London – Victoria.",
+        "credit": "The building on Bridge Place in 2010, when it was the Hesperia London Victoria. A view of the building, not of our work. Photography: Stacey Harris / Wikimedia Commons (CC BY-SA 2.0).",
+        "sourceUrls": [
+          "https://creativecommons.org/licenses/by-sa/2.0",
+          "https://commons.wikimedia.org/wiki/File:Bridge_Place,_Victoria,_London_SW1V_-_geograph.org.uk_-_1766428.jpg"
+        ]
+      }
+    ],
+    "formats": {
+      "html": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+      "markdown": "https://www.mrwallcover.com/projects/doubletree-victoria/index.md",
+      "json": "https://www.mrwallcover.com/ai/projects/doubletree-victoria.json"
+    },
+    "pageContent": {
+      "id": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+      "url": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+      "path": "/projects/doubletree-victoria/",
+      "title": "DoubleTree Victoria | Mr Wallcover",
+      "description": "Guest room wallcoverings at DoubleTree by Hilton London – Victoria, Bridge Place, in 2023.",
+      "language": "en-GB",
+      "author": "Dorin Burcus",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "formats": {
+        "html": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+        "markdown": "https://www.mrwallcover.com/projects/doubletree-victoria/index.md",
+        "json": "https://www.mrwallcover.com/ai/pages/projects/doubletree-victoria/index.json",
+        "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/78"
+      },
+      "headings": [
+        {
+          "level": 1,
+          "id": null,
+          "text": "DoubleTree by Hilton London – Victoria"
+        },
+        {
+          "level": 2,
+          "id": "glance-heading",
+          "text": "At a glance"
+        },
+        {
+          "level": 2,
+          "id": "at-a-glance",
+          "text": "At a glance"
+        },
+        {
+          "level": 2,
+          "id": "the-work",
+          "text": "The work"
+        },
+        {
+          "level": 2,
+          "id": "photographs-on-this-page",
+          "text": "Photographs on this page"
+        },
+        {
+          "level": 2,
+          "id": "method-heading",
+          "text": "The same standards, on every commission."
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Survey and scope, room by room"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Preparation decides the finish"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Protection and containment"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Batch and shade control"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "Set out from the room's focal points"
+        },
+        {
+          "level": 3,
+          "id": null,
+          "text": "One team, then the return visit"
+        }
+      ],
+      "markdown": "2 Bridge Place, Victoria, London SW1\n\n# DoubleTree by Hilton London – Victoria\n\nGuest room wallcoverings at the Victoria hotel, spring and summer 2023.\n\n![The hotel building on Bridge Place, Victoria, in 2010, when it traded as the Hesperia London Victoria; it is now the DoubleTree by Hilton London – Victoria.](https://www.mrwallcover.com/media/img/doubletree-victoria-commons-01.jpg)\n\nThe building on Bridge Place in 2010, when it was the Hesperia London Victoria. A view of the building, not of our work. Photography: Stacey Harris / Wikimedia Commons (CC BY-SA 2.0).\n\n## At a glance\n\nClient, materials & project facts\n\n**Client**\n: DoubleTree by Hilton London – Victoria\n\n**Designer**\n: –Not recorded\n\n**Main contractor**\n: –Not recorded\n\n**Maker and paper**\n: –Not recorded\n\n**Area or rooms**\n: –Not recorded\n\n**Scope**\n: Guest room wallcoverings\n\n**Year**\n: 2023\n\n## At a glance\n\n- **Hotel:** DoubleTree by Hilton London – Victoria\n- **Address:** 2 Bridge Place, Victoria\n- **Years on site:** March to September 2023\n- **Scope:** guest room wallcoverings\n\n## The work\n\nThe rooms were hung while the hotel stayed in use. Access, protection and the order of floors were agreed so a finished room could be handed back without the next room waiting on a guess.\n\n## Photographs on this page\n\nThis is a photograph of the building by another photographer, credited below. It was taken in 2010, before the hotel took the DoubleTree name, and it shows the building, not our work.\n\n- The building on Bridge Place in 2010, when it was the Hesperia London Victoria: photograph by Stacey Harris, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bridge_Place,_Victoria,_London_SW1V_-_geograph.org.uk_-_1766428.jpg). Resized for the web.\n\nHow the commission ran\n\n## The same standards, on every commission.\n\nWhether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.\n\n01\n\n### Survey and scope, room by room\n\nWe measure the wall that will actually be hung, allow for the repeat and the wastage, and write a scope of works room by room before anyone orders paper.\n\n02\n\n### Preparation decides the finish\n\nWalls are filled, made good and primed until they are true. If a wall is not ready for the material specified, we say so before the last drop is ordered.\n\n03\n\n### Protection and containment\n\nFloors, furniture and finished joinery are protected as part of the hang. Work is contained and the place is left tidy each evening. In a home we are visitors; in a hotel we work around the house.\n\n04\n\n### Batch and shade control\n\nDeliveries are checked against the measure, and batches and shading are managed so that a corridor of rooms reads as one surface.\n\n05\n\n### Set out from the room's focal points\n\nPattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.\n\n06\n\n### One team, then the return visit\n\nThe people who start are the people who finish. Four to six weeks after completion we come back to look at every seam and edge, and the workmanship is guaranteed for twelve months.\n\n[See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)\n\nBy [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 10 October 2026\n",
+      "links": [
+        {
+          "url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "text": "CC BY-SA 2.0"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Bridge_Place,_Victoria,_London_SW1V_-_geograph.org.uk_-_1766428.jpg",
+          "text": "Wikimedia Commons"
+        },
+        {
+          "url": "https://www.mrwallcover.com/details/",
+          "text": "See the finish up close: seams, internal corners, edges and joins from our own installations"
+        },
+        {
+          "url": "https://www.mrwallcover.com/about/#dorin",
+          "text": "Dorin Burcus"
+        },
+        {
+          "url": "https://www.mrwallcover.com/",
+          "text": "Home"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/",
+          "text": "Work"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/browns-hotel-mayfair/",
+          "text": "Brown's Hotel, Mayfair"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/raffles-london-the-owo/",
+          "text": "Raffles London at The OWO, Whitehall"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+          "text": "Four Seasons Hotel London at Ten Trinity Square"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/trematon-castle/",
+          "text": "Castle of Trematon, Cornwall"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/old-bailey-hotel/",
+          "text": "Hyde London City (the Old Bailey Hotel)"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/doubletree-west-end/",
+          "text": "DoubleTree by Hilton London – West End"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/biltmore-mayfair/",
+          "text": "The Biltmore Mayfair"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/",
+          "text": "House of Hackney showroom, St Michael's Clergy House"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/penny-morrison-showroom/",
+          "text": "Penny Morrison showroom, Chelsea"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/pimlico-st-georges-square/",
+          "text": "St George's Square, Pimlico"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/inverness-terrace/",
+          "text": "Inverness Terrace, Bayswater"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/north-london-residence/",
+          "text": "A Georgian house in North London"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/",
+          "text": "Ahluwalia x Calico Wallpaper: 'Estuary' at Rosewood London"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/",
+          "text": "Calico Wallpaper x BEVERLY 1975: Cadence at The Lavery, Brompton Design District"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/calico-lee-broom-overture/",
+          "text": "Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroom"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/",
+          "text": "Hilton Garden Inn Silverstone"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/pendley-manor-hotel/",
+          "text": "Pendley Manor Hotel, Tring"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/hilton-london-metropole/",
+          "text": "Hilton London Metropole"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/novotel-london-canary-wharf/",
+          "text": "Novotel London Canary Wharf"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/huntsman-savile-row/",
+          "text": "Huntsman, Savile Row"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/",
+          "text": "Mercedes-AMG showroom, London"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/everyman-liverpool/",
+          "text": "Everyman cinema, Liverpool"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/oxygen-freejumping-the-o2/",
+          "text": "Oxygen Freejumping, The O2"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/masterpiece-london-2019/",
+          "text": "Masterpiece London 2019"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/private-residence-little-venice/",
+          "text": "Private residence, Little Venice"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/jumeirah-carlton-tower/",
+          "text": "Jumeirah Carlton Tower, Knightsbridge"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/",
+          "text": "Calico Wallpaper airside at Heathrow: a luxury fashion house's store, Terminal 4"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/imperfect-arches-external-corner-trim/",
+          "text": "How we solve imperfect arches: bespoke external-corner trim for wallcoverings"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/scp-showroom-pimlico/",
+          "text": "SCP showroom, Pimlico"
+        },
+        {
+          "url": "https://www.mrwallcover.com/projects/tea-house-jaillon-studio/",
+          "text": "A tea house in West London, for Jaillon Studio"
+        },
+        {
+          "url": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/",
+          "text": "Hotel wallcovering installation"
+        },
+        {
+          "url": "https://www.mrwallcover.com/aftercare/",
+          "text": "Aftercare"
+        },
+        {
+          "url": "https://www.mrwallcover.com/areas/mayfair/",
+          "text": "Wallpaper installation in Mayfair"
+        },
+        {
+          "url": "https://www.mrwallcover.com/areas/belgravia/",
+          "text": "Wallpaper installation in Belgravia"
+        },
+        {
+          "url": "https://www.mrwallcover.com/areas/chelsea/",
+          "text": "Wallpaper installation in Chelsea"
+        },
+        {
+          "url": "https://www.mrwallcover.com/contact/",
+          "text": "Request a quotation"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.mrwallcover.com/media/img/doubletree-victoria-commons-01.jpg",
+          "alt": "The hotel building on Bridge Place, Victoria, in 2010, when it traded as the Hesperia London Victoria; it is now the DoubleTree by Hilton London – Victoria.",
+          "caption": "The building on Bridge Place in 2010, when it was the Hesperia London Victoria. A view of the building, not of our work. Photography: Stacey Harris / Wikimedia Commons (CC BY-SA 2.0).",
+          "width": 1800,
+          "height": 1350
+        }
+      ],
+      "diagrams": [],
+      "media": [],
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": [
+                "HomeAndConstructionBusiness",
+                "ProfessionalService"
+              ],
+              "@id": "https://www.mrwallcover.com/#business",
+              "name": "Mr Wallcover",
+              "url": "https://www.mrwallcover.com",
+              "image": "https://www.mrwallcover.com/og.jpg",
+              "logo": "https://www.mrwallcover.com/logo-512.png",
+              "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus, in the trade since 2012: survey to aftercare for hotels, homes and makers.",
+              "email": "info@mrwallcover.com",
+              "founder": {
+                "@id": "https://www.mrwallcover.com/about/#dorin"
+              },
+              "award": "Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "London",
+                "addressRegion": "Greater London",
+                "addressCountry": "GB"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "London"
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "London and the surrounding areas"
+                },
+                {
+                  "@type": "Country",
+                  "name": "United Kingdom",
+                  "description": "UK-wide for selected projects"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Mayfair",
+                  "url": "https://www.mrwallcover.com/areas/mayfair/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Belgravia",
+                  "url": "https://www.mrwallcover.com/areas/belgravia/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Chelsea",
+                  "url": "https://www.mrwallcover.com/areas/chelsea/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Kensington",
+                  "url": "https://www.mrwallcover.com/areas/kensington/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "the City of London",
+                  "url": "https://www.mrwallcover.com/areas/city-of-london/"
+                },
+                {
+                  "@type": "Place",
+                  "name": "the Cotswolds",
+                  "url": "https://www.mrwallcover.com/areas/cotswolds/"
+                }
+              ],
+              "slogan": "Premium wallcoverings services: surveying, management, supply, install and aftercare.",
+              "knowsAbout": [
+                "Wallpaper installation",
+                "Wallcovering installation for hotels",
+                "Grasscloth installation",
+                "Hand-painted wallcoverings",
+                "Acoustic wallcoverings",
+                "Silk wallcovering installation",
+                "Fabric walling",
+                "Wallpaper mural installation",
+                "Contract vinyl wallcoverings",
+                "Wallcoverings on joinery",
+                "Bespoke wallcovering panels",
+                "Architectural and furniture film wrapping",
+                "Window film installation"
+              ],
+              "sameAs": [
+                "https://www.instagram.com/mrwallcover/"
+              ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Mr Wallcover services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/#service",
+                      "name": "Hand-painted wallpaper installation",
+                      "serviceType": "Hand-painted wallpaper installation",
+                      "url": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/grasscloth-installation/#service",
+                      "name": "Grasscloth installation",
+                      "serviceType": "Grasscloth installation",
+                      "url": "https://www.mrwallcover.com/services/grasscloth-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/silk-wallcovering-installation/#service",
+                      "name": "Silk wallcovering installation",
+                      "serviceType": "Silk wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/silk-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/fabric-walling/#service",
+                      "name": "Fabric walling",
+                      "serviceType": "Fabric walling",
+                      "url": "https://www.mrwallcover.com/services/fabric-walling/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/#service",
+                      "name": "Hotel wallcovering installation",
+                      "serviceType": "Hotel wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/mural-installation/#service",
+                      "name": "Mural installation",
+                      "serviceType": "Mural installation",
+                      "url": "https://www.mrwallcover.com/services/mural-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/#service",
+                      "name": "Acoustic wallcovering installation",
+                      "serviceType": "Acoustic wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/architectural-film-wrapping/#service",
+                      "name": "Architectural & furniture film wrapping",
+                      "serviceType": "Architectural film installation",
+                      "url": "https://www.mrwallcover.com/services/architectural-film-wrapping/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/window-film/#service",
+                      "name": "Window film installation",
+                      "serviceType": "Window film installation",
+                      "url": "https://www.mrwallcover.com/services/window-film/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/#service",
+                      "name": "Joinery wallcoverings & bespoke panels",
+                      "serviceType": "Wallcovering on joinery and bespoke wall panels",
+                      "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/exterior-works/#service",
+                      "name": "Exterior works",
+                      "serviceType": "Exterior decorating",
+                      "url": "https://www.mrwallcover.com/services/exterior-works/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "@id": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/#service",
+                      "name": "Commercial and showroom wallcovering installation",
+                      "serviceType": "Commercial wallcovering installation",
+                      "url": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/",
+                      "provider": {
+                        "@id": "https://www.mrwallcover.com/#business"
+                      }
+                    }
+                  }
+                ]
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "info@mrwallcover.com",
+                "url": "https://www.mrwallcover.com/contact/",
+                "contactType": "quotations",
+                "areaServed": [
+                  {
+                    "@type": "City",
+                    "name": "London"
+                  },
+                  {
+                    "@type": "AdministrativeArea",
+                    "name": "London and the surrounding areas"
+                  },
+                  {
+                    "@type": "Country",
+                    "name": "United Kingdom",
+                    "description": "UK-wide for selected projects"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Mayfair",
+                    "url": "https://www.mrwallcover.com/areas/mayfair/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Belgravia",
+                    "url": "https://www.mrwallcover.com/areas/belgravia/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Chelsea",
+                    "url": "https://www.mrwallcover.com/areas/chelsea/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Kensington",
+                    "url": "https://www.mrwallcover.com/areas/kensington/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "the City of London",
+                    "url": "https://www.mrwallcover.com/areas/city-of-london/"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "the Cotswolds",
+                    "url": "https://www.mrwallcover.com/areas/cotswolds/"
+                  }
+                ],
+                "availableLanguage": [
+                  "English"
+                ]
+              }
+            },
+            {
+              "@type": "Person",
+              "@id": "https://www.mrwallcover.com/about/#dorin",
+              "name": "Dorin Burcus",
+              "jobTitle": "Founder",
+              "url": "https://www.mrwallcover.com/about/",
+              "image": {
+                "@type": "ImageObject",
+                "url": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+                "contentUrl": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+                "creditText": "Dorin Burcus / Mr Wallcover",
+                "creator": {
+                  "@type": "Person",
+                  "@id": "https://www.mrwallcover.com/about/#dorin",
+                  "name": "Dorin Burcus",
+                  "url": "https://www.mrwallcover.com/about/"
+                },
+                "copyrightNotice": "© Mr Wallcover",
+                "license": "https://www.mrwallcover.com/image-use/",
+                "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+              },
+              "worksFor": {
+                "@id": "https://www.mrwallcover.com/#business"
+              }
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://www.mrwallcover.com/#website",
+              "url": "https://www.mrwallcover.com",
+              "name": "Mr Wallcover",
+              "inLanguage": "en-GB",
+              "publisher": {
+                "@id": "https://www.mrwallcover.com/#business"
+              }
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://www.mrwallcover.com/projects/doubletree-victoria/#webpage",
+              "url": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+              "name": "DoubleTree Victoria | Mr Wallcover",
+              "description": "Guest room wallcoverings at DoubleTree by Hilton London – Victoria, Bridge Place, in 2023.",
+              "inLanguage": "en-GB",
+              "isPartOf": {
+                "@id": "https://www.mrwallcover.com/#website"
+              },
+              "about": {
+                "@id": "https://www.mrwallcover.com/#business"
+              },
+              "primaryImageOfPage": {
+                "@type": "ImageObject",
+                "url": "https://www.mrwallcover.com/media/img/doubletree-victoria-commons-01.jpg",
+                "contentUrl": "https://www.mrwallcover.com/media/img/doubletree-victoria-commons-01.jpg",
+                "creditText": "Photo: Stacey Harris / Wikimedia Commons (CC BY-SA 2.0)",
+                "creator": {
+                  "@type": "Person",
+                  "name": "Stacey Harris"
+                },
+                "copyrightNotice": "© Stacey Harris",
+                "license": "https://creativecommons.org/licenses/by-sa/2.0",
+                "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+              }
+            },
+            {
+              "@type": "Article",
+              "@id": "https://www.mrwallcover.com/projects/doubletree-victoria/#article",
+              "headline": "DoubleTree by Hilton London – Victoria",
+              "description": "Guest room wallcoverings at DoubleTree by Hilton London – Victoria, Bridge Place, in 2023.",
+              "url": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+              "mainEntityOfPage": {
+                "@id": "https://www.mrwallcover.com/projects/doubletree-victoria/#webpage"
+              },
+              "inLanguage": "en-GB",
+              "datePublished": "2026-10-09",
+              "dateModified": "2026-10-10",
+              "author": {
+                "@type": "Person",
+                "@id": "https://www.mrwallcover.com/about/#dorin",
+                "name": "Dorin Burcus",
+                "url": "https://www.mrwallcover.com/about/"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "@id": "https://www.mrwallcover.com/#business",
+                "name": "Mr Wallcover",
+                "url": "https://www.mrwallcover.com",
+                "logo": "https://www.mrwallcover.com/logo-512.png"
+              },
+              "image": [
+                {
+                  "@type": "ImageObject",
+                  "url": "https://www.mrwallcover.com/media/img/doubletree-victoria-commons-01.jpg",
+                  "contentUrl": "https://www.mrwallcover.com/media/img/doubletree-victoria-commons-01.jpg",
+                  "creditText": "Photo: Stacey Harris / Wikimedia Commons (CC BY-SA 2.0)",
+                  "creator": {
+                    "@type": "Person",
+                    "name": "Stacey Harris"
+                  },
+                  "copyrightNotice": "© Stacey Harris",
+                  "license": "https://creativecommons.org/licenses/by-sa/2.0",
+                  "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+                }
+              ],
+              "about": {
+                "@type": "CreativeWork",
+                "@id": "https://www.mrwallcover.com/projects/doubletree-victoria/#project",
+                "name": "DoubleTree by Hilton London – Victoria",
+                "creator": {
+                  "@id": "https://www.mrwallcover.com/#business"
+                },
+                "locationCreated": {
+                  "@type": "Place",
+                  "name": "2 Bridge Place, Victoria, London SW1"
+                },
+                "temporalCoverage": "2023"
+              }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.mrwallcover.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Work",
+                  "item": "https://www.mrwallcover.com/projects/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "DoubleTree by Hilton London – Victoria",
+                  "item": "https://www.mrwallcover.com/projects/doubletree-victoria/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

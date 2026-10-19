@@ -1,0 +1,27 @@
+{
+  "captured": "2026-10-18T21:56:06.663331+00:00",
+  "source": "Locally compiled working linen/botanical candidate based on published main 8b8d9ea; sourceCommit identifies the base before the new decorative change is committed.",
+  "sourceCommit": "8b8d9eac2de609d7285c258e45d8f12f310005a5",
+  "baseline": "8b8d9eac2de609d7285c258e45d8f12f310005a5",
+  "productFingerprints": {
+    "src/components/AtelierAtmosphere.astro": "ec71eddd7a27ca439a8c68b9f0f897d4fb8f431c5361a30cb27b9c00bf17171f",
+    "src/styles/atelier-atmosphere.css": "e2fbb2c2d8b7d7fd94d6613834051e090afc75cf7181309bda2a6ea0731ee49a",
+    "public/media/atelier-botanicals/ivory-linen.webp": "a6265ab3d2717bd46cc8a25fe6aadb9c2fdc20408783804ab17ad069c17d8079",
+    "public/media/atelier-botanicals/branch-birds.webp": "a345da11f4929ba5aa0a24ecbc2e90a5f48a018ce0e3b7061c36852b3dfa63ab",
+    "public/media/atelier-botanicals/blossom-sprig.webp": "7678d8d6455ac524554409dc7d6cf1ed95b49ae7f3d68e7207bd59b5c4b0bc6b"
+  },
+  "method": "Compare every normal route: original p/dt/dd/figcaption and leaf li text against candidate main text after Unicode/whitespace normalization, retaining noscript fallback content. Check unique main anchor destinations, meaningful actual image src+alt references and FAQ schema question/answer pairs. Decorative aria-hidden text and noindex pages excluded. Counts are sums of per-route unique references. No structural text exceptions or relaxed list matching are needed for this decorative-only change.",
+  "totals": {
+    "routes": 128,
+    "uniqueAuthoredBlocks": 8618,
+    "preservedAuthoredBlocks": 8618,
+    "uniqueLinks": 4428,
+    "preservedLinks": 4428,
+    "evidenceImages": 629,
+    "preservedEvidenceImages": 629,
+    "faqPairs": 221,
+    "preservedFaqPairs": 221
+  },
+  "exceptions": [],
+  "limitations": "This HTML content/reference comparison complements the standard route/media/schema/Markdown no-loss guard. It does not assess visual composition, external link availability or new claims."
+}

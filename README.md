@@ -4,6 +4,8 @@ Marketing site for [Mr Wallcover](https://www.mrwallcover.com), Dorin Burcus’s
 
 Surveying, management, supply, installation and aftercare for hotels, flagship retail and private homes.
 
+For an assistant or reader that cannot retrieve the custom domain, use the [published-content mirror](https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/README.md). It contains the same published text and complete project records, with canonical source URLs and original dates. [Mirror files](ai-reference/README.md) are generated from the production build and checked for freshness; they are not another editorial source.
+
 ## Run it locally
 
 Node.js 22.12 or newer.
@@ -20,7 +22,7 @@ npm run build
 npm run preview
 ```
 
-`npm run build` writes the site to `dist/`.
+`npm run build` writes the site to `dist/`. When preparing the committed reader mirror for release, match production's public contact-channel configuration; see [the mirror build instructions](docs/ai-crawler.md#alternative-reader-access). The real phone secret is not needed locally.
 
 ## Edit the copy
 
@@ -67,7 +69,7 @@ Use the shared large question frames and right-hand rail on new pages. Open buye
 
 The shared `editorial-layout.css` and family templates organise section navigation, reading surfaces, project facts, evidence, checklists, references and next actions. Keep real captions/credits with their photographs and contain wide tables within their reading region. Case studies keep the authored story and offer the standard seven-field facts in a native disclosure. New pages inherit these patterns rather than copying a local grid or moving essential information into decorative graphics.
 
-`Base.astro` also supplies original CSS paper forms at the outer gutters through `AtelierAtmosphere.astro`. This is a discreet shared background with no WebGL renderer or image download. Suitable pages receive slow motion after load; shared pause, OS/footer preferences and hidden-tab handling stop it. Factual, legal and reference utilities show only a subdued static edge, and noindex pages omit it. Keep it behind content, avoid a second page-specific animation and retain opaque reading surfaces. Decorative motion is not a requirement for every route or paragraph.
+`Base.astro` supplies the shared ivory-linen and botanical background through `AtelierAtmosphere.astro`. Four active optimised WebPs provide a more visible woven ground, original plum blossom, small perched birds on branches and a discreet lower-right water-lily accent; masked margins fade the motifs below content. CSS gives the botanicals a slow, small drift after load, using the existing preference controller without another renderer or animation loop. Shared pause, OS/footer preferences and hidden-tab handling stop motion. Factual, legal and reference utilities, including Makers and Buying routes, retain static linen/right-hand bird artwork without plum or water lilies; noindex pages omit the whole layer. Keep reading surfaces, controls and genuine photography above the decoration, and inherit this shared theme on new pages instead of copying a local background. The generated artwork is decorative, not a maker's pattern, an installed product, an affiliation or completed-project evidence; current provenance and prompts are recorded in [the plum/water-lily register](docs/design/plum-water-lilies/assets.md), with retained linen/bird sources in [the first botanical register](docs/design/linen-botanicals/assets.md). Decorative motion is not a requirement for every route or paragraph.
 
 Check the changed route and shared template on mobile and desktop, preserve form and navigation behaviour, and include screenshot evidence in the PR. Run the relevant checks listed in the standard; source checks and build success do not judge visual composition. Record skipped checks honestly and retain any content publication blockers.
 
@@ -154,6 +156,7 @@ All of these are generated at build time from `src/data/facts.json` and the cont
 | `/for-ai/` | A plain-facts page for people and assistants | `src/pages/for-ai.astro` |
 | `/ai/index.json` | Every published page, canonical source, dates and format addresses | `scripts/build-ai-layer.mjs` (postbuild) |
 | `/ai/pages.json` | The complete published page corpus: Markdown, headings, media semantics and structured data | same script |
+| `/ai/pages/<path>/index.json` | One complete page record without downloading the corpus; home is `/ai/pages/index.json` | same script |
 | `/ai/projects.json` | Complete published project records, page content and individual JSON addresses | Astro public projection, completed by postbuild |
 | `/ai/projects/<slug>.json` | One complete project record for selective reading | `scripts/build-ai-layer.mjs` (postbuild) |
 | `/ai/wallpapering.json` | Public wallpapering and calculator reference data, retaining source/evidence limits | `src/pages/ai/wallpapering.json.ts` |
@@ -168,6 +171,8 @@ All of these are generated at build time from `src/data/facts.json` and the cont
 Drafts, the 404, thank-you and search pages and the old redirect stubs never appear in any of them. `npm run check:dist` proves it (`tests/ai-layer.test.ts`).
 
 All formats are served to visitors and crawlers alike. The corpus exports published main content, including meaningful image descriptions, diagram text and static form guidance; it does not export input values, private enquiries or interactive calculation results. Keep source content authoritative and regenerate the representations with each build. See [the crawler contract](docs/ai-crawler.md) for fields and checks.
+
+The production postbuild also regenerates tracked `ai-reference/` from those sanitized outputs. Stage its changes when changing public content. `check:dist` verifies exact source parity and that no generated changes are left unstaged; CI therefore fails if the committed mirror is stale. Review, phone and other fixture output directories do not overwrite it. Every normal published page advertises its mirrored Markdown in head metadata, and the AI entry pages and `llms.txt` link the mirror index. This is an alternative reading route, not a claim that every reader can reach the canonical domain or that a search engine has indexed it.
 
 ### IndexNow (off until the Cloudflare move)
 

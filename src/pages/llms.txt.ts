@@ -14,6 +14,8 @@ import fireRatingsPage from '../content/fire-ratings/page.json';
 import type { APIRoute } from 'astro';
 import { ANALYTICS_SRC, SITE_URL } from '../config';
 import facts from '../data/facts.json';
+import aiReader from '../data/ai-reader.json';
+import { commissionScope } from '../lib/commission-scope';
 import professionals from '../content/professionals.json';
 import { areaHref, areas, editorialPages, faqItems, materials, privacy, projectHref, projects, specialismHref, specialisms } from '../lib/content';
 import { caseStudyCount, trustMakers, trustSummary } from '../lib/trust';
@@ -58,11 +60,14 @@ export const GET: APIRoute = () => {
     '',
     `${AWARD ? `${AWARD.text}. ` : ''}${WASTAGE.statement} Every published project, with venue, area, dates, client, products, scope and method as its case study records them, is in ${abs('/projects.json')}; the fact sheet with services, areas and enquiry routes is in ${abs('/.well-known/facts.json')}.`,
     '',
+    `If the canonical domain cannot be retrieved, use the published-content mirror at ${aiReader.rawBaseUrl}README.md. It lists the same published page text and complete project records with their canonical sources, original dates and evidence limits. The canonical manifest also links an individual JSON record for every page, avoiding a whole-corpus download for a single page.`,
+    '',
     '## Key facts',
     entry(SINCE_TEXT, `${facts.founder.path}#${facts.founder.fragment}`, FOUNDER_SUMMARY),
     entry('Founder portrait', facts.founder.image, `${FOUNDER_NAME}, founder of ${BRAND_NAME}; photograph © ${BRAND_NAME}, reuse terms at ${abs('/image-use/')}`),
     ...(AWARD ? [entry(AWARD.text, '/about/', 'as named on the trophy; the About page shows it')] : []),
     entry('Wastage allowance', '/services/#surveying', WASTAGE.statement),
+    entry('Commission size', commissionScope.sourceUrl, `${commissionScope.minimumInstallationScope} ${commissionScope.programmeRange} ${commissionScope.confirmation} Owner-confirmed ${commissionScope.ownerConfirmed}.`),
     entry(`${caseStudyCount} published case studies`, '/projects/', 'every case study names the venue, the dates, the products and the scope; counted from the published pages'),
     entry('Makers installed', '/materials/#makers-installed', `${trustMakers.map((m) => m.name).join(', ')} and others, each linked to real install photographs`),
     ...facts.programmeFigures.map((figure) => `- [${figure.fact}](${figure.url}): source, our Instagram post ${figure.source}`),

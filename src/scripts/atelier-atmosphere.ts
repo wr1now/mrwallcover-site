@@ -1,4 +1,4 @@
-/** CSS paper forms share the existing preferences; there is no animation loop or renderer. */
+/** Textile botanicals share the existing preferences; there is no animation loop or renderer. */
 export function mountAtelierAtmosphere() {
   const layer = document.querySelector<HTMLElement>('[data-atelier-motion="active"]');
   if (!layer) return;
