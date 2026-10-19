@@ -16,7 +16,7 @@ Updated 18 October 2026
 
 This website is operated by Dorin Burcus, trading as Mr Wallcover, in London, United Kingdom. He is the controller of personal information sent through this site.
 
-For any privacy request, write to [info@mrwallcover.com](mailto:info@mrwallcover.com), or use the form on the [contact page](https://www.mrwallcover.com/contact/).
+For any privacy request, write to [info@mrwallcover.com](mailto:info@mrwallcover.com), or call the telephone number on the [contact page](https://www.mrwallcover.com/contact/).
 
 ## What this notice covers
 

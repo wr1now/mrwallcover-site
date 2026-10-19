@@ -22,7 +22,7 @@ npm run build
 npm run preview
 ```
 
-`npm run build` writes the site to `dist/`.
+`npm run build` writes the site to `dist/`. When preparing the committed reader mirror for release, match production's public contact-channel configuration; see [the mirror build instructions](docs/ai-crawler.md#alternative-reader-access). The real phone secret is not needed locally.
 
 ## Edit the copy
 

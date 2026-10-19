@@ -465,6 +465,8 @@ Routes, as built on this site:
 
 - [Enquiry form](https://www.mrwallcover.com/contact/): A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether to reply by email or by phone, not both. Photographs, drawings and PDFs help, and are optional.
 - [Email](mailto:info@mrwallcover.com): info@mrwallcover.com. Email is read by Dorin Burcus.
+- [Phone](https://www.mrwallcover.com/contact/): Or go direct. The phone is answered by Dorin Burcus himself; the number is shown on request.
+- [WhatsApp](https://www.mrwallcover.com/contact/): A WhatsApp link on the contact page; the number is added on the page, never printed in the HTML.
 
 ## Machine-readable files
 

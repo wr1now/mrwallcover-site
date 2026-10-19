@@ -139,11 +139,11 @@ Start your project
 
 This form needs JavaScript. Email info@mrwallcover.com instead.
 
-Or write directly. Email is read by Dorin Burcus.
+Or go direct. The phone is answered by Dorin Burcus himself; the number is shown on request.
 
 [info@mrwallcover.com](mailto:info@mrwallcover.com)
 
-[Book a 20-minute call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk)
+[WhatsApp us](https://www.mrwallcover.com/contact/) [Book a 20-minute call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk)
 
 Calls Mon–Fri, 9am–5pm UK.
 
