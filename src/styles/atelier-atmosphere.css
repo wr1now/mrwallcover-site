@@ -2,7 +2,7 @@
 body:has(> .atelier-atmosphere) { isolation:isolate; }
 body:has(> .atelier-atmosphere) > :is(main, .site-footer) { position:relative; z-index:1; }
 .atelier-atmosphere {
-  --linen-opacity:.16;
+  --linen-opacity:.25;
   --botanical-opacity:.31;
   position:fixed;
   inset:0;
@@ -60,14 +60,32 @@ body:has(> .atelier-atmosphere) > :is(main, .site-footer) { position:relative; z
   left:-8rem;
   width:20rem;
   height:30rem;
-  background-image:url('/media/atelier-botanicals/blossom-sprig.webp');
+  background-image:url('/media/atelier-botanicals/plum-blossom.webp');
   transform:rotateX(-2deg) rotateY(5deg) rotateZ(5deg);
   animation-name:atelier-blossom-breathe;
   animation-duration:38s;
 }
+.atelier-atmosphere__pond {
+  position:absolute;
+  right:-2rem;
+  bottom:2.5rem;
+  width:clamp(11rem, 20vw, 22rem);
+  aspect-ratio:3 / 2;
+  overflow:hidden;
+  perspective:1100px;
+  mask-image:linear-gradient(120deg, transparent 5%, #000 80%);
+}
+.atelier-atmosphere__botanical--water-lilies {
+  inset:0;
+  background-image:url('/media/atelier-botanicals/water-lilies.webp');
+  opacity:calc(var(--botanical-opacity) * .7);
+  transform:rotateX(3deg) rotateY(-3deg) rotateZ(-2deg);
+  animation-name:atelier-water-lilies-breathe;
+  animation-duration:42s;
+}
 .atelier-atmosphere[data-running] [data-atelier-moving] { animation-play-state:running; }
-.atelier-atmosphere--quiet { --linen-opacity:.10; --botanical-opacity:.12; }
-.atelier-atmosphere--quiet .atelier-atmosphere__edge--left { display:none; }
+.atelier-atmosphere--quiet { --linen-opacity:.16; --botanical-opacity:.12; }
+.atelier-atmosphere--quiet :is(.atelier-atmosphere__edge--left, .atelier-atmosphere__pond) { display:none; }
 @keyframes atelier-branch-breathe {
   from { transform:translate3d(0,-2px,0) rotateX(2deg) rotateY(-6deg) rotateZ(-3deg); }
   to { transform:translate3d(-3px,3px,0) rotateX(3deg) rotateY(-4deg) rotateZ(-2deg); }
@@ -75,6 +93,10 @@ body:has(> .atelier-atmosphere) > :is(main, .site-footer) { position:relative; z
 @keyframes atelier-blossom-breathe {
   from { transform:translate3d(0,2px,0) rotateX(-2deg) rotateY(5deg) rotateZ(5deg); }
   to { transform:translate3d(3px,-3px,0) rotateX(-3deg) rotateY(7deg) rotateZ(4deg); }
+}
+@keyframes atelier-water-lilies-breathe {
+  from { transform:translate3d(0,1px,0) rotateX(3deg) rotateY(-3deg) rotateZ(-2deg); }
+  to { transform:translate3d(-2px,-1px,0) rotateX(4deg) rotateY(-2deg) rotateZ(-1deg); }
 }
 @media (max-width:1023px) {
   .atelier-atmosphere:not(.atelier-atmosphere--quiet) { --botanical-opacity:.22; }
