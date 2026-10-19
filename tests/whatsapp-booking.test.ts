@@ -26,10 +26,10 @@ test('dist: booking and WhatsApp render only from their build inputs, with no de
     assert.ok(contact.slice(contact.indexOf('contact-quick')).includes(`href="${fromFile}"`), 'booking on the contact page');
     for (const a of all.match(/<a\b[^>]*\bdata-book\b[^>]*>[\s\S]*?<\/a>/g) ?? []) {
       assert.match(a, /rel="noopener noreferrer"/);
-      assert.match(a, /aria-label="Book a 20-minute call \(opens Google Calendar in a new tab\)"/);
-      assert.equal(a.replace(/^<a\b[^>]*>/, '').replace(/<[^>]+>/g, ''), 'Book a 20-minute call');
+      assert.match(a, /aria-label="Book a call — 20 minutes \(opens Google Calendar in a new tab\)"/);
+      assert.equal(a.replace(/^<a\b[^>]*>/, '').replace(/<[^>]+>/g, ''), 'Book a call');
     }
-    for (const part of ['data-dock', 'class="primary-nav"', '<footer']) assert.ok(home.slice(home.indexOf(part)).includes(`href="${fromFile}"`), `booking in ${part}`);
+    for (const part of ['data-dock', '<footer']) assert.ok(home.slice(home.indexOf(part)).includes(`href="${fromFile}"`), `booking in ${part}`);
   }
   for (const a of all.match(/<a\b[^>]*\bdata-(?:book|wa)\b[^>]*>/g) ?? []) {
     assert.match(a, /target="_blank"/);

@@ -7,6 +7,9 @@ const route = '/professionals/designers/';
 const objectSelector = '.guide-faq-item [data-design-object]';
 const professionalRoutes = ['/professionals/designers/', '/professionals/developers/', '/professionals/hotels/', '/professionals/fit-out-contractors/', '/trade/'];
 const representativeRoutes = ['/services/grasscloth-installation/', '/materials/', '/materials/grasscloth-and-weaves/', '/advice/', '/advice/set-out-and-pattern-matching/', '/areas/chelsea/', '/faq/', '/contact/', ...professionalRoutes];
+// This briefing's questions concern programme, paperwork and coordination: its complete
+// answers are the useful content, with no physical detail that earns an illustrative scene.
+const typographicOnlyRoutes = ['/professionals/fit-out-contractors/'];
 const staticRoutes = ['/for-ai/', '/wallcovering-installation-ai-crawler/', '/privacy/', '/image-use/', '/accessibility/', '/calculator/', '/wallpapering/preparation/', '/wallpapering/lining-and-adhesives/', '/makers/', '/makers/de-gournay/', '/buying-routes/'];
 type Answer = { id: string; question: string; answer: string; pages: string[] };
 const source = JSON.parse(await readFile('src/data/buyer-answers.json', 'utf8')) as { answers: Answer[]; standing: Answer[] };
@@ -131,7 +134,8 @@ test('shared page families ship complete SSR studies and preserve responsive que
       for (const path of representativeRoutes) {
         const html = await readFile(`dist${path}index.html`, 'utf8');
         const objectCount = (html.match(/data-design-object="/g) ?? []).length;
-        assert.ok(objectCount > 0, `${path}: the shared family supplies an illustrative study`);
+        if(typographicOnlyRoutes.includes(path))assert.equal(objectCount,0,`${path}: routine briefing questions do not require a generic scene`);
+        else assert.ok(objectCount > 0, `${path}: the shared family supplies a useful physical study`);
         assert.equal((html.match(/src="\/media\/design-objects\/[^"/]+\.webp"/g) ?? []).length, objectCount, `${path}: each SSR object has a poster`);
         await load(page, path);
         if (professionalRoutes.includes(path)) {
@@ -144,17 +148,28 @@ test('shared page families ship complete SSR studies and preserve responsive que
           objects: document.querySelectorAll('[data-design-object]').length,
           posters: [...document.querySelectorAll<HTMLImageElement>('[data-design-object] img')].every(image => image.complete && image.naturalWidth > 0 && image.alt === '' && image.closest('[aria-hidden="true"]')),
           controls: document.querySelectorAll('button[data-object-motion]').length,
+          hiddenControls:[...document.querySelectorAll<HTMLButtonElement>('button[data-object-motion]')].every(button=>button.hidden&&button.getClientRects().length===0),
           questions: [...document.querySelectorAll<HTMLElement>('.question-heading-row, .faq summary')].map(item => {
             const question = item.querySelector('h2,h3')!.getBoundingClientRect();
-            const drawing = item.querySelector('[data-question-visual]')!.getBoundingClientRect();
-            return { question: item.querySelector('h2,h3')?.textContent, rightOfQuestion: drawing.left >= question.right - 1, insideViewport: drawing.right <= innerWidth + 1 };
+            const visual = item.querySelector<HTMLElement>('[data-question-visual]')!;
+            const drawing = visual.getBoundingClientRect();
+            return { question: item.querySelector('h2,h3')?.textContent, typographic:visual.classList.contains('question-visual--typographic'), placeholderFree:getComputedStyle(visual).display==='none'&&!visual.querySelector('[data-design-object],svg')&&drawing.width===0&&drawing.height===0, rightOfQuestion: drawing.left >= question.right - 1, insideViewport: drawing.right <= innerWidth + 1 };
           }),
         }));
         assert.equal(result.objects, objectCount, `${path}: enhancement preserves the complete SSR study collection`);
         assert.equal(result.posters, true, `${path}: posters are loaded and decorative`);
-        assert.ok(result.controls > 0, `${path}: shared motion controls`);
+        if(objectCount)assert.ok(result.controls > 0, `${path}: shared motion controls`);
+        else{
+          assert.equal(result.hiddenControls,true,`${path}: unavailable shared scene controls remain hidden`);
+          assert.equal(result.questions.length,answersFor(path).length,`${path}: every original briefing question remains present`);
+          assert.ok(result.questions.every(question=>question.typographic),`${path}: routine questions read as typography`);
+        }
         assert.equal(result.overflow, false, `${path}: no horizontal overflow at ${width}px`);
         for (const question of result.questions) {
+          if(question.typographic){
+            assert.equal(question.placeholderFree,true,`${path}: ${question.question} reads without a large generic prop or empty frame at ${width}px`);
+            continue;
+          }
           assert.equal(question.rightOfQuestion, true, `${path}: ${question.question} stays right at ${width}px`);
           assert.equal(question.insideViewport, true, `${path}: question object stays in the viewport at ${width}px`);
         }
@@ -186,8 +201,8 @@ test('large question studies retain readable text and a separate right-hand rail
             questions: [...document.querySelectorAll<HTMLElement>('.question-heading-row, .faq summary')].map(row => {
               const heading = row.querySelector<HTMLElement>('h2,h3')!;
               const visual = row.querySelector<HTMLElement>('[data-question-visual]')!;
-              const object = visual.querySelector<HTMLElement>('[data-design-object]')!;
-              const headingBox = rect(heading), visualBox = rect(visual), objectBox = rect(object);
+              const object = visual.querySelector<HTMLElement>('[data-design-object]');
+              const headingBox = rect(heading), visualBox = rect(visual), objectBox = object ? rect(object) : null;
               const item = row.closest('.guide-faq-item, details')!;
               const itemBox = rect(item);
               const paragraphs = [...item.querySelectorAll('p')].map(rect).filter(box => box.width && box.height);
@@ -195,13 +210,15 @@ test('large question studies retain readable text and a separate right-hand rail
               const style = getComputedStyle(visual);
               return {
                 question: heading.textContent?.trim(), headingWidth: headingBox.width,
+                typographic:visual.classList.contains('question-visual--typographic'),
+                placeholderFree:style.display==='none'&&!object&&!visual.querySelector('svg')&&visualBox.width===0&&visualBox.height===0,
                 width: visualBox.width, height: visualBox.height,
                 visible: style.display !== 'none' && style.visibility === 'visible' && Number(style.opacity) > 0,
                 rightOfHeading: visualBox.left >= headingBox.right - 1,
                 insideItem: visualBox.left >= itemBox.left - 1 && visualBox.right <= itemBox.right + 1
                   && visualBox.top >= itemBox.top - 1 && visualBox.bottom <= itemBox.bottom + 1,
                 insideViewport: visualBox.left >= 0 && visualBox.right <= innerWidth + 1,
-                objectFillsFrame: objectBox.width >= visualBox.width - 1 && objectBox.height >= visualBox.height - 1,
+                objectFillsFrame: !!objectBox&&objectBox.width >= visualBox.width - 1 && objectBox.height >= visualBox.height - 1,
                 overlapsText: overlaps(headingBox, visualBox) || paragraphs.some(paragraph => overlaps(paragraph, visualBox)),
                 overlapsMarker: marker ? overlaps(rect(marker), visualBox) : false,
                 textOverflows: heading.scrollWidth > heading.clientWidth + 1,
@@ -211,9 +228,16 @@ test('large question studies retain readable text and a separate right-hand rail
         });
         assert.equal(result.overflow, false, `${path}: no horizontal overflow at ${width}px`);
         assert.ok(result.questions.length > 0, `${path}: representative question rows are present`);
+        assert.ok(result.questions.some(question=>!question.typographic),`${path}: physical detail studies still exercise the complete right-hand rail contract`);
         const minimumFrame = width < 640 ? 144 : width < 1024 ? 192 : path === route ? 288 : 224;
         for (const question of result.questions) {
           const context = `${path} at ${width}px: ${question.question}`;
+          if(question.typographic){
+            assert.equal(question.placeholderFree,true,`${context}: routine programme and paperwork questions keep no decorative placeholder`);
+            assert.ok(question.headingWidth >= (width < 640 ? 144 : 220),`${context}: the typographic heading has a readable column`);
+            assert.equal(question.textOverflows,false,`${context}: typographic headings fit`);
+            continue;
+          }
           assert.ok(question.width >= minimumFrame - 1 && question.height >= minimumFrame - 1, `${context}: the illustration retains its large readable frame`);
           assert.ok(question.headingWidth >= (width < 640 ? 144 : 220), `${context}: the graphic leaves a readable heading column`);
           assert.equal(question.visible && question.objectFillsFrame, true, `${context}: the actual study fills the visible frame`);
@@ -230,7 +254,7 @@ test('a buyer question in a narrow column sizes its study to the column rather t
     await page.setJavaScriptEnabled(false);
     await load(page);
     await page.$eval('.guide-faq', (section: HTMLElement) => { section.style.width = '384px'; });
-    const result = await page.$eval('.guide-faq-item', (item: HTMLElement) => {
+    const result = await page.$eval('.guide-faq-item:has(.question-visual--dimensional)', (item: HTMLElement) => {
       const heading = item.querySelector('h3')!.getBoundingClientRect();
       const study = item.querySelector('[data-question-visual]')!.getBoundingClientRect();
       const answer = item.querySelector(':scope > p')!.getBoundingClientRect();
@@ -387,13 +411,16 @@ test('without JavaScript each shared family keeps complete posters and readable 
     await page.setJavaScriptEnabled(false);
     for (const path of representativeRoutes) {
       await load(page, path);
-      assert.ok(await page.$$eval('[data-design-object]', (objects: HTMLElement[]) => objects.length > 0), path);
+      const objectCount=await page.$$eval('[data-design-object]', (objects: HTMLElement[]) => objects.length);
+      if(typographicOnlyRoutes.includes(path))assert.equal(objectCount,0,path);
+      else assert.ok(objectCount>0,path);
       assert.equal(await page.$$eval('[data-design-object] canvas', (canvases: HTMLCanvasElement[]) => canvases.length), 0);
       await staticPosters(page);
       if (professionalRoutes.includes(path)) assert.deepEqual(await content(page), answersFor(path).map(item => ({
         id: item.id, question: item.question, answer: item.answer, visible: true,
       })), `${path}: all sourced buyer answers are available without scripts`);
-      assert.equal(await page.$$eval('button[data-object-motion]', (buttons: HTMLButtonElement[]) => buttons.length > 0 && buttons.every(button => button.hidden && button.getClientRects().length === 0)), true, `${path}: unavailable enhancement controls stay hidden`);
+      assert.equal(await page.$$eval('button[data-object-motion]', (buttons: HTMLButtonElement[]) => buttons.every(button => button.hidden && button.getClientRects().length === 0)), true, `${path}: unavailable enhancement controls stay hidden`);
+      if(objectCount)assert.ok(await page.$$eval('button[data-object-motion]',(buttons:HTMLButtonElement[])=>buttons.length>0),`${path}: useful studies retain their enhancement control`);
     }
   });
 });
@@ -401,6 +428,20 @@ test('without JavaScript each shared family keeps complete posters and readable 
 // A growing route inventory must not share one aggregate deadline on software-rendered CI.
 // Each route keeps the same bounded readiness/pixel checks and an isolated browser context.
 for (const path of representativeRoutes) {
+  if(typographicOnlyRoutes.includes(path)){
+    test(`${path}: routine questions remain complete without loading a scene`,{timeout:30000},async()=>{
+      await withPage(async(page,requests)=>{
+        await load(page,path);
+        await page.$eval('.guide-faq', (section:HTMLElement)=>section.scrollIntoView({block:'center',behavior:'instant'}));
+        assert.deepEqual(await content(page),answersFor(path).map(item=>({...item,visible:true})),`${path}: every sourced answer remains open`);
+        assert.equal(await page.$$eval('.question-visual--typographic',(markers:HTMLElement[])=>markers.filter(marker=>getComputedStyle(marker).display==='none'&&marker.childElementCount===0).length),answersFor(path).length,'all routine questions omit a generic drawing and its frame');
+        assert.equal(await page.$$eval('[data-design-object]',(elements:HTMLElement[])=>elements.length),0,'typography-only answers do not offer a scene');
+        assert.equal(await page.$$eval('button[data-object-motion]',(buttons:HTMLButtonElement[])=>buttons.every(button=>button.hidden&&button.getClientRects().length===0)),true,'unavailable shared motion controls stay hidden');
+        assert.deepEqual(requests.filter(url=>/\/design-object-scenes\.[^/]+\.js(?:\?|$)/.test(url)),[],'a briefing with no useful physical study incurs no scene request');
+      });
+    });
+    continue;
+  }
   test(`${path}: actual animated pixels, pause and reduced-motion fallbacks`, { timeout: 60000 }, async () => {
     await withPage(async page => {
       await load(page, path);
@@ -444,6 +485,15 @@ test('native service, area and FAQ disclosures keep keyboard and drawing-click b
         });
         await page.mouse.click(point.x, point.y);
         assert.equal(await page.$eval('.faq details', (details: HTMLDetailsElement) => details.open), true, `${path}: the decorative object does not intercept summary clicks`);
+        const typographic='.faq details:has(.question-visual--typographic)';
+        if(await page.$(typographic)){
+          await page.focus(typographic+' summary');
+          await page.keyboard.press('Enter');
+          assert.equal(await page.$eval(typographic,(details:HTMLDetailsElement)=>details.open),true,`${path}: routine question keyboard behaviour remains native (JS=${javascript})`);
+          assert.equal(await page.$eval(typographic,(details:HTMLDetailsElement)=>!details.querySelector('[data-design-object], .question-visual svg')&&!!details.querySelector('summary .plus')&&(details.querySelector('.prose')?.textContent?.trim().length??0)>10),true,'typographic questions retain the original answer and disclosure marker');
+          await page.keyboard.press('Enter');
+          assert.equal(await page.$eval(typographic,(details:HTMLDetailsElement)=>details.open),false);
+        }
       }
     }
   });

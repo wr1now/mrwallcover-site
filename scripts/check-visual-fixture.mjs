@@ -146,10 +146,12 @@ try {
       assert.equal(await published.$eval('[data-atelier-botanical="water-lilies"]',element=>!!element.closest('.atelier-atmosphere__pond')),true,'water lilies inherit the shared pond placement');
       for (const surface of inherited.surfaces) {
         assert.ok(surface.background.includes(`/media/atelier-botanicals/${backgrounds[surface.kind]}`),`${surface.kind}: shared background image @${width}`);
-        assert.ok(surface.visible&&surface.opacity>0&&surface.opacity<.5,`${surface.kind}: a visible, discreet shared surface @${width}`);
+        const shouldPaint=width>=768||surface.kind==='linen';
+        assert.equal(surface.visible,shouldPaint,`${surface.kind}: shared phone/desktop reading policy @${width}`);
+        assert.ok(surface.opacity>0&&surface.opacity<.5,`${surface.kind}: discreet opacity @${width}`);
         assert.equal(surface.inlineStyle,false,`${surface.kind}: no page-local style override`);
       }
-      await waitForPagePredicate(published,names=>names.every(name=>performance.getEntriesByType('resource').some(entry=>entry.name.includes(`/media/atelier-botanicals/${name}`)&&entry.responseEnd>0)),{},Object.values(backgrounds));
+      await waitForPagePredicate(published,names=>names.every(name=>performance.getEntriesByType('resource').some(entry=>entry.name.includes(`/media/atelier-botanicals/${name}`)&&entry.responseEnd>0)),{},width>=768?Object.values(backgrounds):[backgrounds.linen]);
       await published.type('[data-action-form] input',' changed');
       await published.click('[data-action-form] button[type="reset"]');
       assert.equal(await published.$eval('[data-action-form] input',input=>input.value),'Original','normal new page inherits native reset');
@@ -194,6 +196,6 @@ try {
     assert.ok(await page.$('main a[href^="tel:"]'),'phone reveal becomes a dial link without placing a call');
   } finally { await browser.close(); await server.close(); }
   console.log('New route fixture: shared footer/actions and default dimensional FAQ inherited without local CSS or opt-in; native controls, pause/resume, mobile/desktop layout and complete no-JavaScript poster/disclosure pass. Fixture removed from source and public output.');
-  console.log('Published new route fixture: active linen-botanical shell, linen, birds, plum blossom and water lilies inherit shared CSS at 390/1440 without local styling or DOM patches; native footer and form actions pass. The noindex fixture omits the layer. Both temporary sources and isolated output removed.');
+  console.log('Published new route fixture: active linen-botanical shell, phone linen and desktop birds, plum blossom and water lilies inherit shared CSS at 390/1440 without local styling or DOM patches; native footer and form actions pass. The noindex fixture omits the layer. Both temporary sources and isolated output removed.');
   console.log('Phone-enabled browser fixture: six widths, single-line desktop contact action within the bar, booking outside the header, WhatsApp href decoding, field-focus dock hiding and phone reveal pass; no call or message sent.');
 } finally { for (const file of created) await rm(file,{force:true}); await rm(out,{recursive:true,force:true}); }

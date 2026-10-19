@@ -1,6 +1,6 @@
 ---
 /**
- * "Book a 20-minute call": links to BOOKING_URL (src/config.ts), the Google
+ * "Book a call": a 20-minute appointment linking to BOOKING_URL (src/config.ts), the Google
  * Calendar booking page. Rendered only when BOOKING_URL is set; with it empty
  * nothing is printed, so there is never a dead link. No tracking parameters.
  */
@@ -14,14 +14,14 @@ interface Props {
   label?: string;
 }
 
-const { class: cls, wrap, label = 'Book a 20-minute call (opens Google Calendar in a new tab)' } = Astro.props;
+const { class: cls, wrap, label = 'Book a call — 20 minutes (opens Google Calendar in a new tab)' } = Astro.props;
 ---
 
 {BOOKING_URL && wrap && (
   <p class={wrap}>
-    <a href={BOOKING_URL} data-book class:list={['book-link', cls]} aria-label={label} target="_blank" rel="noopener noreferrer"><slot><span class="book-label">Book a <span class="whitespace-nowrap">20-minute</span> call</span></slot></a>
+    <a href={BOOKING_URL} data-book class:list={['book-link', cls]} aria-label={label} title="20-minute project call" target="_blank" rel="noopener noreferrer"><slot><span class="book-label">Book a call</span></slot></a>
   </p>
 )}
 {BOOKING_URL && !wrap && (
-  <a href={BOOKING_URL} data-book class:list={['book-link', cls]} aria-label={label} target="_blank" rel="noopener noreferrer"><slot><span class="book-label">Book a <span class="whitespace-nowrap">20-minute</span> call</span></slot></a>
+  <a href={BOOKING_URL} data-book class:list={['book-link', cls]} aria-label={label} title="20-minute project call" target="_blank" rel="noopener noreferrer"><slot><span class="book-label">Book a call</span></slot></a>
 )}

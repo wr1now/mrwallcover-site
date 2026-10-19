@@ -72,9 +72,9 @@ Where the first drop goes and why: setting out from a focal point, setting a tru
 
 [Read the guide](https://www.mrwallcover.com/advice/set-out-and-pattern-matching/)
 
-Illustrative study
+![A length of Lincrusta relief panel offered up to the wall with a green laser line for setting out, Trematon Castle, November 2021.](https://www.mrwallcover.com/media/img/r/trematon-ig-29-800.webp)
 
-Pause motion
+During works: Lincrusta set out at Trematon Castle. Mr Wallcover photograph.
 
 12 / planning
 

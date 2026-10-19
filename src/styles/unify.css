@@ -17,15 +17,22 @@ main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
 /* FAQ questions: the serif, on the homepage and on /faq/ alike. */
 .faq summary h3, .faq summary h2, .atelier .faq summary h3, main .faq summary h3, main .faq summary h2:not(.sr-only), .atelier-questions details h3 { margin:0; font-family:var(--font-serif); font-weight:500; font-size:var(--text-h4); line-height:1.25; letter-spacing:-.01em; }
 
+/* Reading copy and interface detail are the two sans roles; headings retain their serif hierarchy.
+   The aliases in tokens.css also cover Tailwind text-xs/sm/base/lg/xl without page-local sizes. */
+main .lede, main .prose, main .case-study { font-size:var(--text-body); }
+main .guide-card h2:not(.sr-only), main .project-card h2:not(.sr-only) { font-size:var(--text-h3); line-height:var(--leading-tight); }
+main .guide-sources h2:not(.sr-only) { font-size:var(--text-h4); line-height:1.2; }
+main form label, main .field label, main .form-note, main .guide-byline, main .guide-contents li { font-size:var(--text-meta); }
+
 /* ---- 2. Labels, eyebrows, captions ---- */
 .eyebrow, .atelier-kicker { font-size:var(--text-label); letter-spacing:var(--tracking-label); line-height:1.5; }
 .caption, figcaption { font-size:var(--text-meta); }
 .site-footer .eyebrow { font-size:var(--text-label); }
 
-/* ---- 3. Header: links 14px, the action is the primary button ---- */
+/* ---- 3. Header: six buyer links at the shared 15px detail size, with a separate primary action ---- */
 .site-header .nav-link, .site-header .menu-toggle, .site-header .header-mobile .nav-link { font-size:var(--text-nav); }
 /* Keep the complete enquiry action readable when conditional contact links are present. */
-.site-header .primary-nav { gap:.75rem; }
+.site-header .primary-nav { gap:1.25rem; }
 .site-header .primary-nav .header-action { white-space:nowrap; flex:none; }
 .site-header .primary-nav .header-book { display:none; }
 @media (min-width:1440px) { .site-header .primary-nav .header-book { display:inline-flex; } }
@@ -34,9 +41,9 @@ main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
   .site-header .primary-nav .header-action { padding-inline:1rem; }
 }
 
-/* The mobile dock: 14px like the header links. */
+/* The mobile dock uses the same readable detail type as the header. */
 .dock a, .dock .dock-phone { font-size:var(--text-meta); }
-/* With the booking cell the dock shares its width by content: every cell is at least as wide as its longest word, so "Book a 20-minute call" sits in full on three 14px lines. */
+/* Share dock width by content so each short label remains complete with all four contact actions. */
 .dock:has(.dock-book) { display:flex; }
 .dock:has(.dock-book) > * { flex:1 1 0; min-width:min-content; }
 .dock a.dock-book { text-align:center; padding-inline:4px; }
@@ -51,7 +58,7 @@ main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
   gap:.9rem;
 }
 .site-header .header-action { min-height:calc(var(--header-height) - 14px); padding-inline:1.1rem; }
-.btn span[aria-hidden], .atelier-button span { font-size:1.15em; line-height:1; }
+.btn span[aria-hidden], .atelier-button span[aria-hidden] { font-size:1.15em; line-height:1; }
 .btn-solid-ink, .atelier-button.ink, .work-filters button[aria-pressed="true"] { background:var(--color-ink); border-color:var(--color-ink); color:var(--color-ivory); }
 .btn-solid, .atelier-button.cream { background:var(--color-ivory); border-color:var(--color-ivory); color:var(--color-ink); }
 .btn-line, .work-filters button, .work-empty button { background:transparent; border:1px solid var(--color-ink); color:var(--color-ink); }
@@ -76,13 +83,14 @@ main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
   .site-header { padding-inline:calc(var(--gutter) - var(--header-inset-side) - 1px); }
 }
 
-/* ---- 6. One card system: 4:3 photographs, one gap, titles at h3, meta at 13-14px ---- */
+/* ---- 6. One card system: 4:3 photographs, one gap, titles at h3, detail at 15px ---- */
 .atelier-project-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:3.5rem 2rem; align-items:start; }
 .atelier-project-1, .atelier-project-2, .atelier-project-3 { margin:0; max-width:none; }
 .atelier-project-image img, .atelier-project-2 .atelier-project-image img { aspect-ratio:var(--card-ratio); object-fit:cover; width:100%; height:auto; }
 .home-card img, .work-item:not([data-preview="true"]) .work-figure img { aspect-ratio:var(--card-ratio); object-fit:cover; }
 .atelier-project > p, .home-card > p, .work-summary { font-size:var(--text-body); line-height:1.6; }
-.work-role, .hotel-list li > p:not(.hotel-name) { font-size:1rem; }
+.work-role { font-size:var(--text-body); }
+.hotel-list li > p:not(.hotel-name) { font-size:var(--text-meta); }
 .work-meta p, .atelier-project-meta > span, .atelier-credit, .home-showcase-credit { font-size:var(--text-label); }
 .work-figure figcaption, .work-text-cover small, .work-count, .hotel-record-count { font-size:var(--text-meta); }
 .work-group-heading > p { font-size:var(--text-body); }
@@ -126,40 +134,39 @@ main h4, .atelier h4 { font-size:var(--text-h4); line-height:1.2; }
 
 /* ---- 10. Homepage sizes on the shared scale (audit items 1-4, 7, 9) ----
  * "body" in front lifts each rule just above atelier.css and hero-mobile.css without touching them. */
-/* Labels, eyebrows, credits: 13px. */
+/* Labels, eyebrows and credits: the shared 15px detail role. */
 body .atelier-kicker, body .atelier-hotel-band small, body .atelier-intro dt, body .home-pillars, body .atelier-service-number,
 body .atelier-credit, body .atelier-project-meta > span, body .home-showcase-place, body .home-showcase-credit,
 body .atelier-hero-foot > span, body .atelier-hero-foot a span, body .atelier-materials-image > span, body .atelier-craft-image > p {
   font-size:var(--text-label); letter-spacing:var(--tracking-label); line-height:1.5;
 }
 body .atelier-hotel-band small { margin-top:8px; }
-/* Links, routes and meta lines: 14-15px. */
+/* Links, routes and meta lines: the same detail role. */
 body .atelier-hero-foot a, body .atelier-hero-award a, body .atelier-ai-note, body .atelier-ai-note a { font-size:var(--text-meta); }
 body .atelier-material-links a, body .atelier-enquiry-routes a, body .home-partner-line, body .atelier-text-link { font-size:var(--text-button); }
-body .atelier-contact-email { font-size:1rem; }
-/* Card and list copy: 16px. */
+body .atelier-contact-email { font-size:var(--text-meta); }
+/* Card and list copy: the same 18px reading role as articles. */
 body .home-card p, body .atelier-service li p, body .atelier-intro dd, body .atelier-craft dd, body .home-process p, body .home-needs-grid p, body .home-record ul {
-  font-size:1rem; line-height:1.6;
+  font-size:var(--text-body); line-height:var(--leading-body);
 }
-/* Long-form paragraphs: the inner pages' 17px. */
+/* Long-form paragraphs use the same reading role. */
 body .atelier-intro-bottom p, body .home-proof-text, body .home-more-text, body .atelier-craft-copy > p, body .atelier-materials-copy > p,
 body .home-calico-text, body .home-aftercare-inner > p, body .atelier-project > p, body .home-showcase-head p {
   font-size:var(--text-body); line-height:1.7; max-width:var(--measure-copy);
 }
 body .atelier .atelier-contact > p:not(.atelier-kicker) { margin:25px auto 28px; max-width:var(--measure-copy); }
-/* Hero: the same photograph, crop and composition. Small type reaches the floors with its line boxes held at
- * the old heights, and the two actions stay on one row on phones, so nothing in the hero moves. */
+/* Hero: retain the photograph and display hierarchy; reading copy follows the shared body role. */
+body .atelier .atelier-hero .atelier-hero-description { font-size:var(--text-body); line-height:var(--leading-body); }
 body .atelier .atelier-hero-actions .atelier-button { font-size:var(--text-button); }
 body .atelier .atelier-hero-award { line-height:20px; }
 @media (max-width:767px) {
   body .atelier .atelier-hero-actions { gap:8px; }
   body .atelier .atelier-hero-actions .atelier-button { font-size:var(--text-meta); min-height:52px; padding-inline:16px; gap:10px; }
   body .atelier-hero-foot a { font-size:var(--text-meta); }
-  /* The hero description keeps main's 14px on phones: 16px would add a line and lift the whole hero. */
-  body .atelier .atelier-hero .atelier-hero-description { font-size:var(--text-meta); }
+  body .atelier .atelier-hero .atelier-hero-description { font-size:var(--text-body); }
 }
 @media (max-width:420px) {
-  body .atelier .atelier-hero-actions .atelier-button span { display:none; }
+  body .atelier .atelier-hero-actions .atelier-button span[aria-hidden] { display:none; }
 }
 @media (max-width:380px) {
   body .atelier .atelier-hero-actions .atelier-button { padding-inline:12px; }
@@ -178,7 +185,7 @@ body .atelier .atelier-film-grid .caption, body .atelier .home-films figcaption 
 body .atelier .atelier-craft-copy > p:not(.atelier-kicker), body .atelier .atelier-materials-copy > p:not(.atelier-kicker),
 body .atelier .atelier-service > div > p, body .atelier .home-aftercare-inner p { font-size:var(--text-body); line-height:1.7; }
 body .atelier .atelier-materials-copy > p:not(.atelier-kicker) { max-width:var(--measure-copy); }
-body .atelier .atelier-craft-copy dd { font-size:1rem; }
+body .atelier .atelier-craft-copy dd { font-size:var(--text-body); }
 body .atelier .atelier-craft-copy dt { font-size:var(--text-button); }
 
 /* ---- 11. Paragraph rhythm: prose paragraphs are spaced even where a utility zeroes their margin ---- */
@@ -206,10 +213,10 @@ body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-f
 /* The case-study "At a glance" box: its heading is an eyebrow label, not a section title (src/components/CaseStudyGlance.astro). */
 main .glance-box h2 { font-family:var(--font-sans, inherit); font-size:var(--text-eyebrow); font-weight:500; line-height:1.4; letter-spacing:var(--tracking-eyebrow); text-transform:uppercase; color:var(--color-ink); }
 
-/* Calculator has a dedicated header destination. Keep all ten labelled links, Contact and the project action
-   readable at the 14px floor; booking remains in Contact, the footer and the mobile dock. */
+/* Six buyer destinations leave comfortable space for full 15px labels and the project action.
+   Calculator, wallpapering and AI resources remain discoverable through the footer and relevant hubs. */
 @media (min-width:1280px) {
-  .site-header .primary-nav { gap:10px; }
+  .site-header .primary-nav { gap:1.25rem; }
   .site-header .nav-link { font-size:var(--text-meta); white-space:nowrap; }
-  .site-header .header-action { padding-inline:.75rem; white-space:nowrap; }
+  .site-header .header-action { padding-inline:1.25rem; white-space:nowrap; }
 }

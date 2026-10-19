@@ -1,0 +1,17 @@
+---
+import Picture from './Picture.astro';
+import { makerCardPhotograph } from '../lib/maker-card-photography';
+interface Props { slug: string; }
+const photograph = makerCardPhotograph(Astro.props.slug);
+---
+<figure class="maker-card-photo" data-maker-photo={photograph.kind} data-photo-maker={photograph.actualMaker}>
+  <a class="maker-card-image" href={photograph.evidenceHref}>
+    <Picture id={photograph.imageId} sizes="(min-width:1280px) 34rem, (min-width:768px) 43vw, calc(100vw - 5rem)" />
+  </a>
+  <figcaption>
+    <span class="maker-photo-label">{photograph.kind === 'maker-installation' ? 'Our installation' : 'From our work'}</span>
+    <a href={photograph.evidenceHref}>{photograph.caption}</a>
+    {photograph.stageLabel && <span>{photograph.stageLabel}</span>}
+    <span class="maker-photo-credit">{photograph.credit}</span>
+  </figcaption>
+</figure>

@@ -1,11 +1,9 @@
 /*
  * Glass Atelier design tokens (contract section 6, stage 5 step G3).
  *
- * Imported first by global.css. The palette and the two typefaces live in the
- * Tailwind @theme block so the existing utility names (text-stone, bg-paper,
- * border-line, font-serif) keep working; everything else is a plain custom
- * property on :root and is not a Tailwind namespace, so Tailwind's own
- * defaults (--radius-sm, --text-sm, --ease-out...) never collide with it.
+ * Imported first by global.css. The palette, two typefaces and deliberate reading/detail utility aliases live
+ * in Tailwind @theme so existing utility names keep working. Role values and
+ * layout properties live on :root; unrelated Tailwind defaults stay separate.
  *
  * scripts/contrast-record.mjs reads this file, one token per line, and
  * measures every text/background pair the site uses, including text on each
@@ -25,6 +23,13 @@
   --color-brass: #6b542f;
   --color-gold: #c6a36a;
   --color-stone: #4e4942;
+
+  /* Body and interface utility aliases follow the same two sans roles as the components. */
+  --text-xs: var(--type-detail);
+  --text-sm: var(--type-detail);
+  --text-base: var(--type-reading);
+  --text-lg: var(--type-reading);
+  --text-xl: var(--type-reading);
 
   /* Derived neutrals */
   --color-line: #ddd6c8; /* hairline on ivory and paper */
@@ -67,26 +72,29 @@
   /* Ghost button ring on ink (3:1 non-text rule). */
   --ghost-ring-alpha: 0.45;
 
-  /* ---- Type scale ---- */
-  --text-display: clamp(2.375rem, 1rem + 5.5vw, 6.5rem); /* short page titles, 38px -> 104px */
-  --text-title: clamp(2.2rem, 1.3rem + 2.6vw, 3.4rem); /* section titles, 35px -> 54px */
-  --text-hero: 2.3rem; /* homepage sentence on phones, unchanged from PR #12 */
-  --text-hero-desktop: clamp(2.6rem, 3.3vw, 3.4rem); /* homepage sentence on desktop, unchanged from PR #12 */
-  --text-body: 1.0625rem; /* 17px */
-  --text-lede: 1.125rem; /* 18px */
-  --text-eyebrow: 0.8125rem; /* 13px, never smaller (was 12px; raised 10 Oct 2026 for legibility) */
-  --text-small: 0.9rem;
-  /* One scale for the homepage and the inner pages (home visual unification and laptop audit, 10 Oct 2026).
-     Floors: 14px for any text, 13px for uppercase labels, eyebrows and credits only. */
-  --text-h1: clamp(2.75rem, 1.5rem + 3.4vw, 5.25rem); /* page titles, 44px -> 84px (the homepage hero keeps its own display size) */
-  --text-h2: clamp(2.25rem, 1.4rem + 2.4vw, 3.75rem); /* section titles, 36px -> 60px */
-  --text-h2-feature: clamp(2.75rem, 1.6rem + 4vw, 5.5rem); /* the homepage closing call to action only */
-  --text-h3: clamp(1.5rem, 1.25rem + 0.7vw, 2rem); /* card and list titles, 24px -> 32px */
-  --text-h4: 1.375rem; /* small card titles and FAQ questions, 22px, serif */
-  --text-meta: 0.875rem; /* 14px: captions, dates, meta lines, small links */
-  --text-label: 0.8125rem; /* 13px: uppercase labels, eyebrows, credits. The floor. */
-  --text-nav: 0.875rem; /* 14px: header links */
-  --text-button: 0.9375rem; /* 15px: every button */
+  /* ---- Three type roles: serif display, reading, and labels/controls ----
+     H1-H4 retain a semantic hierarchy within the display role. Reading copy, including
+     ledes and cards, is 18px; captions, navigation, labels and controls share 15px.
+     Technical tables/code may keep their own intrinsic presentation. */
+  --type-reading: 1.125rem;
+  --type-detail: .9375rem;
+  --text-h1: clamp(2.75rem, 1.5rem + 3.4vw, 5.25rem);
+  --text-h2: clamp(2.25rem, 1.4rem + 2.4vw, 3.75rem);
+  --text-h2-feature: clamp(2.75rem, 1.6rem + 4vw, 5.5rem);
+  --text-h3: clamp(1.5rem, 1.25rem + 0.7vw, 2rem);
+  --text-h4: 1.375rem;
+  --text-display: var(--text-h1);
+  --text-title: var(--text-h2);
+  --text-hero: 2.3rem;
+  --text-hero-desktop: clamp(2.6rem, 3.3vw, 3.4rem);
+  --text-body: var(--type-reading);
+  --text-lede: var(--type-reading);
+  --text-eyebrow: var(--type-detail);
+  --text-small: var(--type-detail);
+  --text-meta: var(--type-detail);
+  --text-label: var(--type-detail);
+  --text-nav: var(--type-detail);
+  --text-button: var(--type-detail);
   --tracking-label: 0.14em;
   --leading-tight: 1.1;
   --space-section: clamp(4.5rem, 2.5rem + 5vw, 7.5rem); /* vertical rhythm between sections */
