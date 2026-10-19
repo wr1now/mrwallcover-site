@@ -5,41 +5,22 @@
   },
   {
     "href": "/services/",
-    "label": "Expertise"
+    "label": "Services"
   },
   {
     "href": "/materials/",
     "label": "Materials"
   },
   {
-    "href": "/wallpapering/",
-    "label": "Wallpapering",
-    "secondary": true
-  },
-  {
-    "href": "/calculator/",
-    "label": "Wallpaper calculator"
-  },
-  {
-    "href": "/room-studio/",
-    "label": "Wallpaper my room"
-  },
-  {
     "href": "/professionals/",
-    "label": "For designers"
+    "label": "For professionals"
   },
   {
     "href": "/advice/",
     "label": "Guide"
   },
   {
-    "href": "/about/",
-    "label": "About",
-    "secondary": true
-  },
-  {
-    "href": "/wallcovering-installation-ai-crawler/",
-    "label": "AI Crawler",
-    "secondary": true
+    "href": "/get-in-touch/",
+    "label": "Contact"
   }
 ]

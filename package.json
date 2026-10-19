@@ -14,7 +14,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "node --experimental-strip-types --test tests/quantity.test.ts tests/roll-formats.test.ts tests/materials.test.ts tests/enquiry.test.ts tests/enquiry-context.test.ts tests/leads-api.test.ts tests/content-guards.test.ts tests/phone.test.ts tests/material-advice.test.ts tests/contrast.test.ts tests/material-studio.test.ts tests/project-explorer.test.ts tests/enquiry-attachments.test.ts tests/enquiry-browser-guards.test.ts tests/image-rights.test.ts tests/names-guard.test.ts tests/fire-ratings.test.ts && npm run check:studio && npm run check:studio-types",
-    "check:dist": "node --experimental-strip-types --test tests/dist-guards.test.ts tests/enquiry-context-browser.test.ts tests/ai-layer.test.ts tests/ai-page-records.test.ts tests/ai-reader-mirror.test.ts tests/glass-system.test.ts tests/ai-crawler.test.ts tests/ai-project-details.test.ts tests/ai-access.test.ts tests/ai-datasets.test.ts tests/atelier.test.ts tests/discovery-integrity.test.ts tests/seo-step2.test.ts tests/lee-broom.test.ts tests/ai-layer-data.test.ts tests/ai-layer-consistency.test.ts tests/home-restore.test.ts tests/ai-answers.test.ts tests/private-terms.test.ts tests/image-metadata.test.ts tests/sitemap.test.ts tests/laser-setout.test.ts tests/footer-visual.test.ts tests/visual-system.test.ts tests/visual-browser.test.ts tests/visual-coverage.test.ts tests/design-objects-browser.test.ts tests/atelier-atmosphere.test.ts tests/calculator-browser.test.ts tests/fire-release-browser.test.ts tests/fire-ratings-build.test.ts tests/hotel-fire-guide.test.ts && node scripts/check-visual-fixture.mjs && npm run check:studio-browser",
+    "check:dist": "node --experimental-strip-types --test tests/dist-guards.test.ts tests/home-preservation.test.ts tests/enquiry-context-browser.test.ts tests/ai-layer.test.ts tests/ai-page-records.test.ts tests/ai-reader-mirror.test.ts tests/glass-system.test.ts tests/ai-crawler.test.ts tests/ai-project-details.test.ts tests/ai-access.test.ts tests/ai-datasets.test.ts tests/atelier.test.ts tests/discovery-integrity.test.ts tests/seo-step2.test.ts tests/lee-broom.test.ts tests/ai-layer-data.test.ts tests/ai-layer-consistency.test.ts tests/home-restore.test.ts tests/ai-answers.test.ts tests/private-terms.test.ts tests/image-metadata.test.ts tests/sitemap.test.ts tests/laser-setout.test.ts tests/footer-visual.test.ts tests/visual-system.test.ts tests/visual-browser.test.ts tests/visual-coverage.test.ts tests/design-objects-browser.test.ts tests/atelier-atmosphere.test.ts tests/calculator-browser.test.ts tests/fire-release-browser.test.ts tests/fire-ratings-build.test.ts tests/hotel-fire-guide.test.ts && node scripts/check-visual-fixture.mjs && npm run check:studio-browser",
     "check:type": "node --experimental-strip-types --test tests/type-scale.test.ts",
     "check:phone": "node --experimental-strip-types --test tests/phone-build.test.ts",
     "check:analytics": "node --experimental-strip-types --test tests/analytics-build.test.ts",
@@ -32,34 +32,34 @@
     "check:guide-browser": "node scripts/qa/guide-release-browser.mjs",
     "check:calculator-browser": "node --experimental-strip-types --test tests/calculator-browser.test.ts",
     "capture:calculator": "node scripts/qa/calculator-review.mjs",
+    "check:makers": "node --experimental-strip-types --test tests/makers-directory.test.ts && node scripts/qa/makers-directory.mjs",
     "check:studio": "node --experimental-strip-types --test tests/room-studio-*.test.ts",
     "check:studio-types": "tsc --project tsconfig.room-studio.json && tsc --ignoreConfig --noEmit --strict --target ES2022 --module ESNext --moduleResolution Bundler --allowImportingTsExtensions --skipLibCheck --lib ES2022,DOM supabase/functions/room-studio/index.ts",
     "check:studio-browser": "node --experimental-strip-types scripts/qa/room-studio-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-plan-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-finishes-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-draft-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-panorama-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-draw-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-scene-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-results-browser.mjs && node --experimental-strip-types scripts/qa/room-studio-examples-browser.mjs",
-    "check:studio-plan-browser": "node --experimental-strip-types scripts/qa/room-studio-plan-browser.mjs",
-    "check:makers": "node --experimental-strip-types --test tests/makers-directory.test.ts && node scripts/qa/makers-directory.mjs"
+    "check:studio-plan-browser": "node --experimental-strip-types scripts/qa/room-studio-plan-browser.mjs"
   },
   "dependencies": {
-    "@astrojs/react": "7.1.0",
     "@astrojs/sitemap": "^3.7.4",
     "@fontsource/cormorant-garamond": "^5.3.0",
     "@fontsource/outfit": "^5.3.0",
-    "@react-three/fiber": "9.8.2",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.8",
+    "tailwindcss": "^4.3.3",
+    "three": "^0.170.0",
+    "@astrojs/react": "7.1.0",
+    "@react-three/fiber": "9.8.2",
     "pdfjs-dist": "6.4.299",
     "react": "19.3.1",
-    "react-dom": "19.3.1",
-    "tailwindcss": "^4.3.3",
-    "three": "0.170.0"
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
-    "@electric-sql/pglite": "0.5.10",
     "@resvg/resvg-js": "^2.6.2",
+    "puppeteer-core": "^25.13.0",
+    "sharp": "^0.35.5",
+    "@electric-sql/pglite": "0.5.10",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@types/three": "0.170.0",
-    "puppeteer-core": "^25.13.0",
-    "sharp": "^0.35.5",
     "typescript": "7.0.2"
   }
 }

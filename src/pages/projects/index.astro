@@ -1,5 +1,7 @@
 ---
 import Icon from '../../components/Icon.astro';
+import HomeProjectEditorial from '../../components/HomeProjectEditorial.astro';
+import { moreWork } from '../../data/home-editorial';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Picture from '../../components/Picture.astro';
 import Base from '../../layouts/Base.astro';
@@ -68,6 +70,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
         <p class="lede">{indexCopy.index.lede}</p>
         <a class="work-record-link" href="#hotels">View the complete hotel record <span aria-hidden="true">↓</span></a>
       </div>
+      <p class="work-stories-link"><a href="#commission-stories-heading">Inside the commissions: photographs, films and Calico collaborations</a></p>
     </header>
     <div class="work-controls" data-project-controls hidden>
       <div class="work-filters" role="group" aria-label="Filter projects by setting">
@@ -102,7 +105,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
                 )}
                 <div class="work-meta"><p>{categoryLabel}</p>{project.dates && <p>{project.dates}</p>}</div>
                 <h3><a href={projectHref(project.slug)}>{project.title}</a></h3>
-                <p class="work-role">{project.role}</p>
+                <p class="work-role">{project.role}{moreWork.some(item => item.slug === project.slug) && project.dates ? ` · ${project.dates}` : ''}</p>
                 <p class="work-summary">{project.summary}</p>
                 <a class="work-enquire" href={`/contact/?audience=${audience}#enquiry`}>Discuss a similar project<span class="sr-only">: {project.title}</span><Icon name="arrow-right" /></a>
               </article>
@@ -192,6 +195,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
       controls.hidden = false;
     })();
   </script>
+  <HomeProjectEditorial />
 </Base>
 
 <style>
@@ -200,6 +204,8 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
   .work-introduction { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
   .work-introduction .lede { max-width: 43rem; margin: 1.25rem 0 0; }
   .work-record-link { display: inline-flex; align-items: center; gap: 1.2rem; min-height: 44px; font-size: var(--text-button); text-underline-offset: .3rem; color: inherit; flex-shrink: 0; }
+  .work-stories-link { margin:1rem 0 0; font-size:var(--text-button); }
+  .work-stories-link a { display:inline-flex; align-items:center; min-height:44px; text-underline-offset:.3rem; }
   .work-controls { margin-bottom: 2.5rem; padding: 1.2rem 0; border-block: 1px solid var(--color-line); }
   .work-filters { display: flex; flex-wrap: wrap; gap: .6rem; }
   .work-filters button, .work-empty button { border: 1px solid var(--color-ink); background: transparent; color: var(--color-ink); border-radius: var(--button-radius); min-height: var(--button-height); padding: 0 var(--button-pad); font: inherit; font-size: var(--text-button); font-weight: 500; cursor: pointer; }
@@ -227,7 +233,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
   .work-item h3 { font-size: var(--text-h3); margin: 0; }
   .work-item h3 a { color: inherit; text-decoration: none; }
   .work-item h3 a:hover { text-decoration: underline; text-underline-offset: .2rem; text-decoration-thickness: 1px; }
-  .work-role { font-size: 1rem; margin: .85rem 0 0; color: var(--color-stone); }
+  .work-role { font-size: var(--type-reading); margin: .85rem 0 0; color: var(--color-stone); }
   .work-summary { margin: .7rem 0 0; font-size: var(--text-body); line-height: 1.6; max-width: var(--measure-copy); }
   .work-enquire { display: inline-flex; align-items: center; gap: 1.2rem; color: inherit; min-height: 44px; font-size: var(--text-button); margin-top: .8rem; text-underline-offset: .25rem; }
   .work-empty { padding: 2rem; border: 1px solid var(--color-line); margin-bottom: 3rem; }

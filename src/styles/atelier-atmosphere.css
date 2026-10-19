@@ -103,6 +103,11 @@ body:has(> .atelier-atmosphere) > :is(main, .site-footer) { position:relative; z
   .atelier-atmosphere__botanical--birds { top:22%; right:-7rem; width:18rem; height:27rem; }
   .atelier-atmosphere__botanical--blossom { bottom:8%; left:-7.75rem; width:18rem; height:27rem; }
 }
+/* Phone reading fills the page: keep the linen and give every line an unpainted margin. */
+@media (max-width:767px) {
+  .atelier-atmosphere__edge,
+  .atelier-atmosphere__pond { display:none; }
+}
 html[data-effects="reduced"] .atelier-atmosphere { display:none; }
 html[data-object-motion-state="paused"] [data-atelier-moving] { animation-play-state:paused!important; }
 @media (prefers-reduced-motion:reduce) {

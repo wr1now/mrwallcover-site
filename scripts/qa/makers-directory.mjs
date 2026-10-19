@@ -11,8 +11,17 @@ try{
   await page.setViewport({width,height:960});
   const paths=width===390||width===1440?['/makers/','/buying-routes/',...data.makers.map(m=>`/makers/${m.slug}/`)]:['/makers/','/buying-routes/'];
   for(const path of paths){const response=await page.goto(server.origin+path,{waitUntil:'load'});assert.equal(response.status(),200);await page.evaluate(()=>document.fonts.ready);
-   const result=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,h1:document.querySelectorAll('main h1').length,wideReading:[...document.querySelectorAll('.maker-intro p,.maker-section>p')].filter(e=>e.getBoundingClientRect().width>44*parseFloat(getComputedStyle(document.documentElement).fontSize)+1).length,small:[...document.querySelectorAll('main .maker-card p:not(.eyebrow), main .maker-route p:not(.eyebrow), main .maker-route dd, main .lede')].filter(e=>parseFloat(getComputedStyle(e).fontSize)<16).length}));
+   const result=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,h1:document.querySelectorAll('main h1').length,wideReading:[...document.querySelectorAll('.maker-intro p,.maker-section>p')].filter(e=>e.getBoundingClientRect().width>44*parseFloat(getComputedStyle(document.documentElement).fontSize)+1).length,small:[...document.querySelectorAll('main .maker-card p:not(.eyebrow):not(.maker-date), main .maker-route p:not(.eyebrow):not(.maker-date), main .maker-route dd, main .lede')].filter(e=>parseFloat(getComputedStyle(e).fontSize)<16).length}));
    assert.equal(result.overflow,false,path+' '+width);assert.equal(result.h1,1);assert.equal(result.small,0,path+' text floor');assert.equal(result.wideReading,0,path+' reading measure');report.push({path,width,...result});
+   if(path==='/makers/') {
+    const photographs=await page.$$eval('[data-maker-photo]',async figures=>{
+     await Promise.all(figures.map(async figure=>{const image=figure.querySelector('img');image.loading='eager';await image.decode();}));
+     return figures.map(figure=>({kind:figure.dataset.makerPhoto,loaded:figure.querySelector('img').naturalWidth>0,caption:figure.querySelector('figcaption').textContent.trim(),captionSize:parseFloat(getComputedStyle(figure.querySelector('figcaption')).fontSize)}));
+    });
+    assert.equal(photographs.length,20);assert.equal(photographs.filter(photo=>photo.kind==='maker-installation').length,13);assert.equal(photographs.filter(photo=>photo.kind==='craft-example').length,7);
+    assert.ok(photographs.every(photo=>photo.loaded&&photo.caption.length>30&&photo.captionSize===15),'all real card photos load with readable truthful captions');
+    assert.equal(await page.$$eval('.maker-date',elements=>elements.every(element=>parseFloat(getComputedStyle(element).fontSize)===15)),true,'source-check metadata uses the shared detail role');
+   }
    if(output&&['/makers/','/buying-routes/','/makers/designers-guild/'].includes(path))await page.screenshot({path:`${output}/${path.replaceAll('/','-')}-${width}.png`,fullPage:false});
   }
  }

@@ -138,16 +138,17 @@ test('with SITE_PHONE the reveal control and WhatsApp link render, and the numbe
       assert.ok(part.includes(`href="${BOOKING_FIXTURE}"`), `booking in the ${name}`);
     }
     assert.ok(nav.indexOf('data-wa') < nav.indexOf('header-action'), 'WhatsApp sits just before Start your project');
-    assert.match(quick, /Book a <span class="whitespace-nowrap">20-minute<\/span> call<\/span><\/a>/);
+    assert.match(quick, /<span class="book-label">Book a call<\/span><\/a>/);
+    assert.match(quick,/title="20-minute project call"/);
     const book = [...html.matchAll(/<a\b[^>]*\bdata-book\b[^>]*>/g)].map((m) => m[0]);
     for (const a of book) {
       assert.ok(a.includes(`href="${BOOKING_FIXTURE}"`));
       assert.match(a, /target="_blank"/);
       assert.match(a, /rel="noopener noreferrer"/);
-      assert.match(a, /aria-label="Book a 20-minute call \(opens Google Calendar in a new tab\)"/);
+      assert.match(a, /aria-label="Book a call — 20 minutes \(opens Google Calendar in a new tab\)"/);
     }
     const bookText = [...html.matchAll(/<a\b[^>]*\bdata-book\b[^>]*>([\s\S]*?)<\/a>/g)].map((m) => m[1].replace(/<[^>]+>/g, ''));
-    assert.ok(bookText.length === book.length && bookText.every((t) => t === 'Book a 20-minute call'), 'the visible label is exactly "Book a 20-minute call"');
+    assert.ok(bookText.length === book.length && bookText.every((t) => t === 'Book a call'), 'the visible label is exactly "Book a call"');
     assert.match(contact, /Calls Mon–Fri, 9am–5pm UK\./);
     assert.doesNotMatch(home, /Calls Mon–Fri/, 'the hours line is on the contact page only');
     // The phone reveal is unchanged: still a button, the number still only in the payload.

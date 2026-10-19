@@ -1093,6 +1093,19 @@
       "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/materials/specified-papers/index.json"
     },
     {
+      "sourceUrl": "https://www.mrwallcover.com/practice/",
+      "title": "Our Wallcovering Practice and Process | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/practice/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/practice/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/practice/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/practice/index.json"
+    },
+    {
       "sourceUrl": "https://www.mrwallcover.com/privacy/",
       "title": "Privacy | Mr Wallcover",
       "dates": {

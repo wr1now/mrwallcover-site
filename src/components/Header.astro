@@ -3,7 +3,7 @@ import Action from './Action.astro';
 /**
  * Floating inset champagne-glass header (stage 5, step G5).
  *
- * Desktop: wordmark, the navigation items, a Contact link and optional WhatsApp and the "Start your project" action.
+ * Desktop: wordmark, six buyer navigation links, optional WhatsApp and the separate "Start your project" action.
  * Phones: wordmark, "Start" and a disclosure button that opens the mobile
  * menu panel below the bar. The panel is a sibling of the header so the bar
  * stays the only glass surface and the panel stays opaque ivory.
@@ -31,8 +31,6 @@ interface Props {
 }
 
 const { path } = Astro.props;
-const primary = navigation.filter(item => !('secondary' in item && item.secondary));
-const more = navigation.filter(item => 'secondary' in item && item.secondary);
 
 function isCurrent(href: string) {
   if (href === '/') return path === '/';
@@ -47,19 +45,12 @@ function isCurrent(href: string) {
     </a>
     <nav class="primary-nav" aria-label="Primary">
       {
-        primary.map((item) => (
+        navigation.map((item) => (
           <a class="nav-link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
             {item.label}
           </a>
         ))
       }
-      <details class="nav-more" data-nav-more>
-        <summary class="nav-link">More</summary>
-        <div class="nav-more-links" role="group" aria-label="More pages">
-          {more.map(item => <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>)}
-        </div>
-      </details>
-      <a class="nav-link" href="/get-in-touch/" aria-current={isCurrent('/get-in-touch/') ? 'page' : undefined}>Contact</a>
       <WhatsAppLink class="nav-link" icon />
       <Action class="header-action" href="/contact/">Start your project</Action>
     </nav>
@@ -82,7 +73,6 @@ function isCurrent(href: string) {
         </a>
       ))
     }
-    <a href="/get-in-touch/" aria-current={isCurrent('/get-in-touch/') ? 'page' : undefined}>Contact</a>
     <a href="/contact/">Start your project</a>
   </nav>
 </div>
@@ -92,13 +82,6 @@ function isCurrent(href: string) {
   const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
   const panel = document.querySelector<HTMLElement>('[data-mobile-menu]');
   const desktop = window.matchMedia('(min-width: 1280px)');
-  const more = document.querySelector<HTMLDetailsElement>('[data-nav-more]');
-  document.addEventListener('click', event => {
-    if (more?.open && event.target instanceof Node && !more.contains(event.target)) more.open = false;
-  });
-  more?.addEventListener('keydown', event => {
-    if (event.key === 'Escape') { more.open = false; more.querySelector('summary')?.focus(); }
-  });
   const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
   let open = false;
 

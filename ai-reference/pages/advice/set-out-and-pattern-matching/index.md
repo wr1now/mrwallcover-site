@@ -116,9 +116,9 @@ How a scenic or hand-painted paper is set out: elevations, the focal point, pane
 
 [Read the guide](https://www.mrwallcover.com/advice/hand-painted-murals-set-out/)
 
-Illustrative study
+![Limerence wallpaper meeting joinery in the suite.](https://www.mrwallcover.com/media/img/r/old-bailey-14-800.webp)
 
-Pause motion
+During works: House of Hackney Limerence at 15 Old Bailey. Photograph: Dorin Burcus.
 
 08 / planning
 

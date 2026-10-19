@@ -431,14 +431,17 @@ test('the homepage does not load the 3D engine up front', async () => {
   const home = await readFile('dist/index.html', 'utf8');
   assert.equal(home.includes('three.module'), false);
   const sources = [...home.matchAll(/<script[^>]+src="([^"]+)"/g)].map((match) => match[1]);
-  assert.ok(sources.length > 0);
+  assert.equal(sources.some(source=>/MaterialStudio|design-object-scenes|three\.module/.test(source)),false,'the concise homepage has no unnecessary scene entrypoint');
   for (const source of sources) {
     const file = path.join('dist', source.replace(/^\//, ''));
     const info = await stat(file);
     assert.ok(info.size < 40_000, `${source} is ${info.size} bytes`);
   }
-  const studio = await readFile(path.join('dist', sources.find((source) => source.includes('MaterialStudio'))!.replace(/^\//, '')), 'utf8');
-  assert.match(studio, /import\(`\.\/three\.module/);
+  const materials=await readFile('dist/materials/index.html','utf8');
+  const studioSource=[...materials.matchAll(/<script[^>]+src="([^"]+)"/g)].map(match=>match[1]).find(source=>source.includes('MaterialStudio'));
+  assert.ok(studioSource,'the material studio remains on its appropriate page');
+  const studio=await readFile(path.join('dist',studioSource!.replace(/^\//,'')),'utf8');
+  assert.match(studio,/import\(`\.\/three\.module/);
 });
 
 test('every indexable page has an https canonical, a description, JSON-LD, one H1 and no de Gournay installation-service title', async () => {

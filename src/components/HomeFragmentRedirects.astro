@@ -1,0 +1,17 @@
+---
+import homeFragmentDestinations from '../data/home-fragments.json';
+---
+<script is:inline define:vars={{ homeFragmentDestinations }}>
+  (() => {
+    const forwardRemovedFragment = () => {
+      let id;
+      try { id = decodeURIComponent(window.location.hash.slice(1)); } catch { return; }
+      if (!id || document.getElementById(id)) return;
+      if (Object.prototype.hasOwnProperty.call(homeFragmentDestinations, id)) {
+        window.location.replace(homeFragmentDestinations[id]);
+      }
+    };
+    window.addEventListener('hashchange', forwardRemovedFragment);
+    forwardRemovedFragment();
+  })();
+</script>
