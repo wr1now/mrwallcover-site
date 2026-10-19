@@ -101,7 +101,7 @@ const demoFile = media(demo.id);
               <label for="rp-link">A link to the wallpaper</label>
               <div class="rp-unit"><input id="rp-link" type="url" inputmode="url" placeholder="https://" autocomplete="off" spellcheck="false" data-link /><Action variant="quiet" icon="search" data-link-read>Read the link</Action></div>
               {LINK_API_URL ? (
-                <p class="form-note rp-note">The maker's or shop's product page. The address is sent to our link reader, which fetches that page once, keeps nothing, and returns its product image and, where the page states them, the roll width, repeat and match. If the page cannot be read that way, save its image and upload or paste it; the link still goes with your enquiry. Pasting the page's text with the sizes into this box fills the fields too.</p>
+                <p class="form-note rp-note">The maker's or shop's product page. The address is sent to our link reader, which fetches that page, keeps no record of the address, may hold a fetched image in its cache for up to five minutes, and returns the product image and, where the page states them, the roll width, repeat and match. If the page cannot be read that way, save its image and upload or paste it; the link still goes with your enquiry. Pasting the page's text with the sizes into this box fills the fields too.</p>
               ) : (
                 <p class="form-note rp-note">A link straight to the wallpaper image works where the maker's site allows it. For a product page, save its image and upload or paste it here, then type the roll width and repeat the page states; the link still goes with your enquiry. Pasting the page's text with the sizes into this box fills the fields too.</p>
               )}

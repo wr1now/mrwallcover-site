@@ -195,7 +195,10 @@ export function isPrivateAddress(address: string): boolean {
   }
   if (kind === 6) {
     const lower = address.toLowerCase();
-    if (lower === '::1' || lower === '::' || lower.startsWith('fe80:') || lower.startsWith('fc') || lower.startsWith('fd')) return true;
+    if (lower === '::1' || lower === '::') return true;
+    // The first 16 bits decide the block: fe80::/10 link-local, fec0::/10 site-local, fc00::/7 unique-local, ff00::/8 multicast.
+    const first = parseInt(lower.split(':')[0] || '0', 16);
+    if (Number.isFinite(first) && ((first & 0xffc0) === 0xfe80 || (first & 0xffc0) === 0xfec0 || (first & 0xfe00) === 0xfc00 || (first & 0xff00) === 0xff00)) return true;
     // IPv4 mapped into IPv6, in dotted or (as the URL parser writes it) hex form.
     const dotted = lower.match(/^::ffff:(\d+\.\d+\.\d+\.\d+)$/);
     if (dotted) return isPrivateAddress(dotted[1]);

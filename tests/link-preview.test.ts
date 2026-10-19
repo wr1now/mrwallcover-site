@@ -85,4 +85,6 @@ test('only public http(s) addresses may be read', () => {
   assert.equal(isPrivateAddress('172.31.255.255'), true);
   assert.equal(isPrivateAddress('172.32.0.1'), false);
   assert.equal(isPrivateAddress('2606:4700::1111'), false);
+  for (const bad of ['http://[fe90::1]/', 'http://[febf::1]/', 'http://[fe80::1]/', 'http://[fec0::1]/', 'http://[fd12::1]/', 'http://[ff02::1]/']) assert.equal(isPublicHttpUrl(bad), false, bad);
+  assert.equal(isPublicHttpUrl('http://[2001:db8::1]/'), true);
 });
