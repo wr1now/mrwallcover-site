@@ -15,7 +15,7 @@
     "html": "https://www.mrwallcover.com/wallpapering/preparation/",
     "markdown": "https://www.mrwallcover.com/wallpapering/preparation/index.md",
     "json": "https://www.mrwallcover.com/ai/pages/wallpapering/preparation/index.json",
-    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/128"
+    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/129"
   },
   "headings": [
     {
@@ -109,6 +109,10 @@
     {
       "url": "https://www.mrwallcover.com/calculator/",
       "text": "Calculator"
+    },
+    {
+      "url": "https://www.mrwallcover.com/atelier/",
+      "text": "Atelier"
     },
     {
       "url": "https://www.mrwallcover.com/wallpapering/preparation/",

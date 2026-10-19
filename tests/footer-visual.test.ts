@@ -6,7 +6,7 @@ const requiredDestinations = [
   '/projects/', '/projects/#hotels', '/services/', '/materials/', '/professionals/',
   '/trade/', '/services/joinery-wallcoverings-and-panels/', '/advice/', '/advice/cost/',
   '/aftercare/', '/about/', '/reviews/', '/faq/', '/areas/', '/accessibility/',
-  '/privacy/', '/image-use/', '/for-ai/', '/contact/', 'mailto:info@mrwallcover.com',
+  '/privacy/', '/image-use/', '/for-ai/', '/atelier/', '/contact/', 'mailto:info@mrwallcover.com',
   'https://www.instagram.com/mrwallcover/',
 ];
 const footerOf = (html: string) => html.match(/<footer\b[^>]*class="site-footer"[^>]*>[\s\S]*?<\/footer>/)?.[0] ?? '';

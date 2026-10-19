@@ -99,7 +99,8 @@ export function enquiryHrefForPage(path: string, href = '/contact/'): string {
   if (intent && ['install', 'source', 'advice', 'prepare', 'repair', 'aftercare'].includes(intent)) params.set('intent', intent);
   const audience = enquiryAudience(url.searchParams.get('audience'));
   if (audience) params.set('audience', audience);
-  if (url.searchParams.get('from') === 'calculator') params.set('from', 'calculator');
+  const from = url.searchParams.get('from');
+  if (from === 'calculator' || from === 'room-preview') params.set('from', from);
   const topic = ENQUIRY_TOPICS.find((item) => item.path === path);
   if (topic) {
     params.set('service', topic.service);
