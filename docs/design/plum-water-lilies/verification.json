@@ -1,0 +1,125 @@
+{
+  "checkedAt": "2026-10-19T13:20:17.236Z",
+  "sourceBase": "8db3d53e386bd6c7950f002b220dbfb7d04ad470",
+  "sourceLabel": "Final root-built plum-blossom and water-lily candidate; stronger linen .25 normal/.16 quiet",
+  "scope": "Isolated compiled local browser verification; live publication verification remains separate",
+  "command": "CHROME_PATH=<Chrome headless shell155> node --experimental-strip-types --test tests/atelier-atmosphere.test.ts",
+  "result": {
+    "tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 19811.183709
+  },
+  "checks": {
+    "independentPaint": {
+      "linen": true,
+      "rightBirdBranch": true,
+      "leftPlumBlossom": true,
+      "waterLiliesInClippedPond": true,
+      "viewports": [
+        390,
+        1440
+      ],
+      "classicScrollbar": {
+        "viewportWidth": 390,
+        "forcedCssGutterWidth": 16,
+        "minimumVerifiedLayoutReservation": 15
+      },
+      "criterion": "Both visible states in A/B/A differ from the independently hidden motif by more than 100 channels; restored visible state differs by at most 10 channels. Clips use actual DOM rectangles bounded by the layout viewport, excluding classic scrollbars."
+    },
+    "reading": {
+      "unchangedMainGeometry": true,
+      "noHorizontalOverflow": true,
+      "inertAndAriaHidden": true,
+      "noPointerHitInterceptionIncludingPond": true,
+      "textFreeLinenProbe": true,
+      "normalLinenOpacityAllowedRange": [
+        0.2,
+        0.3
+      ],
+      "maximumAllowedLinenChannelChange": 32,
+      "minimumRequiredBodyContrastRatio": 4.5,
+      "realPortraitPixelsIdentical": true
+    },
+    "motion": {
+      "allThreeActualTransformsChange": true,
+      "allThreeOsReducedMotionStopped": true,
+      "allThreeSharedPauseStopped": true,
+      "footerReducedEffects": true,
+      "hiddenDocument": true,
+      "pagehidePageshow": true
+    },
+    "policy": {
+      "normalFamilies": [
+        "/",
+        "/services/",
+        "/materials/",
+        "/advice/",
+        "/professionals/",
+        "/projects/",
+        "/contact/"
+      ],
+      "staticFamilies": [
+        "/for-ai/",
+        "/privacy/",
+        "/wallcovering-installation-ai-crawler/",
+        "/wallpapering/preparation/",
+        "/makers/",
+        "/makers/de-gournay/",
+        "/buying-routes/"
+      ],
+      "quietPlumAndPondHidden": true,
+      "omitted": [
+        "/404.html",
+        "/thank-you/",
+        "/search/"
+      ],
+      "noJavaScript": {
+        "static": true,
+        "allFourDecorativePartsPaintedAt390": true,
+        "readingComplete": true
+      },
+      "printHidden": true,
+      "forcedColoursHidden": true
+    },
+    "resources": {
+      "activeArtwork": [
+        {
+          "path": "media/atelier-botanicals/branch-birds.webp",
+          "bytes": 139744,
+          "sha256": "a345da11f4929ba5aa0a24ecbc2e90a5f48a018ce0e3b7061c36852b3dfa63ab"
+        },
+        {
+          "path": "media/atelier-botanicals/ivory-linen.webp",
+          "bytes": 26912,
+          "sha256": "a6265ab3d2717bd46cc8a25fe6aadb9c2fdc20408783804ab17ad069c17d8079"
+        },
+        {
+          "path": "media/atelier-botanicals/plum-blossom.webp",
+          "bytes": 84132,
+          "sha256": "195765e30591192e68bdc6532330c260bca6617a6b89b11ca4b67df066f195d8"
+        },
+        {
+          "path": "media/atelier-botanicals/water-lilies.webp",
+          "bytes": 34016,
+          "sha256": "e4db37b396a0ad659302b044500d3f4f8a53a6a8690c852c2ddc392cc80c4b34"
+        }
+      ],
+      "aggregateActiveBytes": 284804,
+      "maximumAggregateBytes": 307200,
+      "budgetUsesCompiledCssReferencesAndActualRequests": true,
+      "archivedBlossomNotRequested": true,
+      "transparentBotanicalAlpha": true,
+      "additionalWebGlSceneRequestedForAtmosphere": false,
+      "publicAndBuiltArtifactsIdentical": true
+    }
+  },
+  "sourceHashes": {
+    "src/components/AtelierAtmosphere.astro": "65821d8172f52ed61e19531a9dfb312d00c0cdeb89f008b8f5a6a6b4cc28e8c9",
+    "src/styles/atelier-atmosphere.css": "f88949a770c9887035ec272089a9a00db8642774f45b9578bd03c36af9a08570",
+    "src/scripts/atelier-atmosphere.ts": "da5d0b6c46547b188acd25a7cc357da8ee606887583d2f1ab6291830b4a6e691",
+    "tests/atelier-atmosphere.test.ts": "337c9eda23a50947af844b7bb826d14b1ce5ce573366f0e042c53489715ebd48"
+  },
+  "log": "/tmp/mw-plum-water-lilies-atmosphere-tests.log"
+}

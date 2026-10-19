@@ -70,7 +70,7 @@ try {
   assert.match(publishedLayer,/data-atelier-style="linen-botanical"/);
   assert.match(publishedLayer,/data-atelier-motion="active"/);
   assert.equal((publishedHtml.match(/\bdata-atelier-linen(?:\s|>|=)/g)||[]).length,1);
-  assert.deepEqual([...publishedHtml.matchAll(/\bdata-atelier-botanical="([^"]+)"/g)].map(match=>match[1]).sort(),['birds','blossom']);
+  assert.deepEqual([...publishedHtml.matchAll(/\bdata-atelier-botanical="([^"]+)"/g)].map(match=>match[1]).sort(),['birds','blossom','water-lilies']);
   const server=await serve(out);
   const browser=await launchBrowser();
   try {
@@ -126,7 +126,7 @@ try {
         const surface=(element,kind)=>{
           const style=getComputedStyle(element);
           const rect=element.getBoundingClientRect();
-          const edge=element.closest('.atelier-atmosphere__edge')?.getBoundingClientRect()??{left:0,top:0,right:innerWidth,bottom:innerHeight};
+          const edge=element.closest('.atelier-atmosphere__edge, .atelier-atmosphere__pond')?.getBoundingClientRect()??{left:0,top:0,right:innerWidth,bottom:innerHeight};
           return {kind,background:style.backgroundImage,opacity:Number(style.opacity),inlineStyle:element.hasAttribute('style'),visible:element.checkVisibility()&&Math.min(rect.right,edge.right,innerWidth)>Math.max(rect.left,edge.left,0)&&Math.min(rect.bottom,edge.bottom,innerHeight)>Math.max(rect.top,edge.top,0)};
         };
         return {
@@ -141,8 +141,9 @@ try {
       assert.equal(inherited.pointer,'none');
       assert.equal(inherited.inert,true);
       assert.equal(inherited.overflow,false,`normal new page @${width}`);
-      const backgrounds={linen:'ivory-linen.webp',birds:'branch-birds.webp',blossom:'blossom-sprig.webp'};
-      assert.equal(inherited.surfaces.length,3);
+      const backgrounds={linen:'ivory-linen.webp',birds:'branch-birds.webp',blossom:'plum-blossom.webp','water-lilies':'water-lilies.webp'};
+      assert.deepEqual(inherited.surfaces.map(surface=>surface.kind).sort(),Object.keys(backgrounds).sort());
+      assert.equal(await published.$eval('[data-atelier-botanical="water-lilies"]',element=>!!element.closest('.atelier-atmosphere__pond')),true,'water lilies inherit the shared pond placement');
       for (const surface of inherited.surfaces) {
         assert.ok(surface.background.includes(`/media/atelier-botanicals/${backgrounds[surface.kind]}`),`${surface.kind}: shared background image @${width}`);
         assert.ok(surface.visible&&surface.opacity>0&&surface.opacity<.5,`${surface.kind}: a visible, discreet shared surface @${width}`);
@@ -193,6 +194,6 @@ try {
     assert.ok(await page.$('main a[href^="tel:"]'),'phone reveal becomes a dial link without placing a call');
   } finally { await browser.close(); await server.close(); }
   console.log('New route fixture: shared footer/actions and default dimensional FAQ inherited without local CSS or opt-in; native controls, pause/resume, mobile/desktop layout and complete no-JavaScript poster/disclosure pass. Fixture removed from source and public output.');
-  console.log('Published new route fixture: active linen-botanical shell, one linen ground and both botanical backgrounds inherit shared CSS at 390/1440 without local styling or DOM patches; native footer and form actions pass. The noindex fixture omits the layer. Both temporary sources and isolated output removed.');
+  console.log('Published new route fixture: active linen-botanical shell, linen, birds, plum blossom and water lilies inherit shared CSS at 390/1440 without local styling or DOM patches; native footer and form actions pass. The noindex fixture omits the layer. Both temporary sources and isolated output removed.');
   console.log('Phone-enabled browser fixture: six widths, single-line desktop contact action within the bar, booking outside the header, WhatsApp href decoding, field-focus dock hiding and phone reveal pass; no call or message sent.');
 } finally { for (const file of created) await rm(file,{force:true}); await rm(out,{recursive:true,force:true}); }

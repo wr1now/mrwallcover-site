@@ -1,9 +1,10 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { readdir, readFile, stat } from 'node:fs/promises';
+import { readFile, stat } from 'node:fs/promises';
 import sharp from 'sharp';
 import { serve, launchBrowser, loadPage, waitForPagePredicate } from '../scripts/visual-browser.mjs';
 let server:any, browser:any;
+const activeArtwork = ['branch-birds.webp', 'ivory-linen.webp', 'plum-blossom.webp', 'water-lilies.webp'];
 before(async () => { server = await serve('dist'); browser = await launchBrowser({ ignoreDefaultArgs:['--hide-scrollbars'] }); });
 after(async () => { await browser?.close(); await server?.close(); });
 
@@ -91,6 +92,16 @@ async function assertGutterPaint(page:any, width:number, { scripts = true } = {}
     const { painted, observations, diagnostics } = await comparePaint(page, selector, clip, { scripts });
     assert.ok(painted, `${width}px: actual ${side} botanical pixels are visible independently of linen; ${JSON.stringify({ observations, diagnostics })}`);
   }
+  const pondClip = await page.$eval('.atelier-atmosphere__pond', (pond:HTMLElement) => {
+    const box = pond.getBoundingClientRect();
+    const left = Math.max(0, Math.ceil(box.left));
+    const right = Math.min(document.documentElement.clientWidth, innerWidth, Math.floor(box.right));
+    const top = Math.max(0, Math.ceil(box.top));
+    const bottom = Math.min(innerHeight, Math.floor(box.bottom));
+    return { left, top, width:right - left, height:bottom - top };
+  });
+  const { painted, observations, diagnostics } = await comparePaint(page, '[data-atelier-botanical="water-lilies"]', pondClip, { scripts });
+  assert.ok(painted, `${width}px: actual water-lily pixels are visible independently of linen and branches; ${JSON.stringify({ observations, diagnostics })}`);
 }
 
 async function assertLinenPaint(page:any, width:number, { scripts = true } = {}) {
@@ -138,18 +149,20 @@ test('linen and each botanical visibly paint without changing reading layout or 
       const before = await page.evaluate(() => {
         const layer = document.querySelector<HTMLElement>('[data-atelier-atmosphere]')!;
         const rect = document.querySelector('main')!.getBoundingClientRect();
-        return { active:layer.dataset.atelierMotion, running:layer.hasAttribute('data-running'), overflow:document.documentElement.scrollWidth > innerWidth, hiddenFromAT:layer.getAttribute('aria-hidden'), inert:layer.inert, pointer:getComputedStyle(layer).pointerEvents, reading:{ x:rect.x, y:rect.y, width:rect.width, height:rect.height }, hits:[document.elementFromPoint(1, 300), document.elementFromPoint(document.documentElement.clientWidth - 1, 300)].some(element => !!element?.closest('[data-atelier-atmosphere]')) };
+        return { active:layer.dataset.atelierMotion, running:layer.hasAttribute('data-running'), linenOpacity:Number(getComputedStyle(layer.querySelector('[data-atelier-linen]')!).opacity), overflow:document.documentElement.scrollWidth > innerWidth, hiddenFromAT:layer.getAttribute('aria-hidden'), inert:layer.inert, pointer:getComputedStyle(layer).pointerEvents, reading:{ x:rect.x, y:rect.y, width:rect.width, height:rect.height }, hits:[document.elementFromPoint(1, 300), document.elementFromPoint(document.documentElement.clientWidth - 1, 300), document.elementFromPoint(document.documentElement.clientWidth - 1, innerHeight - 10)].some(element => !!element?.closest('[data-atelier-atmosphere]')) };
       });
       assert.equal(before.active, 'active'); assert.equal(before.running, false);
       assert.equal(before.overflow, false); assert.equal(before.hiddenFromAT, 'true');
       assert.equal(before.inert, true); assert.equal(before.pointer, 'none'); assert.equal(before.hits, false);
+      assert.ok(before.linenOpacity >= .2 && before.linenOpacity <= .3, 'normal pages have a stronger but restrained linen ground');
       await assertGutterPaint(page, width);
       await assertLinenPaint(page, width);
       const after = await page.evaluate(() => { const rect = document.querySelector('main')!.getBoundingClientRect(); return { x:rect.x, y:rect.y, width:rect.width, height:rect.height }; });
       assert.deepEqual(after, before.reading, 'decoration has no influence on the reading layout');
     }
     assert.equal(requests.some(url => /design-object-scenes\./.test(url)), false, 'ambiance never imports the WebGL scene family');
-    assert.equal(new Set(requests.filter(url => /\/media\/atelier-botanicals\/[^/]+\.webp$/.test(url))).size, 3, 'the entire shared treatment uses three cached decorative WebPs');
+    const requestedArtwork = [...new Set(requests.filter(url => /\/media\/atelier-botanicals\/[^/]+\.webp$/.test(url)).map(url => new URL(url).pathname.split('/').at(-1)))].sort();
+    assert.deepEqual(requestedArtwork, activeArtwork, 'only the four active decorative WebPs are downloaded; the archived blossom is unused');
   });
 });
 
@@ -160,10 +173,15 @@ test('live botanical motion follows OS/footer preferences, document lifecycle an
     await loadPage(page, server.origin + '/about/');
     const running = () => page.evaluate(() => document.querySelector('[data-atelier-atmosphere]')!.hasAttribute('data-running'));
     await waitForPagePredicate(page, () => document.querySelector('[data-atelier-atmosphere]')!.hasAttribute('data-running'));
-    const transform = await page.$eval('[data-atelier-moving]', (element:HTMLElement) => getComputedStyle(element).transform);
-    await page.waitForFunction((before:string) => getComputedStyle(document.querySelector('[data-atelier-moving]')!).transform !== before, { polling:100 }, transform);
+    const transforms = await page.$$eval('[data-atelier-moving]', (elements:HTMLElement[]) => elements.map(element => getComputedStyle(element).transform));
+    assert.equal(transforms.length, 3, 'birds, plum blossom and water lilies share the preference controller');
+    await page.waitForFunction((before:string[]) => {
+      const elements = [...document.querySelectorAll('[data-atelier-moving]')];
+      return elements.length === before.length && elements.every((element, index) => getComputedStyle(element).transform !== before[index]);
+    }, { polling:100 }, transforms);
     await page.emulateMediaFeatures([{ name:'prefers-reduced-motion', value:'reduce' }]);
     await waitForPagePredicate(page, () => !document.querySelector('[data-atelier-atmosphere]')!.hasAttribute('data-running'));
+    assert.equal(await page.$eval('[data-atelier-atmosphere]', (layer:HTMLElement) => layer.getAnimations({ subtree:true }).filter(animation => animation.playState === 'running').length), 0, 'OS reduced motion stops all three botanical animations');
     await page.emulateMediaFeatures([{ name:'prefers-reduced-motion', value:'no-preference' }]);
     await waitForPagePredicate(page, () => document.querySelector('[data-atelier-atmosphere]')!.hasAttribute('data-running'));
     await page.click('[data-effects-toggle]');
@@ -183,7 +201,7 @@ test('live botanical motion follows OS/footer preferences, document lifecycle an
     assert.equal(await running(), true, 'bfcache restoration resumes through the same preference checks');
     await page.evaluate(() => { document.documentElement.dataset.objectMotionState = 'paused'; });
     await waitForPagePredicate(page, () => !document.querySelector('[data-atelier-atmosphere]')!.hasAttribute('data-running'));
-    assert.deepEqual(await page.$$eval('[data-atelier-moving]', (elements:HTMLElement[]) => elements.map(element => getComputedStyle(element).animationPlayState)), ['paused', 'paused']);
+    assert.deepEqual(await page.$$eval('[data-atelier-moving]', (elements:HTMLElement[]) => elements.map(element => getComputedStyle(element).animationPlayState)), ['paused', 'paused', 'paused']);
     await page.evaluate(() => { delete document.documentElement.dataset.objectMotionState; });
     await waitForPagePredicate(page, () => document.querySelector('[data-atelier-atmosphere]')!.hasAttribute('data-running'));
     // One real study is enough to verify that the existing shared control also owns this new layer.
@@ -192,6 +210,7 @@ test('live botanical motion follows OS/footer preferences, document lifecycle an
     await page.waitForSelector(pause, { visible:true, timeout:20000 });
     await page.click(pause);
     await waitForPagePredicate(page, () => document.documentElement.dataset.objectMotionState === 'paused' && !document.querySelector('[data-atelier-atmosphere]')!.hasAttribute('data-running'));
+    assert.deepEqual(await page.$$eval('[data-atelier-moving]', (elements:HTMLElement[]) => elements.map(element => getComputedStyle(element).animationPlayState)), ['paused', 'paused', 'paused'], 'the real shared motion control pauses all botanicals');
     await page.click(pause);
     await waitForPagePredicate(page, () => document.documentElement.dataset.objectMotionState !== 'paused' && document.querySelector('[data-atelier-atmosphere]')!.hasAttribute('data-running'));
   });
@@ -214,8 +233,9 @@ test('new shared content families inherit the motif while utilities stay static 
         markedRunning:element.hasAttribute('data-running'),
         activeAnimations:element.getAnimations({ subtree:true }).filter(animation => animation.playState === 'running').length,
         left:getComputedStyle(element.querySelector('.atelier-atmosphere__edge--left')!).display,
+        pond:getComputedStyle(element.querySelector('.atelier-atmosphere__pond')!).display,
       }));
-      assert.deepEqual(stationary, { markedRunning:false, activeAnimations:0, left:'none' }, path);
+      assert.deepEqual(stationary, { markedRunning:false, activeAnimations:0, left:'none', pond:'none' }, path);
     }
     for (const path of ['/404.html', '/thank-you/', '/search/']) {
       await loadPage(page, server.origin + path);
@@ -261,8 +281,12 @@ test('the decoration leaves real photography unchanged and disappears in print a
 
 test('the shared decorative images keep a bounded payload and transparent botanical artwork', async () => {
   const directory = 'dist/media/atelier-botanicals';
-  const files = (await readdir(directory)).filter(name => name.endsWith('.webp'));
-  assert.equal(files.length, 3);
+  const html = await readFile('dist/about/index.html', 'utf8');
+  const styles = [...html.matchAll(/<link\b[^>]*>/g)].map(match => match[0]).filter(tag => /\brel=["']stylesheet["']/.test(tag)).map(tag => tag.match(/\bhref=["']([^"']+)["']/)![1]);
+  assert.ok(styles.length > 0, 'the compiled reading page links its actual stylesheets');
+  const css = (await Promise.all(styles.map(href => readFile('dist' + new URL(href, 'https://test.invalid').pathname, 'utf8')))).join('\n');
+  const files = [...new Set([...css.matchAll(/\/media\/atelier-botanicals\/([^\s)'";]+\.webp)/g)].map(match => match[1]))].sort();
+  assert.deepEqual(files, activeArtwork, 'the payload budget counts CSS-referenced artwork rather than retained archive files');
   let bytes = 0;
   for (const name of files) {
     const path = `${directory}/${name}`;
