@@ -26,10 +26,10 @@ export function sniffMime(bytes: Uint8Array): string | null {
 }
 export function uploadSpec(input: Record<string,unknown>) {
   const kind=input.kind;
-  if (kind!=='artwork' && kind!=='plan') throw new Error('Unsupported upload');
+  if (!['artwork','plan','room-photo','mask'].includes(String(kind))) throw new Error('Unsupported upload');
   const mime=String(input.mime);
   const extensions: Record<string,string>={'image/png':'png','image/jpeg':'jpg','image/webp':'webp','application/pdf':'pdf'};
-  if (!extensions[mime] || (kind==='artwork' && mime==='application/pdf')) throw new Error('Use a PNG, JPEG or WebP image; floor plans also accept PDF');
+  if (!extensions[mime] || (kind!=='plan' && mime==='application/pdf')) throw new Error('Use a PNG, JPEG or WebP image; floor plans also accept PDF');
   return {kind,mime,extension:extensions[mime],bytes:integer(input.bytes,1,LIMITS.fileBytes,'file size'),sha256:sha256(input.sha256)};
 }
 export function exactOrigin(value: string | null, allowed: string[]): boolean {

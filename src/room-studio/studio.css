@@ -17,3 +17,15 @@
 
 .studio-crop-source svg{width:100%;height:auto;max-height:240px;background:#eceee4;border:1px solid #c4c9bc;border-radius:6px;}
 .studio-example-panel{display:grid;grid-template-columns:minmax(260px,1fr) minmax(0,1.4fr);gap:28px;padding:28px;background:#f2f0e3;border-bottom:1px solid var(--studio-line)}.studio-example-panel h2{margin:10px 0 16px}.studio-example-media figure{margin:0 0 12px}.studio-example-media img{width:100%;height:auto;display:block}.studio-example-media figcaption{font-size:13px;padding:8px 0;color:#59624f}.studio-example-media .studio-button-row a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;text-decoration:underline;text-underline-offset:3px}.studio-example-panorama{margin-top:18px}.studio-example-panorama .studio-panorama{height:340px}@media(max-width:900px){.studio-example-panel{grid-template-columns:1fr;padding:20px;gap:20px}}
+
+/* Two useful starting routes share one saved workspace. */
+.studio-start-options{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 24px}
+.studio-start-option{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:26px;text-align:left;color:#263529;background:#fffdf7;border:1px solid #bdc7ae;border-radius:10px;cursor:pointer;font:inherit;min-width:0}
+.studio-start-option[aria-pressed=true]{border-color:#526446;background:#edf0e5;box-shadow:inset 0 0 0 1px #526446}
+.studio-start-option strong{font-family:var(--font-serif);font-size:clamp(28px,3vw,38px);font-weight:500;line-height:1.1}
+.studio-start-option>span:not(.eyebrow){font-size:18px;line-height:1.5;max-width:46ch}
+.studio-start-option .studio-option-link{font-size:15px!important;display:flex;gap:14px;align-items:center;margin-top:auto;min-height:44px;text-decoration:underline;text-underline-offset:4px}
+.studio-start-option:focus-visible{outline:3px solid #526446;outline-offset:4px}
+.studio-app>[hidden]{display:none!important}
+@media(max-width:700px){.studio-start-options{grid-template-columns:1fr;gap:12px}.studio-start-option{padding:20px;gap:8px}.studio-start-option>span:not(.eyebrow){font-size:18px}}
+.studio-review-facts{margin:14px 0}.studio-review-facts>div{border-top:1px solid #cbd0c1;padding:12px 0;display:grid;grid-template-columns:90px 1fr;gap:10px}.studio-review-facts dt{font-size:15px;color:#58644e}.studio-review-facts dd{font-size:15px;margin:0;line-height:1.5}.studio-review .studio-details li{font-size:15px;line-height:1.6;margin:8px 0}

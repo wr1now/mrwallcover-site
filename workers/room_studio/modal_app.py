@@ -124,17 +124,42 @@ def _store_output(job: dict, kind: str, path: Path) -> dict:
     if not mime or not 0<len(payload)<=MAX_BYTES:
         raise ValueError("Output exceeds the supported file limit")
     digest=hashlib.sha256(payload).hexdigest()
-    asset=_rpc("room_reserve_asset",{"p_owner":job["owner_id"],"p_project":job["project_id"],"p_id":str(uuid.uuid4()),"p_kind":"output","p_mime":mime,"p_bytes":len(payload),"p_sha":digest,"p_extension":suffix[1:]})
+    asset=_rpc("room_reserve_output",{"p_job":job["id"],"p_token":job["lease_token"],"p_id":str(uuid.uuid4()),"p_mime":mime,"p_bytes":len(payload),"p_sha":digest,"p_extension":suffix[1:]})
     try:
         _service("/storage/v1/object/"+BUCKET+"/"+asset["storage_path"],"POST",binary=payload,mime=mime)
         if not _active(job):
             raise RuntimeError("Job was cancelled or its lease expired")
         _service("/rest/v1/room_assets?id=eq."+asset["id"],"PATCH",{"state":"ready"})
-        return {"kind":kind,"storagePath":asset["storage_path"],"sha256":digest}
+        return {"kind":kind,"storagePath":asset["storage_path"],"sha256":digest,"assetId":asset["id"]}
     except Exception:
-        _service("/storage/v1/object/"+BUCKET,"DELETE",{"prefixes":[asset["storage_path"]]})
-        _service("/rest/v1/room_assets?id=eq."+asset["id"],"DELETE")
+        cleanup_output_asset(job["id"],asset["id"])
         raise
+
+
+def cleanup_output_asset(job_id: str, asset_id: str) -> None:
+    # Claim/fence before deleting any bytes: a lost success response must never
+    # cause the exception path to remove an already delivered output package.
+    asset=_rpc("room_claim_output_cleanup",{"p_job":job_id,"p_asset":asset_id})
+    if not asset or not asset.get("id"):return
+    _service("/storage/v1/object/"+BUCKET,"DELETE",{"prefixes":[asset["storage_path"]]})
+    _rpc("room_release_output",{"p_job":job_id,"p_asset":asset_id})
+
+
+def cleanup_unpublished_outputs(job: dict) -> None:
+    """Recover a killed attempt's registered objects before the next attempt.
+    Every attempt uses a new lease. No new output is written until this cleanup
+    completes; a stale process cannot reserve more bytes with its old token.
+    """
+    assets=_rows("room_assets",f"job_id=eq.{_uuid(job['id'])}&kind=eq.output")
+    for asset in assets:
+        cleanup_output_asset(job["id"],asset["id"])
+
+
+def output_maintenance() -> None:
+    """A second killed attempt has no following worker to clean its objects."""
+    assets=_rows("room_assets","select=*,room_jobs!inner(state)&kind=eq.output&room_jobs.state=in.(failed,cancelled)&order=created_at.asc&limit=20")
+    for asset in assets:
+        cleanup_output_asset(asset["job_id"],asset["id"])
 
 
 def process_job(job: dict) -> None:
@@ -143,6 +168,7 @@ def process_job(job: dict) -> None:
     try:
         if os.getenv("ROOM_STUDIO_PAID_JOBS_ENABLED")!="true" or not _active(job):
             raise RuntimeError("Processing is disabled or the job was cancelled")
+        cleanup_unpublished_outputs(job)
         with tempfile.TemporaryDirectory(prefix="room-studio-") as temporary:
             working=Path(temporary)
             if job["type"]=="analysis":
@@ -156,6 +182,11 @@ def process_job(job: dict) -> None:
                 result=working/"candidate.json";result.write_text(json.dumps(candidate))
                 outputs.append(_store_output(job,"candidate",result))
             elif job["type"]=="render":
+                if not job.get("order_id") or job["input"].get("orderId")!=job["order_id"]:
+                    raise ValueError("A paid render order is required")
+                orders=_rows("room_render_orders",f"id=eq.{_uuid(job['order_id'])}&owner_id=eq.{_uuid(job['owner_id'])}&job_id=eq.{_uuid(job['id'])}&state=eq.running")
+                if len(orders)!=1 or not orders[0].get("payment_intent_id") or orders[0]["revision_id"]!=job["revision_id"]:
+                    raise ValueError("Paid render entitlement does not match this revision")
                 asset=_asset(job,asset_id=job["input"]["packageAssetId"])
                 if asset["kind"]!="package" or asset["sha256"]!=job["input"]["packageSha256"]:
                     raise ValueError("Approved render package checksum mismatch")
@@ -203,11 +234,81 @@ def process_job(job: dict) -> None:
         # Delete incomplete output packages: a customer never receives a partial
         # successful result. Snapshot/source uploads remain available for retry.
         for output in outputs:
-            _service("/storage/v1/object/"+BUCKET,"DELETE",{"prefixes":[output["storagePath"]]})
-            _service("/rest/v1/room_assets?storage_path=eq."+urllib.parse.quote(output["storagePath"],safe=""),"DELETE")
+            cleanup_output_asset(job["id"],output["assetId"])
         if _active(job):
             retryable=isinstance(error,(TimeoutError,subprocess.TimeoutExpired,urllib.error.URLError,TransientWorkerError))
             _rpc("room_finish_job",{"p_id":job["id"],"p_token":job["lease_token"],"p_success":False,"p_outputs":[],"p_error":"Processing could not finish. The saved room and original uploads remain available.","p_retryable":retryable})
+
+
+def _stripe_request(path: str, payload: dict|None=None, key: str|None=None) -> dict:
+    secret=os.getenv("ROOM_STUDIO_STRIPE_SECRET_KEY", "")
+    if not (secret.startswith("sk_test_") or (secret.startswith("sk_live_") and os.getenv("ROOM_STUDIO_PAYMENTS_LIVE_ENABLED")=="true")):
+        raise RuntimeError("Payment recovery is not configured")
+    data=urllib.parse.urlencode(payload).encode() if payload is not None else None
+    headers={"Authorization":"Bearer "+secret,"Stripe-Version":"2026-09-30.endive"}
+    if data is not None: headers["Content-Type"]="application/x-www-form-urlencoded"
+    if key: headers["Idempotency-Key"]=key
+    request=urllib.request.Request("https://api.stripe.com/v1/"+path,data=data,headers=headers)
+    with urllib.request.urlopen(request,timeout=5) as response:
+        return json.loads(response.read(500000))
+
+
+def payment_maintenance() -> None:
+    """Refund recovery continues even when new checkout/compute work is disabled.
+    A stable key recovers lost responses. An explicitly failed provider refund
+    receives a new generation key; transient failures retain the previous key.
+    """
+    _rpc("room_expire_checkouts",{})
+    _rpc("room_expire_worker_leases",{})
+    if not os.getenv("ROOM_STUDIO_STRIPE_SECRET_KEY"):
+        return
+    # Webhooks are the primary path. Reconciliation recovers a prolonged webhook
+    # outage. Unbound sessions are never returned to customers, so a crash before
+    # bind leaves an unpaid hold that expires or is resumed with idempotency.
+    # Bound sessions can be looked up without customer action; cancelled sessions
+    # still get checked because a successful payment may race cancellation.
+    import datetime
+    now=datetime.datetime.now(datetime.timezone.utc)
+    pending=_rows("room_render_orders","state=in.(checkout_pending,expired)&payment_intent_id=is.null&checkout_session_id=not.is.null&payment_check_at=lte."+urllib.parse.quote(now.isoformat(),safe="")+"&order=payment_check_at.asc&limit=3")
+    for order in pending:
+        session_id=order["checkout_session_id"]
+        if not re.fullmatch(r"cs_[A-Za-z0-9_]+",session_id):continue
+        try:
+            session=_stripe_request("checkout/sessions/"+session_id)
+            if session.get("payment_status")!="paid":continue
+            metadata=session.get("metadata",{})
+            if session.get("client_reference_id")!=metadata.get("orderId") or metadata.get("orderId")!=order["id"]:raise ValueError("Payment reconciliation identity mismatch")
+            payment=session.get("payment_intent")
+            if isinstance(payment,dict):payment=payment.get("id")
+            _rpc("room_receive_payment",{"p_event":"evt_reconcile_"+session_id,"p_kind":"reconciled.checkout.session","p_order":metadata.get("orderId"),"p_session":session_id,"p_payment":payment,"p_amount":session.get("amount_total"),"p_currency":session.get("currency"),"p_owner":metadata.get("ownerId"),"p_project":metadata.get("projectId"),"p_revision":metadata.get("revisionId"),"p_hash":metadata.get("packageSha256")})
+        except Exception:
+            # Keep the financial obligation visible. The next scheduled run
+            # retries; no provider body or customer photo is logged.
+            continue
+        finally:
+            delay=datetime.timedelta(minutes=5 if order["state"]=="checkout_pending" else 60)
+            _service("/rest/v1/room_render_orders?id=eq."+_uuid(order["id"]),"PATCH",{"payment_check_at":(now+delay).isoformat()})
+    for _ in range(3):
+        order=_rpc("room_claim_refund",{})
+        if not order or not order.get("id"): return
+        refund_id=order.get("refund_id")
+        try:
+            prior=None
+            if refund_id:
+                if not re.fullmatch(r"re_[A-Za-z0-9_]+",refund_id): raise ValueError("Invalid refund identity")
+                prior=_stripe_request("refunds/"+refund_id)
+            if prior and prior.get("status") in ("pending","succeeded"):
+                result=prior
+            else:
+                intent=order["payment_intent_id"]
+                if not re.fullmatch(r"pi_[A-Za-z0-9_]+",intent): raise ValueError("Invalid payment identity")
+                generation="-after-"+refund_id if refund_id else ""
+                result=_stripe_request("refunds",{"payment_intent":intent,"metadata[orderId]":order["id"]},"room-refund-"+order["id"]+generation)
+            if result.get("payment_intent")!=order["payment_intent_id"] or result.get("amount")!=order["amount_pence"] or result.get("currency")!=order["currency"]:
+                raise ValueError("Full refund does not match the order")
+            _rpc("room_finish_refund",{"p_order":order["id"],"p_token":order["refund_token"],"p_refund":result.get("id"),"p_status":result.get("status","failed")})
+        except Exception:
+            _rpc("room_finish_refund",{"p_order":order["id"],"p_token":order["refund_token"],"p_refund":refund_id,"p_status":"failed"})
 
 
 def retention_maintenance() -> None:
@@ -240,12 +341,19 @@ def retention_maintenance() -> None:
         for start in range(0,len(paths),100):
             _service("/storage/v1/object/"+BUCKET,"DELETE",{"prefixes":paths[start:start+100]})
         _service("/rest/v1/room_projects?id=eq."+project["id"]+"&deleting=eq.true","DELETE")
-    # Signed upload tokens last two hours. Reap abandoned reservations only after
-    # that window, so a valid in-flight upload is never deleted under the client.
+    # Authenticated upload admission lasts two hours. Reap abandoned reservations
+    # after that window, fencing completion before deleting any customer bytes.
     import datetime
     cutoff=(datetime.datetime.now(datetime.timezone.utc)-datetime.timedelta(hours=3)).isoformat()
     stale=_rows("room_assets","state=in.(pending,cancelled)&created_at=lt."+urllib.parse.quote(cutoff,safe=""))
     for asset in stale:
+        if asset["kind"]=="output" and asset.get("job_id"):
+            cleanup_output_asset(asset["job_id"],asset["id"])
+            continue
+        if asset["kind"] in ("artwork","plan","room-photo","mask"):
+            cancelled=_rpc("room_finish_upload",{"p_owner":asset["owner_id"],"p_asset":asset["id"],"p_cancel":True})
+            if not cancelled or not cancelled.get("id"):
+                continue  # A completed immutable upload won the race.
         _service("/storage/v1/object/"+BUCKET,"DELETE",{"prefixes":[asset["storage_path"]]})
         _service("/rest/v1/room_assets?id=eq."+asset["id"]+"&state=in.(pending,cancelled)","DELETE")
 
@@ -287,6 +395,12 @@ if modal is not None:
             job=_rpc("room_claim_job",{"p_type":kind})
             if job and job.get("id"):
                 (render_job if kind=="render" else analysis_job).spawn(job)
+
+    @app.function(image=image,secrets=[secret],schedule=modal.Period(minutes=1),timeout=60,max_containers=1)
+    def recover_payments():
+        if os.getenv("ROOM_STUDIO_CLOUD_ENABLED")=="true":
+            payment_maintenance()
+            output_maintenance()
 
     @app.function(image=image,secrets=[secret],schedule=modal.Period(hours=24),timeout=300,max_containers=1)
     def maintain():

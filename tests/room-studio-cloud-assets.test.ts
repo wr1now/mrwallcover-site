@@ -69,9 +69,9 @@ test('cloud saves reuse freshly verified owned artwork across sessions and recov
       return Response.json({access_token:owner,refresh_token:'refresh',expires_at:Math.floor(Date.now()/1000)+3600,user:{id:owner}});
     }
     if(url.pathname==='/functions/v1/room-studio')return handler!(new Request(url,{...init,headers:{...Object.fromEntries(new Headers(init?.headers)),Origin:'https://www.mrwallcover.com'}}));
-    const prefix='/storage/v1/object/upload/sign/room-studio/';
+    const prefix='/storage/v1/object/room-studio/';
     if(url.pathname.startsWith(prefix)){
-      uploads++;const path=url.pathname.slice(prefix.length);assert.equal(objects.has(path),false,'PUT targets must be fresh immutable paths');objects.set(path,new Uint8Array(await (init!.body as Blob).arrayBuffer()));return new Response('');
+      assert.equal(init?.method,'POST');assert.equal(new Headers(init?.headers).get('x-upsert'),'false');assert.ok(new Headers(init?.headers).get('Authorization')?.startsWith('Bearer '));uploads++;const path=url.pathname.slice(prefix.length);assert.equal(objects.has(path),false,'PUT targets must be fresh immutable paths');objects.set(path,new Uint8Array(await (init!.body as Blob).arrayBuffer()));return new Response('');
     }
     if(url.pathname.startsWith('/storage/v1/object/sign/room-studio/'))return new Response(objects.get(url.pathname.slice('/storage/v1/object/sign/room-studio/'.length)));
     throw new Error('Unexpected offline client route: '+url.pathname);
@@ -80,14 +80,22 @@ test('cloud saves reuse freshly verified owned artwork across sessions and recov
   const artwork=(project:RoomProject)=>project.finishes.find(f=>f.type==='wallpaper')!;
   try{
     await import('../supabase/functions/room-studio/index.ts');
-    const original={...fixtureProject(),id:PROJECT};
+    const original:RoomProject={...fixtureProject(),schemaVersion:2,id:PROJECT};
+    const wallIds=original.room.vertices.slice(0,2).map(v=>v.wallId),finishId=artwork(original).id;
+    original.wallRuns=[{id:'connected-run',finishId,wallIds,startOffsetMm:0}];
+    original.assignments=wallIds.map((wallId,i)=>({id:'run-band-'+i,wallId,finishId,fromMm:0,toMm:null,offsetXmm:0,offsetYmm:0,runId:'connected-run'}));
     const response={roughness:.42,metalness:.7,relief:{kind:'faceted' as const,depthMm:1.2,columns:4,rows:3}};
     artwork(original).appearance=structuredClone(response);
+    const source=structuredClone(artwork(original));
+    original.finishes.push({...source,id:'numbered-panels',type:'mural',name:'Finite calibrated proof',calibration:{...source.calibration,widthMm:863.6,heightMm:863.6},panels:[{id:'panel-one',number:1,texture:structuredClone(source.texture),widthMm:863.6,heightMm:863.6},{id:'panel-two',number:2,texture:{...structuredClone(source.texture),id:'second-panel-texture'},widthMm:863.6,heightMm:863.6}]});
     const first=client();await first.completeSignIn('fixture@example.test','123456');
     const saved1=await first.saveProject(original),path1=artwork(saved1.project).texture.storagePath!;
     assert.deepEqual(artwork(saved1.project).appearance,response,'Cloud metadata preserves illustrative response while only artwork bytes are moved');
     assert.deepEqual((projects.get(PROJECT)!.snapshot.finishes[0] as any).appearance,response);
-    assert.equal(uploads,1);assert.equal(signatures,1);
+    assert.equal(uploads,1);assert.equal(signatures,0,'Customer uploads use revocable authenticated storage, never signed-upload tokens');
+    assert.deepEqual(saved1.project.wallRuns,original.wallRuns,'Connected wall runs survive the private cloud save after the empty reservation stub');
+    assert.ok(saved1.project.assignments.every(a=>a.runId==='connected-run'));
+    const panels=saved1.project.finishes.find(f=>f.id==='numbered-panels');assert.ok(panels?.type==='mural');assert.equal(panels.panels?.[1].widthMm,863.6);assert.ok(panels.panels?.every(p=>p.texture.storagePath===path1&&!p.texture.dataUrl),'Every numbered panel uses a private owned source, preserving tenths of a millimetre');
     const saved2=await first.saveProject(original);
     assert.equal(uploads,1,'unchanged repeated saves do not use another upload or reservation');
     assert.equal(artwork(saved2.project).texture.storagePath,path1);
@@ -113,6 +121,11 @@ test('cloud saves reuse freshly verified owned artwork across sessions and recov
     await assert.rejects(()=>other.saveProject(original),/Project unavailable/);
     await other.saveProject({...original,id:THIRD});
     assert.equal(uploads,5,'another owner receives a separately owned asset');
+    const packageId='40000000-0000-4000-8000-000000000099',packagePath=`${OWNER}/${PROJECT}/${packageId}.json`;
+    assets.set(packageId,{id:packageId,owner_id:OWNER,project_id:PROJECT,storage_path:packagePath,kind:'package',mime:'application/json',bytes:2,sha256:'f'.repeat(64),state:'ready'});objects.set(packagePath,new TextEncoder().encode('{}'));
+    const beforeIntegrity=integrityReads;
+    const wrongKind=await handler!(new Request(BASE+'/functions/v1/room-studio',{method:'POST',headers:{Origin:'https://www.mrwallcover.com',Authorization:'Bearer '+OWNER,'Content-Type':'application/json'},body:JSON.stringify({action:'completeUpload',projectId:PROJECT,assetId:packageId})}));
+    assert.equal(wrongKind.status,400);assert.ok(assets.has(packageId));assert.ok(objects.has(packagePath));assert.equal(integrityReads,beforeIntegrity,'Customer completion cannot read or delete an immutable render package');
     objects.set(path3,new Uint8Array([137,80,78,71,13,10,26,10]));
     await assert.rejects(()=>first.saveProject(original),/integrity check/);
     assert.equal(uploads,5,'corrupt existing artwork is never silently reused or overwritten');

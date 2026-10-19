@@ -15,5 +15,13 @@ export function finishSummary(project:RoomProject,confirmed?:Pick<RoomRevision,'
     }
     for(const o of project.room.openings.filter(o=>o.wallId===wall.wallId))lines.push(`  ${o.kind}: ${o.widthMm} × ${o.heightMm} mm; ${o.offsetMm} mm along wall; sill ${o.sillMm} mm; reveal ${o.revealMm} mm.`);
   }
+  for(const finish of project.finishes){
+    if(finish.catalogue)lines.push(`Catalogue: ${finish.name}; product ${finish.catalogue.productId}; version ${finish.catalogue.version}; ${finish.catalogue.verification}.`);
+    if(finish.type==='wallpaper'||finish.type==='mural'){
+      if(finish.panels?.length){lines.push(`Finite panels for ${finish.name} (never repeated):`);for(const panel of finish.panels)lines.push(`  Panel ${panel.number}: ${panel.widthMm} × ${panel.heightMm} mm; source ${panel.texture.sha256}.`);}
+      if(finish.appearance)lines.push(`${finish.name}: illustrative roughness ${finish.appearance.roughness}, metalness ${finish.appearance.metalness}${finish.appearance.relief?`, ${finish.appearance.relief.kind} relief ${finish.appearance.relief.depthMm} mm`:''}.`);
+    }
+  }
+  for(const run of project.wallRuns??[])lines.push(`Connected set-out: ${project.finishes.find(finish=>finish.id===run.finishId)?.name??run.finishId}; walls ${run.wallIds.map(id=>project.room.vertices.findIndex(wall=>wall.wallId===id)+1).join(' → ')}; start ${run.startOffsetMm} mm.`);
   lines.push('','Colour and limewash movement are approximate. Test a sample in your room before ordering.','This summary does not calculate an ordering quantity. Please check the room and installation requirements.');return lines.join('\n');
 }

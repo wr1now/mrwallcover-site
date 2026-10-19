@@ -70,7 +70,7 @@ export function createExampleProject(id:RoomStudioExampleId):RoomProject {
   };
   const paint={id:`example-${id}-paint`,type:'paint' as const,name:'Example warm chalk',colour:'#e9e2d4',sheen:'matte' as const};
   const project:RoomProject={
-    schemaVersion:1,id:crypto.randomUUID(),ownerId:null,name:`${metadata.name} · ${id==='willow-chimney'?'chimney room':id==='ochre-lshape'?'L-shaped room':'bay room'}`,
+    schemaVersion:2,id:crypto.randomUUID(),ownerId:null,name:`${metadata.name} · ${id==='willow-chimney'?'chimney room':id==='ochre-lshape'?'L-shaped room':'bay room'}`,
     room,finishes:[wallpaper,paint],assignments:room.vertices.map((vertex,index)=>({id:`example-${id}-wall-${index+1}`,wallId:vertex.wallId,finishId:index===0?paint.id:wallpaper.id,fromMm:0,toMm:null,offsetXmm:0,offsetYmm:0})),
     cameras,lighting:'daylight',schemes:[],revision:1,updatedAt:new Date().toISOString(),
   };

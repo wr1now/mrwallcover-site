@@ -76,7 +76,7 @@ export function createManufacturerPreviewProject(id: ManufacturerSelectionId, op
   };
   const paint = { id: 'manufacturer-concept-paint', type: 'paint' as const, name: 'Private concept neutral paint', colour: '#d7d3cc', sheen: 'matte' as const };
   project.name = `Private concept · ${id === 'phillip-jeffries-3163' ? 'PJ Gold on Horsehair 3163' : productName}`;
-  project.ownerId = null; project.room.confirmed = false; project.schemes = []; project.finishes = [finish, paint];
+  project.ownerId = null; project.room.confirmed = false; project.schemes = []; delete project.wallRuns; project.finishes = [finish, paint];
   project.room.openings = project.room.openings.map(opening => opening.kind === 'window' ? { ...opening, frameMm: 45 } : opening);
   addAssumption('layout', 'Private window frames use an illustrative 45 mm width. Surveyed wall and opening dimensions remain unchanged.');
   const offsetYmm = dimensions.kind === 'vertical-repeat-panels' ? project.room.heightMm - project.room.corniceMm - heightMm : 0;

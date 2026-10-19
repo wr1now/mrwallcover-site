@@ -1,4 +1,4 @@
-/** Room Studio v1. Inputs are integer millimetres. Compiled meshes use metres,
+/** Room Studio v2. Survey inputs are integer millimetres; artwork is precise to 0.1 mm. Compiled meshes use metres,
  * right-handed X/Y/Z, Y up. Plan points use X/Z, counter-clockwise from above.
  * Wall IDs belong to the outgoing edge of each point and survive coordinate edits.
  */
@@ -28,7 +28,9 @@ export interface ArtworkCalibration {
   repeatKind: 'tile' | 'strip'; match: 'straight' | 'half-drop'; offsetAlreadyIncluded: boolean;
   proofAccepted: boolean;
 }
+export interface CatalogueReference { productId: string; version: string; verification: 'approved' | 'custom'; }
 export interface PaintFinish {
+  catalogue?: CatalogueReference;
   id: string; type: 'paint'; name: string; colour: string; sheen: 'matte' | 'eggshell';
 }
 /** Illustrative response controls, never a claim of manufacturer measurements. */
@@ -37,18 +39,31 @@ export interface ArtworkAppearance {
   /** Optional parametric geometry; compiled mesh positions remain authoritative. */
   relief?: { kind: 'coffered' | 'faceted'; depthMm: number; columns: number; rows: number };
 }
+export interface ArtworkPanel {
+  id: string; number: number; texture: TextureAsset; widthMm: number; heightMm: number;
+}
 export interface ArtworkFinish {
+  catalogue?: CatalogueReference;
+  /** Finite full-image panels in installation order. Never repeated or stretched. */
+  panels?: ArtworkPanel[];
   id: string; type: 'wallpaper' | 'mural'; name: string;
   texture: TextureAsset; calibration: ArtworkCalibration;
   appearance?: ArtworkAppearance;
 }
 export interface BauwerkFinish {
+  catalogue?: CatalogueReference;
   id: string; type: 'bauwerk'; name: string; colour: string;
   shadeId: string; catalogueVersion: string; productUrl: string;
   colourProvenance: 'manufacturer' | 'derived-preview'; seed: number;
 }
 export type FinishAsset = PaintFinish | ArtworkFinish | BauwerkFinish;
+/** Surveyed phase reference. A changed wall finish retains the reference; finite panels require placement review after a gap. */
+export interface FinishWallRun {
+  id: string; finishId: string; wallIds: string[]; startOffsetMm: number;
+}
 export interface WallFinishAssignment {
+  /** Distance along this connected run is derived from current surveyed wall lengths. */
+  runId?: string;
   id: string; wallId: string; finishId: string;
   /** Horizontal band measured from finished floor; null top means room ceiling. */
   fromMm: number; toMm: number | null;
@@ -59,10 +74,11 @@ export interface StudioCamera {
   id: string; kind: 'perspective' | 'panorama'; position: Vec3; target: Vec3; fov: number;
 }
 export type LightingPreset = 'daylight' | 'warm';
-export interface FinishScheme { id: string; name: string; finishes: FinishAsset[]; assignments: WallFinishAssignment[]; }
+export interface FinishScheme { id: string; name: string; finishes: FinishAsset[]; assignments: WallFinishAssignment[]; wallRuns?: FinishWallRun[]; }
 export interface RoomProject {
-  schemaVersion: 1; id: string; ownerId: string | null; name: string;
+  schemaVersion: 1 | 2; id: string; ownerId: string | null; name: string;
   room: RoomDefinition; finishes: FinishAsset[]; assignments: WallFinishAssignment[];
+  wallRuns?: FinishWallRun[];
   cameras: StudioCamera[]; lighting: LightingPreset; schemes: FinishScheme[];
   revision: number; updatedAt: string;
 }
@@ -91,7 +107,7 @@ export interface RenderPackage {
 export type JobState = 'queued' | 'running' | 'succeeded' | 'failed' | 'cancelled';
 export interface ProcessingJob {
   id: string; ownerId: string; type: 'analysis' | 'render'; inputIdentity: string;
-  revisionId: string | null; state: JobState; reservedPence: number;
+  revisionId: string | null; orderId?: string; state: JobState; reservedPence: number;
   attempts: number; error: string | null; outputs: { kind: string; storagePath: string; sha256: string }[];
   createdAt: string; updatedAt: string;
 }

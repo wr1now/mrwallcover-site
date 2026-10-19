@@ -41,3 +41,6 @@ dist-review/
 __pycache__/
 *.pyc
 .venv/
+
+# Local Supabase CLI state
+/supabase/.temp/

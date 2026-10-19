@@ -1,7 +1,7 @@
 ---
 title: "Privacy | Mr Wallcover"
 url: https://www.mrwallcover.com/privacy/
-description: "How Mr Wallcover handles personal information sent with a quotation request. No cookies and no analytics on this site by default."
+description: "How Mr Wallcover handles quotation requests, local room previews, optional private projects and rendering orders. No analytics by default."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -10,7 +10,7 @@ Privacy
 
 # Privacy notice
 
-Updated 18 October 2026
+Updated 19 October 2026
 
 ## Who we are
 
@@ -65,6 +65,16 @@ We keep enquiry correspondence for as long as we need it to answer you, to carry
 We do not keep photographs once they are no longer needed for that enquiry or that commission.
 
 If you withdraw email-marketing consent or object, we keep the minimum suppression record needed to respect that choice, separately from your project correspondence. We do not treat a later enquiry as permission to resume marketing.
+
+## Wallpaper my room
+
+The photo visualiser and measured 3D editor work in your browser. Room photographs, uploaded wallpaper, measurements, masks, finish choices and saved comparisons are stored on this device until you delete them or clear browser data. Download an editable copy before changing devices. Normalized room photographs and PNG exports omit location metadata. Automatic floor-plan interpretation is disabled.
+
+Optional cloud saving is available only when the private service is enabled. Choosing Save online uploads the selected project and its files to private Supabase storage associated with your verified email account. Merely opening the editor does not upload your photographs. Private download links expire. You can export or delete saved projects. Projects become due for deletion after 90 days without activity; an advance notice gives at least seven days to save, export or delete them.
+
+Finished rendering and checkout remain unavailable until their price and operating allowances are configured. When enabled, a purchase freezes the selected measured-room version and sends its geometry and finish assets to the private Modal rendering worker. Stripe handles checkout and card information; Mr Wallcover stores order, payment-reference, fulfilment and refund records, not card numbers. Minimal financial records remain separate from deleted room media for accounting, refunds and reconciliation.
+
+Account verification, purchase receipts and project-expiry notices are service messages, separate from optional marketing. Supabase handles account verification, Stripe handles payment receipts and refunds, and the configured private email provider handles expiry notices. These services process the details needed for their respective steps. If you need help with a saved project or order, use the contact details on this site.
 
 ## Your rights
 

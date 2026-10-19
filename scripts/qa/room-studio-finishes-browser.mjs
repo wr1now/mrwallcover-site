@@ -5,6 +5,9 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import sharp from 'sharp';
 import { launchBrowser, serve, waitForPagePredicate, loadPage, waitForPageContent } from '../visual-browser.mjs';
+import { assignmentOrigin } from '../../src/room-studio/wall-runs.ts';
+import { compileRoom } from '../../src/room-studio/geometry.ts';
+import { halfDropOffset } from '../../src/room-studio/finishes.ts';
 import { fixtureProject } from '../../src/room-studio/fixtures.ts';
 import { bauwerkCatalogue } from '../../src/room-studio/catalogue/index.ts';
 
@@ -149,12 +152,23 @@ try {
   project = await saved(p => p.assignments.filter(assignment => assignment.finishId === paper.id).length === p.room.vertices.length);
   const beforeContinue = structuredClone(project);
   await clickText('Continue pattern around corners');
-  project = await saved(p => p.assignments.find(assignment => assignment.wallId === p.room.vertices[1].wallId && assignment.finishId === paper.id)?.offsetXmm === -4080);
+  project = await saved(p => p.assignments.some(assignment => assignment.wallId === p.room.vertices[1].wallId && assignment.finishId === paper.id && assignmentOrigin(p.room, assignment, p.wallRuns) === -4080));
   let run = 0;
   for (const [index, vertex] of project.room.vertices.entries()) {
     const placed = project.assignments.find(assignment => assignment.wallId === vertex.wallId && assignment.finishId === paper.id);
-    assert.equal(placed.offsetXmm, Math.round(120 - run)); assert.equal(placed.offsetYmm, 200); assert.equal(placed.fromMm, 800); assert.equal(placed.toMm, 1500);
+    assert.ok(Math.abs(assignmentOrigin(project.room, placed, project.wallRuns) - (120 - run)) < 1e-7, 'Connected wallpaper retains exact cumulative phase'); assert.equal(placed.offsetYmm, 200); assert.equal(placed.fromMm, 800); assert.equal(placed.toMm, 1500);
     const next = project.room.vertices[(index + 1) % project.room.vertices.length]; run += Math.hypot(next.x - vertex.x, next.z - vertex.z);
+  }
+  const compiled = compileRoom({ id: 'ui-repeat-continuation', projectId: project.id, number: project.revision, createdAt: project.updatedAt, project });
+  for (const mesh of compiled.meshes.filter(mesh => mesh.materialId === paper.id && mesh.surface === 'wall')) {
+    const index = project.room.vertices.findIndex(vertex => vertex.wallId === mesh.wallId), start = project.room.vertices[index], end = project.room.vertices[(index + 1) % project.room.vertices.length], width = Math.hypot(end.x - start.x, end.z - start.z);
+    const assignment = project.assignments.find(value => value.wallId === mesh.wallId && value.finishId === paper.id), origin = assignmentOrigin(project.room, assignment, project.wallRuns);
+    const local = Array.from({ length: mesh.positions.length / 3 }, (_, vertex) => ((mesh.positions[vertex * 3] * 1000 - start.x) * (end.x - start.x) + (mesh.positions[vertex * 3 + 2] * 1000 - start.z) * (end.z - start.z)) / width);
+    const middle = (Math.min(...local) + Math.max(...local)) / 2, shift = halfDropOffset(Math.floor((middle - origin) / paper.calibration.widthMm), paper.calibration);
+    local.forEach((x, vertex) => {
+      assert.ok(Math.abs(mesh.uvs[vertex * 2] - (x - origin) / paper.calibration.widthMm) < 1e-6, 'Compiled placement follows the connected run even beside openings');
+      assert.ok(Math.abs(mesh.uvs[vertex * 2 + 1] - (mesh.positions[vertex * 3 + 1] * 1000 - assignment.offsetYmm - shift) / paper.calibration.heightMm) < 1e-6, 'Alternate drops and vertical placement remain unchanged');
+    });
   }
   assert.deepEqual(project.assignments.filter(assignment => assignment.finishId !== paper.id), beforeContinue.assignments.filter(assignment => assignment.finishId !== paper.id), 'Continuing wallpaper leaves adjacent paint/bands untouched');
   await check('Apply to all walls', false);

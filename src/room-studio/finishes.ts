@@ -1,4 +1,4 @@
-import type { ArtworkCalibration, ArtworkFinish, FinishAsset, RoomProject, TextureAsset, WallFinishAssignment } from './types.ts';
+import type { ArtworkCalibration, ArtworkFinish, FinishAsset, FinishWallRun, RoomProject, TextureAsset, WallFinishAssignment } from './types.ts';
 import { ROOM_LIMITS, TEXTURE_LIMITS } from './validation.ts';
 
 export const MAX_ARTWORK_BYTES = 20 * 1024 * 1024;
@@ -9,7 +9,7 @@ export const normaliseHex = (value: string): string | null => /^#[0-9a-f]{6}$/i.
 
 export function calibrationErrors(calibration: ArtworkCalibration): string[] {
   const errors: string[] = [];
-  if (![calibration.widthMm, calibration.heightMm].every(value => Number.isInteger(value) && value > 0 && value <= ROOM_LIMITS.maxDimensionMm)) errors.push('Enter the real width and height as whole millimetres, up to 30,000 mm.');
+  if (![calibration.widthMm, calibration.heightMm].every(value => Number.isFinite(value) && Math.abs(value * 10 - Math.round(value * 10)) < 1e-7 && value >= 1 && value <= ROOM_LIMITS.maxDimensionMm)) errors.push('Enter the real width and height to 0.1 mm, up to 30,000 mm.');
   const { x, y, width, height } = calibration.crop;
   if (![x, y, width, height].every(Number.isFinite) || x < 0 || y < 0 || width <= 0 || height <= 0 || x + width > 1.000001 || y + height > 1.000001) errors.push('The crop must stay inside the uploaded image.');
   if (![0, 90, 180, 270].includes(calibration.rotation)) errors.push('Choose a quarter-turn orientation.');
@@ -24,15 +24,15 @@ export function rotatedCropSize(widthPx: number, heightPx: number, calibration: 
   return calibration.rotation % 180 ? { width: height, height: width } : { width, height };
 }
 
-/** Mural sizing follows the prepared crop, with only whole-mm rounding. */
+/** Mural sizing follows the prepared crop, rounded once to 0.1 mm. */
 export function proportionalMuralCalibration(texture: Pick<TextureAsset, 'widthPx' | 'heightPx'>, current: ArtworkCalibration, patch: Partial<ArtworkCalibration> = {}): ArtworkCalibration {
   const next = { ...current, ...patch, proofAccepted: false };
   const size = rotatedCropSize(texture.widthPx, texture.heightPx, next);
   if (![size.width, size.height, next.widthMm, next.heightMm].every(Number.isFinite)) return next;
-  if (patch.heightMm !== undefined && patch.widthMm === undefined) next.widthMm = Math.round(next.heightMm * size.width / size.height);
+  if (patch.heightMm !== undefined && patch.widthMm === undefined) next.widthMm = Math.round(next.heightMm * size.width / size.height * 10) / 10;
   else {
     if (patch.rotation !== undefined && patch.rotation % 180 !== current.rotation % 180) next.widthMm = current.heightMm;
-    next.heightMm = Math.round(next.widthMm * size.height / size.width);
+    next.heightMm = Math.round(next.widthMm * size.height / size.width * 10) / 10;
   }
   return next;
 }
@@ -67,7 +67,10 @@ export function assignFinishBand(project: RoomProject, assignment: WallFinishAss
     if (existingEnd > end) pieces.push({ ...existing, id: crypto.randomUUID(), fromMm: end });
     return pieces;
   });
-  return { ...project, assignments: [...assignments, { ...assignment }] };
+  const next = [...assignments, { ...assignment }];
+  const wallRuns = (project.wallRuns ?? []).filter(run => next.some(value => value.runId === run.id));
+  const runIds = new Set(wallRuns.map(run => run.id));
+  return { ...project, assignments: next.map(value => value.runId && !runIds.has(value.runId) ? (({ runId, ...rest }) => rest)(value) : value), ...(project.wallRuns ? { wallRuns } : {}) };
 }
 
 /** Continue existing wallpaper bands in surveyed wall order. Paint, murals and
@@ -97,7 +100,7 @@ export function continueWallpaperAroundCorners(project: RoomProject, finishId: s
 
 export function saveFinish(project: RoomProject, finish: FinishAsset): RoomProject {
   if (!project.finishes.some(existing => existing.id === finish.id) && project.finishes.length >= 48) throw new Error('This room has 48 saved finishes. Remove an unused finish before adding another.');
-  return { ...project, finishes: [...project.finishes.filter(existing => existing.id !== finish.id), finish] };
+  return { ...project, schemaVersion: 2, finishes: [...project.finishes.filter(existing => existing.id !== finish.id), finish] };
 }
 
 export function detectArtworkMime(bytes: Uint8Array): TextureAsset['mime'] | null {
@@ -243,7 +246,17 @@ export async function artworkProofDataUrl(finish: ArtworkFinish): Promise<string
   const canvas = document.createElement('canvas'); canvas.width = 720; canvas.height = 420;
   const context = canvas.getContext('2d'); if (!context) throw new Error('Preview is unavailable.');
   context.fillStyle = '#eee9dd'; context.fillRect(0, 0, 720, 420);
-  if (finish.type === 'mural') {
+  if (finish.panels?.length) {
+    const panels = await Promise.all(finish.panels.map(async panel => ({ ...panel, canvas: await prepareArtworkCanvas(panel.texture, { crop: { x: 0, y: 0, width: 1, height: 1 }, rotation: 0 }, 1024) })));
+    const width = panels.reduce((sum, panel) => sum + Math.round(panel.widthMm * 10), 0) / 10, height = Math.max(...panels.map(panel => panel.heightMm));
+    const ratio = Math.min(720 / width, 390 / height);
+    let x = (720 - width * ratio) / 2;
+    for (const panel of panels) {
+      const w = panel.widthMm * ratio, h = panel.heightMm * ratio;
+      context.drawImage(panel.canvas, x, 400 - h, w, h);
+      context.fillStyle = '#26352a'; context.font = '14px sans-serif'; context.fillText(String(panel.number), x + 3, 417); x += w;
+    }
+  } else if (finish.type === 'mural') {
     const ratio = Math.min(720 / tile.width, 420 / tile.height);
     context.drawImage(tile, (720 - tile.width * ratio) / 2, (420 - tile.height * ratio) / 2, tile.width * ratio, tile.height * ratio);
   } else {
@@ -295,4 +308,29 @@ export function createLimewashCanvas(colour: string, seed: number, size = 256): 
   const canvas = document.createElement('canvas'); canvas.width = size; canvas.height = size;
   const context = canvas.getContext('2d'); if (!context) throw new Error('Texture preparation unavailable.');
   context.putImageData(new ImageData(createLimewashPixels(colour, seed, size), size, size), 0, 0); return canvas;
+}
+
+/** A connected wall sequence derives phase from surveyed lengths after every room edit. */
+export function linkFinishWallRun(project: RoomProject, finishId: string, wallIds: string[], startOffsetMm = 0, band?: { fromMm: number; toMm: number | null }): RoomProject {
+  if (!wallIds.length || new Set(wallIds).size !== wallIds.length) throw new Error('Choose each wall once in the connected run.');
+  const vertices = project.room.vertices, start = vertices.findIndex(vertex => vertex.wallId === wallIds[0]);
+  if (start < 0 || wallIds.some((wallId, index) => vertices[(start + index) % vertices.length]?.wallId !== wallId)) throw new Error('Choose adjoining walls in the room’s surveyed order.');
+  if (!Number.isInteger(startOffsetMm) || Math.abs(startOffsetMm) > 60000) throw new Error('Keep the run start within 60,000 whole millimetres.');
+  const finish = project.finishes.find(value => value.id === finishId);
+  if (finish?.type !== 'wallpaper' && finish?.type !== 'mural') throw new Error('Choose saved wallpaper or mural artwork.');
+  const run: FinishWallRun = { id: crypto.randomUUID(), finishId, wallIds: [...wallIds], startOffsetMm };
+  const assignments = project.assignments.map(assignment => assignment.finishId === finishId && wallIds.includes(assignment.wallId) && (!band || (assignment.fromMm === band.fromMm && assignment.toMm === band.toMm)) ? { ...assignment, runId: run.id } : assignment);
+  if (wallIds.some(wallId => !assignments.some(assignment => assignment.wallId === wallId && assignment.runId === run.id))) throw new Error('Apply the same artwork to every selected wall before linking the run.');
+  const wallRuns = [...(project.wallRuns ?? []).filter(value => assignments.some(assignment => assignment.runId === value.id)), run];
+  const used = new Set(wallRuns.map(value => value.id));
+  return { ...project, schemaVersion: 2, assignments: assignments.map(assignment => assignment.runId && !used.has(assignment.runId) ? (({ runId, ...rest }) => rest)(assignment) : assignment), wallRuns };
+}
+export const APPEARANCE_PRESETS = {
+  matte: { roughness: .9, metalness: 0 }, satin: { roughness: .5, metalness: 0 },
+  metallic: { roughness: .42, metalness: .7 },
+  raised: { roughness: .85, metalness: 0, relief: { kind: 'coffered' as const, depthMm: 6, columns: 4, rows: 4 } },
+} as const;
+/** Changing an approved product produces a custom instance without changing the catalogue. */
+export function customArtwork(finish: ArtworkFinish, patch: Partial<ArtworkFinish>): ArtworkFinish {
+  return { ...finish, ...patch, ...(finish.catalogue ? { catalogue: { ...finish.catalogue, verification: 'custom' } } : {}) };
 }

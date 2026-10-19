@@ -42,9 +42,10 @@ test('owned revision reads and portable exports stay bound to the historical sna
     [REVISION,{id:REVISION,owner_id:OWNER,project_id:PROJECT,number:3,snapshot:historical,created_at:'2026-10-18T12:00:00Z'}],
     [OTHER_REVISION,{id:OTHER_REVISION,owner_id:OTHER,project_id:PROJECT,number:4,snapshot:{...historical,ownerId:OTHER},created_at:'2026-10-18T12:00:00Z'}],
   ]);
-  const assets=new Map([['historical-artwork',{id:'50000000-0000-4000-8000-000000000005',owner_id:OWNER,project_id:PROJECT,storage_path:PATH,kind:'artwork',state:'ready'}]]);
+  const assets:Map<string,Record<string,any>>=new Map([['historical-artwork',{id:'50000000-0000-4000-8000-000000000005',owner_id:OWNER,project_id:PROJECT,storage_path:PATH,kind:'artwork',state:'ready'}]]);
   const original=fixtureProject().finishes.find(f=>f.type==='wallpaper')!.texture;
   const bytes=Buffer.from(original.dataUrl!.split(',')[1],'base64');
+  for(const asset of assets.values())Object.assign(asset,{sha256:original.sha256,mime:original.mime,bytes:bytes.length});
   const queries:URL[]=[],writes:Record<string,any>[]=[];
   let signedRequests=0,imageRequests=0;
   const rows=(values:Map<string,Record<string,any>>,url:URL)=>[...values.values()].filter(row=>[...url.searchParams].every(([key,filter])=>!filter.startsWith('eq.')||String(row[key])===filter.slice(3)));

@@ -20,7 +20,7 @@ try{
   await button(page,'Add door');await field(page,'Distance from wall start',5000);await page.waitForSelector('.studio-error');await field(page,'Distance from wall start',200);await page.waitForFunction(()=>!document.querySelector('.studio-error'));
   await page.locator('label.studio-check input').click();await saved(page);assert.equal((await draft(page)).room.confirmed,true);
   await page.$eval('.studio-steps button:nth-child(4)',b=>b.click());await button(page,'Confirm room version');await page.waitForFunction(()=>[...document.querySelectorAll('button')].some(b=>/Version \d+ confirmed/.test(b.textContent)));
-  assert(await page.$eval('.studio-controls',e=>e.textContent.includes('Cloud services are not enabled')));
+  assert(await page.$eval('.studio-controls',e=>e.textContent.includes('Cloud saving and paid rendering are not enabled')));
   const original=await draft(page);await page.$eval('.studio-steps button:first-child',b=>b.click());await field(page,'Ceiling height',2700);await saved(page);assert.equal((await draft(page)).room.confirmed,false);
   // Frozen revisions remain exact snapshots even after later draft edits.
   const frozen=await page.evaluate(()=>new Promise(resolve=>{const r=indexedDB.open('mrwallcover-room-studio-v1');r.onsuccess=()=>{const db=r.result,q=db.transaction('revisions').objectStore('revisions').getAll();q.onsuccess=()=>{resolve(q.result);db.close();};};}));

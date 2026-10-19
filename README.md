@@ -26,7 +26,7 @@ npm run preview
 
 ## Room Studio
 
-`/room-studio/` contains the isolated browser room editor. See [its architecture, local checks and acceptance status](docs/room-studio/README.md), [Bauwerk catalogue provenance](docs/room-studio-catalogue.md) and [private-service runbook](docs/room-studio/backend.md). Local editing and exports work without an account. Cloud saving, automatic plan analysis and finished processing remain disabled until separately configured and verified.
+`/room-studio/` contains Wallpaper my room: a free guided photo visualiser and an isolated measured 3D room editor. See [the photo and commerce delivery record](docs/room-studio/wallpaper-my-room.md). See [its architecture, local checks and acceptance status](docs/room-studio/README.md), [Bauwerk catalogue provenance](docs/room-studio-catalogue.md) and [private-service runbook](docs/room-studio/backend.md). Local editing and exports work without an account. Cloud saving, automatic plan analysis and finished processing remain disabled until separately configured and verified.
 
 ## Edit the copy
 

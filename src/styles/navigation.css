@@ -64,6 +64,12 @@
   }
 
   .nav-more { position: relative; }
+  .nav-materials { display: inline-flex; align-items: center; gap: 0; }
+  .nav-material-tools { justify-content: center; min-width: 44px; }
+  .nav-material-tools::after { display: none; }
+  .nav-materials .nav-more-links { left: 0; right: auto; min-width: 15rem; }
+  .mobile-link-group { display: grid; }
+  .mobile-links .mobile-material-tool { font-size: var(--text-button); padding-left: 1rem; min-height: 44px; }
   .nav-more > summary { cursor: pointer; gap: .4rem; list-style: none; }
   .nav-more > summary::after { content: '⌄'; font-size: 1em; }
   .nav-more > summary::-webkit-details-marker { display: none; }

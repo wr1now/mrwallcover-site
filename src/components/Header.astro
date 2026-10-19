@@ -46,7 +46,13 @@ function isCurrent(href: string) {
     <nav class="primary-nav" aria-label="Primary">
       {
         navigation.map((item) => (
-          <a class="nav-link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+          item.href === '/materials/' ? <div class="nav-materials">
+            <a class="nav-link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
+            <details class="nav-more" data-nav-more>
+              <summary class="nav-link nav-material-tools" aria-label="More material tools"><span aria-hidden="true">⌄</span></summary>
+              <div class="nav-more-links" role="group" aria-label="Material tools"><a href="/room-studio/" aria-current={isCurrent('/room-studio/') ? 'page' : undefined}>Wallpaper my room</a><a href="/calculator/">Wallpaper calculator</a></div>
+            </details>
+          </div> : <a class="nav-link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
             {item.label}
           </a>
         ))
@@ -68,9 +74,9 @@ function isCurrent(href: string) {
   <nav class="mobile-links" aria-label="Mobile">
     {
       navigation.map((item) => (
-        <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+        <div class="mobile-link-group"><a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
           {item.label}
-        </a>
+        </a>{item.href === '/materials/' && <a class="mobile-material-tool" href="/room-studio/" aria-current={isCurrent('/room-studio/') ? 'page' : undefined}>Wallpaper my room</a>}</div>
       ))
     }
     <a href="/contact/">Start your project</a>
@@ -82,6 +88,13 @@ function isCurrent(href: string) {
   const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
   const panel = document.querySelector<HTMLElement>('[data-mobile-menu]');
   const desktop = window.matchMedia('(min-width: 1280px)');
+  const more = document.querySelector<HTMLDetailsElement>('[data-nav-more]');
+  document.addEventListener('click', event => {
+    if (more?.open && event.target instanceof Node && !more.contains(event.target)) more.open = false;
+  });
+  more?.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { more.open = false; more.querySelector('summary')?.focus(); }
+  });
   const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
   let open = false;
 

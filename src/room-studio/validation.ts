@@ -1,9 +1,10 @@
-import type { FinishAsset, Point2, RoomDefinition, RoomProject, ValidationIssue, WallFinishAssignment } from './types.ts';
+import type { FinishAsset, FinishWallRun, Point2, RoomDefinition, RoomProject, ValidationIssue, WallFinishAssignment } from './types.ts';
 
 export const ROOM_LIMITS = { vertices: 12, openings: 24, maxDimensionMm: 30000, maxHeightMm: 6000, maxArtworkPixels: 25000000 } as const;
 export const TEXTURE_LIMITS = { maxPixels: ROOM_LIMITS.maxArtworkPixels, maxEdge: 8192 } as const;
 export const PROJECT_LIMITS = { schemes: 3, finishes: 48, assignments: 96, cameras: 8, nameLength: 120, revision: 100000 } as const;
 const finite = (n: unknown): n is number => typeof n === 'number' && Number.isFinite(n);
+export const artworkMillimetres = (n: unknown): n is number => finite(n) && Math.abs(n * 10 - Math.round(n * 10)) < 1e-7;
 const integer = (n: unknown): n is number => finite(n) && Number.isSafeInteger(n);
 const identifier = (value: unknown): value is string => typeof value === 'string' && /^[a-z0-9_-]{1,100}$/i.test(value);
 const name = (value: unknown): value is string => typeof value === 'string' && value.trim().length > 0 && value.length <= PROJECT_LIMITS.nameLength && !/[\u0000-\u001f\u007f]/.test(value);
@@ -91,19 +92,20 @@ export function validateRoom(room: RoomDefinition): ValidationIssue[] {
   });
   return issues;
 }
-function validateFinishSet(finishes: FinishAsset[], assignments: WallFinishAssignment[], room: RoomDefinition, issues: ValidationIssue[], prefix: string, textureIdentities: Map<string, string>): void {
+export function validateFinishSet(finishes: FinishAsset[], assignments: WallFinishAssignment[], room: RoomDefinition, issues: ValidationIssue[], prefix: string, textureIdentities: Map<string, string>): void {
   const add = (path: string, message: string) => issues.push({ path: `${prefix}${path}`, message });
   if (!Array.isArray(finishes) || finishes.length > PROJECT_LIMITS.finishes) { add('finishes', 'Use at most 48 finish assets.'); return; }
   const finishIds = new Set<string>();
   finishes.forEach((f, i) => {
     const path = `finishes.${i}`;
-    if (!f || !identifier(f.id) || f.id.startsWith('neutral-') || finishIds.has(f.id)) { add(path, 'Finishes need unique safe identifiers outside the reserved neutral- namespace.'); return; }
+    if (!f || !identifier(f.id) || (f.id.startsWith('neutral-') || f.id.includes('--panel-')) || finishIds.has(f.id)) { add(path, 'Finishes need unique safe identifiers outside the reserved neutral- namespace.'); return; }
     finishIds.add(f.id);
+    if (f.catalogue !== undefined && (!knownKeys(f.catalogue, ['productId', 'version', 'verification']) || !identifier(f.catalogue.productId) || typeof f.catalogue.version !== 'string' || !/^[a-z0-9][a-z0-9._-]{0,119}$/i.test(f.catalogue.version) || !['approved', 'custom'].includes(f.catalogue.verification))) add(`${path}.catalogue`, 'Keep a valid catalogue product, immutable version and verification status.');
     if (!name(f.name)) add(`${path}.name`, 'Give each finish a name of 1–120 characters without control characters.');
     if (!['paint', 'bauwerk', 'wallpaper', 'mural'].includes(f.type)) { add(path, 'Unsupported finish type.'); return; }
     if (f.type === 'paint' || f.type === 'bauwerk') {
       const fields = f.type === 'paint' ? ['sheen'] : ['shadeId', 'catalogueVersion', 'productUrl', 'colourProvenance', 'seed'];
-      if (!knownKeys(f, ['id', 'type', 'name', 'colour', ...fields])) add(path, 'Finish data contains unsupported fields.');
+      if (!knownKeys(f, ['id', 'type', 'name', 'colour', 'catalogue', ...fields])) add(path, 'Finish data contains unsupported fields.');
       if (typeof f.colour !== 'string' || !/^#[0-9a-f]{6}$/i.test(f.colour)) add(`${path}.colour`, 'Use an sRGB hex colour.');
       if (f.type === 'paint' && !['matte', 'eggshell'].includes(f.sheen)) add(`${path}.sheen`, 'Choose matte or eggshell paint.');
       if (f.type === 'bauwerk') {
@@ -115,13 +117,29 @@ function validateFinishSet(finishes: FinishAsset[], assignments: WallFinishAssig
       }
       return;
     }
-    if (!knownKeys(f, ['id', 'type', 'name', 'texture', 'calibration', 'appearance'])) add(path, 'Artwork data contains unsupported fields.');
+    if (!knownKeys(f, ['id', 'type', 'name', 'texture', 'calibration', 'appearance', 'panels', 'catalogue'])) add(path, 'Artwork data contains unsupported fields.');
     if (f.appearance !== undefined) {
       const a = f.appearance;
       if (!knownKeys(a, ['roughness', 'metalness', 'relief']) || ![a.roughness, a.metalness].every(value => finite(value) && value >= 0 && value <= 1)) add(`${path}.appearance`, 'Illustrative roughness and metalness must both be numbers from 0 to 1, without unsupported fields.');
       if (record(a) && a.relief !== undefined) {
         const r = a.relief;
         if (!knownKeys(r, ['kind', 'depthMm', 'columns', 'rows']) || !['coffered', 'faceted'].includes(r.kind) || !finite(r.depthMm) || r.depthMm < .1 || r.depthMm > 20 || ![r.columns, r.rows].every(value => integer(value) && value >= 1 && value <= 24)) add(`${path}.appearance.relief`, 'Illustrative relief needs a supported profile, depth of 0.1–20 mm, and 1–24 whole columns and rows.');
+      }
+    }
+    if (f.panels !== undefined) {
+      if (f.type !== 'mural' || !Array.isArray(f.panels) || !f.panels.length || f.panels.length > 24) add(`${path}.panels`, 'Use 1–24 numbered finite mural panels.');
+      else {
+        const ids = new Set<string>();
+        f.panels.forEach((panel, panelIndex) => {
+          if (!panel || !knownKeys(panel, ['id', 'number', 'texture', 'widthMm', 'heightMm']) || !identifier(panel.id) || ids.has(panel.id) || panel.number !== panelIndex + 1) { add(`${path}.panels.${panelIndex}`, 'Keep unique panel identifiers in consecutive numbered installation order.'); return; }
+          ids.add(panel.id);
+          if (panel.texture && artworkMillimetres(panel.widthMm) && artworkMillimetres(panel.heightMm) && finite(panel.texture.widthPx) && finite(panel.texture.heightPx) && Math.abs(panel.widthMm * panel.texture.heightPx - panel.heightMm * panel.texture.widthPx) > Math.max(panel.texture.widthPx, panel.texture.heightPx) * .10001) add(`${path}.panels.${panelIndex}`, 'Finite panel dimensions must preserve the full artwork proportions to 0.1 mm.');
+          const panelIssues: ValidationIssue[] = [];
+          validateFinishSet([{ id: `panel-${panelIndex}`, type: 'mural', name: 'Finite panel', texture: panel.texture, calibration: { widthMm: panel.widthMm, heightMm: panel.heightMm, crop: { x: 0, y: 0, width: 1, height: 1 }, rotation: 0, repeatKind: 'tile', match: 'straight', offsetAlreadyIncluded: false, proofAccepted: true } }], [], room, panelIssues, '', textureIdentities);
+          for (const issue of panelIssues) add(`${path}.panels.${panelIndex}.${issue.path.replace(/^finishes\.0\.?/, '')}`, issue.message);
+        });
+        const first = f.panels[0];
+        if (first && (f.texture?.id !== first.texture?.id || f.calibration?.widthMm !== first.widthMm || f.calibration?.heightMm !== first.heightMm || f.calibration?.rotation !== 0 || f.calibration?.crop?.x !== 0 || f.calibration?.crop?.y !== 0 || f.calibration?.crop?.width !== 1 || f.calibration?.crop?.height !== 1)) add(`${path}.panels`, 'The base artwork must reference the first complete panel without cropping or rotation.');
       }
     }
     const c = f.calibration, t = f.texture;
@@ -137,7 +155,7 @@ function validateFinishSet(finishes: FinishAsset[], assignments: WallFinishAssig
       if (textureIdentities.has(t.id) && textureIdentities.get(t.id) !== identity) add(`${path}.texture.id`, 'A texture identifier must always refer to the same artwork file.');
       textureIdentities.set(t.id, identity);
     }
-    if (!c || !integer(c.widthMm) || !integer(c.heightMm) || c.widthMm < 1 || c.heightMm < 1 || c.widthMm > 30000 || c.heightMm > 30000) { add(`${path}.calibration`, 'Calibrate the prepared artwork width and height in millimetres.'); return; }
+    if (!c || !artworkMillimetres(c.widthMm) || !artworkMillimetres(c.heightMm) || c.widthMm < 1 || c.heightMm < 1 || c.widthMm > 30000 || c.heightMm > 30000) { add(`${path}.calibration`, 'Calibrate the prepared artwork width and height in millimetres.'); return; }
     if (!knownKeys(c, ['widthMm', 'heightMm', 'crop', 'rotation', 'repeatKind', 'match', 'offsetAlreadyIncluded', 'proofAccepted'])) add(`${path}.calibration`, 'Artwork calibration contains unsupported fields.');
     if (![0, 90, 180, 270].includes(c.rotation)) add(`${path}.calibration.rotation`, 'Use a 0°, 90°, 180° or 270° rotation.');
     if (!['tile', 'strip'].includes(c.repeatKind) || !['straight', 'half-drop'].includes(c.match)) add(`${path}.calibration`, 'Choose a supported repeat and match.');
@@ -156,7 +174,8 @@ function validateFinishSet(finishes: FinishAsset[], assignments: WallFinishAssig
     const path = `assignments.${i}`;
     if (!a || !identifier(a.id) || assignmentIds.has(a.id)) { add(path, 'Finish bands need unique safe identifiers.'); return; }
     assignmentIds.add(a.id);
-    if (!knownKeys(a, ['id', 'wallId', 'finishId', 'fromMm', 'toMm', 'offsetXmm', 'offsetYmm'])) add(path, 'Finish bands contain unsupported fields.');
+    if (!knownKeys(a, ['id', 'wallId', 'finishId', 'fromMm', 'toMm', 'offsetXmm', 'offsetYmm', 'runId'])) add(path, 'Finish bands contain unsupported fields.');
+    if (a.runId !== undefined && !identifier(a.runId)) add(`${path}.runId`, 'Choose an identified connected wall run.');
     if (!Array.isArray(room?.vertices) || !room.vertices.some(v => v?.wallId === a.wallId)) add(`${path}.wallId`, 'Choose an existing wall.');
     if (!finishIds.has(a.finishId)) add(`${path}.finishId`, 'Choose an existing finish.');
     if (!integer(a.fromMm) || a.fromMm < 0 || (a.toMm !== null && (!integer(a.toMm) || a.toMm > room?.heightMm)) || (a.toMm ?? room?.heightMm) <= a.fromMm) add(path, 'Finish bands must have a positive height within the room.');
@@ -171,8 +190,8 @@ export function validateProject(project: RoomProject): ValidationIssue[] {
   if (!record(project)) return [{ path: 'project', message: 'Supply a room project.' }];
   const issues = validateRoom(project.room);
   const add = (path: string, message: string) => issues.push({ path, message });
-  if (!knownKeys(project, ['schemaVersion', 'id', 'ownerId', 'name', 'room', 'finishes', 'assignments', 'cameras', 'lighting', 'schemes', 'revision', 'updatedAt'])) add('project', 'Room project data contains unsupported fields.');
-  if (project.schemaVersion !== 1) add('schemaVersion', 'Unsupported room project version.');
+  if (!knownKeys(project, ['schemaVersion', 'id', 'ownerId', 'name', 'room', 'finishes', 'assignments', 'wallRuns', 'cameras', 'lighting', 'schemes', 'revision', 'updatedAt'])) add('project', 'Room project data contains unsupported fields.');
+  if (project.schemaVersion !== 1 && project.schemaVersion !== 2) add('schemaVersion', 'Unsupported room project version.');
   if (!identifier(project.id) || !integer(project.revision) || project.revision < 1 || project.revision > PROJECT_LIMITS.revision) add('revision', 'Supply a safe project identifier and a positive revision number up to 100,000.');
   if (project.ownerId !== null && !identifier(project.ownerId)) add('ownerId', 'Use a valid owner identifier or null for a local room.');
   if (!name(project.name)) add('name', 'Give the room a name of 1–120 characters without control characters.');
@@ -180,6 +199,8 @@ export function validateProject(project: RoomProject): ValidationIssue[] {
   if (!['daylight', 'warm'].includes(project.lighting)) add('lighting', 'Choose daylight or warm lighting.');
   const textureIdentities = new Map<string, string>();
   validateFinishSet(project.finishes, project.assignments, project.room, issues, '', textureIdentities);
+  validateWallRuns(project.wallRuns, project.assignments, project.finishes, project.room, issues, '');
+  if (project.schemaVersion === 1 && (project.wallRuns !== undefined || (Array.isArray(project.assignments) && project.assignments.some(a => a?.runId !== undefined)) || (Array.isArray(project.finishes) && project.finishes.some(f => record(f) && ('panels' in f || 'catalogue' in f))))) add('schemaVersion', 'Migrate this editable draft to version 2 before adding catalogue products, panels or connected runs.');
   if (!Array.isArray(project.schemes) || project.schemes.length > PROJECT_LIMITS.schemes) add('schemes', 'Keep up to three saved finish schemes.');
   else {
     const schemeIds = new Set<string>();
@@ -187,11 +208,19 @@ export function validateProject(project: RoomProject): ValidationIssue[] {
       const path = `schemes.${i}`;
       if (!scheme || !identifier(scheme.id) || schemeIds.has(scheme.id)) { add(path, 'Finish schemes need unique safe identifiers.'); return; }
       schemeIds.add(scheme.id);
-      if (!knownKeys(scheme, ['id', 'name', 'finishes', 'assignments'])) add(path, 'Finish schemes contain unsupported fields.');
+      if (!knownKeys(scheme, ['id', 'name', 'finishes', 'assignments', 'wallRuns'])) add(path, 'Finish schemes contain unsupported fields.');
       if (!name(scheme.name)) add(`${path}.name`, 'Give each scheme a name of 1–120 characters without control characters.');
       validateFinishSet(scheme.finishes, scheme.assignments, project.room, issues, `${path}.`, textureIdentities);
+      validateWallRuns(scheme.wallRuns, scheme.assignments, scheme.finishes, project.room, issues, `${path}.`);
+      if (project.schemaVersion === 1 && (scheme.wallRuns !== undefined || (Array.isArray(scheme.assignments) && scheme.assignments.some(a => a?.runId !== undefined)) || (Array.isArray(scheme.finishes) && scheme.finishes.some(f => record(f) && ('panels' in f || 'catalogue' in f))))) add(`${path}.schemaVersion`, 'Migrate this draft before saving version 2 finish combinations.');
     });
   }
+  if (Array.isArray(project.assignments) && Array.isArray(project.finishes)) {
+    const active = new Set(project.assignments.map(assignment => assignment?.finishId));
+    const count = project.finishes.filter(finish => finish && active.has(finish.id)).reduce((sum, finish) => sum + (('panels' in finish && Array.isArray(finish.panels)) ? finish.panels.length : 1), 5);
+    if (count > 53) add('finishes', 'Keep no more than 53 active compiled materials, including numbered panels and room surfaces.');
+  }
+  if (textureIdentities.size > 48) add('finishes', 'Keep no more than 48 distinct artwork textures across the project and saved combinations.');
   if (!Array.isArray(project.cameras) || project.cameras.length > PROJECT_LIMITS.cameras) { add('cameras', 'Use at most eight saved camera views.'); return issues; }
   const cameraIds = new Set<string>();
   project.cameras.forEach((c, i) => {
@@ -206,4 +235,32 @@ export function validateProject(project: RoomProject): ValidationIssue[] {
     if (Math.hypot(...c.position.map((n, k) => n - c.target[k])) < 0.001) add(path, 'Aim the camera away from its own position.');
   });
   return issues;
+}
+
+export function validateFinishAssets(finishes: FinishAsset[]): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  const textures = new Map<string, string>();
+  validateFinishSet(finishes, [], { vertices: [], heightMm: 2600, openings: [], skirtingMm: 0, corniceMm: 0, confirmed: false }, issues, '', textures);
+  if (textures.size > 48) issues.push({ path: 'finishes', message: 'Keep at most 48 distinct artwork textures.' });
+  return issues;
+}
+function validateWallRuns(runs: FinishWallRun[] | undefined, assignments: WallFinishAssignment[], finishes: FinishAsset[], room: RoomDefinition, issues: ValidationIssue[], prefix: string): void {
+  const add = (path: string, message: string) => issues.push({ path: `${prefix}${path}`, message });
+  if (runs !== undefined && (!Array.isArray(runs) || runs.length > 48)) { add('wallRuns', 'Keep at most 48 connected artwork runs.'); return; }
+  if (!Array.isArray(assignments) || !Array.isArray(finishes) || !Array.isArray(room?.vertices)) return;
+  const ids = new Set<string>();
+  for (const [index, run] of (runs ?? []).entries()) {
+    const path = `wallRuns.${index}`;
+    if (!run || !knownKeys(run, ['id', 'finishId', 'wallIds', 'startOffsetMm']) || !identifier(run.id) || ids.has(run.id)) { add(path, 'Connected runs need unique identifiers and supported fields.'); continue; }
+    ids.add(run.id);
+    const finish = finishes.find(value => value?.id === run.finishId);
+    if (finish?.type !== 'wallpaper' && finish?.type !== 'mural') add(path, 'Connected runs require saved artwork.');
+    if (!integer(run.startOffsetMm) || Math.abs(run.startOffsetMm) > 60000) add(path, 'Set the run start in whole millimetres within 60 metres.');
+    if (!Array.isArray(run.wallIds) || !run.wallIds.length || run.wallIds.length > room.vertices.length || new Set(run.wallIds).size !== run.wallIds.length) { add(path, 'Choose each wall once in a connected run.'); continue; }
+    const start = room.vertices.findIndex(vertex => vertex?.wallId === run.wallIds[0]);
+    if (start < 0 || run.wallIds.some((wallId, offset) => room.vertices[(start + offset) % room.vertices.length]?.wallId !== wallId)) add(path, 'Run walls must be adjoining in the room’s surveyed order.');
+    const linked = assignments.filter(assignment => assignment?.runId === run.id);
+    if (!linked.length || linked.some(assignment => assignment.finishId !== run.finishId || !run.wallIds.includes(assignment.wallId))) add(path, 'Every linked assignment must use the run’s artwork and a reference wall. Remove empty runs.');
+  }
+  assignments.forEach((assignment, index) => { if (assignment?.runId !== undefined && !ids.has(assignment.runId)) add(`assignments.${index}.runId`, 'The connected run is missing.'); });
 }

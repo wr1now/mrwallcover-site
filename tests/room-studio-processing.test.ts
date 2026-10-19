@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { PGlite } from '@electric-sql/pglite';
 import { createCloudClient } from '../src/room-studio/cloud.ts';
@@ -18,9 +18,9 @@ async function database() {
     create table auth.users(id uuid primary key);
     create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
     grant usage on schema auth to authenticated;grant execute on function auth.uid() to authenticated;
-    create table storage.buckets(id text primary key,name text,public boolean,file_size_limit bigint,allowed_mime_types text[]);
+    create table storage.objects(id uuid primary key default gen_random_uuid(),bucket_id text,name text,metadata jsonb);create table storage.buckets(id text primary key,name text,public boolean,file_size_limit bigint,allowed_mime_types text[]);
     insert into auth.users(id) values('${OWNER}'),('${OTHER}');`);
-  await db.exec(readFileSync(new URL('../supabase/migrations/202610180001_room_studio.sql',import.meta.url),'utf8'));
+  for(const file of readdirSync(new URL('../supabase/migrations/',import.meta.url)).filter(v=>v.endsWith('.sql')).sort())await db.exec(readFileSync(new URL('../supabase/migrations/'+file,import.meta.url),'utf8'));
   return db;
 }
 const save=(db:PGlite,id=PROJECT,owner=OWNER)=>db.query('select * from room_save_project($1::uuid,$2::uuid,$3,$4::jsonb,0)',[owner,id,'My room','{}']);
@@ -83,7 +83,7 @@ test('Edge actions verify email/origin, keep AI disabled, and hide another owner
     verified=false;assert.equal((await handler!(request({action:'listProjects'}))).status,403);
     verified=true;
     const capability=await handler!(request({action:'capabilities'}));
-    assert.deepEqual(await capability.json(),{analysisEnabled:false,renderEnabled:true,projects:5,analysesPerDay:2,rendersPerDay:1,activeJobs:1});
+    assert.deepEqual(await capability.json(),{analysisEnabled:false,renderEnabled:false,checkoutEnabled:false,renderPricePence:null,currency:'gbp',projects:5,analysesPerDay:2,rendersPerDay:0,activeJobs:1});
     const ai=await handler!(request({action:'enqueueAnalysis',projectId:PROJECT,assetId:PROJECT}));assert.equal(ai.status,503);
     const other=await handler!(request({action:'getProject',projectId:PROJECT}));assert.equal(other.status,400);assert.match((await other.json()).error,/unavailable/);
     const draft={...fixtureProject(),id:PROJECT,revision:0,finishes:[],assignments:[]};
@@ -207,18 +207,13 @@ test('global budget is shared across owners, and deleting a queued project relea
   } finally {await db.close();}
 });
 
-test('render requests require an owned confirmed revision and deduplicate after success',async()=>{
+test('legacy render submissions reject missing payment even with an owned revision and processing budget',async()=>{
   const db=await database();
   try {
     await save(db);await enable(db);
-    await assert.rejects(()=>enqueue(db,'render','missing',OWNER,PROJECT,OTHER),/Confirm/);
     const revision=(await db.query<any>('select * from room_confirm_revision($1::uuid,$2::uuid,$3::jsonb,0)',[OWNER,PROJECT,'{"room":{"confirmed":true}}'])).rows[0];
-    const queued=(await enqueue(db,'render',revision.id,OWNER,PROJECT,revision.id)).rows[0];
-    const claimed=(await db.query<any>("select * from room_claim_job('render')")).rows[0];
-    await db.query('select room_finish_job($1::uuid,$2::uuid,true,$3::jsonb,null,false)',[claimed.id,claimed.lease_token,'[]']);
-    const again=(await enqueue(db,'render',revision.id,OWNER,PROJECT,revision.id)).rows[0];assert.equal(again.id,queued.id);assert.equal(again.state,'succeeded');
-    const second=(await db.query<any>('select * from room_confirm_revision($1::uuid,$2::uuid,$3::jsonb,1)',[OWNER,PROJECT,'{"room":{"confirmed":true},"name":"changed"}'])).rows[0];
-    await assert.rejects(()=>enqueue(db,'render',second.id,OWNER,PROJECT,second.id),/Daily allowance/);
+    await assert.rejects(()=>enqueue(db,'render',revision.id,OWNER,PROJECT,revision.id),/paid render order/);
+    assert.equal((await db.query('select * from room_jobs')).rows.length,0);
   } finally {await db.close();}
 });
 
