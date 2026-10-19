@@ -1,6 +1,6 @@
 # Wallpaper my room: three measured examples
 
-The public menu label is **Wallpaper my room**; its canonical page remains
+The prepared public menu label is **Wallpaper my room**; its canonical page remains
 `/room-studio/`. Three server-rendered cards show actual Blender output before
 the editor loads. Visitors can inspect HD views and a 4K panorama, then explicitly
 open a portable, editable example. Loading is reversible through Undo. Choosing
@@ -77,3 +77,5 @@ explanatory content and the normal published sitemap. Search Console submission
 does not establish that a page has been indexed. Follow the
 [official crawl-request procedure](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl)
 only after the public page returns HTTP 200.
+
+The later owner-selected manufacturer studies are separate [private local concepts](../manufacturer-examples.md). The public page/menu and Google submission have not been released as part of this local review.

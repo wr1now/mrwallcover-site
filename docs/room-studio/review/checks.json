@@ -1,13 +1,15 @@
 {
   "reviewedDate": "2026-10-19",
-  "baselineMain": "9f60ffc7b03bd529873704611dbea2052ed38a40",
+  "baselineMain": "40ee3d7e1985a360d2241855ce6aa13bc7ea801a",
   "sourceFingerprint": {
     "algorithm": "SHA-256 of sorted relative path, NUL, file contents, NUL for listed application/service/worker and shared integration inputs",
-    "sha256": "9f636a265bdb9bfa737f02cb53b629bcbc07cb3ae951f6195b4c028be76bb470",
+    "sha256": "426deea751522fb55bcf1e7e7793d85a2194abb5d1d9346a3c1f3d8408350de1",
     "inputs": [
       "astro.config.mjs",
       "package-lock.json",
       "package.json",
+      "scripts/ai-reader-mirror.mjs",
+      "scripts/build-ai-layer.mjs",
       "scripts/generate-room-studio-example-artwork.mjs",
       "scripts/qa/room-studio-browser.mjs",
       "scripts/qa/room-studio-draft-browser.mjs",
@@ -26,6 +28,7 @@
       "src/components/MobileDock.astro",
       "src/content/navigation.json",
       "src/data/image-rights.json",
+      "src/layouts/Base.astro",
       "src/pages/room-studio.astro",
       "src/room-studio/RoomStudio.tsx",
       "src/room-studio/catalogue/bauwerk-uk.json",
@@ -85,7 +88,7 @@
       "scope": "75 pass in the standard suite plus the unchanged optional Blender 4.5.0 test executed separately; seven manufacturer metadata/private concept contract tests included."
     },
     "builtSite": {
-      "passed": 281,
+      "passed": 294,
       "failed": 0,
       "skipped": 0
     },
@@ -152,6 +155,11 @@
     "examples": {
       "status": "passed",
       "scope": "All three original artworks loaded through real UI, editable exports/reimports, Undo/Redo, cancelled lazy import, protected draft recovery, exact compiler mesh/UV parity and actual WebGL; 390/768/1024/1280/1440 layouts."
+    },
+    "manufacturerPrivateStudies": {
+      "status": "passed",
+      "receipt": "manufacturer-studies.json",
+      "scope": "Three actual private examples, editable export/reopen, mesh/UV parity, HD/4K dimensions, panorama viewer and five responsive widths. No public reuse or physically measured finish accuracy claim."
     }
   },
   "noLoss": {
@@ -161,7 +169,11 @@
     "mediaBefore": 3629,
     "mediaAfter": 3644,
     "existingProjectRecords": 5,
-    "existingGalleryEntries": 12
+    "existingGalleryEntries": 12,
+    "jsonLdNodesBefore": 9455,
+    "jsonLdNodesAfter": 9512,
+    "jsonLdPropertiesBefore": 42431,
+    "jsonLdPropertiesAfter": 42689
   },
   "types": {
     "browser": "passed",
@@ -202,7 +214,6 @@
     "cloudDeployed": false
   },
   "pending": [
-    "Hosted PR checks",
     "Deployed Supabase/Modal integration and operational verification",
     "Pinned OCR worker image and real model accuracy",
     "Physical iPhone Safari and Android Chrome",
@@ -210,7 +221,7 @@
     "Manufacturer preview artwork calibration, physical material maps and public reuse scope; current branded studies remain local-only",
     "Public page deployment and Google Search Console index request"
   ],
-  "scope": "Local implementation review receipt; live hosted status is tracked on the pull request.",
+  "scope": "Local implementation review against current published main. Hosted validation is tracked separately on the pull request. Manufacturer reference assets remain private.",
   "regressions": [
     "Repeated finish-band splits retain bounded unique IDs and complete adjacent coverage",
     "Repeated cloud saves reuse freshly verified owner/project artwork across sessions; stale paths recover and corrupt files fail closed",
@@ -229,5 +240,17 @@
     "offlineIntegrityRegression": "passed",
     "realLinuxImageAndOcr": "pending",
     "review": "worker-dependencies.md"
+  },
+  "namesGuard": {
+    "status": "passed",
+    "requiredPrivateInput": true,
+    "privateEntries": 64,
+    "filesChecked": 1417,
+    "matches": 0
+  },
+  "publicPage": {
+    "published": false,
+    "googleSubmitted": false,
+    "reason": "Manufacturer asset calibration, physical material data and public reuse scope remain pending."
   }
 }

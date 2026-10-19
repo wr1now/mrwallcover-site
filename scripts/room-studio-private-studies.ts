@@ -4,7 +4,7 @@
  */
 import { createHash } from 'node:crypto';
 import { createWriteStream } from 'node:fs';
-import { cp, mkdir, readFile, realpath, rm, symlink, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readFile, readdir, realpath, rm, symlink, writeFile } from 'node:fs/promises';
 import { basename, join, resolve, sep } from 'node:path';
 import { spawn } from 'node:child_process';
 import sharp from 'sharp';
@@ -68,8 +68,10 @@ if(!args.includes('--build-preview')){console.log(`Private projects saved in ${o
 // calibration into the public application, rights registry or deployable dist.
 const site=join(output,'site');await rm(site,{recursive:true,force:true});await mkdir(site,{recursive:true});
 const omitted=new Set(['.git','.tmp','.review-screens','node_modules','dist','dist-review','.astro','.env','.env.production','data','uploads']);
-await cp(root,site,{recursive:true,filter:source=>{const relative=source.slice(root.length+1);return !relative||!omitted.has(relative.split(sep)[0]);}});
+for(const entry of await readdir(root)){if(omitted.has(entry)||entry.startsWith('.env'))continue;await cp(join(root,entry),join(site,entry),{recursive:true});}
 await symlink(join(root,'node_modules'),join(site,'node_modules'),'dir');
+const privateBase=join(site,'src/layouts/Base.astro');
+await writeFile(privateBase,(await readFile(privateBase,'utf8')).replace('Content review preview · Guide drafts await technical review.','Private material studies · Reference artwork and appearance.'));
 const privateMedia=join(site,'public/media/room-studio/private-manufacturer');await mkdir(privateMedia,{recursive:true});
 const cardData=[];
 const labels:Record<string,string>={'degournay-plum-blossom':'de Gournay · Plum Blossom','phillip-jeffries-3163':'Phillip Jeffries · Gold on Horsehair 3163','arte-adobe-97031':'Arte · Adobe Ecru 97031'};

@@ -1,0 +1,532 @@
+{
+  "id": "https://www.mrwallcover.com/room-studio/",
+  "url": "https://www.mrwallcover.com/room-studio/",
+  "path": "/room-studio/",
+  "title": "Wallpaper my room — 3D room visualiser | Mr Wallcover",
+  "description": "Preview wallpaper at its real repeat size in a measured 3D room. Move doors and windows, explore three layouts and compare paint or Bauwerk limewash.",
+  "language": "en-GB",
+  "author": "Dorin Burcus",
+  "dates": {
+    "published": null,
+    "modified": "2026-10-19",
+    "reviewed": null
+  },
+  "formats": {
+    "html": "https://www.mrwallcover.com/room-studio/",
+    "markdown": "https://www.mrwallcover.com/room-studio/index.md",
+    "json": "https://www.mrwallcover.com/ai/pages/room-studio/index.json",
+    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/105"
+  },
+  "headings": [
+    {
+      "level": 1,
+      "id": null,
+      "text": "Wallpaper my room."
+    },
+    {
+      "level": 2,
+      "id": "example-rooms-heading",
+      "text": "Three spaces. Three different finishes."
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Willow lattice"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Ochre cadence"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Indigo arcade"
+    },
+    {
+      "level": 2,
+      "id": null,
+      "text": "From measured walls to considered finishes."
+    }
+  ],
+  "markdown": "Mr Wallcover / Room Studio\n\n# Wallpaper *my room.*\n\nSee your wallpaper at its real pattern size. Build your room, place the windows and doors, then compare wallpaper, paint and Bauwerk limewash.\n\nFree local preview · No sign-up to start · One room at a time\n\nStart your room Explore three examples\n\nMeasured rooms. Visible pattern.\n\n## Three spaces. *Three different finishes.*\n\nExplore a chimney breast, an L-shaped room and an angled bay. These original illustrative designs show how the repeat sits around openings and corners. Open any example to change it yourself.\n\n![Willow lattice: rendered illustrative chimney breast · 8 wall segments](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-preview.webp)\n\n01 / Original illustrative design\n\n### Willow lattice\n\nChimney breast · 8 wall segments 6.2 × 4.6 m · 2.8 m ceiling\n\nRepeat 640 × 640 mm · straight match\n\nExplore this room [View full-resolution render](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-1.webp)\n\n![Ochre cadence: rendered illustrative l-shaped room · 6 wall segments](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-preview.webp)\n\n02 / Original illustrative design\n\n### Ochre cadence\n\nL-shaped room · 6 wall segments 6.0 × 5.0 m · 2.7 m ceiling\n\nRepeat 530 × 640 mm · half-drop match\n\nExplore this room [View full-resolution render](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-1.webp)\n\n![Indigo arcade: rendered illustrative angled bay room · 6 wall segments](https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-preview.webp)\n\n03 / Original illustrative design\n\n### Indigo arcade\n\nAngled bay room · 6 wall segments 5.6 × 4.6 m · 2.75 m ceiling\n\nRepeat 600 × 600 mm · half-drop already in tile\n\nExplore this room [View full-resolution render](https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-1.webp)\n\nBlender Cycles renders from the same measured room and wallpaper coordinates as the editor. Two 1920 × 1080 views and a 4096 × 2048 panorama per example. These are illustrative empty-room studies, not completed commissions or manufacturer wallpapers.\n\nYour interactive room editor is loading.\n\nRoom Studio needs JavaScript for measured editing and 3D. You can still [send us your room measurements and selected finishes](https://www.mrwallcover.com/contact/).\n\nA space you can edit\n\n## From measured walls to considered finishes.\n\nStart with measurements or trace one room on a floor plan. Set the ceiling height, add doors and windows, then try finishes wall by wall. Your wallpaper keeps its real pattern size as you adjust the room.\n\nUpload a complete repeating tile or a measured strip repeat. Check the tiled proof before applying it. Larger walls reveal more pattern; they do not enlarge the motif. Use a sharp source image: the studio preserves your artwork rather than inventing missing detail.\n\nThe preview is illustrative. Colour and limewash movement are approximate. Test a sample in your room before ordering. The three example render packages are available here. Automatic plan reading, cloud saving and finished rendering of your own room are unavailable until the private services are configured.\n\n[Talk to us about installation](https://www.mrwallcover.com/contact/?intent=install)\n\nBy [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 19 October 2026\n",
+  "links": [
+    {
+      "url": "https://www.mrwallcover.com/room-studio/#room-editor",
+      "text": "Start your room"
+    },
+    {
+      "url": "https://www.mrwallcover.com/room-studio/#example-rooms",
+      "text": "Explore three examples"
+    },
+    {
+      "url": "https://www.mrwallcover.com/room-studio/#room-editor",
+      "text": "Explore Willow lattice in the 3D editor"
+    },
+    {
+      "url": "https://www.mrwallcover.com/room-studio/#room-editor",
+      "text": "Explore this room"
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-1.webp",
+      "text": "View full-resolution render"
+    },
+    {
+      "url": "https://www.mrwallcover.com/room-studio/#room-editor",
+      "text": "Explore Ochre cadence in the 3D editor"
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-1.webp",
+      "text": "View full-resolution render"
+    },
+    {
+      "url": "https://www.mrwallcover.com/room-studio/#room-editor",
+      "text": "Explore Indigo arcade in the 3D editor"
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-1.webp",
+      "text": "View full-resolution render"
+    },
+    {
+      "url": "https://www.mrwallcover.com/contact/",
+      "text": "send us your room measurements and selected finishes"
+    },
+    {
+      "url": "https://www.mrwallcover.com/contact/?intent=install",
+      "text": "Talk to us about installation"
+    },
+    {
+      "url": "https://www.mrwallcover.com/about/#dorin",
+      "text": "Dorin Burcus"
+    },
+    {
+      "url": "https://www.mrwallcover.com/",
+      "text": "Home"
+    }
+  ],
+  "images": [
+    {
+      "url": "https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-preview.webp",
+      "alt": "Willow lattice: rendered illustrative chimney breast · 8 wall segments",
+      "caption": null,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-preview.webp",
+      "alt": "Ochre cadence: rendered illustrative l-shaped room · 6 wall segments",
+      "caption": null,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-preview.webp",
+      "alt": "Indigo arcade: rendered illustrative angled bay room · 6 wall segments",
+      "caption": null,
+      "width": 960,
+      "height": 540
+    }
+  ],
+  "diagrams": [],
+  "media": [],
+  "structuredData": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": [
+            "HomeAndConstructionBusiness",
+            "ProfessionalService"
+          ],
+          "@id": "https://www.mrwallcover.com/#business",
+          "name": "Mr Wallcover",
+          "url": "https://www.mrwallcover.com",
+          "image": "https://www.mrwallcover.com/og.jpg",
+          "logo": "https://www.mrwallcover.com/logo-512.png",
+          "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus, in the trade since 2012: survey to aftercare for hotels, homes and makers.",
+          "email": "info@mrwallcover.com",
+          "founder": {
+            "@id": "https://www.mrwallcover.com/about/#dorin"
+          },
+          "award": "Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "London",
+            "addressRegion": "Greater London",
+            "addressCountry": "GB"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "London"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "London and the surrounding areas"
+            },
+            {
+              "@type": "Country",
+              "name": "United Kingdom",
+              "description": "UK-wide for selected projects"
+            },
+            {
+              "@type": "Place",
+              "name": "Mayfair",
+              "url": "https://www.mrwallcover.com/areas/mayfair/"
+            },
+            {
+              "@type": "Place",
+              "name": "Belgravia",
+              "url": "https://www.mrwallcover.com/areas/belgravia/"
+            },
+            {
+              "@type": "Place",
+              "name": "Chelsea",
+              "url": "https://www.mrwallcover.com/areas/chelsea/"
+            },
+            {
+              "@type": "Place",
+              "name": "Kensington",
+              "url": "https://www.mrwallcover.com/areas/kensington/"
+            },
+            {
+              "@type": "Place",
+              "name": "the City of London",
+              "url": "https://www.mrwallcover.com/areas/city-of-london/"
+            },
+            {
+              "@type": "Place",
+              "name": "the Cotswolds",
+              "url": "https://www.mrwallcover.com/areas/cotswolds/"
+            }
+          ],
+          "slogan": "Premium wallcoverings services: surveying, management, supply, install and aftercare.",
+          "knowsAbout": [
+            "Wallpaper installation",
+            "Wallcovering installation for hotels",
+            "Grasscloth installation",
+            "Hand-painted wallcoverings",
+            "Acoustic wallcoverings",
+            "Silk wallcovering installation",
+            "Fabric walling",
+            "Wallpaper mural installation",
+            "Contract vinyl wallcoverings",
+            "Wallcoverings on joinery",
+            "Bespoke wallcovering panels",
+            "Architectural and furniture film wrapping",
+            "Window film installation"
+          ],
+          "sameAs": [
+            "https://www.instagram.com/mrwallcover/"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Mr Wallcover services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/#service",
+                  "name": "Hand-painted wallpaper installation",
+                  "serviceType": "Hand-painted wallpaper installation",
+                  "url": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/grasscloth-installation/#service",
+                  "name": "Grasscloth installation",
+                  "serviceType": "Grasscloth installation",
+                  "url": "https://www.mrwallcover.com/services/grasscloth-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/silk-wallcovering-installation/#service",
+                  "name": "Silk wallcovering installation",
+                  "serviceType": "Silk wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/silk-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/fabric-walling/#service",
+                  "name": "Fabric walling",
+                  "serviceType": "Fabric walling",
+                  "url": "https://www.mrwallcover.com/services/fabric-walling/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/#service",
+                  "name": "Hotel wallcovering installation",
+                  "serviceType": "Hotel wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/mural-installation/#service",
+                  "name": "Mural installation",
+                  "serviceType": "Mural installation",
+                  "url": "https://www.mrwallcover.com/services/mural-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/#service",
+                  "name": "Acoustic wallcovering installation",
+                  "serviceType": "Acoustic wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/architectural-film-wrapping/#service",
+                  "name": "Architectural & furniture film wrapping",
+                  "serviceType": "Architectural film installation",
+                  "url": "https://www.mrwallcover.com/services/architectural-film-wrapping/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/window-film/#service",
+                  "name": "Window film installation",
+                  "serviceType": "Window film installation",
+                  "url": "https://www.mrwallcover.com/services/window-film/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/#service",
+                  "name": "Joinery wallcoverings & bespoke panels",
+                  "serviceType": "Wallcovering on joinery and bespoke wall panels",
+                  "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/exterior-works/#service",
+                  "name": "Exterior works",
+                  "serviceType": "Exterior decorating",
+                  "url": "https://www.mrwallcover.com/services/exterior-works/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/#service",
+                  "name": "Commercial and showroom wallcovering installation",
+                  "serviceType": "Commercial wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              }
+            ]
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@mrwallcover.com",
+            "url": "https://www.mrwallcover.com/contact/",
+            "contactType": "quotations",
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "London"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "London and the surrounding areas"
+              },
+              {
+                "@type": "Country",
+                "name": "United Kingdom",
+                "description": "UK-wide for selected projects"
+              },
+              {
+                "@type": "Place",
+                "name": "Mayfair",
+                "url": "https://www.mrwallcover.com/areas/mayfair/"
+              },
+              {
+                "@type": "Place",
+                "name": "Belgravia",
+                "url": "https://www.mrwallcover.com/areas/belgravia/"
+              },
+              {
+                "@type": "Place",
+                "name": "Chelsea",
+                "url": "https://www.mrwallcover.com/areas/chelsea/"
+              },
+              {
+                "@type": "Place",
+                "name": "Kensington",
+                "url": "https://www.mrwallcover.com/areas/kensington/"
+              },
+              {
+                "@type": "Place",
+                "name": "the City of London",
+                "url": "https://www.mrwallcover.com/areas/city-of-london/"
+              },
+              {
+                "@type": "Place",
+                "name": "the Cotswolds",
+                "url": "https://www.mrwallcover.com/areas/cotswolds/"
+              }
+            ],
+            "availableLanguage": [
+              "English"
+            ]
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.mrwallcover.com/about/#dorin",
+          "name": "Dorin Burcus",
+          "jobTitle": "Founder",
+          "url": "https://www.mrwallcover.com/about/",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+            "contentUrl": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+            "creditText": "Dorin Burcus / Mr Wallcover",
+            "creator": {
+              "@type": "Person",
+              "@id": "https://www.mrwallcover.com/about/#dorin",
+              "name": "Dorin Burcus",
+              "url": "https://www.mrwallcover.com/about/"
+            },
+            "copyrightNotice": "© Mr Wallcover",
+            "license": "https://www.mrwallcover.com/image-use/",
+            "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+          },
+          "worksFor": {
+            "@id": "https://www.mrwallcover.com/#business"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.mrwallcover.com/#website",
+          "url": "https://www.mrwallcover.com",
+          "name": "Mr Wallcover",
+          "inLanguage": "en-GB",
+          "publisher": {
+            "@id": "https://www.mrwallcover.com/#business"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.mrwallcover.com/room-studio/#webpage",
+          "url": "https://www.mrwallcover.com/room-studio/",
+          "name": "Wallpaper my room — 3D room visualiser | Mr Wallcover",
+          "description": "Preview wallpaper at its real repeat size in a measured 3D room. Move doors and windows, explore three layouts and compare paint or Bauwerk limewash.",
+          "inLanguage": "en-GB",
+          "isPartOf": {
+            "@id": "https://www.mrwallcover.com/#website"
+          },
+          "about": {
+            "@id": "https://www.mrwallcover.com/#business"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-1.webp",
+            "contentUrl": "https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-1.webp",
+            "creditText": "Mr Wallcover",
+            "creator": {
+              "@type": "Organization",
+              "@id": "https://www.mrwallcover.com/#business",
+              "name": "Mr Wallcover",
+              "url": "https://www.mrwallcover.com/"
+            },
+            "copyrightNotice": "© Mr Wallcover",
+            "license": "https://www.mrwallcover.com/image-use/",
+            "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.mrwallcover.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Wallpaper my room",
+              "item": "https://www.mrwallcover.com/room-studio/"
+            }
+          ]
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Mr Wallcover Room Studio",
+          "url": "https://www.mrwallcover.com/room-studio/",
+          "applicationCategory": "DesignApplication",
+          "browserRequirements": "JavaScript and WebGL for the interactive editor",
+          "isAccessibleForFree": true,
+          "description": "A measured one-room editor for wallpaper, paint and Bauwerk limewash. Includes original illustrative room examples."
+        }
+      ]
+    }
+  ]
+}

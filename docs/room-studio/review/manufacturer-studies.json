@@ -1,0 +1,288 @@
+{
+  "reviewedAt": "2026-10-19T14:49:12.074560+00:00",
+  "scope": "Private local manufacturer reference studies; no supplier pixels or rendered derivatives are included in this public receipt. Not a manufacturer-calibrated material or installation proof.",
+  "publicDeployment": false,
+  "liveAiCalls": 0,
+  "paidHostedJobs": 0,
+  "studies": [
+    {
+      "id": "degournay-plum-blossom",
+      "sourceUrl": "https://degournay.com/shop-product-details/plumblossom961463",
+      "sourceSha256": "295984393a4a85e1f92860739e909966072e7b7bf935e78e7f94ec34908d55c9",
+      "sourcePixels": [
+        2500,
+        1578
+      ],
+      "privateMappingMm": [
+        4278,
+        2700
+      ],
+      "assetType": "mural",
+      "assumptions": [
+        "Private concept only. Product specifications do not verify this image crop, installation set-out or material appearance.",
+        "Finite mural panels. The web preview does not identify its panel sequence or physical image coverage.",
+        "Gilded ground appearance is not a measured material simulation.",
+        "Artwork permission status is unchanged. This helper does not authorise public images, textures or editable-room redistribution.",
+        "The room and artwork proof remain unconfirmed.",
+        "Assumed full-image height 2700 mm and native image proportions; this is not a verified manufacturer panel crop.",
+        "Private editor image coverage: 4278 \u00d7 2700 mm. Manufacturer fractional dimensions remain exact in selection metadata; editor values use whole millimetres.",
+        "One finite artwork image centred and cropped across the 2600 mm chimney front and two returns, reaching below the skirting and up to the cornice (0 mm image origin). The alcoves and other walls stay painted. Full-image coverage is an explicit composition assumption, not the manufacturer's design height or a verified panel sequence."
+      ],
+      "meshUvSha256": "ae5d1e6343b87744178f7820e2efe27469b06a1d5fb5e5c3f8a63ac7b2d240b7",
+      "compiledInputSha256": "b5205bcb379f36f0f139a854a58664521ccbbded82d4c7bdc89750149eb596f5",
+      "renderedGeometryVerified": true,
+      "localSeconds": 246.471,
+      "outputs": [
+        {
+          "kind": "still-1",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "0464db02068531fc953b3577140732f3c6b4bee5529bbe51bdf63b771f6ec12e"
+        },
+        {
+          "kind": "still-2",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "21b5809e442df530552def6183c01532b1920a0b4cddb13701e3a1cb559e1adc"
+        },
+        {
+          "kind": "panorama",
+          "width": 4096,
+          "height": 2048,
+          "sha256": "5b439e26b0a366401099f82ddc7cd91e6af2237ea792609465ae0218d4dbac70"
+        }
+      ]
+    },
+    {
+      "id": "phillip-jeffries-3163",
+      "sourceUrl": "https://www.phillipjeffries.com/shop/CARD-AG-METALUXEII/3163/tear-sheet",
+      "sourceSha256": "9bcc685c34c27f6f3476c0c3ad7907806eb208d1d268d9f62e085002ba59c126",
+      "sourcePixels": [
+        5000,
+        4853
+      ],
+      "privateMappingMm": [
+        3454,
+        3353
+      ],
+      "assetType": "mural",
+      "assumptions": [
+        "Private concept only. Product specifications do not verify this image crop, installation set-out or material appearance.",
+        "The identified renderer sheet covers four finite drops, 3454.4 \u00d7 3352.8 mm. The vertical repeat is approximate; no horizontal product repeat is specified. Other swatch crops remain uncalibrated.",
+        "The four-drop sheet retains natural panel variation. Metallic and horsehair response is not a measured material simulation.",
+        "Artwork permission status is unchanged. This helper does not authorise public images, textures or editable-room redistribution.",
+        "The room and artwork proof remain unconfirmed.",
+        "Caller-supplied full-image coverage evidence (not independently verified by this helper): Official Multiple Drops image named 3163_Metallic Ombre_11ft_4pnl.jpg. The original 5100 \u00d7 4950 pixel ratio equals four 34-inch widths by 132 inches in height, matching the product specification. Four full-height drops are visible without a border. Reduced once to 5000 \u00d7 4853 pixels to meet the upload limit; no upscaling. Natural panel variation remains illustrative.",
+        "Private editor image coverage: 3454 \u00d7 3353 mm. Manufacturer fractional dimensions remain exact in selection metadata; editor values use whole millimetres.",
+        "Image coverage rounded from 3454.4 \u00d7 3352.8 mm to 3454 \u00d7 3353 mm for the integer-millimetre editor.",
+        "Only one finite image crop on the L-shaped return is shown. The approximate vertical repeat does not prove that this source image is a repeat, and no horizontal repeat is inferred."
+      ],
+      "meshUvSha256": "ba5585ed5d23b57a7a10aa6eb6e4d1433eb1062d5ad5ffa358b9721130d14e6b",
+      "compiledInputSha256": "7d9100da6154f18ddc300c5c2b79d27fa373c4b3eb6225972cb2905ac371a8c6",
+      "renderedGeometryVerified": true,
+      "localSeconds": 290.633,
+      "outputs": [
+        {
+          "kind": "still-1",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "17d6a728f5bdee1190043d1628b2f6bfc339c489552ae13e2e1a8f87e71322ed"
+        },
+        {
+          "kind": "still-2",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "0c3ae482c48facc84b8d3f999514c78ddc24b87efae0080544f6fb84986288d7"
+        },
+        {
+          "kind": "panorama",
+          "width": 4096,
+          "height": 2048,
+          "sha256": "80ba8f80746ef701dfa06e3590a0115fbfc684a1d4f918d749a59ef79759979c"
+        }
+      ]
+    },
+    {
+      "id": "arte-adobe-97031",
+      "sourceUrl": "https://www.arte-international.com/en/collections/babylon/adobe/97031",
+      "sourceSha256": "96b822bbe7a1e87f43d141067835c7366c292a2d572ba0478444bd82dbf0c761",
+      "sourcePixels": [
+        1980,
+        1760
+      ],
+      "privateMappingMm": [
+        900,
+        800
+      ],
+      "assetType": "wallpaper",
+      "assumptions": [
+        "Private concept only. Product specifications do not verify this image crop, installation set-out or material appearance.",
+        "900 \u00d7 800 mm repeatable tiles. Source image coverage needs its own confirmation.",
+        "No measured relief height, displacement field or manufacturer PBR maps were established.",
+        "Artwork permission status is unchanged. This helper does not authorise public images, textures or editable-room redistribution.",
+        "The room and artwork proof remain unconfirmed.",
+        "Assumed full-image coverage: The original 1980 \u00d7 1772 pixel product packshot is assumed to cover one complete 900 \u00d7 800 mm tile. Vertical resampling of \u22120.6772% gives 1980 \u00d7 1760 pixels and the specified 9:8 proportions. The original remains unchanged. Photographed edge and shading seams remain; physical relief depth and material maps are unverified.",
+        "Private editor image coverage: 900 \u00d7 800 mm. Manufacturer fractional dimensions remain exact in selection metadata; editor values use whole millimetres.",
+        "Only the declared tile pattern is repeated. No measured relief amplitude, acoustic performance or physically measured material maps are inferred."
+      ],
+      "meshUvSha256": "5b729b3c49af96337f01c0a807b657a1b87318a9aebf37cabfa07e4f519ade18",
+      "compiledInputSha256": "4b312e23c029c63cff9c36a6644e0b4649c76c4bf064b2cd03d266f1241c3a80",
+      "renderedGeometryVerified": true,
+      "localSeconds": 154.495,
+      "outputs": [
+        {
+          "kind": "still-1",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "6d9bc654bd8334d982f546a011d8efeaed2eef1247ba8cab674fe2b02edfcad3"
+        },
+        {
+          "kind": "still-2",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "b51d9866e2faa105f88915482cd5c5e50bed919d92d1ec1bb358db771ba732ad"
+        },
+        {
+          "kind": "panorama",
+          "width": 4096,
+          "height": 2048,
+          "sha256": "e32819ad042671d51f513a2ea9d457c9d084bad29272d63a9d886847e7b8db67"
+        }
+      ]
+    }
+  ],
+  "browser": {
+    "examples": [
+      {
+        "id": "degournay-plum-blossom",
+        "sourcePixels": {
+          "width": 2500,
+          "height": 1578
+        },
+        "segments": 8,
+        "windows": 3,
+        "exportReimport": true,
+        "proofUnconfirmed": true,
+        "meshUvSha256": "ae5d1e6343b87744178f7820e2efe27469b06a1d5fb5e5c3f8a63ac7b2d240b7",
+        "panoramaOpened": true
+      },
+      {
+        "id": "phillip-jeffries-3163",
+        "sourcePixels": {
+          "width": 5000,
+          "height": 4853
+        },
+        "segments": 6,
+        "windows": 3,
+        "exportReimport": true,
+        "proofUnconfirmed": true,
+        "meshUvSha256": "ba5585ed5d23b57a7a10aa6eb6e4d1433eb1062d5ad5ffa358b9721130d14e6b",
+        "panoramaOpened": true
+      },
+      {
+        "id": "arte-adobe-97031",
+        "sourcePixels": {
+          "width": 1980,
+          "height": 1760
+        },
+        "segments": 6,
+        "windows": 4,
+        "exportReimport": true,
+        "proofUnconfirmed": true,
+        "meshUvSha256": "5b729b3c49af96337f01c0a807b657a1b87318a9aebf37cabfa07e4f519ade18",
+        "panoramaOpened": true
+      }
+    ],
+    "widths": [
+      {
+        "width": 390,
+        "noOverflow": true,
+        "visibleCards": true
+      },
+      {
+        "width": 768,
+        "noOverflow": true,
+        "visibleCards": true
+      },
+      {
+        "width": 1024,
+        "noOverflow": true,
+        "visibleCards": true
+      },
+      {
+        "width": 1280,
+        "noOverflow": true,
+        "visibleCards": true
+      },
+      {
+        "width": 1440,
+        "noOverflow": true,
+        "visibleCards": true
+      }
+    ],
+    "errors": [],
+    "externalRequests": []
+  },
+  "visual": {
+    "overall": {
+      "judgment": "Three distinct and readable architectural wallcovering concepts with clear placement and usable room-scale image detail. They remain simple empty-room studies, not photoreal furnished interiors or physically measured finish proofs.",
+      "limitations": [
+        "Window planes are flat blue-grey, doors and trims are simplified, and the floor is featureless. These constrain scene realism independently of texture resolution.",
+        "All artwork is diffuse photography. The worker links image colour to Base Color, sets Metallic to 0 and does not supply manufacturer normal/height/anisotropy material maps.",
+        "de Gournay and Arte image coverage is assumed; only the identified PJ four-drop sheet has source-coverage evidence.",
+        "Higher output dimensions do not recover source detail, colour calibration, metallic reflectance or geometric relief.",
+        "Public reuse permission and editable texture redistribution clearance remain unresolved/restricted as recorded in each study; this visual review grants no clearance."
+      ],
+      "rendererEvidence": [
+        "workers/room_studio/render.py:198 sets Metallic to 0",
+        "workers/room_studio/render.py:220 connects the artwork image Color to Base Color"
+      ],
+      "noSourceOrRenderSettingChanges": true
+    },
+    "studies": [
+      {
+        "id": "degournay-plum-blossom",
+        "coverage": "assumed finite composition",
+        "observations": [
+          "Full-height finite floral composition is confined to chimney front and returns; alcoves and surrounding walls remain painted.",
+          "Angled still visibly carries blossom branches onto the return without an obvious stretched strip or repeated-image reset.",
+          "Floral silhouettes and colour read well at room distance; close detail is soft relative to the 1920-pixel output.",
+          "Broad bright vertical patches remain fixed in the photographic ground and can resemble reflected light. They do not establish measured silver or pearlescent response."
+        ],
+        "limits": [
+          "2500 \u00d7 1578 source assigned an assumed 4278 \u00d7 2700 mm composition; manufacturer panel sequence and exact image coverage remain unverified.",
+          "The renderer cannot prove gilded metallic/pearlescent appearance from the diffuse reference."
+        ]
+      },
+      {
+        "id": "phillip-jeffries-3163",
+        "coverage": "identified finite four-drop renderer sheet; whole-mm editor rounding",
+        "observations": [
+          "Only the L-shaped return carries the finite ombr\u00e9 crop; adjacent door wall and the wider room remain painted.",
+          "The gold-to-dark transition and fine horizontal horsehair-like texture are clearly visible, especially in the close still.",
+          "No visible infinite repeat or duplicated ombr\u00e9 transition is introduced on the selected return.",
+          "The panorama shows this surface at a narrow angle; still-2 provides the useful material-detail view."
+        ],
+        "limits": [
+          "Verified sheet coverage does not verify the final installation proof or natural batch/panel variation.",
+          "Gold is presented through image colour and photographed texture; physically measured metallic reflectance, anisotropy and fibre geometry are absent."
+        ]
+      },
+      {
+        "id": "arte-adobe-97031",
+        "coverage": "assumed whole original packshot, aspect corrected -0.6772009029345383% vertically",
+        "observations": [
+          "Small square/triangle cells retain a consistent apparent scale around the bay and are cut cleanly at the window openings.",
+          "The repeat is clearly recognisable at room distance and remains legible in the closer still.",
+          "Repeated source-photo brightness and edge shading create an obvious 900 \u00d7 800 mm panel/checker grid. This is the most conspicuous source-image limitation of the three studies.",
+          "The source shading suggests relief but the rendered wall silhouette and window-edge termination remain flat."
+        ],
+        "limits": [
+          "1980 \u00d7 1760 corrected packshot is assumed to cover one 900 \u00d7 800 mm tile; coverage is not manufacturer calibrated.",
+          "No manufacturer height field, normal map, relief amplitude or true surface geometry was supplied; this is a diffuse photographic concept of a 3D product.",
+          "Tile-edge/shading seams are preserved, not retouched or removed."
+        ]
+      }
+    ]
+  }
+}

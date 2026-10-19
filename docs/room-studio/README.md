@@ -156,7 +156,7 @@ Local verification and representative images are recorded in [the review receipt
 Local acceptance:
 
 - [x] Integrated source, Studio types, built-site, catalogue and no-loss checks
-  pass against main `f71a587`; hosted checks are tracked on the PR.
+  pass against main `40ee3d7`; hosted checks are tracked on the PR.
 - [x] Manual measurements, custom/concave rooms, angle edits, doors/windows and
   overlapping/out-of-bounds validation work at mobile and desktop widths.
 - [x] Actual PDF/JPEG/PNG preview and tracing prove page selection, known-distance
@@ -193,3 +193,5 @@ Service activation remains pending:
 See [backend implementation and deployment preparation](backend.md) for the
 current limits and operational checklist. A passing local build must not be
 presented as deployed service readiness.
+
+The owner-selected de Gournay, Phillip Jeffries and Arte studies are documented in [manufacturer examples](manufacturer-examples.md) and the [private-study verification receipt](review/manufacturer-studies.json). Their source pixels and rendered views remain local under ignored `.tmp/`; the public application does not bundle or rename third-party artwork.
