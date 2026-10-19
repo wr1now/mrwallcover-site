@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-19",
+  "baseline": "addd1ab1b07e9ec20cad588b27b8da54902e45a8",
+  "scope": "Local integration of approved public main with the disabled designer portal; synthetic drafts only.",
+  "build": {
+    "pagesBuilt": 138,
+    "publishedPages": 129,
+    "publicPhoneMode": "Reserved test fixture; no actual number or provider request."
+  },
+  "checks": {
+    "source": 153,
+    "designerDomainApiDatabase": 108,
+    "designerTypeScript": "pass",
+    "pythonWorkers": 56,
+    "builtSite": 300,
+    "portalBrowser": 5,
+    "connectedOwnerFixture": 1,
+    "typographyAndContrast": 2,
+    "phoneBuilds": 2,
+    "guidePublication": 5,
+    "makersUnits": 4,
+    "makersResponsiveCases": 48,
+    "guideRelease": 9,
+    "guideResponsiveCases": 18,
+    "sharedFooterCases": 8,
+    "analyticsFixtures": 2
+  },
+  "noLoss": {
+    "status": "pass",
+    "counts": {
+      "base": {
+        "pages": 129,
+        "projectRecords": 5,
+        "projectGalleryEntries": 12,
+        "mediaFiles": 3629,
+        "imageFiles": 3625,
+        "markdownTwins": 129,
+        "jsonLd": {
+          "nodes": 9499,
+          "props": 42654
+        }
+      },
+      "pr": {
+        "pages": 129,
+        "projectRecords": 5,
+        "projectGalleryEntries": 12,
+        "mediaFiles": 3629,
+        "imageFiles": 3625,
+        "markdownTwins": 129,
+        "jsonLd": {
+          "nodes": 9552,
+          "props": 42895
+        }
+      }
+    },
+    "homeRelocationPassed": true,
+    "currentMainHomePassed": true
+  },
+  "screenshots": {
+    "widths": [
+      390,
+      1440
+    ],
+    "browserErrors": [],
+    "horizontalOverflow": false,
+    "reviewed": [
+      "Public guide: readable filters and cards, shared header/actions, phone linen-only decoration.",
+      "Private workspace: six-step navigation and controls, no background artwork or floating enquiry dock."
+    ]
+  },
+  "privateBoundaries": {
+    "publicCloudEnabled": false,
+    "mirrorContainsPrivateWorkspace": false,
+    "customerDataUsed": false,
+    "providerAcceptanceClaimed": false
+  },
+  "hostedVerification": "Pending on the integration commit; local results are not hosted or staging acceptance."
+}

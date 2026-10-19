@@ -30,7 +30,8 @@ test('the design tokens are in the built CSS', async () => {
   for (const token of ['--text-display:', '--text-body:', '--text-lede:', '--text-eyebrow:', '--content-max:', '--grid-columns:', '--radius-control:', '--radius-bar:', '--radius-pill:', '--dur-control:', '--dur-panel:', '--dur-media:', '--ease-standard:', '--glass-champagne-alpha:', '--glass-smoked-alpha:', '--glass-clear-alpha:', '--dock-clearance:']) {
     assert.ok(css.includes(token), token);
   }
-  assert.match(css, /--text-display:clamp\(/);
+  assert.match(css, /--text-display:var\(--text-h1\)/, 'display uses the canonical H1 role');
+  assert.match(css, /--text-h1:clamp\([^;]*vw[^;]*\)/, 'the canonical display role resolves to a fluid clamp');
   // The minifier prints 180ms as .18s; read either.
   const ms = (name: string) => {
     const m = css.match(new RegExp(`--${name}:(\\.?\\d*\\.?\\d+)(ms|s)`))!;
@@ -193,9 +194,9 @@ test('home hero offers responsive original-photo derivatives for the full-width 
   assert.ok(html.includes(`imagesizes="${source![2]}"`), 'preload uses the same sizes');
 });
 
-test('home films: a finished room first, the mid-works film last, each with a visible description of what it shows', async () => {
-  const html = await readFile('dist/index.html', 'utf8');
-  const posters = [...html.matchAll(/poster="\/media\/video\/(browns-hotel-mayfair-video-\d+)-poster\.jpg"/g)].map((m) => m[1]);
+test('relocated home films: a finished room first, the mid-works film last, each with a visible description of what it shows', async () => {
+  const html = await readFile('dist/projects/index.html', 'utf8');
+  const posters = [...html.matchAll(/data-poster="\/media\/video\/(browns-hotel-mayfair-video-\d+)-poster\.jpg"/g)].map((m) => m[1]);
   assert.deepEqual(posters, ['browns-hotel-mayfair-video-02', 'browns-hotel-mayfair-video-01', 'browns-hotel-mayfair-video-03']);
   const captions = [...html.matchAll(/<figcaption class="caption">(Silent film[^<]*)<\/figcaption>/g)];
   assert.equal(captions.length, 3);

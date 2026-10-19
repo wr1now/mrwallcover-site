@@ -1,0 +1,27 @@
+---
+import Icon from './Icon.astro';
+---
+    <section class="atelier-section home-needs" aria-labelledby="needs-heading">
+      <p class="atelier-kicker">What do you need?</p>
+      <h2 id="needs-heading">Five ways to begin.</h2>
+      <div class="home-needs-grid">
+        <a href="/contact/?intent=install#enquiry"><Icon name="roll" /><h3>I already have the wallpaper</h3><p>Installation, with the product you have bought. Measurements can wait.</p></a>
+        <a href="/contact/?intent=source#enquiry"><Icon name="swatch" /><h3>Help me choose and install it</h3><p>A material family, a sample in the room, then the hang.</p></a>
+        <a href="/professionals/#designers"><Icon name="drawing" /><h3>I am specifying a project</h3><p>Send the room schedule, drawings and the specification. Unknowns can stay blank.</p></a>
+        <a href="/professionals/"><Icon name="room" /><h3>A hotel or contractor package</h3><p>Access, programme and who supplies the material.</p></a>
+        <a href="/aftercare/#support"><Icon name="tools" /><h3>Aftercare or a repair</h3><p>A separate note for existing work. A photograph tells us whether it is the hang or the building.</p></a>
+      </div>
+      <nav class="home-enquiry-shortcuts" aria-label="Start with your project"><a href="/contact/?intent=install#enquiry">Wallpaper already chosen</a><a href="/contact/?intent=source#enquiry">Help choosing a wallcovering</a><a href="/contact/?audience=designer#enquiry">A designer’s specification</a></nav>
+    </section>
+
+
+<style>
+.home-needs { margin-top:clamp(2.5rem,5vw,4rem); padding:2.5rem 0; border-top:1px solid var(--color-line); }
+.home-needs h2 { font-size:var(--text-h3); }
+.home-needs-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); gap:1.25rem 2rem; margin-top:1.5rem; }
+.home-needs-grid a { padding-block:1rem; }
+.home-needs-grid h3 { font-size:var(--text-h4); line-height:1.2; }
+.home-needs-grid p { font-size:var(--text-body); }
+.home-enquiry-shortcuts { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; margin-top:1rem; border-top:1px solid var(--color-line); padding-top:1rem; }
+.home-enquiry-shortcuts a { display:inline-flex; min-height:44px; align-items:center; font-size:var(--text-button); }
+</style>

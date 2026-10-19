@@ -36,7 +36,7 @@ Send a message, with photographs of the walls or the paper label if you have the
 
 Choose a time in the calendar to talk the project through.
 
-[Book a 20-minute call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk)
+[Book a call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk)
 
 Calls Mon–Fri, 9am–5pm UK.
 

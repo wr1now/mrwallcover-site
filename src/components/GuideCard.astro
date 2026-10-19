@@ -5,6 +5,7 @@ import Picture from './Picture.astro';
 import Action from './Action.astro';
 import DesignStudy from './DesignStudy.astro';
 import { guideStudyKind } from '../lib/design-study-topic';
+import { dimensionalStudyHelps } from '../lib/question-visual-policy';
 interface Props { guide: GuideCardData; }
 const { guide } = Astro.props;
 const categoryIcons: Record<GuideCardData['category'], IconName> = { choosing: 'swatch', preparing: 'tools', planning: 'drawing', caring: 'check' };
@@ -13,12 +14,17 @@ const photographs: Record<string, { id: string; caption: string }> = {
   'choosing-wallcoverings': { id: 'browns-hotel-mayfair-06', caption: 'Adam’s Eden at Brown’s Hotel, Mayfair. Mr Wallcover photograph.' },
   'grasscloth-seams-and-variation': { id: 'fs-residences-06', caption: 'Natural weave at an external corner, Four Seasons residences. Mr Wallcover photograph.' },
   'set-out-and-pattern-matching': { id: 'lee-broom-06', caption: 'Setting out Overture to a laser line. Photograph: Dorin Burcus.' },
+  'designer-specification-checklist': { id: 'old-bailey-14', caption: 'During works: House of Hackney Limerence at 15 Old Bailey. Photograph: Dorin Burcus.' },
+  'developer-wallcovering-package': { id: 'old-bailey-18', caption: 'Guest corridor at 15 Old Bailey, where we delivered the decorating package. Photograph: Dorin Burcus.' },
+  'papered-ceilings-and-staircases': { id: 'trematon-ig-29', caption: 'During works: Lincrusta set out at Trematon Castle. Mr Wallcover photograph.' },
 };
 const photograph = photographs[guide.slug];
+const studyKind = guideStudyKind(guide.slug, guide.category);
+const reference = !photograph && !dimensionalStudyHelps(studyKind);
 ---
-<article class="guide-card" data-guide-category={guide.category}>
+<article class:list={['guide-card', {'guide-card--reference':reference}]} data-guide-category={guide.category}>
   {photograph && <figure class="guide-card-media"><Picture id={photograph.id} sizes="(min-width: 768px) 38rem, calc(100vw - 5rem)" /><figcaption>{photograph.caption}</figcaption></figure>}
-  {!photograph && <DesignStudy kind={guideStudyKind(guide.slug, guide.category)} caption="Illustrative study" class="guide-card-study" />}
+  {!photograph && !reference && <DesignStudy kind={studyKind} caption="Illustrative study" class="guide-card-study" />}
   <div class="guide-card-anchor">{photograph && <span class="guide-card-icon"><Icon name={topicIcons[guide.slug] ?? categoryIcons[guide.category]} /></span>}<p class="eyebrow">{String(guide.order).padStart(2, '0')} / {guide.category}</p></div>
   <h2><a href={guideHref(guide.slug)}>{guide.shortTitle}</a></h2>
   <p>{guide.description}</p>
@@ -29,8 +35,8 @@ const photograph = photographs[guide.slug];
   .guide-card-anchor { display: flex; align-items: center; min-height:44px; gap: .8rem; margin-bottom: 1.2rem; }
   .guide-card :global(.guide-card-study) { max-width: 100%; margin: 0 0 1.5rem; }
   .guide-card :global(.guide-card-study .design-study-object) { max-width:100%; aspect-ratio:1; }
-  .guide-card :global(.guide-card-study.design-study figcaption) { margin-top:.65rem; min-height:3.75rem; }
-  .guide-card :global(.guide-card-study .object-motion-controls) { gap:.5rem; min-height:3.75rem; margin:0; }
+  .guide-card :global(.guide-card-study.design-study figcaption) { margin-top:.65rem; min-height:4.5rem; }
+  .guide-card :global(.guide-card-study .object-motion-controls) { gap:.5rem; min-height:4.5rem; margin:0; }
   .guide-card :global(.guide-card-study .object-motion-slot) { flex:0 0 8.5rem; width:8.5rem; min-height:44px; }
   .guide-card :global(.guide-card-study .mw-action) { padding-inline:.5rem; }
   .guide-card-anchor .eyebrow { margin: 0; }
@@ -38,6 +44,16 @@ const photograph = photographs[guide.slug];
   .guide-card-media { margin: 0 0 1.5rem; }
   .guide-card-media :global(.media-frame) { overflow: hidden; aspect-ratio:1; }
   .guide-card-media :global(.media-img) { width: 100%; height: 100%; aspect-ratio:1; object-fit: cover; }
-  .guide-card-media figcaption { margin-top:.65rem; min-height:3.75rem; color: var(--color-stone); font-size: var(--text-meta); line-height: 1.4; }
+  .guide-card-media figcaption { margin-top:.65rem; min-height:4.5rem; color: var(--color-stone); font-size: var(--text-meta); line-height: 1.4; }
   .guide-card :global(.guide-read) { align-self: flex-start; padding-top: .75rem; padding-bottom: .75rem; }
+  .guide-card.guide-card--reference { grid-column:1 / -1; display:grid; grid-template-columns:minmax(0, 1fr); gap:.75rem 1.5rem; }
+  .guide-card--reference .guide-card-anchor { margin-bottom:0; }
+  .guide-card--reference h2,.guide-card--reference p { margin:0; }
+  .guide-card--reference :global(.guide-read) { justify-self:start; }
+  @media (min-width:768px) {
+    .guide-card.guide-card--reference { grid-template-columns:minmax(0, 1fr) auto; }
+    .guide-card--reference .guide-card-anchor { grid-column:1 / -1; }
+    .guide-card--reference h2,.guide-card--reference > p { grid-column:1; }
+    .guide-card--reference :global(.guide-read) { grid-column:2; grid-row:2 / 4; align-self:center; }
+  }
 </style>

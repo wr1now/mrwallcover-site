@@ -3,9 +3,10 @@ import assert from 'node:assert/strict';
 import { access, readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { questionIcon } from '../src/lib/question-visual.ts';
-import { questionVisualForPath } from '../src/lib/question-visual-policy.ts';
+import { dimensionalStudyHelps, questionVisualForPath } from '../src/lib/question-visual-policy.ts';
 import { objectKindForQuestion } from '../src/lib/design-object-presentation.ts';
 import { materialStudyKind, guideStudyKind } from '../src/lib/design-study-topic.ts';
+import { designObjectKinds } from '../src/lib/design-object-kinds.ts';
 
 test('physical studies distinguish measurement, wrapped corners and thin applied film without implying approval',()=>{
   assert.equal(objectKindForQuestion('What wall dimensions do you need?'),'measure');
@@ -29,6 +30,37 @@ test('future FAQ pages inherit dimensional studies while factual and reference u
     assert.equal(questionVisualForPath(path),'drawing',`${path}: factual reading and utility controls stay static`);
   }
   assert.equal(questionVisualForPath('/for-ai/?view=facts#questions'),'drawing','query strings and fragments do not change the factual presentation');
+});
+
+test('shared question and guide policy reserves dimensional studies for useful physical topics',()=>{
+  for (const kind of designObjectKinds) {
+    assert.equal(dimensionalStudyHelps(kind), !['calendar','folio','document'].includes(kind), kind);
+  }
+});
+
+test('the guide library combines registered work, useful studies and an uncluttered reference band',async()=>{
+  const html=await readFile('dist/advice/index.html','utf8');
+  const cards=html.match(/<article\b[^>]*class="[^"]*\bguide-card\b[^"]*"[^>]*>[\s\S]*?<\/article>/g)??[];
+  assert.equal(cards.length,14,'every published guide remains in the library');
+  const photos=cards.filter(card=>/class="guide-card-media\b/.test(card));
+  const studies=cards.filter(card=>/data-design-object=/.test(card));
+  const reference=cards.filter(card=>/\bguide-card--reference\b/.test(card));
+  assert.equal(photos.length,6,'relevant photographs show actual registered work');
+  assert.equal(studies.length,7,'material, measurement and detailing studies remain available');
+  assert.equal(reference.length,1,'the standards reference reads without a large paperwork prop');
+  const alts=JSON.parse(await readFile('src/content/alts.json','utf8'));
+  for(const card of photos){
+    const image=card.match(/<img\b[^>]*>/)?.[0]??'';
+    assert.match(image,/loading="lazy"/,'lower-page work photographs stay lazy');
+    assert.match(image,/\bwidth="\d+"/); assert.match(image,/\bheight="\d+"/);
+    assert.match(card,/<source\b[^>]*srcset=/,'work uses responsive registered picture sources');
+    assert.match(card,/<figcaption\b[^>]*>[^<]+/,'every work photograph has an honest visible caption');
+    const alt=image.match(/\balt="([^"]+)"/)?.[1]?.replaceAll('&amp;','&').replaceAll('&#39;',"'").replaceAll('&quot;','"');
+    assert.ok(Object.values(alts).some((entry:any)=>entry.alt===alt),'photograph uses its registered alt text');
+  }
+  for(const card of studies)assert.doesNotMatch(card,/data-design-object="(?:calendar|folio|document)"/,'generic paperwork does not replace one repeated prop with another');
+  assert.match(reference[0],/wallcovering-fire-ratings-uk/);
+  assert.doesNotMatch(reference[0],/data-design-object=|class="guide-card-media/);
 });
 
 test('question drawings follow the topic and do not imply approval or certification',()=>{

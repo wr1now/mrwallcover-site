@@ -77,6 +77,10 @@ async function comparePaint(page:any, selector:string, clip:Clip, { scripts = tr
 }
 
 async function assertGutterPaint(page:any, width:number, { scripts = true } = {}) {
+  if (width < 768) {
+    assert.deepEqual(await page.$$eval('.atelier-atmosphere__edge, .atelier-atmosphere__pond', (layers:HTMLElement[]) => layers.map(layer => ({ display:getComputedStyle(layer).display, rects:layer.getClientRects().length }))), [{display:'none',rects:0},{display:'none',rects:0},{display:'none',rects:0}], 'phone reading keeps the linen ground and removes every botanical painting surface');
+    return;
+  }
   for (const side of ['right', 'left']) {
     // Classic scrollbars belong to innerWidth but are outside the fixed layer's layout viewport.
     // Sample the actual clipped edge, never the browser's scrollbar pixels.
@@ -135,7 +139,7 @@ async function assertLinenPaint(page:any, width:number, { scripts = true } = {})
   assert.ok(minimumContrast >= 4.5, `body text retains AA contrast against the actual linen ground (${minimumContrast.toFixed(2)}:1)`);
 }
 
-test('linen and each botanical visibly paint without changing reading layout or hit testing', { timeout:60000 }, async () => {
+test('linen paints on phones and desktop botanicals paint without changing reading layout or hit testing', { timeout:60000 }, async () => {
   await session(async (page, requests) => {
     await page.emulateMediaFeatures([{ name:'prefers-reduced-motion', value:'reduce' }]);
     for (const { width, classicScrollbar } of [{ width:390, classicScrollbar:false }, { width:1440, classicScrollbar:false }, { width:390, classicScrollbar:true }]) {

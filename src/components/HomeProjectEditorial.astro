@@ -1,0 +1,131 @@
+---
+
+import Icon from '../components/Icon.astro';
+import Picture from '../components/Picture.astro';
+import { home, projectHref, videoById } from '../lib/content';
+import { programmeFigures } from '../lib/trust';
+import { AWARD_TEXT, AWARD_URL } from '../lib/schema';
+import approvedQuotes from '../data/approved-quotes.json';
+import { selection, alsoOnRecord, calicoProjects, calicoLabel, showcase } from '../data/home-editorial';
+import '../styles/home-editorial.css';
+const hotelNames = [
+  {name: "Brown’s Hotel", place: 'MAYFAIR', href: '/projects/browns-hotel-mayfair/'},
+  {name: 'Raffles London', place: 'THE OWO', href: '/projects/raffles-london-the-owo/'},
+  {name: 'Four Seasons', place: 'TEN TRINITY SQUARE', href: '/projects/four-seasons-ten-trinity-square/'},
+  {name: 'Hyde London City', place: 'OLD BAILEY', href: '/projects/old-bailey-hotel/'},
+];
+---
+<section class="home-editorial-page atelier projects-editorial" aria-labelledby="commission-stories-heading">
+  <div class="container-page"><h2 id="commission-stories-heading">Inside the commissions.</h2><p>Finished-room photographs, scope and on-site records from the projects above.</p></div>
+  <details class="projects-editorial-disclosure"><summary>Hotels and historic interiors: rooms, scope and on-site films</summary>
+    <section class="home-showcase editorial-evidence-section" aria-labelledby="showcase-heading">
+      <div class="home-showcase-head">
+        <p class="atelier-kicker">Hotels and historic commissions</p>
+        <h2 id="showcase-heading">Rooms we have <em>finished.</em></h2>
+      </div>
+      <ul class="home-showcase-strip editorial-evidence-grid" role="list">
+        {showcase.map((item) => (
+          <li class="home-showcase-item">
+            <a class="home-showcase-image" href={projectHref(item.slug)} tabindex="-1" aria-hidden="true"><Picture id={item.image} sizes="(min-width: 1024px) 34vw, (min-width: 768px) 48vw, 80vw" /></a>
+            <p class="home-showcase-place">{item.place}</p>
+            <h3><a href={projectHref(item.slug)}>{item.name}</a></h3>
+            {item.credit && <p class="home-showcase-credit">{item.credit}</p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="atelier-hotel-band" aria-label="Selected hotel projects">
+      <p class="atelier-kicker">OUR WORK HAS A PLACE<br />IN EXTRAORDINARY ADDRESSES</p>
+      <div>{hotelNames.map(hotel => <a href={hotel.href}><span>{hotel.name}</span><small>{hotel.place}</small></a>)}</div>
+      <p class="home-partner-line"><a href="#calico-heading">Work delivered in partnership with Calico Wallpaper</a></p>
+    </section>
+
+    <section class="atelier-section editorial-programmes" aria-labelledby="programme-heading"><p class="eyebrow">On the record</p><h2 id="programme-heading">Programmes, in figures.</h2><ul><li><a href={AWARD_URL} rel="noopener"><span>Recognised</span><strong>{AWARD_TEXT}</strong></a></li>{programmeFigures.map(item => <li><a href={item.href}><span>{item.where}</span><strong>{item.figure}</strong></a></li>)}</ul></section>
+    <section class="atelier-section home-proof" aria-labelledby="proof-heading">
+      <div class="atelier-section-head"><div><p class="atelier-kicker">{home.proof.eyebrow}</p><h2 id="proof-heading">{home.proof.title}</h2></div><p class="home-proof-text">{home.proof.text}</p></div>
+      <div class="home-proof-strip" role="region" tabindex="0" aria-label="Photographs from Brown's Hotel">
+        {home.proof.images.map((id) => <figure><Picture id={id} sizes="(min-width: 768px) 18rem, 78vw" /></figure>)}
+      </div>
+      <h3 class="home-films-title">On location: short films from Brown’s Hotel</h3>
+      <div class="atelier-film-grid home-films" data-films role="region" aria-label="Short films from Brown’s Hotel" tabindex="0">{home.proof.videos.map(id => { const film = videoById(id); return <figure><video controls playsinline preload="none" data-poster={film.poster} width={film.width} height={film.height} src={film.src} aria-label={film.alt} /><figcaption class="caption">{film.caption}</figcaption></figure>; })}</div>
+    </section>
+    <section class="atelier-section atelier-work editorial-evidence-section" aria-labelledby="selected-work">
+      <div class="atelier-section-head"><div><p class="atelier-kicker">SELECTED COMMISSIONS</p><h2 id="selected-work">Places with <em>presence.</em></h2></div><a class="atelier-text-link" href="/projects/">View the full portfolio <Icon name="arrow-right" /></a></div>
+      <div class="atelier-project-grid">
+        <article class="atelier-project atelier-project-lead">
+          <a class="atelier-project-image" href="/projects/browns-hotel-mayfair/">
+            <picture><source type="image/webp" srcset="/media/atelier/browns-facade-dusk-960.webp 960w, /media/atelier/browns-facade-dusk-1600.webp 1600w" sizes="(min-width: 768px) 57vw, 100vw" /><img src="/media/atelier/browns-facade-dusk-1600.jpg" alt="Brown's Hotel in Mayfair at dusk, its entrance illuminated beneath the flags. Our photograph of the hotel exterior." width="1600" height="1200" loading="lazy" /></picture>
+            <span class="atelier-project-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="atelier-project-meta"><div><p class="atelier-kicker">HOSPITALITY · MAYFAIR</p><h3><a href="/projects/browns-hotel-mayfair/">Brown’s Hotel</a></h3></div><span>2022–2024</span></div>
+          <p>A full decorating package, delivered while the hotel continued welcoming guests.</p>
+          <p class="atelier-credit">Our photograph of the hotel exterior. See the commission for completed interiors.</p>
+        </article>
+        {selection.map((item, i) => <article class:list={['atelier-project', `atelier-project-${i + 1}`]}>
+          <a class="atelier-project-image" href={projectHref(item.slug)}>
+            <Picture id={item.project.imageId ?? item.image} thumbOnly={item.type !== 'Hospitality'} sizes="(min-width: 768px) 36vw, 100vw" />
+            <span class="atelier-project-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="atelier-project-meta"><div><p class="atelier-kicker">{item.type}</p><h3><a href={projectHref(item.slug)}>{item.label}</a></h3></div><span>{item.project.dates}</span></div>
+          <p>{item.project.role}</p>
+          {item.credit && <p class="atelier-credit">{item.credit}</p>}
+        </article>)}
+      </div>
+      <div class="home-more">
+        <p class="atelier-kicker">{home.featured.eyebrow} · More commissions</p>
+        <h3 class="home-more-title">{home.featured.title}</h3>
+        <p class="home-more-text">{home.featured.text}</p>
+        {alsoOnRecord.length > 0 && <div class="home-record"><p class="atelier-kicker">Also on the record</p><ul>{alsoOnRecord.map((project) => <li><a href={projectHref(project.slug)}>{project.title}</a><span>. {project.summary}</span></li>)}</ul></div>}
+      </div>
+    </section>
+
+  </details>
+  <details class="projects-editorial-disclosure"><summary>Calico Wallpaper: collaborations and installation record</summary>
+    <section class="atelier-section home-calico" aria-labelledby="calico-heading">
+      <p class="atelier-kicker">{home.partners.eyebrow}</p>
+      <h2 id="calico-heading">{home.partners.title}</h2>
+      <p class="home-calico-text">{home.partners.text}</p>
+      <ul>{calicoProjects.map((project) => <li data-project-slug={project.slug}><a href={projectHref(project.slug)}>{calicoLabel(project)} <Icon name="arrow-right" /></a></li>)}</ul>
+      {/* Testimonials: only the approved lines in src/data/approved-quotes.json (Dorin, 11 Oct 2026), exact wording, Calico Wallpaper attribution only. */}
+      <div class="home-praise" role="group" aria-label="In Calico Wallpaper's own words">
+        {approvedQuotes.quotes.map((item) => (
+          <figure class="home-praise-quote">
+            <blockquote><p>“{item.quote}”</p></blockquote>
+            <figcaption>{item.href ? <a href={item.href}>{item.attribution}</a> : item.attribution}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+  </details>
+</section>
+
+<script is:inline>
+  // Film posters load when this project evidence is opened and approached, or a film receives focus.
+  (() => {
+    // A shared link can point straight to evidence inside a native disclosure.
+    const revealEvidence = () => {
+      let id;
+      try { id = decodeURIComponent(window.location.hash.slice(1)); } catch { return; }
+      const target = id && document.getElementById(id);
+      if (!target || !target.closest('.projects-editorial')) return;
+      let ancestor = target.parentElement;
+      while (ancestor) {
+        if (ancestor instanceof HTMLDetailsElement) ancestor.open = true;
+        ancestor = ancestor.parentElement;
+      }
+      target.scrollIntoView({ block:'start', behavior:'instant' });
+    };
+    window.addEventListener('hashchange', revealEvidence);
+    revealEvidence();
+    const grid = document.querySelector('[data-films]');
+    if (!grid) return;
+    const load = () => grid.querySelectorAll('video[data-poster]').forEach((video) => { video.poster = video.dataset.poster; video.removeAttribute('data-poster'); });
+    grid.addEventListener('pointerdown', load, { once: true });
+    grid.addEventListener('focusin', load, { once: true });
+    if (!('IntersectionObserver' in window)) return load();
+    const io = new IntersectionObserver((entries) => { if (entries.some((e) => e.isIntersecting)) { load(); io.disconnect(); } }, { rootMargin: '300px 0px' });
+    io.observe(grid);
+  })();
+</script>

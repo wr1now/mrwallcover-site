@@ -1,69 +1,22 @@
 ---
 import facts from '../data/facts.json';
 import Hero from '../components/Hero.astro';
+import HomeFragmentRedirects from '../components/HomeFragmentRedirects.astro';
 import Icon from '../components/Icon.astro';
 import Action from '../components/Action.astro';
-import QuestionVisual from '../components/QuestionVisual.astro';
-import ObjectMotionControls from '../components/ObjectMotionControls.astro';
 import Picture from '../components/Picture.astro';
-import MaterialStudio from '../components/MaterialStudio.astro';
 import Base from '../layouts/Base.astro';
-import { home, faqItems, projects, projectHref, videoById } from '../lib/content';
-import { AWARD_TEXT, AWARD_URL, faqNode } from '../lib/schema';
-import { caseStudyCount, programmeFigures, teamFacts, trustMakers } from '../lib/trust';
-import { publishedGuides, guideHref } from '../lib/guides';
-import sizes from '../content/sizes.json';
-import approvedQuotes from '../data/approved-quotes.json';
-import '../styles/atelier.css';
-// The hero's one extra rule (home-hero.css) is inlined in <head>. Every other homepage rule, the restored sections
-// and the showcase included, is in atelier.css, so the page is styled by one sheet before first paint.
+import { home, projectHref } from '../lib/content';
+import { AWARD_TEXT, AWARD_URL } from '../lib/schema';
+import { caseStudyCount, teamFacts } from '../lib/trust';
+import { showcase } from '../data/home-editorial';
+import '../styles/home-clear.css';
 import homeHeroCss from '../styles/home-hero.css?raw';
-const selection = [
-  { slug: 'raffles-london-the-owo', label: 'Raffles London at The OWO', type: 'Hospitality', image: 'owo-official-classic', credit: 'Venue photograph · Raffles London at The OWO (official)' },
-  { slug: 'trematon-castle', label: 'The Castle of Trematon', type: 'Historic interiors', image: 'trematon-01', credit: '' },
-  { slug: 'calico-beverly-1975-cadence', label: 'Calico × BEVERLY 1975', type: 'Design & culture', image: 'beverly-08', credit: '' },
-].map(item => ({...item, project: projects.find(p => p.slug === item.slug)!}));
-// Restored from 1b387c6 (the homepage before #23): every published case study stays on the homepage.
-const shownSlugs = new Set(['browns-hotel-mayfair', ...selection.map((item) => item.slug)]);
-const moreWork = projects.filter((project) => project.featured && !shownSlugs.has(project.slug));
-const alsoOnRecord = projects.filter((project) => !project.featured && !shownSlugs.has(project.slug));
-const calicoProjects = projects.filter((project) => project.group === 'design-weeks');
-const calicoLabel = (project: (typeof projects)[number]) =>
-  project.slug === 'heathrow-terminal-4-calico' ? 'Calico Wallpaper at Heathrow Terminal 4' : project.title.replace(/: '?([^']+)'? at .*$/, ': $1');
-// Top-of-page showcase: one large finished-room photograph per hotel and historic commission.
-// Our own photographs first; a credited venue image only where we have no finished-room photo of our own.
-const showcase = [
-  { slug: 'browns-hotel-mayfair', name: 'Brown’s Hotel', place: 'Mayfair', image: 'browns-hotel-mayfair-10', credit: '' },
-  { slug: 'raffles-london-the-owo', name: 'Raffles London at The OWO', place: 'Whitehall', image: 'owo-official-junior-suite', credit: 'Image: Raffles London at The OWO (official)' },
-  { slug: 'four-seasons-ten-trinity-square', name: 'Four Seasons, Ten Trinity Square', place: 'Private Residences, City of London', image: 'fs-residences-01' },
-  { slug: 'old-bailey-hotel', name: 'Hyde London City', place: 'Old Bailey', image: 'old-bailey-06', credit: '' },
-  { slug: 'heathrow-terminal-4-calico', name: 'Calico Wallpaper at Heathrow', place: 'Terminal 4', image: 'heathrow-05', credit: '' },
-  { slug: 'trematon-castle', name: 'The Castle of Trematon', place: 'Cornwall', image: 'trematon-01', credit: '' },
-  { slug: 'house-of-hackney-st-michaels', name: 'House of Hackney', place: 'St Michael’s Clergy House', image: 'house-of-hackney-st-michaels-06', credit: '' },
-].filter((item) => projects.some((p) => p.slug === item.slug));
-// "How we work" in photographs: our own process photographs already in the media library, each linked to the guide that explains that step.
-const processPhotos = [
-  { step: 'Survey', image: 'masterpiece-01', text: 'Laser levels, tape and blades: the room measured and set out before a roll is opened.', href: '/advice/installation-cost/#how-is-the-area-measured', guide: 'How the area is measured' },
-  { step: 'Preparation', image: 'ahluwalia-estuary-03', text: 'The surface sanded smooth, because raking light shows every flaw under a fine paper.', href: '/advice/wall-preparation/#is-it-smooth-enough-for-this-material', guide: 'Is the wall smooth enough?' },
-  { step: 'Lining', image: 'trematon-24', text: 'An atrium at Trematon Castle stripped back and lined before any paper went up.', href: '/advice/wall-preparation/#what-is-lining-paper-for-and-does-this-wall-need-it', guide: 'What lining paper is for' },
-  { step: 'Hanging', image: 'lee-broom-07', text: 'A full drop of a panelled design hung to the laser line, before trimming at the skirting.', href: '/advice/hand-painted-murals-set-out/#how-does-the-panel-sequence-work', guide: 'How the panel sequence works' },
-  { step: 'Seams', image: 'beverly-05', text: 'A seam in a deep oxblood paper, checked by hand so the joint disappears.', href: '/advice/grasscloth-seams-and-variation/#what-is-normal-and-what-is-a-fault', guide: 'What is normal at a seam' },
-];
-// Dorin's cleared portrait arrives with the About portrait PR (claude/about-portrait). The team block shows it as soon as
-// that media entry exists, and stays text-only until then, so no image is duplicated or invented here.
-const PORTRAIT_ID = 'dorin-burcus-portrait';
-const hasPortrait = PORTRAIT_ID in (sizes as Record<string, unknown>);
-const guideList = [...publishedGuides].sort((a, b) => a.frontmatter.order - b.frontmatter.order);
-const hotelNames = [
-  {name: "Brown’s Hotel", place: 'MAYFAIR', href: '/projects/browns-hotel-mayfair/'},
-  {name: 'Raffles London', place: 'THE OWO', href: '/projects/raffles-london-the-owo/'},
-  {name: 'Four Seasons', place: 'TEN TRINITY SQUARE', href: '/projects/four-seasons-ten-trinity-square/'},
-  {name: 'Hyde London City', place: 'OLD BAILEY', href: '/projects/old-bailey-hotel/'},
-];
+const hotelSelection = showcase.slice(0,3);
 ---
-<Base title={home.title} description={facts.description} path="/" preloadHero extraSchema={[faqNode(faqItems)]} image="/media/atelier/browns-bedroom-2000.jpg" imageAlt="Our completed wallcovering installation at Brown's Hotel, Mayfair.">
+<Base title={home.title} description={facts.description} path="/" preloadHero image="/media/atelier/browns-bedroom-2000.jpg" imageAlt="Our completed wallcovering installation at Brown's Hotel, Mayfair.">
   <style is:inline slot="head" set:html={homeHeroCss}></style>
-  <div class="atelier">
+  <div class="atelier clear-home" data-home-composition="concise">
     <section class="atelier-hero" aria-labelledby="hero-heading">
       <Hero />
       <div class="atelier-hero-shade" aria-hidden="true"></div>
@@ -73,8 +26,8 @@ const hotelNames = [
         <p class="atelier-hero-description">{home.hero.lede}</p>
         <p class="atelier-hero-award hero-award"><a href={AWARD_URL} rel="noopener">{AWARD_TEXT}</a></p>
         <div class="atelier-hero-actions">
-          <a class="atelier-button cream" href="/projects/">Explore our work <Icon name="arrow-right" /></a>
-          <a class="atelier-button ghost" href="/contact/">Start your project <Icon name="arrow-right" /></a>
+          <Action class="clear-home-hero-projects" href="/projects/">Explore our work</Action>
+          <Action variant="secondary" class="clear-home-hero-contact" href="/contact/">Start your project</Action>
         </div>
       </div>
       <div class="atelier-hero-foot">
@@ -83,164 +36,36 @@ const hotelNames = [
       </div>
     </section>
 
-    <section class="home-trust" aria-labelledby="trust-heading">
-      <h2 id="trust-heading" class="home-trust-title">London wallcovering installers, since 2012.</h2>
-      <ul class="home-trust-strip" role="list">
-        <li><a href="/about/#dorin"><span class="home-trust-label">In the trade</span><span class="home-trust-value">Since 2012</span></a></li>
-        <li><a href="/projects/"><span class="home-trust-label">On the record</span><span class="home-trust-value">{caseStudyCount} case studies</span></a></li>
-        <li class="home-trust-wide"><a href={AWARD_URL} rel="noopener"><span class="home-trust-label">Recognised</span><span class="home-trust-value home-trust-small">{AWARD_TEXT}</span></a></li>
-        {programmeFigures.map((item, i) => <li class={i === programmeFigures.length - 1 ? 'home-trust-wide' : undefined}><a href={item.href}><span class="home-trust-label">{item.where}</span><span class="home-trust-value">{item.figure}</span></a></li>)}
-      </ul>
-      <div class="home-trust-makers"><span class="home-trust-label">Makers we install</span><ul role="list" aria-label="Makers we install">{trustMakers.map((maker) => <li><a href={maker.href}>{maker.name}</a></li>)}<li><a class="home-trust-more" href="/materials/#makers-installed">and more</a></li></ul></div>
-    </section>
-
-    <section class="home-showcase" aria-labelledby="showcase-heading">
-      <div class="home-showcase-head">
-        <p class="atelier-kicker">Hotels and historic commissions</p>
-        <h2 id="showcase-heading">Rooms we have <em>finished.</em></h2>
-      </div>
-      <ul class="home-showcase-strip" role="list">
-        {showcase.map((item) => (
-          <li class="home-showcase-item">
-            <a class="home-showcase-image" href={projectHref(item.slug)} tabindex="-1" aria-hidden="true"><Picture id={item.image} sizes="(min-width: 1024px) 34vw, (min-width: 768px) 48vw, 80vw" /></a>
-            <p class="home-showcase-place">{item.place}</p>
-            <h3><a href={projectHref(item.slug)}>{item.name}</a></h3>
-            {item.credit && <p class="home-showcase-credit">{item.credit}</p>}
-          </li>
-        ))}
-      </ul>
-    </section>
-
-    <section class="atelier-hotel-band" aria-label="Selected hotel projects">
-      <p class="atelier-kicker">OUR WORK HAS A PLACE<br />IN EXTRAORDINARY ADDRESSES</p>
-      <div>{hotelNames.map(hotel => <a href={hotel.href}><span>{hotel.name}</span><small>{hotel.place}</small></a>)}</div>
-      <p class="home-partner-line"><a href="#calico-heading">Work delivered in partnership with Calico Wallpaper</a></p>
-    </section>
-
-    <section class="atelier-intro atelier-section" aria-labelledby="intro-heading">
-      <p class="atelier-kicker">THE PRACTICE</p>
-      <div><h2 id="intro-heading">A beautiful wall begins<br />long before <em>the first drop.</em></h2>
-        <div class="atelier-intro-bottom"><p>From the first survey to the last carefully matched seam, we bring care to every stage. Silk, grasscloth, hand-painted paper and bespoke murals. Wallcoverings, hung properly. By people who understand the material.</p><div><p>{facts.description}</p><a class="atelier-text-link" href="/about/">Meet the practice <Icon name="arrow-right" /></a></div></div>
-        <dl class="home-facts">{home.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
-        <p class="home-pillars">{home.pillars.join(' · ')}</p>
-      </div>
-    </section>
-
-    <section class="atelier-section home-team" aria-labelledby="founder-heading">
-      <p class="atelier-kicker">The people on site</p>
-      <h2 id="founder-heading">Dorin Burcus</h2>
-      <div class:list={['home-team-grid', hasPortrait && 'home-team-with-portrait']}>
-        {hasPortrait && <figure class="home-team-portrait"><Picture id={PORTRAIT_ID} sizes="(min-width: 768px) 22rem, 70vw" /></figure>}
-        <p class="home-team-lead">{facts.founder.name} founded Mr Wallcover. {teamFacts.founder}</p>
-        <ul class="home-team-facts" role="list">
-          <li>{teamFacts.supervision}</li>
-          <li>{teamFacts.team}</li>
-          <li>{teamFacts.hours}</li>
+    <section class="clear-home-trust" aria-labelledby="trust-heading">
+      <div class="clear-home-width">
+        <h2 id="trust-heading">London wallcovering installers, since 2012.</h2>
+        <ul role="list">
+          <li><a href="/about/#dorin"><span>In the trade</span><strong>Since 2012</strong></a></li>
+          <li><a href="/projects/"><span>On the record</span><strong>{caseStudyCount} case studies</strong></a></li>
+          <li><a href={AWARD_URL} rel="noopener" aria-label={AWARD_TEXT}><span>Recognised</span><strong>BUILD Magazine, 2021</strong></a></li>
         </ul>
       </div>
-      <a class="atelier-text-link" href="/about/#dorin">More about Dorin and how we work <Icon name="arrow-right" /></a>
     </section>
 
-    <section class="atelier-section home-proof" aria-labelledby="proof-heading">
-      <div class="atelier-section-head"><div><p class="atelier-kicker">{home.proof.eyebrow}</p><h2 id="proof-heading">{home.proof.title}</h2></div><p class="home-proof-text">{home.proof.text}</p></div>
-      <div class="home-proof-strip" role="region" tabindex="0" aria-label="Photographs from Brown's Hotel">
-        {home.proof.images.map((id) => <figure><Picture id={id} sizes="(min-width: 768px) 18rem, 78vw" /></figure>)}
-      </div>
-      <h3 class="home-films-title">On location: short films from Brown’s Hotel</h3>
-      <div class="atelier-film-grid home-films" data-films role="region" aria-label="Short films from Brown’s Hotel" tabindex="0">{home.proof.videos.map(id => { const film = videoById(id); return <figure><video controls playsinline preload="none" data-poster={film.poster} width={film.width} height={film.height} src={film.src} aria-label={film.alt} /><figcaption class="caption">{film.caption}</figcaption></figure>; })}</div>
-    </section>
-    <div class="home-studio"><MaterialStudio /></div>
-
-    <section class="atelier-section atelier-work" aria-labelledby="selected-work">
-      <div class="atelier-section-head"><div><p class="atelier-kicker">SELECTED COMMISSIONS</p><h2 id="selected-work">Places with <em>presence.</em></h2></div><a class="atelier-text-link" href="/projects/">View the full portfolio <Icon name="arrow-right" /></a></div>
-      <div class="atelier-project-grid">
-        <article class="atelier-project atelier-project-lead">
-          <a class="atelier-project-image" href="/projects/browns-hotel-mayfair/">
-            <picture><source type="image/webp" srcset="/media/atelier/browns-facade-dusk-960.webp 960w, /media/atelier/browns-facade-dusk-1600.webp 1600w" sizes="(min-width: 768px) 57vw, 100vw" /><img src="/media/atelier/browns-facade-dusk-1600.jpg" alt="Brown's Hotel in Mayfair at dusk, its entrance illuminated beneath the flags. Our photograph of the hotel exterior." width="1600" height="1200" loading="lazy" /></picture>
-            <span class="atelier-project-arrow" aria-hidden="true">↗</span>
-          </a>
-          <div class="atelier-project-meta"><div><p class="atelier-kicker">HOSPITALITY · MAYFAIR</p><h3><a href="/projects/browns-hotel-mayfair/">Brown’s Hotel</a></h3></div><span>2022–2024</span></div>
-          <p>A full decorating package, delivered while the hotel continued welcoming guests.</p>
-          <p class="atelier-credit">Our photograph of the hotel exterior. See the commission for completed interiors.</p>
-        </article>
-        {selection.map((item, i) => <article class:list={['atelier-project', `atelier-project-${i + 1}`]}>
-          <a class="atelier-project-image" href={projectHref(item.slug)}>
-            <Picture id={item.project.imageId ?? item.image} thumbOnly={item.type !== 'Hospitality'} sizes="(min-width: 768px) 36vw, 100vw" />
-            <span class="atelier-project-arrow" aria-hidden="true">↗</span>
-          </a>
-          <div class="atelier-project-meta"><div><p class="atelier-kicker">{item.type}</p><h3><a href={projectHref(item.slug)}>{item.label}</a></h3></div><span>{item.project.dates}</span></div>
-          <p>{item.project.role}</p>
-          {item.credit && <p class="atelier-credit">{item.credit}</p>}
-        </article>)}
-      </div>
-      <div class="home-more">
-        <p class="atelier-kicker">{home.featured.eyebrow} · More commissions</p>
-        <h3 class="home-more-title">{home.featured.title}</h3>
-        <p class="home-more-text">{home.featured.text}</p>
-        <div class="home-more-grid">
-          {moreWork.map((project) => <article class="home-card" data-project-slug={project.slug}>
-            {project.imageId && <a class="home-card-image" href={projectHref(project.slug)} tabindex="-1" aria-hidden="true"><Picture id={project.imageId} sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 100vw" /></a>}
-            <h4><a href={projectHref(project.slug)}>{project.title}</a></h4>
-            <p>{project.role}{project.dates ? ` · ${project.dates}` : ''}</p>
-          </article>)}
-        </div>
-        {alsoOnRecord.length > 0 && <div class="home-record"><p class="atelier-kicker">Also on the record</p><ul>{alsoOnRecord.map((project) => <li><a href={projectHref(project.slug)}>{project.title}</a><span>. {project.summary}</span></li>)}</ul></div>}
-      </div>
+    <section class="clear-home-section clear-home-width clear-home-hotels" aria-labelledby="showcase-heading" id="selected-work">
+      <div class="clear-home-section-head"><div><p class="eyebrow">Hotels and historic commissions</p><h2 id="showcase-heading">Rooms we have <em>finished.</em></h2></div><Action variant="quiet" href="/projects/#hotels">View the full hotel record</Action></div>
+      <ul role="list" class="clear-home-hotel-grid">
+        {hotelSelection.map(item => <li><figure><a href={projectHref(item.slug)} tabindex="-1" aria-hidden="true"><Picture id={item.image} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, calc(100vw - 40px)" /></a><figcaption><p class="clear-home-place">{item.place}</p><h3><a href={projectHref(item.slug)}>{item.name}</a></h3>{item.credit && <p class="clear-home-credit">{item.credit}</p>}</figcaption></figure></li>)}
+      </ul>
     </section>
 
-    <section class="atelier-craft" aria-labelledby="craft-heading">
-      <div class="atelier-craft-image"><picture><source srcset="/media/atelier/browns-cornice-960.webp 960w, /media/atelier/browns-cornice-1440.webp 1440w" type="image/webp" sizes="(min-width: 768px) 50vw, 100vw" /><img src="/media/atelier/browns-cornice-960.webp" width="960" height="1280" alt="Botanical wallcovering meeting the detailed white cornice at Brown's Hotel, Mayfair." loading="lazy" /></picture><p>THE FINISH, UP CLOSE · BROWN’S HOTEL</p></div>
-      <div class="atelier-craft-copy"><p class="atelier-kicker light">THE DETAIL IS THE DIFFERENCE</p><h2 id="craft-heading">The room is the vision.<br /><em>The finish is our craft.</em></h2><p>Setting out around a doorway. Carrying a pattern through a corner. Preparing a wall so raking light reveals the texture, never the substrate. This is the work that makes the whole room feel right.</p>
-        <dl><div><dt>Material knowledge</dt><dd>Silk, grasscloth, vinyl, textiles, murals and hand-painted papers.</dd></div><div><dt>Care from beginning to end</dt><dd>Survey, management, supply, installation and aftercare.</dd></div><div><dt>A considered return</dt><dd>A follow-up visit after four to six weeks, with twelve months’ cover on the workmanship of the hang.</dd></div></dl>
-        <a class="atelier-text-link light" href="/services/">Explore our expertise <Icon name="arrow-right" /></a>
-      </div>
+    <section class="clear-home-section clear-home-width clear-home-founder" aria-labelledby="founder-heading">
+      <figure class="clear-home-portrait"><Picture id="dorin-burcus-portrait" sizes="(min-width: 900px) 24rem, (min-width: 640px) 42vw, calc(100vw - 40px)" /><figcaption>Dorin Burcus, founder of Mr Wallcover.</figcaption></figure>
+      <div><p class="eyebrow">The people on site</p><h2 id="founder-heading">Dorin Burcus</h2><p>{facts.founder.name} founded Mr Wallcover. {teamFacts.founder}</p><p>{facts.description}</p><p class="clear-home-founder-line">Wallcoverings, hung properly.</p><div class="clear-home-related"><Action variant="quiet" href="/about/#dorin">Meet Dorin</Action><Action variant="quiet" href="/practice/">How the practice works</Action></div></div>
     </section>
 
-    <section class="atelier-section atelier-service" aria-labelledby="service-heading">
-      <div><p class="atelier-kicker">FROM FIRST IDEA TO FINISHED ROOM</p><h2 id="service-heading">One practice.<br /><em>Every stage.</em></h2><p>Bring us the paper you love, a specification, or simply the room you have in mind.</p><a class="atelier-text-link" href="/contact/">Tell us about it <Icon name="arrow-right" /></a></div>
-      <ol>{home.serviceCards.map((service, i) => <li><a href={service.href}><span class="atelier-service-number">0{i+1}<Icon name={(['ruler', 'calendar', 'roll', 'layers', 'check'] as const)[i]} /></span><div><h3>{service.title}</h3><p>{service.text}</p></div><span class="sr-only">Read about {service.title.toLowerCase()}</span><Icon name="arrow-right" /></a></li>)}</ol>
+    <section class="clear-home-section clear-home-width clear-home-process" aria-labelledby="process-heading">
+      <div class="clear-home-section-head"><div><p class="eyebrow">{home.process.eyebrow}</p><h2 id="process-heading">{home.process.title}</h2></div><Action variant="quiet" href="/practice/#service-heading">Explore the five services</Action></div>
+      <ol role="list">{home.process.steps.map(step => <li><span class="clear-home-step-number">{step.number}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol>
     </section>
 
-    <section class="atelier-section home-process" aria-labelledby="process-heading">
-      <p class="atelier-kicker">{home.process.eyebrow}</p>
-      <h2 id="process-heading">{home.process.title}</h2>
-      <ol>{home.process.steps.map((step) => <li><span class="atelier-service-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol>
-      <h3 class="home-steps-title">On site, step by step</h3>
-      <ol class="home-steps" role="list">
-        {processPhotos.map((item) => (
-          <li>
-            <figure><Picture id={item.image} sizes="(min-width: 1024px) 18vw, (min-width: 640px) 40vw, 78vw" /></figure>
-            <p class="home-steps-label">{item.step}</p>
-            <p class="home-steps-text">{item.text}</p>
-            <a href={item.href}>{item.guide} <Icon name="arrow-right" /></a>
-          </li>
-        ))}
-      </ol>
-    </section>
-
-    <section class="atelier-materials" aria-labelledby="materials-heading">
-      <div class="atelier-materials-copy"><p class="atelier-kicker">A FEEL FOR MATERIAL</p><h2 id="materials-heading">Find the character<br /><em>of your room.</em></h2><p>Soft texture. Quiet depth. A whole landscape on a wall. Explore the material families and what they ask of the room.</p><div class="atelier-material-links"><a href="/services/silk-wallcovering-installation/">Silk <Icon name="arrow-right" /></a><a href="/services/grasscloth-installation/">Grasscloth <Icon name="arrow-right" /></a><a href="/materials/">All materials <Icon name="arrow-right" /></a><a href="/details/">Details up close <Icon name="arrow-right" /></a></div></div>
-      <div class="atelier-materials-image"><Picture id="browns-hotel-mayfair-06" sizes="(min-width: 768px) 50vw, 100vw" /><span>ADAM’S EDEN · LEWIS & WOOD · BROWN’S HOTEL</span></div>
-    </section>
-
-    <section class="atelier-section home-calico" aria-labelledby="calico-heading">
-      <p class="atelier-kicker">{home.partners.eyebrow}</p>
-      <h2 id="calico-heading">{home.partners.title}</h2>
-      <p class="home-calico-text">{home.partners.text}</p>
-      <ul>{calicoProjects.map((project) => <li data-project-slug={project.slug}><a href={projectHref(project.slug)}>{calicoLabel(project)} <Icon name="arrow-right" /></a></li>)}</ul>
-      {/* Testimonials: only the approved lines in src/data/approved-quotes.json (Dorin, 11 Oct 2026), exact wording, Calico Wallpaper attribution only. */}
-      <div class="home-praise" role="group" aria-label="In Calico Wallpaper's own words">
-        {approvedQuotes.quotes.map((item) => (
-          <figure class="home-praise-quote">
-            <blockquote><p>“{item.quote}”</p></blockquote>
-            <figcaption>{item.href ? <a href={item.href}>{item.attribution}</a> : item.attribution}</figcaption>
-          </figure>
-        ))}
-      </div>
-    </section>
-
-    <section class="home-aftercare" aria-labelledby="aftercare-heading">
-      <div class="home-aftercare-inner">
+    <section class="home-aftercare clear-home-aftercare" aria-labelledby="aftercare-heading">
+      <div class="home-aftercare-inner clear-home-width">
         <p class="atelier-kicker light">{home.aftercare.eyebrow}</p>
         <h2 id="aftercare-heading">{home.aftercare.title}</h2>
         <p>{home.aftercare.text}</p>
@@ -248,42 +73,9 @@ const hotelNames = [
       </div>
     </section>
 
-    <section class="atelier-section atelier-questions" aria-labelledby="questions-heading">
-      <div><p class="atelier-kicker">BEFORE WE BEGIN</p><h2 id="questions-heading">A few good<br /><em>questions.</em></h2><p class="home-faq-links"><a class="atelier-text-link" href="/advice/">The Wallcovering Guide <Icon name="arrow-right" /></a><a class="atelier-text-link" href="/faq/">All questions answered <Icon name="arrow-right" /></a></p>
-        <nav class="home-guides" aria-label="Wallcovering guides"><p class="home-guides-label">The guides</p><ul role="list">{guideList.map((guide) => <li><a href={guideHref(guide.frontmatter.slug)}>{guide.frontmatter.title}</a></li>)}</ul></nav></div>
-      <div class="faq" data-visual="dimensional"><ObjectMotionControls />{faqItems.map(item => <details id={item.id}><summary><h3>{item.question}</h3><span class="question-row-tools"><QuestionVisual question={item.question} id={item.id} /><span class="plus" aria-hidden="true"></span></span></summary><div class="prose pb-5">{item.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div></details>)}</div>
+    <section class="clear-home-section clear-home-width clear-home-closing" aria-labelledby="contact-heading">
+      <p class="eyebrow">YOUR NEXT ROOM</p><h2 id="contact-heading">Let’s make it<br /><em>something remarkable.</em></h2><p>Hotels, prime residences and specified schemes. Tell us what you have in mind.</p><Action href="/contact/">Start your project</Action>
     </section>
-
-    <section class="atelier-section home-needs" aria-labelledby="needs-heading">
-      <p class="atelier-kicker">What do you need?</p>
-      <h2 id="needs-heading">Five ways to begin.</h2>
-      <div class="home-needs-grid">
-        <a href="/contact/?intent=install#enquiry"><Icon name="roll" /><h3>I already have the wallpaper</h3><p>Installation, with the product you have bought. Measurements can wait.</p></a>
-        <a href="/contact/?intent=source#enquiry"><Icon name="swatch" /><h3>Help me choose and install it</h3><p>A material family, a sample in the room, then the hang.</p></a>
-        <a href="/professionals/#designers"><Icon name="drawing" /><h3>I am specifying a project</h3><p>Send the room schedule, drawings and the specification. Unknowns can stay blank.</p></a>
-        <a href="/professionals/"><Icon name="room" /><h3>A hotel or contractor package</h3><p>Access, programme and who supplies the material.</p></a>
-        <a href="/aftercare/#support"><Icon name="tools" /><h3>Aftercare or a repair</h3><p>A separate note for existing work. A photograph tells us whether it is the hang or the building.</p></a>
-      </div>
-    </section>
-
-    <section class="atelier-contact" aria-labelledby="contact-heading"><p class="atelier-kicker">YOUR NEXT ROOM</p><h2 id="contact-heading">Let’s make it<br /><em>something remarkable.</em></h2><p>Hotels, prime residences and specified schemes. Tell us what you have in mind.</p><nav class="atelier-enquiry-routes" aria-label="Start with your project"><a href="/contact/?intent=install#enquiry">Wallpaper already chosen <Icon name="arrow-right" /></a><a href="/contact/?intent=source#enquiry">Help choosing a wallcovering <Icon name="arrow-right" /></a><a href="/contact/?audience=designer#enquiry">A designer’s specification <Icon name="arrow-right" /></a></nav><Action href="/contact/">Start your project</Action><a class="atelier-contact-email" href={`mailto:${facts.email}`}>{facts.email}</a></section>
-
-    <div class="atelier-ai-note"><p>Looking for structured business and project information?</p><a href="/wallcovering-installation-ai-crawler/">Wallcovering Installation AI Crawler <Icon name="arrow-right" /></a></div>
   </div>
+  <HomeFragmentRedirects />
 </Base>
-
-
-<script is:inline>
-  // Film posters load only when the films come near the viewport (or are touched), so they never compete with the hero.
-  (() => {
-    const grid = document.querySelector('[data-films]');
-    if (!grid) return;
-    const load = () => grid.querySelectorAll('video[data-poster]').forEach((video) => { video.poster = video.dataset.poster; video.removeAttribute('data-poster'); });
-    grid.addEventListener('pointerdown', load, { once: true });
-    grid.addEventListener('focusin', load, { once: true });
-    if (!('IntersectionObserver' in window)) return load();
-    const io = new IntersectionObserver((entries) => { if (entries.some((e) => e.isIntersecting)) { load(); io.disconnect(); } }, { rootMargin: '300px 0px' });
-    io.observe(grid);
-  })();
-</script>
-

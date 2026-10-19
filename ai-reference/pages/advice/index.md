@@ -162,9 +162,9 @@ Specifying wallcoverings for an occupied hotel: cleaning and durability, the sam
 
 [Read the guide](https://www.mrwallcover.com/advice/hotel-wallcovering-specification/)
 
-Illustrative study
+![Limerence wallpaper meeting joinery in the suite.](https://www.mrwallcover.com/media/img/r/old-bailey-14-800.webp)
 
-Pause motion
+During works: House of Hackney Limerence at 15 Old Bailey. Photograph: Dorin Burcus.
 
 08 / planning
 
@@ -174,9 +174,9 @@ What a wallcovering specification needs before site: maker and code, elevations,
 
 [Read the guide](https://www.mrwallcover.com/advice/designer-specification-checklist/)
 
-Illustrative study
+![Green-painted guest corridor at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-18-800.webp)
 
-Pause motion
+Guest corridor at 15 Old Bailey, where we delivered the decorating package. Photograph: Dorin Burcus.
 
 09 / planning
 
@@ -210,9 +210,9 @@ Where a hotel wallcovering's fire classification comes from, why it belongs to t
 
 [Read the guide](https://www.mrwallcover.com/advice/hotel-fire-safety-and-compliance/)
 
-Illustrative study
+![A length of Lincrusta relief panel offered up to the wall with a green laser line for setting out, Trematon Castle, November 2021.](https://www.mrwallcover.com/media/img/r/trematon-ig-29-800.webp)
 
-Pause motion
+During works: Lincrusta set out at Trematon Castle. Mr Wallcover photograph.
 
 12 / planning
 
@@ -233,10 +233,6 @@ Setting out Overture to a laser line. Photograph: Dorin Burcus.
 Where the first drop goes and why: setting out from a focal point, setting a true vertical with a laser in a room that is not square, matching across joints and corners, balancing the end panels, hanging murals in order, and joining wide vinyl by overlap and splice.
 
 [Read the guide](https://www.mrwallcover.com/advice/set-out-and-pattern-matching/)
-
-Illustrative study
-
-Pause motion
 
 14 / planning
 

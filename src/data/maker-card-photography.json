@@ -1,0 +1,296 @@
+{
+  "reviewed": "2026-10-19",
+  "method": "Existing registered, owner-made installation photographs only. Maker-specific records and explicitly identified craft examples remain distinct.",
+  "entries": {
+    "arte": {
+      "kind": "maker-installation",
+      "imageId": "brand-arte-01",
+      "actualMaker": "Arte",
+      "caption": "Arte · private project, London",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/materials/#maker-arte",
+      "evidenceLabel": "View installation record",
+      "sources": [
+        "src/content/makers-installed.json",
+        "https://www.instagram.com/p/BdNtIUtAtKR/",
+        "/materials/#maker-arte"
+      ],
+      "evidenceNote": "The published installation register identifies this maker and photograph.",
+      "stageLabel": "During installation"
+    },
+    "phillip-jeffries": {
+      "kind": "maker-installation",
+      "imageId": "biltmore-04",
+      "actualMaker": "Phillip Jeffries",
+      "caption": "Phillip Jeffries · The Biltmore Mayfair",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/biltmore-mayfair/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/makers-installed.json",
+        "/projects/biltmore-mayfair/"
+      ],
+      "evidenceNote": "The published installation register identifies this maker and photograph."
+    },
+    "de-gournay": {
+      "kind": "maker-installation",
+      "imageId": "brand-de-gournay-01",
+      "actualMaker": "de Gournay",
+      "caption": "de Gournay · private residence, London",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/materials/#maker-de-gournay",
+      "evidenceLabel": "View installation record",
+      "sources": [
+        "src/content/makers-installed.json",
+        "https://www.instagram.com/p/BhcaLpanOEf/",
+        "/materials/#maker-de-gournay"
+      ],
+      "evidenceNote": "The published installation register identifies this maker and photograph."
+    },
+    "fromental": {
+      "kind": "maker-installation",
+      "imageId": "fs-ig-12",
+      "actualMaker": "Fromental",
+      "caption": "Fromental · Four Seasons Ten Trinity Square",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/four-seasons-ten-trinity-square/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/makers-installed.json",
+        "/projects/four-seasons-ten-trinity-square/"
+      ],
+      "evidenceNote": "The published installation register names this maker; the selected frame is identified in the linked published case study and registered alt text."
+    },
+    "calico-wallpaper": {
+      "kind": "maker-installation",
+      "imageId": "lee-broom-04",
+      "actualMaker": "Calico Wallpaper",
+      "caption": "Calico Wallpaper · Lee Broom, Shoreditch",
+      "credit": "Photograph: Dorin Burcus",
+      "evidenceHref": "/projects/calico-lee-broom-overture/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/makers-installed.json",
+        "https://www.instagram.com/p/B2Uz7Dcl2_j/",
+        "/projects/calico-lee-broom-overture/"
+      ],
+      "evidenceNote": "The published installation register names this maker; the selected frame is identified in the linked published case study and registered alt text.",
+      "stageLabel": "During installation"
+    },
+    "house-of-hackney": {
+      "kind": "maker-installation",
+      "imageId": "hoh-shoreditch-2019-01",
+      "actualMaker": "House of Hackney",
+      "caption": "House of Hackney · Shoreditch showroom, 2019",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/house-of-hackney-st-michaels/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/makers-installed.json",
+        "/projects/house-of-hackney-st-michaels/"
+      ],
+      "evidenceNote": "The published installation register identifies this maker and photograph."
+    },
+    "cole-and-son": {
+      "kind": "maker-installation",
+      "imageId": "pendley-manor-04",
+      "actualMaker": "Cole & Son",
+      "caption": "Cole & Son · Pendley Manor Hotel",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/pendley-manor-hotel/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/makers-installed.json",
+        "/projects/pendley-manor-hotel/"
+      ],
+      "evidenceNote": "The published installation register identifies this maker and photograph."
+    },
+    "dedar": {
+      "kind": "maker-installation",
+      "imageId": "fs-ig-06",
+      "actualMaker": "Dedar",
+      "caption": "Dedar · Four Seasons Ten Trinity Square",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/four-seasons-ten-trinity-square/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/makers-installed.json",
+        "/projects/four-seasons-ten-trinity-square/"
+      ],
+      "evidenceNote": "The published installation register identifies this maker and photograph."
+    },
+    "elitis": {
+      "kind": "maker-installation",
+      "imageId": "brand-elitis-01",
+      "actualMaker": "Elitis",
+      "caption": "Élitis · private residence, Mayfair",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/materials/#maker-elitis",
+      "evidenceLabel": "View installation record",
+      "sources": [
+        "src/content/makers-installed.json",
+        "https://www.instagram.com/p/BglmE0vgCj9/",
+        "/materials/#maker-elitis"
+      ],
+      "evidenceNote": "The published installation register identifies this maker and photograph."
+    },
+    "omexco": {
+      "kind": "maker-installation",
+      "imageId": "brand-omexco-01",
+      "actualMaker": "Omexco",
+      "caption": "Omexco · private project, London",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/materials/#maker-omexco",
+      "evidenceLabel": "View installation record",
+      "sources": [
+        "src/content/makers-installed.json",
+        "https://www.instagram.com/p/BaCaL9JAVaV/",
+        "/materials/#maker-omexco"
+      ],
+      "evidenceNote": "The published installation register identifies this maker and photograph."
+    },
+    "osborne-and-little": {
+      "kind": "maker-installation",
+      "imageId": "brand-osborne-little-01",
+      "actualMaker": "Osborne & Little",
+      "caption": "Osborne & Little · private project, Chelsea",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/materials/#maker-osborne-little",
+      "evidenceLabel": "View installation record",
+      "sources": [
+        "src/content/makers-installed.json",
+        "https://www.instagram.com/p/Brs8kF0A3Ry/",
+        "/materials/#maker-osborne-little"
+      ],
+      "evidenceNote": "The published installation register identifies this maker and photograph."
+    },
+    "vescom": {
+      "kind": "maker-installation",
+      "imageId": "metropole-05",
+      "actualMaker": "Vescom",
+      "caption": "Vescom · Hilton London Metropole",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/hilton-london-metropole/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/makers-installed.json",
+        "/projects/hilton-london-metropole/"
+      ],
+      "evidenceNote": "The published installation register identifies this maker and photograph."
+    },
+    "zoffany": {
+      "kind": "maker-installation",
+      "imageId": "brand-zoffany-01",
+      "actualMaker": "Zoffany",
+      "caption": "Zoffany · private residence, Soho",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/materials/#maker-zoffany",
+      "evidenceLabel": "View installation record",
+      "sources": [
+        "src/content/makers-installed.json",
+        "https://www.instagram.com/p/BgbJzaZgdvm/",
+        "/materials/#maker-zoffany"
+      ],
+      "evidenceNote": "The published installation register identifies this maker and photograph."
+    },
+    "brewster-home-fashions": {
+      "kind": "craft-example",
+      "imageId": "browns-hotel-mayfair-09",
+      "actualMaker": "Lewis & Wood",
+      "caption": "Craft example: Lewis & Wood at Brown’s Hotel",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/browns-hotel-mayfair/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/alts.json",
+        "/projects/browns-hotel-mayfair/"
+      ],
+      "evidenceNote": "Context from Mr Wallcover’s published work with the maker named in this caption. No maker-specific installation photo is identified for this directory profile; this is not an installation or affiliation claim for that brand."
+    },
+    "designers-guild": {
+      "kind": "craft-example",
+      "imageId": "lee-broom-01",
+      "actualMaker": "Calico Wallpaper",
+      "caption": "Craft example: Calico Wallpaper at Lee Broom",
+      "credit": "Photograph: Dorin Burcus",
+      "evidenceHref": "/projects/calico-lee-broom-overture/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/alts.json",
+        "/projects/calico-lee-broom-overture/"
+      ],
+      "evidenceNote": "Context from Mr Wallcover’s published work with the maker named in this caption. No maker-specific installation photo is identified for this directory profile; this is not an installation or affiliation claim for that brand.",
+      "stageLabel": "During installation"
+    },
+    "morris-and-co": {
+      "kind": "craft-example",
+      "imageId": "browns-hotel-mayfair-12",
+      "actualMaker": "Lewis & Wood",
+      "caption": "Craft example: Lewis & Wood at Brown’s Hotel",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/browns-hotel-mayfair/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/alts.json",
+        "/projects/browns-hotel-mayfair/"
+      ],
+      "evidenceNote": "Context from Mr Wallcover’s published work with the maker named in this caption. No maker-specific installation photo is identified for this directory profile; this is not an installation or affiliation claim for that brand."
+    },
+    "pierre-frey": {
+      "kind": "craft-example",
+      "imageId": "fs-ig-03",
+      "actualMaker": "Phillip Jeffries",
+      "caption": "Craft example: Phillip Jeffries at Four Seasons",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/four-seasons-ten-trinity-square/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/alts.json",
+        "/projects/four-seasons-ten-trinity-square/"
+      ],
+      "evidenceNote": "Context from Mr Wallcover’s published work with the maker named in this caption. No maker-specific installation photo is identified for this directory profile; this is not an installation or affiliation claim for that brand."
+    },
+    "sanderson": {
+      "kind": "craft-example",
+      "imageId": "hoh-shoreditch-2019-04",
+      "actualMaker": "House of Hackney",
+      "caption": "Craft example: House of Hackney’s Shoreditch showroom",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/house-of-hackney-st-michaels/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/alts.json",
+        "/projects/house-of-hackney-st-michaels/"
+      ],
+      "evidenceNote": "Context from Mr Wallcover’s published work with the maker named in this caption. No maker-specific installation photo is identified for this directory profile; this is not an installation or affiliation claim for that brand."
+    },
+    "sangetsu": {
+      "kind": "craft-example",
+      "imageId": "fs-ig-48",
+      "actualMaker": "Dedar",
+      "caption": "Craft example: Dedar at Four Seasons Ten Trinity Square",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/four-seasons-ten-trinity-square/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/alts.json",
+        "/projects/four-seasons-ten-trinity-square/"
+      ],
+      "evidenceNote": "Context from Mr Wallcover’s published work with the maker named in this caption. No maker-specific installation photo is identified for this directory profile; this is not an installation or affiliation claim for that brand."
+    },
+    "york-wallcoverings": {
+      "kind": "craft-example",
+      "imageId": "pendley-manor-05",
+      "actualMaker": "Cole & Son",
+      "caption": "Craft example: Cole & Son at Pendley Manor Hotel",
+      "credit": "Photograph: Mr Wallcover",
+      "evidenceHref": "/projects/pendley-manor-hotel/",
+      "evidenceLabel": "View project",
+      "sources": [
+        "src/content/alts.json",
+        "/projects/pendley-manor-hotel/"
+      ],
+      "evidenceNote": "Context from Mr Wallcover’s published work with the maker named in this caption. No maker-specific installation photo is identified for this directory profile; this is not an installation or affiliation claim for that brand."
+    }
+  }
+}
