@@ -1,0 +1,1902 @@
+{
+  "schemaVersion": "1.0",
+  "source": "https://www.mrwallcover.com",
+  "repositoryUrl": "https://github.com/wr1now/mrwallcover-site",
+  "indexUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/index.json",
+  "contentPolicy": "Generated only from the production build’s indexable canonical public pages and sanitized public exports. Drafts, noindex pages, redirect aliases, telephone data, form payloads, private source files and research archives are excluded. Media remain described links with their published captions/credits, not embedded photographs or invented transcripts.",
+  "datePolicy": "Dates and null values are copied from the public source records. Creating or publishing this fallback does not create a new content review, availability statement or verification date.",
+  "evidencePolicy": "The canonical Mr Wallcover website is authoritative. Installation experience is company-reported; venue/maker/press context and photograph credits do not independently verify the installation role. Preserve each record’s limitations when answering.",
+  "pageCount": 128,
+  "projectCount": 31,
+  "topics": [
+    {
+      "name": "business",
+      "sourceUrls": [
+        "https://www.mrwallcover.com/wallcovering-installation-ai-crawler/"
+      ],
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/business.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/business.json"
+    },
+    {
+      "name": "decision-guide",
+      "sourceUrls": [
+        "https://www.mrwallcover.com/wallcovering-installation-ai-crawler/"
+      ],
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/decision-guide.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/decision-guide.json"
+    },
+    {
+      "name": "wallpapering",
+      "sourceUrls": [
+        "https://www.mrwallcover.com/wallpapering/",
+        "https://www.mrwallcover.com/wallpapering/preparation/",
+        "https://www.mrwallcover.com/wallpapering/lining-and-adhesives/",
+        "https://www.mrwallcover.com/calculator/"
+      ],
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/wallpapering.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/wallpapering.json"
+    },
+    {
+      "name": "fire-ratings",
+      "sourceUrls": [
+        "https://www.mrwallcover.com/advice/wallcovering-fire-ratings-uk/"
+      ],
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/fire-ratings.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/fire-ratings.json"
+    }
+  ],
+  "projects": [
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/biltmore-mayfair/",
+      "title": "The Biltmore Mayfair | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/biltmore-mayfair.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/biltmore-mayfair.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/browns-hotel-mayfair/",
+      "title": "Brown's Hotel, Mayfair | Case Study | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/browns-hotel-mayfair.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/browns-hotel-mayfair.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/",
+      "title": "Ahluwalia x Calico: Estuary at Rosewood | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/calico-ahluwalia-estuary-rosewood.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/calico-ahluwalia-estuary-rosewood.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/",
+      "title": "BEVERLY 1975 x Calico: Cadence, LDF 2026 | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/calico-beverly-1975-cadence.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/calico-beverly-1975-cadence.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/calico-lee-broom-overture/",
+      "title": "Lee Broom x Calico: Overture, Shoreditch | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/calico-lee-broom-overture.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/calico-lee-broom-overture.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+      "title": "DoubleTree Victoria | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/doubletree-victoria.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/doubletree-victoria.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/doubletree-west-end/",
+      "title": "DoubleTree West End | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/doubletree-west-end.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/doubletree-west-end.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/everyman-liverpool/",
+      "title": "Everyman cinema, Liverpool | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/everyman-liverpool.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/everyman-liverpool.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+      "title": "Four Seasons Hotel London, Ten Trinity Square | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/four-seasons-ten-trinity-square.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/four-seasons-ten-trinity-square.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/",
+      "title": "Calico Wallpaper Mural, Heathrow Terminal 4 | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/heathrow-terminal-4-calico.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/heathrow-terminal-4-calico.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/",
+      "title": "Hilton Garden Inn Silverstone | Case Study | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/hilton-garden-inn-silverstone.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/hilton-garden-inn-silverstone.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/hilton-london-metropole/",
+      "title": "Hilton London Metropole | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/hilton-london-metropole.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/hilton-london-metropole.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/",
+      "title": "House of Hackney showroom | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/house-of-hackney-st-michaels.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/house-of-hackney-st-michaels.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/huntsman-savile-row/",
+      "title": "Huntsman, Savile Row | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/huntsman-savile-row.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/huntsman-savile-row.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/imperfect-arches-external-corner-trim/",
+      "title": "Imperfect arches: bespoke corner trim | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/imperfect-arches-external-corner-trim.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/imperfect-arches-external-corner-trim.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/inverness-terrace/",
+      "title": "Inverness Terrace exterior | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/inverness-terrace.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/inverness-terrace.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/jumeirah-carlton-tower/",
+      "title": "Jumeirah Carlton Tower | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/jumeirah-carlton-tower.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/jumeirah-carlton-tower.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/masterpiece-london-2019/",
+      "title": "Masterpiece London 2019 | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/masterpiece-london-2019.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/masterpiece-london-2019.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/",
+      "title": "Mercedes-AMG showroom, London | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/mercedes-amg-showroom-london.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/mercedes-amg-showroom-london.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/north-london-residence/",
+      "title": "A Georgian house in North London | Case Study | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/north-london-residence.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/north-london-residence.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/novotel-london-canary-wharf/",
+      "title": "Novotel London Canary Wharf | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/novotel-london-canary-wharf.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/novotel-london-canary-wharf.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/old-bailey-hotel/",
+      "title": "Hyde London City (the Old Bailey Hotel) | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/old-bailey-hotel.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/old-bailey-hotel.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/oxygen-freejumping-the-o2/",
+      "title": "Oxygen Freejumping, The O2 | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/oxygen-freejumping-the-o2.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/oxygen-freejumping-the-o2.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/pendley-manor-hotel/",
+      "title": "Pendley Manor Hotel, Tring | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/pendley-manor-hotel.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/pendley-manor-hotel.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/penny-morrison-showroom/",
+      "title": "Penny Morrison showroom | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/penny-morrison-showroom.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/penny-morrison-showroom.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/pimlico-st-georges-square/",
+      "title": "St George's Square exterior | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/pimlico-st-georges-square.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/pimlico-st-georges-square.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/private-residence-little-venice/",
+      "title": "Private residence, Little Venice | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/private-residence-little-venice.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/private-residence-little-venice.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/raffles-london-the-owo/",
+      "title": "Raffles London at The OWO, Whitehall | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/raffles-london-the-owo.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/raffles-london-the-owo.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/scp-showroom-pimlico/",
+      "title": "SCP showroom, Pimlico | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/scp-showroom-pimlico.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/scp-showroom-pimlico.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/tea-house-jaillon-studio/",
+      "title": "Tea house for Jaillon Studio, West London | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/tea-house-jaillon-studio.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/tea-house-jaillon-studio.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/trematon-castle/",
+      "title": "Castle of Trematon, Cornwall | Case Study | Mr Wallcover",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/trematon-castle.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/trematon-castle.json"
+    }
+  ],
+  "pages": [
+    {
+      "sourceUrl": "https://www.mrwallcover.com/",
+      "title": "Mr Wallcover | Wallpaper Installer London",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/about/",
+      "title": "Dorin Burcus, Founder | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/about/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/about/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/about/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/about/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/accessibility/",
+      "title": "Accessibility | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/accessibility/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/accessibility/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/accessibility/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/accessibility/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/",
+      "title": "Wallcovering Guide | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/choosing-wallcoverings/",
+      "title": "Choosing wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/choosing-wallcoverings/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/choosing-wallcoverings/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/choosing-wallcoverings/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/choosing-wallcoverings/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/cost/",
+      "title": "Wallpaper Installation Quotation Checklist | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/cost/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/cost/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/cost/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/cost/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/designer-specification-checklist/",
+      "title": "Designer Wallcovering Specification Checklist | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/designer-specification-checklist/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/designer-specification-checklist/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/designer-specification-checklist/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/designer-specification-checklist/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/developer-wallcovering-package/",
+      "title": "Wallcovering Tender & Handover Checklist | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/developer-wallcovering-package/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/developer-wallcovering-package/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/developer-wallcovering-package/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/developer-wallcovering-package/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/grasscloth-seams-and-variation/",
+      "title": "Grasscloth seams and variation | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/grasscloth-seams-and-variation/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/grasscloth-seams-and-variation/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/grasscloth-seams-and-variation/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/grasscloth-seams-and-variation/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/hand-painted-murals-set-out/",
+      "title": "Hand-painted papers and murals | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/hand-painted-murals-set-out/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/hand-painted-murals-set-out/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/hand-painted-murals-set-out/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/hand-painted-murals-set-out/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/hotel-fire-safety-and-compliance/",
+      "title": "Hotel fire safety | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/hotel-fire-safety-and-compliance/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/hotel-fire-safety-and-compliance/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/hotel-fire-safety-and-compliance/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/hotel-fire-safety-and-compliance/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/hotel-wallcovering-specification/",
+      "title": "Hotel wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/hotel-wallcovering-specification/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/hotel-wallcovering-specification/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/hotel-wallcovering-specification/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/hotel-wallcovering-specification/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/installation-cost/",
+      "title": "Wallpaper Installation Cost: Quote Factors | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/installation-cost/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/installation-cost/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/installation-cost/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/installation-cost/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/papered-ceilings-and-staircases/",
+      "title": "Wallpapering Ceilings & Staircases | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/papered-ceilings-and-staircases/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/papered-ceilings-and-staircases/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/papered-ceilings-and-staircases/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/papered-ceilings-and-staircases/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/quantities/",
+      "title": "How much wallpaper should you order? | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/quantities/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/quantities/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/quantities/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/quantities/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/set-out-and-pattern-matching/",
+      "title": "Wallpaper Set-out & Pattern Matching | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/set-out-and-pattern-matching/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/set-out-and-pattern-matching/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/set-out-and-pattern-matching/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/set-out-and-pattern-matching/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/wall-preparation/",
+      "title": "Preparing Walls for Wallpaper | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/wall-preparation/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/wall-preparation/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/wall-preparation/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/wall-preparation/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/wallcovering-fire-ratings-uk/",
+      "title": "Wallcovering fire ratings: UK standards | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-15",
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/wallcovering-fire-ratings-uk/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/wallcovering-fire-ratings-uk/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/wallcovering-fire-ratings-uk/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/wallcovering-fire-ratings-uk/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/advice/wallcovering-problems-and-aftercare/",
+      "title": "Wallpaper Problems & Aftercare | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/wallcovering-problems-and-aftercare/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/advice/wallcovering-problems-and-aftercare/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/advice/wallcovering-problems-and-aftercare/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/advice/wallcovering-problems-and-aftercare/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/aftercare/",
+      "title": "Wallcovering Aftercare & Guarantee | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/aftercare/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/aftercare/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/aftercare/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/aftercare/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/areas/",
+      "title": "Wallpaper Installer London Areas | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/areas/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/areas/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/areas/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/areas/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/areas/belgravia/",
+      "title": "Wallpaper Installer in Belgravia | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/areas/belgravia/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/areas/belgravia/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/areas/belgravia/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/areas/belgravia/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/areas/chelsea/",
+      "title": "Wallpaper Installer in Chelsea | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/areas/chelsea/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/areas/chelsea/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/areas/chelsea/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/areas/chelsea/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/areas/city-of-london/",
+      "title": "Wallcovering Installer, City of London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/areas/city-of-london/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/areas/city-of-london/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/areas/city-of-london/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/areas/city-of-london/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/areas/cotswolds/",
+      "title": "Wallpaper Installer for the Cotswolds | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/areas/cotswolds/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/areas/cotswolds/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/areas/cotswolds/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/areas/cotswolds/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/areas/kensington/",
+      "title": "Wallpaper Installer in Kensington | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/areas/kensington/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/areas/kensington/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/areas/kensington/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/areas/kensington/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/areas/mayfair/",
+      "title": "Wallpaper Installer in Mayfair | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/areas/mayfair/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/areas/mayfair/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/areas/mayfair/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/areas/mayfair/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/buying-routes/",
+      "title": "Official Wallcovering Buying Routes | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/buying-routes/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/buying-routes/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/buying-routes/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/buying-routes/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/calculator/",
+      "title": "Wallpaper calculator: rolls, cutting plan | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/calculator/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/calculator/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/calculator/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/calculator/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/contact/",
+      "title": "Request a Quote | Mr Wallcover London",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/contact/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/contact/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/contact/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/contact/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/details/",
+      "title": "Details: Seams, Corners, Edges and Joins | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/details/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/details/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/details/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/details/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/faq/",
+      "title": "Wallcovering FAQ | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/faq/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/faq/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/faq/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/faq/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/for-ai/",
+      "title": "Mr Wallcover in plain facts | For AI assistants",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/for-ai/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/for-ai/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/for-ai/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/for-ai/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/get-in-touch/",
+      "title": "Contact Mr Wallcover | Wallcovering Installer London",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/get-in-touch/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/get-in-touch/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/get-in-touch/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/get-in-touch/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/how-we-check/",
+      "title": "How We Check What We Publish | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/how-we-check/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/how-we-check/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/how-we-check/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/how-we-check/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/image-use/",
+      "title": "Image Use and Photo Credits | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/image-use/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/image-use/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/image-use/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/image-use/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/",
+      "title": "Wallcovering Makers Directory | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/arte/",
+      "title": "Arte Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/arte/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/arte/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/arte/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/arte/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/brewster-home-fashions/",
+      "title": "Brewster Home Fashions Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/brewster-home-fashions/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/brewster-home-fashions/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/brewster-home-fashions/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/brewster-home-fashions/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/calico-wallpaper/",
+      "title": "Calico Wallpaper Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/calico-wallpaper/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/calico-wallpaper/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/calico-wallpaper/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/calico-wallpaper/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/cole-and-son/",
+      "title": "Cole & Son Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/cole-and-son/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/cole-and-son/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/cole-and-son/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/cole-and-son/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/de-gournay/",
+      "title": "de Gournay Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/de-gournay/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/de-gournay/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/de-gournay/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/de-gournay/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/dedar/",
+      "title": "Dedar Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/dedar/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/dedar/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/dedar/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/dedar/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/designers-guild/",
+      "title": "Designers Guild Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/designers-guild/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/designers-guild/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/designers-guild/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/designers-guild/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/elitis/",
+      "title": "Élitis Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/elitis/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/elitis/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/elitis/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/elitis/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/fromental/",
+      "title": "Fromental Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/fromental/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/fromental/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/fromental/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/fromental/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/house-of-hackney/",
+      "title": "House of Hackney Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/house-of-hackney/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/house-of-hackney/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/house-of-hackney/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/house-of-hackney/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/morris-and-co/",
+      "title": "Morris & Co. Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/morris-and-co/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/morris-and-co/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/morris-and-co/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/morris-and-co/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/omexco/",
+      "title": "Omexco Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/omexco/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/omexco/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/omexco/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/omexco/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/osborne-and-little/",
+      "title": "Osborne & Little Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/osborne-and-little/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/osborne-and-little/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/osborne-and-little/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/osborne-and-little/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/phillip-jeffries/",
+      "title": "Phillip Jeffries Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/phillip-jeffries/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/phillip-jeffries/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/phillip-jeffries/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/phillip-jeffries/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/pierre-frey/",
+      "title": "Pierre Frey Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/pierre-frey/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/pierre-frey/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/pierre-frey/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/pierre-frey/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/sanderson/",
+      "title": "Sanderson Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/sanderson/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/sanderson/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/sanderson/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/sanderson/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/sangetsu/",
+      "title": "Sangetsu Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/sangetsu/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/sangetsu/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/sangetsu/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/sangetsu/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/vescom/",
+      "title": "Vescom Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/vescom/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/vescom/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/vescom/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/vescom/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/york-wallcoverings/",
+      "title": "York Wallcoverings Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/york-wallcoverings/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/york-wallcoverings/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/york-wallcoverings/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/york-wallcoverings/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/makers/zoffany/",
+      "title": "Zoffany Wallcoverings | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/makers/zoffany/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/makers/zoffany/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/makers/zoffany/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/makers/zoffany/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/materials/",
+      "title": "Material library | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/materials/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/materials/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/materials/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/materials/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/materials/acoustic/",
+      "title": "Acoustic wallcovering installation in London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/materials/acoustic/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/materials/acoustic/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/materials/acoustic/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/materials/acoustic/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/materials/contract-vinyl/",
+      "title": "Contract vinyl wallcovering installation | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/materials/contract-vinyl/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/materials/contract-vinyl/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/materials/contract-vinyl/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/materials/contract-vinyl/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/materials/grasscloth-and-weaves/",
+      "title": "Grasscloth and natural weave installation | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/materials/grasscloth-and-weaves/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/materials/grasscloth-and-weaves/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/materials/grasscloth-and-weaves/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/materials/grasscloth-and-weaves/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/materials/hand-painted/",
+      "title": "Hand-painted scenic wallpaper installation | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/materials/hand-painted/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/materials/hand-painted/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/materials/hand-painted/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/materials/hand-painted/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/materials/murals/",
+      "title": "Mural wallpaper installation in London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/materials/murals/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/materials/murals/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/materials/murals/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/materials/murals/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/materials/paper-and-non-woven/",
+      "title": "Paper and non-woven wallpaper installation | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/materials/paper-and-non-woven/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/materials/paper-and-non-woven/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/materials/paper-and-non-woven/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/materials/paper-and-non-woven/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/materials/silk-and-textiles/",
+      "title": "Silk and textile wallcovering installation | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/materials/silk-and-textiles/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/materials/silk-and-textiles/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/materials/silk-and-textiles/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/materials/silk-and-textiles/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/materials/specified-papers/",
+      "title": "Specified Wallpapers We Install, London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/materials/specified-papers/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/materials/specified-papers/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/materials/specified-papers/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/materials/specified-papers/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/privacy/",
+      "title": "Privacy | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/privacy/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/privacy/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/privacy/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/privacy/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/professionals/",
+      "title": "For Designers, Developers & Hotels | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/professionals/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/professionals/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/professionals/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/professionals/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/professionals/designers/",
+      "title": "Wallpaper Hanging for Designers & Architects | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/professionals/designers/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/professionals/designers/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/professionals/designers/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/professionals/designers/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/professionals/developers/",
+      "title": "Wallcovering Packages for Contractors | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/professionals/developers/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/professionals/developers/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/professionals/developers/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/professionals/developers/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/professionals/fit-out-contractors/",
+      "title": "Wallcovering Package for Fit-out Contractors | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/professionals/fit-out-contractors/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/professionals/fit-out-contractors/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/professionals/fit-out-contractors/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/professionals/fit-out-contractors/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/professionals/hotels/",
+      "title": "Hotel Wallcovering Installation & Phasing | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/professionals/hotels/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/professionals/hotels/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/professionals/hotels/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/professionals/hotels/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/",
+      "title": "Hotel Wallcovering Projects | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/biltmore-mayfair/",
+      "title": "The Biltmore Mayfair | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/biltmore-mayfair/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/biltmore-mayfair/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/biltmore-mayfair/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/biltmore-mayfair/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/browns-hotel-mayfair/",
+      "title": "Brown's Hotel, Mayfair | Case Study | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/browns-hotel-mayfair/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/browns-hotel-mayfair/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/browns-hotel-mayfair/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/browns-hotel-mayfair/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/",
+      "title": "Ahluwalia x Calico: Estuary at Rosewood | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/calico-ahluwalia-estuary-rosewood/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/calico-ahluwalia-estuary-rosewood/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/calico-ahluwalia-estuary-rosewood/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/",
+      "title": "BEVERLY 1975 x Calico: Cadence, LDF 2026 | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/calico-beverly-1975-cadence/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/calico-beverly-1975-cadence/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/calico-beverly-1975-cadence/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/calico-lee-broom-overture/",
+      "title": "Lee Broom x Calico: Overture, Shoreditch | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/calico-lee-broom-overture/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/calico-lee-broom-overture/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/calico-lee-broom-overture/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/calico-lee-broom-overture/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/doubletree-victoria/",
+      "title": "DoubleTree Victoria | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/doubletree-victoria/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/doubletree-victoria/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/doubletree-victoria/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/doubletree-victoria/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/doubletree-west-end/",
+      "title": "DoubleTree West End | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/doubletree-west-end/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/doubletree-west-end/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/doubletree-west-end/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/doubletree-west-end/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/everyman-liverpool/",
+      "title": "Everyman cinema, Liverpool | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/everyman-liverpool/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/everyman-liverpool/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/everyman-liverpool/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/everyman-liverpool/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
+      "title": "Four Seasons Hotel London, Ten Trinity Square | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/four-seasons-ten-trinity-square/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/four-seasons-ten-trinity-square/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/four-seasons-ten-trinity-square/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/",
+      "title": "Calico Wallpaper Mural, Heathrow Terminal 4 | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/heathrow-terminal-4-calico/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/heathrow-terminal-4-calico/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/heathrow-terminal-4-calico/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/",
+      "title": "Hilton Garden Inn Silverstone | Case Study | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/hilton-garden-inn-silverstone/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/hilton-garden-inn-silverstone/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/hilton-garden-inn-silverstone/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/hilton-london-metropole/",
+      "title": "Hilton London Metropole | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/hilton-london-metropole/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/hilton-london-metropole/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/hilton-london-metropole/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/hilton-london-metropole/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/",
+      "title": "House of Hackney showroom | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/house-of-hackney-st-michaels/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/house-of-hackney-st-michaels/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/house-of-hackney-st-michaels/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/huntsman-savile-row/",
+      "title": "Huntsman, Savile Row | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/huntsman-savile-row/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/huntsman-savile-row/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/huntsman-savile-row/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/huntsman-savile-row/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/imperfect-arches-external-corner-trim/",
+      "title": "Imperfect arches: bespoke corner trim | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-10",
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/imperfect-arches-external-corner-trim/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/imperfect-arches-external-corner-trim/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/imperfect-arches-external-corner-trim/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/imperfect-arches-external-corner-trim/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/inverness-terrace/",
+      "title": "Inverness Terrace exterior | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/inverness-terrace/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/inverness-terrace/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/inverness-terrace/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/inverness-terrace/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/jumeirah-carlton-tower/",
+      "title": "Jumeirah Carlton Tower | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/jumeirah-carlton-tower/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/jumeirah-carlton-tower/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/jumeirah-carlton-tower/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/jumeirah-carlton-tower/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/masterpiece-london-2019/",
+      "title": "Masterpiece London 2019 | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/masterpiece-london-2019/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/masterpiece-london-2019/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/masterpiece-london-2019/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/masterpiece-london-2019/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/",
+      "title": "Mercedes-AMG showroom, London | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/mercedes-amg-showroom-london/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/mercedes-amg-showroom-london/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/mercedes-amg-showroom-london/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/north-london-residence/",
+      "title": "A Georgian house in North London | Case Study | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/north-london-residence/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/north-london-residence/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/north-london-residence/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/north-london-residence/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/novotel-london-canary-wharf/",
+      "title": "Novotel London Canary Wharf | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/novotel-london-canary-wharf/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/novotel-london-canary-wharf/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/novotel-london-canary-wharf/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/novotel-london-canary-wharf/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/old-bailey-hotel/",
+      "title": "Hyde London City (the Old Bailey Hotel) | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/old-bailey-hotel/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/old-bailey-hotel/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/old-bailey-hotel/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/old-bailey-hotel/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/oxygen-freejumping-the-o2/",
+      "title": "Oxygen Freejumping, The O2 | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/oxygen-freejumping-the-o2/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/oxygen-freejumping-the-o2/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/oxygen-freejumping-the-o2/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/oxygen-freejumping-the-o2/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/pendley-manor-hotel/",
+      "title": "Pendley Manor Hotel, Tring | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/pendley-manor-hotel/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/pendley-manor-hotel/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/pendley-manor-hotel/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/pendley-manor-hotel/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/penny-morrison-showroom/",
+      "title": "Penny Morrison showroom | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/penny-morrison-showroom/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/penny-morrison-showroom/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/penny-morrison-showroom/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/penny-morrison-showroom/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/pimlico-st-georges-square/",
+      "title": "St George's Square exterior | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/pimlico-st-georges-square/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/pimlico-st-georges-square/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/pimlico-st-georges-square/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/pimlico-st-georges-square/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/private-residence-little-venice/",
+      "title": "Private residence, Little Venice | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-11",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/private-residence-little-venice/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/private-residence-little-venice/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/private-residence-little-venice/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/private-residence-little-venice/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/raffles-london-the-owo/",
+      "title": "Raffles London at The OWO, Whitehall | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/raffles-london-the-owo/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/raffles-london-the-owo/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/raffles-london-the-owo/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/raffles-london-the-owo/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/scp-showroom-pimlico/",
+      "title": "SCP showroom, Pimlico | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-10",
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/scp-showroom-pimlico/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/scp-showroom-pimlico/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/scp-showroom-pimlico/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/scp-showroom-pimlico/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/tea-house-jaillon-studio/",
+      "title": "Tea house for Jaillon Studio, West London | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-10",
+        "modified": "2026-10-10",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/tea-house-jaillon-studio/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/tea-house-jaillon-studio/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/tea-house-jaillon-studio/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/tea-house-jaillon-studio/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/projects/trematon-castle/",
+      "title": "Castle of Trematon, Cornwall | Case Study | Mr Wallcover",
+      "dates": {
+        "published": "2026-10-09",
+        "modified": "2026-10-11",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/trematon-castle/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/projects/trematon-castle/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/projects/trematon-castle/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/projects/trematon-castle/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/reviews/",
+      "title": "Calico Wallpaper Installation Feedback | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/reviews/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/reviews/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/reviews/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/reviews/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/",
+      "title": "Wallcovering Installation London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/",
+      "title": "Acoustic Wallcoverings & Panels, London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/acoustic-wallcovering-installation/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/acoustic-wallcovering-installation/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/acoustic-wallcovering-installation/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/architectural-film-wrapping/",
+      "title": "Architectural & Furniture Wrapping, London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/architectural-film-wrapping/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/architectural-film-wrapping/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/architectural-film-wrapping/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/architectural-film-wrapping/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/calico-wallpaper-installer/",
+      "title": "Calico Wallpaper Installer London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/calico-wallpaper-installer/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/calico-wallpaper-installer/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/calico-wallpaper-installer/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/calico-wallpaper-installer/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/",
+      "title": "Commercial Wallcovering Installer London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/commercial-wallcovering-installation/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/commercial-wallcovering-installation/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/commercial-wallcovering-installation/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/exterior-works/",
+      "title": "Exterior Painting & Decorating London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/exterior-works/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/exterior-works/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/exterior-works/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/exterior-works/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/fabric-walling/",
+      "title": "Fabric Walling & Textile Wallcovering, London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/fabric-walling/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/fabric-walling/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/fabric-walling/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/fabric-walling/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/grasscloth-installation/",
+      "title": "Grasscloth Wallpaper Installer London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/grasscloth-installation/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/grasscloth-installation/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/grasscloth-installation/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/grasscloth-installation/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/",
+      "title": "Hand-Painted Wallpaper Installer London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/hand-painted-wallpaper-installation/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/hand-painted-wallpaper-installation/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/hand-painted-wallpaper-installation/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/heritage-listed-buildings/",
+      "title": "Listed Building Wallpaper Installation | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-18",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/heritage-listed-buildings/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/heritage-listed-buildings/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/heritage-listed-buildings/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/heritage-listed-buildings/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/",
+      "title": "Hotel Wallcovering Contractor London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/hotel-wallcovering-installation/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/hotel-wallcovering-installation/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/hotel-wallcovering-installation/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/house-of-hackney-wallpaper-installer/",
+      "title": "House of Hackney Wallpaper Installer London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/house-of-hackney-wallpaper-installer/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/house-of-hackney-wallpaper-installer/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/house-of-hackney-wallpaper-installer/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/house-of-hackney-wallpaper-installer/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+      "title": "Wallcoverings on Joinery & Panels, London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/joinery-wallcoverings-and-panels/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/joinery-wallcoverings-and-panels/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/joinery-wallcoverings-and-panels/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/mural-installation/",
+      "title": "Wallpaper Mural Installer London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/mural-installation/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/mural-installation/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/mural-installation/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/mural-installation/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/silk-wallcovering-installation/",
+      "title": "Silk Wallcovering Installer London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/silk-wallcovering-installation/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/silk-wallcovering-installation/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/silk-wallcovering-installation/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/silk-wallcovering-installation/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/timorous-beasties-installer/",
+      "title": "Timorous Beasties Wallpaper Installer London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/timorous-beasties-installer/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/timorous-beasties-installer/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/timorous-beasties-installer/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/timorous-beasties-installer/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/window-film/",
+      "title": "Window Film Installation London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/window-film/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/window-film/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/window-film/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/window-film/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/trade/",
+      "title": "Wallcovering Installer for Trade | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/trade/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/trade/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/trade/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/trade/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/wallcovering-installation-ai-crawler/",
+      "title": "Wallcovering Installation AI Crawler | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/wallcovering-installation-ai-crawler/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/wallcovering-installation-ai-crawler/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/wallcovering-installation-ai-crawler/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/wallcovering-installation-ai-crawler/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/wallpapering/",
+      "title": "Wallpapering: preparation and specification | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/wallpapering/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/wallpapering/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/wallpapering/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/wallpapering/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/wallpapering/lining-and-adhesives/",
+      "title": "Lining papers, pastes and primers | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/wallpapering/lining-and-adhesives/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/wallpapering/lining-and-adhesives/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/wallpapering/lining-and-adhesives/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/wallpapering/lining-and-adhesives/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/wallpapering/preparation/",
+      "title": "Wallpaper Preparation Tables by Wall Type | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/wallpapering/preparation/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/wallpapering/preparation/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/wallpapering/preparation/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/wallpapering/preparation/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/where-to-buy/",
+      "title": "Where to Buy Wallpaper, and How It Is Sold | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": "2026-10-17",
+        "reviewed": null
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/where-to-buy/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/where-to-buy/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/where-to-buy/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/where-to-buy/index.json"
+    }
+  ]
+}

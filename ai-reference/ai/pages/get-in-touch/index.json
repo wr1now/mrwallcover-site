@@ -1,0 +1,528 @@
+{
+  "id": "https://www.mrwallcover.com/get-in-touch/",
+  "url": "https://www.mrwallcover.com/get-in-touch/",
+  "path": "/get-in-touch/",
+  "title": "Contact Mr Wallcover | Wallcovering Installer London",
+  "description": "Contact Mr Wallcover, the London wallcovering installer founded by Dorin Burcus. Email info@mrwallcover.com, or start a project with the enquiry form.",
+  "language": "en-GB",
+  "author": "Dorin Burcus",
+  "dates": {
+    "published": null,
+    "modified": null,
+    "reviewed": "2026-10-09"
+  },
+  "formats": {
+    "html": "https://www.mrwallcover.com/get-in-touch/",
+    "markdown": "https://www.mrwallcover.com/get-in-touch/index.md",
+    "json": "https://www.mrwallcover.com/ai/pages/get-in-touch/index.json",
+    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/33"
+  },
+  "headings": [
+    {
+      "level": 1,
+      "id": null,
+      "text": "Get in touch."
+    },
+    {
+      "level": 2,
+      "id": "ways-heading",
+      "text": "Ways to reach us"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Email"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Phone"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "WhatsApp"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "A 20-minute call"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Instagram"
+    },
+    {
+      "level": 2,
+      "id": "project-heading",
+      "text": "Starting a project?"
+    },
+    {
+      "level": 2,
+      "id": "areas-heading",
+      "text": "Where we work"
+    }
+  ],
+  "markdown": "Contact\n\n# Get in touch.\n\nWrite, call or send a message, whichever suits you. Dorin Burcus reads the email and answers the phone himself.\n\n[Start your project](https://www.mrwallcover.com/contact/) Contact Dorin directly\n\n## Ways to reach us\n\n### Email\n\nFor questions, photographs, drawings and specifications. Attachments are welcome.\n\n[info@mrwallcover.com](mailto:info@mrwallcover.com)\n\n### Phone\n\nDorin Burcus answers the phone himself. Select the button below to see the number.\n\n### WhatsApp\n\nSend a message, with photographs of the walls or the paper label if you have them.\n\n[WhatsApp us](https://www.mrwallcover.com/contact/)\n\n### A 20-minute call\n\nChoose a time in the calendar to talk the project through.\n\n[Book a 20-minute call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk)\n\nCalls Mon–Fri, 9am–5pm UK.\n\n### Instagram\n\nRecent installations and work in progress.\n\n[@mrwallcover](https://www.instagram.com/mrwallcover/)\n\n## Starting a project?\n\nFor a quotation, the enquiry form asks for the few things that shape the price: the building, the rooms, the material and the timing. Photographs and drawings help, and are optional.\n\n[What to include in your enquiry](https://www.mrwallcover.com/contact/)\n\n## Where we work\n\nLondon and the surrounding areas; UK-wide for selected projects.\n\n- [Mayfair](https://www.mrwallcover.com/areas/mayfair/)\n- [Belgravia](https://www.mrwallcover.com/areas/belgravia/)\n- [Chelsea](https://www.mrwallcover.com/areas/chelsea/)\n- [Kensington](https://www.mrwallcover.com/areas/kensington/)\n- [City of London](https://www.mrwallcover.com/areas/city-of-london/)\n- [Cotswolds](https://www.mrwallcover.com/areas/cotswolds/)\n- [All areas](https://www.mrwallcover.com/areas/)\n\nBy [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026\n",
+  "links": [
+    {
+      "url": "https://www.mrwallcover.com/contact/",
+      "text": "Start your project"
+    },
+    {
+      "url": "https://www.mrwallcover.com/get-in-touch/#ways-heading",
+      "text": "Contact Dorin directly"
+    },
+    {
+      "url": "mailto:info@mrwallcover.com",
+      "text": "info@mrwallcover.com"
+    },
+    {
+      "url": "https://www.mrwallcover.com/contact/",
+      "text": "WhatsApp us"
+    },
+    {
+      "url": "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk",
+      "text": "Book a 20-minute call"
+    },
+    {
+      "url": "https://www.instagram.com/mrwallcover/",
+      "text": "@mrwallcover"
+    },
+    {
+      "url": "https://www.mrwallcover.com/contact/",
+      "text": "What to include in your enquiry"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/mayfair/",
+      "text": "Mayfair"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/belgravia/",
+      "text": "Belgravia"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/chelsea/",
+      "text": "Chelsea"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/kensington/",
+      "text": "Kensington"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/city-of-london/",
+      "text": "City of London"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/cotswolds/",
+      "text": "Cotswolds"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/",
+      "text": "All areas"
+    },
+    {
+      "url": "https://www.mrwallcover.com/about/#dorin",
+      "text": "Dorin Burcus"
+    },
+    {
+      "url": "https://www.mrwallcover.com/",
+      "text": "Home"
+    }
+  ],
+  "images": [],
+  "diagrams": [],
+  "media": [],
+  "structuredData": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": [
+            "HomeAndConstructionBusiness",
+            "ProfessionalService"
+          ],
+          "@id": "https://www.mrwallcover.com/#business",
+          "name": "Mr Wallcover",
+          "url": "https://www.mrwallcover.com",
+          "image": "https://www.mrwallcover.com/og.jpg",
+          "logo": "https://www.mrwallcover.com/logo-512.png",
+          "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus, in the trade since 2012: survey to aftercare for hotels, homes and makers.",
+          "email": "info@mrwallcover.com",
+          "founder": {
+            "@id": "https://www.mrwallcover.com/about/#dorin"
+          },
+          "award": "Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "London",
+            "addressRegion": "Greater London",
+            "addressCountry": "GB"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "London"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "London and the surrounding areas"
+            },
+            {
+              "@type": "Country",
+              "name": "United Kingdom",
+              "description": "UK-wide for selected projects"
+            },
+            {
+              "@type": "Place",
+              "name": "Mayfair",
+              "url": "https://www.mrwallcover.com/areas/mayfair/"
+            },
+            {
+              "@type": "Place",
+              "name": "Belgravia",
+              "url": "https://www.mrwallcover.com/areas/belgravia/"
+            },
+            {
+              "@type": "Place",
+              "name": "Chelsea",
+              "url": "https://www.mrwallcover.com/areas/chelsea/"
+            },
+            {
+              "@type": "Place",
+              "name": "Kensington",
+              "url": "https://www.mrwallcover.com/areas/kensington/"
+            },
+            {
+              "@type": "Place",
+              "name": "the City of London",
+              "url": "https://www.mrwallcover.com/areas/city-of-london/"
+            },
+            {
+              "@type": "Place",
+              "name": "the Cotswolds",
+              "url": "https://www.mrwallcover.com/areas/cotswolds/"
+            }
+          ],
+          "slogan": "Premium wallcoverings services: surveying, management, supply, install and aftercare.",
+          "knowsAbout": [
+            "Wallpaper installation",
+            "Wallcovering installation for hotels",
+            "Grasscloth installation",
+            "Hand-painted wallcoverings",
+            "Acoustic wallcoverings",
+            "Silk wallcovering installation",
+            "Fabric walling",
+            "Wallpaper mural installation",
+            "Contract vinyl wallcoverings",
+            "Wallcoverings on joinery",
+            "Bespoke wallcovering panels",
+            "Architectural and furniture film wrapping",
+            "Window film installation"
+          ],
+          "sameAs": [
+            "https://www.instagram.com/mrwallcover/"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Mr Wallcover services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/#service",
+                  "name": "Hand-painted wallpaper installation",
+                  "serviceType": "Hand-painted wallpaper installation",
+                  "url": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/grasscloth-installation/#service",
+                  "name": "Grasscloth installation",
+                  "serviceType": "Grasscloth installation",
+                  "url": "https://www.mrwallcover.com/services/grasscloth-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/silk-wallcovering-installation/#service",
+                  "name": "Silk wallcovering installation",
+                  "serviceType": "Silk wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/silk-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/fabric-walling/#service",
+                  "name": "Fabric walling",
+                  "serviceType": "Fabric walling",
+                  "url": "https://www.mrwallcover.com/services/fabric-walling/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/#service",
+                  "name": "Hotel wallcovering installation",
+                  "serviceType": "Hotel wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/mural-installation/#service",
+                  "name": "Mural installation",
+                  "serviceType": "Mural installation",
+                  "url": "https://www.mrwallcover.com/services/mural-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/#service",
+                  "name": "Acoustic wallcovering installation",
+                  "serviceType": "Acoustic wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/architectural-film-wrapping/#service",
+                  "name": "Architectural & furniture film wrapping",
+                  "serviceType": "Architectural film installation",
+                  "url": "https://www.mrwallcover.com/services/architectural-film-wrapping/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/window-film/#service",
+                  "name": "Window film installation",
+                  "serviceType": "Window film installation",
+                  "url": "https://www.mrwallcover.com/services/window-film/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/#service",
+                  "name": "Joinery wallcoverings & bespoke panels",
+                  "serviceType": "Wallcovering on joinery and bespoke wall panels",
+                  "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/exterior-works/#service",
+                  "name": "Exterior works",
+                  "serviceType": "Exterior decorating",
+                  "url": "https://www.mrwallcover.com/services/exterior-works/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/#service",
+                  "name": "Commercial and showroom wallcovering installation",
+                  "serviceType": "Commercial wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              }
+            ]
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@mrwallcover.com",
+            "url": "https://www.mrwallcover.com/contact/",
+            "contactType": "quotations",
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "London"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "London and the surrounding areas"
+              },
+              {
+                "@type": "Country",
+                "name": "United Kingdom",
+                "description": "UK-wide for selected projects"
+              },
+              {
+                "@type": "Place",
+                "name": "Mayfair",
+                "url": "https://www.mrwallcover.com/areas/mayfair/"
+              },
+              {
+                "@type": "Place",
+                "name": "Belgravia",
+                "url": "https://www.mrwallcover.com/areas/belgravia/"
+              },
+              {
+                "@type": "Place",
+                "name": "Chelsea",
+                "url": "https://www.mrwallcover.com/areas/chelsea/"
+              },
+              {
+                "@type": "Place",
+                "name": "Kensington",
+                "url": "https://www.mrwallcover.com/areas/kensington/"
+              },
+              {
+                "@type": "Place",
+                "name": "the City of London",
+                "url": "https://www.mrwallcover.com/areas/city-of-london/"
+              },
+              {
+                "@type": "Place",
+                "name": "the Cotswolds",
+                "url": "https://www.mrwallcover.com/areas/cotswolds/"
+              }
+            ],
+            "availableLanguage": [
+              "English"
+            ]
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.mrwallcover.com/about/#dorin",
+          "name": "Dorin Burcus",
+          "jobTitle": "Founder",
+          "url": "https://www.mrwallcover.com/about/",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+            "contentUrl": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+            "creditText": "Dorin Burcus / Mr Wallcover",
+            "creator": {
+              "@type": "Person",
+              "@id": "https://www.mrwallcover.com/about/#dorin",
+              "name": "Dorin Burcus",
+              "url": "https://www.mrwallcover.com/about/"
+            },
+            "copyrightNotice": "© Mr Wallcover",
+            "license": "https://www.mrwallcover.com/image-use/",
+            "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+          },
+          "worksFor": {
+            "@id": "https://www.mrwallcover.com/#business"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.mrwallcover.com/#website",
+          "url": "https://www.mrwallcover.com",
+          "name": "Mr Wallcover",
+          "inLanguage": "en-GB",
+          "publisher": {
+            "@id": "https://www.mrwallcover.com/#business"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.mrwallcover.com/get-in-touch/#webpage",
+          "url": "https://www.mrwallcover.com/get-in-touch/",
+          "name": "Contact Mr Wallcover | Wallcovering Installer London",
+          "description": "Contact Mr Wallcover, the London wallcovering installer founded by Dorin Burcus. Email info@mrwallcover.com, or start a project with the enquiry form.",
+          "inLanguage": "en-GB",
+          "isPartOf": {
+            "@id": "https://www.mrwallcover.com/#website"
+          },
+          "about": {
+            "@id": "https://www.mrwallcover.com/#business"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://www.mrwallcover.com/og.jpg",
+            "contentUrl": "https://www.mrwallcover.com/og.jpg",
+            "creditText": "Mr Wallcover",
+            "creator": {
+              "@type": "Organization",
+              "@id": "https://www.mrwallcover.com/#business",
+              "name": "Mr Wallcover",
+              "url": "https://www.mrwallcover.com/"
+            },
+            "copyrightNotice": "© Mr Wallcover",
+            "license": "https://www.mrwallcover.com/image-use/",
+            "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.mrwallcover.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contact",
+              "item": "https://www.mrwallcover.com/get-in-touch/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

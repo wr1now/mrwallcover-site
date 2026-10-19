@@ -1,20 +1,38 @@
 import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { mkdtemp, readdir, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
 import { promisify } from 'node:util';
 import { build as buildAiLayer } from '../scripts/build-ai-layer.mjs';
+import { expectedReaderMirrorFiles } from '../scripts/ai-reader-mirror.mjs';
 
 /**
- * Builds the site twice, with and without SITE_PHONE, into temporary folders,
- * and checks what each build prints. 07700 900000 is Ofcom's reserved drama
- * range, not a real number.
+ * Builds the site three times into temporary folders: without SITE_PHONE and
+ * with two different values from Ofcom's reserved drama range. Checks the public
+ * channel copy, payload exclusion and number-independent reader mirror bytes.
  */
 const run = promisify(execFile);
 const FAKE = '07700900000';
+const OTHER_FAKE = '07700900001';
 const PHONE_PATTERN = /\b0?7\d{3}\s?\d{6}\b|\+?44\s?7\d{9}/;
+
+async function trackedMirrorSnapshot(dir = 'ai-reference'): Promise<Record<string, string>> {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const out: Record<string, string> = {};
+  for (const entry of entries) {
+    const file = path.join(dir, entry.name);
+    if (entry.isDirectory()) Object.assign(out, await trackedMirrorSnapshot(file));
+    else out[file] = createHash('sha256').update(await readFile(file)).digest('hex');
+  }
+  return out;
+}
+
+function mirrorDigests(files: Map<string, string>) {
+  return [...files].map(([name, text]) => [name, createHash('sha256').update(text).digest('hex')]);
+}
 
 async function htmlFiles(dir: string): Promise<string[]> {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -30,15 +48,17 @@ async function htmlFiles(dir: string): Promise<string[]> {
 // A fixture, never the real booking page: the real URL lives in src/config.ts.
 const BOOKING_FIXTURE = 'https://calendar.app.google/TEST-FIXTURE-not-real';
 
-async function build(withPhone: boolean): Promise<{ dir: string; html: string }> {
+async function build(withPhone: boolean, phone = FAKE): Promise<{ dir: string; html: string }> {
   const dir = await mkdtemp(path.join(tmpdir(), `mw-phone-${withPhone ? 'on' : 'off'}-`));
+  const mirrorBefore = await trackedMirrorSnapshot();
   const env = { ...process.env };
-  if (withPhone) env.SITE_PHONE = FAKE;
+  if (withPhone) env.SITE_PHONE = phone;
   else delete env.SITE_PHONE;
   // The phone build also sets a booking URL; the other build forces it empty, whatever src/config.ts holds.
   env.BOOKING_URL = withPhone ? BOOKING_FIXTURE : '';
   await run(path.join('node_modules', '.bin', 'astro'), ['build', '--outDir', dir], { env, maxBuffer: 64 * 1024 * 1024 });
   await buildAiLayer(dir);
+  assert.deepEqual(await trackedMirrorSnapshot(), mirrorBefore, 'a real phone fixture build and its postbuild hook never mutate the tracked production mirror');
   const files = await htmlFiles(dir);
   assert.ok(files.length > 10, 'build produced pages');
   const html = (await Promise.all(files.map((file) => readFile(file, 'utf8')))).join('\n');
@@ -72,6 +92,10 @@ test('without SITE_PHONE no phone or WhatsApp control is rendered and no payload
     assert.doesNotMatch(contact, /contact-quick/);
     assert.match(contact, /Email is read by Dorin Burcus/);
     assert.doesNotMatch(contact, /shown on request/);
+    const mirror = await expectedReaderMirrorFiles({ distDir: dir });
+    assert.match(mirror.get('pages/contact/index.md')!, /Or write directly\. Email is read by Dorin Burcus\./);
+    assert.match(mirror.get('pages/get-in-touch/index.md')!, /Email is the simplest way in\./);
+    assert.doesNotMatch(mirror.get('pages/get-in-touch/index.md')!, /### Phone\b|### WhatsApp\b/);
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
@@ -133,6 +157,22 @@ test('with SITE_PHONE the reveal control and WhatsApp link render, and the numbe
     const touch = await readFile(path.join(dir, 'get-in-touch', 'index.html'), 'utf8');
     assert.match(touch, /<button\b[^>]*data-phone-reveal/);
     assert.match(touch, /data-wa/);
+    const mirror = await expectedReaderMirrorFiles({ distDir: dir });
+    assert.match(mirror.get('pages/contact/index.md')!, /The phone is answered by Dorin Burcus himself; the number is shown on request\./);
+    assert.match(mirror.get('pages/get-in-touch/index.md')!, /Write, call or send a message, whichever suits you\./);
+    assert.match(mirror.get('pages/get-in-touch/index.md')!, /### Phone\b/);
+    assert.match(mirror.get('pages/get-in-touch/index.md')!, /### WhatsApp\b/);
+    assert.match(mirror.get('pages/get-in-touch/index.md')!, /Select the button below to see the number\./, 'the fallback preserves the published conditional copy instead of normalising it away');
+    const other = await build(true, OTHER_FAKE);
+    try {
+      await assertAiExportsHaveNoPhone(other.dir);
+      const otherMirror = await expectedReaderMirrorFiles({ distDir: other.dir });
+      assert.deepEqual(mirrorDigests(otherMirror), mirrorDigests(mirror), 'every sanitized production-mode mirror byte is independent of the particular phone number');
+      for (const [name, text] of otherMirror) {
+        assert.doesNotMatch(text, PHONE_PATTERN, `${name}: no phone number enters the versioned mirror`);
+        assert.doesNotMatch(text, /data-phone-reveal|const payload|"(?:telephone|phone)"\s*:/i, `${name}: no encoded phone payload enters the versioned mirror`);
+      }
+    } finally { await rm(other.dir, { recursive: true, force: true }); }
   } finally {
     await rm(dir, { recursive: true, force: true });
   }

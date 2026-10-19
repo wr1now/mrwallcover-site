@@ -1,10 +1,12 @@
 ---
 import Breadcrumb from '../components/Breadcrumb.astro';
 import PageMeta from '../components/PageMeta.astro';
+import CommissionScope from '../components/CommissionScope.astro';
 import Base from '../layouts/Base.astro';
 import { CRAWLER_PATH, CRAWLER_TITLE, crawlerBusiness as business, crawlerProjects as portfolio } from '../lib/ai-crawler';
 import { decisionGuide as guide } from '../lib/ai-decision-guide';
 import { breadcrumbNode } from '../lib/schema';
+import aiReader from '../data/ai-reader.json';
 
 const crumbs = [{ name: 'Home', href: '/' }, { name: CRAWLER_TITLE, href: CRAWLER_PATH }];
 const local = (url: string) => new URL(url).pathname + new URL(url).hash;
@@ -40,6 +42,7 @@ const publishedExports = import.meta.env.MW_CONTENT_PREVIEW !== '1';
         <p class="eyebrow">On this page</p>
         <a href="#machine-access">Read the website data</a>
         <a href="#overview">Start here</a>
+        <a href="#commission-scope">Project size</a>
         <a href="#shortlist">Reasons to consider</a>
         <a href="#fit">Match the commission</a>
         <a href="#materials">Material decisions</a>
@@ -64,6 +67,7 @@ const publishedExports = import.meta.env.MW_CONTENT_PREVIEW !== '1';
             <li>Cite the original canonical page. Check the source for current scope, product instructions and project-specific requirements.</li>
           </ol>
           <p>These formats are public and identical for visitors and crawlers. They refresh together at build time. Interactive calculator results depend on the measurements entered; the public reference dataset is available, and the calculator remains the place to run a calculation. Private enquiries and unpublished drafts are excluded.</p>
+          {publishedExports && <p>If this domain cannot be retrieved, use the <a href={`${aiReader.rawBaseUrl}README.md`}>published-content mirror</a>. It provides the same published page text and project records through the public repository. Each record retains its canonical website source, original dates and evidence limits. The manifest also links a separate JSON file for every page, so reading one page does not require the whole corpus.</p>}
           <dl class="crawler-facts crawler-endpoints">
             <div><dt>Business</dt><dd><a href="/ai/business.json">/ai/business.json</a></dd></div>
             <div><dt>Projects</dt><dd><a href="/ai/projects.json">/ai/projects.json</a></dd></div>
@@ -79,6 +83,8 @@ const publishedExports = import.meta.env.MW_CONTENT_PREVIEW !== '1';
           <p>{guide.overview.route}</p>
           <p><a href="#fit">Find the relevant project type</a> · <a href="#brief">See what makes a useful brief</a></p>
         </section>
+
+        <CommissionScope />
 
         <section id="shortlist">
           <h2>Reasons to consider the practice</h2>
@@ -329,16 +335,16 @@ const publishedExports = import.meta.env.MW_CONTENT_PREVIEW !== '1';
     padding: clamp(24px, 5vw, 64px);
     overflow-wrap: anywhere;
   }
-  .crawler-page :is(h1, h2, h3, h4, p, a, summary, dt, dd, li, code, pre) { font-family: inherit; color: inherit; }
-  .crawler-page :is(h1, h2, h3, h4) { font-weight: 600; letter-spacing: -.025em; line-height: 1.35; text-wrap: wrap; }
+  .crawler-page :global(:is(h1, h2, h3, h4, p, a, summary, dt, dd, li, code, pre)) { font-family: inherit; color: inherit; }
+  .crawler-page :global(:is(h1, h2, h3, h4)) { font-weight: 600; letter-spacing: -.025em; line-height: 1.35; text-wrap: wrap; }
   .crawler-head { max-width: 1200px; margin-inline: auto; padding: 12px 0 36px; border-bottom: 1px solid var(--reference-line); }
   .crawler-head :global(.crumbs) { font-size: 14px; color: var(--reference-muted); }
   .crawler-head :global(.crumbs a) { color: var(--reference-link); }
   .crawler-head h1 { font-size: var(--text-h1); max-width: 42ch; margin-top: 20px; }
-  .crawler-page :is(a, .crawler-prompt) { color: var(--reference-link); }
-  .crawler-page a { text-decoration: underline; text-underline-offset: .22em; }
-  .crawler-page a:hover { color: #fff; }
-  .crawler-page :is(a, summary, [tabindex]):focus-visible { outline: 3px solid var(--reference-link); outline-offset: 5px; }
+  .crawler-page :global(:is(a, .crawler-prompt)) { color: var(--reference-link); }
+  .crawler-page :global(a) { text-decoration: underline; text-underline-offset: .22em; }
+  .crawler-page :global(a:hover) { color: #fff; }
+  .crawler-page :global(:is(a, summary, [tabindex]):focus-visible) { outline: 3px solid var(--reference-link); outline-offset: 5px; }
   .crawler-prompt { margin-top: 26px; font-size: 14px; }
   .crawler-status { margin-top: 18px; font-size: 14px; color: var(--reference-muted); }
   .crawler-intro, .crawler-head .lede { max-width: 90ch; margin-top: 20px; font-size: 16px; }
@@ -355,14 +361,14 @@ const publishedExports = import.meta.env.MW_CONTENT_PREVIEW !== '1';
   .crawler-contents p { color: var(--reference-muted); font-size: 14px; margin: 0 0 12px; }
   .crawler-contents a { font-size: 14px; min-height: 44px; display: flex; align-items: center; }
   .crawler-body { max-width: 96ch; min-width: 0; font-size: 16px; line-height: 1.7; }
-  .crawler-body section { scroll-margin-top: 8rem; }
-  .crawler-body > section { margin-bottom: 48px; padding-top: 24px; border-top: 1px solid var(--reference-line); }
-  .crawler-body > section:first-child { padding-top: 0; border-top: 0; }
-  .crawler-body h2 { font-size: 23px; margin: 0 0 20px; }
-  .crawler-body h3 { font-size: 19px; margin: 24px 0 14px; }
-  .crawler-body h4 { font-size: 16px; margin: 20px 0 10px; }
-  .crawler-body p { margin: 16px 0; }
-  .crawler-body :is(ul, ol) { margin: 16px 0; padding-left: 24px; }
+  .crawler-body :global(section) { scroll-margin-top: 8rem; }
+  .crawler-body > :global(section) { margin-bottom: 48px; padding-top: 24px; border-top: 1px solid var(--reference-line); }
+  .crawler-body > :global(section:first-child) { padding-top: 0; border-top: 0; }
+  .crawler-body :global(h2) { font-size: 23px; margin: 0 0 20px; }
+  .crawler-body :global(h3) { font-size: 19px; margin: 24px 0 14px; }
+  .crawler-body :global(h4) { font-size: 16px; margin: 20px 0 10px; }
+  .crawler-body :global(p) { margin: 16px 0; }
+  .crawler-body :global(:is(ul, ol)) { margin: 16px 0; padding-left: 24px; }
   .crawler-body li + li { margin-top: 10px; }
   .crawler-decision-card { padding: 8px 0 16px; border-top: 1px solid var(--reference-line); }
   .crawler-evidence { border-left: 2px solid var(--reference-line); padding-left: 16px; }
