@@ -76,16 +76,6 @@ export const ANALYTICS_EVENTS = ['calculator_complete', 'measurements_click', 'c
 export const LEAD_API_URL: string = import.meta.env.PUBLIC_LEAD_API || '';
 
 /**
- * Where the room preview (/atelier/) reads a pasted wallpaper link:
- * GET /api/link-preview and GET /api/link-image on this origin. On the live site
- * that is the Cloudflare Worker in workers/link-preview, set with PUBLIC_LINK_API
- * (no trailing slash). It falls back to PUBLIC_LEAD_API because the private API
- * serves the same two routes, so a local run of that API needs no second variable.
- * The enquiry form never reads this: it posts only to PUBLIC_LEAD_API.
- */
-export const LINK_API_URL: string = (import.meta.env.PUBLIC_LINK_API || LEAD_API_URL).replace(/\/+$/, '');
-
-/**
  * Google Search Console HTML-tag verification (URL-prefix property).
  * Paste only the content value Google gives you, e.g. 'AbC123...'.
  * Empty means no tag is printed. Domain (DNS TXT) verification needs no change here.

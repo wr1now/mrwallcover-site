@@ -1,7 +1,7 @@
 ---
 title: "Wallpaper my room | Mr Wallcover"
 url: https://www.mrwallcover.com/room-studio/
-description: "Original measured-room wallpaper studies, and the Mr Wallcover Atelier for a wallpaper on a photo of your own wall, while the 3D editor completes testing."
+description: "Explore original measured-room wallpaper studies while Mr Wallcover’s photo and 3D room visualiser completes testing."
 author: "Dorin Burcus"
 last_updated: 2026-10-19
 ---
@@ -12,9 +12,9 @@ Mr Wallcover / Room Studio
 
 See how a wallpaper pattern sits around corners, windows and a chimney breast.
 
-The photo preview is open: [Mr Wallcover Atelier](https://www.mrwallcover.com/atelier/) lays a wallpaper on a photograph of your wall at true scale. The measured 3D editor is still completing testing and is not yet available on this page. Explore three original rendered studies below, or talk to us about your room and chosen finish.
+Our room-photo visualiser and measured 3D editor are completing testing. The interactive service is not yet available on this public page. Explore three original rendered studies below, or talk to us about your room and chosen finish.
 
-[Open the Atelier](https://www.mrwallcover.com/atelier/) [Discuss your room](https://www.mrwallcover.com/contact/)
+[Discuss your room](https://www.mrwallcover.com/contact/)
 
 ## Three rooms. *Three considered finishes.*
 
@@ -52,7 +52,7 @@ An original indigo fan pattern retains its scale across angled walls.
 
 ## A room to make your own.
 
-The [Mr Wallcover Atelier](https://www.mrwallcover.com/atelier/) already lays wallpaper or paint on a photograph of your wall at true scale; the planned studio adds a measured 3D layout and Bauwerk limewash. Free previews and an optional finished-render package are being prepared. Automatic plan reading and live payments remain disabled while the service is verified.
+The planned studio lets you try wallpaper, paint and Bauwerk limewash using a room photograph or a measured 3D layout. Free previews and an optional finished-render package are being prepared. Automatic plan reading and live payments remain disabled while the service is verified.
 
 Colour, texture and light on screen are illustrative. Always check a physical sample in your room.
 

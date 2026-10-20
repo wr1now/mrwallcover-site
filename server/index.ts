@@ -8,10 +8,7 @@ import { createServer, type IncomingMessage, type ServerResponse } from 'node:ht
 import { mkdir, readFile, writeFile, rename } from 'node:fs/promises';
 import path from 'node:path';
 import { timingSafeEqual } from 'node:crypto';
-import { lookup } from 'node:dns/promises';
-import { isIP } from 'node:net';
 import { pathToFileURL } from 'node:url';
-import { isPrivateAddress, isPublicHttpUrl, parseProductPage } from '../src/lib/link-preview.ts';
 import { emptyEnquiry, makeReference, validateEnquiry, FILE_LIMITS, type EnquiryFields, type ValidEnquiry } from '../src/lib/enquiry.ts';
 import { extensionFor, prepareUpload } from '../src/lib/files.ts';
 import { INTAKE_SCHEMA_VERSION, EMAIL_MARKETING_TEXT, EMAIL_MARKETING_VERSION, PRIVACY_NOTICE_VERSION } from '../src/lib/enquiry-context.ts';
@@ -115,7 +112,8 @@ function authorised(req: IncomingMessage): boolean {
   return timingSafeEqual(a, b);
 }
 
-function rateLimited(ip: string, limit = Number(process.env.LEAD_RATE_LIMIT || 8)): boolean {
+function rateLimited(ip: string): boolean {
+  const limit = Number(process.env.LEAD_RATE_LIMIT || 8);
   const windowMs = 10 * 60 * 1000;
   const now = Date.now();
   const hits = (rateBuckets.get(ip) || []).filter((at) => now - at < windowMs);
@@ -479,116 +477,7 @@ async function handle(req: IncomingMessage, res: ServerResponse) {
     return;
   }
 
-  // The room preview reads a wallpaper link here, because a browser cannot read another website itself.
-  if (req.method === 'GET' && (url.pathname === '/api/link-preview' || url.pathname === '/api/link-image')) {
-    if (!originAllowed(req)) {
-      json(res, 403, { error: 'This link could not be read from that address.' });
-      return;
-    }
-    if (rateLimited(`link:${ip}`, Number(process.env.LINK_RATE_LIMIT || 60))) {
-      json(res, 429, { error: 'Too many links from this network just now.' });
-      return;
-    }
-    const target = url.searchParams.get('url') || '';
-    if (!isPublicHttpUrl(target) || !(await resolvesPublicly(target))) {
-      json(res, 400, { error: 'Only a public web address can be read.' });
-      return;
-    }
-    try {
-      if (url.pathname === '/api/link-preview') {
-        const self = `${req.headers['x-forwarded-proto'] || 'http'}://${req.headers.host || '127.0.0.1'}`;
-        const page = await fetchLimited(target, (type) => (type.startsWith('image/') ? LINK_LIMITS.imageBytes : LINK_LIMITS.pageBytes), /^text\/html|^application\/xhtml|^image\/(jpeg|png|webp|avif|gif)$/i);
-        // A link straight to a picture is the picture.
-        if (page.type.startsWith('image/')) {
-          json(res, 200, { ok: true, url: page.url, title: new URL(page.url).hostname, image: page.url, imageProxy: `${self}/api/link-image?url=${encodeURIComponent(page.url)}` });
-          return;
-        }
-        const preview = parseProductPage(page.body.toString('utf8'), page.url);
-        if (!preview.image) {
-          json(res, 422, { error: 'No product image was found on that page.' });
-          return;
-        }
-        json(res, 200, { ok: true, ...preview, imageProxy: `${self}/api/link-image?url=${encodeURIComponent(preview.image)}` });
-        return;
-      }
-      const image = await fetchLimited(target, LINK_LIMITS.imageBytes, /^image\/(jpeg|png|webp|avif|gif)$/i);
-      res.writeHead(200, { 'Content-Type': image.type, 'Content-Length': String(image.body.byteLength), 'Cache-Control': 'private, max-age=300', 'X-Content-Type-Options': 'nosniff' });
-      res.end(image.body);
-    } catch (error) {
-      const reason = error instanceof Error ? error.message : 'failed';
-      json(res, reason === 'too_large' ? 413 : reason === 'type' ? 415 : 502, { error: reason === 'too_large' ? 'That page or image is too large to read.' : reason === 'type' ? 'That address is not a web page or an image.' : 'That page could not be read.' });
-    }
-    return;
-  }
-
   json(res, 404, { error: 'Not found.' });
-}
-
-const LINK_LIMITS = { pageBytes: 2 * 1024 * 1024, imageBytes: 15 * 1024 * 1024, timeoutMs: 10000, redirects: 3 };
-
-/** Every address the name resolves to must be public, so a public name cannot point the server at itself or the LAN. */
-async function resolvesPublicly(target: string): Promise<boolean> {
-  const host = new URL(target).hostname.replace(/^\[|\]$/g, '');
-  if (isIP(host)) return !isPrivateAddress(host);
-  try {
-    const addresses = await lookup(host, { all: true });
-    return addresses.length > 0 && addresses.every((entry) => !isPrivateAddress(entry.address));
-  } catch {
-    return false;
-  }
-}
-
-/** GET with a byte cap, a timeout, a content-type check and manual redirects that are guarded again. */
-async function fetchLimited(target: string, maxBytesFor: number | ((contentType: string) => number), type: RegExp): Promise<{ url: string; type: string; body: Buffer }> {
-  let current = target;
-  for (let hop = 0; hop <= LINK_LIMITS.redirects; hop++) {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), LINK_LIMITS.timeoutMs);
-    try {
-      const response = await fetch(current, { redirect: 'manual', signal: controller.signal, headers: { 'User-Agent': 'Mozilla/5.0 (compatible; MrWallcoverRoomPreview/1.0; +https://www.mrwallcover.com/atelier/)', Accept: type.source.startsWith('^image') ? 'image/*' : 'text/html,application/xhtml+xml' } });
-      if (response.status >= 300 && response.status < 400) {
-        await response.body?.cancel().catch(() => undefined);
-        const location = response.headers.get('location');
-        if (!location) throw new Error('redirect');
-        current = new URL(location, current).href;
-        if (!isPublicHttpUrl(current) || !(await resolvesPublicly(current))) throw new Error('redirect');
-        continue;
-      }
-      if (!response.ok) {
-        await response.body?.cancel().catch(() => undefined);
-        throw new Error('status');
-      }
-      const contentType = (response.headers.get('content-type') || '').split(';')[0].trim().toLowerCase();
-      if (!type.test(contentType)) {
-        await response.body?.cancel().catch(() => undefined);
-        throw new Error('type');
-      }
-      const maxBytes = typeof maxBytesFor === 'function' ? maxBytesFor(contentType) : maxBytesFor;
-      const declared = Number(response.headers.get('content-length') || 0);
-      if (declared > maxBytes) {
-        await response.body?.cancel().catch(() => undefined);
-        throw new Error('too_large');
-      }
-      const chunks: Uint8Array[] = [];
-      let total = 0;
-      const reader = response.body?.getReader();
-      if (!reader) throw new Error('body');
-      for (;;) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        total += value.byteLength;
-        if (total > maxBytes) {
-          await reader.cancel();
-          throw new Error('too_large');
-        }
-        chunks.push(value);
-      }
-      return { url: current, type: contentType, body: Buffer.concat(chunks) };
-    } finally {
-      clearTimeout(timer);
-    }
-  }
-  throw new Error('redirect');
 }
 
 export function startLeadServer(port = 0): Promise<{ port: number; close: () => Promise<void> }> {

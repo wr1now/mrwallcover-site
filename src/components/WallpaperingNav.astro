@@ -1,14 +1,13 @@
 ---
 /** Shared links keep calculator, preparation and the technical reference on separate pages. */
 interface Props {
-  current: 'hub' | 'calculator' | 'preview' | 'guide' | 'preparation' | 'lining' | 'fire';
+  current: 'hub' | 'calculator' | 'guide' | 'preparation' | 'lining' | 'fire';
 }
 import '../styles/wallpapering.css';
 const { current } = Astro.props;
 const parts = [
   { id: 'hub', href: '/wallpapering/', label: 'Wallpapering' },
   { id: 'calculator', href: '/calculator/', label: 'Calculator' },
-  { id: 'preview', href: '/atelier/', label: 'Atelier' },
   { id: 'preparation', href: '/wallpapering/preparation/', label: 'Preparation' },
   { id: 'lining', href: '/wallpapering/lining-and-adhesives/', label: 'Lining & adhesives' },
   { id: 'fire', href: '/advice/wallcovering-fire-ratings-uk/', label: 'Fire ratings & standards' },

@@ -7,7 +7,6 @@ interface ImportMetaEnv {
   readonly PUBLIC_ANALYTICS_SRC?: string;
   readonly PUBLIC_ANALYTICS_WEBSITE_ID?: string;
   readonly PUBLIC_LEAD_API?: string;
-  readonly PUBLIC_LINK_API?: string;
   readonly PUBLIC_GOOGLE_SITE_VERIFICATION?: string;
 }
 

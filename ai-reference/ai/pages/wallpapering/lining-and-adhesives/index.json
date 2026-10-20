@@ -15,7 +15,7 @@
     "html": "https://www.mrwallcover.com/wallpapering/lining-and-adhesives/",
     "markdown": "https://www.mrwallcover.com/wallpapering/lining-and-adhesives/index.md",
     "json": "https://www.mrwallcover.com/ai/pages/wallpapering/lining-and-adhesives/index.json",
-    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/128"
+    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/127"
   },
   "headings": [
     {
@@ -300,10 +300,6 @@
     {
       "url": "https://www.mrwallcover.com/calculator/",
       "text": "Calculator"
-    },
-    {
-      "url": "https://www.mrwallcover.com/atelier/",
-      "text": "Atelier"
     },
     {
       "url": "https://www.mrwallcover.com/wallpapering/preparation/",

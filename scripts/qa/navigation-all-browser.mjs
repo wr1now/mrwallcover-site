@@ -6,7 +6,7 @@ import { launchBrowser, loadPage, serve } from '../visual-browser.mjs';
 const expected = [
   ['Projects','/projects/'], ['Expertise','/services/'], ['Materials','/materials/'],
   ['Wallpapering','/wallpapering/'], ['Wallpaper calculator','/calculator/'],
-  ['Mr Wallcover Atelier','/atelier/'], ['For designers','/professionals/'],
+  ['Wallpaper my room','/room-studio/'], ['For designers','/professionals/'],
   ['Guide','/advice/'], ['About','/about/'], ['AI Crawler','/wallcovering-installation-ai-crawler/'], ['Contact','/get-in-touch/'],
   ['Start your project','/contact/'],
 ];
