@@ -1,0 +1,8 @@
+# Worker image only; the website has no Python or model runtime dependency.
+modal==1.6.2
+pdfplumber==0.11.7
+Pillow==11.3.0
+numpy==1.26.4
+opencv-python-headless==4.11.0.86
+paddleocr==2.9.1
+paddlepaddle==3.0.0

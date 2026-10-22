@@ -1,0 +1,18 @@
+project_id = "mrwallcover-room-studio"
+
+[functions.room-studio]
+verify_jwt = true
+
+[functions.room-studio-payments]
+verify_jwt = false
+
+# Local development defaults only. Production redirect allowlists must use the
+# exact approved site origin; never wildcard customer-controlled hosts.
+[auth]
+site_url = "http://localhost:4321/room-studio/"
+additional_redirect_urls = ["http://localhost:4321/room-studio/"]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true

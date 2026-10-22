@@ -1,0 +1,9 @@
+{
+  "source": "local Blender render",
+  "interiorVisible": true,
+  "turnControls": true,
+  "fullTurnMeanPixelDifference": 0,
+  "pointerPitch": true,
+  "keyboardPitch": true,
+  "errors": []
+}

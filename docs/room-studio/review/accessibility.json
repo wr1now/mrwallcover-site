@@ -1,0 +1,352 @@
+{
+  "scope": "Focused automated desktop WebKit keyboard, accessible-name and layout review. Not a screen-reader test or full WCAG certification.",
+  "engine": "Playwright WebKit26.5",
+  "layouts": [
+    {
+      "layout": {
+        "name": "320css",
+        "width": 320,
+        "height": 900,
+        "scale": 1
+      },
+      "stages": [
+        {
+          "stage": 0,
+          "metrics": {
+            "docWidth": 320,
+            "viewportWidth": 320,
+            "studioWidth": 280,
+            "studioScrollWidth": 278,
+            "wideControls": []
+          },
+          "possiblyUnnamedRoles": [],
+          "computedControl": {
+            "tag": "SELECT",
+            "label": "Room shapeRectangleL-shapeDraw / edit outline",
+            "border": "rgb(131, 141, 120)",
+            "background": "rgb(255, 253, 248)",
+            "colour": "rgb(40, 51, 45)"
+          }
+        },
+        {
+          "stage": 1,
+          "metrics": {
+            "docWidth": 320,
+            "viewportWidth": 320,
+            "studioWidth": 280,
+            "studioScrollWidth": 278,
+            "wideControls": []
+          },
+          "possiblyUnnamedRoles": [],
+          "computedControl": {
+            "tag": "SELECT",
+            "label": "Selected wallWall 1Wall 2Wall 3Wall 4",
+            "border": "rgb(131, 141, 120)",
+            "background": "rgb(255, 253, 248)",
+            "colour": "rgb(40, 51, 45)"
+          }
+        },
+        {
+          "stage": 2,
+          "metrics": {
+            "docWidth": 320,
+            "viewportWidth": 320,
+            "studioWidth": 280,
+            "studioScrollWidth": 278,
+            "wideControls": []
+          },
+          "possiblyUnnamedRoles": [],
+          "computedControl": {
+            "tag": "SELECT",
+            "label": "LightingNeutral daylightWarm light",
+            "border": "rgb(131, 141, 120)",
+            "background": "rgb(255, 253, 248)",
+            "colour": "rgb(40, 51, 45)"
+          }
+        },
+        {
+          "stage": 3,
+          "metrics": {
+            "docWidth": 320,
+            "viewportWidth": 320,
+            "studioWidth": 280,
+            "studioScrollWidth": 278,
+            "wideControls": []
+          },
+          "possiblyUnnamedRoles": []
+        }
+      ],
+      "keyboard": [
+        {
+          "check": "macOS native Option+Tab moves between stage buttons; Enter opens Finishes",
+          "passed": true
+        },
+        {
+          "check": "Native keyboard Width edit/Tab commit saved to IndexedDB",
+          "passed": true
+        },
+        {
+          "check": "Native Space activates focused SVG door and opens labelled door controls",
+          "passed": true,
+          "focusedOpening": {
+            "tag": "g",
+            "role": "button",
+            "text": "Select door, 850 millimetres wide",
+            "type": null,
+            "rect": {
+              "x": 99.9529037475586,
+              "y": -335.2510986328125,
+              "width": 30.02355194091797,
+              "height": 0
+            },
+            "focusVisible": true,
+            "outline": "3px solid rgb(67, 117, 87)",
+            "occluder": null
+          }
+        }
+      ]
+    },
+    {
+      "layout": {
+        "name": "200percent-equivalent",
+        "width": 640,
+        "height": 450,
+        "scale": 2
+      },
+      "stages": [
+        {
+          "stage": 0,
+          "metrics": {
+            "docWidth": 640,
+            "viewportWidth": 640,
+            "studioWidth": 600,
+            "studioScrollWidth": 598,
+            "wideControls": []
+          },
+          "possiblyUnnamedRoles": [],
+          "computedControl": {
+            "tag": "SELECT",
+            "label": "Room shapeRectangleL-shapeDraw / edit outline",
+            "border": "rgb(131, 141, 120)",
+            "background": "rgb(255, 253, 248)",
+            "colour": "rgb(40, 51, 45)"
+          }
+        },
+        {
+          "stage": 1,
+          "metrics": {
+            "docWidth": 640,
+            "viewportWidth": 640,
+            "studioWidth": 600,
+            "studioScrollWidth": 598,
+            "wideControls": []
+          },
+          "possiblyUnnamedRoles": [],
+          "computedControl": {
+            "tag": "SELECT",
+            "label": "Selected wallWall 1Wall 2Wall 3Wall 4",
+            "border": "rgb(131, 141, 120)",
+            "background": "rgb(255, 253, 248)",
+            "colour": "rgb(40, 51, 45)"
+          }
+        },
+        {
+          "stage": 2,
+          "metrics": {
+            "docWidth": 640,
+            "viewportWidth": 640,
+            "studioWidth": 600,
+            "studioScrollWidth": 598,
+            "wideControls": []
+          },
+          "possiblyUnnamedRoles": [],
+          "computedControl": {
+            "tag": "SELECT",
+            "label": "LightingNeutral daylightWarm light",
+            "border": "rgb(131, 141, 120)",
+            "background": "rgb(255, 253, 248)",
+            "colour": "rgb(40, 51, 45)"
+          }
+        },
+        {
+          "stage": 3,
+          "metrics": {
+            "docWidth": 640,
+            "viewportWidth": 640,
+            "studioWidth": 600,
+            "studioScrollWidth": 598,
+            "wideControls": []
+          },
+          "possiblyUnnamedRoles": []
+        }
+      ],
+      "keyboard": [
+        {
+          "check": "macOS native Option+Tab moves between stage buttons; Enter opens Finishes",
+          "passed": true
+        },
+        {
+          "check": "Native keyboard Width edit/Tab commit saved to IndexedDB",
+          "passed": true
+        },
+        {
+          "check": "Native Space activates focused SVG door and opens labelled door controls",
+          "passed": true,
+          "focusedOpening": {
+            "tag": "g",
+            "role": "button",
+            "text": "Select door, 850 millimetres wide",
+            "type": null,
+            "rect": {
+              "x": 259.9529113769531,
+              "y": -757.6104736328125,
+              "width": 30.023529052734375,
+              "height": 0
+            },
+            "focusVisible": true,
+            "outline": "3px solid rgb(67, 117, 87)",
+            "occluder": null
+          }
+        }
+      ]
+    }
+  ],
+  "dockClearance": {
+    "engine": "Playwright WebKit26.5",
+    "scope": "Studio opt-in dock clearance;320CSSpx and200%-equivalent desktop effective viewport; native macOS Option+Tab",
+    "checkedAt": "2026-10-18T20:40:11.475Z",
+    "cases": [
+      {
+        "width": 320,
+        "height": 900,
+        "focusedDismiss": {
+          "active": {
+            "tag": "BUTTON",
+            "name": "Dismiss message",
+            "insideStudio": true,
+            "rect": {
+              "top": 428.15625,
+              "bottom": 472.15625,
+              "left": 48,
+              "right": 92
+            },
+            "outline": "3px solid rgb(67, 117, 87)",
+            "focusVisible": true
+          },
+          "dock": {
+            "display": "none",
+            "visibility": "visible",
+            "opacity": "1",
+            "top": 0,
+            "bottom": 0
+          },
+          "ownCentreHit": true,
+          "hit": {
+            "tag": "BUTTON",
+            "class": "",
+            "text": "×"
+          },
+          "bodyClasses": "field-focus",
+          "scrollY": 546
+        },
+        "afterLeavingStudio": {
+          "active": {
+            "tag": "A",
+            "name": "Talk to us about installation",
+            "insideStudio": false,
+            "rect": {
+              "top": 424.78125,
+              "bottom": 474.21875,
+              "left": 20,
+              "right": 238.59375
+            },
+            "outline": "2px solid rgb(107, 84, 47)",
+            "focusVisible": true
+          },
+          "dock": {
+            "display": "flex",
+            "visibility": "visible",
+            "opacity": "1",
+            "top": 832,
+            "bottom": 888
+          },
+          "ownCentreHit": true,
+          "hit": {
+            "tag": "SPAN",
+            "class": "",
+            "text": "Talk to us about installation"
+          },
+          "bodyClasses": "",
+          "scrollY": 2905
+        },
+        "passed": true
+      },
+      {
+        "width": 640,
+        "height": 450,
+        "focusedDismiss": {
+          "active": {
+            "tag": "BUTTON",
+            "name": "Dismiss message",
+            "insideStudio": true,
+            "rect": {
+              "top": 405.59375,
+              "bottom": 449.59375,
+              "left": 548,
+              "right": 592
+            },
+            "outline": "3px solid rgb(67, 117, 87)",
+            "focusVisible": true
+          },
+          "dock": {
+            "display": "none",
+            "visibility": "visible",
+            "opacity": "1",
+            "top": 0,
+            "bottom": 0
+          },
+          "ownCentreHit": true,
+          "hit": {
+            "tag": "BUTTON",
+            "class": "",
+            "text": "×"
+          },
+          "bodyClasses": "field-focus",
+          "scrollY": 418
+        },
+        "afterLeavingStudio": {
+          "active": {
+            "tag": "A",
+            "name": "Talk to us about installation",
+            "insideStudio": false,
+            "rect": {
+              "top": 199.703125,
+              "bottom": 249.140625,
+              "left": 20,
+              "right": 238.59375
+            },
+            "outline": "2px solid rgb(107, 84, 47)",
+            "focusVisible": true
+          },
+          "dock": {
+            "display": "flex",
+            "visibility": "visible",
+            "opacity": "1",
+            "top": 382,
+            "bottom": 438
+          },
+          "ownCentreHit": true,
+          "hit": {
+            "tag": "SPAN",
+            "class": "",
+            "text": "Talk to us about installation"
+          },
+          "bodyClasses": "",
+          "scrollY": 2588
+        },
+        "passed": true
+      }
+    ],
+    "errors": []
+  }
+}

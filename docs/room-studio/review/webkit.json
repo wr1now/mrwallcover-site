@@ -1,0 +1,107 @@
+{
+  "scope": "Automated desktop Playwright WebKit with desktop and touch/narrow viewport contexts. Not installed Safari, physical iPhone Safari or Android Chrome acceptance.",
+  "browserVersion": "26.5",
+  "startedAt": "2026-10-18T20:33:37.912Z",
+  "checks": [
+    {
+      "check": "Live room canvas",
+      "width": 1440,
+      "webgl": {
+        "available": true,
+        "drawingBuffer": [
+          591,
+          480
+        ]
+      }
+    },
+    {
+      "check": "Original fixture import, edit/undo/redo, IndexedDB reload and no overflow",
+      "width": 1440,
+      "touch": false
+    },
+    {
+      "check": "PNG artwork decode, crop, 90-degree rotation, visible repeat proof and acknowledgement"
+    },
+    {
+      "check": "Actual editable JSON download bytes and re-import preserve geometry and source artwork; cloud disabled",
+      "width": 1440
+    },
+    {
+      "check": "Live room canvas",
+      "width": 390,
+      "webgl": {
+        "available": true,
+        "drawingBuffer": [
+          322,
+          340
+        ]
+      }
+    },
+    {
+      "check": "Original fixture import, edit/undo/redo, IndexedDB reload and no overflow",
+      "width": 390,
+      "touch": true
+    },
+    {
+      "check": "Actual editable JSON download bytes and re-import preserve geometry and source artwork; cloud disabled",
+      "width": 390
+    },
+    {
+      "check": "Actual PNG preview, calibration and manual trace",
+      "dimensions": {
+        "width": 1000,
+        "height": 700
+      },
+      "page2": false
+    },
+    {
+      "check": "Actual JPG preview, calibration and manual trace",
+      "dimensions": {
+        "width": 1000,
+        "height": 700
+      },
+      "page2": false
+    },
+    {
+      "check": "Actual PDF preview, calibration and manual trace",
+      "dimensions": {
+        "width": 1400,
+        "height": 2000
+      },
+      "page2": true
+    },
+    {
+      "check": "No-JavaScript fallback"
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "blockedRequests": [],
+  "contexts": [
+    {
+      "width": 1440,
+      "touch": false,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Safari/605.1.15",
+      "maxTouchPoints": 0,
+      "coarse": false,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Safari/605.1.15",
+      "maxTouchPoints": 0,
+      "coarse": true,
+      "viewport": {
+        "width": 390,
+        "height": 900
+      }
+    }
+  ],
+  "status": "passed",
+  "finishedAt": "2026-10-18T20:33:55.542Z",
+  "runtime": "Playwright WebKit build 2336, installed only in ignored task-local test tooling"
+}

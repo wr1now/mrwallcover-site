@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
 import { computeLastmod } from './scripts/sitemap-lastmod.mjs';
@@ -64,6 +65,7 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { inlineStylesheets: 'auto' },
   integrations: [
+    react({ include: ['**/room-studio/**/*.tsx', '**/components/react/**/*.tsx'] }),
     {
       name: 'mw-sitemap-outdir',
       hooks: {

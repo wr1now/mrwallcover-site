@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { withoutPdfDiagnostic } from './helpers/vendor-diagnostics.ts';
 import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { test } from 'node:test';
@@ -373,7 +374,7 @@ test('draft editorial pages are not built, not in the sitemap, not in llms.txt a
   }
 });
 
-test('no public dist file contains TODO', async () => {
+test('no public dist file contains unresolved site TODOs (known PDF.js runtime diagnostic excluded)', async () => {
   async function textFiles(dir: string): Promise<string[]> {
     const entries = await readdir(dir, { withFileTypes: true });
     const out: string[] = [];
@@ -388,7 +389,7 @@ test('no public dist file contains TODO', async () => {
   assert.ok(files.length > 50);
   const offenders: string[] = [];
   for (const file of files) {
-    if ((await readFile(file, 'utf8')).includes('TODO')) offenders.push(file);
+    if (withoutPdfDiagnostic(await readFile(file, 'utf8'), file).includes('TODO')) offenders.push(file);
   }
   assert.deepEqual(offenders, []);
 });

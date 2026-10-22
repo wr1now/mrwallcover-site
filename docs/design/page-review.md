@@ -358,6 +358,51 @@ Direct HTTP retrieval and browser tests establish public endpoint access only. T
 
 Reconciled with main `90455ef` before release, retaining the shared larger material studies and their updated template instructions. Integrated-head checks are rerun against this source.
 
+## Room Studio implementation review — 18 October 2026
+
+`/room-studio/` adds a measured one-room editor with a live 3D view, dimensioned
+plan, doors/windows, local PDF/image tracing and four visible stages. It reuses
+the shared site navigation, footer, type, palette and action treatment through a
+React Action counterpart. The room geometry and customer-uploaded artwork are
+the meaningful visual content. Test rooms and geometric wallpaper are original
+illustrations; no commissioned project, maker wallpaper photograph or completed
+installation is fabricated.
+
+Finish controls support custom HEX paint, physically calibrated repeat wallpaper
+and murals, per-wall/height-band placement, plus the complete dated Bauwerk UK
+snapshot: 358 published colours sourced on 18 October 2026. Only public factual
+product and website-preview colour metadata is retained. The original limewash
+texture and screen colour are explicitly approximate, with official physical
+sample links. [Catalogue provenance](../room-studio-catalogue.md) records source,
+refresh checks and the limits of this preview.
+
+The scene, finish library, palette and PDF handling load within this route as
+needed. The local editor uses IndexedDB drafts/confirmed versions and editable
+JSON export. It preserves damaged drafts for recovery rather than overwriting
+them. A confirmed version freezes the exact room, finishes, lighting and cameras;
+later edits require confirmation again. An installation enquiry uses copied
+readable finish text; a room is not submitted automatically.
+
+The browser preview is independent of the private backend and AI providers.
+Cloud saving, automatic plan interpretation and finished Blender rendering have
+implementation contracts but remain disabled and undeployed. The interface says
+so. Local tracing is available now; automatic interpretation still requires the
+separate staging verification described in the [backend runbook](../room-studio/backend.md).
+No paid service, real customer upload, email or model request is part of this
+review. The private research archive is not copied into the site.
+
+Focused automated journeys cover actual upload/crop/rotation and half-drop proof
+pixels, proportional murals, paint/palette/band application, measured outline
+drawing, angled-wall opening drags, reload and protected-draft recovery. The
+room preview is an essential editing view rendered on demand; it stays usable
+with reduced motion and has a no-JavaScript contact fallback. Live material
+replacement is checked through rendered pixels, and browser mesh/UV attributes
+are checked against the compiled package. The local renderer uses those same
+meshes, UVs and saved cameras. See the [browser review](../room-studio/review/browser-review.md),
+[checks](../room-studio/review/checks.json) and [render review](../room-studio/review/render-review.md).
+Production service and physical-device acceptance remains pending. See [Room Studio architecture and acceptance
+checklist](../room-studio/README.md).
+
 ## Makers publication — 18 October 2026
 
 Owner approved the reviewed copy and authorised publication and merge after checks. Enabled the curated 20 profiles and 42 routes, retaining both purchasing exclusions. Moved 22 visual decisions to the published route ledger. Static reference layouts, shared components and unchanged source check dates remain appropriate; no new imagery or claims were added. Repeat normal/review publication checks, responsive filtering and no-JS checks, source/name guards and hosted integrated checks before merge.
@@ -568,6 +613,11 @@ Source checks pass (153 tests), as do all 294 built-site tests, typography/contr
 
 Exact-head hosted checks and actual reader/live deployment verification must complete before announcing release. The alternate route is not a claim that the custom-domain reader failure is repaired or that any assistant will index or recommend the business. The owner's existing release authorisation applies; unrelated draft and private-seed publication boundaries remain.
 
+## Private Room Studio specifications — 19 October 2026
+
+The scratch manufacturer's preview now uses `StudySpecifications.astro`: a full-width section heading and three numbered study articles replace the inherited layout that confined every product record to the right-hand half of the page. Each article keeps the official source with its title, separates the maker's specification into a readable fact strip, and groups the existing notes into Source and scale, Room set-out, Material appearance, and Review and permissions. The notes use 18px reading text and 15px labels. Two columns appear only when an article has at least 44rem of content width; phone and intermediate layouts stack the groups. This technical record is deliberately text-led; the existing room imagery already explains the studies, and another visual would compete with the assumptions.
+
+Local before/after screenshots and the browser receipt are retained under ignored `.tmp/specifications-layout-review/`. Chromium checks passed at 360, 390, 768, 1024, 1280 and 1440px: all articles span the section, no horizontal overflow, all 39 exact notes and maker specifications preserved, and readable content without JavaScript. The editor also hydrates without page errors. The private preview rebuild verifies the existing render input/output hashes; 15 focused manufacturer/relief tests and Studio TypeScript pass. Independent source review found no actionable issue. The full site/deployment suites were not rerun for this isolated private presentation change. The public route, reader mirror and publication status are unchanged; private pixels, render packages and screenshots remain outside the public repository.
 
 ## Concise home, content relocation and quieter shared graphics — 19 October 2026
 
@@ -621,3 +671,11 @@ The owner explicitly requested publishing the fuller local menu, superseding the
 The new `/room-studio/` introduction prevents the menu link opening a missing page. Three original Blender room studies explain the intended service and are labelled as illustrations. The page explicitly says the interactive photo/3D application is still completing testing; payment and AI services are not enabled by this release. The [artwork provenance](full-menu/room-study-provenance.md) records original sources, physical calibration and image hashes. No private manufacturer studies or customer files are included.
 
 Focused browser checks pass all twelve links at 360, 390, 768, 1024, 1280 and 1440px, including real destination responses, 44px clickable controls, mobile Enter/Escape/focus return, no horizontal overflow and both no-JavaScript layouts. Phone and desktop screenshots were visually inspected. Full-source and release-suite results follow in the final receipt before publication.
+
+## Wallpaper my room application — 19 October 2026
+
+The application adds two explicit starts inside the existing Room Studio route: a guided room-photo compositor and the measured 3D editor. The page uses Base, the shared footer/actions and original rendered example cards. Its wording distinguishes free browser work, the optional paid output package and disabled cloud/AI/payment services. The owner subsequently requested all eleven navigation destinations plus Start your project; a separate menu release handles public access while the interactive application stays under review.
+
+Original numbered-panel fixtures show scale, sequence, clipping and camera behavior; photo fixtures show perspective, protected room pixels and comparison controls. They explain the product without implying supplier permission or completed work. The [delivery record](../room-studio/wallpaper-my-room.md) includes [desktop/phone screenshots and the local receipt](../room-studio/review/wallpaper-my-room/checks.json). The two HD stills and complete 4K panorama from an actual fresh customer-confirmed version were inspected. Rendered detail remains limited by the supplied artwork; unverified material response stays illustrative.
+
+Local browser journeys cover manual room editing/tracing, upload/proof, finite panels, palette/paint/Bauwerk controls, camera placement/rejection, comparison/export/reopen, protected draft recovery, delayed photo deletion and real panorama controls. Actual browser GPU data and Blender mesh/UV/camera data are checked. Both editors inherit mobile dock clearance and keyboard controls. Hosted payments/processing, actual phones and operating costs remain explicit gates; this record does not authorise activating those services.

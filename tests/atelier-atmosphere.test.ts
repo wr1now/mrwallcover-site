@@ -253,6 +253,10 @@ test('new shared content families inherit the motif while utilities stay static 
     assert.ok(await page.$eval('main h1', (heading:HTMLElement) => !!heading.textContent?.trim()), 'server-rendered reading remains complete without enhancement');
     // The full no-JS menu can occupy the first viewport; inspect the actual reading surface.
     await page.$eval('main h1', (heading:HTMLElement) => heading.scrollIntoView({block:'center',behavior:'instant'}));
+    // The complete no-JS menu grows when a real destination is added. Test
+    // the reading ground after scrolling past it, clear of the sticky header,
+    // rather than sampling whichever texture phase happens to meet the fold.
+    await page.$eval('main', (main:HTMLElement) => window.scrollTo({ top:window.scrollY + main.getBoundingClientRect().top - 112, behavior:'instant' }));
     await assertGutterPaint(page, 390, { scripts:false });
     await assertLinenPaint(page, 390, { scripts:false });
   });

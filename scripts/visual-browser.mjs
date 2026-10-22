@@ -7,7 +7,7 @@ import puppeteer from 'puppeteer-core';
 
 export async function serve(directory) {
   const root = resolve(directory);
-  const types = { '.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.svg':'image/svg+xml', '.webp':'image/webp', '.avif':'image/avif', '.jpg':'image/jpeg', '.png':'image/png', '.woff2':'font/woff2', '.json':'application/json' };
+  const types = { '.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.mjs':'text/javascript', '.wasm':'application/wasm', '.svg':'image/svg+xml', '.webp':'image/webp', '.avif':'image/avif', '.jpg':'image/jpeg', '.png':'image/png', '.woff2':'font/woff2', '.json':'application/json' };
   const server = createServer(async (req, res) => {
     try {
       let file = resolve(root, '.' + decodeURIComponent(new URL(req.url, 'http://localhost').pathname));

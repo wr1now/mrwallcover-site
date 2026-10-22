@@ -1,0 +1,262 @@
+import { assignmentOrigin, finishTextures, orderedPanels, panelMaterialId } from './wall-runs.ts';
+import { createReliefWall } from './relief.ts';
+import type { ArtworkFinish, CompiledMaterial, CompiledMesh, FinishAsset, Point2, RenderPackage, RoomDefinition, RoomRevision, StudioCamera, Vec3, WallFinishAssignment } from './types.ts';
+import { pointInsideRoom, validateProject, validateRoom, wallLength } from './validation.ts';
+export { pointInsideRoom, wallLength } from './validation.ts';
+
+export const COMPILER_VERSION = 'room-studio-geometry/2.0.0';
+const mm = (value: number) => value / 1000;
+const EPS = 0.00001;
+type Pair = [number, number];
+const quadIndices = [0, 1, 2, 0, 2, 3];
+
+export function createRectangle(widthMm = 4200, depthMm = 3600, heightMm = 2600): RoomDefinition {
+  return { vertices: [{ x: 0, z: 0, wallId: 'wall-south' }, { x: widthMm, z: 0, wallId: 'wall-east' }, { x: widthMm, z: depthMm, wallId: 'wall-north' }, { x: 0, z: depthMm, wallId: 'wall-west' }], heightMm, openings: [], skirtingMm: 100, corniceMm: 80, confirmed: false };
+}
+export function createLShape(widthMm = 5200, depthMm = 4200, heightMm = 2600, notchWidthMm = 1800, notchDepthMm = 1600): RoomDefinition {
+  return { ...createRectangle(widthMm, depthMm, heightMm), vertices: [{ x: 0, z: 0, wallId: 'wall-south' }, { x: widthMm, z: 0, wallId: 'wall-east' }, { x: widthMm, z: depthMm - notchDepthMm, wallId: 'wall-return-north' }, { x: widthMm - notchWidthMm, z: depthMm - notchDepthMm, wallId: 'wall-return-east' }, { x: widthMm - notchWidthMm, z: depthMm, wallId: 'wall-north' }, { x: 0, z: depthMm, wallId: 'wall-west' }] };
+}
+
+function cross(a: Point2, b: Point2, c: Point2): number { return (b.x - a.x) * (c.z - a.z) - (b.z - a.z) * (c.x - a.x); }
+/** Ear clipping keeps concave rooms closed; all calculations remain floating point. */
+export function triangulateRoom(points: Point2[]): number[] {
+  const remaining = points.map((_, i) => i), triangles: number[] = [];
+  let guard = points.length * points.length;
+  const inTriangle = (p: Point2, a: Point2, b: Point2, c: Point2) => cross(a, b, p) >= -EPS && cross(b, c, p) >= -EPS && cross(c, a, p) >= -EPS;
+  while (remaining.length > 3 && guard-- > 0) {
+    let clipped = false;
+    for (let j = 0; j < remaining.length; j++) {
+      const ia = remaining[(j + remaining.length - 1) % remaining.length], ib = remaining[j], ic = remaining[(j + 1) % remaining.length];
+      if (cross(points[ia], points[ib], points[ic]) <= EPS) continue;
+      if (remaining.some(i => i !== ia && i !== ib && i !== ic && inTriangle(points[i], points[ia], points[ib], points[ic]))) continue;
+      triangles.push(ia, ib, ic); remaining.splice(j, 1); clipped = true; break;
+    }
+    if (!clipped) {
+      const collinear = remaining.findIndex((ib, j) => Math.abs(cross(points[remaining[(j + remaining.length - 1) % remaining.length]], points[ib], points[remaining[(j + 1) % remaining.length]])) <= EPS);
+      if (collinear >= 0) remaining.splice(collinear, 1); else throw new Error('Room triangulation failed; check the wall outline.');
+    }
+  }
+  if (remaining.length === 3) triangles.push(...remaining);
+  if (!triangles.length) throw new Error('Room has no triangulatable floor.');
+  return triangles;
+}
+
+function distanceToEdge(p: Point2, a: Point2, b: Point2): number {
+  const dx = b.x - a.x, dz = b.z - a.z, t = Math.max(0, Math.min(1, ((p.x - a.x) * dx + (p.z - a.z) * dz) / (dx * dx + dz * dz)));
+  return Math.hypot(p.x - a.x - t * dx, p.z - a.z - t * dz);
+}
+export function suggestCameras(room: RoomDefinition, preferredWallIds: string[] = [], finishBands: WallFinishAssignment[] = []): StudioCamera[] {
+  if (validateRoom(room).length) return [];
+  if (!preferredWallIds.length) preferredWallIds = room.vertices.map(vertex => vertex.wallId);
+  const xs = room.vertices.map(v => v.x), zs = room.vertices.map(v => v.z), minX = Math.min(...xs), minZ = Math.min(...zs), width = Math.max(...xs) - minX, depth = Math.max(...zs) - minZ;
+  const candidates: (Point2 & { clearance: number })[] = [];
+  for (let x = 1; x < 12; x++) for (let z = 1; z < 12; z++) {
+    const p = { x: minX + width * x / 12, z: minZ + depth * z / 12 };
+    if (pointInsideRoom(room, p)) candidates.push({ ...p, clearance: Math.min(...room.vertices.map((a, i) => distanceToEdge(p, a, room.vertices[(i + 1) % room.vertices.length]))) });
+  }
+  if (!candidates.length) {
+    const tri = triangulateRoom(room.vertices).slice(0, 3).map(i => room.vertices[i]);
+    const p = { x: tri.reduce((s, v) => s + v.x, 0) / 3, z: tri.reduce((s, v) => s + v.z, 0) / 3 };
+    candidates.push({ ...p, clearance: 1 });
+  }
+  const centre = candidates.reduce((a, b) => b.clearance > a.clearance ? b : a);
+  const safe = candidates.filter(p => p.clearance >= Math.min(250, centre.clearance * 0.7));
+  const first = safe.reduce((a, b) => Math.hypot(b.x - centre.x, b.z - centre.z) > Math.hypot(a.x - centre.x, a.z - centre.z) ? b : a, centre);
+  const second = safe.reduce((a, b) => Math.hypot(b.x - first.x, b.z - first.z) > Math.hypot(a.x - first.x, a.z - first.z) ? b : a, centre);
+  const eye = mm(Math.min(1550, room.heightMm - 200));
+  const aim = (p: Point2): Vec3 => Math.hypot(p.x - centre.x, p.z - centre.z) < 1 ? [mm(centre.x + 100), eye, mm(centre.z)] : [mm(centre.x), eye, mm(centre.z)];
+  if (preferredWallIds.length) {
+    // A line that crosses any other surveyed wall is occluded, including a
+    // narrow chimney return that coarse point sampling could miss.
+    const visible = (p: Point2, target: Point2) => !room.vertices.some((a, index) => {
+      const b = room.vertices[(index + 1) % room.vertices.length], rx = target.x - p.x, rz = target.z - p.z, ex = b.x - a.x, ez = b.z - a.z;
+      const denominator = rx * ez - rz * ex;
+      if (Math.abs(denominator) < EPS) return false;
+      const t = ((a.x - p.x) * ez - (a.z - p.z) * ex) / denominator;
+      const u = ((a.x - p.x) * rz - (a.z - p.z) * rx) / denominator;
+      return t > EPS && t < 1 - EPS && u >= -EPS && u <= 1 + EPS;
+    });
+    const subjects = room.vertices.flatMap((a, index) => {
+      if (!preferredWallIds.includes(a.wallId)) return [];
+      const b = room.vertices[(index + 1) % room.vertices.length], length = wallLength(room, a.wallId), dx = (b.x - a.x) / length, dz = (b.z - a.z) / length;
+      const openings = room.openings.filter(opening => opening.wallId === a.wallId);
+      const assigned = finishBands.filter(band => band.wallId === a.wallId);
+      const bands = assigned.length ? assigned : [{ fromMm: room.skirtingMm, toMm: room.heightMm - room.corniceMm }];
+      let area = 0, region = { left: 0, right: length, bottom: 0, top: room.heightMm, area: 0 };
+      for (const band of bands) {
+        const bottom = Math.max(room.skirtingMm, band.fromMm), top = Math.min(room.heightMm - room.corniceMm, band.toMm ?? room.heightMm);
+        if (top <= bottom) continue;
+        area += length * (top - bottom) - openings.reduce((sum, opening) => sum + opening.widthMm * Math.max(0, Math.min(top, opening.sillMm + opening.heightMm) - Math.max(bottom, opening.sillMm)), 0);
+        const cuts = unique([0, length, ...openings.flatMap(opening => [opening.offsetMm, opening.offsetMm + opening.widthMm])]);
+        // Enumerate horizontal spans and merge blocked vertical intervals to
+        // find the largest complete solid rectangle, rather than aim at a window.
+        for (let left = 0; left < cuts.length - 1; left++) for (let right = left + 1; right < cuts.length; right++) {
+          const blocked = openings.filter(opening => opening.offsetMm < cuts[right] - EPS && opening.offsetMm + opening.widthMm > cuts[left] + EPS).map(opening => [Math.max(bottom, opening.sillMm), Math.min(top, opening.sillMm + opening.heightMm)]).filter(([low, high]) => high > low).sort(([low], [other]) => low - other);
+          let cursor = bottom;
+          for (const [low, high] of [...blocked, [top, top]]) {
+            const candidateArea = (cuts[right] - cuts[left]) * (low - cursor);
+            if (candidateArea > region.area) region = { left: cuts[left], right: cuts[right], bottom: cursor, top: low, area: candidateArea };
+            cursor = Math.max(cursor, high);
+          }
+        }
+      }
+      if (region.area <= 0 || area <= 0) return [];
+      const along = (region.left + region.right) / 2;
+      return [{ x: a.x + dx * along, z: a.z + dz * along, y: (region.bottom + region.top) / 2, dx, dz, area, wallId: a.wallId }];
+    }).sort((a, b) => b.area - a.area);
+    const views: StudioCamera[] = [];
+    for (const target of subjects) {
+      let choices = safe.filter(p => visible(p, target));
+      const frontal = choices.filter(p => { const x = p.x - target.x, z = p.z - target.z; return (-target.dz * x + target.dx * z) / Math.max(1, Math.hypot(x, z)) >= .4; });
+      if (frontal.length) choices = frontal;
+      if (!choices.length) continue;
+      const score = (p: Point2) => Math.hypot(p.x - target.x, p.z - target.z) + (views.length ? Math.hypot(p.x - views[0].position[0] * 1000, p.z - views[0].position[2] * 1000) * .4 : 0);
+      const position = choices.reduce((a, b) => score(b) > score(a) ? b : a);
+      views.push({ id: `still-${views.length + 1}`, kind: 'perspective', position: [mm(position.x), eye, mm(position.z)], target: [mm(target.x), mm(target.y), mm(target.z)], fov: 70 });
+      if (views.length === 2) break;
+    }
+    if (views.length === 1) {
+      const original = views[0], target = { x: original.target[0] * 1000, z: original.target[2] * 1000 };
+      const choices = safe.filter(p => visible(p, target));
+      const alternative = choices.reduce((a, b) => Math.hypot(b.x - original.position[0] * 1000, b.z - original.position[2] * 1000) > Math.hypot(a.x - original.position[0] * 1000, a.z - original.position[2] * 1000) ? b : a, choices[0] ?? centre);
+      views.push({ ...original, id: 'still-2', position: [mm(alternative.x), eye, mm(alternative.z)] });
+    }
+    if (views.length) return [...views, { id: 'panorama-1', kind: 'panorama', position: [mm(centre.x), eye, mm(centre.z)], target: [mm(centre.x), eye, mm(centre.z + 1000)], fov: 90 }];
+  }
+  return [{ id: 'still-1', kind: 'perspective', position: [mm(first.x), eye, mm(first.z)], target: aim(first), fov: 65 }, { id: 'still-2', kind: 'perspective', position: [mm(second.x), eye, mm(second.z)], target: aim(second), fov: 65 }, { id: 'panorama-1', kind: 'panorama', position: [mm(centre.x), eye, mm(centre.z)], target: [mm(centre.x), eye, mm(centre.z + 1000)], fov: 90 }];
+}
+
+function material(f: FinishAsset): CompiledMaterial {
+  if (f.type === 'paint') return { id: f.id, type: f.type, colour: f.colour, roughness: f.sheen === 'matte' ? 0.92 : 0.66 };
+  if (f.type === 'bauwerk') return { id: f.id, type: f.type, colour: f.colour, roughness: 0.98, seed: f.seed };
+  return { id: f.id, type: f.type, colour: '#ffffff', roughness: 0.88, textureId: f.texture.id, repeat: f.type === 'wallpaper', texturePreparation: { crop: { ...f.calibration.crop }, rotation: f.calibration.rotation }, ...(f.appearance ? { appearance: { ...f.appearance, ...(f.appearance.relief ? { relief: { ...f.appearance.relief } } : {}) } } : {}) };
+}
+function addQuad(meshes: CompiledMesh[], id: string, surface: CompiledMesh['surface'], materialId: string, points: Vec3[], normal: Vec3, uv: Pair[] = [[0, 0], [1, 0], [1, 1], [0, 1]], wallId?: string): void {
+  if (meshes.length >= 30000) throw new Error('Room geometry is too complex. Reduce the number of openings or finish bands.');
+  meshes.push({ id, surface, materialId, ...(wallId ? { wallId } : {}), positions: points.flat(), normals: Array(4).fill(normal).flat(), uvs: uv.flat(), indices: [...quadIndices] });
+}
+function unique(values: number[]): number[] { return [...new Set(values.map(v => Math.round(v * 1e6) / 1e6))].sort((a, b) => a - b); }
+function isArtwork(f: FinishAsset | undefined): f is ArtworkFinish { return !!f && (f.type === 'wallpaper' || f.type === 'mural'); }
+
+/** Meshes and UVs are the authority for all renderers. No renderer reapplies set-out. */
+export function compileRoom(revision: RoomRevision): RenderPackage {
+  if (!revision || typeof revision.id !== 'string' || !revision.id || revision.id.length > 200 || !revision.project || revision.projectId !== revision.project.id || !Number.isInteger(revision.number) || revision.number < 1 || revision.number !== revision.project.revision || typeof revision.createdAt !== 'string' || !Number.isFinite(Date.parse(revision.createdAt))) throw new Error('revision: Supply an identified snapshot with matching project ID and revision number.');
+  const project = revision.project, issues = validateProject(project);
+  if (issues.length) throw new Error(issues.map(i => `${i.path}: ${i.message}`).join('\n'));
+  const room = project.room, meshes: CompiledMesh[] = [];
+  const assignedIds = new Set(project.assignments.map(a => a.finishId));
+  const usedFinishes = project.finishes.filter(f => assignedIds.has(f.id));
+  const materials: CompiledMaterial[] = [
+    { id: 'neutral-wall', type: 'neutral', colour: '#e9e4dc', roughness: 0.92 },
+    { id: 'neutral-floor', type: 'neutral', colour: '#b4a18a', roughness: 0.78 },
+    { id: 'neutral-ceiling', type: 'neutral', colour: '#f6f3ec', roughness: 0.98 },
+    { id: 'neutral-trim', type: 'neutral', colour: '#f2eee5', roughness: 0.72 },
+    { id: 'neutral-door', type: 'neutral', colour: '#d7d0c2', roughness: 0.7 },
+    ...usedFinishes.flatMap(f => isArtwork(f) && f.panels?.length ? f.panels.map((panel, index) => ({ ...material(f), id: panelMaterialId(f.id, index), textureId: panel.texture.id, repeat: false, texturePreparation: { crop: { x: 0, y: 0, width: 1, height: 1 }, rotation: 0 as const } })) : [material(f)]),
+  ];
+  if (materials.length > 53) throw new Error('This room exceeds the 53-material allowance. Reduce its active panel sequences or finish count.');
+  const byId = new Map(project.finishes.map(f => [f.id, f]));
+  const floorTriangles = triangulateRoom(room.vertices);
+  meshes.push({ id: 'room-floor', surface: 'floor', materialId: 'neutral-floor', positions: room.vertices.flatMap(p => [mm(p.x), 0, mm(p.z)]), normals: room.vertices.flatMap(() => [0, 1, 0]), uvs: room.vertices.flatMap(p => [mm(p.x), mm(p.z)]), indices: floorTriangles.flatMap((v, i) => i % 3 === 0 ? [floorTriangles[i + 2], floorTriangles[i + 1], v] : []) });
+  meshes.push({ id: 'room-ceiling', surface: 'ceiling', materialId: 'neutral-ceiling', positions: room.vertices.flatMap(p => [mm(p.x), mm(room.heightMm), mm(p.z)]), normals: room.vertices.flatMap(() => [0, -1, 0]), uvs: room.vertices.flatMap(p => [mm(p.x), mm(p.z)]), indices: [...floorTriangles] });
+  room.vertices.forEach((a, wallIndex) => {
+    const b = room.vertices[(wallIndex + 1) % room.vertices.length], length = wallLength(room, a.wallId), dx = (b.x - a.x) / length, dz = (b.z - a.z) / length;
+    const inward: Vec3 = [-dz, 0, dx], outward: Vec3 = [dz, 0, -dx];
+    const point = (s: number, y: number, inset = 0): Vec3 => [mm(a.x + dx * s - dz * inset), mm(y), mm(a.z + dz * s + dx * inset)];
+    const openings = room.openings.filter(o => o.wallId === a.wallId), assignments = project.assignments.filter(v => v.wallId === a.wallId);
+    // The inner survey line is authoritative. A wall with openings backs onto
+    // its deepest supplied reveal; each opening keeps its own exact depth.
+    const thickness = openings.length ? Math.max(...openings.map(o => o.revealMm)) : 120;
+    const xCuts = [0, length, ...openings.flatMap(o => [o.offsetMm, o.offsetMm + o.widthMm])];
+    const yCuts = [0, room.heightMm, room.skirtingMm, room.heightMm - room.corniceMm, ...openings.flatMap(o => [o.sillMm, o.sillMm + o.heightMm]), ...assignments.flatMap(v => [v.fromMm, v.toMm ?? room.heightMm])];
+    assignments.forEach(assignment => {
+      const f = byId.get(assignment.finishId);
+      if (!isArtwork(f)) return;
+      const origin = assignmentOrigin(room, assignment, project.wallRuns);
+      if (f.type === 'mural') {
+        const panels = orderedPanels(f);
+        if (panels.length) {
+          for (const { panel, startMm, endMm } of panels) {
+            xCuts.push(Math.max(0, Math.min(length, origin + startMm)), Math.max(0, Math.min(length, origin + endMm)));
+            yCuts.push(Math.max(0, Math.min(room.heightMm, assignment.offsetYmm)), Math.max(0, Math.min(room.heightMm, assignment.offsetYmm + panel.heightMm)));
+          }
+        } else {
+          xCuts.push(Math.max(0, Math.min(length, origin)), Math.max(0, Math.min(length, origin + f.calibration.widthMm)));
+          yCuts.push(Math.max(0, Math.min(room.heightMm, assignment.offsetYmm)), Math.max(0, Math.min(room.heightMm, assignment.offsetYmm + f.calibration.heightMm)));
+        }
+      } else if (f.calibration.repeatKind === 'strip' && f.calibration.match === 'half-drop' && !f.calibration.offsetAlreadyIncluded) {
+        const width = f.calibration.widthMm, start = Math.floor(-origin / width), end = Math.ceil((length - origin) / width);
+        if (end - start > 512) throw new Error('This half-drop calibration produces more than 512 strips on one wall. Check its physical width.');
+        for (let n = start; n <= end; n++) { const x = origin + n * width; if (x > 0 && x < length) xCuts.push(x); }
+      }
+    });
+    const xx = unique(xCuts), yy = unique(yCuts);
+    for (let i = 0; i < xx.length - 1; i++) for (let j = 0; j < yy.length - 1; j++) {
+      const x0 = xx[i], x1 = xx[i + 1], y0 = yy[j], y1 = yy[j + 1], mx = (x0 + x1) / 2, my = (y0 + y1) / 2;
+      if (x1 - x0 < EPS || y1 - y0 < EPS || openings.some(o => mx > o.offsetMm - EPS && mx < o.offsetMm + o.widthMm + EPS && my > o.sillMm - EPS && my < o.sillMm + o.heightMm + EPS)) continue;
+      const assignment = assignments.find(v => my >= v.fromMm && my < (v.toMm ?? room.heightMm)), finish = assignment ? byId.get(assignment.finishId) : undefined;
+      const origin = assignment ? assignmentOrigin(room, assignment, project.wallRuns) : 0;
+      const panel = isArtwork(finish) && finish.panels?.length ? orderedPanels(finish).find(value => mx >= origin + value.startMm && mx < origin + value.endMm) : undefined;
+      let materialId = finish?.id ?? 'neutral-wall';
+      if (isArtwork(finish) && finish.panels?.length) materialId = panel && assignment && my >= assignment.offsetYmm && my <= assignment.offsetYmm + panel.panel.heightMm ? panelMaterialId(finish.id, panel.index) : 'neutral-wall';
+      const uvAt = (x: number, y: number): Pair => {
+        if (!isArtwork(finish) || !assignment) return [mm(x), mm(y)];
+        if (panel) return [(x - origin - panel.startMm) / panel.panel.widthMm, (y - assignment.offsetYmm) / panel.panel.heightMm];
+        const c = finish.calibration;
+        const strip = Math.floor((mx - origin) / c.widthMm);
+        const shift = finish.type === 'wallpaper' && c.repeatKind === 'strip' && c.match === 'half-drop' && !c.offsetAlreadyIncluded && ((strip % 2 + 2) % 2) === 1 ? c.heightMm / 2 : 0;
+        return [(x - origin) / c.widthMm, (y - assignment.offsetYmm - shift) / c.heightMm];
+      };
+      if (finish?.type === 'mural' && !finish.panels?.length && assignment && (mx < origin || mx > origin + finish.calibration.widthMm || my < assignment.offsetYmm || my > assignment.offsetYmm + finish.calibration.heightMm)) materialId = 'neutral-wall';
+      const cell = `${a.wallId}-${i}-${j}`;
+      const relief = isArtwork(finish) && materialId !== 'neutral-wall' && y1 > room.skirtingMm && y0 < room.heightMm - room.corniceMm ? finish.appearance?.relief : undefined;
+      if (relief) {
+        meshes.push(createReliefWall(`${cell}-inside`, materialId, [point(x0, y0), point(x1, y0), point(x1, y1), point(x0, y1)], inward, [uvAt(x0, y0), uvAt(x1, y0), uvAt(x1, y1), uvAt(x0, y1)], a.wallId, relief));
+        if (meshes.reduce((sum, mesh) => sum + mesh.positions.length / 3, 0) > 250000) throw new Error('Room relief exceeds the shared 250,000 vertex budget. Reduce its detail or covered area.');
+      }
+      else addQuad(meshes, `${cell}-inside`, 'wall', materialId, [point(x0, y0), point(x1, y0), point(x1, y1), point(x0, y1)], inward, [uvAt(x0, y0), uvAt(x1, y0), uvAt(x1, y1), uvAt(x0, y1)], a.wallId);
+      if (thickness > 0) addQuad(meshes, `${cell}-outside`, 'wall', 'neutral-wall', [point(x1, y0, -thickness), point(x0, y0, -thickness), point(x0, y1, -thickness), point(x1, y1, -thickness)], outward, undefined, a.wallId);
+      if (y1 <= room.skirtingMm + EPS || y0 >= room.heightMm - room.corniceMm - EPS) {
+        const skirting = y1 <= room.skirtingMm + EPS, surface = skirting ? 'skirting' : 'cornice', inset = skirting ? 14 : 22;
+        addQuad(meshes, `${cell}-${surface}`, surface, 'neutral-trim', [point(x0, y0, inset), point(x1, y0, inset), point(x1, y1, inset), point(x0, y1, inset)], inward, undefined, a.wallId);
+        const edgeY = skirting ? y1 : y0;
+        addQuad(meshes, `${cell}-${surface}-edge`, surface, 'neutral-trim', skirting ? [point(x0, edgeY), point(x0, edgeY, inset), point(x1, edgeY, inset), point(x1, edgeY)] : [point(x0, edgeY), point(x1, edgeY), point(x1, edgeY, inset), point(x0, edgeY, inset)], skirting ? [0, 1, 0] : [0, -1, 0], undefined, a.wallId);
+      }
+    }
+    // Close the wall thickness and the opening reveals. UV is already baked above.
+    if (thickness > 0) addQuad(meshes, `${a.wallId}-top`, 'reveal', 'neutral-wall', [point(0, room.heightMm), point(length, room.heightMm), point(length, room.heightMm, -thickness), point(0, room.heightMm, -thickness)], [0, 1, 0], undefined, a.wallId);
+    openings.forEach(o => {
+      const x0 = o.offsetMm, x1 = x0 + o.widthMm, y0 = o.sillMm, y1 = y0 + o.heightMm, depth = o.revealMm;
+      if (depth > 0) {
+        addQuad(meshes, `${o.id}-reveal-left`, 'reveal', 'neutral-trim', [point(x0, y0), point(x0, y0, -depth), point(x0, y1, -depth), point(x0, y1)], [dx, 0, dz], undefined, a.wallId);
+        addQuad(meshes, `${o.id}-reveal-right`, 'reveal', 'neutral-trim', [point(x1, y1), point(x1, y1, -depth), point(x1, y0, -depth), point(x1, y0)], [-dx, 0, -dz], undefined, a.wallId);
+        addQuad(meshes, `${o.id}-reveal-top`, 'reveal', 'neutral-trim', [point(x0, y1), point(x0, y1, -depth), point(x1, y1, -depth), point(x1, y1)], [0, -1, 0], undefined, a.wallId);
+        if (y0 > 0) addQuad(meshes, `${o.id}-sill`, 'reveal', 'neutral-trim', [point(x0, y0), point(x1, y0), point(x1, y0, -depth), point(x0, y0, -depth)], [0, 1, 0], undefined, a.wallId);
+        if (o.kind === 'door') addQuad(meshes, `${o.id}-threshold`, 'floor', 'neutral-floor', [point(x0, 0), point(x1, 0), point(x1, 0, -depth), point(x0, 0, -depth)], [0, 1, 0], undefined, a.wallId);
+      }
+      if (o.kind === 'door') addQuad(meshes, `${o.id}-door`, 'reveal', 'neutral-door', [point(x0, y0, -depth), point(x1, y0, -depth), point(x1, y1, -depth), point(x0, y1, -depth)], inward, undefined, a.wallId);
+      if (o.kind === 'window' && o.frameMm) {
+        // A generic frame occupies the existing opening at the back of its
+        // reveal. The surveyed wall/cut-out and artwork UVs stay authoritative.
+        const f = o.frameMm, back = -depth, front = back + 35;
+        const beam = (name: string, left: number, right: number, bottom: number, top: number) => {
+          const face = (suffix: string, points: Vec3[], normal: Vec3) => addQuad(meshes, `${o.id}-frame-${name}-${suffix}`, 'reveal', 'neutral-trim', points, normal, undefined, a.wallId);
+          face('front', [point(left,bottom,front),point(right,bottom,front),point(right,top,front),point(left,top,front)], inward);
+          face('back', [point(right,bottom,back),point(left,bottom,back),point(left,top,back),point(right,top,back)], outward);
+          face('left', [point(left,bottom,front),point(left,top,front),point(left,top,back),point(left,bottom,back)], [-dx,0,-dz]);
+          face('right', [point(right,bottom,front),point(right,bottom,back),point(right,top,back),point(right,top,front)], [dx,0,dz]);
+          face('bottom', [point(left,bottom,front),point(left,bottom,back),point(right,bottom,back),point(right,bottom,front)], [0,-1,0]);
+          face('top', [point(left,top,front),point(right,top,front),point(right,top,back),point(left,top,back)], [0,1,0]);
+        };
+        beam('left',x0,x0+f,y0,y1); beam('right',x1-f,x1,y0,y1);
+        beam('bottom',x0+f,x1-f,y0,y0+f); beam('top',x0+f,x1-f,y1-f,y1);
+      }
+    });
+  });
+  if (meshes.length > 30000) throw new Error('Room geometry is too complex. Reduce the number of openings or finish bands.');
+  if (meshes.reduce((sum, mesh) => sum + mesh.positions.length / 3, 0) > 250000) throw new Error('Room relief exceeds the shared 250,000 vertex budget. Reduce its detail or covered area.');
+  const textures = new Map<string, ArtworkFinish['texture']>();
+  usedFinishes.forEach(f => finishTextures(f).forEach(texture => textures.set(texture.id, structuredClone(texture))));
+  if (textures.size > 48) throw new Error('This room exceeds the 48-texture allowance. Reduce its artwork or panels.');
+  return { schemaVersion: 1, compilerVersion: COMPILER_VERSION, revisionId: revision.id, projectId: project.id, units: 'metres', meshes, materials, textures: [...textures.values()], cameras: project.cameras.length ? structuredClone(project.cameras) : suggestCameras(room, project.assignments.filter(assignment => isArtwork(byId.get(assignment.finishId))).map(assignment => assignment.wallId), project.assignments.filter(assignment => isArtwork(byId.get(assignment.finishId)))), lighting: project.lighting, outputs: { stills: [1920, 1080], panorama: [4096, 2048] } };
+}

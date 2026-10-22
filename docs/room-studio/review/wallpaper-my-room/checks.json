@@ -1,0 +1,154 @@
+{
+  "date": "2026-10-19",
+  "publicMainBaseline": "5ad956575a5091639968b84b0e7dc71c78901a63",
+  "scope": "Local implementation evidence; hosted payments/processing remain disabled",
+  "source": {
+    "coreTests": 156,
+    "studioTests": 141,
+    "failed": 0,
+    "skipped": 0,
+    "actualBlenderOptionalTests": true,
+    "typescript": "Browser and both Edge entry points pass"
+  },
+  "browser": {
+    "photo": "Fresh upload, four corners, masks and restore, exact outside pixels, calibration labels, comparisons, PNG, export/reopen, orientation/GPS, delayed-delete regression",
+    "measured": "Fresh blank room, six user-uploaded numbered panels, proof, connected whole-room run, materials, camera placement and rejection, quality confirmation; immutable revision exported",
+    "examples": "All three original layouts: actual GPU mesh/UV and saved camera parity; rendered output hashes and sizes; export/reopen",
+    "resolution": "Exports are bounded by actual source detail. Output dimensions do not imply additional artwork detail.",
+    "physicalPhones": "Not tested; Chromium emulation and cached desktop WebKit are not physical device verification"
+  },
+  "render": {
+    "revisionId": "51852bb0-cafa-4065-ae4c-93e371b26565",
+    "geometrySha256": "e53812caefb1735748db0bb4513370ff90c3ddcc828ce40abc86f5151600bd6d",
+    "meshes": 147,
+    "vertices": 13047,
+    "triangles": 17798,
+    "cameras": [
+      {
+        "id": "still-1",
+        "kind": "perspective",
+        "position": [
+          0.35,
+          1.55,
+          0.3
+        ],
+        "target": [
+          2.1,
+          1.31,
+          3.6
+        ],
+        "fov": 70
+      },
+      {
+        "id": "still-2",
+        "kind": "perspective",
+        "position": [
+          0.35,
+          1.55,
+          3.3
+        ],
+        "target": [
+          4.2,
+          1.31,
+          1.8
+        ],
+        "fov": 70
+      },
+      {
+        "id": "panorama-1",
+        "kind": "panorama",
+        "position": [
+          2.1,
+          1.55,
+          1.8
+        ],
+        "target": [
+          2.1,
+          1.55,
+          2.8
+        ],
+        "fov": 90
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "still-1",
+        "sha256": "0a012be60c9577b58e835779fc26fd97117d4a760b2ed8cd7c4cbdcc0b9abb72",
+        "width": 1920,
+        "height": 1080,
+        "renderSeconds": 35.535
+      },
+      {
+        "kind": "still-2",
+        "sha256": "57e57ed5dbeffbafc6e8220995a550a57c07744b282ae220df2c7cc4a37ff525",
+        "width": 1920,
+        "height": 1080,
+        "renderSeconds": 33.879
+      },
+      {
+        "kind": "panorama",
+        "sha256": "8f274da44f1d502a5a3ae9cc72470946fd599777cf2feedacf503eb1275d55f8",
+        "width": 4096,
+        "height": 2048,
+        "renderSeconds": 149.257
+      }
+    ],
+    "quality": "production",
+    "blenderVersion": "4.5.0",
+    "renderedGeometryVerified": true,
+    "device": "GPU",
+    "samples": 128,
+    "seed": 217,
+    "elapsedSeconds": 219.452,
+    "source": "Actual immutable revision exported from the fresh customer browser journey",
+    "visuallyInspected": [
+      "still-1",
+      "still-2",
+      "complete equirectangular panorama"
+    ],
+    "sourceLimitation": "Numbered test art is intentionally 512px; the customer confirms the shown detail warning. These images are technical acceptance fixtures."
+  },
+  "cloudCommerce": {
+    "offline": "Ownership, authenticated upload, immutable orders, signed-webhook protocol, reservations, cancellations, refund retries, paid entitlement, duplicate events, killed-worker and corruption paths tested without provider charges",
+    "staging": "Supabase hosted Storage concurrency, Stripe test Checkout/webhooks, Modal execution, retention emails and real costs remain unverified"
+  },
+  "costs": {
+    "localPackageSeconds": 219.452,
+    "hostedCompute": null,
+    "storageTransfer": null,
+    "paymentFees": null,
+    "failureAllowance": null,
+    "supportEffort": null,
+    "retailPrice": null,
+    "paidProcessingEnabled": false,
+    "liveAIEnabled": false
+  },
+  "publication": "The separate full-menu release publishes an honest introduction. The interactive editor remains in PR #83 until its release gates are cleared.",
+  "postMenuIntegration": {
+    "publicMainBaseline": "caed6d913deddd7803b8a7e03d6d7f37465fe4fb",
+    "builtSiteTests": 300,
+    "failures": 0,
+    "sharedFixtures": "pass",
+    "fullNavigation": "12 destinations, six widths, keyboard/no-JS and real routes pass",
+    "roomStudioBrowserSuites": "All eleven pass",
+    "noLoss": {
+      "pages": [
+        130,
+        130
+      ],
+      "media": [
+        5615,
+        5624
+      ],
+      "markdownTwins": [
+        130,
+        130
+      ],
+      "legacyProjects": [
+        5,
+        5
+      ]
+    },
+    "recovery": "Invalid but readable v1 drafts are backed up before correction and the original file downloads through the customer controls."
+  }
+}

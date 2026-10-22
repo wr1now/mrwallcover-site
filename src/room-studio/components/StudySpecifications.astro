@@ -1,0 +1,72 @@
+---
+import Action from '../../components/Action.astro';
+import type { ManufacturerAssumptionGroup } from '../manufacturer-preview';
+
+interface Props {
+  studies: {
+    id: string;
+    name: string;
+    layoutLabel: string;
+    dimensionsLabel: string;
+    specificationLabel: string;
+    sourceUrl: string;
+    assumptionGroups: ManufacturerAssumptionGroup[];
+  }[];
+}
+const { studies } = Astro.props;
+---
+<section id="specifications" class="study-specifications" aria-labelledby="study-specifications-heading">
+  <header class="study-specifications-heading">
+    <p class="eyebrow">Reading the studies</p>
+    <h2 id="study-specifications-heading">Specifications and assumptions</h2>
+    <p>Read each maker’s specification alongside the source, scale and appearance assumptions used in its private room preview.</p>
+  </header>
+  <div class="study-specifications-list">
+    {studies.map((study, index) => <article class="study-specification" aria-labelledby={`specification-${study.id}`}>
+      <header class="study-specification-heading">
+        <div>
+          <p class="eyebrow">{String(index + 1).padStart(2, '0')} / Private reference study</p>
+          <h3 id={`specification-${study.id}`}>{study.name}</h3>
+          <p class="study-room-label">{study.layoutLabel} · {study.dimensionsLabel}</p>
+        </div>
+        <Action href={study.sourceUrl} variant="quiet" target="_blank" rel="noreferrer">Official product and specification</Action>
+      </header>
+      <div class="study-maker-specification">
+        <p class="eyebrow">Maker specification</p>
+        <ul>{study.specificationLabel.split(' · ').map(fact => <li>{fact}</li>)}</ul>
+      </div>
+      <div class="study-assumption-groups">
+        {study.assumptionGroups.map(group => <section class="study-assumption-group" aria-labelledby={`${study.id}-${group.id}`}>
+          <h4 id={`${study.id}-${group.id}`}>{group.title}</h4>
+          <ul>{group.notes.map(note => <li>{note}</li>)}</ul>
+        </section>)}
+      </div>
+    </article>)}
+  </div>
+</section>
+<style>
+  .study-specifications{border-top:1px solid var(--color-line);padding-block:clamp(2rem,5vw,4rem) 1rem;margin-top:2rem;font-size:max(var(--text-body),1.125rem)}
+  .study-specifications .eyebrow{font-size:max(var(--text-meta),.9375rem)}
+  .study-specifications-heading{margin-bottom:2rem}
+  .study-specifications-heading h2{font-size:clamp(2.35rem,4.3vw,3.5rem);line-height:1.05;max-width:24ch;margin:.65rem 0 1rem}
+  .study-specifications-heading>p:last-child{max-width:65ch;margin:0;line-height:1.65}
+  .study-specifications-list{display:grid;gap:2rem}
+  .study-specification{min-width:0;container-type:inline-size;background:var(--color-paper);border:1px solid var(--color-line);padding:clamp(1.25rem,3vw,2.5rem)}
+  .study-specification-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:1.25rem 2rem;flex-wrap:wrap}
+  .study-specification-heading>div{flex:1 1 25rem;min-width:0}
+  .study-specification-heading h3{font-size:clamp(1.9rem,3vw,2.75rem);line-height:1.12;margin:.65rem 0 .75rem;max-width:32ch}
+  .study-specification-heading :global(.mw-action){flex:0 1 auto;white-space:normal;text-align:left}
+  .study-room-label{font-size:max(var(--text-meta),.9375rem);line-height:1.6;color:var(--color-stone);margin:0}
+  .study-maker-specification{border-block:1px solid var(--color-line);margin-block:1.75rem;padding-block:1.25rem}
+  .study-maker-specification .eyebrow{margin:0 0 .85rem}
+  .study-maker-specification ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:1rem 2rem}
+  .study-maker-specification li{font-size:max(var(--text-body),1.125rem);line-height:1.5;max-width:28ch}
+  .study-assumption-groups{display:grid;grid-template-columns:1fr;gap:1.75rem;align-items:start}
+  .study-assumption-group{min-width:0}
+  .study-assumption-group h4{font-size:max(var(--text-body),1.125rem);font-weight:500;line-height:1.4;margin:0 0 1rem;color:var(--color-ink)}
+  .study-assumption-group ul{list-style:disc;margin:0;padding-left:1.2rem;display:grid;gap:.9rem}
+  .study-assumption-group li{font-size:max(var(--text-body),1.125rem);line-height:1.65;max-width:60ch;padding-left:.2rem;overflow-wrap:anywhere}
+  .study-assumption-group li::marker{color:var(--color-stone)}
+  @container(min-width:44rem){.study-assumption-groups{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 3rem}}
+  @media(max-width:760px){.study-specification-heading{gap:.5rem}.study-specification-heading>div{flex-basis:100%}.study-specifications-heading h2{max-width:17ch}.study-maker-specification{margin-block:1.25rem}.study-specifications-list{gap:1.5rem}}
+</style>

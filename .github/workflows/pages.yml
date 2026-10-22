@@ -40,6 +40,12 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
+      - name: Setup Python for offline renderer checks
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned image validation dependency
+        run: python3 -m pip install Pillow==11.3.0
       - name: Check case-study dates against git
         # Fails when a case study was edited without re-running scripts/stamp-case-study-dates.mjs.
         run: node scripts/stamp-case-study-dates.mjs --check

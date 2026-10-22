@@ -1,0 +1,16 @@
+{
+  "evidence": [
+    "Manual dimensions, opening bounds, undo/redo, local reopen, exact frozen revision, disabled cloud",
+    "Rectangle, L-shaped and angled JSON round trips with original fixture artwork and sourced finishes",
+    "Pointer drag clamps window to integer-mm boundary on an angled wall",
+    "No overflow and screenshot at 360px",
+    "No overflow and screenshot at 390px",
+    "No overflow and screenshot at 768px",
+    "No overflow and screenshot at 1024px",
+    "No overflow and screenshot at 1280px",
+    "No overflow and screenshot at 1440px",
+    "Forced WebGL loss recovers with the same saved room"
+  ],
+  "errors": [],
+  "scope": "Chromium desktop and responsive emulation. Not physical iPhone Safari or Android validation."
+}

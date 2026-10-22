@@ -1,0 +1,5030 @@
+{
+  "schemaVersion": 1,
+  "provider": "bauwerk",
+  "market": "GB",
+  "checkedAt": "2026-10-18",
+  "version": "bauwerk-uk-2026-10-18-b14aec5e41fe",
+  "source": "https://ukcheckout.bauwerkcolour.com/collections/colour-lab/products.json",
+  "collectionUrl": "https://www.bauwerkcolour.com/en-gb/collection/colour-lab",
+  "sourcePages": [
+    "https://ukcheckout.bauwerkcolour.com/collections/colour-lab/products.json?limit=250&page=1",
+    "https://ukcheckout.bauwerkcolour.com/collections/colour-lab/products.json?limit=250&page=2"
+  ],
+  "sourceMetadataSha256": "b14aec5e41fe2fcb80fc1bad86c70280e533bc9b96d5893849617f91ca5ce765",
+  "shadeCount": 358,
+  "colourNote": "Manufacturer-published website preview colour-code metadata. Approximate screen representation; not measured paint colour or a physical colour match.",
+  "shades": [
+    {
+      "id": "7941413929184",
+      "name": "Agave",
+      "slug": "agave-limewash-paint-colour",
+      "colour": "#BFCAC6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/agave-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/agave-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941414191328",
+      "name": "Air",
+      "slug": "air-limewash-paint-colour",
+      "colour": "#D1E0F2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/air-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/air-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941414289632",
+      "name": "Alabaster",
+      "slug": "alabaster-limewash-paint-colour",
+      "colour": "#FEF8F8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/alabaster-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/alabaster-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941414453472",
+      "name": "Almond Blossom",
+      "slug": "almond-blossom-limewash-paint-colour",
+      "colour": "#F3E5E2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/almond-blossom-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/almond-blossom-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941414551776",
+      "name": "Almond Flower",
+      "slug": "almond-flower-limewash-paint-colour",
+      "colour": "#F3E2D3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/almond-flower-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/almond-flower-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941414912224",
+      "name": "Amethyst",
+      "slug": "amethyst-limewash-paint-colour",
+      "colour": "#D0C7C7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/amethyst-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/amethyst-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941415076064",
+      "name": "Amsterdam",
+      "slug": "amsterdam-limewash-paint-colour",
+      "colour": "#DCDBDB",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/amsterdam-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/amsterdam-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941415403744",
+      "name": "Angelica",
+      "slug": "angelica-limewash-paint-colour",
+      "colour": "#99B28F",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/angelica-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/angelica-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941415502048",
+      "name": "Anise",
+      "slug": "anise-limewash-paint-colour",
+      "colour": "#5B5753",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/anise-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/anise-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941415698656",
+      "name": "Apple Blossom",
+      "slug": "apple-blossom-limewash-paint-colour",
+      "colour": "#FAE7E1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/apple-blossom-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/apple-blossom-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941415862496",
+      "name": "Apple Mint",
+      "slug": "apple-mint-limewash-paint-colour",
+      "colour": "#8EC787",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/apple-mint-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/apple-mint-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941416059104",
+      "name": "Aquamarine",
+      "slug": "aquamarine-limewash-paint-colour",
+      "colour": "#B7CCD4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/aquamarine-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/aquamarine-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941416157408",
+      "name": "Ardoise",
+      "slug": "ardoise-limewash-paint-colour",
+      "colour": "#EDEDE8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/ardoise-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/ardoise-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941416386784",
+      "name": "Arnica",
+      "slug": "arnica-limewash-paint-colour",
+      "colour": "#E6E5E7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/arnica-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/arnica-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941416485088",
+      "name": "Artemisia",
+      "slug": "artemisia-limewash-paint-colour",
+      "colour": "#AEB8C0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/artemisia-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/artemisia-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941416583392",
+      "name": "Artichoke",
+      "slug": "artichoke-limewash-paint-colour",
+      "colour": "#9994A2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/artichoke-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/artichoke-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941417009376",
+      "name": "Ash",
+      "slug": "ash-limewash-paint-colour",
+      "colour": "#AFAFB2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/ash-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/ash-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941417042144",
+      "name": "Aster",
+      "slug": "aster-limewash-paint-colour",
+      "colour": "#E9DFE0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/aster-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/aster-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941417271520",
+      "name": "Aurora",
+      "slug": "aurora-limewash-paint-colour",
+      "colour": "#ECEDEE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/aurora-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/aurora-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941417435360",
+      "name": "Balance",
+      "slug": "balance-limewash-paint-colour",
+      "colour": "#D0C8B6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/balance-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/balance-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941417697504",
+      "name": "Bali",
+      "slug": "bali-limewash-paint-colour",
+      "colour": "#A08366",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bali-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bali-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941417795808",
+      "name": "Balsam",
+      "slug": "balsam-limewash-paint-colour",
+      "colour": "#E3D5AD",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/balsam-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/balsam-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941418025184",
+      "name": "Baltic",
+      "slug": "baltic-limewash-paint-colour",
+      "colour": "#889EAB",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/baltic-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/baltic-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941418189024",
+      "name": "Bamboo",
+      "slug": "bamboo-limewash-paint-colour",
+      "colour": "#DEDEC4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bamboo-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bamboo-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941418516704",
+      "name": "Banana Flower",
+      "slug": "banana-flower-limewash-paint-colour",
+      "colour": "#86717F",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/banana-flower-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/banana-flower-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941418713312",
+      "name": "Bark",
+      "slug": "bark-limewash-paint-colour",
+      "colour": "#938674",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bark-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bark-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941419040992",
+      "name": "Barley",
+      "slug": "barley-limewash-paint-colour",
+      "colour": "#D0B59E",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/barley-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/barley-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941419139296",
+      "name": "Barleycorn",
+      "slug": "barleycorn-limewash-paint-colour",
+      "colour": "#A88B61",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/barleycorn-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/barleycorn-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941419303136",
+      "name": "Basalt",
+      "slug": "basalt-limewash-paint-colour",
+      "colour": "#D2D2CA",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/basalt-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/basalt-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941419532512",
+      "name": "Beach",
+      "slug": "beach-limewash-paint-colour",
+      "colour": "#FFF6E0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/beach-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/beach-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941419663584",
+      "name": "Beach Grass",
+      "slug": "beach-grass-limewash-paint-colour",
+      "colour": "#9A7F64",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/beach-grass-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/beach-grass-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941419794656",
+      "name": "Beanshoot",
+      "slug": "beanshoot-limewash-paint-colour",
+      "colour": "#E0E0CA",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/beanshoot-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/beanshoot-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941419991264",
+      "name": "Beech",
+      "slug": "beech-limewash-paint-colour",
+      "colour": "#CEC8B4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/beech-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/beech-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941420089568",
+      "name": "Bermagui",
+      "slug": "bermagui-limewash-paint-colour",
+      "colour": "#C3D6E3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bermagui-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bermagui-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941420253408",
+      "name": "Birch",
+      "slug": "birch-limewash-paint-colour",
+      "colour": "#E6E6DE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/birch-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/birch-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941420351712",
+      "name": "Blackthorn",
+      "slug": "blackthorn-limewash-paint-colour",
+      "colour": "#6E6761",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/blackthorn-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/blackthorn-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941420515552",
+      "name": "Bleached White",
+      "slug": "bleached-white-limewash-paint-colour",
+      "colour": "#FFFFFF",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "white"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bleached-white-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bleached-white-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941420646624",
+      "name": "Bloodwood",
+      "slug": "bloodwood-limewash-paint-colour",
+      "colour": "#794A43",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "red"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bloodwood-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bloodwood-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941420744928",
+      "name": "Bluebell",
+      "slug": "bluebell-limewash-paint-colour",
+      "colour": "#89A8EE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bluebell-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bluebell-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941420876000",
+      "name": "Blush",
+      "slug": "blush-limewash-paint-colour",
+      "colour": "#F0E1DE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/blush-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/blush-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941421072608",
+      "name": "Bondi",
+      "slug": "bondi-limewash-paint-colour",
+      "colour": "#86BAC6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bondi-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bondi-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941421138144",
+      "name": "Bone",
+      "slug": "bone-limewash-paint-colour",
+      "colour": "#F1EDE1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bone-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bone-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941421367520",
+      "name": "Borage",
+      "slug": "borage-limewash-paint-colour",
+      "colour": "#8B7E88",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/borage-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/borage-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941421433056",
+      "name": "Boronia",
+      "slug": "boronia-limewash-paint-colour",
+      "colour": "#55595D",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/boronia-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/boronia-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941421793504",
+      "name": "Bracken",
+      "slug": "bracken-limewash-paint-colour",
+      "colour": "#A1705E",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bracken-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bracken-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941421891808",
+      "name": "Broadbean",
+      "slug": "broadbean-limewash-paint-colour",
+      "colour": "#9A9679",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/broadbean-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/broadbean-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941421990112",
+      "name": "Bronte",
+      "slug": "bronte-limewash-paint-colour",
+      "colour": "#EDDFD1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bronte-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bronte-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941422186720",
+      "name": "Buckwheat",
+      "slug": "buckwheat-limewash-paint-colour",
+      "colour": "#9B856E",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/buckwheat-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/buckwheat-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941422219488",
+      "name": "Bullrush",
+      "slug": "bullrush-limewash-paint-colour",
+      "colour": "#B0906C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/bullrush-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/bullrush-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941422678240",
+      "name": "Butter",
+      "slug": "butter-limewash-paint-colour",
+      "colour": "#FFF3CD",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/butter-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/butter-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941422809312",
+      "name": "Buttercup",
+      "slug": "buttercup-limewash-paint-colour",
+      "colour": "#FFF1A0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/buttercup-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/buttercup-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941422907616",
+      "name": "Cabbage",
+      "slug": "cabbage-limewash-paint-colour",
+      "colour": "#A5A2AB",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/cabbage-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/cabbage-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941423104224",
+      "name": "Cacao",
+      "slug": "cacao-limewash-paint-colour",
+      "colour": "#59423A",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/cacao-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/cacao-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941423268064",
+      "name": "Calendula",
+      "slug": "calendula-limewash-paint-colour",
+      "colour": "#ECB186",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/calendula-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/calendula-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941423366368",
+      "name": "Calico",
+      "slug": "calico-limewash-paint-colour",
+      "colour": "#FBF3E3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/calico-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/calico-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941423530208",
+      "name": "Calm",
+      "slug": "calm-limewash-paint-colour",
+      "colour": "#F5F0E4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/calm-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/calm-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941423792352",
+      "name": "Caramel",
+      "slug": "caramel-limewash-paint-colour",
+      "colour": "#CAB69A",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/caramel-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/caramel-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941423956192",
+      "name": "Caravane",
+      "slug": "caravane-limewash-paint-colour",
+      "colour": "#B38E7B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/caravane-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/caravane-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941424152800",
+      "name": "Cardamon",
+      "slug": "cardamon-limewash-paint-colour",
+      "colour": "#876F66",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/cardamon-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/cardamon-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941424316640",
+      "name": "Carmin",
+      "slug": "carmin-limewash-paint-colour",
+      "colour": "#5C3D3B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "red"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/carmin-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/carmin-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941424611552",
+      "name": "Carrot",
+      "slug": "carrot-limewash-paint-colour",
+      "colour": "#D38B5E",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/carrot-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/carrot-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "8417700970839",
+      "name": "Casa",
+      "slug": "casa-limewash-paint-colour",
+      "colour": "#BD8661",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/casa-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/casa-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941424775392",
+      "name": "Casablanca",
+      "slug": "casablanca-limewash-paint-colour",
+      "colour": "#5C948F",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/casablanca-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/casablanca-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941424873696",
+      "name": "Cassava",
+      "slug": "cassava-limewash-paint-colour",
+      "colour": "#F1E8DA",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/cassava-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/cassava-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941424972000",
+      "name": "Catkin",
+      "slug": "catkin-limewash-paint-colour",
+      "colour": "#CECECE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/catkin-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/catkin-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941425135840",
+      "name": "Catmint",
+      "slug": "catmint-limewash-paint-colour",
+      "colour": "#868882",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/catmint-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/catmint-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941425266912",
+      "name": "Celadon",
+      "slug": "celadon-limewash-paint-colour",
+      "colour": "#C8D0D2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/celadon-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/celadon-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941425365216",
+      "name": "Chaff",
+      "slug": "chaff-limewash-paint-colour",
+      "colour": "#CCB580",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/chaff-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/chaff-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941425561824",
+      "name": "Chalk",
+      "slug": "chalk-limewash-paint-colour",
+      "colour": "#FBFBFB",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "white"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/chalk-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/chalk-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941425692896",
+      "name": "Champagne",
+      "slug": "champagne-limewash-paint-colour",
+      "colour": "#F3EDF2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/champagne-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/champagne-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "8417709031767",
+      "name": "Charlottenburg",
+      "slug": "charlottenburg-limewash-paint-colour",
+      "colour": "#D1AD9A",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/charlottenburg-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/charlottenburg-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941425987808",
+      "name": "Chestnut",
+      "slug": "chestnut-limewash-paint-colour",
+      "colour": "#715238",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/chestnut-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/chestnut-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941426086112",
+      "name": "Chickpea",
+      "slug": "chickpea-limewash-paint-colour",
+      "colour": "#D9CCB7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/chickpea-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/chickpea-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941426282720",
+      "name": "Chickweed",
+      "slug": "chickweed-limewash-paint-colour",
+      "colour": "#829375",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/chickweed-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/chickweed-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941426413792",
+      "name": "Chicory",
+      "slug": "chicory-limewash-paint-colour",
+      "colour": "#5B79C6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/chicory-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/chicory-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941426577632",
+      "name": "Cinnabar",
+      "slug": "cinnabar-limewash-paint-colour",
+      "colour": "#A37C67",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/cinnabar-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/cinnabar-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941426741472",
+      "name": "Cinnamon",
+      "slug": "cinnamon-limewash-paint-colour",
+      "colour": "#B8A086",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/cinnamon-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/cinnamon-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941426839776",
+      "name": "Clay",
+      "slug": "clay-limewash-paint-colour",
+      "colour": "#AFAAA4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/clay-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/clay-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941427069152",
+      "name": "Cleanse",
+      "slug": "cleanse-limewash-paint-colour",
+      "colour": "#94998C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/cleanse-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/cleanse-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941427200224",
+      "name": "Climbing Rose",
+      "slug": "climbing-rose-limewash-paint-colour",
+      "colour": "#CDAC98",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/climbing-rose-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/climbing-rose-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941427396832",
+      "name": "Clove",
+      "slug": "clove-limewash-paint-colour",
+      "colour": "#4E3B34",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/clove-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/clove-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941427527904",
+      "name": "Clover",
+      "slug": "clover-limewash-paint-colour",
+      "colour": "#728973",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/clover-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/clover-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941427658976",
+      "name": "Coast",
+      "slug": "coast-limewash-paint-colour",
+      "colour": "#657377",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/coast-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/coast-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941427888352",
+      "name": "Columbine",
+      "slug": "columbine-limewash-paint-colour",
+      "colour": "#7D9EAB",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/columbine-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/columbine-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941428084960",
+      "name": "Concrete",
+      "slug": "concrete-limewash-paint-colour",
+      "colour": "#878587",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/concrete-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/concrete-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941428248800",
+      "name": "Copper",
+      "slug": "copper-limewash-paint-colour",
+      "colour": "#64A4B2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/copper-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/copper-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941428510944",
+      "name": "Corn",
+      "slug": "corn-limewash-paint-colour",
+      "colour": "#F2D491",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/corn-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/corn-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941428642016",
+      "name": "Cornflower",
+      "slug": "cornflower-limewash-paint-colour",
+      "colour": "#4F7FE2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/cornflower-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/cornflower-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941428707552",
+      "name": "Cowslip",
+      "slug": "cowslip-limewash-paint-colour",
+      "colour": "#F4DD97",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/cowslip-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/cowslip-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941428936928",
+      "name": "Crabapple",
+      "slug": "crabapple-limewash-paint-colour",
+      "colour": "#E6C5C0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/crabapple-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/crabapple-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941429002464",
+      "name": "Cucumber",
+      "slug": "cucumber-limewash-paint-colour",
+      "colour": "#4B5546",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/cucumber-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/cucumber-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941429133536",
+      "name": "Cuttlefish",
+      "slug": "cuttlefish-limewash-paint-colour",
+      "colour": "#D4D5D8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/cuttlefish-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/cuttlefish-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941429264608",
+      "name": "Daffodil",
+      "slug": "daffodil-limewash-paint-colour",
+      "colour": "#FFEB99",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/daffodil-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/daffodil-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941429461216",
+      "name": "Damson",
+      "slug": "damson-limewash-paint-colour",
+      "colour": "#6D454E",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/damson-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/damson-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941429559520",
+      "name": "Dandelion",
+      "slug": "dandelion-limewash-paint-colour",
+      "colour": "#657958",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/dandelion-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/dandelion-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941429723360",
+      "name": "Daphne",
+      "slug": "daphne-limewash-paint-colour",
+      "colour": "#F7FEEE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/daphne-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/daphne-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941429919968",
+      "name": "Date",
+      "slug": "date-limewash-paint-colour",
+      "colour": "#795C3D",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/date-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/date-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941430051040",
+      "name": "Dawn",
+      "slug": "dawn-limewash-paint-colour",
+      "colour": "#9E9DA6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/dawn-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/dawn-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941430083808",
+      "name": "Day",
+      "slug": "day-limewash-paint-colour",
+      "colour": "#889AAF",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/day-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/day-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941430214880",
+      "name": "Desert Fig",
+      "slug": "desert-fig-limewash-paint-colour",
+      "colour": "#C6AA96",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/desert-fig-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/desert-fig-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941430608096",
+      "name": "Dock",
+      "slug": "dock-limewash-paint-colour",
+      "colour": "#8F9E79",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/dock-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/dock-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "8417727185239",
+      "name": "Docklands",
+      "slug": "docklands-limewash-paint-colour",
+      "colour": "#4C586D",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/docklands-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/docklands-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941430739168",
+      "name": "Dog Rose",
+      "slug": "dog-rose-limewash-paint-colour",
+      "colour": "#B57D7A",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/dog-rose-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/dog-rose-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941430837472",
+      "name": "Donkey",
+      "slug": "donkey-limewash-paint-colour",
+      "colour": "#C8C1BB",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/donkey-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/donkey-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941431001312",
+      "name": "Dream",
+      "slug": "dream-limewash-paint-colour",
+      "colour": "#F9F1E6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/dream-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/dream-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941431132384",
+      "name": "Drift",
+      "slug": "drift-limewash-paint-colour",
+      "colour": "#B7A791",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/drift-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/drift-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941431394528",
+      "name": "Driftwood",
+      "slug": "driftwood-limewash-paint-colour",
+      "colour": "#AD9392",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/driftwood-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/driftwood-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941431460064",
+      "name": "Duck Egg",
+      "slug": "duck-egg-limewash-paint-colour",
+      "colour": "#D9DDE0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/duck-egg-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/duck-egg-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941431558368",
+      "name": "Dune",
+      "slug": "dune-limewash-paint-colour",
+      "colour": "#D8C2A7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/dune-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/dune-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941431722208",
+      "name": "Dusk",
+      "slug": "dusk-limewash-paint-colour",
+      "colour": "#B29B92",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/dusk-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/dusk-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941431853280",
+      "name": "Dusty",
+      "slug": "dusty-limewash-paint-colour",
+      "colour": "#765D59",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/dusty-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/dusty-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941431984352",
+      "name": "Dyed",
+      "slug": "dyed-limewash-paint-colour",
+      "colour": "#2A335E",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/dyed-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/dyed-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941432279264",
+      "name": "Eggshell",
+      "slug": "eggshell-limewash-paint-colour",
+      "colour": "#F8F6F2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "white"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/eggshell-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/eggshell-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941432443104",
+      "name": "Elkhorn",
+      "slug": "elkhorn-limewash-paint-colour",
+      "colour": "#D4D1CB",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/elkhorn-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/elkhorn-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941432672480",
+      "name": "Eucalyptus",
+      "slug": "eucalyptus-limewash-paint-colour",
+      "colour": "#B0B1A3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/eucalyptus-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/eucalyptus-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941432901856",
+      "name": "Fawn",
+      "slug": "fawn-limewash-paint-colour",
+      "colour": "#F7ECD4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/fawn-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/fawn-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941433098464",
+      "name": "Fennel",
+      "slug": "fennel-limewash-paint-colour",
+      "colour": "#CCBE7D",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/fennel-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/fennel-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941433196768",
+      "name": "Fields",
+      "slug": "fields-limewash-paint-colour",
+      "colour": "#EFE7C2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/fields-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/fields-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941433360608",
+      "name": "Fir",
+      "slug": "fir-limewash-paint-colour",
+      "colour": "#76877C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/fir-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/fir-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941433655520",
+      "name": "Flannel Flower",
+      "slug": "flannel-flower-limewash-paint-colour",
+      "colour": "#F1EEE3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/flannel-flower-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/flannel-flower-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941433852128",
+      "name": "Flax",
+      "slug": "flax-limewash-paint-colour",
+      "colour": "#DFDCD1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/flax-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/flax-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941434048736",
+      "name": "Forest",
+      "slug": "forest-limewash-paint-colour",
+      "colour": "#3F5A50",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/forest-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/forest-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941434245344",
+      "name": "Forget Me Not",
+      "slug": "forget-me-not-limewash-paint-colour",
+      "colour": "#D1DBE3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/forget-me-not-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/forget-me-not-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941434343648",
+      "name": "Foxglove",
+      "slug": "foxglove-limewash-paint-colour",
+      "colour": "#464858",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/foxglove-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/foxglove-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941434441952",
+      "name": "Freesia",
+      "slug": "freesia-limewash-paint-colour",
+      "colour": "#DDD9D6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/freesia-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/freesia-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941434671328",
+      "name": "Garance",
+      "slug": "garance-limewash-paint-colour",
+      "colour": "#513C38",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/garance-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/garance-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941434769632",
+      "name": "Gardenia",
+      "slug": "gardenia-limewash-paint-colour",
+      "colour": "#FEF9EF",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/gardenia-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/gardenia-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941434933472",
+      "name": "General",
+      "slug": "general-limewash-paint-colour",
+      "colour": "#605942",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/general-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/general-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941435097312",
+      "name": "Gentian",
+      "slug": "gentian-limewash-paint-colour",
+      "colour": "#505C84",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/gentian-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/gentian-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941435424992",
+      "name": "Geraldton Wax",
+      "slug": "geraldton-wax-limewash-paint-colour",
+      "colour": "#614B56",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/geraldton-wax-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/geraldton-wax-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941435490528",
+      "name": "Gerbera",
+      "slug": "gerbera-limewash-paint-colour",
+      "colour": "#DA9579",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/gerbera-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/gerbera-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941435883744",
+      "name": "Goa",
+      "slug": "goa-limewash-paint-colour",
+      "colour": "#E5D3BD",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/goa-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/goa-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941435949280",
+      "name": "Gourd",
+      "slug": "gourd-limewash-paint-colour",
+      "colour": "#A7794D",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/gourd-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/gourd-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941436244192",
+      "name": "Grass Tree",
+      "slug": "grass-tree-limewash-paint-colour",
+      "colour": "#444339",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/grass-tree-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/grass-tree-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941436473568",
+      "name": "Grasshopper",
+      "slug": "grasshopper-limewash-paint-colour",
+      "colour": "#6F806D",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/grasshopper-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/grasshopper-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941436571872",
+      "name": "Gravel",
+      "slug": "gravel-limewash-paint-colour",
+      "colour": "#898989",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/gravel-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/gravel-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941436768480",
+      "name": "Grenadine",
+      "slug": "grenadine-limewash-paint-colour",
+      "colour": "#7E5656",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/grenadine-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/grenadine-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941436866784",
+      "name": "Grevillea",
+      "slug": "grevillea-limewash-paint-colour",
+      "colour": "#976558",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/grevillea-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/grevillea-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941436965088",
+      "name": "Ground",
+      "slug": "ground-limewash-paint-colour",
+      "colour": "#604C4F",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/ground-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/ground-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941437128928",
+      "name": "Hawthorn",
+      "slug": "hawthorn-limewash-paint-colour",
+      "colour": "#625E43",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hawthorn-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hawthorn-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941437260000",
+      "name": "Hay",
+      "slug": "hay-limewash-paint-colour",
+      "colour": "#EDE1C7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hay-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hay-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "8417759134039",
+      "name": "Haymarket",
+      "slug": "haymarket-limewash-paint-colour",
+      "colour": "#A59F8F",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/haymarket-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/haymarket-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941437391072",
+      "name": "Hazel",
+      "slug": "hazel-limewash-paint-colour",
+      "colour": "#C9967C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hazel-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hazel-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941437554912",
+      "name": "Hazelnut",
+      "slug": "hazelnut-limewash-paint-colour",
+      "colour": "#8B796B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hazelnut-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hazelnut-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941437817056",
+      "name": "Heather",
+      "slug": "heather-limewash-paint-colour",
+      "colour": "#78625C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/heather-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/heather-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941437915360",
+      "name": "Hellebore",
+      "slug": "hellebore-limewash-paint-colour",
+      "colour": "#5B688C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hellebore-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hellebore-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941438079200",
+      "name": "Hemlock",
+      "slug": "hemlock-limewash-paint-colour",
+      "colour": "#735E58",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hemlock-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hemlock-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941438210272",
+      "name": "Henna",
+      "slug": "henna-limewash-paint-colour",
+      "colour": "#784F4B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "red"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/henna-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/henna-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941438406880",
+      "name": "Heron",
+      "slug": "heron-limewash-paint-colour",
+      "colour": "#606D70",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/heron-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/heron-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941438537952",
+      "name": "Hoar Frost",
+      "slug": "hoar-frost-limewash-paint-colour",
+      "colour": "#EAE6DA",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hoar-frost-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hoar-frost-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941438636256",
+      "name": "Hogweed",
+      "slug": "hogweed-limewash-paint-colour",
+      "colour": "#645C57",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hogweed-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hogweed-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941438800096",
+      "name": "Hollyhock",
+      "slug": "hollyhock-limewash-paint-colour",
+      "colour": "#CE8E79",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hollyhock-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hollyhock-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941438931168",
+      "name": "Hops",
+      "slug": "hops-limewash-paint-colour",
+      "colour": "#DBBE92",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hops-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hops-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941439029472",
+      "name": "Hortensia",
+      "slug": "hortensia-limewash-paint-colour",
+      "colour": "#9AA7BB",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hortensia-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hortensia-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "8417746452823",
+      "name": "House",
+      "slug": "house-limewash-paint-colour",
+      "colour": "#E6E3DB",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/house-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/house-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941439291616",
+      "name": "Humming",
+      "slug": "humming-limewash-paint-colour",
+      "colour": "#4C6A80",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/humming-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/humming-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941439422688",
+      "name": "Huon Pine",
+      "slug": "huon-pine-limewash-paint-colour",
+      "colour": "#766F4A",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/huon-pine-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/huon-pine-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941439488224",
+      "name": "Hyssop",
+      "slug": "hyssop-limewash-paint-colour",
+      "colour": "#7793A2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/hyssop-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/hyssop-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941439783136",
+      "name": "Ibiza",
+      "slug": "ibiza-limewash-paint-colour",
+      "colour": "#D1C6AA",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/ibiza-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/ibiza-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941439815904",
+      "name": "Intention",
+      "slug": "intention-limewash-paint-colour",
+      "colour": "#F8F3E8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "white"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/intention-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/intention-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941439979744",
+      "name": "Iris",
+      "slug": "iris-limewash-paint-colour",
+      "colour": "#CDD7E4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/iris-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/iris-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941440176352",
+      "name": "Japonica",
+      "slug": "japonica-limewash-paint-colour",
+      "colour": "#A1493E",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "red"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/japonica-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/japonica-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941440307424",
+      "name": "Jet",
+      "slug": "jet-limewash-paint-colour",
+      "colour": "#4D4C4D",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "black"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/jet-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/jet-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941440438496",
+      "name": "Jindabyne",
+      "slug": "jindabyne-limewash-paint-colour",
+      "colour": "#4A443B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/jindabyne-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/jindabyne-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941440536800",
+      "name": "Juniper",
+      "slug": "juniper-limewash-paint-colour",
+      "colour": "#41575E",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/juniper-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/juniper-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941440667872",
+      "name": "Kaolin",
+      "slug": "kaolin-limewash-paint-colour",
+      "colour": "#E1DED3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/kaolin-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/kaolin-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941440831712",
+      "name": "Kelp",
+      "slug": "kelp-limewash-paint-colour",
+      "colour": "#D6BA72",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/kelp-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/kelp-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "8417736032599",
+      "name": "Kino",
+      "slug": "kino-limewash-paint-colour",
+      "colour": "#797D74",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/kino-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/kino-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941441028320",
+      "name": "Koala",
+      "slug": "koala-limewash-paint-colour",
+      "colour": "#575750",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/koala-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/koala-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941441126624",
+      "name": "Kohlrabi",
+      "slug": "kohlrabi-limewash-paint-colour",
+      "colour": "#B9A8AE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/kohlrabi-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/kohlrabi-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "8417502003543",
+      "name": "Koning",
+      "slug": "koning-limewash-paint-colour",
+      "colour": "#D08865",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/koning-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/koning-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941441356000",
+      "name": "Kosciusko",
+      "slug": "kosciusko-limewash-paint-colour",
+      "colour": "#D1CFC2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/kosciusko-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/kosciusko-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941441585376",
+      "name": "Ladies Mantle",
+      "slug": "ladies-mantle-limewash-paint-colour",
+      "colour": "#DECAC9",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/ladies-mantle-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/ladies-mantle-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941441650912",
+      "name": "Lago Guatemala",
+      "slug": "lago-guatemala-limewash-paint-colour",
+      "colour": "#346FA0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/lago-guatemala-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/lago-guatemala-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941441781984",
+      "name": "Lagoon",
+      "slug": "lagoon-limewash-paint-colour",
+      "colour": "#8E8992",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/lagoon-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/lagoon-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941441945824",
+      "name": "Laguna",
+      "slug": "laguna-limewash-paint-colour",
+      "colour": "#E1E0DC",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/laguna-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/laguna-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941442142432",
+      "name": "Lake",
+      "slug": "lake-limewash-paint-colour",
+      "colour": "#BCBFCC",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/lake-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/lake-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941442404576",
+      "name": "Laurel",
+      "slug": "laurel-limewash-paint-colour",
+      "colour": "#395C59",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/laurel-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/laurel-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941442666720",
+      "name": "Leek",
+      "slug": "leek-limewash-paint-colour",
+      "colour": "#779077",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/leek-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/leek-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941442830560",
+      "name": "Lichen",
+      "slug": "lichen-limewash-paint-colour",
+      "colour": "#AFAA97",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/lichen-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/lichen-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941443256544",
+      "name": "Lilac",
+      "slug": "lilac-limewash-paint-colour",
+      "colour": "#CBC8C9",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/lilac-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/lilac-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941443387616",
+      "name": "Lillypilly",
+      "slug": "lillypilly-limewash-paint-colour",
+      "colour": "#6F6178",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/lillypilly-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/lillypilly-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941443551456",
+      "name": "Linen",
+      "slug": "linen-limewash-paint-colour",
+      "colour": "#DCD3B1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/linen-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/linen-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941443649760",
+      "name": "Livid",
+      "slug": "livid-limewash-paint-colour",
+      "colour": "#8DA1A7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/livid-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/livid-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941443813600",
+      "name": "Loquat",
+      "slug": "loquat-limewash-paint-colour",
+      "colour": "#E0D4A0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/loquat-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/loquat-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941443977440",
+      "name": "Lotus",
+      "slug": "lotus-limewash-paint-colour",
+      "colour": "#E7C5D2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/lotus-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/lotus-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941444141280",
+      "name": "Love Apples",
+      "slug": "love-apples-limewash-paint-colour",
+      "colour": "#8C4F48",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "red"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/love-apples-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/love-apples-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941444305120",
+      "name": "Lychee",
+      "slug": "lychee-limewash-paint-colour",
+      "colour": "#F0DBD9",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/lychee-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/lychee-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941444403424",
+      "name": "Madder",
+      "slug": "madder-limewash-paint-colour",
+      "colour": "#AA8D83",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/madder-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/madder-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941444698336",
+      "name": "Magnolia",
+      "slug": "magnolia-limewash-paint-colour",
+      "colour": "#F5E9E3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/magnolia-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/magnolia-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941444731104",
+      "name": "Maidenhair",
+      "slug": "maidenhair-limewash-paint-colour",
+      "colour": "#D4DECF",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/maidenhair-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/maidenhair-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941444894944",
+      "name": "Maize",
+      "slug": "maize-limewash-paint-colour",
+      "colour": "#FFEBB6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/maize-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/maize-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941444993248",
+      "name": "Malibu",
+      "slug": "malibu-limewash-paint-colour",
+      "colour": "#E8CFC9",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/malibu-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/malibu-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941445091552",
+      "name": "Mallorca",
+      "slug": "mallorca-limewash-paint-colour",
+      "colour": "#DEDFDA",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/mallorca-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/mallorca-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941445288160",
+      "name": "Mallow",
+      "slug": "mallow-limewash-paint-colour",
+      "colour": "#BDB5BF",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/mallow-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/mallow-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941445648608",
+      "name": "Marble",
+      "slug": "marble-limewash-paint-colour",
+      "colour": "#949694",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/marble-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/marble-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941445714144",
+      "name": "Marrakesh",
+      "slug": "marrakesh-limewash-paint-colour",
+      "colour": "#EBD3C8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/marrakesh-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/marrakesh-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941445877984",
+      "name": "Meadowsweet",
+      "slug": "meadowsweet-limewash-paint-colour",
+      "colour": "#B1B9A7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/meadowsweet-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/meadowsweet-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941445976288",
+      "name": "Medlar",
+      "slug": "medlar-limewash-paint-colour",
+      "colour": "#C49479",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/medlar-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/medlar-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941446140128",
+      "name": "Melaleuca",
+      "slug": "melaleuca-limewash-paint-colour",
+      "colour": "#E1D6D6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/melaleuca-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/melaleuca-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941446303968",
+      "name": "Melrose",
+      "slug": "melrose-limewash-paint-colour",
+      "colour": "#E5D2C9",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/melrose-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/melrose-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941446435040",
+      "name": "Menthe",
+      "slug": "menthe-limewash-paint-colour",
+      "colour": "#6E8C87",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/menthe-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/menthe-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941446729952",
+      "name": "Midnight",
+      "slug": "midnight-limewash-paint-colour",
+      "colour": "#3C3D46",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/midnight-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/midnight-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941446762720",
+      "name": "Milkweed",
+      "slug": "milkweed-limewash-paint-colour",
+      "colour": "#818084",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/milkweed-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/milkweed-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941446861024",
+      "name": "Millet",
+      "slug": "millet-limewash-paint-colour",
+      "colour": "#CEB97F",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/millet-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/millet-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941447090400",
+      "name": "Mimosa",
+      "slug": "mimosa-limewash-paint-colour",
+      "colour": "#F9D57C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/mimosa-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/mimosa-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941447221472",
+      "name": "Mist",
+      "slug": "mist-limewash-paint-colour",
+      "colour": "#BDC3C5",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/mist-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/mist-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941447418080",
+      "name": "Moorland",
+      "slug": "moorland-limewash-paint-colour",
+      "colour": "#936C53",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/moorland-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/moorland-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941453644000",
+      "name": "Moreton Bay Fig",
+      "slug": "moreton-bay-fig-limewash-paint-colour",
+      "colour": "#898050",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/moreton-bay-fig-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/moreton-bay-fig-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "8417756545367",
+      "name": "Moss",
+      "slug": "moss-limewash-paint-colour",
+      "colour": "#96938F",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/moss-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/moss-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941448433888",
+      "name": "Moth",
+      "slug": "moth-limewash-paint-colour",
+      "colour": "#C7C0B8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/moth-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/moth-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941448761568",
+      "name": "Mudd",
+      "slug": "mudd-limewash-paint-colour",
+      "colour": "#675248",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/mudd-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/mudd-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941448958176",
+      "name": "Mugwort",
+      "slug": "mugwort-limewash-paint-colour",
+      "colour": "#61695C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/mugwort-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/mugwort-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941449154784",
+      "name": "Mulberry",
+      "slug": "mulberry-limewash-paint-colour",
+      "colour": "#757184",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/mulberry-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/mulberry-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941449318624",
+      "name": "Muscat",
+      "slug": "muscat-limewash-paint-colour",
+      "colour": "#836A6B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/muscat-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/muscat-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941449515232",
+      "name": "Mushroom",
+      "slug": "mushroom-limewash-paint-colour",
+      "colour": "#BBADA7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/mushroom-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/mushroom-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941449613536",
+      "name": "Mustard",
+      "slug": "mustard-limewash-paint-colour",
+      "colour": "#E4E4AC",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/mustard-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/mustard-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941449744608",
+      "name": "Mykonos",
+      "slug": "mykonos-limewash-paint-colour",
+      "colour": "#F1EEE1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/mykonos-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/mykonos-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941450006752",
+      "name": "Myrtle",
+      "slug": "myrtle-limewash-paint-colour",
+      "colour": "#425543",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/myrtle-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/myrtle-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941450170592",
+      "name": "Neroli",
+      "slug": "neroli-limewash-paint-colour",
+      "colour": "#F2F4EF",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/neroli-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/neroli-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941450334432",
+      "name": "Nest",
+      "slug": "nest-limewash-paint-colour",
+      "colour": "#5A7782",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/nest-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/nest-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941450465504",
+      "name": "Nettle",
+      "slug": "nettle-limewash-paint-colour",
+      "colour": "#4C5146",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/nettle-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/nettle-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941450662112",
+      "name": "Nigella",
+      "slug": "nigella-limewash-paint-colour",
+      "colour": "#555C6C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/nigella-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/nigella-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941450793184",
+      "name": "Nightshade",
+      "slug": "nightshade-limewash-paint-colour",
+      "colour": "#4F5A66",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/nightshade-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/nightshade-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941450957024",
+      "name": "North",
+      "slug": "north-limewash-paint-colour",
+      "colour": "#C6CAC4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/north-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/north-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941451055328",
+      "name": "North Sea",
+      "slug": "north-sea-limewash-paint-colour",
+      "colour": "#CCCECE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/north-sea-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/north-sea-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941451186400",
+      "name": "Nougat",
+      "slug": "nougat-limewash-paint-colour",
+      "colour": "#D4C4B6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/nougat-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/nougat-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941451284704",
+      "name": "Nullarbor",
+      "slug": "nullarbor-limewash-paint-colour",
+      "colour": "#CDCABD",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/nullarbor-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/nullarbor-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941451677920",
+      "name": "Nurture",
+      "slug": "nurture-limewash-paint-colour",
+      "colour": "#3F3E38",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "black"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/nurture-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/nurture-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941451776224",
+      "name": "Oak",
+      "slug": "oak-limewash-paint-colour",
+      "colour": "#B59B86",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/oak-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/oak-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941452234976",
+      "name": "Oat",
+      "slug": "oat-limewash-paint-colour",
+      "colour": "#87837B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/oat-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/oat-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941452595424",
+      "name": "Obsidian",
+      "slug": "obsidian-limewash-paint-colour",
+      "colour": "#32302F",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "black"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/obsidian-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/obsidian-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941452726496",
+      "name": "Olive",
+      "slug": "olive-limewash-paint-colour",
+      "colour": "#7A7455",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/olive-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/olive-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941452759264",
+      "name": "Onyx",
+      "slug": "onyx-limewash-paint-colour",
+      "colour": "#212121",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "black"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/onyx-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/onyx-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941453250784",
+      "name": "Oyster",
+      "slug": "oyster-limewash-paint-colour",
+      "colour": "#D2D0D0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/oyster-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/oyster-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941453414624",
+      "name": "Palm Sugar",
+      "slug": "palm-sugar-limewash-paint-colour",
+      "colour": "#C6B19D",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/palm-sugar-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/palm-sugar-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941453742304",
+      "name": "Palomino",
+      "slug": "palomino-limewash-paint-colour",
+      "colour": "#F9F1E8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/palomino-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/palomino-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941453840608",
+      "name": "Pampas",
+      "slug": "pampas-limewash-paint-colour",
+      "colour": "#ACAAA2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/pampas-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/pampas-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941454266592",
+      "name": "Paprika",
+      "slug": "paprika-limewash-paint-colour",
+      "colour": "#9E4F31",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/paprika-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/paprika-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941454332128",
+      "name": "Pasadena",
+      "slug": "pasadena-limewash-paint-colour",
+      "colour": "#BE8F8B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/pasadena-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/pasadena-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941454692576",
+      "name": "Peach Blossom",
+      "slug": "peach-blossom-limewash-paint-colour",
+      "colour": "#EDE1DA",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/peach-blossom-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/peach-blossom-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941454954720",
+      "name": "Pear",
+      "slug": "pear-limewash-paint-colour",
+      "colour": "#F3E2AF",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/pear-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/pear-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941455282400",
+      "name": "Peony",
+      "slug": "peony-limewash-paint-colour",
+      "colour": "#C9A29B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/peony-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/peony-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941455413472",
+      "name": "Peppermint",
+      "slug": "peppermint-limewash-paint-colour",
+      "colour": "#5A977D",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/peppermint-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/peppermint-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941455610080",
+      "name": "Periwinkle",
+      "slug": "periwinkle-limewash-paint-colour",
+      "colour": "#6CA1CC",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/periwinkle-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/periwinkle-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941455708384",
+      "name": "Persimmon",
+      "slug": "persimmon-limewash-paint-colour",
+      "colour": "#AD705C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/persimmon-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/persimmon-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941456036064",
+      "name": "Pheasant",
+      "slug": "pheasant-limewash-paint-colour",
+      "colour": "#74473A",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/pheasant-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/pheasant-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941456265440",
+      "name": "Phlox",
+      "slug": "phlox-limewash-paint-colour",
+      "colour": "#AD9193",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/phlox-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/phlox-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941456462048",
+      "name": "Pinewood",
+      "slug": "pinewood-limewash-paint-colour",
+      "colour": "#564D43",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/pinewood-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/pinewood-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941456888032",
+      "name": "Pistachio",
+      "slug": "pistachio-limewash-paint-colour",
+      "colour": "#B8B98E",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/pistachio-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/pistachio-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941456953568",
+      "name": "Platinum",
+      "slug": "platinum-limewash-paint-colour",
+      "colour": "#A9ABAD",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/platinum-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/platinum-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "8417732395351",
+      "name": "Poblenou",
+      "slug": "poblenou-limewash-paint-colour",
+      "colour": "#ABB3B7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/poblenou-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/poblenou-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941469110496",
+      "name": "Poivre",
+      "slug": "poivre-limewash-paint-colour",
+      "colour": "#BFB5B8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/poivre-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/poivre-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941457215712",
+      "name": "Poppy Seed",
+      "slug": "poppy-seed-limewash-paint-colour",
+      "colour": "#343436",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "black"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/poppy-seed-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/poppy-seed-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941457477856",
+      "name": "Potato",
+      "slug": "potato-limewash-paint-colour",
+      "colour": "#F5EAD7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/potato-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/potato-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941457707232",
+      "name": "Prickly Pear",
+      "slug": "prickly-pear-limewash-paint-colour",
+      "colour": "#6D6D56",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/prickly-pear-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/prickly-pear-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941457903840",
+      "name": "Primrose",
+      "slug": "primrose-limewash-paint-colour",
+      "colour": "#F1CBB0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/primrose-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/primrose-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941458034912",
+      "name": "Prun",
+      "slug": "prun-limewash-paint-colour",
+      "colour": "#665B64",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/prun-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/prun-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941458198752",
+      "name": "Pumice",
+      "slug": "pumice-limewash-paint-colour",
+      "colour": "#AFB3B5",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/pumice-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/pumice-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941458329824",
+      "name": "Pussywillow",
+      "slug": "pussywillow-limewash-paint-colour",
+      "colour": "#AFC5C6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/pussywillow-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/pussywillow-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941458591968",
+      "name": "Quiet",
+      "slug": "quiet-limewash-paint-colour",
+      "colour": "#EAE9DD",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/quiet-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/quiet-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941458723040",
+      "name": "Quince",
+      "slug": "quince-limewash-paint-colour",
+      "colour": "#DFC188",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/quince-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/quince-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941458919648",
+      "name": "Raffia",
+      "slug": "raffia-limewash-paint-colour",
+      "colour": "#E9BA9E",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/raffia-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/raffia-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941459247328",
+      "name": "Raspberry",
+      "slug": "raspberry-limewash-paint-colour",
+      "colour": "#B79195",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/raspberry-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/raspberry-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941459345632",
+      "name": "Raw White",
+      "slug": "raw-white-limewash-paint-colour",
+      "colour": "#FBF8F5",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "white"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/raw-white-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/raw-white-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941459607776",
+      "name": "Reed",
+      "slug": "reed-limewash-paint-colour",
+      "colour": "#EAE2C1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/reed-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/reed-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941459738848",
+      "name": "Reflection",
+      "slug": "reflection-limewash-paint-colour",
+      "colour": "#E3DBC8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/reflection-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/reflection-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941459869920",
+      "name": "Retreat",
+      "slug": "retreat-limewash-paint-colour",
+      "colour": "#D9D9D0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/retreat-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/retreat-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941460230368",
+      "name": "Rice",
+      "slug": "rice-limewash-paint-colour",
+      "colour": "#F5E5CA",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/rice-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/rice-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941460426976",
+      "name": "River",
+      "slug": "river-limewash-paint-colour",
+      "colour": "#738192",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/river-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/river-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941460623584",
+      "name": "Riverstone",
+      "slug": "riverstone-limewash-paint-colour",
+      "colour": "#676768",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/riverstone-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/riverstone-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941460754656",
+      "name": "Robin Egg",
+      "slug": "robin-egg-limewash-paint-colour",
+      "colour": "#8DA8AA",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/robin-egg-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/robin-egg-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941460852960",
+      "name": "Rosehip",
+      "slug": "rosehip-limewash-paint-colour",
+      "colour": "#F7D4C9",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/rosehip-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/rosehip-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941461049568",
+      "name": "Rosewood",
+      "slug": "rosewood-limewash-paint-colour",
+      "colour": "#604E4A",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/rosewood-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/rosewood-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941461213408",
+      "name": "Ruby",
+      "slug": "ruby-limewash-paint-colour",
+      "colour": "#4E3C42",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/ruby-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/ruby-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941461508320",
+      "name": "Rye",
+      "slug": "rye-limewash-paint-colour",
+      "colour": "#D6C4B9",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/rye-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/rye-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941461573856",
+      "name": "Saffron",
+      "slug": "saffron-limewash-paint-colour",
+      "colour": "#CA865C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/saffron-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/saffron-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941461803232",
+      "name": "Sage",
+      "slug": "sage-limewash-paint-colour",
+      "colour": "#7B8981",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sage-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sage-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941462130912",
+      "name": "Saint Germain",
+      "slug": "saint-germain-limewash-paint-colour",
+      "colour": "#DCB2A4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/saint-germain-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/saint-germain-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941462360288",
+      "name": "Saltbush",
+      "slug": "saltbush-limewash-paint-colour",
+      "colour": "#999596",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/saltbush-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/saltbush-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "8999746765143",
+      "name": "Salve",
+      "slug": "salve-limewash-paint-colour",
+      "colour": "#545043",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/salve-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/salve-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941462458592",
+      "name": "Salvia",
+      "slug": "salvia-limewash-paint-colour",
+      "colour": "#AEB6C2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/salvia-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/salvia-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941462622432",
+      "name": "Samphire",
+      "slug": "samphire-limewash-paint-colour",
+      "colour": "#908F63",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/samphire-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/samphire-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941462819040",
+      "name": "Sandalwood",
+      "slug": "sandalwood-limewash-paint-colour",
+      "colour": "#D6B87F",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sandalwood-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sandalwood-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941462982880",
+      "name": "Sandstone",
+      "slug": "sandstone-limewash-paint-colour",
+      "colour": "#E6D8C3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sandstone-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sandstone-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941463146720",
+      "name": "Sapphire",
+      "slug": "sapphire-limewash-paint-colour",
+      "colour": "#4F8AAE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sapphire-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sapphire-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941463343328",
+      "name": "Sassafras",
+      "slug": "sassafras-limewash-paint-colour",
+      "colour": "#F1E2C8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sassafras-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sassafras-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941463474400",
+      "name": "Savannah",
+      "slug": "savannah-limewash-paint-colour",
+      "colour": "#D0C4A6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/savannah-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/savannah-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941463638240",
+      "name": "Sea Urchin",
+      "slug": "sea-urchin-limewash-paint-colour",
+      "colour": "#625E6B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sea-urchin-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sea-urchin-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941463834848",
+      "name": "Seagrass",
+      "slug": "seagrass-limewash-paint-colour",
+      "colour": "#CEBB76",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/seagrass-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/seagrass-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941464162528",
+      "name": "Seaweed",
+      "slug": "seaweed-limewash-paint-colour",
+      "colour": "#585949",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/seaweed-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/seaweed-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941464195296",
+      "name": "Sedum",
+      "slug": "sedum-limewash-paint-colour",
+      "colour": "#C9C4C1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sedum-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sedum-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941464326368",
+      "name": "Seed",
+      "slug": "seed-limewash-paint-colour",
+      "colour": "#E3D8C1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/seed-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/seed-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941464555744",
+      "name": "Seed Pod",
+      "slug": "seed-pod-limewash-paint-colour",
+      "colour": "#868580",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/seed-pod-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/seed-pod-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941464752352",
+      "name": "Sepia",
+      "slug": "sepia-limewash-paint-colour",
+      "colour": "#C9BBA4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sepia-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sepia-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941464883424",
+      "name": "Serene",
+      "slug": "serene-limewash-paint-colour",
+      "colour": "#F7EFE1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/serene-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/serene-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941465407712",
+      "name": "Shale",
+      "slug": "shale-limewash-paint-colour",
+      "colour": "#E6E6E6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/shale-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/shale-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941465538784",
+      "name": "Shell",
+      "slug": "shell-limewash-paint-colour",
+      "colour": "#DCD0CE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/shell-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/shell-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941465800928",
+      "name": "Sheoak",
+      "slug": "sheoak-limewash-paint-colour",
+      "colour": "#8E857A",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sheoak-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sheoak-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941466095840",
+      "name": "Sienna",
+      "slug": "sienna-limewash-paint-colour",
+      "colour": "#D5BC93",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sienna-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sienna-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941466194144",
+      "name": "Silky Oak",
+      "slug": "silky-oak-limewash-paint-colour",
+      "colour": "#B0A5A4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/silky-oak-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/silky-oak-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941466357984",
+      "name": "Silver",
+      "slug": "silver-limewash-paint-colour",
+      "colour": "#E7E7E7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/silver-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/silver-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941466554592",
+      "name": "Silversky",
+      "slug": "silversky-limewash-paint-colour",
+      "colour": "#D2D6D7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/silversky-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/silversky-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941466816736",
+      "name": "Sky",
+      "slug": "sky-limewash-paint-colour",
+      "colour": "#D9E2E2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sky-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sky-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941467078880",
+      "name": "Slate",
+      "slug": "slate-limewash-paint-colour",
+      "colour": "#4E4E4C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/slate-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/slate-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941467209952",
+      "name": "Slow",
+      "slug": "slow-limewash-paint-colour",
+      "colour": "#E4E3D9",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/slow-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/slow-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941467767008",
+      "name": "Smokebush",
+      "slug": "smokebush-limewash-paint-colour",
+      "colour": "#E4E4DE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/smokebush-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/smokebush-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941467832544",
+      "name": "Sorrel",
+      "slug": "sorrel-limewash-paint-colour",
+      "colour": "#DBC779",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sorrel-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sorrel-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941468160224",
+      "name": "Spearmint",
+      "slug": "spearmint-limewash-paint-colour",
+      "colour": "#517957",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/spearmint-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/spearmint-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941468324064",
+      "name": "Spring",
+      "slug": "spring-limewash-paint-colour",
+      "colour": "#B5D0D5",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/spring-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/spring-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941468913888",
+      "name": "Stella",
+      "slug": "stella-limewash-paint-colour",
+      "colour": "#AABBE3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/stella-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/stella-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941469143264",
+      "name": "Still",
+      "slug": "still-limewash-paint-colour",
+      "colour": "#E7E3D7",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/still-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/still-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941469274336",
+      "name": "Stone",
+      "slug": "stone-limewash-paint-colour",
+      "colour": "#FBFAF8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "white"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/stone-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/stone-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941469503712",
+      "name": "Storm",
+      "slug": "storm-limewash-paint-colour",
+      "colour": "#4D667F",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/storm-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/storm-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941469700320",
+      "name": "Straw",
+      "slug": "straw-limewash-paint-colour",
+      "colour": "#D8C799",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/straw-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/straw-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941469995232",
+      "name": "Summer Grass",
+      "slug": "summer-grass-limewash-paint-colour",
+      "colour": "#A6BEA1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/summer-grass-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/summer-grass-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941470126304",
+      "name": "Swallow",
+      "slug": "swallow-limewash-paint-colour",
+      "colour": "#97B2C5",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/swallow-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/swallow-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941470224608",
+      "name": "Sweetpea",
+      "slug": "sweetpea-limewash-paint-colour",
+      "colour": "#F7D4D4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/sweetpea-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/sweetpea-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941470486752",
+      "name": "Tangier",
+      "slug": "tangier-limewash-paint-colour",
+      "colour": "#F2E8D5",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tangier-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tangier-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941470519520",
+      "name": "Tansy",
+      "slug": "tansy-limewash-paint-colour",
+      "colour": "#CFAB87",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tansy-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tansy-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941470650592",
+      "name": "Tattoo",
+      "slug": "tattoo-limewash-paint-colour",
+      "colour": "#353B44",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tattoo-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tattoo-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941470781664",
+      "name": "Tea",
+      "slug": "tea-limewash-paint-colour",
+      "colour": "#9F836C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tea-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tea-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941470945504",
+      "name": "Tea Rose",
+      "slug": "tea-rose-limewash-paint-colour",
+      "colour": "#E2D9D8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tea-rose-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tea-rose-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941471109344",
+      "name": "Thatch",
+      "slug": "thatch-limewash-paint-colour",
+      "colour": "#958065",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/thatch-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/thatch-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941471240416",
+      "name": "Thistle",
+      "slug": "thistle-limewash-paint-colour",
+      "colour": "#CEC8CF",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/thistle-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/thistle-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941471404256",
+      "name": "Thistle Leaf",
+      "slug": "thistle-leaf-limewash-paint-colour",
+      "colour": "#4B594B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/thistle-leaf-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/thistle-leaf-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941471666400",
+      "name": "Thorn",
+      "slug": "thorn-limewash-paint-colour",
+      "colour": "#A2A4A3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/thorn-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/thorn-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941472026848",
+      "name": "Tobacco",
+      "slug": "tobacco-limewash-paint-colour",
+      "colour": "#5F4840",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tobacco-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tobacco-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941472092384",
+      "name": "Topaz",
+      "slug": "topaz-limewash-paint-colour",
+      "colour": "#D0B37B",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "yellow"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/topaz-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/topaz-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941472288992",
+      "name": "Tranquil",
+      "slug": "tranquil-limewash-paint-colour",
+      "colour": "#ECEBE4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tranquil-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tranquil-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941472387296",
+      "name": "Transparent White",
+      "slug": "transparent-white-limewash-paint-colour",
+      "colour": "#FFFFFE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "white"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/transparent-white-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/transparent-white-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941472583904",
+      "name": "Tuberose",
+      "slug": "tuberose-limewash-paint-colour",
+      "colour": "#FDF0E6",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tuberose-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tuberose-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941472747744",
+      "name": "Tucson",
+      "slug": "tucson-limewash-paint-colour",
+      "colour": "#86969D",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tucson-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tucson-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941472878816",
+      "name": "Tumble",
+      "slug": "tumble-limewash-paint-colour",
+      "colour": "#5C5B53",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tumble-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tumble-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941473075424",
+      "name": "Tundra",
+      "slug": "tundra-limewash-paint-colour",
+      "colour": "#C8B98D",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tundra-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tundra-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941473206496",
+      "name": "Turmeric",
+      "slug": "turmeric-limewash-paint-colour",
+      "colour": "#CA9562",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "orange"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/turmeric-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/turmeric-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941473468640",
+      "name": "Tweed",
+      "slug": "tweed-limewash-paint-colour",
+      "colour": "#B2B3B0",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/tweed-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/tweed-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941473534176",
+      "name": "Umber",
+      "slug": "umber-limewash-paint-colour",
+      "colour": "#A08E7E",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/umber-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/umber-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941473796320",
+      "name": "Valerian",
+      "slug": "valerian-limewash-paint-colour",
+      "colour": "#CED5CC",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/valerian-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/valerian-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941473829088",
+      "name": "Vanilla",
+      "slug": "vanilla-limewash-paint-colour",
+      "colour": "#FFF3E4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/vanilla-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/vanilla-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941474156768",
+      "name": "Vervain",
+      "slug": "vervain-limewash-paint-colour",
+      "colour": "#BEC8C1",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/vervain-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/vervain-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941474484448",
+      "name": "Wander",
+      "slug": "wander-limewash-paint-colour",
+      "colour": "#DAD3C3",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/wander-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/wander-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941474582752",
+      "name": "Water",
+      "slug": "water-limewash-paint-colour",
+      "colour": "#BDCECE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/water-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/water-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941474746592",
+      "name": "Weeping Sedge",
+      "slug": "weeping-sedge-limewash-paint-colour",
+      "colour": "#A8A499",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/weeping-sedge-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/weeping-sedge-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941474910432",
+      "name": "Wheat",
+      "slug": "wheat-limewash-paint-colour",
+      "colour": "#CABB9C",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/wheat-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/wheat-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941475107040",
+      "name": "White Fox",
+      "slug": "white-fox-limewash-paint-colour",
+      "colour": "#F2ECDC",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/white-fox-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/white-fox-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941475434720",
+      "name": "White Stag",
+      "slug": "white-stag-limewash-paint-colour",
+      "colour": "#C7C6BD",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/white-stag-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/white-stag-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941475401952",
+      "name": "Whitewash",
+      "slug": "whitewash-limewash-paint-colour",
+      "colour": "#FFFFFE",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "white"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/whitewash-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/whitewash-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941475565792",
+      "name": "Wild Rice",
+      "slug": "wild-rice-limewash-paint-colour",
+      "colour": "#928377",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "brown"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/wild-rice-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/wild-rice-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941475762400",
+      "name": "Wild Rose",
+      "slug": "wild-rose-limewash-paint-colour",
+      "colour": "#E3AD9A",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "pink"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/wild-rose-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/wild-rose-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941475893472",
+      "name": "Willow",
+      "slug": "willow-limewash-paint-colour",
+      "colour": "#9CADAD",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/willow-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/willow-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941476122848",
+      "name": "Winter Morning",
+      "slug": "winter-morning-limewash-paint-colour",
+      "colour": "#CBDEEF",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "blue"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/winter-morning-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/winter-morning-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941476450528",
+      "name": "Wisteria",
+      "slug": "wisteria-limewash-paint-colour",
+      "colour": "#B8B4C8",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "purple"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/wisteria-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/wisteria-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941476679904",
+      "name": "Witch Hazel",
+      "slug": "witch-hazel-limewash-paint-colour",
+      "colour": "#D2CCBD",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "neutral"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/witch-hazel-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/witch-hazel-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941477007584",
+      "name": "Wolf",
+      "slug": "wolf-limewash-paint-colour",
+      "colour": "#848781",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/wolf-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/wolf-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941477171424",
+      "name": "Woodbine",
+      "slug": "woodbine-limewash-paint-colour",
+      "colour": "#4B5B49",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/woodbine-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/woodbine-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941477269728",
+      "name": "Wormwood",
+      "slug": "wormwood-limewash-paint-colour",
+      "colour": "#B4BBB2",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "green"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/wormwood-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/wormwood-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    },
+    {
+      "id": "7941477597408",
+      "name": "Yucca",
+      "slug": "yucca-limewash-paint-colour",
+      "colour": "#C8CEC4",
+      "colourMethod": "manufacturer-web-preview",
+      "families": [
+        "grey"
+      ],
+      "available": true,
+      "productUrl": "https://www.bauwerkcolour.com/en-gb/product/yucca-limewash-paint-colour",
+      "sampleUrl": "https://www.bauwerkcolour.com/en-gb/product/yucca-limewash-paint-colour",
+      "sourceUpdatedAt": "2026-10-18T21:20:58+02:00"
+    }
+  ]
+}

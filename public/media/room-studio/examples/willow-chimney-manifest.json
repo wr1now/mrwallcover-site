@@ -1,0 +1,200 @@
+{
+  "id": "willow-chimney",
+  "provenance": "Original illustrative room and wallpaper artwork. No supplier endorsement or completed-project claim.",
+  "revisionId": "eac2bdd6-53fd-4f55-889a-0be76017446d-revision-1",
+  "packageSha256": "62c841a784fe378108b2f7a8bb6c4f650b5b55d552f8e8ae3a092e576ba2f943",
+  "compilerVersion": "room-studio-geometry/1.0.0",
+  "sourceSha256": "1586cf420a36bbe3646d7e4f6c4f26280115a106189361a9acc4f696db8cd680",
+  "meshUvSha256": "8a5ece155eede7a37bd27aed12f8697f8acd1430ef053db8b0724f69fce9400e",
+  "room": {
+    "corners": 8,
+    "heightMm": 2800,
+    "doors": 1,
+    "windows": 3
+  },
+  "wallpaper": [
+    {
+      "name": "Original illustrative Willow lattice wallpaper",
+      "sourcePixels": [
+        1536,
+        1536
+      ],
+      "sourceSha256": "f4fd41423047815e1c719d97824a4a978555eaf15c0949ba6244caff717bd529",
+      "physicalMm": [
+        640,
+        640
+      ],
+      "repeatKind": "tile",
+      "match": "straight",
+      "offsetAlreadyIncluded": false,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "rotation": 0,
+      "nativePixelsPerInch": [
+        61,
+        61
+      ]
+    }
+  ],
+  "setOut": [
+    {
+      "wallId": "willow-east",
+      "lengthMm": 4600,
+      "offsetXmm": 0,
+      "offsetYmm": 0,
+      "startU": 0,
+      "endU": 7.1875
+    },
+    {
+      "wallId": "willow-north-right",
+      "lengthMm": 2100,
+      "offsetXmm": -4600,
+      "offsetYmm": 0,
+      "startU": 7.1875,
+      "endU": 10.46875
+    },
+    {
+      "wallId": "willow-chimney-right",
+      "lengthMm": 400,
+      "offsetXmm": -6700,
+      "offsetYmm": 0,
+      "startU": 10.46875,
+      "endU": 11.09375
+    },
+    {
+      "wallId": "willow-chimney-front",
+      "lengthMm": 1800,
+      "offsetXmm": -7100,
+      "offsetYmm": 0,
+      "startU": 11.09375,
+      "endU": 13.90625
+    },
+    {
+      "wallId": "willow-chimney-left",
+      "lengthMm": 400,
+      "offsetXmm": -8900,
+      "offsetYmm": 0,
+      "startU": 13.90625,
+      "endU": 14.53125
+    },
+    {
+      "wallId": "willow-north-left",
+      "lengthMm": 2300,
+      "offsetXmm": -9300,
+      "offsetYmm": 0,
+      "startU": 14.53125,
+      "endU": 18.125
+    },
+    {
+      "wallId": "willow-west",
+      "lengthMm": 4600,
+      "offsetXmm": -11600,
+      "offsetYmm": 0,
+      "startU": 18.125,
+      "endU": 25.3125
+    }
+  ],
+  "renderer": {
+    "blenderVersion": "4.5.0",
+    "device": "GPU",
+    "samples": 128,
+    "seed": 217,
+    "elapsedSeconds": 214.035,
+    "renderedGeometryVerified": true,
+    "geometrySha256": "d9bf6ef10e37c0abdf46dc8dbe4cb59d2981f078aeb0788493bcc57a76a5b944"
+  },
+  "preview": {
+    "file": "willow-chimney-preview.webp",
+    "width": 960,
+    "height": 540,
+    "bytes": 67682,
+    "sha256": "ed77c19d55e796219832d56640aa7bc636e2d0d1badcfea3dfc3542d8e4c0172"
+  },
+  "outputs": [
+    {
+      "kind": "still-1",
+      "file": "willow-chimney-1.webp",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 299788,
+      "sha256": "becff0268e8ec7f30b8fa3181b79b8b12bc90790ae68fbc9b862e5b3aa2634af",
+      "originalPng": {
+        "file": "still-1.png",
+        "bytes": 2377871,
+        "sha256": "ede1db0d9be6e9992d25909cfca4a933f359987f3dd8477281a7658adf6a4196"
+      },
+      "renderSeconds": 34.35,
+      "compression": {
+        "encoding": "lossy",
+        "webpQuality": 96,
+        "pixelIdentical": false,
+        "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+        "meanAbsoluteError": 0.9362,
+        "rmse": 1.506,
+        "psnrDb": 44.574,
+        "psnrUnbounded": false,
+        "maximumChannelError": 17
+      },
+      "encoding": "lossy",
+      "pixelIdentical": false
+    },
+    {
+      "kind": "still-2",
+      "file": "willow-chimney-2.webp",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 281400,
+      "sha256": "efa923a108d9713db7ff2ed3fe445960a5207e0bc15d4310b3bc7fa1b67d7091",
+      "originalPng": {
+        "file": "still-2.png",
+        "bytes": 2429257,
+        "sha256": "d5f19f0017ad1a4b8c8917297aeb67f4b4b1ce6686e77d451fff266cfd05cd9b"
+      },
+      "renderSeconds": 35.408,
+      "compression": {
+        "encoding": "lossy",
+        "webpQuality": 96,
+        "pixelIdentical": false,
+        "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+        "meanAbsoluteError": 0.9085,
+        "rmse": 1.463,
+        "psnrDb": 44.826,
+        "psnrUnbounded": false,
+        "maximumChannelError": 16
+      },
+      "encoding": "lossy",
+      "pixelIdentical": false
+    },
+    {
+      "kind": "panorama",
+      "file": "willow-chimney-panorama.webp",
+      "width": 4096,
+      "height": 2048,
+      "bytes": 467572,
+      "sha256": "4db678c0c6752e7d9f60ffc58dca17813ced6ace25e61499442d7d8f492e66ae",
+      "originalPng": {
+        "file": "panorama.png",
+        "bytes": 7746684,
+        "sha256": "df2b3876ba82213a7c8eba909ad45816cde9d2524cd43d81ace38204a3b34c22"
+      },
+      "renderSeconds": 144.029,
+      "compression": {
+        "encoding": "lossy",
+        "webpQuality": 96,
+        "pixelIdentical": false,
+        "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+        "meanAbsoluteError": 0.7492,
+        "rmse": 1.1424,
+        "psnrDb": 46.975,
+        "psnrUnbounded": false,
+        "maximumChannelError": 20
+      },
+      "encoding": "lossy",
+      "pixelIdentical": false
+    }
+  ]
+}

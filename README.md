@@ -24,6 +24,10 @@ npm run preview
 
 `npm run build` writes the site to `dist/`. When preparing the committed reader mirror for release, match production's public contact-channel configuration; see [the mirror build instructions](docs/ai-crawler.md#alternative-reader-access). The real phone secret is not needed locally.
 
+## Room Studio
+
+`/room-studio/` contains Wallpaper my room: a free guided photo visualiser and an isolated measured 3D room editor. See [the photo and commerce delivery record](docs/room-studio/wallpaper-my-room.md). See [its architecture, local checks and acceptance status](docs/room-studio/README.md), [Bauwerk catalogue provenance](docs/room-studio-catalogue.md) and [private-service runbook](docs/room-studio/backend.md). Local editing and exports work without an account. Cloud saving, automatic plan analysis and finished processing remain disabled until separately configured and verified.
+
 ## Edit the copy
 
 Core business and service wording lives in `src/content/`. The concise Atelier homepage is composed in `src/pages/index.astro`; its hero wording is in `src/content/home.json`. Extended original copy and evidence now live on `/practice/`, `/projects/` and `/contact/`, with FAQ and material-studio content on their existing routes. Shared relocated editorial data is in `src/data/home-editorial.ts`. AI reference projections are documented in `docs/ai-crawler.md`.

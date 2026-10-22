@@ -1,0 +1,181 @@
+{
+  "id": "indigo-bay",
+  "provenance": "Original illustrative room and wallpaper artwork. No supplier endorsement or completed-project claim.",
+  "revisionId": "3b06e5ad-1689-48f2-a712-d6d5af2ac54d-revision-1",
+  "packageSha256": "b1a45f45e088b2f37b56fdec683aa200a5e96bcde1f770789232a03c229ceeef",
+  "compilerVersion": "room-studio-geometry/1.0.0",
+  "sourceSha256": "1dc531ee55ec94158ae8f4c26fc0e1c2dedd8d8e4939b4201fe750df4780119f",
+  "meshUvSha256": "af4d056508377dc35f064d5e07d55f09b97b4ffe270bb4fd914e7318ca56b280",
+  "room": {
+    "corners": 6,
+    "heightMm": 2750,
+    "doors": 1,
+    "windows": 4
+  },
+  "wallpaper": [
+    {
+      "name": "Original illustrative Indigo arcade wallpaper",
+      "sourcePixels": [
+        1536,
+        1536
+      ],
+      "sourceSha256": "51f03e215600f23434c69f8fe647015acd11f37d1cd9d4523bb4b1154e9aa202",
+      "physicalMm": [
+        600,
+        600
+      ],
+      "repeatKind": "tile",
+      "match": "half-drop",
+      "offsetAlreadyIncluded": true,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "rotation": 0,
+      "nativePixelsPerInch": [
+        65,
+        65
+      ]
+    }
+  ],
+  "setOut": [
+    {
+      "wallId": "indigo-east",
+      "lengthMm": 3600,
+      "offsetXmm": 0,
+      "offsetYmm": 0,
+      "startU": 0,
+      "endU": 6
+    },
+    {
+      "wallId": "indigo-bay-right",
+      "lengthMm": 1562.05,
+      "offsetXmm": -3600,
+      "offsetYmm": 0,
+      "startU": 6,
+      "endU": 8.603417
+    },
+    {
+      "wallId": "indigo-bay-centre",
+      "lengthMm": 3200,
+      "offsetXmm": -5162,
+      "offsetYmm": 0,
+      "startU": 8.603333,
+      "endU": 13.936667
+    },
+    {
+      "wallId": "indigo-bay-left",
+      "lengthMm": 1562.05,
+      "offsetXmm": -8362,
+      "offsetYmm": 0,
+      "startU": 13.936667,
+      "endU": 16.540083
+    },
+    {
+      "wallId": "indigo-west",
+      "lengthMm": 3600,
+      "offsetXmm": -9924,
+      "offsetYmm": 0,
+      "startU": 16.54,
+      "endU": 22.54
+    }
+  ],
+  "renderer": {
+    "blenderVersion": "4.5.0",
+    "device": "GPU",
+    "samples": 128,
+    "seed": 217,
+    "elapsedSeconds": 158.575,
+    "renderedGeometryVerified": true,
+    "geometrySha256": "01b370ffd5e3a2e32d9bb7e41454a82d56667fd8d726758d29763e285fe58fe8"
+  },
+  "preview": {
+    "file": "indigo-bay-preview.webp",
+    "width": 960,
+    "height": 540,
+    "bytes": 66498,
+    "sha256": "674adae7498008119925d31ce08f76e69c740783db4103a2cf07262869e61031"
+  },
+  "outputs": [
+    {
+      "kind": "still-1",
+      "file": "indigo-bay-1.webp",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 1536702,
+      "sha256": "b324a49c6087fa7ea9b522b9334a84c6afd304dc8f24bdbba3d1516554948f7f",
+      "originalPng": {
+        "file": "still-1.png",
+        "bytes": 2561353,
+        "sha256": "6dc4699b8cdd603ea06475951730ea9c4d9ef5492544fed77c0379a6ff761039"
+      },
+      "renderSeconds": 20.424,
+      "compression": {
+        "encoding": "lossless",
+        "pixelIdentical": true,
+        "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+        "meanAbsoluteError": 0,
+        "rmse": 0,
+        "psnrDb": null,
+        "psnrUnbounded": true,
+        "maximumChannelError": 0
+      },
+      "encoding": "lossless",
+      "pixelIdentical": true
+    },
+    {
+      "kind": "still-2",
+      "file": "indigo-bay-2.webp",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 1520186,
+      "sha256": "c9c9c07521d161099f5d28f468e851ac700b7f99aba0d49059b240721dbdf6ad",
+      "originalPng": {
+        "file": "still-2.png",
+        "bytes": 2608629,
+        "sha256": "8f87f6c0bf45393f017b3e413a474650a7eca168f5a0fab753101b8072423c8f"
+      },
+      "renderSeconds": 19.526,
+      "compression": {
+        "encoding": "lossless",
+        "pixelIdentical": true,
+        "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+        "meanAbsoluteError": 0,
+        "rmse": 0,
+        "psnrDb": null,
+        "psnrUnbounded": true,
+        "maximumChannelError": 0
+      },
+      "encoding": "lossless",
+      "pixelIdentical": true
+    },
+    {
+      "kind": "panorama",
+      "file": "indigo-bay-panorama.webp",
+      "width": 4096,
+      "height": 2048,
+      "bytes": 4509810,
+      "sha256": "8bcf44fcc257b9be9a992e436e4722b8a364bb97764466b88eb34d1d5063f7c5",
+      "originalPng": {
+        "file": "panorama.png",
+        "bytes": 8115087,
+        "sha256": "b2739f48afbb0173129c52f77dd7f2c0b0bc61d71bf23faf8190695b37439768"
+      },
+      "renderSeconds": 118.324,
+      "compression": {
+        "encoding": "lossless",
+        "pixelIdentical": true,
+        "comparison": "Decoded full-resolution 8-bit sRGB RGB channels",
+        "meanAbsoluteError": 0,
+        "rmse": 0,
+        "psnrDb": null,
+        "psnrUnbounded": true,
+        "maximumChannelError": 0
+      },
+      "encoding": "lossless",
+      "pixelIdentical": true
+    }
+  ]
+}

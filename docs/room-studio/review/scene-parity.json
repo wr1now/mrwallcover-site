@@ -1,0 +1,137 @@
+{
+  "paintToWallpaperVisible": true,
+  "removeAndReapply": true,
+  "greenPixelRatio": {
+    "before": 0,
+    "after": 0.029244407314582752,
+    "removed": 0
+  },
+  "actualMeshAttributeParity": true,
+  "meshes": 105,
+  "lowCameraPosePreserved": true,
+  "verticalFov": 65,
+  "detailChecks": [
+    {
+      "viewport": 1000,
+      "maps": [
+        {
+          "material": "fixture-wallpaper",
+          "width": 2048,
+          "height": 2048,
+          "minFilter": 1008,
+          "generateMipmaps": true,
+          "anisotropy": 16
+        },
+        {
+          "material": "fixture-bauwerk-olive",
+          "width": 256,
+          "height": 256,
+          "minFilter": 1008,
+          "generateMipmaps": true,
+          "anisotropy": 16
+        }
+      ]
+    },
+    {
+      "viewport": 390,
+      "maps": [
+        {
+          "material": "fixture-wallpaper",
+          "width": 1024,
+          "height": 1024,
+          "minFilter": 1008,
+          "generateMipmaps": true,
+          "anisotropy": 16
+        },
+        {
+          "material": "fixture-bauwerk-olive",
+          "width": 256,
+          "height": 256,
+          "minFilter": 1008,
+          "generateMipmaps": true,
+          "anisotropy": 16
+        }
+      ]
+    }
+  ],
+  "trilinearMipmaps": true,
+  "hardwareBoundedAnisotropy": true,
+  "activeImagesOnly": true,
+  "textureBudgetIncludingMips": {
+    "desktopPixels": 11998156,
+    "mobilePixels": 5592404
+  },
+  "exampleChecks": [
+    {
+      "id": "willow-chimney",
+      "meshUvParity": true,
+      "publishedRenderSourceParity": true,
+      "nativeArtworkPixels": [
+        1536,
+        1536
+      ],
+      "camera": {
+        "position": [
+          3.100000000000001,
+          1.5500000000000003,
+          0.75
+        ],
+        "direction": [
+          -1.287079939035931e-16,
+          -0.01449123183459566,
+          0.9998949965870998
+        ],
+        "fov": 65
+      },
+      "outputsVerified": 3
+    },
+    {
+      "id": "ochre-lshape",
+      "meshUvParity": true,
+      "publishedRenderSourceParity": true,
+      "nativeArtworkPixels": [
+        1536,
+        1536
+      ],
+      "camera": {
+        "position": [
+          0.75,
+          1.55,
+          0.6500000000000004
+        ],
+        "direction": [
+          0.7442242658816209,
+          -0.05222626427239445,
+          0.6658848694730287
+        ],
+        "fov": 65
+      },
+      "outputsVerified": 3
+    },
+    {
+      "id": "indigo-bay",
+      "meshUvParity": true,
+      "publishedRenderSourceParity": true,
+      "nativeArtworkPixels": [
+        1536,
+        1536
+      ],
+      "camera": {
+        "position": [
+          2.8000000000000003,
+          1.5500000000000003,
+          0.7499999999999996
+        ],
+        "direction": [
+          -1.2860001737963406e-16,
+          -0.04343722427630705,
+          0.9990561583550597
+        ],
+        "fov": 65
+      },
+      "outputsVerified": 3
+    }
+  ],
+  "errors": [],
+  "blocked": []
+}

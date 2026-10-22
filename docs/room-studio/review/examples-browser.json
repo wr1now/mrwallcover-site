@@ -1,0 +1,274 @@
+{
+  "examples": [
+    {
+      "id": "willow-chimney",
+      "layoutSegments": 8,
+      "windows": 3,
+      "repeatMm": {
+        "width": 640,
+        "height": 640
+      },
+      "sourcePixels": {
+        "width": 1536,
+        "height": 1536
+      },
+      "exportReimport": true,
+      "undoRedo": true,
+      "meshUvParity": true,
+      "interactiveCaptures": [
+        {
+          "viewport": 1440,
+          "canvasPixels": [
+            591,
+            480
+          ],
+          "originalColourPixelRatio": 0.025821347997743938,
+          "image": "willow-chimney-interactive-1440.png"
+        },
+        {
+          "viewport": 390,
+          "canvasPixels": [
+            322,
+            340
+          ],
+          "originalColourPixelRatio": 0.01434051881622214,
+          "image": "willow-chimney-interactive-390.png"
+        }
+      ],
+      "outputs": [
+        [
+          1920,
+          1080
+        ],
+        [
+          1920,
+          1080
+        ],
+        [
+          4096,
+          2048
+        ]
+      ]
+    },
+    {
+      "id": "ochre-lshape",
+      "layoutSegments": 6,
+      "windows": 3,
+      "repeatMm": {
+        "width": 530,
+        "height": 640
+      },
+      "sourcePixels": {
+        "width": 1536,
+        "height": 1536
+      },
+      "exportReimport": true,
+      "undoRedo": true,
+      "meshUvParity": true,
+      "interactiveCaptures": [
+        {
+          "viewport": 1440,
+          "canvasPixels": [
+            591,
+            480
+          ],
+          "originalColourPixelRatio": 0.07925831923293852,
+          "image": "ochre-lshape-interactive-1440.png"
+        },
+        {
+          "viewport": 390,
+          "canvasPixels": [
+            322,
+            340
+          ],
+          "originalColourPixelRatio": 0.08851845085860431,
+          "image": "ochre-lshape-interactive-390.png"
+        }
+      ],
+      "outputs": [
+        [
+          1920,
+          1080
+        ],
+        [
+          1920,
+          1080
+        ],
+        [
+          4096,
+          2048
+        ]
+      ]
+    },
+    {
+      "id": "indigo-bay",
+      "layoutSegments": 6,
+      "windows": 4,
+      "repeatMm": {
+        "width": 600,
+        "height": 600
+      },
+      "sourcePixels": {
+        "width": 1536,
+        "height": 1536
+      },
+      "exportReimport": true,
+      "undoRedo": true,
+      "meshUvParity": true,
+      "interactiveCaptures": [
+        {
+          "viewport": 1440,
+          "canvasPixels": [
+            591,
+            480
+          ],
+          "originalColourPixelRatio": 0.2227086858432036,
+          "image": "indigo-bay-interactive-1440.png"
+        },
+        {
+          "viewport": 390,
+          "canvasPixels": [
+            322,
+            340
+          ],
+          "originalColourPixelRatio": 0.2610339788089149,
+          "image": "indigo-bay-interactive-390.png"
+        }
+      ],
+      "outputs": [
+        [
+          1920,
+          1080
+        ],
+        [
+          1920,
+          1080
+        ],
+        [
+          4096,
+          2048
+        ]
+      ]
+    }
+  ],
+  "navigation": [
+    {
+      "width": 390,
+      "menu": true,
+      "overflow": false,
+      "cardCopies": [
+        {
+          "id": "willow-chimney",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        },
+        {
+          "id": "ochre-lshape",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        },
+        {
+          "id": "indigo-bay",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        }
+      ],
+      "cardExploreHitTargets": true
+    },
+    {
+      "width": 768,
+      "menu": true,
+      "overflow": false,
+      "cardCopies": [
+        {
+          "id": "willow-chimney",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        },
+        {
+          "id": "ochre-lshape",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        },
+        {
+          "id": "indigo-bay",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        }
+      ],
+      "cardExploreHitTargets": true
+    },
+    {
+      "width": 1024,
+      "menu": true,
+      "overflow": false,
+      "cardCopies": [
+        {
+          "id": "willow-chimney",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        },
+        {
+          "id": "ochre-lshape",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        },
+        {
+          "id": "indigo-bay",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        }
+      ],
+      "cardExploreHitTargets": true
+    },
+    {
+      "width": 1280,
+      "menu": true,
+      "overflow": false,
+      "cardCopies": [
+        {
+          "id": "willow-chimney",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        },
+        {
+          "id": "ochre-lshape",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        },
+        {
+          "id": "indigo-bay",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        }
+      ],
+      "cardExploreHitTargets": true
+    },
+    {
+      "width": 1440,
+      "menu": true,
+      "overflow": false,
+      "cardCopies": [
+        {
+          "id": "willow-chimney",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        },
+        {
+          "id": "ochre-lshape",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        },
+        {
+          "id": "indigo-bay",
+          "copyInsideCard": true,
+          "ctaInsideCard": true
+        }
+      ],
+      "cardExploreHitTargets": true
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "noJavaScript": true
+}

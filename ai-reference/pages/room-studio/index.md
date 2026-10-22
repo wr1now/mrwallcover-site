@@ -1,7 +1,7 @@
 ---
-title: "Wallpaper my room | Mr Wallcover"
+title: "Wallpaper my room — photo & 3D visualiser | Mr Wallcover"
 url: https://www.mrwallcover.com/room-studio/
-description: "Explore original measured-room wallpaper studies while Mr Wallcover’s photo and 3D room visualiser completes testing."
+description: "Upload a room photo or build a measured 3D room. Try wallpaper, paint and Bauwerk limewash, compare finishes and download your preview."
 author: "Dorin Burcus"
 last_updated: 2026-10-19
 ---
@@ -10,52 +10,88 @@ Mr Wallcover / Room Studio
 
 # Wallpaper *my room.*
 
-See how a wallpaper pattern sits around corners, windows and a chimney breast.
+See your chosen finish in your own room. Upload a photograph for a quick preview, or build a measured 3D room to explore wallpaper, paint and Bauwerk limewash.
 
-Our room-photo visualiser and measured 3D editor are completing testing. The interactive service is not yet available on this public page. Explore three original rendered studies below, or talk to us about your room and chosen finish.
+Free photo and 3D previews · No sign-up to start · Private on your device
 
-[Discuss your room](https://www.mrwallcover.com/contact/)
+View in your room Build a 3D room Explore three examples
 
-## Three rooms. *Three considered finishes.*
+Measured rooms. Visible pattern.
 
-These are original architectural illustrations rendered from measured room geometry. They are not manufacturer wallpapers, photographs of customers’ rooms or completed commissions.
+## Three spaces. *Three different finishes.*
 
-[![Original illustrative Willow lattice wallpaper study: chimney breast and three windows](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-preview.webp)](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-1.webp)
+Explore a chimney breast, an L-shaped room and an angled bay. These original illustrative designs show how the repeat sits around openings and corners. Open any example to change it yourself.
 
-Chimney breast and three windows
+[![Willow lattice: rendered illustrative chimney breast · 8 wall segments](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-preview.webp)](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-1.webp)
+
+01 / Original illustrative design
 
 ### Willow lattice
 
-A sage botanical repeat follows the wall faces and chimney returns.
+Chimney breast · 8 wall segments 6.2 × 4.6 m · 2.8 m ceiling
 
-[View 1920 × 1080 room study](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-1.webp)
+Repeat 640 × 640 mm · straight match
 
-[![Original illustrative Ochre cadence wallpaper study: l-shaped room](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-preview.webp)](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-1.webp)
+Explore this room [View full-resolution render](https://www.mrwallcover.com/media/room-studio/examples/willow-chimney-1.webp)
 
-L-shaped room
+[![Ochre cadence: rendered illustrative l-shaped room · 6 wall segments](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-preview.webp)](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-1.webp)
+
+02 / Original illustrative design
 
 ### Ochre cadence
 
-A measured half-drop pattern continues around the inner corner and openings.
+L-shaped room · 6 wall segments 6.0 × 5.0 m · 2.7 m ceiling
 
-[View 1920 × 1080 room study](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-1.webp)
+Repeat 530 × 640 mm · half-drop match
 
-[![Original illustrative Indigo arcade wallpaper study: angled bay and four windows](https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-preview.webp)](https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-1.webp)
+Explore this room [View full-resolution render](https://www.mrwallcover.com/media/room-studio/examples/ochre-lshape-1.webp)
 
-Angled bay and four windows
+[![Indigo arcade: rendered illustrative angled bay room · 6 wall segments](https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-preview.webp)](https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-1.webp)
+
+03 / Original illustrative design
 
 ### Indigo arcade
 
-An original indigo fan pattern retains its scale across angled walls.
+Angled bay room · 6 wall segments 5.6 × 4.6 m · 2.75 m ceiling
 
-[View 1920 × 1080 room study](https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-1.webp)
+Repeat 600 × 600 mm · half-drop already in tile
 
-## A room to make your own.
+Explore this room [View full-resolution render](https://www.mrwallcover.com/media/room-studio/examples/indigo-bay-1.webp)
 
-The planned studio lets you try wallpaper, paint and Bauwerk limewash using a room photograph or a measured 3D layout. Free previews and an optional finished-render package are being prepared. Automatic plan reading and live payments remain disabled while the service is verified.
+Blender Cycles renders from the same measured room and wallpaper coordinates as the editor. Two 1920 × 1080 views and a 4096 × 2048 panorama per example. These are illustrative empty-room studies, not completed commissions or manufacturer wallpapers.
 
-Colour, texture and light on screen are illustrative. Always check a physical sample in your room.
+Your photo and measured-room workspace is loading.
+
+Room Studio needs JavaScript for photo editing, measured editing and 3D. You can still [send us your room measurements and selected finishes](https://www.mrwallcover.com/contact/).
+
+A space you can edit
+
+## From measured walls to considered finishes.
+
+For a photo preview, mark each wall’s four corners and protect windows, furniture and trim with the erase brush. Add the wall width and height for calibrated placement, or adjust an illustrative scale. Compare your choices and download a free PNG. A photograph does not supply unseen walls or a 360° view.
+
+For a measured room, start with measurements or trace one room on a floor plan. Set the ceiling height, add doors and windows, then try finishes wall by wall. Your wallpaper keeps its real pattern size as you adjust the room.
+
+Upload a complete repeating tile or a measured strip repeat. Check the tiled proof before applying it. Larger walls reveal more pattern; they do not enlarge the motif. Use a sharp source image: the studio preserves your artwork rather than inventing missing detail.
+
+The preview is illustrative. Colour and limewash movement are approximate. Test a sample in your room before ordering. The three example render packages are available here. Automatic plan reading, cloud saving and finished rendering of your own room are unavailable until the private services are configured. Finished 3D rendering will be a standalone paid package; pricing remains unset while costs are measured.
+
+[Talk to us about installation](https://www.mrwallcover.com/contact/?intent=install)
 
 [Explore wallcovering materials](https://www.mrwallcover.com/materials/) [Wallpaper calculator](https://www.mrwallcover.com/calculator/)
+
+Optional finished rendering
+
+## A considered view. *A room to keep.*
+
+Keep experimenting with free previews. When finished rendering is available, purchase one package for your confirmed measured-room design. There is no subscription.
+
+- Two 1920 × 1080 room views
+- One 4096 × 2048 panorama with a 360° viewer
+- Your editable room and finish specification
+
+Review the room, wallpaper scale and cameras before checkout. The purchased version stays fixed while you keep editing. Source-image detail and illustrative material limitations are shown before confirmation.
+
+Live checkout is unavailable while price and processing allowances are unset. Automatic plan reading remains disabled.
 
 By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 19 October 2026

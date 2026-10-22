@@ -36,6 +36,16 @@ dist-review/
 # Local visual comparison evidence
 .review-screens/
 
-# Local implementation evidence and scratch builds.
+# Room Studio local fixtures and render outputs
+.tmp/
+__pycache__/
+*.pyc
+.venv/
+
+# Local Supabase CLI state
+/supabase/.temp/
+
+# Scratch verification and public-preview builds.
 /.tmp/
 /.review-screens/
+/supabase/.temp/

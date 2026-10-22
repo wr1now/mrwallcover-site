@@ -1,0 +1,389 @@
+{
+  "reviewedAt": "2026-10-19T16:14:32.215105+00:00",
+  "scope": "Private full-room manufacturer source studies. Supplier pixels and derivatives remain ignored; this receipt does not establish calibrated product mapping, measured materials, permission or public release. Replaces the earlier sparse/diffuse study receipt.",
+  "publicDeployment": false,
+  "liveAiCalls": 0,
+  "paidHostedJobs": 0,
+  "studies": [
+    {
+      "id": "degournay-plum-blossom",
+      "sourceUrl": "https://degournay.com/shop-product-details/plumblossom961463",
+      "sourceSha256": "295984393a4a85e1f92860739e909966072e7b7bf935e78e7f94ec34908d55c9",
+      "sourcePixels": [
+        2500,
+        1578
+      ],
+      "privateMappingMm": [
+        4278,
+        2700
+      ],
+      "assetType": "wallpaper",
+      "appearance": {
+        "roughness": 0.65,
+        "metalness": 0.35
+      },
+      "fullWallCoverage": true,
+      "wallSegments": 8,
+      "windows": 3,
+      "assumptions": [
+        "Private concept only. Product specifications do not verify this image crop, installation set-out or material appearance.",
+        "Finite mural panels. The web preview does not identify its panel sequence or physical image coverage.",
+        "Gilded ground appearance is not a measured material simulation.",
+        "Artwork permission status is unchanged. This helper does not authorise public images, textures or editable-room redistribution.",
+        "The room and artwork proof remain unconfirmed.",
+        "Assumed full-image height 2700 mm and native image proportions; this is not a verified manufacturer panel crop.",
+        "Private editor image coverage: 4278 \u00d7 2700 mm. Manufacturer fractional dimensions remain exact in selection metadata; editor values use whole millimetres.",
+        "Private window frames use an illustrative 45 mm width. Surveyed wall and opening dimensions remain unchanged.",
+        "PRIVATE full-room source preview: the exact supplied reference artwork is duplicated horizontally as a 4278 \u00d7 2700 mm source block to cover every wall. This does not represent a de Gournay product repeat or a verified tailored panel sequence. The assumed artwork scale stays fixed; no missing design is generated or stretched to the room perimeter.",
+        "Silver appearance settings (roughness 0.65, metalness 0.35) soften glare in this illustrative study; they are not measured manufacturer PBR properties.",
+        "All room walls receive the same source at continuous cumulative offsets. Openings remain true cut-outs. The closure seam is an illustrative start/end seam, not a claim of an exact manufacturer panel match.",
+        "Two wide interior viewpoints show complementary sides of the fully covered room; the saved panorama retains its full-room position."
+      ],
+      "meshUvSha256": "a0f9224240d32f19e650a6b52d03cd3e5ac89cedc5498093d18af477df863541",
+      "compiledInputSha256": "949070277c926e853c510d91ae9f5b9178b0180d9b43256aabad6facc9112817",
+      "compilerVersion": "room-studio-geometry/1.1.0",
+      "vertices": 1164,
+      "triangles": 586,
+      "renderedGeometryVerified": true,
+      "device": "GPU",
+      "samples": 128,
+      "blenderVersion": "4.5.0",
+      "localSeconds": 288.804,
+      "outputs": [
+        {
+          "kind": "still-1",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "82e395f29d1a1b58b6f0faa3976147ef6851b65101c95216ed00372ce2d32762"
+        },
+        {
+          "kind": "still-2",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "6d38899788b7f74a1e24f718e8d408251b10c4a617669b47b24b69c37b573679"
+        },
+        {
+          "kind": "panorama",
+          "width": 4096,
+          "height": 2048,
+          "sha256": "f9e0de4e13e34caa3f4c82af41732710a0b13c782b68396ed4fb423eed823a53"
+        }
+      ]
+    },
+    {
+      "id": "phillip-jeffries-3163",
+      "sourceUrl": "https://www.phillipjeffries.com/shop/CARD-AG-METALUXEII/3163/tear-sheet",
+      "sourceSha256": "9bcc685c34c27f6f3476c0c3ad7907806eb208d1d268d9f62e085002ba59c126",
+      "sourcePixels": [
+        5000,
+        4853
+      ],
+      "privateMappingMm": [
+        3454,
+        3353
+      ],
+      "assetType": "wallpaper",
+      "appearance": {
+        "roughness": 0.42,
+        "metalness": 0.7
+      },
+      "fullWallCoverage": true,
+      "wallSegments": 6,
+      "windows": 3,
+      "assumptions": [
+        "Private concept only. Product specifications do not verify this image crop, installation set-out or material appearance.",
+        "The identified renderer sheet covers four finite drops, 3454.4 \u00d7 3352.8 mm. The vertical repeat is approximate; no horizontal product repeat is specified. Other swatch crops remain uncalibrated.",
+        "The four-drop sheet retains natural panel variation. Metallic and horsehair response is not a measured material simulation.",
+        "Artwork permission status is unchanged. This helper does not authorise public images, textures or editable-room redistribution.",
+        "The room and artwork proof remain unconfirmed.",
+        "Caller-supplied full-image coverage evidence (not independently verified by this helper): Official Multiple Drops image named 3163_Metallic Ombre_11ft_4pnl.jpg. The original 5100 \u00d7 4950 pixel ratio equals four 34-inch widths by 132 inches in height, matching the product specification. Four full-height drops are visible without a border. Reduced once to 5000 \u00d7 4853 pixels to meet the upload limit; no upscaling. Natural panel variation remains illustrative.",
+        "Private editor image coverage: 3454 \u00d7 3353 mm. Manufacturer fractional dimensions remain exact in selection metadata; editor values use whole millimetres.",
+        "Image coverage rounded from 3454.4 \u00d7 3352.8 mm to 3454 \u00d7 3353 mm for the integer-millimetre editor.",
+        "Private window frames use an illustrative 45 mm width. Surveyed wall and opening dimensions remain unchanged.",
+        "PRIVATE full-room source preview: the supplied four-drop reference sheet is duplicated horizontally as a 3454 \u00d7 3353 mm source block. This is illustrative source reuse, not a product horizontal repeat. Only one full-panel height is used vertically; the approximate product vertical repeat is not substituted for the sheet height.",
+        "The unchanged full-panel source is top-aligned below the cornice at 2620 mm, with vertical set-out -733 mm. Excess artwork below the finished floor is cropped, preserving the gold upper area without resizing the source.",
+        "Gold appearance settings (roughness 0.42, metalness 0.70) are illustrative study values, not measured manufacturer PBR properties.",
+        "All room walls receive the same source at continuous cumulative offsets. Openings remain true cut-outs. The closure seam is an illustrative start/end seam, not a claim of an exact manufacturer panel match.",
+        "Two wide interior viewpoints show complementary sides of the fully covered room; the saved panorama retains its full-room position."
+      ],
+      "meshUvSha256": "779dd05b0b556d8056d00a61562d94869c0de9140aa65e9191869e14f88552a6",
+      "compiledInputSha256": "68360d3bbd62acb06fa127d0857a103610ba04b20578a0e4de4c8c03785a43a0",
+      "compilerVersion": "room-studio-geometry/1.1.0",
+      "vertices": 1172,
+      "triangles": 588,
+      "renderedGeometryVerified": true,
+      "device": "GPU",
+      "samples": 128,
+      "blenderVersion": "4.5.0",
+      "localSeconds": 204.274,
+      "outputs": [
+        {
+          "kind": "still-1",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "54e526dce8be2af0feded5d2ccd74bc2a08c3e355869cd448d4d39bff7d22841"
+        },
+        {
+          "kind": "still-2",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "d5c3345c5ba83dff2a2e4b635dd4d4b928ce1337eecb43c00d42c8eee4d8b65c"
+        },
+        {
+          "kind": "panorama",
+          "width": 4096,
+          "height": 2048,
+          "sha256": "4afa53b41f321e47e80b4de6d56533a051df57a9461624afd8c1b5771ad519df"
+        }
+      ]
+    },
+    {
+      "id": "arte-caisson-61533",
+      "sourceUrl": "https://www.arte-international.com/en/collections/spectra/caisson-2/61533",
+      "sourceSha256": "a729cdf19536d413cfdbe2a2e2ba781124a73547be0415b5aa227daa19ecec59",
+      "sourcePixels": [
+        2000,
+        1125
+      ],
+      "privateMappingMm": [
+        3690,
+        2300
+      ],
+      "assetType": "wallpaper",
+      "appearance": {
+        "roughness": 0.85,
+        "metalness": 0,
+        "relief": {
+          "kind": "coffered",
+          "depthMm": 8,
+          "columns": 9,
+          "rows": 5
+        }
+      },
+      "fullWallCoverage": true,
+      "wallSegments": 6,
+      "windows": 4,
+      "assumptions": [
+        "Private concept only. Product specifications do not verify this image crop, installation set-out or material appearance.",
+        "1230 mm product width and 460 mm straight vertical repeat. The private whole-image 3690 \u00d7 2300 mm coverage and nine-column, five-row framing are inferred from the reference, not manufacturer-calibrated artwork; the resulting 410 \u00d7 460 mm cell is not an official tile size.",
+        "The manufacturer describes a positive acoustic effect. No measured relief amplitude, displacement field or manufacturer PBR maps were established.",
+        "Artwork permission status is unchanged. This helper does not authorise public images, textures or editable-room redistribution.",
+        "The room and artwork proof remain unconfirmed.",
+        "Assumed full-image coverage: Official full-pattern modal identifies three lanes at 1230 mm each. Nine coffers across and five rows are inferred from the reference framing: 410 mm per coffer and the official 460 mm straight vertical repeat. All source pixels are preserved; physical UV framing applies a 10.81% vertical aspect correction. The parametric 8 mm relief is illustrative, not measured material data.",
+        "Private editor image coverage: 3690 \u00d7 2300 mm. Manufacturer fractional dimensions remain exact in selection metadata; editor values use whole millimetres.",
+        "Private window frames use an illustrative 45 mm width. Surveyed wall and opening dimensions remain unchanged.",
+        "PRIVATE Caisson whole-image source preview repeats an inferred 3690 \u00d7 2300 mm block: three 1230 mm product widths, with nine columns and five rows inferred from the reference framing. Each analytic cell is 410 \u00d7 460 mm; the inferred cell width is not an official tile size.",
+        "The complete supplied image and all its pixels are retained. The inferred physical coverage applies an explicit 10.81% vertical aspect correction relative to native image proportions; this is an assumed framing correction, not calibrated manufacturer artwork.",
+        "The analytic coffered profile uses an illustrative 8 mm amplitude, nine columns and five rows per source block, roughness 0.85 and metalness 0. No measured relief amplitude, acoustic rating or manufacturer PBR properties are inferred from the photograph.",
+        "All room walls receive the same source at continuous cumulative offsets. Openings remain true cut-outs. The closure seam is an illustrative start/end seam, not a claim of an exact manufacturer panel match.",
+        "Two wide interior viewpoints show complementary sides of the fully covered room; the saved panorama retains its full-room position."
+      ],
+      "meshUvSha256": "96c1b299f719fff9d9aaecfc9c7d21ece9dd0a25a7f454302acf323356a7b678",
+      "compiledInputSha256": "755a065069cfc4fa46b705fe390831ac05ae358aaa982b71fd26bee985a3c4d4",
+      "compilerVersion": "room-studio-geometry/1.1.0",
+      "vertices": 38725,
+      "triangles": 50938,
+      "renderedGeometryVerified": true,
+      "device": "GPU",
+      "samples": 128,
+      "blenderVersion": "4.5.0",
+      "localSeconds": 171.755,
+      "outputs": [
+        {
+          "kind": "still-1",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "082f052bd1488858f319bdd109c27d841667a557941ffe81eb4bca6d081900a9"
+        },
+        {
+          "kind": "still-2",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "1e3c4dd3528a054d4f9ddef8ec3c64eb7e6bdb6b63196521c61e4fc99d5dfea5"
+        },
+        {
+          "kind": "panorama",
+          "width": 4096,
+          "height": 2048,
+          "sha256": "5af36c10f69ec0070a3af0018b60075a0554b213444a305c98ce578e2a26e897"
+        }
+      ]
+    }
+  ],
+  "browserVerification": {
+    "reviewedAt": "2026-10-19T16:06:53.635Z",
+    "scope": "Private loopback build, real WebGL, real editable downloads/reimports, responsive Chromium emulation. No live services or source-calibration/material accuracy claim.",
+    "examples": [
+      {
+        "id": "degournay-plum-blossom",
+        "sourcePixels": {
+          "width": 2500,
+          "height": 1578
+        },
+        "segments": 8,
+        "windows": 3,
+        "exportReimport": true,
+        "proofUnconfirmed": true,
+        "meshUvSha256": "a0f9224240d32f19e650a6b52d03cd3e5ac89cedc5498093d18af477df863541",
+        "panoramaOpened": true,
+        "captures": [
+          {
+            "viewport": 1440,
+            "canvasPixels": [
+              591,
+              480
+            ],
+            "image": "degournay-plum-blossom-interactive-1440.png",
+            "entropy": 5.427588819882658
+          },
+          {
+            "viewport": 390,
+            "canvasPixels": [
+              322,
+              340
+            ],
+            "image": "degournay-plum-blossom-interactive-390.png",
+            "entropy": 5.620116648438852
+          }
+        ]
+      },
+      {
+        "id": "phillip-jeffries-3163",
+        "sourcePixels": {
+          "width": 5000,
+          "height": 4853
+        },
+        "segments": 6,
+        "windows": 3,
+        "exportReimport": true,
+        "proofUnconfirmed": true,
+        "meshUvSha256": "779dd05b0b556d8056d00a61562d94869c0de9140aa65e9191869e14f88552a6",
+        "panoramaOpened": true,
+        "captures": [
+          {
+            "viewport": 1440,
+            "canvasPixels": [
+              591,
+              480
+            ],
+            "image": "phillip-jeffries-3163-interactive-1440.png",
+            "entropy": 5.481953020636865
+          },
+          {
+            "viewport": 390,
+            "canvasPixels": [
+              322,
+              340
+            ],
+            "image": "phillip-jeffries-3163-interactive-390.png",
+            "entropy": 5.6203786605619825
+          }
+        ]
+      },
+      {
+        "id": "arte-caisson-61533",
+        "sourcePixels": {
+          "width": 2000,
+          "height": 1125
+        },
+        "segments": 6,
+        "windows": 4,
+        "exportReimport": true,
+        "proofUnconfirmed": true,
+        "meshUvSha256": "96c1b299f719fff9d9aaecfc9c7d21ece9dd0a25a7f454302acf323356a7b678",
+        "panoramaOpened": true,
+        "captures": [
+          {
+            "viewport": 1440,
+            "canvasPixels": [
+              591,
+              480
+            ],
+            "image": "arte-caisson-61533-interactive-1440.png",
+            "entropy": 6.5359895971632795
+          },
+          {
+            "viewport": 390,
+            "canvasPixels": [
+              322,
+              340
+            ],
+            "image": "arte-caisson-61533-interactive-390.png",
+            "entropy": 6.4487141605932266
+          }
+        ]
+      }
+    ],
+    "widths": [
+      {
+        "width": 390,
+        "noOverflow": true,
+        "visibleCards": true
+      },
+      {
+        "width": 768,
+        "noOverflow": true,
+        "visibleCards": true
+      },
+      {
+        "width": 1024,
+        "noOverflow": true,
+        "visibleCards": true
+      },
+      {
+        "width": 1280,
+        "noOverflow": true,
+        "visibleCards": true
+      },
+      {
+        "width": 1440,
+        "noOverflow": true,
+        "visibleCards": true
+      }
+    ],
+    "errors": [],
+    "externalRequests": []
+  },
+  "sharedSceneVerification": {
+    "actualMeshAttributeParity": true,
+    "appearanceChecks": [
+      {
+        "finish": "gold",
+        "roughness": 0.42,
+        "metalness": 0.7,
+        "localEnvironment": true,
+        "changedPixelFraction": 0.8958762647359139
+      },
+      {
+        "finish": "silver",
+        "roughness": 0.42,
+        "metalness": 0.7,
+        "localEnvironment": true,
+        "changedPixelFraction": 0.8958762647359139
+      }
+    ],
+    "responseMemory": [
+      2,
+      2,
+      2
+    ],
+    "reliefCheck": {
+      "actualGpuAttributeParity": true,
+      "vertices": 30738,
+      "triangles": 47192,
+      "cutaway": true,
+      "zeroRevealCutaway": true
+    },
+    "errors": [],
+    "blocked": []
+  },
+  "validation": {
+    "studioUnit": "89 passed; 3 optional Blender checks skipped in ordinary unit run and executed separately against local Blender.",
+    "builtSite": "293 built-site tests passed initially; the one phone configuration guard passed when rerun with the matching reserved phone input. Visual fixture and all nine Studio browser suites passed across the initial and focused final runs.",
+    "pythonOfflineTests": 17,
+    "types": "Browser and Edge TypeScript passed.",
+    "noLoss": "128 -> 129 pages; 3629 -> 3644 media; 5 project records and 12 gallery records retained.",
+    "float32Regression": "Current coffered fixture: zero collapsed indexed triangles. Pre-fix reconstruction: 108, including 40 on angled bay walls.",
+    "physicalDevices": "Responsive Chromium emulation; physical iPhone Safari and Android Chrome acceptance remains pending."
+  }
+}
