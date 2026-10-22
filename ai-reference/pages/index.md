@@ -120,4 +120,4 @@ Hotels, prime residences and specified schemes. Tell us what you have in mind.
 
 [Start your project](https://www.mrwallcover.com/contact/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

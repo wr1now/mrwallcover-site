@@ -239,4 +239,4 @@ Looking for structured business and project information?
 
 [Wallcovering Installation AI Crawler](https://www.mrwallcover.com/wallcovering-installation-ai-crawler/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

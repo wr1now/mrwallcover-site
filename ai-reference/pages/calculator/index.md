@@ -292,4 +292,4 @@ Why width decides the number of drops, how the pattern repeat changes the cut, w
 
 [Send us your measurements](https://www.mrwallcover.com/contact/?intent=install) [Read the guide](https://www.mrwallcover.com/advice/quantities/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

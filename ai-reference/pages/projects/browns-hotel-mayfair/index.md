@@ -10,7 +10,7 @@ Albemarle Street, Mayfair, London W1S 4BP
 
 # Brown's Hotel, Mayfair
 
-A full decorating package at Brown's Hotel, Mayfair: two years as main decorating contractor, delivered while the hotel stayed open to guests.
+A full decorating package for London's oldest hotel: two years as main decorating contractor, delivered while it never stopped taking guests.
 
 ![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)
 
@@ -77,13 +77,13 @@ The last two photographs, of the hotel’s sign and street entrance, are our own
 
 ## The building
 
-Brown’s opened in 1832, when James and Sarah Brown took 23 Dover Street. It has never been renamed, rebuilt or relocated. Rocco Forte Hotels acquired it in 2003.
+Brown’s opened in 1832, when James and Sarah Brown took 23 Dover Street. It has never been renamed, rebuilt or relocated, which makes it London’s oldest luxury hotel. Rocco Forte Hotels acquired it in 2003.
 
 About the building
 
 The hotel was long said to date from 1837; its own commissioned research now places the opening in 1832.
 
-Alexander Graham Bell made Britain’s first telephone call here in 1876. Rudyard Kipling came from the day he was married and returned for more than four decades; Agatha Christie’s *At Bertram’s Hotel* owes much to her stays. Theodore Roosevelt stayed before his marriage in 1886, and Franklin and Eleanor Roosevelt spent their honeymoon here.
+Its guest book reads like a syllabus. Alexander Graham Bell made Britain’s first telephone call here in 1876. Rudyard Kipling came from the day he was married and returned for more than four decades; Agatha Christie’s *At Bertram’s Hotel* owes much to her stays. Theodore Roosevelt stayed before his marriage in 1886, and Franklin and Eleanor Roosevelt spent their honeymoon here.
 
 ## Photographs
 

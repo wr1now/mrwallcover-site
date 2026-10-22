@@ -114,4 +114,4 @@ Risk assessments and method statements (RAMS) are issued for every package, and 
 
 Limewash is applied by Mr Wallcover's own team. Lime render can be arranged through trusted specialist partners.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

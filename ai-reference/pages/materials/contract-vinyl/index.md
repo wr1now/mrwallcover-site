@@ -141,4 +141,4 @@ Contract vinyl: send a short note about the room, or tell us you already have th
 
 [How we install contract vinyl](https://www.mrwallcover.com/services/hotel-wallcovering-installation/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

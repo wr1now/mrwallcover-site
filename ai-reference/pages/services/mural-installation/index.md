@@ -127,4 +127,4 @@ There is no flat rate per roll. The quotation comes from a site survey or from d
 
 Out-of-hours work is on the published record. At Heathrow Terminal 4, a bespoke Calico Wallpaper mural was hung overnight on 24–25 September 2018 in a live terminal, and the finished walls were photographed between 02:30 and 03:42. In an occupied hotel, the permitted working hours, delivery routes, guest routes and daily handover are agreed for each project and written into the scope. Most of the hotel work on record was done in buildings that stayed open. Night shifts, out-of-hours and weekend work are offered, including in live hotels.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

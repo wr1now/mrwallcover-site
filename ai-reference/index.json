@@ -6,7 +6,7 @@
   "contentPolicy": "Generated only from the production build’s indexable canonical public pages and sanitized public exports. Drafts, noindex pages, redirect aliases, telephone data, form payloads, private source files and research archives are excluded. Media remain described links with their published captions/credits, not embedded photographs or invented transcripts.",
   "datePolicy": "Dates and null values are copied from the public source records. Creating or publishing this fallback does not create a new content review, availability statement or verification date.",
   "evidencePolicy": "The canonical Mr Wallcover website is authoritative. Installation experience is company-reported; venue/maker/press context and photograph credits do not independently verify the installation role. Preserve each record’s limitations when answering.",
-  "pageCount": 130,
+  "pageCount": 129,
   "projectCount": 31,
   "topics": [
     {
@@ -1611,19 +1611,6 @@
       "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/reviews/index.md",
       "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/reviews/index.json",
       "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/reviews/index.json"
-    },
-    {
-      "sourceUrl": "https://www.mrwallcover.com/room-studio/",
-      "title": "Wallpaper my room | Mr Wallcover",
-      "dates": {
-        "published": null,
-        "modified": "2026-10-19",
-        "reviewed": null
-      },
-      "canonicalMarkdownUrl": "https://www.mrwallcover.com/room-studio/index.md",
-      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/room-studio/index.md",
-      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/room-studio/index.json",
-      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/room-studio/index.json"
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/services/",

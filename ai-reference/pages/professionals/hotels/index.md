@@ -173,4 +173,4 @@ Listed buildings on the published record: Hyde London City (Grade II, 1874); Fou
 
 [Designers & architects](https://www.mrwallcover.com/professionals/designers/) [Developers & main contractors](https://www.mrwallcover.com/professionals/developers/) [Fit-out contractors](https://www.mrwallcover.com/professionals/fit-out-contractors/) [Explore our work](https://www.mrwallcover.com/projects/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

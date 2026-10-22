@@ -4,10 +4,9 @@
  *
  * `updated` is an ISO date the page knows for itself (a guide's or case study's
  * frontmatter, stamped from the edit, never the build time) and is shown as
- * "Last updated". `reviewed` shows the site-wide review date from
- * src/data/facts.json as "Last reviewed"; only the AI fact pages (/for-ai/ and
- * /wallcovering-installation-ai-crawler/) set it. Every other page names the
- * author with no date.
+ * "Last updated". Without it the line shows the site-wide review date from
+ * src/data/facts.json as "Last reviewed" (`reviewed` defaults to true; pass
+ * reviewed={false} for an author line with no date).
  *
  * The <time> element carries data-page-updated so the Markdown twins and
  * llms-full.txt (scripts/build-ai-layer.mjs) read the same date from the HTML;
@@ -22,7 +21,7 @@ interface Props {
   class?: string;
 }
 
-const { updated, reviewed = false, class: className } = Astro.props;
+const { updated, reviewed = true, class: className } = Astro.props;
 const iso = updated ?? (reviewed ? facts.lastReviewed : undefined);
 if (iso !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(iso)) throw new Error(`PageMeta needs an ISO date, got "${iso}"`);
 const label = updated ? 'Last updated' : 'Last reviewed';

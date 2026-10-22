@@ -160,7 +160,7 @@ What should we look at? Required
 
 Photographs or a PDF, if you have them
 
-Photographs from your phone and drawings help (JPEG, PNG, WebP, HEIC, HEIF or PDF). Up to 8 files and 10 MB in total. Attachments are optional. If a file will not send, email info@mrwallcover.com. Or send them on [WhatsApp](https://www.mrwallcover.com/contact/).
+Photographs from your phone and drawings help (JPEG, PNG, WebP, HEIC, HEIF or PDF). Up to 8 files and 10 MB in total. Attachments are optional. If a file will not send, email info@mrwallcover.com.
 
 How did you hear about us? Optional
 
@@ -194,4 +194,4 @@ Some people call this a warranty. It is the same promise: twelve months on our w
 
 [Start your project](https://www.mrwallcover.com/contact/?service=aftercare&topic=aftercare)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

@@ -166,4 +166,4 @@ Send the product reference. We read the maker's current instruction and confirm 
 
 [Discuss wall preparation](https://www.mrwallcover.com/contact/?intent=prepare&service=wallcovering&topic=lining) [Preparation by wall type](https://www.mrwallcover.com/wallpapering/preparation/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

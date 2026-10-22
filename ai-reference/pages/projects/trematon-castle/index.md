@@ -10,7 +10,7 @@ Castle of Trematon, near Saltash, Cornwall
 
 # Castle of Trematon, Cornwall
 
-Nearly three years inside a Norman castle's Georgian heart, hanging House of Hackney prints throughout the house.
+Nearly three years inside a Norman castle's Georgian heart, hanging the prints of the house that made maximalism modern.
 
 ![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp)
 

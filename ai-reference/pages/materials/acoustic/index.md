@@ -108,4 +108,4 @@ Acoustic wallcoverings: send a short note about the room, or tell us you already
 
 [How we install acoustic wallcoverings](https://www.mrwallcover.com/services/acoustic-wallcovering-installation/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

@@ -12,11 +12,11 @@ Contact
 
 A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether you would like a reply by email or by phone. Photographs, drawings and PDFs help, and are optional.
 
-Or go direct. The phone is answered by Dorin Burcus himself; the number is shown on request.
+Or write directly. Email is read by Dorin Burcus.
 
 [info@mrwallcover.com](mailto:info@mrwallcover.com?subject=Wallcovering%20enquiry)
 
-[WhatsApp us](https://www.mrwallcover.com/contact/) [Book a call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk)
+[Book a call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk)
 
 Calls Mon–Fri, 9am–5pm UK. Each call is 20 minutes.
 
@@ -129,7 +129,7 @@ When would you like to start? Optional
 
 Photographs or a PDF, if you have them
 
-Photographs from your phone and drawings help (JPEG, PNG, WebP, HEIC, HEIF or PDF). Up to 8 files and 10 MB in total. Attachments are optional. If a file will not send, email info@mrwallcover.com. Or send them on [WhatsApp](https://www.mrwallcover.com/contact/).
+Photographs from your phone and drawings help (JPEG, PNG, WebP, HEIC, HEIF or PDF). Up to 8 files and 10 MB in total. Attachments are optional. If a file will not send, email info@mrwallcover.com.
 
 How did you hear about us? Optional
 
@@ -212,4 +212,4 @@ Access, programme and who supplies the material.
 
 A separate note for existing work. A photograph tells us whether it is the hang or the building.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

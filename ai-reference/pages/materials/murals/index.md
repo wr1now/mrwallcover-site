@@ -129,4 +129,4 @@ Murals: send a short note about the room, or tell us you already have the materi
 
 [How we install murals](https://www.mrwallcover.com/services/mural-installation/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

@@ -322,7 +322,7 @@ Appearance, joins, handling & care
 : Suites and drawing rooms
 
 **Appearance**
-: Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them.
+: Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them. We do not make them, and we are not affiliated with those makers.
 
 **Joins**
 : Panels follow a sequence. The scene has to meet across doors, windows and corners. The set-out starts from a fixed point.
@@ -838,7 +838,7 @@ These records reproduce the role, dates and materials on each published project 
 
 ### [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
-A full decorating package at Brown's Hotel, Mayfair: two years as main decorating contractor, delivered while the hotel stayed open to guests.
+A full decorating package for London's oldest hotel: two years as main decorating contractor, delivered while it never stopped taking guests.
 
 [Complete project JSON](https://www.mrwallcover.com/ai/projects/browns-hotel-mayfair.json) · [Complete project Markdown](https://www.mrwallcover.com/projects/browns-hotel-mayfair/index.md)
 
@@ -926,7 +926,7 @@ A photograph listed without a credit has no separately recorded credit.
 
 ### [Raffles London at The OWO, Whitehall](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
 
-Bespoke Vescom wallcoverings for the guest rooms of Raffles London at The OWO, the former Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.
+Bespoke Vescom wallcoverings for the guest rooms of London's most storied address, the Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.
 
 [Complete project JSON](https://www.mrwallcover.com/ai/projects/raffles-london-the-owo.json) · [Complete project Markdown](https://www.mrwallcover.com/projects/raffles-london-the-owo/index.md)
 
@@ -980,7 +980,7 @@ Coordination. Work was sequenced alongside the other trades and the main contrac
 
 #### Outcome (outcome)
 
-We were chosen in 2021 to install about 17,500 m² of wallcoverings in 18 months, in the bedrooms and several other areas. Raffles notes that its rooms and suites feature customised carpets, fabrics and wallcoverings; we hung some of those wallcoverings.
+We were chosen in 2021 to install about 17,500 m² of wallcoverings in 18 months, in the bedrooms and several other areas. Raffles notes that its rooms and suites feature customised carpets, fabrics and wallcoverings; it is a quiet satisfaction to have hung some of them.
 
 References & photograph credits
 
@@ -1155,7 +1155,7 @@ A photograph listed without a credit has no separately recorded credit.
 
 ### [Castle of Trematon, Cornwall](https://www.mrwallcover.com/projects/trematon-castle/)
 
-Nearly three years inside a Norman castle's Georgian heart, hanging House of Hackney prints throughout the house.
+Nearly three years inside a Norman castle's Georgian heart, hanging the prints of the house that made maximalism modern.
 
 [Complete project JSON](https://www.mrwallcover.com/ai/projects/trematon-castle.json) · [Complete project Markdown](https://www.mrwallcover.com/projects/trematon-castle/index.md)
 

@@ -112,4 +112,4 @@ Risk assessments and method statements (RAMS) are issued for every package, and 
 
 We focus on whole residences and hotel packages, and will take on one- or two-room commissions. The minimum installation commission is one room.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

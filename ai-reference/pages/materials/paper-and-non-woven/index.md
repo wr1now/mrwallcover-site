@@ -135,4 +135,4 @@ Paper and non-woven: send a short note about the room, or tell us you already ha
 
 [Discuss this material](https://www.mrwallcover.com/contact/?intent=source&service=wallcovering&topic=material%3Apaper-and-non-woven) [I already have it](https://www.mrwallcover.com/contact/?intent=install&service=wallcovering&topic=material%3Apaper-and-non-woven)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

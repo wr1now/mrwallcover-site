@@ -342,4 +342,4 @@ Overture, with Calico Wallpaper, at the Lee Broom Shoreditch showroom.
 
 [Overture](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

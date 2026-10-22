@@ -1,7 +1,7 @@
 ---
 title: "Hand-painted scenic wallpaper installation | Mr Wallcover"
 url: https://www.mrwallcover.com/materials/hand-painted/
-description: "Hand-painted and scenic papers, surveyed and hung by Mr Wallcover, including a panoramic scenic paper in a West London tea house for Jaillon Studio, 2021."
+description: "Scenic and panelled papers in the manner of de Gournay and Fromental. We hang them; we do not make them and are not affiliated with those makers."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -10,7 +10,7 @@ Material family
 
 # Hand-painted scenic papers
 
-Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them.
+Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them. We do not make them, and we are not affiliated with those makers.
 
 ![de Gournay hand-painted wallpaper with brass wall lights, a private residence, London.](https://www.mrwallcover.com/media/img/r/brand-de-gournay-01-800.webp)
 
@@ -125,4 +125,4 @@ Hand-painted scenic papers: send a short note about the room, or tell us you alr
 
 [How we install hand-painted scenic papers](https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

@@ -6,7 +6,7 @@
   "description": "What makers say about Mr Wallcover's wallcovering installation in London: Calico Wallpaper's own words, published as written.",
   "eyebrow": "Reviews",
   "heading": "Feedback from Calico Wallpaper",
-  "lede": "Two notes from Calico Wallpaper, published as written and with permission, beside the installations they refer to.",
+  "lede": "Two notes from Calico Wallpaper, published as written and with permission, beside the installations they refer to. Private clients are never named.",
   "parent": { "name": "About", "href": "/about/" },
   "updated": "2026-10-18",
   "projects": ["calico-beverly-1975-cadence", "calico-ahluwalia-estuary-rosewood"],

@@ -15,7 +15,7 @@
   "metaTitle": null,
   "metaDescription": "Wallcovering installation at Raffles London at The OWO, Whitehall, 2020–2023: bespoke Vescom wallcoverings, chosen to install about 17,500 m² in 18 months.",
   "group": null,
-  "standfirst": "Bespoke Vescom wallcoverings for the guest rooms of Raffles London at The OWO, the former Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.",
+  "standfirst": "Bespoke Vescom wallcoverings for the guest rooms of London's most storied address, the Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.",
   "hero": "owo-official-classic",
   "gallery": [
     {
@@ -81,7 +81,7 @@ To install the hotel's wallcoverings in the bedrooms and several other areas: a 
 
 ## Outcome
 
-We were chosen in 2021 to install about 17,500 m² of wallcoverings in 18 months, in the bedrooms and several other areas. Raffles notes that its rooms and suites feature customised carpets, fabrics and wallcoverings; we hung some of those wallcoverings.
+We were chosen in 2021 to install about 17,500 m² of wallcoverings in 18 months, in the bedrooms and several other areas. Raffles notes that its rooms and suites feature customised carpets, fabrics and wallcoverings; it is a quiet satisfaction to have hung some of them.
 
 ## The building
 

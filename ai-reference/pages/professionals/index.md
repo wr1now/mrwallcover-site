@@ -76,4 +76,4 @@ A schedule, drawings and a short note are enough to begin. Include who is supply
 
 [Start your project](https://www.mrwallcover.com/contact/?intent=install&audience=commercial)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

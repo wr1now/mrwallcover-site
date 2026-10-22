@@ -74,4 +74,4 @@ London wallpaper installers for country houses in the Cotswolds. Hand-painted pa
 
 [Explore Cotswolds](https://www.mrwallcover.com/areas/cotswolds/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

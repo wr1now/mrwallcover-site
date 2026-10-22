@@ -61,4 +61,4 @@ We return about four to six weeks after completion, at no call-out charge, to lo
 
 [Start your project](https://www.mrwallcover.com/contact/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

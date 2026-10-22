@@ -140,4 +140,4 @@ Public liability, employers' liability and professional indemnity details are av
 
 Yes. Mr Wallcover has experience of JCT contracts as a specialist package contractor, and is registered for VAT and CIS.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

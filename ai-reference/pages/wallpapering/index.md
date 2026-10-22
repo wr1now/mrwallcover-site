@@ -128,4 +128,4 @@ Send the room, the material you are considering and any drawings or photographs 
 
 [Discuss your wallcovering](https://www.mrwallcover.com/contact/?intent=advice&service=wallcovering&topic=wallpapering)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

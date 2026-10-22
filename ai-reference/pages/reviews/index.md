@@ -12,7 +12,7 @@ Reviews
 
 By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 18 October 2026
 
-Two notes from Calico Wallpaper, published as written and with permission, beside the installations they refer to.
+Two notes from Calico Wallpaper, published as written and with permission, beside the installations they refer to. Private clients are never named.
 
 [Start your project](https://www.mrwallcover.com/contact/) [See the work](https://www.mrwallcover.com/projects/)
 

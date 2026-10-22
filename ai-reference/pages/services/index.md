@@ -238,4 +238,4 @@ Where we work
 - [Wallpaper installation in the City of London](https://www.mrwallcover.com/areas/city-of-london/)
 - [Wallpaper installation in the Cotswolds](https://www.mrwallcover.com/areas/cotswolds/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

@@ -125,4 +125,4 @@ Grasscloth and natural weaves: send a short note about the room, or tell us you 
 
 [How we install grasscloth and natural weaves](https://www.mrwallcover.com/services/grasscloth-installation/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

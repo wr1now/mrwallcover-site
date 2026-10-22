@@ -83,4 +83,4 @@ From a site survey or from drawings. The figure follows the measured area after 
 
 [Start your project](https://www.mrwallcover.com/contact/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

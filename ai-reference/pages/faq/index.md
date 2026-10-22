@@ -58,4 +58,4 @@ Public liability, employers' liability and professional indemnity details are av
 
 [Start your project](https://www.mrwallcover.com/contact/?intent=advice)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

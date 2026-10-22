@@ -91,6 +91,20 @@ if (conciseHome) {
 }
 const relocated = conciseHome && homeRelocation?.passed;
 
+// Owner-held pages (Dorin, 22 Oct 2026: Wallpaper My Room stays hidden until its tools finish
+// testing). A held page is not lost: it must still be built, at the same URL, and carry
+// noindex. Only its own sitemap entry, Markdown twin and AI page record may then be absent,
+// because noindex pages are excluded from the sitemap and the AI layer by design.
+const HELD_PAGES = ['/room-studio/'];
+const heldPage = new Set();
+for (const held of HELD_PAGES) {
+  const file = `${held.slice(1)}index.html`;
+  if (!has(dist, file)) { fail('held', `${held} must still be built`); continue; }
+  if (!/<meta name="robots" content="noindex/.test(read(dist, file))) { fail('held', `${held} is held but not noindex`); continue; }
+  heldPage.add(held);
+}
+const isHeldUrl = (u) => { try { return heldPage.has(new URL(u, 'https://www.mrwallcover.com').pathname); } catch { return false; } };
+
 // (a) Sitemap URLs.
 function sitemapUrls(dir) {
   const urls = new Set();
@@ -103,7 +117,7 @@ const baseUrls = sitemapUrls(base);
 const prUrls = sitemapUrls(dist);
 report.counts.base.pages = baseUrls.size;
 report.counts.pr.pages = prUrls.size;
-for (const u of baseUrls) if (!prUrls.has(u)) fail('a', `sitemap URL missing: ${u}`);
+for (const u of baseUrls) if (!prUrls.has(u) && !isHeldUrl(u)) fail('a', `sitemap URL missing: ${u}`);
 
 // (b) Case studies and gallery frames, from main's committed files.
 const csDir = 'src/content/case-studies';
@@ -241,6 +255,8 @@ function measure(dir, file) {
   const t = read(dir, file);
   if (file.endsWith('.json')) {
     const d = JSON.parse(t);
+    // A held page's own record leaves the AI page manifests with its noindex; compare the rest.
+    if (/^ai\/[^/]+\.json$/.test(file) && d && Array.isArray(d.pages)) d.pages = d.pages.filter((page) => !(page && heldPage.has(page.path)));
     // Top-level lists by name (e.g. /ai/projects.json "projects", the 16-project dataset).
     const entries = Object.fromEntries(Object.entries(d && !Array.isArray(d) ? d : {}).filter(([, v]) => Array.isArray(v)).map(([k, v]) => [`entries.${k}`, v.length]));
     return { jsonLeaves: leaves(d), largestList: maxArray(d), ...(Array.isArray(d) ? { entries: d.length } : entries) };
@@ -256,7 +272,7 @@ const aiFiles = baseFiles.filter((f) =>
 report.counts.base.markdownTwins = baseFiles.filter((f) => f.endsWith('.md')).length;
 report.counts.pr.markdownTwins = walk(dist).filter((f) => f.endsWith('.md')).length;
 for (const f of aiFiles) {
-  if (!has(dist, f)) { fail('e', `AI layer file missing: /${f}`); continue; }
+  if (!has(dist, f)) { if (!(f.endsWith('index.md') && heldPage.has(`/${f.replace(/index\.md$/, '')}`))) fail('e', `AI layer file missing: /${f}`); continue; }
   const b = measure(base, f);
   const p = measure(dist, f);
   if (!f.endsWith('.md') || f.startsWith('wallcovering-installation-ai-crawler/')) report.ai[f] = { base: b, pr: p };

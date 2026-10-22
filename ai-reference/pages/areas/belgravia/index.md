@@ -47,4 +47,4 @@ Yes. The designer or the client usually supplies the paper (free-issue). We mana
 
 [Start your project](https://www.mrwallcover.com/contact/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
