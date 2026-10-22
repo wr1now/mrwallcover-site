@@ -10,7 +10,7 @@ Direct contact
 
 # Contact Mr Wallcover.
 
-Email is the simplest way in. It is read by Dorin Burcus himself.
+Write, call or send a message, whichever suits you. Dorin Burcus reads the email and answers the phone himself.
 
 [Start your project](https://www.mrwallcover.com/contact/) Contact Dorin directly
 
@@ -21,6 +21,16 @@ Email is the simplest way in. It is read by Dorin Burcus himself.
 For questions, photographs, drawings and specifications. Attachments are welcome.
 
 [info@mrwallcover.com](mailto:info@mrwallcover.com?subject=Wallcovering%20enquiry)
+
+### Phone
+
+Dorin Burcus answers the phone himself. Select the button below to see the number.
+
+### WhatsApp
+
+Send a message, with photographs of the walls or the paper label if you have them.
+
+[WhatsApp us](https://www.mrwallcover.com/contact/)
 
 ### A 20-minute call
 
