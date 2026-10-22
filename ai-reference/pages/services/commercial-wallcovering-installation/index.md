@@ -12,15 +12,15 @@ Services
 
 Showrooms, flagship shops, venues, fairs and launches, where the wall is seen close up, under bright light, and the opening date does not move.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Acommercial-wallcovering-installation) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Acommercial-wallcovering-installation) [See the work](https://www.mrwallcover.com/projects/)
 
 Commercial walls are judged at arm's length by customers and visitors, often under showroom lighting that shows every joint. The finishes on our commercial record are among the least forgiving there are: black matt vinyl, a tweed check, a colour gradient and gilded marbling.
 
-The work runs the way every commission does: a survey and a scope of works, preparation that decides the finish, protection and containment, and the same team from the first length to the return visit. We can install material you have already bought, or source a family and install it.
+The work runs the way every commission does: a survey and a scope of works, preparation that decides the finish, protection and containment, and [the same team](https://www.mrwallcover.com/about/#how-heading) from the first length to the return visit. We can install material you have already bought, or source a family and install it.
 
 ![Huntsman, Savile Row: a tweed-print wallpapered room with a sofa and dartboard.](https://www.mrwallcover.com/media/img/r/huntsman-07-800.webp)
 
-The tweed-print wallpapered room and matching display treatment at [Huntsman, Savile Row](https://www.mrwallcover.com/projects/huntsman-savile-row/).Photograph: Mr Wallcover.
+The tweed-print wallpapered room and matching display treatment at [Huntsman, Savile Row](https://www.mrwallcover.com/projects/huntsman-savile-row/). Photograph: Mr Wallcover.
 
 01
 
@@ -68,7 +68,7 @@ Risk assessments and method statements (RAMS) are issued for every package, and 
 
 [![Huntsman, Savile Row: a tweed-print wallpapered room with a sofa and dartboard.](https://www.mrwallcover.com/media/img/r/huntsman-07-800.webp)](https://www.mrwallcover.com/projects/huntsman-savile-row/)
 
-Huntsman, Savile Row: a tweed-print wallpapered room with a sofa and dartboard.Photograph: Mr Wallcover.
+Huntsman, Savile Row: a tweed-print wallpapered room with a sofa and dartboard. Photograph: Mr Wallcover.
 
 ### [Huntsman, Savile Row](https://www.mrwallcover.com/projects/huntsman-savile-row/)
 
@@ -78,7 +78,7 @@ Bespoke printed wallpaper installation and display boards, 2018–2019.
 
 [![Curved staircase beside walls finished in black matt wallcovering, Mercedes-AMG showroom, London.](https://www.mrwallcover.com/media/img/r/mercedes-amg-06-800.webp)](https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/)
 
-Curved staircase beside walls finished in black matt wallcovering, Mercedes-AMG showroom, London.Photograph: Mr Wallcover.
+Curved staircase beside walls finished in black matt wallcovering, Mercedes-AMG showroom, London. Photograph: Mr Wallcover.
 
 ### [Mercedes-AMG showroom, London](https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/)
 
@@ -88,7 +88,7 @@ Supply and installation of black matt wallcoverings, 2019.
 
 [![Overture drapery wallpaper beside a chandelier.](https://www.mrwallcover.com/media/img/r/lee-broom-08-800.webp)](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
 
-Overture drapery wallpaper beside a chandelier.Photograph: Dorin Burcus / Mr Wallcover.
+Overture drapery wallpaper beside a chandelier. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroom](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
 
@@ -106,7 +106,7 @@ Survey, wall preparation and installation of the Overture mural; wallpapering of
 
 Questions
 
-## Asked about Commercial and showroom wallcovering installation
+## Questions we are asked
 
 Illustrative material studies
 
@@ -140,4 +140,4 @@ Public liability, employers' liability and professional indemnity details are av
 
 Yes. Mr Wallcover has experience of JCT contracts as a specialist package contractor, and is registered for VAT and CIS.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

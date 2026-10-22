@@ -37,7 +37,7 @@
     }
   ],
   "published": "2026-10-11",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -56,4 +56,4 @@ A hotel wallcovering is judged years after the installers leave: whether the joi
 
 ## Photographs on this page
 
-Our own photographs, taken on the 2022 visit and posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 29 January 2022 ([CZVUfE5KWNA](https://www.instagram.com/p/CZVUfE5KWNA/)).
+Our own photographs, taken on the 2022 visit and posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 29 January 2022 ([see the post](https://www.instagram.com/p/CZVUfE5KWNA/)).

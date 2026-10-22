@@ -16,9 +16,9 @@ Pierre Frey creates fabrics, wallpapers, rugs and furniture. Product constructio
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://www.pierrefrey.com/en/wallpapers/FP846003-ciel-reve) — checked 2026-10-17
-- [Official source](https://www.pierrefrey.com/en/points-of-sale/pierre-frey-london-professional-showroom) — checked 2026-10-17
-- [Official source](https://www.pierrefrey.com/en/points-of-sale) — checked 2026-10-17
+- [Official source: pierrefrey.com/en/wallpapers/FP846003-ciel-reve](https://www.pierrefrey.com/en/wallpapers/FP846003-ciel-reve) — checked 17 October 2026
+- [Official source: pierrefrey.com/en/points-of-sale/pierre-frey-london-professional-showroom](https://www.pierrefrey.com/en/points-of-sale/pierre-frey-london-professional-showroom) — checked 17 October 2026
+- [Official source: pierrefrey.com/en/points-of-sale](https://www.pierrefrey.com/en/points-of-sale) — checked 17 October 2026
 
 [Visit maker website](https://www.pierrefrey.com/en/)
 
@@ -45,9 +45,9 @@ Terms and checks before ordering
 
 Professional showroom contact only. No private walk-in purchase, stock availability or delivery promise is made.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.pierrefrey.com/en/points-of-sale/pierre-frey-london-professional-showroom)
+[Open official source: Showroom or brand contact, London, United Kingdom — professional showroom](https://www.pierrefrey.com/en/points-of-sale/pierre-frey-london-professional-showroom)
 
 ### Find a stockist or representative
 
@@ -68,9 +68,9 @@ Terms and checks before ordering
 
 Professional path directs to showrooms/agents; private path to partners or a showroom. This is a finder link, not an established purchase or delivery route.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.pierrefrey.com/en/points-of-sale)
+[Open official source: Find a stockist or representative, International; country results unverified](https://www.pierrefrey.com/en/points-of-sale)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

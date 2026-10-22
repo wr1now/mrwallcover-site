@@ -202,7 +202,7 @@ Where the published work is relevant, and what to agree before appointment
   - Cause, substrate condition, spare material and likely visibility of a repair
 
 - **Commission**: Aftercare for a Mr Wallcover installation
-- **Consider when**: You need the included return inspection or support for a completed installation.
+- **Consider when**: You need the included return visit or support for a completed installation.
 - **Relevant record**: [Aftercare and workmanship terms](https://www.mrwallcover.com/aftercare/)
 - **Confirm together**:
   - Project reference and completion date
@@ -322,7 +322,7 @@ Appearance, joins, handling & care
 : Suites and drawing rooms
 
 **Appearance**
-: Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them. We do not make them, and we are not affiliated with those makers.
+: Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them.
 
 **Joins**
 : Panels follow a sequence. The scene has to meet across doors, windows and corners. The set-out starts from a fixed point.
@@ -456,7 +456,7 @@ The service can cover all five stages, or an agreed installation package. The sc
 
 We measure on site, or from drawings when that is what the programme needs. Skirting, joinery, doors and windows come out of the area. What is left is the wall that will actually be hung.
 
-Quantities include wastage and pattern repeat. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey. A roll that looks generous on a plan can run short on the last pier.
+Quantities include wastage and pattern repeat. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. A roll that looks generous on a plan can run short on the last pier.
 
 The survey is also a judgement on the wall. If it is not ready for the material specified, we say so before anyone orders the last drop.
 
@@ -466,7 +466,7 @@ The survey is also a judgement on the wall. If it is not ready for the material 
 
 Every project has a project leader on the ground. That person is the day-to-day contact for the craft, the progress and the expectations that have been set.
 
-On a longer commission, senior oversight quality-controls the work and agrees a forward plan with you, in person, each week. Frequent and plain communication is part of the method, not a courtesy added at the end.
+On a longer commission, senior oversight checks the quality of the work and agrees a forward plan with you, in person, each week. Frequent and plain communication is part of the method, not a courtesy added at the end.
 
 The team you meet on the first day is the core team that finishes. Disruption is kept low: work is contained, floors and joinery are protected, and the place is left tidy every evening. In a home we are visitors. In a hotel we work around the house.
 
@@ -474,9 +474,11 @@ The team you meet on the first day is the core team that finishes. Disruption is
 
 ### 3. Supply
 
-On many hotel and flagship jobs the wallcovering is free-issue from the designer, the brand or the client. We manage delivery, check the delivery against the measure, and hang what was specified.
+On many hotel and flagship jobs the designer, the brand or the client supplies the wallcovering (free-issue). We manage delivery, check it against the measure, and hang what was specified.
 
 We can also procure. Either way, the order has to cover the repeat and the wastage, or the last wall is the one that waits.
+
+Rolls are inspected as part of preparation; on large volumes not every roll can be opened in advance. Any defect is reported straight away to the designer, contractor and manufacturer.
 
 Delivery is timed to the hang. Paper sitting in a corridor for days is a risk to the goods and a nuisance to the building.
 
@@ -484,9 +486,11 @@ Delivery is timed to the hang. Paper sitting in a corridor for days is a risk to
 
 ### 4. Installation
 
-This is the craft the practice is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.
+This is the craft Mr Wallcover is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.
 
 Preparation, where it is in the specification, includes stripping old paper, dustless sanding, and making good cracks and uneven surfaces. Some materials are specified with a lining paper. Some, including certain mural installs, are specified without one. We follow the specification.
+
+We set out every wall with a laser level. Deliveries are checked against the measure, and batches and shading are managed so that a room reads as one surface.
 
 Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Where Mr Wallcover is appointed as main decorating contractor, the package can include fine painting, French polishing and other specialist finishes, as it did at Brown's Hotel, Mayfair.
 
@@ -494,7 +498,7 @@ Protection of floors, furniture and finished joinery is part of the hang, not an
 
 ### 5. Aftercare
 
-Aftercare is the fifth part of the service. A return inspection is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.
+Aftercare is the fifth part of the service. A return visit is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.
 
 The detail, including care by material and what the guarantee does not cover, is on the aftercare page.
 
@@ -506,15 +510,17 @@ For twelve months from completion, Mr Wallcover guarantees the workmanship of th
 
 It does not cover building movement, damp, leaks, or a substrate that fails. It does not cover damage by later trades, impact, furniture, or cleaning the material cannot take.
 
+About four to six weeks later we come back, once the paper has had a chance to settle. Seams and edges are looked at. For twelve months, workmanship of the hang is guaranteed. Building movement and damp are not.
+
 Some people call this a warranty. It is the same promise: twelve months on our workmanship, and a clear line where the building takes over from the hang.
 
 Aftercare is one of the five parts of a Mr Wallcover commission. The return visit is included, and the twelve-month workmanship guarantee is set out below.
 
-Return inspection
+Return visit
 
 About four to six weeks after we finish, we come back. By then the heating, the ventilation and the humidity have had a chance to move the paper. That movement is settling. It is the reason for the visit.
 
-We look at seams, edges, corners and any joinery that was covered. Touch-ups that belong to the hang are done on that visit. There is no call-out charge for this inspection.
+We look at seams, edges, corners and any joinery that was covered. Touch-ups that belong to the hang are done on that visit. There is no call-out charge for this visit.
 
 Seams and edges
 
@@ -574,7 +580,7 @@ For wallcoverings installed by others, send photographs for an assessment of whe
 
 ## Prepare a brief that moves the conversation forward
 
-A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether to reply by email or by phone, not both. Photographs, drawings and PDFs help, and are optional. The following details help resolve scope and suitability. Send what is known and identify what remains open.
+A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether you would like a reply by email or by phone. Photographs, drawings and PDFs help, and are optional. The following details help resolve scope and suitability. Send what is known and identify what remains open.
 
 ### Project and location
 
@@ -802,22 +808,22 @@ He has worked in the trade since 2012, starting as a labourer and going on to ru
 
 ### Installation services
 
-- [Hand-painted wallpaper installation](https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/). Installation of hand-painted, scenic and chinoiserie wallpapers in London, in the manner of de Gournay and Fromental. Survey, set-out, hang and aftercare.
-- [Grasscloth installation](https://www.mrwallcover.com/services/grasscloth-installation/). Grasscloth and natural weave wallcovering installation in London. Seams, colour variation and weave direction agreed before the first length is cut.
-- [Silk wallcovering installation](https://www.mrwallcover.com/services/silk-wallcovering-installation/). Silk wallcovering installation in London houses and hotels. Clean hands, the right adhesive and seams planned so the light does not catch a ridge.
-- [Fabric walling](https://www.mrwallcover.com/services/fabric-walling/). Fabric walling and textile wallcovering installation in London. Wider goods, careful edges at joinery, skirtings and reveals.
-- [Hotel wallcovering installation](https://www.mrwallcover.com/services/hotel-wallcovering-installation/). Hotel wallcovering contractor in London: contract vinyl, Vescom and specialist papers for bedrooms and corridors. The OWO, Brown's Hotel, Four Seasons.
-- [Mural installation](https://www.mrwallcover.com/services/mural-installation/). Printed and hand-made wallpaper mural installation in London. Set out from a fixed point so the scene meets around doors and corners.
-- [Acoustic wallcovering installation](https://www.mrwallcover.com/services/acoustic-wallcovering-installation/). Acoustic wallcovering and acoustic panel installation in London hotels, offices and homes. Hung to the maker's instruction so the face keeps its performance.
-- [Architectural & furniture film wrapping](https://www.mrwallcover.com/services/architectural-film-wrapping/). Architectural and furniture film wrapping in London: doors, joinery, lift interiors, reception desks and furniture refinished in place. Survey to aftercare.
-- [Window film installation](https://www.mrwallcover.com/services/window-film/). Window film installation in London: decorative, privacy, solar control and safety films for homes, hotels, offices and shopfronts. Survey to aftercare.
-- [Joinery wallcoverings & bespoke panels](https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/). Wallcoverings and bespoke panels for doors, wardrobes and joinery in London. Full joinery services through trusted, vetted specialist partners.
+- [Hand-painted wallpaper installation](https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/). Hand-painted, scenic and chinoiserie wallpaper installation in London, including de Gournay in a private residence in 2018. Survey to aftercare.
+- [Grasscloth installation](https://www.mrwallcover.com/services/grasscloth-installation/). Grasscloth and natural weaves hung in London, including Phillip Jeffries Tweed and Omexco at Four Seasons Hotel London at Ten Trinity Square, 2016–2019.
+- [Silk wallcovering installation](https://www.mrwallcover.com/services/silk-wallcovering-installation/). Silk wallcovering installation in London houses and hotels, including hand-dyed silk feature walls at Four Seasons Hotel London at Ten Trinity Square.
+- [Fabric walling](https://www.mrwallcover.com/services/fabric-walling/). Fabric walling and textile wallcovering installation in London, including fabric-wrapped wall panels at Four Seasons Hotel London at Ten Trinity Square.
+- [Hotel wallcovering installation](https://www.mrwallcover.com/services/hotel-wallcovering-installation/). Hotel wallcovering contractor in London: bedrooms and corridors, hung to programme, mostly in hotels that stayed open. The OWO, Brown's Hotel, Four Seasons.
+- [Mural installation](https://www.mrwallcover.com/services/mural-installation/). Printed and hand-made wallpaper mural installation in London, including Calico Wallpaper’s landscape at Heathrow Terminal 4, hung overnight in 2018.
+- [Acoustic wallcovering installation](https://www.mrwallcover.com/services/acoustic-wallcovering-installation/). Acoustic wallcovering and panel installation for London hotels, offices and homes, including acoustic felt on a Holborn office boardroom wall in 2020.
+- [Architectural & furniture film wrapping](https://www.mrwallcover.com/services/architectural-film-wrapping/). Architectural and furniture film wrapping: doors, joinery, lifts and furniture refinished in place, including lift car interiors at Heythrop Park, 2022.
+- [Window film installation](https://www.mrwallcover.com/services/window-film/). Window film in London: decorative, privacy, solar control and safety films, including Solar Screen film fitted at Hyde London City (the Old Bailey Hotel).
+- [Joinery wallcoverings & bespoke panels](https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/). Wallcoverings and bespoke panels for doors, wardrobes and joinery, including Calico Wallpaper’s Overture across a flush door at Lee Broom’s showroom, 2025.
 - [Exterior works](https://www.mrwallcover.com/services/exterior-works/). Full exteriors in London: scaffolding supplied and managed, masonry and render painting, and windows. Public projects in Pimlico and Bayswater.
 - [Commercial and showroom wallcovering installation](https://www.mrwallcover.com/services/commercial-wallcovering-installation/). Wallcoverings for London showrooms, shops, venues and launches: Huntsman on Savile Row, Mercedes-AMG, SCP, House of Hackney and Calico Wallpaper.
 
 ### Area guides
 
-London and the surrounding areas; UK-wide for selected projects.
+We work in London and the surrounding areas, and UK-wide on selected projects.
 
 - [Mayfair](https://www.mrwallcover.com/areas/mayfair/)
 - [Belgravia](https://www.mrwallcover.com/areas/belgravia/)
@@ -832,7 +838,7 @@ These records reproduce the role, dates and materials on each published project 
 
 ### [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
-A full decorating package for London's oldest hotel: two years as main decorating contractor, delivered while it never stopped taking guests.
+A full decorating package at Brown's Hotel, Mayfair: two years as main decorating contractor, delivered while the hotel stayed open to guests.
 
 [Complete project JSON](https://www.mrwallcover.com/ai/projects/browns-hotel-mayfair.json) · [Complete project Markdown](https://www.mrwallcover.com/projects/browns-hotel-mayfair/index.md)
 
@@ -855,7 +861,7 @@ A full decorating package for London's oldest hotel: two years as main decoratin
 : 2026-10-09
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
@@ -870,25 +876,25 @@ Company-reported project record · [Read the original record](https://www.mrwall
 
 #### The brief (scope)
 
-To act as main decorating contractor across a sequence of rooms and suites: preparing every surface, hanging premium wallcoverings, fine painting, French polishing and specialist finishes, and spray-finishing the hotel's richly moulded ceilings. All of it within a fully operating hotel, to programme, around guests in residence.
+To act as main decorating contractor across a sequence of rooms and suites: preparing every surface, hanging wallcoverings, fine painting, French polishing and specialist finishes, and spray-finishing the hotel's richly moulded ceilings. All of it within a fully operating hotel, to programme, around guests in residence.
 
 #### Our approach (approach)
 
 Preparation and priming. Period walls were filled, made good and primed until they were true enough to receive both fine paint and wide-width printed papers. On walls of this age, the hours spent here decide everything that follows.
 
-Setting out. Adam's Eden is a large-scale design with a 108.5 cm half-drop repeat. Each room was set out from its focal points (chimneypieces, doorcases and bed walls) so that the birds and branches fall naturally, and so the pattern meets the cornice with composure.
+Setting out. Adam's Eden is a large-scale design with a 108.5 cm half-drop repeat. Each room was set out from its focal points (chimneypieces, doorcases and bed walls) so that the birds and branches fall naturally, and so the pattern sits square to the cornice and the joinery.
 
 Ceilings. The ornate moulded ceilings were spray-finished to give a flawless, even coat that keeps every crisp detail of the plasterwork, something a brush or roller cannot achieve on enrichment of this depth.
 
 Fine finishes. Fine painting, French polishing and specialist finishes were carried out by the same team, so that joinery, walls and ceilings were finished as one coherent scheme.
 
-A live hotel. Brown's remained open throughout. We worked closely with the main contractor and the hotel's management on access, timing, protection and housekeeping, keeping work contained and quiet. The project was delivered on time, with the hotel open throughout.
+A live hotel. Brown's remained open throughout. We worked closely with the main contractor and the hotel's management on access, timing, protection and housekeeping, keeping work contained and quiet. The project was delivered on time.
 
 #### Outcome (outcome)
 
-Rooms that feel as though they have always been this way: Adam Calkin's garden climbing beneath freshly finished plasterwork, and calm, tailored bedrooms. All of it delivered on time, in a hotel that never closed its doors.
+Rooms that feel as though they have always been this way: Adam Calkin's garden climbing beneath freshly finished plasterwork, and calm, tailored bedrooms.
 
-The last two photographs, of the hotel's sign and street entrance, are our own, posted on our Instagram, @mrwallcover, on 7 February 2022, the day we started this project at Brown's (CZqAHTMKcnj).
+The last two photographs, of the hotel's sign and street entrance, are our own. We posted them on Instagram, @mrwallcover, on 7 February 2022, the day we started this project at Brown's (see the post).
 
 References & photograph credits
 
@@ -901,24 +907,26 @@ References & photograph credits
 
 #### Photographs
 
-- [Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-09.webp) Credit not separately recorded.
-- [Narrow bedside at Brown's Hotel, Mayfair, papered in pale tree-and-leaf wallcovering, with a sculptural bronze lamp, a wall light and a green patterned headboard.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-10.webp) Credit not separately recorded.
-- [Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-06.webp) Credit not separately recorded.
-- [Adam's Eden wallcovering meeting a carved cornice and decorative plaster ceiling at Brown's Hotel, Mayfair, above a door case.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-12.webp) Credit not separately recorded.
-- [Adam's Eden wallcovering beneath a carved cornice at Brown's Hotel, Mayfair, around a door case, with a gilt mirror leaning against the wall.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-11.webp) Credit not separately recorded.
-- [Finished guest bedroom at Brown's Hotel, Mayfair: grey upholstered headboard, yellow cushions, a checked throw and twin wall lights on pale grey painted walls.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-02.webp) Credit not separately recorded.
-- [Guest bedroom at Brown's Hotel, Mayfair, with tall sash windows, full-length linen curtains, a red armchair and an upholstered bench at the foot of the bed.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-03.webp) Credit not separately recorded.
-- [Bedside in a finished guest room at Brown's Hotel, Mayfair: a dark wood chest, a wavy-stemmed table lamp and yellow cushions against pale grey painted walls.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-04.webp) Credit not separately recorded.
-- [Two wooden chairs with yellow seats beside a dark wood bedside chest in a finished guest room at Brown's Hotel, Mayfair.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-05.webp) Credit not separately recorded.
-- [Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-01.webp) Credit not separately recorded.
-- [Room at Brown's Hotel, Mayfair, during works: Adam's Eden wallcovering hung beneath an ornate plaster ceiling and chandelier, with protection board on the floor and a vacuum cleaner in view.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-07.webp) Credit not separately recorded.
-- [Ornate plaster ceiling and chandelier above walls hung in Adam's Eden wallcovering at Brown's Hotel, Mayfair, photographed during works with floor protection and equipment by the door.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-08.webp) Credit not separately recorded.
-- [Brown's Hotel sign on the Albemarle Street front, Mayfair.](https://www.mrwallcover.com/media/img/r/browns-ig-01-1440.webp) Credit not separately recorded.
-- [Street entrance and signage at Brown's Hotel, Mayfair.](https://www.mrwallcover.com/media/img/r/browns-ig-02-1440.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-09.webp)
+- [Narrow bedside at Brown's Hotel, Mayfair, papered in pale tree-and-leaf wallcovering, with a sculptural bronze lamp, a wall light and a green patterned headboard.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-10.webp)
+- [Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-06.webp)
+- [Adam's Eden wallcovering meeting a carved cornice and decorative plaster ceiling at Brown's Hotel, Mayfair, above a door case.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-12.webp)
+- [Adam's Eden wallcovering beneath a carved cornice at Brown's Hotel, Mayfair, around a door case, with a gilt mirror leaning against the wall.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-11.webp)
+- [Finished guest bedroom at Brown's Hotel, Mayfair: grey upholstered headboard, yellow cushions, a checked throw and twin wall lights on pale grey painted walls.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-02.webp)
+- [Guest bedroom at Brown's Hotel, Mayfair, with tall sash windows, full-length linen curtains, a red armchair and an upholstered bench at the foot of the bed.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-03.webp)
+- [Bedside in a finished guest room at Brown's Hotel, Mayfair: a dark wood chest, a wavy-stemmed table lamp and yellow cushions against pale grey painted walls.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-04.webp)
+- [Two wooden chairs with yellow seats beside a dark wood bedside chest in a finished guest room at Brown's Hotel, Mayfair.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-05.webp)
+- [Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-01.webp)
+- [Room at Brown's Hotel, Mayfair, during works: Adam's Eden wallcovering hung beneath an ornate plaster ceiling and chandelier, with protection board on the floor and a vacuum cleaner in view.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-07.webp)
+- [Ornate plaster ceiling and chandelier above walls hung in Adam's Eden wallcovering at Brown's Hotel, Mayfair, photographed during works with floor protection and equipment by the door.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-08.webp)
+- [Brown's Hotel sign on the Albemarle Street front, Mayfair.](https://www.mrwallcover.com/media/img/r/browns-ig-01-1440.webp)
+- [Street entrance and signage at Brown's Hotel, Mayfair.](https://www.mrwallcover.com/media/img/r/browns-ig-02-1440.webp)
 
 ### [Raffles London at The OWO, Whitehall](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
 
-Bespoke Vescom wallcoverings for the guest rooms of London's most storied address, the Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.
+Bespoke Vescom wallcoverings for the guest rooms of Raffles London at The OWO, the former Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.
 
 [Complete project JSON](https://www.mrwallcover.com/ai/projects/raffles-london-the-owo.json) · [Complete project Markdown](https://www.mrwallcover.com/projects/raffles-london-the-owo/index.md)
 
@@ -941,7 +949,7 @@ Bespoke Vescom wallcoverings for the guest rooms of London's most storied addres
 : 2026-10-09
 
 **Record updated**
-: 2026-10-10
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
@@ -952,7 +960,7 @@ Company-reported project record · [Read the original record](https://www.mrwall
 
 #### At a glance (scope)
 
-- Client / brand: Raffles London at The OWO - Location: The Old War Office, Whitehall, London - Years: 2020–2023 - Role: Wallcovering installation - Wallcoverings: a bespoke Vescom wallcovering made for the hotel; Vescom Alcantara in selected suites - Scope: Installation to bedrooms and several other areas, including walls and parts of the joinery
+- Client / brand: Raffles London at The OWO - Location: The Old War Office, Whitehall, London - Years: 2020–2023 - Role: Wallcovering installation - Wallcoverings: a bespoke Vescom wallcovering made for the hotel; Vescom Alcantara in selected suites - Scope: Installation to bedrooms and several other areas, including walls and parts of the joinery - Scale: chosen to install about 17,500 m² of wallcoverings in 18 months
 
 #### The brief (scope)
 
@@ -968,11 +976,11 @@ Setting out. Rooms were set out from their windows, doorcases and joinery, with 
 
 Seam and shade control. With a bespoke production run, consistency from roll to roll and room to room is paramount. Batches were checked and managed so that corridors of rooms read as one.
 
-Coordination. Work was sequenced alongside the other trades and the main contractor within one of London's most complex heritage restorations.
+Coordination. Work was sequenced alongside the other trades and the main contractor during the building's restoration.
 
 #### Outcome (outcome)
 
-Our team installed the wallcoverings for the bedrooms and several other areas of this remarkable building. Raffles notes that its rooms and suites feature customised carpets, fabrics and wallcoverings; it is a quiet satisfaction to have hung some of them.
+We were chosen in 2021 to install about 17,500 m² of wallcoverings in 18 months, in the bedrooms and several other areas. Raffles notes that its rooms and suites feature customised carpets, fabrics and wallcoverings; we hung some of those wallcoverings.
 
 References & photograph credits
 
@@ -1001,7 +1009,7 @@ References & photograph credits
 
 ### [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
-Three years of guest room and suite wallpapering, 2016 to 2019, through the opening of one of the City's great Beaux-Arts conversions, and the walls of the Four Seasons Private Residences upstairs.
+Guest room and suite wallpapering from 2016 to 2019, through the opening of the hotel in the former Port of London Authority headquarters, and wallcoverings in the Four Seasons Private Residences upstairs.
 
 [Complete project JSON](https://www.mrwallcover.com/ai/projects/four-seasons-ten-trinity-square.json) · [Complete project Markdown](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/index.md)
 
@@ -1024,7 +1032,7 @@ Three years of guest room and suite wallpapering, 2016 to 2019, through the open
 : 2026-10-09
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
@@ -1035,7 +1043,7 @@ Company-reported project record · [Read the original record](https://www.mrwall
 
 #### At a glance (scope)
 
-- Client / brand: Four Seasons Hotel London at Ten Trinity Square (renamed Four Seasons Hotel London at Tower Bridge in October 2024) - Location: 10 Trinity Square, Tower Hill, City of London - Years: 2016–2019 - Role: Guest room and suite wallpapering, and wallcoverings in the Four Seasons Private Residences - Wallcoverings: Phillip Jeffries Tweed; Omexco - Scope: Survey, wall preparation and priming, setting out, installation with full pattern and seam control - Photographs: our own, of finished private residences and residents' lift lobbies in the building, April and May 2019. We do not identify any residence: no flat or floor numbers, no owners, no views, and lift floor indicators and signs are blurred. Then our own photographs of the hotel's lift lobbies, corridors and wallcoverings, December 2017 to September 2019, first posted on our Instagram - Hotel wallcoverings, 2019: about 5,000 m², including Fromental silks, Dedar, Vescom, Tektura and Muraspec
+- Client / brand: Four Seasons Hotels and Resorts, for Four Seasons Hotel London at Ten Trinity Square (renamed Four Seasons Hotel London at Tower Bridge in October 2024) - Location: 10 Trinity Square, Tower Hill, City of London - Years: 2016–2019 - Role: Guest room and suite wallpapering, and wallcoverings in the Four Seasons Private Residences - Wallcoverings: Phillip Jeffries Tweed; Omexco - Scope: Survey, wall preparation and priming, setting out, installation with full pattern and seam control - Photographs: our own, of finished private residences and residents' lift lobbies in the building, April and May 2019. We do not identify any residence: no flat or floor numbers, no owners, no views, and lift floor indicators and signs are blurred. Then our own photographs of the hotel's lift lobbies, corridors and wallcoverings, December 2017 to September 2019, first posted on our Instagram - Hotel wallcoverings, 2019: about 5,000 m², including Fromental silks, Dedar, Vescom, Tektura and Muraspec
 
 #### The brief (scope)
 
@@ -1083,69 +1091,71 @@ References & photograph credits
 
 #### Photographs
 
-- [Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-2400.webp) Credit not separately recorded.
-- [The same entrance hall seen along its length: the banded wallcovering runs the full wall under a lit cove ceiling, past the mirror and bench to the front door.](https://www.mrwallcover.com/media/img/r/fs-residences-02-1600.webp) Credit not separately recorded.
-- [Close detail of the entrance-hall wallcovering: soft horizontal bands of charcoal, silver and ochre, laid with no visible seam.](https://www.mrwallcover.com/media/img/r/fs-residences-03-1600.webp) Credit not separately recorded.
-- [Finished dining room in a private residence: a round table and gold armchairs under a cloud of glass discs, with a black sideboard, a round clock and walnut shelving beyond.](https://www.mrwallcover.com/media/img/r/fs-residences-04-1600.webp) Credit not separately recorded.
-- [Finished living room in the same residence: a pale sofa, a blue rug and walnut bookshelves, with a brass-framed screen dividing it from the dining room.](https://www.mrwallcover.com/media/img/r/fs-residences-05-1600.webp) Credit not separately recorded.
-- [Close detail of a woven grasscloth wallcovering turning an external corner, the weave running straight and tight to the edge.](https://www.mrwallcover.com/media/img/r/fs-residences-06-1600.webp) Credit not separately recorded.
-- [A residents’ lift lobby: walls in a warm, banded veneer-effect finish, bronze lift doors and a glazed screen, with the stair rail in the foreground.](https://www.mrwallcover.com/media/img/r/fs-residences-07-1600.webp) Credit not separately recorded.
-- [The banded lobby walls turning a corner towards a pair of glazed doors, with bronze lift doors on the right.](https://www.mrwallcover.com/media/img/r/fs-residences-08-1600.webp) Credit not separately recorded.
-- [A pale lift lobby seen between two stone-effect walls: bronze lift doors either side and a glazed door at the far end.](https://www.mrwallcover.com/media/img/r/fs-residences-09-1600.webp) Credit not separately recorded.
-- [The same lobby from the top of the steps: matched stone-effect walls, bronze lift doors and a glazed door at the end of the corridor.](https://www.mrwallcover.com/media/img/r/fs-residences-10-1600.webp) Credit not separately recorded.
-- [A corner of the lobby: an antiqued mirror panel between two crystal wall lights on the stone-effect walls.](https://www.mrwallcover.com/media/img/r/fs-residences-11-1600.webp) Credit not separately recorded.
-- [The lobby beside the stair: stone-effect walls, a bronze lift door, a ventilation grille and the antiqued mirror beyond.](https://www.mrwallcover.com/media/img/r/fs-residences-12-1600.webp) Credit not separately recorded.
-- [Collage of Fromental silk wallcovering details in a hotel room, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-01-1080.webp) Credit not separately recorded.
-- [Collage of Fromental silk wallcovering in hotel corridors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-02-1080.webp) Credit not separately recorded.
-- [Hotel guest-room door set in a tweed-like Phillip Jeffries fabric wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-03-1080.webp) Credit not separately recorded.
-- [Collage of a vinyl wallcovering in a hotel bathroom and room, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-05-1080.webp) Credit not separately recorded.
-- [Close-up of a lustrous Dedar wallcovering with horizontal sheen, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-06-1080.webp) Credit not separately recorded.
-- [Grid of wallcovering samples: silk, linen and painted-landscape designs, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-08-1080.webp) Credit not separately recorded.
-- [Close-up of Fromental hand-painted silk with dark marbled waves, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-09-1080.webp) Credit not separately recorded.
-- [Fromental silk wallcovering in a corner showing seamless pattern match, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-10-1080.webp) Credit not separately recorded.
-- [Close-up of a blue-grey hand-dyed Fromental silk, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-11-1440.webp) Credit not separately recorded.
-- [Hotel lobby with Fromental hand-dyed silk in warm amber tones around a glazed door, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-12-1440.webp) Credit not separately recorded.
-- [Lift lobby with stair balustrades and amber hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-13-1440.webp) Credit not separately recorded.
-- [Hotel lobby lined with amber hand-dyed silk leading to double doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-14-1440.webp) Credit not separately recorded.
-- [Corridor with warm hand-dyed silk walls and a full-height mirrored door, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-15-1440.webp) Credit not separately recorded.
-- [Lobby with double doors framed by hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-16-1440.webp) Credit not separately recorded.
-- [Lift lobby lined with iridescent dark Fromental silk around a mirrored door, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-17-1440.webp) Credit not separately recorded.
-- [Close-up of iridescent brown-and-gold Fromental silk in a lobby, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-18-1440.webp) Credit not separately recorded.
-- [Lobby with dark iridescent silk walls and a stair balustrade, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-19-1440.webp) Credit not separately recorded.
-- [Mirrored lift door framed by iridescent silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-20-1440.webp) Credit not separately recorded.
-- [Lift lobby in iridescent Fromental silk with warm downlights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-21-1440.webp) Credit not separately recorded.
-- [Lift lobby lined with pale hand-dyed Fromental silk and warm wall lights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-22-1440.webp) Credit not separately recorded.
-- [Lobby with hand-dyed silk walls leading to glazed doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-23-1440.webp) Credit not separately recorded.
-- [Stair balustrades and glazed doors in a hand-dyed silk lobby, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-24-1440.webp) Credit not separately recorded.
-- [Lobby with hand-dyed silk walls and a full-height mirrored panel, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-25-1440.webp) Credit not separately recorded.
-- [Lift doors set in pale hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-26-1440.webp) Credit not separately recorded.
-- [Lobby with hand-dyed silk walls and a curved stair rail, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-27-1440.webp) Credit not separately recorded.
-- [Hotel corridor with dark silk wallcovering, round mirror and chandelier, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-28-1440.webp) Credit not separately recorded.
-- [Lift lobby with warm-toned silk wall panels and recessed lighting, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-29-1440.webp) Credit not separately recorded.
-- [Lobby with amber silk walls and a view through to a stair hall, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-30-1440.webp) Credit not separately recorded.
-- [Close-up of a grey and gold wave-pattern silk wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-31-1440.webp) Credit not separately recorded.
-- [Dark wave-pattern silk wall with a round mirror and upholstered bench, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-32-1440.webp) Credit not separately recorded.
-- [Hotel lounge with a chandelier, yellow armchairs and silk-covered walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-33-1440.webp) Credit not separately recorded.
-- [Round mirror between table lamps on a dark silk-covered wall, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-34-1440.webp) Credit not separately recorded.
-- [Hotel meeting room with long table, chandelier and fabric-covered walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-35-1440.webp) Credit not separately recorded.
-- [Fabric-wrapped wall panels beneath two framed artworks in a hotel room, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-36-1440.webp) Credit not separately recorded.
-- [Fabric-wrapped joinery wall with two framed gold artworks, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-37-1440.webp) Credit not separately recorded.
-- [Close-up of a woven linen-texture wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-38-1440.webp) Credit not separately recorded.
-- [Sculptural wall light on a pale textured wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-39-1440.webp) Credit not separately recorded.
-- [Teal fabric-wrapped wall with two framed artworks, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-41-1440.webp) Credit not separately recorded.
-- [Lobby corridor with Fromental silk walls and wall lights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-43-1440.webp) Credit not separately recorded.
-- [Lift lobby in warm Fromental silk with dark lift doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-44-1440.webp) Credit not separately recorded.
-- [Stair lobby with Fromental silk walls and black balustrades, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-45-1440.webp) Credit not separately recorded.
-- [Mirrored panel framed by warm silk walls with wall lights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-46-1440.webp) Credit not separately recorded.
-- [Hotel lobby with lustrous Dedar wallcovering and warm downlights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-48-1440.webp) Credit not separately recorded.
-- [Lobby with Dedar wallcovering and dark doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-49-1440.webp) Credit not separately recorded.
-- [Ten Trinity Square at night, seen from Trinity Square Gardens, with the tower and portico lit.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-01.webp) Ten Trinity Square at night, from Trinity Square Gardens. A view of the building, not of our work. Photography: The wub / Wikimedia Commons (CC BY-SA 4.0). Source: [https://creativecommons.org/licenses/by-sa/4.0](https://creativecommons.org/licenses/by-sa/4.0) Source: [https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_London,_at_night.jpg](https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_London,_at_night.jpg)
-- [The Portland stone tower and columned front of Ten Trinity Square, framed by trees on Trinity Square.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-02.webp) Ten Trinity Square from Trinity Square, 2026. A view of the building, not of our work. Photography: APK / Wikimedia Commons (CC BY 4.0). Source: [https://creativecommons.org/licenses/by/4.0](https://creativecommons.org/licenses/by/4.0) Source: [https://commons.wikimedia.org/wiki/File:10_Trinity_Square_in_2026.jpg](https://commons.wikimedia.org/wiki/File:10_Trinity_Square_in_2026.jpg)
-- [The full front of Ten Trinity Square on Tower Hill, with its central tower and Corinthian columns.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-03.webp) The front of Ten Trinity Square on Tower Hill, 2015. A view of the building, not of our work. Photography: Jim Linwood from London / Wikimedia Commons (CC BY 2.0). Source: [https://creativecommons.org/licenses/by/2.0](https://creativecommons.org/licenses/by/2.0) Source: [https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_Tower_Hill_-_City_Of_London._(16459952029](https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_Tower_Hill_-_City_Of_London._(16459952029)
+A photograph listed without a credit has no separately recorded credit.
+
+- [Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-2400.webp)
+- [The same entrance hall seen along its length: the banded wallcovering runs the full wall under a lit cove ceiling, past the mirror and bench to the front door.](https://www.mrwallcover.com/media/img/r/fs-residences-02-1600.webp)
+- [Close detail of the entrance-hall wallcovering: soft horizontal bands of charcoal, silver and ochre, laid with no visible seam.](https://www.mrwallcover.com/media/img/r/fs-residences-03-1600.webp)
+- [Finished dining room in a private residence: a round table and gold armchairs under a cloud of glass discs, with a black sideboard, a round clock and walnut shelving beyond.](https://www.mrwallcover.com/media/img/r/fs-residences-04-1600.webp)
+- [Finished living room in the same residence: a pale sofa, a blue rug and walnut bookshelves, with a brass-framed screen dividing it from the dining room.](https://www.mrwallcover.com/media/img/r/fs-residences-05-1600.webp)
+- [Close detail of a woven grasscloth wallcovering turning an external corner, the weave running straight and tight to the edge.](https://www.mrwallcover.com/media/img/r/fs-residences-06-1600.webp)
+- [A residents’ lift lobby: walls in a warm, banded veneer-effect finish, bronze lift doors and a glazed screen, with the stair rail in the foreground.](https://www.mrwallcover.com/media/img/r/fs-residences-07-1600.webp)
+- [The banded lobby walls turning a corner towards a pair of glazed doors, with bronze lift doors on the right.](https://www.mrwallcover.com/media/img/r/fs-residences-08-1600.webp)
+- [A pale lift lobby seen between two stone-effect walls: bronze lift doors either side and a glazed door at the far end.](https://www.mrwallcover.com/media/img/r/fs-residences-09-1600.webp)
+- [The same lobby from the top of the steps: matched stone-effect walls, bronze lift doors and a glazed door at the end of the corridor.](https://www.mrwallcover.com/media/img/r/fs-residences-10-1600.webp)
+- [A corner of the lobby: an antiqued mirror panel between two crystal wall lights on the stone-effect walls.](https://www.mrwallcover.com/media/img/r/fs-residences-11-1600.webp)
+- [The lobby beside the stair: stone-effect walls, a bronze lift door, a ventilation grille and the antiqued mirror beyond.](https://www.mrwallcover.com/media/img/r/fs-residences-12-1600.webp)
+- [Collage of Fromental silk wallcovering details in a hotel room, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-01-1080.webp)
+- [Collage of Fromental silk wallcovering in hotel corridors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-02-1080.webp)
+- [Hotel guest-room door set in a tweed-like Phillip Jeffries fabric wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-03-1080.webp)
+- [Collage of a vinyl wallcovering in a hotel bathroom and room, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-05-1080.webp)
+- [Close-up of a lustrous Dedar wallcovering with horizontal sheen, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-06-1080.webp)
+- [Grid of wallcovering samples: silk, linen and painted-landscape designs, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-08-1080.webp)
+- [Close-up of Fromental hand-painted silk with dark marbled waves, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-09-1080.webp)
+- [Fromental silk wallcovering in a corner showing seamless pattern match, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-10-1080.webp)
+- [Close-up of a blue-grey hand-dyed Fromental silk, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-11-1440.webp)
+- [Hotel lobby with Fromental hand-dyed silk in warm amber tones around a glazed door, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-12-1440.webp)
+- [Lift lobby with stair balustrades and amber hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-13-1440.webp)
+- [Hotel lobby lined with amber hand-dyed silk leading to double doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-14-1440.webp)
+- [Corridor with warm hand-dyed silk walls and a full-height mirrored door, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-15-1440.webp)
+- [Lobby with double doors framed by hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-16-1440.webp)
+- [Lift lobby lined with iridescent dark Fromental silk around a mirrored door, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-17-1440.webp)
+- [Close-up of iridescent brown-and-gold Fromental silk in a lobby, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-18-1440.webp)
+- [Lobby with dark iridescent silk walls and a stair balustrade, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-19-1440.webp)
+- [Mirrored lift door framed by iridescent silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-20-1440.webp)
+- [Lift lobby in iridescent Fromental silk with warm downlights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-21-1440.webp)
+- [Lift lobby lined with pale hand-dyed Fromental silk and warm wall lights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-22-1440.webp)
+- [Lobby with hand-dyed silk walls leading to glazed doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-23-1440.webp)
+- [Stair balustrades and glazed doors in a hand-dyed silk lobby, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-24-1440.webp)
+- [Lobby with hand-dyed silk walls and a full-height mirrored panel, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-25-1440.webp)
+- [Lift doors set in pale hand-dyed silk walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-26-1440.webp)
+- [Lobby with hand-dyed silk walls and a curved stair rail, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-27-1440.webp)
+- [Hotel corridor with dark silk wallcovering, round mirror and chandelier, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-28-1440.webp)
+- [Lift lobby with warm-toned silk wall panels and recessed lighting, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-29-1440.webp)
+- [Lobby with amber silk walls and a view through to a stair hall, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-30-1440.webp)
+- [Close-up of a grey and gold wave-pattern silk wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-31-1440.webp)
+- [Dark wave-pattern silk wall with a round mirror and upholstered bench, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-32-1440.webp)
+- [Hotel lounge with a chandelier, yellow armchairs and silk-covered walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-33-1440.webp)
+- [Round mirror between table lamps on a dark silk-covered wall, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-34-1440.webp)
+- [Hotel meeting room with long table, chandelier and fabric-covered walls, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-35-1440.webp)
+- [Fabric-wrapped wall panels beneath two framed artworks in a hotel room, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-36-1440.webp)
+- [Fabric-wrapped joinery wall with two framed gold artworks, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-37-1440.webp)
+- [Close-up of a woven linen-texture wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-38-1440.webp)
+- [Sculptural wall light on a pale textured wallcovering, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-39-1440.webp)
+- [Teal fabric-wrapped wall with two framed artworks, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-41-1440.webp)
+- [Lobby corridor with Fromental silk walls and wall lights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-43-1440.webp)
+- [Lift lobby in warm Fromental silk with dark lift doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-44-1440.webp)
+- [Stair lobby with Fromental silk walls and black balustrades, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-45-1440.webp)
+- [Mirrored panel framed by warm silk walls with wall lights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-46-1440.webp)
+- [Hotel lobby with lustrous Dedar wallcovering and warm downlights, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-48-1440.webp)
+- [Lobby with Dedar wallcovering and dark doors, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-49-1440.webp)
+- [Ten Trinity Square at night, seen from Trinity Square Gardens, with the tower and portico lit.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-01.webp) Ten Trinity Square at night, from Trinity Square Gardens. Venue photograph, not our work. Photograph: The wub / Wikimedia Commons (CC BY-SA 4.0). Source: [https://creativecommons.org/licenses/by-sa/4.0](https://creativecommons.org/licenses/by-sa/4.0) Source: [https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_London,_at_night.jpg](https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_London,_at_night.jpg)
+- [The Portland stone tower and columned front of Ten Trinity Square, framed by trees on Trinity Square.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-02.webp) Ten Trinity Square from Trinity Square, 2026. Venue photograph, not our work. Photograph: APK / Wikimedia Commons (CC BY 4.0). Source: [https://creativecommons.org/licenses/by/4.0](https://creativecommons.org/licenses/by/4.0) Source: [https://commons.wikimedia.org/wiki/File:10_Trinity_Square_in_2026.jpg](https://commons.wikimedia.org/wiki/File:10_Trinity_Square_in_2026.jpg)
+- [The full front of Ten Trinity Square on Tower Hill, with its central tower and Corinthian columns.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-03.webp) The front of Ten Trinity Square on Tower Hill, 2015. Venue photograph, not our work. Photograph: Jim Linwood from London / Wikimedia Commons (CC BY 2.0). Source: [https://creativecommons.org/licenses/by/2.0](https://creativecommons.org/licenses/by/2.0) Source: [https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_Tower_Hill_-_City_Of_London._(16459952029](https://commons.wikimedia.org/wiki/File:10_Trinity_Square,_Tower_Hill_-_City_Of_London._(16459952029)
 
 ### [Castle of Trematon, Cornwall](https://www.mrwallcover.com/projects/trematon-castle/)
 
-Nearly three years inside a Norman castle's Georgian heart, hanging the prints of the house that made maximalism modern.
+Nearly three years inside a Norman castle's Georgian heart, hanging House of Hackney prints throughout the house.
 
 [Complete project JSON](https://www.mrwallcover.com/ai/projects/trematon-castle.json) · [Complete project Markdown](https://www.mrwallcover.com/projects/trematon-castle/index.md)
 
@@ -1168,7 +1178,7 @@ Nearly three years inside a Norman castle's Georgian heart, hanging the prints o
 : 2026-10-09
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/trematon-castle/)
@@ -1227,55 +1237,57 @@ References & photograph credits
 
 #### Photographs
 
-- [Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-2400.webp) Credit not separately recorded.
-- [PLANTASIA panoramic mural part-hung on a full-height wall at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-03-1600.webp) Credit not separately recorded.
-- [Terracotta floral wallpaper on a fireplace wall at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-11-1600.webp) Credit not separately recorded.
-- [Papered atrium ceiling around an oval skylight at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-16-1600.webp) Credit not separately recorded.
-- [Small box room at the Castle of Trematon papered on the walls and ceiling.](https://www.mrwallcover.com/media/img/r/trematon-13-1600.webp) Credit not separately recorded.
-- [Lincrusta relief wallcovering hung to a laser line at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-18-1600.webp) Credit not separately recorded.
-- [Close view of a celestial blue wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-06-1600.webp) Credit not separately recorded.
-- [Close view of a dark floral stripe wallpaper hung at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-07-1600.webp) Credit not separately recorded.
-- [Powder room at the Castle of Trematon papered in a floral stripe.](https://www.mrwallcover.com/media/img/r/trematon-08-1600.webp) Credit not separately recorded.
-- [Bathroom with a roll-top bath and floral stripe wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-09-1600.webp) Credit not separately recorded.
-- [Bedroom at the Castle of Trematon being papered in a pale floral design.](https://www.mrwallcover.com/media/img/r/trematon-10-1600.webp) Credit not separately recorded.
-- [Terracotta floral wallpaper being hung at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-12-1600.webp) Credit not separately recorded.
-- [Close view of a hollyhock wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-14-1600.webp) Credit not separately recorded.
-- [Bedroom at the Castle of Trematon in a large floral wallpaper.](https://www.mrwallcover.com/media/img/r/trematon-15-1600.webp) Credit not separately recorded.
-- [Papered atrium ceiling with a chandelier at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-17-1600.webp) Credit not separately recorded.
-- [Lincrusta embossed relief panel at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-19-1600.webp) Credit not separately recorded.
-- [Floral wallpaper on a ceiling at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-21-1600.webp) Credit not separately recorded.
-- [Gothic-style bed against a dark floral wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-23-1600.webp) Credit not separately recorded.
-- [Atrium at the Castle of Trematon stripped and lined before papering.](https://www.mrwallcover.com/media/img/r/trematon-24-1600.webp) Credit not separately recorded.
-- [The Georgian house within the walls of the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-25-1600.webp) Credit not separately recorded.
-- [The Norman keep of the Castle of Trematon seen from the house.](https://www.mrwallcover.com/media/img/r/trematon-26-1600.webp) Credit not separately recorded.
-- [Roll label for House of Hackney PLANTASIA wallpaper on site at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-04-1600.webp) Credit not separately recorded.
-- [Roll label for House of Hackney GAIA wallpaper in Prussian Blue, delivered to the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-05-1600.webp) Credit not separately recorded.
-- [Lincrusta leaflet on site at the Castle of Trematon, November 2021.](https://www.mrwallcover.com/media/img/r/trematon-20-1600.webp) Credit not separately recorded.
-- [The Georgian house at Trematon Castle, Cornwall, under a blue sky.](https://www.mrwallcover.com/media/img/r/trematon-ig-01-1440.webp) Credit not separately recorded.
-- [Gardens at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-02-1440.webp) Credit not separately recorded.
-- [Old stone fireplace at Trematon Castle before restoration.](https://www.mrwallcover.com/media/img/r/trematon-ig-03-1440.webp) Credit not separately recorded.
-- [Faded red embroidered textile hanging at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-04-1440.webp) Credit not separately recorded.
-- [Stone arched gateway at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-06-1440.webp) Credit not separately recorded.
-- [Trematon Castle bedroom with a large floral House of Hackney wallpaper and a four-poster bed.](https://www.mrwallcover.com/media/img/r/trematon-ig-08-1440.webp) Credit not separately recorded.
-- [Ceiling and wall prepared with lining paper at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-09-1440.webp) Credit not separately recorded.
-- [Pink basin and wall light against a striped floral wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-11-1440.webp) Credit not separately recorded.
-- ['Castle of Trematon' sign at the entrance to the estate.](https://www.mrwallcover.com/media/img/r/trematon-ig-12-1440.webp) Credit not separately recorded.
-- [The Gate House at Trematon Castle lit at night.](https://www.mrwallcover.com/media/img/r/trematon-ig-13-1440.webp) Credit not separately recorded.
-- [Arched alcove papered in a pale grey leaf-pattern wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-14-1440.webp) Credit not separately recorded.
-- [Close-up of grey-green leaf-pattern wallpaper in an arch, the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-ig-15-1440.webp) Credit not separately recorded.
-- [Interior of the House of Hackney-designed caravan at Trematon Castle with patterned walls.](https://www.mrwallcover.com/media/img/r/trematon-ig-17-1440.webp) Credit not separately recorded.
-- [Caravan bedroom with floral wallpaper and a window, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-18-1440.webp) Credit not separately recorded.
-- [Caravan dining nook with patterned wallpaper and yellow upholstery, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-19-1440.webp) Credit not separately recorded.
-- [Caravan interior with floral wallpaper and fitted seating, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-20-1440.webp) Credit not separately recorded.
-- [Ceiling of a stair hall papered in a dark ornamental House of Hackney design, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-21-1440.webp) Credit not separately recorded.
-- [Ornate mirror on a striped floral wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-22-1440.webp) Credit not separately recorded.
-- [Close-up of a striped floral wallpaper with blooms and leaves, the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-ig-23-1440.webp) Credit not separately recorded.
-- [Fringed table lamp against a red floral wallpaper, the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-ig-24-1440.webp) Credit not separately recorded.
-- [Bathroom with floral wallpaper, sash window and bath, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-25-1440.webp) Credit not separately recorded.
-- [Bathroom mirror and wall lights on a blue striped floral wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-26-1440.webp) Credit not separately recorded.
-- [Sitting room with fully papered walls and ceiling, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-27-1440.webp) Credit not separately recorded.
-- [Curved staircase wall during Lincrusta installation, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-28-1440.webp) Credit not separately recorded.
-- [A length of Lincrusta relief panel offered up to the wall with a green laser line for setting out, Trematon Castle, November 2021.](https://www.mrwallcover.com/media/img/r/trematon-ig-29-1440.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-2400.webp)
+- [PLANTASIA panoramic mural part-hung on a full-height wall at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-03-1600.webp)
+- [Terracotta floral wallpaper on a fireplace wall at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-11-1600.webp)
+- [Papered atrium ceiling around an oval skylight at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-16-1600.webp)
+- [Small box room at the Castle of Trematon papered on the walls and ceiling.](https://www.mrwallcover.com/media/img/r/trematon-13-1600.webp)
+- [Lincrusta relief wallcovering hung to a laser line at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-18-1600.webp)
+- [Close view of a celestial blue wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-06-1600.webp)
+- [Close view of a dark floral stripe wallpaper hung at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-07-1600.webp)
+- [Powder room at the Castle of Trematon papered in a floral stripe.](https://www.mrwallcover.com/media/img/r/trematon-08-1600.webp)
+- [Bathroom with a roll-top bath and floral stripe wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-09-1600.webp)
+- [Bedroom at the Castle of Trematon being papered in a pale floral design.](https://www.mrwallcover.com/media/img/r/trematon-10-1600.webp)
+- [Terracotta floral wallpaper being hung at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-12-1600.webp)
+- [Close view of a hollyhock wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-14-1600.webp)
+- [Bedroom at the Castle of Trematon in a large floral wallpaper.](https://www.mrwallcover.com/media/img/r/trematon-15-1600.webp)
+- [Papered atrium ceiling with a chandelier at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-17-1600.webp)
+- [Lincrusta embossed relief panel at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-19-1600.webp)
+- [Floral wallpaper on a ceiling at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-21-1600.webp)
+- [Gothic-style bed against a dark floral wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-23-1600.webp)
+- [Atrium at the Castle of Trematon stripped and lined before papering.](https://www.mrwallcover.com/media/img/r/trematon-24-1600.webp)
+- [The Georgian house within the walls of the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-25-1600.webp)
+- [The Norman keep of the Castle of Trematon seen from the house.](https://www.mrwallcover.com/media/img/r/trematon-26-1600.webp)
+- [Roll label for House of Hackney PLANTASIA wallpaper on site at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-04-1600.webp)
+- [Roll label for House of Hackney GAIA wallpaper in Prussian Blue, delivered to the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-05-1600.webp)
+- [Lincrusta leaflet on site at the Castle of Trematon, November 2021.](https://www.mrwallcover.com/media/img/r/trematon-20-1600.webp)
+- [The Georgian house at Trematon Castle, Cornwall, under a blue sky.](https://www.mrwallcover.com/media/img/r/trematon-ig-01-1440.webp)
+- [Gardens at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-02-1440.webp)
+- [Old stone fireplace at Trematon Castle before restoration.](https://www.mrwallcover.com/media/img/r/trematon-ig-03-1440.webp)
+- [Faded red embroidered textile hanging at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-04-1440.webp)
+- [Stone arched gateway at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-06-1440.webp)
+- [Trematon Castle bedroom with a large floral House of Hackney wallpaper and a four-poster bed.](https://www.mrwallcover.com/media/img/r/trematon-ig-08-1440.webp)
+- [Ceiling and wall prepared with lining paper at Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-09-1440.webp)
+- [Pink basin and wall light against a striped floral wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-11-1440.webp)
+- ['Castle of Trematon' sign at the entrance to the estate.](https://www.mrwallcover.com/media/img/r/trematon-ig-12-1440.webp)
+- [The Gate House at Trematon Castle lit at night.](https://www.mrwallcover.com/media/img/r/trematon-ig-13-1440.webp)
+- [Arched alcove papered in a pale grey leaf-pattern wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-14-1440.webp)
+- [Close-up of grey-green leaf-pattern wallpaper in an arch, the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-ig-15-1440.webp)
+- [Interior of the House of Hackney-designed caravan at Trematon Castle with patterned walls.](https://www.mrwallcover.com/media/img/r/trematon-ig-17-1440.webp)
+- [Caravan bedroom with floral wallpaper and a window, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-18-1440.webp)
+- [Caravan dining nook with patterned wallpaper and yellow upholstery, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-19-1440.webp)
+- [Caravan interior with floral wallpaper and fitted seating, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-20-1440.webp)
+- [Ceiling of a stair hall papered in a dark ornamental House of Hackney design, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-21-1440.webp)
+- [Ornate mirror on a striped floral wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-22-1440.webp)
+- [Close-up of a striped floral wallpaper with blooms and leaves, the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-ig-23-1440.webp)
+- [Fringed table lamp against a red floral wallpaper, the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-ig-24-1440.webp)
+- [Bathroom with floral wallpaper, sash window and bath, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-25-1440.webp)
+- [Bathroom mirror and wall lights on a blue striped floral wallpaper, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-26-1440.webp)
+- [Sitting room with fully papered walls and ceiling, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-27-1440.webp)
+- [Curved staircase wall during Lincrusta installation, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-28-1440.webp)
+- [A length of Lincrusta relief panel offered up to the wall with a green laser line for setting out, Trematon Castle, November 2021.](https://www.mrwallcover.com/media/img/r/trematon-ig-29-1440.webp)
 
 ### [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
@@ -1302,7 +1314,7 @@ A complete decorating package for 111 guest rooms across seven storeys: paint, s
 : 2026-10-09
 
 **Record updated**
-: 2026-10-10
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/old-bailey-hotel/)
@@ -1348,25 +1360,27 @@ References & photograph credits
 
 #### Photographs
 
-- [Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-2400.webp) Credit not separately recorded.
-- [Suite bedroom at Hyde London City wrapped in House of Hackney Limerence palm wallpaper.](https://www.mrwallcover.com/media/img/r/old-bailey-12-1600.webp) Credit not separately recorded.
-- [Timorous Beasties Tropical Clouded Leopard wallpaper hung as a headboard panel.](https://www.mrwallcover.com/media/img/r/old-bailey-07-1600.webp) Credit not separately recorded.
-- [Guest room in progress with a shaped Tropical Clouded Leopard headboard panel.](https://www.mrwallcover.com/media/img/r/old-bailey-08-1600.webp) Credit not separately recorded.
-- [Timorous Beasties Totem Damask feature wall in a guest room.](https://www.mrwallcover.com/media/img/r/old-bailey-09-1600.webp) Credit not separately recorded.
-- [Detail of Totem Damask wallpaper beside a wall light.](https://www.mrwallcover.com/media/img/r/old-bailey-10-1600.webp) Credit not separately recorded.
-- [Detail of House of Hackney Limerence wallpaper in the Galapagos colourway.](https://www.mrwallcover.com/media/img/r/old-bailey-11-1600.webp) Credit not separately recorded.
-- [Dressing area of the suite in House of Hackney Limerence wallpaper.](https://www.mrwallcover.com/media/img/r/old-bailey-13-1600.webp) Credit not separately recorded.
-- [Limerence wallpaper meeting joinery in the suite.](https://www.mrwallcover.com/media/img/r/old-bailey-14-1600.webp) Credit not separately recorded.
-- [Stair landing with terracotta walls at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-16-1600.webp) Credit not separately recorded.
-- [The stair balustrade and timber handrail seen from above.](https://www.mrwallcover.com/media/img/r/old-bailey-17-1600.webp) Credit not separately recorded.
-- [Green-painted guest corridor at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-18-1600.webp) Credit not separately recorded.
-- [Corner façade of 15 Old Bailey, the 1874 hotel building in the City of London.](https://www.mrwallcover.com/media/img/r/old-bailey-01-1600.webp) Credit not separately recorded.
-- [Carved stone entrance doorway at 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-02-1600.webp) Credit not separately recorded.
-- [Window detail on the façade of 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-03-1600.webp) Credit not separately recorded.
-- [Carved stone bay window on the façade of 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-04-1600.webp) Credit not separately recorded.
-- [The dome of St Paul's Cathedral seen through a round window at 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-05-1600.webp) Credit not separately recorded.
-- [Rolls of Solar Screen window film on site before installation.](https://www.mrwallcover.com/media/img/r/old-bailey-15-1600.webp) Credit not separately recorded.
-- [A neighbouring church tower seen from an upper-floor window.](https://www.mrwallcover.com/media/img/r/old-bailey-19-1600.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-2400.webp)
+- [Suite bedroom at Hyde London City wrapped in House of Hackney Limerence palm wallpaper.](https://www.mrwallcover.com/media/img/r/old-bailey-12-1600.webp)
+- [Timorous Beasties Tropical Clouded Leopard wallpaper hung as a headboard panel.](https://www.mrwallcover.com/media/img/r/old-bailey-07-1600.webp)
+- [Guest room in progress with a shaped Tropical Clouded Leopard headboard panel.](https://www.mrwallcover.com/media/img/r/old-bailey-08-1600.webp)
+- [Timorous Beasties Totem Damask feature wall in a guest room.](https://www.mrwallcover.com/media/img/r/old-bailey-09-1600.webp)
+- [Detail of Totem Damask wallpaper beside a wall light.](https://www.mrwallcover.com/media/img/r/old-bailey-10-1600.webp)
+- [Detail of House of Hackney Limerence wallpaper in the Galapagos colourway.](https://www.mrwallcover.com/media/img/r/old-bailey-11-1600.webp)
+- [Dressing area of the suite in House of Hackney Limerence wallpaper.](https://www.mrwallcover.com/media/img/r/old-bailey-13-1600.webp)
+- [Limerence wallpaper meeting joinery in the suite.](https://www.mrwallcover.com/media/img/r/old-bailey-14-1600.webp)
+- [Stair landing with terracotta walls at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-16-1600.webp)
+- [The stair balustrade and timber handrail seen from above.](https://www.mrwallcover.com/media/img/r/old-bailey-17-1600.webp)
+- [Green-painted guest corridor at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-18-1600.webp)
+- [Corner façade of 15 Old Bailey, the 1874 hotel building in the City of London.](https://www.mrwallcover.com/media/img/r/old-bailey-01-1600.webp)
+- [Carved stone entrance doorway at 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-02-1600.webp)
+- [Window detail on the façade of 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-03-1600.webp)
+- [Carved stone bay window on the façade of 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-04-1600.webp)
+- [The dome of St Paul's Cathedral seen through a round window at 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-05-1600.webp)
+- [Rolls of Solar Screen window film on site before installation.](https://www.mrwallcover.com/media/img/r/old-bailey-15-1600.webp)
+- [A neighbouring church tower seen from an upper-floor window.](https://www.mrwallcover.com/media/img/r/old-bailey-19-1600.webp)
 
 ### [DoubleTree by Hilton London – West End](https://www.mrwallcover.com/projects/doubletree-west-end/)
 
@@ -1393,7 +1407,7 @@ Guest room wallcoverings at the Holborn hotel, the former Bonnington, through th
 : 2026-10-09
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/doubletree-west-end/)
@@ -1428,19 +1442,21 @@ References & photograph credits
 
 #### Photographs
 
-- [The DoubleTree by Hilton London – West End on Southampton Row, Holborn: the red-brick and stone frontage, seen from the street.](https://www.mrwallcover.com/media/img/doubletree-west-end-commons-01.webp) The hotel on Southampton Row, 2024. A view of the building, not of our work. Photography: Frombowen / Wikimedia Commons (CC BY-SA 4.0). Source: [https://creativecommons.org/licenses/by-sa/4.0](https://creativecommons.org/licenses/by-sa/4.0) Source: [https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_Hotel_London_-_West_End.jpg](https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_Hotel_London_-_West_End.jpg)
-- [The former Bonnington Hotel at 92 Southampton Row, now the DoubleTree by Hilton London – West End, with flags over the entrance.](https://www.mrwallcover.com/media/img/doubletree-west-end-commons-02.webp) The former Bonnington Hotel, now the DoubleTree, 2026. A view of the building, not of our work. Photography: APK / Wikimedia Commons (CC BY 4.0). Source: [https://creativecommons.org/licenses/by/4.0](https://creativecommons.org/licenses/by/4.0) Source: [https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_-_Southampton_Row,_London.jpg](https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_-_Southampton_Row,_London.jpg)
-- [Street facade of the Bonnington Hotel on Southampton Row, Holborn, the building now occupied by DoubleTree by Hilton London West End.](https://www.mrwallcover.com/media/img/thumbs/hilton-holborn-01-800.webp) Credit not separately recorded.
-- [Hotel bedroom wall with textured wallcovering and a wall-mounted reading light, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-02-1440.webp) Credit not separately recorded.
-- [Bedside table and telephone against a textured hotel wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-06-1440.webp) Credit not separately recorded.
-- [Hotel corridor with neutral wallcovering and patterned carpet, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-03-1440.webp) Credit not separately recorded.
-- [Long hotel corridor lined with framed pictures and textured wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-04-1440.webp) Credit not separately recorded.
-- [Hotel corridor with a skylight, framed art and textured wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-05-1440.webp) Credit not separately recorded.
-- [Close-up of a textured, linen-look hotel wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-07-1440.webp) Credit not separately recorded.
-- [Close-up of a textured stone-effect hotel wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-08-1440.webp) Credit not separately recorded.
-- [Close-up of a fine woven wallcovering in a hotel room, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-10-1440.webp) Credit not separately recorded.
-- [Light switches set into a textured wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-09-1440.webp) Credit not separately recorded.
-- [Collage of a hotel bedroom and corridor finished in Tektura wide vinyl, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-01-1080.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [The DoubleTree by Hilton London – West End on Southampton Row, Holborn: the red-brick and stone frontage, seen from the street.](https://www.mrwallcover.com/media/img/doubletree-west-end-commons-01.webp) The hotel on Southampton Row, 2024. Venue photograph, not our work. Photograph: Frombowen / Wikimedia Commons (CC BY-SA 4.0). Source: [https://creativecommons.org/licenses/by-sa/4.0](https://creativecommons.org/licenses/by-sa/4.0) Source: [https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_Hotel_London_-_West_End.jpg](https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_Hotel_London_-_West_End.jpg)
+- [The former Bonnington Hotel at 92 Southampton Row, now the DoubleTree by Hilton London – West End, with flags over the entrance.](https://www.mrwallcover.com/media/img/doubletree-west-end-commons-02.webp) The former Bonnington Hotel, now the DoubleTree, 2026. Venue photograph, not our work. Photograph: APK / Wikimedia Commons (CC BY 4.0). Source: [https://creativecommons.org/licenses/by/4.0](https://creativecommons.org/licenses/by/4.0) Source: [https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_-_Southampton_Row,_London.jpg](https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_-_Southampton_Row,_London.jpg)
+- [Street facade of the Bonnington Hotel on Southampton Row, Holborn, the building now occupied by DoubleTree by Hilton London West End.](https://www.mrwallcover.com/media/img/thumbs/hilton-holborn-01-800.webp)
+- [Hotel bedroom wall with textured wallcovering and a wall-mounted reading light, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-02-1440.webp)
+- [Bedside table and telephone against a textured hotel wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-06-1440.webp)
+- [Hotel corridor with neutral wallcovering and patterned carpet, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-03-1440.webp)
+- [Long hotel corridor lined with framed pictures and textured wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-04-1440.webp)
+- [Hotel corridor with a skylight, framed art and textured wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-05-1440.webp)
+- [Close-up of a textured, linen-look hotel wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-07-1440.webp)
+- [Close-up of a textured stone-effect hotel wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-08-1440.webp)
+- [Close-up of a fine woven wallcovering in a hotel room, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-10-1440.webp)
+- [Light switches set into a textured wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-09-1440.webp)
+- [Collage of a hotel bedroom and corridor finished in Tektura wide vinyl, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-01-1080.webp)
 
 ### [DoubleTree by Hilton London – Victoria](https://www.mrwallcover.com/projects/doubletree-victoria/)
 
@@ -1467,7 +1483,7 @@ Guest room wallcoverings at the Victoria hotel, spring and summer 2023.
 : 2026-10-09
 
 **Record updated**
-: 2026-10-10
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/doubletree-victoria/)
@@ -1493,7 +1509,7 @@ References & photograph credits
 
 #### Photographs
 
-- [The hotel building on Bridge Place, Victoria, in 2010, when it traded as the Hesperia London Victoria; it is now the DoubleTree by Hilton London – Victoria.](https://www.mrwallcover.com/media/img/doubletree-victoria-commons-01.webp) The building on Bridge Place in 2010, when it was the Hesperia London Victoria. A view of the building, not of our work. Photography: Stacey Harris / Wikimedia Commons (CC BY-SA 2.0). Source: [https://creativecommons.org/licenses/by-sa/2.0](https://creativecommons.org/licenses/by-sa/2.0) Source: [https://commons.wikimedia.org/wiki/File:Bridge_Place,_Victoria,_London_SW1V_-_geograph.org.uk_-_1766428.jpg](https://commons.wikimedia.org/wiki/File:Bridge_Place,_Victoria,_London_SW1V_-_geograph.org.uk_-_1766428.jpg)
+- [The hotel building on Bridge Place, Victoria, in 2010, when it traded as the Hesperia London Victoria; it is now the DoubleTree by Hilton London – Victoria.](https://www.mrwallcover.com/media/img/doubletree-victoria-commons-01.webp) The building on Bridge Place in 2010, when it was the Hesperia London Victoria. Venue photograph, not our work. Photograph: Stacey Harris / Wikimedia Commons (CC BY-SA 2.0). Source: [https://creativecommons.org/licenses/by-sa/2.0](https://creativecommons.org/licenses/by-sa/2.0) Source: [https://commons.wikimedia.org/wiki/File:Bridge_Place,_Victoria,_London_SW1V_-_geograph.org.uk_-_1766428.jpg](https://commons.wikimedia.org/wiki/File:Bridge_Place,_Victoria,_London_SW1V_-_geograph.org.uk_-_1766428.jpg)
 
 ### [The Biltmore Mayfair](https://www.mrwallcover.com/projects/biltmore-mayfair/)
 
@@ -1520,7 +1536,7 @@ More than 15,000 m² of guest-room wallcoverings in 2018 at the Millennium Hotel
 : 2026-10-09
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/biltmore-mayfair/)
@@ -1546,13 +1562,15 @@ References & photograph credits
 
 #### Photographs
 
-- [Hotel bedroom with grasscloth-effect wallcovering, navy armchair and full-height curtains, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-02-1080.webp) Credit not separately recorded.
-- [Hotel room with textured neutral wallcovering behind a desk, lamp and red armchair, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-03-1080.webp) Credit not separately recorded.
-- [Hotel suite with pale wallcovering, round table and curved banquette seating, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-05-1080.webp) Credit not separately recorded.
-- [Desk corner of a hotel room with neutral textured wallcovering and a brass lamp, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-08-1080.webp) Credit not separately recorded.
-- [Hotel guest room corridor with textured neutral wallcovering and dark timber door frames, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-01-1080.webp) Credit not separately recorded.
-- [Hotel room under fit-out with wallcovering hung and floor protection down, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-07-1080.webp) Credit not separately recorded.
-- [Close-up of a woven, natural-texture Phillip Jeffries wallcovering, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-04-1080.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Hotel bedroom with grasscloth-effect wallcovering, navy armchair and full-height curtains, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-02-1080.webp)
+- [Hotel room with textured neutral wallcovering behind a desk, lamp and red armchair, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-03-1080.webp)
+- [Hotel suite with pale wallcovering, round table and curved banquette seating, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-05-1080.webp)
+- [Desk corner of a hotel room with neutral textured wallcovering and a brass lamp, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-08-1080.webp)
+- [Hotel guest room corridor with textured neutral wallcovering and dark timber door frames, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-01-1080.webp)
+- [Hotel room under fit-out with wallcovering hung and floor protection down, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-07-1080.webp)
+- [Close-up of a woven, natural-texture Phillip Jeffries wallcovering, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-04-1080.webp)
 
 ### [House of Hackney showroom, St Michael's Clergy House](https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/)
 
@@ -1579,7 +1597,7 @@ Preparation and making good of the 1856 clergy house, then decorating and hangin
 : 2026-10-09
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/)
@@ -1598,9 +1616,9 @@ St Michael's Clergy House dates from 1856. The brief was the interior of the new
 
 The survey was in October 2021. Making good and decorating ran from January 2022, and the rooms were dressed before the opening on 26 March 2022. The tiled cloakrooms were finished in May 2022.
 
-Pattern names are not stated here. The papers are House of Hackney's own, hung through the rooms as specified for the showroom. This commission was internal works only.
+The papers are House of Hackney's own, hung through the rooms as specified for the showroom. This commission was internal works only.
 
-The finished-room photographs marked "Photography: House of Hackney" are House of Hackney's own, from their website. The others were taken on site by us; the two marked "Before" show rooms as found, before the works began.
+The finished-room photographs marked "Photograph: House of Hackney" are House of Hackney's own, from their website. The others were taken on site by us; the two marked "Before" show rooms as found, before the works began.
 
 The last seven photographs are from an earlier job for the same client: House of Hackney's previous showroom in Shoreditch, which we worked on in 2019. They are our own photographs, posted on our Instagram, @mrwallcover, on 19 August 2019, and each is captioned as the earlier showroom. They are not St Michael's Clergy House.
 
@@ -1612,20 +1630,22 @@ References & photograph credits
 
 #### Photographs
 
-- [Finished room at the House of Hackney showroom, St Michael's Clergy House, with dark floral wallpaper, matching curtains and low floral sofas.](https://www.mrwallcover.com/media/img/hoh-official-01.webp) Photography: House of Hackney Source: [https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels](https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels)
-- [Green-and-gold floral wallpaper above timber panelling in a finished room at the House of Hackney showroom, with glass tables and low stools.](https://www.mrwallcover.com/media/img/hoh-official-02.webp) Photography: House of Hackney Source: [https://www.houseofhackney.com/pages/london-showroom](https://www.houseofhackney.com/pages/london-showroom)
-- [Large-scale floral wallpaper behind two pedestal basins at the House of Hackney showroom.](https://www.mrwallcover.com/media/img/hoh-official-03.webp) Photography: House of Hackney Source: [https://www.houseofhackney.com/pages/london-showroom](https://www.houseofhackney.com/pages/london-showroom)
-- [Floral wallpaper around a fireplace and a timber bookcase in a finished room at the House of Hackney showroom.](https://www.mrwallcover.com/media/img/hoh-official-04.webp) Photography: House of Hackney Source: [https://www.houseofhackney.com/pages/london-showroom](https://www.houseofhackney.com/pages/london-showroom)
-- [Panelled wall with floral and striped wallpaper behind a striped sofa at the House of Hackney showroom.](https://www.mrwallcover.com/media/img/hoh-official-05.webp) Photography: House of Hackney Source: [https://www.houseofhackney.com/pages/london-showroom](https://www.houseofhackney.com/pages/london-showroom)
-- [Finished room at the House of Hackney showroom, with patterned wallpaper below the dado, a fireplace and printed armchairs.](https://www.mrwallcover.com/media/img/hoh-official-06.webp) Photography: House of Hackney Source: [https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels](https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels)
-- [Stained glass doors and patterned wall at the House of Hackney showroom in St Michael's Clergy House.](https://www.mrwallcover.com/media/img/hoh-official-07.webp) Photography: House of Hackney Source: [https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels](https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels)
-- [Bedroom set at the House of Hackney showroom, with green floral wallpaper and a four-poster bed.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-05.webp) Credit not separately recorded.
-- [Finished room at the House of Hackney showroom, with floral wallpaper, a fireplace and printed sofas.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-06.webp) Credit not separately recorded.
-- [Finished room at the House of Hackney showroom, with green walls, a floral panel and printed sofas.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-08.webp) Credit not separately recorded.
-- [Passage at the House of Hackney showroom, with bird-pattern wallpaper above green tiles.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-09.webp) Credit not separately recorded.
-- [Cloakroom basin at the House of Hackney showroom, with floral wallpaper above green tiles and a marble vanity.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-11.webp) Credit not separately recorded.
-- [Cloakroom at the House of Hackney showroom, seen through a doorway, with floral wallpaper above green tiles.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-10.webp) Credit not separately recorded.
-- [Finished room at the House of Hackney showroom, with a long timber table, hanging fabric samples and arched windows.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-04.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Finished room at the House of Hackney showroom, St Michael's Clergy House, with dark floral wallpaper, matching curtains and low floral sofas.](https://www.mrwallcover.com/media/img/hoh-official-01.webp) Photograph: House of Hackney Source: [https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels](https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels)
+- [Green-and-gold floral wallpaper above timber panelling in a finished room at the House of Hackney showroom, with glass tables and low stools.](https://www.mrwallcover.com/media/img/hoh-official-02.webp) Photograph: House of Hackney Source: [https://www.houseofhackney.com/pages/london-showroom](https://www.houseofhackney.com/pages/london-showroom)
+- [Large-scale floral wallpaper behind two pedestal basins at the House of Hackney showroom.](https://www.mrwallcover.com/media/img/hoh-official-03.webp) Photograph: House of Hackney Source: [https://www.houseofhackney.com/pages/london-showroom](https://www.houseofhackney.com/pages/london-showroom)
+- [Floral wallpaper around a fireplace and a timber bookcase in a finished room at the House of Hackney showroom.](https://www.mrwallcover.com/media/img/hoh-official-04.webp) Photograph: House of Hackney Source: [https://www.houseofhackney.com/pages/london-showroom](https://www.houseofhackney.com/pages/london-showroom)
+- [Panelled wall with floral and striped wallpaper behind a striped sofa at the House of Hackney showroom.](https://www.mrwallcover.com/media/img/hoh-official-05.webp) Photograph: House of Hackney Source: [https://www.houseofhackney.com/pages/london-showroom](https://www.houseofhackney.com/pages/london-showroom)
+- [Finished room at the House of Hackney showroom, with patterned wallpaper below the dado, a fireplace and printed armchairs.](https://www.mrwallcover.com/media/img/hoh-official-06.webp) Photograph: House of Hackney Source: [https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels](https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels)
+- [Stained glass doors and patterned wall at the House of Hackney showroom in St Michael's Clergy House.](https://www.mrwallcover.com/media/img/hoh-official-07.webp) Photograph: House of Hackney Source: [https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels](https://www.houseofhackney.com/blogs/stories/the-transformation-of-st-michaels)
+- [Bedroom set at the House of Hackney showroom, with green floral wallpaper and a four-poster bed.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-05.webp)
+- [Finished room at the House of Hackney showroom, with floral wallpaper, a fireplace and printed sofas.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-06.webp)
+- [Finished room at the House of Hackney showroom, with green walls, a floral panel and printed sofas.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-08.webp)
+- [Passage at the House of Hackney showroom, with bird-pattern wallpaper above green tiles.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-09.webp)
+- [Cloakroom basin at the House of Hackney showroom, with floral wallpaper above green tiles and a marble vanity.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-11.webp)
+- [Cloakroom at the House of Hackney showroom, seen through a doorway, with floral wallpaper above green tiles.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-10.webp)
+- [Finished room at the House of Hackney showroom, with a long timber table, hanging fabric samples and arched windows.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-04.webp)
 - [Before: an empty upper room at St Michael's Clergy House, with blue carpet, a fireplace and plain white walls, before the House of Hackney showroom works.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-01.webp) Before
 - [Before: an empty room at St Michael's Clergy House, with red carpet, white walls and an arched door, before the showroom works.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-03.webp) Before
 - [House of Hackney's earlier Shoreditch showroom, 2019: bold floral wallpaper behind displayed furnishings.](https://www.mrwallcover.com/media/img/r/hoh-shoreditch-2019-01-1440.webp) The earlier House of Hackney showroom in Shoreditch, August 2019.
@@ -1661,7 +1681,7 @@ All the internal works plus the full exterior at 9 Langton Street: the showroom 
 : 2026-10-09
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/penny-morrison-showroom/)
@@ -1678,20 +1698,22 @@ References & photograph credits
 
 #### Photographs
 
-- [Penny Morrison showroom at 9 Langton Street, with floral wallpaper, a marble fireplace and upholstered seating.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-01.webp) Credit not separately recorded.
-- [Floral wallpaper and upholstered seating in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-02.webp) Credit not separately recorded.
-- [Penny Morrison showroom with floral wallpaper, a fireplace and a patterned red carpet.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-04.webp) Credit not separately recorded.
-- [Shelves of fabric samples beside floral wallpaper in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-05.webp) Credit not separately recorded.
-- [Close view of large-scale floral wallpaper in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-06.webp) Credit not separately recorded.
-- [Stair hall at the Penny Morrison showroom, lined with a scenic landscape wallpaper.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-03.webp) Credit not separately recorded.
-- [Front elevation of the Penny Morrison showroom at 9 Langton Street during exterior decorating.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-07.webp) Credit not separately recorded.
-- [Upper sash windows on the Penny Morrison showroom front, with brick and stucco being prepared.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-08.webp) Credit not separately recorded.
-- [Finished white stucco and sash windows on the Penny Morrison showroom front.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-09.webp) Credit not separately recorded.
-- [Brick and stucco bay of the Penny Morrison showroom, with sash windows.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-10.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Penny Morrison showroom at 9 Langton Street, with floral wallpaper, a marble fireplace and upholstered seating.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-01.webp)
+- [Floral wallpaper and upholstered seating in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-02.webp)
+- [Penny Morrison showroom with floral wallpaper, a fireplace and a patterned red carpet.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-04.webp)
+- [Shelves of fabric samples beside floral wallpaper in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-05.webp)
+- [Close view of large-scale floral wallpaper in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-06.webp)
+- [Stair hall at the Penny Morrison showroom, lined with a scenic landscape wallpaper.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-03.webp)
+- [Front elevation of the Penny Morrison showroom at 9 Langton Street during exterior decorating.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-07.webp)
+- [Upper sash windows on the Penny Morrison showroom front, with brick and stucco being prepared.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-08.webp)
+- [Finished white stucco and sash windows on the Penny Morrison showroom front.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-09.webp)
+- [Brick and stucco bay of the Penny Morrison showroom, with sash windows.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-10.webp)
 
 ### [St George's Square, Pimlico](https://www.mrwallcover.com/projects/pimlico-st-georges-square/)
 
-A full exterior on St George's Square in 2024: scaffold supplied and managed by the practice, masonry and render repairs, painting, windows and the entrance ironwork.
+A full exterior on St George's Square in 2024: scaffold supplied and managed by us, masonry and render repairs, painting, windows and the entrance ironwork.
 
 [Complete project JSON](https://www.mrwallcover.com/ai/projects/pimlico-st-georges-square.json) · [Complete project Markdown](https://www.mrwallcover.com/projects/pimlico-st-georges-square/index.md)
 
@@ -1714,7 +1736,7 @@ A full exterior on St George's Square in 2024: scaffold supplied and managed by 
 : 2026-10-09
 
 **Record updated**
-: 2026-10-18
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/pimlico-st-georges-square/)
@@ -1725,13 +1747,13 @@ Company-reported project record · [Read the original record](https://www.mrwall
 
 #### At a glance (scope)
 
-- Building: a stucco townhouse of flats on St George's Square, Pimlico - Survey: June 2024 - Works: July to November 2024. The scaffold was struck in late November 2024 - Scope: full front and rear exterior. Scaffolding supplied and managed by the practice
+- Building: a stucco townhouse of flats on St George's Square, Pimlico - Survey: June 2024 - Works: July to November 2024. The scaffold was struck in late November 2024 - Scope: full front and rear exterior. Scaffolding supplied and managed by us
 
 #### The work (scope)
 
 The survey was in June 2024. Works ran from July to November 2024, and the scaffold came down in late November.
 
-The scaffold for the front and the rear was supplied and managed by the practice. Repairs took in the cornice, the pediment and the portico, where cracks were made good, and the parapet. Masonry and render were painted in a Dulux Trade system. Sills and entrance joinery, the columns, the balustrade and the railings were finished with the elevation.
+We supplied and managed the scaffold for the front and the rear. Repairs took in the cornice, the pediment and the portico, where cracks were made good, and the parapet. Masonry and render were painted in a Dulux Trade system. Sills and entrance joinery, the columns, the balustrade and the railings were finished with the elevation.
 
 A private residential building, named here by street only.
 
@@ -1739,15 +1761,17 @@ References & photograph credits
 
 #### Photographs
 
-- [Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-11.webp) Credit not separately recorded.
-- [Front elevation on St George's Square under scaffold, with a columned portico and sash windows.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-02.webp) Credit not separately recorded.
-- [Scaffolded corner on St George's Square, with the cornice and upper sash windows.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-04.webp) Credit not separately recorded.
-- [Close view of a white stucco cornice and sash window on St George's Square, with scaffold poles in front.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-03.webp) Credit not separately recorded.
-- [Upper facade on St George's Square under scaffold, with sash windows, a cornice and a black balcony railing.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-08.webp) Credit not separately recorded.
-- [Ground-floor entrance on St George's Square under scaffold, with white columns, steps and black railings.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-07.webp) Credit not separately recorded.
-- [Rear brick elevation on St George's Square, seen from an upper balcony, under scaffold and sheeting.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-01.webp) Credit not separately recorded.
-- [Rear elevation on St George's Square under a full scaffold, red brick and white render, with paint buckets on the boards.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-06.webp) Credit not separately recorded.
-- [Close view of a white stucco cornice on St George's Square, with scaffold beside the moulding.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-10.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-11.webp)
+- [Front elevation on St George's Square under scaffold, with a columned portico and sash windows.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-02.webp)
+- [Scaffolded corner on St George's Square, with the cornice and upper sash windows.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-04.webp)
+- [Close view of a white stucco cornice and sash window on St George's Square, with scaffold poles in front.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-03.webp)
+- [Upper facade on St George's Square under scaffold, with sash windows, a cornice and a black balcony railing.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-08.webp)
+- [Ground-floor entrance on St George's Square under scaffold, with white columns, steps and black railings.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-07.webp)
+- [Rear brick elevation on St George's Square, seen from an upper balcony, under scaffold and sheeting.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-01.webp)
+- [Rear elevation on St George's Square under a full scaffold, red brick and white render, with paint buckets on the boards.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-06.webp)
+- [Close view of a white stucco cornice on St George's Square, with scaffold beside the moulding.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-10.webp)
 
 ### [Inverness Terrace, Bayswater](https://www.mrwallcover.com/projects/inverness-terrace/)
 
@@ -1799,16 +1823,18 @@ References & photograph credits
 
 #### Photographs
 
-- [Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-10.webp) Credit not separately recorded.
-- [Inverness Terrace front under scaffold, with a columned entrance and a first-floor balcony.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-08.webp) Credit not separately recorded.
-- [Inverness Terrace front under scaffold netting, with black balcony ironwork and sash windows.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-02.webp) Credit not separately recorded.
-- [Inverness Terrace front under scaffold netting, with a columned entrance, balconies and sash windows.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-07.webp) Credit not separately recorded.
-- [Inverness Terrace front with balconies and sash windows, scaffold still on the facade.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-11.webp) Credit not separately recorded.
-- [Close view of ornamental capitals and a balcony railing on Inverness Terrace, with scaffold poles in front.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-03.webp) Credit not separately recorded.
-- [Close view of a sash window and white stucco surround on Inverness Terrace, with scaffold poles in front.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-05.webp) Credit not separately recorded.
-- [Rear brick elevation on Inverness Terrace, seen from above, under scaffold.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-01.webp) Credit not separately recorded.
-- [Upper facade on Inverness Terrace under scaffold, with a stucco cornice, balcony brackets and a black iron railing.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-09.webp) Credit not separately recorded.
-- [Rear elevation on Inverness Terrace under scaffold, with white render, brick and sash windows.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-04.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-10.webp)
+- [Inverness Terrace front under scaffold, with a columned entrance and a first-floor balcony.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-08.webp)
+- [Inverness Terrace front under scaffold netting, with black balcony ironwork and sash windows.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-02.webp)
+- [Inverness Terrace front under scaffold netting, with a columned entrance, balconies and sash windows.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-07.webp)
+- [Inverness Terrace front with balconies and sash windows, scaffold still on the facade.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-11.webp)
+- [Close view of ornamental capitals and a balcony railing on Inverness Terrace, with scaffold poles in front.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-03.webp)
+- [Close view of a sash window and white stucco surround on Inverness Terrace, with scaffold poles in front.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-05.webp)
+- [Rear brick elevation on Inverness Terrace, seen from above, under scaffold.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-01.webp)
+- [Upper facade on Inverness Terrace under scaffold, with a stucco cornice, balcony brackets and a black iron railing.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-09.webp)
+- [Rear elevation on Inverness Terrace under scaffold, with white render, brick and sash windows.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-04.webp)
 
 ### [A Georgian house in North London](https://www.mrwallcover.com/projects/north-london-residence/)
 
@@ -1835,7 +1861,7 @@ House of Hackney's BAMBUSA in Midnight, hung on every wall of a historic guest b
 : 2026-10-09
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/north-london-residence/)
@@ -1865,18 +1891,20 @@ References & photograph credits
 
 #### Photographs
 
-- [Four-poster bed against House of Hackney Bambusa wallpaper in the Midnight colourway.](https://www.mrwallcover.com/media/img/r/north-london-residence-01-2400.webp) Credit not separately recorded.
-- [Bed wall with a gilt mirror on Bambusa Midnight wallpaper.](https://www.mrwallcover.com/media/img/r/north-london-residence-02-1600.webp) Credit not separately recorded.
-- [Bambusa Midnight wallpaper with matching curtains.](https://www.mrwallcover.com/media/img/r/north-london-residence-03-1600.webp) Credit not separately recorded.
-- [Pineapple lamp in front of Bambusa Midnight wallpaper.](https://www.mrwallcover.com/media/img/r/north-london-residence-04-1600.webp) Credit not separately recorded.
-- [Bedside corner with a fringed lamp against Bambusa wallpaper.](https://www.mrwallcover.com/media/img/r/north-london-residence-05-1600.webp) Credit not separately recorded.
-- [Four-poster bed and canopy in the finished bedroom.](https://www.mrwallcover.com/media/img/r/north-london-residence-06-1600.webp) Credit not separately recorded.
-- [Bedside detail with lamp and Bambusa wallpaper.](https://www.mrwallcover.com/media/img/r/north-london-residence-07-1600.webp) Credit not separately recorded.
-- [Overview of the bedroom with the four-poster and Bambusa walls.](https://www.mrwallcover.com/media/img/r/north-london-residence-08-1600.webp) Credit not separately recorded.
-- [Fireplace wall and beam, with Bambusa wallpaper cut around the period joinery.](https://www.mrwallcover.com/media/img/r/north-london-residence-09-1600.webp) Credit not separately recorded.
-- [Writing corner in the bedroom, papered in Bambusa.](https://www.mrwallcover.com/media/img/r/north-london-residence-10-1600.webp) Credit not separately recorded.
-- [Serpentis snakeskin pattern on the ceiling above dark-blue joinery.](https://www.mrwallcover.com/media/img/r/north-london-residence-11-1600.webp) Credit not separately recorded.
-- [Built-in bookshelves painted dark blue.](https://www.mrwallcover.com/media/img/r/north-london-residence-12-1600.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Four-poster bed against House of Hackney Bambusa wallpaper in the Midnight colourway.](https://www.mrwallcover.com/media/img/r/north-london-residence-01-2400.webp)
+- [Bed wall with a gilt mirror on Bambusa Midnight wallpaper.](https://www.mrwallcover.com/media/img/r/north-london-residence-02-1600.webp)
+- [Bambusa Midnight wallpaper with matching curtains.](https://www.mrwallcover.com/media/img/r/north-london-residence-03-1600.webp)
+- [Pineapple lamp in front of Bambusa Midnight wallpaper.](https://www.mrwallcover.com/media/img/r/north-london-residence-04-1600.webp)
+- [Bedside corner with a fringed lamp against Bambusa wallpaper.](https://www.mrwallcover.com/media/img/r/north-london-residence-05-1600.webp)
+- [Four-poster bed and canopy in the finished bedroom.](https://www.mrwallcover.com/media/img/r/north-london-residence-06-1600.webp)
+- [Bedside detail with lamp and Bambusa wallpaper.](https://www.mrwallcover.com/media/img/r/north-london-residence-07-1600.webp)
+- [Overview of the bedroom with the four-poster and Bambusa walls.](https://www.mrwallcover.com/media/img/r/north-london-residence-08-1600.webp)
+- [Fireplace wall and beam, with Bambusa wallpaper cut around the period joinery.](https://www.mrwallcover.com/media/img/r/north-london-residence-09-1600.webp)
+- [Writing corner in the bedroom, papered in Bambusa.](https://www.mrwallcover.com/media/img/r/north-london-residence-10-1600.webp)
+- [Serpentis snakeskin pattern on the ceiling above dark-blue joinery.](https://www.mrwallcover.com/media/img/r/north-london-residence-11-1600.webp)
+- [Built-in bookshelves painted dark blue.](https://www.mrwallcover.com/media/img/r/north-london-residence-12-1600.webp)
 
 ### [Ahluwalia x Calico Wallpaper: 'Estuary' at Rosewood London](https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/)
 
@@ -1897,13 +1925,13 @@ An event install for Calico Wallpaper, not a hotel fit-out: the runway backdrop 
 : 2026
 
 **Materials**
-: Calico Wallpaper x Ahluwalia – Estuary (bespoke mural)
+: Calico Wallpaper × Ahluwalia – Estuary (bespoke mural)
 
 **Record published**
 : 2026-10-09
 
 **Record updated**
-: 2026-10-10
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/)
@@ -1959,12 +1987,14 @@ References & photograph credits
 
 #### Photographs
 
-- [The runway set at Rosewood London, ready for the show.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-07-2400.webp) Credit not separately recorded.
-- [A freestanding panel finished in Calico Wallpaper's Estuary in the set builder's workshop.](https://www.mrwallcover.com/media/img/r/nomad-01-1600.webp) Credit not separately recorded.
-- [The event space at Rosewood London before the Ahluwalia show.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-01-1600.webp) Credit not separately recorded.
-- [The Estuary mural by Ahluwalia for Calico Wallpaper installed as the runway backdrop at Rosewood London.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-06-1600.webp) Credit not separately recorded.
-- [The show space at Rosewood London before the backdrop went up.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-02-1600.webp) Credit not separately recorded.
-- [Sanding the backdrop surface before hanging.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-03-1600.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [The runway set at Rosewood London, ready for the show.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-07-2400.webp)
+- [A freestanding panel finished in Calico Wallpaper's Estuary in the set builder's workshop.](https://www.mrwallcover.com/media/img/r/nomad-01-1600.webp)
+- [The event space at Rosewood London before the Ahluwalia show.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-01-1600.webp)
+- [The Estuary mural by Ahluwalia for Calico Wallpaper installed as the runway backdrop at Rosewood London.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-06-1600.webp)
+- [The show space at Rosewood London before the backdrop went up.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-02-1600.webp)
+- [Sanding the backdrop surface before hanging.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-03-1600.webp)
 
 ### [Calico Wallpaper x BEVERLY 1975: Cadence at The Lavery, Brompton Design District](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
 
@@ -1991,7 +2021,7 @@ A feature wall of Calico's Cadence, in Oxblood, hung in a single day on site for
 : 2026-10-09
 
 **Record updated**
-: 2026-10-10
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
@@ -2021,12 +2051,14 @@ References & photograph credits
 
 #### Photographs
 
-- [Cadence Oxblood behind BEVERLY 1975's tables during Brompton Design District.](https://www.mrwallcover.com/media/img/r/beverly-08-2400.webp) Credit not separately recorded.
-- [The finished Cadence Oxblood feature wall at The Lavery, Cromwell Place.](https://www.mrwallcover.com/media/img/r/beverly-06-1600.webp) Credit not separately recorded.
-- [Close-up of the layered texture of Cadence in Oxblood.](https://www.mrwallcover.com/media/img/r/beverly-07-1600.webp) Credit not separately recorded.
-- [Seam detail in Cadence Oxblood.](https://www.mrwallcover.com/media/img/r/beverly-05-1600.webp) Credit not separately recorded.
-- [Calico Wallpaper Cadence in Oxblood going up on the feature wall.](https://www.mrwallcover.com/media/img/r/beverly-04-1080.webp) Credit not separately recorded.
-- [Preparing the wall at The Lavery, Cromwell Place, before hanging.](https://www.mrwallcover.com/media/img/r/beverly-03-1600.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Cadence Oxblood behind BEVERLY 1975's tables during Brompton Design District.](https://www.mrwallcover.com/media/img/r/beverly-08-2400.webp)
+- [The finished Cadence Oxblood feature wall at The Lavery, Cromwell Place.](https://www.mrwallcover.com/media/img/r/beverly-06-1600.webp)
+- [Close-up of the layered texture of Cadence in Oxblood.](https://www.mrwallcover.com/media/img/r/beverly-07-1600.webp)
+- [Seam detail in Cadence Oxblood.](https://www.mrwallcover.com/media/img/r/beverly-05-1600.webp)
+- [Calico Wallpaper Cadence in Oxblood going up on the feature wall.](https://www.mrwallcover.com/media/img/r/beverly-04-1080.webp)
+- [Preparing the wall at The Lavery, Cromwell Place, before hanging.](https://www.mrwallcover.com/media/img/r/beverly-03-1600.webp)
 
 ### [Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroom](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
 
@@ -2047,13 +2079,13 @@ Lee Broom's first wallpaper, a trompe-l'oeil theatre curtain, brought to the UK 
 : 2025
 
 **Materials**
-: Calico Wallpaper x Lee Broom – Overture (installed design: Matinee)
+: Calico Wallpaper × Lee Broom – Overture (installed design: Matinee)
 
 **Record published**
 : 2026-10-09
 
 **Record updated**
-: 2026-10-10
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
@@ -2093,16 +2125,18 @@ References & photograph credits
 
 #### Photographs
 
-- [Overture drapery wallpaper beside a chandelier.](https://www.mrwallcover.com/media/img/r/lee-broom-08-2400.webp) Credit not separately recorded.
-- [Detail of an Overture flat ready for Calico's London Design Festival dinner.](https://www.mrwallcover.com/media/img/r/lee-broom-11-1600.webp) Credit not separately recorded.
-- [Overture panels on the side wall of the showroom.](https://www.mrwallcover.com/media/img/r/lee-broom-04-1600.webp) Credit not separately recorded.
-- [Overture drapery wallpaper hung across the room at Lee Broom's Shoreditch showroom, before the room was dressed.](https://www.mrwallcover.com/media/img/r/lee-broom-03-1600.webp) Credit not separately recorded.
-- [Calico Wallpaper Overture trompe-l'oeil curtain carried across a concealed door at Lee Broom's Shoreditch showroom.](https://www.mrwallcover.com/media/img/r/lee-broom-01-1600.webp) Credit not separately recorded.
-- [A full Overture drop hung, before trimming at the skirting.](https://www.mrwallcover.com/media/img/r/lee-broom-07-1600.webp) Credit not separately recorded.
-- [Overture panels aligned at the top of the wall during installation.](https://www.mrwallcover.com/media/img/r/lee-broom-05-1600.webp) Credit not separately recorded.
-- [Setting out an Overture panel against a laser line.](https://www.mrwallcover.com/media/img/r/lee-broom-06-1600.webp) Credit not separately recorded.
-- [A theatrical flat papered in Overture on the workshop bench.](https://www.mrwallcover.com/media/img/r/lee-broom-09-1600.webp) Credit not separately recorded.
-- [A papered Overture flat standing in the set builder's workshop.](https://www.mrwallcover.com/media/img/r/lee-broom-10-1600.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Overture drapery wallpaper beside a chandelier.](https://www.mrwallcover.com/media/img/r/lee-broom-08-2400.webp)
+- [Detail of an Overture flat ready for Calico's London Design Festival dinner.](https://www.mrwallcover.com/media/img/r/lee-broom-11-1600.webp)
+- [Overture panels on the side wall of the showroom.](https://www.mrwallcover.com/media/img/r/lee-broom-04-1600.webp)
+- [Overture drapery wallpaper hung across the room at Lee Broom's Shoreditch showroom, before the room was dressed.](https://www.mrwallcover.com/media/img/r/lee-broom-03-1600.webp)
+- [Calico Wallpaper Overture trompe-l'oeil curtain carried across a concealed door at Lee Broom's Shoreditch showroom.](https://www.mrwallcover.com/media/img/r/lee-broom-01-1600.webp)
+- [A full Overture drop hung, before trimming at the skirting.](https://www.mrwallcover.com/media/img/r/lee-broom-07-1600.webp)
+- [Overture panels aligned at the top of the wall during installation.](https://www.mrwallcover.com/media/img/r/lee-broom-05-1600.webp)
+- [Setting out an Overture panel against a laser line.](https://www.mrwallcover.com/media/img/r/lee-broom-06-1600.webp)
+- [A theatrical flat papered in Overture on the workshop bench.](https://www.mrwallcover.com/media/img/r/lee-broom-09-1600.webp)
+- [A papered Overture flat standing in the set builder's workshop.](https://www.mrwallcover.com/media/img/r/lee-broom-10-1600.webp)
 
 ### [Hilton Garden Inn Silverstone](https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/)
 
@@ -2129,7 +2163,7 @@ Main wallcoverings contractor for the only hotel on the Silverstone Circuit, its
 : 2026-10-09
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/)
@@ -2140,7 +2174,7 @@ Company-reported project record · [Read the original record](https://www.mrwall
 
 #### At a glance (scope)
 
-- Client / brand: Hilton Garden Inn Silverstone (Hilton) - Location: Hamilton Straight, Silverstone Circuit, Northamptonshire - Role: Main wallcoverings contractor - Scope: Wallcovering installation
+- Client / brand: Hilton Garden Inn Silverstone (Hilton) - Location: Hamilton Straight, Silverstone Circuit, Northamptonshire - Year: 2022 (completed in time for the British Grand Prix) - Role: Main wallcoverings contractor - Scope: Wallcovering installation
 
 #### The brief (scope)
 
@@ -2172,10 +2206,10 @@ References & photograph credits
 
 #### Photographs
 
-- [Hilton Garden Inn Silverstone from outside: a six-storey hotel clad in grey and buff panels, with V-shaped columns along the entrance.](https://www.mrwallcover.com/media/img/hilton-garden-inn-silverstone-press-01.webp) Hilton Garden Inn Silverstone from outside. A view of the building, not of our work. Photography: Hilton. Source: [https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack](https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack)
-- [A guest room at Hilton Garden Inn Silverstone, with pale walls, a white bed and a glazed balcony door looking out towards the circuit.](https://www.mrwallcover.com/media/img/hilton-garden-inn-silverstone-press-02.webp) A guest room as published by Hilton. A view of the hotel, not of our work. Photography: Hilton. Source: [https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack](https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack)
-- [A Ferrari and a Mercedes side by side on track at the 2022 British Grand Prix, Silverstone.](https://www.mrwallcover.com/media/img/silverstone-circuit-commons-01.webp) The circuit during the 2022 British Grand Prix. A view of the venue, not of our work. Photography: fuji.tim / Wikimedia Commons (CC BY-SA 2.0). Source: [https://creativecommons.org/licenses/by-sa/2.0](https://creativecommons.org/licenses/by-sa/2.0) Source: [https://commons.wikimedia.org/wiki/File:Ferrari%27s_Charles_Leclerc_battles_for_the_podium_with_Mercedes%27_Lewis_Hamilton_at_the_2022_British_Grand_Prix_at_Silverstone._(52196620083](https://commons.wikimedia.org/wiki/File:Ferrari%27s_Charles_Leclerc_battles_for_the_podium_with_Mercedes%27_Lewis_Hamilton_at_the_2022_British_Grand_Prix_at_Silverstone._(52196620083)
-- [A single-seater racing car at speed on the Silverstone circuit during the 2022 British Grand Prix weekend.](https://www.mrwallcover.com/media/img/silverstone-circuit-commons-02.webp) A car on the circuit during the 2022 British Grand Prix weekend. A view of the venue, not of our work. Photography: Jen Ross / Wikimedia Commons (CC BY 2.0). Source: [https://creativecommons.org/licenses/by/2.0](https://creativecommons.org/licenses/by/2.0) Source: [https://commons.wikimedia.org/wiki/File:2022_British_Grand_Prix_(52382657159](https://commons.wikimedia.org/wiki/File:2022_British_Grand_Prix_(52382657159)
+- [Hilton Garden Inn Silverstone from outside: a six-storey hotel clad in grey and buff panels, with V-shaped columns along the entrance.](https://www.mrwallcover.com/media/img/hilton-garden-inn-silverstone-press-01.webp) Hilton Garden Inn Silverstone from outside. Venue photograph, not our work. Photograph: Hilton. Source: [https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack](https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack)
+- [A guest room at Hilton Garden Inn Silverstone, with pale walls, a white bed and a glazed balcony door looking out towards the circuit.](https://www.mrwallcover.com/media/img/hilton-garden-inn-silverstone-press-02.webp) A guest room as published by Hilton. Venue photograph, not our work. Photograph: Hilton. Source: [https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack](https://stories.hilton.com/emea/releases/hilton-garden-inn-silverstone-debuts-on-the-famous-racetrack)
+- [A Ferrari and a Mercedes side by side on track at the 2022 British Grand Prix, Silverstone.](https://www.mrwallcover.com/media/img/silverstone-circuit-commons-01.webp) The circuit during the 2022 British Grand Prix. Venue photograph, not our work. Photograph: fuji.tim / Wikimedia Commons (CC BY-SA 2.0). Source: [https://creativecommons.org/licenses/by-sa/2.0](https://creativecommons.org/licenses/by-sa/2.0) Source: [https://commons.wikimedia.org/wiki/File:Ferrari%27s_Charles_Leclerc_battles_for_the_podium_with_Mercedes%27_Lewis_Hamilton_at_the_2022_British_Grand_Prix_at_Silverstone._(52196620083](https://commons.wikimedia.org/wiki/File:Ferrari%27s_Charles_Leclerc_battles_for_the_podium_with_Mercedes%27_Lewis_Hamilton_at_the_2022_British_Grand_Prix_at_Silverstone._(52196620083)
+- [A single-seater racing car at speed on the Silverstone circuit during the 2022 British Grand Prix weekend.](https://www.mrwallcover.com/media/img/silverstone-circuit-commons-02.webp) A car on the circuit during the 2022 British Grand Prix weekend. Venue photograph, not our work. Photograph: Jen Ross / Wikimedia Commons (CC BY 2.0). Source: [https://creativecommons.org/licenses/by/2.0](https://creativecommons.org/licenses/by/2.0) Source: [https://commons.wikimedia.org/wiki/File:2022_British_Grand_Prix_(52382657159](https://commons.wikimedia.org/wiki/File:2022_British_Grand_Prix_(52382657159)
 
 ### [Pendley Manor Hotel, Tring](https://www.mrwallcover.com/projects/pendley-manor-hotel/)
 
@@ -2202,7 +2236,7 @@ Thirty guest rooms in thirty days at the manor house hotel in Tring: Anaglypta o
 : 2026-10-11
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/pendley-manor-hotel/)
@@ -2224,21 +2258,23 @@ References & photograph credits
 
 #### Photographs
 
-- [Pendley Manor bedroom with red damask walls, upholstered headboard and red bedside lamps.](https://www.mrwallcover.com/media/img/r/pendley-manor-15-1200.webp) Credit not separately recorded.
-- [Pendley Manor hotel bedroom with red damask walls and a white bed.](https://www.mrwallcover.com/media/img/r/pendley-manor-14-1200.webp) Credit not separately recorded.
-- [Pendley Manor guest room with red damask wallpaper, a desk and wall-mounted TV.](https://www.mrwallcover.com/media/img/r/pendley-manor-16-1200.webp) Credit not separately recorded.
-- [Pendley Manor bedroom papered in a dark damask with a white fireplace, floor protected.](https://www.mrwallcover.com/media/img/r/pendley-manor-06-1440.webp) Credit not separately recorded.
-- [Pendley Manor bedroom with damask walls and bay window, mid-refurbishment.](https://www.mrwallcover.com/media/img/r/pendley-manor-08-1440.webp) Credit not separately recorded.
-- [Pendley Manor room papered in dark damask with sash windows, during works.](https://www.mrwallcover.com/media/img/r/pendley-manor-07-1440.webp) Credit not separately recorded.
-- [Freshly papered Anaglypta ceiling in a Pendley Manor room.](https://www.mrwallcover.com/media/img/r/pendley-manor-03-1440.webp) Credit not separately recorded.
-- [Close-up of Cole & Son Petroushka velvet flock in gold on cream, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-04-1440.webp) Credit not separately recorded.
-- [Close-up of gold-on-cream Petroushka velvet flock wallpaper, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-05-1440.webp) Credit not separately recorded.
-- [Velvet flock wallpaper samples in red, green and gold, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-09-1440.webp) Credit not separately recorded.
-- [Close-up of green velvet flock damask wallpaper, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-11-1440.webp) Credit not separately recorded.
-- [Detail of green flock wallpaper with a white ceiling, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-12-1440.webp) Credit not separately recorded.
-- [Macro close-up of green-on-white flock pattern, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-13-1440.webp) Credit not separately recorded.
-- [Pendley Manor entrance sign in front of the Victorian manor house.](https://www.mrwallcover.com/media/img/r/pendley-manor-02-1440.webp) Credit not separately recorded.
-- ['Pendley Manor, Caution! Roaming Peacocks' sign on the hotel lawn.](https://www.mrwallcover.com/media/img/r/pendley-manor-01-1440.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Pendley Manor bedroom with red damask walls, upholstered headboard and red bedside lamps.](https://www.mrwallcover.com/media/img/r/pendley-manor-15-1200.webp)
+- [Pendley Manor hotel bedroom with red damask walls and a white bed.](https://www.mrwallcover.com/media/img/r/pendley-manor-14-1200.webp)
+- [Pendley Manor guest room with red damask wallpaper, a desk and wall-mounted TV.](https://www.mrwallcover.com/media/img/r/pendley-manor-16-1200.webp)
+- [Pendley Manor bedroom papered in a dark damask with a white fireplace, floor protected.](https://www.mrwallcover.com/media/img/r/pendley-manor-06-1440.webp)
+- [Pendley Manor bedroom with damask walls and bay window, mid-refurbishment.](https://www.mrwallcover.com/media/img/r/pendley-manor-08-1440.webp)
+- [Pendley Manor room papered in dark damask with sash windows, during works.](https://www.mrwallcover.com/media/img/r/pendley-manor-07-1440.webp)
+- [Freshly papered Anaglypta ceiling in a Pendley Manor room.](https://www.mrwallcover.com/media/img/r/pendley-manor-03-1440.webp)
+- [Close-up of Cole & Son Petroushka velvet flock in gold on cream, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-04-1440.webp)
+- [Close-up of gold-on-cream Petroushka velvet flock wallpaper, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-05-1440.webp)
+- [Velvet flock wallpaper samples in red, green and gold, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-09-1440.webp)
+- [Close-up of green velvet flock damask wallpaper, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-11-1440.webp)
+- [Detail of green flock wallpaper with a white ceiling, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-12-1440.webp)
+- [Macro close-up of green-on-white flock pattern, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-13-1440.webp)
+- [Pendley Manor entrance sign in front of the Victorian manor house.](https://www.mrwallcover.com/media/img/r/pendley-manor-02-1440.webp)
+- ['Pendley Manor, Caution! Roaming Peacocks' sign on the hotel lawn.](https://www.mrwallcover.com/media/img/r/pendley-manor-01-1440.webp)
 
 ### [Hilton London Metropole](https://www.mrwallcover.com/projects/hilton-london-metropole/)
 
@@ -2265,7 +2301,7 @@ Jet-black Muraspec wallcovering, and Vescom wallcovering on the wall panels of a
 : 2026-10-11
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/hilton-london-metropole/)
@@ -2288,13 +2324,15 @@ References & photograph credits
 
 #### Photographs
 
-- [Large conference room at the Hilton London Metropole with Vescom-covered wall panels.](https://www.mrwallcover.com/media/img/r/metropole-05-1440.webp) Credit not separately recorded.
-- [Conference room with balcony rail and wallcovered panels, Hilton London Metropole.](https://www.mrwallcover.com/media/img/r/metropole-07-1440.webp) Credit not separately recorded.
-- [Conference room with patterned carpet and wallcovered panels, Hilton London Metropole.](https://www.mrwallcover.com/media/img/r/metropole-06-1440.webp) Credit not separately recorded.
-- [Doors to the Monarch Suite conference room at the Hilton London Metropole.](https://www.mrwallcover.com/media/img/r/metropole-04-1440.webp) Credit not separately recorded.
-- [Close-up of a jet-black textured Muraspec wallcovering, Hilton London Metropole.](https://www.mrwallcover.com/media/img/r/metropole-01-1440.webp) Credit not separately recorded.
-- [Detail of a jet-black embossed Muraspec wallcovering, Hilton London Metropole.](https://www.mrwallcover.com/media/img/r/metropole-02-1440.webp) Credit not separately recorded.
-- [Exterior of the Hilton London Metropole, Edgware Road.](https://www.mrwallcover.com/media/img/r/metropole-03-1440.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Large conference room at the Hilton London Metropole with Vescom-covered wall panels.](https://www.mrwallcover.com/media/img/r/metropole-05-1440.webp)
+- [Conference room with balcony rail and wallcovered panels, Hilton London Metropole.](https://www.mrwallcover.com/media/img/r/metropole-07-1440.webp)
+- [Conference room with patterned carpet and wallcovered panels, Hilton London Metropole.](https://www.mrwallcover.com/media/img/r/metropole-06-1440.webp)
+- [Doors to the Monarch Suite conference room at the Hilton London Metropole.](https://www.mrwallcover.com/media/img/r/metropole-04-1440.webp)
+- [Close-up of a jet-black textured Muraspec wallcovering, Hilton London Metropole.](https://www.mrwallcover.com/media/img/r/metropole-01-1440.webp)
+- [Detail of a jet-black embossed Muraspec wallcovering, Hilton London Metropole.](https://www.mrwallcover.com/media/img/r/metropole-02-1440.webp)
+- [Exterior of the Hilton London Metropole, Edgware Road.](https://www.mrwallcover.com/media/img/r/metropole-03-1440.webp)
 
 ### [Novotel London Canary Wharf](https://www.mrwallcover.com/projects/novotel-london-canary-wharf/)
 
@@ -2321,7 +2359,7 @@ Wallcovering installations at Novotel London Canary Wharf in 2016, photographed 
 : 2026-10-11
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/novotel-london-canary-wharf/)
@@ -2343,11 +2381,13 @@ References & photograph credits
 
 #### Photographs
 
-- [Hotel room with concrete-effect wallcovering on a column, sofa and city view, Novotel London Canary Wharf.](https://www.mrwallcover.com/media/img/r/novotel-03-1440.webp) Credit not separately recorded.
-- [Guest room with textured wallcovering, sofa and bed, Novotel London Canary Wharf.](https://www.mrwallcover.com/media/img/r/novotel-04-1440.webp) Credit not separately recorded.
-- [Hotel room seen past a wallcovered column, Novotel London Canary Wharf.](https://www.mrwallcover.com/media/img/r/novotel-05-1440.webp) Credit not separately recorded.
-- [Hotel corridor with concrete-effect wallcovering, Novotel London Canary Wharf.](https://www.mrwallcover.com/media/img/r/novotel-01-1440.webp) Credit not separately recorded.
-- [Close-up of a timber-grain wallcovering beside a light switch, Novotel London Canary Wharf.](https://www.mrwallcover.com/media/img/r/novotel-02-1440.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Hotel room with concrete-effect wallcovering on a column, sofa and city view, Novotel London Canary Wharf.](https://www.mrwallcover.com/media/img/r/novotel-03-1440.webp)
+- [Guest room with textured wallcovering, sofa and bed, Novotel London Canary Wharf.](https://www.mrwallcover.com/media/img/r/novotel-04-1440.webp)
+- [Hotel room seen past a wallcovered column, Novotel London Canary Wharf.](https://www.mrwallcover.com/media/img/r/novotel-05-1440.webp)
+- [Hotel corridor with concrete-effect wallcovering, Novotel London Canary Wharf.](https://www.mrwallcover.com/media/img/r/novotel-01-1440.webp)
+- [Close-up of a timber-grain wallcovering beside a light switch, Novotel London Canary Wharf.](https://www.mrwallcover.com/media/img/r/novotel-02-1440.webp)
 
 ### [Huntsman, Savile Row](https://www.mrwallcover.com/projects/huntsman-savile-row/)
 
@@ -2374,7 +2414,7 @@ A bespoke wallpaper printed as a perfect image of the Huntsman tweed, hung throu
 : 2026-10-11
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/huntsman-savile-row/)
@@ -2398,18 +2438,20 @@ References & photograph credits
 
 #### Photographs
 
-- [Huntsman, Savile Row: a tweed-print wallpapered room with a sofa and dartboard.](https://www.mrwallcover.com/media/img/r/huntsman-07-1080.webp) Credit not separately recorded.
-- [Huntsman, Savile Row: suits displayed on mannequins in front of tweed-print walls.](https://www.mrwallcover.com/media/img/r/huntsman-08-1080.webp) Credit not separately recorded.
-- [Huntsman, Savile Row: fitting room with tweed-print wallpaper and dark joinery.](https://www.mrwallcover.com/media/img/r/huntsman-12-1080.webp) Credit not separately recorded.
-- [Huntsman, Savile Row: framed pictures on the bespoke tweed-print wallpaper.](https://www.mrwallcover.com/media/img/r/huntsman-09-1080.webp) Credit not separately recorded.
-- [Huntsman, Savile Row: a display with a red coat and luggage against tweed-print walls.](https://www.mrwallcover.com/media/img/r/huntsman-10-1080.webp) Credit not separately recorded.
-- [Huntsman, Savile Row: tweed-print walls with a column radiator and timber shelving.](https://www.mrwallcover.com/media/img/r/huntsman-11-1080.webp) Credit not separately recorded.
-- [Tweed suit on a mannequin in front of the matching bespoke Huntsman tweed-print wallpaper.](https://www.mrwallcover.com/media/img/r/huntsman-13-1124.webp) Credit not separately recorded.
-- [Tweed suit jacket on a stand in front of a matching Huntsman tweed-print display board.](https://www.mrwallcover.com/media/img/r/huntsman-02-1080.webp) Credit not separately recorded.
-- [Bespoke display boards covered in Huntsman tweed print.](https://www.mrwallcover.com/media/img/r/huntsman-04-1080.webp) Credit not separately recorded.
-- [Display board in Huntsman tweed print with a suit on a stand.](https://www.mrwallcover.com/media/img/r/huntsman-05-1080.webp) Credit not separately recorded.
-- [Pair of freestanding display boards covered in Huntsman tweed-print wallpaper.](https://www.mrwallcover.com/media/img/r/huntsman-06-1080.webp) Credit not separately recorded.
-- [Close-up of the bespoke Huntsman tweed-print wallpaper, Huntsman, Savile Row.](https://www.mrwallcover.com/media/img/r/huntsman-01-1080.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Huntsman, Savile Row: a tweed-print wallpapered room with a sofa and dartboard.](https://www.mrwallcover.com/media/img/r/huntsman-07-1080.webp)
+- [Huntsman, Savile Row: suits displayed on mannequins in front of tweed-print walls.](https://www.mrwallcover.com/media/img/r/huntsman-08-1080.webp)
+- [Huntsman, Savile Row: fitting room with tweed-print wallpaper and dark joinery.](https://www.mrwallcover.com/media/img/r/huntsman-12-1080.webp)
+- [Huntsman, Savile Row: framed pictures on the bespoke tweed-print wallpaper.](https://www.mrwallcover.com/media/img/r/huntsman-09-1080.webp)
+- [Huntsman, Savile Row: a display with a red coat and luggage against tweed-print walls.](https://www.mrwallcover.com/media/img/r/huntsman-10-1080.webp)
+- [Huntsman, Savile Row: tweed-print walls with a column radiator and timber shelving.](https://www.mrwallcover.com/media/img/r/huntsman-11-1080.webp)
+- [Tweed suit on a mannequin in front of the matching bespoke Huntsman tweed-print wallpaper.](https://www.mrwallcover.com/media/img/r/huntsman-13-1124.webp)
+- [Tweed suit jacket on a stand in front of a matching Huntsman tweed-print display board.](https://www.mrwallcover.com/media/img/r/huntsman-02-1080.webp)
+- [Bespoke display boards covered in Huntsman tweed print.](https://www.mrwallcover.com/media/img/r/huntsman-04-1080.webp)
+- [Display board in Huntsman tweed print with a suit on a stand.](https://www.mrwallcover.com/media/img/r/huntsman-05-1080.webp)
+- [Pair of freestanding display boards covered in Huntsman tweed-print wallpaper.](https://www.mrwallcover.com/media/img/r/huntsman-06-1080.webp)
+- [Close-up of the bespoke Huntsman tweed-print wallpaper, Huntsman, Savile Row.](https://www.mrwallcover.com/media/img/r/huntsman-01-1080.webp)
 
 ### [Mercedes-AMG showroom, London](https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/)
 
@@ -2436,7 +2478,7 @@ Supply and fit of black matt Muraspec wallcoverings through one of the newest Me
 : 2026-10-11
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/)
@@ -2459,12 +2501,14 @@ References & photograph credits
 
 #### Photographs
 
-- [Curved staircase beside walls finished in black matt wallcovering, Mercedes-AMG showroom, London.](https://www.mrwallcover.com/media/img/r/mercedes-amg-06-1440.webp) Credit not separately recorded.
-- [Mercedes-AMG showroom entrance, London, with illuminated AMG branding against the black matt walls.](https://www.mrwallcover.com/media/img/r/mercedes-amg-05-1440.webp) Credit not separately recorded.
-- [Corridor of black matt wallcovering with steel-trimmed doors and skirting, Mercedes-AMG showroom, London.](https://www.mrwallcover.com/media/img/r/mercedes-amg-04-1440.webp) Credit not separately recorded.
-- [Black matt Muraspec walls around a door with a brushed stainless-steel trim, Mercedes-AMG showroom, London.](https://www.mrwallcover.com/media/img/r/mercedes-amg-02-1440.webp) Credit not separately recorded.
-- [Two doors set in black matt wallcovering with narrow brushed-steel trims, Mercedes-AMG showroom, London.](https://www.mrwallcover.com/media/img/r/mercedes-amg-03-1440.webp) Credit not separately recorded.
-- [Collage from the works at the Mercedes-AMG showroom, London: black matt walls, AMG signage and our installers at work.](https://www.mrwallcover.com/media/img/r/mercedes-amg-01-1440.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Curved staircase beside walls finished in black matt wallcovering, Mercedes-AMG showroom, London.](https://www.mrwallcover.com/media/img/r/mercedes-amg-06-1440.webp)
+- [Mercedes-AMG showroom entrance, London, with illuminated AMG branding against the black matt walls.](https://www.mrwallcover.com/media/img/r/mercedes-amg-05-1440.webp)
+- [Corridor of black matt wallcovering with steel-trimmed doors and skirting, Mercedes-AMG showroom, London.](https://www.mrwallcover.com/media/img/r/mercedes-amg-04-1440.webp)
+- [Black matt Muraspec walls around a door with a brushed stainless-steel trim, Mercedes-AMG showroom, London.](https://www.mrwallcover.com/media/img/r/mercedes-amg-02-1440.webp)
+- [Two doors set in black matt wallcovering with narrow brushed-steel trims, Mercedes-AMG showroom, London.](https://www.mrwallcover.com/media/img/r/mercedes-amg-03-1440.webp)
+- [Collage from the works at the Mercedes-AMG showroom, London: black matt walls, AMG signage and our installers at work.](https://www.mrwallcover.com/media/img/r/mercedes-amg-01-1440.webp)
 
 ### [Everyman cinema, Liverpool](https://www.mrwallcover.com/projects/everyman-liverpool/)
 
@@ -2491,7 +2535,7 @@ Bespoke extra-wide digital prints of classic film and music imagery for the Ever
 : 2026-10-11
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/everyman-liverpool/)
@@ -2515,19 +2559,21 @@ References & photograph credits
 
 #### Photographs
 
-- [Colour digital-print mural of a classic Italian street scene in the Everyman cinema bar, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-11-1080.webp) Credit not separately recorded.
-- [Large black-and-white film mural fitted floor to ceiling in a corridor of the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-09-1080.webp) Credit not separately recorded.
-- [Framed black-and-white film-star mural panel on timber panelling, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-05-1080.webp) Credit not separately recorded.
-- [Black-and-white digital-print mural of a classic film star on a wall of the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-04-1080.webp) Credit not separately recorded.
-- [Close-up of a black-and-white digital-print mural of a classic film kiss, the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-08-1080.webp) Credit not separately recorded.
-- [Large digital-print mural of classic music icons being installed in the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-01-1024.webp) Credit not separately recorded.
-- [Wide view of the street-scene mural with installers at work, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-13-1080.webp) Credit not separately recorded.
-- [Street-scene digital mural being installed behind the bar seating, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-12-1080.webp) Credit not separately recorded.
-- [Installer on a platform hanging the mural, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-14-1080.webp) Credit not separately recorded.
-- [Installer hanging a black-and-white film-star mural, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-06-1080.webp) Credit not separately recorded.
-- [Mobile scaffold tower beside a tall window during mural installation at the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-03-1080.webp) Credit not separately recorded.
-- [Timber-look wall panel next to the mural area at the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-07-1080.webp) Credit not separately recorded.
-- [Wall prepared with lining panels before mural installation, the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-10-1080.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Colour digital-print mural of a classic Italian street scene in the Everyman cinema bar, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-11-1080.webp)
+- [Large black-and-white film mural fitted floor to ceiling in a corridor of the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-09-1080.webp)
+- [Framed black-and-white film-star mural panel on timber panelling, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-05-1080.webp)
+- [Black-and-white digital-print mural of a classic film star on a wall of the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-04-1080.webp)
+- [Close-up of a black-and-white digital-print mural of a classic film kiss, the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-08-1080.webp)
+- [Large digital-print mural of classic music icons being installed in the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-01-1024.webp)
+- [Wide view of the street-scene mural with installers at work, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-13-1080.webp)
+- [Street-scene digital mural being installed behind the bar seating, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-12-1080.webp)
+- [Installer on a platform hanging the mural, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-14-1080.webp)
+- [Installer hanging a black-and-white film-star mural, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-06-1080.webp)
+- [Mobile scaffold tower beside a tall window during mural installation at the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-03-1080.webp)
+- [Timber-look wall panel next to the mural area at the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-07-1080.webp)
+- [Wall prepared with lining panels before mural installation, the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-10-1080.webp)
 
 ### [Oxygen Freejumping, The O2](https://www.mrwallcover.com/projects/oxygen-freejumping-the-o2/)
 
@@ -2554,7 +2600,7 @@ Bespoke digital wallcoverings in a fine-line geometric design for Oxygen Freejum
 : 2026-10-11
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/oxygen-freejumping-the-o2/)
@@ -2576,11 +2622,13 @@ References & photograph credits
 
 #### Photographs
 
-- [Oxygen Freejumping at The O2: purple-lit seating area with bespoke digital wallcoverings.](https://www.mrwallcover.com/media/img/r/oxygen-o2-01-1080.webp) Credit not separately recorded.
-- [Close-up of a fine-line geometric wide-vinyl wallcovering, Oxygen Freejumping, The O2.](https://www.mrwallcover.com/media/img/r/oxygen-o2-03-1080.webp) Credit not separately recorded.
-- [Bespoke geometric digital wallcovering under purple lighting, Oxygen Freejumping, The O2.](https://www.mrwallcover.com/media/img/r/oxygen-o2-02-1080.webp) Credit not separately recorded.
-- [Seating zone with patterned wallcovering under coloured lights, Oxygen Freejumping, The O2.](https://www.mrwallcover.com/media/img/r/oxygen-o2-05-1080.webp) Credit not separately recorded.
-- [Fine-line geometric wallcovering hung with overlap-and-splice joints, Oxygen Freejumping, The O2.](https://www.mrwallcover.com/media/img/r/oxygen-o2-06-1080.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Oxygen Freejumping at The O2: purple-lit seating area with bespoke digital wallcoverings.](https://www.mrwallcover.com/media/img/r/oxygen-o2-01-1080.webp)
+- [Close-up of a fine-line geometric wide-vinyl wallcovering, Oxygen Freejumping, The O2.](https://www.mrwallcover.com/media/img/r/oxygen-o2-03-1080.webp)
+- [Bespoke geometric digital wallcovering under purple lighting, Oxygen Freejumping, The O2.](https://www.mrwallcover.com/media/img/r/oxygen-o2-02-1080.webp)
+- [Seating zone with patterned wallcovering under coloured lights, Oxygen Freejumping, The O2.](https://www.mrwallcover.com/media/img/r/oxygen-o2-05-1080.webp)
+- [Fine-line geometric wallcovering hung with overlap-and-splice joints, Oxygen Freejumping, The O2.](https://www.mrwallcover.com/media/img/r/oxygen-o2-06-1080.webp)
 
 ### [Masterpiece London 2019](https://www.mrwallcover.com/projects/masterpiece-london-2019/)
 
@@ -2607,7 +2655,7 @@ A bespoke, hand-crafted wallcovering in bold abstract shapes, installed on a sta
 : 2026-10-11
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/masterpiece-london-2019/)
@@ -2630,9 +2678,11 @@ References & photograph credits
 
 #### Photographs
 
-- [Bold abstract hand-crafted wallcovering on a stand at Masterpiece London 2019.](https://www.mrwallcover.com/media/img/r/masterpiece-04-1440.webp) Credit not separately recorded.
-- [Bespoke hand-crafted wallcovering with sweeping gold outlines, Masterpiece London 2019.](https://www.mrwallcover.com/media/img/r/masterpiece-02-1440.webp) Credit not separately recorded.
-- [Laser levels, knives and tools laid out for the installation at Masterpiece London 2019.](https://www.mrwallcover.com/media/img/r/masterpiece-01-1440.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Bold abstract hand-crafted wallcovering on a stand at Masterpiece London 2019.](https://www.mrwallcover.com/media/img/r/masterpiece-04-1440.webp)
+- [Bespoke hand-crafted wallcovering with sweeping gold outlines, Masterpiece London 2019.](https://www.mrwallcover.com/media/img/r/masterpiece-02-1440.webp)
+- [Laser levels, knives and tools laid out for the installation at Masterpiece London 2019.](https://www.mrwallcover.com/media/img/r/masterpiece-01-1440.webp)
 
 ### [Private residence, Little Venice](https://www.mrwallcover.com/projects/private-residence-little-venice/)
 
@@ -2659,7 +2709,7 @@ A small but bold project in a Little Venice home designed by Jaillon Studio of P
 : 2026-10-11
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/private-residence-little-venice/)
@@ -2682,10 +2732,12 @@ References & photograph credits
 
 #### Photographs
 
-- [Floral-papered sitting room with a red velvet sofa and full bookcases, a private residence in Little Venice.](https://www.mrwallcover.com/media/img/r/little-venice-03-1440.webp) Credit not separately recorded.
-- [Living room with a pink floral House of Hackney wallpaper and a flower arrangement, a private residence in Little Venice designed by Jaillon Studio.](https://www.mrwallcover.com/media/img/r/little-venice-02-960.webp) Credit not separately recorded.
-- [Living room in a private residence in Little Venice: a pink floral House of Hackney wallpaper, a red sofa and bookshelves.](https://www.mrwallcover.com/media/img/r/little-venice-01-960.webp) Credit not separately recorded.
-- [Collage of a private residence in Little Venice: floral wallpaper, a white kitchen and a red sofa.](https://www.mrwallcover.com/media/img/r/little-venice-04-960.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Floral-papered sitting room with a red velvet sofa and full bookcases, a private residence in Little Venice.](https://www.mrwallcover.com/media/img/r/little-venice-03-1440.webp)
+- [Living room with a pink floral House of Hackney wallpaper and a flower arrangement, a private residence in Little Venice designed by Jaillon Studio.](https://www.mrwallcover.com/media/img/r/little-venice-02-960.webp)
+- [Living room in a private residence in Little Venice: a pink floral House of Hackney wallpaper, a red sofa and bookshelves.](https://www.mrwallcover.com/media/img/r/little-venice-01-960.webp)
+- [Collage of a private residence in Little Venice: floral wallpaper, a white kitchen and a red sofa.](https://www.mrwallcover.com/media/img/r/little-venice-04-960.webp)
 
 ### [Jumeirah Carlton Tower, Knightsbridge](https://www.mrwallcover.com/projects/jumeirah-carlton-tower/)
 
@@ -2712,7 +2764,7 @@ Eight months of wallcovering installation at Jumeirah Carlton Tower in Knightsbr
 : 2026-10-11
 
 **Record updated**
-: 2026-10-11
+: 2026-10-22
 
 **Source**
 : [Read the case study](https://www.mrwallcover.com/projects/jumeirah-carlton-tower/)
@@ -2800,14 +2852,16 @@ References & photograph credits
 
 #### Photographs
 
-- [The mural wrapped around an internal corner, full height.](https://www.mrwallcover.com/media/img/r/heathrow-05-2400.webp) Credit not separately recorded.
-- [Detail of the painted mist band in the Calico mural.](https://www.mrwallcover.com/media/img/r/heathrow-06-1600.webp) Credit not separately recorded.
-- [Detail of the dark ground of the mural wrapping the corner.](https://www.mrwallcover.com/media/img/r/heathrow-07-1600.webp) Credit not separately recorded.
-- [Detail of the mural meeting the lit cove at the top of the wall.](https://www.mrwallcover.com/media/img/r/heathrow-08-1600.webp) Credit not separately recorded.
-- [The long wall of the mural beneath the lit cove.](https://www.mrwallcover.com/media/img/r/heathrow-04-1600.webp) Credit not separately recorded.
-- [The Calico Wallpaper landscape mural running unbroken around a corner of the Terminal 4 store.](https://www.mrwallcover.com/media/img/r/heathrow-03-1600.webp) Credit not separately recorded.
-- [Calico Wallpaper landscape mural across two walls of the store, before the fixtures went in.](https://www.mrwallcover.com/media/img/r/heathrow-02-1600.webp) Credit not separately recorded.
-- [Heathrow Terminal 4 gate lounge, empty in the small hours during the overnight installation.](https://www.mrwallcover.com/media/img/r/heathrow-01-1600.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [The mural wrapped around an internal corner, full height.](https://www.mrwallcover.com/media/img/r/heathrow-05-2400.webp)
+- [Detail of the painted mist band in the Calico mural.](https://www.mrwallcover.com/media/img/r/heathrow-06-1600.webp)
+- [Detail of the dark ground of the mural wrapping the corner.](https://www.mrwallcover.com/media/img/r/heathrow-07-1600.webp)
+- [Detail of the mural meeting the lit cove at the top of the wall.](https://www.mrwallcover.com/media/img/r/heathrow-08-1600.webp)
+- [The long wall of the mural beneath the lit cove.](https://www.mrwallcover.com/media/img/r/heathrow-04-1600.webp)
+- [The Calico Wallpaper landscape mural running unbroken around a corner of the Terminal 4 store.](https://www.mrwallcover.com/media/img/r/heathrow-03-1600.webp)
+- [Calico Wallpaper landscape mural across two walls of the store, before the fixtures went in.](https://www.mrwallcover.com/media/img/r/heathrow-02-1600.webp)
+- [Heathrow Terminal 4 gate lounge, empty in the small hours during the overnight installation.](https://www.mrwallcover.com/media/img/r/heathrow-01-1600.webp)
 
 ### [How we solve imperfect arches: bespoke external-corner trim for wallcoverings](https://www.mrwallcover.com/projects/imperfect-arches-external-corner-trim/)
 
@@ -2856,17 +2910,19 @@ References & photograph credits
 
 #### Photographs
 
-- [A wallcovered arch seen from below, its curved outer edge finished as one crisp, even line, framing a room with a decorative plaster ceiling and a chandelier.](https://www.mrwallcover.com/media/img/r/arch-trim-01-2400.webp) Credit not separately recorded.
-- [Finished bedroom with a pale textured wallcovering, geometric panelling with brass inlay behind the bed, and a crystal chandelier.](https://www.mrwallcover.com/media/img/r/arch-trim-02-1600.webp) Credit not separately recorded.
-- [Finished drawing room with pale textured walls, a gold geometric pendant, a buttoned leather ottoman and velvet seating in green and magenta.](https://www.mrwallcover.com/media/img/r/arch-trim-03-1600.webp) Credit not separately recorded.
-- [The drawing room towards its joinery wall, with a pale wallcovering behind a group of round wall mirrors and a green velvet sofa.](https://www.mrwallcover.com/media/img/r/arch-trim-04-1600.webp) Credit not separately recorded.
-- [Upright view of the drawing room: pale textured walls beneath an ornate plaster cornice and ceiling rose.](https://www.mrwallcover.com/media/img/r/arch-trim-05-1600.webp) Credit not separately recorded.
-- [A cloakroom lined in a fine horizontal-weave wallcovering, with a black marble basin and a backlit mirror.](https://www.mrwallcover.com/media/img/r/arch-trim-06-1600.webp) Credit not separately recorded.
-- [A round brass mirror above a glass-topped chest of drawers, against a pale textured wallcovering.](https://www.mrwallcover.com/media/img/r/arch-trim-07-1600.webp) Credit not separately recorded.
-- [Close detail of a finished external edge: a fine woven wallcovering runs straight and tight to a crisp corner line.](https://www.mrwallcover.com/media/img/r/arch-trim-08-1600.webp) Credit not separately recorded.
-- [Close detail of a woven wallcovering on two neighbouring surfaces, each edge cut clean either side of a narrow shadow gap.](https://www.mrwallcover.com/media/img/r/arch-trim-09-1600.webp) Credit not separately recorded.
-- [Close detail of a textured wallcovering cut neatly around a wall-mounted lighting control.](https://www.mrwallcover.com/media/img/r/arch-trim-10-1600.webp) Credit not separately recorded.
-- [Round wall mirrors with gold radiating frames against a pale wallcovering.](https://www.mrwallcover.com/media/img/r/arch-trim-11-1600.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [A wallcovered arch seen from below, its curved outer edge finished as one crisp, even line, framing a room with a decorative plaster ceiling and a chandelier.](https://www.mrwallcover.com/media/img/r/arch-trim-01-2400.webp)
+- [Finished bedroom with a pale textured wallcovering, geometric panelling with brass inlay behind the bed, and a crystal chandelier.](https://www.mrwallcover.com/media/img/r/arch-trim-02-1600.webp)
+- [Finished drawing room with pale textured walls, a gold geometric pendant, a buttoned leather ottoman and velvet seating in green and magenta.](https://www.mrwallcover.com/media/img/r/arch-trim-03-1600.webp)
+- [The drawing room towards its joinery wall, with a pale wallcovering behind a group of round wall mirrors and a green velvet sofa.](https://www.mrwallcover.com/media/img/r/arch-trim-04-1600.webp)
+- [Upright view of the drawing room: pale textured walls beneath an ornate plaster cornice and ceiling rose.](https://www.mrwallcover.com/media/img/r/arch-trim-05-1600.webp)
+- [A cloakroom lined in a fine horizontal-weave wallcovering, with a black marble basin and a backlit mirror.](https://www.mrwallcover.com/media/img/r/arch-trim-06-1600.webp)
+- [A round brass mirror above a glass-topped chest of drawers, against a pale textured wallcovering.](https://www.mrwallcover.com/media/img/r/arch-trim-07-1600.webp)
+- [Close detail of a finished external edge: a fine woven wallcovering runs straight and tight to a crisp corner line.](https://www.mrwallcover.com/media/img/r/arch-trim-08-1600.webp)
+- [Close detail of a woven wallcovering on two neighbouring surfaces, each edge cut clean either side of a narrow shadow gap.](https://www.mrwallcover.com/media/img/r/arch-trim-09-1600.webp)
+- [Close detail of a textured wallcovering cut neatly around a wall-mounted lighting control.](https://www.mrwallcover.com/media/img/r/arch-trim-10-1600.webp)
+- [Round wall mirrors with gold radiating frames against a pale wallcovering.](https://www.mrwallcover.com/media/img/r/arch-trim-11-1600.webp)
 
 ### [SCP showroom, Pimlico](https://www.mrwallcover.com/projects/scp-showroom-pimlico/)
 
@@ -2910,11 +2966,13 @@ References & photograph credits
 
 #### Photographs
 
-- [Finished showroom room: walls in a deep blue gradient mural that fades to white at the top, around a green velvet sofa under a brass pendant.](https://www.mrwallcover.com/media/img/r/scp-pimlico-01-2400.webp) Credit not separately recorded.
-- [Showroom wall in a gilded marbled wallcovering, a flush door papered in so it almost disappears, beside the shop window.](https://www.mrwallcover.com/media/img/r/scp-pimlico-02-1600.webp) Credit not separately recorded.
-- [The blue gradient mural behind a low walnut sideboard and a linear light, the colour deepening smoothly to the floor.](https://www.mrwallcover.com/media/img/r/scp-pimlico-03-1600.webp) Credit not separately recorded.
-- [Close view of the gilded marbled wallcovering, gold veining over pale grey, crossed by the arc of a floor lamp.](https://www.mrwallcover.com/media/img/r/scp-pimlico-04-1600.webp) Credit not separately recorded.
-- [Panorama of the marbled showroom wall, the gilded pattern running unbroken across the full length of the room.](https://www.mrwallcover.com/media/img/r/scp-pimlico-05-1600.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [Finished showroom room: walls in a deep blue gradient mural that fades to white at the top, around a green velvet sofa under a brass pendant.](https://www.mrwallcover.com/media/img/r/scp-pimlico-01-2400.webp)
+- [Showroom wall in a gilded marbled wallcovering, a flush door papered in so it almost disappears, beside the shop window.](https://www.mrwallcover.com/media/img/r/scp-pimlico-02-1600.webp)
+- [The blue gradient mural behind a low walnut sideboard and a linear light, the colour deepening smoothly to the floor.](https://www.mrwallcover.com/media/img/r/scp-pimlico-03-1600.webp)
+- [Close view of the gilded marbled wallcovering, gold veining over pale grey, crossed by the arc of a floor lamp.](https://www.mrwallcover.com/media/img/r/scp-pimlico-04-1600.webp)
+- [Panorama of the marbled showroom wall, the gilded pattern running unbroken across the full length of the room.](https://www.mrwallcover.com/media/img/r/scp-pimlico-05-1600.webp)
 
 ### [A tea house in West London, for Jaillon Studio](https://www.mrwallcover.com/projects/tea-house-jaillon-studio/)
 
@@ -2962,14 +3020,16 @@ References & photograph credits
 
 #### Photographs
 
-- [The finished tea room: a bold green-and-gold feather wallpaper on every wall, hung behind arched mirrors, patchwork armchairs and round walnut tables set for tea.](https://www.mrwallcover.com/media/img/r/tea-house-01-2400.webp) Credit not separately recorded.
-- [The feather wallpaper behind three arched mirrors, the large-scale pattern running unbroken around them above the tables and armchairs.](https://www.mrwallcover.com/media/img/r/tea-house-02-1600.webp) Credit not separately recorded.
-- [Two arched mirrors set into the feather wallpaper above a table laid for tea and a feather-print armchair.](https://www.mrwallcover.com/media/img/r/tea-house-03-1600.webp) Credit not separately recorded.
-- [An arched mirror framed by the feather wallpaper, the pattern centred on the mirror and matched across the drops.](https://www.mrwallcover.com/media/img/r/tea-house-04-1600.webp) Credit not separately recorded.
-- [Close view of the feather wallpaper beside a mirror, its gold quills crisp to the frame, above a table with a teacup and pastry.](https://www.mrwallcover.com/media/img/r/tea-house-05-1600.webp) Credit not separately recorded.
-- [The garden room: a panoramic scenic wallpaper of a swan lake and flowering hydrangeas, with gilt-framed mirrors, two armchairs and a tea table.](https://www.mrwallcover.com/media/img/r/tea-house-06-1600.webp) Credit not separately recorded.
-- [Detail of the scenic swan-lake wallpaper behind a tea table, its hydrangeas and swans running beneath a gilt frame.](https://www.mrwallcover.com/media/img/r/tea-house-07-1600.webp) Credit not separately recorded.
-- [The tea counter: the feather wallpaper above a tiled bar, with an espresso machine, a silver cake stand and pink velvet stools.](https://www.mrwallcover.com/media/img/r/tea-house-08-1600.webp) Credit not separately recorded.
+A photograph listed without a credit has no separately recorded credit.
+
+- [The finished tea room: a bold green-and-gold feather wallpaper on every wall, hung behind arched mirrors, patchwork armchairs and round walnut tables set for tea.](https://www.mrwallcover.com/media/img/r/tea-house-01-2400.webp)
+- [The feather wallpaper behind three arched mirrors, the large-scale pattern running unbroken around them above the tables and armchairs.](https://www.mrwallcover.com/media/img/r/tea-house-02-1600.webp)
+- [Two arched mirrors set into the feather wallpaper above a table laid for tea and a feather-print armchair.](https://www.mrwallcover.com/media/img/r/tea-house-03-1600.webp)
+- [An arched mirror framed by the feather wallpaper, the pattern centred on the mirror and matched across the drops.](https://www.mrwallcover.com/media/img/r/tea-house-04-1600.webp)
+- [Close view of the feather wallpaper beside a mirror, its gold quills crisp to the frame, above a table with a teacup and pastry.](https://www.mrwallcover.com/media/img/r/tea-house-05-1600.webp)
+- [The garden room: a panoramic scenic wallpaper of a swan lake and flowering hydrangeas, with gilt-framed mirrors, two armchairs and a tea table.](https://www.mrwallcover.com/media/img/r/tea-house-06-1600.webp)
+- [Detail of the scenic swan-lake wallpaper behind a tea table, its hydrangeas and swans running beneath a gilt frame.](https://www.mrwallcover.com/media/img/r/tea-house-07-1600.webp)
+- [The tea counter: the feather wallpaper above a tiled bar, with an espresso machine, a silver cake stand and pink velvet stools.](https://www.mrwallcover.com/media/img/r/tea-house-08-1600.webp)
 
 ## Reading the record
 

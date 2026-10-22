@@ -39,11 +39,11 @@
       "text": "From sample to specification"
     }
   ],
-  "markdown": "The Wallcovering Guide · Choose and source\n\n# Designers Guild\n\nDesigners Guild is a furnishing and wallcovering design brand established in 1970, according to its official company profile. This profile describes the brand only; no purchasing, ownership, licensing or fulfilment claim is made here.\n\n## Source evidence\n\nRead the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.\n\n- [Official source](https://www.designersguild.com/en-gb/company-profile/l1004) — checked 2026-10-18\n\n[Visit maker website](https://www.designersguild.com/en-gb/)\n\n## Official sourcing routes\n\nNo purchasing route is listed for this brand. This profile provides brand information only.\n\n[All makers](https://www.mrwallcover.com/makers/)\n\n## From sample to specification\n\nRecord the exact design and product code, check current instructions and establish the wall preparation before quantities and installation are agreed.\n\n[Discuss your wallcovering](https://www.mrwallcover.com/contact/?intent=source)\n\nBy [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 18 October 2026\n",
+  "markdown": "The Wallcovering Guide · Choose and source\n\n# Designers Guild\n\nDesigners Guild is a furnishing and wallcovering design brand established in 1970, according to its official company profile. This profile describes the brand only; no purchasing, ownership, licensing or fulfilment claim is made here.\n\n## Source evidence\n\nRead the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.\n\n- [Official source: designersguild.com/en-gb/company-profile/l1004](https://www.designersguild.com/en-gb/company-profile/l1004) — checked 18 October 2026\n\n[Visit maker website](https://www.designersguild.com/en-gb/)\n\n## Official sourcing routes\n\nNo purchasing route is listed for this brand. This profile provides brand information only.\n\n[All makers](https://www.mrwallcover.com/makers/)\n\n## From sample to specification\n\nRecord the exact design and product code, check current instructions and establish the wall preparation before quantities and installation are agreed.\n\n[Discuss your wallcovering](https://www.mrwallcover.com/contact/?intent=source)\n\nBy [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 18 October 2026\n",
   "links": [
     {
       "url": "https://www.designersguild.com/en-gb/company-profile/l1004",
-      "text": "Official source"
+      "text": "Official source: designersguild.com /en-gb /company-profile /l1004"
     },
     {
       "url": "https://www.designersguild.com/en-gb/",
@@ -83,7 +83,7 @@
     },
     {
       "url": "https://www.mrwallcover.com/how-we-check/",
-      "text": "How we check"
+      "text": "Product facts and corrections"
     }
   ],
   "images": [],
@@ -160,7 +160,7 @@
               "url": "https://www.mrwallcover.com/areas/cotswolds/"
             }
           ],
-          "slogan": "Premium wallcoverings services: surveying, management, supply, install and aftercare.",
+          "slogan": "Specialist wallcovering installation for hotels and prime homes: survey, management, supply, installation and aftercare.",
           "knowsAbout": [
             "Wallpaper installation",
             "Wallcovering installation for hotels",
@@ -345,7 +345,7 @@
             "@type": "ContactPoint",
             "email": "info@mrwallcover.com",
             "url": "https://www.mrwallcover.com/contact/",
-            "contactType": "quotations",
+            "contactType": "sales",
             "areaServed": [
               {
                 "@type": "City",

@@ -13,9 +13,9 @@
   ],
   "modest": false,
   "metaTitle": null,
-  "metaDescription": null,
+  "metaDescription": "Wallcovering installation at Raffles London at The OWO, Whitehall, 2020–2023: bespoke Vescom wallcoverings, chosen to install about 17,500 m² in 18 months.",
   "group": null,
-  "standfirst": "Bespoke Vescom wallcoverings for the guest rooms of London's most storied address, the Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.",
+  "standfirst": "Bespoke Vescom wallcoverings for the guest rooms of Raffles London at The OWO, the former Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.",
   "hero": "owo-official-classic",
   "gallery": [
     {
@@ -44,7 +44,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -56,16 +56,7 @@
 - **Role:** Wallcovering installation
 - **Wallcoverings:** a bespoke [Vescom](https://vescom.com/en/wallcovering) wallcovering made for the hotel; Vescom [Alcantara](https://www.alcantara.com/solutions/alcantara-interior-design/) in selected suites
 - **Scope:** Installation to bedrooms and several other areas, including walls and parts of the joinery
-
-## The building
-
-Designed by William Young and completed in 1906 to the Edwardian Baroque, the Old War Office rose on Whitehall from 26,000 tons of Portland stone and some 25 million bricks. Young died before it was finished; his son Clyde Young and Sir John Taylor completed the design.
-
-The building stands on Whitehall. It looks over the Royal Horse Guards and sits a short walk from Downing Street, Buckingham Palace and St James's Park.
-
-For almost six decades it was the seat of Britain's military administration. Lord Haldane, Lord Kitchener, David Lloyd George and Winston Churchill all held office here as Secretary of State for War, and Douglas Haig served at the War Office as Director of Military Training and then Director of Staff Duties. In October 1914 a young T. E. Lawrence joined its Geographical Section. In 1960 John Profumo arrived as Secretary of State for War; his affair with Christine Keeler, and his resignation in 1963, nearly toppled the government.
-
-Its secrets run deeper still. Britain's Secret Service Bureau, the forerunner of MI5 and MI6, was created in meetings at the War Office in 1909. Ian Fleming, a wartime naval intelligence officer, would have known the building, and its air of espionage helped inspire James Bond; the building has since appeared as MI6 in Bond films. After a comprehensive eight-year restoration under the Hinduja Group and ONEX Holding, the building opened on 29 September 2023 as The OWO, home to Raffles London, the brand's first hotel in the United Kingdom.
+- **Scale:** chosen to install about 17,500 m² of wallcoverings in 18 months
 
 ## The brief
 
@@ -81,16 +72,31 @@ To install the hotel's wallcoverings in the bedrooms and several other areas: a 
 
 **Seam and shade control.** With a bespoke production run, consistency from roll to roll and room to room is paramount. Batches were checked and managed so that corridors of rooms read as one.
 
-**Coordination.** Work was sequenced alongside the other trades and the main contractor within one of London's most complex heritage restorations.
+**Coordination.** Work was sequenced alongside the other trades and the main contractor during the building's restoration.
 
 ## Materials
 
-- **[Vescom](https://vescom.com/en/wallcovering), bespoke:** a wallcovering made specifically for the hotel. Vescom produces custom wallcoverings through its [Customise](https://vescom.com/en/customise) service ([Custom Colour](https://vescom.com/en/customise/custom-colour) and [Wallcovering+Print](https://vescom.com/en/customise/wallcovering-print)); the exact base product and reference are not recorded here.
+- **[Vescom](https://vescom.com/en/wallcovering), bespoke:** a wallcovering made specifically for the hotel. Vescom produces custom wallcoverings through its [Customise](https://vescom.com/en/customise) service ([Custom Colour](https://vescom.com/en/customise/custom-colour) and [Wallcovering+Print](https://vescom.com/en/customise/wallcovering-print)).
 - **Vescom Alcantara:** the Italian material [Alcantara](https://www.alcantara.com/solutions/alcantara-interior-design/), known for its soft, suede-like hand, used in selected suites.
 
 ## Outcome
 
-Our team installed the wallcoverings for the bedrooms and several other areas of this remarkable building. Raffles notes that its rooms and suites feature customised carpets, fabrics and wallcoverings; it is a quiet satisfaction to have hung some of them.
+We were chosen in 2021 to install about 17,500 m² of wallcoverings in 18 months, in the bedrooms and several other areas. Raffles notes that its rooms and suites feature customised carpets, fabrics and wallcoverings; we hung some of those wallcoverings.
+
+## The building
+
+Designed by William Young and completed in 1906 to the Edwardian Baroque, the Old War Office stands on Whitehall. After an eight-year restoration under the Hinduja Group and ONEX Holding it opened on 29 September 2023 as The OWO, home to Raffles London, the brand's first hotel in the United Kingdom.
+
+<details>
+<summary>About the building</summary>
+
+The building rose from 26,000 tons of Portland stone and some 25 million bricks. Young died before it was finished; his son Clyde Young and Sir John Taylor completed the design. It looks over the Royal Horse Guards and sits a short walk from Downing Street, Buckingham Palace and St James's Park.
+
+For almost six decades it was the seat of Britain's military administration. Lord Haldane, Lord Kitchener, David Lloyd George and Winston Churchill all held office here as Secretary of State for War, and Douglas Haig served at the War Office as Director of Military Training and then Director of Staff Duties. In October 1914 a young T. E. Lawrence joined its Geographical Section. In 1960 John Profumo arrived as Secretary of State for War; his affair with Christine Keeler, and his resignation in 1963, nearly toppled the government.
+
+Britain's Secret Service Bureau, the forerunner of MI5 and MI6, was created in meetings at the War Office in 1909. Ian Fleming, a wartime naval intelligence officer, would have known the building, and its air of espionage helped inspire James Bond; the building has since appeared as MI6 in Bond films.
+
+</details>
 
 ## Notes and sources
 

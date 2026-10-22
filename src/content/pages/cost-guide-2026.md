@@ -4,17 +4,17 @@
   "title": "Wallpaper quotation checklist",
   "metaTitle": "Wallpaper Installation Quotation Checklist | Mr Wallcover",
   "description": "Prepare a wallpaper installation enquiry with location, photographs, approximate dimensions, material references and timing. Final scope follows a survey.",
-  "eyebrow": "Advice",
+  "eyebrow": "Guide",
   "heading": "What to send for a wallpaper installation quotation",
   "lede": "Start with the location, the rooms and the finish you have in mind. Photographs, approximate dimensions and a product reference help us prepare for the survey; leave anything you do not yet know open.",
   "parent": {
-    "name": "Advice",
+    "name": "Wallcovering Guide",
     "href": "/advice/"
   },
   "published": "2026-10-11",
-  "updated": "2026-10-18",
+  "updated": "2026-10-22",
   "cta": {
-    "label": "Request a quotation",
+    "label": "Start your project",
     "href": "/contact/?intent=install"
   },
   "projects": [],
@@ -30,7 +30,7 @@
       "id": "cost-wastage",
       "question": "How much extra paper should be allowed?",
       "paragraphs": [
-        "The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey."
+        "The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles."
       ]
     },
     {
@@ -55,6 +55,8 @@ You do not need a complete specification to start a conversation. Send what you 
 - The project location and which rooms or areas are included.
 - Approximate widths and heights, or current drawings if you have them. Say what has been measured and what is approximate.
 - Whether the room is a home, a hotel or another working building, and whether it will be occupied during the work.
+
+The smallest commission we take on is a single room. We also take on [programmes that run for years](/services/#commission-scope).
 
 ## The chosen wallcovering
 

@@ -8,7 +8,7 @@ last_reviewed: 2026-10-09
 
 Designers & architects
 
-# Your specification. Considered down to the last return.
+# Your specification, set out to the last return.
 
 Bring the material, elevations and design intent together before installation begins. Pattern placement, natural panel variation and the junctions with joinery all deserve a decision before the first length is cut.
 
@@ -80,7 +80,7 @@ Free-issue deliveries are checked against the measure when they arrive. Scenic p
 
 ### Can you give references, and which designers have you worked with?
 
-The published case studies name the design teams and brands involved. Studio Moren designed the interiors at Hyde London City (2022–2024, 111 rooms). House of Hackney's design consultancy worked on a Grade II-listed Georgian house in North London (2019). Calico Wallpaper of Brooklyn was the client at Lee Broom's Shoreditch showroom (2025), Rosewood London (2026), The Lavery in the Brompton Design District (2026) and Heathrow Terminal 4 (2018). Hotel clients on the record include Rocco Forte Hotels (Brown's Hotel), Raffles London at The OWO and Four Seasons (Ten Trinity Square). Major main contractors recommend Mr Wallcover's work. Referees are not named on the site.
+The published case studies name the design teams and brands involved. Studio Moren designed the interiors at Hyde London City (2022–2024, 111 rooms). House of Hackney's design consultancy worked on a Grade II-listed Georgian house in North London (2019). Calico Wallpaper of Brooklyn was the client at Lee Broom's Shoreditch showroom (2025), Rosewood London (2026), The Lavery in the Brompton Design District (2026) and Heathrow Terminal 4 (2018). Hotel clients on the record include Rocco Forte Hotels (Brown's Hotel), Raffles London at The OWO and Four Seasons Hotel London at Ten Trinity Square. Major main contractors recommend Mr Wallcover's work. Referees are not named on the site.
 
 ### Are you on any maker's recommended-installer list?
 
@@ -92,11 +92,11 @@ There is no flat rate per roll. The quotation comes from a site survey or from d
 
 ### Will you keep our project confidential, and will you sign an NDA?
 
-Private clients are not named, on the site or in passing. Residential work is published only by street or area, and only with the owner's agreement. Private and NDA jobs are anonymised. On the published record, for example, the Heathrow client appears as "a luxury fashion house (name withheld)", and the arch case study's location as "a prime residence in central London", with window views and personal items blurred. Permission for photography is agreed before any image is used. Where a client requires a non-disclosure agreement, Mr Wallcover signs one, and those projects are never named.
+Private clients are not named, on the site or in passing. Residential work is published only by street or area, and only with the homeowner's agreement. Private and NDA jobs are anonymised. On the published record, for example, the Heathrow client appears as "a luxury fashion house (name withheld)", and the arch case study's location as "a prime residence in central London", with window views and personal items blurred. Permission for photography is agreed before any image is used. Where a client requires a non-disclosure agreement, Mr Wallcover signs one, and those projects are never named.
 
 ### Do you take on single rooms, or only larger projects?
 
-We focus on whole residences and hotel packages, and will take on one- or two-room commissions.
+We focus on whole residences and hotel packages, and will take on one- or two-room commissions. The minimum installation commission is one room.
 
 ### Do you offer limewash and lime render?
 
@@ -112,11 +112,11 @@ Acoustic wallcovering and acoustic panel installation in London hotels, offices 
 
 ### What aftercare and guarantee are included?
 
-Aftercare is part of every commission: a return inspection about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.
+Aftercare is part of every commission: a return visit about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.
 
 ### How long have you been in the trade?
 
-In the trade since 2012. Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards.
+Dorin Burcus, founder of Mr Wallcover, has worked in the trade since 2012. Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards.
 
 ### Have you worked in listed buildings?
 
@@ -140,7 +140,7 @@ Interior designers, London
 
 A private home near Sloane Square, January 2020, in papers by Cole & Son and Little Greene.
 
-[Our post, 28 January 2020](https://www.instagram.com/p/B73YYaSlpPv/)
+[See the post, 28 January 2020](https://www.instagram.com/p/B73YYaSlpPv/)
 
 Diane Hill
 
@@ -148,7 +148,7 @@ Artist
 
 Blossom hand-painted over Phillip Jeffries silk after we had hung it, in a dining room in Kensington, 2019.
 
-[Our post, 30 October 2019](https://www.instagram.com/p/B4Puc1-FUT9/)
+[See the post, 30 October 2019](https://www.instagram.com/p/B4Puc1-FUT9/)
 
 Calico Wallpaper
 
@@ -178,4 +178,4 @@ Overture, with Calico Wallpaper, at the Lee Broom Shoreditch showroom.
 
 [Developers & main contractors](https://www.mrwallcover.com/professionals/developers/) [Hotels & operators](https://www.mrwallcover.com/professionals/hotels/) [Fit-out contractors](https://www.mrwallcover.com/professionals/fit-out-contractors/) [Explore our work](https://www.mrwallcover.com/projects/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

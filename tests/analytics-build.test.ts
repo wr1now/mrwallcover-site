@@ -42,7 +42,7 @@ test('analytics on: Umami loads on the live host only, honours Do Not Track, ign
     }
     assert.match(on.privacy, /This site counts visits with Umami, a cookie-free analytics tool\./);
     assert.match(on.privacy, /cookie-free visit counts this site keeps with Umami/);
-    assert.doesNotMatch(on.privacy, /does not run analytics|Nothing is loaded unless that script is deliberately switched on/);
+    assert.doesNotMatch(on.privacy, /does not run analytics|It is switched off on this site as published/);
     assert.match(on.llms, /cookie-free visit counts with Umami/);
   } finally {
     await rm(on.dir, { recursive: true, force: true });

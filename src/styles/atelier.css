@@ -8,11 +8,6 @@
 .atelier-text-link { display:inline-flex; gap:28px; align-items:center; color:#292a23; text-decoration:none; border-bottom:1px solid #a99b82; padding:10px 0; min-height:44px; font-size:13px; }
 .atelier-text-link.light { color:#fffdf8; border-color:#d7c7a0; }
 .atelier-text-link span { font-size:19px; }
-.atelier-button { display:inline-flex; align-items:center; justify-content:space-between; gap:35px; padding:17px 23px; min-height:52px; font-size:12px; text-decoration:none; letter-spacing:.015em; border:1px solid transparent; transition:background 180ms ease,transform 180ms ease; }
-.atelier-button:hover { transform:translateY(-2px); }
-.atelier-button.cream { background:#f4f0e8; color:#23251e; }
-.atelier-button.ink { background:#292f26; color:#fffdf8; }
-.atelier-button span { font-size:20px; line-height:1; }
 .atelier-section { max-width:1380px; padding:106px 6%; margin:auto; }
 .atelier-hotel-band { max-width:1500px; display:grid; grid-template-columns:1.1fr 4fr; gap:25px; padding:43px 6%; margin:auto; border-bottom:1px solid #d8d1c4; }
 .atelier-hotel-band>p { font-size:9px; align-self:center; margin:0; }
@@ -67,7 +62,7 @@
 .atelier-service li>a { display:flex; gap:25px; padding:23px 0; text-decoration:none; color:inherit; }
 .atelier-service-number { font-size:10px; color:#726750; padding-top:7px; }
 .atelier-service li h3 { margin:0; font-size:30px; }
-.atelier-service li p { margin:7px 0 0; font-size:12px; line-height:1.7; color:var(--atelier-muted); }
+.atelier-service li p { margin:var(--space-2) 0 0; font-size:12px; line-height:1.7; color:var(--atelier-muted); }
 .atelier-service li>a>span:last-child { margin-left:auto; font-size:23px; }
 .atelier-materials { display:grid; grid-template-columns:1fr 1fr; margin:0 24px; background:#eae5da; }
 .atelier-materials-copy { padding:75px 12%; align-self:center; }
@@ -97,7 +92,7 @@
 .site-header { --radius-bar:2px; box-shadow:none; }
 .site-header .primary-nav { gap:22px; }
 .site-header .nav-link { font-size:12px; white-space:nowrap; }
-.site-header .header-action { border-radius:0; font-size:12px; padding-inline:20px; min-height:40px; }
+.site-header .header-action { font-size:12px; padding-inline:20px; min-height:var(--button-height-compact); }
 .site-header .wordmark { font-size:29px; white-space:nowrap; }
 .site-header .reveal-phone { display:none; }
 @media(min-width:1024px){.site-header{max-width:none;width:calc(100% - 48px);height:var(--header-height)}.site-header .primary-nav{gap:clamp(12px,1.7vw,27px)}}
@@ -113,15 +108,15 @@
  .atelier-service{grid-template-columns:1fr;gap:35px}.atelier-service li>a{gap:20px}.atelier-service>div>p:not(.atelier-kicker){max-width:none}
  .atelier-materials{grid-template-columns:1fr;margin:0 12px}.atelier-materials-copy{padding:45px 24px}.atelier-materials-image{min-height:380px}
  .atelier-questions{grid-template-columns:1fr;gap:35px}.atelier-contact{padding-block:55px}.atelier-contact h2{font-size:3.35rem}
- .atelier-explore-studio{margin-inline:12px}.atelier-ai-note{padding-inline:24px}.site-header .wordmark{font-size:25px}.site-header .header-mobile .nav-link{font-size:13px}
+ .atelier-explore-studio{margin-inline:12px}.atelier-ai-note{padding-inline:24px}.site-header .wordmark{font-size:25px}
 }
 @media(prefers-reduced-motion:reduce){.atelier *{scroll-behavior:auto;transition:none!important;animation:none!important}}
 .atelier-film-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:0 24px 24px}.atelier-film-grid figure{margin:0}.atelier-film-grid video{width:100%;height:auto;max-height:420px;background:#222;object-fit:contain}.atelier-film-grid .caption{font-size:12px;line-height:1.6}
 @media(max-width:767px){.atelier-film-grid{grid-template-columns:1fr}.atelier-hero-actions .atelier-text-link{gap:12px}}
 
 .atelier-enquiry-routes{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;margin:0 auto 30px;max-width:900px}.atelier-enquiry-routes a{display:inline-flex;align-items:center;gap:14px;min-height:44px;color:#343a30;font-size:13px;text-underline-offset:5px}
-@media(max-width:767px){.site-header{padding-inline:10px}.site-header-row{gap:8px}.site-header .header-start{min-width:44px;padding-inline:4px}.site-header .menu-toggle{font-size:13px;padding-inline:6px;gap:8px}.site-header .header-mobile{gap:4px}.atelier h2{font-size:clamp(40px,10.5vw,60px)}.atelier-contact h2{font-size:clamp(44px,11vw,66px)}}
-@media(max-width:360px){.site-header .wordmark{font-size:23px}.atelier-hero-actions{gap:6px}.atelier-hero-actions .atelier-button{padding:12px;font-size:11px;gap:10px}.atelier-hero-actions .atelier-text-link{font-size:11px;gap:6px}.atelier-hero-content{padding-inline:16px}.atelier-hero-foot{left:16px;right:16px}.atelier-hero-description{font-size:13px}}
+@media(max-width:767px){.site-header{padding-inline:10px}.site-header-row{gap:8px}.site-header .menu-toggle{font-size:13px;padding-inline:6px;gap:8px}.site-header .header-mobile{gap:4px}.atelier h2{font-size:clamp(40px,10.5vw,60px)}.atelier-contact h2{font-size:clamp(44px,11vw,66px)}}
+@media(max-width:360px){.site-header .wordmark{font-size:23px}.atelier-hero-actions{gap:6px}.atelier-hero-actions .atelier-text-link{font-size:11px;gap:6px}.atelier-hero-content{padding-inline:16px}.atelier-hero-foot{left:16px;right:16px}.atelier-hero-description{font-size:13px}}
 
 /* ======================================================================================
  * Homepage visual unification (10 Oct 2026).
@@ -137,7 +132,7 @@
 /* -- Labels, buttons, links -- */
 .atelier-kicker, .atelier-project-meta .atelier-kicker { font-size:var(--text-label); letter-spacing:var(--tracking-label); line-height:1.5; }
 .atelier-kicker { margin-bottom:18px; }
-.atelier-button, .atelier-text-link, .atelier-enquiry-routes a { font-size:var(--text-meta); letter-spacing:.01em; }
+.atelier-text-link, .atelier-enquiry-routes a { font-size:var(--text-meta); letter-spacing:.01em; }
 .atelier-hero-foot>span, .atelier-hero-foot a span { font-size:var(--text-label); letter-spacing:var(--tracking-label); }
 
 /* -- Headings -- */
@@ -257,7 +252,6 @@
   .atelier-project-meta>span { font-size:var(--text-meta); }
   .atelier-hotel-band small { font-size:var(--text-label); }
   .atelier-intro-bottom p { font-size:var(--text-body); }
-  .site-header .header-mobile .nav-link { font-size:14px; }
   .home-facts { grid-template-columns:1fr; gap:16px; }
   .home-more-grid, .home-process ol, .home-needs-grid, .home-record ul, .home-calico ul, .home-praise { grid-template-columns:1fr; }
   .home-aftercare { margin:0 12px; }

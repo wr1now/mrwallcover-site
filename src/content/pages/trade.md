@@ -35,7 +35,7 @@
       "id": "trade-nights",
       "question": "Can you work nights or around guests?",
       "paragraphs": [
-        "Yes. Most of our hotel work has been in live buildings, floor by floor or room by room around the house's bookings, and the Heathrow mural was hung overnight in a live terminal. Night shifts, out-of-hours and weekend work are offered, including in live hotels."
+        "Yes. Most of our hotel work has been in live buildings, floor by floor or room by room around the house's bookings, and the Heathrow mural was hung overnight in a live terminal."
       ]
     }
   ],
@@ -65,7 +65,7 @@ Main contractors, hotel FF&E and project teams, fit-out firms and the designers 
 
 ## How we price
 
-From a site survey or from drawings. Openings come out of the area; pattern repeat and wastage go in. Access, protection and making good are written into the scope, not discovered at the end. We say what has been allowed for. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey.
+From a site survey or from drawings. Openings come out of the area; pattern repeat and wastage go in. Access, protection and making good are written into the scope, not discovered at the end. We say what has been allowed for. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. The [quantities guide](/advice/quantities/) shows how the order is worked out.
 
 ## Programme and night work
 
@@ -82,8 +82,10 @@ The core team is six wallpaper hangers and six decorators, scaling to 25–35 pe
 
 ## The sample-room process
 
-Sample room first, then the hang, then snagging, then the return visit about four to six weeks after completion, with twelve months' cover on the workmanship of the hang. At Hyde London City the record starts with a finished sample room in November 2022 and the remaining rooms were repeated from it.
+Sample room first, then the hang, then snagging, then the return visit about four to six weeks after completion, with a twelve-month guarantee on the workmanship of the hang. At Hyde London City the record starts with a finished sample room in November 2022 and the remaining rooms were repeated from it.
 
 ## References
 
 Major main contractors recommend Mr Wallcover's work. Referees are not named on this site.
+
+Calico Wallpaper's notes on our installations are published as written, with permission, on [Reviews](/reviews/).

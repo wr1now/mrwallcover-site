@@ -3,18 +3,18 @@ title: "Wallpaper Installation Quotation Checklist | Mr Wallcover"
 url: https://www.mrwallcover.com/advice/cost/
 description: "Prepare a wallpaper installation enquiry with location, photographs, approximate dimensions, material references and timing. Final scope follows a survey."
 author: "Dorin Burcus"
-last_updated: 2026-10-18
+last_updated: 2026-10-22
 ---
 
-Advice
+Guide
 
 # What to send for a wallpaper installation quotation
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 18 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026
 
 Start with the location, the rooms and the finish you have in mind. Photographs, approximate dimensions and a product reference help us prepare for the survey; leave anything you do not yet know open.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?intent=install) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?intent=install) [See the work](https://www.mrwallcover.com/projects/)
 
 You do not need a complete specification to start a conversation. Send what you know about the rooms and the material, and mark anything that still needs a decision. These notes help us prepare for the survey; they are not a substitute for seeing the walls.
 
@@ -23,6 +23,8 @@ You do not need a complete specification to start a conversation. Send what you 
 - The project location and which rooms or areas are included.
 - Approximate widths and heights, or current drawings if you have them. Say what has been measured and what is approximate.
 - Whether the room is a home, a hotel or another working building, and whether it will be occupied during the work.
+
+The smallest commission we take on is a single room. We also take on [programmes that run for years](https://www.mrwallcover.com/services/#commission-scope).
 
 ## The chosen wallcovering
 
@@ -63,7 +65,7 @@ Schematic · not to scaleMeasured wall area, openings and the set-out inform the
 
 Questions
 
-## Asked about Wallpaper quotation checklist
+## Questions we are asked
 
 Illustrative material studies
 
@@ -75,7 +77,7 @@ Because the roll does not decide the labour. The same number of rolls can be a m
 
 ### How much extra paper should be allowed?
 
-The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey.
+The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles.
 
 ### When do I get a price?
 

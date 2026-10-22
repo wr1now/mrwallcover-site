@@ -3,7 +3,7 @@ title: "DoubleTree Victoria | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/doubletree-victoria/
 description: "Guest room wallcoverings at DoubleTree by Hilton London – Victoria, Bridge Place, in 2023."
 author: "Dorin Burcus"
-last_updated: 2026-10-10
+last_updated: 2026-10-22
 ---
 
 2 Bridge Place, Victoria, London SW1
@@ -14,9 +14,9 @@ Guest room wallcoverings at the Victoria hotel, spring and summer 2023.
 
 ![The hotel building on Bridge Place, Victoria, in 2010, when it traded as the Hesperia London Victoria; it is now the DoubleTree by Hilton London – Victoria.](https://www.mrwallcover.com/media/img/doubletree-victoria-commons-01.jpg)
 
-The building on Bridge Place in 2010, when it was the Hesperia London Victoria. A view of the building, not of our work. Photography: Stacey Harris / Wikimedia Commons (CC BY-SA 2.0).
+The building on Bridge Place in 2010, when it was the Hesperia London Victoria. Venue photograph, not our work. Photograph: Stacey Harris / Wikimedia Commons (CC BY-SA 2.0).
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -62,7 +62,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -92,7 +94,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -102,4 +104,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 10 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

@@ -3,7 +3,7 @@ title: "Pendley Manor Hotel, Tring | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/pendley-manor-hotel/
 description: "30 guest rooms in 30 days at Pendley Manor Hotel, Tring: Anaglypta ceilings, lining throughout and 20 different wallpapers, including Cole & Son velvet flock."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 Tring, Hertfordshire
@@ -14,7 +14,7 @@ Thirty guest rooms in thirty days at the manor house hotel in Tring: Anaglypta o
 
 ![Pendley Manor bedroom with red damask walls, upholstered headboard and red bedside lamps.](https://www.mrwallcover.com/media/img/r/pendley-manor-15-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -65,7 +65,7 @@ Velvet flock is a raised pile on a paper ground. It marks easily and cannot be w
 
 Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), in January and February 2020: the finished red damask rooms first, then rooms during works, the ceilings and the papers.
 
-Source for the figures: our Instagram post of 2 January 2020 ([B60Ncb2FWZS](https://www.instagram.com/p/B60Ncb2FWZS/)): 30 rooms in 30 days, Anaglypta for the ceilings, lining on all walls and 20 different wallpapers.
+Source for the figures: our Instagram post of 2 January 2020 ([see the post](https://www.instagram.com/p/B60Ncb2FWZS/)): 30 rooms in 30 days, Anaglypta for the ceilings, lining on all walls and 20 different wallpapers.
 
 ## Photographs
 
@@ -85,6 +85,8 @@ Source for the figures: our Instagram post of 2 January 2020 ([B60Ncb2FWZS](http
 
 ![Close-up of gold-on-cream Petroushka velvet flock wallpaper, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-05-800.webp)
 
+All 6 more photographs from this project
+
 ![Velvet flock wallpaper samples in red, green and gold, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-09-800.webp)
 
 ![Close-up of green velvet flock damask wallpaper, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-11-800.webp)
@@ -101,7 +103,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -131,7 +135,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -141,4 +145,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

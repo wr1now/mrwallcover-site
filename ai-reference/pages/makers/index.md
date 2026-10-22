@@ -28,7 +28,7 @@ Our installation[Arte · private project, London](https://www.mrwallcover.com/ma
 
 Arte designs, manufactures and distributes wallcoverings for residential and contract interiors. Its ranges include natural surfaces, textiles, vinyl, non-woven and metallic finishes. Use the material and product reference to identify the relevant specification.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore Arte](https://www.mrwallcover.com/makers/arte/)
 
@@ -42,7 +42,7 @@ Our installation[Phillip Jeffries · The Biltmore Mayfair](https://www.mrwallcov
 
 Phillip Jeffries offers grasscloth, textiles, paper weaves, prints and scenic wallcoverings. It supplies members of the design trade and selected design retailers; homeowners should arrange purchasing through an eligible designer or retailer.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore Phillip Jeffries](https://www.mrwallcover.com/makers/phillip-jeffries/)
 
@@ -56,7 +56,7 @@ Our installation[de Gournay · private residence, London](https://www.mrwallcove
 
 de Gournay offers hand-painted wallpaper and embroidered wallcoverings. Its made-to-measure service allows designs and colours to be adapted to a project. Bespoke enquiries and stock information are separate starting points.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore de Gournay](https://www.mrwallcover.com/makers/de-gournay/)
 
@@ -70,7 +70,7 @@ Our installation[Fromental · Four Seasons Ten Trinity Square](https://www.mrwal
 
 Fromental creates hand-painted, embroidered and printed wallcoverings. Bespoke panels can be tailored to a room; its separate Shop offers standard formats and colourways. Sample arrangements differ between bespoke and Shop collections.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore Fromental](https://www.mrwallcover.com/makers/fromental/)
 
@@ -84,7 +84,7 @@ Our installation[Calico Wallpaper · Lee Broom, Shoreditch](https://www.mrwallco
 
 Calico Wallpaper creates non-repeating murals from handmade patterns and digital enlargement. Its designs explore marbling, gradients, metallic effects and woven natural fibres. Mural panels, samples and custom layouts follow different ordering processes.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore Calico Wallpaper](https://www.mrwallcover.com/makers/calico-wallpaper/)
 
@@ -98,7 +98,7 @@ Our installation[House of Hackney · Shoreditch showroom, 2019](https://www.mrwa
 
 House of Hackney designs nature-inspired wallpapers and interior collections. Its wallcovering materials include paper and cork, with composition and origin checked for each design. The official website offers wallpaper and samples alongside showroom consultations.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore House of Hackney](https://www.mrwallcover.com/makers/house-of-hackney/)
 
@@ -112,7 +112,7 @@ From our work[Craft example: Lewis & Wood at Brown’s Hotel](https://www.mrwall
 
 Brewster Home Fashions offers a multi-brand wallpaper catalogue and has an in-house design team. It shares York Design Group with York Wallcoverings. Its direct online store excludes orders outside North America; UK sourcing requires a separate enquiry.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore Brewster Home Fashions](https://www.mrwallcover.com/makers/brewster-home-fashions/)
 
@@ -126,7 +126,7 @@ Our installation[Cole & Son · Pendley Manor Hotel](https://www.mrwallcover.com/
 
 Cole & Son develops wallpaper and fabric collections through archive references and its artistic team. Buyers can use its product shop, contact client services or consult its official partner finder. Confirm country selection and sample terms separately.
 
-3 official sourcing routes · source check 2026-10-17
+3 official sourcing routes · source check 17 October 2026
 
 [Explore Cole & Son](https://www.mrwallcover.com/makers/cole-and-son/)
 
@@ -140,7 +140,7 @@ Our installation[Dedar · Four Seasons Ten Trinity Square](https://www.mrwallcov
 
 Dedar is a family-run fabric house whose catalogue also includes textile wallcoverings. Examples use silk, linen, cotton and velvet. Its London showroom and customer-service contacts provide starting points for product enquiries.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore Dedar](https://www.mrwallcover.com/makers/dedar/)
 
@@ -154,7 +154,7 @@ From our work[Craft example: Calico Wallpaper at Lee Broom](https://www.mrwallco
 
 Designers Guild is a furnishing and wallcovering design brand established in 1970, according to its official company profile. This profile describes the brand only; no purchasing, ownership, licensing or fulfilment claim is made here.
 
-Brand information only · source check 2026-10-18
+Brand information only · source check 18 October 2026
 
 [Explore Designers Guild](https://www.mrwallcover.com/makers/designers-guild/)
 
@@ -168,7 +168,7 @@ Our installation[Élitis · private residence, Mayfair](https://www.mrwallcover.
 
 Élitis offers wallpapers, wallcoverings and fabrics exploring woven, vinyl, textile and handcrafted surfaces. Its official guidance separates retailer enquiries, professional representatives and swatch requests. Product availability access is restricted to its professional extranet.
 
-3 official sourcing routes · source check 2026-10-17
+3 official sourcing routes · source check 17 October 2026
 
 [Explore Élitis](https://www.mrwallcover.com/makers/elitis/)
 
@@ -176,13 +176,13 @@ Maker reference
 
 ## [Morris & Co.](https://www.mrwallcover.com/makers/morris-and-co/)
 
-[![Adam's Eden wallcovering meeting a carved cornice and decorative plaster ceiling at Brown's Hotel, Mayfair, above a door case.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-12.jpg)](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
+[![Adam's Eden wallcovering meeting a carved cornice and decorative plaster ceiling at Brown's Hotel, Mayfair, above a door case.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-12-800.webp)](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
 From our work[Craft example: Lewis & Wood at Brown’s Hotel](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)Photograph: Mr Wallcover
 
 Morris & Co. adapts archive designs into wallpaper and fabric collections. Its official history describes a London design studio and UK production. Product-specific ordering and technical information should be confirmed before quantities are settled.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore Morris & Co.](https://www.mrwallcover.com/makers/morris-and-co/)
 
@@ -196,7 +196,7 @@ Our installation[Omexco · private project, London](https://www.mrwallcover.com/
 
 Omexco designs and manufactures wall decorations in an atelier near Brussels. Its collections include printed, woven and natural surfaces. UK ordering goes through representatives; other territories use regional distributors. Website sample requests are for interior professionals.
 
-3 official sourcing routes · source check 2026-10-17
+3 official sourcing routes · source check 17 October 2026
 
 [Explore Omexco](https://www.mrwallcover.com/makers/omexco/)
 
@@ -210,7 +210,7 @@ Our installation[Osborne & Little · private project, Chelsea](https://www.mrwal
 
 Osborne & Little provides wallcovering, fabric and trimming collections through worldwide stockists. Its official contact page lists a London showroom. Direct online samples are available only within the United Kingdom; this is separate from buying wallpaper rolls.
 
-3 official sourcing routes · source check 2026-10-17
+3 official sourcing routes · source check 17 October 2026
 
 [Explore Osborne & Little](https://www.mrwallcover.com/makers/osborne-and-little/)
 
@@ -224,7 +224,7 @@ From our work[Craft example: Phillip Jeffries at Four Seasons](https://www.mrwal
 
 Pierre Frey creates fabrics, wallpapers, rugs and furniture. Product constructions differ: Ciel reve uses vinyl on a non-woven backing. Its professional London showroom and official finder provide distinct contact routes for professionals and private individuals.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore Pierre Frey](https://www.mrwallcover.com/makers/pierre-frey/)
 
@@ -238,7 +238,7 @@ From our work[Craft example: House of Hackney’s Shoreditch showroom](https://w
 
 Sanderson brings wallpaper, fabric, paint and trimmings together within Sanderson Design Group. Its history describes archive-led design and UK wallpaper production. Consumer shopping and the group trade programme have separate eligibility and sample terms.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore Sanderson](https://www.mrwallcover.com/makers/sanderson/)
 
@@ -252,7 +252,7 @@ From our work[Craft example: Dedar at Four Seasons Ten Trinity Square](https://w
 
 Sangetsu develops interior decorating products, including XSELECT, FAITH, Reserve and FINE wallpapers. Its material guides cover paper weave, Japanese paper, foil, cork and textile surfaces. Japanese showrooms provide viewing and guidance rather than direct sales.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore Sangetsu](https://www.mrwallcover.com/makers/sangetsu/)
 
@@ -266,7 +266,7 @@ Our installation[Vescom · Hilton London Metropole](https://www.mrwallcover.com/
 
 Vescom designs, produces and distributes wallcovering, upholstery and curtain fabrics for contract interiors. Its London showroom provides a viewing and contact route. The textile sample offer is for professional customers and excludes direct private-customer sales.
 
-3 official sourcing routes · source check 2026-10-17
+3 official sourcing routes · source check 17 October 2026
 
 [Explore Vescom](https://www.mrwallcover.com/makers/vescom/)
 
@@ -280,7 +280,7 @@ From our work[Craft example: Cole & Son at Pendley Manor Hotel](https://www.mrwa
 
 York Wallcoverings describes a Pennsylvania manufacturing history and a catalogue of printed and natural wallcoverings. It shares York Design Group with Brewster Home Fashions. Its own online shipping policy excludes destinations outside the United States.
 
-2 official sourcing routes · source check 2026-10-17
+2 official sourcing routes · source check 17 October 2026
 
 [Explore York Wallcoverings](https://www.mrwallcover.com/makers/york-wallcoverings/)
 
@@ -294,7 +294,7 @@ Our installation[Zoffany · private residence, Soho](https://www.mrwallcover.com
 
 Zoffany develops wallpapers, murals, fabrics and paint, drawing on an archive associated with Temple Newsam. The brand is part of Sanderson Design Group. This directory includes the group trade route; consumer purchasing is not listed.
 
-1 official sourcing route · source check 2026-10-17
+1 official sourcing route · source check 17 October 2026
 
 [Explore Zoffany](https://www.mrwallcover.com/makers/zoffany/)
 

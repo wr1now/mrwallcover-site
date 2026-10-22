@@ -1,6 +1,9 @@
 ---
 import Action from '../components/Action.astro';
+import BookCallLink from '../components/BookCallLink.astro';
 import PhoneReveal from '../components/PhoneReveal.astro';
+import { BOOKING_HINT, BOOKING_URL } from '../config';
+import { phoneAvailable } from '../lib/phone';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
 import Base from '../layouts/Base.astro';
 import utility from '../content/utility.json';
@@ -9,15 +12,19 @@ import Icon from '../components/Icon.astro';
 
 <Base title={utility.thanks.title} description={utility.thanks.description} path="/thank-you/" noindex={true}>
   <div class="container-page py-20">
-    <p class="eyebrow">Contact</p>
+    <p class="eyebrow">Enquiry received</p>
     <Icon name="check" class="value-icon" />
     <h1 class="m-0 text-[clamp(2.6rem,6vw,4.2rem)]">{utility.thanks.heading}</h1>
     <p class="lede mt-5">{utility.thanks.text}</p>
     <p class="mt-4" data-receipt-line hidden></p>
+    {(BOOKING_URL || phoneAvailable) && <p class="mt-6 max-w-[44rem]">{[BOOKING_URL && utility.thanks.next, phoneAvailable && utility.thanks.nextWhatsApp].filter(Boolean).join(' ')}</p>}
+    {/* The hours line follows "Book a call" in reading order. From md it drops below the row, so the buttons stay evenly spaced. */}
     <div class="mt-8 flex flex-wrap gap-3">
-      <PhoneReveal class="btn btn-solid-ink" label="Show phone number" prefix="Call " />
+      <BookCallLink class="btn btn-solid-ink" />
+      {BOOKING_URL && <p class="booking-hint -mt-2 mb-0 basis-full text-sm text-stone md:order-last">{BOOKING_HINT}</p>}
+      <PhoneReveal class="btn btn-line" label="Show phone number" prefix="Call " />
       <WhatsAppLink class="btn btn-line" />
-      <Action variant="secondary" href="/">Home</Action>
+      <Action variant="secondary" href="/projects/">See the work</Action>
     </div>
   </div>
   <script>

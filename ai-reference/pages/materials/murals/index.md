@@ -1,7 +1,7 @@
 ---
 title: "Mural wallpaper installation in London | Mr Wallcover"
 url: https://www.mrwallcover.com/materials/murals/
-description: "Printed or hand-made scenes, including event murals hung for a fixed date."
+description: "Printed and hand-made wallpaper murals hung by Mr Wallcover, including Muraspec’s extra-wide prints at the Everyman cinema in Liverpool in 2018."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -51,7 +51,19 @@ Check the panel count, the sequence and the substrate before the first piece is 
 
 Follow the maker. An event mural is not the same duty as a guest-room vinyl.
 
-Digital colour is a guide. Order a cutting or a sample before you commit to a room. We can install material you have already bought, or source a family and install it. Either way, the next step is a short note about the room.
+Digital colour is a guide. Order a cutting or a sample before you commit to a room. Some makers’ own sample routes are listed under [official buying routes](https://www.mrwallcover.com/buying-routes/). We can install material you have already bought, or source a family and install it. Either way, the next step is a short note about the room.
+
+Before you order
+
+## For a high-value order
+
+- Workmanship is guaranteed for twelve months. [The aftercare page](https://www.mrwallcover.com/aftercare/) sets out what is covered.
+- Public liability, employers' liability and professional indemnity details are available on request.
+- Risk assessments and method statements (RAMS) on every job, with Dorin Burcus supervising on site.
+- A core team of six wallpaper hangers and six decorators who work together every day, scaling to 25–35 skilled tradespeople for large hotel programmes.
+- [For designers and architects](https://www.mrwallcover.com/professionals/designers/)
+- [Download the specification schedule (CSV)](https://www.mrwallcover.com/downloads/wallcovering-specification-schedule.csv)
+- [Trade and contractors](https://www.mrwallcover.com/trade/)
 
 Illustrative material study · confirm the actual finish with a sample
 
@@ -79,7 +91,7 @@ Plan the detail
 
 - [Hand-painted papers and murals](https://www.mrwallcover.com/advice/hand-painted-murals-set-out/)
 
-From our portfolio
+From our projects
 
 ## Selected work
 
@@ -97,13 +109,13 @@ Makers installed
 
 ## Murals: makers we have hung
 
-Each in our own photograph of its product on the wall. A maker named here means Mr Wallcover installed that maker's product; it is not an approval, accreditation or endorsement.
+Each in our own photograph of its product on the wall. Naming a maker records an installation, not an endorsement.
 
 - ![Room with a deep blue Calico gradient wallpaper, a yellow sideboard and a daybed, a private project, London.](https://www.mrwallcover.com/media/img/r/brand-calico-wallpaper-01-800.webp)
 
 ### Calico Wallpaper
 
-Installed at a private project, London, 2019. [Our post](https://www.instagram.com/p/B2Uz7Dcl2_j/).
+Installed at a private project, London, 2019. [See the post](https://www.instagram.com/p/B2Uz7Dcl2_j/).
 
 - ![Black matt Muraspec walls around a door with a brushed stainless-steel trim, Mercedes-AMG showroom, London.](https://www.mrwallcover.com/media/img/r/mercedes-amg-02-800.webp)
 
@@ -111,4 +123,10 @@ Installed at a private project, London, 2019. [Our post](https://www.instagram.c
 
 Installed at [Everyman cinema, Liverpool](https://www.mrwallcover.com/projects/everyman-liverpool/) · [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/) · [Hilton London Metropole](https://www.mrwallcover.com/projects/hilton-london-metropole/) · [Mercedes-AMG showroom, London](https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/) · [Oxygen Freejumping, The O2](https://www.mrwallcover.com/projects/oxygen-freejumping-the-o2/).
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+Murals: send a short note about the room, or tell us you already have the material.
+
+[Discuss this material](https://www.mrwallcover.com/contact/?intent=source&service=wallcovering&topic=material%3Amurals) [I already have it](https://www.mrwallcover.com/contact/?intent=install&service=wallcovering&topic=material%3Amurals)
+
+[How we install murals](https://www.mrwallcover.com/services/mural-installation/)
+
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

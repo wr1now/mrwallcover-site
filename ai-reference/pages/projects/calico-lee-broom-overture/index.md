@@ -1,9 +1,9 @@
 ---
-title: "Lee Broom x Calico: Overture, Shoreditch | Mr Wallcover"
+title: "Lee Broom × Calico: Overture, Shoreditch | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/calico-lee-broom-overture/
 description: "Survey, preparation and installation of Lee Broom's Overture mural for Calico Wallpaper at his Shoreditch showroom, London Design Festival 2025."
 author: "Dorin Burcus"
-last_updated: 2026-10-10
+last_updated: 2026-10-22
 ---
 
 Lee Broom flagship showroom, Rivington Street, Shoreditch
@@ -14,7 +14,7 @@ Lee Broom's first wallpaper, a trompe-l'oeil theatre curtain, brought to the UK 
 
 ![Overture drapery wallpaper beside a chandelier.](https://www.mrwallcover.com/media/img/r/lee-broom-08-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -28,7 +28,7 @@ Client, materials & project facts
 : –Not recorded
 
 **Maker and paper**
-: Calico Wallpaper x Lee Broom – Overture (installed design: Matinee)
+: Calico Wallpaper × Lee Broom – Overture (installed design: Matinee)
 
 **Area or rooms**
 : –Not recorded
@@ -102,13 +102,17 @@ From 16 to 21 September 2025, visitors to Shoreditch Design Triangle walked into
 
 ![A theatrical flat papered in Overture on the workshop bench.](https://www.mrwallcover.com/media/img/r/lee-broom-09-800.webp)
 
+One more photograph from this project
+
 ![A papered Overture flat standing in the set builder's workshop.](https://www.mrwallcover.com/media/img/r/lee-broom-10-800.webp)
 
 How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -138,7 +142,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -148,4 +152,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 10 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

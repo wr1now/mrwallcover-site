@@ -3,7 +3,7 @@ title: "Private residence, Little Venice | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/private-residence-little-venice/
 description: "House of Hackney wallpaper in a private home in Little Venice, London, designed by Jaillon Studio of Paris and installed by Mr Wallcover in July 2019."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 Little Venice, London W9
@@ -14,7 +14,7 @@ A small but bold project in a Little Venice home designed by Jaillon Studio of P
 
 ![Floral-papered sitting room with a red velvet sofa and full bookcases, a private residence in Little Venice.](https://www.mrwallcover.com/media/img/r/little-venice-03-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -55,7 +55,7 @@ A large floral is set out from the centre of the main wall, so the pattern sits 
 
 ## Photographs on this page
 
-Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 22 July 2019 ([B0O1YqbF4Vp](https://www.instagram.com/p/B0O1YqbF4Vp/)). We have worked with Jaillon Studio again since, on the [tea house in West London](https://www.mrwallcover.com/projects/tea-house-jaillon-studio/).
+Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 22 July 2019 ([see the post](https://www.instagram.com/p/B0O1YqbF4Vp/)). We have worked with Jaillon Studio again since, on the [tea house in West London](https://www.mrwallcover.com/projects/tea-house-jaillon-studio/).
 
 ## Photographs
 
@@ -69,7 +69,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -99,7 +101,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -109,4 +111,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

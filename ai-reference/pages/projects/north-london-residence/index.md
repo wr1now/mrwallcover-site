@@ -1,9 +1,9 @@
 ---
-title: "A Georgian house in North London | Case Study | Mr Wallcover"
+title: "A Georgian house in North London | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/north-london-residence/
-description: "Wallpaper installation at a Georgian house in North London, 2019. House of Hackney's BAMBUSA in Midnight, hung on every wall of a historic guest bedroom…"
+description: "House of Hackney's BAMBUSA in Midnight, hung on every wall of a guest bedroom in a listed Georgian house in North London in 2019, to the designer's scheme."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 North London
@@ -14,7 +14,7 @@ House of Hackney's BAMBUSA in Midnight, hung on every wall of a historic guest b
 
 ![Four-poster bed against House of Hackney Bambusa wallpaper in the Midnight colourway.](https://www.mrwallcover.com/media/img/r/north-london-residence-01-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -94,6 +94,8 @@ Our photographs from April 2019 show the room complete: BAMBUSA on every wall, t
 
 ![Fireplace wall and beam, with Bambusa wallpaper cut around the period joinery.](https://www.mrwallcover.com/media/img/r/north-london-residence-09-800.webp)
 
+All 3 more photographs from this project
+
 ![Writing corner in the bedroom, papered in Bambusa.](https://www.mrwallcover.com/media/img/r/north-london-residence-10-800.webp)
 
 ![Serpentis snakeskin pattern on the ceiling above dark-blue joinery.](https://www.mrwallcover.com/media/img/r/north-london-residence-11-800.webp)
@@ -104,7 +106,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -134,7 +138,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -144,4 +148,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

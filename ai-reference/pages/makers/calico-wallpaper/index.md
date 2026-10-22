@@ -1,7 +1,7 @@
 ---
-title: "Calico Wallpaper Wallcoverings | Mr Wallcover"
+title: "Calico Wallpaper | Mr Wallcover"
 url: https://www.mrwallcover.com/makers/calico-wallpaper/
-description: "Explore Calico Wallpaper wallcoverings and official sourcing contacts, with source dates, purchasing limits and product-specific checks before ordering."
+description: "Explore Calico Wallpaper and official sourcing contacts, with source dates, purchasing limits and product-specific checks before ordering."
 author: "Dorin Burcus"
 last_updated: 2026-10-18
 ---
@@ -16,9 +16,9 @@ Calico Wallpaper creates non-repeating murals from handmade patterns and digital
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://calicowallpaper.com/about/our-story/) — checked 2026-10-17
-- [Official source](https://calicowallpaper.com/about/faqs/) — checked 2026-10-17
-- [Official source](https://calicowallpaper.com/about/contact/) — checked 2026-10-17
+- [Official source: calicowallpaper.com/about/our-story](https://calicowallpaper.com/about/our-story/) — checked 17 October 2026
+- [Official source: calicowallpaper.com/about/faqs](https://calicowallpaper.com/about/faqs/) — checked 17 October 2026
+- [Official source: calicowallpaper.com/about/contact](https://calicowallpaper.com/about/contact/) — checked 17 October 2026
 
 [Visit maker website](https://calicowallpaper.com/)
 
@@ -45,9 +45,9 @@ Terms and checks before ordering
 
 Samples selectable by style, substrate and size. Trade discounts and complimentary samples are for qualifying accounts; international taxes/duties may be payable by purchaser.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://calicowallpaper.com/)
+[Open official source: Shop or product ordering, US; international mural orders stated, UK acceptance unconfirmed](https://calicowallpaper.com/)
 
 ### Showroom or brand contact
 
@@ -68,9 +68,9 @@ Terms and checks before ordering
 
 Bespoke enquiries available through sales; appointment required for showroom per FAQ.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://calicowallpaper.com/about/contact/)
+[Open official source: Showroom or brand contact, New York, US; remote sales enquiry](https://calicowallpaper.com/about/contact/)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

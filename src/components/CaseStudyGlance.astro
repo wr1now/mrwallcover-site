@@ -1,6 +1,7 @@
 ---
 /**
- * The standard "At a glance" box (src/lib/glance.ts): seven fields, always in the same order.
+ * The standard project record box (src/lib/glance.ts): seven fields, always in the same order. Headed
+ * "Project record" so it does not repeat the case study's own authored "At a glance" list beside it.
  * A field the case study does not record shows a dash, with "Not recorded" for screen readers.
  */
 import { glanceRows, type GlanceSource } from '../lib/glance';
@@ -15,7 +16,7 @@ const icons: IconName[] = ['room', 'drawing', 'tools', 'swatch', 'ruler', 'layer
 ---
 
 <section class="glance-box" aria-labelledby="glance-heading" data-glance>
-  <h2 id="glance-heading" class="eyebrow m-0">At a glance</h2>
+  <h2 id="glance-heading" class="eyebrow m-0">Project record</h2>
   <details class="glance-disclosure">
   <summary>Client, materials &amp; project facts</summary>
   <dl class="glance-list">

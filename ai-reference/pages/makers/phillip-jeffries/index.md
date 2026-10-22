@@ -16,8 +16,8 @@ Phillip Jeffries offers grasscloth, textiles, paper weaves, prints and scenic wa
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://landing.phillipjeffries.com/about) — checked 2026-10-17
-- [Official source](https://www.phillipjeffries.com/contact-us) — checked 2026-10-17
+- [Official source: landing.phillipjeffries.com/about](https://landing.phillipjeffries.com/about) — checked 17 October 2026
+- [Official source: phillipjeffries.com/contact-us](https://www.phillipjeffries.com/contact-us) — checked 17 October 2026
 
 [Visit maker website](https://www.phillipjeffries.com/)
 
@@ -44,9 +44,9 @@ Terms and checks before ordering
 
 Sales restricted to design-trade members and selected design retailers per About page. Trade sampling can be requested by email; charges and approval criteria not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.phillipjeffries.com/contact-us)
+[Open official source: Showroom or brand contact, UK / Europe](https://www.phillipjeffries.com/contact-us)
 
 ### Trade enquiry
 
@@ -67,9 +67,9 @@ Terms and checks before ordering
 
 Design trade / selected retailers sales model; sample charges, account approval and cross-border terms not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.phillipjeffries.com/contact-us)
+[Open official source: Trade enquiry, US / Asia](https://www.phillipjeffries.com/contact-us)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

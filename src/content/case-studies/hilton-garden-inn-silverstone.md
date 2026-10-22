@@ -9,31 +9,31 @@
   "role": "Main wallcoverings contractor",
   "wallcoverings": [],
   "modest": false,
-  "metaTitle": null,
-  "metaDescription": null,
+  "metaTitle": "Hilton Garden Inn Silverstone | Mr Wallcover",
+  "metaDescription": "Main wallcoverings contractor at Hilton Garden Inn Silverstone, the only hotel on the Silverstone Circuit: rooms finished for the 2022 British Grand Prix.",
   "group": null,
   "standfirst": "Main wallcoverings contractor for the only hotel on the Silverstone Circuit, its rooms finished to one standard in time for the 2022 British Grand Prix.",
   "hero": "hilton-garden-inn-silverstone-press-01",
   "gallery": [
     {
       "id": "hilton-garden-inn-silverstone-press-01",
-      "credit": "Hilton Garden Inn Silverstone from outside. A view of the building, not of our work. Photography: Hilton."
+      "credit": "Hilton Garden Inn Silverstone from outside. Venue photograph, not our work. Photograph: Hilton."
     },
     {
       "id": "hilton-garden-inn-silverstone-press-02",
-      "credit": "A guest room as published by Hilton. A view of the hotel, not of our work. Photography: Hilton."
+      "credit": "A guest room as published by Hilton. Venue photograph, not our work. Photograph: Hilton."
     },
     {
       "id": "silverstone-circuit-commons-01",
-      "credit": "The circuit during the 2022 British Grand Prix. A view of the venue, not of our work. Photography: fuji.tim / Wikimedia Commons (CC BY-SA 2.0)."
+      "credit": "The circuit during the 2022 British Grand Prix. Venue photograph, not our work. Photograph: fuji.tim / Wikimedia Commons (CC BY-SA 2.0)."
     },
     {
       "id": "silverstone-circuit-commons-02",
-      "credit": "A car on the circuit during the 2022 British Grand Prix weekend. A view of the venue, not of our work. Photography: Jen Ross / Wikimedia Commons (CC BY 2.0)."
+      "credit": "A car on the circuit during the 2022 British Grand Prix weekend. Venue photograph, not our work. Photograph: Jen Ross / Wikimedia Commons (CC BY 2.0)."
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -41,6 +41,7 @@
 
 - **Client / brand:** Hilton Garden Inn Silverstone (Hilton)
 - **Location:** Hamilton Straight, Silverstone Circuit, Northamptonshire
+- **Year:** 2022 (completed in time for the British Grand Prix)
 - **Role:** Main wallcoverings contractor
 - **Scope:** Wallcovering installation
 

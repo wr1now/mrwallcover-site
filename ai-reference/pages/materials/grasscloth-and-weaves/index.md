@@ -1,7 +1,7 @@
 ---
 title: "Grasscloth and natural weave installation | Mr Wallcover"
 url: https://www.mrwallcover.com/materials/grasscloth-and-weaves/
-description: "Sisal, raffia, grass and other weaves. Colour and texture move from roll to roll."
+description: "Grasscloth, sisal, raffia and other natural weaves, hung by Mr Wallcover, including a Phillip Jeffries schedule in the 2018 programme at The Biltmore Mayfair."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -51,7 +51,19 @@ Clean hands, an adhesive that suits the backing, and enough length from one batc
 
 Dry and gentle. Adhesive on the face marks the weave. Not a washable surface.
 
-Digital colour is a guide. Order a cutting or a sample before you commit to a room. We can install material you have already bought, or source a family and install it. Either way, the next step is a short note about the room.
+Digital colour is a guide. Order a cutting or a sample before you commit to a room. Some makers’ own sample routes are listed under [official buying routes](https://www.mrwallcover.com/buying-routes/). We can install material you have already bought, or source a family and install it. Either way, the next step is a short note about the room.
+
+Before you order
+
+## For a high-value order
+
+- Workmanship is guaranteed for twelve months. [The aftercare page](https://www.mrwallcover.com/aftercare/) sets out what is covered.
+- Public liability, employers' liability and professional indemnity details are available on request.
+- Risk assessments and method statements (RAMS) on every job, with Dorin Burcus supervising on site.
+- A core team of six wallpaper hangers and six decorators who work together every day, scaling to 25–35 skilled tradespeople for large hotel programmes.
+- [For designers and architects](https://www.mrwallcover.com/professionals/designers/)
+- [Download the specification schedule (CSV)](https://www.mrwallcover.com/downloads/wallcovering-specification-schedule.csv)
+- [Trade and contractors](https://www.mrwallcover.com/trade/)
 
 Illustrative material study · confirm the actual finish with a sample
 
@@ -80,7 +92,7 @@ Plan the detail
 - [Choosing wallcoverings](https://www.mrwallcover.com/advice/choosing-wallcoverings/)
 - [Grasscloth seams and variation](https://www.mrwallcover.com/advice/grasscloth-seams-and-variation/)
 
-From our portfolio
+From our projects
 
 ## Selected work
 
@@ -93,7 +105,7 @@ Makers installed
 
 ## Grasscloth and natural weaves: makers we have hung
 
-Each in our own photograph of its product on the wall. A maker named here means Mr Wallcover installed that maker's product; it is not an approval, accreditation or endorsement.
+Each in our own photograph of its product on the wall. Naming a maker records an installation, not an endorsement.
 
 - ![Close-up of a woven, natural-texture Phillip Jeffries wallcovering, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-04-800.webp)
 
@@ -105,6 +117,12 @@ Installed at [The Biltmore Mayfair](https://www.mrwallcover.com/projects/biltmor
 
 ### Omexco
 
-Installed at a private project, London, 2017. [Our post](https://www.instagram.com/p/BaCaL9JAVaV/).
+Installed at a private project, London, 2017. [See the post](https://www.instagram.com/p/BaCaL9JAVaV/).
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+Grasscloth and natural weaves: send a short note about the room, or tell us you already have the material.
+
+[Discuss this material](https://www.mrwallcover.com/contact/?intent=source&service=wallcovering&topic=material%3Agrasscloth-and-weaves) [I already have it](https://www.mrwallcover.com/contact/?intent=install&service=wallcovering&topic=material%3Agrasscloth-and-weaves)
+
+[How we install grasscloth and natural weaves](https://www.mrwallcover.com/services/grasscloth-installation/)
+
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

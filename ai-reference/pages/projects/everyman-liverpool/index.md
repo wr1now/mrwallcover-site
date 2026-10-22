@@ -3,7 +3,7 @@ title: "Everyman cinema, Liverpool | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/everyman-liverpool/
 description: "Bespoke large-format digital wallcoverings of classic film and music imagery, installed at the Everyman cinema, Liverpool, in autumn 2018. Muraspec print."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 Metquarter, Liverpool
@@ -14,7 +14,7 @@ Bespoke extra-wide digital prints of classic film and music imagery for the Ever
 
 ![Colour digital-print mural of a classic Italian street scene in the Everyman cinema bar, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-11-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -64,7 +64,7 @@ A large print shows every bump beneath it, so the walls were prepared and lined 
 
 ## Photographs on this page
 
-Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), from October to December 2018: the finished murals first, then installation and preparation. The faces in the murals are printed artworks. The work is recorded in our posts of 24 October 2018 ([BpT508uHLMu](https://www.instagram.com/p/BpT508uHLMu/)) and 27 November 2018 ([BqsxZT2gAjQ](https://www.instagram.com/p/BqsxZT2gAjQ/)).
+Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), from October to December 2018: the finished murals first, then installation and preparation. The faces in the murals are printed artworks. The work is recorded in our posts of 24 October 2018 ([see the post](https://www.instagram.com/p/BpT508uHLMu/)) and 27 November 2018 ([see the post](https://www.instagram.com/p/BqsxZT2gAjQ/)).
 
 ## Photographs
 
@@ -84,6 +84,8 @@ Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.i
 
 ![Installer on a platform hanging the mural, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-14-800.webp)
 
+All 4 more photographs from this project
+
 ![Installer hanging a black-and-white film-star mural, Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-06-800.webp)
 
 ![Mobile scaffold tower beside a tall window during mural installation at the Everyman cinema, Liverpool.](https://www.mrwallcover.com/media/img/r/everyman-03-800.webp)
@@ -96,7 +98,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -126,7 +130,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -136,4 +140,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

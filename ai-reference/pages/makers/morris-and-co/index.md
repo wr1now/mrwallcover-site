@@ -16,11 +16,11 @@ Morris & Co. adapts archive designs into wallpaper and fabric collections. Its o
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://www.wmorrisandco.com/uk/about-us/) — checked 2026-10-17
-- [Official source](https://www.wmorrisandco.com/uk/owl-willow-wallpaper-bayleaf-orange-44043-217055/) — checked 2026-10-17
-- [Official source](https://www.wmorrisandco.com/eu/showrooms/) — checked 2026-10-17
-- [Official source](https://www.wmorrisandco.com/uk/terms-conditions/) — checked 2026-10-17
-- [Official source](https://www.wmorrisandco.com/uk/sample-service/) — checked 2026-10-17
+- [Official source: wmorrisandco.com/uk/about-us](https://www.wmorrisandco.com/uk/about-us/) — checked 17 October 2026
+- [Official source: wmorrisandco.com/uk/owl-willow-wallpaper-bayleaf-orange-44043-217055](https://www.wmorrisandco.com/uk/owl-willow-wallpaper-bayleaf-orange-44043-217055/) — checked 17 October 2026
+- [Official source: wmorrisandco.com/eu/showrooms](https://www.wmorrisandco.com/eu/showrooms/) — checked 17 October 2026
+- [Official source: wmorrisandco.com/uk/terms-conditions](https://www.wmorrisandco.com/uk/terms-conditions/) — checked 17 October 2026
+- [Official source: wmorrisandco.com/uk/sample-service](https://www.wmorrisandco.com/uk/sample-service/) — checked 17 October 2026
 
 [Visit maker website](https://www.wmorrisandco.com/uk/)
 
@@ -47,9 +47,9 @@ Terms and checks before ordering
 
 UK consumer terms govern; commercial use excluded for purchases on that site. Sample service offers five free samples; account necessity not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.wmorrisandco.com/uk/owl-willow-wallpaper-bayleaf-orange-44043-217055/)
+[Open official source: Shop or product ordering, UK regional store; mainland UK delivery explicitly evidenced](https://www.wmorrisandco.com/uk/owl-willow-wallpaper-bayleaf-orange-44043-217055/)
 
 ### Showroom or brand contact
 
@@ -70,9 +70,9 @@ Terms and checks before ordering
 
 Retail ordering access, appointment requirements, trade qualification and samples not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.wmorrisandco.com/eu/showrooms/)
+[Open official source: Showroom or brand contact, London, UK; Netherlands and US showroom contacts also listed](https://www.wmorrisandco.com/eu/showrooms/)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

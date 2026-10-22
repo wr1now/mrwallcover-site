@@ -621,3 +621,16 @@ The owner explicitly requested publishing the fuller local menu, superseding the
 The new `/room-studio/` introduction prevents the menu link opening a missing page. Three original Blender room studies explain the intended service and are labelled as illustrations. The page explicitly says the interactive photo/3D application is still completing testing; payment and AI services are not enabled by this release. The [artwork provenance](full-menu/room-study-provenance.md) records original sources, physical calibration and image hashes. No private manufacturer studies or customer files are included.
 
 Focused browser checks pass all twelve links at 360, 390, 768, 1024, 1280 and 1440px, including real destination responses, 44px clickable controls, mobile Enter/Escape/focus return, no horizontal overflow and both no-JavaScript layouts. Phone and desktop screenshots were visually inspected. Full-source and release-suite results follow in the final receipt before publication.
+
+
+### Focused audit release — 22 October 2026
+
+Retain the existing seven-section homepage, its headline, trust strip, photographs and closing copy. Only shared header/dock fixes, responsive derivatives of the same hero photograph and closing-heading alignment affect it. The navigation groups existing released destinations into primary and Resources rows. Contact remains `/get-in-touch/`; Start your project remains `/contact/`.
+
+Atelier and interactive Wallpaper My Room remain held. No feature branch is included; the existing room information source is unchanged and omitted from the menu. New photo placements, gallery caption revisions, new calculator entry points and material-cost guarantee extensions are deferred. Existing public guarantees and calculator functionality remain as published. No business dates, reply promises, insurance limits or testimonials are invented. Analytics stays off.
+
+Selected repairs improve client wording, form accessibility and validated contact values, shared navigation/dock behaviour, footer headings, long project/gallery disclosures and responsive variants of existing photographs. Phones keep the complete illustrated study posters without loading the desktop 3D renderer. The existing provider CAPTCHA remains enabled. Every route uses the installed shared design standard. No private archive or audit report is included.
+
+Verification is recorded below after the focused production build; historical full-audit screenshots do not establish this release's appearance.
+
+Focused local validation: production build; 167 source tests; 2 typography/hero-contrast tests; exact-main no-loss (130 pages and 130 Markdown twins preserved, 5,615 existing media files retained); strict configured private-name guard; case-study dates; and 16 before/after captures across home, contact, services and projects at 390/1440px. No horizontal overflow in those captures. Independent scope and technical reviews found no remaining material blocker. Full built-site and hosted release checks are recorded in the PR. No real enquiry was submitted or mailbox-delivery claim made.

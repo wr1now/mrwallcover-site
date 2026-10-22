@@ -16,10 +16,10 @@ The Wallcovering Guide · Choose and source
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://elitis.fr/en/collections/walls?qa=new) — checked 2026-10-17
-- [Official source](https://elitis.fr/en/expertise/our-signature) — checked 2026-10-17
-- [Official source](https://elitis.fr/en/faq) — checked 2026-10-17
-- [Official source](https://elitis.fr/en/retail-outlets/london-showroom) — checked 2026-10-17
+- [Official source: elitis.fr/en/collections/walls](https://elitis.fr/en/collections/walls?qa=new) — checked 17 October 2026
+- [Official source: elitis.fr/en/expertise/our-signature](https://elitis.fr/en/expertise/our-signature) — checked 17 October 2026
+- [Official source: elitis.fr/en/faq](https://elitis.fr/en/faq) — checked 17 October 2026
+- [Official source: elitis.fr/en/retail-outlets/london-showroom](https://elitis.fr/en/retail-outlets/london-showroom) — checked 17 October 2026
 
 [Visit maker website](https://elitis.fr/en/)
 
@@ -46,9 +46,9 @@ Terms and checks before ordering
 
 Account eligibility, direct retail ordering and sample costs: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://elitis.fr/en/retail-outlets/london-showroom)
+[Open official source: Showroom or brand contact, United Kingdom — London](https://elitis.fr/en/retail-outlets/london-showroom)
 
 ### Find a stockist or representative
 
@@ -69,9 +69,9 @@ Terms and checks before ordering
 
 Professionals: country representative route. Private individuals: direct contact permitted. Online availability requires professional extranet access.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://elitis.fr/en/faq)
+[Open official source: Find a stockist or representative, Country-dependent; international](https://elitis.fr/en/faq)
 
 ### Samples
 
@@ -92,9 +92,9 @@ Terms and checks before ordering
 
 FAQ describes an online swatch action. Charges, eligibility and UK sample delivery: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://elitis.fr/en/faq)
+[Open official source: Samples, Website; delivery territory not stated](https://elitis.fr/en/faq)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

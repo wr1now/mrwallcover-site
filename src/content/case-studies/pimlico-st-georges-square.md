@@ -14,7 +14,7 @@
   "metaDescription": "Full exterior on St George's Square, Pimlico, in 2024: scaffolding supplied and managed, masonry and render painting, windows and entrance ironwork.",
   "group": null,
   "method": "exterior",
-  "standfirst": "A full exterior on St George's Square in 2024: scaffold supplied and managed by the practice, masonry and render repairs, painting, windows and the entrance ironwork.",
+  "standfirst": "A full exterior on St George's Square in 2024: scaffold supplied and managed by us, masonry and render repairs, painting, windows and the entrance ironwork.",
   "hero": "pimlico-st-georges-square-exterior-11",
   "gallery": [
     { "id": "pimlico-st-georges-square-exterior-11", "credit": null },
@@ -28,7 +28,7 @@
     { "id": "pimlico-st-georges-square-exterior-10", "credit": null }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-18"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -37,12 +37,12 @@
 - **Building:** a stucco townhouse of flats on St George's Square, Pimlico
 - **Survey:** June 2024
 - **Works:** July to November 2024. The scaffold was struck in late November 2024
-- **Scope:** full front and rear exterior. Scaffolding supplied and managed by the practice
+- **Scope:** full front and rear exterior. Scaffolding supplied and managed by us
 
 ## The work
 
 The survey was in June 2024. Works ran from July to November 2024, and the scaffold came down in late November.
 
-The scaffold for the front and the rear was supplied and managed by the practice. Repairs took in the cornice, the pediment and the portico, where cracks were made good, and the parapet. Masonry and render were painted in a Dulux Trade system. Sills and entrance joinery, the columns, the balustrade and the railings were finished with the elevation.
+We supplied and managed the scaffold for the front and the rear. Repairs took in the cornice, the pediment and the portico, where cracks were made good, and the parapet. Masonry and render were painted in a Dulux Trade system. Sills and entrance joinery, the columns, the balustrade and the railings were finished with the elevation.
 
 A private residential building, named here by street only.

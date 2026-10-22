@@ -1,7 +1,7 @@
 ---
 title: "Fabric Walling & Textile Wallcovering, London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/fabric-walling/
-description: "Fabric walling and textile wallcovering installation in London. Wider goods, careful edges at joinery, skirtings and reveals."
+description: "Fabric walling and textile wallcovering installation in London, including fabric-wrapped wall panels at Four Seasons Hotel London at Ten Trinity Square."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -12,7 +12,7 @@ Services
 
 Textile on the wall, often in wider goods, for drawing rooms, bedrooms, dressing rooms and hotel suites.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Afabric-walling) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Afabric-walling) [See the work](https://www.mrwallcover.com/projects/)
 
 Fabric walling needs care at the edges and wherever it meets joinery, skirtings and reveals. The set-out is planned so joins fall where they are least seen.
 
@@ -22,7 +22,7 @@ As with every material, aftercare is included: a return visit once the room has 
 
 ![Fabric-wrapped wall panels beneath two framed artworks in a hotel room, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-36-800.webp)
 
-Fabric-wrapped wall panels beneath framed artworks at [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/).Photograph: Mr Wallcover.
+Fabric-wrapped wall panels beneath framed artworks at [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/). Photograph: Mr Wallcover.
 
 01
 
@@ -42,7 +42,7 @@ Fabric walling needs care at the edges and wherever it meets joinery, skirtings 
 
 ## Textiles on the record
 
-At [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/), the wallcoverings included Phillip Jeffries Tweed, Fromental silks and Dedar. At [Raffles London at The OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/), selected suites have Vescom Alcantara. A maker named here means we installed that maker's product; it is not an approval or an endorsement.
+At [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/), the wallcoverings included Phillip Jeffries Tweed, Fromental silks and Dedar. At [Raffles London at The OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/), selected suites have Vescom Alcantara. Naming a maker records an installation, not an endorsement.
 
 04
 
@@ -60,7 +60,7 @@ The quotation comes from a site survey or from drawings: the measured area, the 
 
 [![Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp)](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
-Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.Photograph: Mr Wallcover.
+Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench. Photograph: Mr Wallcover.
 
 ### [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
@@ -70,7 +70,7 @@ Guest room, suite and private residence wallpapering, 2016–2019.
 
 Questions
 
-## Asked about Fabric walling
+## Questions we are asked
 
 Illustrative material studies
 
@@ -90,10 +90,10 @@ There is no flat rate per roll. The quotation comes from a site survey or from d
 
 ### Do you take on single rooms, or only larger projects?
 
-We focus on whole residences and hotel packages, and will take on one- or two-room commissions.
+We focus on whole residences and hotel packages, and will take on one- or two-room commissions. The minimum installation commission is one room.
 
 ### What aftercare and guarantee are included?
 
-Aftercare is part of every commission: a return inspection about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.
+Aftercare is part of every commission: a return visit about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

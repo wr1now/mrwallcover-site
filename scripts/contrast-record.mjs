@@ -94,6 +94,8 @@ function resolve(tokens, spec) {
 
 const GLASS_BACKDROPS = ['#ffffff', 'ink'];
 const champagne = { tint: 'ivory', alpha: 'glass-champagne-alpha', over: GLASS_BACKDROPS };
+/* The header over a dark band (data-over-dark): the olive aftercare and craft bands (#343a30 in atelier.css), the AI Crawler reference page (#151d1a) and ink. */
+const champagneOverDark = { tint: 'ivory', alpha: 'glass-champagne-alpha-over-dark', over: ['#343a30', '#151d1a', 'ink'] };
 const smoked = { tint: 'ink', alpha: 'glass-smoked-alpha', over: GLASS_BACKDROPS };
 const clearLight = { tint: '#ffffff', alpha: 'glass-clear-alpha', over: ['#ffffff', 'ivory', 'paper'] };
 const clearDark = { tint: '#ffffff', alpha: 'glass-clear-alpha', over: ['ink'] };
@@ -127,6 +129,11 @@ export const PAIRS = [
   { id: 'brass/champagne (small)', fg: 'brass', bg: champagne, size: 'body', status: 'forbidden', where: 'brass is not small text on glass' },
   { id: 'gold/champagne', fg: 'gold', bg: champagne, size: 'body', status: 'forbidden', where: 'gold is never text on glass' },
   { id: 'nav current line/champagne', fg: 'brass', bg: champagne, size: 'ui', status: 'used', where: '.nav-link[aria-current] 1px brass rule' },
+  // Champagne over a dark band (the header with data-over-dark)
+  { id: 'ink/champagne over dark', fg: 'ink', bg: champagneOverDark, size: 'body', status: 'used', where: 'header links, "Menu", wordmark while a dark band is under the bar' },
+  { id: 'stone/champagne over dark', fg: 'stone', bg: champagneOverDark, size: 'body', status: 'used', where: 'Resources label and links while a dark band is under the bar' },
+  { id: 'brass/champagne over dark (large)', fg: 'brass', bg: champagneOverDark, size: 'large', status: 'used', where: 'wordmark "Mr" while a dark band is under the bar' },
+  { id: 'focus ring/champagne over dark', fg: 'brass', bg: champagneOverDark, size: 'ui', status: 'used', where: 'header focus outline while a dark band is under the bar' },
   // Smoked glass (controls over dark photography; no shipped title uses it)
   { id: 'ivory/smoked', fg: 'ivory', bg: smoked, size: 'body', status: 'used', where: 'Glass variant="smoked" text' },
   { id: 'ivory-soft/smoked', fg: 'ivory-soft', bg: smoked, size: 'body', status: 'used', where: 'secondary text on smoked' },
@@ -137,7 +144,7 @@ export const PAIRS = [
   { id: 'ink/clear over ink', fg: 'ink', bg: clearDark, size: 'body', status: 'forbidden', where: 'why clear glass never sits over dark photography' },
   { id: 'clear border/light', fg: { tint: 'ink', alpha: 'glass-clear-border-alpha', over: ['ivory'] }, bg: 'ivory', size: 'ui', status: 'noted', where: 'clear 1px ink ring at 12%: decorative, the control is identified by its label and ink text' },
   // Opaque dock (champagne without blur)
-  { id: 'ink/dock', fg: 'ink', bg: dock, size: 'body', status: 'used', where: 'dock labels (13px) on the opaque champagne dock' },
+  { id: 'ink/dock', fg: 'ink', bg: dock, size: 'body', status: 'used', where: 'dock labels (15px) on the opaque champagne dock' },
   // User-interface boundaries and indicators (1.4.11, 3:1)
   { id: 'ghost ring/ink', fg: ghostRing, bg: 'ink', size: 'ui', status: 'used', where: '.btn-ghost border, ivory at 45% on ink' },
   { id: 'line border/ivory', fg: 'ink', bg: 'ivory', size: 'ui', status: 'used', where: '.btn-line border' },
@@ -175,7 +182,8 @@ function fmt(n) {
   return `${n.toFixed(2)}:1`;
 }
 
-export function render(results) {
+export function render(results, tokens = readTokens()) {
+  const percent = (name) => `${Math.round(Number(tokens.get(name)) * 100)}%`;
   const lines = [
     '# Contrast record',
     '',
@@ -203,7 +211,8 @@ export function render(results) {
     '- Brass is text on ivory and paper, and on champagne glass only at display size (the wordmark). Eyebrows on glass are stone or ink.',
     '- Smoked glass carries ivory text and sits over dark photography or the studio stage. It carries no page title.',
     '- Clear glass is for small controls over the page and other light surfaces. Over ink it fails, so it is not used there.',
-    '- The dock is champagne without blur (ivory at 96%), so the header is the only blurred surface on phones.',
+    `- The dock is champagne without blur (ivory at ${percent('glass-dock-alpha')}), so the header is the only blurred surface on phones.`,
+    `- While a dark band is under the header (data-over-dark, set by the Header script) the champagne rises from ivory at ${percent('glass-champagne-alpha')} to ${percent('glass-champagne-alpha-over-dark')}, so the bar reads ivory, not grey.`,
     '',
   );
   return lines.join('\n');

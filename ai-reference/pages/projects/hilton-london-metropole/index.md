@@ -3,7 +3,7 @@ title: "Hilton London Metropole | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/hilton-london-metropole/
 description: "Wallcoverings at Hilton London Metropole, Paddington, in 2019: a jet-black Muraspec wallcovering and Vescom on the wall panels of a large conference room."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 Edgware Road, Paddington, London W2
@@ -14,7 +14,7 @@ Jet-black Muraspec wallcovering, and Vescom wallcovering on the wall panels of a
 
 ![Large conference room at the Hilton London Metropole with Vescom-covered wall panels.](https://www.mrwallcover.com/media/img/r/metropole-05-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -54,7 +54,7 @@ Panelled walls in a conference room are covered panel by panel. Each panel is wr
 
 ## Photographs on this page
 
-Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), in September and November 2019: the conference room first, then the wallcoverings and the hotel. The work is recorded in our posts of 29 September 2019 ([B3AAo9sFAE_](https://www.instagram.com/p/B3AAo9sFAE_/)) and 27 November 2019 ([B5XtSRtFedQ](https://www.instagram.com/p/B5XtSRtFedQ/)).
+Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), in September and November 2019: the conference room first, then the wallcoverings and the hotel. The work is recorded in our posts of 29 September 2019 ([see the post](https://www.instagram.com/p/B3AAo9sFAE_/)) and 27 November 2019 ([see the post](https://www.instagram.com/p/B5XtSRtFedQ/)).
 
 ## Photographs
 
@@ -74,7 +74,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -104,7 +106,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -114,4 +116,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

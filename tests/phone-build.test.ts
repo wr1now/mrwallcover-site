@@ -34,6 +34,12 @@ function mirrorDigests(files: Map<string, string>) {
   return [...files].map(([name, text]) => [name, createHash('sha256').update(text).digest('hex')]);
 }
 
+async function cssFiles(dir: string): Promise<string> {
+  const assets = path.join(dir, '_astro');
+  const names = (await readdir(assets)).filter((name) => name.endsWith('.css'));
+  return (await Promise.all(names.map((name) => readFile(path.join(assets, name), 'utf8')))).join('\n');
+}
+
 async function htmlFiles(dir: string): Promise<string[]> {
   const entries = await readdir(dir, { withFileTypes: true });
   const out: string[] = [];
@@ -150,7 +156,15 @@ test('with SITE_PHONE the reveal control and WhatsApp link render, and the numbe
     const bookText = [...html.matchAll(/<a\b[^>]*\bdata-book\b[^>]*>([\s\S]*?)<\/a>/g)].map((m) => m[1].replace(/<[^>]+>/g, ''));
     assert.ok(bookText.length === book.length && bookText.every((t) => t === 'Book a call'), 'the visible label is exactly "Book a call"');
     assert.match(contact, /Calls Mon–Fri, 9am–5pm UK\./);
-    assert.doesNotMatch(home, /Calls Mon–Fri/, 'the hours line is on the contact page only');
+    assert.doesNotMatch(home, /Calls Mon–Fri/, 'the "Calls" hours line is on the contact pages only');
+    // The thank-you booking hint follows the link, outside it, so the link text stays "Book a call". It is its own
+    // full-width row item, not inside the button's cell, so it cannot widen the gap before the next button.
+    const thanks = await readFile(path.join(dir, 'thank-you', 'index.html'), 'utf8');
+    assert.match(thanks, /<\/a>\s*<p class="booking-hint[^"]*\bbasis-full\b[^"]*">20(?:&nbsp;|\u00a0)minutes, Mon–Fri, 9am–5pm UK\.<\/p>/);
+    assert.doesNotMatch(thanks, /<p class="m-0">\s*<a\b[^>]*data-book/, 'the thank-you button is not wrapped in a cell');
+    // The attachment help offers WhatsApp for photographs, in a span that goes with the link when JavaScript is off.
+    const help = contact.slice(contact.indexOf('id="attachment-help"')).split('</p>')[0];
+    assert.match(help, /<span data-wa-item>\s*Or send them on <a href="\/contact\/" data-wa\b[\s\S]*?<span>WhatsApp<\/span><\/a>\.<\/span>/);
     // The phone reveal is unchanged: still a button, the number still only in the payload.
     assert.doesNotMatch(home, /<button\b[^>]*data-phone-reveal/);
     assert.doesNotMatch(nav, /data-book/);
@@ -158,6 +172,10 @@ test('with SITE_PHONE the reveal control and WhatsApp link render, and the numbe
     const touch = await readFile(path.join(dir, 'get-in-touch', 'index.html'), 'utf8');
     assert.match(touch, /<button\b[^>]*data-phone-reveal/);
     assert.match(touch, /data-wa/);
+    // Without JavaScript the reveal cannot show the number: the button and its phone card are hidden together.
+    assert.match(touch, /<li\b[^>]*\bdata-phone-item\b[^>]*>(?:(?!<\/li>)[\s\S])*<button\b[^>]*data-phone-reveal/);
+    assert.match(await cssFiles(dir), /html:not\(\.js\) \[data-phone-reveal\]/);
+    assert.match(touch, /Calls Mon–Fri, 9am–5pm UK\./, 'the hours line on /get-in-touch/ matches /contact/');
     const mirror = await expectedReaderMirrorFiles({ distDir: dir });
     assert.match(mirror.get('pages/contact/index.md')!, /The phone is answered by Dorin Burcus himself; the number is shown on request\./);
     assert.match(mirror.get('pages/get-in-touch/index.md')!, /Write, call or send a message, whichever suits you\./);

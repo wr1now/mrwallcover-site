@@ -19,11 +19,11 @@
   "gallery": [
     {
       "id": "doubletree-west-end-commons-01",
-      "credit": "The hotel on Southampton Row, 2024. A view of the building, not of our work. Photography: Frombowen / Wikimedia Commons (CC BY-SA 4.0)."
+      "credit": "The hotel on Southampton Row, 2024. Venue photograph, not our work. Photograph: Frombowen / Wikimedia Commons (CC BY-SA 4.0)."
     },
     {
       "id": "doubletree-west-end-commons-02",
-      "credit": "The former Bonnington Hotel, now the DoubleTree, 2026. A view of the building, not of our work. Photography: APK / Wikimedia Commons (CC BY 4.0)."
+      "credit": "The former Bonnington Hotel, now the DoubleTree, 2026. Venue photograph, not our work. Photograph: APK / Wikimedia Commons (CC BY 4.0)."
     },
     {
       "id": "hilton-holborn-01",
@@ -71,7 +71,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -99,7 +99,7 @@ For a similar guest-room package, send the room types, the programme and who sup
 
 The first three are photographs of the building, two of them by the photographers credited below. They show the building, not our work.
 
-The others are our own photographs of the finished rooms and corridors, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/): one from December 2017 ([BdNpAgPArnf](https://www.instagram.com/p/BdNpAgPArnf/)) and the rest from 19 July 2019 ([B0GpM3Vlmkh](https://www.instagram.com/p/B0GpM3Vlmkh/)), the post that records the 30 rooms on levels 5 and 6.
+The others are our own photographs of the finished rooms and corridors, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/): one from December 2017 ([see the post](https://www.instagram.com/p/BdNpAgPArnf/)) and the rest from 19 July 2019 ([see the post](https://www.instagram.com/p/B0GpM3Vlmkh/)), the post that records the 30 rooms on levels 5 and 6.
 
 - The hotel on Southampton Row, 2024: photograph by Frombowen, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_Hotel_London_-_West_End.jpg). Resized for the web.
 - The former Bonnington Hotel, now the DoubleTree, 2026: photograph by APK, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_-_Southampton_Row,_London.jpg). Resized for the web.

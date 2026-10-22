@@ -16,9 +16,9 @@ de Gournay offers hand-painted wallpaper and embroidered wallcoverings. Its made
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://degournay.com/how-to-order) — checked 2026-10-17
-- [Official source](https://degournay.com/contactus) — checked 2026-10-17
-- [Official source](https://degournay.com/stock) — checked 2026-10-17
+- [Official source: degournay.com/how-to-order](https://degournay.com/how-to-order) — checked 17 October 2026
+- [Official source: degournay.com/contactus](https://degournay.com/contactus) — checked 17 October 2026
+- [Official source: degournay.com/stock](https://degournay.com/stock) — checked 17 October 2026
 
 [Visit maker website](https://degournay.com/)
 
@@ -45,9 +45,9 @@ Terms and checks before ordering
 
 Account eligibility and sample conditions: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://degournay.com/contactus)
+[Open official source: Showroom or brand contact, UK; overseas showrooms separately listed](https://degournay.com/contactus)
 
 ### Stock information and enquiry
 
@@ -68,9 +68,9 @@ Terms and checks before ordering
 
 Account, sample and destination shipping terms: not established; ask the maker.
 
-Official page checked 2026-10-18. Website evidence, not a test order.
+Checked on the official website on 18 October 2026. This check did not include placing an order.
 
-[Open official source](https://degournay.com/stock)
+[Open official source: Stock information and enquiry, Destination-dependent; UK shipping unverified](https://degournay.com/stock)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

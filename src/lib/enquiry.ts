@@ -3,7 +3,8 @@ import { preferencesFromJSON } from './material-advice.ts';
 
 /**
  * Enquiry validation shared by the browser form and the private lead API.
- * One reliable reply method is required: email or phone, not both.
+ * One reliable reply method is required, email or phone. The other is optional and kept only
+ * when it is usable: a valid email address, or a phone number with at least eight digits.
  */
 
 export const FILE_LIMITS = {
@@ -182,7 +183,7 @@ export function validateEnquiry(input: EnquiryFields): { ok: true; value: ValidE
       kind,
       name,
       email: replyBy === 'email' ? email : email && EMAIL.test(email) ? email : '',
-      phone: replyBy === 'phone' ? phone : '',
+      phone: replyBy === 'phone' ? phone : phone.replace(/\D/g, '').length >= 8 ? phone : '',
       replyBy: replyBy as ReplyBy,
       message,
       audience,

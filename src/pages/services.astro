@@ -21,7 +21,7 @@ const heritageEditorials = serviceEditorials.filter((page) => page.path === '/se
 const makerEditorials = serviceEditorials.filter((page) => !heritageEditorials.includes(page));
 const stageVisuals: Record<string, { icon: IconName; study: DesignObjectKind; diagram: DiagramKind; caption: string; image?: string; imageCaption?: string }> = {
   surveying: { icon: 'ruler', study: 'measure', diagram: 'survey', caption: 'Record the wall, openings and a true vertical before setting out the paper.' },
-  management: { icon: 'calendar', study: 'calendar', diagram: 'programme', caption: 'Illustrative sequence only. Delivery, overlaps and working dates are agreed for each project.' },
+  management: { icon: 'calendar', study: 'calendar', diagram: 'programme', caption: 'Delivery, overlaps and working dates are agreed for each project.' },
   supply: { icon: 'roll', study: 'roll', diagram: 'supply', caption: 'Product, batch and delivered quantity are checked against the agreed schedule.' },
   installation: { icon: 'layers', study: 'junction', diagram: 'setout', caption: 'The focal point and the end panels guide the layout before any length is cut.', image: 'browns-hotel-mayfair-07', imageCaption: 'Adam’s Eden at Brown’s Hotel, Mayfair, during installation. Floors remain protected. Mr Wallcover project photograph.' },
   aftercare: { icon: 'check', study: 'care', diagram: 'inspection', caption: 'Look at seams, edges and junctions once the paper has settled.', image: 'browns-hotel-mayfair-12', imageCaption: 'Wallcovering meeting the cornice and door case at Brown’s Hotel, Mayfair. Mr Wallcover project photograph.' },
@@ -50,7 +50,7 @@ const stageVisuals: Record<string, { icon: IconName; study: DesignObjectKind; di
         {services.pillars.map((pillar) => <a href={`#${pillar.id}`}><Icon name={stageVisuals[pillar.id].icon} /><span>{pillar.title}</span></a>)}
       </nav>
     </header>
-    <div class="prose pb-12"><CommissionScope /></div>
+    <CommissionScope variant="client" />
   </div>
 
   {
@@ -63,7 +63,13 @@ const stageVisuals: Record<string, { icon: IconName; study: DesignObjectKind; di
               <h2>{pillar.title}</h2>
             </header>
             <div class="prose">
-              {pillar.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              {/* Each guide link follows the paragraph it expands on: quantities, the core team on /about/, then set-out. */}
+              {pillar.paragraphs.map((paragraph, i) => <>
+                <p>{paragraph}</p>
+                {pillar.id === 'surveying' && i === 1 && <p><a href="/advice/quantities/">The quantities guide</a> shows how the order is worked out.</p>}
+                {pillar.id === 'management' && i === 2 && <p><a href="/about/#how-heading">How we work</a> describes the core team and how it scales for large hotel programmes.</p>}
+                {pillar.id === 'installation' && i === 2 && <p><a href="/advice/set-out-and-pattern-matching/">The set-out and pattern matching guide</a> explains the method.</p>}
+              </>)}
               {pillar.id === 'installation' && <p>Specialist detailing: <a href="/projects/imperfect-arches-external-corner-trim/">how we finish an imperfect arch with a bespoke external-corner trim</a></p>}
               {pillar.id === 'aftercare' && <p><a href="/aftercare/">The aftercare page</a></p>}
             </div>
@@ -72,7 +78,7 @@ const stageVisuals: Record<string, { icon: IconName; study: DesignObjectKind; di
             <DesignStudy kind={stageVisuals[pillar.id].study} caption={`${pillar.id === 'supply' ? 'Illustrative wallpaper roll.' : 'Illustrative study.'} ${stageVisuals[pillar.id].caption}`} />
             {pillar.id !== 'supply' && <details class="service-stage-schematic">
               <summary>View the {pillar.title.toLowerCase()} schematic</summary>
-              <TechnicalDiagram kind={stageVisuals[pillar.id].diagram} caption={stageVisuals[pillar.id].caption} />
+              <TechnicalDiagram kind={stageVisuals[pillar.id].diagram} />
             </details>}
           </div>
           {stageVisuals[pillar.id].image && <figure class="service-stage-photo">

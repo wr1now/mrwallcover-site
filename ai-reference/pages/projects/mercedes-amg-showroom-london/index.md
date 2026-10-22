@@ -3,7 +3,7 @@ title: "Mercedes-AMG showroom, London | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/
 description: "Black matt Muraspec wallcoverings supplied and installed at a Mercedes-AMG showroom in London in 2019, with brushed-steel trims at doors and skirtings."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 London
@@ -14,7 +14,7 @@ Supply and fit of black matt Muraspec wallcoverings through one of the newest Me
 
 ![Curved staircase beside walls finished in black matt wallcovering, Mercedes-AMG showroom, London.](https://www.mrwallcover.com/media/img/r/mercedes-amg-06-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -59,7 +59,7 @@ Around each door and above each skirting a narrow brushed stainless-steel trim f
 
 ## Photographs on this page
 
-Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), in September 2019 and May 2021: the finished showroom first, then the door and skirting details, and a collage from the works. The scope is recorded in our posts of 7 September 2019 ([B2HM9AWlG3w](https://www.instagram.com/p/B2HM9AWlG3w/)) and 13 September 2019 ([B2V9cZklfv9](https://www.instagram.com/p/B2V9cZklfv9/)).
+Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), in September 2019 and May 2021: the finished showroom first, then the door and skirting details, and a collage from the works. The scope is recorded in our posts of 7 September 2019 ([see the post](https://www.instagram.com/p/B2HM9AWlG3w/)) and 13 September 2019 ([see the post](https://www.instagram.com/p/B2V9cZklfv9/)).
 
 ## Photographs
 
@@ -77,7 +77,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -107,7 +109,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -117,4 +119,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

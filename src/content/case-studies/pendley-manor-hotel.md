@@ -80,7 +80,7 @@
     }
   ],
   "published": "2026-10-11",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -110,4 +110,4 @@ Velvet flock is a raised pile on a paper ground. It marks easily and cannot be w
 
 Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), in January and February 2020: the finished red damask rooms first, then rooms during works, the ceilings and the papers.
 
-Source for the figures: our Instagram post of 2 January 2020 ([B60Ncb2FWZS](https://www.instagram.com/p/B60Ncb2FWZS/)): 30 rooms in 30 days, Anaglypta for the ceilings, lining on all walls and 20 different wallpapers.
+Source for the figures: our Instagram post of 2 January 2020 ([see the post](https://www.instagram.com/p/B60Ncb2FWZS/)): 30 rooms in 30 days, Anaglypta for the ceilings, lining on all walls and 20 different wallpapers.

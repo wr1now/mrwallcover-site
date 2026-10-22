@@ -5,24 +5,27 @@ import Action from '../components/Action.astro';
 import Base from '../layouts/Base.astro';
 import { faq, faqItems } from '../lib/content';
 import { breadcrumbNode, faqNode } from '../lib/schema';
+import { buyerFaqFor } from '../lib/ai-layer-data';
 
 const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'Questions', href: '/faq/' },
 ];
+// The page's own questions first, then any buyer questions placed on it (src/data/buyer-answers.json `pages`): one visible list, one FAQPage.
+const items = [...faqItems, ...buyerFaqFor('/faq/').map((item) => ({ id: item.id, question: item.question, paragraphs: [item.answer] }))];
 ---
 
 <Base
   title={faq.title}
   description={faq.description}
   path="/faq/"
-  extraSchema={[faqNode(faqItems), breadcrumbNode(crumbs)]}
+  extraSchema={[faqNode(items), breadcrumbNode(crumbs)]}
 >
   <div class="container-page">
     <header class="page-head pb-0">
       <Breadcrumb items={crumbs} />
     </header>
   </div>
-  <FaqList items={faqItems} eyebrow={faq.eyebrow} heading={faq.heading} lede={faq.lede} titleLevel="h1" />
-  <div class="container-page pb-16"><Action href="/contact/?intent=advice">Ask about your project</Action></div>
+  <FaqList items={items} eyebrow={faq.eyebrow} heading={faq.heading} lede={faq.lede} titleLevel="h1" />
+  <div class="container-page pb-16"><Action href="/contact/?intent=advice">Start your project</Action></div>
 </Base>

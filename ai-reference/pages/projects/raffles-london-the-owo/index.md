@@ -1,22 +1,22 @@
 ---
 title: "Raffles London at The OWO, Whitehall | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/raffles-london-the-owo/
-description: "Wallcovering installation at Raffles London at The OWO, Whitehall, 2020–2023. Bespoke Vescom wallcoverings for the guest rooms of London's most storied…"
+description: "Wallcovering installation at Raffles London at The OWO, Whitehall, 2020–2023: bespoke Vescom wallcoverings, chosen to install about 17,500 m² in 18 months."
 author: "Dorin Burcus"
-last_updated: 2026-10-10
+last_updated: 2026-10-22
 ---
 
 The Old War Office, Whitehall, London SW1A 2BX
 
 # Raffles London at The OWO, Whitehall
 
-Bespoke Vescom wallcoverings for the guest rooms of London's most storied address, the Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.
+Bespoke Vescom wallcoverings for the guest rooms of Raffles London at The OWO, the former Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.
 
-![Classic room at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/owo-official-classic.jpg)
+![Classic room at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/r/owo-official-classic-800.webp)
 
 Image: Raffles London at The OWO (official)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -49,16 +49,7 @@ Client, materials & project facts
 - **Role:** Wallcovering installation
 - **Wallcoverings:** a bespoke [Vescom](https://vescom.com/en/wallcovering) wallcovering made for the hotel; Vescom [Alcantara](https://www.alcantara.com/solutions/alcantara-interior-design/) in selected suites
 - **Scope:** Installation to bedrooms and several other areas, including walls and parts of the joinery
-
-## The building
-
-Designed by William Young and completed in 1906 to the Edwardian Baroque, the Old War Office rose on Whitehall from 26,000 tons of Portland stone and some 25 million bricks. Young died before it was finished; his son Clyde Young and Sir John Taylor completed the design.
-
-The building stands on Whitehall. It looks over the Royal Horse Guards and sits a short walk from Downing Street, Buckingham Palace and St James’s Park.
-
-For almost six decades it was the seat of Britain’s military administration. Lord Haldane, Lord Kitchener, David Lloyd George and Winston Churchill all held office here as Secretary of State for War, and Douglas Haig served at the War Office as Director of Military Training and then Director of Staff Duties. In October 1914 a young T. E. Lawrence joined its Geographical Section. In 1960 John Profumo arrived as Secretary of State for War; his affair with Christine Keeler, and his resignation in 1963, nearly toppled the government.
-
-Its secrets run deeper still. Britain’s Secret Service Bureau, the forerunner of MI5 and MI6, was created in meetings at the War Office in 1909. Ian Fleming, a wartime naval intelligence officer, would have known the building, and its air of espionage helped inspire James Bond; the building has since appeared as MI6 in Bond films. After a comprehensive eight-year restoration under the Hinduja Group and ONEX Holding, the building opened on 29 September 2023 as The OWO, home to Raffles London, the brand’s first hotel in the United Kingdom.
+- **Scale:** chosen to install about 17,500 m² of wallcoverings in 18 months
 
 ## The brief
 
@@ -74,16 +65,28 @@ To install the hotel’s wallcoverings in the bedrooms and several other areas: 
 
 **Seam and shade control.** With a bespoke production run, consistency from roll to roll and room to room is paramount. Batches were checked and managed so that corridors of rooms read as one.
 
-**Coordination.** Work was sequenced alongside the other trades and the main contractor within one of London’s most complex heritage restorations.
+**Coordination.** Work was sequenced alongside the other trades and the main contractor during the building’s restoration.
 
 ## Materials
 
-- **[Vescom](https://vescom.com/en/wallcovering), bespoke:** a wallcovering made specifically for the hotel. Vescom produces custom wallcoverings through its [Customise](https://vescom.com/en/customise) service ([Custom Colour](https://vescom.com/en/customise/custom-colour) and [Wallcovering+Print](https://vescom.com/en/customise/wallcovering-print)); the exact base product and reference are not recorded here.
+- **[Vescom](https://vescom.com/en/wallcovering), bespoke:** a wallcovering made specifically for the hotel. Vescom produces custom wallcoverings through its [Customise](https://vescom.com/en/customise) service ([Custom Colour](https://vescom.com/en/customise/custom-colour) and [Wallcovering+Print](https://vescom.com/en/customise/wallcovering-print)).
 - **Vescom Alcantara:** the Italian material [Alcantara](https://www.alcantara.com/solutions/alcantara-interior-design/), known for its soft, suede-like hand, used in selected suites.
 
 ## Outcome
 
-Our team installed the wallcoverings for the bedrooms and several other areas of this remarkable building. Raffles notes that its rooms and suites feature customised carpets, fabrics and wallcoverings; it is a quiet satisfaction to have hung some of them.
+We were chosen in 2021 to install about 17,500 m² of wallcoverings in 18 months, in the bedrooms and several other areas. Raffles notes that its rooms and suites feature customised carpets, fabrics and wallcoverings; we hung some of those wallcoverings.
+
+## The building
+
+Designed by William Young and completed in 1906 to the Edwardian Baroque, the Old War Office stands on Whitehall. After an eight-year restoration under the Hinduja Group and ONEX Holding it opened on 29 September 2023 as The OWO, home to Raffles London, the brand’s first hotel in the United Kingdom.
+
+About the building
+
+The building rose from 26,000 tons of Portland stone and some 25 million bricks. Young died before it was finished; his son Clyde Young and Sir John Taylor completed the design. It looks over the Royal Horse Guards and sits a short walk from Downing Street, Buckingham Palace and St James’s Park.
+
+For almost six decades it was the seat of Britain’s military administration. Lord Haldane, Lord Kitchener, David Lloyd George and Winston Churchill all held office here as Secretary of State for War, and Douglas Haig served at the War Office as Director of Military Training and then Director of Staff Duties. In October 1914 a young T. E. Lawrence joined its Geographical Section. In 1960 John Profumo arrived as Secretary of State for War; his affair with Christine Keeler, and his resignation in 1963, nearly toppled the government.
+
+Britain’s Secret Service Bureau, the forerunner of MI5 and MI6, was created in meetings at the War Office in 1909. Ian Fleming, a wartime naval intelligence officer, would have known the building, and its air of espionage helped inspire James Bond; the building has since appeared as MI6 in Bond films.
 
 ## Notes and sources
 
@@ -96,23 +99,23 @@ Our team installed the wallcoverings for the bedrooms and several other areas of
 
 ## Photographs
 
-![Deluxe Double room at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/owo-official-deluxe-double.jpg)
+![Deluxe Double room at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/r/owo-official-deluxe-double-800.webp)
 
 Image: Raffles London at The OWO (official)
 
-![Deluxe Twin room at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/owo-official-deluxe-twin.jpg)
+![Deluxe Twin room at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/r/owo-official-deluxe-twin-800.webp)
 
 Image: Raffles London at The OWO (official)
 
-![Junior Suite at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/owo-official-junior-suite.jpg)
+![Junior Suite at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/r/owo-official-junior-suite-800.webp)
 
 Image: Raffles London at The OWO (official)
 
-![Executive room at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/owo-official-executive.jpg)
+![Executive room at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/r/owo-official-executive-800.webp)
 
 Image: Raffles London at The OWO (official)
 
-![Lifestyle Suite bedroom at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/owo-official-lifestyle-suite.jpg)
+![Lifestyle Suite bedroom at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/r/owo-official-lifestyle-suite-800.webp)
 
 Image: Raffles London at The OWO (official)
 
@@ -120,7 +123,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -150,7 +155,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -160,4 +165,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 10 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

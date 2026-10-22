@@ -35,7 +35,7 @@
     }
   ],
   "published": "2026-10-11",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -55,4 +55,4 @@ A large floral is set out from the centre of the main wall, so the pattern sits 
 
 ## Photographs on this page
 
-Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 22 July 2019 ([B0O1YqbF4Vp](https://www.instagram.com/p/B0O1YqbF4Vp/)). We have worked with Jaillon Studio again since, on the [tea house in West London](/projects/tea-house-jaillon-studio/).
+Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 22 July 2019 ([see the post](https://www.instagram.com/p/B0O1YqbF4Vp/)). We have worked with Jaillon Studio again since, on the [tea house in West London](/projects/tea-house-jaillon-studio/).

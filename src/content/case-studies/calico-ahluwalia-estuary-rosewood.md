@@ -8,10 +8,10 @@
   "years": "2026",
   "role": "Specialist installation of the Estuary mural backdrop, against a fixed show deadline",
   "wallcoverings": [
-    "Calico Wallpaper x Ahluwalia – Estuary (bespoke mural)"
+    "Calico Wallpaper × Ahluwalia – Estuary (bespoke mural)"
   ],
   "modest": true,
-  "metaTitle": "Ahluwalia x Calico: Estuary at Rosewood | Mr Wallcover",
+  "metaTitle": "Ahluwalia × Calico: Estuary at Rosewood | Mr Wallcover",
   "metaDescription": "Ahluwalia's Estuary mural for Calico Wallpaper, installed as the runway backdrop at Rosewood London for London Fashion Week, September 2026.",
   "group": "design-weeks",
   "standfirst": "An event install for Calico Wallpaper, not a hotel fit-out: the runway backdrop for Priya Ahluwalia's first wallcovering, hung in a single day before the show.",
@@ -43,7 +43,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-22"
 }
 ---
 

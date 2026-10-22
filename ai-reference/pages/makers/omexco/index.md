@@ -16,10 +16,10 @@ Omexco designs and manufactures wall decorations in an atelier near Brussels. It
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://www.omexco.com/belgian-savoir-faire) — checked 2026-10-17
-- [Official source](https://www.omexco.com/wallcoverings/whisper) — checked 2026-10-17
-- [Official source](https://www.omexco.com/contact) — checked 2026-10-17
-- [Official source](https://www.omexco.com/faq) — checked 2026-10-17
+- [Official source: omexco.com/belgian-savoir-faire](https://www.omexco.com/belgian-savoir-faire) — checked 17 October 2026
+- [Official source: omexco.com/wallcoverings/whisper](https://www.omexco.com/wallcoverings/whisper) — checked 17 October 2026
+- [Official source: omexco.com/contact](https://www.omexco.com/contact) — checked 17 October 2026
+- [Official source: omexco.com/faq](https://www.omexco.com/faq) — checked 17 October 2026
 
 [Visit maker website](https://www.omexco.com/)
 
@@ -46,9 +46,9 @@ Terms and checks before ordering
 
 FAQ explicitly gives UK representative ordering. Consumer account eligibility and sample costs: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.omexco.com/contact)
+[Open official source: Find a stockist or representative, United Kingdom](https://www.omexco.com/contact)
 
 ### Find a stockist or representative
 
@@ -69,9 +69,9 @@ Terms and checks before ordering
 
 FAQ directs overseas orders through regional distributors. Directory entries are listed by maker; no authorised label asserted.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.omexco.com/contact)
+[Open official source: Find a stockist or representative, Outside UK, Ireland and France; United States example](https://www.omexco.com/contact)
 
 ### Samples
 
@@ -92,9 +92,9 @@ Terms and checks before ordering
 
 For interior professionals; maximum five samples. Charges and UK sample delivery: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.omexco.com/faq)
+[Open official source: Samples, Interior professionals; territory limits not stated](https://www.omexco.com/faq)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

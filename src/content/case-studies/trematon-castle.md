@@ -18,10 +18,10 @@
     "Lincrusta heritage relief wallcovering"
   ],
   "modest": true,
-  "metaTitle": null,
-  "metaDescription": null,
+  "metaTitle": "Castle of Trematon, Cornwall | Mr Wallcover",
+  "metaDescription": "Wallcovering installation across the Georgian house at the Castle of Trematon, Cornwall, 2019–2022: House of Hackney prints, murals and Lincrusta relief.",
   "group": null,
-  "standfirst": "Nearly three years inside a Norman castle's Georgian heart, hanging the prints of the house that made maximalism modern.",
+  "standfirst": "Nearly three years inside a Norman castle's Georgian heart, hanging House of Hackney prints throughout the house.",
   "hero": "trematon-01",
   "gallery": [
     {
@@ -222,7 +222,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -237,7 +237,7 @@
 
 ## The castle
 
-Trematon is one of Cornwall's oldest fortifications: a Norman motte-and-bailey, built in 1068 and granted to the Duchy of Cornwall in 1337. The Duchy still owns it today. A 13th-century gatehouse still guards the bailey. Within the walls, an 11,000 sq ft Georgian manor with nine bedrooms was added in the early 1800s, its windows looking out over nine acres of gardens and the estuary beyond.
+Trematon is a Norman motte-and-bailey castle, built in 1068 and granted to the Duchy of Cornwall in 1337. The Duchy still owns it today. A 13th-century gatehouse still guards the bailey. Within the walls, an 11,000 sq ft Georgian manor with nine bedrooms was added in the early 1800s, its windows looking out over nine acres of gardens and the estuary beyond.
 
 The house has beautiful proportions, and it needed a lot of restoration: paint stripped back to a blank canvas, then a multi-year, foundational renovation. Trematon is also the setting of House of Hackney's campaigns and gives its name to the TREMATONIA print.
 
@@ -277,7 +277,7 @@ Other House of Hackney designs that the press records at Trematon, but which we 
 
 ## More from site
 
-The later photographs on this page are our own, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), between June 2019 and November 2021: the house and the castle walls, rooms during strip-out, finished bedrooms and bathrooms, the caravan papered and fitted out to a House of Hackney design in May 2021, and the Lincrusta going up the curved stair walls in November 2021 ([CWksjiaKBnq](https://www.instagram.com/p/CWksjiaKBnq/)), set out panel by panel with a laser line ([CW5IdnPKgTP](https://www.instagram.com/p/CW5IdnPKgTP/)).
+The later photographs on this page are our own, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), between June 2019 and November 2021: the house and the castle walls, rooms during strip-out, finished bedrooms and bathrooms, the caravan papered and fitted out to a House of Hackney design in May 2021, and the Lincrusta going up the curved stair walls in November 2021 ([see the post](https://www.instagram.com/p/CWksjiaKBnq/)), set out panel by panel with a laser line ([see the post](https://www.instagram.com/p/CW5IdnPKgTP/)).
 
 ## Outcome
 

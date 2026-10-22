@@ -16,9 +16,9 @@ Arte designs, manufactures and distributes wallcoverings for residential and con
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://www.arte-international.com/en/about-arte) — checked 2026-10-17
-- [Official source](https://www.arte-international.com/en/surprising-materials-1) — checked 2026-10-17
-- [Official source](https://www.arte-international.com/en/contact) — checked 2026-10-17
+- [Official source: arte-international.com/en/about-arte](https://www.arte-international.com/en/about-arte) — checked 17 October 2026
+- [Official source: arte-international.com/en/surprising-materials-1](https://www.arte-international.com/en/surprising-materials-1) — checked 17 October 2026
+- [Official source: arte-international.com/en/contact](https://www.arte-international.com/en/contact) — checked 17 October 2026
 
 [Visit maker website](https://www.arte-international.com/)
 
@@ -45,9 +45,9 @@ Terms and checks before ordering
 
 Retail and contract enquiry channels stated. Account eligibility and sample terms: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.arte-international.com/en/contact)
+[Open official source: Showroom or brand contact, UK](https://www.arte-international.com/en/contact)
 
 ### Find a stockist or representative
 
@@ -68,9 +68,9 @@ Terms and checks before ordering
 
 Official finder link only; no seller, purchase eligibility, sample or delivery terms are endorsed.
 
-Official page checked 2026-10-18. Website evidence, not a test order.
+Checked on the official website on 18 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.arte-international.com/en/where-to-buy)
+[Open official source: Find a stockist or representative, Country-dependent; UK results unverified](https://www.arte-international.com/en/where-to-buy)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

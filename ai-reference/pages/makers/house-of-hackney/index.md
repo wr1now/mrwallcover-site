@@ -16,9 +16,9 @@ House of Hackney designs nature-inspired wallpapers and interior collections. It
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://www.houseofhackney.com/en-intl/pages/our-story) — checked 2026-10-17
-- [Official source](https://www.houseofhackney.com/pages/our-materials) — checked 2026-10-17
-- [Official source](https://www.houseofhackney.com/products/troop-wallpaper-birch) — checked 2026-10-17
+- [Official source: houseofhackney.com/en-intl/pages/our-story](https://www.houseofhackney.com/en-intl/pages/our-story) — checked 17 October 2026
+- [Official source: houseofhackney.com/pages/our-materials](https://www.houseofhackney.com/pages/our-materials) — checked 17 October 2026
+- [Official source: houseofhackney.com/products/troop-wallpaper-birch](https://www.houseofhackney.com/products/troop-wallpaper-birch) — checked 17 October 2026
 
 [Visit maker website](https://www.houseofhackney.com/)
 
@@ -45,9 +45,9 @@ Terms and checks before ordering
 
 Paid sample ordering shown; trade pricing requires login, with application offered. Page states printed-to-order wallpaper cannot be returned or cancelled. Delivery cost confirmed at checkout.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.houseofhackney.com/products/troop-wallpaper-birch)
+[Open official source: Shop or product ordering, UK; international delivery described](https://www.houseofhackney.com/products/troop-wallpaper-birch)
 
 ### Showroom or brand contact
 
@@ -68,9 +68,9 @@ Terms and checks before ordering
 
 Official story says both London and New York showrooms are open to the public and offer complimentary design consultations. Confirm visit arrangements using the current showroom page; sample and order terms are separate.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.houseofhackney.com/en-intl/pages/our-story)
+[Open official source: Showroom or brand contact, London, UK; New York, US](https://www.houseofhackney.com/en-intl/pages/our-story)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

@@ -2,8 +2,8 @@
   "_note": "Copy for /get-in-touch/, the page the header's \"Contact\" link opens (owner, 15 Oct 2026). Every way to reach the practice directly; the quotation form stays on /contact/. Lines naming the phone, WhatsApp or the call are printed only when SITE_PHONE or BOOKING_URL is set for the build.",
   "title": "Contact Mr Wallcover | Wallcovering Installer London",
   "description": "Contact Mr Wallcover, the London wallcovering installer founded by Dorin Burcus. Email info@mrwallcover.com, or start a project with the enquiry form.",
-  "eyebrow": "Contact",
-  "heading": "Get in touch.",
+  "eyebrow": "Direct contact",
+  "heading": "Contact Mr Wallcover.",
   "lede": "Write, call or send a message, whichever suits you. Dorin Burcus reads the email and answers the phone himself.",
   "ledeNoPhone": "Email is the simplest way in. It is read by Dorin Burcus himself.",
   "waysHeading": "Ways to reach us",
@@ -34,6 +34,7 @@
   },
   "areas": {
     "heading": "Where we work",
+    "text": "We work in London and the surrounding areas, and UK-wide on selected projects.",
     "all": "All areas"
   }
 }

@@ -60,7 +60,7 @@ Mr Wallcover installs wallcoverings. If you would like us to hang the paper, or 
 
 - [Work out the rolls](https://www.mrwallcover.com/advice/quantities/)
 - [Prepare the wall](https://www.mrwallcover.com/advice/wall-preparation/)
-- [How we check what we publish](https://www.mrwallcover.com/how-we-check/)
+- [Product facts and corrections](https://www.mrwallcover.com/how-we-check/)
 
 ## Find a maker and a route
 

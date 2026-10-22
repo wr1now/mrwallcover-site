@@ -14,13 +14,13 @@ Founder
 
 Dorin Burcus founded Mr Wallcover. He has worked in the trade since 2012, starting as a labourer and going on to run wallcovering packages in prime London hotels.
 
-The earliest commissions dated on this site are Four Seasons Hotel London at Ten Trinity Square, 2016 to 2019, guest room and suite wallpapering, and Novotel London Canary Wharf in 2016. Since then the public work includes The OWO on Whitehall, Brown's Hotel in Mayfair, hotels in Holborn and at Silverstone, and The Lanesborough.
+Among the earliest dated commissions are Four Seasons Hotel London at Ten Trinity Square, 2016 to 2019, guest room and suite wallpapering, and Novotel London Canary Wharf in 2016. Since then the public work includes The OWO on Whitehall, Brown's Hotel in Mayfair, hotels in Holborn and at Silverstone, and The Lanesborough.
 
-The practice is based in London, covers London and the surrounding areas, and works UK-wide for selected projects. Every job is planned around the building and the people who have to keep using it, so that the disruption stays small and the finish does not.
+The practice is based in London, covers London and the surrounding areas, and works UK-wide for selected projects.
 
-What you see on this site is public. Private clients are not named.
+Every job is planned around the building and the people who have to keep using it, so that the disruption stays small and the finish does not.
 
-[Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards](https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg).
+Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards. [Source: the trophy photograph, archived June 2022](https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg).
 
 ![Dorin Burcus, founder of Mr Wallcover](https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-800.webp)
 
@@ -28,13 +28,13 @@ Dorin Burcus, founder of Mr Wallcover.
 
 ## The work, in order.
 
-Surveying, management, supply, installation and aftercare. Premium wallcoverings for prime residential work and for the hotel industry. The services page is the longer version.
+Surveying, management, supply, installation and aftercare. Wallcoverings for prime residential work and for the hotel industry. The services page is the longer version.
 
-[Read the services.](https://www.mrwallcover.com/services/)
+[Read about our services](https://www.mrwallcover.com/services/)
 
-![Bedside in a finished guest room at Brown's Hotel, Mayfair: a dark wood chest, a wavy-stemmed table lamp and yellow cushions against pale grey painted walls.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-04.jpg)
+![Bedside in a finished guest room at Brown's Hotel, Mayfair: a dark wood chest, a wavy-stemmed table lamp and yellow cushions against pale grey painted walls.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-04-800.webp)
 
-Scenic wallcovering at Brown's Hotel, Mayfair. Photographed on site.
+A finished guest room at Brown's Hotel, Mayfair. Photograph: Mr Wallcover.
 
 How the work is carried
 
@@ -168,7 +168,7 @@ Also on our record
 
 ## More of the work, in our own photographs.
 
-Smaller jobs and early stages, each shown with our own photographs from Instagram.
+Smaller jobs and early stages, each linked to its Instagram post.
 
 ![The front of The Marylebone hotel, London, with its name above the entrance.](https://www.mrwallcover.com/media/img/r/marylebone-02-800.webp)
 
@@ -176,7 +176,7 @@ Smaller jobs and early stages, each shown with our own photographs from Instagra
 
 Marylebone, 2020
 
-Rooms and communal areas in a heavy-texture oblique-line wallpaper. [Our post](https://www.instagram.com/p/B80WqY1l96C/).
+Rooms and communal areas in a heavy-texture oblique-line wallpaper. [See the post](https://www.instagram.com/p/B80WqY1l96C/).
 
 ![Hoarding reading 'Curio, The Westminster London' outside the hotel before its reopening, 2021.](https://www.mrwallcover.com/media/img/r/curio-westminster-01-800.webp)
 
@@ -186,7 +186,7 @@ Rooms and communal areas in a heavy-texture oblique-line wallpaper. [Our post](h
 
 Westminster, 2021
 
-Getting the hotel ready for its reopening after lockdown. [Our post](https://www.instagram.com/p/CL4j518lzE7/).
+Getting the hotel ready for its reopening after lockdown. [See the post](https://www.instagram.com/p/CL4j518lzE7/).
 
 ![The front of DoubleTree by Hilton London Victoria, 2023.](https://www.mrwallcover.com/media/img/r/doubletree-victoria-ig-01-800.webp)
 
@@ -196,7 +196,7 @@ Getting the hotel ready for its reopening after lockdown. [Our post](https://www
 
 Victoria, 2023
 
-The hotel as the 2023 project began. [Our post](https://www.instagram.com/p/CpnQ-kFo0J_/).
+The hotel as the 2023 project began. [See the post](https://www.instagram.com/p/CpnQ-kFo0J_/).
 
 ![Office wall finished in a grey silk-look Vescom wallcovering, Jermyn Street, St James's.](https://www.mrwallcover.com/media/img/r/jermyn-street-office-03-800.webp)
 
@@ -206,7 +206,7 @@ The hotel as the 2023 project began. [Our post](https://www.instagram.com/p/CpnQ
 
 St James's, 2018
 
-Vescom Chandra, a silk-look wallcovering. [Our post](https://www.instagram.com/p/BrlESE1g3Q6/).
+Vescom Chandra, a silk-look wallcovering. [See the post](https://www.instagram.com/p/BrlESE1g3Q6/).
 
 ![The label of the Papiers de Paris 'Lac des Cygnes No 2' scenic wallpaper, hung in the garden room of the tea house in West London.](https://www.mrwallcover.com/media/img/r/tea-house-ig-01-800.webp)
 
@@ -214,7 +214,7 @@ Vescom Chandra, a silk-look wallcovering. [Our post](https://www.instagram.com/p
 
 West London, 2020–2021
 
-Papiers de Paris scenic paper for the garden room. [Our post](https://www.instagram.com/p/CJY2uwJFTo-/).
+Papiers de Paris scenic paper for the garden room. [See the post](https://www.instagram.com/p/CJY2uwJFTo-/).
 
 ![Close-up of House of Hackney's Gaia botanical wallpaper, hung for the Adam Reed salon, London.](https://www.mrwallcover.com/media/img/r/adam-reed-01-800.webp)
 
@@ -222,7 +222,7 @@ Papiers de Paris scenic paper for the garden room. [Our post](https://www.instag
 
 London, 2020
 
-House of Hackney's Gaia wallpaper for the salon. [Our post](https://www.instagram.com/p/B8J-pOll0VU/).
+House of Hackney's Gaia wallpaper for the salon. [See the post](https://www.instagram.com/p/B8J-pOll0VU/).
 
 ![Site hoarding for the 250 City Road development, London.](https://www.mrwallcover.com/media/img/r/city-road-250-01-800.webp)
 
@@ -230,7 +230,7 @@ House of Hackney's Gaia wallpaper for the salon. [Our post](https://www.instagra
 
 Islington, 2021
 
-A completed project at the apartments development. [Our post](https://www.instagram.com/p/CPFNkQCFulC/).
+A completed project at the apartments development. [See the post](https://www.instagram.com/p/CPFNkQCFulC/).
 
 ![Hotel bathroom with a backlit round mirror and a Tektura wide-vinyl wallcovering, DoubleTree by Hilton London Hyde Park.](https://www.mrwallcover.com/media/img/r/doubletree-hyde-park-01-800.webp)
 
@@ -238,7 +238,7 @@ A completed project at the apartments development. [Our post](https://www.instag
 
 Bayswater, 2017
 
-Tektura wide vinyl in a guest bathroom. [Our post](https://www.instagram.com/p/BdNt2noATWY/).
+Tektura wide vinyl in a guest bathroom. [See the post](https://www.instagram.com/p/BdNt2noATWY/).
 
 ![The 'Welcome to Silverstone' gantry with our 'New project' caption over the photograph, February 2022.](https://www.mrwallcover.com/media/img/r/silverstone-ig-01-800.webp)
 
@@ -246,7 +246,7 @@ Tektura wide vinyl in a guest bathroom. [Our post](https://www.instagram.com/p/B
 
 Northamptonshire, 2022
 
-The start of the Hilton Garden Inn Silverstone project. [Our post](https://www.instagram.com/p/CZxXOZAKhx1/).
+The start of the Hilton Garden Inn Silverstone project. [See the post](https://www.instagram.com/p/CZxXOZAKhx1/).
 
 A short timeline
 
@@ -259,7 +259,7 @@ A short timeline
 : Four Seasons Hotel London at Ten Trinity Square begins, running to 2019. Novotel London Canary Wharf.
 
 **2017**
-: Our Instagram record, @mrwallcover, begins in October. First work at DoubleTree by Hilton London – West End, and at DoubleTree Hyde Park.
+: We begin posting our work on Instagram, @mrwallcover, in October. First work at DoubleTree by Hilton London – West End, and at DoubleTree Hyde Park.
 
 **2018**
 : A guest-room programme of more than 15,000 m² at the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair. Huntsman, Savile Row begins. Oxygen Freejumping at The O2; the Everyman cinema, Liverpool; an office on Jermyn Street.
@@ -288,7 +288,7 @@ Who we work with
 
 We work for interior designers and architects, hotel owners and operators, and main contractors delivering large projects, on anything from a single hand-painted panel to a 17,500 m² hotel programme. Designers and artists we have worked alongside include Jaillon Studio (Catherine Jaillon), Posner Interiors and the artist Diane Hill. [Talk to us about your project.](https://www.mrwallcover.com/contact/)
 
-[Discuss your project](https://www.mrwallcover.com/contact/)
+[Start your project](https://www.mrwallcover.com/contact/)
 
 Designers we work with
 
@@ -308,7 +308,7 @@ Interior designers, London
 
 A private home near Sloane Square, January 2020, in papers by Cole & Son and Little Greene.
 
-[Our post, 28 January 2020](https://www.instagram.com/p/B73YYaSlpPv/)
+[See the post, 28 January 2020](https://www.instagram.com/p/B73YYaSlpPv/)
 
 Diane Hill
 
@@ -316,7 +316,7 @@ Artist
 
 Blossom hand-painted over Phillip Jeffries silk after we had hung it, in a dining room in Kensington, 2019.
 
-[Our post, 30 October 2019](https://www.instagram.com/p/B4Puc1-FUT9/)
+[See the post, 30 October 2019](https://www.instagram.com/p/B4Puc1-FUT9/)
 
 Calico Wallpaper
 
@@ -342,4 +342,4 @@ Overture, with Calico Wallpaper, at the Lee Broom Shoreditch showroom.
 
 [Overture](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

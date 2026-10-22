@@ -79,4 +79,4 @@ Send a photograph in daylight and tell us what you know about the wall. We will 
 
 [Discuss wall preparation](https://www.mrwallcover.com/contact/?intent=prepare&service=wallcovering&topic=preparation) [Work out the rolls](https://www.mrwallcover.com/calculator/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

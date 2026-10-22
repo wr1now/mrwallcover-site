@@ -7,6 +7,7 @@ import Action from './Action.astro';
 import Icon from './Icon.astro';
 import ProjectEvidence from './ProjectEvidence.astro';
 import FilmWrapDiagram from './FilmWrapDiagram.astro';
+import NextSteps from './NextSteps.astro';
 import { areaHref, areas, landingProjectSlugs, linkedProjects, media, specialismHref, specialisms } from '../lib/content';
 import { imageRights } from '../lib/schema';
 import type { LandingPage } from '../lib/content';
@@ -52,7 +53,7 @@ function segments(text: string) {
     <h1>{page.heading}</h1>
     <p class="lede mt-5">{page.lede}</p>
     <div class="mt-6 flex flex-wrap gap-3">
-      <Action href="/contact/">Request a quotation</Action>
+      <Action href="/contact/">Start your project</Action>
       <Action variant="secondary" href="/projects/">See the work</Action>
     </div>
   </header>
@@ -83,7 +84,7 @@ function segments(text: string) {
       page.imageId && (
         <figure class="landing-photograph">
           <Picture id={page.imageId} sizes="(min-width: 1024px) 30rem, (min-width: 768px) 42vw, calc(100vw - 2.5rem)" />
-          <figcaption class="caption mt-3"><span>{segments(page.imageCaption ?? media(page.imageId).alt).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</span><span>Photograph: {photographCredit}.</span></figcaption>
+          <figcaption class="caption mt-3"><span>{segments(page.imageCaption ?? media(page.imageId).alt).map((seg) => (seg.href ? <a href={seg.href}>{seg.text}</a> : seg.text))}</span>{' '}<span>Photograph: {photographCredit}.</span></figcaption>
         </figure>
       )
     }
@@ -151,6 +152,7 @@ function segments(text: string) {
   .landing-related li a:hover { text-decoration: underline; text-underline-offset: .2em; }
   .landing-related li :global(.mw-icon) { flex-shrink: 0; width: 1rem; height: 1rem; color: var(--color-brass); }
   .landing-related-aftercare { margin: 1.5rem 0 0; }
+  .landing-next { padding-bottom: clamp(2.5rem, 5vw, 4rem); }
   @media (min-width: 768px) {
     .landing-introduction--illustrated { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); }
     .landing-section { grid-template-columns: minmax(0, .8fr) minmax(0, 1.35fr); gap: clamp(2rem, 5vw, 5rem); }
@@ -160,7 +162,15 @@ function segments(text: string) {
   @media (max-width: 639px) { .landing-contents ul { grid-template-columns: 1fr; } }
 </style>
 
-<FaqList items={page.faq} eyebrow="Questions" heading={`Asked about ${page.name.replace(/^the /, '')}`} />
+<FaqList items={page.faq} eyebrow="Questions" heading={kind === 'area' ? `Questions about papering in ${page.name}` : 'Questions we are asked'} />
+
+{/* Area pages end the enquiry path with the same steps as /contact/ (contact.json next); no new text. */}
+{kind === 'area' && (
+  <div class="container-page landing-next">
+    <NextSteps headingId="area-next-heading" />
+    <p class="mt-6 mb-0"><Action href="/contact/">Start your project</Action></p>
+  </div>
+)}
 
 <div class="container-page">
   <nav class="landing-related" aria-label="Related pages">
@@ -176,7 +186,7 @@ function segments(text: string) {
     </div>
     <section>
       <p class="eyebrow">Where we work</p>
-      <ul>{(kind === 'area' ? otherAreas : areas).map((a) => <li><a href={areaHref(a.slug)}><span>Wallpaper installer, {a.name.replace(/^the /, '')}</span><Icon name="arrow-right" /></a></li>)}</ul>
+      <ul>{(kind === 'area' ? otherAreas : areas).map((a) => <li><a href={areaHref(a.slug)}><span>Wallpaper installation in {a.name}</span><Icon name="arrow-right" /></a></li>)}</ul>
     </section>
   </nav>
 </div>

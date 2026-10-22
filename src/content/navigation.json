@@ -1,46 +1,52 @@
 [
   {
     "href": "/projects/",
-    "label": "Projects"
+    "label": "Projects",
+    "group": "primary"
   },
   {
     "href": "/services/",
-    "label": "Expertise"
+    "label": "Expertise",
+    "group": "primary"
   },
   {
     "href": "/materials/",
-    "label": "Materials"
-  },
-  {
-    "href": "/wallpapering/",
-    "label": "Wallpapering"
-  },
-  {
-    "href": "/calculator/",
-    "label": "Wallpaper calculator"
-  },
-  {
-    "href": "/room-studio/",
-    "label": "Wallpaper my room"
+    "label": "Materials",
+    "group": "primary"
   },
   {
     "href": "/professionals/",
-    "label": "For designers"
+    "label": "For designers",
+    "group": "primary"
   },
   {
     "href": "/advice/",
-    "label": "Guide"
+    "label": "Guide",
+    "group": "primary"
   },
   {
     "href": "/about/",
-    "label": "About"
-  },
-  {
-    "href": "/wallcovering-installation-ai-crawler/",
-    "label": "AI Crawler"
+    "label": "About",
+    "group": "primary"
   },
   {
     "href": "/get-in-touch/",
-    "label": "Contact"
+    "label": "Contact",
+    "group": "primary"
+  },
+  {
+    "href": "/wallpapering/",
+    "label": "Wallpapering",
+    "group": "resources"
+  },
+  {
+    "href": "/calculator/",
+    "label": "Wallpaper calculator",
+    "group": "resources"
+  },
+  {
+    "href": "/wallcovering-installation-ai-crawler/",
+    "label": "AI Crawler",
+    "group": "resources"
   }
 ]

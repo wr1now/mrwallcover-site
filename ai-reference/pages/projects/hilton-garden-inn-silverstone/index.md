@@ -1,9 +1,9 @@
 ---
-title: "Hilton Garden Inn Silverstone | Case Study | Mr Wallcover"
+title: "Hilton Garden Inn Silverstone | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/
-description: "Main wallcoverings contractor at Hilton Garden Inn Silverstone. Main wallcoverings contractor for the only hotel on the Silverstone Circuit, its rooms…"
+description: "Main wallcoverings contractor at Hilton Garden Inn Silverstone, the only hotel on the Silverstone Circuit: rooms finished for the 2022 British Grand Prix."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 Silverstone Circuit, Northamptonshire
@@ -14,9 +14,9 @@ Main wallcoverings contractor for the only hotel on the Silverstone Circuit, its
 
 ![Hilton Garden Inn Silverstone from outside: a six-storey hotel clad in grey and buff panels, with V-shaped columns along the entrance.](https://www.mrwallcover.com/media/img/hilton-garden-inn-silverstone-press-01.jpg)
 
-Hilton Garden Inn Silverstone from outside. A view of the building, not of our work. Photography: Hilton.
+Hilton Garden Inn Silverstone from outside. Venue photograph, not our work. Photograph: Hilton.
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -45,6 +45,7 @@ Client, materials & project facts
 
 - **Client / brand:** Hilton Garden Inn Silverstone (Hilton)
 - **Location:** Hamilton Straight, Silverstone Circuit, Northamptonshire
+- **Year:** 2022 (completed in time for the British Grand Prix)
 - **Role:** Main wallcoverings contractor
 - **Scope:** Wallcovering installation
 
@@ -85,21 +86,23 @@ These are photographs of the hotel and the circuit by other photographers, credi
 
 ![A guest room at Hilton Garden Inn Silverstone, with pale walls, a white bed and a glazed balcony door looking out towards the circuit.](https://www.mrwallcover.com/media/img/hilton-garden-inn-silverstone-press-02.jpg)
 
-A guest room as published by Hilton. A view of the hotel, not of our work. Photography: Hilton.
+A guest room as published by Hilton. Venue photograph, not our work. Photograph: Hilton.
 
 ![A Ferrari and a Mercedes side by side on track at the 2022 British Grand Prix, Silverstone.](https://www.mrwallcover.com/media/img/silverstone-circuit-commons-01.jpg)
 
-The circuit during the 2022 British Grand Prix. A view of the venue, not of our work. Photography: fuji.tim / Wikimedia Commons (CC BY-SA 2.0).
+The circuit during the 2022 British Grand Prix. Venue photograph, not our work. Photograph: fuji.tim / Wikimedia Commons (CC BY-SA 2.0).
 
 ![A single-seater racing car at speed on the Silverstone circuit during the 2022 British Grand Prix weekend.](https://www.mrwallcover.com/media/img/silverstone-circuit-commons-02.jpg)
 
-A car on the circuit during the 2022 British Grand Prix weekend. A view of the venue, not of our work. Photography: Jen Ross / Wikimedia Commons (CC BY 2.0).
+A car on the circuit during the 2022 British Grand Prix weekend. Venue photograph, not our work. Photograph: Jen Ross / Wikimedia Commons (CC BY 2.0).
 
 How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -129,7 +132,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -139,4 +142,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

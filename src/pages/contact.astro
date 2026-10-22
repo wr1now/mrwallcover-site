@@ -1,5 +1,6 @@
 ---
 import {
+  ENQUIRY_MAILTO,
   INSTAGRAM_HANDLE,
   INSTAGRAM_URL,
   PUBLIC_EMAIL,
@@ -10,18 +11,19 @@ import HomeEnquiryRoutes from '../components/HomeEnquiryRoutes.astro';
 import PhoneReveal from '../components/PhoneReveal.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
 import BookCallLink from '../components/BookCallLink.astro';
+import NextSteps from '../components/NextSteps.astro';
 import Icon, { type IconName } from '../components/Icon.astro';
 import DesignStudy from '../components/DesignStudy.astro';
 import Base from '../layouts/Base.astro';
 import { contact } from '../lib/content';
 import quoteChecklist from '../content/quote-checklist.json';
 import { phoneAvailable } from '../lib/phone';
-import { BOOKING_URL } from '../config';
+import { BOOKING_HOURS, BOOKING_URL } from '../config';
 import { breadcrumbNode } from '../lib/schema';
 
 const crumbs = [
   { name: 'Home', href: '/' },
-  { name: 'Contact', href: '/contact/' },
+  { name: 'Start your project', href: '/contact/' },
 ];
 ---
 
@@ -29,6 +31,7 @@ const crumbs = [
   title={contact.title}
   description={contact.description}
   path="/contact/"
+  pageType="ContactPage"
   extraSchema={[breadcrumbNode(crumbs)]}
 >
   <div class="container-page pb-20">
@@ -39,18 +42,21 @@ const crumbs = [
       <p class="lede mt-5">{contact.lede}</p>
     </header>
     <div class="contact-layout">
-      <div id="enquiry" class="contact-form-column scroll-mt-24">
+      {/* Direct contact comes before the form in the source, so phones show it first; from 1024px it sits at the top of the right-hand column, as before. */}
+      <section class="contact-direct" aria-label="Contact the practice">
+        <p class="m-0">{phoneAvailable ? contact.direct : contact.directNoPhone}</p>
+        <PhoneReveal wrap="mt-6 mb-0" />
+        <p class:list={['m-0', !phoneAvailable && 'mt-6']}><a href={ENQUIRY_MAILTO}>{PUBLIC_EMAIL}</a></p>
+        {/* Without BOOKING_URL the row holds only WhatsApp, so it is marked to hide with it when JavaScript is off. */}
+        {(phoneAvailable || BOOKING_URL) && <div class="contact-quick mt-4 mb-4 flex flex-wrap gap-3" data-wa-item={BOOKING_URL ? undefined : ''}><WhatsAppLink class="btn btn-line" /><BookCallLink class="btn btn-line" /></div>}
+        {BOOKING_URL && <p class="booking-hours mt-0 mb-4 text-sm text-stone">{BOOKING_HOURS} Each call is 20&nbsp;minutes.</p>}
+        <p class="m-0"><a href={INSTAGRAM_URL}>Instagram {INSTAGRAM_HANDLE}</a></p>
+      </section>
+      <div id="enquiry" class="contact-form-column" style="scroll-margin-top: calc(var(--header-height) + var(--header-inset-top) + 1rem)">
         <EnquiryForm />
       </div>
       <aside class="contact-aside">
-        <section class="contact-direct" aria-label="Contact the practice">
-        <p class="m-0">{phoneAvailable ? contact.direct : contact.directNoPhone}</p>
-        <PhoneReveal wrap="mt-6 mb-0" />
-        <p class:list={['m-0', !phoneAvailable && 'mt-6']}><a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a></p>
-        {(phoneAvailable || BOOKING_URL) && <div class="contact-quick mt-4 mb-4 flex flex-wrap gap-3"><WhatsAppLink class="btn btn-line" /><BookCallLink class="btn btn-line" /></div>}
-        {BOOKING_URL && <p class="booking-hours mt-0 mb-4 text-sm text-stone">Calls Mon–Fri, 9am–5pm UK.</p>}
-        <p class="m-0"><a href={INSTAGRAM_URL}>Instagram {INSTAGRAM_HANDLE}</a></p>
-        </section>
+        <NextSteps />
         <section class="quote-checklist" aria-labelledby="quote-checklist-heading" data-quote-checklist>
           <h2 id="quote-checklist-heading" class="font-serif text-[2rem]">{quoteChecklist.heading}</h2>
           <p>{quoteChecklist.intro}</p>
@@ -63,6 +69,8 @@ const crumbs = [
           <DesignStudy kind="document" caption="Illustrative project brief" />
           <p>Tell us the area, the rooms or rough scope, the paper or material you have in mind, and your preferred timing. Photographs or drawings can follow by email.</p>
           <p>You do not need every answer yet. We can establish the details together.</p>
+          {/* Verbatim from the published buyer answer f-d4 (src/data/buyer-answers.json, Dorin's Q8 answer). */}
+          <p>Private clients are not named, on the site or in passing. Where a client requires a non-disclosure agreement, Mr Wallcover signs one, and those projects are never named.</p>
         </section>
       </aside>
     </div>
@@ -74,14 +82,21 @@ const crumbs = [
   .contact-layout { display:grid; gap:var(--layout-gap); align-items:start; }
   .contact-form-column { min-width:0; padding:clamp(1.25rem,3vw,2.5rem); border:1px solid var(--color-line); background:var(--color-panel); border-radius:var(--radius-control); }
   .contact-aside { min-width:0; display:grid; gap:2.5rem; }
-  .contact-aside h2 { font-size:var(--text-h3); margin:0 0 1rem; }
-  .contact-direct { padding:1.5rem; background:var(--color-paper); border:1px solid var(--color-line); border-radius:var(--radius-control); }
+  .contact-aside :global(h2) { font-size:var(--text-h3); margin:0 0 1rem; }
+  .contact-direct { min-width:0; padding:1.5rem; background:var(--color-paper); border:1px solid var(--color-line); border-radius:var(--radius-control); }
   .contact-direct p { line-height:1.65; }
-  .quote-checklist { padding-bottom:1.5rem; border-bottom:1px solid var(--color-line); }
+  .contact-aside > :global(.contact-next), .quote-checklist { padding-bottom:1.5rem; border-bottom:1px solid var(--color-line); }
+  .contact-brief > p + p { margin-top: var(--space-4); }
   .quote-checklist-list { gap: 0; padding: 0; list-style: none; }
   .quote-checklist-list li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: .9rem; align-items: start; padding: 1rem 0; border-top: 1px solid var(--color-line); }
   .quote-checklist-list strong { display: block; margin-bottom: .2rem; font-weight: 500; color: var(--color-ink); }
   .quote-checklist-list li > div { color: var(--color-stone); line-height: 1.65; }
   .quote-checklist-icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: var(--color-brass); border: 1px solid var(--color-line); border-radius: 50%; background: var(--color-paper); }
-  @media (min-width:1024px) { .contact-layout { grid-template-columns:minmax(0,7fr) minmax(0,4fr); } }
+  /* The form spans both rows; the second row takes any extra height, so the rail never opens a gap under the direct card. */
+  @media (min-width:1024px) {
+    .contact-layout { grid-template-columns:minmax(0,7fr) minmax(0,4fr); grid-template-rows:auto 1fr; row-gap:2.5rem; }
+    .contact-form-column { grid-column:1; grid-row:1 / span 2; }
+    .contact-direct { grid-column:2; grid-row:1; }
+    .contact-aside { grid-column:2; grid-row:2; }
+  }
 </style>

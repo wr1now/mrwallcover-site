@@ -1,0 +1,30 @@
+---
+/**
+ * "What happens next": the enquiry steps from src/content/contact.json `next`, shared by /contact/ and
+ * the area pages. Each step restates published copy (sources in contact.json); no times until Dorin
+ * states them. The booking step prints only when BOOKING_URL is set.
+ */
+import { BOOKING_URL } from '../config';
+import { contact } from '../lib/content';
+
+interface Props {
+  headingId?: string;
+  class?: string;
+}
+
+const { headingId = 'next-heading', class: className } = Astro.props;
+const steps = contact.next.steps.filter((step) => BOOKING_URL || !(step as { booking?: boolean }).booking);
+---
+
+<section class:list={['contact-next', className]} aria-labelledby={headingId}>
+  <h2 id={headingId} class="font-serif text-[2rem]">{contact.next.heading}</h2>
+  <ol class="contact-next-list">
+    {steps.map((step) => <li>{step.text}</li>)}
+  </ol>
+</section>
+
+<style>
+  .contact-next h2 { margin:0 0 1rem; }
+  .contact-next-list { display:grid; gap:.75rem; margin:0; padding-left:1.5rem; list-style:decimal; line-height:1.65; }
+  .contact-next-list li::marker { color:var(--color-brass); font-variant-numeric:lining-nums; }
+</style>

@@ -70,4 +70,4 @@ Timber-grain wallcovering cut close round a light switch. [Novotel London Canary
 
 The method behind these finishes is in the [Wallcovering Guide](https://www.mrwallcover.com/advice/); for a room of your own, [send us the drawings or a photograph](https://www.mrwallcover.com/contact/?intent=install).
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

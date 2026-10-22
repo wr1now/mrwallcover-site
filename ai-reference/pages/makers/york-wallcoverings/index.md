@@ -1,7 +1,7 @@
 ---
-title: "York Wallcoverings Wallcoverings | Mr Wallcover"
+title: "York Wallcoverings | Mr Wallcover"
 url: https://www.mrwallcover.com/makers/york-wallcoverings/
-description: "Explore York Wallcoverings wallcoverings and official sourcing contacts, with source dates, purchasing limits and product-specific checks before ordering."
+description: "Explore York Wallcoverings and official sourcing contacts, with source dates, purchasing limits and product-specific checks before ordering."
 author: "Dorin Burcus"
 last_updated: 2026-10-18
 ---
@@ -16,10 +16,10 @@ York Wallcoverings describes a Pennsylvania manufacturing history and a catalogu
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://yorkwallcoverings.com/pages/about) — checked 2026-10-17
-- [Official source](https://yorkdesigngroup.com/pages/about-us) — checked 2026-10-17
-- [Official source](https://yorkwallcoverings.com/) — checked 2026-10-17
-- [Official source](https://yorkwallcoverings.com/policies/shipping-policy) — checked 2026-10-17
+- [Official source: yorkwallcoverings.com/pages/about](https://yorkwallcoverings.com/pages/about) — checked 17 October 2026
+- [Official source: yorkdesigngroup.com/pages/about-us](https://yorkdesigngroup.com/pages/about-us) — checked 17 October 2026
+- [Official source: yorkwallcoverings.com](https://yorkwallcoverings.com/) — checked 17 October 2026
+- [Official source: yorkwallcoverings.com/policies/shipping-policy](https://yorkwallcoverings.com/policies/shipping-policy) — checked 17 October 2026
 
 [Visit maker website](https://yorkwallcoverings.com/)
 
@@ -46,9 +46,9 @@ Terms and checks before ordering
 
 Checkout/account requirements not established; ask the maker Most residential patterns have samples for online purchase, per FAQ
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://yorkwallcoverings.com/)
+[Open official source: Shop or product ordering, United States](https://yorkwallcoverings.com/)
 
 ### Find a stockist or representative
 
@@ -69,9 +69,9 @@ Terms and checks before ordering
 
 Official finder link only; no seller, purchase eligibility, sample or delivery terms are endorsed.
 
-Official page checked 2026-10-18. Website evidence, not a test order.
+Checked on the official website on 18 October 2026. This check did not include placing an order.
 
-[Open official source](https://yorkwallcoverings.com/pages/store-locator)
+[Open official source: Find a stockist or representative, Locator geography not verified](https://yorkwallcoverings.com/pages/store-locator)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

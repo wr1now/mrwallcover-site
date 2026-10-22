@@ -64,7 +64,7 @@ Photographs plan the job; they do not answer every question. Anything that canno
 
 Preparation discovered late moves the installation date, and that is expensive when deliveries, decorators, joinery and occupancy have already been arranged. Ask for preparation to be described separately in the quotation, with what is included and what is subject to inspection; our guide to [what changes the cost](https://www.mrwallcover.com/advice/installation-cost/) shows how. The survey is also a judgement on the wall: if it is not ready for the material specified, we say so before anyone orders the last drop.
 
-## When does this advice stop being reliable?
+## What this guide cannot tell you
 
 For a quick reference, our [preparation tables](https://www.mrwallcover.com/wallpapering/preparation/) set out the treatment, primer and lining grade for each wall type and condition, and [lining papers, pastes and primers](https://www.mrwallcover.com/wallpapering/lining-and-adhesives/) lists the products with their data sheets. This is general guidance for domestic and hotel walls in reasonable condition. Damp, structural movement, lime plaster, historic fabric and any wall where the specification carries a fire or acoustic requirement need the product’s own instructions and, often, the specifier’s confirmation. The maker’s hanging instruction for the actual product takes precedence over everything on this page.
 
@@ -112,7 +112,7 @@ Send the material reference and what you already know. A photograph and a short 
 
 ## Keep reading
 
-![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-06.jpg)
+![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-06-800.webp)
 
 Adam’s Eden at Brown’s Hotel, Mayfair. Mr Wallcover photograph.
 
@@ -132,7 +132,7 @@ Pause motion
 
 ## [Installation cost](https://www.mrwallcover.com/advice/installation-cost/)
 
-Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
+Why installation is not priced per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
 
 [Read the guide](https://www.mrwallcover.com/advice/installation-cost/)
 

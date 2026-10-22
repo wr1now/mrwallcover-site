@@ -11,14 +11,15 @@ import utility from '../content/utility.json';
     <p class="lede mt-5">{utility.notFound.text}</p>
     <div class="mt-8 flex flex-wrap gap-3">
       <Action variant="primary" href="/">Home</Action>
-      <Action variant="secondary" href="/projects/">Work</Action>
-      <Action variant="secondary" href="/contact/">Contact</Action>
+      <Action variant="secondary" href="/projects/">Projects</Action>
+      <Action variant="secondary" href="/contact/">Start your project</Action>
+      <Action variant="secondary" href="/materials/">Materials</Action>
     </div>
   </div>
 </Base>
 
 <script is:inline>
   // GitHub Pages serves this page for any unknown URL. A retired project URL (one that is no
-  // longer a page and cannot be named in the source) goes to the work index instead of a dead end.
+  // longer a page and cannot be named in the source) goes to the projects index instead of a dead end.
   if (/^\/projects\/[a-z0-9-]+\/?$/.test(location.pathname)) location.replace('/projects/');
 </script>

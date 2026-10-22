@@ -361,7 +361,25 @@ test('owner-confirmed one-room minimum and multi-year scope reach shared public 
   assert.doesNotMatch(JSON.stringify(scope), /largest|unlimited|guaranteed availability|£|GBP|survey fee|response time/i);
   for (const payload of [business, guide]) assert.equal(payload.resourceReviewed, '2026-10-10', 'a new policy confirmation is not a resource-wide content review');
   assert.equal(business.lastReviewed, (await readJson<any>('src/data/facts.json')).lastReviewed);
-  for (const pathname of ['/services/', '/for-ai/', CRAWLER]) {
+  // Buyers on /services/ read the same facts in plain sentences, without the record's internal wording.
+  {
+    const html = await readFile('dist/services/index.html', 'utf8');
+    const section = html.match(/<section\b[^>]*id="commission-scope"[^>]*>([\s\S]*?)<\/section>/)?.[1];
+    assert.ok(section, '/services/: shared scope section');
+    assert.match(section, /<h2\b[^>]*id="commission-scope-heading"/);
+    const text = visibleText(section);
+    assert.ok(text.includes(scope.heading));
+    assert.match(text, /smallest commission we take on is a single room/);
+    assert.match(text, /quoted on its own scope, phasing, crew and start date/);
+    assert.doesNotMatch(text, /largest|two years or more/i, 'the client sentences claim no more than the project records');
+    assert.doesNotMatch(text, /\bbelow\b/, 'from 900px the programme cards sit beside the copy, not below it');
+    assert.doesNotMatch(text, /Owner-confirmed|Recorded role|Company-reported|not stated here/, 'no internal record wording on the buyer page');
+    for (const project of scope.supportingProjects) {
+      assert.ok(text.includes(project.title), `/services/: ${project.title}`);
+      assert.ok(section.includes(`href="${new URL(project.url).pathname}"`));
+    }
+  }
+  for (const pathname of ['/for-ai/', CRAWLER]) {
     const html = await readFile(`dist${pathname}index.html`, 'utf8');
     const section = html.match(/<section\b[^>]*id="commission-scope"[^>]*>([\s\S]*?)<\/section>/)?.[1];
     assert.ok(section, `${pathname}: shared scope section`);

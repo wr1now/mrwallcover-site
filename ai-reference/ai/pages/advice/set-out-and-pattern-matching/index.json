@@ -80,7 +80,7 @@
     },
     {
       "level": 2,
-      "id": null,
+      "id": "guide-sources-title",
       "text": "Further reading"
     },
     {
@@ -363,7 +363,7 @@
               "url": "https://www.mrwallcover.com/areas/cotswolds/"
             }
           ],
-          "slogan": "Premium wallcoverings services: surveying, management, supply, install and aftercare.",
+          "slogan": "Specialist wallcovering installation for hotels and prime homes: survey, management, supply, installation and aftercare.",
           "knowsAbout": [
             "Wallpaper installation",
             "Wallcovering installation for hotels",
@@ -548,7 +548,7 @@
             "@type": "ContactPoint",
             "email": "info@mrwallcover.com",
             "url": "https://www.mrwallcover.com/contact/",
-            "contactType": "quotations",
+            "contactType": "sales",
             "areaServed": [
               {
                 "@type": "City",

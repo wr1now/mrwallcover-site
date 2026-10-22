@@ -1,7 +1,7 @@
 ---
 title: "Wallcovering Installation London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/
-description: "Wallcovering installation in London: survey, management, supply and aftercare. Silk, grasscloth, fabric, vinyl, hand-painted papers, murals and acoustic."
+description: "Survey, management, supply, installation and aftercare for London hotels and prime homes, from one room to multi-year programmes like Brown’s Hotel, Mayfair."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -14,18 +14,18 @@ Mr Wallcover is a wallpaper installer in London for hotels and prime homes. One 
 
 ## From one room to a multi-year programme
 
-The minimum installation commission is one room. Mr Wallcover takes on single-room installations through to large programmes, including programmes spanning multiple years.
+The smallest commission we take on is a single room. We also take on programmes that run for years; the two shown here each took about two years on site.
 
-Confirm the particular scope, phasing, crew and proposed start with the practice for each commission.
+Each commission is quoted on its own scope, phasing, crew and start date.
 
-Public rates are not stated here. Request a quotation for the particular commission.
+The quotation comes from a site survey or from drawings.
 
-Owner-confirmed commission-scope policy. Confirmed by the owner on 19 October 2026. [Published scope policy](https://www.mrwallcover.com/wallcovering-installation-ai-crawler/#commission-scope).
+[Start your project](https://www.mrwallcover.com/contact/)
 
-### Recorded programmes
+### Programmes that ran for years
 
-- [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/) — 2022–2024. Recorded role: Main decorating contractor. Company-reported project record.
-- [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/) — 2022–2024 (about two years on site; opened 2 September 2024). Recorded role: Full decorating package: decoration, specialist wallcoverings and window film. Company-reported project record.
+- [2022–2024: **Brown's Hotel, Mayfair**. Main decorating contractor](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
+- [2022–2024 (about two years on site; opened 2 September 2024): **Hyde London City (the Old Bailey Hotel)**. Full decorating package. Decoration, specialist wallcoverings and window film](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
 01 / 05
 
@@ -33,7 +33,9 @@ Owner-confirmed commission-scope policy. Confirmed by the owner on 19 October 20
 
 We measure on site, or from drawings when that is what the programme needs. Skirting, joinery, doors and windows come out of the area. What is left is the wall that will actually be hung.
 
-Quantities include wastage and pattern repeat. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey. A roll that looks generous on a plan can run short on the last pier.
+Quantities include wastage and pattern repeat. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. A roll that looks generous on a plan can run short on the last pier.
+
+[The quantities guide](https://www.mrwallcover.com/advice/quantities/) shows how the order is worked out.
 
 The survey is also a judgement on the wall. If it is not ready for the material specified, we say so before anyone orders the last drop.
 
@@ -45,7 +47,7 @@ View the surveying schematic
 
 Diagram: Wall elevation showing overall width, height, an opening and a vertical datum. Labels: Width W; Height H; Door; True vertical.
 
-Schematic · not to scaleRecord the wall, openings and a true vertical before setting out the paper.
+Schematic · not to scale
 
 02 / 05
 
@@ -53,11 +55,13 @@ Schematic · not to scaleRecord the wall, openings and a true vertical before se
 
 Every project has a project leader on the ground. That person is the day-to-day contact for the craft, the progress and the expectations that have been set.
 
-On a longer commission, senior oversight quality-controls the work and agrees a forward plan with you, in person, each week. Frequent and plain communication is part of the method, not a courtesy added at the end.
+On a longer commission, senior oversight checks the quality of the work and agrees a forward plan with you, in person, each week. Frequent and plain communication is part of the method, not a courtesy added at the end.
 
 The team you meet on the first day is the core team that finishes. Disruption is kept low: work is contained, floors and joinery are protected, and the place is left tidy every evening. In a home we are visitors. In a hotel we work around the house.
 
-Illustrative study. Illustrative sequence only. Delivery, overlaps and working dates are agreed for each project.
+[How we work](https://www.mrwallcover.com/about/#how-heading) describes the core team and how it scales for large hotel programmes.
+
+Illustrative study. Delivery, overlaps and working dates are agreed for each project.
 
 Pause motion
 
@@ -65,15 +69,17 @@ View the project management schematic
 
 Diagram: An illustrative project sequence: survey, delivery, preparation, installation and inspection. Labels: Survey; Delivery; Prepare; Install; Inspect; Sequence agreed for the project.
 
-Schematic · not to scaleIllustrative sequence only. Delivery, overlaps and working dates are agreed for each project.
+Schematic · not to scale
 
 03 / 05
 
 ## Supply
 
-On many hotel and flagship jobs the wallcovering is free-issue from the designer, the brand or the client. We manage delivery, check the delivery against the measure, and hang what was specified.
+On many hotel and flagship jobs the designer, the brand or the client supplies the wallcovering (free-issue). We manage delivery, check it against the measure, and hang what was specified.
 
 We can also procure. Either way, the order has to cover the repeat and the wastage, or the last wall is the one that waits.
+
+Rolls are inspected as part of preparation; on large volumes not every roll can be opened in advance. Any defect is reported straight away to the designer, contractor and manufacturer.
 
 Delivery is timed to the hang. Paper sitting in a corridor for days is a risk to the goods and a nuisance to the building.
 
@@ -85,9 +91,13 @@ Pause motion
 
 ## Installation
 
-This is the craft the practice is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.
+This is the craft Mr Wallcover is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.
 
 Preparation, where it is in the specification, includes stripping old paper, dustless sanding, and making good cracks and uneven surfaces. Some materials are specified with a lining paper. Some, including certain mural installs, are specified without one. We follow the specification.
+
+We set out every wall with a laser level. Deliveries are checked against the measure, and batches and shading are managed so that a room reads as one surface.
+
+[The set-out and pattern matching guide](https://www.mrwallcover.com/advice/set-out-and-pattern-matching/) explains the method.
 
 Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Where Mr Wallcover is appointed as main decorating contractor, the package can include fine painting, French polishing and other specialist finishes, as it did at Brown's Hotel, Mayfair.
 
@@ -101,9 +111,9 @@ View the installation schematic
 
 Diagram: Wallpaper panels balanced around a focal point, with joints on a true vertical. Labels: Focal point / balanced set-out.
 
-Schematic · not to scaleThe focal point and the end panels guide the layout before any length is cut.
+Schematic · not to scale
 
-![Room at Brown's Hotel, Mayfair, during works: Adam's Eden wallcovering hung beneath an ornate plaster ceiling and chandelier, with protection board on the floor and a vacuum cleaner in view.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-07.jpg)
+![Room at Brown's Hotel, Mayfair, during works: Adam's Eden wallcovering hung beneath an ornate plaster ceiling and chandelier, with protection board on the floor and a vacuum cleaner in view.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-07-800.webp)
 
 Adam’s Eden at Brown’s Hotel, Mayfair, during installation. Floors remain protected. Mr Wallcover project photograph.
 
@@ -111,7 +121,7 @@ Adam’s Eden at Brown’s Hotel, Mayfair, during installation. Floors remain pr
 
 ## Aftercare
 
-Aftercare is the fifth part of the service. A return inspection is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.
+Aftercare is the fifth part of the service. A return visit is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.
 
 The detail, including care by material and what the guarantee does not cover, is on the aftercare page.
 
@@ -125,9 +135,9 @@ View the aftercare schematic
 
 Diagram: A magnified junction showing the seam, top edge and corner to inspect. Labels: Edges and corners; Seam detail.
 
-Schematic · not to scaleLook at seams, edges and junctions once the paper has settled.
+Schematic · not to scale
 
-![Adam's Eden wallcovering meeting a carved cornice and decorative plaster ceiling at Brown's Hotel, Mayfair, above a door case.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-12.jpg)
+![Adam's Eden wallcovering meeting a carved cornice and decorative plaster ceiling at Brown's Hotel, Mayfair, above a door case.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-12-800.webp)
 
 Wallcovering meeting the cornice and door case at Brown’s Hotel, Mayfair. Mr Wallcover project photograph.
 
@@ -135,15 +145,15 @@ Materials
 
 ## What we hang.
 
-Silk, grasscloth, fabric, vinyl, hand-painted papers, murals and acoustic panels are hung by the same team; what changes is the preparation, the set-out and the patience each one needs. These are the materials the practice hangs.
+Silk, grasscloth, fabric, vinyl, hand-painted papers, murals and acoustic panels are hung by the same team; what changes is the preparation, the set-out and the patience each one needs. These are the materials we hang.
 
-![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-06.jpg)
+![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-06-800.webp)
 
 Adam’s Eden by Adam Calkin for Lewis & Wood, photographed with its printed selvedge at Brown’s Hotel, Mayfair. Mr Wallcover project photograph.
 
 ### [Silk](https://www.mrwallcover.com/services/silk-wallcovering-installation/)
 
-Lustrous, and quick to mark. Hung with clean hands and an adhesive that suits the cloth. Seams are planned so the light does not catch a ridge.
+Lustrous, and quick to mark.
 
 ### [Grasscloth and natural weaves](https://www.mrwallcover.com/services/grasscloth-installation/)
 
@@ -159,7 +169,7 @@ The usual specification in busy hotel rooms and corridors. At The OWO, Whitehall
 
 ### [Hand-painted papers](https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/)
 
-Scenic and panelled papers in the manner of de Gournay and Fromental. They need a sound wall, a patient set-out, and time. We hang them for London houses and hotels. This is installation, not a claim to make the paper.
+Scenic and panelled papers in the manner of de Gournay and Fromental. They need a sound wall, a patient set-out and time. We hang them for London houses and hotels.
 
 ### [Murals](https://www.mrwallcover.com/services/mural-installation/)
 
@@ -225,7 +235,7 @@ Where we work
 - [Wallpaper installation in Belgravia](https://www.mrwallcover.com/areas/belgravia/)
 - [Wallpaper installation in Chelsea](https://www.mrwallcover.com/areas/chelsea/)
 - [Wallpaper installation in Kensington](https://www.mrwallcover.com/areas/kensington/)
-- [Wallcovering installation in the City of London](https://www.mrwallcover.com/areas/city-of-london/)
+- [Wallpaper installation in the City of London](https://www.mrwallcover.com/areas/city-of-london/)
 - [Wallpaper installation in the Cotswolds](https://www.mrwallcover.com/areas/cotswolds/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

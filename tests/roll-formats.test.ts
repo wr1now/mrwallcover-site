@@ -85,7 +85,8 @@ test('the calculator page takes any width, in cm or inches, and suggests the com
 
 test('the shared navigation and footer both expose Wallpaper calculator', () => {
   const menu = JSON.parse(readFileSync(new URL('../src/content/navigation.json', import.meta.url), 'utf8')) as { href: string; label: string }[];
-  assert.equal(menu.length,11);
+  assert.equal(menu.length,10);
+  assert.ok(!menu.some(item => ['/room-studio/', '/atelier/'].includes(item.href)), 'held tools are not promoted in the menu');
   assert.equal(menu.find(item=>item.href==='/calculator/')?.label,'Wallpaper calculator');
   const footer=readFileSync(new URL('../src/components/Footer.astro',import.meta.url),'utf8');
   assert.match(footer,/href:\s*['"]\/calculator\/['"],\s*label:\s*['"]Wallpaper calculator['"]/);

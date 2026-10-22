@@ -1,8 +1,9 @@
 ---
-import { ANALYTICS_SRC, PUBLIC_EMAIL } from '../config';
+import { ANALYTICS_SRC, BOOKING_URL, PUBLIC_EMAIL } from '../config';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Base from '../layouts/Base.astro';
 import { privacy } from '../lib/content';
+import { PRIVACY_NOTICE_VERSION } from '../lib/enquiry-context';
 import { phoneAvailable } from '../lib/phone';
 import { breadcrumbNode } from '../lib/schema';
 
@@ -18,12 +19,16 @@ const lineFor = (paragraph: string) => {
   if (paragraph.includes('There is a place in the build for a cookie-free analytics script')) return privacy.analyticsOn.cookies;
   return paragraph;
 };
+// The notice's own date: the version the enquiry form records, shown in the author line and read by the Markdown twin.
+const versionDate = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${PRIVACY_NOTICE_VERSION}T00:00:00Z`));
+if (versionDate !== privacy.updated) throw new Error(`privacy.json updated (${privacy.updated}) does not match PRIVACY_NOTICE_VERSION (${PRIVACY_NOTICE_VERSION})`);
 ---
 
 <Base
   title={privacy.title}
   description={analyticsOn ? privacy.analyticsOn.description : privacy.description}
   path="/privacy/"
+  updated={PRIVACY_NOTICE_VERSION}
   extraSchema={[breadcrumbNode(crumbs)]}
 >
   <div class="container-page pb-20">
@@ -35,7 +40,8 @@ const lineFor = (paragraph: string) => {
     </header>
     <div class="grid gap-10">
       {
-        privacy.sections.map((section) => (
+        // The booking section describes a button that exists only when BOOKING_URL is set.
+        privacy.sections.filter((section) => BOOKING_URL || section.heading !== 'Booking a call').map((section) => (
           <section class="max-w-2xl border-t border-line pt-6">
             <h2 class="m-0 text-[2rem]">{section.heading}</h2>
             <div class="prose mt-4">

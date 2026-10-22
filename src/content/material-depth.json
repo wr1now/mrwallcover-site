@@ -1,5 +1,5 @@
 {
-  "_note": "On the record for each material page: a paragraph from the published case studies, the makers from makers-installed.json (each shown with its own install photograph there) and the case studies that carry the family. A maker named here means we installed its product; it is not an endorsement. Acoustic has no published project yet, so it has no entry.",
+  "_note": "On the record for each material page: a paragraph from the published case studies, the makers from makers-installed.json (each shown with its own install photograph there) and the case studies that carry the family. A maker named here means we installed its product; it is not an endorsement. Acoustic has no case study yet; its entry cites the project record on /projects/ (an office in Holborn, 2020) and the Elitis install in makers-installed.json. Elitis is not listed under its makers: that install is already the page's evidence photograph (materials.json), so a maker record would show the same photograph twice.",
   "items": {
     "paper-and-non-woven": {
       "makers": [
@@ -97,6 +97,15 @@
       "paragraphs": [
         "At [Raffles London at The OWO](/projects/raffles-london-the-owo/), a bespoke Vescom wallcovering made for the hotel went onto walls and parts of the joinery. At [Hyde London City](/projects/old-bailey-hotel/), Timorous Beasties' Tropical Clouded Leopard and Totem Damask went into the guest rooms as custom-printed vinyl. At [Hilton London Metropole](/projects/hilton-london-metropole/), a jet-black embossed Muraspec and Vescom on conference-room panels; at the [Mercedes-AMG showroom](/projects/mercedes-amg-showroom-london/), black matt Muraspec; at [DoubleTree by Hilton London – West End](/projects/doubletree-west-end/), Tektura wide vinyl in 2017.",
         "At [Novotel London Canary Wharf](/projects/novotel-london-canary-wharf/), concrete-effect and timber-grain wallcoverings we installed in 2016 were photographed six years on, in 2022. The [hotel specification guide](/advice/hotel-wallcovering-specification/) covers cleaning, batches and documentation."
+      ]
+    },
+    "acoustic": {
+      "makers": [],
+      "projects": [],
+      "paragraphs": [
+        "At [an office in Holborn](/projects/#record-an-office-in-holborn-2020) in 2020: sound-absorbent acoustic felt wallcovering on a boardroom wall, wrapped around free-standing columns and on a feature wall in an open-plan office.",
+        "In 2018 we installed an Elitis wallcovering in a private cinema room in Mayfair. Its acoustic performance depends on the specified system and its data.",
+        "[Acoustic wallcovering installation](/services/acoustic-wallcovering-installation/) explains the adhesive, trimming and edges, and how junctions with other finishes are planned."
       ]
     }
   }

@@ -3,22 +3,28 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import Action from '../components/Action.astro';
 import Icon, { type IconName } from '../components/Icon.astro';
 import EvidenceFigure from '../components/EvidenceFigure.astro';
+import BuyerFaq from '../components/BuyerFaq.astro';
 import Base from '../layouts/Base.astro';
 import professionals from '../content/professionals.json';
+import { buyerFaqFor } from '../lib/ai-layer-data';
 import { editorialPages, linkedProjects, projectHref, type EditorialPageData } from '../lib/content';
-import { breadcrumbNode } from '../lib/schema';
+import { breadcrumbNode, buyerFaqNode } from '../lib/schema';
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'For professionals', href: '/professionals/' }];
 // Published editorial pages under /professionals/ (e.g. fit-out contractors) sit beside the audience pages.
 type ProfessionalEditorial = EditorialPageData & { featureMedia?: { id: string; caption: string; credit: string; project?: string } };
 const professionalEditorials = editorialPages.map((mod) => mod.frontmatter as ProfessionalEditorial).filter((fm) => fm.path.startsWith('/professionals/'));
+// Buyer answers placed on the hub (src/data/buyer-answers.json `pages`), as on the audience pages: one visible list, one FAQPage.
+// The free-issue checks (f-a19), as /professionals/designers/ shows them, must stay.
+const checks = buyerFaqFor('/professionals/');
+if (!checks.some((item) => item.id === 'f-a19')) throw new Error('professionals.astro: buyer answer f-a19 (free-issue checks) must list /professionals/ in its pages');
 ---
-<Base title="For Designers, Developers & Hotels | Mr Wallcover" description="Wallcovering specification and installation routes for designers, property developers, contractors and hotel operators." path="/professionals/" extraSchema={[breadcrumbNode(crumbs)]}>
+<Base title="For Designers, Developers & Hotels | Mr Wallcover" description="Wallcovering specification and installation routes for designers, property developers, contractors and hotel operators." path="/professionals/" extraSchema={[breadcrumbNode(crumbs), buyerFaqNode(checks)]}>
   <div class="container-page pb-20">
     <header class="page-head guide-head">
       <Breadcrumb items={crumbs} />
       <p class="eyebrow">For professionals</p>
       <h1>Wallcovering support for your specification.</h1>
-      <p class="lede mt-5">Choose the route that fits your work. Bring the drawings, the material and the decisions still to be made.</p>
+      <p class="lede mt-5">Choose the route that fits your work: designers and architects; developers and main contractors; hotels and operators; or fit-out contractors. Bring the drawings, the material and the decisions still to be made.</p>
     </header>
     <div class="professional-route-grid">
       {professionals.map((item) => <section class="professional-card" id={item.slug === 'developers' ? 'commercial' : item.slug}>
@@ -39,7 +45,9 @@ const professionalEditorials = editorialPages.map((mod) => mod.frontmatter as Pr
         </section>;
       })}
     </div>
-    <section class="guide-next"><p class="eyebrow">Already have a complete brief?</p><h2>Send the work in front of you.</h2><p>A schedule, drawings and a short note are enough to begin. Include who is supplying the material and any date the tender needs.</p><Action href="/contact/?audience=commercial&intent=install">Start a professional enquiry</Action></section>
+    {/* The hub is photographic, so its one answer takes the line drawing rather than a dimensional study. */}
+    <div class="professional-questions"><BuyerFaq items={checks} eyebrow="Questions" visual="drawing" /></div>
+    <section class="guide-next"><p class="eyebrow">Already have a complete brief?</p><h2>Send the work in front of you.</h2><p>A schedule, drawings and a short note are enough to begin. Include who is supplying the material and any date the tender needs.</p><Action href="/contact/?audience=commercial&intent=install">Start your project</Action></section>
   </div>
 </Base>
 
@@ -53,5 +61,8 @@ const professionalEditorials = editorialPages.map((mod) => mod.frontmatter as Pr
   .professional-card h2 a:hover { text-decoration: underline; text-underline-offset: .2em; }
   .professional-card-intro { margin: 1rem 0 1.5rem; color: var(--color-stone); font-size: var(--text-body); line-height: 1.65; }
   .professional-card :global(.professional-card-evidence) { width: 100%; margin: auto 0 1.2rem; }
+  .professional-questions { max-width: none; padding-top: 1rem; }
+  /* The answer keeps the 44rem reading measure, as on the other professional pages. */
+  .professional-questions :global(.guide-faq-item) { max-width: 44rem; }
   @media (min-width: 768px) { .professional-route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; } }
 </style>

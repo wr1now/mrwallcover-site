@@ -30,7 +30,7 @@ What should a wallcovering specification contain? Enough for the installer to se
 - Backing, and the adhesive and primer the maker specifies for it.
 - Whether the item is confirmed or provisional, so a provisional reference is never mistaken for an order.
 
-Already specifying a maker? See the [papers we have installed](https://www.mrwallcover.com/materials/specified-papers/) and the published projects behind them. A maker appearing on that record means installation experience, not approval or endorsement.
+Already specifying a maker? See the [papers we have installed](https://www.mrwallcover.com/materials/specified-papers/) and the published projects behind them. Naming a maker records an installation, not an endorsement.
 
 ## Elevations and design intent
 

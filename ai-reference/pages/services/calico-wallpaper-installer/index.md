@@ -3,20 +3,20 @@ title: "Calico Wallpaper Installer London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/calico-wallpaper-installer/
 description: "Calico Wallpaper murals and papers installed in London by Mr Wallcover: four public installs since 2018, at Heathrow, Lee Broom, The Lavery and Rosewood London."
 author: "Dorin Burcus"
-last_updated: 2026-10-17
+last_updated: 2026-10-22
 ---
 
 Services
 
 # Calico Wallpaper installation in London
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 17 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026
 
 Mr Wallcover has installed Calico Wallpaper murals and papers at four public commissions in London since 2018. This page says what was hung, how it hangs, and where each case study is.
 
 [Discuss a Calico installation](https://www.mrwallcover.com/contact/?intent=install&service=wallcovering&topic=service%3Acalico-wallpaper-installer) [See the work](https://www.mrwallcover.com/projects/)
 
-Mr Wallcover has installed Calico Wallpaper at four public commissions in London since 2018, delivered in partnership with Calico Wallpaper. A maker’s name on this site means we installed that maker’s product on that project. It is not a maker approval, accreditation or endorsement.
+Mr Wallcover has installed Calico Wallpaper at four public commissions in London since 2018, delivered in partnership with Calico Wallpaper.
 
 ## What was hung
 
@@ -35,6 +35,8 @@ The method is the one the case studies record. At Heathrow the landscape is a si
 
 Heathrow Terminal 4 (2018), Lee Broom’s Shoreditch showroom (2025), The Lavery in the Brompton Design District (2026) and Rosewood London (2026). Each case study below has the photographs, the dates and the credits.
 
+Mr Wallcover is not on maker recommended-installer lists. Naming a maker records an installation, not an endorsement.
+
 ![Setting out an Overture panel against a laser line.](https://www.mrwallcover.com/media/img/r/lee-broom-06-800.webp)
 
 Setting out an Overture panel against a laser line in the Lee Broom showroom. The vertical datum guides the panel sequence.Photograph: Dorin Burcus / Mr Wallcover.[View the Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroom case study](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
@@ -43,7 +45,7 @@ Setting out an Overture panel against a laser line in the Lee Broom showroom. Th
 
 [![The mural wrapped around an internal corner, full height.](https://www.mrwallcover.com/media/img/r/heathrow-05-800.webp)](https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/)
 
-The mural wrapped around an internal corner, full height.Photograph: Dorin Burcus / Mr Wallcover.
+The mural wrapped around an internal corner, full height. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Calico Wallpaper airside at Heathrow: a luxury fashion house's store, Terminal 4](https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/)
 
@@ -53,7 +55,7 @@ Specialist wallcovering installation, overnight, in a live terminal, 2018.
 
 [![Overture drapery wallpaper beside a chandelier.](https://www.mrwallcover.com/media/img/r/lee-broom-08-800.webp)](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
 
-Overture drapery wallpaper beside a chandelier.Photograph: Dorin Burcus / Mr Wallcover.
+Overture drapery wallpaper beside a chandelier. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroom](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
 
@@ -63,7 +65,7 @@ Survey, wall preparation and installation of the Overture mural; wallpapering of
 
 [![Cadence Oxblood behind BEVERLY 1975's tables during Brompton Design District.](https://www.mrwallcover.com/media/img/r/beverly-08-800.webp)](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
 
-Cadence Oxblood behind BEVERLY 1975's tables during Brompton Design District.Photograph: Dorin Burcus / Mr Wallcover.
+Cadence Oxblood behind BEVERLY 1975's tables during Brompton Design District. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Calico Wallpaper x BEVERLY 1975: Cadence at The Lavery, Brompton Design District](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/)
 
@@ -75,7 +77,7 @@ Wallcovering installation (feature wall), 2026.
 
 Questions
 
-## Asked about Calico Wallpaper installation
+## Questions we are asked
 
 Illustrative material studies
 

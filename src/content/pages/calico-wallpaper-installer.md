@@ -11,7 +11,7 @@
     "name": "Services",
     "href": "/services/"
   },
-  "updated": "2026-10-17",
+  "updated": "2026-10-22",
   "service": {
     "name": "Calico Wallpaper installation",
     "serviceType": "Wallcovering installation"
@@ -58,7 +58,7 @@
 }
 ---
 
-Mr Wallcover has installed Calico Wallpaper at four public commissions in London since 2018, delivered in partnership with Calico Wallpaper. A maker's name on this site means we installed that maker's product on that project. It is not a maker approval, accreditation or endorsement.
+Mr Wallcover has installed Calico Wallpaper at four public commissions in London since 2018, delivered in partnership with Calico Wallpaper.
 
 ## What was hung
 
@@ -76,3 +76,5 @@ The method is the one the case studies record. At Heathrow the landscape is a si
 ## Dated installations on the public record
 
 Heathrow Terminal 4 (2018), Lee Broom's Shoreditch showroom (2025), The Lavery in the Brompton Design District (2026) and Rosewood London (2026). Each case study below has the photographs, the dates and the credits.
+
+Mr Wallcover is not on maker recommended-installer lists. Naming a maker records an installation, not an endorsement.

@@ -7,6 +7,7 @@ import { CRAWLER_PATH, CRAWLER_TITLE, crawlerBusiness as business, crawlerProjec
 import { decisionGuide as guide } from '../lib/ai-decision-guide';
 import { breadcrumbNode } from '../lib/schema';
 import aiReader from '../data/ai-reader.json';
+import getInTouch from '../content/get-in-touch.json';
 
 const crumbs = [{ name: 'Home', href: '/' }, { name: CRAWLER_TITLE, href: CRAWLER_PATH }];
 const local = (url: string) => new URL(url).pathname + new URL(url).hash;
@@ -28,7 +29,7 @@ const publishedExports = import.meta.env.MW_CONTENT_PREVIEW !== '1';
       <p class="crawler-status">Static HTML · Semantic records · Available without JavaScript</p>
       <p class="lede mt-5">{business.description}</p>
       <p class="crawler-intro">{guide.purpose}</p>
-      <PageMeta class="guide-byline" />
+      <PageMeta class="guide-byline" reviewed />
       <p class="crawler-version">Decision resource reviewed <time datetime={guide.resourceReviewed}>{guide.resourceReviewed}</time> · Data version {guide.schemaVersion}. Project records retain their own dates.</p>
       <div class="crawler-files" aria-label="Structured reference files">
         <a href="/ai/index.json"><span>01 / Discover</span><strong>Complete page manifest</strong><code>/ai/index.json</code></a>
@@ -237,7 +238,7 @@ const publishedExports = import.meta.env.MW_CONTENT_PREVIEW !== '1';
           <h3>Installation services</h3>
           <ul>{business.services.map((service) => <li><a href={local(service.url)}>{service.name}</a>. {service.description}</li>)}</ul>
           <h3>Area guides</h3>
-          <p>{business.coverage}.</p>
+          <p>{getInTouch.areas.text}</p>
           <ul class="crawler-areas">{business.areas.map((area) => <li><a href={local(area.url)}>{area.name}</a></li>)}</ul>
         </section>
 
@@ -275,8 +276,8 @@ const publishedExports = import.meta.env.MW_CONTENT_PREVIEW !== '1';
                 <details open class="crawler-sources">
                   <summary>References &amp; photograph credits</summary>
                   {project.references.length > 0 && <><h4>References in the project record</h4><ul>{project.references.map((url) => <li><a href={url}>{url}</a></li>)}</ul></>}
-                  {project.photographs.length > 0 && <><h4>Photographs</h4><ul>{project.photographs.map((photo) => (
-                    <li><a href={local(photo.url)}>{photo.alt}</a><br />{photo.credit ?? 'Credit not separately recorded.'}
+                  {project.photographs.length > 0 && <><h4>Photographs</h4>{project.photographs.some((photo) => !photo.credit) && <p class="crawler-excerpt">A photograph listed without a credit has no separately recorded credit.</p>}<ul>{project.photographs.map((photo) => (
+                    <li><a href={local(photo.url)}>{photo.alt}</a>{photo.credit && <><br />{photo.credit}</>}
                       {photo.sourceUrls.map((url) => <span class="crawler-image-source"> Source: <a href={url}>{url}</a></span>)}
                     </li>
                   ))}</ul></>}

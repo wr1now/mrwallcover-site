@@ -48,7 +48,7 @@
     }
   ],
   "published": "2026-10-11",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -67,4 +67,4 @@ Panelled walls in a conference room are covered panel by panel. Each panel is wr
 
 ## Photographs on this page
 
-Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), in September and November 2019: the conference room first, then the wallcoverings and the hotel. The work is recorded in our posts of 29 September 2019 ([B3AAo9sFAE_](https://www.instagram.com/p/B3AAo9sFAE_/)) and 27 November 2019 ([B5XtSRtFedQ](https://www.instagram.com/p/B5XtSRtFedQ/)).
+Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), in September and November 2019: the conference room first, then the wallcoverings and the hotel. The work is recorded in our posts of 29 September 2019 ([see the post](https://www.instagram.com/p/B3AAo9sFAE_/)) and 27 November 2019 ([see the post](https://www.instagram.com/p/B5XtSRtFedQ/)).

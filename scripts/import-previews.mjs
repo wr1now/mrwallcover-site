@@ -26,27 +26,27 @@ const frames = {
   },
   'pimlico-st-georges-square-exterior-02': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-02.jpg',
-    alt: "Front elevation on St George's Square under scaffold, with a columned portico and sash windows.",
+    alt: "Looking down into a narrow light well between brick walls on St George's Square, with a glass roof light at the bottom.",
   },
   'pimlico-st-georges-square-exterior-03': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-03.jpg',
-    alt: "Close view of a white stucco cornice and sash window on St George's Square, with scaffold poles in front.",
+    alt: "Flat roof on St George's Square, with a parapet, railings and the neighbouring rooftops beyond.",
   },
   'pimlico-st-georges-square-exterior-04': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-04.jpg',
-    alt: "Scaffolded corner on St George's Square, with the cornice and upper sash windows.",
+    alt: "Cracks running through a painted stucco pediment and the mouldings below it, on St George's Square.",
   },
   'pimlico-st-georges-square-exterior-06': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-06.jpg',
-    alt: "Rear elevation on St George's Square under a full scaffold, red brick and white render, with paint buckets on the boards.",
+    alt: "Weathered stucco cornice and scroll brackets on St George's Square, seen from the scaffold boards.",
   },
   'pimlico-st-georges-square-exterior-07': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-07.jpg',
-    alt: "Ground-floor entrance on St George's Square under scaffold, with white columns, steps and black railings.",
+    alt: "Broken stucco moulding over a bracket below a window on St George's Square, with cracks in the render beneath.",
   },
   'pimlico-st-georges-square-exterior-08': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-08.jpg',
-    alt: "Upper facade on St George's Square under scaffold, with sash windows, a cornice and a black balcony railing.",
+    alt: "Rendered pier on St George's Square with a pale painted patch under a taped label, beside a green-framed glazed door.",
   },
   'pimlico-st-georges-square-exterior-10': {
     file: 'pimlico-st-georges-square-exterior/pimlico-st-georges-square-exterior-10.jpg',
@@ -102,27 +102,27 @@ const frames = {
   },
   'penny-morrison-showroom-02': {
     file: 'penny-morrison-showroom/penny-morrison-showroom-02.jpg',
-    alt: "Floral wallpaper and upholstered seating in the Penny Morrison showroom.",
+    alt: "Hallway at the Penny Morrison showroom papered in a floral wallpaper, looking towards the front door, with floor protection down during the works.",
   },
   'penny-morrison-showroom-03': {
     file: 'penny-morrison-showroom/penny-morrison-showroom-03.jpg',
-    alt: "Stair hall at the Penny Morrison showroom, lined with a scenic landscape wallpaper.",
+    alt: "Looking from a yellow hall through a glazed door to the stairs at the Penny Morrison showroom, with floral wallpaper on the stair wall and boxes stacked below.",
   },
   'penny-morrison-showroom-04': {
     file: 'penny-morrison-showroom/penny-morrison-showroom-04.jpg',
-    alt: "Penny Morrison showroom with floral wallpaper, a fireplace and a patterned red carpet.",
+    alt: "Room at the Penny Morrison showroom with lit shelves of fabrics, upholstered chairs and a stool, and a desk at the far end.",
   },
   'penny-morrison-showroom-05': {
     file: 'penny-morrison-showroom/penny-morrison-showroom-05.jpg',
-    alt: "Shelves of fabric samples beside floral wallpaper in the Penny Morrison showroom.",
+    alt: "Room at the Penny Morrison showroom with green walls, empty lit shelves and bags piled on a table beside the stairs.",
   },
   'penny-morrison-showroom-06': {
     file: 'penny-morrison-showroom/penny-morrison-showroom-06.jpg',
-    alt: "Close view of large-scale floral wallpaper in the Penny Morrison showroom.",
+    alt: "Corner of the Penny Morrison showroom lined with lit shelves of fabrics, with a row of upholstered chairs in front.",
   },
   'penny-morrison-showroom-07': {
     file: 'penny-morrison-showroom/penny-morrison-showroom-07.jpg',
-    alt: "Front elevation of the Penny Morrison showroom at 9 Langton Street during exterior decorating.",
+    alt: "Narrow hallway at the Penny Morrison showroom leading to the stairs, with a coat and an umbrella on wall hooks.",
   },
   'penny-morrison-showroom-08': {
     file: 'penny-morrison-showroom/penny-morrison-showroom-08.jpg',
@@ -130,7 +130,7 @@ const frames = {
   },
   'penny-morrison-showroom-09': {
     file: 'penny-morrison-showroom/penny-morrison-showroom-09.jpg',
-    alt: "Finished white stucco and sash windows on the Penny Morrison showroom front.",
+    alt: "White front door of the Penny Morrison showroom, with a clipped shrub in a half-barrel, tins and tubs on the step and a yellow-padded pole beside it.",
   },
   'penny-morrison-showroom-10': {
     file: 'penny-morrison-showroom/penny-morrison-showroom-10.jpg',

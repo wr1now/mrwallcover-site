@@ -35,7 +35,7 @@ List every area with its material reference, drawing revision, quantity basis an
 
 ## Measurement basis: what is being priced?
 
-State whether areas are measured net of openings, whether returns, reveals and joinery faces are measured separately, and whether the contractor or the client confirms the purchase quantity. The labour measure and the order quantity are different numbers: the order has to cover full drops, the repeat and the batch. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey. See the [quantities page](/advice/quantities/).
+State whether areas are measured net of openings, whether returns, reveals and joinery faces are measured separately, and whether the contractor or the client confirms the purchase quantity. The labour measure and the order quantity are different numbers: the order has to cover full drops, the repeat and the batch. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. See the [quantities page](/advice/quantities/).
 
 ## Substrate handover: when is a wall "ready"?
 

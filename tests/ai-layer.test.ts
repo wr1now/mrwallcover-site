@@ -4,6 +4,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
 import { readPage, toMarkdown } from '../scripts/build-ai-layer.mjs';
+import { PRIVACY_NOTICE_VERSION } from '../src/lib/enquiry-context.ts';
 
 /**
  * The AI-crawling layer, checked on the built site in dist/. Everything here
@@ -76,7 +77,7 @@ test('/for-ai/ states the facts from facts.json, links every published case stud
     brand: string;
     description: string;
     email: string;
-    coverage: string;
+    place: string;
     lastReviewed: string;
     founder: { name: string; path: string; fragment: string };
   };
@@ -85,7 +86,9 @@ test('/for-ai/ states the facts from facts.json, links every published case stud
   assert.equal(html.match(/<h1[\s>]/g)?.length, 1, 'one H1');
   assert.match(html, new RegExp(`<h1>${facts.brand} in plain facts\\.</h1>`));
   assert.ok(html.includes(`<p class="lede mt-5">${facts.description}</p>`), 'the lede is the fact-sheet sentence');
-  assert.ok(html.includes(facts.coverage), 'coverage sentence');
+  // Coverage reads as the sentence /get-in-touch/ prints, not the fact-sheet data field.
+  const whereWeWork = (JSON.parse(await readFile('src/content/get-in-touch.json', 'utf8')) as { areas: { text: string } }).areas.text;
+  assert.ok(html.includes(`<p>Based in ${facts.place}. ${whereWeWork} The areas with a page of their own are:</p>`), 'coverage sentence');
   assert.ok(html.includes(`href="mailto:${facts.email}"`), 'email link');
   assert.ok(html.includes('href="/contact/"'), 'contact link');
   assert.ok(html.includes(`href="${facts.founder.path}#${facts.founder.fragment}"`), 'founder link');
@@ -508,7 +511,7 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
   for (const name of (await readdir('src/content/case-studies')).filter((entry) => entry.endsWith('.md'))) {
     const fm = JSON.parse((await readFile(`src/content/case-studies/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { slug: string; draft?: boolean; gallery: { id: string; credit: string | null }[] };
     if (fm.draft) drafts.add(fm.slug);
-    else for (const item of fm.gallery) if (item.credit && /^(Photography|Image):/.test(item.credit)) credits.set(item.id, item.credit);
+    else for (const item of fm.gallery) if (item.credit && /^(Photography|Photograph|Image):/.test(item.credit)) credits.set(item.id, item.credit);
   }
   assert.ok(credits.size >= 10, 'credited photographs exist in the published case studies');
   const problems: string[] = [];
@@ -567,7 +570,7 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
       const credit = credits.get(match[1]);
       if (!credit) continue;
       creditedImages += 1;
-      const holder = credit.replace(/^(Photography|Image):\s*/, '').replace(/\s*\(official\)$/, '');
+      const holder = credit.replace(/^(Photography|Photograph|Image):\s*/, '').replace(/\s*\(official\)$/, '');
       // creditText reads "Photo: <holder>" (src/lib/schema.ts imageRights), the holder exactly as credited.
       if (!match[2].includes(`"creditText":"Photo: ${holder}"`)) problems.push(`${page.pathname}: ${match[1]} lacks creditText "Photo: ${holder}"`);
       if (/"name":"(Mr Wallcover|Dorin Burcus)"/.test(match[2])) problems.push(`${page.pathname}: credited ${match[1]} is claimed as ours`);
@@ -591,7 +594,7 @@ test('schema audit: business coverage matches the fact sheet and the area pages,
   assert.doesNotMatch(search, /location\.search|URLSearchParams|searchParams/, 'if /search/ starts honouring ?q=, add a SearchAction and update this test');
 });
 
-test('every published page shows one author and date line: the page\'s own date for guides and case studies, the site-wide review date elsewhere; the twins carry the same date', async () => {
+test('every published page shows one author line: its own date where it has one, the site-wide review date on the two AI fact pages, no date elsewhere; the twins carry the date, the review date when the page shows none', async () => {
   const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { lastReviewed: string };
   const guideDates = new Map<string, string>();
   for (const name of (await readdir('src/content/guides')).filter((entry) => entry.endsWith('.md'))) {
@@ -614,35 +617,46 @@ test('every published page shows one author and date line: the page\'s own date 
     const fm = JSON.parse((await readFile(`src/content/pages/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { path: string; draft?: boolean; updated?: string };
     if (!fm.draft && fm.updated) editorialDates.set(fm.path, fm.updated);
   }
+  // The privacy notice is dated by the version the enquiry form records.
+  editorialDates.set('/privacy/', PRIVACY_NOTICE_VERSION);
   const directory = JSON.parse(await readFile('src/data/makers-directory.json', 'utf8'));
   if (directory.publication.approved && directory.publication.approved_by && directory.publication.approved_on) {
     for (const route of ['/makers/', '/buying-routes/', ...directory.makers.map((m: {slug: string}) => `/makers/${m.slug}/`)]) editorialDates.set(route, directory.updated);
   }
+  // The dated site-wide review stamp stays on the AI fact pages only; every other page without a date of its own names the author alone.
+  const reviewedPages = new Set(['/for-ai/', '/wallcovering-installation-ai-crawler/']);
+  const seenReviewed = new Set<string>();
   const problems: string[] = [];
   for (const page of await publishedPages()) {
     const main = page.html.match(/<main id="main"[^>]*>([\s\S]*?)<\/main>/)![1];
-    const stamps = [...main.matchAll(/By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder · (Last updated|Last reviewed) <time datetime="(\d{4}-\d{2}-\d{2})" data-page-updated="(updated|reviewed)">(\d{1,2} [A-Z][a-z]+ \d{4})<\/time>/g)];
-    if (stamps.length !== 1) {
-      problems.push(`${page.pathname}: ${stamps.length} author/date lines`);
+    const bylines = [...main.matchAll(/By <a href="\/about\/#dorin">Dorin Burcus<\/a>, founder(?: · (Last updated|Last reviewed) <time datetime="(\d{4}-\d{2}-\d{2})" data-page-updated="(updated|reviewed)">\d{1,2} [A-Z][a-z]+ \d{4}<\/time>|<\/p>)/g)];
+    if (bylines.length !== 1) {
+      problems.push(`${page.pathname}: ${bylines.length} author lines`);
       continue;
     }
-    const [, label, iso, kind] = stamps[0];
+    const [, label, iso, kind] = bylines[0];
     const own = guideDates.get(page.pathname) ?? studyDates.get(page.pathname) ?? editorialDates.get(page.pathname);
-    if (own) {
-      if (label !== 'Last updated' || kind !== 'updated' || iso !== own) problems.push(`${page.pathname}: expected "Last updated ${own}", got "${label} ${iso}"`);
-    } else if (label !== 'Last reviewed' || kind !== 'reviewed' || iso !== facts.lastReviewed) {
-      problems.push(`${page.pathname}: expected "Last reviewed ${facts.lastReviewed}", got "${label} ${iso}"`);
+    if (reviewedPages.has(page.pathname)) seenReviewed.add(page.pathname);
+    const expected = own
+      ? { label: 'Last updated', kind: 'updated', iso: own }
+      : reviewedPages.has(page.pathname) ? { label: 'Last reviewed', kind: 'reviewed', iso: facts.lastReviewed } : null;
+    if (expected && (label !== expected.label || kind !== expected.kind || iso !== expected.iso)) {
+      problems.push(`${page.pathname}: expected "${expected.label} ${expected.iso}", got "${label ?? 'no date'}${iso ? ` ${iso}` : ''}"`);
     }
-    if (iso < '2026-10-09') problems.push(`${page.pathname}: date ${iso} precedes the 9 October 2026 review`);
+    if (!expected && label) problems.push(`${page.pathname}: expected the undated author line, got "${label} ${iso}"`);
+    if (!reviewedPages.has(page.pathname) && main.includes('Last reviewed')) problems.push(`${page.pathname}: prints "Last reviewed"`);
+    const date = iso ?? facts.lastReviewed;
+    if (date < '2026-10-09') problems.push(`${page.pathname}: date ${date} precedes the 9 October 2026 review`);
     const twin = await readFile(path.join('dist', page.pathname, 'index.md'), 'utf8');
     const key = own ? 'last_updated' : 'last_reviewed';
-    if (!twin.includes(`\n${key}: ${iso}\n---\n`)) problems.push(`${page.pathname}: twin front matter lacks "${key}: ${iso}"`);
+    if (!twin.includes(`\n${key}: ${date}\n---\n`)) problems.push(`${page.pathname}: twin front matter lacks "${key}: ${date}"`);
     // Answer-first: a real opening paragraph of at least 60 characters within the first three paragraphs after the H1.
     const after = main.split(/<\/h1>/)[1] ?? '';
     const paragraphs = [...after.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)].slice(0, 3).map((m) => stripTags(m[1]));
     if (!paragraphs.some((text) => text.length >= 60)) problems.push(`${page.pathname}: no opening paragraph of substance after the H1`);
   }
   assert.deepEqual(problems, []);
+  assert.deepEqual([...seenReviewed].sort(), [...reviewedPages].sort(), 'both AI fact pages are published with the dated review stamp');
   const full = await readFile('dist/llms-full.txt', 'utf8');
   assert.equal(full.match(/^Last (updated|reviewed): \d{4}-\d{2}-\d{2}$/gm)?.length, (await publishedPages()).length, 'every page in llms-full carries its date line');
 });
@@ -651,6 +665,7 @@ test('AI manifest and corpus contain exactly every published canonical page and 
   const manifest = JSON.parse(await readFile('dist/ai/index.json', 'utf8')) as { schemaVersion: string; pageCount: number; corpusUrl: string; pages: Omit<AiPageRecord, 'markdown'>[] };
   const corpus = JSON.parse(await readFile('dist/ai/pages.json', 'utf8')) as { schemaVersion: string; pageCount: number; pages: AiPageRecord[] };
   const published = await publishedPages();
+  const siteReviewed = (JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { lastReviewed: string }).lastReviewed;
   const expected = published.map((page) => `${SITE}${page.pathname}`).sort();
   assert.equal(manifest.schemaVersion, '1.0');
   assert.equal(corpus.schemaVersion, manifest.schemaVersion);
@@ -680,9 +695,11 @@ test('AI manifest and corpus contain exactly every published canonical page and 
     assert.deepEqual(structuredData, sourceGraphs, `${record.path}: published JSON-LD parity`);
     const article = sourceGraphs.flatMap((graph) => graph['@graph'] ?? graph).find((node) => node['@type'] === 'Article' && node.url === record.url);
     assert.equal(record.dates.published, article?.datePublished ?? null, `${record.path}: no invented publication date`);
-    const stamp = source.html.match(/<time datetime="([^"]+)" data-page-updated="(updated|reviewed)">/)!;
-    assert.equal(record.dates.reviewed, stamp[2] === 'reviewed' ? stamp[1] : null);
-    assert.equal(record.dates.modified, article?.dateModified ?? (stamp[2] === 'updated' ? stamp[1] : null));
+    // An undated author line stands for the site-wide review date.
+    const stamp = source.html.match(/<time datetime="([^"]+)" data-page-updated="(updated|reviewed)">/);
+    const [stampDate, stampKind] = stamp ? [stamp[1], stamp[2]] : [siteReviewed, 'reviewed'];
+    assert.equal(record.dates.reviewed, stampKind === 'reviewed' ? stampDate : null);
+    assert.equal(record.dates.modified, article?.dateModified ?? (stampKind === 'updated' ? stampDate : null));
     for (const link of links) assert.match(link.url, /^(https?:|mailto:)/, 'no executable or telephone links');
     for (const image of images) {
       assert.ok(image.alt.trim());
@@ -751,6 +768,26 @@ test('page records read semantic metadata from published HTML and reject noindex
       await writeFile(file, html.replace('</head>', `${excluded}</head>`));
       assert.equal(await readPage(file), null);
     }
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
+test('an author line with no date of its own takes the site-wide review date; a page with no author line gets no date', async () => {
+  const facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')) as { lastReviewed: string };
+  const dir = await mkdtemp(path.join(tmpdir(), 'mw-ai-byline-'));
+  const file = path.join(dir, 'index.html');
+  const pageWith = (body: string) => `<html lang="en-GB"><head><title>Example</title><link rel="canonical" href="${SITE}/example/"><meta name="description" content="Published description."></head><main id="main"><h1>Example page</h1>${body}</main></html>`;
+  try {
+    await writeFile(file, pageWith('<p class="page-meta text-sm text-stone">By <a href="/about/#dorin">Dorin Burcus</a>, founder</p>'));
+    const undated = await readPage(file);
+    assert.equal(undated.dateKind, 'reviewed');
+    assert.equal(undated.date, facts.lastReviewed);
+    assert.deepEqual(undated.dates, { published: null, modified: null, reviewed: facts.lastReviewed });
+    await writeFile(file, pageWith('<div class="container-page page-meta-wrap"><p>No author line.</p></div>'));
+    const bare = await readPage(file);
+    assert.equal(bare.date, null);
+    assert.deepEqual(bare.dates, { published: null, modified: null, reviewed: null });
   } finally {
     await rm(dir, { recursive: true, force: true });
   }

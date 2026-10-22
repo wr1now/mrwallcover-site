@@ -48,7 +48,7 @@ const cards = projects.map((project) => {
   };
 });
 const groups = [
-  { id: 'hotels-homes', title: 'Selected projects', intro: '', items: cards.filter(({ project }) => !project.group) },
+  { id: 'hotels-homes', title: 'Case studies', intro: '', items: cards.filter(({ project }) => !project.group) },
   {
     id: 'design-weeks',
     title: 'Retail, design weeks & fashion',
@@ -56,7 +56,8 @@ const groups = [
     items: cards.filter(({ project }) => project.group === 'design-weeks'),
   },
 ].filter((group) => group.items.length > 0);
-const crumbs = [{ name: 'Home', href: '/' }, { name: 'Work', href: '/projects/' }];
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Projects', href: '/projects/' }];
+const nameOnlyHotels = hotels.filter((hotel) => hotel.nameOnly).map((hotel) => hotel.name);
 import makersInstalled from '../../content/makers-installed.json';
 const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
 ---
@@ -69,10 +70,16 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
       <h1>{indexCopy.index.heading}</h1>
       <div class="work-introduction">
         <p class="lede">{indexCopy.index.lede}</p>
-        <a class="work-record-link" href="#hotels">View the complete hotel record <span aria-hidden="true">↓</span></a>
       </div>
-      <p class="work-stories-link"><a href="#commission-stories-heading">Inside the commissions: photographs, films and Calico collaborations</a></p>
-      <p class="work-stories-link"><a href="#project-record">The fuller project record: more hotels, restaurants, shops, workplaces and homes</a></p>
+      {/* A list rather than <nav>: the page's text mirror keeps every in-page route, one per line. */}
+      <div class="work-jump">
+        <p class="work-jump-label" id="work-jump-label">On this page</p>
+        <ul role="list" aria-labelledby="work-jump-label">
+          <li><a href="#hotels">The complete hotel record <span aria-hidden="true">↓</span></a></li>
+          <li><a href="#commission-stories-heading">Inside the commissions: photographs, films and Calico collaborations <span aria-hidden="true">↓</span></a></li>
+          <li><a href="#project-record">The fuller project record: more hotels, restaurants, shops, workplaces and homes <span aria-hidden="true">↓</span></a></li>
+        </ul>
+      </div>
     </header>
     <div class="work-controls" data-project-controls hidden>
       <div class="work-filters" role="group" aria-label="Filter projects by setting">
@@ -93,8 +100,8 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
             {group.items.map(({ project, category, categoryLabel, image, imageWidth, preview, credit, audience }) => (
               <article class="work-item" data-project-card data-project-category={category} data-project-slug={project.slug} data-preview={preview ? 'true' : 'false'}>
                 {image && project.imageId ? (
-                  <figure class="work-figure" style={`max-width:${imageWidth}px`}>
-                    <a class="work-image-link" href={projectHref(project.slug)} aria-label={`View ${project.title}`}>
+                  <figure class="work-figure">
+                    <a class="work-image-link" href={projectHref(project.slug)} aria-label={`View ${project.title}`} style={preview ? `max-width:${imageWidth}px` : undefined}>
                       <Picture id={project.imageId} thumbOnly={preview} sizes={preview ? `(min-width: ${imageWidth! + 48}px) ${imageWidth}px, calc(100vw - 48px)` : '(min-width: 1280px) 36rem, (min-width: 768px) 45vw, 100vw'} />
                     </a>
                     {credit && <figcaption>{project.imageId.startsWith('owo-official-') && 'Venue photograph. '}{credit}</figcaption>}
@@ -102,7 +109,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
                 ) : (
                   <a class="work-text-cover" href={projectHref(project.slug)}>
                     <span>{project.client}</span>
-                    <small>{project.awaitingPhotos ? 'Project record · photographs to follow' : 'Project record'}</small>
+                    <small>{project.awaitingPhotos ? 'Project record · photographs not yet published' : 'Project record'}</small>
                   </a>
                 )}
                 <div class="work-meta"><p>{categoryLabel}</p>{project.dates && <p>{project.dates}</p>}</div>
@@ -124,7 +131,7 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
     <details id="hotels" class="hotel-record" data-hotel-record>
       <summary><span>Complete hotel record</span><span class="hotel-record-count">{hotels.length} named hotels</span></summary>
       <div class="hotel-record-body">
-        <p class="lede">Hotels on the public record, with the years and the scope where we can state them. The Lanesborough and Moxy London ExCeL are listed by name only.</p>
+        <p class="lede">The {hotels.length} hotels we have named, with the years and scope where we can state them.{nameOnlyHotels.length > 0 && ` For ${new Intl.ListFormat('en-GB', { type: 'conjunction' }).format(nameOnlyHotels)} we list the name only.`}</p>
         <ul class="hotel-list">
           {hotels.map((hotel) => (
             <li>
@@ -135,11 +142,14 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
         </ul>
       </div>
     </details>
-    <section class="hotel-record" aria-labelledby="makers-heading">
-      <h2 id="makers-heading" class="m-0 text-[1.6rem]">Makers on our projects</h2>
-      <p class="lede">Wallcovering makers we have installed, each shown with our own photograph on <a href="/materials/#makers-installed">the Materials page</a>. A maker named here is not an endorsement.</p>
-      <ul class="project-maker-links">{makersInstalled.items.map((item) => <li><a href={`/materials/#${makerId(item.brand)}`}>{item.brand}<Icon name="arrow-right" /></a></li>)}</ul>
-    </section>
+    {/* Closed like the hotel record: every maker and link stays in the server HTML. */}
+    <details class="hotel-record" data-makers-record>
+      <summary><h2 id="makers-heading" class="m-0">Makers on our projects</h2><span class="hotel-record-count">{makersInstalled.items.length} makers</span></summary>
+      <div class="hotel-record-body">
+        <p class="lede">Wallcovering makers we have installed, each shown with our own photograph on <a href="/materials/#makers-installed">the Materials page</a>. Naming a maker records an installation, not an endorsement.</p>
+        <ul class="project-maker-links">{makersInstalled.items.map((item) => <li><a href={`/materials/#${makerId(item.brand)}`}>{item.brand}<Icon name="arrow-right" /></a></li>)}</ul>
+      </div>
+    </details>
   </div>
   <script is:inline data-project-explorer-script>
     (() => {
@@ -208,9 +218,12 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
   .work-heading { padding-bottom: 2.5rem; }
   .work-introduction { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
   .work-introduction .lede { max-width: 43rem; margin: 1.25rem 0 0; }
-  .work-record-link { display: inline-flex; align-items: center; gap: 1.2rem; min-height: 44px; font-size: var(--text-button); text-underline-offset: .3rem; color: inherit; flex-shrink: 0; }
-  .work-stories-link { margin:1rem 0 0; font-size:var(--text-button); }
-  .work-stories-link a { display:inline-flex; align-items:center; min-height:44px; text-underline-offset:.3rem; }
+  /* One quiet "On this page" row instead of three loose links. */
+  .work-jump { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1.75rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--color-line); font-size: var(--text-button); }
+  .work-jump-label { margin: 0; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--color-brass); }
+  .work-jump ul { display: flex; flex-wrap: wrap; gap: .25rem 1.75rem; margin: 0; padding: 0; list-style: none; }
+  .work-jump a { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; color: inherit; text-decoration: none; }
+  .work-jump a:hover { text-decoration: underline; text-underline-offset: .3rem; }
   .work-controls { margin-bottom: 2.5rem; padding: 1.2rem 0; border-block: 1px solid var(--color-line); }
   .work-filters { display: flex; flex-wrap: wrap; gap: .6rem; }
   .work-filters button, .work-empty button { border: 1px solid var(--color-ink); background: transparent; color: var(--color-ink); border-radius: var(--button-radius); min-height: var(--button-height); padding: 0 var(--button-pad); font: inherit; font-size: var(--text-button); font-weight: 500; cursor: pointer; }
@@ -223,12 +236,27 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
   .work-group-heading > p { max-width: var(--layout-reading); color: var(--color-stone); font-size: var(--text-body); margin: 1rem 0 0; }
   .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.8rem 3rem; align-items: stretch; }
   .work-item { min-width: 0; }
+  /* From 1024px, where a credit sits on its photograph, a card's six parts (photo or text cover, meta, title, role, summary, action) share the row's tracks, so a two-line title or a longer role does not push its neighbour out of line. Below 1024px a credit prints under its photograph, and shared tracks would leave a gap under an uncredited neighbour's photo. */
+  @media (min-width: 1024px) {
+    .work-item { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+    .work-item > .work-enquire { justify-self: start; }
+  }
   .work-figure { margin: 0; width: 100%; }
   .work-image-link { display: block; }
   .work-figure :global(.media-frame), .work-figure :global(picture) { display: block; width: 100%; }
   .work-figure :global(img) { display: block; width: 100%; height: auto; }
   .work-item:not([data-preview="true"]) .work-figure :global(img) { aspect-ratio: 4 / 3; object-fit: cover; }
+  /* A small source is never upscaled: it sits mounted, centred in the same 4:3 frame, so every card row lines up. */
+  .work-item[data-preview="true"] .work-figure { display: grid; grid-template-rows: minmax(0, 1fr); place-items: center; aspect-ratio: 4 / 3; min-height: 0; overflow: hidden; padding: clamp(1rem, 3vw, 2rem); background: var(--color-paper); border: 1px solid var(--color-line); }
+  .work-item[data-preview="true"] .work-image-link { display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; min-height: 0; }
+  .work-item[data-preview="true"] .work-figure :global(.media-frame), .work-item[data-preview="true"] .work-figure :global(picture) { display: flex; justify-content: center; width: auto; height: 100%; max-width: 100%; }
+  .work-item[data-preview="true"] .work-figure :global(img) { width: auto; max-width: 100%; height: 100%; object-fit: contain; }
+  /* The credit stays on its photograph (a caption chip), so a credited card does not push its row out of line. */
+  .work-figure { position: relative; }
   .work-figure figcaption { margin-top: .6rem; font-size: var(--text-meta); line-height: 1.6; color: var(--color-stone); }
+  @media (min-width: 1024px) {
+    .work-figure figcaption { position: absolute; left: .6rem; bottom: .6rem; max-width: calc(100% - 1.2rem); margin: 0; padding: .2rem .6rem; border-radius: 4px; background: rgba(20, 18, 16, .78); color: #fffdf8; }
+  }
   .work-text-cover { display: flex; flex-direction: column; justify-content: end; gap: 1rem; padding: 2rem; min-height: 16rem; border: 1px solid var(--color-line); background: var(--color-paper); color: inherit; text-decoration: none; }
   .work-text-cover > span { font-family: var(--font-serif); font-size: var(--text-h3); }
   .work-text-cover small { font-size: var(--text-meta); color: var(--color-stone); }
@@ -244,7 +272,8 @@ const makerId = (name: string) => `maker-${name.toLowerCase().normalize('NFD').r
   .work-empty { padding: 2rem; border: 1px solid var(--color-line); margin-bottom: 3rem; }
   .work-empty h2 { margin-top: 0; }
   .hotel-record { border-block: 1px solid var(--color-line); }
-  section.hotel-record { padding-block:2rem; }
+  /* The makers heading sets exactly like the hotel record's summary text beside it. */
+  .hotel-record > summary > h2 { display: inline; font-size: inherit; line-height: inherit; font-weight: inherit; letter-spacing: inherit; }
   .project-maker-links { list-style:none; padding:0; margin:1.5rem 0 0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.25rem 2rem; }
   .project-maker-links a { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:44px; padding-block:.5rem; border-bottom:1px solid var(--color-line); text-decoration:none; }
   .project-maker-links :global(.mw-icon) { width:1rem; height:1rem; color:var(--color-brass); }

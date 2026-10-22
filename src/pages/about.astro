@@ -33,7 +33,7 @@ const valueIcons: IconName[] = ['room', 'lock', 'check'];
     <div class="about-opening">
       <div class="prose about-biography">
         {about.paragraphs.map((paragraph) => <p class="m-0">{paragraph}</p>)}
-        <p class="m-0"><a href={AWARD_URL} rel="noopener">{AWARD_TEXT}</a>.</p>
+        <p class="m-0" id="recognition">{AWARD_TEXT}. <a href={AWARD_URL} rel="noopener">Source: the trophy photograph, archived June 2022</a>.</p>
       </div>
       <div class="about-founder">
         <figure class="founder-portrait m-0">
@@ -43,7 +43,7 @@ const valueIcons: IconName[] = ['room', 'lock', 'check'];
       </div>
     </div>
     <section class="about-work-detail" aria-labelledby="about-disciplines">
-      <div><h2 id="about-disciplines">{about.disciplines.title}</h2><p>{about.disciplines.text}</p><Action variant="quiet" href="/services/">Read the services.</Action></div>
+      <div><h2 id="about-disciplines">{about.disciplines.title}</h2><p>{about.disciplines.text}</p><Action variant="quiet" href="/services/">Read about our services</Action></div>
       <figure class="m-0"><Picture id={about.image} sizes="(min-width: 768px) 36rem, calc(100vw - 2.5rem)" /><figcaption class="caption">{about.imageCaption}</figcaption></figure>
     </section>
   </div>
@@ -120,8 +120,8 @@ const valueIcons: IconName[] = ['room', 'lock', 'check'];
                 )}
               </figure>
               <h3 class="mt-4 mb-0 text-[1.5rem]">{item.href ? <a href={item.href}>{item.name}</a> : item.name}</h3>
-              <p class="mt-1 mb-0 text-brass">{item.place}, {item.years}</p>
-              <p class="mt-2 mb-0 text-stone">{item.text} <a href={item.source} rel="noopener">Our post</a>.</p>
+              <p class="mt-2 mb-0 text-brass">{item.place}, {item.years}</p>
+              <p class="mt-2 mb-0 text-stone">{item.text} <a href={item.source} rel="noopener">See the post</a>.</p>
             </article>
           ))
         }
@@ -151,7 +151,7 @@ const valueIcons: IconName[] = ['room', 'lock', 'check'];
       <p class="eyebrow">{about.collaborators.eyebrow}</p>
       <h2 id="collaborators-heading" class="m-0 max-w-xl text-[clamp(2.2rem,4vw,3.3rem)]">{about.collaborators.title}</h2>
       <p class="mt-6 mb-0 max-w-3xl text-stone">{about.collaborators.text} <a href="/contact/">Talk to us about your project.</a></p>
-      <p class="mt-6"><Action href="/contact/">Discuss your project</Action></p>
+      <p class="mt-6"><Action href="/contact/">Start your project</Action></p>
       <DesignersStrip headingLevel="h3" />
     </div>
   </section>

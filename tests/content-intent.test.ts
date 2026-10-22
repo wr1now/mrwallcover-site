@@ -75,6 +75,6 @@ test('preparation lookup and designer evidence links remain readable in HTML and
   const designer = main(await read('dist/advice/designer-specification-checklist/index.html'));
   const designerTwin = await read('dist/advice/designer-specification-checklist/index.md');
   assert.ok(designer.includes('href="/materials/specified-papers/"'));
-  assert.match(normal(designer), /installation experience, not approval or endorsement/);
+  assert.match(normal(designer), /records an installation, not an endorsement/);
   assert.match(designerTwin, /https:\/\/www\.mrwallcover\.com\/materials\/specified-papers\//);
 });

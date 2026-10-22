@@ -3,7 +3,7 @@ title: "The Biltmore Mayfair | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/biltmore-mayfair/
 description: "More than 15,000 m² of guest-room wallcoverings at the Millennium Hotel, Grosvenor Square, in 2018, including Phillip Jeffries. Now The Biltmore Mayfair."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 44 Grosvenor Square, Mayfair, London W1
@@ -14,7 +14,7 @@ More than 15,000 m² of guest-room wallcoverings in 2018 at the Millennium Hotel
 
 ![Hotel bedroom with grasscloth-effect wallcovering, navy armchair and full-height curtains, the Millennium Hotel, Grosvenor Square, now The Biltmore Mayfair.](https://www.mrwallcover.com/media/img/r/biltmore-02-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -53,7 +53,7 @@ The papers were hung to the schedule for that building, with the repeat and the 
 
 ## Photographs on this page
 
-Our own photographs of the guest rooms and corridors in 2018, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 14 June 2018 ([BkBSc6AHX7U](https://www.instagram.com/p/BkBSc6AHX7U/)), when the programme of more than 15,000 m² had recently started. One shows a room during the works, with the floor still protected.
+Our own photographs of the guest rooms and corridors in 2018, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 14 June 2018 ([see the post](https://www.instagram.com/p/BkBSc6AHX7U/)), when the programme of more than 15,000 m² had recently started. One shows a room during the works, with the floor still protected.
 
 ## Photographs
 
@@ -73,7 +73,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -103,7 +105,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -113,4 +115,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

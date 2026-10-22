@@ -66,4 +66,4 @@ A photograph, the dimensions you have and the product reference are enough for a
 
 [Send us your measurements](https://www.mrwallcover.com/contact/?intent=install)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

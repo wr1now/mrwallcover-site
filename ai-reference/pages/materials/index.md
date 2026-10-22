@@ -1,7 +1,7 @@
 ---
-title: "Material library | Mr Wallcover"
+title: "Wallcovering Materials We Install | Mr Wallcover"
 url: https://www.mrwallcover.com/materials/
-description: "Paper, grasscloth, silk, hand-painted scenics, murals, contract vinyl and acoustic wallcoverings. Installation and sourcing; physical samples decide colour."
+description: "Paper, grasscloth, silk, hand-painted scenics, murals, contract vinyl and acoustic wallcoverings: what each asks of the wall, the seams and the cleaning."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -10,9 +10,7 @@ Materials
 
 # Find the right wallcovering for your room.
 
-Seven material families: paper, grasscloth, silk and textiles, hand-painted scenics, murals, contract vinyl and acoustic wallcoverings, with what each one asks of the wall, the joins and the cleaning. We hang all of them and can source them when you want that. A screen cannot show colour, texture or sheen, so order a physical sample before you decide.
-
-Saved materials stay on this device. There is no account. If you send an enquiry from this browser, the shortlist is attached.
+Seven material families, from printed paper to acoustic panels, all of which we hang and can source, with what each one asks of the wall, the seams and the cleaning. A screen cannot show colour, texture or sheen, so order a physical sample before you decide.
 
 The finish, up close
 
@@ -25,118 +23,6 @@ See how real wallcoverings meet a corner, a seam and the joinery. Each detail co
 ![Close detail of a woven grasscloth wallcovering turning an external corner, the weave running straight and tight to the edge.](https://www.mrwallcover.com/media/img/r/fs-residences-06-800.webp)
 
 Woven grasscloth at an external corner. Four Seasons Private Residences, Ten Trinity Square. Photograph: Mr Wallcover.
-
-A starting point for your room
-
-## Which families suit your room?
-
-A few practical choices narrow the families worth comparing. The final choice still needs a physical sample and the product's own instructions.
-
-Where will it go?
-
-- Bedroom or sitting room
-- Busy hall or family space
-- Hotel or commercial space
-- A wall exposed to splashes or regular steam
-- Not sure yet
-
-What appeals to you?
-
-- Natural texture
-- A more uniform finish
-- A scene or large composition
-- Sheen and changing light
-- Still exploring
-
-How will it be cared for?
-
-- Regular cleaning matters
-- Gentle care is fine
-- Not sure yet
-
-What do you expect from the joints?
-
-- I like visible natural panels
-- I prefer a more uniform wall
-- Show me the difference
-
-What is the light like?
-
-- Strong light across the wall
-- A mix of daylight and lamps
-- Not sure yet
-
-Show me what to compare
-
-Clear my choices
-
-Your choices stay in this browser session and can be included when you send an enquiry.
-
-Explore the material families below, or [ask about your room](https://www.mrwallcover.com/contact/?intent=advice).
-
-### Families to compare
-
-Strong side lighting can emphasise texture, joints and the surface underneath. Review a sample in that light.
-
-For a commercial specification, confirm the exact product's required performance documents and installation conditions with the responsible project professional.
-
-### [Paper and non-woven](https://www.mrwallcover.com/materials/paper-and-non-woven/)
-
-You want a printed pattern or a quieter, more even visual finish.
-
-**Consider this:** Print, backing and care vary substantially between products.
-
-Save to shortlist
-
-### [Grasscloth and natural weaves](https://www.mrwallcover.com/materials/grasscloth-and-weaves/)
-
-Natural fibre and a visible panel character are part of the look you want.
-
-**Consider this:** Adjacent drops can differ in shade; do not expect an invisible joint.
-
-Save to shortlist
-
-### [Silk and textiles](https://www.mrwallcover.com/materials/silk-and-textiles/)
-
-You want a textile surface whose appearance changes with the light.
-
-**Consider this:** Delicate faces can be less forgiving of marks and handling.
-
-Save to shortlist
-
-### [Hand-painted scenic papers](https://www.mrwallcover.com/materials/hand-painted/)
-
-The scene should be designed around the room and its focal points.
-
-**Consider this:** Doors, corners and furniture can interrupt the composition.
-
-Save to shortlist
-
-### [Murals](https://www.mrwallcover.com/materials/murals/)
-
-One wall or a room needs a planned composition rather than a repeating pattern.
-
-**Consider this:** A preview cannot confirm the real colour, texture or precise crop.
-
-Save to shortlist
-
-### [Contract vinyl](https://www.mrwallcover.com/materials/contract-vinyl/)
-
-Cleaning and everyday wear are priorities worth discussing with the supplier.
-
-**Consider this:** The material name alone does not establish wet-area or fire suitability.
-
-Save to shortlist
-
-### [Acoustic wallcoverings](https://www.mrwallcover.com/materials/acoustic/)
-
-Sound performance forms part of a professionally specified system.
-
-**Consider this:** A decorative texture is not evidence of acoustic performance.
-
-Save to shortlist
-
-[Discuss these choices](https://www.mrwallcover.com/contact/?intent=source)
 
 The material library
 
@@ -190,7 +76,7 @@ Save to shortlist
 
 ### [Hand-painted scenic papers](https://www.mrwallcover.com/materials/hand-painted/)
 
-Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them. We do not make them, and we are not affiliated with those makers.
+Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them.
 
 The joins
 
@@ -242,11 +128,125 @@ Save to shortlist
 
 [Installation](https://www.mrwallcover.com/services/acoustic-wallcovering-installation/)
 
+A starting point for your room
+
+## Which families suit your room?
+
+A few practical choices narrow the families worth comparing. The final choice still needs a physical sample and the product's own instructions.
+
+Where will it go?
+
+- Bedroom or sitting room
+- Busy hall or family space
+- Hotel or commercial space
+- A wall exposed to splashes or regular steam
+- Not sure yet
+
+What appeals to you?
+
+- Natural texture
+- A more uniform finish
+- A scene or large composition
+- Sheen and changing light
+- Still exploring
+
+How will it be cared for?
+
+- Regular cleaning matters
+- Gentle care is fine
+- Not sure yet
+
+What do you expect from the joints?
+
+- I like visible natural panels
+- I prefer a more uniform wall
+- Show me the difference
+
+What is the light like?
+
+- Strong light across the wall
+- A mix of daylight and lamps
+- Not sure yet
+
+Show me what to compare
+
+Clear my choices
+
+Your choices stay in this browser session and can be included when you send an enquiry.
+
+Explore the material families above, or [ask about your room](https://www.mrwallcover.com/contact/?intent=advice).
+
+### Families to compare
+
+Strong side lighting can emphasise texture, joints and the surface underneath. Review a sample in that light.
+
+For a commercial specification, confirm the exact product's required performance documents and installation conditions with the responsible project professional.
+
+### [Paper and non-woven](https://www.mrwallcover.com/materials/paper-and-non-woven/)
+
+You want a printed pattern or a quieter, more even visual finish.
+
+**Worth knowing:** Print, backing and care vary substantially between products.
+
+Save to shortlist
+
+### [Grasscloth and natural weaves](https://www.mrwallcover.com/materials/grasscloth-and-weaves/)
+
+Natural fibre and a visible panel character are part of the look you want.
+
+**Worth knowing:** Adjacent drops can differ in shade; do not expect an invisible joint.
+
+Save to shortlist
+
+### [Silk and textiles](https://www.mrwallcover.com/materials/silk-and-textiles/)
+
+You want a textile surface whose appearance changes with the light.
+
+**Worth knowing:** Delicate faces can be less forgiving of marks and handling.
+
+Save to shortlist
+
+### [Hand-painted scenic papers](https://www.mrwallcover.com/materials/hand-painted/)
+
+The scene should be designed around the room and its focal points.
+
+**Worth knowing:** Doors, corners and furniture can interrupt the composition.
+
+Save to shortlist
+
+### [Murals](https://www.mrwallcover.com/materials/murals/)
+
+One wall or a room needs a planned composition rather than a repeating pattern.
+
+**Worth knowing:** A preview cannot confirm the real colour, texture or precise crop.
+
+Save to shortlist
+
+### [Contract vinyl](https://www.mrwallcover.com/materials/contract-vinyl/)
+
+Cleaning and everyday wear are priorities worth discussing with the supplier.
+
+**Worth knowing:** The material name alone does not establish wet-area or fire suitability.
+
+Save to shortlist
+
+### [Acoustic wallcoverings](https://www.mrwallcover.com/materials/acoustic/)
+
+Sound performance forms part of a professionally specified system.
+
+**Worth knowing:** A decorative texture is not evidence of acoustic performance.
+
+Save to shortlist
+
+[Discuss these choices](https://www.mrwallcover.com/contact/?intent=source)
+
 ## Compare the shortlist 0
 
 Clear shortlist
 
 Save two or more families to compare joins, care and where they belong.
+
+Saved materials stay on this device. There is no account. If you send an enquiry from this browser, the shortlist is attached.
 
 ### Paper and non-woven
 
@@ -318,7 +318,7 @@ Makers installed
 
 ## Makers we have installed, in our own photographs.
 
-Each maker below is shown with one of our photographs of its product on the wall, linked to the project where the project is public. Private projects are named only by area. A maker named here means Mr Wallcover installed that maker's product; it is not an approval, accreditation or endorsement.
+Each maker below is shown with one of our photographs of its product on the wall, linked to the project where the project is public. Private projects are named only by area. Naming a maker records an installation, not an endorsement.
 
 - ![Freshly papered Anaglypta ceiling in a Pendley Manor room.](https://www.mrwallcover.com/media/img/r/pendley-manor-03-800.webp)
 
@@ -330,31 +330,31 @@ Installed at [Pendley Manor Hotel, Tring](https://www.mrwallcover.com/projects/p
 
 ### Andrew Martin
 
-Installed at a private residence, London, 2018. [Our post](https://www.instagram.com/p/BfwPR8zgKN0/).
+Installed at a private residence, London, 2018. [See the post](https://www.instagram.com/p/BfwPR8zgKN0/).
 
 - ![Corridor with Arte grey linear wallcovering, a private project, London.](https://www.mrwallcover.com/media/img/r/brand-arte-01-800.webp)
 
 ### Arte
 
-Installed at a private project, London, 2017. [Our post](https://www.instagram.com/p/BdNtIUtAtKR/).
+Installed at a private project, London, 2017. [See the post](https://www.instagram.com/p/BdNtIUtAtKR/).
 
 - ![Barneby Gates wallpaper in a bathroom with a mirror, a private project, London.](https://www.mrwallcover.com/media/img/r/brand-barneby-gates-01-800.webp)
 
 ### Barneby Gates
 
-Installed at a private project, London, 2018. [Our post](https://www.instagram.com/p/BfatDoPAhNB/).
+Installed at a private project, London, 2018. [See the post](https://www.instagram.com/p/BfatDoPAhNB/).
 
 - ![Crystal chandelier in a room lined with Bernard Thorp charcoal Savoy silk, Kensington.](https://www.mrwallcover.com/media/img/r/brand-bernard-thorp-01-800.webp)
 
 ### Bernard Thorp
 
-Installed at a private project, Kensington, 2019. [Our post](https://www.instagram.com/p/B1gT66IlmF5/).
+Installed at a private project, Kensington, 2019. [See the post](https://www.instagram.com/p/B1gT66IlmF5/).
 
 - ![Room with a deep blue Calico gradient wallpaper, a yellow sideboard and a daybed, a private project, London.](https://www.mrwallcover.com/media/img/r/brand-calico-wallpaper-01-800.webp)
 
 ### Calico Wallpaper
 
-Installed at a private project, London, 2019. [Our post](https://www.instagram.com/p/B2Uz7Dcl2_j/).
+Installed at a private project, London, 2019. [See the post](https://www.instagram.com/p/B2Uz7Dcl2_j/).
 
 [How we install Calico Wallpaper](https://www.mrwallcover.com/services/calico-wallpaper-installer/)
 
@@ -362,19 +362,19 @@ Installed at a private project, London, 2019. [Our post](https://www.instagram.c
 
 ### Celerie Kemble
 
-Installed at a private project, South Kensington, 2018. [Our post](https://www.instagram.com/p/BfzCYuBgjSb/).
+Installed at a private project, South Kensington, 2018. [See the post](https://www.instagram.com/p/BfzCYuBgjSb/).
 
 - ![Close-up of a Chilewich woven backless wall textile, a private project, London.](https://www.mrwallcover.com/media/img/r/brand-chilewich-01-800.webp)
 
 ### Chilewich
 
-Installed at a private project, London, 2018. [Our post](https://www.instagram.com/p/BgR498OAKT7/).
+Installed at a private project, London, 2018. [See the post](https://www.instagram.com/p/BgR498OAKT7/).
 
 - ![Bathroom with a Christopher Farr Cloth raffia wallpaper by Kate Blee above a basin, a private project, London.](https://www.mrwallcover.com/media/img/r/brand-christopher-farr-cloth-01-800.webp)
 
 ### Christopher Farr Cloth
 
-Installed at a private project, London, 2019. [Our post](https://www.instagram.com/p/B27gA7Flo7y/).
+Installed at a private project, London, 2019. [See the post](https://www.instagram.com/p/B27gA7Flo7y/).
 
 - ![Close-up of Cole & Son Petroushka velvet flock in gold on cream, Pendley Manor Hotel, Tring.](https://www.mrwallcover.com/media/img/r/pendley-manor-04-800.webp)
 
@@ -392,19 +392,19 @@ Installed at [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwal
 
 ### Eijffinger
 
-Installed at a private project, London, 2019. [Our post](https://www.instagram.com/p/B1OBBTolcYg/).
+Installed at a private project, London, 2019. [See the post](https://www.instagram.com/p/B1OBBTolcYg/).
 
 - ![Cinema room walls in a dark Elitis acoustic wallcovering, private residence, Mayfair.](https://www.mrwallcover.com/media/img/r/brand-elitis-01-800.webp)
 
 ### Elitis
 
-Installed at a private residence, Mayfair, 2018. [Our post](https://www.instagram.com/p/BglmE0vgCj9/).
+Installed at a private residence, Mayfair, 2018. [See the post](https://www.instagram.com/p/BglmE0vgCj9/).
 
 - ![Fermoie linen applied to walls, joinery and skirting, a private project, London.](https://www.mrwallcover.com/media/img/r/brand-fermoie-01-800.webp)
 
 ### Fermoie
 
-Installed at a private project, London, 2021. [Our post](https://www.instagram.com/p/CQmafWXF-Q7/).
+Installed at a private project, London, 2021. [See the post](https://www.instagram.com/p/CQmafWXF-Q7/).
 
 - ![Collage of Fromental silk wallcovering details in a hotel room, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-01-800.webp)
 
@@ -416,25 +416,25 @@ Installed at [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwal
 
 ### Glamora
 
-Installed at a private residence, Belgravia, 2020. [Our post](https://www.instagram.com/p/B76IQn3FDtg/).
+Installed at a private residence, Belgravia, 2020. [See the post](https://www.instagram.com/p/B76IQn3FDtg/).
 
 - ![Close-up of Gucci cats wallpaper in navy and red, a private project, Covent Garden.](https://www.mrwallcover.com/media/img/r/brand-gucci-01-800.webp)
 
 ### Gucci
 
-Installed at a private project, Covent Garden, 2019. [Our post](https://www.instagram.com/p/B27e8vpFbY1/).
+Installed at a private project, Covent Garden, 2019. [See the post](https://www.instagram.com/p/B27e8vpFbY1/).
 
 - ![Collage of Harlequin, Romo and Zoffany textured feature walls, private residence, Soho.](https://www.mrwallcover.com/media/img/r/brand-harlequin-01-800.webp)
 
 ### Harlequin
 
-Installed at a private residence, Soho, 2018. [Our post](https://www.instagram.com/p/Bg0dDlUgILu/).
+Installed at a private residence, Soho, 2018. [See the post](https://www.instagram.com/p/Bg0dDlUgILu/).
 
 - ![Collage of a Hermès pattern wallpaper, Knightsbridge.](https://www.mrwallcover.com/media/img/r/brand-hermes-01-800.webp)
 
 ### Hermès
 
-Installed at a private project, Knightsbridge, 2018. [Our post](https://www.instagram.com/p/BfGl02NAXNp/).
+Installed at a private project, Knightsbridge, 2018. [See the post](https://www.instagram.com/p/BfGl02NAXNp/).
 
 - ![House of Hackney's earlier Shoreditch showroom, 2019: bold floral wallpaper behind displayed furnishings.](https://www.mrwallcover.com/media/img/r/hoh-shoreditch-2019-01-800.webp)
 
@@ -448,7 +448,7 @@ Installed at [our About page](https://www.mrwallcover.com/about/) · [House of H
 
 ### Kelly Hoppen
 
-Installed at a private project, Chelsea, 2018. [Our post](https://www.instagram.com/p/Bdub1dVA8ul/).
+Installed at a private project, Chelsea, 2018. [See the post](https://www.instagram.com/p/Bdub1dVA8ul/).
 
 - ![Curved staircase wall during Lincrusta installation, Trematon Castle.](https://www.mrwallcover.com/media/img/r/trematon-ig-28-800.webp)
 
@@ -466,13 +466,13 @@ Installed at [Everyman cinema, Liverpool](https://www.mrwallcover.com/projects/e
 
 ### Omexco
 
-Installed at a private project, London, 2017. [Our post](https://www.instagram.com/p/BaCaL9JAVaV/).
+Installed at a private project, London, 2017. [See the post](https://www.instagram.com/p/BaCaL9JAVaV/).
 
 - ![Close-up of a black-and-white illustrated Osborne & Little bird wallpaper, a private project, Chelsea.](https://www.mrwallcover.com/media/img/r/brand-osborne-little-01-800.webp)
 
 ### Osborne & Little
 
-Installed at a private project, Chelsea, 2018. [Our post](https://www.instagram.com/p/Brs8kF0A3Ry/).
+Installed at a private project, Chelsea, 2018. [See the post](https://www.instagram.com/p/Brs8kF0A3Ry/).
 
 - ![The label of the Papiers de Paris 'Lac des Cygnes No 2' scenic wallpaper, hung in the garden room of the tea house in West London.](https://www.mrwallcover.com/media/img/r/tea-house-ig-01-800.webp)
 
@@ -490,37 +490,37 @@ Installed at [The Biltmore Mayfair](https://www.mrwallcover.com/projects/biltmor
 
 ### Ralph Lauren Home
 
-Installed at a private project, Chelsea, 2018. [Our post](https://www.instagram.com/p/Bf_VErVATsL/).
+Installed at a private project, Chelsea, 2018. [See the post](https://www.instagram.com/p/Bf_VErVATsL/).
 
 - ![Close-up of black embossed Roberto Cavalli wallpaper with a metallic logo, a private residence, South Bank.](https://www.mrwallcover.com/media/img/r/brand-roberto-cavalli-home-01-800.webp)
 
 ### Roberto Cavalli Home
 
-Installed at a private residence, South Bank, 2020. [Our post](https://www.instagram.com/p/B7nPadkl-or/).
+Installed at a private residence, South Bank, 2020. [See the post](https://www.instagram.com/p/B7nPadkl-or/).
 
 - ![Collage of Harlequin, Romo and Zoffany textured feature walls, private residence, Soho.](https://www.mrwallcover.com/media/img/r/brand-harlequin-01-800.webp)
 
 ### Romo
 
-Installed at a private residence, Soho, 2018. [Our post](https://www.instagram.com/p/Bg0dDlUgILu/).
+Installed at a private residence, Soho, 2018. [See the post](https://www.instagram.com/p/Bg0dDlUgILu/).
 
 - ![Close-up of a Sahco fine fabric wallcovering, a private project, Chelsea.](https://www.mrwallcover.com/media/img/r/brand-sahco-01-800.webp)
 
 ### Sahco
 
-Installed at a private project, Chelsea, 2018. [Our post](https://www.instagram.com/p/BducVIvggXY/).
+Installed at a private project, Chelsea, 2018. [See the post](https://www.instagram.com/p/BducVIvggXY/).
 
 - ![Living room with chandelier and bird-pattern Schumacher wallpaper, South Kensington.](https://www.mrwallcover.com/media/img/r/brand-schumacher-01-800.webp)
 
 ### Schumacher
 
-Installed at a private residence, South Kensington, 2018. [Our post](https://www.instagram.com/p/Bg4IZSZAIQy/).
+Installed at a private residence, South Kensington, 2018. [See the post](https://www.instagram.com/p/Bg4IZSZAIQy/).
 
 - ![Soane Britain wallpaper with a dark green vertical leaf trail, a private project, London.](https://www.mrwallcover.com/media/img/r/brand-soane-britain-01-800.webp)
 
 ### Soane Britain
 
-Installed at a private project, London, 2021. [Our post](https://www.instagram.com/p/CQ1ZMbWFHer/).
+Installed at a private project, London, 2021. [See the post](https://www.instagram.com/p/CQ1ZMbWFHer/).
 
 - ![Collage of a hotel bedroom and corridor finished in Tektura wide vinyl, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-01-800.webp)
 
@@ -532,13 +532,13 @@ Installed at [our About page](https://www.mrwallcover.com/about/) · [DoubleTree
 
 ### Thibaut
 
-Installed at a private project, London, 2017. [Our post](https://www.instagram.com/p/BaCSZQwAnzo/).
+Installed at a private project, London, 2017. [See the post](https://www.instagram.com/p/BaCSZQwAnzo/).
 
 - ![Timorous Beasties birds-and-bees wallpaper with colourful birds on blue-grey, a private project, Shoreditch.](https://www.mrwallcover.com/media/img/r/brand-timorous-beasties-01-800.webp)
 
 ### Timorous Beasties
 
-Installed at a private project, Shoreditch, 2019. [Our post](https://www.instagram.com/p/B5XtrKBlCHp/).
+Installed at a private project, Shoreditch, 2019. [See the post](https://www.instagram.com/p/B5XtrKBlCHp/).
 
 [How we install Timorous Beasties](https://www.mrwallcover.com/services/timorous-beasties-installer/)
 
@@ -546,13 +546,13 @@ Installed at a private project, Shoreditch, 2019. [Our post](https://www.instagr
 
 ### Today Interiors (Zaniah)
 
-Installed at a private project, Westminster, 2021. [Our post](https://www.instagram.com/p/COGgYVIl5up/).
+Installed at a private project, Westminster, 2021. [See the post](https://www.instagram.com/p/COGgYVIl5up/).
 
 - ![Versace Medusa motif on a grey wallpaper, a private residence, London.](https://www.mrwallcover.com/media/img/r/brand-versace-home-01-800.webp)
 
 ### Versace Home
 
-Installed at a private residence, London, 2018. [Our post](https://www.instagram.com/p/BgE3W2Jgv3z/).
+Installed at a private residence, London, 2018. [See the post](https://www.instagram.com/p/BgE3W2Jgv3z/).
 
 - ![Large conference room at the Hilton London Metropole with Vescom-covered wall panels.](https://www.mrwallcover.com/media/img/r/metropole-05-800.webp)
 
@@ -564,25 +564,25 @@ Installed at [our About page](https://www.mrwallcover.com/about/) · [Four Seaso
 
 ### Wall&decò
 
-Installed at a private residence, London, 2018. [Our post](https://www.instagram.com/p/Bd79-CEALLQ/).
+Installed at a private residence, London, 2018. [See the post](https://www.instagram.com/p/Bd79-CEALLQ/).
 
 - ![Wine bar wall with a bespoke Woodchip & Magnolia print of trees and birds, a wine bar, London.](https://www.mrwallcover.com/media/img/r/brand-woodchip-magnolia-01-800.webp)
 
 ### Woodchip & Magnolia
 
-Installed at a wine bar, London, 2019. [Our post](https://www.instagram.com/p/B1yKHuFF8Xt/).
+Installed at a wine bar, London, 2019. [See the post](https://www.instagram.com/p/B1yKHuFF8Xt/).
 
 - ![Close-up of a Zoffany textured wallpaper, Soho.](https://www.mrwallcover.com/media/img/r/brand-zoffany-01-800.webp)
 
 ### Zoffany
 
-Installed at a private residence, Soho, 2018. [Our post](https://www.instagram.com/p/BgbJzaZgdvm/).
+Installed at a private residence, Soho, 2018. [See the post](https://www.instagram.com/p/BgbJzaZgdvm/).
 
 - ![de Gournay hand-painted wallpaper with brass wall lights, a private residence, London.](https://www.mrwallcover.com/media/img/r/brand-de-gournay-01-800.webp)
 
 ### de Gournay
 
-Installed at a private residence, London, 2018. [Our post](https://www.instagram.com/p/BhcaLpanOEf/).
+Installed at a private residence, London, 2018. [See the post](https://www.instagram.com/p/BhcaLpanOEf/).
 
 Material light studio
 
@@ -590,7 +590,7 @@ Material light studio
 
 An illustrative simulation of a room corner. It is not a certified match of a named product. A physical sample is the authority for colour, texture and sheen.
 
-![Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-01.jpg)
+![Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-01-800.webp)
 
 A real surface at Brown's Hotel, Mayfair. The studio does not replace this photograph.
 
@@ -624,4 +624,4 @@ Reset
 
 Close
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

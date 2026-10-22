@@ -1,7 +1,7 @@
 ---
 title: "Paper and non-woven wallpaper installation | Mr Wallcover"
 url: https://www.mrwallcover.com/materials/paper-and-non-woven/
-description: "Paper and non-woven wallcoverings, printed or plain, from a quiet texture to a large repeat, surveyed and hung by Mr Wallcover in London."
+description: "Paper and non-woven wallpaper, printed or plain, hung by Mr Wallcover, including seven House of Hackney papers at the Castle of Trematon, 2019–2022."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -12,7 +12,7 @@ Material family
 
 Printed or plain, from a quiet texture to a large repeat.
 
-![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-06.jpg)
+![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-06-800.webp)
 
 Printed Adam’s Eden by Adam Calkin for Lewis & Wood at Brown’s Hotel, Mayfair, with its printed selvedge still visible. The repeat and edge are product-specific.Mr Wallcover project photograph.[Brown’s Hotel: the project](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
@@ -51,7 +51,19 @@ The wall has to be sound first. Lining is used when the maker or the wall requir
 
 Follow the maker. Many papers are not washable. We do not call a family washable, fire-rated or seamless unless that product’s own data says so.
 
-Digital colour is a guide. Order a cutting or a sample before you commit to a room. We can install material you have already bought, or source a family and install it. Either way, the next step is a short note about the room.
+Digital colour is a guide. Order a cutting or a sample before you commit to a room. Some makers’ own sample routes are listed under [official buying routes](https://www.mrwallcover.com/buying-routes/). We can install material you have already bought, or source a family and install it. Either way, the next step is a short note about the room.
+
+Before you order
+
+## For a high-value order
+
+- Workmanship is guaranteed for twelve months. [The aftercare page](https://www.mrwallcover.com/aftercare/) sets out what is covered.
+- Public liability, employers' liability and professional indemnity details are available on request.
+- Risk assessments and method statements (RAMS) on every job, with Dorin Burcus supervising on site.
+- A core team of six wallpaper hangers and six decorators who work together every day, scaling to 25–35 skilled tradespeople for large hotel programmes.
+- [For designers and architects](https://www.mrwallcover.com/professionals/designers/)
+- [Download the specification schedule (CSV)](https://www.mrwallcover.com/downloads/wallcovering-specification-schedule.csv)
+- [Trade and contractors](https://www.mrwallcover.com/trade/)
 
 Illustrative material study · confirm the actual finish with a sample
 
@@ -77,7 +89,7 @@ Plan the detail
 
 - [Choosing wallcoverings](https://www.mrwallcover.com/advice/choosing-wallcoverings/)
 
-From our portfolio
+From our projects
 
 ## Selected work
 
@@ -93,7 +105,7 @@ Makers installed
 
 ## Paper and non-woven: makers we have hung
 
-Each in our own photograph of its product on the wall. A maker named here means Mr Wallcover installed that maker's product; it is not an approval, accreditation or endorsement.
+Each in our own photograph of its product on the wall. Naming a maker records an installation, not an endorsement.
 
 - ![House of Hackney's earlier Shoreditch showroom, 2019: bold floral wallpaper behind displayed furnishings.](https://www.mrwallcover.com/media/img/r/hoh-shoreditch-2019-01-800.webp)
 
@@ -119,4 +131,8 @@ Installed at [Pendley Manor Hotel, Tring](https://www.mrwallcover.com/projects/p
 
 Installed at [Castle of Trematon, Cornwall](https://www.mrwallcover.com/projects/trematon-castle/).
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+Paper and non-woven: send a short note about the room, or tell us you already have the material.
+
+[Discuss this material](https://www.mrwallcover.com/contact/?intent=source&service=wallcovering&topic=material%3Apaper-and-non-woven) [I already have it](https://www.mrwallcover.com/contact/?intent=install&service=wallcovering&topic=material%3Apaper-and-non-woven)
+
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

@@ -1,9 +1,9 @@
 ---
 title: "Hyde London City (the Old Bailey Hotel) | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/old-bailey-hotel/
-description: "Full decorating package: decoration, specialist wallcoverings and window film at Hyde London City (the Old Bailey Hotel), c. 2 years. A complete…"
+description: "Full decorating package at Hyde London City (the Old Bailey Hotel), 2022–2024: 111 guest rooms, specialist wallcoverings and window film."
 author: "Dorin Burcus"
-last_updated: 2026-10-10
+last_updated: 2026-10-22
 ---
 
 15 Old Bailey, City of London EC4M 7EF
@@ -14,7 +14,7 @@ A complete decorating package for 111 guest rooms across seven storeys: paint, s
 
 ![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -115,6 +115,8 @@ On 2 September 2024 the first hotel in London to be lit by electricity reopened 
 
 ![Limerence wallpaper meeting joinery in the suite.](https://www.mrwallcover.com/media/img/r/old-bailey-14-800.webp)
 
+All 10 more photographs from this project
+
 ![Stair landing with terracotta walls at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-16-800.webp)
 
 ![The stair balustrade and timber handrail seen from above.](https://www.mrwallcover.com/media/img/r/old-bailey-17-800.webp)
@@ -139,7 +141,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -169,7 +173,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -179,4 +183,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 10 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

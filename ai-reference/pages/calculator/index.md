@@ -1,7 +1,7 @@
 ---
 title: "Wallpaper calculator: rolls, cutting plan | Mr Wallcover"
 url: https://www.mrwallcover.com/calculator/
-description: "Work out how many rolls of wallpaper to order, see how every drop is cut from the rolls, and get the primer, lining and paste for the wall. No price."
+description: "Work out how many rolls of wallpaper to order, see how every drop is cut from the rolls, and get the primer, lining and paste. A quantity, not a price."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -10,7 +10,7 @@ Calculator
 
 # Wallpaper calculator
 
-Choose the roll, then give the wall's width and height. We cut every drop from the rolls the way we do and give you the order with a spare, the cutting plan, and the primer, lining and paste. A quantity to order, not a set-out, and never a price.
+Choose the roll, then enter the wall's width and height. The calculator cuts every drop from the rolls as we would on site, and gives you the order with a spare, the cutting plan, and the primer, lining and paste to go with it. It gives a quantity to order, not a set-out, and never a price.
 
 [Try the worked example](https://www.mrwallcover.com/calculator/?f=other-roll&rw=55&rl=10&m=straight&r=65&ms=wall&w=230x265#calculator-heading)230 × 265 cm wall · 65 cm straight repeat
 
@@ -292,4 +292,4 @@ Why width decides the number of drops, how the pattern repeat changes the cut, w
 
 [Send us your measurements](https://www.mrwallcover.com/contact/?intent=install) [Read the guide](https://www.mrwallcover.com/advice/quantities/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

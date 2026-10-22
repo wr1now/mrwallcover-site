@@ -59,3 +59,6 @@
 }
 @media (min-width:1100px) { .clear-home-process ol { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media (max-width:639px) { .clear-home .clear-home-hero-contact { display:none; } .clear-home .atelier-hero-actions { gap:.75rem; } .clear-home .atelier-hero-actions .mw-action { gap:.75rem; padding-inline:1rem; } }
+
+/* Keep the existing closing heading aligned with its centred copy. */
+body .atelier .clear-home-closing h2 { margin-left:auto; margin-right:auto; }

@@ -1,7 +1,7 @@
 ---
 title: "Wallcovering Guide | Mr Wallcover"
 url: https://www.mrwallcover.com/advice/
-description: "Choose, specify, source, prepare for and install a wallcovering: our guides, the roll calculator, how wallpaper is sold and how we check."
+description: "Plain guidance from a London installer: choosing, specifying, preparing for and hanging wallcoverings, with the calculator and aftercare."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -31,7 +31,7 @@ How do I write it down so it is hung as drawn?
   - [**Plan a professional package**Designers, developers and hotels.](https://www.mrwallcover.com/professionals/)
   - [**Designer checklist**What a schedule needs before a roll is ordered.](https://www.mrwallcover.com/advice/designer-specification-checklist/)
   - [**Hotel wallcoverings**Corridors, rooms and the spare stock a hotel keeps.](https://www.mrwallcover.com/advice/hotel-wallcovering-specification/)
-  - [**Fire ratings & standards**Evidence to request for a commercial specification.](https://www.mrwallcover.com/advice/wallcovering-fire-ratings-uk/)
+  - [**Fire ratings & standards**The documents to ask for on a commercial specification.](https://www.mrwallcover.com/advice/wallcovering-fire-ratings-uk/)
 
 ### Source
 
@@ -62,7 +62,7 @@ Who hangs it, and how is it done well?
   - [**Seams, corners and edges**Close-ups from our own jobs.](https://www.mrwallcover.com/details/)
   - [**Care and repairs**What to expect after the hang.](https://www.mrwallcover.com/aftercare/)
 
-[How we check](https://www.mrwallcover.com/how-we-check/) Our evidence rules, publication checks and corrections.
+[Product facts and corrections](https://www.mrwallcover.com/how-we-check/) Where our product facts come from, and how to report a correction.
 
 ## Find the answer you need.
 
@@ -78,7 +78,7 @@ Planning
 
 Caring
 
-![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-06.jpg)
+![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-06-800.webp)
 
 Adam’s Eden at Brown’s Hotel, Mayfair. Mr Wallcover photograph.
 
@@ -134,7 +134,7 @@ Pause motion
 
 ## [Installation cost](https://www.mrwallcover.com/advice/installation-cost/)
 
-Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
+Why installation is not priced per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
 
 [Read the guide](https://www.mrwallcover.com/advice/installation-cost/)
 
@@ -248,6 +248,6 @@ A question about your project?
 
 Tell us about the room or send the material you are considering. We can discuss preparation, installation or the complete package.
 
-[Discuss your project](https://www.mrwallcover.com/contact/?intent=advice) [Care and repairs](https://www.mrwallcover.com/aftercare/)
+[Start your project](https://www.mrwallcover.com/contact/?intent=advice) [Care and repairs](https://www.mrwallcover.com/aftercare/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

@@ -185,7 +185,7 @@ export function gapsFor(product: Product, today = FIRE_CHECKED, lookup: (id: str
   if (!product.testedBuildup.substrate && !product.testedBuildup.adhesive) gaps.push({ kind: 'no-buildup', text: 'The document we read does not name the tested substrate or adhesive.' });
   if (!product.fieldOfApplication) gaps.push({ kind: 'no-field-of-application', text: 'No field of application (permitted variations) is stated in the document we read.' });
   if (product.status === 'superseded') gaps.push({ kind: 'superseded', text: 'This document has been superseded; do not rely on it.' });
-  if (product.status === 'unclear') gaps.push({ kind: 'unclear-status', text: 'Whether this document is still current is unclear.' });
+  if (product.status === 'unclear') gaps.push({ kind: 'unclear-status', text: 'Ask the maker to confirm this document is still current before you rely on it.' });
   if (product.evidenceLevel === 'technical_sheet' || product.evidenceLevel === 'webpage' || product.evidenceLevel === 'brochure') gaps.push({ kind: 'sheet-only', text: 'Only a maker’s sheet or page was available to us, not the declaration of performance or classification report behind it.' });
   for (const text of product.conflicts) gaps.push({ kind: 'conflict', text });
   for (const text of product.unresolved) gaps.push({ kind: 'unresolved', text });

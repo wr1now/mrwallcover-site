@@ -16,12 +16,12 @@ Sangetsu develops interior decorating products, including XSELECT, FAITH, Reserv
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://www.sangetsu.co.jp/english/companyprofile/overview.html) — checked 2026-10-17
-- [Official source](https://www.sangetsu.co.jp/english/products/wallpaper.html) — checked 2026-10-17
-- [Official source](https://www.sangetsu.co.jp/english/pdfdownload/xselect25_texture_material/) — checked 2026-10-17
-- [Official source](https://www.sangetsu.co.jp/english/showroom/) — checked 2026-10-17
-- [Official source](https://qa.sangetsu.co.jp/public/faq_detail.html?id=10765) — checked 2026-10-17
-- [Official source](https://qa.sangetsu.co.jp/public/) — checked 2026-10-17
+- [Official source: sangetsu.co.jp/english/companyprofile/overview.html](https://www.sangetsu.co.jp/english/companyprofile/overview.html) — checked 17 October 2026
+- [Official source: sangetsu.co.jp/english/products/wallpaper.html](https://www.sangetsu.co.jp/english/products/wallpaper.html) — checked 17 October 2026
+- [Official source: sangetsu.co.jp/english/pdfdownload/xselect25_texture_material](https://www.sangetsu.co.jp/english/pdfdownload/xselect25_texture_material/) — checked 17 October 2026
+- [Official source: sangetsu.co.jp/english/showroom](https://www.sangetsu.co.jp/english/showroom/) — checked 17 October 2026
+- [Official source: qa.sangetsu.co.jp/public/faq_detail.html](https://qa.sangetsu.co.jp/public/faq_detail.html?id=10765) — checked 17 October 2026
+- [Official source: qa.sangetsu.co.jp/public](https://qa.sangetsu.co.jp/public/) — checked 17 October 2026
 
 [Visit maker website](https://www.sangetsu.co.jp/english/)
 
@@ -48,9 +48,9 @@ Terms and checks before ordering
 
 not established; ask the maker not established; ask the maker
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.sangetsu.co.jp/english/showroom/)
+[Open official source: Showroom or brand contact, Japan](https://www.sangetsu.co.jp/english/showroom/)
 
 ### Showroom or brand contact
 
@@ -71,9 +71,9 @@ Terms and checks before ordering
 
 not established; ask the maker not established; ask the maker
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://qa.sangetsu.co.jp/public/)
+[Open official source: Showroom or brand contact, Japan-based enquiry; international eligibility unconfirmed](https://qa.sangetsu.co.jp/public/)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

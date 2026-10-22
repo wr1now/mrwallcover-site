@@ -79,6 +79,6 @@ Photographs plan the job; they do not answer every question. Anything that canno
 
 Preparation discovered late moves the installation date, and that is expensive when deliveries, decorators, joinery and occupancy have already been arranged. Ask for preparation to be described separately in the quotation, with what is included and what is subject to inspection; our guide to [what changes the cost](/advice/installation-cost/) shows how. The survey is also a judgement on the wall: if it is not ready for the material specified, we say so before anyone orders the last drop.
 
-## When does this advice stop being reliable?
+## What this guide cannot tell you
 
 For a quick reference, our [preparation tables](/wallpapering/preparation/) set out the treatment, primer and lining grade for each wall type and condition, and [lining papers, pastes and primers](/wallpapering/lining-and-adhesives/) lists the products with their data sheets. This is general guidance for domestic and hotel walls in reasonable condition. Damp, structural movement, lime plaster, historic fabric and any wall where the specification carries a fire or acoustic requirement need the product's own instructions and, often, the specifier's confirmation. The maker's hanging instruction for the actual product takes precedence over everything on this page.

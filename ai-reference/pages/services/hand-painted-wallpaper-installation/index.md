@@ -1,28 +1,30 @@
 ---
 title: "Hand-Painted Wallpaper Installer London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/
-description: "Installation of hand-painted, scenic and chinoiserie wallpapers in London, in the manner of de Gournay and Fromental. Survey, set-out, hang and aftercare."
+description: "Hand-painted, scenic and chinoiserie wallpaper installation in London, including de Gournay in a private residence in 2018. Survey to aftercare."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
 
 Services
 
-# Hand-painted wallpaper installation
+# Hand-painted wallpaper installation in London
 
 Scenic, chinoiserie and panelled hand-painted papers, in the manner of de Gournay and Fromental, hung in London houses and hotels.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Ahand-painted-wallpaper-installation) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Ahand-painted-wallpaper-installation) [See the work](https://www.mrwallcover.com/projects/)
 
 Hand-painted papers need a sound wall, a patient set-out and time. Panels are usually supplied in a sequence, and the scene has to meet across doors, windows and corners. We plan the set-out from a fixed point before the first panel goes up.
 
 Preparation follows the maker's specification. Some papers are hung over a lining, some are not. If the wall is not ready for the material, we say so at the survey.
 
-We install these papers; we do not make them and are not affiliated with any maker. Brown's Hotel, Mayfair includes scenic and chinoiserie wallcoverings, among them Lewis & Wood's Adam's Eden, identified from the selvedge photographed on site.
+We install these papers; on our record is de Gournay, hung in a private residence in London in 2018.
+
+Brown's Hotel, Mayfair includes scenic and chinoiserie wallcoverings, among them Lewis & Wood's Adam's Eden, identified from the selvedge photographed on site.
 
 ![Close-up of Fromental hand-painted silk with dark marbled waves, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-09-800.webp)
 
-Fromental hand-painted silk at [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/): a close detail of the dark, wave-patterned wallcovering.Photograph: Mr Wallcover.
+Fromental hand-painted silk at [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/): a close detail of the dark, wave-patterned wallcovering. Photograph: Mr Wallcover.
 
 01
 
@@ -54,7 +56,7 @@ New plaster and very absorbent walls are sized as the maker's instruction says, 
 
 At [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/), where we were main decorating contractor from 2022 to 2024, the scheme includes scenic and chinoiserie wallcoverings, among them Lewis & Wood's Adam's Eden, designed by Adam Calkin. At a [tea house in West London](https://www.mrwallcover.com/projects/tea-house-jaillon-studio/) designed by Jaillon Studio, the garden room is a panoramic scenic paper of a swan lake and flowering hydrangeas, hung for the reopening in 2021.
 
-Beyond the published case studies, we have installed de Gournay and Fromental papers, including a large volume of Fromental at Four Seasons Ten Trinity Square, and de Gournay in a private residence in London in 2018. We hang these papers. We do not make them, and we are not affiliated with any maker.
+Beyond the published case studies, we have installed de Gournay and Fromental papers, including a large volume of Fromental at Four Seasons Ten Trinity Square, and de Gournay in a private residence in London in 2018.
 
 05
 
@@ -70,13 +72,13 @@ Our twelve-month workmanship guarantee covers our own installations; it does not
 
 There is no flat rate per roll, and a roll count will not price a scenic paper. The quotation comes from a site survey or from drawings, and reflects the elevations and panel layout, the state of the walls and any lining, access and protection. Preparation is described separately, with what is included and what depends on inspection. The [installation cost guide](https://www.mrwallcover.com/advice/installation-cost/) explains each item.
 
-We focus on whole residences and hotel packages, and will take on one- or two-room commissions. The [hand-painted papers](https://www.mrwallcover.com/materials/hand-painted/) material page describes what the family needs.
+We focus on whole residences and hotel packages, and will take on one- or two-room commissions. The minimum installation commission is one room. The [hand-painted papers](https://www.mrwallcover.com/materials/hand-painted/) material page describes what the family needs.
 
 ## On the public record
 
 [![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
-Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.Photograph: Mr Wallcover.
+Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights. Photograph: Mr Wallcover.
 
 ### [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
@@ -86,7 +88,7 @@ Main decorating contractor, 2022–2024.
 
 [![Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp)](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
-Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.Photograph: Mr Wallcover.
+Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench. Photograph: Mr Wallcover.
 
 ### [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
@@ -96,7 +98,7 @@ Guest room, suite and private residence wallpapering, 2016–2019.
 
 Questions
 
-## Asked about Hand-painted wallpaper installation
+## Questions we are asked
 
 Illustrative material studies
 
@@ -130,4 +132,4 @@ There is no flat rate per roll. The quotation comes from a site survey or from d
 
 For a wallcovering hung by others, send overall and close-up photographs, the product and batch if known, when the problem appeared and any recent changes, and Mr Wallcover will assess whether a repair is possible. Marks, flaking or water damage on a hand-painted paper need a paper conservator. Mr Wallcover can help find the right person, but will not experiment on a de Gournay or Fromental-style panel. The twelve-month workmanship guarantee covers Mr Wallcover's own installations and does not transfer to an existing hang by another installer.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

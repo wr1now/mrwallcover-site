@@ -56,7 +56,7 @@ Hand-painted papers need a sound wall, a patient set-out and time. Some are hung
 
 A room preview helps with placement and overall effect. It cannot show real colour, the texture of the paper or the way the surface takes light. Physical samples, a strike-off or the maker’s proof still decide colour, and a full-size paper mock-up of one panel on the wall is often the cheapest insurance on a large commission.
 
-## When does this advice stop being reliable?
+## What this guide cannot tell you
 
 Each maker has its own panel widths, overlaps, hanging direction and adhesive requirements, and some papers must not be trimmed on site at all. The maker’s hanging instruction and layout drawing take precedence over this guide. For a commission with several rooms, record the elevations, focal points and panel expectations in a schedule; our [designer specification checklist](https://www.mrwallcover.com/advice/designer-specification-checklist/) has the fields, and the [hand-painted](https://www.mrwallcover.com/materials/hand-painted/) and [murals](https://www.mrwallcover.com/materials/murals/) material pages describe what each family needs.
 
@@ -100,7 +100,7 @@ Pause motion
 
 ## [Installation cost](https://www.mrwallcover.com/advice/installation-cost/)
 
-Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
+Why installation is not priced per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
 
 [Read the guide](https://www.mrwallcover.com/advice/installation-cost/)
 

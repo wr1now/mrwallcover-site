@@ -28,6 +28,7 @@ Prepared 10 October 2026 from the owner’s local iCloud Drive project archive. 
 |---|---:|---:|---|
 | `public/media/atelier/browns-bedroom-640.webp` | 640 × 480 | 61,116 | `256553251d7d003f81cfd085051d5b5c5a9154ebb87ba8a78a2a9ccffa11424c` |
 | `public/media/atelier/browns-bedroom-960.webp` | 960 × 720 | 124,046 | `e8805f29d9b3a2d4a609fbefe3eeea1452f94a6495b107892003308e3d88287d` |
+| `public/media/atelier/browns-bedroom-1080.webp` | 1080 × 810 | 157,430 | `a951a9afcc81aa1da9e096c9839fed34710f68e67f05e8c14053ab8b302c4d03` |
 | `public/media/atelier/browns-bedroom-1440.webp` | 1440 × 1080 | 258,692 | `271da179a33fc3e129710a8cef76f4a657781203c97249d0427c16929216e448` |
 | `public/media/atelier/browns-bedroom-2000.webp` | 2000 × 1500 | 471,602 | `1f6cb32106ebd0892bf3c8a8e390d8cf757530d00c2e8cc73acc83884cdfff9b` |
 | `public/media/atelier/browns-bedroom-2560.webp` | 2560 × 1920 | 747,552 | `5cf02e4e2a1415d4cf26ef17d17a2f7f0a4884c0f289afb5e629447017c50207` |

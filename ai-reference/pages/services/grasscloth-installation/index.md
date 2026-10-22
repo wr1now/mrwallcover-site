@@ -1,18 +1,18 @@
 ---
 title: "Grasscloth Wallpaper Installer London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/grasscloth-installation/
-description: "Grasscloth and natural weave wallcovering installation in London. Seams, colour variation and weave direction agreed before the first length is cut."
+description: "Grasscloth and natural weaves hung in London, including Phillip Jeffries Tweed and Omexco at Four Seasons Hotel London at Ten Trinity Square, 2016–2019."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
 
 Services
 
-# Grasscloth and natural weave installation
+# Grasscloth and natural weave installation in London
 
 Grasscloth, sisal, raffia and other natural weaves, hung in London houses and hotels.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Agrasscloth-installation) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Agrasscloth-installation) [See the work](https://www.mrwallcover.com/projects/)
 
 The irregularity is the point of the material. Colour and weave vary from roll to roll, and the seams are visible. We agree that, and the direction of the weave, before the first length is cut.
 
@@ -22,7 +22,7 @@ Quantities allow for the variation between rolls, so lengths from the same batch
 
 ![Close detail of a woven grasscloth wallcovering turning an external corner, the weave running straight and tight to the edge.](https://www.mrwallcover.com/media/img/r/fs-residences-06-800.webp)
 
-A natural weave turning an external corner in the [Four Seasons Private Residences at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/). The weave and the corner detail remain visible.Photograph: Mr Wallcover.
+A natural weave turning an external corner in the [Four Seasons Private Residences at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/). The weave and the corner detail remain visible. Photograph: Mr Wallcover.
 
 01
 
@@ -60,7 +60,7 @@ Variation between batches is larger than variation within one. The whole room is
 
 At [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/) we hung Phillip Jeffries Tweed and Omexco between 2016 and 2019, and shading on the natural textiles was checked continuously so the walls read as a single surface. At [The Biltmore Mayfair](https://www.mrwallcover.com/projects/biltmore-mayfair/), then the Millennium Hotel, Grosvenor Square, the 2018 guest-room programme of more than 15,000 m² included a Phillip Jeffries schedule.
 
-A maker named here means we installed that maker's product on that project. It is not a stockist claim, an approval or an endorsement.
+Naming a maker records an installation, not an endorsement.
 
 06
 
@@ -74,7 +74,7 @@ The wall beneath needs to be sound, true and evenly porous, and lined where the 
 
 [![Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp)](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
-Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.Photograph: Mr Wallcover.
+Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench. Photograph: Mr Wallcover.
 
 ### [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
@@ -84,7 +84,7 @@ Guest room, suite and private residence wallpapering, 2016–2019.
 
 Questions
 
-## Asked about Grasscloth installation
+## Questions we are asked
 
 Illustrative material studies
 
@@ -108,10 +108,10 @@ There is no flat rate per roll. The quotation comes from a site survey or from d
 
 ### How is snagging handled?
 
-Snagging is part of the package. A sample room or sample area is agreed first, in the permanent lighting where possible, and every later room is measured against it. Then comes the hang, then snagging, then a return inspection about four to six weeks after completion, at no call-out charge, when seams, edges and corners are checked once the paper has settled. Visible seams and shading in natural weaves are properties of the material, and they are settled at the sample stage rather than raised as snags. At Hyde London City the record starts with a finished sample room in November 2022.
+Snagging is part of the package. A sample room or sample area is agreed first, in the permanent lighting where possible, and every later room is measured against it. Then comes the hang, then snagging, then a return visit about four to six weeks after completion, at no call-out charge, when seams, edges and corners are checked once the paper has settled. Visible seams and shading in natural weaves are properties of the material, and they are settled at the sample stage rather than raised as snags. At Hyde London City the record starts with a finished sample room in November 2022.
 
 ### What aftercare and guarantee are included?
 
-Aftercare is part of every commission: a return inspection about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.
+Aftercare is part of every commission: a return visit about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

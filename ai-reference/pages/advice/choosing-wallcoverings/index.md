@@ -14,7 +14,7 @@ How to choose a wallcovering that still looks right once it is on the wall: traf
 
 By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 17 October 2026
 
-[Discuss my room](https://www.mrwallcover.com/contact/?intent=advice&audience=homeowner&service=wallcovering&topic=guide%3Achoosing-wallcoverings)
+[Start your project](https://www.mrwallcover.com/contact/?intent=advice&audience=homeowner&service=wallcovering&topic=guide%3Achoosing-wallcoverings)
 
 ![Close-up of Fromental hand-painted silk with dark marbled waves, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-09-800.webp)
 
@@ -56,7 +56,7 @@ Some clients want a very uniform wall. Others want the movement and character of
 
 **Bedrooms and living rooms.** These usually give you the most freedom. Appearance still deserves care: side lighting emphasises texture and imperfection, and a large pattern needs a large sample.
 
-## When does this advice stop being reliable?
+## What this guide cannot tell you
 
 General family guidance cannot tell you whether a particular product is approved for a wet position, whether it carries a fire classification, or how it should be cleaned. Those answers come from that product’s own data sheet and care instructions, and from the maker where the room is unusual. If an answer is missing, keep the product on the shortlist rather than treating it as the final choice.
 
@@ -72,7 +72,7 @@ Your next step
 
 Send the material reference and what you already know. A photograph and a short note are enough to start.
 
-[Discuss my room](https://www.mrwallcover.com/contact/?intent=advice&audience=homeowner&service=wallcovering&topic=guide%3Achoosing-wallcoverings)
+[Start your project](https://www.mrwallcover.com/contact/?intent=advice&audience=homeowner&service=wallcovering&topic=guide%3Achoosing-wallcoverings)
 
 ## Explore the materials
 
@@ -112,6 +112,6 @@ Pause motion
 
 ## [Installation cost](https://www.mrwallcover.com/advice/installation-cost/)
 
-Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
+Why installation is not priced per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
 
 [Read the guide](https://www.mrwallcover.com/advice/installation-cost/)

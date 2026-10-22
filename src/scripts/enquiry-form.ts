@@ -1,9 +1,41 @@
 import { enquiryAudience, enquiryContext, enquiryTopicLabel } from '../lib/enquiry-context.ts';
-import { validateAttachments } from '../lib/enquiry-attachments.ts';
+import { attachmentLimits, validateAttachments } from '../lib/enquiry-attachments.ts';
 import { preferencesFromJSON, preferenceSummary, PREFERENCE_KEY } from '../lib/material-advice.ts';
 import { emptyEnquiry, PROFESSIONAL_AUDIENCES, isReplyEmail, makeReference, sanitiseEvent, validateEnquiry, type EnquiryFields } from '../lib/enquiry.ts';
 
 const DRAFT_KEY = 'mw-brief-draft';
+
+// Phone photographs are often several megabytes each, and FormSubmit takes 10 MB in all. A JPEG, PNG or
+// WebP longer than this on its long edge is redrawn at this size as a JPEG when it is chosen. HEIC, PDF,
+// smaller images and anything the browser cannot draw are sent exactly as chosen.
+const PHOTO_MAX_EDGE = 2400;
+const PHOTO_TYPES = /^image\/(jpeg|png|webp)$/;
+
+async function downscaledPhoto(file: File): Promise<File> {
+  if (!PHOTO_TYPES.test(file.type) || typeof createImageBitmap !== 'function') return file;
+  let bitmap: ImageBitmap | undefined;
+  try {
+    bitmap = await createImageBitmap(file, { imageOrientation: 'from-image' });
+    const scale = PHOTO_MAX_EDGE / Math.max(bitmap.width, bitmap.height);
+    if (scale >= 1) return file;
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(bitmap.width * scale);
+    canvas.height = Math.round(bitmap.height * scale);
+    const context = canvas.getContext('2d');
+    if (!context) return file;
+    // A transparent PNG would turn black as a JPEG: paint it on white first.
+    context.fillStyle = '#fff';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.85));
+    if (!blob || blob.size >= file.size) return file;
+    return new File([blob], file.name.replace(/\.[^.]+$/, '') + '.jpg', { type: 'image/jpeg', lastModified: file.lastModified });
+  } catch {
+    return file;
+  } finally {
+    bitmap?.close();
+  }
+}
 
 function readForm(form: HTMLFormElement): EnquiryFields {
   const value = (name: string) => {
@@ -47,6 +79,25 @@ function readForm(form: HTMLFormElement): EnquiryFields {
   });
 }
 
+// The control an error belongs to: the chosen radio of a group, otherwise the first field with that name.
+function errorControl(form: HTMLFormElement, key: string) {
+  return form.querySelector<HTMLElement>(`[name="${key}"]:checked`) || form.querySelector<HTMLElement>(`[name="${key}"]`);
+}
+
+// Screen readers read each error line with its control: the slot gets an id that is added to the control's
+// aria-describedby, after any ids already there (the attachment help).
+function describeErrors(form: HTMLFormElement) {
+  form.querySelectorAll<HTMLElement>('[data-error]').forEach((slot) => {
+    const key = slot.dataset.error || '';
+    if (!key) return;
+    if (!slot.id) slot.id = `error-${key}`;
+    form.querySelectorAll<HTMLElement>(`[name="${key}"]`).forEach((control) => {
+      const ids = (control.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean);
+      if (!ids.includes(slot.id)) control.setAttribute('aria-describedby', [...ids, slot.id].join(' '));
+    });
+  });
+}
+
 function showErrors(form: HTMLFormElement, errors: Record<string, string>) {
   form.querySelectorAll<HTMLElement>('[data-error]').forEach((node) => {
     node.textContent = '';
@@ -61,7 +112,7 @@ function showErrors(form: HTMLFormElement, errors: Record<string, string>) {
   if (summary) {
     const items = Object.entries(errors).filter(([, message]) => message);
     summary.hidden = items.length === 0;
-    summary.innerHTML = items.map(([key, message]) => `<a href="#field-${key}">${message}</a>`).join(' ');
+    summary.innerHTML = items.map(([key, message]) => `<a href="#field-${key}" data-error-for="${key}">${message}</a>`).join(' ');
     if (items.length) summary.focus();
   }
 }
@@ -128,6 +179,18 @@ export function bindEnquiryForm(form: HTMLFormElement) {
   const shortlist = form.querySelector<HTMLInputElement>('[name="shortlist"]');
   if (shortlist) shortlist.value = form.dataset.variant === 'aftercare' ? '' : shortlistValue();
   restoreDraft(form);
+  describeErrors(form);
+  // A summary link shows the whole question and puts focus in its control, not on the wrapper its href names.
+  form.querySelector('[data-error-summary]')?.addEventListener('click', (event) => {
+    const link = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[data-error-for]') : null;
+    const key = link?.dataset.errorFor || '';
+    const control = key ? errorControl(form, key) : null;
+    if (!control) return;
+    event.preventDefault();
+    const wrapper = form.querySelector<HTMLElement>(`#field-${key}`);
+    wrapper?.scrollIntoView({ block: 'start' });
+    control.focus({ preventScroll: Boolean(wrapper) });
+  });
   // Context is the page/action the visitor chose. It is shown, removable, and never persisted as history.
   const service = form.querySelector<HTMLSelectElement>('[name="service"]');
   const topic = form.querySelector<HTMLInputElement>('[name="topic"]');
@@ -184,7 +247,7 @@ export function bindEnquiryForm(form: HTMLFormElement) {
       step.hidden = i !== index;
     });
     const label = form.querySelector<HTMLElement>('[data-step-label]');
-    if (label) label.textContent = `Step ${index + 1} of ${steps.length}`;
+    if (label) label.textContent = `Fuller brief: part ${index + 1} of ${steps.length}`;
     const back = form.querySelector<HTMLButtonElement>('[data-step-back]');
     const next = form.querySelector<HTMLButtonElement>('[data-step-next]');
     if (back) back.disabled = index === 0;
@@ -227,11 +290,10 @@ export function bindEnquiryForm(form: HTMLFormElement) {
 
   const syncReply = () => {
     const reply = form.querySelector<HTMLInputElement>('input[name="replyBy"]:checked')?.value;
-    const email = form.querySelector<HTMLElement>('[data-reply="email"]');
-    const phone = form.querySelector<HTMLElement>('[data-reply="phone"]');
-    if (email) email.hidden = reply === 'phone';
-    if (phone) phone.hidden = reply === 'email';
     const emailField = form.querySelector<HTMLInputElement>('[name="email"]');
+    // Only the chosen reply channel is required, so only that field announces it.
+    emailField?.setAttribute('aria-required', String(reply === 'email'));
+    form.querySelector<HTMLInputElement>('[name="phone"]')?.setAttribute('aria-required', String(reply === 'phone'));
     const marketing = form.querySelector<HTMLInputElement>('[name="marketing"]');
     const marketingControl = form.querySelector<HTMLElement>('[data-email-marketing]');
     const emailPermissionAvailable = reply === 'email' && Boolean(emailField?.validity.valid && isReplyEmail(emailField.value));
@@ -261,6 +323,9 @@ export function bindEnquiryForm(form: HTMLFormElement) {
   const fileList = form.querySelector<HTMLElement>('[data-file-list]');
   const attachmentProvider = form.dataset.leadApi ? 'lead-api' : form.dataset.provider || '';
   const attachmentError = () => validateAttachments([...(fileInput?.files || [])], attachmentProvider);
+  // The running total uses the units of the help line: decimal MB for FormSubmit, MiB for the private API.
+  const totalLimit = attachmentLimits(attachmentProvider).maxTotalBytes;
+  const unit = attachmentProvider === 'lead-api' ? { bytes: 1024 * 1024, name: 'MiB' } : { bytes: 1_000_000, name: 'MB' };
   const showAttachmentError = () => {
     const error = attachmentError();
     const slot = form.querySelector<HTMLElement>('[data-error="attachment"]');
@@ -297,8 +362,35 @@ export function bindEnquiryForm(form: HTMLFormElement) {
       row.append(remove);
       fileList.append(row);
     });
+    if (files.length) {
+      const used = files.reduce((sum, file) => sum + file.size, 0);
+      const total = document.createElement('li');
+      total.className = 'text-stone';
+      total.textContent = `${(Math.ceil((used / unit.bytes) * 10) / 10).toFixed(1)} ${unit.name} of ${totalLimit / unit.bytes} ${unit.name} used`;
+      fileList.append(total);
+    }
   };
-  fileInput?.addEventListener('change', renderFiles);
+  // Large photographs are reduced before the list and its total are shown, so the total is what will be sent.
+  // Send waits meanwhile, one file at a time to spare a phone's memory; a newer choice supersedes an older one.
+  let filesRun = 0;
+  fileInput?.addEventListener('change', async () => {
+    const run = ++filesRun;
+    const chosen = [...(fileInput.files || [])];
+    const submit = form.querySelector<HTMLButtonElement>('[type="submit"]');
+    if (typeof DataTransfer === 'function' && chosen.some((file) => PHOTO_TYPES.test(file.type))) {
+      if (submit) submit.disabled = true;
+      const prepared: File[] = [];
+      for (const file of chosen) prepared.push(await downscaledPhoto(file));
+      if (run !== filesRun) return;
+      if (prepared.some((file, index) => file !== chosen[index])) {
+        const next = new DataTransfer();
+        prepared.forEach((file) => next.items.add(file));
+        fileInput.files = next.files;
+      }
+    }
+    if (submit && !sending) submit.disabled = false;
+    renderFiles();
+  });
 
   form.addEventListener('submit', async (event) => {
     if (shortlist) shortlist.value = form.dataset.variant === 'aftercare' ? '' : shortlistValue();
@@ -313,8 +405,9 @@ export function bindEnquiryForm(form: HTMLFormElement) {
       return;
     }
     showErrors(form, {});
-    // Native FormSubmit receives the same allowlisted context and permission versions as the private API.
-    for (const key of ['kind', 'service', 'topic', 'topicOrigin', 'sourceDeclared', 'privacyNoticeVersion', 'marketingTextVersion'] as const) {
+    // Native FormSubmit receives the validated reply channels, allowlisted context and permission
+    // versions used by the private API. An unusable optional email or phone must not be forwarded raw.
+    for (const key of ['email', 'phone', 'kind', 'service', 'topic', 'topicOrigin', 'sourceDeclared', 'privacyNoticeVersion', 'marketingTextVersion'] as const) {
       const field = form.elements.namedItem(key);
       if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement) field.value = validated.value[key];
     }
@@ -401,6 +494,13 @@ export function bindEnquiryForm(form: HTMLFormElement) {
       return;
     }
   });
+
+  // The send button is rendered disabled so the form cannot post natively without this script;
+  // enable it only now that the submit handler is bound.
+  const submitButton = form.querySelector<HTMLButtonElement>('[type="submit"]');
+  if (submitButton) submitButton.disabled = false;
+  // Read by the load check in EnquiryForm.astro: a form without it never bound and gets the email notice back.
+  form.dataset.ready = '';
 }
 
 const form = document.querySelector<HTMLFormElement>('[data-enquiry-form]');

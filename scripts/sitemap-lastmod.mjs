@@ -143,18 +143,18 @@ export function computeLastmod(root) {
   // Single pages and hubs: their own source files (and, for hubs, their children).
   const pages = {
     '/': ['src/pages/index.astro', 'src/content/home.json', 'src/content/hero.json'],
-    '/practice/': ['src/pages/practice.astro', 'src/data/home-editorial.ts', 'src/content/home.json'],
+    '/practice/': ['src/pages/practice.astro', 'src/data/home-editorial.ts', 'src/content/home.json', 'src/content/method.json'],
     '/about/': ['src/pages/about.astro', 'src/content/about.json', 'src/content/team.json', 'src/content/hotels.json'],
     '/accessibility/': ['src/pages/accessibility.astro'],
     '/aftercare/': ['src/pages/aftercare.astro', 'src/content/aftercare.json'],
     '/details/': ['src/pages/details.astro'],
     '/get-in-touch/': ['src/pages/get-in-touch.astro', 'src/content/get-in-touch.json'],
     '/contact/': ['src/pages/contact.astro', 'src/content/contact.json'],
-    '/faq/': ['src/pages/faq.astro', 'src/content/faq.json'],
+    '/faq/': ['src/pages/faq.astro', 'src/content/faq.json', 'src/data/buyer-answers.json'],
     '/privacy/': ['src/pages/privacy.astro', 'src/content/privacy.json'],
     '/services/': ['src/pages/services.astro', 'src/content/services.json', 'src/content/specialisms.json'],
-    '/for-ai/': ['src/pages/for-ai.astro', 'src/data/facts.json', 'src/data/buyer-answers.json', 'src/lib/ai-layer-data.ts'],
-    '/wallcovering-installation-ai-crawler/': ['src/pages/wallcovering-installation-ai-crawler.astro', 'src/lib/ai-crawler.ts', 'src/lib/ai-decision-guide.ts'],
+    '/for-ai/': ['src/pages/for-ai.astro', 'src/data/facts.json', 'src/data/buyer-answers.json', 'src/lib/ai-layer-data.ts', 'src/content/get-in-touch.json'],
+    '/wallcovering-installation-ai-crawler/': ['src/pages/wallcovering-installation-ai-crawler.astro', 'src/lib/ai-crawler.ts', 'src/lib/ai-decision-guide.ts', 'src/content/get-in-touch.json'],
     '/advice/': ['src/pages/advice/index.astro'],
     '/wallpapering/': ['src/pages/wallpapering/index.astro', 'src/data/wallpapering.json'],
     '/calculator/': ['src/pages/calculator.astro', 'src/lib/quantity.ts', 'src/lib/materials.ts', 'src/data/wallpapering.json'],
@@ -164,7 +164,7 @@ export function computeLastmod(root) {
     '/advice/quantities/': ['src/pages/advice/quantities.astro'],
     '/areas/': ['src/pages/areas/index.astro', 'src/content/areas.json'],
     '/materials/': ['src/pages/materials/index.astro', 'src/content/materials.json', 'src/content/makers-installed.json'],
-    '/professionals/': ['src/pages/professionals.astro', 'src/content/professionals.json'],
+    '/professionals/': ['src/pages/professionals.astro', 'src/content/professionals.json', 'src/data/buyer-answers.json'],
     '/projects/': ['src/pages/projects/index.astro', 'src/content/projects.json', 'src/content/makers-installed.json', 'src/content/project-record.json', 'src/components/ProjectRecord.astro', 'src/content/hotels.json'],
   };
   for (const [p, files] of Object.entries(pages)) set(p, ...files.map(fileDate));

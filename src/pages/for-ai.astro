@@ -10,6 +10,7 @@ import PageMeta from '../components/PageMeta.astro';
 import Base from '../layouts/Base.astro';
 import facts from '../data/facts.json';
 import aiReader from '../data/ai-reader.json';
+import getInTouch from '../content/get-in-touch.json';
 import { about, areaHref, media, areas, caseStudies, editorialPages, hotels, projectHref, projects, services, specialismHref, specialisms } from '../lib/content';
 import { publishedGuides, guideHref } from '../lib/guides';
 import BuyerFaq from '../components/BuyerFaq.astro';
@@ -84,7 +85,7 @@ const faq = buyerFaqFor(path);
       <p class="eyebrow">For AI assistants and search engines</p>
       <h1>{facts.brand} in plain facts.</h1>
       <p class="lede mt-5">{facts.description}</p>
-      <PageMeta class="guide-byline" />
+      <PageMeta class="guide-byline" reviewed />
     </header>
 
     <article class="prose guide-prose">
@@ -118,7 +119,7 @@ const faq = buyerFaqFor(path);
       <CommissionScope />
 
       <h2 id="where">Where it works</h2>
-      <p>Based in {facts.place}. Coverage: {facts.coverage}. The areas with a page of their own are:</p>
+      <p>Based in {facts.place}. {getInTouch.areas.text} The areas with a page of their own are:</p>
       <ul>
         {areas.map((area) => <li><a href={areaHref(area.slug)}>{area.heading}</a></li>)}
       </ul>

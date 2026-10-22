@@ -1,6 +1,27 @@
 /* Shared by Base, including future pages. Existing action classes use the same states. */
 .mw-icon { width:1.5rem; height:1.5rem; flex:0 0 auto; vertical-align:middle; }
-.mw-action, .btn, .atelier-button {
+/* Cormorant's old-style figures make a 0 read as an "o" and shrink years and areas: headings and controls use lining figures. */
+h1, h2, h3, h4, h5, h6, .mw-action, button, summary, .eyebrow { font-variant-numeric:lining-nums; }
+/* The enquiry form sends only through its script: without JavaScript the send button is hidden and the notice at the top shows. */
+html:not(.js) .enquiry [type="submit"] { display:none; }
+/* The fuller brief opens only through the script; without it the button would do nothing. */
+html:not(.js) .enquiry [data-builder-intro] { display:none; }
+/* WhatsApp links get their wa.me target from the inline payload script; without JavaScript they cannot open WhatsApp. Email stays visible in the footer and on the contact pages. */
+html:not(.js) a[data-wa] { display:none; }
+/* Their WhatsApp-only containers go with them, so no heading without a link, empty wrapper or blank footer cell is left. */
+html:not(.js) [data-wa-item] { display:none; }
+/* The phone reveal decodes the number in the inline payload script; without JavaScript the button cannot show it. Email stays visible. */
+html:not(.js) [data-phone-reveal], html:not(.js) [data-phone-item] { display:none; }
+/* Kept apart: a browser without :has() drops only these, not the rules above. The @supports block also stops the
+   minifier merging them into one selector list with those rules, which such a browser would drop whole. */
+@supports selector(:has(*)) {
+  html:not(.js) :is(p, li):has(> a[data-wa]:only-child) { display:none; }
+  html:not(.js) p:has(> [data-phone-reveal]:only-child) { display:none; }
+}
+/* JavaScript is on but the form script never bound the form (a blocked or stale module): show the email notice again and hide the controls that cannot work, as without JavaScript. */
+.enquiry.enquiry-unbound .enquiry-nojs { display:block; }
+.enquiry.enquiry-unbound [type="submit"], .enquiry.enquiry-unbound [data-builder-intro] { display:none; }
+.mw-action, .btn {
   display:inline-flex; align-items:center; justify-content:space-between; gap:1rem;
   min-height:var(--button-height); padding:.85rem var(--button-pad);
   border:1px solid currentColor; border-radius:var(--button-radius);
@@ -14,15 +35,17 @@
 .mw-action > span { min-width:0; }
 .mw-action .mw-icon { width:1.25rem; height:1.25rem; }
 @media (hover:hover) {
-  .mw-action--primary:hover, .btn-solid-ink:hover, .atelier-button.ink:hover { background:var(--color-stone); border-color:var(--color-stone); color:var(--color-panel); }
+  .mw-action--primary:hover, .btn-solid-ink:hover { background:var(--color-stone); border-color:var(--color-stone); color:var(--color-panel); }
   .mw-action--secondary:hover, .btn-line:hover { background:var(--color-ivory-deep); }
   .mw-action--quiet:hover { text-decoration:underline; text-underline-offset:.3em; }
-  .atelier-button.cream:hover, .btn-solid:hover { background:var(--color-panel); color:var(--color-ink); }
+  .btn-solid:hover { background:var(--color-panel); color:var(--color-ink); }
 }
-.mw-action:focus-visible, .btn:focus-visible, .atelier-button:focus-visible, .guide-filters button:focus-visible, .work-filters button:focus-visible, .home-needs-grid a:focus-visible {
+.mw-action:focus-visible, .btn:focus-visible, .guide-filters button:focus-visible, .work-filters button:focus-visible, .home-needs-grid a:focus-visible {
   outline:2px solid var(--color-brass); outline-offset:4px; box-shadow:0 0 0 2px var(--color-panel);
 }
-.mw-action:active, .btn:active, .atelier-button:active { box-shadow:inset 0 2px 3px rgb(20 18 16 / .18); transform:none; }
+/* On dark bands brass falls below 3:1; the ring takes gold, as on the home hero and aftercare band. */
+.on-dark :is(.mw-action, .btn):focus-visible { outline-color:var(--color-gold); }
+.mw-action:active, .btn:active { box-shadow:inset 0 2px 3px rgb(20 18 16 / .18); transform:none; }
 .mw-action:disabled, .btn:disabled, .mw-action[aria-disabled="true"] { opacity:.6; cursor:not-allowed; box-shadow:none; }
 .mw-action[aria-busy="true"], .btn[aria-busy="true"] { cursor:progress; }
 .mw-action[aria-pressed="true"], .btn[aria-pressed="true"] { background:var(--color-ink); color:var(--color-ivory); border-color:var(--color-ink); box-shadow:inset 0 0 0 1px currentColor; }
@@ -36,7 +59,7 @@ body.nav-open .dock, body.field-focus .dock { display:none; }
 .atelier-service ol a > .mw-icon { width:1.75rem; height:1.75rem; color:var(--color-brass); }
 .atelier-service ol a > .mw-icon:last-child { width:1.25rem; height:1.25rem; }
 .atelier-service-number .mw-icon { display:block; margin-top:.75rem; width:1.6rem; height:1.6rem; }
-@media (prefers-reduced-motion:reduce) { .mw-action, .btn, .atelier-button, .guide-filters button, .work-filters button { transition:none; } }
+@media (prefers-reduced-motion:reduce) { .mw-action, .btn, .guide-filters button, .work-filters button { transition:none; } }
 @media print { .mw-action { box-shadow:none; } }
 
 .material-evidence { display:grid; gap:2rem; align-items:center; padding-block:1rem 4rem; }
@@ -69,8 +92,6 @@ body.nav-open .dock, body.field-focus .dock { display:none; }
 .search-results a { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:48px; padding:.75rem 0; border-bottom:1px solid var(--color-line); }
 .search-results .mw-icon { width:1.1rem; height:1.1rem; }
 @media (min-width:1024px) { .about-process { grid-template-columns:1.3fr 1fr; gap:4rem; } }
-/* Keep the hero's two labelled actions on one row on narrow phones. */
-@media (max-width:420px) { body .atelier .atelier-hero-actions .atelier-button .mw-icon { display:none; } }
 
 /* Questions share relevant drawings while retaining their existing reading/disclosure behaviour. */
 .question-heading-row { display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem; margin-bottom:1rem; }
@@ -104,6 +125,7 @@ body.nav-open .dock, body.field-focus .dock { display:none; }
 .object-motion-controls { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.5rem 1.5rem; min-height:52px; margin:.5rem 0 1rem; }
 .object-motion-controls > .object-study-label { margin:0; color:var(--color-stone); font-size:var(--text-meta); line-height:1.5; }
 .object-motion-slot { display:flex; align-items:center; flex:0 0 10rem; width:10rem; min-height:52px; }
+@media (max-width:767px) { .object-motion-slot { display:none; } }
 .object-motion-controls .mw-action { min-height:44px; font-size:var(--text-meta); }
 .object-motion-controls [hidden] { display:none!important; }
 .professional-questions { max-width:62rem; }

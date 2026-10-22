@@ -4,12 +4,28 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import MakerDirectoryNav from '../../components/MakerDirectoryNav.astro';
 import MakerDirectoryFilter from '../../components/MakerDirectoryFilter.astro';
 import MakerRoute from '../../components/MakerRoute.astro';
-import { makerDirectory, directoryVisible, directoryReview, directoryRoutes } from '../../lib/makers-directory';
+import { makerDirectory, directoryVisible, directoryReview } from '../../lib/makers-directory';
 import { breadcrumbNode } from '../../lib/schema';
 import '../../styles/makers-directory.css';
 export function getStaticPaths(){return directoryVisible?[{params:{slug:undefined}}]:[];}
 const crumbs=[{name:'Home',href:'/'},{name:'Wallcovering Guide',href:'/advice/'},{name:'Buying routes',href:'/buying-routes/'}];
+// One closed group per maker with routes, in directory order, so all 42 cards stay in the HTML without one long wall of them.
+const routeMakers=makerDirectory.makers.filter(m=>m.routes.length);
 ---
 <Base title="Official Wallcovering Buying Routes | Mr Wallcover" description="Find official wallcovering shops, showroom contacts, trade enquiries and sample routes, with geographic limits and dated sources before ordering." path="/buying-routes/" updated={makerDirectory.updated} noindex={directoryReview} extraSchema={[breadcrumbNode(crumbs)]}>
-<div class="container-page pb-20"><header class="page-head maker-intro"><Breadcrumb items={crumbs}/><p class="eyebrow">The Wallcovering Guide · Source</p><h1>The right way in.</h1><p class="lede mt-5">A sample request, showroom contact and wallpaper order are different things. Start with the maker’s official route and check who can buy, where it can be delivered and which terms apply.</p><p>No paid placement, affiliate ranking or individual seller endorsement. Country selectors and the maker’s current product and destination terms take precedence.</p>{directoryReview&&<p class="maker-review-note">Editorial review preview. Copy approved by the owner on 18 October 2026; these links are not proof of fulfilled orders.</p>}</header><MakerDirectoryNav/><MakerDirectoryFilter kind="routes" makers={makerDirectory.makers}/><div class="maker-route-grid">{directoryRoutes.map(route=><MakerRoute route={route} makerName={route.makerName} makerSlug={route.makerSlug}/>)}</div></div>
+<div class="container-page pb-20"><header class="page-head maker-intro"><Breadcrumb items={crumbs}/><p class="eyebrow">The Wallcovering Guide · Source</p><h1>The right way in.</h1><p class="lede mt-5">A sample request, showroom contact and wallpaper order are different things. Start with the maker’s official route and check who can buy, where it can be delivered and which terms apply.</p><p>No paid placement, affiliate ranking or individual seller endorsement. Country selectors and the maker’s current product and destination terms take precedence.</p>{directoryReview&&<p class="maker-review-note">Editorial review preview. Copy approved by the owner on 18 October 2026; these links are not proof of fulfilled orders.</p>}</header><MakerDirectoryNav/><MakerDirectoryFilter kind="routes" makers={makerDirectory.makers}/>
+<nav class="maker-route-jump" aria-label="Makers on this page"><ul>{routeMakers.map(m=><li data-directory-jump={m.slug}><a href={`#routes-${m.slug}`}>{m.name}</a></li>)}</ul></nav>
+{routeMakers.map(m=><section class="maker-route-group" id={`routes-${m.slug}`} data-directory-group data-maker={m.slug}><details><summary><h2>{m.name}</h2><span class="maker-route-group-count">{m.routes.length} official sourcing {m.routes.length===1?'route':'routes'}</span><span class="maker-route-group-icon" aria-hidden="true"></span></summary><div class="maker-route-grid">{m.routes.map(route=><MakerRoute route={route} makerName={m.name} makerSlug={m.slug}/>)}</div></details></section>)}
+</div>
 </Base>
+<script>
+// A link to a maker group or to one route card opens its group first, then brings it into view.
+const groupOf=(hash:string)=>{let id='';try{id=decodeURIComponent(hash.slice(1));}catch{return null;}const target=id?document.getElementById(id):null;const group=target?.closest<HTMLElement>('[data-directory-group]');return group&&target?{target,details:group.querySelector('details')}:null;};
+const reveal=()=>{const hit=groupOf(location.hash);if(!hit?.details)return;const wasClosed=!hit.details.open;hit.details.open=true;if(wasClosed)hit.target.scrollIntoView({block:'start',behavior:'instant'});};
+document.addEventListener('click',event=>{const link=event.target instanceof Element?event.target.closest<HTMLAnchorElement>('a[href*="#"]'):null;if(!link||link.origin!==location.origin||link.pathname!==location.pathname)return;const hit=groupOf(link.hash);if(hit?.details)hit.details.open=true;});
+addEventListener('hashchange',reveal);reveal();
+// Print every route, then restore the groups the reader had closed.
+let closedForPrint:HTMLDetailsElement[]=[];
+addEventListener('beforeprint',()=>{closedForPrint=[...document.querySelectorAll<HTMLDetailsElement>('.maker-route-group > details:not([open])')];closedForPrint.forEach(d=>(d.open=true));});
+addEventListener('afterprint',()=>{closedForPrint.forEach(d=>(d.open=false));closedForPrint=[];});
+</script>

@@ -16,10 +16,10 @@ Brewster Home Fashions offers a multi-brand wallpaper catalogue and has an in-ho
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://www.brewsterwallcovering.com/about-brewster) — checked 2026-10-17
-- [Official source](https://www.brewsterwallcovering.com/shop-all-brewster-home-fashions-wallpaper) — checked 2026-10-17
-- [Official source](https://www.brewsterwallcovering.com/shipping-policy) — checked 2026-10-17
-- [Official source](https://yorkdesigngroup.com/pages/about-us) — checked 2026-10-17
+- [Official source: brewsterwallcovering.com/about-brewster](https://www.brewsterwallcovering.com/about-brewster) — checked 17 October 2026
+- [Official source: brewsterwallcovering.com/shop-all-brewster-home-fashions-wallpaper](https://www.brewsterwallcovering.com/shop-all-brewster-home-fashions-wallpaper) — checked 17 October 2026
+- [Official source: brewsterwallcovering.com/shipping-policy](https://www.brewsterwallcovering.com/shipping-policy) — checked 17 October 2026
+- [Official source: yorkdesigngroup.com/pages/about-us](https://yorkdesigngroup.com/pages/about-us) — checked 17 October 2026
 
 [Visit maker website](https://www.brewsterwallcovering.com/)
 
@@ -46,9 +46,9 @@ Terms and checks before ordering
 
 Checkout/account requirements not established; ask the maker Policy describes paid sample shipping and Canada sample shipments; UK sample delivery not established
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.brewsterwallcovering.com/shop-all-brewster-home-fashions-wallpaper)
+[Open official source: Shop or product ordering, North America; policy sections for USA and Canada](https://www.brewsterwallcovering.com/shop-all-brewster-home-fashions-wallpaper)
 
 ### Find a stockist or representative
 
@@ -69,9 +69,9 @@ Terms and checks before ordering
 
 not established; ask the maker not established; ask the maker
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.brewsterwallcovering.com/shipping-policy)
+[Open official source: Find a stockist or representative, International; country-specific seller not verified](https://www.brewsterwallcovering.com/shipping-policy)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

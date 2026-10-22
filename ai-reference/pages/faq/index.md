@@ -1,7 +1,7 @@
 ---
-title: "Wallcovering FAQ | Mr Wallcover"
+title: "Wallcovering Installation FAQ | Mr Wallcover"
 url: https://www.mrwallcover.com/faq/
-description: "What London wallcovering installation costs, how lead times work, who supplies the paper, how walls are prepared, and what the aftercare guarantee covers."
+description: "How installation is priced, how far ahead to book, who supplies the paper, how walls are prepared and what the twelve-month guarantee covers."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -52,6 +52,10 @@ Silk, grasscloth and other natural weaves, fabric walling, vinyl and contract wa
 
 London and the surrounding areas; UK-wide for selected projects. The practice is based in London, and most of the work is in central London.
 
-[Ask about your project](https://www.mrwallcover.com/contact/?intent=advice)
+## What insurance do you hold?
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+Public liability, employers' liability and professional indemnity details are available on request.
+
+[Start your project](https://www.mrwallcover.com/contact/?intent=advice)
+
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

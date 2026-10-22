@@ -16,6 +16,12 @@ Pages use headings, visible keyboard focus and controls that can be used without
 
 The material studio is optional. If WebGL is unavailable, the photograph and the written notes remain.
 
+Last checked 22 October 2026. We ran automated axe-core checks on 13 pages and tabbed through a sample of them with the keyboard, at phone width (390 pixels) and desktop width (1440 pixels).
+
+The problems found then have been corrected: on phones, keyboard focus could sit behind the bottom bar; error messages in the enquiry form were not linked to their fields; and two side panels on guide pages had no separate names for screen readers. Apart from those, the automated checks reported no violations on the pages checked.
+
+Known limitation: the enquiry form needs JavaScript to send. Without it, the form says so, and you can email info@mrwallcover.com with the same details instead.
+
 If something blocks you, email info@mrwallcover.com and say which page. We will help with the enquiry directly.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

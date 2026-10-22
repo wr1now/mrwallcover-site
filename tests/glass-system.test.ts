@@ -27,10 +27,11 @@ test('the design tokens are in the built CSS', async () => {
   for (const token of ['--color-ink:#141210', '--color-ivory:#f4f0e8', '--color-paper:#f7f4ee', '--color-brass:#6b542f', '--color-gold:#c6a36a', '--color-stone:#4e4942']) {
     assert.ok(css.includes(token), token);
   }
-  for (const token of ['--text-display:', '--text-body:', '--text-lede:', '--text-eyebrow:', '--content-max:', '--grid-columns:', '--radius-control:', '--radius-bar:', '--radius-pill:', '--dur-control:', '--dur-panel:', '--dur-media:', '--ease-standard:', '--glass-champagne-alpha:', '--glass-smoked-alpha:', '--glass-clear-alpha:', '--dock-clearance:']) {
+  for (const token of ['--text-display:', '--text-body:', '--text-lede:', '--text-eyebrow:', '--content-max:', '--grid-columns:', '--radius-control:', '--radius-bar:', '--radius-pill:', '--dur-control:', '--dur-panel:', '--dur-media:', '--ease-standard:', '--glass-champagne-alpha:', '--glass-champagne-alpha-over-dark:', '--glass-smoked-alpha:', '--glass-clear-alpha:', '--dock-clearance:']) {
     assert.ok(css.includes(token), token);
   }
   assert.match(css, /--text-display:var\(--text-h1\)/, 'display uses the canonical H1 role');
+  assert.match(css, /--glass-dock-alpha:1[;}]/, 'the dock is fully opaque');
   assert.match(css, /--text-h1:clamp\([^;]*vw[^;]*\)/, 'the canonical display role resolves to a fluid clamp');
   // The minifier prints 180ms as .18s; read either.
   const ms = (name: string) => {
@@ -53,6 +54,8 @@ test('the three Glass variants ship with the @supports fallback, the reduced-eff
   assert.match(css, /@media \(prefers-reduced-transparency:reduce\)\{[^}]*\.glass[^}]*\{[^}]*backdrop-filter:none/);
   // The dock is the opaque recipe and the old "plain" preference is gone.
   assert.match(css, /\.glass-opaque\{[^}]*backdrop-filter:none/);
+  // Over a dark band the header's champagne rises in opacity; the opaque fallbacks above do not read --glass-alpha.
+  assert.match(css, /\.site-header\.glass-champagne\[data-over-dark\]\{--glass-alpha:var\(--glass-champagne-alpha-over-dark\)\}/);
   assert.doesNotMatch(css, /data-effects=plain/);
   // The menu's hidden state is keyed on a class the Header script sets itself, not on the head's html.js, so a failed module still shows the in-flow links and no dead toggle.
   assert.match(css, /html:not\(\.js-nav\) \.menu-toggle\{display:none\}/);
@@ -86,6 +89,9 @@ test('every page: the header is one Glass element with a real disclosure toggle,
     assert.ok(header, `${file}: glass header`);
     assert.ok(header!.split(' ').includes('glass') && header!.includes('glass-champagne') && header!.includes('site-header'), `${file}: ${header}`);
     assert.equal(html.match(/<header\b[^>]*data-site-header/g)?.length, 1, `${file}: one header`);
+    // On phones the dock's first cell is "Start your project"; the bar does not repeat it.
+    const headerHtml = html.slice(html.indexOf(headerTag!)).split('</header>')[0];
+    assert.doesNotMatch(headerHtml, /header-start/, `${file}: no second Start in the phone bar`);
     assert.match(html, /<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>/, `${file}: toggle`);
     assert.match(html, /<div class="mobile-menu" id="mobile-menu" data-mobile-menu>/, `${file}: panel`);
     assert.doesNotMatch(html, /<details class="mobile-nav"/, `${file}: no <details> menu`);
@@ -97,7 +103,11 @@ test('every page: the header is one Glass element with a real disclosure toggle,
     const dockInner = html.slice(dockTag!.index! + dockTag![0].length).match(/^([\s\S]*?)<\/nav>/)![1];
     const actions = dockInner.match(/<(a|button)\b/g)?.length ?? 0;
     assert.ok(actions >= 2 && actions <= 5, `${file}: ${actions} dock actions`);
-    assert.match(dockInner, /^\s*<a class="dock-primary" href="\/contact\/">/, `${file}: Start first`);
+    const cells = dockInner.match(/<(a|button)\b[\s\S]*?<\/\1>/g) ?? [];
+    assert.ok(cells.length === actions && cells.every((cell) => /<svg\b/.test(cell)), `${file}: every dock cell has its icon`);
+    // On /contact/ itself Start jumps to the form (#enquiry) instead of reloading the page.
+    const startHref = file === path.join('dist', 'contact', 'index.html') ? '#enquiry' : '/contact/';
+    assert.ok(dockInner.trimStart().startsWith(`<a class="dock-primary" href="${startHref}">`), `${file}: Start first`);
     assert.match(html, /data-effects-toggle aria-pressed="false">Reduce visual effects<\/button>/, `${file}: footer toggle`);
     assert.match(html, /<head>[\s\S]*mwEffects === ['"]reduced['"][\s\S]*<\/head>/, `${file}: preference applied in <head>`);
   }

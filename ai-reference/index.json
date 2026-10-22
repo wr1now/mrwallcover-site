@@ -54,25 +54,25 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/browns-hotel-mayfair/",
-      "title": "Brown's Hotel, Mayfair | Case Study | Mr Wallcover",
+      "title": "Brown's Hotel, Mayfair | Mr Wallcover",
       "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/browns-hotel-mayfair.json",
       "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/browns-hotel-mayfair.json"
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/",
-      "title": "Ahluwalia x Calico: Estuary at Rosewood | Mr Wallcover",
+      "title": "Ahluwalia × Calico: Estuary at Rosewood | Mr Wallcover",
       "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/calico-ahluwalia-estuary-rosewood.json",
       "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/calico-ahluwalia-estuary-rosewood.json"
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/",
-      "title": "BEVERLY 1975 x Calico: Cadence, LDF 2026 | Mr Wallcover",
+      "title": "BEVERLY 1975 × Calico: Cadence, LDF 2026 | Mr Wallcover",
       "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/calico-beverly-1975-cadence.json",
       "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/calico-beverly-1975-cadence.json"
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/calico-lee-broom-overture/",
-      "title": "Lee Broom x Calico: Overture, Shoreditch | Mr Wallcover",
+      "title": "Lee Broom × Calico: Overture, Shoreditch | Mr Wallcover",
       "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/calico-lee-broom-overture.json",
       "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/calico-lee-broom-overture.json"
     },
@@ -96,7 +96,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
-      "title": "Four Seasons Hotel London, Ten Trinity Square | Mr Wallcover",
+      "title": "Four Seasons Ten Trinity Square | Mr Wallcover",
       "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/four-seasons-ten-trinity-square.json",
       "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/four-seasons-ten-trinity-square.json"
     },
@@ -108,7 +108,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/",
-      "title": "Hilton Garden Inn Silverstone | Case Study | Mr Wallcover",
+      "title": "Hilton Garden Inn Silverstone | Mr Wallcover",
       "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/hilton-garden-inn-silverstone.json",
       "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/hilton-garden-inn-silverstone.json"
     },
@@ -162,7 +162,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/north-london-residence/",
-      "title": "A Georgian house in North London | Case Study | Mr Wallcover",
+      "title": "A Georgian house in North London | Mr Wallcover",
       "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/north-london-residence.json",
       "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/north-london-residence.json"
     },
@@ -228,7 +228,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/trematon-castle/",
-      "title": "Castle of Trematon, Cornwall | Case Study | Mr Wallcover",
+      "title": "Castle of Trematon, Cornwall | Mr Wallcover",
       "canonicalJsonUrl": "https://www.mrwallcover.com/ai/projects/trematon-castle.json",
       "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/projects/trematon-castle.json"
     }
@@ -304,7 +304,7 @@
       "title": "Wallpaper Installation Quotation Checklist | Mr Wallcover",
       "dates": {
         "published": "2026-10-11",
-        "modified": "2026-10-18",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/advice/cost/index.md",
@@ -535,7 +535,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/areas/city-of-london/",
-      "title": "Wallcovering Installer, City of London | Mr Wallcover",
+      "title": "Wallpaper Installer in the City of London | Mr Wallcover",
       "dates": {
         "published": null,
         "modified": null,
@@ -613,7 +613,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/contact/",
-      "title": "Request a Quote | Mr Wallcover London",
+      "title": "Start your project: request a quote | Mr Wallcover",
       "dates": {
         "published": null,
         "modified": null,
@@ -639,7 +639,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/faq/",
-      "title": "Wallcovering FAQ | Mr Wallcover",
+      "title": "Wallcovering Installation FAQ | Mr Wallcover",
       "dates": {
         "published": null,
         "modified": null,
@@ -678,7 +678,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/how-we-check/",
-      "title": "How We Check What We Publish | Mr Wallcover",
+      "title": "Product Facts and Corrections | Mr Wallcover",
       "dates": {
         "published": null,
         "modified": "2026-10-17",
@@ -743,7 +743,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/makers/calico-wallpaper/",
-      "title": "Calico Wallpaper Wallcoverings | Mr Wallcover",
+      "title": "Calico Wallpaper | Mr Wallcover",
       "dates": {
         "published": null,
         "modified": "2026-10-18",
@@ -951,7 +951,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/makers/york-wallcoverings/",
-      "title": "York Wallcoverings Wallcoverings | Mr Wallcover",
+      "title": "York Wallcoverings | Mr Wallcover",
       "dates": {
         "published": null,
         "modified": "2026-10-18",
@@ -977,7 +977,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/materials/",
-      "title": "Material library | Mr Wallcover",
+      "title": "Wallcovering Materials We Install | Mr Wallcover",
       "dates": {
         "published": null,
         "modified": null,
@@ -1084,7 +1084,7 @@
       "title": "Specified Wallpapers We Install, London | Mr Wallcover",
       "dates": {
         "published": null,
-        "modified": "2026-10-10",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/materials/specified-papers/index.md",
@@ -1094,7 +1094,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/practice/",
-      "title": "Our Wallcovering Practice and Process | Mr Wallcover",
+      "title": "Our Wallcovering Installation Process | Mr Wallcover",
       "dates": {
         "published": null,
         "modified": null,
@@ -1107,11 +1107,11 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/privacy/",
-      "title": "Privacy | Mr Wallcover",
+      "title": "Privacy Notice | Mr Wallcover",
       "dates": {
         "published": null,
-        "modified": null,
-        "reviewed": "2026-10-09"
+        "modified": "2026-10-22",
+        "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/privacy/index.md",
       "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/privacy/index.md",
@@ -1185,7 +1185,7 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/",
-      "title": "Hotel Wallcovering Projects | Mr Wallcover",
+      "title": "Hotel & Residential Wallcovering Projects | Mr Wallcover",
       "dates": {
         "published": null,
         "modified": null,
@@ -1201,7 +1201,7 @@
       "title": "The Biltmore Mayfair | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/biltmore-mayfair/index.md",
@@ -1211,10 +1211,10 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/browns-hotel-mayfair/",
-      "title": "Brown's Hotel, Mayfair | Case Study | Mr Wallcover",
+      "title": "Brown's Hotel, Mayfair | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/browns-hotel-mayfair/index.md",
@@ -1224,10 +1224,10 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/",
-      "title": "Ahluwalia x Calico: Estuary at Rosewood | Mr Wallcover",
+      "title": "Ahluwalia × Calico: Estuary at Rosewood | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-10",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/index.md",
@@ -1237,10 +1237,10 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/",
-      "title": "BEVERLY 1975 x Calico: Cadence, LDF 2026 | Mr Wallcover",
+      "title": "BEVERLY 1975 × Calico: Cadence, LDF 2026 | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-10",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/index.md",
@@ -1250,10 +1250,10 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/calico-lee-broom-overture/",
-      "title": "Lee Broom x Calico: Overture, Shoreditch | Mr Wallcover",
+      "title": "Lee Broom × Calico: Overture, Shoreditch | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-10",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/calico-lee-broom-overture/index.md",
@@ -1266,7 +1266,7 @@
       "title": "DoubleTree Victoria | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-10",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/doubletree-victoria/index.md",
@@ -1279,7 +1279,7 @@
       "title": "DoubleTree West End | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/doubletree-west-end/index.md",
@@ -1292,7 +1292,7 @@
       "title": "Everyman cinema, Liverpool | Mr Wallcover",
       "dates": {
         "published": "2026-10-11",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/everyman-liverpool/index.md",
@@ -1302,10 +1302,10 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/",
-      "title": "Four Seasons Hotel London, Ten Trinity Square | Mr Wallcover",
+      "title": "Four Seasons Ten Trinity Square | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/index.md",
@@ -1328,10 +1328,10 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/",
-      "title": "Hilton Garden Inn Silverstone | Case Study | Mr Wallcover",
+      "title": "Hilton Garden Inn Silverstone | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/hilton-garden-inn-silverstone/index.md",
@@ -1344,7 +1344,7 @@
       "title": "Hilton London Metropole | Mr Wallcover",
       "dates": {
         "published": "2026-10-11",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/hilton-london-metropole/index.md",
@@ -1357,7 +1357,7 @@
       "title": "House of Hackney showroom | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/index.md",
@@ -1370,7 +1370,7 @@
       "title": "Huntsman, Savile Row | Mr Wallcover",
       "dates": {
         "published": "2026-10-11",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/huntsman-savile-row/index.md",
@@ -1409,7 +1409,7 @@
       "title": "Jumeirah Carlton Tower | Mr Wallcover",
       "dates": {
         "published": "2026-10-11",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/jumeirah-carlton-tower/index.md",
@@ -1422,7 +1422,7 @@
       "title": "Masterpiece London 2019 | Mr Wallcover",
       "dates": {
         "published": "2026-10-11",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/masterpiece-london-2019/index.md",
@@ -1435,7 +1435,7 @@
       "title": "Mercedes-AMG showroom, London | Mr Wallcover",
       "dates": {
         "published": "2026-10-11",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/mercedes-amg-showroom-london/index.md",
@@ -1445,10 +1445,10 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/north-london-residence/",
-      "title": "A Georgian house in North London | Case Study | Mr Wallcover",
+      "title": "A Georgian house in North London | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/north-london-residence/index.md",
@@ -1461,7 +1461,7 @@
       "title": "Novotel London Canary Wharf | Mr Wallcover",
       "dates": {
         "published": "2026-10-11",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/novotel-london-canary-wharf/index.md",
@@ -1474,7 +1474,7 @@
       "title": "Hyde London City (the Old Bailey Hotel) | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-10",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/old-bailey-hotel/index.md",
@@ -1487,7 +1487,7 @@
       "title": "Oxygen Freejumping, The O2 | Mr Wallcover",
       "dates": {
         "published": "2026-10-11",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/oxygen-freejumping-the-o2/index.md",
@@ -1500,7 +1500,7 @@
       "title": "Pendley Manor Hotel, Tring | Mr Wallcover",
       "dates": {
         "published": "2026-10-11",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/pendley-manor-hotel/index.md",
@@ -1513,7 +1513,7 @@
       "title": "Penny Morrison showroom | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/penny-morrison-showroom/index.md",
@@ -1526,7 +1526,7 @@
       "title": "St George's Square exterior | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-18",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/pimlico-st-georges-square/index.md",
@@ -1539,7 +1539,7 @@
       "title": "Private residence, Little Venice | Mr Wallcover",
       "dates": {
         "published": "2026-10-11",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/private-residence-little-venice/index.md",
@@ -1552,7 +1552,7 @@
       "title": "Raffles London at The OWO, Whitehall | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-10",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/raffles-london-the-owo/index.md",
@@ -1588,10 +1588,10 @@
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/projects/trematon-castle/",
-      "title": "Castle of Trematon, Cornwall | Case Study | Mr Wallcover",
+      "title": "Castle of Trematon, Cornwall | Mr Wallcover",
       "dates": {
         "published": "2026-10-09",
-        "modified": "2026-10-11",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/projects/trematon-castle/index.md",
@@ -1669,7 +1669,7 @@
       "title": "Calico Wallpaper Installer London | Mr Wallcover",
       "dates": {
         "published": null,
-        "modified": "2026-10-17",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/calico-wallpaper-installer/index.md",
@@ -1773,7 +1773,7 @@
       "title": "House of Hackney Wallpaper Installer London | Mr Wallcover",
       "dates": {
         "published": null,
-        "modified": "2026-10-17",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/house-of-hackney-wallpaper-installer/index.md",
@@ -1825,7 +1825,7 @@
       "title": "Timorous Beasties Wallpaper Installer London | Mr Wallcover",
       "dates": {
         "published": null,
-        "modified": "2026-10-17",
+        "modified": "2026-10-22",
         "reviewed": null
       },
       "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/timorous-beasties-installer/index.md",

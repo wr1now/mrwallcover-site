@@ -40,6 +40,10 @@ Maker
 - York Wallcoverings
 - Zoffany
 
+## Arte
+
+2 official sourcing routes
+
 [Arte](https://www.mrwallcover.com/makers/arte/)
 
 ### Showroom or brand contact
@@ -61,9 +65,9 @@ Terms and checks before ordering
 
 Retail and contract enquiry channels stated. Account eligibility and sample terms: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.arte-international.com/en/contact)
+[Open official source: Arte, Showroom or brand contact, UK](https://www.arte-international.com/en/contact)
 
 [Arte](https://www.mrwallcover.com/makers/arte/)
 
@@ -86,9 +90,13 @@ Terms and checks before ordering
 
 Official finder link only; no seller, purchase eligibility, sample or delivery terms are endorsed.
 
-Official page checked 2026-10-18. Website evidence, not a test order.
+Checked on the official website on 18 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.arte-international.com/en/where-to-buy)
+[Open official source: Arte, Find a stockist or representative, Country-dependent; UK results unverified](https://www.arte-international.com/en/where-to-buy)
+
+## Phillip Jeffries
+
+2 official sourcing routes
 
 [Phillip Jeffries](https://www.mrwallcover.com/makers/phillip-jeffries/)
 
@@ -111,9 +119,9 @@ Terms and checks before ordering
 
 Sales restricted to design-trade members and selected design retailers per About page. Trade sampling can be requested by email; charges and approval criteria not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.phillipjeffries.com/contact-us)
+[Open official source: Phillip Jeffries, Showroom or brand contact, UK / Europe](https://www.phillipjeffries.com/contact-us)
 
 [Phillip Jeffries](https://www.mrwallcover.com/makers/phillip-jeffries/)
 
@@ -136,9 +144,13 @@ Terms and checks before ordering
 
 Design trade / selected retailers sales model; sample charges, account approval and cross-border terms not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.phillipjeffries.com/contact-us)
+[Open official source: Phillip Jeffries, Trade enquiry, US / Asia](https://www.phillipjeffries.com/contact-us)
+
+## de Gournay
+
+2 official sourcing routes
 
 [de Gournay](https://www.mrwallcover.com/makers/de-gournay/)
 
@@ -161,9 +173,9 @@ Terms and checks before ordering
 
 Account eligibility and sample conditions: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://degournay.com/contactus)
+[Open official source: de Gournay, Showroom or brand contact, UK; overseas showrooms separately listed](https://degournay.com/contactus)
 
 [de Gournay](https://www.mrwallcover.com/makers/de-gournay/)
 
@@ -186,9 +198,13 @@ Terms and checks before ordering
 
 Account, sample and destination shipping terms: not established; ask the maker.
 
-Official page checked 2026-10-18. Website evidence, not a test order.
+Checked on the official website on 18 October 2026. This check did not include placing an order.
 
-[Open official source](https://degournay.com/stock)
+[Open official source: de Gournay, Stock information and enquiry, Destination-dependent; UK shipping unverified](https://degournay.com/stock)
+
+## Fromental
+
+2 official sourcing routes
 
 [Fromental](https://www.mrwallcover.com/makers/fromental/)
 
@@ -211,9 +227,9 @@ Terms and checks before ordering
 
 Bespoke sample loans require an approved trade account and return within the allocated period. Ask the sales representative for the applicable return date. Head-office visits are by appointment; separate London showroom details appear on the official Visit us page.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://fromental.com/pages/representatives)
+[Open official source: Fromental, Showroom or brand contact, UK / Europe; regional overseas contacts](https://fromental.com/pages/representatives)
 
 [Fromental](https://www.mrwallcover.com/makers/fromental/)
 
@@ -236,9 +252,13 @@ Terms and checks before ordering
 
 Shop wallpaper samples are purchasable in bundles of six. Samples are indicative and may vary by batch; the FAQ recommends replacing older samples without the current QR code. Trade pricing requires an approved account. UK destination eligibility must be confirmed for the selected order.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://fromental.com/collections/shop)
+[Open official source: Fromental, Shop or product ordering, UK destination check required; international shipping stated](https://fromental.com/collections/shop)
+
+## Calico Wallpaper
+
+2 official sourcing routes
 
 [Calico Wallpaper](https://www.mrwallcover.com/makers/calico-wallpaper/)
 
@@ -261,9 +281,9 @@ Terms and checks before ordering
 
 Samples selectable by style, substrate and size. Trade discounts and complimentary samples are for qualifying accounts; international taxes/duties may be payable by purchaser.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://calicowallpaper.com/)
+[Open official source: Calico Wallpaper, Shop or product ordering, US; international mural orders stated, UK acceptance unconfirmed](https://calicowallpaper.com/)
 
 [Calico Wallpaper](https://www.mrwallcover.com/makers/calico-wallpaper/)
 
@@ -286,9 +306,13 @@ Terms and checks before ordering
 
 Bespoke enquiries available through sales; appointment required for showroom per FAQ.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://calicowallpaper.com/about/contact/)
+[Open official source: Calico Wallpaper, Showroom or brand contact, New York, US; remote sales enquiry](https://calicowallpaper.com/about/contact/)
+
+## House of Hackney
+
+2 official sourcing routes
 
 [House of Hackney](https://www.mrwallcover.com/makers/house-of-hackney/)
 
@@ -311,9 +335,9 @@ Terms and checks before ordering
 
 Paid sample ordering shown; trade pricing requires login, with application offered. Page states printed-to-order wallpaper cannot be returned or cancelled. Delivery cost confirmed at checkout.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.houseofhackney.com/products/troop-wallpaper-birch)
+[Open official source: House of Hackney, Shop or product ordering, UK; international delivery described](https://www.houseofhackney.com/products/troop-wallpaper-birch)
 
 [House of Hackney](https://www.mrwallcover.com/makers/house-of-hackney/)
 
@@ -336,9 +360,13 @@ Terms and checks before ordering
 
 Official story says both London and New York showrooms are open to the public and offer complimentary design consultations. Confirm visit arrangements using the current showroom page; sample and order terms are separate.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.houseofhackney.com/en-intl/pages/our-story)
+[Open official source: House of Hackney, Showroom or brand contact, London, UK; New York, US](https://www.houseofhackney.com/en-intl/pages/our-story)
+
+## Brewster Home Fashions
+
+2 official sourcing routes
 
 [Brewster Home Fashions](https://www.mrwallcover.com/makers/brewster-home-fashions/)
 
@@ -361,9 +389,9 @@ Terms and checks before ordering
 
 Checkout/account requirements not established; ask the maker Policy describes paid sample shipping and Canada sample shipments; UK sample delivery not established
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.brewsterwallcovering.com/shop-all-brewster-home-fashions-wallpaper)
+[Open official source: Brewster Home Fashions, Shop or product ordering, North America; policy sections for USA and Canada](https://www.brewsterwallcovering.com/shop-all-brewster-home-fashions-wallpaper)
 
 [Brewster Home Fashions](https://www.mrwallcover.com/makers/brewster-home-fashions/)
 
@@ -386,9 +414,13 @@ Terms and checks before ordering
 
 not established; ask the maker not established; ask the maker
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.brewsterwallcovering.com/shipping-policy)
+[Open official source: Brewster Home Fashions, Find a stockist or representative, International; country-specific seller not verified](https://www.brewsterwallcovering.com/shipping-policy)
+
+## Cole & Son
+
+3 official sourcing routes
 
 [Cole & Son](https://www.mrwallcover.com/makers/cole-and-son/)
 
@@ -411,9 +443,9 @@ Terms and checks before ordering
 
 Samples are purchased; overseas sample duties may apply. Wallpaper-roll international duty treatment differs from samples. Account requirement and trade approval criteria not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://cole-and-son.com/en-ww/collections/wallpapers/products/diamond-maze-roll)
+[Open official source: Cole & Son, Shop or product ordering, UK; international subject to delivery-country acceptance](https://cole-and-son.com/en-ww/collections/wallpapers/products/diamond-maze-roll)
 
 [Cole & Son](https://www.mrwallcover.com/makers/cole-and-son/)
 
@@ -436,9 +468,9 @@ Terms and checks before ordering
 
 Trade enquiry channel is evidenced; account eligibility and showroom sample terms not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://cole-and-son.com/pages/contact-us)
+[Open official source: Cole & Son, Showroom or brand contact, London, UK](https://cole-and-son.com/pages/contact-us)
 
 [Cole & Son](https://www.mrwallcover.com/makers/cole-and-son/)
 
@@ -461,9 +493,13 @@ Terms and checks before ordering
 
 Official finder link only; no seller, purchase eligibility, sample or delivery terms are endorsed.
 
-Official page checked 2026-10-18. Website evidence, not a test order.
+Checked on the official website on 18 October 2026. This check did not include placing an order.
 
-[Open official source](https://cole-and-son.com/pages/where-to-buy)
+[Open official source: Cole & Son, Find a stockist or representative, UK and international search; individual listings unverified](https://cole-and-son.com/pages/where-to-buy)
+
+## Dedar
+
+2 official sourcing routes
 
 [Dedar](https://www.mrwallcover.com/makers/dedar/)
 
@@ -486,9 +522,9 @@ Terms and checks before ordering
 
 Direct retail purchase, trade eligibility and sample charges: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://dedar.com/company/contacts/)
+[Open official source: Dedar, Showroom or brand contact, United Kingdom — London](https://dedar.com/company/contacts/)
 
 [Dedar](https://www.mrwallcover.com/makers/dedar/)
 
@@ -511,9 +547,13 @@ Terms and checks before ordering
 
 Milan showroom visits are listed as by appointment. Account and sample terms: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://dedar.com/company/contacts/)
+[Open official source: Dedar, Showroom or brand contact, Italy and international enquiries](https://dedar.com/company/contacts/)
+
+## Élitis
+
+3 official sourcing routes
 
 [Élitis](https://www.mrwallcover.com/makers/elitis/)
 
@@ -536,9 +576,9 @@ Terms and checks before ordering
 
 Account eligibility, direct retail ordering and sample costs: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://elitis.fr/en/retail-outlets/london-showroom)
+[Open official source: Élitis, Showroom or brand contact, United Kingdom — London](https://elitis.fr/en/retail-outlets/london-showroom)
 
 [Élitis](https://www.mrwallcover.com/makers/elitis/)
 
@@ -561,9 +601,9 @@ Terms and checks before ordering
 
 Professionals: country representative route. Private individuals: direct contact permitted. Online availability requires professional extranet access.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://elitis.fr/en/faq)
+[Open official source: Élitis, Find a stockist or representative, Country-dependent; international](https://elitis.fr/en/faq)
 
 [Élitis](https://www.mrwallcover.com/makers/elitis/)
 
@@ -586,9 +626,13 @@ Terms and checks before ordering
 
 FAQ describes an online swatch action. Charges, eligibility and UK sample delivery: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://elitis.fr/en/faq)
+[Open official source: Élitis, Samples, Website; delivery territory not stated](https://elitis.fr/en/faq)
+
+## Morris & Co.
+
+2 official sourcing routes
 
 [Morris & Co.](https://www.mrwallcover.com/makers/morris-and-co/)
 
@@ -611,9 +655,9 @@ Terms and checks before ordering
 
 UK consumer terms govern; commercial use excluded for purchases on that site. Sample service offers five free samples; account necessity not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.wmorrisandco.com/uk/owl-willow-wallpaper-bayleaf-orange-44043-217055/)
+[Open official source: Morris & Co., Shop or product ordering, UK regional store; mainland UK delivery explicitly evidenced](https://www.wmorrisandco.com/uk/owl-willow-wallpaper-bayleaf-orange-44043-217055/)
 
 [Morris & Co.](https://www.mrwallcover.com/makers/morris-and-co/)
 
@@ -636,9 +680,13 @@ Terms and checks before ordering
 
 Retail ordering access, appointment requirements, trade qualification and samples not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.wmorrisandco.com/eu/showrooms/)
+[Open official source: Morris & Co., Showroom or brand contact, London, UK; Netherlands and US showroom contacts also listed](https://www.wmorrisandco.com/eu/showrooms/)
+
+## Omexco
+
+3 official sourcing routes
 
 [Omexco](https://www.mrwallcover.com/makers/omexco/)
 
@@ -661,9 +709,9 @@ Terms and checks before ordering
 
 FAQ explicitly gives UK representative ordering. Consumer account eligibility and sample costs: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.omexco.com/contact)
+[Open official source: Omexco, Find a stockist or representative, United Kingdom](https://www.omexco.com/contact)
 
 [Omexco](https://www.mrwallcover.com/makers/omexco/)
 
@@ -686,9 +734,9 @@ Terms and checks before ordering
 
 FAQ directs overseas orders through regional distributors. Directory entries are listed by maker; no authorised label asserted.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.omexco.com/contact)
+[Open official source: Omexco, Find a stockist or representative, Outside UK, Ireland and France; United States example](https://www.omexco.com/contact)
 
 [Omexco](https://www.mrwallcover.com/makers/omexco/)
 
@@ -711,9 +759,13 @@ Terms and checks before ordering
 
 For interior professionals; maximum five samples. Charges and UK sample delivery: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.omexco.com/faq)
+[Open official source: Omexco, Samples, Interior professionals; territory limits not stated](https://www.omexco.com/faq)
+
+## Osborne & Little
+
+3 official sourcing routes
 
 [Osborne & Little](https://www.mrwallcover.com/makers/osborne-and-little/)
 
@@ -736,9 +788,9 @@ Terms and checks before ordering
 
 Stockists described as an ordering route; neutral maker-listed terminology only.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.osborneandlittle.com/stockists)
+[Open official source: Osborne & Little, Find a stockist or representative, UK and overseas: country selector includes United Kingdom and other countries](https://www.osborneandlittle.com/stockists)
 
 [Osborne & Little](https://www.mrwallcover.com/makers/osborne-and-little/)
 
@@ -761,9 +813,9 @@ Terms and checks before ordering
 
 Maker lists London showroom and contact details.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.osborneandlittle.com/contact_us/)
+[Open official source: Osborne & Little, Showroom or brand contact, UK London; US showroom contacts separately listed, without implied UK fulfilment](https://www.osborneandlittle.com/contact_us/)
 
 [Osborne & Little](https://www.mrwallcover.com/makers/osborne-and-little/)
 
@@ -786,9 +838,13 @@ Terms and checks before ordering
 
 Samples are available to order directly from this site only within the United Kingdom. Up to ten samples per order; the published sample cost includes delivery and VAT. Samples may be unavailable and are not guaranteed to match production batches exactly.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.osborneandlittle.com/samples/)
+[Open official source: Osborne & Little, Samples, United Kingdom only; page explicitly excludes orders and delivery outside UK](https://www.osborneandlittle.com/samples/)
+
+## Pierre Frey
+
+2 official sourcing routes
 
 [Pierre Frey](https://www.mrwallcover.com/makers/pierre-frey/)
 
@@ -811,9 +867,9 @@ Terms and checks before ordering
 
 Professional showroom contact only. No private walk-in purchase, stock availability or delivery promise is made.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.pierrefrey.com/en/points-of-sale/pierre-frey-london-professional-showroom)
+[Open official source: Pierre Frey, Showroom or brand contact, London, United Kingdom — professional showroom](https://www.pierrefrey.com/en/points-of-sale/pierre-frey-london-professional-showroom)
 
 [Pierre Frey](https://www.mrwallcover.com/makers/pierre-frey/)
 
@@ -836,9 +892,13 @@ Terms and checks before ordering
 
 Professional path directs to showrooms/agents; private path to partners or a showroom. This is a finder link, not an established purchase or delivery route.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.pierrefrey.com/en/points-of-sale)
+[Open official source: Pierre Frey, Find a stockist or representative, International; country results unverified](https://www.pierrefrey.com/en/points-of-sale)
+
+## Sanderson
+
+2 official sourcing routes
 
 [Sanderson](https://www.mrwallcover.com/makers/sanderson/)
 
@@ -861,9 +921,9 @@ Terms and checks before ordering
 
 Guest checkout stated. Homepage describes complimentary samples; delivery page states a separate sample delivery charge. Consumer terms exclude commercial use.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.sanderson.design/)
+[Open official source: Sanderson, Shop or product ordering, UK mainland expressly stated in FAQ; overseas delivery not established by this UK route](https://www.sanderson.design/)
 
 [Sanderson](https://www.mrwallcover.com/makers/sanderson/)
 
@@ -886,9 +946,13 @@ Terms and checks before ordering
 
 Programme advertises wallpaper/fabric/sample ordering and complimentary samples.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://info.sandersondesigngroup.com/tailored-for-trade)
+[Open official source: Sanderson, Trade enquiry, UK-relevant group programme with UK contracts contact; overseas account service not established](https://info.sandersondesigngroup.com/tailored-for-trade)
+
+## Sangetsu
+
+2 official sourcing routes
 
 [Sangetsu](https://www.mrwallcover.com/makers/sangetsu/)
 
@@ -911,9 +975,9 @@ Terms and checks before ordering
 
 not established; ask the maker not established; ask the maker
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.sangetsu.co.jp/english/showroom/)
+[Open official source: Sangetsu, Showroom or brand contact, Japan](https://www.sangetsu.co.jp/english/showroom/)
 
 [Sangetsu](https://www.mrwallcover.com/makers/sangetsu/)
 
@@ -936,9 +1000,13 @@ Terms and checks before ordering
 
 not established; ask the maker not established; ask the maker
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://qa.sangetsu.co.jp/public/)
+[Open official source: Sangetsu, Showroom or brand contact, Japan-based enquiry; international eligibility unconfirmed](https://qa.sangetsu.co.jp/public/)
+
+## Vescom
+
+3 official sourcing routes
 
 [Vescom](https://www.mrwallcover.com/makers/vescom/)
 
@@ -961,9 +1029,9 @@ Terms and checks before ordering
 
 Showroom visitor eligibility not established; ask the maker Professional restriction stated on textile sample page; showroom-specific sample terms not established; ask the maker
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://vescom.com/en/contact/showrooms/london)
+[Open official source: Vescom, Showroom or brand contact, United Kingdom](https://vescom.com/en/contact/showrooms/london)
 
 [Vescom](https://www.mrwallcover.com/makers/vescom/)
 
@@ -986,9 +1054,9 @@ Terms and checks before ordering
 
 not established; ask the maker not established; ask the maker
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://vescom.com/en/contact/sales-offices-distributors)
+[Open official source: Vescom, Find a stockist or representative, Regional worldwide directories](https://vescom.com/en/contact/sales-offices-distributors)
 
 [Vescom](https://www.mrwallcover.com/makers/vescom/)
 
@@ -1011,9 +1079,13 @@ Terms and checks before ordering
 
 Samples reserved for professional customers; products not sold directly to individuals for private use Free textile sample pack offered; eligibility and delivery geography require human confirmation
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://pages.vescom.com/en/sample-pack/textile-wallcovering)
+[Open official source: Vescom, Samples, Geography not stated](https://pages.vescom.com/en/sample-pack/textile-wallcovering)
+
+## York Wallcoverings
+
+2 official sourcing routes
 
 [York Wallcoverings](https://www.mrwallcover.com/makers/york-wallcoverings/)
 
@@ -1036,9 +1108,9 @@ Terms and checks before ordering
 
 Checkout/account requirements not established; ask the maker Most residential patterns have samples for online purchase, per FAQ
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://yorkwallcoverings.com/)
+[Open official source: York Wallcoverings, Shop or product ordering, United States](https://yorkwallcoverings.com/)
 
 [York Wallcoverings](https://www.mrwallcover.com/makers/york-wallcoverings/)
 
@@ -1061,9 +1133,13 @@ Terms and checks before ordering
 
 Official finder link only; no seller, purchase eligibility, sample or delivery terms are endorsed.
 
-Official page checked 2026-10-18. Website evidence, not a test order.
+Checked on the official website on 18 October 2026. This check did not include placing an order.
 
-[Open official source](https://yorkwallcoverings.com/pages/store-locator)
+[Open official source: York Wallcoverings, Find a stockist or representative, Locator geography not verified](https://yorkwallcoverings.com/pages/store-locator)
+
+## Zoffany
+
+1 official sourcing route
 
 [Zoffany](https://www.mrwallcover.com/makers/zoffany/)
 
@@ -1086,8 +1162,8 @@ Terms and checks before ordering
 
 Group programme advertises portal ordering and complimentary samples; Zoffany homepage links group trade signup.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://info.sandersondesigngroup.com/tailored-for-trade)
+[Open official source: Zoffany, Trade enquiry, UK-relevant group programme; overseas eligibility not established](https://info.sandersondesigngroup.com/tailored-for-trade)
 
 By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 18 October 2026

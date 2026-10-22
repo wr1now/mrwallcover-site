@@ -7,7 +7,7 @@ import path from 'node:path';
 type Answer = { id: string; question: string; answer: string; short?: string; pages: string[]; pendingOmitted: string[]; sources: { url?: string; note?: string }[] };
 const data = JSON.parse(await readFile('src/data/buyer-answers.json', 'utf8')) as { answers: Answer[]; standing: Answer[]; factsAdditions: Record<string, unknown>; factsAdditionsPending: string[] };
 const all = [...data.answers, ...data.standing];
-const FAQ_PAGES = ['/for-ai/', '/professionals/designers/', '/professionals/hotels/', '/professionals/developers/', '/advice/hotel-wallcovering-specification/', '/aftercare/'];
+const FAQ_PAGES = ['/for-ai/', '/professionals/', '/professionals/designers/', '/professionals/hotels/', '/professionals/developers/', '/advice/hotel-wallcovering-specification/', '/aftercare/'];
 const AWARD_LINE = 'Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards';
 
 const decode = (s: string) => s.replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
@@ -192,6 +192,32 @@ test('Q10 and Q13: Chelsea FAQ, decision guide and Cadence role read as Dorin de
   assert.deepEqual(wellKnown.makersInstalled.makers, ['de Gournay', 'Fromental', 'House of Hackney', 'Muraspec', 'Phillip Jeffries', 'Timorous Beasties']);
   assert.equal(wellKnown.minimumProjectSize, Q10);
   for (const key of ['paymentTerms', 'roomsPerDay']) assert.ok(!(key in wellKnown), key);
+});
+
+test('/faq/ shows the approved insurance answer after its own questions, with the same text in its one FAQPage', async () => {
+  const html = await readFile('dist/faq/index.html', 'utf8');
+  const insurance = all.find((item) => item.id === 'f-q1')!;
+  assert.ok(insurance.pages.includes('/faq/'));
+  const faqs = graphOf(html).filter((node) => node['@type'] === 'FAQPage');
+  assert.equal(faqs.length, 1, 'one FAQPage');
+  assert.equal(faqs[0].mainEntity.at(-1)?.name, insurance.question, 'the buyer question follows the page’s own questions');
+  assert.equal(faqs[0].mainEntity.at(-1)?.acceptedAnswer?.text, insurance.answer);
+  assert.ok(html.includes(`<details id="${insurance.id}"`), 'a visible disclosure with its anchor');
+  assert.ok(decode(html).includes(insurance.answer), 'the visible answer is the approved text');
+});
+
+test('the all-hotels answer is shown as a list made of its own words, and the FAQPage keeps the full answer', async () => {
+  const hotels = all.find((item) => item.id === 'f-b1') as Answer & { answerList: { lead: string; items: string[]; after?: string } };
+  for (const page of hotels.pages) {
+    const html = await readFile(`dist${page}index.html`, 'utf8');
+    const block = html.match(/<div\b[^>]*\bid="f-b1"[^>]*>([\s\S]*?)<\/ul>/)?.[1];
+    assert.ok(block, `${page}: the f-b1 answer has a list`);
+    const items = [...block.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/g)].map((m) => decode(m[1]).trim());
+    assert.deepEqual(items, hotels.answerList.items, `${page}: one hotel per list item`);
+    assert.ok(decode(block).includes(hotels.answerList.lead), `${page}: the lead sentence`);
+    const faq = graphOf(html).find((node) => node['@type'] === 'FAQPage')!;
+    assert.ok(faq.mainEntity.some((q: any) => q.name === hotels.question && q.acceptedAnswer.text === hotels.answer), `${page}: the FAQPage keeps the full answer`);
+  }
 });
 
 // SEO fix pack D: service and material page depth.

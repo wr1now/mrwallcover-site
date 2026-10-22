@@ -10,7 +10,7 @@ import { guideStages, howWeCheck } from '../../lib/guide-stages';
 import '../../styles/guide.css';
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href: '/advice/' }];
 ---
-<Base title="Wallcovering Guide | Mr Wallcover" description="Choose, specify, source, prepare for and install a wallcovering: our guides, the roll calculator, how wallpaper is sold and how we check." path="/advice/" extraSchema={[breadcrumbNode(crumbs)]}>
+<Base title="Wallcovering Guide | Mr Wallcover" description="Plain guidance from a London installer: choosing, specifying, preparing for and hanging wallcoverings, with the calculator and aftercare." path="/advice/" extraSchema={[breadcrumbNode(crumbs)]}>
   <div class="container-page guide-hub pb-20">
     <header class="page-head guide-intro">
       <Breadcrumb items={crumbs} />
@@ -43,7 +43,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href:
       <p class="sr-only" data-guide-count role="status"></p>
       <div class="guide-grid">{hubCards.map((card) => <GuideCard guide={card} />)}</div>
     </section>}
-    <section class="guide-next"><p class="eyebrow">A question about your project?</p><h2>Start with what you know.</h2><p>Tell us about the room or send the material you are considering. We can discuss preparation, installation or the complete package.</p><div class="flex flex-wrap gap-3"><Action href="/contact/?intent=advice">Discuss your project</Action><Action variant="secondary" href="/aftercare/">Care and repairs</Action></div></section>
+    <section class="guide-next"><p class="eyebrow">A question about your project?</p><h2>Start with what you know.</h2><p>Tell us about the room or send the material you are considering. We can discuss preparation, installation or the complete package.</p><div class="flex flex-wrap gap-3"><Action href="/contact/?intent=advice">Start your project</Action><Action variant="secondary" href="/aftercare/">Care and repairs</Action></div></section>
   </div>
 </Base>
 <script>
@@ -80,7 +80,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Wallcovering Guide', href:
   .stage { display: flex; flex-direction: column; gap: 1.5rem; min-width: 0; padding: clamp(1.25rem, 2.5vw, 2rem); background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
   .stage-head { min-width: 0; }
   .stage-head > :global(.mw-icon) { display: block; width: 2rem; height: 2rem; margin-bottom: 1.25rem; }
-  .stage-head p { line-height: 1.65; }
+  .stage-head p { line-height: 1.65; margin-top: var(--space-2); }
   .stage-links { grid-template-columns: minmax(0, 1fr); margin-top: auto; }
   .stage-links a { gap: .45rem; padding-block: 1rem; }
   .stage-links li:nth-child(2) a { border-top: 1px solid var(--color-line); }

@@ -1,20 +1,20 @@
 ---
-title: "Brown's Hotel, Mayfair | Case Study | Mr Wallcover"
+title: "Brown's Hotel, Mayfair | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/browns-hotel-mayfair/
-description: "Main decorating contractor at Brown's Hotel, Mayfair, 2022–2024. A full decorating package for London's oldest hotel: two years as main decorating…"
+description: "Main decorating contractor at Brown's Hotel, Mayfair, 2022–2024: wallcoverings, fine painting and French polishing in a hotel that stayed open."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 Albemarle Street, Mayfair, London W1S 4BP
 
 # Brown's Hotel, Mayfair
 
-A full decorating package for London's oldest hotel: two years as main decorating contractor, delivered while it never stopped taking guests.
+A full decorating package at Brown's Hotel, Mayfair: two years as main decorating contractor, delivered while the hotel stayed open to guests.
 
 ![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -48,62 +48,68 @@ Client, materials & project facts
 - **Wallcoverings:** [Lewis & Wood](https://www.lewisandwood.co.uk/) [Adam’s Eden](https://www.lewisandwood.co.uk/wallpapers/adams-eden/), among others
 - **Scope:** Wallcovering installation; wall preparation, filling, making good and priming; fine painting; French polishing and specialist finishes; spray-finishing of ornate moulded ceilings
 
-## The building
-
-Brown’s needs little introduction in Mayfair. Long celebrated as dating from 1837, the hotel’s own commissioned research now traces its founding to 1832, when James and Sarah Brown opened their doors at 23 Dover Street. It has never been renamed, rebuilt or relocated, which makes it London’s oldest luxury hotel.
-
-Its guest book reads like a syllabus. Alexander Graham Bell made Britain’s first telephone call here in 1876. Rudyard Kipling came from the day he was married and returned for more than four decades; Agatha Christie’s *At Bertram’s Hotel* owes much to her stays. Theodore Roosevelt stayed before his marriage in 1886, and Franklin and Eleanor Roosevelt spent their honeymoon here. Rocco Forte Hotels acquired Brown’s in 2003.
-
 ## The brief
 
-To act as main decorating contractor across a sequence of rooms and suites: preparing every surface, hanging premium wallcoverings, fine painting, French polishing and specialist finishes, and spray-finishing the hotel’s richly moulded ceilings. All of it within a fully operating hotel, to programme, around guests in residence.
+To act as main decorating contractor across a sequence of rooms and suites: preparing every surface, hanging wallcoverings, fine painting, French polishing and specialist finishes, and spray-finishing the hotel’s richly moulded ceilings. All of it within a fully operating hotel, to programme, around guests in residence.
 
 ## Our approach
 
 **Preparation and priming.** Period walls were filled, made good and primed until they were true enough to receive both fine paint and wide-width printed papers. On walls of this age, the hours spent here decide everything that follows.
 
-**Setting out.** Adam’s Eden is a large-scale design with a 108.5 cm half-drop repeat. Each room was set out from its focal points (chimneypieces, doorcases and bed walls) so that the birds and branches fall naturally, and so the pattern meets the cornice with composure.
+**Setting out.** Adam’s Eden is a large-scale design with a 108.5 cm half-drop repeat. Each room was set out from its focal points (chimneypieces, doorcases and bed walls) so that the birds and branches fall naturally, and so the pattern sits square to the cornice and the joinery.
 
 **Ceilings.** The ornate moulded ceilings were spray-finished to give a flawless, even coat that keeps every crisp detail of the plasterwork, something a brush or roller cannot achieve on enrichment of this depth.
 
 **Fine finishes.** Fine painting, French polishing and specialist finishes were carried out by the same team, so that joinery, walls and ceilings were finished as one coherent scheme.
 
-**A live hotel.** Brown’s remained open throughout. We worked closely with the main contractor and the hotel’s management on access, timing, protection and housekeeping, keeping work contained and quiet. The project was delivered on time, with the hotel open throughout.
+**A live hotel.** Brown’s remained open throughout. We worked closely with the main contractor and the hotel’s management on access, timing, protection and housekeeping, keeping work contained and quiet. The project was delivered on time.
 
 ## Materials
 
-- **[Lewis & Wood – Adam’s Eden](https://www.lewisandwood.co.uk/wallpapers/adams-eden/):** designed by the decorative artist Adam Calkin and one of Lewis & Wood’s signature designs, printed on wide non-woven paper. The design is identified from the printed selvedge photographed on site; the colourway is not recorded here.
-- Other wallcoverings appear in our photographs, including a green trailing-leaf design; these are not identified here.
+- **[Lewis & Wood – Adam’s Eden](https://www.lewisandwood.co.uk/wallpapers/adams-eden/):** designed by the decorative artist Adam Calkin and one of Lewis & Wood’s signature designs, printed on wide non-woven paper. The design is identified from the printed selvedge photographed on site.
+- A green trailing-leaf design also appears in the rooms.
 
 ## Outcome
 
-Rooms that feel as though they have always been this way: Adam Calkin’s garden climbing beneath freshly finished plasterwork, and calm, tailored bedrooms. All of it delivered on time, in a hotel that never closed its doors.
+Rooms that feel as though they have always been this way: Adam Calkin’s garden climbing beneath freshly finished plasterwork, and calm, tailored bedrooms.
 
-The last two photographs, of the hotel’s sign and street entrance, are our own, posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 7 February 2022, the day we started this project at Brown’s ([CZqAHTMKcnj](https://www.instagram.com/p/CZqAHTMKcnj/)).
+The last two photographs, of the hotel’s sign and street entrance, are our own. We posted them on Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 7 February 2022, the day we started this project at Brown’s ([see the post](https://www.instagram.com/p/CZqAHTMKcnj/)).
+
+## The building
+
+Brown’s opened in 1832, when James and Sarah Brown took 23 Dover Street. It has never been renamed, rebuilt or relocated. Rocco Forte Hotels acquired it in 2003.
+
+About the building
+
+The hotel was long said to date from 1837; its own commissioned research now places the opening in 1832.
+
+Alexander Graham Bell made Britain’s first telephone call here in 1876. Rudyard Kipling came from the day he was married and returned for more than four decades; Agatha Christie’s *At Bertram’s Hotel* owes much to her stays. Theodore Roosevelt stayed before his marriage in 1886, and Franklin and Eleanor Roosevelt spent their honeymoon here.
 
 ## Photographs
 
-![Narrow bedside at Brown's Hotel, Mayfair, papered in pale tree-and-leaf wallcovering, with a sculptural bronze lamp, a wall light and a green patterned headboard.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-10.jpg)
+![Narrow bedside at Brown's Hotel, Mayfair, papered in pale tree-and-leaf wallcovering, with a sculptural bronze lamp, a wall light and a green patterned headboard.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-10-800.webp)
 
-![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-06.jpg)
+![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-06-800.webp)
 
-![Adam's Eden wallcovering meeting a carved cornice and decorative plaster ceiling at Brown's Hotel, Mayfair, above a door case.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-12.jpg)
+![Adam's Eden wallcovering meeting a carved cornice and decorative plaster ceiling at Brown's Hotel, Mayfair, above a door case.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-12-800.webp)
 
-![Adam's Eden wallcovering beneath a carved cornice at Brown's Hotel, Mayfair, around a door case, with a gilt mirror leaning against the wall.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-11.jpg)
+![Adam's Eden wallcovering beneath a carved cornice at Brown's Hotel, Mayfair, around a door case, with a gilt mirror leaning against the wall.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-11-800.webp)
 
-![Finished guest bedroom at Brown's Hotel, Mayfair: grey upholstered headboard, yellow cushions, a checked throw and twin wall lights on pale grey painted walls.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-02.jpg)
+![Finished guest bedroom at Brown's Hotel, Mayfair: grey upholstered headboard, yellow cushions, a checked throw and twin wall lights on pale grey painted walls.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-02-800.webp)
 
-![Guest bedroom at Brown's Hotel, Mayfair, with tall sash windows, full-length linen curtains, a red armchair and an upholstered bench at the foot of the bed.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-03.jpg)
+![Guest bedroom at Brown's Hotel, Mayfair, with tall sash windows, full-length linen curtains, a red armchair and an upholstered bench at the foot of the bed.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-03-800.webp)
 
-![Bedside in a finished guest room at Brown's Hotel, Mayfair: a dark wood chest, a wavy-stemmed table lamp and yellow cushions against pale grey painted walls.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-04.jpg)
+![Bedside in a finished guest room at Brown's Hotel, Mayfair: a dark wood chest, a wavy-stemmed table lamp and yellow cushions against pale grey painted walls.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-04-800.webp)
 
-![Two wooden chairs with yellow seats beside a dark wood bedside chest in a finished guest room at Brown's Hotel, Mayfair.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-05.jpg)
+![Two wooden chairs with yellow seats beside a dark wood bedside chest in a finished guest room at Brown's Hotel, Mayfair.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-05-800.webp)
 
-![Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-01.jpg)
+All 5 more photographs from this project
 
-![Room at Brown's Hotel, Mayfair, during works: Adam's Eden wallcovering hung beneath an ornate plaster ceiling and chandelier, with protection board on the floor and a vacuum cleaner in view.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-07.jpg)
+![Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-01-800.webp)
 
-![Ornate plaster ceiling and chandelier above walls hung in Adam's Eden wallcovering at Brown's Hotel, Mayfair, photographed during works with floor protection and equipment by the door.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-08.jpg)
+![Room at Brown's Hotel, Mayfair, during works: Adam's Eden wallcovering hung beneath an ornate plaster ceiling and chandelier, with protection board on the floor and a vacuum cleaner in view.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-07-800.webp)
+
+![Ornate plaster ceiling and chandelier above walls hung in Adam's Eden wallcovering at Brown's Hotel, Mayfair, photographed during works with floor protection and equipment by the door.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-08-800.webp)
 
 ![Brown's Hotel sign on the Albemarle Street front, Mayfair.](https://www.mrwallcover.com/media/img/r/browns-ig-01-800.webp)
 
@@ -113,7 +119,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -143,7 +151,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -167,4 +175,4 @@ Silent film, 15 seconds. A walk through a finished room papered in a cream wallc
 
 Silent film, 7 seconds. A bedroom during the works, hung in a sage wallcovering with a white leaf pattern, with the floor protected and a laser level and stepladders in the room.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

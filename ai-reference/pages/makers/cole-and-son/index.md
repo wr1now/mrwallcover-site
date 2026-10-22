@@ -16,10 +16,10 @@ Cole & Son develops wallpaper and fabric collections through archive references 
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://cole-and-son.com/pages/our-heritage) — checked 2026-10-17
-- [Official source](https://cole-and-son.com/pages/frequently-asked-questions) — checked 2026-10-17
-- [Official source](https://cole-and-son.com/pages/contact-us) — checked 2026-10-17
-- [Official source](https://cole-and-son.com/en-ww/collections/wallpapers/products/diamond-maze-roll) — checked 2026-10-17
+- [Official source: cole-and-son.com/pages/our-heritage](https://cole-and-son.com/pages/our-heritage) — checked 17 October 2026
+- [Official source: cole-and-son.com/pages/frequently-asked-questions](https://cole-and-son.com/pages/frequently-asked-questions) — checked 17 October 2026
+- [Official source: cole-and-son.com/pages/contact-us](https://cole-and-son.com/pages/contact-us) — checked 17 October 2026
+- [Official source: cole-and-son.com/en-ww/collections/wallpapers/products/diamond-maze-roll](https://cole-and-son.com/en-ww/collections/wallpapers/products/diamond-maze-roll) — checked 17 October 2026
 
 [Visit maker website](https://cole-and-son.com/)
 
@@ -46,9 +46,9 @@ Terms and checks before ordering
 
 Samples are purchased; overseas sample duties may apply. Wallpaper-roll international duty treatment differs from samples. Account requirement and trade approval criteria not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://cole-and-son.com/en-ww/collections/wallpapers/products/diamond-maze-roll)
+[Open official source: Shop or product ordering, UK; international subject to delivery-country acceptance](https://cole-and-son.com/en-ww/collections/wallpapers/products/diamond-maze-roll)
 
 ### Showroom or brand contact
 
@@ -69,9 +69,9 @@ Terms and checks before ordering
 
 Trade enquiry channel is evidenced; account eligibility and showroom sample terms not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://cole-and-son.com/pages/contact-us)
+[Open official source: Showroom or brand contact, London, UK](https://cole-and-son.com/pages/contact-us)
 
 ### Find a stockist or representative
 
@@ -92,9 +92,9 @@ Terms and checks before ordering
 
 Official finder link only; no seller, purchase eligibility, sample or delivery terms are endorsed.
 
-Official page checked 2026-10-18. Website evidence, not a test order.
+Checked on the official website on 18 October 2026. This check did not include placing an order.
 
-[Open official source](https://cole-and-son.com/pages/where-to-buy)
+[Open official source: Find a stockist or representative, UK and international search; individual listings unverified](https://cole-and-son.com/pages/where-to-buy)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

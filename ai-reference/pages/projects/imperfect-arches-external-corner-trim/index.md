@@ -14,7 +14,7 @@ An arch that was not true, finished in wallcovering with a specialist external-c
 
 ![A wallcovered arch seen from below, its curved outer edge finished as one crisp, even line, framing a room with a decorative plaster ceiling and a chandelier.](https://www.mrwallcover.com/media/img/r/arch-trim-01-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -106,6 +106,8 @@ Preparing the wall is the other half of a clean edge: our [wall preparation guid
 
 ![Close detail of a woven wallcovering on two neighbouring surfaces, each edge cut clean either side of a narrow shadow gap.](https://www.mrwallcover.com/media/img/r/arch-trim-09-800.webp)
 
+All 2 more photographs from this project
+
 ![Close detail of a textured wallcovering cut neatly around a wall-mounted lighting control.](https://www.mrwallcover.com/media/img/r/arch-trim-10-800.webp)
 
 ![Round wall mirrors with gold radiating frames against a pale wallcovering.](https://www.mrwallcover.com/media/img/r/arch-trim-11-800.webp)
@@ -114,7 +116,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -144,7 +148,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 

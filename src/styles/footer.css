@@ -36,6 +36,8 @@
 .site-footer .footer-phone { display: flex; align-items: center; gap: .7rem; min-height: 44px; }
 .site-footer .footer-contact-list svg { width: 20px; height: 20px; flex: 0 0 20px; }
 .site-footer .footer-contact-list a span { overflow-wrap: anywhere; }
+/* The booking hint (BookCallLink hint) sits under "Book a call", in line with the label rather than the icon. */
+.site-footer .footer-contact-list .booking-hint { padding-left: calc(20px + .7rem); line-height: 1.4; }
 .site-footer .footer-reveal {
   appearance: none; background: transparent; border: 0; padding: .65rem 0; min-height: 44px;
   color: inherit; font-family: inherit; text-align: left; text-decoration: underline;
@@ -61,9 +63,11 @@
   display: flex; align-items: center; min-height: 44px; padding-block: .45rem;
   font-size: var(--text-meta); line-height: 1.5; overflow-wrap: anywhere; text-decoration-color: transparent;
 }
+/* Subheadings inside a column set in the serif italic of the wordmark's "Mr", so they never read as one more link. */
 .site-footer .footer-subheading {
-  margin: .3rem 0 .6rem; color: var(--color-stone); font-size: var(--text-meta); font-weight: 500; line-height: 1.5;
+  margin: .3rem 0 .6rem; color: var(--color-brass); font-family: var(--font-serif); font-size: var(--text-body); font-style: italic; font-weight: 500; line-height: 1.4;
 }
+.site-footer .footer-explore-columns,
 .site-footer .footer-expertise-columns { display: grid; gap: 1rem 1.5rem; }
 .site-footer a:hover,
 .site-footer .footer-reveal:hover { text-decoration-color: currentColor; text-underline-offset: .23em; }
@@ -94,7 +98,7 @@
   }
   .site-footer .footer-contact-heading { align-items: flex-start; }
   .site-footer .footer-directory {
-    display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 2.25fr) minmax(0, 1fr) minmax(0, .65fr);
+    display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 2fr) minmax(0, 1fr) minmax(0, .6fr);
     gap: 2rem; padding-block: 1.2rem 2rem; border-bottom: 1px solid var(--color-line);
   }
   .site-footer .footer-group { border-bottom: 0; }
@@ -102,7 +106,7 @@
   .site-footer .footer-disclosure { display: none; }
   .site-footer .footer-group-content { padding-bottom: 0; }
   .site-footer .footer-explore-columns { column-gap: 1.25rem; }
-  .site-footer .footer-explore-columns,
+  /* Explore and Expertise carry subheadings; Materials and Areas start on the same line as the first links. */
   .site-footer .footer-materials > .footer-group-content,
   .site-footer .footer-areas > .footer-group-content { padding-top: 2.25rem; }
   .site-footer .footer-subheading { margin: 0 0 .75rem; min-height: 1.5rem; }

@@ -62,6 +62,6 @@ Variation between batches is larger than variation within one. Order the whole r
 
 Natural grasscloth is a dry-dust surface. Moisture stains it, adhesive on the face marks it, and it is not suited to frequent wiping or splashes. In a busy family hall or beside a kitchen, a textured vinyl may be the better answer if cleanability matters more than natural fibre. The wall beneath it also matters: a sound, true, evenly porous surface, lined where the maker specifies it, because grasscloth telegraphs a poor substrate less than silk but hides nothing that is proud of the surface. See [wall preparation](/advice/wall-preparation/).
 
-## When does this advice stop being reliable?
+## What this guide cannot tell you
 
 This guide describes natural grasscloth in general. Paper-backed, non-woven-backed and vinyl-backed weaves behave differently, and so do the adhesives they need. The product's own hanging instruction and care sheet take precedence over anything here. If you like the texture but dislike the panel character, change the specification now; it is a much better moment than after the room is finished.
