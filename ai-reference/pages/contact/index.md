@@ -212,4 +212,4 @@ Access, programme and who supplies the material.
 
 A separate note for existing work. A photograph tells us whether it is the hang or the building.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

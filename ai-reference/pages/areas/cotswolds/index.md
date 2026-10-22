@@ -53,4 +53,4 @@ Often, with the right preparation. The survey is a judgement on the wall. If it 
 
 [Start your project](https://www.mrwallcover.com/contact/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

@@ -250,4 +250,4 @@ Tell us about the room or send the material you are considering. We can discuss 
 
 [Start your project](https://www.mrwallcover.com/contact/?intent=advice) [Care and repairs](https://www.mrwallcover.com/aftercare/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

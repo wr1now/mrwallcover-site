@@ -40,7 +40,7 @@ Hotels
 
 Main decorating contractor
 
-A full decorating package at Brown's Hotel, Mayfair: two years as main decorating contractor, delivered while the hotel stayed open to guests.
+A full decorating package for London's oldest hotel: two years as main decorating contractor, delivered while it never stopped taking guests.
 
 [Discuss a similar project: Brown's Hotel, Mayfair](https://www.mrwallcover.com/contact/?audience=hotel#enquiry)
 
@@ -56,7 +56,7 @@ Hotels
 
 Wallcovering installation
 
-Bespoke Vescom wallcoverings for the guest rooms of Raffles London at The OWO, the former Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.
+Bespoke Vescom wallcoverings for the guest rooms of London's most storied address, the Old War Office: walls and, in places, joinery, with batches managed so whole corridors read as one.
 
 [Discuss a similar project: Raffles London at The OWO, Whitehall](https://www.mrwallcover.com/contact/?audience=hotel#enquiry)
 
@@ -84,7 +84,7 @@ Homes & heritage
 
 Wallcovering installation contractor across the Georgian house and estate
 
-Nearly three years inside a Norman castle's Georgian heart, hanging House of Hackney prints throughout the house.
+Nearly three years inside a Norman castle's Georgian heart, hanging the prints of the house that made maximalism modern.
 
 [Discuss a similar project: Castle of Trematon, Cornwall](https://www.mrwallcover.com/contact/?audience=homeowner#enquiry)
 
@@ -1991,4 +1991,4 @@ A dark patterned feature wall and a plain textured wallcovering, hung in a room 
 
 Photographs were taken on site by us or our installation team; some show work in progress. Hotel and business names appear with the owner's approval; private clients are never named.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

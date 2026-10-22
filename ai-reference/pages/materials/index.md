@@ -76,7 +76,7 @@ Save to shortlist
 
 ### [Hand-painted scenic papers](https://www.mrwallcover.com/materials/hand-painted/)
 
-Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them.
+Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them. We do not make them, and we are not affiliated with those makers.
 
 The joins
 
@@ -624,4 +624,4 @@ Reset
 
 Close
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

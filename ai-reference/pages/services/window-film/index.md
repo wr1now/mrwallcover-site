@@ -86,4 +86,4 @@ Mr Wallcover trained at Solar Screen's headquarters in Luxembourg in window film
 
 Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

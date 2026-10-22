@@ -194,4 +194,4 @@ Some people call this a warranty. It is the same promise: twelve months on our w
 
 [Start your project](https://www.mrwallcover.com/contact/?service=aftercare&topic=aftercare)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

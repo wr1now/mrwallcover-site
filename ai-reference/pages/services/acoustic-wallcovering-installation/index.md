@@ -84,4 +84,4 @@ The handover includes a room-by-room record of the installed product, colourway,
 
 Aftercare is part of every commission: a return visit about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

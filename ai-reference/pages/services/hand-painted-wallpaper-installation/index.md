@@ -132,4 +132,4 @@ There is no flat rate per roll. The quotation comes from a site survey or from d
 
 For a wallcovering hung by others, send overall and close-up photographs, the product and batch if known, when the problem appeared and any recent changes, and Mr Wallcover will assess whether a repair is possible. Marks, flaking or water damage on a hand-painted paper need a paper conservator. Mr Wallcover can help find the right person, but will not experiment on a de Gournay or Fromental-style panel. The twelve-month workmanship guarantee covers Mr Wallcover's own installations and does not transfer to an existing hang by another installer.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

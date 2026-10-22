@@ -24,4 +24,4 @@ Known limitation: the enquiry form needs JavaScript to send. Without it, the for
 
 If something blocks you, email info@mrwallcover.com and say which page. We will help with the enquiry directly.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

@@ -32,6 +32,8 @@ New product and buying-route references are checked against the maker’s own do
 
 A reference that has not had that review stays unpublished.
 
+This page sets the rule for those new references; it does not claim that every older page has received a second independent review. No maker or retailer directory records are being released with this buying guide.
+
 ## Words we do not use without a document
 
 We do not call a product fire-rated, washable or waterproof unless the maker’s own document says so for that exact product, and then we use the maker’s words. A stockist listing proves that a maker lists a seller; it does not by itself prove an authorised, approved or exclusive relationship. Those labels require the maker’s explicit wording.

@@ -21,7 +21,7 @@
   "metaTitle": "Castle of Trematon, Cornwall | Mr Wallcover",
   "metaDescription": "Wallcovering installation across the Georgian house at the Castle of Trematon, Cornwall, 2019–2022: House of Hackney prints, murals and Lincrusta relief.",
   "group": null,
-  "standfirst": "Nearly three years inside a Norman castle's Georgian heart, hanging House of Hackney prints throughout the house.",
+  "standfirst": "Nearly three years inside a Norman castle's Georgian heart, hanging the prints of the house that made maximalism modern.",
   "hero": "trematon-01",
   "gallery": [
     {

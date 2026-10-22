@@ -7,7 +7,7 @@ import examples from '../data/room-studio-previews.json';
 import studioPage from '../room-studio/page.json';
 const crumbs=[{name:'Home',href:'/'},{name:'Wallpaper my room',href:'/room-studio/'}];
 ---
-<Base title="Wallpaper my room | Mr Wallcover" description="Explore original measured-room wallpaper studies while Mr Wallcover’s photo and 3D room visualiser completes testing." path="/room-studio/" image="/media/room-studio/examples/willow-chimney-1.webp" imageAlt="Original illustrative wallpaper study around a chimney breast" imageCredit="Original Room Studio illustration" extraSchema={[breadcrumbNode(crumbs)]} updated={studioPage.updated}>
+<Base title="Wallpaper my room | Mr Wallcover" description="Explore original measured-room wallpaper studies while Mr Wallcover’s photo and 3D room visualiser completes testing." path="/room-studio/" noindex={true} image="/media/room-studio/examples/willow-chimney-1.webp" imageAlt="Original illustrative wallpaper study around a chimney breast" imageCredit="Original Room Studio illustration" extraSchema={[breadcrumbNode(crumbs)]} updated={studioPage.updated}>
   <div class="container-page studio-introduction">
     <Breadcrumb items={crumbs}/>
     <header><p class="eyebrow">Mr Wallcover / Room Studio</p><h1>Wallpaper<br/><em>my room.</em></h1><p class="lede">See how a wallpaper pattern sits around corners, windows and a chimney breast.</p><p>Our room-photo visualiser and measured 3D editor are completing testing. The interactive service is not yet available on this public page. Explore three original rendered studies below, or talk to us about your room and chosen finish.</p><Action href="/contact/" variant="primary">Discuss your room</Action></header>

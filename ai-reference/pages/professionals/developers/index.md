@@ -118,4 +118,4 @@ Dorin Burcus, founder of Mr Wallcover, has worked in the trade since 2012. Award
 
 [Designers & architects](https://www.mrwallcover.com/professionals/designers/) [Hotels & operators](https://www.mrwallcover.com/professionals/hotels/) [Fit-out contractors](https://www.mrwallcover.com/professionals/fit-out-contractors/) [Explore our work](https://www.mrwallcover.com/projects/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026

@@ -79,6 +79,8 @@ export default defineConfig({
         !page.includes('/thank-you') &&
         !page.includes('/404') &&
         !page.includes('/search') &&
+        // Wallpaper My Room is held until its tools finish testing: built and reachable, noindex, not listed.
+        !page.endsWith('/room-studio/') &&
         !['/projects/owo-whitehall/', '/projects/four-seasons-ten-trinity/', '/projects/hilton-silverstone/', '/projects/hilton-holborn/', '/projects/the-lanesborough/'].some((old) =>
           page.endsWith(old),
         ),

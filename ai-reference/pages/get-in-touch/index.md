@@ -64,4 +64,4 @@ We work in London and the surrounding areas, and UK-wide on selected projects.
 - [Cotswolds](https://www.mrwallcover.com/areas/cotswolds/)
 - [All areas](https://www.mrwallcover.com/areas/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
