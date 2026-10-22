@@ -1,7 +1,10 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, stat, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
 import { test } from 'node:test';
-import type { Page } from 'puppeteer-core';
+import sharp from 'sharp';
+import type { HTTPRequest, Page } from 'puppeteer-core';
 
 async function click(page: Page, selector: string) {
   // Cancel the site's smooth scrolling so the real pointer click lands on its intended control.
@@ -107,13 +110,173 @@ test('real form behavior preserves explicit context and email choice at mobile a
     assert.equal(await invalid.$eval('[data-error-summary]', (summary: HTMLElement) => summary.hidden), false);
     assert.ok(await invalid.$('form a[href="/privacy/"]'));
     await invalid.close();
+    // "I am a…" sits in the short form: its professional prompt shows there while the fuller brief stays closed.
+    const role = await browser.newPage();
+    await role.setViewport({ width: 1280, height: 900 });
+    await role.setRequestInterception(true);
+    role.on('request', async (request) => {
+      if (request.url().startsWith(server.origin) || request.url().startsWith('data:')) await request.continue();
+      else await request.abort();
+    });
+    await role.goto(`${server.origin}/contact/`, { waitUntil: 'load' });
+    assert.equal(await role.$eval('[data-professional-help]', (help: HTMLElement) => help.offsetHeight), 0, 'no prompt before a role is chosen');
+    await role.select('#audience', 'designer');
+    const prompt = await role.$eval('[data-professional-help]', (help: HTMLElement) => ({
+      builderHidden: document.querySelector<HTMLElement>('[data-builder]')!.hidden,
+      height: help.offsetHeight,
+      inField: Boolean(help.closest('#field-audience')),
+      text: help.textContent || '',
+    }));
+    assert.equal(prompt.builderHidden, true);
+    assert.ok(prompt.inField && prompt.height > 0 && prompt.text.startsWith('Include material codes'), 'the designer prompt is visible beside the choice');
+    // The WhatsApp offer in the attachment help is an underlined word on the line, not the icon button.
+    if (await role.$('#attachment-help a[data-wa]')) {
+      const wa = await role.$eval('#attachment-help a[data-wa]', (link: HTMLElement) => {
+        const style = getComputedStyle(link);
+        const words = document.createRange();
+        words.selectNodeContents(link);
+        const after = link.nextSibling!;
+        const stop = document.createRange();
+        stop.selectNodeContents(after);
+        return { display: style.display, line: style.textDecorationLine, glyph: getComputedStyle(link.querySelector('.wa-glyph')!).display, top: words.getBoundingClientRect().top, stopTop: stop.getBoundingClientRect().top };
+      });
+      assert.deepEqual([wa.display, wa.line, wa.glyph], ['inline', 'underline', 'none']);
+      assert.ok(Math.abs(wa.top - wa.stopTop) < 1, 'the link text and its full stop share a line box');
+    }
+    // The thank-you buttons stay evenly spaced: the booking hours line is not inside the first cell.
+    await role.goto(`${server.origin}/thank-you/`, { waitUntil: 'load' });
+    const gaps = await role.$eval('main a[data-book]', (book: HTMLElement) => {
+      const cells = [...book.parentElement!.children].filter((cell) => !cell.classList.contains('booking-hint') && cell.getClientRects().length > 0).map((cell) => cell.getBoundingClientRect());
+      const pairs = cells.slice(1).map((cell, i) => [cells[i], cell]);
+      return pairs.filter(([a, b]) => Math.abs(a.top - b.top) < 1).map(([a, b]) => Math.round(b.left - a.right));
+    });
+    assert.ok(gaps.length > 0 && gaps.every((gap) => gap === gaps[0]), `even gaps in the thank-you row: ${gaps.join(', ')}`);
+    await role.close();
     const nojs = await browser.newPage();
     await nojs.setJavaScriptEnabled(false);
     await nojs.goto(`${server.origin}/contact/`);
-    assert.ok(await nojs.$('a[href="mailto:info@mrwallcover.com"]'));
+    assert.ok(await nojs.$('a[href^="mailto:info@mrwallcover.com"]'));
+    // The notice and the direct card open the email with a subject.
+    assert.ok(await nojs.$('.enquiry-nojs a[href="mailto:info@mrwallcover.com?subject=Wallcovering%20enquiry"]'));
+    assert.ok(await nojs.$('.contact-direct a[href="mailto:info@mrwallcover.com?subject=Wallcovering%20enquiry"]'));
     await nojs.close();
   } finally {
     await browser.close();
     await server.close();
+  }
+});
+
+test('native FormSubmit sends validated optional reply channels and retains provider CAPTCHA, without sending a live enquiry', async () => {
+  const server = await serve('dist');
+  const browser = await launchBrowser().catch(async (error) => { await server.close(); throw error; });
+  const cases = [
+    { reply: 'email', email: 'ada@example.invalid', phone: 'abc', expectedEmail: 'ada@example.invalid', expectedPhone: '' },
+    { reply: 'email', email: 'ada@example.invalid', phone: '07700 900000', expectedEmail: 'ada@example.invalid', expectedPhone: '07700 900000' },
+    { reply: 'phone', email: 'invalid-address', phone: '07700 900000', expectedEmail: '', expectedPhone: '07700 900000' },
+    { reply: 'phone', email: 'ada@example.invalid', phone: '07700 900000', expectedEmail: 'ada@example.invalid', expectedPhone: '07700 900000' },
+  ];
+  try {
+    for (const width of [390, 1440]) {
+      for (const scenario of cases) {
+        const page = await browser.newPage();
+        await page.setViewport({ width, height: 900 });
+        let intercepted: string | null = null;
+        await page.setRequestInterception(true);
+        page.on('request', async (request) => {
+          if (request.url().startsWith('https://formsubmit.co/')) {
+            intercepted = request.postData() || '';
+            await request.respond({ status: 200, contentType: 'text/html', body: '<p>Intercepted test submission. No message sent.</p>' });
+          } else if (request.url().startsWith(server.origin) || request.url().startsWith('data:')) await request.continue();
+          else await request.abort();
+        });
+        await page.goto(`${server.origin}/contact/`, { waitUntil: 'load' });
+        await page.waitForFunction(() => document.querySelector('[data-enquiry-form]')?.hasAttribute('data-ready'));
+        await page.type('[name="name"]', 'Ada Test');
+        await page.type('[name="message"]', 'Testing reply validation without sending.');
+        await click(page, `[name="replyBy"][value="${scenario.reply}"]`);
+        await page.type('[name="email"]', scenario.email);
+        await page.type('[name="phone"]', scenario.phone);
+        await Promise.all([page.waitForNavigation(), click(page, 'form [type="submit"]')]);
+        assert.ok(intercepted, 'the actual native POST was intercepted before reaching FormSubmit');
+        const fields = new Map([...intercepted!.matchAll(/name="([^"]+)"\r\n\r\n([^\r\n]*)\r\n/g)].map((match) => [match[1], match[2]]));
+        assert.equal(fields.get('email'), scenario.expectedEmail, `${scenario.reply} reply @${width}: optional email is validated`);
+        assert.equal(fields.get('phone'), scenario.expectedPhone, `${scenario.reply} reply @${width}: optional phone is validated`);
+        assert.equal(fields.get('replyBy'), scenario.reply, 'the preferred reply is preserved');
+        assert.equal(fields.get('_captcha'), 'true', 'the receiving provider retains its CAPTCHA check');
+        await page.close();
+      }
+    }
+  } finally {
+    await browser.close();
+    await server.close();
+  }
+});
+
+test('a large photograph is reduced to 2,400 px before it is listed and sent; HEIC and PDF go as chosen', async () => {
+  const dir = await mkdtemp(path.join(tmpdir(), 'mw-photos-'));
+  const server = await serve('dist');
+  const browser = await launchBrowser().catch(async (error) => { await server.close(); throw error; });
+  try {
+    // A 4032 x 3024 phone-sized JPEG stored on its side (EXIF orientation 6), a small JPEG, a PDF and a HEIC.
+    const photo = path.join(dir, 'IMG_0001.jpg');
+    await sharp({ create: { width: 4032, height: 3024, channels: 3, background: '#b8a58c', noise: { type: 'gaussian', mean: 128, sigma: 24 } } })
+      .jpeg({ quality: 90 }).withMetadata({ orientation: 6 }).toFile(photo);
+    const small = path.join(dir, 'small.jpg');
+    await sharp({ create: { width: 1200, height: 900, channels: 3, background: '#8c7a63' } }).jpeg().toFile(small);
+    const pdf = path.join(dir, 'plan.pdf');
+    await writeFile(pdf, `%PDF-1.4\n${'0'.repeat(50_000)}\n%%EOF\n`);
+    const heic = path.join(dir, 'IMG_0002.heic');
+    await writeFile(heic, Buffer.concat([Buffer.from([0, 0, 0, 24]), Buffer.from('ftypheic'), Buffer.alloc(60_000, 7)]));
+    const before = Object.fromEntries(await Promise.all([photo, small, pdf, heic].map(async (file) => [path.basename(file), (await stat(file)).size])));
+
+    const page = await browser.newPage();
+    await page.setViewport({ width: 390, height: 900 });
+    let submission: HTTPRequest | null = null;
+    await page.setRequestInterception(true);
+    page.on('request', async (request) => {
+      if (request.url().startsWith('https://formsubmit.co/')) {
+        submission = request;
+        await request.respond({ status: 200, contentType: 'text/html', body: '<p>Intercepted test submission. No message sent.</p>' });
+      } else if (!request.url().startsWith(server.origin) && !request.url().startsWith('data:')) await request.abort();
+      else await request.continue();
+    });
+    await page.goto(`${server.origin}/contact/`, { waitUntil: 'load' });
+    await page.waitForFunction(() => document.querySelector('[data-enquiry-form]')?.hasAttribute('data-ready'));
+    // Both reply fields stay on the page whichever is preferred.
+    for (const reply of ['email', 'phone']) {
+      await click(page, `[name="replyBy"][value="${reply}"]`);
+      assert.deepEqual(await page.evaluate(() => [document.querySelector<HTMLElement>('#field-email')!.hidden, document.querySelector<HTMLElement>('#field-phone')!.hidden]), [false, false]);
+    }
+    const input = await page.$('#photos');
+    await input!.uploadFile(photo, small, pdf, heic);
+    await page.waitForFunction(() => document.querySelectorAll('[data-file-list] li').length === 5, { timeout: 30_000 });
+    const files = await page.evaluate(async () => Promise.all([...document.querySelector<HTMLInputElement>('#photos')!.files!].map(async (file) => {
+      let size: number[] | null = null;
+      if (file.type === 'image/jpeg') { const bitmap = await createImageBitmap(file); size = [bitmap.width, bitmap.height]; bitmap.close(); }
+      return { name: file.name, type: file.type, bytes: file.size, size };
+    })));
+    assert.deepEqual(files[0].size, [1800, 2400], 'turned upright and reduced to 2,400 px on the long edge');
+    assert.equal(files[0].name, 'IMG_0001.jpg');
+    assert.ok(files[0].bytes < before['IMG_0001.jpg']);
+    assert.deepEqual(files[1], { name: 'small.jpg', type: 'image/jpeg', bytes: before['small.jpg'], size: [1200, 900] }, 'a smaller photograph is sent as chosen');
+    assert.equal(files[2].bytes, before['plan.pdf']);
+    assert.equal(files[3].bytes, before['IMG_0002.heic']);
+    const list = await page.$$eval('[data-file-list] li', (rows) => rows.map((row) => row.textContent || ''));
+    assert.match(list.at(-1)!, /^\d+\.\d MB of 10 MB used$/);
+    assert.equal(await page.$eval('form [type="submit"]', (button: HTMLButtonElement) => button.disabled), false);
+    await page.type('[name="name"]', 'Ada Test');
+    await page.type('[name="phone"]', '07700 900000');
+    await page.type('[name="message"]', 'Testing the attachment path only.');
+    await Promise.all([page.waitForNavigation(), click(page, 'form [type="submit"]')]);
+    assert.ok(submission, 'the native POST was intercepted before reaching FormSubmit');
+    // A body with files is not inlined in the request event; fetch it (the part headers name each file).
+    const posted = (await (submission as HTTPRequest).fetchPostData()) || '';
+    assert.match(posted, /name="attachment"; filename="IMG_0001\.jpg"\r\nContent-Type: image\/jpeg/);
+    assert.match(posted, /name="attachment"; filename="IMG_0002\.heic"/);
+    await page.close();
+  } finally {
+    await browser.close();
+    await server.close();
+    await rm(dir, { recursive: true, force: true });
   }
 });

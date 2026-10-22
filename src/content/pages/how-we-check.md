@@ -1,12 +1,12 @@
 ---
 {
   "path": "/how-we-check/",
-  "title": "How we check",
-  "metaTitle": "How We Check What We Publish | Mr Wallcover",
-  "description": "Our editorial rules for product references: maker instructions, dated sources, human review before publication, independent inclusion and corrections.",
-  "eyebrow": "The Wallcovering Guide · How we check",
-  "heading": "How we check what we publish",
-  "lede": "These are the publication rules for new product and buying-route references. They distinguish maker evidence from our own installation experience and keep unchecked research off the site.",
+  "title": "Product facts and corrections",
+  "metaTitle": "Product Facts and Corrections | Mr Wallcover",
+  "description": "Where our product facts come from: the maker's own instructions first, dated sources, no paid placement, and how to report a correction.",
+  "eyebrow": "The Wallcovering Guide · Product facts",
+  "heading": "Product facts and corrections",
+  "lede": "Where the product facts on this site come from, how we keep a maker's documents apart from our own installation experience, and how to report a correction.",
   "parent": {
     "name": "Wallcovering Guide",
     "href": "/advice/"
@@ -31,13 +31,13 @@ The maker's current instructions for the exact product come first. Our project a
 
 - For a new product reference, we record the fact as the maker prints it, and link the document it comes from: a data sheet, hanging instructions or the product page.
 - The reference must give the source link and date that document was checked. Makers change their documents, so the date tells you how current our copy is.
-- Where the document is silent, the reference must say "not stated". We do not fill the gap from another product, another colourway or the brand as a whole.
+- Where the document is silent, we write "not stated". We do not fill the gap from another product, another colourway or the brand as a whole.
 
 ## Checked twice
 
-New product and buying-route research must be checked against the primary source, then reviewed by a person before publication. A research record without that review stays unpublished.
+New product and buying-route references are checked against the maker's own document, then reviewed by a person before they are published.
 
-This page sets the rule for those new references; it does not claim that every older page has received a second independent review. No maker or retailer directory records are being released with this buying guide.
+A reference that has not had that review stays unpublished.
 
 ## Words we do not use without a document
 

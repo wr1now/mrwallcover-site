@@ -11,7 +11,7 @@
     "Calico Wallpaper – Cadence by Athena Calderone, Oxblood"
   ],
   "modest": true,
-  "metaTitle": "BEVERLY 1975 x Calico: Cadence, LDF 2026 | Mr Wallcover",
+  "metaTitle": "BEVERLY 1975 × Calico: Cadence, LDF 2026 | Mr Wallcover",
   "metaDescription": "Cadence in Oxblood by Calico Wallpaper, hung in a day for BEVERLY 1975 at The Lavery, Cromwell Place, Brompton Design District 2026.",
   "group": "design-weeks",
   "standfirst": "A feature wall of Calico's Cadence, in Oxblood, hung in a single day on site for New York homewares shop BEVERLY 1975's first London presentation, at The Lavery.",
@@ -43,7 +43,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-22"
 }
 ---
 

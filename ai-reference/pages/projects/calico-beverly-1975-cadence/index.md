@@ -1,9 +1,9 @@
 ---
-title: "BEVERLY 1975 x Calico: Cadence, LDF 2026 | Mr Wallcover"
+title: "BEVERLY 1975 × Calico: Cadence, LDF 2026 | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/
 description: "Cadence in Oxblood by Calico Wallpaper, hung in a day for BEVERLY 1975 at The Lavery, Cromwell Place, Brompton Design District 2026."
 author: "Dorin Burcus"
-last_updated: 2026-10-10
+last_updated: 2026-10-22
 ---
 
 The Lavery, Cromwell Place, South Kensington
@@ -14,7 +14,7 @@ A feature wall of Calico's Cadence, in Oxblood, hung in a single day on site for
 
 ![Cadence Oxblood behind BEVERLY 1975's tables during Brompton Design District.](https://www.mrwallcover.com/media/img/r/beverly-08-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -86,7 +86,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -116,7 +118,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -126,4 +128,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 10 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

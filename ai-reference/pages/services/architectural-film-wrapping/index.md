@@ -1,7 +1,7 @@
 ---
 title: "Architectural & Furniture Wrapping, London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/architectural-film-wrapping/
-description: "Architectural and furniture film wrapping in London: doors, joinery, lift interiors, reception desks and furniture refinished in place. Survey to aftercare."
+description: "Architectural and furniture film wrapping: doors, joinery, lifts and furniture refinished in place, including lift car interiors at Heythrop Park, 2022."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -12,7 +12,7 @@ Services
 
 Self-adhesive architectural films that refinish doors, joinery, lifts, counters and furniture in place, without stripping out or replacing them.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=architectural-film&topic=service%3Aarchitectural-film-wrapping) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=architectural-film&topic=service%3Aarchitectural-film-wrapping) [See the work](https://www.mrwallcover.com/projects/)
 
 Architectural film is a thin, self-adhesive surface in wood, stone, metal, leather-look, textured or solid finishes. Applied properly, it renews a door, a run of joinery or a piece of furniture where it stands. There is no spraying on site and no long drying time, and far less goes in the skip than with a replacement.
 
@@ -32,21 +32,27 @@ Schematic · not to scalePlan the face, edge returns and junctions before applyi
 
 01
 
+## Architectural film on the record
+
+At [Heythrop Park](https://www.mrwallcover.com/projects/#record-heythrop-park-2022), Enstone, Oxfordshire, in 2022, we refinished the passenger lift car interiors in architectural film: a linen texture above dark wood grain, fitted at night over several visits.
+
+02
+
 ## Film or wallcovering on joinery
 
 Film suits hard-wearing, wipe-clean surfaces in busy areas: hotel bedroom doors, wardrobes, lifts and counters. Wallcovering suits pattern, texture and continuity with the walls, as at [Raffles London at The OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/), where the wallcovering continued from the walls onto parts of the joinery. Where both could work, we sample both in the room.
 
-02
+03
 
 ## How a wrapping package runs
 
 The survey checks every surface: sound, smooth and non-porous faces take film, while flaking, damp or heavily textured ones need work first. A sample on a real door or panel is approved in the room's own light before the run is ordered. Surfaces are then cleaned, keyed, filled and primed to the film maker's instruction, and edges, corners and returns are finished as agreed on the sample.
 
-Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site. In a hotel or office that stays open, the work goes room by room or floor by floor, and each area is handed back as it is finished. Aftercare is part of the commission: a return inspection about four to six weeks after completion and a twelve-month workmanship guarantee.
+Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site. In a hotel or office that stays open, the work goes room by room or floor by floor, and each area is handed back as it is finished. Aftercare is part of the commission: a return visit about four to six weeks after completion and a twelve-month workmanship guarantee.
 
 Questions
 
-## Asked about Architectural & furniture film wrapping
+## Questions we are asked
 
 Illustrative material studies
 
@@ -76,4 +82,4 @@ Mr Wallcover trained at Solar Screen's headquarters in Luxembourg in window film
 
 Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

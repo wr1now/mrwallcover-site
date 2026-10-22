@@ -12,7 +12,7 @@ Where we work
 
 Country houses and estates in the Cotswolds and beyond. Mr Wallcover is a London practice, and for the right project the same core team travels to the house.
 
-[Request a quotation](https://www.mrwallcover.com/contact/) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/) [See the work](https://www.mrwallcover.com/projects/)
 
 Country houses bring their own conditions: old lime plaster, uneven walls, tall stair halls and rooms that were not built square. The survey covers the state of the walls as well as the measure, so the preparation is in the scope from the start.
 
@@ -22,7 +22,7 @@ The aftercare is the same as in London: a return visit about four to six weeks a
 
 ![Bedroom at the Castle of Trematon in a large floral wallpaper.](https://www.mrwallcover.com/media/img/r/trematon-15-800.webp)
 
-No Cotswolds commission is on the public record yet. Country-house work outside London: a finished bedroom at [Trematon Castle](https://www.mrwallcover.com/projects/trematon-castle/), Cornwall.Photograph: Dorin Burcus / Mr Wallcover.
+Country-house work outside London: a finished bedroom at [Trematon Castle](https://www.mrwallcover.com/projects/trematon-castle/), Cornwall. Photograph: Dorin Burcus / Mr Wallcover.
 
 ## On the public record
 
@@ -30,7 +30,7 @@ No Cotswolds commission is on the public record yet. Country-house work outside 
 
 Questions
 
-## Asked about Cotswolds
+## Questions about papering in the Cotswolds
 
 Illustrative material studies
 
@@ -44,4 +44,13 @@ Yes. We cover London and the surrounding areas, and work UK-wide for selected pr
 
 Often, with the right preparation. The survey is a judgement on the wall. If it is not ready for the material specified, we say so and write the preparation into the scope before anyone orders the paper.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+## What happens next
+
+1. Dorin Burcus reads your note.
+2. You can book a 20-minute call to talk the project through.
+3. If the project needs a survey, we arrange it after we have spoken.
+4. After the survey we write a scope of works by room.
+
+[Start your project](https://www.mrwallcover.com/contact/)
+
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

@@ -6,12 +6,12 @@
   "description": "Makers whose papers Mr Wallcover has installed, from hand-painted scenic papers to contract wallcoverings, each linked to the case study that records it.",
   "eyebrow": "Materials",
   "heading": "Specified papers we install",
-  "lede": "Mr Wallcover has installed papers by de Gournay, Fromental, House of Hackney, Muraspec, Phillip Jeffries and Timorous Beasties, along with the makers named on our published case studies below. Installed means we hung that maker's product on a project. It is not a maker approval or endorsement, and we are not on makers' installer lists. The one partnership is Calico Wallpaper: work delivered in partnership with Calico Wallpaper.",
+  "lede": "Mr Wallcover has installed papers by de Gournay, Fromental, House of Hackney, Muraspec, Phillip Jeffries and Timorous Beasties, along with the makers named on our published case studies below. Naming a maker records an installation, not an endorsement. The one partnership is Calico Wallpaper: work delivered in partnership with Calico Wallpaper.",
   "parent": {
     "name": "Materials",
     "href": "/materials/"
   },
-  "updated": "2026-10-10",
+  "updated": "2026-10-22",
   "service": {
     "name": "Specified wallpaper installation",
     "serviceType": "Wallcovering installation"
@@ -82,3 +82,5 @@ Work delivered in partnership with Calico Wallpaper. The Brooklyn studio's mural
 ## What a specified paper needs from us
 
 The maker's hanging instructions come first. Panels are hung in their numbered sequence, batches are checked from the roll labels, and the set-out is agreed before the first length is cut. The [materials library](/materials/) describes each family, and the guide to [hand-painted papers and murals](/advice/hand-painted-murals-set-out/) explains the set-out.
+
+Digital colour is a guide. Order a cutting or a sample before you commit to a room.

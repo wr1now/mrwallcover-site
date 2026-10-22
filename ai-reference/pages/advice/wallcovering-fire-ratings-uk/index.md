@@ -324,7 +324,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - Only 360 gsm is named.
   - Muraspec's May 2026 hanging leaflet (p. 1) requires Murabond Sealed Surface adhesive on non-absorbent walls and a coat of Murabond Primer on absorbent walls (diluted 1:3 on uncoated plaster, plasterboard and MDF; 1:1 on emulsion-painted walls). Neither is part of the declared fibre-cement and Murabond Heavy build-up.
   - No field of application (permitted variations) is stated in the document we read.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - Another Muraspec declaration signed the same day (CPR0001, version 3, 4 September 2024) declares B-s2,d0 for woven fabric-backed vinyl of 360 to 460 gsm, which overlaps this product; the two give different smoke subclasses and neither says it replaces the other.
   - Muraspec's product page for Frequency 13602 cites CPR0004 and gives a weight of 460 gsm, while the declaration names only 360 gsm.
   - Which of the two woven declarations applies to a given roll is not explained.
@@ -349,7 +349,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - Muraspec's 2025 declaration (CPR0003, version 4) lists certificate 0493-CPR-W048 for non-woven Type I, including digital products, with a printed expiry date of 18 October 2027.
   - Muraspec's May 2026 hanging leaflet (p. 1) requires Murabond Sealed Surface adhesive on non-absorbent walls and a coat of Murabond Primer on absorbent walls (diluted 1:3 on uncoated plaster, plasterboard and MDF; 1:1 on emulsion-painted walls). Neither is part of the declared fibre-cement and Murabond Heavy build-up.
   - No field of application (permitted variations) is stated in the document we read.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - Muraspec's July 2025 document carries the same number (CPR0003, version 4) with a wider scope and a different notified body (Centexbel 0493 instead of BTTG); whether it replaces this version 1 is not stated.
   - Muraspec's 2025 declaration CPR0003 (version 4) also lists non-woven Type I fabric-backed vinyl of 270–460 gsm 'including Digital Products' at B-s2,d0; which of the two declarations applies to a given digital product is not stated.
   - How print coverage, ink or bespoke artwork affects the classification is not stated.
@@ -413,7 +413,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - A class C product: it would not meet a class B requirement.
   - The document we read does not name the tested substrate or adhesive.
   - No field of application (permitted variations) is stated in the document we read.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - Only a maker’s sheet or page was available to us, not the declaration of performance or classification report behind it.
   - The page cites declaration CPR0001, but neither version we found (January 2021; version 3, September 2024) lists an acoustic foam vinyl.
   - Muraspec's article 'How do fire ratings work?' describes its wallcoverings as class B; this product's own page states class C.
@@ -437,7 +437,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - The sheet says these designs can also be printed on other Tektura wallcoverings. The fire line does not say it covers those bases, so check the rating of the base actually ordered.
   - The document gives the class without the full smoke and droplet subclasses; treat the missing subclass as unknown.
   - No field of application (permitted variations) is stated in the document we read.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - Only a maker’s sheet or page was available to us, not the declaration of performance or classification report behind it.
   - What "suitable substrate" means.
   - Which test report and laboratory support the class for the printed build-up.
@@ -459,7 +459,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - The product web page tags it 'Euroclass B' without subclasses.
   - The document we read does not name the tested substrate or adhesive.
   - No field of application (permitted variations) is stated in the document we read.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - Only a maker’s sheet or page was available to us, not the declaration of performance or classification report behind it.
   - Rivulet, with the same weight and backing on its sheet, is printed as B s2 d0; the two are kept separate here.
   - The tested substrate and adhesive.
@@ -481,7 +481,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - The product web page tags it 'Euroclass B' without subclasses.
   - The document we read does not name the tested substrate or adhesive.
   - No field of application (permitted variations) is stated in the document we read.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - Only a maker’s sheet or page was available to us, not the declaration of performance or classification report behind it.
   - The tested substrate and adhesive.
 
@@ -501,7 +501,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - A class C product: it would not meet a class B requirement.
   - The document we read does not name the tested substrate or adhesive.
   - No field of application (permitted variations) is stated in the document we read.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - Only a maker’s sheet or page was available to us, not the declaration of performance or classification report behind it.
   - The tested substrate and adhesive.
 
@@ -521,7 +521,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - Neither document is a declaration of performance or classification report.
   - The document we read does not name the tested substrate or adhesive.
   - No field of application (permitted variations) is stated in the document we read.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - Only a maker’s sheet or page was available to us, not the declaration of performance or classification report behind it.
   - The technical sheet says Euroclass B and the product page says Euroclass C. We have not chosen between them.
   - Which class is current, and the declaration or report behind it.
@@ -542,7 +542,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - The BS 476 Class 0 and Class 1 statement is a British national classification, not a European class, and does not convert to one. England's Approved Document B dropped national reaction-to-fire classes from 2 March 2025 (transitional arrangements apply); the Welsh and Northern Irish guidance still print them.
   - The document gives the class without the full smoke and droplet subclasses; treat the missing subclass as unknown.
   - No field of application (permitted variations) is stated in the document we read.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - Only a maker’s sheet or page was available to us, not the declaration of performance or classification report behind it.
   - The tested substrate and adhesive.
   - The smoke and droplet subclasses.
@@ -585,7 +585,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - A family declaration: individual designs can have their own, different results.
   - The declaration gives the intended use as internal walls or partitions of A2-s1,d0 or better, fixed with adhesive.
   - 0493-CPR-W014 states a validity that ended on 31 July 2023 (printed as “latest on July 31st 2023”); ask the maker for the current document.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - The 2024 declaration gives 360–850 g/m², while the 2017 declaration and the certificate give 350–800 g/m².
   - A 2012 Vescom classification report on a 460 g/m² vinyl was tested on paper-faced plasterboard, which this certificate excludes.
   - Whether a certificate replaced 0493-CPR-W014 after its stated validity ended.
@@ -610,7 +610,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - Vescom's product page also lists Colour Choice+Protect as B s2 d0.
   - 0493-CPR-W015 states a validity that ended on 31 July 2023 (printed as “latest on July 31st 2023”); ask the maker for the current document.
   - DO-18-0159\A-R1 states a validity that ended on 21 August 2023 (printed as “5 years as from 21/08/2018”); ask the maker for the current document.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - The report linked from the product page (CREPIM DO-18-0159\A-R1, 'VESCOM - RAINY') never names Colour Choice or Protect. It describes only a cotton backing and vinyl topcoat, with no variation in composition allowed. It is one of the two reports behind Vescom's non-Protect vinyl family certificate 0493-CPR-W014, not a Protect-specific test.
   - Whether Vescom holds a classification of Colour Choice+Protect at about 460 g/m² with the Protect laminate, and whether certificate W015 was renewed after July 2023.
   - Whether the linked report, printed as valid for five years from August 2018, has been renewed.
@@ -664,7 +664,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
   - The declaration gives the intended use as internal walls or partitions of A2-s1,d0 or better, fixed with adhesive.
   - The document we read does not name the tested substrate or adhesive.
   - No field of application (permitted variations) is stated in the document we read.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - The tested substrate, adhesive and joints are unknown without the classification report.
 
 - **Product**: Arte International Moire Sauvage (Arte Contract), contract vinyl type 07A — References 47253A, 47254A, 47258A, 47260A, 47261A, 47264A, 47265A, 47269A and 67700 to 67705 — The 14 Moire Sauvage references listed in the declaration. Not other Arte Contract designs, although the certificate groups them in one family.
@@ -744,7 +744,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
 - **Gaps and cautions**:
   - A class C product: it would not meet a class B requirement.
   - The declaration says Centexbel performed the type testing; the classification report names Aitex test reports as its basis.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - The declaration cites report 20/1155; the report linked from the product page is numbered 20/1150.
   - The declaration (April 2026) predates the linked report (August 2026).
   - Whether report 20/1155 exists separately, and whether the declaration has been reissued.
@@ -764,7 +764,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
 - **Gaps and cautions**:
   - On either reading this is below class B.
   - The declaration says Centexbel performed the type testing; the classification report names Aitex test reports as its basis.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - The declaration declares C-s1,d0 and cites report 18/667; the current version of that report gives D-s1,d0. We have not chosen between them.
   - Which class is current for Collines; ask Arte for a reissued declaration.
   - Which UK approved body, if any, supports the UKCA mark on the declaration: the documents it relies on were issued by Centexbel as an EU notified body (0493) under Regulation (EU) 305/2011.
@@ -784,7 +784,7 @@ Product-specific evidence for Muraspec, Tektura, Vescom, Arte International, New
 - **Gaps and cautions**:
   - Paper plasterboard is expressly excluded.
   - The report says it remains valid as long as composition, production and the test and classification methods do not change.
-  - Whether this document is still current is unclear.
+  - Ask the maker to confirm this document is still current before you rely on it.
   - A separate 2023 BTTG test report (27/06093/02/23) on a sample referenced "Premier 20oz, Nonwoven-Backed" gives B, s2, d0, tested on 12 mm calcium silicate board with Newmor Heavy adhesive rather than the 8 mm fibre-cement board and Dixon Turner Heavy adhesive of 082/BW/22. The report states no weight in g/m², so whether it is the same construction is not established.
 
 - **Product**: Newmor Premier vinyl, 400 g/m², non-woven backing — Test report 27/06068B/01/23 (February 2023) — One sample as tested.

@@ -71,7 +71,7 @@
     }
   ],
   "published": "2026-10-11",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -100,4 +100,4 @@ A large print shows every bump beneath it, so the walls were prepared and lined 
 
 ## Photographs on this page
 
-Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), from October to December 2018: the finished murals first, then installation and preparation. The faces in the murals are printed artworks. The work is recorded in our posts of 24 October 2018 ([BpT508uHLMu](https://www.instagram.com/p/BpT508uHLMu/)) and 27 November 2018 ([BqsxZT2gAjQ](https://www.instagram.com/p/BqsxZT2gAjQ/)).
+Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), from October to December 2018: the finished murals first, then installation and preparation. The faces in the murals are printed artworks. The work is recorded in our posts of 24 October 2018 ([see the post](https://www.instagram.com/p/BpT508uHLMu/)) and 27 November 2018 ([see the post](https://www.instagram.com/p/BqsxZT2gAjQ/)).

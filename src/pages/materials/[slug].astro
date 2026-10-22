@@ -2,7 +2,7 @@
 import { guides, guideHref } from '../../lib/guides';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Base from '../../layouts/Base.astro';
-import { materials, media, projectHref, projects, specialismHref, specialisms } from '../../lib/content';
+import { aftercare, materials, media, projectHref, projects, specialismHref, specialisms } from '../../lib/content';
 import { breadcrumbNode } from '../../lib/schema';
 import Picture from '../../components/Picture.astro';
 import Action from '../../components/Action.astro';
@@ -11,6 +11,8 @@ import DesignStudy from '../../components/DesignStudy.astro';
 import { materialStudyKind } from '../../lib/design-study-topic';
 import materialDepthJson from '../../content/material-depth.json';
 import makersInstalled from '../../content/makers-installed.json';
+import { teamFacts } from '../../lib/trust';
+import { directoryVisible } from '../../lib/makers-directory';
 
 export function getStaticPaths() {
   return materials.items.map((material) => ({ params: { slug: material.slug }, props: { material } }));
@@ -45,6 +47,9 @@ function segments(text: string) {
   if (last < text.length) parts.push({ text: text.slice(last) });
   return parts;
 }
+// The insurance line as the aftercare page states it (src/content/aftercare.json assurance).
+const insurance = aftercare.assurance.items.find((item) => item.title === 'Insurance')?.text;
+if (!insurance) throw new Error('aftercare.json: the material pages quote its Insurance item, which is missing');
 const projectTitle = (href: string) => projects.find((entry) => projectHref(entry.slug) === href)?.title ?? (href === '/about/' ? 'About' : href);
 const crumbs = [
   { name: 'Home', href: '/' },
@@ -83,7 +88,22 @@ const crumbs = [
           <section><p class="eyebrow">03 · Installation</p><h2>Handling</h2><p>{material.handling}</p></section>
           <section><p class="eyebrow">04 · Living with it</p><h2>Care</h2><p>{material.care}</p></section>
         </div>
-        <p class="material-sample-note">Digital colour is a guide. Order a cutting or a sample before you commit to a room. We can install material you have already bought, or source a family and install it. Either way, the next step is a short note about the room.</p>
+        <p class="material-sample-note">Digital colour is a guide. Order a cutting or a sample before you commit to a room.{directoryVisible && <>{' '}Some makers’ own sample routes are listed under <a href="/buying-routes/">official buying routes</a>.</>} We can install material you have already bought, or source a family and install it. Either way, the next step is a short note about the room.</p>
+        <section class="material-assurance" aria-labelledby="material-assurance-heading">
+          <p class="eyebrow">Before you order</p>
+          <h2 id="material-assurance-heading">For a high-value order</h2>
+          <ul class="material-assurance-points">
+            <li>Workmanship is guaranteed for twelve months. <a href="/aftercare/">The aftercare page</a> sets out what is covered.</li>
+            <li>{insurance}</li>
+            <li>{teamFacts.supervision}</li>
+            <li>{teamFacts.team}</li>
+          </ul>
+          <ul class="material-assurance-links">
+            <li><a href="/professionals/designers/">For designers and architects</a></li>
+            <li><a href="/downloads/wallcovering-specification-schedule.csv" download>Download the specification schedule (CSV)</a></li>
+            <li><a href="/trade/">Trade and contractors</a></li>
+          </ul>
+        </section>
       </div>
       <aside class="material-enquiry-rail" aria-label="Save or discuss this material">
         <DesignStudy kind={materialStudyKind(material.slug)} caption="Illustrative material study · confirm the actual finish with a sample" />
@@ -103,23 +123,23 @@ const crumbs = [
     </section>}
     <div class="material-further" role="group" aria-label="Related material reading and projects">
       {relatedGuides.length > 0 && <section><p class="eyebrow">Plan the detail</p><h2>Useful reading</h2><ul>{relatedGuides.map((guide) => <li><a href={guideHref(guide.frontmatter.slug)}>{guide.frontmatter.shortTitle}</a></li>)}</ul></section>}
-      <section><p class="eyebrow">From our portfolio</p><h2>Selected work</h2><ul>{related.map((project) => <li><a href={projectHref(project.slug)}>{project.title}</a></li>)}</ul></section>
+      <section><p class="eyebrow">From our projects</p><h2>Selected work</h2><ul>{related.map((project) => <li><a href={projectHref(project.slug)}>{project.title}</a></li>)}</ul></section>
     </div>
     {
       makers.length > 0 && (
         <section class="mt-16 border-t border-line pt-10" aria-labelledby="family-makers-heading">
           <p class="eyebrow">Makers installed</p>
           <h2 id="family-makers-heading" class="m-0 text-[2rem]">{material.name}: makers we have hung</h2>
-          <p class="mt-4 mb-0 max-w-3xl text-stone">Each in our own photograph of its product on the wall. A maker named here means Mr Wallcover installed that maker's product; it is not an approval, accreditation or endorsement.</p>
+          <p class="mt-4 mb-0 max-w-3xl text-stone">Each in our own photograph of its product on the wall. Naming a maker records an installation, not an endorsement.</p>
           <ul class="material-maker-records">
             {makers.map((item) => (
               <li class="border-t border-line pt-4">
                 <Picture id={item.image} sizes="(min-width: 1024px) 18rem, (min-width: 640px) 45vw, 100vw" />
                 <h3 class="mt-3 mb-0 text-[1.4rem]">{item.brand}</h3>
                 {item.projects.length > 0 ? (
-                  <p class="mt-1 mb-0 text-stone">Installed at {item.projects.map((href, i) => <>{i > 0 && ' · '}<a href={href}>{projectTitle(href)}</a></>)}.</p>
+                  <p class="mt-3 mb-0 text-stone">Installed at {item.projects.map((href, i) => <>{i > 0 && ' · '}<a href={href}>{projectTitle(href)}</a></>)}.</p>
                 ) : (
-                  <p class="mt-1 mb-0 text-stone">Installed at {item.where}, {item.year}. <a href={item.source} rel="noopener">Our post</a>.</p>
+                  <p class="mt-3 mb-0 text-stone">Installed at {item.where}, {item.year}. <a href={item.source} rel="noopener">See the post</a>.</p>
                 )}
               </li>
             ))}
@@ -127,6 +147,14 @@ const crumbs = [
         </section>
       )
     }
+    <section class="material-next" aria-label={`Discuss ${material.name}`}>
+      <p>{material.name}: send a short note about the room, or tell us you already have the material.</p>
+      <div class="material-next-actions">
+        <Action variant="primary" href="/contact/?intent=source">Discuss this material</Action>
+        <Action variant="secondary" href="/contact/?intent=install">I already have it</Action>
+      </div>
+      {service && <p class="material-next-install"><a href={specialismHref(service.slug)}>How we install {material.name.toLowerCase()}</a></p>}
+    </section>
   </div>
 </Base>
 
@@ -153,6 +181,19 @@ const crumbs = [
   .material-enquiry-actions [data-shortlist-status] { margin: 0; }
   .material-enquiry-actions [data-shortlist-status]:empty { display: none; }
   .material-install-link { margin: .3rem 0 0; }
+  .material-assurance { max-width: var(--layout-reading, 44rem); margin-top: 2rem; padding: clamp(1.25rem, 3vw, 1.75rem); border: 1px solid var(--color-line); background: var(--color-paper); }
+  .material-assurance > .eyebrow { margin: 0 0 .75rem; }
+  .material-assurance h2 { margin: 0 0 1rem; font-size: clamp(1.85rem, 2.5vw, 2.2rem); }
+  .material-assurance-points { display: grid; gap: .75rem; margin: 0; padding-left: 1.2rem; list-style: disc; }
+  .material-assurance-points li::marker { color: var(--color-brass); }
+  .material-assurance-links { display: flex; flex-wrap: wrap; gap: 0 1.5rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+  .material-assurance-links a, .material-next-install a { display: inline-flex; align-items: center; min-height: 44px; }
+  /* Links in running text and link lists carry an underline, as in .prose, not colour alone. */
+  .material-sample-note a, .material-assurance li a, .material-next-install a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; text-decoration-color: var(--color-underline); }
+  .material-next { margin-top: clamp(3rem, 6vw, 4.5rem); padding-top: 2.5rem; border-top: 1px solid var(--color-line); }
+  .material-next > p:first-child { max-width: var(--layout-reading, 44rem); margin: 0 0 1.25rem; }
+  .material-next-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .material-next-install { margin: 1rem 0 0; }
   .material-record { display: grid; gap: 1.5rem; margin-top: clamp(3rem, 6vw, 5rem); padding-block: 2.5rem; border-top: 1px solid var(--color-line); }
   .material-record h2 { margin: 0; font-size: clamp(2rem, 3vw, 2.7rem); }
   .material-record .prose > p:first-child { margin-top: 0; }

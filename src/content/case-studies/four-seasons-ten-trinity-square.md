@@ -17,10 +17,10 @@
     "Muraspec"
   ],
   "modest": false,
-  "metaTitle": "Four Seasons Hotel London, Ten Trinity Square | Mr Wallcover",
-  "metaDescription": null,
+  "metaTitle": "Four Seasons Ten Trinity Square | Mr Wallcover",
+  "metaDescription": "Guest room, suite and private residence wallpapering at Four Seasons Hotel London at Ten Trinity Square, 2016–2019: about 5,000 m² of hotel wallcoverings.",
   "group": null,
-  "standfirst": "Three years of guest room and suite wallpapering, 2016 to 2019, through the opening of one of the City's great Beaux-Arts conversions, and the walls of the Four Seasons Private Residences upstairs.",
+  "standfirst": "Guest room and suite wallpapering from 2016 to 2019, through the opening of the hotel in the former Port of London Authority headquarters, and wallcoverings in the Four Seasons Private Residences upstairs.",
   "hero": "fs-residences-01",
   "gallery": [
     {
@@ -249,25 +249,25 @@
     },
     {
       "id": "four-seasons-ten-trinity-commons-01",
-      "credit": "Ten Trinity Square at night, from Trinity Square Gardens. A view of the building, not of our work. Photography: The wub / Wikimedia Commons (CC BY-SA 4.0)."
+      "credit": "Ten Trinity Square at night, from Trinity Square Gardens. Venue photograph, not our work. Photograph: The wub / Wikimedia Commons (CC BY-SA 4.0)."
     },
     {
       "id": "four-seasons-ten-trinity-commons-02",
-      "credit": "Ten Trinity Square from Trinity Square, 2026. A view of the building, not of our work. Photography: APK / Wikimedia Commons (CC BY 4.0)."
+      "credit": "Ten Trinity Square from Trinity Square, 2026. Venue photograph, not our work. Photograph: APK / Wikimedia Commons (CC BY 4.0)."
     },
     {
       "id": "four-seasons-ten-trinity-commons-03",
-      "credit": "The front of Ten Trinity Square on Tower Hill, 2015. A view of the building, not of our work. Photography: Jim Linwood from London / Wikimedia Commons (CC BY 2.0)."
+      "credit": "The front of Ten Trinity Square on Tower Hill, 2015. Venue photograph, not our work. Photograph: Jim Linwood from London / Wikimedia Commons (CC BY 2.0)."
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
 ## At a glance
 
-- **Client / brand:** Four Seasons Hotel London at Ten Trinity Square (renamed Four Seasons Hotel London at Tower Bridge in October 2024)
+- **Client / brand:** Four Seasons Hotels and Resorts, for Four Seasons Hotel London at Ten Trinity Square (renamed Four Seasons Hotel London at Tower Bridge in October 2024)
 - **Location:** 10 Trinity Square, Tower Hill, City of London
 - **Years:** 2016–2019
 - **Role:** Guest room and suite wallpapering, and wallcoverings in the Four Seasons Private Residences
@@ -312,7 +312,7 @@ The same building holds the Four Seasons Private Residences, and our work at Ten
 
 ## The hotel, 2017 to 2019
 
-Our own photographs from the hotel floors, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), record the scale of the work. In May 2019 our team completed the installation of about 5,000 m² of wallcoverings at Four Seasons Hotel London, in Fromental, Vescom, Tektura and Dedar ([BxBEIajB-d5](https://www.instagram.com/p/BxBEIajB-d5/)). The silks were Fromental's, including hand-dyed silk feature walls ([BwS1XkFhWv6](https://www.instagram.com/p/BwS1XkFhWv6/)); several lift lobbies were finished in Dedar ([B2U2Ry8F0rE](https://www.instagram.com/p/B2U2Ry8F0rE/)) and others in Muraspec ([B2U12SXFLHE](https://www.instagram.com/p/B2U12SXFLHE/)). Phillip Jeffries' tweed-like fabric appears in our posts from December 2017 ([BdNs0wagJs9](https://www.instagram.com/p/BdNs0wagJs9/)).
+Our own photographs from the hotel floors, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), record the scale of the work. In May 2019 our team completed the installation of about 5,000 m² of wallcoverings at Four Seasons Hotel London, in Fromental, Vescom, Tektura and Dedar ([Instagram, May 2019](https://www.instagram.com/p/BxBEIajB-d5/)). The silks were Fromental's, including hand-dyed silk feature walls ([Instagram, the silk walls](https://www.instagram.com/p/BwS1XkFhWv6/)); several lift lobbies were finished in Dedar ([Instagram, Dedar lobbies](https://www.instagram.com/p/B2U2Ry8F0rE/)) and others in Muraspec ([Instagram, Muraspec lobbies](https://www.instagram.com/p/B2U12SXFLHE/)). Phillip Jeffries' tweed-like fabric appears in our posts from December 2017 ([Instagram, December 2017](https://www.instagram.com/p/BdNs0wagJs9/)).
 
 ## Materials
 

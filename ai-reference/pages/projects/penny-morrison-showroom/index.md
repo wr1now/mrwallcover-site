@@ -1,9 +1,9 @@
 ---
 title: "Penny Morrison showroom | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/penny-morrison-showroom/
-description: "Internal decorating and wallpapering, then the full front elevation, at the Penny Morrison showroom, 9 Langton Street, Chelsea, 2023 to 2024."
+description: "Interior decorating and wallpapering, then the full front elevation, at the Penny Morrison showroom, 9 Langton Street, Chelsea, 2023 to 2024."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 9 Langton Street, Chelsea, London SW10
@@ -12,9 +12,9 @@ last_updated: 2026-10-11
 
 All the internal works plus the full exterior at 9 Langton Street: the showroom and stair hall in Penny Morrison's own papers, then the front elevation.
 
-![Penny Morrison showroom at 9 Langton Street, with floral wallpaper, a marble fireplace and upholstered seating.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-01.jpg)
+![Penny Morrison showroom at 9 Langton Street, with floral wallpaper, a marble fireplace and upholstered seating.](https://www.mrwallcover.com/media/img/r/penny-morrison-showroom-01-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -49,7 +49,7 @@ Client, materials & project facts
 
 ## Inside
 
-The showroom and the stair hall were decorated and papered in Penny Morrison’s own floral papers. Joinery and electrics were coordinated with the decorating so the rooms could be finished as one interior. Pattern names are not stated here.
+The showroom and the stair hall were decorated and papered in Penny Morrison’s own floral papers. Joinery and electrics were coordinated with the decorating so the rooms could be finished as one interior.
 
 ## Outside
 
@@ -57,29 +57,33 @@ The full front elevation followed in April and May 2024: windows, stucco and bri
 
 ## Photographs
 
-![Floral wallpaper and upholstered seating in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-02.jpg)
+![Floral wallpaper and upholstered seating in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/r/penny-morrison-showroom-02-800.webp)
 
-![Penny Morrison showroom with floral wallpaper, a fireplace and a patterned red carpet.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-04.jpg)
+![Penny Morrison showroom with floral wallpaper, a fireplace and a patterned red carpet.](https://www.mrwallcover.com/media/img/r/penny-morrison-showroom-04-800.webp)
 
-![Shelves of fabric samples beside floral wallpaper in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-05.jpg)
+![Shelves of fabric samples beside floral wallpaper in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/r/penny-morrison-showroom-05-800.webp)
 
-![Close view of large-scale floral wallpaper in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-06.jpg)
+![Close view of large-scale floral wallpaper in the Penny Morrison showroom.](https://www.mrwallcover.com/media/img/r/penny-morrison-showroom-06-800.webp)
 
-![Stair hall at the Penny Morrison showroom, lined with a scenic landscape wallpaper.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-03.jpg)
+![Stair hall at the Penny Morrison showroom, lined with a scenic landscape wallpaper.](https://www.mrwallcover.com/media/img/r/penny-morrison-showroom-03-800.webp)
 
-![Front elevation of the Penny Morrison showroom at 9 Langton Street during exterior decorating.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-07.jpg)
+![Front elevation of the Penny Morrison showroom at 9 Langton Street during exterior decorating.](https://www.mrwallcover.com/media/img/r/penny-morrison-showroom-07-800.webp)
 
-![Upper sash windows on the Penny Morrison showroom front, with brick and stucco being prepared.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-08.jpg)
+![Upper sash windows on the Penny Morrison showroom front, with brick and stucco being prepared.](https://www.mrwallcover.com/media/img/r/penny-morrison-showroom-08-800.webp)
 
-![Finished white stucco and sash windows on the Penny Morrison showroom front.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-09.jpg)
+![Finished white stucco and sash windows on the Penny Morrison showroom front.](https://www.mrwallcover.com/media/img/r/penny-morrison-showroom-09-800.webp)
 
-![Brick and stucco bay of the Penny Morrison showroom, with sash windows.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-10.jpg)
+One more photograph from this project
+
+![Brick and stucco bay of the Penny Morrison showroom, with sash windows.](https://www.mrwallcover.com/media/img/r/penny-morrison-showroom-10-800.webp)
 
 How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -109,7 +113,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -119,4 +123,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

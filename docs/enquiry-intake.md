@@ -1,6 +1,6 @@
 # Enquiry context and email permission
 
-The website remains a static Astro build. Its public form keeps the existing FormSubmit alias and CAPTCHA; the optional private API and Umami remain off unless deliberately configured. This change does not add visitor tracking, connect an analytics identity to a contact, send email, or turn the thank-you page into proof of delivery.
+The website remains a static Astro build. Its public form keeps the existing FormSubmit alias, with FormSubmit's existing reCAPTCHA page enabled (`_captcha` is "true" in src/components/EnquiryForm.astro); the honeypot remains, and without JavaScript the send button stays disabled and the email notice shows first; the optional private API and Umami remain off unless deliberately configured. This change does not add visitor tracking, connect an analytics identity to a contact, send email, or turn the thank-you page into proof of delivery.
 
 ## Shared contract
 
@@ -9,6 +9,12 @@ The website remains a static Astro build. Its public form keeps the existing For
 The form shows the topic, lets the visitor remove it or change the service, and sends it only with their submitted note. It does not save topic history, store referrers, persist campaigns or read arbitrary UTM/click identifiers. Source is a separate optional answer supplied by the visitor. A source answer or prefilled topic is context, not proof of an acquisition journey.
 
 The existing `audience=contractor` link resolves to the main-contractor/developer intake. Unknown or mismatched service/topic values are cleared. The care form keeps its `aftercare` kind and service; it cannot acquire a new-installation topic through a manipulated query.
+
+## Reply channels and attachments
+
+The short form shows both the email and the phone field. The visitor chooses a preferred reply, and only that field is required; `validateEnquiry` keeps the other one only when it is usable (a valid address, or a number with at least eight digits). The "I am a…" question and "When would you like to start?" sit in the short form; the fuller brief keeps its own three parts. The prompt for a professional choice (designer, developer, hotel, other commercial) shows under "I am a…" as a polite live region, so it appears whether or not the fuller brief is open; the professional fields themselves stay in part 1 of the fuller brief. The privacy notice describes the email address and phone number the visitor provides. Native submissions receive the validated contact values, so unusable optional details are discarded just as on the API path.
+
+When a visitor chooses a JPEG, PNG or WebP longer than 2,400 pixels, the form script redraws it at 2,400 pixels on the long edge as a JPEG (quality 0.85) before listing it, so the running total under the list is what will be sent. HEIC, PDF, smaller images and anything the browser cannot draw are sent exactly as chosen. The send button waits while the files are prepared.
 
 ## Email updates
 
@@ -54,7 +60,7 @@ The prototype still uses private JSON files and a shared staff token. Its notifi
 ## Verification
 
 - `npm run check` covers allowlisted context, matching/current permission versions, phone-only refusal, aftercare separation, private storage/export, and malformed JSON input.
-- `npm run build` followed by `node --experimental-strip-types --test tests/enquiry-context-browser.test.ts` verifies every registered page action, privacy HTML/Markdown projections and actual mobile/desktop form interaction. FormSubmit POSTs are intercepted; no synthetic email is delivered.
+- `npm run build` followed by `node --experimental-strip-types --test tests/enquiry-context-browser.test.ts` verifies every registered page action, privacy HTML/Markdown projections, actual mobile/desktop form interaction and the reduction of a 4032 × 3024 photograph to 2,400 pixels (HEIC and PDF unchanged). FormSubmit POSTs are intercepted; no synthetic email is delivered.
 - `npm run check:analytics` retains on/off fixture behavior and the existing three-event allowlist. This change sends no new enquiry/context/source fields to analytics.
 - `node scripts/qa/enquiry-review.mjs` captures the form at 390 and 1440 pixels and checks layout across representative widths. It uses a synthetic example address without submitting the form.
 

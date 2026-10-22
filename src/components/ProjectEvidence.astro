@@ -25,9 +25,9 @@ const records = projects.filter((project) => !photographed.has(project.slug));
   {photos.map(({ project, image, rights }) => <li class="project-evidence-card" data-evidence-project={project.slug}>
     <figure style={project.modest ? `--evidence-image-max:${image.thumbWidth}px` : undefined}>
       <a class="project-evidence-image" href={projectHref(project.slug)} tabindex="-1" aria-hidden="true">
-        <Picture id={project.imageId!} sizes="(min-width: 1024px) 24rem, (min-width: 640px) 45vw, calc(100vw - 2.5rem)" thumbOnly={project.modest} />
+        <Picture id={project.imageId!} sizes="(min-width: 1024px) 28rem, (min-width: 640px) 45vw, calc(100vw - 2.5rem)" thumbOnly={project.modest} />
       </a>
-      <figcaption><span>{image.alt}</span><span>Photograph: {rights.creditText}.</span></figcaption>
+      <figcaption><span>{image.alt}</span>{' '}<span>Photograph: {rights.creditText}.</span></figcaption>
     </figure>
     <h3><a href={projectHref(project.slug)}>{project.title}</a></h3>
     <p>{project.role}{project.dates ? `, ${project.dates}` : ''}.</p>
@@ -54,6 +54,11 @@ const records = projects.filter((project) => !photographed.has(project.slug));
   h3 a:hover { text-decoration:underline; text-underline-offset:.15em; }
   .project-evidence-card > p { margin:0; font-size:var(--text-body); line-height:1.6; color:var(--color-stone); }
   .project-evidence-card :global(.mw-action) { margin-top:.6rem; }
+  /* Side by side, each card's figure, title, role and action share rows, so a longer caption does not stagger the titles. */
+  @media (min-width:640px) {
+    .project-evidence-card { display:grid; grid-row:span 4; grid-template-rows:subgrid; row-gap:0; }
+    .project-evidence-card :global(.mw-action) { justify-self:start; align-self:start; }
+  }
   .project-evidence-records { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 2rem; margin:2rem 0 0; padding:0; list-style:none; }
   .project-evidence-records li { padding:1rem 0; border-top:1px solid var(--color-line); line-height:1.65; }
   .project-evidence-records a { display:inline-flex; align-items:center; justify-content:space-between; gap:.7rem; min-height:44px; font-size:var(--text-body); text-decoration:underline; text-decoration-color:var(--color-underline); text-underline-offset:.2em; }

@@ -12,9 +12,9 @@ Inverness Terrace, Bayswater, London
 
 A full scaffolded exterior on Inverness Terrace in 2018: stucco and render repairs, windows, balconies and the rear brickwork, front and back.
 
-![Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-10.jpg)
+![Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-10-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -56,23 +56,25 @@ The main run was June to September 2018, busiest in September, with returns in O
 
 ## Photographs
 
-![Inverness Terrace front under scaffold, with a columned entrance and a first-floor balcony.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-08.jpg)
+![Inverness Terrace front under scaffold, with a columned entrance and a first-floor balcony.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-08-800.webp)
 
-![Inverness Terrace front under scaffold netting, with black balcony ironwork and sash windows.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-02.jpg)
+![Inverness Terrace front under scaffold netting, with black balcony ironwork and sash windows.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-02-800.webp)
 
-![Inverness Terrace front under scaffold netting, with a columned entrance, balconies and sash windows.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-07.jpg)
+![Inverness Terrace front under scaffold netting, with a columned entrance, balconies and sash windows.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-07-800.webp)
 
-![Inverness Terrace front with balconies and sash windows, scaffold still on the facade.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-11.jpg)
+![Inverness Terrace front with balconies and sash windows, scaffold still on the facade.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-11-800.webp)
 
-![Close view of ornamental capitals and a balcony railing on Inverness Terrace, with scaffold poles in front.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-03.jpg)
+![Close view of ornamental capitals and a balcony railing on Inverness Terrace, with scaffold poles in front.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-03-800.webp)
 
-![Close view of a sash window and white stucco surround on Inverness Terrace, with scaffold poles in front.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-05.jpg)
+![Close view of a sash window and white stucco surround on Inverness Terrace, with scaffold poles in front.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-05-800.webp)
 
-![Rear brick elevation on Inverness Terrace, seen from above, under scaffold.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-01.jpg)
+![Rear brick elevation on Inverness Terrace, seen from above, under scaffold.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-01-800.webp)
 
-![Upper facade on Inverness Terrace under scaffold, with a stucco cornice, balcony brackets and a black iron railing.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-09.jpg)
+![Upper facade on Inverness Terrace under scaffold, with a stucco cornice, balcony brackets and a black iron railing.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-09-800.webp)
 
-![Rear elevation on Inverness Terrace under scaffold, with white render, brick and sash windows.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-04.jpg)
+One more photograph from this project
+
+![Rear elevation on Inverness Terrace under scaffold, with white render, brick and sash windows.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-04-800.webp)
 
 How the exterior work was carried out
 
@@ -116,7 +118,7 @@ Dulux Trade finishes are recorded on both projects. The case study describes wha
 
 The dates and photographs belong to the completed commission. Inverness Terrace records return visits in October and December 2018; St George's Square records works from July to November 2024. A new project needs its own scope and programme.
 
-[Discuss exterior decorating, repairs and scaffolded access](https://www.mrwallcover.com/services/exterior-works/)
+[Read about exterior decorating, repairs and scaffolded access](https://www.mrwallcover.com/services/exterior-works/)
 
 For our wallcovering work: [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 

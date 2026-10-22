@@ -1,6 +1,6 @@
 {
-  "_note": "The 'What to send for a fast quote' checklist above the enquiry form (src/pages/contact.astro). Copy and decorative icon metadata only: it sits outside the enquiry form stack and changes no field. Each item restates something the site already says, with its source in 'source'. There is deliberately no reply-time promise: none is stated by Dorin anywhere in the repo. Add one here only once he states it.",
-  "heading": "What to send for a fast quote",
+  "_note": "The 'What helps us quote' checklist above the enquiry form (src/pages/contact.astro). Copy and decorative icon metadata only: it sits outside the enquiry form stack and changes no field. Each item restates something the site already says, with its source in 'source'. There is deliberately no reply-time promise: none is stated by Dorin anywhere in the repo. Add one here only once he states it.",
+  "heading": "What helps us quote",
   "intro": "None of this is required: a short note is enough to start. Each item you can send now is a question we will not need to ask later.",
   "items": [
     { "lead": "The building and the rooms.", "icon": "room", "text": "The address or area, the rooms, and a rough idea of the walls involved.", "source": "src/pages/contact.astro 'A useful first brief'; src/content/contact.json lede" },

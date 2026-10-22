@@ -8,10 +8,10 @@
   "years": "2025",
   "role": "Survey, wall preparation and installation of the Overture mural; wallpapering of theatrical flats for Calico's LDF dinner",
   "wallcoverings": [
-    "Calico Wallpaper x Lee Broom – Overture (installed design: Matinee)"
+    "Calico Wallpaper × Lee Broom – Overture (installed design: Matinee)"
   ],
   "modest": true,
-  "metaTitle": "Lee Broom x Calico: Overture, Shoreditch | Mr Wallcover",
+  "metaTitle": "Lee Broom × Calico: Overture, Shoreditch | Mr Wallcover",
   "metaDescription": "Survey, preparation and installation of Lee Broom's Overture mural for Calico Wallpaper at his Shoreditch showroom, London Design Festival 2025.",
   "group": "design-weeks",
   "standfirst": "Lee Broom's first wallpaper, a trompe-l'oeil theatre curtain, brought to the UK for London Design Festival 2025, measured for a bespoke panel layout and hung.",
@@ -59,7 +59,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-22"
 }
 ---
 

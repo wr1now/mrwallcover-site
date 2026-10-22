@@ -28,7 +28,7 @@ Main contractors, hotel FF&E and project teams, fit-out firms and the designers 
 
 ## How we price
 
-From a site survey or from drawings. Openings come out of the area; pattern repeat and wastage go in. Access, protection and making good are written into the scope, not discovered at the end. We say what has been allowed for. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey.
+From a site survey or from drawings. Openings come out of the area; pattern repeat and wastage go in. Access, protection and making good are written into the scope, not discovered at the end. We say what has been allowed for. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. The [quantities guide](https://www.mrwallcover.com/advice/quantities/) shows how the order is worked out.
 
 ## Programme and night work
 
@@ -45,13 +45,15 @@ The core team is six wallpaper hangers and six decorators, scaling to 25–35 pe
 
 ## The sample-room process
 
-Sample room first, then the hang, then snagging, then the return visit about four to six weeks after completion, with twelve months’ cover on the workmanship of the hang. At Hyde London City the record starts with a finished sample room in November 2022 and the remaining rooms were repeated from it.
+Sample room first, then the hang, then snagging, then the return visit about four to six weeks after completion, with a twelve-month guarantee on the workmanship of the hang. At Hyde London City the record starts with a finished sample room in November 2022 and the remaining rooms were repeated from it.
 
 ## References
 
 Major main contractors recommend Mr Wallcover’s work. Referees are not named on this site.
 
-![Room at Brown's Hotel, Mayfair, during works: Adam's Eden wallcovering hung beneath an ornate plaster ceiling and chandelier, with protection board on the floor and a vacuum cleaner in view.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-07.jpg)
+Calico Wallpaper’s notes on our installations are published as written, with permission, on [Reviews](https://www.mrwallcover.com/reviews/).
+
+![Room at Brown's Hotel, Mayfair, during works: Adam's Eden wallcovering hung beneath an ornate plaster ceiling and chandelier, with protection board on the floor and a vacuum cleaner in view.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-07-800.webp)
 
 Brown’s Hotel, Mayfair, during works: wallcoverings hung as part of the full decorating package, with the floors protected.Mr Wallcover project photograph.[View the Brown's Hotel, Mayfair case study](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
@@ -59,7 +61,7 @@ Brown’s Hotel, Mayfair, during works: wallcoverings hung as part of the full d
 
 [![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
-Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.Photograph: Mr Wallcover.
+Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights. Photograph: Mr Wallcover.
 
 ### [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
@@ -69,7 +71,7 @@ Main decorating contractor, 2022–2024.
 
 [![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
-Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.Photograph: Dorin Burcus / Mr Wallcover.
+Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
@@ -97,4 +99,4 @@ Public liability, employers' liability and professional indemnity details are av
 
 ### Can you work nights or around guests?
 
-Yes. Most of our hotel work has been in live buildings, floor by floor or room by room around the house's bookings, and the Heathrow mural was hung overnight in a live terminal. Night shifts, out-of-hours and weekend work are offered, including in live hotels.
+Yes. Most of our hotel work has been in live buildings, floor by floor or room by room around the house's bookings, and the Heathrow mural was hung overnight in a live terminal.

@@ -16,8 +16,8 @@ Zoffany develops wallpapers, murals, fabrics and paint, drawing on an archive as
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://www.zoffany.design/about-us) — checked 2026-10-17
-- [Official source](https://info.sandersondesigngroup.com/tailored-for-trade) — checked 2026-10-17
+- [Official source: zoffany.design/about-us](https://www.zoffany.design/about-us) — checked 17 October 2026
+- [Official source: info.sandersondesigngroup.com/tailored-for-trade](https://info.sandersondesigngroup.com/tailored-for-trade) — checked 17 October 2026
 
 [Visit maker website](https://www.zoffany.design/)
 
@@ -44,9 +44,9 @@ Terms and checks before ordering
 
 Group programme advertises portal ordering and complimentary samples; Zoffany homepage links group trade signup.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://info.sandersondesigngroup.com/tailored-for-trade)
+[Open official source: Trade enquiry, UK-relevant group programme; overseas eligibility not established](https://info.sandersondesigngroup.com/tailored-for-trade)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

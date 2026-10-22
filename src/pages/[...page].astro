@@ -7,7 +7,7 @@
  * - updated: ISO date; prints the PageMeta author and "Last updated" line.
  * - published: ISO date; with updated, a page under /advice/ also gets an Article node.
  * - service: { name, serviceType }; adds a Service node for the page.
- * - cta: { label, href }; replaces the default "Request a quotation" button.
+ * - cta: { label, href }; replaces the default "Start your project" button.
  * - intake: { heading, items, download, downloadLabel, guide }; lays the page
  *   out like /professionals/<slug>/ (body beside a "What to send" panel).
  * - otherProfessionals: true; adds the "Other ways we can help" row that the
@@ -71,7 +71,7 @@ const url = new URL(page.path, SITE_URL).href;
 const intake = page.intake;
 const relatedGuide = intake?.guide ? guides.find((guide) => guide.frontmatter.slug === intake.guide) : undefined;
 if (intake?.guide && !relatedGuide) throw new Error(`editorial page "${page.path}" names a guide that does not exist: ${intake.guide}`);
-const cta = page.cta ?? { label: 'Request a quotation', href: '/contact/' };
+const cta = page.cta ?? { label: 'Start your project', href: '/contact/' };
 const featureProject = page.featureMedia?.project ? linked.find((project) => project.slug === page.featureMedia?.project) : undefined;
 if (page.featureMedia?.project && !featureProject) throw new Error(`Editorial page "${page.path}" featureMedia must name one of its linked projects`);
 // Pages under /professionals/ show their questions the way /professionals/<slug>/ does: the shared
@@ -131,6 +131,7 @@ const buyerFaq = professionalPage
           <article class:list={['prose guide-prose editorial-reading', page.guideStage && 'guide-stage-page']}>
             <Content />
       {page.path === "/where-to-buy/" && directoryVisible && <aside class="guide-next"><h2>Find a maker and a route</h2><p>Compare brand profiles and official sourcing contacts on their own pages.</p><Action href="/makers/" variant="secondary">Makers directory</Action><Action href="/buying-routes/" variant="quiet">Official buying routes</Action></aside>}
+      {page.path === "/materials/specified-papers/" && directoryVisible && <p>Some makers’ own sample routes are listed under <a href="/buying-routes/">official buying routes</a>.</p>}
           </article>
           {(page.featureMedia || page.featureDiagram) && <div class="editorial-evidence-rail">
             {page.featureMedia && <EvidenceFigure class="editorial-feature-media" id={page.featureMedia.id} caption={page.featureMedia.caption} credit={page.featureMedia.credit} href={featureProject ? projectHref(featureProject.slug) : undefined} linkLabel={featureProject ? `View the ${featureProject.title} case study` : undefined} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" />}
@@ -164,7 +165,7 @@ const buyerFaq = professionalPage
       )
     }
   </div>
-  {!professionalPage && page.faq.length > 0 && <FaqList items={page.faq} eyebrow="Questions" heading={`Asked about ${page.title}`} />}
+  {!professionalPage && page.faq.length > 0 && <FaqList items={page.faq} eyebrow="Questions" heading="Questions we are asked" />}
 </Base>
 
 <style>

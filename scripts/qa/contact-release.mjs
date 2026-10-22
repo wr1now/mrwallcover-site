@@ -13,7 +13,7 @@ try {
   if(data.reveal){await page.$eval('main [data-phone-reveal]',e=>e.scrollIntoView({block:'center'}));await new Promise(r=>setTimeout(r,200));await page.click('main [data-phone-reveal]');assert.ok(await page.$('main a[href^="tel:"]'));}
   results.push({width,...data});await page.close();
  }
- const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(server.origin+'/get-in-touch/');assert.ok(await nojs.$('a[href="mailto:info@mrwallcover.com"]'));await nojs.close();
+ const nojs=await browser.newPage();await nojs.setJavaScriptEnabled(false);await nojs.goto(server.origin+'/get-in-touch/');assert.ok(await nojs.$('a[href^="mailto:info@mrwallcover.com"]'));assert.ok(await nojs.$('[data-contact-ways] a[href="mailto:info@mrwallcover.com?subject=Wallcovering%20enquiry"]'));await nojs.close();
  const live=await browser.newPage();const response=await live.goto('https://www.mrwallcover.com/get-in-touch/',{waitUntil:'networkidle0'});console.log('Production /get-in-touch/: HTTP',response.status());await live.close();
  await writeFile('.review-screens/contact/results.json',JSON.stringify(results,null,2));console.log(JSON.stringify(results));
 }finally{await browser.close();await server.close();}

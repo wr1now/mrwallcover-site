@@ -140,11 +140,13 @@ test('the fact sheet holds one description sentence of 160 characters or fewer, 
   }
 });
 
-test('the founder sentences /for-ai/ quotes are the approved About paragraphs, word for word', async () => {
-  const about = JSON.parse(await readFile('src/content/about.json', 'utf8')) as { paragraphs: string[]; founderSummary: string; publicRecord: string };
+test('the founder sentences /for-ai/ quotes are the approved About text, word for word', async () => {
+  const about = JSON.parse(await readFile('src/content/about.json', 'utf8')) as { paragraphs: string[]; founderSummary: string; publicRecord: string; values: { items: { text: string }[] } };
+  // The founder line comes from the founder paragraphs; the privacy line may also be a values card (the Discretion card).
+  const sources = { founderSummary: about.paragraphs, publicRecord: [...about.paragraphs, ...about.values.items.map((item) => item.text)] };
   for (const [key, value] of [['founderSummary', about.founderSummary], ['publicRecord', about.publicRecord]] as const) {
     assert.ok(typeof value === 'string' && value.length > 20, `about.${key} is a sentence`);
-    assert.ok(about.paragraphs.some((paragraph) => paragraph.includes(value)), `about.${key} must appear inside about.paragraphs: "${value}"`);
+    assert.ok(sources[key].some((text) => text.includes(value)), `about.${key} must appear inside the approved About text: "${value}"`);
   }
   assert.doesNotMatch(await readFile('src/pages/for-ai.astro', 'utf8'), /about\.paragraphs\[\d+\]/, '/for-ai/ must not pick About paragraphs by index');
 });
@@ -277,6 +279,19 @@ test('the hand-painted service names the Brown\'s paper its case study records',
   assert.doesNotMatch(proof, /de Gournay|Fromental/, 'the proof sentence names the paper actually hung, not a maker it is compared with');
 });
 
+test('the services stages link each guide in the sentence that names it, so no unlinked guide reference reaches the AI layer', async () => {
+  const services = JSON.parse(await readFile('src/content/services.json', 'utf8')) as { pillars: { id: string; paragraphs: string[] }[] };
+  for (const pillar of services.pillars) {
+    for (const paragraph of pillar.paragraphs) {
+      assert.doesNotMatch(paragraph, /\bguide (shows|explains)\b/, `${pillar.id}: services.json prints as plain text on /for-ai/ and ai/business.json, so a guide named there has no link`);
+    }
+  }
+  const page = await readFile('src/pages/services.astro', 'utf8');
+  for (const href of ['/advice/quantities/', '/advice/set-out-and-pattern-matching/']) {
+    assert.match(page, new RegExp(`<a href="${href}">The [^<]+ guide</a> (shows|explains) `), `${href}: the link carries its own sentence`);
+  }
+});
+
 test('House of Hackney client photographs are committed, so the build does not download them', async () => {
   const manifest = JSON.parse(await readFile('scripts/credited/house-of-hackney.json', 'utf8')) as {
     images: Record<string, { image: string }>;
@@ -307,4 +322,42 @@ test('the four-second submit trap is gone', async () => {
   const form = await readFile('src/components/EnquiryForm.astro', 'utf8');
   const script = await readFile('src/scripts/enquiry-form.ts', 'utf8');
   assert.doesNotMatch(form + script, /4000|time-trap|loadedAt/);
+});
+
+// Full audit, 22 Oct 2026, round four: copy fixes that add no fact. Each new sentence restates published text.
+test('the trade answer names Dorin, the cost checklist retains the one-room minimum without adding calculator entry points, Calico closes on the maker line, specified papers carry the sample step', async () => {
+  const body = (text: string) => text.replace(/^---\n[\s\S]*?\n---\n/, '').trim();
+  // 2012 is the year Dorin entered the trade, not the firm's age: the answer opens with the About description's clause.
+  const answers = JSON.parse(await readFile('src/data/buyer-answers.json', 'utf8')) as { standing: { id: string; answer: string }[] };
+  const about = JSON.parse(await readFile('src/content/about.json', 'utf8')) as { description: string };
+  const trade = answers.standing.find((item) => item.id === 's-since-2012')!.answer;
+  const founder = 'Dorin Burcus, founder of Mr Wallcover, has worked in the trade since 2012';
+  assert.ok(about.description.startsWith(founder), 'the founder clause is the About description');
+  assert.ok(trade.startsWith(`${founder}. `), 's-since-2012 names Dorin');
+  assert.ok(trade.endsWith(' Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards.'), 'award line verbatim');
+  // The cost checklist keeps the /services/ one-room sentence; new calculator entry points await owner review.
+  const cost = body(await readFile('src/content/pages/cost-guide-2026.md', 'utf8'));
+  const scope = await readFile('src/components/CommissionScope.astro', 'utf8');
+  const minimum = 'The smallest commission we take on is a single room.';
+  assert.ok(scope.includes(minimum) && cost.includes(minimum), 'one-room minimum in the /services/ wording');
+  assert.doesNotMatch(cost, /\[wallpaper calculator\]\(\/calculator\/\)/, 'new calculator entry point remains on hold');
+  // The minimum is not restated in the next sentence.
+  assert.doesNotMatch(cost, /single room\.[^\n]*from one room/, 'one-room minimum stated once');
+  // Calico: the opening keeps the partnership; the maker line closes the body, as on the other maker installer pages.
+  const MAKER_LINE = 'Mr Wallcover is not on maker recommended-installer lists. Naming a maker records an installation, not an endorsement.';
+  const calicoSource = await readFile('src/content/pages/calico-wallpaper-installer.md', 'utf8');
+  const calico = body(calicoSource).split(/\n{2,}/);
+  assert.match(calico[0], /delivered in partnership with Calico Wallpaper\.$/, 'Calico opening keeps the partnership and no disclaimer');
+  assert.equal(calico.at(-1), MAKER_LINE, 'Calico closing line');
+  assert.ok(calicoSource.includes('it is not a maker approval, accreditation or endorsement.'), 'Calico relationship FAQ keeps its answer');
+  for (const name of ['timorous-beasties-installer.md', 'house-of-hackney-wallpaper-installer.md']) assert.ok(body(await readFile(`src/content/pages/${name}`, 'utf8')).includes(MAKER_LINE), name);
+  // Specified papers: the material pages' sample sentence, word for word.
+  const SAMPLE = 'Digital colour is a guide. Order a cutting or a sample before you commit to a room.';
+  assert.ok((await readFile('src/pages/materials/[slug].astro', 'utf8')).includes(SAMPLE), 'material pages carry the sample sentence');
+  assert.ok(body(await readFile('src/content/pages/specified-papers.md', 'utf8')).includes(SAMPLE), 'specified papers carry the sample sentence');
+  // A copy change moves the page's own date, which feeds the byline, dateModified and the sitemap lastmod.
+  for (const name of ['cost-guide-2026.md', 'calico-wallpaper-installer.md', 'specified-papers.md', 'timorous-beasties-installer.md', 'house-of-hackney-wallpaper-installer.md']) {
+    const fm = JSON.parse((await readFile(`src/content/pages/${name}`, 'utf8')).match(/^---\n([\s\S]*?)\n---\n/)![1]) as { updated: string };
+    assert.ok(fm.updated >= '2026-10-22', `${name} updated`);
+  }
 });

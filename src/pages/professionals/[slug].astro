@@ -34,7 +34,11 @@ const dimensional=item.visual?.objects!==false;
       <div class="professional-opening">
         <div>
           <p class="eyebrow">{item.name}</p><h1>{item.heading}</h1><p class="lede mt-5">{item.intro}</p>
-          <Action class="mt-4" href={`/contact/?audience=${item.audience}&intent=install`}>{item.cta}</Action>
+          <div class="professional-actions">
+            <Action href={`/contact/?audience=${item.audience}&intent=install`}>{item.cta}</Action>
+            {/* Pre-qualification is the first gate for hotels and contractors: "details on request" becomes one click. */}
+            {['hotel', 'developer', 'commercial'].includes(item.audience) && <Action variant="quiet" href={`/contact/?audience=${item.audience}&intent=advice`}>Request insurance and RAMS details</Action>}
+          </div>
         </div>
         {item.visual?.evidence && <EvidenceFigure {...item.visual.evidence} sizes="(min-width: 1024px) 29rem, calc(100vw - 2.5rem)" loading="eager" fetchpriority="high" class="professional-opening-evidence" />}
       </div>
@@ -59,6 +63,7 @@ const dimensional=item.visual?.objects!==false;
 
 <style>
   .professional-opening { display: grid; gap: 2.5rem; align-items: center; margin-top: 1rem; }
+  .professional-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.75rem; margin-top: 1.25rem; }
   .professional-opening :global(.professional-opening-evidence) { min-width: 0; }
   .professional-body { padding-block:1rem 2rem; border-top:1px solid var(--color-line); align-items:start; gap:var(--layout-gap); }
   .professional-sections section { padding-block:1.75rem; border-bottom:1px solid var(--color-line); }

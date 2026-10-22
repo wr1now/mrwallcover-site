@@ -1,28 +1,28 @@
 ---
 title: "Silk Wallcovering Installer London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/silk-wallcovering-installation/
-description: "Silk wallcovering installation in London houses and hotels. Clean hands, the right adhesive and seams planned so the light does not catch a ridge."
+description: "Silk wallcovering installation in London houses and hotels, including hand-dyed silk feature walls at Four Seasons Hotel London at Ten Trinity Square."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
 
 Services
 
-# Silk wallcovering installation
+# Silk wallcovering installation in London
 
 Silk wallcoverings, plain and patterned, hung in London houses and hotels.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Asilk-wallcovering-installation) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Asilk-wallcovering-installation) [See the work](https://www.mrwallcover.com/projects/)
 
-Silk is lustrous, and quick to mark. It is hung with clean hands and an adhesive that suits the cloth. Seams are planned so the light from the windows does not catch a ridge.
+Silk is lustrous, and quick to mark.
 
 The wall has to be right first. Preparation, including a lining where the maker specifies one, is written into the scope.
 
-Protection of floors, furniture and finished joinery is part of the hang, not an optional extra.
+Access, protection and making good are also written into the scope; see [how a project is run](https://www.mrwallcover.com/services/).
 
 ![Close-up of a blue-grey hand-dyed Fromental silk, Four Seasons Hotel London at Ten Trinity Square.](https://www.mrwallcover.com/media/img/r/fs-ig-11-800.webp)
 
-Blue-grey hand-dyed Fromental silk at [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/). A photograph records the installed surface; a physical sample decides colour and sheen.Photograph: Mr Wallcover.
+Blue-grey hand-dyed Fromental silk at [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/). A photograph records the installed surface; a physical sample decides colour and sheen. Photograph: Mr Wallcover.
 
 01
 
@@ -42,7 +42,7 @@ Fresh plaster and filler need time to dry, and a moisture reading, not a calenda
 
 ## Seams, light and set-out
 
-Seams are planned so the light from the windows does not catch a ridge. Pattern is set out from the room's focal points, such as chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure. Deliveries are checked against the measure, and batches and shading are managed so that a room reads as one surface.
+Seams are planned so the light from the windows does not catch a ridge. Pattern is set out from the room's focal points, such as chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery. Deliveries are checked against the measure, and batches and shading are managed so that a room reads as one surface.
 
 Silk is hung with clean hands and an adhesive that suits the cloth, and floors, furniture and finished joinery are protected as part of the hang.
 
@@ -58,13 +58,13 @@ Before a silk is ordered, see the sample in the room's own light and confirm the
 
 ## What the quotation includes
 
-There is no flat rate per roll. The quotation comes from a site survey or from drawings, and reflects the measured area after openings are taken off, the pattern repeat and the wastage it creates, the state of the walls, lining where it is specified, and access and protection. The [installation cost guide](https://www.mrwallcover.com/advice/installation-cost/) explains each item. We focus on whole residences and hotel packages, and will take on one- or two-room commissions.
+There is no flat rate per roll. The quotation comes from a site survey or from drawings, and reflects the measured area after openings are taken off, the pattern repeat and the wastage it creates, the state of the walls, lining where it is specified, and access and protection. The [installation cost guide](https://www.mrwallcover.com/advice/installation-cost/) explains each item. We focus on whole residences and hotel packages, and will take on one- or two-room commissions. The minimum installation commission is one room.
 
 ## On the public record
 
 [![Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp)](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
-Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.Photograph: Mr Wallcover.
+Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench. Photograph: Mr Wallcover.
 
 ### [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
@@ -74,7 +74,7 @@ Guest room, suite and private residence wallpapering, 2016–2019.
 
 Questions
 
-## Asked about Silk wallcovering installation
+## Questions we are asked
 
 Illustrative material studies
 
@@ -94,10 +94,10 @@ There is no flat rate per roll. The quotation comes from a site survey or from d
 
 ### Do you take on single rooms, or only larger projects?
 
-We focus on whole residences and hotel packages, and will take on one- or two-room commissions.
+We focus on whole residences and hotel packages, and will take on one- or two-room commissions. The minimum installation commission is one room.
 
 ### What aftercare and guarantee are included?
 
-Aftercare is part of every commission: a return inspection about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.
+Aftercare is part of every commission: a return visit about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

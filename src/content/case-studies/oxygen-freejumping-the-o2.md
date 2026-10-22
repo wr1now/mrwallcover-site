@@ -39,7 +39,7 @@
     }
   ],
   "published": "2026-10-11",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -59,4 +59,4 @@ Wide vinyl is hung with the edges overlapped, then cut through both layers at on
 
 ## Photographs on this page
 
-Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 22 September 2018 ([BoCE7LPnvqA](https://www.instagram.com/p/BoCE7LPnvqA/)).
+Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 22 September 2018 ([see the post](https://www.instagram.com/p/BoCE7LPnvqA/)).

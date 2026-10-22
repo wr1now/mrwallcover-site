@@ -1,9 +1,9 @@
 ---
-title: "Ahluwalia x Calico: Estuary at Rosewood | Mr Wallcover"
+title: "Ahluwalia × Calico: Estuary at Rosewood | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/
 description: "Ahluwalia's Estuary mural for Calico Wallpaper, installed as the runway backdrop at Rosewood London for London Fashion Week, September 2026."
 author: "Dorin Burcus"
-last_updated: 2026-10-10
+last_updated: 2026-10-22
 ---
 
 Rosewood London, High Holborn
@@ -14,7 +14,7 @@ An event install for Calico Wallpaper, not a hotel fit-out: the runway backdrop 
 
 ![The runway set at Rosewood London, ready for the show.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-07-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -28,7 +28,7 @@ Client, materials & project facts
 : –Not recorded
 
 **Maker and paper**
-: Calico Wallpaper x Ahluwalia – Estuary (bespoke mural)
+: Calico Wallpaper × Ahluwalia – Estuary (bespoke mural)
 
 **Area or rooms**
 : –Not recorded
@@ -119,7 +119,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -149,7 +151,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -159,4 +161,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 10 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

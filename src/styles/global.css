@@ -43,6 +43,21 @@
     scroll-margin-top: calc(var(--header-height) + var(--header-inset-top) + 1rem);
   }
 
+  /* WCAG 2.4.11: keyboard focus stops clear of the sticky header (Shift+Tab scrolls up). A margin on
+     the controls, not html scroll-padding-top, which would add to every [id] and section margin and
+     double the gap above each in-page link target. */
+  :where(a[href], button, input, select, textarea, summary, [tabindex]) {
+    scroll-margin-top: calc(var(--header-height) + var(--header-inset-top) + 1rem);
+  }
+
+  /* ...and clear of the fixed dock, shown below 1280px (navigation.css). In-page links align to the
+     top, so this only changes focus and end-aligned scrolls. */
+  @media (max-width: 1279px) {
+    html {
+      scroll-padding-bottom: var(--dock-clearance);
+    }
+  }
+
   img {
     max-width: 100%;
     height: auto;
@@ -60,6 +75,18 @@
 
   .on-dark :focus-visible {
     outline-color: var(--color-gold);
+  }
+
+  /* Shared rhythm beyond .prose (makers, room studio, practice, about): a heading never touches the text
+     after it. Base layer, so a component, utility or page style that sets its own spacing still wins. The
+     excluded components space from the heading's own bottom margin, which this would collapse up to 20px. */
+  main :is(h2, h3):where(:not(.maker-route h3, .fr-checklist h3, .guide-next h2, .material-evidence h2, .quote-checklist h2, .material-result h3)) + :is(p, ul, ol, dl) {
+    margin-top: var(--space-5);
+  }
+
+  /* A legend renders outside its fieldset's grid, so gap-5 does not separate it from the first field. */
+  .enquiry fieldset.grid > legend {
+    margin-bottom: var(--space-4);
   }
 }
 
@@ -165,6 +192,7 @@
     background-color: var(--color-media-fill);
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     line-height: 0;
   }
 
@@ -250,6 +278,21 @@
     margin: 0;
     font-size: var(--text-display);
     max-width: var(--measure-title);
+  }
+
+  /* Shared rhythm: a page title or section heading never touches the text after it, even where a page forgot
+     its mt-* utility (the reset zeroes every margin). Utilities still win where a page sets its own spacing. */
+  .page-head h1 + :is(p, .lede),
+  .prose :is(h2, h3) + :is(p, ul, ol, dl) {
+    margin-top: var(--space-5);
+  }
+
+  .page-head .lede + p {
+    margin-top: var(--space-4);
+  }
+
+  .prose :is(p, ul, ol, dl) + :is(h2, h3) {
+    margin-top: var(--space-8);
   }
 
   .prose {
@@ -542,6 +585,22 @@
     overflow: hidden;
   }
 
+  /* The enquiry form sends through its script: without JavaScript, say so first and hide the send button. */
+  .enquiry-nojs {
+    margin: 0;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--color-line);
+    border-left: 3px solid var(--color-brass);
+    border-radius: var(--radius-control);
+    background: var(--color-paper);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+  }
+  .js .enquiry-nojs { display: none; }
+  /* The reply fieldset follows the optional brief: give its heading air above. */
+  .enquiry [data-contact] { margin-top: var(--space-8); }
+  /* The matching rule that hides the send button without JavaScript is in visual-system.css (unlayered, so it beats .mw-action). */
+
   .crumbs {
     display: flex;
     flex-wrap: wrap;
@@ -621,7 +680,8 @@
   }
 }
 
-@media (max-width: 1023px) {
+/* Matches the dock's own breakpoint (navigation.css hides it from 1280px), not the 1024px layout change. */
+@media (max-width: 1279px) {
   /* The fixed dock never covers the footer's last line: the body ends with the dock's full clearance. */
   body {
     padding-bottom: var(--dock-clearance);
@@ -711,7 +771,25 @@ article h3 a {
 }
 .field input[type="file"] {
   min-height: 48px;
-  padding: 0.6rem 0;
+  padding: 0.5rem 0.6rem;
+}
+/* The file picker's own button and the reply radios and consent checkbox use the control tokens; the base :focus-visible ring still shows on each. */
+.field input[type="file"]::file-selector-button {
+  margin-right: 0.85rem;
+  min-height: 2.5rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--color-field-border);
+  border-radius: var(--radius-control);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: inherit;
+  cursor: pointer;
+}
+.enquiry input:is([type="radio"], [type="checkbox"]) {
+  accent-color: var(--color-ink);
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
 }
 /* Case studies */
 .case-study {
@@ -923,7 +1001,7 @@ article h3 a {
 .guide-tools .eyebrow { margin: 0; }
 .guide-tools > a > span:last-child { font-size: var(--text-meta); color: var(--color-stone); }
 .guide-library, .guide-related { margin-top: 4rem; }
-.guide-library > h2, .guide-related > h2 { font-size: clamp(2rem,4vw,3rem); }
+.guide-library > h2, .guide-related > h2 { font-size: clamp(2rem,4vw,3rem); margin-bottom: var(--space-5); }
 .guide-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0 2rem; border: 0; padding: 0; }
 .guide-filters button { min-height: 48px; border: 1px solid var(--color-line); padding: .5rem 1rem; border-radius: var(--radius-pill); cursor: pointer; }
 .guide-filters button[aria-pressed="true"] { background: var(--color-ink); color: var(--color-ivory); border-color: var(--color-ink); }
@@ -994,9 +1072,8 @@ article h3 a {
 .guide-tools .eyebrow { margin: 0; }
 .guide-tools > a > span:last-child { font-size: var(--text-meta); color: var(--color-stone); }
 .guide-library, .guide-related { margin-top: 4rem; }
-.guide-library > h2, .guide-related > h2 { font-size: clamp(2rem,4vw,3rem); }
+.guide-library > h2, .guide-related > h2 { font-size: clamp(2rem,4vw,3rem); margin-bottom: var(--space-5); }
 .guide-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0 2rem; border: 0; padding: 0; }
-.guide-filters button { min-height: 48px; border: 1px solid var(--color-line); padding: .5rem 1rem; border-radius: 99px; cursor: pointer; }
 .guide-filters button[aria-pressed="true"] { background: var(--color-ink); color: var(--color-ivory); border-color: var(--color-ink); }
 .guide-grid { display: grid; gap: 1.5rem; }
 .guide-card { display: flex; flex-direction: column; padding: 1.75rem; border: 1px solid var(--color-line); background: var(--color-paper); }

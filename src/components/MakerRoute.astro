@@ -4,13 +4,21 @@ import Icon from './Icon.astro';
 import { routeLabel, type BuyingRoute } from '../lib/makers-directory';
 interface Props { route: BuyingRoute; makerName?: string; makerSlug?: string }
 const { route, makerName, makerSlug } = Astro.props;
+const checked = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${route.checked_on}T00:00:00Z`));
+// The first card on a page draws the shared roll and arrow icons once, as symbols; every card then reuses them,
+// so /buying-routes/ does not repeat the same two drawings 42 times. Astro.locals is new for each page.
+const page = Astro.locals as { makerRouteIcons?: boolean };
+const drawIcons = !page.makerRouteIcons;
+page.makerRouteIcons = true;
 ---
+{drawIcons && <svg class="maker-route-icons" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="maker-route-roll" viewBox="0 0 24 24"><Icon name="roll" /></symbol><symbol id="maker-route-arrow" viewBox="0 0 24 24"><Icon name="arrow-right" /></symbol></svg>}
 <article class="maker-route" id={route.id} data-directory-item data-maker={makerSlug} data-search={`${makerName ?? ''} ${routeLabel(route.type)} ${route.region} ${route.action}`.toLowerCase()}>
-  <p class="eyebrow"><Icon name="roll" />{makerSlug && <a href={`/makers/${makerSlug}/`}>{makerName}</a>}</p>
+  <p class="eyebrow"><svg class="mw-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#maker-route-roll" /></svg>{makerSlug && <a href={`/makers/${makerSlug}/`}>{makerName}</a>}</p>
   <h3>{routeLabel(route.type)}</h3><p>{route.action}</p>
   <dl><dt>Region</dt><dd>{route.region}</dd><dt>UK access</dt><dd>{route.uk_access}</dd><dt>Overseas access</dt><dd>{route.overseas_access}</dd></dl>
   <p class="maker-scope">{route.scope}</p>
   <details><summary>Terms and checks before ordering</summary><p>{route.terms}</p></details>
-  <p class="maker-date">Official page checked <time datetime={route.checked_on}>{route.checked_on}</time>. Website evidence, not a test order.</p>
-  <Action href={route.url} variant="secondary" target="_blank" rel="noopener noreferrer">Open official source</Action>
+  <p class="maker-date">Checked on the official website on <time datetime={route.checked_on}>{checked}</time>. This check did not include placing an order.</p>
+  {/* The button draws no icon of its own: the shared arrow sits in its label, and makers-directory.css keeps the usual gap. */}
+  <Action href={route.url} variant="secondary" target="_blank" rel="noopener noreferrer" icon={false}>Open official source<span class="sr-only">: {makerName ? `${makerName}, ` : ''}{routeLabel(route.type)}, {route.region}</span><svg class="mw-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#maker-route-arrow" /></svg></Action>
 </article>

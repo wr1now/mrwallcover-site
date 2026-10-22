@@ -6,18 +6,18 @@
   "role": "Founder",
   "paragraphs": [
     "Dorin Burcus founded Mr Wallcover. He has worked in the trade since 2012, starting as a labourer and going on to run wallcovering packages in prime London hotels.",
-    "The earliest commissions dated on this site are Four Seasons Hotel London at Ten Trinity Square, 2016 to 2019, guest room and suite wallpapering, and Novotel London Canary Wharf in 2016. Since then the public work includes The OWO on Whitehall, Brown's Hotel in Mayfair, hotels in Holborn and at Silverstone, and The Lanesborough.",
-    "The practice is based in London, covers London and the surrounding areas, and works UK-wide for selected projects. Every job is planned around the building and the people who have to keep using it, so that the disruption stays small and the finish does not.",
-    "What you see on this site is public. Private clients are not named."
+    "Among the earliest dated commissions are Four Seasons Hotel London at Ten Trinity Square, 2016 to 2019, guest room and suite wallpapering, and Novotel London Canary Wharf in 2016. Since then the public work includes The OWO on Whitehall, Brown's Hotel in Mayfair, hotels in Holborn and at Silverstone, and The Lanesborough.",
+    "The practice is based in London, covers London and the surrounding areas, and works UK-wide for selected projects.",
+    "Every job is planned around the building and the people who have to keep using it, so that the disruption stays small and the finish does not."
   ],
-  "_founderSummary": "Sentences /for-ai/ quotes about the founder. They must appear word for word inside `paragraphs` above (tests/content-guards.test.ts checks); change the paragraph first, then these.",
+  "_founderSummary": "Sentences /for-ai/ quotes from this page. founderSummary must appear word for word inside `paragraphs` above, and publicRecord inside `paragraphs` or a `values` card (tests/content-guards.test.ts checks); change the source text first, then these.",
   "founderSummary": "He has worked in the trade since 2012, starting as a labourer and going on to run wallcovering packages in prime London hotels.",
-  "publicRecord": "What you see on this site is public. Private clients are not named.",
+  "publicRecord": "Private clients are not named, on this site or in passing. We publish the commissions that are already public, and we leave the rest off the page.",
   "_portrait": "Dorin's own portrait, supplied and cleared by Dorin on 11 Oct 2026 (docs/asset-rights.md, 'Founder portrait'). Shown beside the founder text; also the founder's image in the Person schema, facts.json and /for-ai/.",
   "portrait": "dorin-burcus-portrait",
   "portraitCaption": "Dorin Burcus, founder of Mr Wallcover.",
   "image": "browns-hotel-mayfair-04",
-  "imageCaption": "Scenic wallcovering at Brown's Hotel, Mayfair. Photographed on site.",
+  "imageCaption": "A finished guest room at Brown's Hotel, Mayfair. Photograph: Mr Wallcover.",
   "values": {
     "eyebrow": "How the work is carried",
     "title": "Three things we will not trade away.",
@@ -38,7 +38,7 @@
   },
   "disciplines": {
     "title": "The work, in order.",
-    "text": "Surveying, management, supply, installation and aftercare. Premium wallcoverings for prime residential work and for the hotel industry. The services page is the longer version."
+    "text": "Surveying, management, supply, installation and aftercare. Wallcoverings for prime residential work and for the hotel industry. The services page is the longer version."
   },
   "_record": "Added 11 Oct 2026 from the @mrwallcover Instagram photo pack (wr1now/mrwallcover-ops ig-pack db42922, instagram/ 192a6ad). Every project named here has its own photographs on the site (a case study or a roll-call photograph), except Jumeirah Carlton Tower, which Dorin allowed in the timeline text only. Figures: only the five Dorin cleared, each cited in docs/sources.md.",
   "howWeWork": {
@@ -170,7 +170,7 @@
   "rollCall": {
     "eyebrow": "Also on our record",
     "title": "More of the work, in our own photographs.",
-    "intro": "Smaller jobs and early stages, each shown with our own photographs from Instagram.",
+    "intro": "Smaller jobs and early stages, each linked to its Instagram post.",
     "items": [
       {
         "name": "The Marylebone",
@@ -292,7 +292,7 @@
       },
       {
         "year": "2017",
-        "text": "Our Instagram record, @mrwallcover, begins in October. First work at DoubleTree by Hilton London – West End, and at DoubleTree Hyde Park."
+        "text": "We begin posting our work on Instagram, @mrwallcover, in October. First work at DoubleTree by Hilton London – West End, and at DoubleTree Hyde Park."
       },
       {
         "year": "2018",

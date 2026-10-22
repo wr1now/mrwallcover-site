@@ -31,7 +31,7 @@
     }
   ],
   "published": "2026-10-11",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -50,4 +50,4 @@ A fair stand is built and dressed in days, and it is seen close up by every visi
 
 ## Photographs on this page
 
-Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 21 and 26 June 2019 ([By-zBigFOAR](https://www.instagram.com/p/By-zBigFOAR/), [BzLSNUKFouL](https://www.instagram.com/p/BzLSNUKFouL/)). The exhibitor is not named.
+Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 21 and 26 June 2019 ([first post](https://www.instagram.com/p/By-zBigFOAR/), [second post](https://www.instagram.com/p/BzLSNUKFouL/)). The exhibitor is not named.

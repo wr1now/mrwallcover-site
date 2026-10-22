@@ -29,7 +29,15 @@ try{
  await page.goto(server.origin+'/buying-routes/?maker=designers-guild');assert.equal(await page.$$eval('.maker-route',es=>es.filter(e=>!e.hidden).length),0);
  await page.select('[data-directory-maker]','arte');assert.equal(await page.$$eval('.maker-route',es=>es.filter(e=>!e.hidden).length),2);
  await page.select('[data-directory-maker]','zoffany');assert.equal(await page.$$eval('.maker-route',es=>es.filter(e=>!e.hidden).length),1);
- await page.setJavaScriptEnabled(false);await page.goto(server.origin+'/buying-routes/');assert.equal((await page.$$('.maker-route')).length,42);await page.click('.maker-route summary');assert.equal(await page.$eval('.maker-route details',e=>e.open),true);
+ assert.deepEqual(await page.$$eval('.maker-route-group',gs=>gs.filter(g=>!g.hidden).map(g=>[g.dataset.maker,g.querySelector('details').open])),[['zoffany',true]],'the filter shows and opens only the chosen maker group');
+ const routeId=data.makers.find(m=>m.slug==='vescom').routes[0].id;await page.goto(server.origin+'/buying-routes/#'+routeId);
+ assert.equal(await page.$eval('#routes-vescom > details',e=>e.open),true,'a link to one route card opens its maker group');
+ assert.equal(await page.$eval('#routes-arte > details',e=>e.open),false);
+ await page.setJavaScriptEnabled(false);await page.goto(server.origin+'/buying-routes/');assert.equal((await page.$$('.maker-route')).length,42);
+ // Routes sit in one closed group per maker: without JavaScript a reader opens the group, then the card's terms.
+ assert.equal((await page.$$('.maker-route-group')).length,data.makers.filter(m=>m.routes.length).length);assert.equal(await page.$$eval('.maker-route-group > details',ds=>ds.every(d=>!d.open)),true);
+ await page.click('.maker-route-group > details > summary');assert.equal(await page.$eval('.maker-route-group > details',e=>e.open),true);
+ await page.click('.maker-route summary');assert.equal(await page.$eval('.maker-route details',e=>e.open),true);
  await page.goto(server.origin+'/makers/');assert.equal((await page.$$('.maker-card')).length,20);assert.deepEqual(errors,[]);
  if(output)writeFileSync(`${output}/verification.json`,JSON.stringify({cases:report.length,errors,report},null,2));
  console.log(`Makers review: ${report.length} responsive cases; filters, exclusions and no-JS passed.`);

@@ -16,9 +16,9 @@ Dedar is a family-run fabric house whose catalogue also includes textile wallcov
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://dedar.com/company/about_us/) — checked 2026-10-17
-- [Official source](https://dedar.com/products/wallcovering/) — checked 2026-10-17
-- [Official source](https://dedar.com/company/contacts/) — checked 2026-10-17
+- [Official source: dedar.com/company/about_us](https://dedar.com/company/about_us/) — checked 17 October 2026
+- [Official source: dedar.com/products/wallcovering](https://dedar.com/products/wallcovering/) — checked 17 October 2026
+- [Official source: dedar.com/company/contacts](https://dedar.com/company/contacts/) — checked 17 October 2026
 
 [Visit maker website](https://dedar.com/)
 
@@ -45,9 +45,9 @@ Terms and checks before ordering
 
 Direct retail purchase, trade eligibility and sample charges: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://dedar.com/company/contacts/)
+[Open official source: Showroom or brand contact, United Kingdom — London](https://dedar.com/company/contacts/)
 
 ### Showroom or brand contact
 
@@ -68,9 +68,9 @@ Terms and checks before ordering
 
 Milan showroom visits are listed as by appointment. Account and sample terms: not established; ask the maker.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://dedar.com/company/contacts/)
+[Open official source: Showroom or brand contact, Italy and international enquiries](https://dedar.com/company/contacts/)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

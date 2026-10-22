@@ -107,7 +107,8 @@
         "/services/silk-wallcovering-installation/",
         "/services/mural-installation/",
         "/services/fabric-walling/",
-        "/services/acoustic-wallcovering-installation/"
+        "/services/acoustic-wallcovering-installation/",
+        "/professionals/"
       ],
       "answeredBy": [
         "Q14"
@@ -116,7 +117,7 @@
     {
       "id": "f-a20",
       "question": "Can you give references, and which designers have you worked with?",
-      "answer": "The published case studies name the design teams and brands involved. Studio Moren designed the interiors at Hyde London City (2022–2024, 111 rooms). House of Hackney's design consultancy worked on a Grade II-listed Georgian house in North London (2019). Calico Wallpaper of Brooklyn was the client at Lee Broom's Shoreditch showroom (2025), Rosewood London (2026), The Lavery in the Brompton Design District (2026) and Heathrow Terminal 4 (2018). Hotel clients on the record include Rocco Forte Hotels (Brown's Hotel), Raffles London at The OWO and Four Seasons (Ten Trinity Square). Major main contractors recommend Mr Wallcover's work. Referees are not named on the site.",
+      "answer": "The published case studies name the design teams and brands involved. Studio Moren designed the interiors at Hyde London City (2022–2024, 111 rooms). House of Hackney's design consultancy worked on a Grade II-listed Georgian house in North London (2019). Calico Wallpaper of Brooklyn was the client at Lee Broom's Shoreditch showroom (2025), Rosewood London (2026), The Lavery in the Brompton Design District (2026) and Heathrow Terminal 4 (2018). Hotel clients on the record include Rocco Forte Hotels (Brown's Hotel), Raffles London at The OWO and Four Seasons Hotel London at Ten Trinity Square. Major main contractors recommend Mr Wallcover's work. Referees are not named on the site.",
       "status": "ready",
       "auditRows": [
         "a21"
@@ -216,6 +217,32 @@
       "id": "f-b1",
       "question": "Which London hotels has Mr Wallcover worked on?",
       "answer": "There are 22 named hotels on the public record: Brown's Hotel, Mayfair (main decorating contractor, 2022–2024, Rocco Forte Hotels); Hyde London City, 15 Old Bailey (full decorating package, specialist wallcoverings and window film, 111 rooms, sample room November 2022 to August 2024); Raffles London at The OWO (wallcovering installation, 2020–2023); Four Seasons Hotel London at Ten Trinity Square, now at Tower Bridge (guest room and suite wallpapering, 2016–2019); DoubleTree by Hilton London – West End (2019); DoubleTree by Hilton London – Victoria (March to September 2023); Hilton Garden Inn Silverstone (main wallcoverings contractor, 2022); The Biltmore Mayfair (2018, including Phillip Jeffries); Pendley Manor Hotel (December 2019 – January 2020); Hilton London Metropole, Paddington (2019); Novotel London Canary Wharf (2016); Jumeirah Carlton Tower, Knightsbridge (2020); Waldorf Astoria London Admiralty Arch (2026); London Marriott Hotel Canary Wharf (2026); Heythrop Park, Oxfordshire (2022); The Westminster London, Curio Collection by Hilton (2021); The Marylebone (2020); The Lensbury, Teddington (2018–2019); Hilton London Hyde Park (2016); and Premier Inn London Heathrow Airport Terminal 4 (2016). The Lanesborough and Moxy London ExCeL are listed by name only.",
+      "answerList": {
+        "lead": "There are 22 named hotels on the public record:",
+        "items": [
+          "Brown's Hotel, Mayfair (main decorating contractor, 2022–2024, Rocco Forte Hotels)",
+          "Hyde London City, 15 Old Bailey (full decorating package, specialist wallcoverings and window film, 111 rooms, sample room November 2022 to August 2024)",
+          "Raffles London at The OWO (wallcovering installation, 2020–2023)",
+          "Four Seasons Hotel London at Ten Trinity Square, now at Tower Bridge (guest room and suite wallpapering, 2016–2019)",
+          "DoubleTree by Hilton London – West End (2019)",
+          "DoubleTree by Hilton London – Victoria (March to September 2023)",
+          "Hilton Garden Inn Silverstone (main wallcoverings contractor, 2022)",
+          "The Biltmore Mayfair (2018, including Phillip Jeffries)",
+          "Pendley Manor Hotel (December 2019 – January 2020)",
+          "Hilton London Metropole, Paddington (2019)",
+          "Novotel London Canary Wharf (2016)",
+          "Jumeirah Carlton Tower, Knightsbridge (2020)",
+          "Waldorf Astoria London Admiralty Arch (2026)",
+          "London Marriott Hotel Canary Wharf (2026)",
+          "Heythrop Park, Oxfordshire (2022)",
+          "The Westminster London, Curio Collection by Hilton (2021)",
+          "The Marylebone (2020)",
+          "The Lensbury, Teddington (2018–2019)",
+          "Hilton London Hyde Park (2016)",
+          "Premier Inn London Heathrow Airport Terminal 4 (2016)"
+        ],
+        "after": "The Lanesborough and Moxy London ExCeL are listed by name only."
+      },
       "status": "ready",
       "auditRows": [
         "b1",
@@ -279,7 +306,7 @@
     {
       "id": "f-b5",
       "question": "Do you install Class A / B-s1,d0 fire-rated wallcoverings, and can you evidence it?",
-      "answer": "Mr Wallcover does not call a wallcovering fire-rated unless that product's own data says so. A fire classification, such as a Euroclass under EN 13501-1 (the standard's own class names, not a claim here), belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. \"Class A\" on its own is not a class name under EN 13501-1: it may refer to a US ASTM E84 result, which is not a European class, or be loose shorthand for European class A1 or A2, so ask for the full classification, such as B-s1,d0. A substitute product or adhesive needs its own evidence. For a hotel, get the current classification document for the exact product, backing and installation method. For building work, the responsible designer, fire engineer or building-control body accepts it. Where the work is not building work, the hotel's responsible person accepts it, through the fire risk assessment. A guest room, a public corridor and a protected stair can have different requirements, and no single class is what \"hotels need\". The adhesive and primer are part of the specified system and are used as the maker lists them (Vescom, for example, lists them per product). The fire classification is not certified by the installer: it comes from testing and classification of the product in a stated build-up, and the wallcovering manufacturer declares it. Mr Wallcover installs to the wallcovering maker's instructions and the project's fire specification.",
+      "answer": "Mr Wallcover does not call a wallcovering fire-rated unless that product's own data says so. A fire classification, such as a Euroclass under EN 13501-1, belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. \"Class A\" on its own is not a class name under EN 13501-1: it may refer to a US ASTM E84 result, which is not a European class, or be loose shorthand for European class A1 or A2, so ask for the full classification, such as B-s1,d0. A substitute product or adhesive needs its own evidence. For a hotel, get the current classification document for the exact product, backing and installation method. For building work, the responsible designer, fire engineer or building-control body accepts it. Where the work is not building work, the hotel's responsible person accepts it, through the fire risk assessment. A guest room, a public corridor and a protected stair can have different requirements, and no single class is what \"hotels need\". The adhesive and primer are part of the specified system and are used as the maker lists them (Vescom, for example, lists them per product). The fire classification is not certified by the installer: it comes from testing and classification of the product in a stated build-up, and the wallcovering manufacturer declares it. Mr Wallcover installs to the wallcovering maker's instructions and the project's fire specification.",
       "status": "partial",
       "auditRows": [
         "b5",
@@ -374,7 +401,7 @@
     {
       "id": "f-b11",
       "question": "How is snagging handled?",
-      "answer": "Snagging is part of the package. A sample room or sample area is agreed first, in the permanent lighting where possible, and every later room is measured against it. Then comes the hang, then snagging, then a return inspection about four to six weeks after completion, at no call-out charge, when seams, edges and corners are checked once the paper has settled. Visible seams and shading in natural weaves are properties of the material, and they are settled at the sample stage rather than raised as snags. At Hyde London City the record starts with a finished sample room in November 2022.",
+      "answer": "Snagging is part of the package. A sample room or sample area is agreed first, in the permanent lighting where possible, and every later room is measured against it. Then comes the hang, then snagging, then a return visit about four to six weeks after completion, at no call-out charge, when seams, edges and corners are checked once the paper has settled. Visible seams and shading in natural weaves are properties of the material, and they are settled at the sample stage rather than raised as snags. At Hyde London City the record starts with a finished sample room in November 2022.",
       "status": "ready",
       "auditRows": [
         "b11"
@@ -437,7 +464,7 @@
     {
       "id": "f-c8",
       "question": "What prelims and inclusions are in your price?",
-      "answer": "Access, protection and making good are written into the scope rather than discovered at the end, and the quotation says what has been allowed for. Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Delivery of free-issue goods is timed to the hang, and paper is not stored in corridors. On exteriors, the practice supplies and manages the scaffold, including the strike. Packages can be wallcovering only, or wallcovering within a full decorating package (as at Brown's Hotel and 15 Old Bailey).",
+      "answer": "Access, protection and making good are written into the scope rather than discovered at the end, and the quotation says what has been allowed for. Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Delivery of free-issue goods is timed to the hang, and paper is not stored in corridors. On exteriors, we supply and manage the scaffold, including the strike. Packages can be wallcovering only, or wallcovering within a full decorating package (as at Brown's Hotel and 15 Old Bailey).",
       "status": "partial",
       "auditRows": [
         "c8"
@@ -529,7 +556,7 @@
     {
       "id": "f-d4",
       "question": "Will you keep our project confidential, and will you sign an NDA?",
-      "answer": "Private clients are not named, on the site or in passing. Residential work is published only by street or area, and only with the owner's agreement. Private and NDA jobs are anonymised. On the published record, for example, the Heathrow client appears as \"a luxury fashion house (name withheld)\", and the arch case study's location as \"a prime residence in central London\", with window views and personal items blurred. Permission for photography is agreed before any image is used. Where a client requires a non-disclosure agreement, Mr Wallcover signs one, and those projects are never named.",
+      "answer": "Private clients are not named, on the site or in passing. Residential work is published only by street or area, and only with the homeowner's agreement. Private and NDA jobs are anonymised. On the published record, for example, the Heathrow client appears as \"a luxury fashion house (name withheld)\", and the arch case study's location as \"a prime residence in central London\", with window views and personal items blurred. Permission for photography is agreed before any image is used. Where a client requires a non-disclosure agreement, Mr Wallcover signs one, and those projects are never named.",
       "status": "partial",
       "auditRows": [
         "d4"
@@ -615,7 +642,8 @@
         "/professionals/developers/",
         "/services/hotel-wallcovering-installation/",
         "/services/commercial-wallcovering-installation/",
-        "/advice/hotel-fire-safety-and-compliance/"
+        "/advice/hotel-fire-safety-and-compliance/",
+        "/faq/"
       ]
     },
     {
@@ -669,7 +697,7 @@
     {
       "id": "f-q10",
       "question": "Do you take on single rooms, or only larger projects?",
-      "answer": "We focus on whole residences and hotel packages, and will take on one- or two-room commissions.",
+      "answer": "We focus on whole residences and hotel packages, and will take on one- or two-room commissions. The minimum installation commission is one room.",
       "status": "ready",
       "auditRows": [],
       "pendingOmitted": [],
@@ -679,6 +707,9 @@
       "sources": [
         {
           "note": "Dorin Burcus, answer to Q10 (QUESTIONS_FOR_DORIN.md), 10 Oct 2026"
+        },
+        {
+          "note": "Owner-confirmed commission-scope policy, 19 Oct 2026"
         }
       ],
       "pages": [
@@ -760,7 +791,7 @@
     {
       "id": "s-aftercare",
       "question": "What aftercare and guarantee are included?",
-      "answer": "Aftercare is part of every commission: a return inspection about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.",
+      "answer": "Aftercare is part of every commission: a return visit about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.",
       "auditRows": [
         "a32",
         "b13",
@@ -786,7 +817,7 @@
     {
       "id": "s-since-2012",
       "question": "How long have you been in the trade?",
-      "answer": "In the trade since 2012. Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards.",
+      "answer": "Dorin Burcus, founder of Mr Wallcover, has worked in the trade since 2012. Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards.",
       "auditRows": [
         "a33",
         "a34"
@@ -860,7 +891,7 @@
       "sample room or area accepted",
       "hang",
       "snagging",
-      "return inspection 4–6 weeks after completion"
+      "return visit 4–6 weeks after completion"
     ],
     "handoverPack": [
       "room-by-room product, colourway, batch and care sheet",

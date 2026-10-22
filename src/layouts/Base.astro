@@ -30,14 +30,16 @@ interface Props {
   /** Site-relative JPEG for social cards. Defaults to /og.jpg. */
   image?: string;
   imageAlt?: string;
-  /** Credit printed beside the page's lead image, e.g. "Photography: House of Hackney". Goes into the WebPage ImageObject. */
+  /** Credit printed beside the page's lead image, e.g. "Photograph: House of Hackney". Goes into the WebPage ImageObject. */
   imageCredit?: string | null;
   ogType?: 'website' | 'article';
   author?: string;
-  /** ISO date of the page's last content change when the page knows it (guides, case studies). Otherwise the site-wide review date is shown. */
+  /** ISO date of the page's last content change when the page knows it (guides, case studies). Otherwise the byline names the author with no date; the AI layer carries the site-wide review date. */
   updated?: string;
   /** Set false when the page renders its own PageMeta line in its header. */
   meta?: boolean;
+  /** schema.org type of this page's WebPage node, e.g. ContactPage. Defaults to WebPage. */
+  pageType?: string;
 }
 
 const {
@@ -56,6 +58,7 @@ const {
   author = 'Dorin Burcus',
   updated,
   meta = true,
+  pageType,
 } = Astro.props;
 const reviewBuild = import.meta.env.MW_CONTENT_PREVIEW === '1';
 const noindex = requestedNoindex || reviewBuild;
@@ -66,7 +69,7 @@ const schema = jsonLd([
   businessNode(),
   founderNode(),
   websiteNode(),
-  webPageNode({ url: canonical, name: title, description, image, imageCredit }),
+  webPageNode({ url: canonical, name: title, description, image, imageCredit, type: pageType }),
   ...extraSchema,
 ]);
 const heroSrcset = hero.sources.map(source => `${source.src} ${source.width}w`).join(', ');

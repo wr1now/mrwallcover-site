@@ -16,11 +16,11 @@ Sanderson brings wallpaper, fabric, paint and trimmings together within Sanderso
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://www.sanderson.design/about-us) — checked 2026-10-17
-- [Official source](https://www.sanderson.design/faqs) — checked 2026-10-17
-- [Official source](https://www.sanderson.design/information/delivery) — checked 2026-10-17
-- [Official source](https://www.sanderson.design/t-cs) — checked 2026-10-17
-- [Official source](https://info.sandersondesigngroup.com/tailored-for-trade) — checked 2026-10-17
+- [Official source: sanderson.design/about-us](https://www.sanderson.design/about-us) — checked 17 October 2026
+- [Official source: sanderson.design/faqs](https://www.sanderson.design/faqs) — checked 17 October 2026
+- [Official source: sanderson.design/information/delivery](https://www.sanderson.design/information/delivery) — checked 17 October 2026
+- [Official source: sanderson.design/t-cs](https://www.sanderson.design/t-cs) — checked 17 October 2026
+- [Official source: info.sandersondesigngroup.com/tailored-for-trade](https://info.sandersondesigngroup.com/tailored-for-trade) — checked 17 October 2026
 
 [Visit maker website](https://www.sanderson.design/)
 
@@ -47,9 +47,9 @@ Terms and checks before ordering
 
 Guest checkout stated. Homepage describes complimentary samples; delivery page states a separate sample delivery charge. Consumer terms exclude commercial use.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.sanderson.design/)
+[Open official source: Shop or product ordering, UK mainland expressly stated in FAQ; overseas delivery not established by this UK route](https://www.sanderson.design/)
 
 ### Trade enquiry
 
@@ -70,9 +70,9 @@ Terms and checks before ordering
 
 Programme advertises wallpaper/fabric/sample ordering and complimentary samples.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://info.sandersondesigngroup.com/tailored-for-trade)
+[Open official source: Trade enquiry, UK-relevant group programme with UK contracts contact; overseas account service not established](https://info.sandersondesigngroup.com/tailored-for-trade)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

@@ -3,7 +3,7 @@ title: "DoubleTree West End | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/doubletree-west-end/
 description: "Guest room wallcoverings at DoubleTree by Hilton London – West End, Southampton Row, in 2019. Formerly the Bonnington Hotel."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 92 Southampton Row, Holborn, London WC1
@@ -14,9 +14,9 @@ Guest room wallcoverings at the Holborn hotel, the former Bonnington, through th
 
 ![The DoubleTree by Hilton London – West End on Southampton Row, Holborn: the red-brick and stone frontage, seen from the street.](https://www.mrwallcover.com/media/img/doubletree-west-end-commons-01.jpg)
 
-The hotel on Southampton Row, 2024. A view of the building, not of our work. Photography: Frombowen / Wikimedia Commons (CC BY-SA 4.0).
+The hotel on Southampton Row, 2024. Venue photograph, not our work. Photograph: Frombowen / Wikimedia Commons (CC BY-SA 4.0).
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -65,7 +65,7 @@ For a similar guest-room package, send the room types, the programme and who sup
 
 The first three are photographs of the building, two of them by the photographers credited below. They show the building, not our work.
 
-The others are our own photographs of the finished rooms and corridors, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/): one from December 2017 ([BdNpAgPArnf](https://www.instagram.com/p/BdNpAgPArnf/)) and the rest from 19 July 2019 ([B0GpM3Vlmkh](https://www.instagram.com/p/B0GpM3Vlmkh/)), the post that records the 30 rooms on levels 5 and 6.
+The others are our own photographs of the finished rooms and corridors, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/): one from December 2017 ([see the post](https://www.instagram.com/p/BdNpAgPArnf/)) and the rest from 19 July 2019 ([see the post](https://www.instagram.com/p/B0GpM3Vlmkh/)), the post that records the 30 rooms on levels 5 and 6.
 
 - The hotel on Southampton Row, 2024: photograph by Frombowen, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_Hotel_London_-_West_End.jpg). Resized for the web.
 - The former Bonnington Hotel, now the DoubleTree, 2026: photograph by APK, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:DoubleTree_by_Hilton_-_Southampton_Row,_London.jpg). Resized for the web.
@@ -74,9 +74,9 @@ The others are our own photographs of the finished rooms and corridors, first po
 
 ![The former Bonnington Hotel at 92 Southampton Row, now the DoubleTree by Hilton London – West End, with flags over the entrance.](https://www.mrwallcover.com/media/img/doubletree-west-end-commons-02.jpg)
 
-The former Bonnington Hotel, now the DoubleTree, 2026. A view of the building, not of our work. Photography: APK / Wikimedia Commons (CC BY 4.0).
+The former Bonnington Hotel, now the DoubleTree, 2026. Venue photograph, not our work. Photograph: APK / Wikimedia Commons (CC BY 4.0).
 
-![Street facade of the Bonnington Hotel on Southampton Row, Holborn, the building now occupied by DoubleTree by Hilton London West End.](https://www.mrwallcover.com/media/img/thumbs/hilton-holborn-01-800.jpg)
+![Street facade of the Bonnington Hotel on Southampton Row, Holborn, the building now occupied by DoubleTree by Hilton London West End.](https://www.mrwallcover.com/media/img/r/hilton-holborn-01-800.webp)
 
 ![Hotel bedroom wall with textured wallcovering and a wall-mounted reading light, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-02-800.webp)
 
@@ -90,6 +90,8 @@ The former Bonnington Hotel, now the DoubleTree, 2026. A view of the building, n
 
 ![Close-up of a textured, linen-look hotel wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-07-800.webp)
 
+All 4 more photographs from this project
+
 ![Close-up of a textured stone-effect hotel wallcovering, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-08-800.webp)
 
 ![Close-up of a fine woven wallcovering in a hotel room, DoubleTree by Hilton London West End, Holborn.](https://www.mrwallcover.com/media/img/r/doubletree-west-end-ig-10-800.webp)
@@ -102,7 +104,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -132,7 +136,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -142,4 +146,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

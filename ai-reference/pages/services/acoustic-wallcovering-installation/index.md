@@ -1,7 +1,7 @@
 ---
 title: "Acoustic Wallcoverings & Panels, London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/acoustic-wallcovering-installation/
-description: "Acoustic wallcovering and acoustic panel installation in London hotels, offices and homes. Hung to the maker's instruction so the face keeps its performance."
+description: "Acoustic wallcovering and panel installation for London hotels, offices and homes, including acoustic felt on a Holborn office boardroom wall in 2020."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -12,7 +12,7 @@ Services
 
 Acoustic wallcoverings and panels for hotels, offices, restaurants and homes.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Aacoustic-wallcovering-installation) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Aacoustic-wallcovering-installation) [See the work](https://www.mrwallcover.com/projects/)
 
 Acoustic wallcoverings and panels are hung so the face keeps the performance it was specified for. Adhesive, trimming and edges follow the maker's instruction.
 
@@ -22,7 +22,7 @@ Aftercare and the twelve-month workmanship guarantee apply as with any other mat
 
 ![Cinema room walls in a dark Elitis acoustic wallcovering, private residence, Mayfair.](https://www.mrwallcover.com/media/img/r/brand-elitis-01-800.webp)
 
-Elitis acoustic wallcovering in a private Mayfair cinema room. The photograph shows the finish; acoustic performance depends on the specified system and its data.Photograph: Mr Wallcover.
+Elitis acoustic wallcovering in a private Mayfair cinema room. The photograph shows the finish; acoustic performance depends on the specified system and its data. Photograph: Mr Wallcover.
 
 01
 
@@ -46,13 +46,19 @@ Acoustic finishes often sit beside other wallcoverings and joinery in the same r
 
 04
 
+## Acoustic work on the record
+
+At [an office in Holborn](https://www.mrwallcover.com/projects/#record-an-office-in-holborn-2020) in 2020: sound-absorbent acoustic felt wallcovering on a boardroom wall, wrapped around free-standing columns and on a feature wall in an open-plan office.
+
+05
+
 ## What the quotation includes
 
 The quotation comes from a site survey or from drawings, and reflects the measured area, the system's own installation requirements, the state of the walls, and access and protection. Aftercare and the twelve-month workmanship guarantee apply as with any other material. The [acoustic wallcoverings](https://www.mrwallcover.com/materials/acoustic/) material page and the [developer package guide](https://www.mrwallcover.com/advice/developer-wallcovering-package/) cover the specification side.
 
 Questions
 
-## Asked about Acoustic wallcovering installation
+## Questions we are asked
 
 Illustrative material studies
 
@@ -76,6 +82,6 @@ The handover includes a room-by-room record of the installed product, colourway,
 
 ### What aftercare and guarantee are included?
 
-Aftercare is part of every commission: a return inspection about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.
+Aftercare is part of every commission: a return visit about four to six weeks after completion, a priority repair call-out and a twelve-month workmanship guarantee.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

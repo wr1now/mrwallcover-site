@@ -1,20 +1,20 @@
 ---
-title: "Castle of Trematon, Cornwall | Case Study | Mr Wallcover"
+title: "Castle of Trematon, Cornwall | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/trematon-castle/
-description: "Wallcovering installation contractor across the Georgian house and estate at Castle of Trematon, Cornwall, 2019–2022. Nearly three years inside a Norman…"
+description: "Wallcovering installation across the Georgian house at the Castle of Trematon, Cornwall, 2019–2022: House of Hackney prints, murals and Lincrusta relief."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 Castle of Trematon, near Saltash, Cornwall
 
 # Castle of Trematon, Cornwall
 
-Nearly three years inside a Norman castle's Georgian heart, hanging the prints of the house that made maximalism modern.
+Nearly three years inside a Norman castle's Georgian heart, hanging House of Hackney prints throughout the house.
 
 ![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -50,7 +50,7 @@ Client, materials & project facts
 
 ## The castle
 
-Trematon is one of Cornwall’s oldest fortifications: a Norman motte-and-bailey, built in 1068 and granted to the Duchy of Cornwall in 1337. The Duchy still owns it today. A 13th-century gatehouse still guards the bailey. Within the walls, an 11,000 sq ft Georgian manor with nine bedrooms was added in the early 1800s, its windows looking out over nine acres of gardens and the estuary beyond.
+Trematon is a Norman motte-and-bailey castle, built in 1068 and granted to the Duchy of Cornwall in 1337. The Duchy still owns it today. A 13th-century gatehouse still guards the bailey. Within the walls, an 11,000 sq ft Georgian manor with nine bedrooms was added in the early 1800s, its windows looking out over nine acres of gardens and the estuary beyond.
 
 The house has beautiful proportions, and it needed a lot of restoration: paint stripped back to a blank canvas, then a multi-year, foundational renovation. Trematon is also the setting of House of Hackney’s campaigns and gives its name to the TREMATONIA print.
 
@@ -90,7 +90,7 @@ Other House of Hackney designs that the press records at Trematon, but which we 
 
 ## More from site
 
-The later photographs on this page are our own, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), between June 2019 and November 2021: the house and the castle walls, rooms during strip-out, finished bedrooms and bathrooms, the caravan papered and fitted out to a House of Hackney design in May 2021, and the Lincrusta going up the curved stair walls in November 2021 ([CWksjiaKBnq](https://www.instagram.com/p/CWksjiaKBnq/)), set out panel by panel with a laser line ([CW5IdnPKgTP](https://www.instagram.com/p/CW5IdnPKgTP/)).
+The later photographs on this page are our own, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), between June 2019 and November 2021: the house and the castle walls, rooms during strip-out, finished bedrooms and bathrooms, the caravan papered and fitted out to a House of Hackney design in May 2021, and the Lincrusta going up the curved stair walls in November 2021 ([see the post](https://www.instagram.com/p/CWksjiaKBnq/)), set out panel by panel with a laser line ([see the post](https://www.instagram.com/p/CW5IdnPKgTP/)).
 
 ## Outcome
 
@@ -113,6 +113,8 @@ A Georgian house within a Norman castle, dressed wall by wall and ceiling by cei
 ![Close view of a dark floral stripe wallpaper hung at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-07-800.webp)
 
 ![Powder room at the Castle of Trematon papered in a floral stripe.](https://www.mrwallcover.com/media/img/r/trematon-08-800.webp)
+
+All 40 more photographs from this project
 
 ![Bathroom with a roll-top bath and floral stripe wallpaper at the Castle of Trematon.](https://www.mrwallcover.com/media/img/r/trematon-09-800.webp)
 
@@ -198,7 +200,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -228,7 +232,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -238,4 +242,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

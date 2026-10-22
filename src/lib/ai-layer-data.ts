@@ -216,10 +216,16 @@ export interface BuyerAnswer {
   pendingOmitted: string[];
   sources: { url?: string; note?: string }[];
   pages: string[];
+  /** The same answer laid out as a list on the page; every part is quoted word for word from `answer`. */
+  answerList?: { lead: string; items: string[]; after?: string };
 }
 export const buyerAnswers: BuyerAnswer[] = [...buyerJson.answers, ...buyerJson.standing];
 for (const item of buyerAnswers) {
   if (/\[Pending|Pending Q\d/.test(`${item.question} ${item.answer} ${item.short ?? ''}`)) throw new Error(`buyer-answers.json ${item.id} still carries a [Pending] sentence`);
+  const list = item.answerList;
+  for (const part of list ? [list.lead, ...list.items, ...(list.after ? [list.after] : [])] : []) {
+    if (!item.answer.includes(part)) throw new Error(`buyer-answers.json ${item.id}: answerList text is not in the answer: "${part}"`);
+  }
 }
 if (AWARD && !buyerAnswers.some((item) => item.answer.includes(AWARD.text))) throw new Error('buyer-answers.json must quote the award exactly as facts.json prints it');
 /** The FILL.md questions only (not the standing repeats), in audit order: the /for-ai/ and llms.txt list. */

@@ -3,7 +3,7 @@ title: "Novotel London Canary Wharf | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/novotel-london-canary-wharf/
 description: "Wallcovering installations at Novotel London Canary Wharf in 2016: concrete-effect and timber-grain wallcoverings, photographed on a return visit in 2022."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 Canary Wharf, London E14
@@ -14,7 +14,7 @@ Wallcovering installations at Novotel London Canary Wharf in 2016, photographed 
 
 ![Hotel room with concrete-effect wallcovering on a column, sofa and city view, Novotel London Canary Wharf.](https://www.mrwallcover.com/media/img/r/novotel-03-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -54,7 +54,7 @@ A hotel wallcovering is judged years after the installers leave: whether the joi
 
 ## Photographs on this page
 
-Our own photographs, taken on the 2022 visit and posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 29 January 2022 ([CZVUfE5KWNA](https://www.instagram.com/p/CZVUfE5KWNA/)).
+Our own photographs, taken on the 2022 visit and posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 29 January 2022 ([see the post](https://www.instagram.com/p/CZVUfE5KWNA/)).
 
 ## Photographs
 
@@ -70,7 +70,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -100,7 +102,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -110,4 +112,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

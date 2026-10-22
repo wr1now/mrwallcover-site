@@ -107,7 +107,9 @@ export async function verifyHomePreservation(dist, inventory) {
   };
   check('authored block',inventory.blocks,(page,text)=>page.text.includes(text));
   check('public link',inventory.links,(page,href)=>page.hrefs.includes(href));
-  check('real photograph',inventory.images,(page,image)=>page.images.some(actual=>actual.slot===image.slot&&actual.alt===image.alt));
+  // A responsive variant of the same photograph (the r/ or thumbs/ folder, any width suffix) fills the same slot; the alt text must still match.
+  const canonicalSlot = slot => slot.replace(/^\/media\/img\/(?:r|thumbs)\//, '/media/img/').replace(/(?:-(?:\d{2,5}w?|preview|thumb))+$/i, '');
+  check('real photograph',inventory.images,(page,image)=>page.images.some(actual=>canonicalSlot(actual.slot)===canonicalSlot(image.slot)&&actual.alt===image.alt));
   check('film',inventory.films,(page,url)=>page.html.includes(url));
   check('FAQ pair',inventory.faqs,(page,pair)=>page.faqs.some(actual=>JSON.stringify(actual)===JSON.stringify(pair))&&pair.every(text=>page.text.includes(text)));
   return {passed:missing.length===0,sourceCommit:inventory.sourceCommit,publishedPages:pages.length,counts:{blocks:inventory.blocks.length,links:inventory.links.length,photographs:inventory.images.length,films:inventory.films.length,faqPairs:inventory.faqs.length},locations,missing};

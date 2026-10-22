@@ -14,7 +14,7 @@ A tea house in West London designed by Jaillon Studio of Paris: a bold feather w
 
 ![The finished tea room: a bold green-and-gold feather wallpaper on every wall, hung behind arched mirrors, patchwork armchairs and round walnut tables set for tea.](https://www.mrwallcover.com/media/img/r/tea-house-01-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -91,7 +91,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -121,7 +123,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 

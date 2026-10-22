@@ -3,10 +3,19 @@ import Action from './Action.astro';
 /**
  * Floating inset champagne-glass header (stage 5, step G5).
  *
- * Desktop: wordmark, all eleven navigation destinations in two rows, optional WhatsApp and the separate "Start your project" action.
- * Phones: wordmark, "Start" and a disclosure button that opens the mobile
- * menu panel below the bar. The panel is a sibling of the header so the bar
- * stays the only glass surface and the panel stays opaque ivory.
+ * Desktop: wordmark, then two deliberate rows: the seven primary destinations, optional WhatsApp and the
+ * "Start your project" action on one line; the labelled Resources row (navigation.json group "resources")
+ * beneath it. Every navigation destination stays visible in the bar; the hierarchy says which ones lead.
+ * Phones: wordmark and a disclosure button that opens the mobile menu panel
+ * below the bar ("Start your project" is the first dock cell and the last menu
+ * link). The panel is a sibling of the header so the bar stays the only glass
+ * surface and the panel stays opaque ivory.
+ *
+ * While a dark band (the olive aftercare and craft bands, the ink band, the
+ * material studio stage, the AI Crawler reference page) sits under the bar,
+ * the script sets data-over-dark and the bar rises to the more opaque
+ * champagne in navigation.css, so it reads ivory rather than grey. The
+ * reduced-effects fallbacks in glass.css are opaque already and ignore it.
  *
  * Without JavaScript the panel renders in flow under the bar and the toggle is
  * hidden, so every link stays reachable. Base.astro sets html.js-nav before
@@ -36,6 +45,11 @@ function isCurrent(href: string) {
   if (href === '/') return path === '/';
   return path === href || path.startsWith(href);
 }
+
+const primary = navigation.filter((item) => item.group !== 'resources');
+const resources = navigation.filter((item) => item.group === 'resources');
+// On /contact/ itself the Start links jump to the form instead of reloading the page.
+const startHref = path.replace(/\/?$/, '/') === '/contact/' ? '#enquiry' : '/contact/';
 ---
 
 <Glass element="header" variant="champagne" class="site-header" data-site-header>
@@ -44,14 +58,21 @@ function isCurrent(href: string) {
       <em>Mr</em>Wallcover
     </a>
     <nav class="primary-nav" aria-label="Primary">
-      <div class="header-nav-links">
-        {navigation.map(item => <a class="nav-link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>)}
+      <div class="header-main">
+        <div class="header-nav-links">
+          {primary.map(item => <a class="nav-link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>)}
+        </div>
+        <WhatsAppLink class="nav-link" icon />
+        <Action class="header-action" href={startHref}>Start your project</Action>
       </div>
-      <WhatsAppLink class="nav-link" icon />
-      <Action class="header-action" href="/contact/">Start your project</Action>
+      {resources.length > 0 && (
+        <div class="header-resources" role="group" aria-labelledby="nav-resources-label">
+          <span class="header-resources-label" id="nav-resources-label">Resources</span>
+          {resources.map(item => <a class="nav-link nav-link--resource" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>)}
+        </div>
+      )}
     </nav>
     <div class="header-mobile">
-      <a class="nav-link header-start" href="/contact/">Start<span class="sr-only"> your project</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
         <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
         <span class="open-label">Menu</span>
@@ -62,8 +83,14 @@ function isCurrent(href: string) {
 </Glass>
 <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
   <nav class="mobile-links" aria-label="Mobile">
-    {navigation.map(item => <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>)}
-    <a href="/contact/">Start your project</a>
+    {primary.map(item => <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>)}
+    {resources.length > 0 && (
+      <div role="group" aria-labelledby="mobile-resources-label">
+        <p class="mobile-links-label" id="mobile-resources-label">Resources</p>
+        {resources.map(item => <a class="mobile-link--resource" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>)}
+      </div>
+    )}
+    <a class="mobile-link--start" href={startHref}>Start your project</a>
   </nav>
 </div>
 
@@ -140,4 +167,23 @@ function isCurrent(href: string) {
   desktop.addEventListener('change', (event) => {
     if (event.matches) setOpen(false, true);
   });
+
+  // The observer's root is the strip of viewport the bar covers, so data-over-dark is set only while a dark band is under the bar.
+  const darkBands = document.querySelectorAll<HTMLElement>('.home-aftercare, .atelier-craft, .band-dark, .studio-stage, .crawler-page');
+  if (header && darkBands.length && 'IntersectionObserver' in window) {
+    const under = new Set<Element>();
+    let observer: IntersectionObserver | undefined;
+    const watch = () => {
+      observer?.disconnect();
+      under.clear();
+      const strip = Math.ceil(header.getBoundingClientRect().bottom);
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => (entry.isIntersecting ? under.add(entry.target) : under.delete(entry.target)));
+        header.toggleAttribute('data-over-dark', under.size > 0);
+      }, { rootMargin: `0px 0px ${strip - window.innerHeight}px 0px` });
+      darkBands.forEach((band) => observer!.observe(band));
+    };
+    watch();
+    window.addEventListener('resize', watch, { passive: true });
+  }
 </script>

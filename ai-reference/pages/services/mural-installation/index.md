@@ -1,18 +1,18 @@
 ---
 title: "Wallpaper Mural Installer London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/mural-installation/
-description: "Printed and hand-made wallpaper mural installation in London. Set out from a fixed point so the scene meets around doors and corners."
+description: "Printed and hand-made wallpaper mural installation in London, including Calico Wallpaper’s landscape at Heathrow Terminal 4, hung overnight in 2018."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
 
 Services
 
-# Mural installation
+# Wallpaper mural installation in London
 
 Printed and hand-made murals for houses, hotels and shops in London.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Amural-installation) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Amural-installation) [See the work](https://www.mrwallcover.com/projects/)
 
 Murals are set out from a fixed point so the scene meets where it should, including around doors and corners. Panels are checked against the supplier's layout before hanging.
 
@@ -22,7 +22,7 @@ Measurements for a bespoke print are taken on site so the artwork is sized to th
 
 ![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp)
 
-House of Hackney’s PLANTASIA forest mural, installed by Mr Wallcover at [the Castle of Trematon](https://www.mrwallcover.com/projects/trematon-castle/), Cornwall.Photograph: Dorin Burcus / Mr Wallcover.
+House of Hackney’s PLANTASIA forest mural, installed by Mr Wallcover at [the Castle of Trematon](https://www.mrwallcover.com/projects/trematon-castle/), Cornwall. Photograph: Dorin Burcus / Mr Wallcover.
 
 01
 
@@ -66,7 +66,7 @@ A roll calculator will not price a mural. The quotation follows the panel count,
 
 [![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp)](https://www.mrwallcover.com/projects/trematon-castle/)
 
-Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.Photograph: Dorin Burcus / Mr Wallcover.
+Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Castle of Trematon, Cornwall](https://www.mrwallcover.com/projects/trematon-castle/)
 
@@ -76,7 +76,7 @@ Wallcovering installation contractor across the Georgian house and estate, 2019�
 
 [![Overture drapery wallpaper beside a chandelier.](https://www.mrwallcover.com/media/img/r/lee-broom-08-800.webp)](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
 
-Overture drapery wallpaper beside a chandelier.Photograph: Dorin Burcus / Mr Wallcover.
+Overture drapery wallpaper beside a chandelier. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroom](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
 
@@ -86,7 +86,7 @@ Survey, wall preparation and installation of the Overture mural; wallpapering of
 
 [![The runway set at Rosewood London, ready for the show.](https://www.mrwallcover.com/media/img/r/ahluwalia-estuary-07-800.webp)](https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/)
 
-The runway set at Rosewood London, ready for the show.Photograph: Dorin Burcus / Mr Wallcover.
+The runway set at Rosewood London, ready for the show. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Ahluwalia x Calico Wallpaper: 'Estuary' at Rosewood London](https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/)
 
@@ -101,7 +101,7 @@ Specialist installation of the Estuary mural backdrop, against a fixed show dead
 
 Questions
 
-## Asked about Mural installation
+## Questions we are asked
 
 Illustrative material studies
 
@@ -127,4 +127,4 @@ There is no flat rate per roll. The quotation comes from a site survey or from d
 
 Out-of-hours work is on the published record. At Heathrow Terminal 4, a bespoke Calico Wallpaper mural was hung overnight on 24–25 September 2018 in a live terminal, and the finished walls were photographed between 02:30 and 03:42. In an occupied hotel, the permitted working hours, delivery routes, guest routes and daily handover are agreed for each project and written into the scope. Most of the hotel work on record was done in buildings that stayed open. Night shifts, out-of-hours and weekend work are offered, including in live hotels.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

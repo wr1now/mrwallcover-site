@@ -42,6 +42,7 @@ const photoRecords = creditedMedia as Record<string, { manifestNote: string }>;
 
 const installationHeadings: Record<string, 'scope' | 'approach' | 'outcome'> = {
   'At a glance': 'scope',
+  'Project record': 'scope',
   'The brief': 'scope',
   'The work': 'scope',
   'Our work': 'approach',

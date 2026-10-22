@@ -3,7 +3,8 @@
  * A visible "questions buyers ask" block, read from src/data/buyer-answers.json
  * through src/lib/ai-layer-data.ts. The page that renders it adds the matching
  * FAQPage node (buyerFaqNode) to its one JSON-LD graph, so the schema always
- * describes exactly the questions shown here.
+ * describes exactly the questions shown here. An answer with `answerList` is
+ * shown as its list; the schema keeps the full `answer` text.
  */
 import type { BuyerAnswer } from '../lib/ai-layer-data';
 import QuestionVisual from './QuestionVisual.astro';
@@ -22,8 +23,18 @@ const { items, heading = 'Questions buyers ask', intro, eyebrow, visual=question
     {items.map((item) => (
       <div class="guide-faq-item" id={item.id} data-design-hit>
         <div class="question-heading-row"><h3>{item.question}</h3><QuestionVisual question={item.question} id={item.id} variant={visual} /></div>
-        <p>{item.answer}</p>
+        {item.answerList ? <>
+          <p>{item.answerList.lead}</p>
+          <ul class="faq-answer-list">{item.answerList.items.map((text) => <li>{text}</li>)}</ul>
+          {item.answerList.after && <p>{item.answerList.after}</p>}
+        </> : <p>{item.answer}</p>}
       </div>
     ))}
   </section>
 )}
+
+<style is:global>
+  /* Global so the shared FAQ markup carries no scoping attributes; the class is unique to this list. */
+  .faq-answer-list { display: grid; gap: .35rem; max-width: var(--layout-reading); margin: .6rem 0; padding-left: 1.2rem; list-style: disc; }
+  .faq-answer-list li::marker { color: var(--color-brass); }
+</style>

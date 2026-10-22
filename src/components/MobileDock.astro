@@ -3,8 +3,9 @@
  * Mobile action dock (stage 5, step G6). Four actions at most: "Start your
  * project" first, then Projects, WhatsApp (when SITE_PHONE is set), and Book a call.
  * The phone reveal belongs on the contact pages. "Book a call" (a 20-minute appointment)
- * is a fourth cell only when BOOKING_URL is set in src/config.ts. Opaque champagne (no
- * blur), so on a phone the header is the only blurred surface. Hidden while
+ * is a fourth cell only when BOOKING_URL is set in src/config.ts. Every cell carries
+ * one same-size icon above a one-line label, so the cells match. Fully opaque
+ * champagne (no blur), so on a phone the header is the only blurred surface. Hidden while
  * the mobile menu is open and while a text field has focus (an on-screen
  * keyboard is likely up); body padding (--dock-clearance) keeps it off the
  * footer's last line.
@@ -12,17 +13,17 @@
 import Glass from './Glass.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
 import BookCallLink from './BookCallLink.astro';
+import Icon from './Icon.astro';
+
+// On /contact/ itself "Start" jumps to the form instead of reloading the page.
+const startHref = Astro.url.pathname.replace(/\/?$/, '/') === '/contact/' ? '#enquiry' : '/contact/';
 ---
 
 <Glass element="nav" variant="champagne" opaque class="dock" aria-label="Contact shortcuts" data-dock>
-  <a class="dock-primary" href="/contact/">
-    <span>Start</span><span class="sr-only"> your project</span>
-  </a>
-  <a href="/projects/">
-    <span>Projects</span>
-  </a>
+  <a class="dock-primary" href={startHref}><Icon name="mail" /><span>Start</span><span class="sr-only"> your project</span></a>
+  <a href="/projects/"><Icon name="panels" /><span>Projects</span></a>
   <WhatsAppLink>WhatsApp</WhatsAppLink>
-  <BookCallLink class="dock-book" />
+  <BookCallLink class="dock-book"><Icon name="calendar" /><span class="book-label">Book a call</span></BookCallLink>
 </Glass>
 
 <script>

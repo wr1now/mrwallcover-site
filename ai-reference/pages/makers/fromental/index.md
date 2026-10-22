@@ -16,10 +16,10 @@ Fromental creates hand-painted, embroidered and printed wallcoverings. Bespoke p
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://fromental.com/pages/about-fromental) — checked 2026-10-17
-- [Official source](https://fromental.com/pages/frequently-asked-questions) — checked 2026-10-17
-- [Official source](https://fromental.com/pages/representatives) — checked 2026-10-17
-- [Official source](https://fromental.com/collections/shop) — checked 2026-10-17
+- [Official source: fromental.com/pages/about-fromental](https://fromental.com/pages/about-fromental) — checked 17 October 2026
+- [Official source: fromental.com/pages/frequently-asked-questions](https://fromental.com/pages/frequently-asked-questions) — checked 17 October 2026
+- [Official source: fromental.com/pages/representatives](https://fromental.com/pages/representatives) — checked 17 October 2026
+- [Official source: fromental.com/collections/shop](https://fromental.com/collections/shop) — checked 17 October 2026
 
 [Visit maker website](https://fromental.com/)
 
@@ -46,9 +46,9 @@ Terms and checks before ordering
 
 Bespoke sample loans require an approved trade account and return within the allocated period. Ask the sales representative for the applicable return date. Head-office visits are by appointment; separate London showroom details appear on the official Visit us page.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://fromental.com/pages/representatives)
+[Open official source: Showroom or brand contact, UK / Europe; regional overseas contacts](https://fromental.com/pages/representatives)
 
 ### Shop or product ordering
 
@@ -69,9 +69,9 @@ Terms and checks before ordering
 
 Shop wallpaper samples are purchasable in bundles of six. Samples are indicative and may vary by batch; the FAQ recommends replacing older samples without the current QR code. Trade pricing requires an approved account. UK destination eligibility must be confirmed for the selected order.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://fromental.com/collections/shop)
+[Open official source: Shop or product ordering, UK destination check required; international shipping stated](https://fromental.com/collections/shop)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

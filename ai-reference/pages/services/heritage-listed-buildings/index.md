@@ -48,7 +48,7 @@ A Lincrusta relief panel offered up to a laser datum at Trematon Castle. The set
 
 [![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp)](https://www.mrwallcover.com/projects/trematon-castle/)
 
-Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.Photograph: Dorin Burcus / Mr Wallcover.
+Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Castle of Trematon, Cornwall](https://www.mrwallcover.com/projects/trematon-castle/)
 
@@ -58,7 +58,7 @@ Wallcovering installation contractor across the Georgian house and estate, 2019â
 
 [![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
-Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.Photograph: Dorin Burcus / Mr Wallcover.
+Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
@@ -68,7 +68,7 @@ Full decorating package: decoration, specialist wallcoverings and window film, c
 
 [![Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp)](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
-Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.Photograph: Mr Wallcover.
+Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench. Photograph: Mr Wallcover.
 
 ### [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
@@ -81,7 +81,7 @@ Guest room, suite and private residence wallpapering, 2016â€“2019.
 
 Questions
 
-## Asked about Heritage and listed buildings
+## Questions we are asked
 
 Illustrative material studies
 

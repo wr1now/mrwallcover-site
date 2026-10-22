@@ -3,16 +3,16 @@ title: "Specified Wallpapers We Install, London | Mr Wallcover"
 url: https://www.mrwallcover.com/materials/specified-papers/
 description: "Makers whose papers Mr Wallcover has installed, from hand-painted scenic papers to contract wallcoverings, each linked to the case study that records it."
 author: "Dorin Burcus"
-last_updated: 2026-10-10
+last_updated: 2026-10-22
 ---
 
 Materials
 
 # Specified papers we install
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 10 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026
 
-Mr Wallcover has installed papers by de Gournay, Fromental, House of Hackney, Muraspec, Phillip Jeffries and Timorous Beasties, along with the makers named on our published case studies below. Installed means we hung that maker's product on a project. It is not a maker approval or endorsement, and we are not on makers' installer lists. The one partnership is Calico Wallpaper: work delivered in partnership with Calico Wallpaper.
+Mr Wallcover has installed papers by de Gournay, Fromental, House of Hackney, Muraspec, Phillip Jeffries and Timorous Beasties, along with the makers named on our published case studies below. Naming a maker records an installation, not an endorsement. The one partnership is Calico Wallpaper: work delivered in partnership with Calico Wallpaper.
 
 [Send the specification](https://www.mrwallcover.com/contact/?intent=install&service=wallcovering&topic=material%3Aspecified-papers) [See the work](https://www.mrwallcover.com/projects/)
 
@@ -48,11 +48,15 @@ Work delivered in partnership with Calico Wallpaper. The Brooklyn studio’s mur
 
 The maker’s hanging instructions come first. Panels are hung in their numbered sequence, batches are checked from the roll labels, and the set-out is agreed before the first length is cut. The [materials library](https://www.mrwallcover.com/materials/) describes each family, and the guide to [hand-painted papers and murals](https://www.mrwallcover.com/advice/hand-painted-murals-set-out/) explains the set-out.
 
+Digital colour is a guide. Order a cutting or a sample before you commit to a room.
+
+Some makers’ own sample routes are listed under [official buying routes](https://www.mrwallcover.com/buying-routes/).
+
 ## On the public record
 
 [![Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp)](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
-Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.Photograph: Mr Wallcover.
+Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench. Photograph: Mr Wallcover.
 
 ### [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
@@ -62,7 +66,7 @@ Guest room, suite and private residence wallpapering, 2016–2019.
 
 [![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp)](https://www.mrwallcover.com/projects/trematon-castle/)
 
-Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.Photograph: Dorin Burcus / Mr Wallcover.
+Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Castle of Trematon, Cornwall](https://www.mrwallcover.com/projects/trematon-castle/)
 
@@ -72,7 +76,7 @@ Wallcovering installation contractor across the Georgian house and estate, 2019�
 
 [![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
-Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.Photograph: Dorin Burcus / Mr Wallcover.
+Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
@@ -91,7 +95,7 @@ Full decorating package: decoration, specialist wallcoverings and window film, c
 
 Questions
 
-## Asked about Specified papers we install
+## Questions we are asked
 
 Illustrative material studies
 

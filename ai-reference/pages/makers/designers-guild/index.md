@@ -16,7 +16,7 @@ Designers Guild is a furnishing and wallcovering design brand established in 197
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://www.designersguild.com/en-gb/company-profile/l1004) — checked 2026-10-18
+- [Official source: designersguild.com/en-gb/company-profile/l1004](https://www.designersguild.com/en-gb/company-profile/l1004) — checked 18 October 2026
 
 [Visit maker website](https://www.designersguild.com/en-gb/)
 

@@ -45,7 +45,7 @@ Known seam in the preview: the champagne panel is three stacked elements (eyebro
 
 ## Image choices per page
 
-All photographs are the practice's own site photographs from the Brown's Hotel case study. No credit line is required for own photographs; the only credited set on the site is House of Hackney ("Photography: House of Hackney"), which is not used here because the credited images belong to that case study page.
+All photographs are the practice's own site photographs from the Brown's Hotel case study. No credit line is required for own photographs; the only credited set on the site is House of Hackney ("Photograph: House of Hackney"), which is not used here because the credited images belong to that case study page.
 
 | Page | Image | Why | Crop and focal point |
 |---|---|---|---|

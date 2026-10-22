@@ -1,7 +1,7 @@
 ---
 title: "Wallcovering Aftercare & Guarantee | Mr Wallcover"
 url: https://www.mrwallcover.com/aftercare/
-description: "Included return inspection, seam and edge care, a priority repair call-out, cleaning guidance, and a 12-month workmanship guarantee."
+description: "Included return visit, seam and edge care, a priority repair call-out, cleaning guidance, and a twelve-month workmanship guarantee."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -16,9 +16,9 @@ Request aftercare Read the workmanship guarantee
 
 ![Close detail of a woven grasscloth wallcovering turning an external corner, the weave running straight and tight to the edge.](https://www.mrwallcover.com/media/img/r/fs-residences-06-800.webp)
 
-A woven wallcovering turning an external corner at the Four Seasons residences, Ten Trinity Square. A finished edge is part of the detail checked at handover and return inspection.Mr Wallcover project photograph.[See the Four Seasons project](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
+A woven wallcovering turning an external corner at the Four Seasons residences, Ten Trinity Square. A finished edge is part of the detail checked at handover and at the return visit.Mr Wallcover project photograph.[See the Four Seasons project](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
-Illustrative detail. The return inspection includes the finished edges and the wallcovering's turn around a corner.
+Illustrative detail. The return visit includes the finished edges and the wallcovering's turn around a corner.
 
 Pause motion
 
@@ -28,11 +28,11 @@ Diagram: A magnified junction showing the seam, top edge and corner to inspect. 
 
 Schematic · not to scaleThe return visit looks at seams, edges, corners and covered joinery. A visible natural seam and a seam that has lifted are different things.
 
-## Return inspection
+## Return visit
 
 About four to six weeks after we finish, we come back. By then the heating, the ventilation and the humidity have had a chance to move the paper. That movement is settling. It is the reason for the visit.
 
-We look at seams, edges, corners and any joinery that was covered. Touch-ups that belong to the hang are done on that visit. There is no call-out charge for this inspection.
+We look at seams, edges, corners and any joinery that was covered. Touch-ups that belong to the hang are done on that visit. There is no call-out charge for this visit.
 
 ## Seams and edges
 
@@ -94,7 +94,7 @@ Pause motion
 
 ### How is snagging handled?
 
-Snagging is part of the package. A sample room or sample area is agreed first, in the permanent lighting where possible, and every later room is measured against it. Then comes the hang, then snagging, then a return inspection about four to six weeks after completion, at no call-out charge, when seams, edges and corners are checked once the paper has settled. Visible seams and shading in natural weaves are properties of the material, and they are settled at the sample stage rather than raised as snags. At Hyde London City the record starts with a finished sample room in November 2022.
+Snagging is part of the package. A sample room or sample area is agreed first, in the permanent lighting where possible, and every later room is measured against it. Then comes the hang, then snagging, then a return visit about four to six weeks after completion, at no call-out charge, when seams, edges and corners are checked once the paper has settled. Visible seams and shading in natural weaves are properties of the material, and they are settled at the sample stage rather than raised as snags. At Hyde London City the record starts with a finished sample room in November 2022.
 
 ### What goes into the O&M and handover pack?
 
@@ -130,6 +130,8 @@ Support
 
 Use this for a seam, a repair, or a question about a finished room. It is kept apart from a new installation enquiry. Send a photograph and we will say whether it is the hang, a knock or the building before anything else.
 
+This form needs JavaScript to send. If it is switched off, email [info@mrwallcover.com](mailto:info@mrwallcover.com?subject=Wallcovering%20enquiry) with the same details and attach any photographs.
+
 Your material choices
 
 Remove these choices
@@ -140,23 +142,25 @@ This is for care of work, or for a wallcovering that needs looking at. We look a
 
 Reference, if you have one
 
-Name
+A name, how to reply and a short note are all we need. Everything else is optional.
 
-Reply by
+Name Required
 
-Email
-
-Phone
+Preferred reply Required
 
 Email
 
 Phone
 
-What should we look at?
+Email
+
+Phone
+
+What should we look at? Required
 
 Photographs or a PDF, if you have them
 
-Phone photographs and drawings help. JPEG, PNG, WebP, HEIC, HEIF and PDF. Up to 8 files and 10 MB in total. You do not have to attach anything to write to us. If a file will not send, email info@mrwallcover.com.
+Photographs from your phone and drawings help (JPEG, PNG, WebP, HEIC, HEIF or PDF). Up to 8 files and 10 MB in total. Attachments are optional. If a file will not send, email info@mrwallcover.com. Or send them on [WhatsApp](https://www.mrwallcover.com/contact/).
 
 How did you hear about us? Optional
 
@@ -172,13 +176,11 @@ Email me occasional Mr Wallcover project and material updates. Optional; withdra
 
 Separate from your enquiry. You can withdraw by [emailing us](mailto:info@mrwallcover.com).
 
-Your note is sent to info@mrwallcover.com with a reference. Dorin Burcus reads it. If you have not heard back, email that address directly.
+Your note goes to info@mrwallcover.com with a reference, and Dorin Burcus reads it. If you do not hear back, email that address directly.
 
 We use the details you send to respond to this request. [Read the privacy notice](https://www.mrwallcover.com/privacy/).
 
 Send the note
-
-This form needs JavaScript. Email info@mrwallcover.com instead.
 
 ## Twelve-month workmanship guarantee
 
@@ -186,8 +188,10 @@ For twelve months from completion, Mr Wallcover guarantees the workmanship of th
 
 It does not cover building movement, damp, leaks, or a substrate that fails. It does not cover damage by later trades, impact, furniture, or cleaning the material cannot take.
 
+About four to six weeks later we come back, once the paper has had a chance to settle. Seams and edges are looked at. For twelve months, workmanship of the hang is guaranteed. Building movement and damp are not.
+
 Some people call this a warranty. It is the same promise: twelve months on our workmanship, and a clear line where the building takes over from the hang.
 
-[Ask about a room](https://www.mrwallcover.com/contact/?service=aftercare&topic=aftercare)
+[Start your project](https://www.mrwallcover.com/contact/?service=aftercare&topic=aftercare)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

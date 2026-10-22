@@ -1,8 +1,10 @@
 ---
 import Action from './Action.astro';
+import WhatsAppLink from './WhatsAppLink.astro';
 import { ENQUIRY_SERVICES, ENQUIRY_SOURCES, EMAIL_MARKETING_TEXT, EMAIL_MARKETING_VERSION, PRIVACY_NOTICE_VERSION } from '../lib/enquiry-context';
-import { LEAD_API_URL, FORM_ENDPOINT, FORM_PROVIDER, PUBLIC_EMAIL, SITE_URL } from '../config';
+import { ENQUIRY_MAILTO, LEAD_API_URL, FORM_ENDPOINT, FORM_PROVIDER, PUBLIC_EMAIL, SITE_URL } from '../config';
 import { attachmentLimits } from '../lib/enquiry-attachments';
+import { phoneAvailable } from '../lib/phone';
 
 interface Props {
   variant?: 'enquiry' | 'aftercare';
@@ -47,6 +49,8 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
     </>
   )}
 
+  {/* The form sends through its script. Without JavaScript this note shows first, the send button stays disabled and hidden and the fuller-brief control is hidden (visual-system.css), so nobody fills ten fields for nothing. */}
+  <p class="enquiry-nojs">This form needs JavaScript to send. If it is switched off, email <a href={ENQUIRY_MAILTO}>{PUBLIC_EMAIL}</a> with the same details and attach any photographs.</p>
   <div data-hide-on-success>
     {variant === 'enquiry' ? <>
       <div class="selection-summary mb-5" data-enquiry-context hidden>
@@ -65,7 +69,7 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
     <div data-error-summary class="form-summary" tabindex="-1" hidden></div>
 
     {variant === 'enquiry' && (
-      <div>
+      <div data-builder-intro>
         <Action variant="secondary" type="button" data-open-builder>Add a fuller brief</Action>
         <p class="form-note m-0 mt-2 text-stone">The short note below is enough. The fuller brief is optional, and you can leave any answer as “not sure”.</p>
       </div>
@@ -73,21 +77,11 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
 
     {variant === 'enquiry' && (
       <div data-builder hidden>
-        <p class="eyebrow" data-step-label>Step 1 of 4</p>
+        {/* The fuller brief counts only its own parts; the reply fieldset below is always the send step. */}
+        <p class="eyebrow" data-step-label>Fuller brief: part 1 of 3</p>
         <div data-step>
           <fieldset class="grid gap-5">
             <legend class="font-serif text-[1.8rem]">Your project</legend>
-            <div class="field" id="field-audience">
-              <label for="audience">Who is enquiring?</label>
-              <select id="audience" name="audience">
-                <option value="">Not sure</option>
-                <option value="homeowner">Homeowner</option>
-                <option value="designer">Designer or architect</option>
-                <option value="developer">Property developer or main contractor</option>
-                <option value="hotel">Hotel or property operator</option>
-                <option value="commercial">Other commercial project</option>
-              </select>
-            </div>
             <div class="field" id="field-intent">
               <label for="intent">What do you need?</label>
               <select id="intent" name="intent">
@@ -116,7 +110,6 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
               </div>
             </div>
             <div data-pro hidden class="grid gap-5">
-              <p data-professional-help class="m-0 text-stone"></p>
               <div class="field">
                 <label for="material-responsibility">Who is supplying the material?</label>
                 <input id="material-responsibility" name="materialResponsibility" type="text" placeholder="Not sure is fine" />
@@ -144,11 +137,7 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
         </div>
         <div data-step hidden>
           <fieldset class="grid gap-5">
-            <legend class="font-serif text-[1.8rem]">Timing</legend>
-            <div class="field">
-              <label for="timing">When would you like to start?</label>
-              <input id="timing" name="timing" type="text" placeholder="A month is enough" />
-            </div>
+            <legend class="font-serif text-[1.8rem]">Access and budget</legend>
             <div class="field">
               <label for="access">Access, occupied rooms, or site limits</label>
               <textarea id="access" name="access"></textarea>
@@ -162,9 +151,7 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
               </select>
             </div>
           </fieldset>
-        </div>
-        <div data-step hidden>
-          <p class="m-0">Check the note below, then send. You can go back and change an answer. Nothing is stored in the page address.</p>
+          <p class="mt-5 mb-0">Check the note below, then send. You can go back and change an answer. Nothing is stored in the page address.</p>
         </div>
         <div class="mt-4 flex flex-wrap gap-3">
           <Action variant="secondary" icon="arrow-left" type="button" data-step-back>Back</Action>
@@ -184,16 +171,33 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
           </div>
         </>
       )}
+      <p class="form-note m-0 text-stone">A name, how to reply and a short note are all we need. Everything else is optional.</p>
       <div class="field" id="field-name">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" autocomplete="name" />
+        <label for="name">Name <span class="text-stone">Required</span></label>
+        <input id="name" name="name" type="text" autocomplete="name" aria-required="true" />
         <p class="form-error" data-error="name"></p>
       </div>
+      {/* Same id and name as before, so the professional fields in the fuller brief still follow it. The prompt sits
+          here, where the choice is made, so it shows whether or not the fuller brief is open. */}
+      {variant === 'enquiry' && (
+        <div class="field" id="field-audience">
+          <label for="audience">I am a… <span class="text-stone">Optional</span></label>
+          <select id="audience" name="audience">
+            <option value="">Not sure</option>
+            <option value="homeowner">Homeowner</option>
+            <option value="designer">Designer or architect</option>
+            <option value="developer">Property developer or main contractor</option>
+            <option value="hotel">Hotel or property operator</option>
+            <option value="commercial">Other commercial project</option>
+          </select>
+          <p data-professional-help class="form-note mt-2 mb-0 text-stone" aria-live="polite"></p>
+        </div>
+      )}
       <fieldset id="field-replyBy">
-        <legend>Reply by</legend>
+        <legend>Preferred reply <span class="text-stone">Required</span></legend>
         <div class="mt-2 flex flex-wrap gap-4">
-          <label class="inline-flex min-h-12 items-center gap-2"><input type="radio" name="replyBy" value="email" /> Email</label>
-          <label class="inline-flex min-h-12 items-center gap-2"><input type="radio" name="replyBy" value="phone" /> Phone</label>
+          <label class="inline-flex min-h-12 items-center gap-2"><input type="radio" name="replyBy" value="email" required /> Email</label>
+          <label class="inline-flex min-h-12 items-center gap-2"><input type="radio" name="replyBy" value="phone" required /> Phone</label>
         </div>
         <p class="form-error" data-error="replyBy"></p>
       </fieldset>
@@ -202,20 +206,27 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
         <input id="email" name="email" type="email" autocomplete="email" inputmode="email" />
         <p class="form-error" data-error="email"></p>
       </div>
-      <div class="field" id="field-phone" data-reply="phone" hidden>
+      {/* Both fields show; only the preferred one is required. */}
+      <div class="field" id="field-phone" data-reply="phone">
         <label for="phone">Phone</label>
         <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" />
         <p class="form-error" data-error="phone"></p>
       </div>
       <div class="field" id="field-message">
-        <label for="message">{variant === 'aftercare' ? 'What should we look at?' : 'Note'}</label>
-        <textarea id="message" name="message"></textarea>
+        <label for="message">{variant === 'aftercare' ? 'What should we look at?' : 'Your note'} <span class="text-stone">Required</span></label>
+        <textarea id="message" name="message" aria-required="true"></textarea>
         <p class="form-error" data-error="message"></p>
       </div>
+      {variant === 'enquiry' && (
+        <div class="field">
+          <label for="timing">When would you like to start? <span class="text-stone">Optional</span></label>
+          <input id="timing" name="timing" type="text" placeholder="A month is enough" />
+        </div>
+      )}
       <div class="field" id="field-attachment">
         <label for="photos">Photographs or a PDF, if you have them</label>
         <input id="photos" name="attachment" type="file" aria-describedby="attachment-help attachment-error" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif,.pdf,application/pdf" multiple />
-        <p id="attachment-help" class="form-note m-0 text-stone">Phone photographs and drawings help. JPEG, PNG, WebP, HEIC, HEIF and PDF. {attachmentHelp} You do not have to attach anything to write to us. If a file will not send, email {PUBLIC_EMAIL}.</p>
+        <p id="attachment-help" class="form-note m-0 text-stone">Photographs from your phone and drawings help (JPEG, PNG, WebP, HEIC, HEIF or PDF). {attachmentHelp} Attachments are optional. If a file will not send, email {PUBLIC_EMAIL}.{phoneAvailable && <span data-wa-item> Or send them on <WhatsAppLink>WhatsApp</WhatsAppLink>.</span>}</p>
         <p id="attachment-error" class="form-error" data-error="attachment" aria-live="polite"></p>
         <ul class="file-list" data-file-list></ul>
       </div>
@@ -233,10 +244,11 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
       <p class="form-note m-0 text-stone">
         {LEAD_API_URL
           ? `Your enquiry is saved with a reference before this page confirms it. Dorin Burcus reads it. If you have not heard back, email ${PUBLIC_EMAIL} and quote the reference.`
-          : `Your note is sent to ${PUBLIC_EMAIL} with a reference. Dorin Burcus reads it. If you have not heard back, email that address directly.`}
+          : `Your note goes to ${PUBLIC_EMAIL} with a reference, and Dorin Burcus reads it. If you do not hear back, email that address directly.`}
       </p>
       <p class="form-note m-0 text-stone">We use the details you send to respond to this request. <a href="/privacy/">Read the privacy notice</a>.</p>
-      <Action variant="primary" type="submit">{variant === 'aftercare' ? 'Send the note' : 'Start your project'}</Action>
+      {/* Disabled until the script binds: a disabled default button also blocks Enter-key submission without JavaScript. */}
+      <Action variant="primary" type="submit" disabled>{variant === 'aftercare' ? 'Send the note' : 'Send your note'}</Action>
     </fieldset>
   </div>
   <p data-status role="status" hidden></p>
@@ -245,9 +257,25 @@ const attachmentHelp = attachmentLimits(LEAD_API_URL ? 'lead-api' : FORM_PROVIDE
     <p data-notification class="lede mt-4"></p>
     <p class="m-0">You can also email {PUBLIC_EMAIL}. If the project needs a survey, we arrange it after we have spoken.</p>
   </div>
-  <noscript><p>This form needs JavaScript. Email {PUBLIC_EMAIL} instead.</p></noscript>
 </form>
 
+<style is:global>
+  /* Global so the form markup carries no scoping attributes (the tests read it as written). Links in the notes are
+     underlined, so they do not rely on colour; the WhatsApp offer reads as a word in its sentence, not as the icon button. */
+  .enquiry .form-note a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; text-decoration-color: var(--color-underline); }
+  .enquiry .form-note .wa-link { display: inline; }
+  .enquiry .form-note .wa-glyph { display: none; }
+  /* Empty, the prompt takes no space but stays a live region, so a new prompt is announced. */
+  .enquiry [data-professional-help]:empty { margin-top: 0; }
+</style>
+
+<script is:inline>
+  /* As with Base.astro's data-nav-ready check: if the form script has not bound the form by load (blocked or
+     stale module), mark it so visual-system.css shows the email notice instead of a silent disabled button. */
+  window.addEventListener('load', function () {
+    document.querySelectorAll('[data-enquiry-form]:not([data-ready])').forEach(function (form) { form.classList.add('enquiry-unbound'); });
+  });
+</script>
 <script>
   import '../scripts/enquiry-form';
 </script>

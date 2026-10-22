@@ -6,7 +6,7 @@ const requiredDestinations = [
   '/projects/', '/projects/#hotels', '/services/', '/materials/', '/professionals/',
   '/trade/', '/services/joinery-wallcoverings-and-panels/', '/advice/', '/advice/cost/',
   '/aftercare/', '/about/', '/reviews/', '/faq/', '/areas/', '/accessibility/',
-  '/privacy/', '/image-use/', '/for-ai/', '/contact/', 'mailto:info@mrwallcover.com',
+  '/privacy/', '/image-use/', '/for-ai/', '/contact/', 'mailto:info@mrwallcover.com?subject=Wallcovering%20enquiry',
   'https://www.instagram.com/mrwallcover/',
 ];
 const footerOf = (html: string) => html.match(/<footer\b[^>]*class="site-footer"[^>]*>[\s\S]*?<\/footer>/)?.[0] ?? '';
@@ -38,7 +38,7 @@ test('the directory is real labelled HTML and starts expanded without JavaScript
   assert.equal(groups.length, 4, 'four manageable navigation groups');
   const names = groups.map((group) => {
     assert.match(group[1], /\bopen(?:[\s=>]|$)/, 'the server-rendered directory is usable without JavaScript');
-    assert.match(group[2], /<ul>/, 'navigation links are real lists');
+    assert.match(group[2], /<ul\b[^>]*>/, 'navigation links are real lists');
     assert.match(group[2], /<a\b[^>]*href=/, 'links remain in the initial HTML');
     return group[2].match(/<summary><span>([^<]+)<\/span>/)?.[1];
   });
@@ -46,6 +46,13 @@ test('the directory is real labelled HTML and starts expanded without JavaScript
   assert.ok(footer.indexOf('footer-contact') < footer.indexOf('footer-directory'), 'contact precedes the directory on mobile');
   assert.match(footer, /<a\b[^>]*href="\/contact\/"[^>]*>[\s\S]*?Start your project[\s\S]*?<\/a>/);
   assert.match(footer, /<button\b[^>]*type="button"[^>]*data-effects-toggle aria-pressed="false">Reduce visual effects<\/button>/);
+  // The guide keeps the navigation's one name, and "Book a call" carries its duration and hours outside the link text.
+  assert.match(footer, /<a href="\/advice\/">Guide<\/a>/);
+  const booking = footer.match(/<a\b[^>]*\bdata-book\b[^>]*>([\s\S]*?)<\/a>([\s\S]*?)<\/li>/);
+  if (booking) {
+    assert.equal(booking[1].replace(/<[^>]+>/g, ''), 'Book a call');
+    assert.match(booking[2], /class="booking-hint[^"]*">20(?:\s|&nbsp;)minutes, /);
+  }
   const utilities = footer.slice(footer.indexOf('footer-utilities'));
   for (const href of ['/accessibility/', '/privacy/', '/image-use/', '/for-ai/']) {
     assert.ok(hrefsOf(utilities).has(href), `${href} is in the utility row`);

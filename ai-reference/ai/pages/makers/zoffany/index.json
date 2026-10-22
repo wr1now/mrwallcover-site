@@ -44,15 +44,15 @@
       "text": "From sample to specification"
     }
   ],
-  "markdown": "The Wallcovering Guide · Choose and source\n\n# Zoffany\n\nZoffany develops wallpapers, murals, fabrics and paint, drawing on an archive associated with Temple Newsam. The brand is part of Sanderson Design Group. This directory includes the group trade route; consumer purchasing is not listed.\n\n## Source evidence\n\nRead the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.\n\n- [Official source](https://www.zoffany.design/about-us) — checked 2026-10-17\n- [Official source](https://info.sandersondesigngroup.com/tailored-for-trade) — checked 2026-10-17\n\n[Visit maker website](https://www.zoffany.design/)\n\n## Official sourcing routes\n\nCheck the route’s scope before ordering. Showrooms, samples and finder links do not establish a roll checkout or delivery promise.\n\n### Trade enquiry\n\nApply for trade account or use existing member login.\n\n**Region**\n: UK-relevant group programme; overseas eligibility not established\n\n**UK access**\n: UK-relevant group programme; overseas eligibility not established\n\n**Overseas access**\n: Not established for this route—human check required.\n\nMaker-published information; confirm current eligibility and destination before ordering.\n\nTerms and checks before ordering\n\nGroup programme advertises portal ordering and complimentary samples; Zoffany homepage links group trade signup.\n\nOfficial page checked 2026-10-17. Website evidence, not a test order.\n\n[Open official source](https://info.sandersondesigngroup.com/tailored-for-trade)\n\n[All makers](https://www.mrwallcover.com/makers/)\n\n## From sample to specification\n\nRecord the exact design and product code, check current instructions and establish the wall preparation before quantities and installation are agreed.\n\n[Discuss your wallcovering](https://www.mrwallcover.com/contact/?intent=source)\n\nBy [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 18 October 2026\n",
+  "markdown": "The Wallcovering Guide · Choose and source\n\n# Zoffany\n\nZoffany develops wallpapers, murals, fabrics and paint, drawing on an archive associated with Temple Newsam. The brand is part of Sanderson Design Group. This directory includes the group trade route; consumer purchasing is not listed.\n\n## Source evidence\n\nRead the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.\n\n- [Official source: zoffany.design/about-us](https://www.zoffany.design/about-us) — checked 17 October 2026\n- [Official source: info.sandersondesigngroup.com/tailored-for-trade](https://info.sandersondesigngroup.com/tailored-for-trade) — checked 17 October 2026\n\n[Visit maker website](https://www.zoffany.design/)\n\n## Official sourcing routes\n\nCheck the route’s scope before ordering. Showrooms, samples and finder links do not establish a roll checkout or delivery promise.\n\n### Trade enquiry\n\nApply for trade account or use existing member login.\n\n**Region**\n: UK-relevant group programme; overseas eligibility not established\n\n**UK access**\n: UK-relevant group programme; overseas eligibility not established\n\n**Overseas access**\n: Not established for this route—human check required.\n\nMaker-published information; confirm current eligibility and destination before ordering.\n\nTerms and checks before ordering\n\nGroup programme advertises portal ordering and complimentary samples; Zoffany homepage links group trade signup.\n\nChecked on the official website on 17 October 2026. This check did not include placing an order.\n\n[Open official source: Trade enquiry, UK-relevant group programme; overseas eligibility not established](https://info.sandersondesigngroup.com/tailored-for-trade)\n\n[All makers](https://www.mrwallcover.com/makers/)\n\n## From sample to specification\n\nRecord the exact design and product code, check current instructions and establish the wall preparation before quantities and installation are agreed.\n\n[Discuss your wallcovering](https://www.mrwallcover.com/contact/?intent=source)\n\nBy [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 18 October 2026\n",
   "links": [
     {
       "url": "https://www.zoffany.design/about-us",
-      "text": "Official source"
+      "text": "Official source: zoffany.design /about-us"
     },
     {
       "url": "https://info.sandersondesigngroup.com/tailored-for-trade",
-      "text": "Official source"
+      "text": "Official source: info.sandersondesigngroup.com /tailored-for-trade"
     },
     {
       "url": "https://www.zoffany.design/",
@@ -60,7 +60,7 @@
     },
     {
       "url": "https://info.sandersondesigngroup.com/tailored-for-trade",
-      "text": "Open official source"
+      "text": "Open official source : Trade enquiry, UK-relevant group programme; overseas eligibility not established"
     },
     {
       "url": "https://www.mrwallcover.com/makers/",
@@ -96,7 +96,7 @@
     },
     {
       "url": "https://www.mrwallcover.com/how-we-check/",
-      "text": "How we check"
+      "text": "Product facts and corrections"
     }
   ],
   "images": [],
@@ -173,7 +173,7 @@
               "url": "https://www.mrwallcover.com/areas/cotswolds/"
             }
           ],
-          "slogan": "Premium wallcoverings services: surveying, management, supply, install and aftercare.",
+          "slogan": "Specialist wallcovering installation for hotels and prime homes: survey, management, supply, installation and aftercare.",
           "knowsAbout": [
             "Wallpaper installation",
             "Wallcovering installation for hotels",
@@ -358,7 +358,7 @@
             "@type": "ContactPoint",
             "email": "info@mrwallcover.com",
             "url": "https://www.mrwallcover.com/contact/",
-            "contactType": "quotations",
+            "contactType": "sales",
             "areaServed": [
               {
                 "@type": "City",

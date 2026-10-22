@@ -67,4 +67,4 @@ Mr Wallcover installs wallcoverings. If you would like us to hang the paper, or 
 
 - [Work out the rolls](/advice/quantities/)
 - [Prepare the wall](/advice/wall-preparation/)
-- [How we check what we publish](/how-we-check/)
+- [Product facts and corrections](/how-we-check/)

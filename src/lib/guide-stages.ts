@@ -48,7 +48,7 @@ export const guideStages: GuideStage[] = [
       { href: '/professionals/', label: 'Plan a professional package', note: 'Designers, developers and hotels.' },
       guide('designer-specification-checklist', 'What a schedule needs before a roll is ordered.'),
       guide('hotel-wallcovering-specification', 'Corridors, rooms and the spare stock a hotel keeps.'),
-      guide('wallcovering-fire-ratings-uk', 'Evidence to request for a commercial specification.'),
+      guide('wallcovering-fire-ratings-uk', 'The documents to ask for on a commercial specification.'),
     ],
   },
   {
@@ -90,6 +90,6 @@ export const guideStages: GuideStage[] = [
 /** The trust page every stage rests on. */
 export const howWeCheck: StageLink = {
   href: '/how-we-check/',
-  label: 'How we check',
-  note: 'Our evidence rules, publication checks and corrections.',
+  label: 'Product facts and corrections',
+  note: 'Where our product facts come from, and how to report a correction.',
 };

@@ -300,7 +300,7 @@
     {
       "id": "aftercare",
       "audience": "Aftercare for a Mr Wallcover installation",
-      "considerWhen": "You need the included return inspection or support for a completed installation.",
+      "considerWhen": "You need the included return visit or support for a completed installation.",
       "evidence": [],
       "source": {
         "title": "Aftercare and workmanship terms",
@@ -382,7 +382,7 @@
       "sourceUrl": "https://www.mrwallcover.com/materials/hand-painted/",
       "serviceUrl": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/",
       "setting": "Suites and drawing rooms",
-      "appearance": "Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them. We do not make them, and we are not affiliated with those makers.",
+      "appearance": "Scenic and panelled papers, in the manner of houses such as de Gournay and Fromental. We hang them.",
       "joins": "Panels follow a sequence. The scene has to meet across doors, windows and corners. The set-out starts from a fixed point.",
       "care": "As the maker specifies. These are not washable contract surfaces.",
       "handling": "A sound wall, time, and the maker’s instruction on lining.",
@@ -567,7 +567,7 @@
       "description": "We measure on site, or from drawings when that is what the programme needs. Skirting, joinery, doors and windows come out of the area. What is left is the wall that will actually be hung.",
       "paragraphs": [
         "We measure on site, or from drawings when that is what the programme needs. Skirting, joinery, doors and windows come out of the area. What is left is the wall that will actually be hung.",
-        "Quantities include wastage and pattern repeat. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey. A roll that looks generous on a plan can run short on the last pier.",
+        "Quantities include wastage and pattern repeat. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. A roll that looks generous on a plan can run short on the last pier.",
         "The survey is also a judgement on the wall. If it is not ready for the material specified, we say so before anyone orders the last drop."
       ],
       "url": "https://www.mrwallcover.com/services/#surveying"
@@ -577,36 +577,38 @@
       "description": "Every project has a project leader on the ground. That person is the day-to-day contact for the craft, the progress and the expectations that have been set.",
       "paragraphs": [
         "Every project has a project leader on the ground. That person is the day-to-day contact for the craft, the progress and the expectations that have been set.",
-        "On a longer commission, senior oversight quality-controls the work and agrees a forward plan with you, in person, each week. Frequent and plain communication is part of the method, not a courtesy added at the end.",
+        "On a longer commission, senior oversight checks the quality of the work and agrees a forward plan with you, in person, each week. Frequent and plain communication is part of the method, not a courtesy added at the end.",
         "The team you meet on the first day is the core team that finishes. Disruption is kept low: work is contained, floors and joinery are protected, and the place is left tidy every evening. In a home we are visitors. In a hotel we work around the house."
       ],
       "url": "https://www.mrwallcover.com/services/#management"
     },
     {
       "name": "Supply",
-      "description": "On many hotel and flagship jobs the wallcovering is free-issue from the designer, the brand or the client. We manage delivery, check the delivery against the measure, and hang what was specified.",
+      "description": "On many hotel and flagship jobs the designer, the brand or the client supplies the wallcovering (free-issue). We manage delivery, check it against the measure, and hang what was specified.",
       "paragraphs": [
-        "On many hotel and flagship jobs the wallcovering is free-issue from the designer, the brand or the client. We manage delivery, check the delivery against the measure, and hang what was specified.",
+        "On many hotel and flagship jobs the designer, the brand or the client supplies the wallcovering (free-issue). We manage delivery, check it against the measure, and hang what was specified.",
         "We can also procure. Either way, the order has to cover the repeat and the wastage, or the last wall is the one that waits.",
+        "Rolls are inspected as part of preparation; on large volumes not every roll can be opened in advance. Any defect is reported straight away to the designer, contractor and manufacturer.",
         "Delivery is timed to the hang. Paper sitting in a corridor for days is a risk to the goods and a nuisance to the building."
       ],
       "url": "https://www.mrwallcover.com/services/#supply"
     },
     {
       "name": "Installation",
-      "description": "This is the craft the practice is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.",
+      "description": "This is the craft Mr Wallcover is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.",
       "paragraphs": [
-        "This is the craft the practice is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.",
+        "This is the craft Mr Wallcover is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.",
         "Preparation, where it is in the specification, includes stripping old paper, dustless sanding, and making good cracks and uneven surfaces. Some materials are specified with a lining paper. Some, including certain mural installs, are specified without one. We follow the specification.",
+        "We set out every wall with a laser level. Deliveries are checked against the measure, and batches and shading are managed so that a room reads as one surface.",
         "Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Where Mr Wallcover is appointed as main decorating contractor, the package can include fine painting, French polishing and other specialist finishes, as it did at Brown's Hotel, Mayfair."
       ],
       "url": "https://www.mrwallcover.com/services/#installation"
     },
     {
       "name": "Aftercare",
-      "description": "Aftercare is the fifth part of the service. A return inspection is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.",
+      "description": "Aftercare is the fifth part of the service. A return visit is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.",
       "paragraphs": [
-        "Aftercare is the fifth part of the service. A return inspection is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.",
+        "Aftercare is the fifth part of the service. A return visit is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.",
         "The detail, including care by material and what the guarantee does not cover, is on the aftercare page."
       ],
       "url": "https://www.mrwallcover.com/services/#aftercare"
@@ -616,10 +618,10 @@
     "sourceUrl": "https://www.mrwallcover.com/aftercare/",
     "introduction": "Aftercare is one of the five parts of a Mr Wallcover commission. The return visit is included, and the twelve-month workmanship guarantee is set out below.",
     "inspection": {
-      "title": "Return inspection",
+      "title": "Return visit",
       "paragraphs": [
         "About four to six weeks after we finish, we come back. By then the heating, the ventilation and the humidity have had a chance to move the paper. That movement is settling. It is the reason for the visit.",
-        "We look at seams, edges, corners and any joinery that was covered. Touch-ups that belong to the hang are done on that visit. There is no call-out charge for this inspection."
+        "We look at seams, edges, corners and any joinery that was covered. Touch-ups that belong to the hang are done on that visit. There is no call-out charge for this visit."
       ]
     },
     "seams": {
@@ -649,6 +651,7 @@
       "paragraphs": [
         "For twelve months from completion, Mr Wallcover guarantees the workmanship of the hang. That covers seams opening, edges lifting, and adhesive failure that comes from the way we hung the material.",
         "It does not cover building movement, damp, leaks, or a substrate that fails. It does not cover damage by later trades, impact, furniture, or cleaning the material cannot take.",
+        "About four to six weeks later we come back, once the paper has had a chance to settle. Seams and edges are looked at. For twelve months, workmanship of the hang is guaranteed. Building movement and damp are not.",
         "Some people call this a warranty. It is the same promise: twelve months on our workmanship, and a clear line where the building takes over from the hang."
       ]
     },
@@ -831,7 +834,7 @@
       "Include only documents and personal information the client has authorised to share.",
       "Have the client review the completed brief and recipient before sending it through the contact page or public email."
     ],
-    "minimumToEnquire": "A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether to reply by email or by phone, not both. Photographs, drawings and PDFs help, and are optional.",
+    "minimumToEnquire": "A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether you would like a reply by email or by phone. Photographs, drawings and PDFs help, and are optional.",
     "contactUrl": "https://www.mrwallcover.com/contact/",
     "email": "info@mrwallcover.com",
     "template": {

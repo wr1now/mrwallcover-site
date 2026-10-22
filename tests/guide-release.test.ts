@@ -18,7 +18,9 @@ test('Guide pages use the shared shell and only published internal destinations'
 });
 test('policy scopes review promises; discovery includes both editorial routes',()=>{
  const policy=read('dist/how-we-check/index.html');
- assert.match(policy,/does not claim that every older page/);
+ // The page makes its review promise only for new product and buying-route references, and never for every page.
+ assert.match(policy,/New product and buying-route references are checked/);
+ assert.doesNotMatch(policy,/every (older )?page (has|have) (been )?(independently )?(reviewed|checked)/i);
  assert.doesNotMatch(policy,/is checked twice before it appears/);
  for(const slug of ['where-to-buy','how-we-check'])for(const file of ['dist/search/index.html','dist/llms.txt','dist/sitemap-0.xml'])assert.ok(read(file).includes(`/${slug}/`),`${file}: ${slug}`);
  assert.match(read('src/content/navigation.json'),/"Guide"/);

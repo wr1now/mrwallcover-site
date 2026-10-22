@@ -38,6 +38,9 @@ try {
         const initial = await page.evaluate(() => ({ cls:window.__editorialCLS, bytes:performance.getEntriesByType('resource').reduce((sum, entry) => sum + entry.encodedBodySize, 0) }));
         const selector = path === '/services/' ? '#supply [data-design-object]' : 'main [data-design-object]';
         await page.$eval(selector, element => element.scrollIntoView({ block:'center', behavior:'instant' }));
+        // The 3D scene loads only on wide fine-pointer screens; a phone in the new build keeps the poster.
+        const liveExpected = build === 'before' || width >= 1024;
+        if (liveExpected) {
         await waitForPagePredicate(page, selector => {
           const element = document.querySelector(selector), canvas = element?.querySelector('canvas');
           if (!element?.hasAttribute('data-live') || !canvas) return false;
@@ -54,6 +57,7 @@ try {
           for (const value of canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height).data) hash = Math.imul(hash ^ value, 16777619);
           return (hash >>> 0) !== before;
         }, { polling:100, timeout:10000 }, selector, hash);
+        }
         await page.waitForNetworkIdle({ idleTime:150, timeout:20000 });
         const metrics = await page.evaluate(() => {
           const resources = performance.getEntriesByType('resource');
@@ -74,8 +78,8 @@ try {
             overflow:document.documentElement.scrollWidth > innerWidth,
           };
         });
-        assert.equal(metrics.sceneRequested, true, 'the real lazy scene module was measured');
-        assert.ok(metrics.liveStudies > 0);
+        assert.equal(metrics.sceneRequested, liveExpected, liveExpected ? 'the real lazy scene module was measured' : 'a phone requests no scene module');
+        assert.equal(metrics.liveStudies > 0, liveExpected);
         assert.equal(metrics.overflow, false);
         assert.deepEqual(errors, []);
         results.push({ build, path, width, initial, ...metrics });

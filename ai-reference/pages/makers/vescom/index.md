@@ -16,11 +16,11 @@ Vescom designs, produces and distributes wallcovering, upholstery and curtain fa
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://vescom.com/en/inspiration/about-us) — checked 2026-10-17
-- [Official source](https://vescom.com/en/resources/visual-material) — checked 2026-10-17
-- [Official source](https://vescom.com/en/contact/showrooms/london) — checked 2026-10-17
-- [Official source](https://vescom.com/en/contact/sales-offices-distributors) — checked 2026-10-17
-- [Official source](https://pages.vescom.com/en/sample-pack/textile-wallcovering) — checked 2026-10-17
+- [Official source: vescom.com/en/inspiration/about-us](https://vescom.com/en/inspiration/about-us) — checked 17 October 2026
+- [Official source: vescom.com/en/resources/visual-material](https://vescom.com/en/resources/visual-material) — checked 17 October 2026
+- [Official source: vescom.com/en/contact/showrooms/london](https://vescom.com/en/contact/showrooms/london) — checked 17 October 2026
+- [Official source: vescom.com/en/contact/sales-offices-distributors](https://vescom.com/en/contact/sales-offices-distributors) — checked 17 October 2026
+- [Official source: pages.vescom.com/en/sample-pack/textile-wallcovering](https://pages.vescom.com/en/sample-pack/textile-wallcovering) — checked 17 October 2026
 
 [Visit maker website](https://vescom.com/)
 
@@ -47,9 +47,9 @@ Terms and checks before ordering
 
 Showroom visitor eligibility not established; ask the maker Professional restriction stated on textile sample page; showroom-specific sample terms not established; ask the maker
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://vescom.com/en/contact/showrooms/london)
+[Open official source: Showroom or brand contact, United Kingdom](https://vescom.com/en/contact/showrooms/london)
 
 ### Find a stockist or representative
 
@@ -70,9 +70,9 @@ Terms and checks before ordering
 
 not established; ask the maker not established; ask the maker
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://vescom.com/en/contact/sales-offices-distributors)
+[Open official source: Find a stockist or representative, Regional worldwide directories](https://vescom.com/en/contact/sales-offices-distributors)
 
 ### Samples
 
@@ -93,9 +93,9 @@ Terms and checks before ordering
 
 Samples reserved for professional customers; products not sold directly to individuals for private use Free textile sample pack offered; eligibility and delivery geography require human confirmation
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://pages.vescom.com/en/sample-pack/textile-wallcovering)
+[Open official source: Samples, Geography not stated](https://pages.vescom.com/en/sample-pack/textile-wallcovering)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

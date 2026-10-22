@@ -7,7 +7,7 @@ import Icon from '../components/Icon.astro';
 import { areaHref, areas, materials, projectHref, projects, specialismHref, specialisms } from '../lib/content';
 
 const entries = [
-  ...(directoryVisible ? [{href:'/makers/',label:'Makers directory'},{href:'/buying-routes/',label:'Official buying routes'},...makerDirectory.makers.map(m=>({href:`/makers/${m.slug}/`,label:m.name+' wallcoverings'}))] : []),
+  ...(directoryVisible ? [{href:'/makers/',label:'Makers directory'},{href:'/buying-routes/',label:'Official buying routes'},...makerDirectory.makers.map(m=>({href:`/makers/${m.slug}/`,label:/wallcovering|wallpaper/i.test(m.name)?m.name:m.name+' wallcoverings'}))] : []),
   { href: '/services/', label: 'Services' },
   { href: '/materials/', label: 'Materials' },
   { href: '/projects/', label: 'Projects' },
@@ -16,7 +16,7 @@ const entries = [
   { href: '/calculator/', label: 'Wallpaper calculator' },
   { href: '/advice/quantities/', label: 'How much wallpaper to order' },
   { href: '/where-to-buy/', label: 'Where to buy wallpaper' },
-  { href: '/how-we-check/', label: 'How we check' },
+  { href: '/how-we-check/', label: 'Product facts and corrections' },
   { href: '/wallpapering/', label: 'Wallpapering' },
   { href: '/advice/wallcovering-fire-ratings-uk/', label: 'Fire ratings and standards' },
   { href: '/aftercare/', label: 'Aftercare' },

@@ -1,14 +1,14 @@
 ---
-title: "Our Wallcovering Practice and Process | Mr Wallcover"
+title: "Our Wallcovering Installation Process | Mr Wallcover"
 url: https://www.mrwallcover.com/practice/
-description: "How Mr Wallcover carries a commission: the survey, material, preparation and installation, with on-site process photographs and useful guides."
+description: "How a Mr Wallcover commission runs: a survey, a written scope by room, one project leader, weekly oversight on longer jobs and a return visit."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
 
 The full approach
 
-# From first idea to finished room.
+# How a commission runs.
 
 The detail behind the finished photograph: how we plan a commission, understand a material and carry the work through.
 
@@ -18,11 +18,13 @@ THE PRACTICE
 
 ## A beautiful wall begins long before *the first drop.*
 
-From the first survey to the last carefully matched seam, we bring care to every stage. Silk, grasscloth, hand-painted paper and bespoke murals. Wallcoverings, hung properly. By people who understand the material.
+A written scope by room, agreed once the survey is done. One project leader on the ground. The same core team from the first day to the handover. A return visit once the paper has settled.
+
+Specialist wallcovering installation for remarkable hotels, considered homes and ambitious spaces. From the first survey to the last carefully matched seam, we bring care to every stage. Silk, grasscloth, hand-painted paper and bespoke murals. Wallcoverings, hung properly. By people who understand the material.
 
 Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus, in the trade since 2012: survey to aftercare for hotels, homes and makers.
 
-[Meet the practice](https://www.mrwallcover.com/about/)
+[Meet Dorin](https://www.mrwallcover.com/about/#dorin)
 
 **In the trade**
 : Since 2012
@@ -62,7 +64,7 @@ Setting out around a doorway. Carrying a pattern through a corner. Preparing a w
 **A considered return**
 : A follow-up visit after four to six weeks, with twelve months’ cover on the workmanship of the hang.
 
-[Explore our expertise](https://www.mrwallcover.com/services/)
+[Read about our services](https://www.mrwallcover.com/services/)
 
 FROM FIRST IDEA TO FINISHED ROOM
 
@@ -70,7 +72,9 @@ FROM FIRST IDEA TO FINISHED ROOM
 
 Bring us the paper you love, a specification, or simply the room you have in mind.
 
-[Tell us about it](https://www.mrwallcover.com/contact/)
+Free-issue means the paper is supplied by you, your designer or the brand; we receive it and check it against the measure.
+
+[Start your project](https://www.mrwallcover.com/contact/)
 
 1. 01
 
@@ -158,6 +162,48 @@ A seam in a deep oxblood paper, checked by hand so the joint disappears.
 
 [What is normal at a seam](https://www.mrwallcover.com/advice/grasscloth-seams-and-variation/#what-is-normal-and-what-is-a-fault)
 
+The six standards
+
+## The same standards, on every commission.
+
+Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+
+01
+
+### Survey and scope, room by room
+
+We measure the wall that will actually be hung, allow for the repeat and the wastage, and write a scope of works room by room before anyone orders paper.
+
+02
+
+### Preparation decides the finish
+
+Walls are filled, made good and primed until they are true. If a wall is not ready for the material specified, we say so before the last drop is ordered.
+
+03
+
+### Protection and containment
+
+Floors, furniture and finished joinery are protected as part of the hang. Work is contained and the place is left tidy each evening. In a home we are visitors; in a hotel we work around the house.
+
+04
+
+### Batch and shade control
+
+Deliveries are checked against the measure, and batches and shading are managed so that a corridor of rooms reads as one surface.
+
+05
+
+### Set out from the room's focal points
+
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
+
+06
+
+### One team, then the return visit
+
+The people who start are the people who finish. Four to six weeks after completion we come back to look at every seam and edge, and the workmanship is guaranteed for twelve months.
+
 A FEEL FOR MATERIAL
 
 ## Find the character *of your room.*
@@ -166,11 +212,11 @@ Soft texture. Quiet depth. A whole landscape on a wall. Explore the material fam
 
 [Silk](https://www.mrwallcover.com/services/silk-wallcovering-installation/) [Grasscloth](https://www.mrwallcover.com/services/grasscloth-installation/) [All materials](https://www.mrwallcover.com/materials/) [Details up close](https://www.mrwallcover.com/details/)
 
-![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-06.jpg) ADAM’S EDEN · LEWIS & WOOD · BROWN’S HOTEL
+![Close view of Adam's Eden wallcovering by Adam Calkin for Lewis & Wood at Brown's Hotel, Mayfair: a yellow bird on a branch above the printed selvedge.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-06-800.webp) ADAM’S EDEN · LEWIS & WOOD · BROWN’S HOTEL
 
-Makers we install
+Materials
 
-## A feel for the paper.
+## Makers whose papers we have installed.
 
 - [de Gournay](https://www.mrwallcover.com/materials/#maker-de-gournay)
 - [Fromental](https://www.mrwallcover.com/materials/#maker-fromental)
@@ -193,4 +239,4 @@ Looking for structured business and project information?
 
 [Wallcovering Installation AI Crawler](https://www.mrwallcover.com/wallcovering-installation-ai-crawler/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

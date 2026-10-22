@@ -19,11 +19,11 @@
   "gallery": [
     {
       "id": "doubletree-victoria-commons-01",
-      "credit": "The building on Bridge Place in 2010, when it was the Hesperia London Victoria. A view of the building, not of our work. Photography: Stacey Harris / Wikimedia Commons (CC BY-SA 2.0)."
+      "credit": "The building on Bridge Place in 2010, when it was the Hesperia London Victoria. Venue photograph, not our work. Photograph: Stacey Harris / Wikimedia Commons (CC BY-SA 2.0)."
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-22"
 }
 ---
 

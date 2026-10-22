@@ -29,7 +29,7 @@ Who certifies a hotel wallcovering's fire performance? Not the installer. The cl
 
 ## Why does a fire classification belong to the build-up, not the paper?
 
-A fire classification, such as a Euroclass under EN 13501-1 (the standard's own class names, not a claim made here), belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. A substitute product or adhesive needs its own evidence. "Contract wallcovering" or "vinyl" on a sample card is not evidence of any classification, and [contract vinyl](/materials/contract-vinyl/) on a wall is not, by itself, a fire certificate.
+A fire classification, such as a Euroclass under EN 13501-1, belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. A substitute product or adhesive needs its own evidence. "Contract wallcovering" or "vinyl" on a sample card is not evidence of any classification, and [contract vinyl](/materials/contract-vinyl/) on a wall is not, by itself, a fire certificate.
 
 ## Is there one class that hotels need?
 
@@ -52,6 +52,6 @@ The same rule runs through our [material pages](/materials/): we do not call a f
 
 Most of the hotel work on our record was done in buildings that stayed open. [Brown's Hotel](/projects/browns-hotel-mayfair/) never stopped taking guests across a two-year decorating programme. In an occupied hotel, the permitted working hours, delivery routes, guest routes and daily handover are agreed for each project and written into the scope. Night shifts, out-of-hours and weekend work are offered, including in live hotels. The [hotel specification guide](/advice/hotel-wallcovering-specification/) covers the sample room, batch control and phasing in more detail.
 
-## When does this guide stop being reliable?
+## What this guide cannot tell you
 
 It explains where a classification comes from and how we work to a specified system. It does not certify any product, it is not fire-engineering advice, and it does not replace the review of the responsible designer, fire engineer or building-control route, or of the responsible person for a building in use. For a hotel package, send the room types, the floor or phase schedule, occupancy, working hours and the material codes, with the fire requirement each area carries; the [hotels and operators page](/professionals/hotels/) lists what else to include.

@@ -6,9 +6,9 @@ author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
 
-Contact
+Direct contact
 
-# Get in touch.
+# Contact Mr Wallcover.
 
 Write, call or send a message, whichever suits you. Dorin Burcus reads the email and answers the phone himself.
 
@@ -20,7 +20,7 @@ Write, call or send a message, whichever suits you. Dorin Burcus reads the email
 
 For questions, photographs, drawings and specifications. Attachments are welcome.
 
-[info@mrwallcover.com](mailto:info@mrwallcover.com)
+[info@mrwallcover.com](mailto:info@mrwallcover.com?subject=Wallcovering%20enquiry)
 
 ### Phone
 
@@ -38,7 +38,7 @@ Choose a time in the calendar to talk the project through.
 
 [Book a call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk)
 
-Calls Mon–Fri, 9am–5pm UK.
+Calls Mon–Fri, 9am–5pm UK. Each call is 20 minutes.
 
 ### Instagram
 
@@ -54,7 +54,7 @@ For a quotation, the enquiry form asks for the few things that shape the price: 
 
 ## Where we work
 
-London and the surrounding areas; UK-wide for selected projects.
+We work in London and the surrounding areas, and UK-wide on selected projects.
 
 - [Mayfair](https://www.mrwallcover.com/areas/mayfair/)
 - [Belgravia](https://www.mrwallcover.com/areas/belgravia/)
@@ -64,4 +64,4 @@ London and the surrounding areas; UK-wide for selected projects.
 - [Cotswolds](https://www.mrwallcover.com/areas/cotswolds/)
 - [All areas](https://www.mrwallcover.com/areas/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

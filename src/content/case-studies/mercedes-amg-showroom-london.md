@@ -43,7 +43,7 @@
     }
   ],
   "published": "2026-10-11",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -67,4 +67,4 @@ Around each door and above each skirting a narrow brushed stainless-steel trim f
 
 ## Photographs on this page
 
-Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), in September 2019 and May 2021: the finished showroom first, then the door and skirting details, and a collage from the works. The scope is recorded in our posts of 7 September 2019 ([B2HM9AWlG3w](https://www.instagram.com/p/B2HM9AWlG3w/)) and 13 September 2019 ([B2V9cZklfv9](https://www.instagram.com/p/B2V9cZklfv9/)).
+Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), in September 2019 and May 2021: the finished showroom first, then the door and skirting details, and a collage from the works. The scope is recorded in our posts of 7 September 2019 ([see the post](https://www.instagram.com/p/B2HM9AWlG3w/)) and 13 September 2019 ([see the post](https://www.instagram.com/p/B2V9cZklfv9/)).

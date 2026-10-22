@@ -1,7 +1,7 @@
 ---
 title: "Wallcoverings on Joinery & Panels, London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/
-description: "Wallcoverings and bespoke panels for doors, wardrobes and joinery in London. Full joinery services through trusted, vetted specialist partners."
+description: "Wallcoverings and bespoke panels for doors, wardrobes and joinery, including Calico Wallpaper’s Overture across a flush door at Lee Broom’s showroom, 2025."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -12,9 +12,9 @@ Services
 
 Wallcoverings carried onto doors, wardrobes, panelling and furniture, with bespoke panels created for the chosen finish. Full joinery services can be arranged through our trusted, vetted specialist partners.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Ajoinery-wallcoverings-and-panels) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Ajoinery-wallcoverings-and-panels) [See the work](https://www.mrwallcover.com/projects/)
 
-The most considered rooms carry the finish beyond the wall: across doors, wardrobe fronts, panelling and bespoke furniture, so that joinery and walls read as one surface. We apply wallcoverings to joinery with the same discipline as the walls around it. Seams, edges and returns are planned at the survey so the joins disappear.
+In some rooms the finish carries beyond the wall: across doors, wardrobe fronts, panelling and bespoke furniture, so that joinery and walls read as one surface. We apply wallcoverings to joinery with the same discipline as the walls around it. Seams, edges and returns are planned at the survey so the joins disappear.
 
 Joinery is a different surface from plaster. Faces are sealed and primed to suit the material, edges are wrapped or finished tight, and the pattern is carried across doors and frames. At [Lee Broom's Shoreditch showroom](https://www.mrwallcover.com/projects/calico-lee-broom-overture/) we ran Calico Wallpaper's Overture straight across a flush door until it vanished into the drape. At [Raffles London at The OWO](https://www.mrwallcover.com/projects/raffles-london-the-owo/) the wallcovering continued from the walls onto parts of the joinery.
 
@@ -30,7 +30,7 @@ Makers: [Cover Styl' architectural and furniture films](https://coverstyl.com/en
 
 ![Overture panels on the side wall of the showroom.](https://www.mrwallcover.com/media/img/r/lee-broom-04-800.webp)
 
-Overture panels on the side wall of the [Lee Broom showroom](https://www.mrwallcover.com/projects/calico-lee-broom-overture/). The installed scene is checked across the supplied sequence.Photograph: Dorin Burcus / Mr Wallcover.
+Overture panels on the side wall of the [Lee Broom showroom](https://www.mrwallcover.com/projects/calico-lee-broom-overture/). The installed scene is checked across the supplied sequence. Photograph: Dorin Burcus / Mr Wallcover.
 
 01
 
@@ -56,7 +56,7 @@ Where an edge will not come true, we stop asking the paper to make it. In [a pri
 
 [![Overture drapery wallpaper beside a chandelier.](https://www.mrwallcover.com/media/img/r/lee-broom-08-800.webp)](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
 
-Overture drapery wallpaper beside a chandelier.Photograph: Dorin Burcus / Mr Wallcover.
+Overture drapery wallpaper beside a chandelier. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroom](https://www.mrwallcover.com/projects/calico-lee-broom-overture/)
 
@@ -66,7 +66,7 @@ Survey, wall preparation and installation of the Overture mural; wallpapering of
 
 [![Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.](https://www.mrwallcover.com/media/img/r/trematon-01-800.webp)](https://www.mrwallcover.com/projects/trematon-castle/)
 
-Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall.Photograph: Dorin Burcus / Mr Wallcover.
+Detail of the PLANTASIA forest mural by House of Hackney, hung by Mr Wallcover at the Castle of Trematon, Cornwall. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Castle of Trematon, Cornwall](https://www.mrwallcover.com/projects/trematon-castle/)
 
@@ -78,7 +78,7 @@ Wallcovering installation contractor across the Georgian house and estate, 2019�
 
 Questions
 
-## Asked about Joinery wallcoverings & bespoke panels
+## Questions we are asked
 
 Illustrative material studies
 
@@ -110,6 +110,6 @@ Risk assessments and method statements (RAMS) are issued for every package, and 
 
 ### Do you take on single rooms, or only larger projects?
 
-We focus on whole residences and hotel packages, and will take on one- or two-room commissions.
+We focus on whole residences and hotel packages, and will take on one- or two-room commissions. The minimum installation commission is one room.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

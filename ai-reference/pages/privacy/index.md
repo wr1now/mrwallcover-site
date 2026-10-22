@@ -1,16 +1,16 @@
 ---
-title: "Privacy | Mr Wallcover"
+title: "Privacy Notice | Mr Wallcover"
 url: https://www.mrwallcover.com/privacy/
 description: "How Mr Wallcover handles personal information sent with a quotation request. No cookies and no analytics on this site by default."
 author: "Dorin Burcus"
-last_reviewed: 2026-10-09
+last_updated: 2026-10-22
 ---
 
 Privacy
 
 # Privacy notice
 
-Updated 18 October 2026
+Updated 22 October 2026
 
 ## Who we are
 
@@ -20,7 +20,7 @@ For any privacy request, write to [info@mrwallcover.com](mailto:info@mrwallcover
 
 ## What this notice covers
 
-It covers information you give us when you ask for a quotation or otherwise get in touch: your name, chosen reply address or phone number, project type, location, preferred start, your message, and any photographs you choose to send. An optional service choice, the visible topic from the page you chose, material choices and your own answer about how you heard of us are included only with the enquiry you submit.
+It covers information you give us when you ask for a quotation or otherwise get in touch: your name, the email address and phone number you give us, project type, location, preferred start, your message, and any photographs you choose to send. An optional service choice, the visible topic from the page you chose, material choices and your own answer about how you heard of us are included only with the enquiry you submit.
 
 It also covers the fact that this site, as published, does not use cookies and does not run analytics.
 
@@ -42,6 +42,10 @@ You can always email the address on the contact page instead.
 
 The form includes the versions of this privacy notice and the optional email-updates statement shown to you. For enquiries saved directly, we record the permission choice and the time we received it. A submitted choice is not a record of every page you visited, and a FormSubmit thank-you page alone does not prove delivery to our mailbox.
 
+## Booking a call
+
+The Book a call button opens Google Calendar’s appointment page in a new tab. That page is run by Google, not by this site. If you book a call there, the details you enter go to Google and to us, so that we can hold the call. Google’s privacy policy applies to that step.
+
 ## Cookies and analytics
 
 This site does not set cookies and does not embed advertising. A shortlist of material names, and a calmer-display preference, can be saved in this browser after you use those controls. They are not sent anywhere unless you include the shortlist in an enquiry. A draft of a project brief keeps the non-sensitive answers in this tab only, and not your name, email, phone or message.
@@ -50,7 +54,9 @@ After you use the material finder, its room, appearance, cleaning, panel and lig
 
 The quantity calculator works in this browser. The measurements you type are not sent to us unless you include them in an enquiry. A link you copy to share a result carries those measurements in the web address.
 
-There is a place in the build for a cookie-free analytics script, such as Plausible, Fathom or Cloudflare Web Analytics. Nothing is loaded unless that script is deliberately switched on. If it is switched on later, this notice will be updated.
+This site is hosted on GitHub Pages, run by GitHub. As with any website, when your browser loads a page, GitHub receives your IP address and the standard details every browser sends with a request. GitHub’s privacy statement covers that.
+
+There is a place in the build for a cookie-free analytics script, Umami. It is switched off on this site as published, so no analytics script is loaded. If it is ever switched on, this notice will change in the same release to describe it.
 
 ## Who we share it with
 
@@ -76,4 +82,4 @@ To use any of these rights, email [info@mrwallcover.com](mailto:info@mrwallcover
 
 This site is not aimed at children, and we do not knowingly collect their information.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

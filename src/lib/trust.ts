@@ -41,6 +41,7 @@ export const teamFacts = {
   supervision: find(/RAMS/),
   team: find(/six wallpaper hangers and six decorators/),
   hours: find(/^Nights and weekends/),
+  credentials: find(/JCT contracts/),
 };
 
 export const trustSummary = `In the trade since 2012; ${caseStudyCount} published case studies; makers installed include ${trustMakers.slice(0, -1).map((m) => m.name).join(', ')} and ${trustMakers.at(-1)!.name}. ${teamFacts.team} ${teamFacts.supervision}`;

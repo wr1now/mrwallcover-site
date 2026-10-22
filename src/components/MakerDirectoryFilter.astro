@@ -12,7 +12,14 @@ if(form){
  form.hidden=false;
  const search=form.querySelector<HTMLInputElement>('[data-directory-search]')!;
  const maker=form.querySelector<HTMLSelectElement>('[data-directory-maker]');
- const update=()=>{let count=0;const query=search.value.trim().toLocaleLowerCase();document.querySelectorAll<HTMLElement>('[data-directory-item]').forEach(item=>{item.hidden=!(item.dataset.search??'').includes(query)||Boolean(maker&&maker.value!=='all'&&item.dataset.maker!==maker.value);if(!item.hidden)count++;});const status=document.querySelector('[data-directory-count]');if(status)status.textContent=`${count} ${count===1?'result':'results'} shown`;};
+ const update=()=>{let count=0;const query=search.value.trim().toLocaleLowerCase();document.querySelectorAll<HTMLElement>('[data-directory-item]').forEach(item=>{item.hidden=!(item.dataset.search??'').includes(query)||Boolean(maker&&maker.value!=='all'&&item.dataset.maker!==maker.value);if(!item.hidden)count++;});
+  // Buying routes sit in one closed group per maker: hide a group with nothing to show, and open the rest while a filter is on.
+  const filtering=Boolean(query||(maker&&maker.value!=='all'));
+  const groups=document.querySelectorAll<HTMLElement>('[data-directory-group]');
+  groups.forEach(group=>{group.hidden=!group.querySelector('[data-directory-item]:not([hidden])');const jump=document.querySelector<HTMLElement>(`[data-directory-jump="${group.dataset.maker}"]`);if(jump)jump.hidden=group.hidden;const details=group.querySelector('details');if(details&&filtering&&!group.hidden)details.open=true;});
+  // Closed groups show no cards, so the count is given only while a filter has opened them.
+  const status=document.querySelector('[data-directory-count]');if(status)status.textContent=filtering||!groups.length?`${count} ${count===1?'result':'results'} shown`:'';
+ };
  const initial=new URLSearchParams(location.search).get('maker');if(maker&&initial&&Array.from(maker.options).some(o=>o.value===initial))maker.value=initial;
  form.addEventListener('input',update);form.addEventListener('change',update);update();
 }

@@ -13,6 +13,7 @@ import type { Project } from '../../lib/types';
 import method from '../../content/method.json';
 import exteriorMethod from '../../content/method-exterior.json';
 import retired from '../../content/retired-projects.json';
+// The same icons mark the standards on /practice/#method (src/pages/practice.astro).
 const methodIcons: IconName[] = ['ruler', 'layers', 'room', 'tag', 'drawing', 'check'];
 
 export function getStaticPaths() {
@@ -26,7 +27,7 @@ export function getStaticPaths() {
       params: { slug: oldSlug },
       props: { project: projects.find((p) => p.slug === newSlug)!, redirectTo: projectHref(newSlug) },
     })),
-    // Retired project URLs (once published, now not a page): back to the work index.
+    // Retired project URLs (once published, now not a page): back to the Projects index.
     ...retired.items
       .filter((item) => !projects.some((p) => p.slug === item.slug))
       .map((item) => ({
@@ -47,13 +48,16 @@ const study = project.caseStudy ? caseStudyBySlug(project.slug) : undefined;
 const isExterior = study?.frontmatter.method === 'exterior';
 const projectMethod = isExterior ? exteriorMethod : method;
 const projectMethodIcons: IconName[] = isExterior ? ['ruler', 'room', 'layers', 'drawing', 'swatch', 'calendar'] : methodIcons;
+/* The wallcovering standards are owned by /practice/#method. A case study prints this one-sentence summary of
+   method.json's title and six items, then the six in full in a closed disclosure: keep it in step with method.json. */
+const methodSummary = 'Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit.';
 /* Modest (preview-only) heroes are shown at their own pixel width, never stretched past it. */
 const modestHeroWidth = project.modest && project.imageId ? media(project.imageId).thumbWidth : 360;
 const StudyContent = study?.Content;
 const redirectUrl = redirectTo ? new URL(redirectTo, SITE_URL).href : null;
 const crumbs = [
   { name: 'Home', href: '/' },
-  { name: 'Work', href: '/projects/' },
+  { name: 'Projects', href: '/projects/' },
   { name: project.title, href: projectHref(project.slug) },
 ];
 const films = project.videos.map((id) => videoById(id));
@@ -86,6 +90,12 @@ const schemaNodes = study
 /* The hero's sizes, shared by the <picture> and its preload so both pick the same file. */
 const heroSizes = project.modest ? `(min-width: ${modestHeroWidth + 40}px) ${modestHeroWidth}px, 100vw` : '(min-width: 768px) 72rem, 100vw';
 const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictureSources(project.imageId, project.modest)[0], sizes: heroSizes } : undefined;
+/* The first eight frames show; the rest sit in a closed disclosure, whose lazy photos load only when it
+   opens. Every frame, credit and alt stays in the HTML. */
+const galleryFrames = project.gallery.filter((id) => id !== project.imageId);
+const galleryLead = galleryFrames.slice(0, 8);
+const galleryMore = galleryFrames.slice(8);
+const gallerySizes = project.modest ? '(min-width: 768px) 360px, (min-width: 640px) 50vw, 100vw' : '(min-width: 768px) 36rem, 100vw';
 ---
 
 {redirectUrl ? (
@@ -130,9 +140,9 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
     {project.awaitingPhotos && (
       <figure class="photo-awaiting">
         <div class="photo-awaiting-frame">
-          <p>Interior photographs to follow</p>
+          <p>Interior photographs are not yet published for this project.</p>
         </div>
-        <figcaption class="caption">This panel stands in for the interior photographs, which will follow once they are cleared. It is not a photograph of the hotel or of the finished rooms.</figcaption>
+        <figcaption class="caption">This panel is a placeholder. It is not a photograph of the building or of the finished rooms.</figcaption>
       </figure>
     )}
     {StudyContent ? (
@@ -153,29 +163,77 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
           <section class="project-gallery-section mt-14" aria-labelledby="gallery-heading">
             <h2 id="gallery-heading" class="m-0 text-[clamp(2rem,3vw,2.7rem)]">Photographs</h2>
             <div class:list={['project-gallery mt-6', project.modest && 'modest-gallery']}>
-              {project.gallery.filter((id) => id !== project.imageId).map((id) => (
+              {galleryLead.map((id) => (
                 <figure class="m-0">
-                  <Picture id={id} thumbOnly={project.modest} sizes={project.modest ? '(min-width: 768px) 360px, (min-width: 640px) 50vw, 100vw' : '(min-width: 768px) 36rem, 100vw'} />
+                  <Picture id={id} thumbOnly={project.modest} sizes={gallerySizes} />
                   {project.credits?.[id] && <figcaption class="caption">{project.credits[id]}</figcaption>}
                 </figure>
               ))}
             </div>
+            {galleryMore.length > 0 && (
+              <details class="project-gallery-more" data-gallery-more>
+                <summary>{galleryMore.length === 1 ? 'One more photograph from this project' : `All ${galleryMore.length} more photographs from this project`}</summary>
+                <div class:list={['project-gallery mt-6', project.modest && 'modest-gallery']}>
+                  {galleryMore.map((id) => (
+                    <figure class="m-0">
+                      <Picture id={id} thumbOnly={project.modest} sizes={gallerySizes} />
+                      {project.credits?.[id] && <figcaption class="caption">{project.credits[id]}</figcaption>}
+                    </figure>
+                  ))}
+                </div>
+              </details>
+            )}
+            {galleryMore.length > 0 && (
+              <script is:inline>
+                // Paper copies carry every frame: open the closed galleries before printing so their photos load.
+                (() => {
+                  if (window.__galleryPrint) return;
+                  window.__galleryPrint = true;
+                  let opened = [];
+                  window.addEventListener('beforeprint', () => {
+                    opened = [...document.querySelectorAll('[data-gallery-more]:not([open])')];
+                    opened.forEach((more) => { more.open = true; });
+                  });
+                  window.addEventListener('afterprint', () => { opened.forEach((more) => { more.open = false; }); opened = []; });
+                })();
+              </script>
+            )}
           </section>
         )}
         <section class="project-method mt-14 border-t border-line pt-10" aria-labelledby="method-heading">
           <p class="eyebrow">{projectMethod.eyebrow}</p>
           <h2 id="method-heading" class="m-0 max-w-xl text-[clamp(2rem,3vw,2.7rem)]">{projectMethod.title}</h2>
-          <p class="lede mt-4 max-w-2xl">{projectMethod.text}</p>
-          <ol class="method-list mt-8 grid md:grid-cols-2" style="list-style:none;padding:0;margin-left:0;column-gap:2.5rem;row-gap:1.5rem">
-            {projectMethod.items.map((item, index) => (
-              <li style="padding-top:0.25rem">
-                <p class="eyebrow method-marker m-0"><Icon name={projectMethodIcons[index]} />{String(index + 1).padStart(2, '0')}</p>
-                <h3 style="margin:0.25rem 0 0.5rem;font-size:1.25rem;line-height:1.4">{item.title}</h3>
-                <p class="m-0">{item.text}</p>
-              </li>
-            ))}
-          </ol>
-          {isExterior && <p class="mt-8 mb-0"><a href="/services/exterior-works/">Discuss exterior decorating, repairs and scaffolded access</a></p>}
+          {isExterior ? (
+            <>
+              <p class="lede mt-4 max-w-2xl">{projectMethod.text}</p>
+              <ol class="method-list mt-8 grid md:grid-cols-2" style="list-style:none;padding:0;margin-left:0;column-gap:2.5rem;row-gap:1.5rem">
+                {projectMethod.items.map((item, index) => (
+                  <li style="padding-top:0.25rem">
+                    <p class="eyebrow method-marker m-0"><Icon name={projectMethodIcons[index]} />{String(index + 1).padStart(2, '0')}</p>
+                    <h3 style="margin:0.25rem 0 0.5rem;font-size:1.25rem;line-height:1.4">{item.title}</h3>
+                    <p class="m-0">{item.text}</p>
+                  </li>
+                ))}
+              </ol>
+            </>
+          ) : (
+            <>
+              <p class="lede mt-4 max-w-2xl">{methodSummary} <a href="/practice/#method">Read the method</a>.</p>
+              <details class="project-method-more mt-8">
+                <summary>The six standards in full</summary>
+                <ol class="method-list mt-6 grid md:grid-cols-2" style="list-style:none;padding:0;margin-left:0;column-gap:2.5rem;row-gap:1.5rem">
+                  {projectMethod.items.map((item, index) => (
+                    <li style="padding-top:0.25rem">
+                      <p class="eyebrow method-marker m-0"><Icon name={projectMethodIcons[index]} />{String(index + 1).padStart(2, '0')}</p>
+                      <h3 style="margin:0.25rem 0 0.5rem;font-size:1.25rem;line-height:1.4">{item.title}</h3>
+                      <p class="m-0">{item.text}</p>
+                    </li>
+                  ))}
+                </ol>
+              </details>
+            </>
+          )}
+          {isExterior && <p class="mt-8 mb-0"><a href="/services/exterior-works/">Read about exterior decorating, repairs and scaffolded access</a></p>}
           <p class="mt-8 mb-0">{isExterior && 'For our wallcovering work: '}<a href="/details/">See the finish up close: seams, internal corners, edges and joins from our own installations</a></p>
         </section>
         {films.length > 0 && (
@@ -229,7 +287,7 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
             <ul class="m-0 grid list-none gap-1 p-0">
               {(relatedAreas.length ? relatedAreas : areas.slice(0, 3)).map((a) => <li><a href={areaHref(a.slug)}>{a.heading}</a></li>)}
             </ul>
-            <p class="mt-6"><Action variant="primary" href="/contact/">Request a quotation</Action></p>
+            <p class="mt-6"><Action variant="primary" href="/contact/">Start your project</Action></p>
           </div>
         </nav>
       </div>
@@ -357,12 +415,30 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
   .case-study :global(li + li) { margin-top: .7rem; }
   .case-study :global(th), .case-study :global(td) { padding: .85rem 1rem; border: 1px solid var(--color-line); text-align: left; vertical-align: top; }
   .case-study :global(th) { background: var(--color-ivory-deep); font-weight: 500; }
+  /* A native disclosure inside the story (for example "About the building"). */
+  .case-study :global(details) { max-width: 44rem; margin-block: 1.25rem; border-block: 1px solid var(--color-line); }
+  .case-study :global(details > summary) { display: flex; align-items: center; min-height: 44px; padding-block: .5rem; cursor: pointer; line-height: 1.6; }
+  .case-study :global(details > summary)::after { content: "+"; margin-left: auto; padding-left: 1rem; font-size: 1.25rem; line-height: 1; color: var(--color-brass); }
+  .case-study :global(details[open] > summary)::after { content: "\2212"; }
+  .case-study :global(details > summary)::-webkit-details-marker { display: none; }
+  .case-study :global(details[open] > summary) { border-bottom: 1px solid var(--color-line); margin-bottom: 1rem; }
+  .case-study :global(details > p) { max-width: 44rem; }
   .project-gallery-section { padding-top: 2.5rem; border-top: 1px solid var(--color-line); }
   .project-gallery { columns: 1; column-gap: 1.5rem; }
   .project-gallery > figure { margin: 0 0 1.5rem; break-inside: avoid; }
   .project-gallery :global(.media-frame) { overflow: hidden; border-radius: var(--radius-control); }
   .project-gallery .caption { padding: .25rem .15rem 0; }
+  /* The same quiet +/- row as the story's own disclosures, at a 44px target; the method standards use it too. */
+  .project-gallery-more, .project-method-more { border-block: 1px solid var(--color-line); }
+  .project-gallery-more > summary, .project-method-more > summary { display: flex; align-items: center; min-height: 44px; padding-block: .5rem; cursor: pointer; line-height: 1.6; list-style: none; }
+  .project-gallery-more > summary::-webkit-details-marker, .project-method-more > summary::-webkit-details-marker { display: none; }
+  .project-gallery-more > summary::after, .project-method-more > summary::after { content: "+"; margin-left: auto; padding-left: 1rem; font-size: 1.25rem; line-height: 1; color: var(--color-brass); }
+  .project-gallery-more[open] > summary::after, .project-method-more[open] > summary::after { content: "\2212"; }
+  /* Open, the gallery summary takes a rule; the standards' own item rules divide the method one. */
+  .project-gallery-more[open] > summary { border-bottom: 1px solid var(--color-line); }
+  .project-method .lede a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; text-decoration-color: var(--color-underline); }
   .project-method .method-list { margin-bottom: 0; }
+  .project-method-more .method-list { margin-bottom: 1.5rem; }
   .project-method .method-list > li { padding: 1.5rem 0 0 !important; border-top: 1px solid var(--color-line); }
   .project-related > div { min-width: 0; padding: 1.5rem; background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-control); }
   .project-related .eyebrow { margin-top: 0; }
@@ -380,6 +456,9 @@ const heroPreload = project.imageId && !redirectTo && StudyContent ? { ...pictur
   @media print {
     .project-story-layout, .project-record-layout { display: block; }
     .project-story-layout .case-study, .project-record-copy { max-width: none; padding: 0; border: 0; }
+    .case-study :global(details)::details-content { content-visibility: visible; block-size: auto; }
+    .project-gallery-more::details-content, .project-method-more::details-content { content-visibility: visible; block-size: auto; }
+    .project-gallery-more > summary::after, .project-method-more > summary::after { content: none; }
     .project-gallery { columns: 2; }
   }
 </style>

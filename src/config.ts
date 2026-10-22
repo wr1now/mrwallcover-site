@@ -54,7 +54,14 @@ export const FORM_ENDPOINT: string = import.meta.env.PUBLIC_FORM_ENDPOINT || end
 // Google Calendar appointment schedule 'Mr Wallcover: 20-minute project call', Mon–Fri 09:00–17:00 UK (supplied 11 Oct 2026).
 const bookingFromFile = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk';
 export const BOOKING_URL: string = resolveBookingUrl(bookingFromFile);
+/** Booking hours from that schedule: one source for /contact/, /get-in-touch/ and the "Book a call" hint. */
+export const BOOKING_DAYS = 'Mon–Fri, 9am–5pm UK';
+export const BOOKING_HOURS = `Calls ${BOOKING_DAYS}.`;
+/** The short line under "Book a call": BookCallLink's hint and the thank-you page. */
+export const BOOKING_HINT = `20 minutes, ${BOOKING_DAYS}.`;
 
+/** Direct email links on the enquiry path open with this subject. Privacy and AI-reader links keep the bare address. */
+export const ENQUIRY_MAILTO = `mailto:${PUBLIC_EMAIL}?subject=Wallcovering%20enquiry`;
 
 /**
  * Cookie-free analytics (Umami, chosen by the owner on 14 Oct 2026).

@@ -635,7 +635,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "conflict",
@@ -726,7 +726,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "conflict",
@@ -965,7 +965,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "sheet-only",
@@ -1045,7 +1045,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "sheet-only",
@@ -1124,7 +1124,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "sheet-only",
@@ -1204,7 +1204,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "sheet-only",
@@ -1271,7 +1271,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "sheet-only",
@@ -1344,7 +1344,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "sheet-only",
@@ -1417,7 +1417,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "sheet-only",
@@ -1570,7 +1570,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "conflict",
@@ -1672,7 +1672,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "conflict",
@@ -1860,7 +1860,7 @@
         },
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "unresolved",
@@ -2165,7 +2165,7 @@
       "gaps": [
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "conflict",
@@ -2243,7 +2243,7 @@
       "gaps": [
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "conflict",
@@ -2316,7 +2316,7 @@
       "gaps": [
         {
           "kind": "unclear-status",
-          "text": "Whether this document is still current is unclear."
+          "text": "Ask the maker to confirm this document is still current before you rely on it."
         },
         {
           "kind": "conflict",

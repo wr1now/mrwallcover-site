@@ -11,6 +11,8 @@
     "House of Hackney – BAMBUSA, Midnight"
   ],
   "modest": true,
+  "metaTitle": "A Georgian house in North London | Mr Wallcover",
+  "metaDescription": "House of Hackney's BAMBUSA in Midnight, hung on every wall of a guest bedroom in a listed Georgian house in North London in 2019, to the designer's scheme.",
   "standfirst": "House of Hackney's BAMBUSA in Midnight, hung on every wall of a historic guest bedroom in a listed Georgian house in North London, to the designer's scheme.",
   "hero": "north-london-residence-01",
   "gallery": [
@@ -64,7 +66,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 

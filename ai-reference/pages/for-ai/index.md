@@ -31,18 +31,20 @@ Mr Wallcover is a wallpaper installer in London for hotels and prime homes. One 
 The service has five parts, described on [the services page](https://www.mrwallcover.com/services/):
 
 - [Surveying](https://www.mrwallcover.com/services/#surveying). We measure on site, or from drawings when that is what the programme needs. Skirting, joinery, doors and windows come out of the area. What is left is the wall that will actually be hung.
-  - Quantities include wastage and pattern repeat. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey. A roll that looks generous on a plan can run short on the last pier.
+  - Quantities include wastage and pattern repeat. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. A roll that looks generous on a plan can run short on the last pier.
   - The survey is also a judgement on the wall. If it is not ready for the material specified, we say so before anyone orders the last drop.
 - [Project management](https://www.mrwallcover.com/services/#management). Every project has a project leader on the ground. That person is the day-to-day contact for the craft, the progress and the expectations that have been set.
-  - On a longer commission, senior oversight quality-controls the work and agrees a forward plan with you, in person, each week. Frequent and plain communication is part of the method, not a courtesy added at the end.
+  - On a longer commission, senior oversight checks the quality of the work and agrees a forward plan with you, in person, each week. Frequent and plain communication is part of the method, not a courtesy added at the end.
   - The team you meet on the first day is the core team that finishes. Disruption is kept low: work is contained, floors and joinery are protected, and the place is left tidy every evening. In a home we are visitors. In a hotel we work around the house.
-- [Supply](https://www.mrwallcover.com/services/#supply). On many hotel and flagship jobs the wallcovering is free-issue from the designer, the brand or the client. We manage delivery, check the delivery against the measure, and hang what was specified.
+- [Supply](https://www.mrwallcover.com/services/#supply). On many hotel and flagship jobs the designer, the brand or the client supplies the wallcovering (free-issue). We manage delivery, check it against the measure, and hang what was specified.
   - We can also procure. Either way, the order has to cover the repeat and the wastage, or the last wall is the one that waits.
+  - Rolls are inspected as part of preparation; on large volumes not every roll can be opened in advance. Any defect is reported straight away to the designer, contractor and manufacturer.
   - Delivery is timed to the hang. Paper sitting in a corridor for days is a risk to the goods and a nuisance to the building.
-- [Installation](https://www.mrwallcover.com/services/#installation). This is the craft the practice is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.
+- [Installation](https://www.mrwallcover.com/services/#installation). This is the craft Mr Wallcover is built on. Wallcovering installation for hotels, retail flagships and prime residential rooms, including paper on joinery where the drawings show it.
   - Preparation, where it is in the specification, includes stripping old paper, dustless sanding, and making good cracks and uneven surfaces. Some materials are specified with a lining paper. Some, including certain mural installs, are specified without one. We follow the specification.
+  - We set out every wall with a laser level. Deliveries are checked against the measure, and batches and shading are managed so that a room reads as one surface.
   - Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Where Mr Wallcover is appointed as main decorating contractor, the package can include fine painting, French polishing and other specialist finishes, as it did at Brown's Hotel, Mayfair.
-- [Aftercare](https://www.mrwallcover.com/services/#aftercare). Aftercare is the fifth part of the service. A return inspection is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.
+- [Aftercare](https://www.mrwallcover.com/services/#aftercare). Aftercare is the fifth part of the service. A return visit is included once the paper has settled, about four to six weeks after completion. Seams and edges are attended to. There is a priority repair call-out for the workmanship, and a twelve-month guarantee.
   - The detail, including care by material and what the guarantee does not cover, is on the aftercare page.
 
 ## From one room to a multi-year programme
@@ -62,13 +64,13 @@ Owner-confirmed commission-scope policy. Confirmed by the owner on 19 October 20
 
 ## Where it works
 
-Based in London. Coverage: London and the surrounding areas; UK-wide for selected projects. The areas with a page of their own are:
+Based in London. We work in London and the surrounding areas, and UK-wide on selected projects. The areas with a page of their own are:
 
 - [Wallpaper installation in Mayfair](https://www.mrwallcover.com/areas/mayfair/)
 - [Wallpaper installation in Belgravia](https://www.mrwallcover.com/areas/belgravia/)
 - [Wallpaper installation in Chelsea](https://www.mrwallcover.com/areas/chelsea/)
 - [Wallpaper installation in Kensington](https://www.mrwallcover.com/areas/kensington/)
-- [Wallcovering installation in the City of London](https://www.mrwallcover.com/areas/city-of-london/)
+- [Wallpaper installation in the City of London](https://www.mrwallcover.com/areas/city-of-london/)
 - [Wallpaper installation in the Cotswolds](https://www.mrwallcover.com/areas/cotswolds/)
 
 ## Who runs it
@@ -77,7 +79,7 @@ Based in London. Coverage: London and the surrounding areas; UK-wide for selecte
 
 Portrait: [Dorin Burcus, founder of Mr Wallcover](https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg) (© Mr Wallcover; reuse terms on [the image use page](https://www.mrwallcover.com/image-use/)).
 
-What you see on this site is public. Private clients are not named.
+Private clients are not named, on this site or in passing. We publish the commissions that are already public, and we leave the rest off the page.
 
 ## Key facts
 
@@ -96,16 +98,16 @@ What you see on this site is public. Private clients are not named.
 
 One page for each installation service:
 
-- [Hand-painted wallpaper installation](https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/): Installation of hand-painted, scenic and chinoiserie wallpapers in London, in the manner of de Gournay and Fromental. Survey, set-out, hang and aftercare.
-- [Grasscloth installation](https://www.mrwallcover.com/services/grasscloth-installation/): Grasscloth and natural weave wallcovering installation in London. Seams, colour variation and weave direction agreed before the first length is cut.
-- [Silk wallcovering installation](https://www.mrwallcover.com/services/silk-wallcovering-installation/): Silk wallcovering installation in London houses and hotels. Clean hands, the right adhesive and seams planned so the light does not catch a ridge.
-- [Fabric walling](https://www.mrwallcover.com/services/fabric-walling/): Fabric walling and textile wallcovering installation in London. Wider goods, careful edges at joinery, skirtings and reveals.
-- [Hotel wallcovering installation](https://www.mrwallcover.com/services/hotel-wallcovering-installation/): Hotel wallcovering contractor in London: contract vinyl, Vescom and specialist papers for bedrooms and corridors. The OWO, Brown's Hotel, Four Seasons.
-- [Mural installation](https://www.mrwallcover.com/services/mural-installation/): Printed and hand-made wallpaper mural installation in London. Set out from a fixed point so the scene meets around doors and corners.
-- [Acoustic wallcovering installation](https://www.mrwallcover.com/services/acoustic-wallcovering-installation/): Acoustic wallcovering and acoustic panel installation in London hotels, offices and homes. Hung to the maker's instruction so the face keeps its performance.
-- [Architectural & furniture film wrapping](https://www.mrwallcover.com/services/architectural-film-wrapping/): Architectural and furniture film wrapping in London: doors, joinery, lift interiors, reception desks and furniture refinished in place. Survey to aftercare.
-- [Window film installation](https://www.mrwallcover.com/services/window-film/): Window film installation in London: decorative, privacy, solar control and safety films for homes, hotels, offices and shopfronts. Survey to aftercare.
-- [Joinery wallcoverings & bespoke panels](https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/): Wallcoverings and bespoke panels for doors, wardrobes and joinery in London. Full joinery services through trusted, vetted specialist partners.
+- [Hand-painted wallpaper installation](https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/): Hand-painted, scenic and chinoiserie wallpaper installation in London, including de Gournay in a private residence in 2018. Survey to aftercare.
+- [Grasscloth installation](https://www.mrwallcover.com/services/grasscloth-installation/): Grasscloth and natural weaves hung in London, including Phillip Jeffries Tweed and Omexco at Four Seasons Hotel London at Ten Trinity Square, 2016–2019.
+- [Silk wallcovering installation](https://www.mrwallcover.com/services/silk-wallcovering-installation/): Silk wallcovering installation in London houses and hotels, including hand-dyed silk feature walls at Four Seasons Hotel London at Ten Trinity Square.
+- [Fabric walling](https://www.mrwallcover.com/services/fabric-walling/): Fabric walling and textile wallcovering installation in London, including fabric-wrapped wall panels at Four Seasons Hotel London at Ten Trinity Square.
+- [Hotel wallcovering installation](https://www.mrwallcover.com/services/hotel-wallcovering-installation/): Hotel wallcovering contractor in London: bedrooms and corridors, hung to programme, mostly in hotels that stayed open. The OWO, Brown's Hotel, Four Seasons.
+- [Mural installation](https://www.mrwallcover.com/services/mural-installation/): Printed and hand-made wallpaper mural installation in London, including Calico Wallpaper’s landscape at Heathrow Terminal 4, hung overnight in 2018.
+- [Acoustic wallcovering installation](https://www.mrwallcover.com/services/acoustic-wallcovering-installation/): Acoustic wallcovering and panel installation for London hotels, offices and homes, including acoustic felt on a Holborn office boardroom wall in 2020.
+- [Architectural & furniture film wrapping](https://www.mrwallcover.com/services/architectural-film-wrapping/): Architectural and furniture film wrapping: doors, joinery, lifts and furniture refinished in place, including lift car interiors at Heythrop Park, 2022.
+- [Window film installation](https://www.mrwallcover.com/services/window-film/): Window film in London: decorative, privacy, solar control and safety films, including Solar Screen film fitted at Hyde London City (the Old Bailey Hotel).
+- [Joinery wallcoverings & bespoke panels](https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/): Wallcoverings and bespoke panels for doors, wardrobes and joinery, including Calico Wallpaper’s Overture across a flush door at Lee Broom’s showroom, 2025.
 - [Exterior works](https://www.mrwallcover.com/services/exterior-works/): Full exteriors in London: scaffolding supplied and managed, masonry and render painting, and windows. Public projects in Pimlico and Bayswater.
 - [Commercial and showroom wallcovering installation](https://www.mrwallcover.com/services/commercial-wallcovering-installation/): Wallcoverings for London showrooms, shops, venues and launches: Huntsman on Savile Row, Mercedes-AMG, SCP, House of Hackney and Calico Wallpaper.
 
@@ -118,7 +120,7 @@ Pages on specific makers' products, on working with main contractors, on how a j
 - [Calico Wallpaper installation](https://www.mrwallcover.com/services/calico-wallpaper-installer/): Calico Wallpaper murals and papers installed in London by Mr Wallcover: four public installs since 2018, at Heathrow, Lee Broom, The Lavery and Rosewood London.
 - [Wallpaper quotation checklist](https://www.mrwallcover.com/advice/cost/): Prepare a wallpaper installation enquiry with location, photographs, approximate dimensions, material references and timing. Final scope follows a survey.
 - [House of Hackney wallpaper installation](https://www.mrwallcover.com/services/house-of-hackney-wallpaper-installer/): House of Hackney wallpapers hung by Mr Wallcover: Trematon Castle, the St Michael's Clergy House showroom, a Hyde London City suite and a North London bedroom.
-- [Reviews](https://www.mrwallcover.com/reviews/): What makers say about Mr Wallcover's wallcovering installation in London: Calico Wallpaper's own words, published exactly as written.
+- [Reviews](https://www.mrwallcover.com/reviews/): What makers say about Mr Wallcover's wallcovering installation in London: Calico Wallpaper's own words, published as written.
 - [Timorous Beasties installation](https://www.mrwallcover.com/services/timorous-beasties-installer/): We install Timorous Beasties papers. On the record: custom-printed vinyl hung through the 111 guest rooms across seven storeys of Hyde London City.
 - [For trade](https://www.mrwallcover.com/trade/): How Mr Wallcover works with main contractors, hotel project teams and fit-out firms in London: packages, pricing, programme, night work, RAMS and sample rooms.
 
@@ -204,7 +206,7 @@ These are the commissions already on the public record, each with its own case s
   - Venue: a stucco townhouse of flats on St George's Square, Pimlico.
   - When: July to November 2024. The scaffold was struck in late November 2024.
   - Client: Private residential building.
-  - Scope: full front and rear exterior. Scaffolding supplied and managed by the practice.
+  - Scope: full front and rear exterior. Scaffolding supplied and managed by us.
   - [Markdown version of this case study](https://www.mrwallcover.com/projects/pimlico-st-georges-square/index.md).
 - [Inverness Terrace, Bayswater](https://www.mrwallcover.com/projects/inverness-terrace/). Full scaffolded exterior, 2018.
   - Where: Inverness Terrace, Bayswater, London.
@@ -222,7 +224,7 @@ These are the commissions already on the public record, each with its own case s
   - Wallcoverings as the case study lists them: House of Hackney BAMBUSA, Midnight.
   - Scope: wallpaper installation.
   - [Markdown version of this case study](https://www.mrwallcover.com/projects/north-london-residence/index.md).
-- [Ahluwalia x Calico Wallpaper: 'Estuary' at Rosewood London](https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/). Specialist installation of the Estuary mural backdrop, against a fixed show deadline, 2026. Installed: Calico Wallpaper x Ahluwalia – Estuary (bespoke mural).
+- [Ahluwalia x Calico Wallpaper: 'Estuary' at Rosewood London](https://www.mrwallcover.com/projects/calico-ahluwalia-estuary-rosewood/). Specialist installation of the Estuary mural backdrop, against a fixed show deadline, 2026. Installed: Calico Wallpaper × Ahluwalia – Estuary (bespoke mural).
   - Where: Rosewood London, High Holborn.
   - Venue: Rosewood London.
   - When: 18 September 2026, the day before the show.
@@ -238,7 +240,7 @@ These are the commissions already on the public record, each with its own case s
   - With: Calico Wallpaper, Brooklyn.
   - Wallcoverings as the case study lists them: Cadence by Athena Calderone, in Oxblood.
   - [Markdown version of this case study](https://www.mrwallcover.com/projects/calico-beverly-1975-cadence/index.md).
-- [Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroom](https://www.mrwallcover.com/projects/calico-lee-broom-overture/). Survey, wall preparation and installation of the Overture mural; wallpapering of theatrical flats for Calico's LDF dinner, 2025. Installed: Calico Wallpaper x Lee Broom – Overture (installed design: Matinee).
+- [Lee Broom x Calico Wallpaper: 'Overture' at the Lee Broom Shoreditch showroom](https://www.mrwallcover.com/projects/calico-lee-broom-overture/). Survey, wall preparation and installation of the Overture mural; wallpapering of theatrical flats for Calico's LDF dinner, 2025. Installed: Calico Wallpaper × Lee Broom – Overture (installed design: Matinee).
   - Where: Lee Broom flagship showroom, Rivington Street, Shoreditch.
   - When: surveyed July 2025; installed 9 September 2025.
   - Client: Calico Wallpaper (Brooklyn, New York), for Lee Broom.
@@ -374,7 +376,7 @@ The [Wallcovering Guide](https://www.mrwallcover.com/advice/) is written by Dori
 - [Choosing wallpaper for the room, not just the photograph](https://www.mrwallcover.com/advice/choosing-wallcoverings/): How to choose a wallcovering that still looks right once it is on the wall: traffic, light, cleaning, moisture, sample size and the questions to settle before ordering.
 - [Grasscloth: the seams and variation to expect](https://www.mrwallcover.com/advice/grasscloth-seams-and-variation/): Grasscloth seams show and panels vary in shade. What is normal, what is a fault, how the set-out and the batch change the result, and what to settle before you order.
 - [Is the wall ready for wallpaper?](https://www.mrwallcover.com/advice/wall-preparation/): How to tell whether a wall is ready for wallcovering: old coatings, dryness, soundness, filling and sanding, lining paper, priming and what needs a site inspection.
-- [What changes the cost of wallpaper installation?](https://www.mrwallcover.com/advice/installation-cost/): Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
+- [What changes the cost of wallpaper installation?](https://www.mrwallcover.com/advice/installation-cost/): Why installation is not priced per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
 - [Hand-painted papers and murals: plan the room before ordering](https://www.mrwallcover.com/advice/hand-painted-murals-set-out/): How a scenic or hand-painted paper is set out: elevations, the focal point, panel sequence, doors and corners, finished dimensions and when the survey has to happen.
 - [Wallcoverings for working hotels and busy corridors](https://www.mrwallcover.com/advice/hotel-wallcovering-specification/): Specifying wallcoverings for an occupied hotel: cleaning and durability, the sample room, batch control, phasing around guests, product documents, spares and handover.
 - [A designer's wallcovering specification checklist](https://www.mrwallcover.com/advice/designer-specification-checklist/): What a wallcovering specification needs before site: maker and code, elevations, repeat and match, samples, light, lining, free-issue responsibilities and change control.
@@ -402,7 +404,7 @@ Free-issue deliveries are checked against the measure when they arrive. Scenic p
 
 ### Can you give references, and which designers have you worked with?
 
-The published case studies name the design teams and brands involved. Studio Moren designed the interiors at Hyde London City (2022–2024, 111 rooms). House of Hackney's design consultancy worked on a Grade II-listed Georgian house in North London (2019). Calico Wallpaper of Brooklyn was the client at Lee Broom's Shoreditch showroom (2025), Rosewood London (2026), The Lavery in the Brompton Design District (2026) and Heathrow Terminal 4 (2018). Hotel clients on the record include Rocco Forte Hotels (Brown's Hotel), Raffles London at The OWO and Four Seasons (Ten Trinity Square). Major main contractors recommend Mr Wallcover's work. Referees are not named on the site.
+The published case studies name the design teams and brands involved. Studio Moren designed the interiors at Hyde London City (2022–2024, 111 rooms). House of Hackney's design consultancy worked on a Grade II-listed Georgian house in North London (2019). Calico Wallpaper of Brooklyn was the client at Lee Broom's Shoreditch showroom (2025), Rosewood London (2026), The Lavery in the Brompton Design District (2026) and Heathrow Terminal 4 (2018). Hotel clients on the record include Rocco Forte Hotels (Brown's Hotel), Raffles London at The OWO and Four Seasons Hotel London at Ten Trinity Square. Major main contractors recommend Mr Wallcover's work. Referees are not named on the site.
 
 ### Are you on any maker's recommended-installer list?
 
@@ -414,7 +416,30 @@ There is no flat rate per roll. The quotation comes from a site survey or from d
 
 ### Which London hotels has Mr Wallcover worked on?
 
-There are 22 named hotels on the public record: Brown's Hotel, Mayfair (main decorating contractor, 2022–2024, Rocco Forte Hotels); Hyde London City, 15 Old Bailey (full decorating package, specialist wallcoverings and window film, 111 rooms, sample room November 2022 to August 2024); Raffles London at The OWO (wallcovering installation, 2020–2023); Four Seasons Hotel London at Ten Trinity Square, now at Tower Bridge (guest room and suite wallpapering, 2016–2019); DoubleTree by Hilton London – West End (2019); DoubleTree by Hilton London – Victoria (March to September 2023); Hilton Garden Inn Silverstone (main wallcoverings contractor, 2022); The Biltmore Mayfair (2018, including Phillip Jeffries); Pendley Manor Hotel (December 2019 – January 2020); Hilton London Metropole, Paddington (2019); Novotel London Canary Wharf (2016); Jumeirah Carlton Tower, Knightsbridge (2020); Waldorf Astoria London Admiralty Arch (2026); London Marriott Hotel Canary Wharf (2026); Heythrop Park, Oxfordshire (2022); The Westminster London, Curio Collection by Hilton (2021); The Marylebone (2020); The Lensbury, Teddington (2018–2019); Hilton London Hyde Park (2016); and Premier Inn London Heathrow Airport Terminal 4 (2016). The Lanesborough and Moxy London ExCeL are listed by name only.
+There are 22 named hotels on the public record:
+
+- Brown's Hotel, Mayfair (main decorating contractor, 2022–2024, Rocco Forte Hotels)
+- Hyde London City, 15 Old Bailey (full decorating package, specialist wallcoverings and window film, 111 rooms, sample room November 2022 to August 2024)
+- Raffles London at The OWO (wallcovering installation, 2020–2023)
+- Four Seasons Hotel London at Ten Trinity Square, now at Tower Bridge (guest room and suite wallpapering, 2016–2019)
+- DoubleTree by Hilton London – West End (2019)
+- DoubleTree by Hilton London – Victoria (March to September 2023)
+- Hilton Garden Inn Silverstone (main wallcoverings contractor, 2022)
+- The Biltmore Mayfair (2018, including Phillip Jeffries)
+- Pendley Manor Hotel (December 2019 – January 2020)
+- Hilton London Metropole, Paddington (2019)
+- Novotel London Canary Wharf (2016)
+- Jumeirah Carlton Tower, Knightsbridge (2020)
+- Waldorf Astoria London Admiralty Arch (2026)
+- London Marriott Hotel Canary Wharf (2026)
+- Heythrop Park, Oxfordshire (2022)
+- The Westminster London, Curio Collection by Hilton (2021)
+- The Marylebone (2020)
+- The Lensbury, Teddington (2018–2019)
+- Hilton London Hyde Park (2016)
+- Premier Inn London Heathrow Airport Terminal 4 (2016)
+
+The Lanesborough and Moxy London ExCeL are listed by name only.
 
 ### Can you work nights or out of hours?
 
@@ -422,7 +447,7 @@ Out-of-hours work is on the published record. At Heathrow Terminal 4, a bespoke 
 
 ### Do you install Class A / B-s1,d0 fire-rated wallcoverings, and can you evidence it?
 
-Mr Wallcover does not call a wallcovering fire-rated unless that product's own data says so. A fire classification, such as a Euroclass under EN 13501-1 (the standard's own class names, not a claim here), belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. "Class A" on its own is not a class name under EN 13501-1: it may refer to a US ASTM E84 result, which is not a European class, or be loose shorthand for European class A1 or A2, so ask for the full classification, such as B-s1,d0. A substitute product or adhesive needs its own evidence. For a hotel, get the current classification document for the exact product, backing and installation method. For building work, the responsible designer, fire engineer or building-control body accepts it. Where the work is not building work, the hotel's responsible person accepts it, through the fire risk assessment. A guest room, a public corridor and a protected stair can have different requirements, and no single class is what "hotels need". The adhesive and primer are part of the specified system and are used as the maker lists them (Vescom, for example, lists them per product). The fire classification is not certified by the installer: it comes from testing and classification of the product in a stated build-up, and the wallcovering manufacturer declares it. Mr Wallcover installs to the wallcovering maker's instructions and the project's fire specification.
+Mr Wallcover does not call a wallcovering fire-rated unless that product's own data says so. A fire classification, such as a Euroclass under EN 13501-1, belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. "Class A" on its own is not a class name under EN 13501-1: it may refer to a US ASTM E84 result, which is not a European class, or be loose shorthand for European class A1 or A2, so ask for the full classification, such as B-s1,d0. A substitute product or adhesive needs its own evidence. For a hotel, get the current classification document for the exact product, backing and installation method. For building work, the responsible designer, fire engineer or building-control body accepts it. Where the work is not building work, the hotel's responsible person accepts it, through the fire risk assessment. A guest room, a public corridor and a protected stair can have different requirements, and no single class is what "hotels need". The adhesive and primer are part of the specified system and are used as the maker lists them (Vescom, for example, lists them per product). The fire classification is not certified by the installer: it comes from testing and classification of the product in a stated build-up, and the wallcovering manufacturer declares it. Mr Wallcover installs to the wallcovering maker's instructions and the project's fire specification.
 
 ### Have you installed contract vinyl in hotels?
 
@@ -434,7 +459,7 @@ These are the hotel programmes on record. Hyde London City: 111 rooms plus corri
 
 ### How is snagging handled?
 
-Snagging is part of the package. A sample room or sample area is agreed first, in the permanent lighting where possible, and every later room is measured against it. Then comes the hang, then snagging, then a return inspection about four to six weeks after completion, at no call-out charge, when seams, edges and corners are checked once the paper has settled. Visible seams and shading in natural weaves are properties of the material, and they are settled at the sample stage rather than raised as snags. At Hyde London City the record starts with a finished sample room in November 2022.
+Snagging is part of the package. A sample room or sample area is agreed first, in the permanent lighting where possible, and every later room is measured against it. Then comes the hang, then snagging, then a return visit about four to six weeks after completion, at no call-out charge, when seams, edges and corners are checked once the paper has settled. Visible seams and shading in natural weaves are properties of the material, and they are settled at the sample stage rather than raised as snags. At Hyde London City the record starts with a finished sample room in November 2022.
 
 ### What accreditations or training do you hold?
 
@@ -442,7 +467,7 @@ Mr Wallcover trained at Solar Screen's headquarters in Luxembourg in window film
 
 ### What prelims and inclusions are in your price?
 
-Access, protection and making good are written into the scope rather than discovered at the end, and the quotation says what has been allowed for. Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Delivery of free-issue goods is timed to the hang, and paper is not stored in corridors. On exteriors, the practice supplies and manages the scaffold, including the strike. Packages can be wallcovering only, or wallcovering within a full decorating package (as at Brown's Hotel and 15 Old Bailey).
+Access, protection and making good are written into the scope rather than discovered at the end, and the quotation says what has been allowed for. Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Delivery of free-issue goods is timed to the hang, and paper is not stored in corridors. On exteriors, we supply and manage the scaffold, including the strike. Packages can be wallcovering only, or wallcovering within a full decorating package (as at Brown's Hotel and 15 Old Bailey).
 
 ### Who is the contracting party?
 
@@ -454,7 +479,7 @@ The handover includes a room-by-room record of the installed product, colourway,
 
 ### Will you keep our project confidential, and will you sign an NDA?
 
-Private clients are not named, on the site or in passing. Residential work is published only by street or area, and only with the owner's agreement. Private and NDA jobs are anonymised. On the published record, for example, the Heathrow client appears as "a luxury fashion house (name withheld)", and the arch case study's location as "a prime residence in central London", with window views and personal items blurred. Permission for photography is agreed before any image is used. Where a client requires a non-disclosure agreement, Mr Wallcover signs one, and those projects are never named.
+Private clients are not named, on the site or in passing. Residential work is published only by street or area, and only with the homeowner's agreement. Private and NDA jobs are anonymised. On the published record, for example, the Heathrow client appears as "a luxury fashion house (name withheld)", and the arch case study's location as "a prime residence in central London", with window views and personal items blurred. Permission for photography is agreed before any image is used. Where a client requires a non-disclosure agreement, Mr Wallcover signs one, and those projects are never named.
 
 ### Can you assess or repair existing or historic wallpaper?
 
@@ -474,7 +499,7 @@ Yes. Mr Wallcover has experience of JCT contracts as a specialist package contra
 
 ### Do you take on single rooms, or only larger projects?
 
-We focus on whole residences and hotel packages, and will take on one- or two-room commissions.
+We focus on whole residences and hotel packages, and will take on one- or two-room commissions. The minimum installation commission is one room.
 
 ### Do you offer limewash and lime render?
 
@@ -486,7 +511,7 @@ Email [info@mrwallcover.com](mailto:info@mrwallcover.com) or use [the contact pa
 
 Routes, as built on this site:
 
-- [Enquiry form](https://www.mrwallcover.com/contact/): A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether to reply by email or by phone, not both. Photographs, drawings and PDFs help, and are optional.
+- [Enquiry form](https://www.mrwallcover.com/contact/): A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether you would like a reply by email or by phone. Photographs, drawings and PDFs help, and are optional.
 - [Email](mailto:info@mrwallcover.com): info@mrwallcover.com. Email is read by Dorin Burcus.
 - [Phone](https://www.mrwallcover.com/contact/): Or go direct. The phone is answered by Dorin Burcus himself; the number is shown on request.
 - [WhatsApp](https://www.mrwallcover.com/contact/): A WhatsApp link on the contact page; the number is added on the page, never printed in the HTML.

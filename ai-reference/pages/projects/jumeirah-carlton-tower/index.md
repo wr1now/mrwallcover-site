@@ -3,7 +3,7 @@ title: "Jumeirah Carlton Tower | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/jumeirah-carlton-tower/
 description: "Wallcovering installation at Jumeirah Carlton Tower, Knightsbridge: eight months on the hotel's renovation, finished at the end of 2020."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 Cadogan Place, Knightsbridge, London SW1
@@ -16,7 +16,7 @@ Eight months of wallcovering installation at Jumeirah Carlton Tower in Knightsbr
 
 Photograph: Jumeirah Carlton Tower
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -57,7 +57,7 @@ Jumeirah describes the renovated bedrooms and suites as light oak wall panelling
 
 We have no photographs of our own from this job that are fit to publish. The photographs here are the hotel’s own: official photographs of the finished rooms and suites, published by Jumeirah on the hotel’s website. Each is credited “Photograph: Jumeirah Carlton Tower”. We did not take them, and they belong to Jumeirah; they are shown to illustrate the finished rooms.
 
-Source for the dates: our Instagram post of 6 January 2021 ([CJtvVheldiT](https://www.instagram.com/p/CJtvVheldiT/)): part of the project for 8 months, completed at the end of 2020. The description of the rooms is from Jumeirah’s own fact sheet for the hotel.
+Source for the dates: our Instagram post of 6 January 2021 ([see the post](https://www.instagram.com/p/CJtvVheldiT/)): part of the project for 8 months, completed at the end of 2020. The description of the rooms is from Jumeirah’s own fact sheet for the hotel.
 
 ## Photographs
 
@@ -85,7 +85,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -115,7 +117,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -125,4 +127,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

@@ -28,6 +28,10 @@ Thresholds (WCAG 2.2 AA): body text 4.5:1; large text (24px regular, or 18.66px 
 | brass/champagne (small) | brass | ivory 82% over ink = #ccc8c1 | 4.29:1 | 4.5:1 body | fails, as intended: not used | brass is not small text on glass |
 | gold/champagne | gold | ivory 82% over ink = #ccc8c1 | 1.42:1 | 4.5:1 body | fails, as intended: not used | gold is never text on glass |
 | nav current line/champagne | brass | ivory 82% over ink = #ccc8c1 | 4.29:1 | 3:1 ui | pass | .nav-link[aria-current] 1px brass rule |
+| ink/champagne over dark | ink | ivory 95% over ink = #e9e5dd | 14.86:1 | 4.5:1 body | pass | header links, "Menu", wordmark while a dark band is under the bar |
+| stone/champagne over dark | stone | ivory 95% over ink = #e9e5dd | 7.09:1 | 4.5:1 body | pass | Resources label and links while a dark band is under the bar |
+| brass/champagne over dark (large) | brass | ivory 95% over ink = #e9e5dd | 5.69:1 | 3:1 large | pass | wordmark "Mr" while a dark band is under the bar |
+| focus ring/champagne over dark | brass | ivory 95% over ink = #e9e5dd | 5.69:1 | 3:1 ui | pass | header focus outline while a dark band is under the bar |
 | ivory/smoked | ivory | ink 72% over #ffffff = #565453 | 6.60:1 | 4.5:1 body | pass | Glass variant="smoked" text |
 | ivory-soft/smoked | ivory-soft | ink 72% over #ffffff = #565453 | 6.12:1 | 4.5:1 body | pass | secondary text on smoked |
 | gold/smoked (small) | gold | ink 72% over #ffffff = #565453 | 3.16:1 | 4.5:1 body | fails, as intended: not used | a gold eyebrow on smoked over light paper fails; eyebrows on smoked are ivory |
@@ -35,7 +39,7 @@ Thresholds (WCAG 2.2 AA): body text 4.5:1; large text (24px regular, or 18.66px 
 | ink/clear over light | ink | #ffffff 40% over ivory = #f8f6f1 | 17.32:1 | 4.5:1 body | pass | material studio preset buttons over the page |
 | ink/clear over ink | ink | #ffffff 40% over ink = #727170 | 3.83:1 | 4.5:1 body | fails, as intended: not used | why clear glass never sits over dark photography |
 | clear border/light | ink 12% over ivory = #d9d5ce | ivory | 1.28:1 | 3:1 ui | noted, no requirement | clear 1px ink ring at 12%: decorative, the control is identified by its label and ink text |
-| ink/dock | ink | ivory 96% over ink = #ebe7df | 15.17:1 | 4.5:1 body | pass | dock labels (13px) on the opaque champagne dock |
+| ink/dock | ink | ivory 100% over #ffffff = #f4f0e8 | 16.44:1 | 4.5:1 body | pass | dock labels (15px) on the opaque champagne dock |
 | ghost ring/ink | ivory 45% over ink = #797671 | ink | 4.13:1 | 3:1 ui | pass | .btn-ghost border, ivory at 45% on ink |
 | line border/ivory | ink | ivory | 16.44:1 | 3:1 ui | pass | .btn-line border |
 | field border/panel | field-border | panel | 3.49:1 | 3:1 ui | pass | .field input/select/textarea border |
@@ -54,12 +58,16 @@ Thresholds (WCAG 2.2 AA): body text 4.5:1; large text (24px regular, or 18.66px 
 - brass/champagne (small): brass on ivory 82% over #ffffff = #f6f3ec 6.45:1; brass on ivory 82% over ink = #ccc8c1 4.29:1
 - gold/champagne: gold on ivory 82% over #ffffff = #f6f3ec 2.14:1; gold on ivory 82% over ink = #ccc8c1 1.42:1
 - nav current line/champagne: brass on ivory 82% over #ffffff = #f6f3ec 6.45:1; brass on ivory 82% over ink = #ccc8c1 4.29:1
+- ink/champagne over dark: ink on ivory 95% over #343a30 = #eae7df 15.12:1; ink on ivory 95% over #151d1a = #e9e5de 14.92:1; ink on ivory 95% over ink = #e9e5dd 14.86:1
+- stone/champagne over dark: stone on ivory 95% over #343a30 = #eae7df 7.21:1; stone on ivory 95% over #151d1a = #e9e5de 7.12:1; stone on ivory 95% over ink = #e9e5dd 7.09:1
+- brass/champagne over dark (large): brass on ivory 95% over #343a30 = #eae7df 5.79:1; brass on ivory 95% over #151d1a = #e9e5de 5.71:1; brass on ivory 95% over ink = #e9e5dd 5.69:1
+- focus ring/champagne over dark: brass on ivory 95% over #343a30 = #eae7df 5.79:1; brass on ivory 95% over #151d1a = #e9e5de 5.71:1; brass on ivory 95% over ink = #e9e5dd 5.69:1
 - ivory/smoked: ivory on ink 72% over #ffffff = #565453 6.60:1; ivory on ink 72% over ink = #141210 16.44:1
 - ivory-soft/smoked: ivory-soft on ink 72% over #ffffff = #565453 6.12:1; ivory-soft on ink 72% over ink = #141210 15.23:1
 - gold/smoked (small): gold on ink 72% over #ffffff = #565453 3.16:1; gold on ink 72% over ink = #141210 7.87:1
 - gold/smoked (large): gold on ink 72% over #ffffff = #565453 3.16:1; gold on ink 72% over ink = #141210 7.87:1
 - ink/clear over light: ink on #ffffff 40% over #ffffff = #ffffff 18.69:1; ink on #ffffff 40% over ivory = #f8f6f1 17.32:1; ink on #ffffff 40% over paper = #faf8f5 17.68:1
-- ink/dock: ink on ivory 96% over #ffffff = #f4f1e9 16.53:1; ink on ivory 96% over ink = #ebe7df 15.17:1
+- ink/dock: ink on ivory 100% over #ffffff = #f4f0e8 16.44:1; ink on ivory 100% over ink = #f4f0e8 16.44:1
 - focus ring/champagne: brass on ivory 82% over #ffffff = #f6f3ec 6.45:1; brass on ivory 82% over ink = #ccc8c1 4.29:1
 - focus ring/smoked: gold on ink 72% over #ffffff = #565453 3.16:1; gold on ink 72% over ink = #141210 7.87:1
 
@@ -69,4 +77,5 @@ Thresholds (WCAG 2.2 AA): body text 4.5:1; large text (24px regular, or 18.66px 
 - Brass is text on ivory and paper, and on champagne glass only at display size (the wordmark). Eyebrows on glass are stone or ink.
 - Smoked glass carries ivory text and sits over dark photography or the studio stage. It carries no page title.
 - Clear glass is for small controls over the page and other light surfaces. Over ink it fails, so it is not used there.
-- The dock is champagne without blur (ivory at 96%), so the header is the only blurred surface on phones.
+- The dock is champagne without blur (ivory at 100%), so the header is the only blurred surface on phones.
+- While a dark band is under the header (data-over-dark, set by the Header script) the champagne rises from ivory at 82% to 95%, so the bar reads ivory, not grey.

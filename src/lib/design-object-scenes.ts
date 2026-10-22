@@ -111,7 +111,8 @@ export function createObjectStudio() {
     c.fillStyle=gradient;c.fillRect(0,0,128,128);
     const material=own(new T.MeshBasicMaterial({map:own(new T.CanvasTexture(canvas)),transparent:true,depthWrite:false}));
     const mesh=new T.Mesh(own(new T.PlaneGeometry(width*1.5,Math.max(depth*1.7,1.15))),material);mesh.rotation.x=-Math.PI/2;mesh.position.y=ground+.001;
-    const floor=new T.Mesh(own(new T.PlaneGeometry(6,6)),own(new T.ShadowMaterial({color:0x322a20,opacity:.15,depthWrite:false})));
+    // The shadow-catching floor reaches well past the camera frame, so a cast shadow fades out instead of stopping at an edge.
+    const floor=new T.Mesh(own(new T.PlaneGeometry(18,18)),own(new T.ShadowMaterial({color:0x322a20,opacity:.15,depthWrite:false})));
     floor.rotation.x=-Math.PI/2;floor.position.y=ground;floor.receiveShadow=true;
     const group=new T.Group();group.add(mesh,floor);return group;
   }
@@ -146,8 +147,9 @@ export function createObjectStudio() {
     const scene=new T.Scene();
     const camera=new T.PerspectiveCamera(32,1,.1,30);
     scene.add(new T.HemisphereLight(0xfff8eb,0x414c45,.48));
-    const key=new T.DirectionalLight(0xfff1db,3.3);key.position.set(-3.5,5.5,5);key.castShadow=true;
-    key.shadow.mapSize.set(1024,1024);key.shadow.camera.left=-2.4;key.shadow.camera.right=2.4;key.shadow.camera.top=2.4;key.shadow.camera.bottom=-2.4;key.shadow.camera.near=.1;key.shadow.camera.far=12;key.shadow.normalBias=.008;key.shadow.bias=-.00008;key.shadow.radius=5;scene.add(key);
+    const key=new T.DirectionalLight(0xfff1db,3.3);key.position.set(-2.6,8.4,4.6);key.castShadow=true;
+    // A wider shadow frustum (with a larger map to keep the same softness) so long shadows are not cut off at the frame edge.
+    key.shadow.mapSize.set(2048,2048);key.shadow.camera.left=-4.8;key.shadow.camera.right=4.8;key.shadow.camera.top=4.8;key.shadow.camera.bottom=-4.8;key.shadow.camera.near=.1;key.shadow.camera.far=12;key.shadow.normalBias=.008;key.shadow.bias=-.00008;key.shadow.radius=5;scene.add(key);
     const rim=new T.DirectionalLight(0xe9efff,1.25);rim.position.set(4,3,-3);scene.add(rim);
     const model=new T.Group();scene.add(model);
     const moving:T.Object3D[]=[];

@@ -1,28 +1,28 @@
 ---
 title: "Hotel Wallcovering Contractor London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/hotel-wallcovering-installation/
-description: "Hotel wallcovering contractor in London: contract vinyl, Vescom and specialist papers for bedrooms and corridors. The OWO, Brown's Hotel, Four Seasons."
+description: "Hotel wallcovering contractor in London: bedrooms and corridors, hung to programme, mostly in hotels that stayed open. The OWO, Brown's Hotel, Four Seasons."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
 
 Services
 
-# Hotel wallcovering installation
+# Hotel wallcovering installation in London
 
-Bedrooms, corridors and public areas in London hotels, hung to programme and around the house. Public commissions include The OWO, Brown's Hotel, Four Seasons Ten Trinity Square and hotels in Holborn and at Silverstone.
+Bedrooms, corridors and public areas in London hotels, hung to programme and around the house. Most of our hotel work has been in buildings that stayed open. Public commissions include Raffles London at The OWO, Brown's Hotel, Four Seasons Ten Trinity Square, DoubleTree by Hilton London – West End and Hilton Garden Inn Silverstone.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Ahotel-wallcovering-installation) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=wallcovering&topic=service%3Ahotel-wallcovering-installation) [See the work](https://www.mrwallcover.com/projects/)
 
 Contract vinyls are the usual specification in busy hotel rooms and corridors. At The OWO, Whitehall, the install was Vescom wallcoverings, to walls and to parts of the joinery, between 2020 and 2023.
 
-Hotel work moves floor by floor or room by room around guests. Delivery of free-issue goods is timed to the hang, and paper is not left in corridors. A project leader is on site every day, and on a longer commission senior oversight agrees a forward plan each week.
+Hotel work moves floor by floor or room by room around guests. Delivery of free-issue goods (paper supplied by the designer, the brand or the client) is timed to the hang, and paper is not left in corridors. A project leader is on site every day, and on a longer commission senior oversight agrees a forward plan each week.
 
 Where Mr Wallcover is appointed as main decorating contractor, the package can include fine painting, French polishing and other specialist finishes, as it did at Brown's Hotel, Mayfair, from 2022 to 2024.
 
 ![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)
 
-A finished guest room at [Brown’s Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/), part of our 2022–2024 decorating package.Photograph: Mr Wallcover.
+A finished guest room at [Brown’s Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/), part of our 2022–2024 decorating package. Photograph: Mr Wallcover.
 
 01
 
@@ -30,7 +30,7 @@ A finished guest room at [Brown’s Hotel, Mayfair](https://www.mrwallcover.com/
 
 Every package starts with a survey and a scope of works written room by room, before any paper is ordered. A sample room or sample area is then agreed, in the permanent lighting where possible, and every later room is measured against it. At [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/) the record starts with a finished sample room in November 2022.
 
-After the sample come the hang, snagging and a return inspection about four to six weeks after completion, when seams, edges and corners are checked once the paper has settled. The workmanship is guaranteed for twelve months. Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site.
+After the sample come the hang, snagging and a return visit about four to six weeks after completion, when seams, edges and corners are checked once the paper has settled. The workmanship is guaranteed for twelve months. Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site.
 
 02
 
@@ -38,7 +38,7 @@ After the sample come the hang, snagging and a return inspection about four to s
 
 Most of our hotel work has been done in buildings that stayed open. The rooms that can be released together, the permitted working hours, the delivery routes and the daily handover are agreed for each project and written into the scope. At [DoubleTree by Hilton London – West End](https://www.mrwallcover.com/projects/doubletree-west-end/) we papered 30 rooms on two floors in 2019 while the hotel stayed open; at [Pendley Manor Hotel](https://www.mrwallcover.com/projects/pendley-manor-hotel/), 30 rooms in 30 days, with 20 different wallpapers.
 
-The core team is six wallpaper hangers and six decorators, scaling to 25–35 people on large projects; at Hyde London City there were 25 people on site, in coordinated task teams. The people who start are the people who finish.
+The core team is six wallpaper hangers and six decorators, scaling to 25–35 people on large projects; at Hyde London City there were 25 people on site, in coordinated task teams. The same team starts and finishes the job; see [how we work](https://www.mrwallcover.com/about/#how-heading).
 
 03
 
@@ -54,7 +54,7 @@ Hyde London City ran from the sample room in November 2022 to final touches in A
 
 [Contract vinyl](https://www.mrwallcover.com/materials/contract-vinyl/) is the usual specification where wear and cleaning come first. At The OWO the install was a bespoke Vescom wallcovering made for the hotel, on walls and parts of the joinery, with Vescom Alcantara in selected suites. At Hyde London City, Timorous Beasties' Tropical Clouded Leopard and Totem Damask went into the guest rooms as custom-printed vinyl.
 
-Natural weaves and textiles still have a place where the finish matters more than wipeability: Phillip Jeffries Tweed and Omexco at Four Seasons Ten Trinity Square, and Phillip Jeffries at The Biltmore Mayfair. At [Brown's Hotel](https://www.mrwallcover.com/projects/browns-hotel-mayfair/) the scheme includes scenic and chinoiserie papers, among them Lewis & Wood's Adam's Eden; at Pendley Manor, Anaglypta on the high ceilings and Cole & Son velvet flock damasks; at [Hilton London Metropole](https://www.mrwallcover.com/projects/hilton-london-metropole/), Muraspec. A maker named here means we installed that maker's product; it is not an approval or an endorsement.
+Natural weaves and textiles still have a place where the finish matters more than wipeability: Phillip Jeffries Tweed and Omexco at Four Seasons Ten Trinity Square, and Phillip Jeffries at The Biltmore Mayfair. At [Brown's Hotel](https://www.mrwallcover.com/projects/browns-hotel-mayfair/) the scheme includes scenic and chinoiserie papers, among them Lewis & Wood's Adam's Eden; at Pendley Manor, Anaglypta on the high ceilings and Cole & Son velvet flock damasks; at [Hilton London Metropole](https://www.mrwallcover.com/projects/hilton-london-metropole/), Muraspec. Naming a maker records an installation, not an endorsement.
 
 05
 
@@ -62,7 +62,7 @@ Natural weaves and textiles still have a place where the finish matters more tha
 
 Each run of rooms is ordered from one batch, every delivery is checked against the measure, and rolls are allocated to rooms before cutting, so that no room mixes batches and a corridor reads as one surface. At The OWO, batches were checked and managed so that corridors of rooms read as one; at Four Seasons, shading on the natural textiles was checked continuously.
 
-A fire classification belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. It comes from testing and classification of the product in that build-up and is declared by the wallcovering manufacturer, not certified by the installer, and we install to the wallcovering maker's instructions and the project's fire specification. The hotel keeps a room-by-room record of the installed product, colourway, batch and care sheet, with spare material from the same batch. The [hotel specification guide](https://www.mrwallcover.com/advice/hotel-wallcovering-specification/) sets this out in full.
+A fire classification belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. It comes from testing and classification, and the wallcovering manufacturer declares it; the installer does not certify it. We install to the maker's instructions and the project's fire specification. The hotel keeps a room-by-room record of the installed product, colourway, batch and care sheet, with spare material from the same batch. The [hotel specification guide](https://www.mrwallcover.com/advice/hotel-wallcovering-specification/) sets this out in full.
 
 06
 
@@ -70,13 +70,13 @@ A fire classification belongs to the build-up that was tested: the wallcovering,
 
 There is no flat rate per roll. The quotation comes from a site survey or from drawings, and reflects the measured area after openings are taken off, the pattern repeat and the wastage it creates, the state of the walls, the material, and access and protection. Access, protection and making good are written into the scope rather than discovered at the end. The [installation cost guide](https://www.mrwallcover.com/advice/installation-cost/) explains each item.
 
-Packages can be wallcovering only, or wallcovering within a full decorating package, as at Brown's Hotel and 15 Old Bailey. We have experience of JCT contracts as a specialist package contractor, are registered for VAT and CIS, and send insurance details on request. Hotel operators can see what to send on the [hotels and operators page](https://www.mrwallcover.com/professionals/hotels/).
+Packages can be wallcovering only, or wallcovering within a full decorating package, as at Brown's Hotel and Hyde London City. We are registered for VAT and CIS, have experience of JCT contracts as a specialist package contractor, and send insurance details on request. Hotel operators can see what to send on the [hotels and operators page](https://www.mrwallcover.com/professionals/hotels/).
 
 ## On the public record
 
 [![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
-Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.Photograph: Mr Wallcover.
+Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights. Photograph: Mr Wallcover.
 
 ### [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
@@ -86,7 +86,7 @@ Main decorating contractor, 2022–2024.
 
 [![Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp)](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
-Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.Photograph: Mr Wallcover.
+Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench. Photograph: Mr Wallcover.
 
 ### [Four Seasons Hotel London at Ten Trinity Square](https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/)
 
@@ -96,7 +96,7 @@ Guest room, suite and private residence wallpapering, 2016–2019.
 
 [![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
-Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.Photograph: Dorin Burcus / Mr Wallcover.
+Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
@@ -116,7 +116,7 @@ Full decorating package: decoration, specialist wallcoverings and window film, c
 
 ## Hotel groups on our record
 
-Hotels from these groups where we have installed, each linked to its case study. No endorsement by any group is implied.
+Hotels from these groups where we have installed, each linked to its case study. Naming a group records an installation, not an endorsement.
 
 Hilton
 
@@ -144,7 +144,7 @@ Rocco Forte Hotels
 
 Questions
 
-## Asked about Hotel wallcovering installation
+## Questions we are asked
 
 Illustrative material studies
 
@@ -156,7 +156,7 @@ Yes. Most of our hotel work has been in live buildings. The work is contained, m
 
 ### Do you take the whole decorating package?
 
-We can. At Brown's Hotel and at Hyde London City, the Old Bailey Hotel, Mr Wallcover was the main decorating contractor. Elsewhere we have carried the wallcovering package alone.
+We can. At Brown's Hotel and at Hyde London City (the Old Bailey Hotel), Mr Wallcover was the main decorating contractor. Elsewhere we have carried the wallcovering package alone.
 
 ### Can you work nights or out of hours?
 
@@ -164,7 +164,7 @@ Out-of-hours work is on the published record. At Heathrow Terminal 4, a bespoke 
 
 ### Do you install Class A / B-s1,d0 fire-rated wallcoverings, and can you evidence it?
 
-Mr Wallcover does not call a wallcovering fire-rated unless that product's own data says so. A fire classification, such as a Euroclass under EN 13501-1 (the standard's own class names, not a claim here), belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. "Class A" on its own is not a class name under EN 13501-1: it may refer to a US ASTM E84 result, which is not a European class, or be loose shorthand for European class A1 or A2, so ask for the full classification, such as B-s1,d0. A substitute product or adhesive needs its own evidence. For a hotel, get the current classification document for the exact product, backing and installation method. For building work, the responsible designer, fire engineer or building-control body accepts it. Where the work is not building work, the hotel's responsible person accepts it, through the fire risk assessment. A guest room, a public corridor and a protected stair can have different requirements, and no single class is what "hotels need". The adhesive and primer are part of the specified system and are used as the maker lists them (Vescom, for example, lists them per product). The fire classification is not certified by the installer: it comes from testing and classification of the product in a stated build-up, and the wallcovering manufacturer declares it. Mr Wallcover installs to the wallcovering maker's instructions and the project's fire specification.
+Mr Wallcover does not call a wallcovering fire-rated unless that product's own data says so. A fire classification, such as a Euroclass under EN 13501-1, belongs to the build-up that was tested: the wallcovering, the adhesive and the substrate together. "Class A" on its own is not a class name under EN 13501-1: it may refer to a US ASTM E84 result, which is not a European class, or be loose shorthand for European class A1 or A2, so ask for the full classification, such as B-s1,d0. A substitute product or adhesive needs its own evidence. For a hotel, get the current classification document for the exact product, backing and installation method. For building work, the responsible designer, fire engineer or building-control body accepts it. Where the work is not building work, the hotel's responsible person accepts it, through the fire risk assessment. A guest room, a public corridor and a protected stair can have different requirements, and no single class is what "hotels need". The adhesive and primer are part of the specified system and are used as the maker lists them (Vescom, for example, lists them per product). The fire classification is not certified by the installer: it comes from testing and classification of the product in a stated build-up, and the wallcovering manufacturer declares it. Mr Wallcover installs to the wallcovering maker's instructions and the project's fire specification.
 
 ### Have you installed contract vinyl in hotels?
 
@@ -176,7 +176,7 @@ These are the hotel programmes on record. Hyde London City: 111 rooms plus corri
 
 ### How is snagging handled?
 
-Snagging is part of the package. A sample room or sample area is agreed first, in the permanent lighting where possible, and every later room is measured against it. Then comes the hang, then snagging, then a return inspection about four to six weeks after completion, at no call-out charge, when seams, edges and corners are checked once the paper has settled. Visible seams and shading in natural weaves are properties of the material, and they are settled at the sample stage rather than raised as snags. At Hyde London City the record starts with a finished sample room in November 2022.
+Snagging is part of the package. A sample room or sample area is agreed first, in the permanent lighting where possible, and every later room is measured against it. Then comes the hang, then snagging, then a return visit about four to six weeks after completion, at no call-out charge, when seams, edges and corners are checked once the paper has settled. Visible seams and shading in natural weaves are properties of the material, and they are settled at the sample stage rather than raised as snags. At Hyde London City the record starts with a finished sample room in November 2022.
 
 ### What insurance do you hold?
 
@@ -186,4 +186,4 @@ Public liability, employers' liability and professional indemnity details are av
 
 Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

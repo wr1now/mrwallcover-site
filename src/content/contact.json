@@ -1,13 +1,23 @@
 {
-  "title": "Request a Quote | Mr Wallcover London",
-  "description": "Request a quotation from Mr Wallcover, London specialist wallcovering installer. Use the enquiry form or email info@mrwallcover.com.",
+  "title": "Start your project: request a quote | Mr Wallcover",
+  "description": "Tell us the building, the material and the date. Dorin Burcus reads every enquiry; quotations follow a site survey or drawings. Or email info@mrwallcover.com.",
   "eyebrow": "Contact",
   "heading": "Start your project.",
-  "lede": "A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether to reply by email or by phone, not both. Photographs, drawings and PDFs help, and are optional.",
+  "lede": "A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether you would like a reply by email or by phone. Photographs, drawings and PDFs help, and are optional.",
   "photoNote": "Phone photographs, labels and drawings help. You can send them with the note or by email.",
-  "submit": "Start your project",
+  "submit": "Send your note",
   "mailtoStatus": "Your email application should open with this enquiry. If it does not, write to us at the address below.",
   "direct": "Or go direct. The phone is answered by Dorin Burcus himself; the number is shown on request.",
   "directNoPhone": "Or write directly. Email is read by Dorin Burcus.",
-  "spamNote": "This form is protected against spam. After you press send you may be asked to tick a short check before the message reaches us."
+  "spamNote": "Press send and your note goes straight through.",
+  "next": {
+    "_note": "The 'What happens next' list on /contact/ (src/pages/contact.astro). Each step restates copy the site already publishes, named in 'source'. No reply window, survey lead time or scope turnaround: Dorin has stated none. Add times here only once he does. The 'booking' step prints only when BOOKING_URL is set.",
+    "heading": "What happens next",
+    "steps": [
+      { "text": "Dorin Burcus reads your note.", "source": "Live: src/content/get-in-touch.json lede ('Dorin Burcus reads the email and answers the phone himself.'); src/components/EnquiryForm.astro reply note ('Dorin Burcus reads it.'). Also, new on this branch: src/content/utility.json thanks.text ('where Dorin Burcus reads it himself')" },
+      { "text": "You can book a 20-minute call to talk the project through.", "booking": true, "source": "Live: src/content/get-in-touch.json call.heading and call.text ('A 20-minute call' / 'Choose a time in the calendar to talk the project through.'). Also, new on this branch: src/content/utility.json thanks.next ('While you wait, you can book a 20-minute call to talk the project through.')" },
+      { "text": "If the project needs a survey, we arrange it after we have spoken.", "source": "Live: src/content/utility.json thanks.text and the src/components/EnquiryForm.astro receipt (both 'If the project needs a survey, we arrange it after we have spoken.')" },
+      { "text": "After the survey we write a scope of works by room.", "source": "Live: src/content/pages/cost-guide-2026.md ('After the survey we write a scope of works by room.'); src/content/home.json" }
+    ]
+  }
 }

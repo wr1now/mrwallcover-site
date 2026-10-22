@@ -1,7 +1,7 @@
 ---
 title: "Window Film Installation London | Mr Wallcover"
 url: https://www.mrwallcover.com/services/window-film/
-description: "Window film installation in London: decorative, privacy, solar control and safety films for homes, hotels, offices and shopfronts. Survey to aftercare."
+description: "Window film in London: decorative, privacy, solar control and safety films, including Solar Screen film fitted at Hyde London City (the Old Bailey Hotel)."
 author: "Dorin Burcus"
 last_reviewed: 2026-10-09
 ---
@@ -12,7 +12,7 @@ Services
 
 Films applied to existing glass: frosted and decorative designs, privacy, solar control and safety films for London homes, hotels, offices and shopfronts.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=window-film&topic=service%3Awindow-film) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=window-film&topic=service%3Awindow-film) [See the work](https://www.mrwallcover.com/projects/)
 
 Window film changes how existing glass behaves without replacing it. There are four families. Decorative films give a frosted, etched, gradient or patterned finish, including logos and manifestations. Privacy films screen a view by day, or hide a room completely. Solar control films reduce heat gain and glare. Safety and security films help hold broken glass together.
 
@@ -26,13 +26,13 @@ Makers: [Solar Screen window films](https://solarscreen.eu/en/), [Cover Styl' ar
 
 ![Rolls of Solar Screen window film on site before installation.](https://www.mrwallcover.com/media/img/r/old-bailey-15-800.webp)
 
-Rolls of Solar Screen window film on site before installation at [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/). The product is checked before any glazing is covered.Photograph: Dorin Burcus / Mr Wallcover.
+Rolls of Solar Screen window film on site before installation at [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/). The product is checked before any glazing is covered. Photograph: Dorin Burcus / Mr Wallcover.
 
 01
 
 ## Window film on the record
 
-At [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/), the Old Bailey Hotel, Solar Screen window film was fitted to the glazing as part of our full decorating package, alongside paint and specialist wallcoverings, in the Grade II-listed building that opened as a hotel on 2 September 2024.
+At [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/) (the Old Bailey Hotel), Solar Screen window film was fitted to the glazing as part of our full decorating package, alongside paint and specialist wallcoverings, in the Grade II-listed building that opened as a hotel on 2 September 2024.
 
 02
 
@@ -46,7 +46,7 @@ Risk assessments and method statements (RAMS) are issued for every package, and 
 
 [![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
-Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.Photograph: Dorin Burcus / Mr Wallcover.
+Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed. Photograph: Dorin Burcus / Mr Wallcover.
 
 ### [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
@@ -56,7 +56,7 @@ Full decorating package: decoration, specialist wallcoverings and window film, c
 
 Questions
 
-## Asked about Window film installation
+## Questions we are asked
 
 Illustrative material studies
 
@@ -86,4 +86,4 @@ Mr Wallcover trained at Solar Screen's headquarters in Luxembourg in window film
 
 Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

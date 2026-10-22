@@ -41,7 +41,7 @@
     }
   ],
   "published": "2026-10-11",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -61,4 +61,4 @@ Jumeirah describes the renovated bedrooms and suites as light oak wall panelling
 
 We have no photographs of our own from this job that are fit to publish. The photographs here are the hotel's own: official photographs of the finished rooms and suites, published by Jumeirah on the hotel's website. Each is credited "Photograph: Jumeirah Carlton Tower". We did not take them, and they belong to Jumeirah; they are shown to illustrate the finished rooms.
 
-Source for the dates: our Instagram post of 6 January 2021 ([CJtvVheldiT](https://www.instagram.com/p/CJtvVheldiT/)): part of the project for 8 months, completed at the end of 2020. The description of the rooms is from Jumeirah's own fact sheet for the hotel.
+Source for the dates: our Instagram post of 6 January 2021 ([see the post](https://www.instagram.com/p/CJtvVheldiT/)): part of the project for 8 months, completed at the end of 2020. The description of the rooms is from Jumeirah's own fact sheet for the hotel.

@@ -3,8 +3,13 @@
  * "Book a call": a 20-minute appointment linking to BOOKING_URL (src/config.ts), the Google
  * Calendar booking page. Rendered only when BOOKING_URL is set; with it empty
  * nothing is printed, so there is never a dead link. No tracking parameters.
+ * hint: the duration and hours in a line after the link, outside it, so the link text stays "Book a call";
+ * a space before it keeps the two apart in extracted text and the Markdown twin.
  */
-import { BOOKING_URL } from '../config';
+import { BOOKING_DAYS, BOOKING_HINT, BOOKING_URL } from '../config';
+
+// The days and hours never break inside the time range; the hint reads as BOOKING_HINT.
+const BOOKING_LEAD = BOOKING_HINT.slice(0, BOOKING_HINT.indexOf(BOOKING_DAYS));
 
 interface Props {
   class?: string;
@@ -12,16 +17,20 @@ interface Props {
   wrap?: string;
   /** Accessible name; it must contain the visible text. */
   label?: string;
+  /** Show "20 minutes, Mon–Fri, 9am–5pm UK." after the link. */
+  hint?: boolean;
 }
 
-const { class: cls, wrap, label = 'Book a call — 20 minutes (opens Google Calendar in a new tab)' } = Astro.props;
+const { class: cls, wrap, label = 'Book a call — 20 minutes (opens Google Calendar in a new tab)', hint = false } = Astro.props;
 ---
 
 {BOOKING_URL && wrap && (
   <p class={wrap}>
     <a href={BOOKING_URL} data-book class:list={['book-link', cls]} aria-label={label} title="20-minute project call" target="_blank" rel="noopener noreferrer"><slot><span class="book-label">Book a call</span></slot></a>
+    {hint && <>{' '}<span class="booking-hint mt-1 block text-sm text-stone">{BOOKING_LEAD}<span class="whitespace-nowrap">{BOOKING_DAYS}.</span></span></>}
   </p>
 )}
 {BOOKING_URL && !wrap && (
   <a href={BOOKING_URL} data-book class:list={['book-link', cls]} aria-label={label} title="20-minute project call" target="_blank" rel="noopener noreferrer"><slot><span class="book-label">Book a call</span></slot></a>
 )}
+{BOOKING_URL && !wrap && hint && <>{' '}<span class="booking-hint mt-1 block text-sm text-stone">{BOOKING_LEAD}<span class="whitespace-nowrap">{BOOKING_DAYS}.</span></span></>}

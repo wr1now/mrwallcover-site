@@ -1,20 +1,20 @@
 ---
-title: "Four Seasons Hotel London, Ten Trinity Square | Mr Wallcover"
+title: "Four Seasons Ten Trinity Square | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/four-seasons-ten-trinity-square/
-description: "Guest room, suite and private residence wallpapering at Four Seasons Hotel London at Ten Trinity Square, 2016–2019. Three years of guest room and suite…"
+description: "Guest room, suite and private residence wallpapering at Four Seasons Hotel London at Ten Trinity Square, 2016–2019: about 5,000 m² of hotel wallcoverings."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 10 Trinity Square, Tower Hill, City of London EC3N 4AJ
 
 # Four Seasons Hotel London at Ten Trinity Square
 
-Three years of guest room and suite wallpapering, 2016 to 2019, through the opening of one of the City's great Beaux-Arts conversions, and the walls of the Four Seasons Private Residences upstairs.
+Guest room and suite wallpapering from 2016 to 2019, through the opening of the hotel in the former Port of London Authority headquarters, and wallcoverings in the Four Seasons Private Residences upstairs.
 
 ![Finished entrance hall in a private residence at Ten Trinity Square: a wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling, behind a round mirror and a tan leather bench.](https://www.mrwallcover.com/media/img/r/fs-residences-01-800.webp)
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -41,7 +41,7 @@ Client, materials & project facts
 
 ## At a glance
 
-- **Client / brand:** Four Seasons Hotel London at Ten Trinity Square (renamed Four Seasons Hotel London at Tower Bridge in October 2024)
+- **Client / brand:** Four Seasons Hotels and Resorts, for Four Seasons Hotel London at Ten Trinity Square (renamed Four Seasons Hotel London at Tower Bridge in October 2024)
 - **Location:** 10 Trinity Square, Tower Hill, City of London
 - **Years:** 2016–2019
 - **Role:** Guest room and suite wallpapering, and wallcoverings in the Four Seasons Private Residences
@@ -86,7 +86,7 @@ The same building holds the Four Seasons Private Residences, and our work at Ten
 
 ## The hotel, 2017 to 2019
 
-Our own photographs from the hotel floors, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), record the scale of the work. In May 2019 our team completed the installation of about 5,000 m² of wallcoverings at Four Seasons Hotel London, in Fromental, Vescom, Tektura and Dedar ([BxBEIajB-d5](https://www.instagram.com/p/BxBEIajB-d5/)). The silks were Fromental’s, including hand-dyed silk feature walls ([BwS1XkFhWv6](https://www.instagram.com/p/BwS1XkFhWv6/)); several lift lobbies were finished in Dedar ([B2U2Ry8F0rE](https://www.instagram.com/p/B2U2Ry8F0rE/)) and others in Muraspec ([B2U12SXFLHE](https://www.instagram.com/p/B2U12SXFLHE/)). Phillip Jeffries’ tweed-like fabric appears in our posts from December 2017 ([BdNs0wagJs9](https://www.instagram.com/p/BdNs0wagJs9/)).
+Our own photographs from the hotel floors, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), record the scale of the work. In May 2019 our team completed the installation of about 5,000 m² of wallcoverings at Four Seasons Hotel London, in Fromental, Vescom, Tektura and Dedar ([Instagram, May 2019](https://www.instagram.com/p/BxBEIajB-d5/)). The silks were Fromental’s, including hand-dyed silk feature walls ([Instagram, the silk walls](https://www.instagram.com/p/BwS1XkFhWv6/)); several lift lobbies were finished in Dedar ([Instagram, Dedar lobbies](https://www.instagram.com/p/B2U2Ry8F0rE/)) and others in Muraspec ([Instagram, Muraspec lobbies](https://www.instagram.com/p/B2U12SXFLHE/)). Phillip Jeffries’ tweed-like fabric appears in our posts from December 2017 ([Instagram, December 2017](https://www.instagram.com/p/BdNs0wagJs9/)).
 
 ## Materials
 
@@ -126,6 +126,8 @@ The last three are photographs of the building by other photographers, credited 
 ![The banded lobby walls turning a corner towards a pair of glazed doors, with bronze lift doors on the right.](https://www.mrwallcover.com/media/img/r/fs-residences-08-800.webp)
 
 ![A pale lift lobby seen between two stone-effect walls: bronze lift doors either side and a glazed door at the far end.](https://www.mrwallcover.com/media/img/r/fs-residences-09-800.webp)
+
+All 50 more photographs from this project
 
 ![The same lobby from the top of the steps: matched stone-effect walls, bronze lift doors and a glazed door at the end of the corridor.](https://www.mrwallcover.com/media/img/r/fs-residences-10-800.webp)
 
@@ -223,21 +225,23 @@ The last three are photographs of the building by other photographers, credited 
 
 ![Ten Trinity Square at night, seen from Trinity Square Gardens, with the tower and portico lit.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-01.jpg)
 
-Ten Trinity Square at night, from Trinity Square Gardens. A view of the building, not of our work. Photography: The wub / Wikimedia Commons (CC BY-SA 4.0).
+Ten Trinity Square at night, from Trinity Square Gardens. Venue photograph, not our work. Photograph: The wub / Wikimedia Commons (CC BY-SA 4.0).
 
 ![The Portland stone tower and columned front of Ten Trinity Square, framed by trees on Trinity Square.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-02.jpg)
 
-Ten Trinity Square from Trinity Square, 2026. A view of the building, not of our work. Photography: APK / Wikimedia Commons (CC BY 4.0).
+Ten Trinity Square from Trinity Square, 2026. Venue photograph, not our work. Photograph: APK / Wikimedia Commons (CC BY 4.0).
 
 ![The full front of Ten Trinity Square on Tower Hill, with its central tower and Corinthian columns.](https://www.mrwallcover.com/media/img/four-seasons-ten-trinity-commons-03.jpg)
 
-The front of Ten Trinity Square on Tower Hill, 2015. A view of the building, not of our work. Photography: Jim Linwood from London / Wikimedia Commons (CC BY 2.0).
+The front of Ten Trinity Square on Tower Hill, 2015. Venue photograph, not our work. Photograph: Jim Linwood from London / Wikimedia Commons (CC BY 2.0).
 
 How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -267,7 +271,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -277,4 +281,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

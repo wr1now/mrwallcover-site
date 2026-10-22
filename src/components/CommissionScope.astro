@@ -1,18 +1,78 @@
 ---
+/**
+ * The owner-confirmed commission scope (src/data/commission-scope.json).
+ *
+ * variant="record" (default): the exact field-by-field record that /for-ai/ and the AI crawler page publish,
+ * with the confirmation date and the policy link, for readers that quote it.
+ * variant="client": the same facts in plain sentences for a buyer on /services/, with the multi-year
+ * programmes as linked cards. No fact is added; only the record's internal wording is left out.
+ */
 import { commissionScope as scope } from '../lib/commission-scope';
+import Action from './Action.astro';
+
+interface Props {
+  variant?: 'record' | 'client';
+}
+
+const { variant = 'record' } = Astro.props;
 const confirmed = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${scope.ownerConfirmed}T00:00:00Z`));
+// "Full decorating package: decoration, …" reads as a label and its detail on a card.
+const roleLine = (role: string) => role.replace(/^([^:]+): /, '$1. ').replace(/\.\s+(.)/, (_, c: string) => `. ${c.toUpperCase()}`);
 ---
 
-<section id="commission-scope" aria-labelledby="commission-scope-heading">
-  <h2 id="commission-scope-heading">{scope.heading}</h2>
-  <p>{scope.minimumInstallationScope} {scope.programmeRange}</p>
-  <p>{scope.confirmation}</p>
-  <p>{scope.pricing}</p>
-  <p>{scope.basis}. Confirmed by the owner on <time datetime={scope.ownerConfirmed}>{confirmed}</time>. <a href={scope.sourceUrl}>Published scope policy</a>.</p>
-  <h3>Recorded programmes</h3>
-  <ul>
-    {scope.supportingProjects.map(project => (
-      <li><a href={project.url}>{project.title}</a> — {project.projectDates}. Recorded role: {project.role}. {project.basis}.</li>
-    ))}
-  </ul>
-</section>
+{variant === 'client' ? (
+  <section id="commission-scope" class="commission-scope commission-scope--client" aria-labelledby="commission-scope-heading">
+    <div class="commission-scope-copy">
+      <h2 id="commission-scope-heading">{scope.heading}</h2>
+      <p>The smallest commission we take on is a single room. We also take on programmes that run for years; the two shown here each took about two years on site.</p>
+      <p>Each commission is quoted on its own scope, phasing, crew and start date.</p>
+      <p>The quotation comes from a site survey or from drawings.</p>
+      <Action href="/contact/" variant="secondary">Start your project</Action>
+    </div>
+    <div class="commission-scope-record">
+      <h3>Programmes that ran for years</h3>
+      <ul role="list" class="commission-scope-programmes">
+        {scope.supportingProjects.map(project => (
+          <li>
+            {/* The hidden punctuation keeps date, name and role apart for screen readers and the text mirror. */}
+            <a href={new URL(project.url).pathname}>
+              <span class="commission-scope-dates">{project.projectDates}</span><span class="sr-only">: </span>
+              <strong>{project.title}</strong><span class="sr-only">. </span>
+              <span>{roleLine(project.role)}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+) : (
+  <section id="commission-scope" aria-labelledby="commission-scope-heading">
+    <h2 id="commission-scope-heading">{scope.heading}</h2>
+    <p>{scope.minimumInstallationScope} {scope.programmeRange}</p>
+    <p>{scope.confirmation}</p>
+    <p>{scope.pricing}</p>
+    <p>{scope.basis}. Confirmed by the owner on <time datetime={scope.ownerConfirmed}>{confirmed}</time>. <a href={scope.sourceUrl}>Published scope policy</a>.</p>
+    <h3>Recorded programmes</h3>
+    <ul>
+      {scope.supportingProjects.map(project => (
+        <li><a href={project.url}>{project.title}</a> — {project.projectDates}. Recorded role: {project.role}. {project.basis}.</li>
+      ))}
+    </ul>
+  </section>
+)}
+
+<style is:global>
+  .commission-scope--client { display: grid; gap: 2rem; padding-block: clamp(2.5rem, 5vw, 4rem); border-top: 1px solid var(--color-line); }
+  .commission-scope--client h2 { font-size: var(--text-h2); line-height: var(--leading-tight); margin: 0 0 1.25rem; max-width: 18ch; }
+  .commission-scope--client p { max-width: var(--measure-prose); margin: 0 0 1rem; font-size: var(--text-body); line-height: var(--leading-body); }
+  .commission-scope--client .mw-action { margin-top: .75rem; }
+  .commission-scope-record { display: grid; gap: 1rem; align-content: start; }
+  .commission-scope-record h3 { margin: 0; font-size: var(--text-label); font-family: var(--font-sans); font-weight: 500; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--color-brass); }
+  .commission-scope-programmes { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; align-content: start; }
+  .commission-scope-programmes a { display: grid; gap: .45rem; padding: 1.4rem 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-control); background: var(--color-panel); color: inherit; text-decoration: none; transition: border-color var(--dur-control) var(--ease-standard); }
+  .commission-scope-programmes a:hover { border-color: var(--color-brass); }
+  .commission-scope-programmes strong { font-family: var(--font-serif); font-size: var(--text-h4); font-weight: 500; line-height: 1.15; }
+  .commission-scope-programmes span { font-size: var(--text-label); line-height: 1.5; color: var(--color-stone); }
+  .commission-scope-programmes .commission-scope-dates { letter-spacing: var(--tracking-label); color: var(--color-brass); font-variant-numeric: lining-nums; }
+  @media (min-width: 900px) { .commission-scope--client { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 5rem); } }
+</style>

@@ -14,6 +14,8 @@ const BRAND_NAME = facts.brand;
 export const AWARD_TEXT = `${facts.award.line}: ${facts.award.name.replace(/, 2021$/, '')}, ${facts.award.organiser}`;
 export const AWARD_SCHEMA = `${facts.award.name}, ${facts.award.organiser}`;
 export const AWARD_URL = facts.award.url;
+/** On-site links to the named line open About, where the archived source sits beside it. */
+export const RECOGNITION_HREF = '/about/#recognition';
 const PUBLIC_EMAIL = facts.email;
 
 export const BUSINESS_ID = `${SITE_URL}/#business`;
@@ -62,8 +64,8 @@ export const AREAS_SERVED = [
  * Driven by the data, never by guesswork:
  * - A credited photograph carries a credit in its manifestNote
  *   (src/content/alts.json, src/content/credited-media.json), the same credit the
- *   page prints beside it: "credit Photography: House of Hackney", "credit Image:
- *   Raffles London at The OWO (official)", "credit Photography: The wub / Wikimedia
+ *   page prints beside it: "credit Photograph: House of Hackney", "credit Image:
+ *   Raffles London at The OWO (official)", "credit Photograph: The wub / Wikimedia
  *   Commons (CC BY-SA 4.0)". The creator and copyright notice name that holder
  *   exactly. A Creative Commons image keeps its own licence URL from the note.
  * - src/data/image-rights.json records what the notes cannot: Dorin's own iPhone
@@ -281,7 +283,7 @@ export function businessNode() {
     },
     areaServed: AREAS_SERVED,
     slogan:
-      'Premium wallcoverings services: surveying, management, supply, install and aftercare.',
+      'Specialist wallcovering installation for hotels and prime homes: survey, management, supply, installation and aftercare.',
     knowsAbout: [
       'Wallpaper installation',
       'Wallcovering installation for hotels',
@@ -304,7 +306,8 @@ export function businessNode() {
       '@type': 'ContactPoint',
       email: PUBLIC_EMAIL,
       url: `${SITE_URL}/contact/`,
-      contactType: 'quotations',
+      // A value Google documents for contactType; quotation requests are sales enquiries.
+      contactType: 'sales',
       areaServed: AREAS_SERVED,
       availableLanguage: ['English'],
     },

@@ -12,9 +12,9 @@ Services
 
 Scaffolding supplied and managed, with masonry and render painting, windows, cornices and railings. The public record is two full exteriors: St George's Square in Pimlico and Inverness Terrace in Bayswater.
 
-[Request a quotation](https://www.mrwallcover.com/contact/?service=exterior-decorating&topic=service%3Aexterior-works) [See the work](https://www.mrwallcover.com/projects/)
+[Start your project](https://www.mrwallcover.com/contact/?service=exterior-decorating&topic=service%3Aexterior-works) [See the work](https://www.mrwallcover.com/projects/)
 
-A full exterior is surveyed, scaffolded and painted as one piece of work. The practice supplies and manages the scaffold, then repairs and paints masonry, render and stucco, including cornices, pediments, capitals and parapets. Windows, sills and architraves are finished with the elevation, and so are balconies, balustrades and railings.
+A full exterior is surveyed, scaffolded and painted as one piece of work. We supply and manage the scaffold, then repair and paint masonry, render and stucco, including cornices, pediments, capitals and parapets. Windows, sills and architraves are finished with the elevation, and so are balconies, balustrades and railings.
 
 At [St George's Square, Pimlico](https://www.mrwallcover.com/projects/pimlico-st-georges-square/) the front and rear scaffolds were supplied and managed here. The work ran from cornice, pediment and portico repairs through masonry and render painting, sills, columns, balustrade and railings. At [Inverness Terrace, Bayswater](https://www.mrwallcover.com/projects/inverness-terrace/) the same approach covered a full scaffolded exterior, front and rear: stucco and render repairs, ornamental capitals and architraves, balconies, the portico, windows and the rear brickwork.
 
@@ -22,15 +22,15 @@ An exterior can be one commission with the interior: all the internal works plus
 
 Private residential buildings are published by street only. A survey still decides access, repairs and the programme. After the scaffold is struck, the same [aftercare](https://www.mrwallcover.com/aftercare/) applies as on an interior.
 
-![Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-11.jpg)
+![Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.](https://www.mrwallcover.com/media/img/r/pimlico-st-georges-square-exterior-11-800.webp)
 
-The finished stucco entrance and black railings at [St George’s Square, Pimlico](https://www.mrwallcover.com/projects/pimlico-st-georges-square/), with the scaffold down.Photograph: Mr Wallcover.
+The finished stucco entrance and black railings at [St George’s Square, Pimlico](https://www.mrwallcover.com/projects/pimlico-st-georges-square/), with the scaffold down. Photograph: Mr Wallcover.
 
 01
 
 ## Survey, scaffold and sequence
 
-An exterior starts with a survey that decides access, repairs and the programme, and the order of elevations. On both exteriors published here, the scaffold for the front and the rear was supplied and managed by the practice, including the strike. Repairs come before paint: cracks in cornices, pediments and porticos are made good, and stucco and render repaired, before the masonry is painted.
+An exterior starts with a survey that decides access, repairs and the programme, and the order of elevations. On both exteriors published here, we supplied and managed the scaffold for the front and the rear, including the strike. Repairs come before paint: cracks in cornices, pediments and porticos are made good, and stucco and render repaired, before the masonry is painted.
 
 02
 
@@ -48,9 +48,9 @@ Limewash is applied by Mr Wallcover's own team. Lime render can be arranged thro
 
 ## On the public record
 
-[![Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.](https://www.mrwallcover.com/media/img/pimlico-st-georges-square-exterior-11.jpg)](https://www.mrwallcover.com/projects/pimlico-st-georges-square/)
+[![Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.](https://www.mrwallcover.com/media/img/r/pimlico-st-georges-square-exterior-11-800.webp)](https://www.mrwallcover.com/projects/pimlico-st-georges-square/)
 
-Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.Photograph: Mr Wallcover.
+Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down. Photograph: Mr Wallcover.
 
 ### [St George's Square, Pimlico](https://www.mrwallcover.com/projects/pimlico-st-georges-square/)
 
@@ -58,9 +58,9 @@ Full exterior, scaffolding supplied and managed, 2024.
 
 [View the project](https://www.mrwallcover.com/projects/pimlico-st-georges-square/)
 
-[![Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down.](https://www.mrwallcover.com/media/img/inverness-terrace-exterior-10.jpg)](https://www.mrwallcover.com/projects/inverness-terrace/)
+[![Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-10-800.webp)](https://www.mrwallcover.com/projects/inverness-terrace/)
 
-Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down.Photograph: Mr Wallcover.
+Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down. Photograph: Mr Wallcover.
 
 ### [Inverness Terrace, Bayswater](https://www.mrwallcover.com/projects/inverness-terrace/)
 
@@ -68,9 +68,9 @@ Full scaffolded exterior, 2018.
 
 [View the project](https://www.mrwallcover.com/projects/inverness-terrace/)
 
-[![Penny Morrison showroom at 9 Langton Street, with floral wallpaper, a marble fireplace and upholstered seating.](https://www.mrwallcover.com/media/img/penny-morrison-showroom-01.jpg)](https://www.mrwallcover.com/projects/penny-morrison-showroom/)
+[![Penny Morrison showroom at 9 Langton Street, with floral wallpaper, a marble fireplace and upholstered seating.](https://www.mrwallcover.com/media/img/r/penny-morrison-showroom-01-800.webp)](https://www.mrwallcover.com/projects/penny-morrison-showroom/)
 
-Penny Morrison showroom at 9 Langton Street, with floral wallpaper, a marble fireplace and upholstered seating.Photograph: Mr Wallcover.
+Penny Morrison showroom at 9 Langton Street, with floral wallpaper, a marble fireplace and upholstered seating. Photograph: Mr Wallcover.
 
 ### [Penny Morrison showroom, Chelsea](https://www.mrwallcover.com/projects/penny-morrison-showroom/)
 
@@ -80,7 +80,7 @@ All the internal works plus the full exterior, 2023–2024.
 
 Questions
 
-## Asked about Exterior works
+## Questions we are asked
 
 Illustrative material studies
 
@@ -88,7 +88,7 @@ Pause motion
 
 ### Do you supply and manage the scaffold?
 
-Yes. On the exteriors published here, the scaffold was supplied and managed by the practice, including the strike. Access, pavement and the order of elevations are agreed at the survey.
+Yes. On the exteriors published here, we supplied and managed the scaffold, including the strike. Access, pavement and the order of elevations are agreed at the survey.
 
 ### What does the masonry and render painting cover?
 
@@ -104,7 +104,7 @@ Yes. One commission can be all the internal works plus the full exterior: decora
 
 ### What prelims and inclusions are in your price?
 
-Access, protection and making good are written into the scope rather than discovered at the end, and the quotation says what has been allowed for. Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Delivery of free-issue goods is timed to the hang, and paper is not stored in corridors. On exteriors, the practice supplies and manages the scaffold, including the strike. Packages can be wallcovering only, or wallcovering within a full decorating package (as at Brown's Hotel and 15 Old Bailey).
+Access, protection and making good are written into the scope rather than discovered at the end, and the quotation says what has been allowed for. Protection of floors, furniture and finished joinery is part of the hang, not an optional extra. Delivery of free-issue goods is timed to the hang, and paper is not stored in corridors. On exteriors, we supply and manage the scaffold, including the strike. Packages can be wallcovering only, or wallcovering within a full decorating package (as at Brown's Hotel and 15 Old Bailey).
 
 ### Do you issue RAMS, and who supervises the site?
 
@@ -114,4 +114,4 @@ Risk assessments and method statements (RAMS) are issued for every package, and 
 
 Limewash is applied by Mr Wallcover's own team. Lime render can be arranged through trusted specialist partners.
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

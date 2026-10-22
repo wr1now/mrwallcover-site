@@ -1,4 +1,5 @@
 type Studio = ReturnType<(typeof import('../lib/design-object-scenes'))['createObjectStudio']>;
+type Connection = EventTarget & { saveData?: boolean };
 import type { DesignObjectKind } from '../lib/design-object-kinds';
 
 /** One detached WebGL renderer serves only visible objects. Reading content is entirely server-rendered. */
@@ -7,6 +8,16 @@ export function mountDesignObjects() {
   if(!objects.length) return;
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
   const fine=matchMedia('(pointer: fine)');
+  // three.js is about 173 KB gzip for decorative motion over an SSR poster: phones,
+  // touch-first screens and Save-Data keep the poster and never download the scene.
+  const desktop=matchMedia('(min-width: 1024px) and (pointer: fine)');
+  const connection=(navigator as Navigator&{connection?:Connection}).connection;
+  const eligible=()=>desktop.matches&&connection?.saveData!==true;
+  // The same Pause also stops the botanical atmosphere, which moves from 768px on active pages
+  // (atelier-atmosphere.css), so tablets and Save-Data screens that keep the poster still need it.
+  const ambientLayer=document.querySelector('[data-atelier-atmosphere][data-atelier-motion="active"]');
+  const ambientWidth=matchMedia('(min-width: 768px)');
+  const ambient=()=>!!ambientLayer&&ambientWidth.matches;
   const events=new AbortController();
   const active=new Set<HTMLElement>();
   const canvases=new Map<HTMLElement,HTMLCanvasElement>();
@@ -14,10 +25,13 @@ export function mountDesignObjects() {
   let studio:Studio|undefined, loading:Promise<void>|undefined, studioSize=0, frame=0, last=0, disposed=false, failed=false, paused=document.documentElement.dataset.objectMotionState==='paused', ready=false;
   let pointer={x:0,y:0}, pointerRow:Element|null=null;
   const reduced=()=>motion.matches || document.documentElement.dataset.effects==='reduced';
-  const running=()=>!disposed&&!failed&&!paused&&!reduced()&&!document.hidden&&active.size>0;
+  const running=()=>!disposed&&!failed&&!paused&&!reduced()&&eligible()&&!document.hidden&&active.size>0;
   const stop=()=>{cancelAnimationFrame(frame);frame=0;objects.forEach(object=>object.removeAttribute('data-live'));};
+  // The desktop scene shows its control once the live view exists. Where the poster is final
+  // (or the scene failed) the control stays only while the botanicals move, never for motion
+  // that cannot run; a window narrowed below the gate also stops the scene.
   const paintControls=()=>controls.forEach(button=>{
-    button.hidden=(!ready&&!paused)||failed;
+    button.hidden=eligible()&&!failed?(!ready&&!paused):!ambient();
     button.disabled=reduced();
     button.setAttribute('aria-pressed',String(paused||reduced()));
     const label=button.querySelector('[data-motion-label]');
@@ -67,6 +81,9 @@ export function mountDesignObjects() {
   },{threshold:0});
   const preferences=new MutationObserver(sync);preferences.observe(document.documentElement,{attributes:true,attributeFilter:['data-effects']});
   motion.addEventListener('change',sync,{signal:events.signal});
+  desktop.addEventListener('change',sync,{signal:events.signal});
+  ambientWidth.addEventListener('change',sync,{signal:events.signal});
+  connection?.addEventListener('change',sync,{signal:events.signal});
   document.addEventListener('visibilitychange',sync,{signal:events.signal});
   document.addEventListener('pointermove',event=>{
     if(!running()||!fine.matches)return;

@@ -3,7 +3,7 @@ title: "House of Hackney showroom | Mr Wallcover"
 url: https://www.mrwallcover.com/projects/house-of-hackney-st-michaels/
 description: "Preparation, decorating and House of Hackney wallpapers at St Michael's Clergy House, Shoreditch, before the showroom opened in March 2022."
 author: "Dorin Burcus"
-last_updated: 2026-10-11
+last_updated: 2026-10-22
 ---
 
 St Michael's Clergy House, Mark Street, Shoreditch, London EC2A 4ER
@@ -14,9 +14,9 @@ Preparation and making good of the 1856 clergy house, then decorating and hangin
 
 ![Finished room at the House of Hackney showroom, St Michael's Clergy House, with dark floral wallpaper, matching curtains and low floral sofas.](https://www.mrwallcover.com/media/img/hoh-official-01.jpg)
 
-Photography: House of Hackney
+Photograph: House of Hackney
 
-## At a glance
+## Project record
 
 Client, materials & project facts
 
@@ -55,9 +55,9 @@ St Michael’s Clergy House dates from 1856. The brief was the interior of the n
 
 The survey was in October 2021. Making good and decorating ran from January 2022, and the rooms were dressed before the opening on 26 March 2022. The tiled cloakrooms were finished in May 2022.
 
-Pattern names are not stated here. The papers are House of Hackney’s own, hung through the rooms as specified for the showroom. This commission was internal works only.
+The papers are House of Hackney’s own, hung through the rooms as specified for the showroom. This commission was internal works only.
 
-The finished-room photographs marked “Photography: House of Hackney” are House of Hackney’s own, from their website. The others were taken on site by us; the two marked “Before” show rooms as found, before the works began.
+The finished-room photographs marked “Photograph: House of Hackney” are House of Hackney’s own, from their website. The others were taken on site by us; the two marked “Before” show rooms as found, before the works began.
 
 The last seven photographs are from an earlier job for the same client: House of Hackney’s previous showroom in Shoreditch, which we worked on in 2019. They are our own photographs, posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 19 August 2019, and each is captioned as the earlier showroom. They are not St Michael’s Clergy House.
 
@@ -65,47 +65,49 @@ The last seven photographs are from an earlier job for the same client: House of
 
 ![Green-and-gold floral wallpaper above timber panelling in a finished room at the House of Hackney showroom, with glass tables and low stools.](https://www.mrwallcover.com/media/img/hoh-official-02.jpg)
 
-Photography: House of Hackney
+Photograph: House of Hackney
 
 ![Large-scale floral wallpaper behind two pedestal basins at the House of Hackney showroom.](https://www.mrwallcover.com/media/img/hoh-official-03.jpg)
 
-Photography: House of Hackney
+Photograph: House of Hackney
 
 ![Floral wallpaper around a fireplace and a timber bookcase in a finished room at the House of Hackney showroom.](https://www.mrwallcover.com/media/img/hoh-official-04.jpg)
 
-Photography: House of Hackney
+Photograph: House of Hackney
 
 ![Panelled wall with floral and striped wallpaper behind a striped sofa at the House of Hackney showroom.](https://www.mrwallcover.com/media/img/hoh-official-05.jpg)
 
-Photography: House of Hackney
+Photograph: House of Hackney
 
 ![Finished room at the House of Hackney showroom, with patterned wallpaper below the dado, a fireplace and printed armchairs.](https://www.mrwallcover.com/media/img/hoh-official-06.jpg)
 
-Photography: House of Hackney
+Photograph: House of Hackney
 
 ![Stained glass doors and patterned wall at the House of Hackney showroom in St Michael's Clergy House.](https://www.mrwallcover.com/media/img/hoh-official-07.jpg)
 
-Photography: House of Hackney
+Photograph: House of Hackney
 
-![Bedroom set at the House of Hackney showroom, with green floral wallpaper and a four-poster bed.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-05.jpg)
+![Bedroom set at the House of Hackney showroom, with green floral wallpaper and a four-poster bed.](https://www.mrwallcover.com/media/img/r/house-of-hackney-st-michaels-05-800.webp)
 
-![Finished room at the House of Hackney showroom, with floral wallpaper, a fireplace and printed sofas.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-06.jpg)
+![Finished room at the House of Hackney showroom, with floral wallpaper, a fireplace and printed sofas.](https://www.mrwallcover.com/media/img/r/house-of-hackney-st-michaels-06-800.webp)
 
-![Finished room at the House of Hackney showroom, with green walls, a floral panel and printed sofas.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-08.jpg)
+All 14 more photographs from this project
 
-![Passage at the House of Hackney showroom, with bird-pattern wallpaper above green tiles.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-09.jpg)
+![Finished room at the House of Hackney showroom, with green walls, a floral panel and printed sofas.](https://www.mrwallcover.com/media/img/r/house-of-hackney-st-michaels-08-800.webp)
 
-![Cloakroom basin at the House of Hackney showroom, with floral wallpaper above green tiles and a marble vanity.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-11.jpg)
+![Passage at the House of Hackney showroom, with bird-pattern wallpaper above green tiles.](https://www.mrwallcover.com/media/img/r/house-of-hackney-st-michaels-09-800.webp)
 
-![Cloakroom at the House of Hackney showroom, seen through a doorway, with floral wallpaper above green tiles.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-10.jpg)
+![Cloakroom basin at the House of Hackney showroom, with floral wallpaper above green tiles and a marble vanity.](https://www.mrwallcover.com/media/img/r/house-of-hackney-st-michaels-11-800.webp)
 
-![Finished room at the House of Hackney showroom, with a long timber table, hanging fabric samples and arched windows.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-04.jpg)
+![Cloakroom at the House of Hackney showroom, seen through a doorway, with floral wallpaper above green tiles.](https://www.mrwallcover.com/media/img/r/house-of-hackney-st-michaels-10-800.webp)
 
-![Before: an empty upper room at St Michael's Clergy House, with blue carpet, a fireplace and plain white walls, before the House of Hackney showroom works.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-01.jpg)
+![Finished room at the House of Hackney showroom, with a long timber table, hanging fabric samples and arched windows.](https://www.mrwallcover.com/media/img/r/house-of-hackney-st-michaels-04-800.webp)
+
+![Before: an empty upper room at St Michael's Clergy House, with blue carpet, a fireplace and plain white walls, before the House of Hackney showroom works.](https://www.mrwallcover.com/media/img/r/house-of-hackney-st-michaels-01-800.webp)
 
 Before
 
-![Before: an empty room at St Michael's Clergy House, with red carpet, white walls and an arched door, before the showroom works.](https://www.mrwallcover.com/media/img/house-of-hackney-st-michaels-03.jpg)
+![Before: an empty room at St Michael's Clergy House, with red carpet, white walls and an arched door, before the showroom works.](https://www.mrwallcover.com/media/img/r/house-of-hackney-st-michaels-03-800.webp)
 
 Before
 
@@ -141,7 +143,9 @@ How the commission ran
 
 ## The same standards, on every commission.
 
-Whether the client is a hotel group, a designer or a household, the job runs the same way. These are the parts a photograph never shows.
+Each commission has a written scope by room, walls prepared until they are true, protected floors, batch and shade control, set-out from the room’s focal points, and a return visit. [Read the method](https://www.mrwallcover.com/practice/#method).
+
+The six standards in full
 
 01
 
@@ -171,7 +175,7 @@ Deliveries are checked against the measure, and batches and shading are managed 
 
 ### Set out from the room's focal points
 
-Pattern is set out from chimneypieces, doorcases and bed walls, so the design meets the cornice and the joinery with composure.
+Pattern is set out from chimneypieces, doorcases and bed walls, so the pattern sits square to the cornice and the joinery.
 
 06
 
@@ -181,4 +185,4 @@ The people who start are the people who finish. Four to six weeks after completi
 
 [See the finish up close: seams, internal corners, edges and joins from our own installations](https://www.mrwallcover.com/details/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 11 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last updated 22 October 2026

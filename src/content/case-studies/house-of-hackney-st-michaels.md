@@ -20,31 +20,31 @@
   "gallery": [
     {
       "id": "hoh-official-01",
-      "credit": "Photography: House of Hackney"
+      "credit": "Photograph: House of Hackney"
     },
     {
       "id": "hoh-official-02",
-      "credit": "Photography: House of Hackney"
+      "credit": "Photograph: House of Hackney"
     },
     {
       "id": "hoh-official-03",
-      "credit": "Photography: House of Hackney"
+      "credit": "Photograph: House of Hackney"
     },
     {
       "id": "hoh-official-04",
-      "credit": "Photography: House of Hackney"
+      "credit": "Photograph: House of Hackney"
     },
     {
       "id": "hoh-official-05",
-      "credit": "Photography: House of Hackney"
+      "credit": "Photograph: House of Hackney"
     },
     {
       "id": "hoh-official-06",
-      "credit": "Photography: House of Hackney"
+      "credit": "Photograph: House of Hackney"
     },
     {
       "id": "hoh-official-07",
-      "credit": "Photography: House of Hackney"
+      "credit": "Photograph: House of Hackney"
     },
     {
       "id": "house-of-hackney-st-michaels-05",
@@ -112,7 +112,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -130,8 +130,8 @@ St Michael's Clergy House dates from 1856. The brief was the interior of the new
 
 The survey was in October 2021. Making good and decorating ran from January 2022, and the rooms were dressed before the opening on 26 March 2022. The tiled cloakrooms were finished in May 2022.
 
-Pattern names are not stated here. The papers are House of Hackney's own, hung through the rooms as specified for the showroom. This commission was internal works only.
+The papers are House of Hackney's own, hung through the rooms as specified for the showroom. This commission was internal works only.
 
-The finished-room photographs marked "Photography: House of Hackney" are House of Hackney's own, from their website. The others were taken on site by us; the two marked "Before" show rooms as found, before the works began.
+The finished-room photographs marked "Photograph: House of Hackney" are House of Hackney's own, from their website. The others were taken on site by us; the two marked "Before" show rooms as found, before the works began.
 
 The last seven photographs are from an earlier job for the same client: House of Hackney's previous showroom in Shoreditch, which we worked on in 2019. They are our own photographs, posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 19 August 2019, and each is captioned as the earlier showroom. They are not St Michael's Clergy House.

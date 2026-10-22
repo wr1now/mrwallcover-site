@@ -54,6 +54,6 @@ Where the project sets fire, acoustic or environmental requirements, obtain the 
 
 A room-by-room record of the installed product, colourway, batch and care sheet; spare material from the same batch, kept dry with its batch label and stored as the maker recommends; and a clear note of the limits of matching a later repair, since a patch from a different batch will show. Our [problems and aftercare guide](/advice/wallcovering-problems-and-aftercare/) explains what to record when something goes wrong.
 
-## When does this advice stop being reliable?
+## What this guide cannot tell you
 
 It describes practice on London hotel refurbishments in occupied buildings. It does not certify any product. It does not replace the specifier's review of fire, acoustic or wet-area requirements, or the responsible person's fire risk assessment for a hotel in use. For a phased programme, send the room types, the floor or phase schedule, occupancy, working hours and the material codes; the [hotels and operators page](/professionals/hotels/) lists what to include, and the [developer package guide](/advice/developer-wallcovering-package/) covers the tender side where a main contractor is involved.

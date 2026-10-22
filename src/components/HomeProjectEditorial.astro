@@ -4,10 +4,12 @@ import Icon from '../components/Icon.astro';
 import Picture from '../components/Picture.astro';
 import { home, projectHref, videoById } from '../lib/content';
 import { programmeFigures } from '../lib/trust';
-import { AWARD_TEXT, AWARD_URL } from '../lib/schema';
+import { AWARD_TEXT, RECOGNITION_HREF } from '../lib/schema';
 import approvedQuotes from '../data/approved-quotes.json';
 import { selection, alsoOnRecord, calicoProjects, calicoLabel, showcase } from '../data/home-editorial';
 import '../styles/home-editorial.css';
+/* The link below goes to /projects/, so it is left out on that page itself. */
+const onProjectsIndex = Astro.url.pathname === '/projects/';
 const hotelNames = [
   {name: "Brown’s Hotel", place: 'MAYFAIR', href: '/projects/browns-hotel-mayfair/'},
   {name: 'Raffles London', place: 'THE OWO', href: '/projects/raffles-london-the-owo/'},
@@ -26,7 +28,7 @@ const hotelNames = [
       <ul class="home-showcase-strip editorial-evidence-grid" role="list">
         {showcase.map((item) => (
           <li class="home-showcase-item">
-            <a class="home-showcase-image" href={projectHref(item.slug)} tabindex="-1" aria-hidden="true"><Picture id={item.image} sizes="(min-width: 1024px) 34vw, (min-width: 768px) 48vw, 80vw" /></a>
+            <a class="home-showcase-image" href={projectHref(item.slug)} tabindex="-1" aria-hidden="true"><Picture id={item.image} sizes="(min-width: 1280px) 34vw, (min-width: 768px) 48vw, 92vw" /></a>
             <p class="home-showcase-place">{item.place}</p>
             <h3><a href={projectHref(item.slug)}>{item.name}</a></h3>
             {item.credit && <p class="home-showcase-credit">{item.credit}</p>}
@@ -41,7 +43,7 @@ const hotelNames = [
       <p class="home-partner-line"><a href="#calico-heading">Work delivered in partnership with Calico Wallpaper</a></p>
     </section>
 
-    <section class="atelier-section editorial-programmes" aria-labelledby="programme-heading"><p class="eyebrow">On the record</p><h2 id="programme-heading">Programmes, in figures.</h2><ul><li><a href={AWARD_URL} rel="noopener"><span>Recognised</span><strong>{AWARD_TEXT}</strong></a></li>{programmeFigures.map(item => <li><a href={item.href}><span>{item.where}</span><strong>{item.figure}</strong></a></li>)}</ul></section>
+    <section class="atelier-section editorial-programmes" aria-labelledby="programme-heading"><p class="eyebrow">On the record</p><h2 id="programme-heading">Programmes, in figures.</h2><ul><li><a href={RECOGNITION_HREF}><span>Recognised</span><strong>{AWARD_TEXT}</strong></a></li>{programmeFigures.map(item => <li><a href={item.href}><span>{item.where}</span><strong>{item.figure}</strong></a></li>)}</ul></section>
     <section class="atelier-section home-proof" aria-labelledby="proof-heading">
       <div class="atelier-section-head"><div><p class="atelier-kicker">{home.proof.eyebrow}</p><h2 id="proof-heading">{home.proof.title}</h2></div><p class="home-proof-text">{home.proof.text}</p></div>
       <div class="home-proof-strip" role="region" tabindex="0" aria-label="Photographs from Brown's Hotel">
@@ -51,7 +53,7 @@ const hotelNames = [
       <div class="atelier-film-grid home-films" data-films role="region" aria-label="Short films from Brown’s Hotel" tabindex="0">{home.proof.videos.map(id => { const film = videoById(id); return <figure><video controls playsinline preload="none" data-poster={film.poster} width={film.width} height={film.height} src={film.src} aria-label={film.alt} /><figcaption class="caption">{film.caption}</figcaption></figure>; })}</div>
     </section>
     <section class="atelier-section atelier-work editorial-evidence-section" aria-labelledby="selected-work">
-      <div class="atelier-section-head"><div><p class="atelier-kicker">SELECTED COMMISSIONS</p><h2 id="selected-work">Places with <em>presence.</em></h2></div><a class="atelier-text-link" href="/projects/">View the full portfolio <Icon name="arrow-right" /></a></div>
+      <div class="atelier-section-head"><div><p class="atelier-kicker">SELECTED COMMISSIONS</p><h2 id="selected-work">Places with <em>presence.</em></h2></div>{onProjectsIndex ? <a class="atelier-text-link" href="/projects/#hotels">See the complete hotel record <Icon name="arrow-right" /></a> : <a class="atelier-text-link" href="/projects/">View all projects <Icon name="arrow-right" /></a>}</div>
       <div class="atelier-project-grid">
         <article class="atelier-project atelier-project-lead">
           <a class="atelier-project-image" href="/projects/browns-hotel-mayfair/">

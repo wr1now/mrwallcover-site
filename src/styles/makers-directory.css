@@ -15,5 +15,30 @@ main .maker-card h2:not(.sr-only),main .maker-route h3:not(.sr-only) { font-size
 .maker-photo-label { color:var(--color-brass); font-size:var(--text-label); font-weight:500; }
 .maker-photo-credit { color:var(--color-stone); font-size:var(--text-meta); }
 .maker-sources li { font-size:var(--text-body); }
+/* Underlined as in .prose, so the link reads apart from the plain "checked" date after it. */
+.maker-sources a { text-decoration:underline; text-decoration-thickness:1px; text-decoration-color:var(--color-underline); text-underline-offset:.2em; }
+.maker-sources a:hover { text-decoration-color:currentColor; }
 .maker-filter label { font-size:var(--text-label); }
 .maker-filter input,.maker-filter select { font-size:var(--text-button); }
+/* Buying routes: a jump list, then one closed group per maker with the same quiet plus/minus row as the project record. */
+.maker-route-jump ul { display:flex; flex-wrap:wrap; gap:0 1.5rem; margin:1.5rem 0 2rem; padding:0; list-style:none; }
+.maker-route-jump a { display:inline-flex; align-items:center; min-height:44px; text-decoration:underline; text-underline-offset:.25em; }
+.maker-route-jump [hidden],.maker-route-group[hidden] { display:none!important; }
+.maker-route-group { border-top:1px solid var(--color-line); }
+.maker-route-group:last-of-type { border-bottom:1px solid var(--color-line); }
+.maker-route-group > details > summary { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:.6rem 1.5rem; min-height:64px; padding:1.1rem .4rem; cursor:pointer; list-style:none; }
+.maker-route-group > details > summary::-webkit-details-marker { display:none; }
+.maker-route-group > details > summary:focus-visible { outline:2px solid var(--color-brass); outline-offset:4px; }
+main .maker-route-group summary h2:not(.sr-only) { grid-column:1; margin:0; font-size:var(--text-h3); line-height:var(--leading-tight); }
+.maker-route-group > details > summary:hover h2 { text-decoration:underline; text-underline-offset:.2em; text-decoration-thickness:1px; }
+.maker-route-group-count { grid-column:1; color:var(--color-stone); font-size:var(--text-meta); line-height:1.5; }
+.maker-route-group-icon { grid-column:2; grid-row:1 / span 2; position:relative; width:14px; height:14px; }
+.maker-route-group-icon::before,.maker-route-group-icon::after { content:''; position:absolute; inset:50% 0 auto; height:1px; background:currentColor; }
+.maker-route-group-icon::after { transform:rotate(90deg); }
+.maker-route-group > details[open] .maker-route-group-icon::after { transform:rotate(0); }
+.maker-route-group .maker-route-grid { margin-block:.5rem 2rem; }
+/* Route cards share one drawing of each icon (MakerRoute.astro). The symbols stay out of the grid; the arrow in the button label keeps the button's gap. */
+.maker-route-icons { position:absolute; width:0; height:0; overflow:hidden; }
+.maker-route-icons .mw-icon { width:100%; height:100%; }
+.maker-route .mw-action > span { display:inline-flex; align-items:center; gap:inherit; }
+@media print { .maker-route-group details::details-content { content-visibility:visible; block-size:auto; } .maker-route-group details > :not(summary) { display:block; } .maker-route-group-icon { display:none; } }

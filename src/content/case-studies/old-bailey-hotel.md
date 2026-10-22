@@ -14,7 +14,7 @@
   ],
   "modest": true,
   "metaTitle": null,
-  "metaDescription": null,
+  "metaDescription": "Full decorating package at Hyde London City (the Old Bailey Hotel), 2022–2024: 111 guest rooms, specialist wallcoverings and window film.",
   "group": null,
   "standfirst": "A complete decorating package for 111 guest rooms across seven storeys: paint, specialist wallcoverings and window film, delivered over about two years inside a Grade II-listed Victorian hotel opposite the Central Criminal Court.",
   "hero": "old-bailey-06",
@@ -97,7 +97,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-10"
+  "updated": "2026-10-22"
 }
 ---
 

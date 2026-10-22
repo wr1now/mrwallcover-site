@@ -8,7 +8,7 @@
   "heading": "Timorous Beasties installation in London",
   "lede": "We install Timorous Beasties papers. On the public record, we hung Tropical Clouded Leopard and Totem Damask, custom-printed as vinyl, through the 111 guest rooms across seven storeys of Hyde London City.",
   "parent": { "name": "Services", "href": "/services/" },
-  "updated": "2026-10-17",
+  "updated": "2026-10-22",
   "service": { "name": "Timorous Beasties wallpaper installation", "serviceType": "Wallcovering installation" },
   "cta": { "label": "Discuss a Timorous Beasties installation", "href": "/contact/?intent=install" },
   "projects": ["old-bailey-hotel"],
@@ -44,7 +44,7 @@
 }
 ---
 
-We install Timorous Beasties papers. The project on the public record is Hyde London City, the former Old Bailey Hotel. Mr Wallcover is not on maker recommended-installer lists: a maker's name on this site means we installed that maker's product on that project.
+We install Timorous Beasties papers. The project on the public record is Hyde London City (the former Old Bailey Hotel).
 
 ## What was hung
 
@@ -56,4 +56,6 @@ As the case study records it: a sample room first, with the headboard panel shap
 
 ## On the public record
 
-Hyde London City, the former Old Bailey Hotel: 111 guest rooms across seven storeys, in a Grade II-listed Victorian building, about two years on site from a finished sample room in November 2022. The case study below is the record, with its photographs.
+Hyde London City (the former Old Bailey Hotel): 111 guest rooms across seven storeys, in a Grade II-listed Victorian building, about two years on site from a finished sample room in November 2022. The case study below is the record, with its photographs.
+
+Mr Wallcover is not on maker recommended-installer lists. Naming a maker records an installation, not an endorsement.

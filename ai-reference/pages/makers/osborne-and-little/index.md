@@ -16,9 +16,9 @@ Osborne & Little provides wallcovering, fabric and trimming collections through 
 
 Read the maker’s information for the selected product and destination. A brand profile does not certify a seller or prove that an order will be accepted.
 
-- [Official source](https://www.osborneandlittle.com/stockists) — checked 2026-10-17
-- [Official source](https://www.osborneandlittle.com/contact_us/) — checked 2026-10-17
-- [Official source](https://www.osborneandlittle.com/samples/) — checked 2026-10-17
+- [Official source: osborneandlittle.com/stockists](https://www.osborneandlittle.com/stockists) — checked 17 October 2026
+- [Official source: osborneandlittle.com/contact_us](https://www.osborneandlittle.com/contact_us/) — checked 17 October 2026
+- [Official source: osborneandlittle.com/samples](https://www.osborneandlittle.com/samples/) — checked 17 October 2026
 
 [Visit maker website](https://www.osborneandlittle.com/)
 
@@ -45,9 +45,9 @@ Terms and checks before ordering
 
 Stockists described as an ordering route; neutral maker-listed terminology only.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.osborneandlittle.com/stockists)
+[Open official source: Find a stockist or representative, UK and overseas: country selector includes United Kingdom and other countries](https://www.osborneandlittle.com/stockists)
 
 ### Showroom or brand contact
 
@@ -68,9 +68,9 @@ Terms and checks before ordering
 
 Maker lists London showroom and contact details.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.osborneandlittle.com/contact_us/)
+[Open official source: Showroom or brand contact, UK London; US showroom contacts separately listed, without implied UK fulfilment](https://www.osborneandlittle.com/contact_us/)
 
 ### Samples
 
@@ -91,9 +91,9 @@ Terms and checks before ordering
 
 Samples are available to order directly from this site only within the United Kingdom. Up to ten samples per order; the published sample cost includes delivery and VAT. Samples may be unavailable and are not guaranteed to match production batches exactly.
 
-Official page checked 2026-10-17. Website evidence, not a test order.
+Checked on the official website on 17 October 2026. This check did not include placing an order.
 
-[Open official source](https://www.osborneandlittle.com/samples/)
+[Open official source: Samples, United Kingdom only; page explicitly excludes orders and delivery outside UK](https://www.osborneandlittle.com/samples/)
 
 [All makers](https://www.mrwallcover.com/makers/)
 

@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { promisify } from 'node:util';
 import { execFile } from 'node:child_process';
 import assert from 'node:assert/strict';
-import { serve, launchBrowser, loadPage, waitForPagePredicate } from './visual-browser.mjs';
+import { serve, launchBrowser, setDesktopViewport, loadPage, waitForPagePredicate } from './visual-browser.mjs';
 const fixture='src/pages/visual-contract-fixture.astro';
 const publishedFixture='src/pages/published-visual-contract-fixture.astro';
 for (const file of [fixture,publishedFixture]) {
@@ -72,9 +72,12 @@ try {
   assert.equal((publishedHtml.match(/\bdata-atelier-linen(?:\s|>|=)/g)||[]).length,1);
   assert.deepEqual([...publishedHtml.matchAll(/\bdata-atelier-botanical="([^"]+)"/g)].map(match=>match[1]).sort(),['birds','blossom','water-lilies']);
   const server=await serve(out);
-  const browser=await launchBrowser();
+  // The new-route renderer contract needs an actual desktop pointer even on a headless Linux
+  // host with no input hardware. These are native Blink device settings, not a matchMedia stub.
+  const browser=await launchBrowser({args:['--blink-settings=primaryPointerType=4,availablePointerTypes=4,primaryHoverType=2,availableHoverTypes=2'],defaultViewport:null});
   try {
     const page=await browser.newPage();
+    assert.equal(await page.evaluate(()=>matchMedia('(pointer:fine) and (hover:hover)').matches),true,'new-route renderer fixture has a native desktop pointer');
     await loadPage(page,server.origin+'/visual-contract-fixture/');
     await page.type('[data-action-form] input',' changed');
     await page.click('[data-action-form] button[type="reset"]');
@@ -84,9 +87,11 @@ try {
     await page.$eval('[data-design-object] img',image=>{image.loading='eager';});
     await waitForPagePredicate(page,()=>document.querySelector('[data-design-object] img').complete);
     for(const width of [390,1440]) {
-      await page.setViewport({width,height:900});
+      await setDesktopViewport(page,width,900);
       await page.$eval('.faq summary',summary=>summary.scrollIntoView({block:'center',behavior:'instant'}));
-      await page.waitForFunction(()=>document.querySelector('[data-design-object][data-live]'));
+      // The 3D scene (and three.js) loads only at (min-width:1024px) and (pointer:fine): a phone keeps the server-rendered poster.
+      if(width>=1024) await page.waitForFunction(()=>document.querySelector('[data-design-object][data-live]'));
+      else assert.equal(await page.evaluate(()=>!document.querySelector('[data-design-object][data-live]')&&!document.querySelector('[data-design-object] canvas')&&getComputedStyle(document.querySelector('[data-design-object] img')).visibility==='visible'),true,'a phone keeps the poster and requests no scene');
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`new default-dimensional route @${width}`);
       await page.focus('.faq summary');
       await page.keyboard.press('Enter');
@@ -103,7 +108,7 @@ try {
 
     const plain=await browser.newPage();
     await plain.setJavaScriptEnabled(false);
-    await plain.setViewport({width:390,height:900});
+    await setDesktopViewport(plain,390,900);
     await loadPage(plain,server.origin+'/visual-contract-fixture/');
     await plain.$eval('[data-design-object] img',image=>{image.loading='eager';});
     await waitForPagePredicate(plain,()=>document.querySelector('[data-design-object] img').complete);
@@ -117,7 +122,7 @@ try {
     const published=await browser.newPage();
     await published.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'no-preference'}]);
     for (const width of [390,1440]) {
-      await published.setViewport({width,height:900});
+      await setDesktopViewport(published,width,900);
       await loadPage(published,server.origin+'/published-visual-contract-fixture/');
       await waitForPagePredicate(published,()=>document.querySelector('[data-atelier-atmosphere]')?.hasAttribute('data-running'));
       // Read the inherited CSS as rendered. No inline style, DOM or preference patches make the artwork appear.
@@ -167,7 +172,7 @@ try {
     }
     await published.close();
     for (const width of [360,390,768,1024,1280,1440]) {
-      await page.setViewport({width,height:900});
+      await setDesktopViewport(page,width,900);
       await loadPage(page,server.origin+'/contact/');
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`phone-enabled layout @${width}`);
       assert.ok(await page.$('[data-wa]'),'phone-enabled WhatsApp control');
@@ -194,8 +199,15 @@ try {
     await loadPage(page,server.origin+'/get-in-touch/');
     await page.click('main [data-phone-reveal]');
     assert.ok(await page.$('main a[href^="tel:"]'),'phone reveal becomes a dial link without placing a call');
+    // A shared `.atelier h2 { margin:0 }` once pinned the closing heading left while its eyebrow and line stayed centred.
+    for (const width of [390,1440]) {
+      await setDesktopViewport(page,width,900);
+      await loadPage(page,server.origin+'/');
+      const closer=await page.$eval('.clear-home-closing',section=>{const box=section.getBoundingClientRect(),range=document.createRange();range.selectNodeContents(section.querySelector('h2'));const rects=[...range.getClientRects()];return {section:(box.left+box.right)/2,text:(Math.min(...rects.map(r=>r.left))+Math.max(...rects.map(r=>r.right)))/2};});
+      assert.ok(Math.abs(closer.text-closer.section)<=2,`homepage closing heading is centred @${width}`);
+    }
   } finally { await browser.close(); await server.close(); }
   console.log('New route fixture: shared footer/actions and default dimensional FAQ inherited without local CSS or opt-in; native controls, pause/resume, mobile/desktop layout and complete no-JavaScript poster/disclosure pass. Fixture removed from source and public output.');
   console.log('Published new route fixture: active linen-botanical shell, phone linen and desktop birds, plum blossom and water lilies inherit shared CSS at 390/1440 without local styling or DOM patches; native footer and form actions pass. The noindex fixture omits the layer. Both temporary sources and isolated output removed.');
-  console.log('Phone-enabled browser fixture: six widths, single-line desktop contact action within the bar, booking outside the header, WhatsApp href decoding, field-focus dock hiding and phone reveal pass; no call or message sent.');
+  console.log('Phone-enabled browser fixture: six widths, single-line desktop contact action within the bar, booking outside the header, WhatsApp href decoding, field-focus dock hiding, phone reveal and the centred homepage closing heading at 390/1440 pass; no call or message sent.');
 } finally { for (const file of created) await rm(file,{force:true}); await rm(out,{recursive:true,force:true}); }

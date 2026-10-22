@@ -17,7 +17,7 @@ export const ENQUIRY_SOURCES = [
 ] as const;
 export const INTAKE_SCHEMA_VERSION = 2;
 export const EMAIL_MARKETING_VERSION = 'email-updates-2026-10-18';
-export const PRIVACY_NOTICE_VERSION = '2026-10-18';
+export const PRIVACY_NOTICE_VERSION = '2026-10-22';
 export const EMAIL_MARKETING_TEXT = 'Email me occasional Mr Wallcover project and material updates. Optional; withdraw at any time.';
 
 export const ENQUIRY_TOPICS = [

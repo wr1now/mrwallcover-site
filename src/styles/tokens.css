@@ -47,6 +47,8 @@
   /* ---- Glass recipes (independent critique, 9 October 2026, starting values; the contrast record decides) ---- */
   /* Champagne: navigation and floating utility surfaces over warm imagery. */
   --glass-champagne-alpha: 0.82;
+  /* The header over a dark band (data-over-dark, set by the Header script): more ivory, so it does not read grey. */
+  --glass-champagne-alpha-over-dark: 0.95;
   --glass-champagne-blur: 20px;
   --glass-champagne-saturate: 1.15;
   --glass-champagne-border: rgba(255, 255, 255, 0.55);
@@ -65,8 +67,8 @@
   --glass-clear-saturate: 1.05;
   --glass-clear-border-alpha: 0.12;
   --glass-clear-border: rgba(20, 18, 16, 0.12);
-  /* Opaque dock: champagne without blur, so the header is the only blurred surface on phones. */
-  --glass-dock-alpha: 0.96;
+  /* Opaque dock: champagne at full opacity without blur, so the header is the only blurred surface on phones. */
+  --glass-dock-alpha: 1;
   --glass-dock-border: rgba(20, 18, 16, 0.08);
   --glass-dock-shadow: 0 8px 20px rgba(20, 18, 16, 0.08);
   /* Ghost button ring on ink (3:1 non-text rule). */
@@ -102,6 +104,8 @@
   --measure-h1: min(66rem, 100%); /* page titles run to two or three lines */
   /* One button system: primary (ink or ivory on dark), secondary (ink line), ghost (ivory line on dark). */
   --button-height: 56px;
+  /* The one compact button: the header action, whose row shares the 104px desktop bar with the Resources row. */
+  --button-height-compact: 44px;
   --button-radius: 6px;
   --button-pad: 1.4rem;
   /* One card system. */
@@ -178,7 +182,7 @@
   }
 }
 
-/* Full owner-requested desktop menu: two rows of accessible links. */
+/* Full owner-requested desktop menu: the primary row and the labelled Resources row beneath it. */
 @media (min-width: 1280px) {
   :root { --header-height: 6.5rem; }
 }

@@ -11,7 +11,7 @@
     "name": "Services",
     "href": "/services/"
   },
-  "updated": "2026-10-17",
+  "updated": "2026-10-22",
   "service": {
     "name": "House of Hackney wallpaper installation",
     "serviceType": "Wallcovering installation"
@@ -45,20 +45,20 @@
       "id": "hoh-photos",
       "question": "Whose photographs are on the House of Hackney showroom case study?",
       "paragraphs": [
-        "The finished-room photographs are House of Hackney's own, credited \"Photography: House of Hackney\". The others were taken on site by us."
+        "The finished-room photographs are House of Hackney's own, credited \"Photograph: House of Hackney\". The others were taken on site by us."
       ]
     }
   ],
   "featureMedia": {
     "id": "trematon-01",
-    "caption": "House of Hackney’s PLANTASIA mural installed at the Castle of Trematon, Cornwall. A recorded installation does not imply maker endorsement.",
+    "caption": "House of Hackney’s PLANTASIA mural installed at the Castle of Trematon, Cornwall.",
     "credit": "Photograph: Dorin Burcus / Mr Wallcover.",
     "project": "trematon-castle"
   }
 }
 ---
 
-Mr Wallcover has hung House of Hackney wallpapers at four published commissions. Mr Wallcover is not on maker recommended-installer lists: a maker's name on this site means we installed that maker's product on that project.
+Mr Wallcover has hung House of Hackney wallpapers at four published commissions.
 
 ## Which papers
 
@@ -71,10 +71,12 @@ The pattern names are the ones the case studies record:
 
 For the maker's range, see [House of Hackney](https://www.houseofhackney.com/).
 
+Mr Wallcover is not on maker recommended-installer lists. Naming a maker records an installation, not an endorsement.
+
 ## How it hangs
 
 As the case studies record it: in an old house, walls lean, floors slope and beams cut across the wall at odd angles, so the paper is set out around the room as found, then cut around the beams, the fireplace, the built-in desk and the shelving and finished tight to the paintwork. At the clergy house, preparation and making good came first.
 
 ## Photographs
 
-House of Hackney's finished-room photographs of the showroom are credited "Photography: House of Hackney" and stay credited that way; the rest were taken on site by us. Each case study below has its own photographs and credits.
+House of Hackney's finished-room photographs of the showroom are credited "Photograph: House of Hackney" and stay credited that way; the rest were taken on site by us. Each case study below has its own photographs and credits.

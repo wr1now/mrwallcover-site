@@ -21,6 +21,10 @@ test('production publishes approved routes, indexable pages and crawler projecti
  assert.equal((read('dist/buying-routes/index.html').match(/class="maker-route"/g)||[]).length,42);
  assert.ok(read('dist/advice/index.html').includes('/makers/'));
  assert.ok(read('dist/where-to-buy/index.html').includes('/buying-routes/'));
+ // The specified-papers sample step points to makers' own sample routes, as the material pages do.
+ const specified=read('dist/materials/specified-papers/index.html');
+ assert.match(specified,/<a href="\/buying-routes\/"[^>]*>official buying routes<\/a>/);
+ assert.ok(plain(specified).includes('Order a cutting or a sample before you commit to a room. Some makers’ own sample routes are listed under official buying routes .'));
 });
 test('review pages expose dated sources, shared chrome, noindex and no withheld purchase routes',()=>{
  const pages=['makers/index.html','buying-routes/index.html',...data.makers.map((m:any)=>`makers/${m.slug}/index.html`)];
@@ -81,5 +85,15 @@ test('every maker card has reviewed registered photography with a truthful direc
    const source=read(`src/content/case-studies/${path.split('/')[2]}.md`);
    assert.ok(source.includes(photo.imageId)&&normalize(source).includes(normalize(photo.actualMaker)),`${label}: the linked case records the frame and actual maker`);
   }
+ }
+});
+
+test('maker profiles keep new installation photography on hold and retain their approved names',()=>{
+ for(const maker of data.makers){
+  const html=read(`dist/makers/${maker.slug}/index.html`);
+  assert.ok(!html.includes('id="our-installations"'),`${maker.slug}: new installation photography remains on hold`);
+  // The title and H1 stay as the owner approved them on 18 October 2026.
+  assert.equal(plain(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)![1]),maker.name,`${maker.slug}: H1`);
+  assert.equal(plain(html.match(/<title>([^<]*)<\/title>/)![1]),`${/wallcovering|wallpaper/i.test(maker.name)?maker.name:`${maker.name} Wallcoverings`} | Mr Wallcover`,`${maker.slug}: title`);
  }
 });

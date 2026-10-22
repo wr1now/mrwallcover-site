@@ -28,7 +28,7 @@ List every area with its material reference, drawing revision, quantity basis an
 
 ## Measurement basis: what is being priced?
 
-State whether areas are measured net of openings, whether returns, reveals and joinery faces are measured separately, and whether the contractor or the client confirms the purchase quantity. The labour measure and the order quantity are different numbers: the order has to cover full drops, the repeat and the batch. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. Extra rolls for pattern matching are confirmed at survey. See the [quantities page](https://www.mrwallcover.com/advice/quantities/).
+State whether areas are measured net of openings, whether returns, reveals and joinery faces are measured separately, and whether the contractor or the client confirms the purchase quantity. The labour measure and the order quantity are different numbers: the order has to cover full drops, the repeat and the batch. The allowance is typically 15–30%, depending on the pattern repeat and the layout, with staircases at the high end (around 30%) because of the angles. See the [quantities page](https://www.mrwallcover.com/advice/quantities/).
 
 ## Substrate handover: when is a wall “ready”?
 
@@ -96,7 +96,7 @@ Pause motion
 
 ## [Installation cost](https://www.mrwallcover.com/advice/installation-cost/)
 
-Why there is no honest price per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
+Why installation is not priced per roll: measured area, repeat and wastage, wall preparation, the material, access and protection, and what a quotation should include.
 
 [Read the guide](https://www.mrwallcover.com/advice/installation-cost/)
 

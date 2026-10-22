@@ -32,13 +32,13 @@ Hotels and historic commissions
 
 [View the full hotel record](https://www.mrwallcover.com/projects/#hotels)
 
-[![Narrow bedside at Brown's Hotel, Mayfair, papered in pale tree-and-leaf wallcovering, with a sculptural bronze lamp, a wall light and a green patterned headboard.](https://www.mrwallcover.com/media/img/browns-hotel-mayfair-10.jpg)](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
+[![Narrow bedside at Brown's Hotel, Mayfair, papered in pale tree-and-leaf wallcovering, with a sculptural bronze lamp, a wall light and a green patterned headboard.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-10-800.webp)](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
 Mayfair
 
 ### [Brown’s Hotel](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
-[![Junior Suite at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/owo-official-junior-suite.jpg)](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
+[![Junior Suite at Raffles London at The OWO, Whitehall. Official hotel photograph.](https://www.mrwallcover.com/media/img/r/owo-official-junior-suite-800.webp)](https://www.mrwallcover.com/projects/raffles-london-the-owo/)
 
 Whitehall
 
@@ -120,4 +120,4 @@ Hotels, prime residences and specified schemes. Tell us what you have in mind.
 
 [Start your project](https://www.mrwallcover.com/contact/)
 
-By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder · Last reviewed 9 October 2026
+By [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder

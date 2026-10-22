@@ -6,7 +6,7 @@ import WhatsAppLink from './WhatsAppLink.astro';
 import BookCallLink from './BookCallLink.astro';
 import Action from './Action.astro';
 import Icon from './Icon.astro';
-import { BOOKING_URL } from '../config';
+import { BOOKING_URL, ENQUIRY_MAILTO } from '../config';
 import { phoneAvailable } from '../lib/phone';
 import { areaHref, areas, editorialPages, home, materials, specialismHref, specialisms } from '../lib/content';
 
@@ -37,22 +37,25 @@ const explore = [
   { href: '/materials/', label: 'Materials' },
   { href: '/professionals/', label: 'For professionals' },
   { href: '/trade/', label: 'Trade and contractors' },
-  { href: '/advice/', label: 'Wallcovering Guide' },
-  { href: '/where-to-buy/', label: 'Where to buy' },
-  ...(directoryVisible ? [{href:'/makers/',label:'Makers directory'},{href:'/buying-routes/',label:'Buying routes'}] : []),
-  { href: '/how-we-check/', label: 'How we check' },
+  { href: '/about/', label: 'About' },
+  { href: '/practice/', label: 'How we work' },
+  { href: '/reviews/', label: 'Reviews' },
+  { href: '/aftercare/', label: 'Aftercare' },
+  { href: '/faq/', label: 'Questions' },
+  { href: '/areas/', label: 'All areas' },
+];
+/** Explore splits by purpose: who we are and what we did, then what a buyer needs to plan, specify and buy. */
+const planAndBuy = [
+  { href: '/advice/', label: 'Guide' },
   { href: '/wallpapering/', label: 'Wallpapering' },
   { href: '/calculator/', label: 'Wallpaper calculator' },
   { href: '/wallpapering/preparation/', label: 'Wall preparation' },
   { href: '/wallpapering/lining-and-adhesives/', label: 'Lining & adhesives' },
   { href: '/advice/wallcovering-fire-ratings-uk/', label: 'Fire ratings & standards' },
   { href: '/advice/cost/', label: 'Quotation checklist' },
-  { href: '/aftercare/', label: 'Aftercare' },
-  { href: '/about/', label: 'About' },
-  { href: '/practice/', label: 'The practice' },
-  { href: '/reviews/', label: 'Reviews' },
-  { href: '/faq/', label: 'Questions' },
-  { href: '/areas/', label: 'All areas' },
+  { href: '/where-to-buy/', label: 'Where to buy' },
+  ...(directoryVisible ? [{href:'/makers/',label:'Makers directory'},{href:'/buying-routes/',label:'Buying routes'}] : []),
+  { href: '/how-we-check/', label: 'Product facts and corrections' },
 ];
 const utility = [
   { href: '/accessibility/', label: 'Accessibility' },
@@ -81,9 +84,9 @@ const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) =
           <Action href="/contact/" contextualEnquiry={false} variant="primary" icon="arrow-right" class="footer-start">Start your project</Action>
         </div>
         <ul class="footer-contact-list">
-          <li><a href={`mailto:${facts.email}`}><Icon name="mail" /><span>{facts.email}</span></a></li>
+          <li><a href={ENQUIRY_MAILTO}><Icon name="mail" /><span>{facts.email}</span></a></li>
           {phoneAvailable && <li><WhatsAppLink /></li>}
-          {BOOKING_URL && <li><BookCallLink><Icon name="calendar" /><span>Book a call</span></BookCallLink></li>}
+          {BOOKING_URL && <li><BookCallLink hint><Icon name="calendar" /><span>Book a call</span></BookCallLink></li>}
           {facts.profiles.map((profile) => (
             <li><a href={profile.url}><Icon name="instagram" /><span>{profile.handle ?? profile.name}</span></a></li>
           ))}
@@ -97,21 +100,26 @@ const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) =
       <details class="footer-group footer-explore" open>
         <summary><span>Explore</span><span class="footer-disclosure" aria-hidden="true"></span></summary>
         <div class="footer-group-content footer-explore-columns">
-          {[explore.slice(0, Math.ceil(explore.length / 2)), explore.slice(Math.ceil(explore.length / 2))].map((links) => (
-            <ul>{links.map((page) => <li><a href={page.href}>{page.label}</a></li>)}</ul>
-          ))}
+          <div>
+            <p class="footer-subheading" id="footer-sub-about">About Mr Wallcover</p>
+            <ul aria-labelledby="footer-sub-about">{explore.map((page) => <li><a href={page.href}>{page.label}</a></li>)}</ul>
+          </div>
+          <div>
+            <p class="footer-subheading" id="footer-sub-plan">Plan and buy</p>
+            <ul aria-labelledby="footer-sub-plan">{planAndBuy.map((page) => <li><a href={page.href}>{page.label}</a></li>)}</ul>
+          </div>
         </div>
       </details>
       <details class="footer-group footer-expertise" open>
         <summary><span>Expertise</span><span class="footer-disclosure" aria-hidden="true"></span></summary>
         <div class="footer-group-content footer-expertise-columns">
           <div>
-            <p class="footer-subheading">Material installation</p>
-            <ul>{installation.map((page) => <li><a href={page.href}>{sentence(page.label)}</a></li>)}</ul>
+            <p class="footer-subheading" id="footer-sub-installation">Material installation</p>
+            <ul aria-labelledby="footer-sub-installation">{installation.map((page) => <li><a href={page.href}>{sentence(page.label)}</a></li>)}</ul>
           </div>
           <div>
-            <p class="footer-subheading">Specialist work</p>
-            <ul>{specialistWork.map((page) => <li><a href={page.href}>{sentence(page.label)}</a></li>)}</ul>
+            <p class="footer-subheading" id="footer-sub-specialist">Specialist work</p>
+            <ul aria-labelledby="footer-sub-specialist">{specialistWork.map((page) => <li><a href={page.href}>{sentence(page.label)}</a></li>)}</ul>
           </div>
         </div>
       </details>
@@ -143,7 +151,13 @@ const sentence = (text: string) => text.replace(/^the /, '').replace(/^./, (c) =
   const footer = document.querySelector<HTMLElement>('[data-footer]');
   const groups = Array.from(footer?.querySelectorAll<HTMLDetailsElement>('.footer-group') ?? []);
   const desktop = window.matchMedia('(min-width: 1024px)');
-  const setDirectory = () => groups.forEach((group) => { group.open = desktop.matches; });
+  const setDirectory = () => groups.forEach((group) => {
+    group.open = desktop.matches;
+    // At desktop the directory is fixed open: its summaries are labels, so they leave the tab order.
+    const summary = group.querySelector('summary');
+    if (desktop.matches) summary?.setAttribute('tabindex', '-1');
+    else summary?.removeAttribute('tabindex');
+  });
   setDirectory();
   desktop.addEventListener('change', setDirectory);
   groups.forEach((group) => {

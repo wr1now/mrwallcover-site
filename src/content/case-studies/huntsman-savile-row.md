@@ -67,7 +67,7 @@
     }
   ],
   "published": "2026-10-11",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -99,4 +99,4 @@ In October 2020 we called in to see the room again: the photograph of the tweed 
 
 ## Photographs on this page
 
-Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), between April 2018 and October 2020: the finished rooms first, then the display boards and the paper itself. Installation and completion are recorded in our posts of 10 April 2018 ([BhY3zp7nKhr](https://www.instagram.com/p/BhY3zp7nKhr/)) and 12 March 2019 ([Bu6-mMFBdbt](https://www.instagram.com/p/Bu6-mMFBdbt/)).
+Our own photographs, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), between April 2018 and October 2020: the finished rooms first, then the display boards and the paper itself. Installation and completion are recorded in our posts of 10 April 2018 ([see the post](https://www.instagram.com/p/BhY3zp7nKhr/)) and 12 March 2019 ([see the post](https://www.instagram.com/p/Bu6-mMFBdbt/)).

@@ -21,6 +21,21 @@ test('phone alone is enough', () => {
   assert.equal(result.value.email, '');
 });
 
+test('the other reply channel is kept only when it is usable', () => {
+  const both = validateEnquiry(fields({ name: 'Ada', replyBy: 'email', email: 'ada@example.com', phone: '07700 900000', message: 'One bedroom, paper already bought.' }));
+  assert.equal(both.ok, true);
+  if (!both.ok) return;
+  assert.equal(both.value.phone, '07700 900000');
+  const shortPhone = validateEnquiry(fields({ name: 'Ada', replyBy: 'email', email: 'ada@example.com', phone: '0770', message: 'One bedroom, paper already bought.' }));
+  assert.equal(shortPhone.ok, true, 'an unusable second channel never blocks the enquiry');
+  if (!shortPhone.ok) return;
+  assert.equal(shortPhone.value.phone, '');
+  const phoneFirst = validateEnquiry(fields({ name: 'Ada', replyBy: 'phone', phone: '07700 900000', email: 'not an address', message: 'Please call about a repair.' }));
+  assert.equal(phoneFirst.ok, true);
+  if (!phoneFirst.ok) return;
+  assert.equal(phoneFirst.value.email, '');
+});
+
 test('requires one reply method and a note', () => {
   const missing = validateEnquiry(fields({ name: 'Ada', message: 'Hello there friend' }));
   assert.equal(missing.ok, false);

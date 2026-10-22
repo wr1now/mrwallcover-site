@@ -97,7 +97,7 @@ const fitMatrix = [
   },
   {
     id: 'aftercare', audience: 'Aftercare for a Mr Wallcover installation',
-    considerWhen: 'You need the included return inspection or support for a completed installation.',
+    considerWhen: 'You need the included return visit or support for a completed installation.',
     evidence: [],
     source: page('Aftercare and workmanship terms', '/aftercare/'),
     confirm: ['Project reference and completion date', 'Whether the issue comes from the hang, the material or the building', 'The guarantee terms and exclusions reproduced below'],

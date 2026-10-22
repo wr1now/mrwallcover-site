@@ -6,12 +6,13 @@
  * BOOKING_URL is set, exactly as on /contact/; this page and the contact pages are the only places the
  * phone reveal appears.
  */
-import { BOOKING_URL, COVERAGE, INSTAGRAM_HANDLE, INSTAGRAM_URL, PUBLIC_EMAIL } from '../config';
+import { BOOKING_HOURS, BOOKING_URL, ENQUIRY_MAILTO, INSTAGRAM_HANDLE, INSTAGRAM_URL, PUBLIC_EMAIL } from '../config';
 import Action from '../components/Action.astro';
 import Icon from '../components/Icon.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import PhoneReveal from '../components/PhoneReveal.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
+import WhatsAppGlyph from '../components/WhatsAppGlyph.astro';
 import BookCallLink from '../components/BookCallLink.astro';
 import Base from '../layouts/Base.astro';
 import copy from '../content/get-in-touch.json';
@@ -42,18 +43,19 @@ const areaName = (name: string) => name.replace(/^the /, '').replace(/^./, (c) =
           <li class="border-t border-line py-6">
             <h3 class="m-0 text-[1.8rem]"><Icon name="mail" /> {copy.email.heading}</h3>
             <p class="mt-2 mb-0 text-stone">{copy.email.text}</p>
-            <p class="mt-2 mb-0"><a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a></p>
+            <p class="mt-2 mb-0"><a href={ENQUIRY_MAILTO}>{PUBLIC_EMAIL}</a></p>
           </li>
+          {/* data-phone-item: without JavaScript the reveal cannot show the number, so the card goes with its button (visual-system.css). */}
           {phoneAvailable && (
-            <li class="border-t border-line py-6">
+            <li class="border-t border-line py-6" data-phone-item>
               <h3 class="m-0 text-[1.8rem]"><Icon name="phone" /> {copy.phone.heading}</h3>
               <p class="mt-2 mb-0 text-stone">{copy.phone.text}</p>
               <PhoneReveal wrap="mt-2 mb-0" prefix="Call " />
             </li>
           )}
           {phoneAvailable && (
-            <li class="border-t border-line py-6">
-              <h3 class="m-0 text-[1.8rem]"><Icon name="phone" /> {copy.whatsapp.heading}</h3>
+            <li class="border-t border-line py-6" data-wa-item>
+              <h3 class="m-0 text-[1.8rem]"><WhatsAppGlyph class="mw-icon" /> {copy.whatsapp.heading}</h3>
               <p class="mt-2 mb-0 text-stone">{copy.whatsapp.text}</p>
               <WhatsAppLink wrap="mt-4 mb-0" class="btn btn-line" />
             </li>
@@ -63,7 +65,7 @@ const areaName = (name: string) => name.replace(/^the /, '').replace(/^./, (c) =
               <h3 class="m-0 text-[1.8rem]"><Icon name="calendar" /> {copy.call.heading}</h3>
               <p class="mt-2 mb-0 text-stone">{copy.call.text}</p>
               <BookCallLink wrap="mt-4 mb-0" class="btn btn-line" />
-              <p class="booking-hours mt-3 mb-0 text-sm text-stone">Calls Mon–Fri, 9am–5pm UK.</p>
+              <p class="booking-hours mt-3 mb-0 text-sm text-stone">{BOOKING_HOURS} Each call is 20&nbsp;minutes.</p>
             </li>
           )}
           <li class="border-t border-b border-line py-6">
@@ -81,7 +83,7 @@ const areaName = (name: string) => name.replace(/^the /, '').replace(/^./, (c) =
         </section>
         <section aria-labelledby="areas-heading">
           <h2 id="areas-heading" class="font-serif text-[2rem]">{copy.areas.heading}</h2>
-          <p>{COVERAGE.replace(/^./, (c) => c.toUpperCase())}.</p>
+          <p>{copy.areas.text}</p>
           <ul class="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0">
             {areas.map((area) => (
               <li><a class="inline-flex min-h-[44px] items-center" href={areaHref(area.slug)}>{areaName(area.name)}</a></li>
@@ -99,5 +101,5 @@ const areaName = (name: string) => name.replace(/^the /, '').replace(/^./, (c) =
 .contact-overview h3 :global(.mw-icon) { color:var(--color-stone); }
 .contact-project-note h2 { font-size:clamp(1.6rem,2.4vw,2rem); line-height:1.15; margin-top:0; }
 .contact-project-note { align-self:start; padding:1.5rem; background:var(--color-paper); border:1px solid var(--color-line); }
-#ways-heading { scroll-margin-top:7rem; }
+#ways-heading { scroll-margin-top:7rem; margin-bottom:var(--space-5); }
 </style>

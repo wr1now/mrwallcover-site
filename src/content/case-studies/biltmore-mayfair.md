@@ -49,7 +49,7 @@
     }
   ],
   "published": "2026-10-09",
-  "updated": "2026-10-11"
+  "updated": "2026-10-22"
 }
 ---
 
@@ -67,4 +67,4 @@ The papers were hung to the schedule for that building, with the repeat and the 
 
 ## Photographs on this page
 
-Our own photographs of the guest rooms and corridors in 2018, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 14 June 2018 ([BkBSc6AHX7U](https://www.instagram.com/p/BkBSc6AHX7U/)), when the programme of more than 15,000 m² had recently started. One shows a room during the works, with the floor still protected.
+Our own photographs of the guest rooms and corridors in 2018, first posted on our Instagram, [@mrwallcover](https://www.instagram.com/mrwallcover/), on 14 June 2018 ([see the post](https://www.instagram.com/p/BkBSc6AHX7U/)), when the programme of more than 15,000 m² had recently started. One shows a room during the works, with the floor still protected.

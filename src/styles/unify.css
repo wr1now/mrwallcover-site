@@ -29,8 +29,8 @@ main form label, main .field label, main .form-note, main .guide-byline, main .g
 .caption, figcaption { font-size:var(--text-meta); }
 .site-footer .eyebrow { font-size:var(--text-label); }
 
-/* ---- 3. Header: six buyer links at the shared 15px detail size, with a separate primary action ---- */
-.site-header .nav-link, .site-header .menu-toggle, .site-header .header-mobile .nav-link { font-size:var(--text-nav); }
+/* ---- 3. Header: seven primary destinations and a labelled Resources row at the shared 15px detail size, with a separate primary action ---- */
+.site-header .nav-link, .site-header .menu-toggle { font-size:var(--text-nav); }
 /* Keep the complete enquiry action readable when conditional contact links are present. */
 .site-header .primary-nav { gap:1.25rem; }
 .site-header .primary-nav .header-action { white-space:nowrap; flex:none; }
@@ -47,24 +47,27 @@ main form label, main .field label, main .form-note, main .guide-byline, main .g
 .dock:has(.dock-book) { display:flex; }
 .dock:has(.dock-book) > * { flex:1 1 0; min-width:min-content; }
 .dock a.dock-book { text-align:center; padding-inline:4px; }
+/* One same-size icon over a one-line label in every cell, so the cells match (unlayered, like .mw-icon in visual-system.css). */
+.dock .mw-icon { width:18px; height:18px; }
+.dock a > span:not(.sr-only) { white-space:nowrap; }
 
 /* ---- 4. One button system ----
  * Primary: ink fill (ivory fill on a photograph). Secondary: ink line. Ghost: ivory line on a photograph.
  * Same height, padding, radius and type everywhere, so "Start your project" looks the same in the header,
  * the hero, the closing call to action and the enquiry form. */
-.btn, .atelier-button, .site-header .header-action, .work-filters button, .work-empty button {
+.btn, .site-header .header-action, .work-filters button, .work-empty button {
   min-height:var(--button-height); padding:0 var(--button-pad); border-radius:var(--button-radius);
   font-family:var(--font-sans); font-size:var(--text-button); font-weight:500; letter-spacing:.01em; line-height:1.2;
   gap:.9rem;
 }
-.site-header .header-action { min-height:44px; padding-inline:1.1rem; }
-.btn span[aria-hidden], .atelier-button span[aria-hidden] { font-size:1.15em; line-height:1; }
-.btn-solid-ink, .atelier-button.ink, .work-filters button[aria-pressed="true"] { background:var(--color-ink); border-color:var(--color-ink); color:var(--color-ivory); }
-.btn-solid, .atelier-button.cream { background:var(--color-ivory); border-color:var(--color-ivory); color:var(--color-ink); }
+.site-header .header-action { min-height:var(--button-height-compact); padding-inline:1.1rem; }
+.btn span[aria-hidden] { font-size:1.15em; line-height:1; }
+.btn-solid-ink, .work-filters button[aria-pressed="true"] { background:var(--color-ink); border-color:var(--color-ink); color:var(--color-ivory); }
+.btn-solid { background:var(--color-ivory); border-color:var(--color-ivory); color:var(--color-ink); }
 .btn-line, .work-filters button, .work-empty button { background:transparent; border:1px solid var(--color-ink); color:var(--color-ink); }
 .work-filters button[aria-pressed="true"] { color:var(--color-ivory); background:var(--color-ink); }
-.btn-ghost, .atelier-button.ghost { background:transparent; border:1px solid color-mix(in srgb, var(--color-ivory) 72%, transparent); color:var(--color-ivory); }
-.atelier-button.ghost:hover, .btn-ghost:hover { background:color-mix(in srgb, var(--color-ivory) 12%, transparent); }
+.btn-ghost { background:transparent; border:1px solid color-mix(in srgb, var(--color-ivory) 72%, transparent); color:var(--color-ivory); }
+.btn-ghost:hover { background:color-mix(in srgb, var(--color-ivory) 12%, transparent); }
 .atelier-text-link, .work-enquire, .work-record-link { font-size:var(--text-button); }
 
 /* ---- 5. One container: the logo, the homepage sections, the inner pages and the footer share one edge ---- */
@@ -102,6 +105,8 @@ main form label, main .field label, main .form-note, main .guide-byline, main .g
   background:linear-gradient(0deg, rgba(20,18,16,.86) 0%, rgba(20,18,16,.62) 55%, rgba(20,18,16,0) 100%);
   padding-top:64px; text-shadow:0 1px 2px rgba(0,0,0,.45); color:#fff;
 }
+/* The photo frame is also a direct-child span: keep the caption scrim off it so the blur-up placeholder covers instead of tiling. */
+.atelier-materials-image > .media-frame { background-color:var(--color-media-fill); background-position:center; background-size:cover; background-repeat:no-repeat; padding:0; text-shadow:none; }
 
 /* ---- 8. Hero: the same photograph and crop, a deeper shade under the words ---- */
 .atelier .atelier-hero-shade {
@@ -157,19 +162,11 @@ body .home-calico-text, body .home-aftercare-inner > p, body .atelier-project > 
 body .atelier .atelier-contact > p:not(.atelier-kicker) { margin:25px auto 28px; max-width:var(--measure-copy); }
 /* Hero: retain the photograph and display hierarchy; reading copy follows the shared body role. */
 body .atelier .atelier-hero .atelier-hero-description { font-size:var(--text-body); line-height:var(--leading-body); }
-body .atelier .atelier-hero-actions .atelier-button { font-size:var(--text-button); }
 body .atelier .atelier-hero-award { line-height:20px; }
 @media (max-width:767px) {
   body .atelier .atelier-hero-actions { gap:8px; }
-  body .atelier .atelier-hero-actions .atelier-button { font-size:var(--text-meta); min-height:52px; padding-inline:16px; gap:10px; }
   body .atelier-hero-foot a { font-size:var(--text-meta); }
   body .atelier .atelier-hero .atelier-hero-description { font-size:var(--text-body); }
-}
-@media (max-width:420px) {
-  body .atelier .atelier-hero-actions .atelier-button span[aria-hidden] { display:none; }
-}
-@media (max-width:380px) {
-  body .atelier .atelier-hero-actions .atelier-button { padding-inline:12px; }
 }
 
 /* /reviews/: approved quotes (src/data/approved-quotes.json) set apart from the running text. */
@@ -213,10 +210,10 @@ body .atelier .home-films video { max-height:none; aspect-ratio:9 / 16; object-f
 /* The case-study "At a glance" box: its heading is an eyebrow label, not a section title (src/components/CaseStudyGlance.astro). */
 main .glance-box h2 { font-family:var(--font-sans, inherit); font-size:var(--text-eyebrow); font-weight:500; line-height:1.4; letter-spacing:var(--tracking-eyebrow); text-transform:uppercase; color:var(--color-ink); }
 
-/* Six buyer destinations leave comfortable space for full 15px labels and the project action.
-   Calculator, wallpapering and AI resources remain discoverable through the footer and relevant hubs. */
+/* From 1280px the bar has two rows: seven primary destinations with WhatsApp and Start your project,
+   then the labelled Resources row (navigation.json "group"). Labels stay at the full 15px and never wrap. */
 @media (min-width:1280px) {
-  .site-header .primary-nav { gap:1.25rem; }
+  .site-header .primary-nav { gap:.25rem 1.25rem; }
   .site-header .nav-link { font-size:var(--text-meta); white-space:nowrap; }
   .site-header .header-action { padding-inline:1.25rem; white-space:nowrap; }
 }

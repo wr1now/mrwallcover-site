@@ -433,6 +433,10 @@ function publicStructuredData(value) {
   return value;
 }
 
+/** The site-wide review date (src/data/facts.json lastReviewed), read once. */
+let siteReviewed;
+const siteReviewDate = () => (siteReviewed ??= readFile(path.join(import.meta.dirname, '..', 'src/data/facts.json'), 'utf8').then((text) => JSON.parse(text).lastReviewed));
+
 /** Read a built page. Returns null for pages that are not published. */
 export async function readPage(file) {
   const html = await readFile(file, 'utf8');
@@ -451,8 +455,10 @@ export async function readPage(file) {
   const description = meta('description');
   const author = meta('author');
   const stamp = [...main.matchAll(/<time\b[^>]*>/gi)].map((match) => match[0]).find((tag) => /^(updated|reviewed)$/.test(attr(tag, 'data-page-updated') ?? ''));
-  const date = attr(stamp ?? '', 'datetime') ?? null;
-  const dateKind = attr(stamp ?? '', 'data-page-updated') ?? null;
+  // An author byline (PageMeta) with no date of its own stands for the site-wide copy review.
+  const undatedByline = !stamp && /<p\b[^>]*\sclass="(?:[^"]*\s)?page-meta(?:\s[^"]*)?"/i.test(main);
+  const date = attr(stamp ?? '', 'datetime') ?? (undatedByline ? await siteReviewDate() : null);
+  const dateKind = attr(stamp ?? '', 'data-page-updated') ?? (undatedByline ? 'reviewed' : null);
   const structuredData = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
     .filter((match) => attr(match[1], 'type')?.toLowerCase() === 'application/ld+json')
     .map((match) => publicStructuredData(JSON.parse(match[2])));
@@ -609,7 +615,7 @@ export async function build(distDir = dist) {
     corpusUrl: `${SITE}/ai/pages.json`,
     pageCount: pages.length,
     contentPolicy: 'Generated from the built, indexable, canonical public HTML. Excludes noindex pages and redirects. Drafts are not built. Main content preserves public wording, headings, tables, code, form guidance and meaningful media descriptions; scripts, styles, navigation chrome, input values and submission endpoints are omitted. Link records retain public main-content navigation destinations. Media URLs are references, not embedded assets or transcripts.',
-    datePolicy: 'Dates are copied only from the published page byline and Article JSON-LD. Null means no corresponding date was published; build time is never used as a content date.',
+    datePolicy: 'Dates are copied only from the published page byline, Article JSON-LD and, for a byline that shows no date, the site-wide review date (lastReviewed in /facts.json). Null means no corresponding date was published; build time is never used as a content date.',
     recordPolicy: 'Each record id is its canonical HTML URL. The json format URL retrieves that individual complete page record; the corpus format URL retains its JSON Pointer address in the aggregate. Markdown matches the corresponding index.md body. Structured data is copied from public JSON-LD without telephone or private payload fields.',
   };
   await writeFile(path.join(distDir, 'ai', 'index.json'), `${JSON.stringify({ ...exportMetadata, pages: manifestPages }, null, 2)}\n`);
