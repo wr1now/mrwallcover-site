@@ -26,7 +26,11 @@ const answersFor = (path: string): VisibleAnswer[] => editorialAnswers.get(path)
   ?? [...source.answers, ...source.standing].filter(item => item.pages.includes(path)).map(shown);
 let server: any, browser: any;
 
-before(async () => { server = await serve('dist'); browser = await launchBrowser(); });
+// Linux headless runners can have no physical pointer. Give renderer tests an explicit desktop
+// device, using Chromium's real Blink settings rather than replacing window.matchMedia.
+// Pointer fine=4 and hover=2: https://chromium.googlesource.com/chromium/src/+/main/third_party/blink/public/mojom/webpreferences/web_preferences.mojom
+const desktopInput = '--blink-settings=primaryPointerType=4,availablePointerTypes=4,primaryHoverType=2,availableHoverTypes=2';
+before(async () => { server = await serve('dist'); browser = await launchBrowser({ args: [desktopInput] }); });
 after(async () => { await browser?.close(); await server?.close(); });
 
 // Every case uses an isolated session and the built site. No external resource or form submission
@@ -43,7 +47,8 @@ async function withPage(check: (page: any, requests: string[]) => Promise<void>,
     else if (!holdRequest?.(request)) void request.continue();
   });
   try {
-    await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 });
+    await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1, isMobile: false, hasTouch: false });
+    assert.equal(await page.evaluate(() => matchMedia('(pointer: fine) and (hover: hover)').matches), true, 'renderer fixture has a native fine pointer and hover');
     await check(page, requests);
     assert.deepEqual(errors, [], 'the production page executes without JavaScript exceptions');
   } finally { await context.close(); }
@@ -277,19 +282,20 @@ const sceneModule = /\/design-object-scenes\.[^/]+\.js(?:\?|$)/;
 // Phones, tablets and Save-Data keep the SSR poster as the final state (audit H-P3: three.js is
 // about 173 KB gzip), so these cases assert the poster instead of a live canvas. From 768px the
 // botanical atmosphere still moves, so the shared Pause stays for it; a phone has nothing to pause.
-test('phone, tablet and Save-Data widths keep the poster, never request the scene and keep Pause only for moving botanicals', { timeout: 90000 }, async () => {
-  for (const { width, saveData } of [{ width: 390, saveData: false }, { width: 900, saveData: false }, { width: 1440, saveData: true }]) {
+test('phone, tablet, wide touch and Save-Data devices keep the poster, never request the scene and keep Pause only for moving botanicals', { timeout: 90000 }, async () => {
+  for (const { width, saveData, hasTouch } of [{ width: 390, saveData: false, hasTouch: true }, { width: 900, saveData: false, hasTouch: true }, { width: 1440, saveData: false, hasTouch: true }, { width: 1440, saveData: true, hasTouch: false }]) {
     await withPage(async (page, requests) => {
       if (saveData) await page.evaluateOnNewDocument(() => {
         Object.defineProperty((navigator as any).connection, 'saveData', { configurable: true, get: () => true });
       });
-      await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
+      await page.setViewport({ width, height: 1000, deviceScaleFactor: 1, isMobile: false, hasTouch });
+      assert.equal(await page.evaluate(() => matchMedia('(pointer: coarse)').matches), hasTouch, 'the fixture uses the native touch capability');
       await load(page, '/materials/grasscloth-and-weaves/');
       await page.$eval('.design-study [data-design-object]', (object: HTMLElement) => object.scrollIntoView({ block: 'center', behavior: 'instant' }));
       // Let the observer report the visible study before asserting that nothing was imported.
       await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
       await page.waitForNetworkIdle({ idleTime: 300, timeout: 10000 });
-      const context = `${width}px${saveData ? ' with Save-Data' : ''}`;
+      const context = `${width}px${hasTouch ? ' with touch' : ''}${saveData ? ' with Save-Data' : ''}`;
       assert.deepEqual(requests.filter(url => sceneModule.test(url) || /\/three\.module\.[^/]+\.js/.test(url)), [], `${context}: no scene or three.js request`);
       await staticPosters(page);
       assert.equal(await page.$$eval('[data-design-object] canvas', (canvases: HTMLCanvasElement[]) => canvases.length), 0, `${context}: no renderer canvas`);
@@ -302,8 +308,10 @@ test('phone, tablet and Save-Data widths keep the poster, never request the scen
         return;
       }
       assert.equal(await page.$$eval('button[data-object-motion]', (buttons: HTMLButtonElement[]) => buttons.length > 0 && buttons.every(button => button.hidden && button.getClientRects().length === 0)), true, `${context}: no Pause control where nothing moves`);
-      // The gate is live: a window widened to desktop starts the same lazy scene and its control.
-      await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 });
+      // The gate is live: switching from a narrow touch device to a desktop pointer starts the
+      // same lazy scene and its control. Width alone must not bypass the coarse-pointer gate.
+      await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1, isMobile: false, hasTouch: false });
+      assert.equal(await page.evaluate(() => matchMedia('(pointer: fine)').matches), true);
       await focusObject(page, '.design-study [data-design-object]');
       assertControls(await controls(page), 'running');
     });

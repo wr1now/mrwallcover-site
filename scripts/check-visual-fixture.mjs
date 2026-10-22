@@ -72,9 +72,12 @@ try {
   assert.equal((publishedHtml.match(/\bdata-atelier-linen(?:\s|>|=)/g)||[]).length,1);
   assert.deepEqual([...publishedHtml.matchAll(/\bdata-atelier-botanical="([^"]+)"/g)].map(match=>match[1]).sort(),['birds','blossom','water-lilies']);
   const server=await serve(out);
-  const browser=await launchBrowser();
+  // The new-route renderer contract needs an actual desktop pointer even on a headless Linux
+  // host with no input hardware. These are native Blink device settings, not a matchMedia stub.
+  const browser=await launchBrowser({args:['--blink-settings=primaryPointerType=4,availablePointerTypes=4,primaryHoverType=2,availableHoverTypes=2']});
   try {
     const page=await browser.newPage();
+    assert.equal(await page.evaluate(()=>matchMedia('(pointer:fine) and (hover:hover)').matches),true,'new-route renderer fixture has a native desktop pointer');
     await loadPage(page,server.origin+'/visual-contract-fixture/');
     await page.type('[data-action-form] input',' changed');
     await page.click('[data-action-form] button[type="reset"]');
