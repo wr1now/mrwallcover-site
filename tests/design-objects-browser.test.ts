@@ -1,7 +1,7 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { serve, launchBrowser, loadPage, waitForPageContent, waitForPagePredicate } from '../scripts/visual-browser.mjs';
+import { serve, launchBrowser, setDesktopViewport, loadPage, waitForPageContent, waitForPagePredicate } from '../scripts/visual-browser.mjs';
 
 const route = '/professionals/designers/';
 const objectSelector = '.guide-faq-item [data-design-object]';
@@ -30,7 +30,7 @@ let server: any, browser: any;
 // device, using Chromium's real Blink settings rather than replacing window.matchMedia.
 // Pointer fine=4 and hover=2: https://chromium.googlesource.com/chromium/src/+/main/third_party/blink/public/mojom/webpreferences/web_preferences.mojom
 const desktopInput = '--blink-settings=primaryPointerType=4,availablePointerTypes=4,primaryHoverType=2,availableHoverTypes=2';
-before(async () => { server = await serve('dist'); browser = await launchBrowser({ args: [desktopInput] }); });
+before(async () => { server = await serve('dist'); browser = await launchBrowser({ args: [desktopInput], defaultViewport:null }); });
 after(async () => { await browser?.close(); await server?.close(); });
 
 // Every case uses an isolated session and the built site. No external resource or form submission
@@ -47,7 +47,7 @@ async function withPage(check: (page: any, requests: string[]) => Promise<void>,
     else if (!holdRequest?.(request)) void request.continue();
   });
   try {
-    await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1, isMobile: false, hasTouch: false });
+    await setDesktopViewport(page, 1440);
     assert.equal(await page.evaluate(() => matchMedia('(pointer: fine) and (hover: hover)').matches), true, 'renderer fixture has a native fine pointer and hover');
     await check(page, requests);
     assert.deepEqual(errors, [], 'the production page executes without JavaScript exceptions');
@@ -64,7 +64,7 @@ async function load(page: any, path = route) {
   try {
     await waitForPagePredicate(page, () => [...document.querySelectorAll<HTMLImageElement>('[data-design-object] img')].every(image => image.complete), { timeout: 20000 });
   } catch(cause) {
-    throw new Error(`${path} @${page.viewport()?.width}: illustration posters did not finish loading`, { cause });
+    throw new Error(`${path} @${await page.evaluate(() => innerWidth)}: illustration posters did not finish loading`, { cause });
   }
 }
 
@@ -138,7 +138,7 @@ async function staticPosters(page: any) {
 test('shared page families ship complete SSR studies and preserve responsive question layouts', { timeout: 120000 }, async () => {
   await withPage(async page => {
     for (const width of [390, 1440]) {
-      await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
+      await setDesktopViewport(page, width);
       for (const path of representativeRoutes) {
         const html = await readFile(`dist${path}index.html`, 'utf8');
         const objectCount = (html.match(/data-design-object="/g) ?? []).length;
@@ -194,7 +194,7 @@ test('large question studies retain readable text and a separate right-hand rail
     for (const path of [route, '/faq/']) {
       await load(page, path);
       for (const width of [360, 390, 688, 768, 1024, 1440]) {
-        await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
+        await setDesktopViewport(page, width);
         await page.evaluate(() => document.fonts.ready);
         const result = await page.evaluate(() => {
           const rect = (element: Element) => {
@@ -288,9 +288,11 @@ test('phone, tablet, wide touch and Save-Data devices keep the poster, never req
       if (saveData) await page.evaluateOnNewDocument(() => {
         Object.defineProperty((navigator as any).connection, 'saveData', { configurable: true, get: () => true });
       });
-      await page.setViewport({ width, height: 1000, deviceScaleFactor: 1, isMobile: false, hasTouch });
+      await setDesktopViewport(page, width);
+      if (hasTouch) await page.setViewport({ width, height: 1000, deviceScaleFactor: 1, isMobile: false, hasTouch:true });
       assert.equal(await page.evaluate(() => matchMedia('(pointer: coarse)').matches), hasTouch, 'the fixture uses the native touch capability');
       await load(page, '/materials/grasscloth-and-weaves/');
+      if (saveData) assert.equal(await page.evaluate(() => matchMedia('(pointer: fine) and (hover: hover)').matches), true, 'Save-Data is tested with an otherwise eligible desktop pointer');
       await page.$eval('.design-study [data-design-object]', (object: HTMLElement) => object.scrollIntoView({ block: 'center', behavior: 'instant' }));
       // Let the observer report the visible study before asserting that nothing was imported.
       await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
@@ -308,14 +310,25 @@ test('phone, tablet, wide touch and Save-Data devices keep the poster, never req
         return;
       }
       assert.equal(await page.$$eval('button[data-object-motion]', (buttons: HTMLButtonElement[]) => buttons.length > 0 && buttons.every(button => button.hidden && button.getClientRects().length === 0)), true, `${context}: no Pause control where nothing moves`);
-      // The gate is live: switching from a narrow touch device to a desktop pointer starts the
-      // same lazy scene and its control. Width alone must not bypass the coarse-pointer gate.
-      await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1, isMobile: false, hasTouch: false });
-      assert.equal(await page.evaluate(() => matchMedia('(pointer: fine)').matches), true);
-      await focusObject(page, '.design-study [data-design-object]');
-      assertControls(await controls(page), 'running');
     });
   }
+});
+
+test('a fine-pointer page starts its lazy scene and controls when the live viewport widens', { timeout: 60000 }, async () => {
+  await withPage(async (page, requests) => {
+    await setDesktopViewport(page, 390);
+    await load(page, '/materials/grasscloth-and-weaves/');
+    await page.$eval('.design-study [data-design-object]', (object: HTMLElement) => object.scrollIntoView({ block:'center', behavior:'instant' }));
+    await page.waitForNetworkIdle({ idleTime:300, timeout:10000 });
+    await staticPosters(page);
+    assert.deepEqual(requests.filter(url => sceneModule.test(url)), [], 'a narrow fine-pointer page keeps its poster');
+    assert.equal(await page.$$eval('[data-design-object] canvas', (canvases: HTMLCanvasElement[]) => canvases.length), 0);
+    await setDesktopViewport(page, 1440);
+    assert.equal(await page.evaluate(() => matchMedia('(pointer: fine) and (hover: hover)').matches), true);
+    await focusObject(page, '.design-study [data-design-object]');
+    assertControls(await controls(page), 'running');
+    assert.equal(requests.some(url => sceneModule.test(url)), true, 'the live width change loads the scene');
+  });
 });
 
 test('lazy scene activation preserves the material controls and shortlist position', { timeout: 60000 }, async () => {
@@ -325,7 +338,7 @@ test('lazy scene activation preserves the material controls and shortlist positi
     let notifyRequest!: () => void;
     const sceneRequested = new Promise<void>(resolve => { notifyRequest = resolve; });
     await withPage(async page => {
-      await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
+      await setDesktopViewport(page, width);
       await loadPage(page, server.origin + '/materials/grasscloth-and-weaves/');
       await page.evaluate(async () => {
         await document.fonts.ready;

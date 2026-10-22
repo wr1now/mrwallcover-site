@@ -21,10 +21,34 @@ export async function serve(directory) {
   return { origin:`http://127.0.0.1:${server.address().port}`, close:() => new Promise((ok) => server.close(ok)) };
 }
 
-export async function launchBrowser({ ignoreDefaultArgs = [], args = [] } = {}) {
+export async function launchBrowser({ ignoreDefaultArgs = [], args = [], defaultViewport } = {}) {
   const chrome = [process.env.CHROME_PATH, '/usr/bin/google-chrome', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'].find((p) => p && existsSync(p));
   if (!chrome) throw new Error('Set CHROME_PATH to the test Chrome/Chromium executable.');
-  return puppeteer.launch({ executablePath:chrome, headless:true, args:['--no-sandbox', ...args], ignoreDefaultArgs });
+  return puppeteer.launch({ executablePath:chrome, headless:true, args:['--no-sandbox', ...args], ignoreDefaultArgs, defaultViewport });
+}
+
+// Puppeteer's setViewport also resets touch/pointer emulation, including the launch-time Blink
+// desktop input on Linux hosts without a mouse. Renderer fixtures opt into defaultViewport:null
+// and set only metrics here. Keep this session attached: detaching loses metrics on navigation.
+const desktopViewports = new WeakMap();
+export async function setDesktopViewport(page, width, height = 1000) {
+  let viewport = desktopViewports.get(page);
+  if (!viewport) {
+    viewport = { session:await page.createCDPSession() };
+    desktopViewports.set(page, viewport);
+  }
+  await viewport.session.send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor:1, mobile:false });
+  Object.assign(viewport, { width, height });
+  await checkDesktopViewport(page);
+}
+
+async function checkDesktopViewport(page) {
+  const expected = desktopViewports.get(page);
+  if (!expected) return;
+  const actual = await page.evaluate(() => ({ width:innerWidth, height:innerHeight, scale:devicePixelRatio }));
+  if (actual.width !== expected.width || actual.height !== expected.height || actual.scale !== 1) {
+    throw new Error(`Desktop fixture viewport: expected ${expected.width}x${expected.height} @1, got ${actual.width}x${actual.height} @${actual.scale}`);
+  }
 }
 
 /** Poll outside the page: disabling JavaScript also suppresses its interval/animation callbacks. */
@@ -56,6 +80,7 @@ export async function loadPage(page, url, navigationOptions = {}) {
   try {
     const response = await page.goto(url, { ...navigationOptions, waitUntil: 'load' });
     await waitForPageContent(page);
+    await checkDesktopViewport(page);
     return response;
   } catch (cause) {
     const viewport = page.viewport();
