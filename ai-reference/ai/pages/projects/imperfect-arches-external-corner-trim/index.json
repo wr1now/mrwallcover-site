@@ -607,6 +607,19 @@
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/decorating/#service",
+                  "name": "Decorating and painting",
+                  "serviceType": "Painting and decorating",
+                  "url": "https://www.mrwallcover.com/services/decorating/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
                   "@id": "https://www.mrwallcover.com/services/exterior-works/#service",
                   "name": "Exterior works",
                   "serviceType": "Exterior decorating",

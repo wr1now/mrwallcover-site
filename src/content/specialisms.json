@@ -336,9 +336,9 @@
       "slug": "window-film",
       "name": "Window film installation",
       "title": "Window Film Installation London | Mr Wallcover",
-      "description": "Window film in London: decorative, privacy, solar control and safety films, including Solar Screen film fitted at Hyde London City (the Old Bailey Hotel).",
+      "description": "Window film in London for hotels, offices and homes: solar control, UV protection, acoustic, privacy, safety and decorative films. Fitted at Hyde London City.",
       "heading": "Window film: decorative, privacy, solar and safety",
-      "lede": "Films applied to existing glass: frosted and decorative designs, privacy, solar control and safety films for London homes, hotels, offices and shopfronts.",
+      "lede": "Films applied to existing glass: frosted and decorative designs, privacy, solar control, UV protection, acoustic and safety films for London homes, hotels, offices and shopfronts.",
       "serviceType": "Window film installation",
       "paragraphs": [
         "Window film changes how existing glass behaves without replacing it. There are four families. Decorative films give a frosted, etched, gradient or patterned finish, including logos and manifestations. Privacy films screen a view by day, or hide a room completely. Solar control films reduce heat gain and glare. Safety and security films help hold broken glass together.",
@@ -378,6 +378,27 @@
           "paragraphs": [
             "Yes. Film can be taken off and the glass cleaned, which makes it useful for rented premises, changing branding or a room that changes use."
           ]
+        },
+        {
+          "id": "wf-acoustic",
+          "question": "Does window film soundproof a window?",
+          "paragraphs": [
+            "It reduces noise rather than removing it. Acoustic laminating films damp the glass and soften traffic and street noise. For heavy noise, secondary glazing does more, and we tell you that at the survey rather than oversell the film."
+          ]
+        },
+        {
+          "id": "wf-uv",
+          "question": "Will UV film stop wallpaper and furniture fading?",
+          "paragraphs": [
+            "It removes most of the ultraviolet that drives fading, which slows it a great deal. Visible light and heat also play a part, so a solar grade can be combined where a room gets strong sun."
+          ]
+        },
+        {
+          "id": "wf-hotel",
+          "question": "Can you film a hotel or office that stays open?",
+          "paragraphs": [
+            "Yes. At Hyde London City every window was filmed as part of the room-by-room decorating package, and at Gray's Inn Square offices were done floor by floor. We plan the order with the building team and can work out of hours."
+          ]
         }
       ],
       "links": [
@@ -390,7 +411,8 @@
           "href": "https://coverstyl.com/en/"
         }
       ],
-      "imageCaption": "Rolls of Solar Screen window film on site before installation at [Hyde London City](/projects/old-bailey-hotel/). The product is checked before any glazing is covered."
+      "imageCaption": "Rolls of Solar Screen window film on site before installation at [Hyde London City](/projects/old-bailey-hotel/). The product is checked before any glazing is covered.",
+      "visualDiagram": "window-film"
     },
     {
       "slug": "joinery-wallcoverings-and-panels",
@@ -455,6 +477,81 @@
         }
       ],
       "imageCaption": "Overture panels on the side wall of the [Lee Broom showroom](/projects/calico-lee-broom-overture/). The installed scene is checked across the supplied sequence."
+    },
+    {
+      "slug": "decorating",
+      "name": "Decorating and painting",
+      "title": "Painting & Decorating London | Mr Wallcover",
+      "description": "Painting and decorating for prime London homes, hotels and commercial interiors: preparation, fine paint finishes, limewash and out-of-hours hotel work.",
+      "heading": "Decorating and painting for prime homes and hotels",
+      "lede": "Interior painting and full decorating packages for London houses, hotels and commercial interiors, delivered by the same team that hangs the wallcoverings.",
+      "serviceType": "Painting and decorating",
+      "paragraphs": [
+        "A decorating package is more than paint. It is the preparation, the order of trades, the protection of what is already in the room and the last coat that everyone sees. We take on the whole of it: walls, ceilings, cornices, joinery and doors, with the wallcoverings in the same programme.",
+        "At [Brown's Hotel, Mayfair](/projects/browns-hotel-mayfair/) we were main decorating contractor from 2022 to 2024 while the hotel kept taking guests. At [Hyde London City](/projects/old-bailey-hotel/) the full decorating package covered 111 guest rooms, with paint, specialist wallcoverings and window film.",
+        "Every room starts at the survey and a sample, so the colour, sheen and finish are approved in the room's own light before the full run starts. Set-out for wallcoverings and decorative lines is done with a laser; the plumb line is the traditional method and is no longer how we set out."
+      ],
+      "sections": [
+        {
+          "heading": "Prime residential",
+          "paragraphs": [
+            "Period houses and apartments are decorated with the furniture, floors and finishes protected throughout and the house left clean at the end of each day. Preparation decides the finish, so cracks, joints and old paint are dealt with properly before the first coat.",
+            "Limewash is applied by our own team, for soft, mineral walls with depth and movement. Lime render is arranged through trusted specialist partners and programmed with our work.",
+            "Interiors can be one commission with the outside: see [exterior works](/services/exterior-works/) for scaffolded elevations at St George's Square and Inverness Terrace."
+          ]
+        },
+        {
+          "heading": "Hotels and commercial interiors",
+          "paragraphs": [
+            "Hotels rarely close for decorating. We work floor by floor and room by room, out of hours where the operation needs it, so rooms go back on sale as they are finished. Out-of-hours work is on our published record, from Brown's Hotel to an overnight installation at [Heathrow Terminal 4](/projects/heathrow-terminal-4-calico/).",
+            "Every job has risk assessments and method statements, a named supervisor and a snagging walk before handover, followed by the same [aftercare](/aftercare/) as our wallcovering work."
+          ]
+        },
+        {
+          "heading": "What a decorating package can include",
+          "paragraphs": [
+            "Preparation, filling and lining; walls and ceilings; cornices and mouldings; doors, skirtings and joinery; limewash; wallcoverings of every kind; window film; and, where the job needs it, exteriors and lime render through partners."
+          ]
+        }
+      ],
+      "projects": [
+        "browns-hotel-mayfair",
+        "old-bailey-hotel",
+        "pimlico-st-georges-square",
+        "inverness-terrace"
+      ],
+      "imageId": "browns-hotel-mayfair-09",
+      "imageCaption": "A finished guest room at [Brown’s Hotel, Mayfair](/projects/browns-hotel-mayfair/), part of our 2022–2024 decorating package.",
+      "faq": [
+        {
+          "id": "dec-occupied",
+          "question": "Can you decorate while we live in the house or the hotel stays open?",
+          "paragraphs": [
+            "Yes. Rooms are protected and worked in an agreed order, and in hotels we work room by room and out of hours where needed, so the building keeps running."
+          ]
+        },
+        {
+          "id": "dec-limewash",
+          "question": "Do you apply limewash yourselves?",
+          "paragraphs": [
+            "Yes. Limewash is applied by our own team. Lime render is arranged through trusted specialist partners."
+          ]
+        },
+        {
+          "id": "dec-sample",
+          "question": "Can we see the finish before you start?",
+          "paragraphs": [
+            "Yes. A sample of the colour and finish is applied in the room so it can be approved in its own light before the full run."
+          ]
+        },
+        {
+          "id": "dec-quote",
+          "question": "What should I send for a decorating quotation?",
+          "paragraphs": [
+            "The address or area, the rooms involved, drawings or a schedule if you have them, the finishes in mind and any dates the building has to work around. Every decorating job is quoted after a survey."
+          ]
+        }
+      ]
     },
     {
       "slug": "exterior-works",

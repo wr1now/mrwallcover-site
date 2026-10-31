@@ -36,6 +36,7 @@ export const ENQUIRY_TOPICS = [
   {"id": "service:architectural-film-wrapping", "label": "Architectural & furniture film wrapping", "service": "architectural-film", "path": "/services/architectural-film-wrapping/"},
   {"id": "service:window-film", "label": "Window film installation", "service": "window-film", "path": "/services/window-film/"},
   {"id": "service:joinery-wallcoverings-and-panels", "label": "Joinery wallcoverings & bespoke panels", "service": "wallcovering", "path": "/services/joinery-wallcoverings-and-panels/"},
+  {"id": "service:decorating", "label": "Decorating and painting", "service": "exterior-decorating", "path": "/services/decorating/"},
   {"id": "service:exterior-works", "label": "Exterior works", "service": "exterior-decorating", "path": "/services/exterior-works/"},
   {"id": "service:commercial-wallcovering-installation", "label": "Commercial and showroom wallcovering installation", "service": "wallcovering", "path": "/services/commercial-wallcovering-installation/"},
   {"id": "material:paper-and-non-woven", "label": "Paper and non-woven", "service": "wallcovering", "path": "/materials/paper-and-non-woven/"},

@@ -1,0 +1,36 @@
+---
+/** Original unbranded schematic of what each family of window film does at the glass. Illustrative, not a product specification. */
+const jobs = [
+  ['Solar', 'heat and glare'],
+  ['UV', 'fading'],
+  ['Acoustic', 'street noise'],
+  ['Privacy', 'the view in'],
+  ['Safety', 'broken glass'],
+  ['Decorative', 'pattern and logos'],
+];
+---
+<figure class="window-film-diagram">
+  <svg viewBox="0 0 560 350" role="img" aria-label="Schematic window in section: a thin film on the inner face of the glass. Outside, sun, ultraviolet and noise arrive; inside, less heat, fading and noise pass through." xmlns="http://www.w3.org/2000/svg">
+    <rect class="frame" x="250" y="40" width="34" height="270" />
+    <rect class="glass" x="258" y="48" width="12" height="254" />
+    <rect class="film" x="270" y="48" width="5" height="254" />
+    <path class="ray" d="M40 90h200M40 175h200M40 260h200" />
+    <path class="ray soft" d="M300 90h90M300 175h60M300 260h40" />
+    <text x="40" y="78">Sun</text><text x="40" y="163">UV</text><text x="40" y="248">Noise</text>
+    <text x="400" y="96">less heat</text><text x="370" y="181">less fading</text><text x="350" y="266">quieter</text>
+    <path class="leader" d="M273 330v-24" /><text x="214" y="345">Film on the inner face</text>
+  </svg>
+  <ul>{jobs.map(([name, against]) => <li><strong>{name}</strong> <span>{against}</span></li>)}</ul>
+  <figcaption><span>Schematic · not to scale</span>Film is applied to the room side of existing glass. The right film depends on the glazing type and the maker's guidance.</figcaption>
+</figure>
+<style>
+  figure { margin:0; padding:1rem; background:var(--color-paper); border:1px solid var(--color-line); border-radius:var(--radius-control); }
+  svg { display:block; width:100%; height:auto; fill:none; stroke:var(--color-stone); stroke-width:1.5; }
+  .frame { fill:var(--color-ivory-deep); } .glass { fill:var(--color-panel); } .film { fill:var(--color-gold); stroke:none; }
+  .ray { stroke:var(--color-brass); stroke-width:3; } .ray.soft { stroke-width:1.5; stroke-dasharray:6 6; }
+  .leader { stroke:var(--color-brass); } text { font:22px 'Outfit',sans-serif; fill:var(--color-ink); stroke:none; }
+  ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.4rem 1rem; margin:.8rem 0 0; padding:0; list-style:none; font-size:var(--text-label); }
+  li strong { color:var(--color-ink); font-weight:500; } li span { color:var(--color-stone); }
+  figcaption { display:grid; gap:.4rem; margin-top:.8rem; color:var(--color-stone); font-size:var(--text-meta); line-height:1.55; }
+  figcaption span { color:var(--color-brass); font-size:var(--text-label); letter-spacing:.08em; text-transform:uppercase; }
+</style>

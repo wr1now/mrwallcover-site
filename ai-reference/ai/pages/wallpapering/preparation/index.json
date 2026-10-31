@@ -15,7 +15,7 @@
     "html": "https://www.mrwallcover.com/wallpapering/preparation/",
     "markdown": "https://www.mrwallcover.com/wallpapering/preparation/index.md",
     "json": "https://www.mrwallcover.com/ai/pages/wallpapering/preparation/index.json",
-    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/127"
+    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/128"
   },
   "headings": [
     {
@@ -353,6 +353,19 @@
                   "name": "Joinery wallcoverings & bespoke panels",
                   "serviceType": "Wallcovering on joinery and bespoke wall panels",
                   "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/decorating/#service",
+                  "name": "Decorating and painting",
+                  "serviceType": "Painting and decorating",
+                  "url": "https://www.mrwallcover.com/services/decorating/",
                   "provider": {
                     "@id": "https://www.mrwallcover.com/#business"
                   }
