@@ -7,6 +7,7 @@ import Action from './Action.astro';
 import Icon from './Icon.astro';
 import ProjectEvidence from './ProjectEvidence.astro';
 import FilmWrapDiagram from './FilmWrapDiagram.astro';
+import WindowFilmDiagram from './WindowFilmDiagram.astro';
 import NextSteps from './NextSteps.astro';
 import { areaHref, areas, landingProjectSlugs, linkedProjects, media, specialismHref, specialisms } from '../lib/content';
 import { imageRights } from '../lib/schema';
@@ -89,6 +90,7 @@ function segments(text: string) {
       )
     }
     {page.visualDiagram === 'film-wrap' && <div class="landing-process-visual"><FilmWrapDiagram /></div>}
+    {page.visualDiagram === 'window-film' && <div class="landing-process-visual"><WindowFilmDiagram /></div>}
   </div>
 
   {

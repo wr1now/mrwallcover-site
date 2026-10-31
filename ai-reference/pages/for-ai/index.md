@@ -106,8 +106,9 @@ One page for each installation service:
 - [Mural installation](https://www.mrwallcover.com/services/mural-installation/): Printed and hand-made wallpaper mural installation in London, including Calico Wallpaper’s landscape at Heathrow Terminal 4, hung overnight in 2018.
 - [Acoustic wallcovering installation](https://www.mrwallcover.com/services/acoustic-wallcovering-installation/): Acoustic wallcovering and panel installation for London hotels, offices and homes, including acoustic felt on a Holborn office boardroom wall in 2020.
 - [Architectural & furniture film wrapping](https://www.mrwallcover.com/services/architectural-film-wrapping/): Architectural and furniture film wrapping: doors, joinery, lifts and furniture refinished in place, including lift car interiors at Heythrop Park, 2022.
-- [Window film installation](https://www.mrwallcover.com/services/window-film/): Window film in London: decorative, privacy, solar control and safety films, including Solar Screen film fitted at Hyde London City (the Old Bailey Hotel).
+- [Window film installation](https://www.mrwallcover.com/services/window-film/): Window film in London for hotels, offices and homes: solar control, UV protection, acoustic, privacy, safety and decorative films. Fitted at Hyde London City.
 - [Joinery wallcoverings & bespoke panels](https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/): Wallcoverings and bespoke panels for doors, wardrobes and joinery, including Calico Wallpaper’s Overture across a flush door at Lee Broom’s showroom, 2025.
+- [Decorating and painting](https://www.mrwallcover.com/services/decorating/): Painting and decorating for prime London homes, hotels and commercial interiors: preparation, fine paint finishes, limewash and out-of-hours hotel work.
 - [Exterior works](https://www.mrwallcover.com/services/exterior-works/): Full exteriors in London: scaffolding supplied and managed, masonry and render painting, and windows. Public projects in Pimlico and Bayswater.
 - [Commercial and showroom wallcovering installation](https://www.mrwallcover.com/services/commercial-wallcovering-installation/): Wallcoverings for London showrooms, shops, venues and launches: Huntsman on Savile Row, Mercedes-AMG, SCP, House of Hackney and Calico Wallpaper.
 
@@ -513,8 +514,6 @@ Routes, as built on this site:
 
 - [Enquiry form](https://www.mrwallcover.com/contact/): A short note is enough: the building, the material if you know it, and the date you have in mind. Tell us whether you would like a reply by email or by phone. Photographs, drawings and PDFs help, and are optional.
 - [Email](mailto:info@mrwallcover.com): info@mrwallcover.com. Email is read by Dorin Burcus.
-- [Phone](https://www.mrwallcover.com/contact/): Or go direct. The phone is answered by Dorin Burcus himself; the number is shown on request.
-- [WhatsApp](https://www.mrwallcover.com/contact/): A WhatsApp link on the contact page; the number is added on the page, never printed in the HTML.
 
 ## Machine-readable files
 

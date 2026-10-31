@@ -193,11 +193,15 @@ Self-adhesive architectural films that refinish doors, joinery, lifts, counters 
 
 ### [Window film installation](https://www.mrwallcover.com/services/window-film/)
 
-Films applied to existing glass: frosted and decorative designs, privacy, solar control and safety films for London homes, hotels, offices and shopfronts.
+Films applied to existing glass: frosted and decorative designs, privacy, solar control, UV protection, acoustic and safety films for London homes, hotels, offices and shopfronts.
 
 Exteriors
 
 ## Exterior works.
+
+### [Decorating and painting](https://www.mrwallcover.com/services/decorating/)
+
+Interior painting and full decorating packages for London houses, hotels and commercial interiors, delivered by the same team that hangs the wallcoverings.
 
 ### [Exterior works](https://www.mrwallcover.com/services/exterior-works/)
 

@@ -10,6 +10,16 @@
     "group": "primary"
   },
   {
+    "href": "/services/decorating/",
+    "label": "Decorating",
+    "group": "primary"
+  },
+  {
+    "href": "/services/window-film/",
+    "label": "Window film",
+    "group": "primary"
+  },
+  {
     "href": "/materials/",
     "label": "Materials",
     "group": "primary"

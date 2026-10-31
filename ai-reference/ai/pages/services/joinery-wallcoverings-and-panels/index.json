@@ -15,7 +15,7 @@
     "html": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
     "markdown": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/index.md",
     "json": "https://www.mrwallcover.com/ai/pages/services/joinery-wallcoverings-and-panels/index.json",
-    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/119"
+    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/120"
   },
   "headings": [
     {
@@ -243,6 +243,10 @@
     {
       "url": "https://www.mrwallcover.com/services/window-film/",
       "text": "Window film installation"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/decorating/",
+      "text": "Decorating and painting"
     },
     {
       "url": "https://www.mrwallcover.com/services/exterior-works/",
@@ -525,6 +529,19 @@
                   "name": "Joinery wallcoverings & bespoke panels",
                   "serviceType": "Wallcovering on joinery and bespoke wall panels",
                   "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/decorating/#service",
+                  "name": "Decorating and painting",
+                  "serviceType": "Painting and decorating",
+                  "url": "https://www.mrwallcover.com/services/decorating/",
                   "provider": {
                     "@id": "https://www.mrwallcover.com/#business"
                   }
