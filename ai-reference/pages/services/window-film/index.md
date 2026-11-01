@@ -61,7 +61,7 @@ Clear films that filter most of the ultraviolet behind faded fabrics, timber flo
 
 Street noise
 
-Laminating films add damping to a single pane and take the edge off traffic and voices. They improve the glass you have. Where noise is severe we will tell you that secondary glazing is the bigger step.
+Laminating films add damping to a single pane and take the edge off traffic and voices in bedrooms and meeting rooms. They improve the glass you have. Where noise is severe we will tell you at the survey that secondary glazing is the bigger step.
 
 4. 04
 
@@ -69,7 +69,7 @@ Laminating films add damping to a single pane and take the edge off traffic and 
 
 The view in
 
-Frosted, gradient and one-way-by-day films screen bathrooms, meeting rooms and street-level windows without losing light. Daytime one-way films reverse at night when the room is lit, and we explain that before you choose.
+Frosted, gradient, one-way-by-day and switchable-look films screen bathrooms, meeting rooms and street-level windows without losing light. Daytime one-way films reverse at night when the room is lit, and we explain that before you choose.
 
 5. 05
 
@@ -105,19 +105,11 @@ Sectors
 
 ## Where it is used
 
-![A neighbouring church tower seen from an upper-floor window.](https://www.mrwallcover.com/media/img/r/old-bailey-19-800.webp)
-
-### Hotels
-
-Guest rooms filmed room by room inside the decorating programme, so rooms go back on sale as they are finished. Solar and UV grades protect new wallcoverings; acoustic film helps bedrooms that face the street.
-
-[Hyde London City →](https://www.mrwallcover.com/projects/old-bailey-hotel/)
-
 ![Carved stone bay window on the façade of 15 Old Bailey.](https://www.mrwallcover.com/media/img/r/old-bailey-04-800.webp)
 
 ### Prime residential
 
-Clear UV film for drawing rooms, libraries and dressing rooms with silk, grasscloth or antique furniture, and acoustic film for bedrooms on busy roads. Homes are never named; the work is.
+Clear UV film for drawing rooms, libraries and dressing rooms with silk, grasscloth or antique furniture, and acoustic film for bedrooms on busy roads.
 
 [Decorating and painting →](https://www.mrwallcover.com/services/decorating/)
 
@@ -125,7 +117,7 @@ Clear UV film for drawing rooms, libraries and dressing rooms with silk, grasscl
 
 ### Offices and chambers
 
-Privacy and manifestation film for meeting rooms and partitions, solar film for screens in bright rooms. At Gray's Inn Square we filmed several sets of offices, floor by floor, around the people working in them.
+Privacy and manifestation film for meeting rooms and partitions, and solar film for screens in bright rooms, worked floor by floor around the people using them.
 
 [Ask about an office →](https://www.mrwallcover.com/contact/)
 
@@ -136,6 +128,10 @@ Our angle
 Silk, grasscloth, hand-painted papers, natural dyes and antique timber are exactly the finishes that sunlight damages first. We see it in our own trade: a panel near a south-facing window that has faded a shade lighter than the rest of the room.
 
 Clear UV film is the quiet insurance for a newly finished room. Fitted by the same team that hangs the paper, it can be planned into the programme, so the glass is protected before the furniture and the guests arrive. See [wallcovering installation](https://www.mrwallcover.com/services/) and [aftercare](https://www.mrwallcover.com/aftercare/).
+
+![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)
+
+Sample room at Hyde London City: new wallcoverings beside the glass.
 
 Plain English
 
@@ -151,13 +147,19 @@ Hotels
 
 ## Working in live hotels
 
-We film a few rooms at a time, in an organised and discreet way, so the hotel keeps trading and rooms go back on sale the same day.
+We film a few rooms at a time, in an organised and discreet way, inside the decorating programme where there is one, so the hotel keeps trading and rooms go back on sale the same day.
+
+Solar and UV grades protect newly hung wallcoverings, and acoustic film helps bedrooms that face the street.
 
 Overnight shifts and weekends are planned with the hotel where the project needs them, as across every window at [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/).
 
+![A neighbouring church tower seen from an upper-floor window.](https://www.mrwallcover.com/media/img/r/old-bailey-19-800.webp)
+
+An upper-floor window at Hyde London City, one of every window we filmed.
+
 Projects
 
-## Where our film is fitted
+## On the public record
 
 ![Rolls of Solar Screen window film on site before installation.](https://www.mrwallcover.com/media/img/r/old-bailey-15-800.webp)
 
@@ -165,7 +167,7 @@ Projects
 
 ### [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
-Solar Screen film fitted to every window of the Grade II-listed building, filmed room by room as part of our full decorating package of paint and specialist wallcoverings. The hotel opened on 2 September 2024.
+Solar Screen film fitted to every window of the Grade II-listed building, filmed room by room as part of our full decorating package of paint and specialist wallcoverings, over about two years. The hotel opened on 2 September 2024.
 
 Holborn
 
@@ -228,7 +230,7 @@ Credentials
 - In the trade since 2012, with window film delivered inside live hotel and office programmes.
 - Trained at Solar Screen's headquarters in Luxembourg in window film and Cover Styl' architectural film.
 - Risk assessments and method statements for every package, and Dorin Burcus supervises the site.
-- One team for film, paint and wallcoverings, so one programme and one point of contact.
+- One team for film, paint and wallcoverings, so one programme and one point of contact. Film can be part of a wider decorating commission, as at Hyde London City, or a job on its own.
 
 ## Film brands we have worked with
 
@@ -272,62 +274,6 @@ Diagram: Schematic window in section: a thin film on the inner face of the glass
 - **Decorative** pattern and logos
 
 Schematic · not to scaleFilm is applied to the room side of existing glass. The right film depends on the glazing type and the maker's guidance.
-
-01
-
-## Six jobs a film can do
-
-Solar control: takes heat and glare off south- and west-facing rooms, so blinds can stay open and screens stay readable.
-
-UV protection: filters most of the ultraviolet that fades fabrics, timber floors, artwork and, in our trade, wallcoverings. Clear grades leave the view and the light almost unchanged.
-
-Acoustic: laminating films add mass and damping to a pane and take the edge off traffic and street noise in bedrooms and meeting rooms. Film improves what is there; where the noise is severe, secondary glazing is the bigger step, and we say so at the survey.
-
-Privacy: frosted, gradient, one-way-by-day and switchable-look films screen meeting rooms, bathrooms and street-level windows without losing daylight.
-
-Safety and security: clear films that help hold broken glass together, for glass at low level, in doors and in places where a break would be dangerous.
-
-Decorative: etched-look bands, patterns, manifestations and logos cut to the pane.
-
-02
-
-## Window film on the record
-
-At [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/) (the Old Bailey Hotel), Solar Screen window film was fitted to the glazing as part of our full decorating package, alongside paint and specialist wallcoverings, in the Grade II-listed building that opened as a hotel on 2 September 2024.
-
-That job covered every window in the building, filmed room by room within the decorating programme.
-
-At Gray's Inn Square in Holborn we have fitted film across several sets of offices, working floor by floor around the people using them.
-
-In private homes across London we have fitted many UV-protective and acoustic films, to protect furnishings and finishes from fading and to quieten rooms facing busy streets. Private homes are not named.
-
-Window film is hard to photograph once it is on: good film is close to invisible. That is why these jobs are listed here in words rather than shown as photographs.
-
-03
-
-## How a window film job runs
-
-The survey looks at the glass, the frame, the orientation and what the room needs, and the film maker's guidance decides what can be applied to that glazing. On the day, the glass is cleaned, the film is cut to the visible pane and squeegeed out, and the edges are finished to the frame. A slight haze while the adhesive cures is normal, and we explain what to expect.
-
-Risk assessments and method statements (RAMS) are issued for every package, and Dorin Burcus personally supervises the site. Film can be part of a wider decorating commission, as at Hyde London City, or a job on its own.
-
-Sample: on larger jobs a sample pane is fitted first, so the look and the light can be approved in the room.
-
-In hotels and offices we work room by room or floor by floor, out of hours where the building needs it.
-
-Aftercare: a short haze while the adhesive cures is normal. We explain the cleaning instructions on the day and come back if anything needs attention.
-
-## On the public record
-
-[![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
-
-Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed. Photograph: Dorin Burcus / Mr Wallcover.
-
-### [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
-
-Full decorating package: decoration, specialist wallcoverings and window film, c. 2 years.
-
-[View the project](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
 Questions
 

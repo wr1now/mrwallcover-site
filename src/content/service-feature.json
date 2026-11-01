@@ -49,12 +49,12 @@
         {
           "name": "Acoustic",
           "for": "Street noise",
-          "text": "Laminating films add damping to a single pane and take the edge off traffic and voices. They improve the glass you have. Where noise is severe we will tell you that secondary glazing is the bigger step."
+          "text": "Laminating films add damping to a single pane and take the edge off traffic and voices in bedrooms and meeting rooms. They improve the glass you have. Where noise is severe we will tell you at the survey that secondary glazing is the bigger step."
         },
         {
           "name": "Privacy",
           "for": "The view in",
-          "text": "Frosted, gradient and one-way-by-day films screen bathrooms, meeting rooms and street-level windows without losing light. Daytime one-way films reverse at night when the room is lit, and we explain that before you choose."
+          "text": "Frosted, gradient, one-way-by-day and switchable-look films screen bathrooms, meeting rooms and street-level windows without losing light. Daytime one-way films reverse at night when the room is lit, and we explain that before you choose."
         },
         {
           "name": "Safety and security",
@@ -75,34 +75,27 @@
       "usedHeading": "Where it is used",
       "used": [
         {
-          "title": "Hotels",
-          "image": "old-bailey-19",
-          "text": "Guest rooms filmed room by room inside the decorating programme, so rooms go back on sale as they are finished. Solar and UV grades protect new wallcoverings; acoustic film helps bedrooms that face the street.",
-          "href": "/projects/old-bailey-hotel/",
-          "link": "Hyde London City"
-        },
-        {
           "title": "Prime residential",
           "image": "old-bailey-04",
-          "text": "Clear UV film for drawing rooms, libraries and dressing rooms with silk, grasscloth or antique furniture, and acoustic film for bedrooms on busy roads. Homes are never named; the work is.",
+          "text": "Clear UV film for drawing rooms, libraries and dressing rooms with silk, grasscloth or antique furniture, and acoustic film for bedrooms on busy roads.",
           "href": "/services/decorating/",
           "link": "Decorating and painting"
         },
         {
           "title": "Offices and chambers",
           "image": "old-bailey-03",
-          "text": "Privacy and manifestation film for meeting rooms and partitions, solar film for screens in bright rooms. At Gray's Inn Square we filmed several sets of offices, floor by floor, around the people working in them.",
+          "text": "Privacy and manifestation film for meeting rooms and partitions, and solar film for screens in bright rooms, worked floor by floor around the people using them.",
           "href": "/contact/",
           "link": "Ask about an office"
         }
       ],
-      "projectsHeading": "Where our film is fitted",
+      "projectsHeading": "On the public record",
       "projects": [
         {
           "title": "Hyde London City",
           "place": "15 Old Bailey, City of London",
           "image": "old-bailey-15",
-          "text": "Solar Screen film fitted to every window of the Grade II-listed building, filmed room by room as part of our full decorating package of paint and specialist wallcoverings. The hotel opened on 2 September 2024.",
+          "text": "Solar Screen film fitted to every window of the Grade II-listed building, filmed room by room as part of our full decorating package of paint and specialist wallcoverings, over about two years. The hotel opened on 2 September 2024.",
           "href": "/projects/old-bailey-hotel/"
         },
         {
@@ -150,7 +143,7 @@
         "In the trade since 2012, with window film delivered inside live hotel and office programmes.",
         "Trained at Solar Screen's headquarters in Luxembourg in window film and Cover Styl' architectural film.",
         "Risk assessments and method statements for every package, and Dorin Burcus supervises the site.",
-        "One team for film, paint and wallcoverings, so one programme and one point of contact."
+        "One team for film, paint and wallcoverings, so one programme and one point of contact. Film can be part of a wider decorating commission, as at Hyde London City, or a job on its own."
       ],
       "ctaHeading": "Send us a photo of the window.",
       "ctaText": "A photo of the glass and the room, the direction it faces and what is bothering you is enough to start. We will say which film, if any, will help.",
@@ -255,7 +248,9 @@
           "paragraphs": [
             "Silk, grasscloth, hand-painted papers, natural dyes and antique timber are exactly the finishes that sunlight damages first. We see it in our own trade: a panel near a south-facing window that has faded a shade lighter than the rest of the room.",
             "Clear UV film is the quiet insurance for a newly finished room. Fitted by the same team that hangs the paper, it can be planned into the programme, so the glass is protected before the furniture and the guests arrive. See [wallcovering installation](/services/) and [aftercare](/aftercare/)."
-          ]
+          ],
+          "image": "old-bailey-06",
+          "caption": "Sample room at Hyde London City: new wallcoverings beside the glass."
         },
         {
           "eyebrow": "Plain English",
@@ -270,9 +265,12 @@
           "eyebrow": "Hotels",
           "heading": "Working in live hotels",
           "paragraphs": [
-            "We film a few rooms at a time, in an organised and discreet way, so the hotel keeps trading and rooms go back on sale the same day.",
+            "We film a few rooms at a time, in an organised and discreet way, inside the decorating programme where there is one, so the hotel keeps trading and rooms go back on sale the same day.",
+            "Solar and UV grades protect newly hung wallcoverings, and acoustic film helps bedrooms that face the street.",
             "Overnight shifts and weekends are planned with the hotel where the project needs them, as across every window at [Hyde London City](/projects/old-bailey-hotel/)."
-          ]
+          ],
+          "image": "old-bailey-19",
+          "caption": "An upper-floor window at Hyde London City, one of every window we filmed."
         }
       ],
       "links": [
@@ -366,23 +364,16 @@
         {
           "name": "Paint and paper together",
           "for": "One programme",
-          "text": "Ceilings, joinery and plain walls painted around specialist wallcoverings, so edges, colours and cut lines are planned rather than patched afterwards."
+          "text": "Ceilings, joinery and plain walls painted around wallcoverings of every kind, so edges, colours and cut lines are planned rather than patched afterwards. [Window film](/services/window-film/) can go in the same programme."
         },
         {
           "name": "Exteriors and render",
           "for": "The outside too",
-          "text": "Scaffolded façades as one commission with the interior, as at St George's Square and Inverness Terrace. Lime render is arranged through trusted specialist partners."
+          "text": "Scaffolded façades as one commission with the interior, as at St George's Square and Inverness Terrace: see [exterior works](/services/exterior-works/). Lime render is arranged through trusted specialist partners and programmed with our work."
         }
       ],
       "usedHeading": "Where we decorate",
       "used": [
-        {
-          "title": "Hotels",
-          "image": "browns-hotel-mayfair-01",
-          "text": "Floor by floor and room by room, out of hours where the operation needs it, so the hotel keeps taking guests and rooms go back on sale as they are finished.",
-          "href": "/projects/browns-hotel-mayfair/",
-          "link": "Brown's Hotel, Mayfair"
-        },
         {
           "title": "Prime residential",
           "image": "north-london-residence-12",
@@ -398,7 +389,7 @@
           "link": "Ask about a commercial job"
         }
       ],
-      "projectsHeading": "Decorating we have delivered",
+      "projectsHeading": "On the public record",
       "projects": [
         {
           "title": "Brown's Hotel, Mayfair",
@@ -411,15 +402,22 @@
           "title": "Hyde London City",
           "place": "City of London",
           "image": "old-bailey-16",
-          "text": "A full decorating package across 111 guest rooms in a Grade II-listed building: paint, specialist wallcoverings and window film, from corridors to the stair.",
+          "text": "A full decorating package over about two years across 111 guest rooms in a Grade II-listed building: decoration, specialist wallcoverings and window film, from corridors to the stair.",
           "href": "/projects/old-bailey-hotel/"
         },
         {
           "title": "St George's Square",
           "place": "Pimlico",
           "image": "pimlico-st-georges-square-exterior-11",
-          "text": "A scaffolded period elevation decorated as one commission with the interior, finished down to the columned entrance and railings.",
+          "text": "A full scaffolded exterior in 2024, scaffolding supplied and managed by us, decorated as one commission with the interior and finished down to the columned entrance and railings.",
           "href": "/projects/pimlico-st-georges-square/"
+        },
+        {
+          "title": "Inverness Terrace",
+          "place": "Bayswater",
+          "image": "inverness-terrace-exterior-10",
+          "text": "A full scaffolded exterior in 2018: stucco, cornices, frieze and sash windows on a period terrace front.",
+          "href": "/projects/inverness-terrace/"
         }
       ],
       "processHeading": "The job, step by step",
@@ -521,9 +519,11 @@
           "eyebrow": "Hotels",
           "heading": "Working in live hotels",
           "paragraphs": [
-            "Hotels rarely close for us. We work a few rooms at a time, in an organised and discreet way, so guests barely know we are there and rooms go back on sale as they are finished.",
-            "Where a project needs it, we work overnight shifts and weekends, planned with the hotel's operations and housekeeping teams, as on our record at [Brown's Hotel, Mayfair](/projects/browns-hotel-mayfair/) and [Hyde London City](/projects/old-bailey-hotel/)."
-          ]
+            "Hotels rarely close for us. We work floor by floor and a few rooms at a time, in an organised and discreet way, so the hotel keeps taking guests, guests barely know we are there and rooms go back on sale as they are finished.",
+            "Where a project needs it, we work overnight shifts and weekends, planned with the hotel's operations and housekeeping teams. Out-of-hours work is on our published record, from [Brown's Hotel, Mayfair](/projects/browns-hotel-mayfair/) and [Hyde London City](/projects/old-bailey-hotel/) to an overnight installation at [Heathrow Terminal 4](/projects/heathrow-terminal-4-calico/)."
+          ],
+          "image": "browns-hotel-mayfair-01",
+          "caption": "Navy-painted guest-room doors at Brown's Hotel, Mayfair, decorated while the hotel stayed open."
         },
         {
           "eyebrow": "For designers and architects",
@@ -531,7 +531,9 @@
           "paragraphs": [
             "We work to the designer's schedule of finishes and the contractor's programme. Samples are applied in the room for sign-off, the approved sample is the standard the finished room is checked against, and progress is reported room by room.",
             "Because we hang wallcoverings too, paint and paper are sequenced properly: ceilings and joinery first, walls prepared to the tolerance the paper needs, cut lines agreed before the first drop. See our work [for designers](/professionals/)."
-          ]
+          ],
+          "image": "old-bailey-06",
+          "caption": "Sample room at Hyde London City, approved before the full run."
         },
         {
           "eyebrow": "Preparation",

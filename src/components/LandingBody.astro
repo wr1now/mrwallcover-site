@@ -60,7 +60,7 @@ function segments(text: string) {
       <Action variant="secondary" href="/projects/">See the work</Action>
     </div>
   </header>}
-  {page.sections && page.sections.length >= 3 && <nav class="landing-contents" aria-label="On this page">
+  {!bare && page.sections && page.sections.length >= 3 && <nav class="landing-contents" aria-label="On this page">
     <p class="eyebrow">On this page</p>
     <ul>{page.sections.map((section, index) => <li><a href={`#landing-section-${index + 1}`}><Icon name="arrow-right" /><span>{section.heading}</span></a></li>)}</ul>
   </nav>}
@@ -96,7 +96,7 @@ function segments(text: string) {
   </div>
 
   {
-    page.sections && page.sections.length > 0 && (
+    !bare && page.sections && page.sections.length > 0 && (
       <div class="landing-sections">
         {page.sections.map((section, index) => (
           <section class="landing-section" id={`landing-section-${index + 1}`}>
@@ -116,7 +116,7 @@ function segments(text: string) {
   }
 
   {
-    linked.length > 0 && (
+    !bare && linked.length > 0 && (
       <section class="border-t border-line py-12" aria-labelledby="record-heading">
         <h2 id="record-heading" class="m-0 text-[clamp(2rem,3vw,2.7rem)]">On the public record</h2>
         <ProjectEvidence projects={linked} />

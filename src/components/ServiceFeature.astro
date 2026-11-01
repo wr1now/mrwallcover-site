@@ -24,7 +24,7 @@ export interface Feature {
   whyHeading: string; why: string[];
   ctaHeading: string; ctaText: string;
   picker?: { heading: string; items: { label: string; target: string }[] };
-  extra?: { eyebrow: string; heading: string; paragraphs: string[] }[];
+  extra?: { eyebrow: string; heading: string; paragraphs: string[]; image?: string; caption?: string }[];
   areas?: { heading: string; items: { label: string; href: string }[] };
   links?: { label: string; href: string }[];
   brands?: { heading: string; items: string[]; note: string };
@@ -74,17 +74,17 @@ function segments(text: string) {
 
   <section class="sf-wrap sf-types" aria-labelledby="sf-types-h">
     <div class="sf-head"><p class="eyebrow">The options</p><h2 id="sf-types-h">{f.typesHeading}</h2></div>
-    <ol role="list">{f.types.map((t, i) => <li class="sf-reveal" id={slug(t.name)}><span class="sf-num">{String(i + 1).padStart(2, '0')}</span><h3>{t.name}</h3><p class="sf-for">{t.for}</p><p>{t.text}</p></li>)}<li class="sf-types-cta"><h3>Not sure which?</h3><p>{f.ctaText}</p><a class="sf-link" href="/contact/">Start your project <span aria-hidden="true">→</span></a></li></ol>
+    <ol role="list">{f.types.map((t, i) => <li class="sf-reveal" id={slug(t.name)}><span class="sf-num">{String(i + 1).padStart(2, '0')}</span><h3>{t.name}</h3><p class="sf-for">{t.for}</p><p>{segments(t.text).map((s) => s.href ? <a href={s.href}>{s.text}</a> : s.text)}</p></li>)}<li class="sf-types-cta"><h3>Not sure which?</h3><p>{f.ctaText}</p><a class="sf-link" href="/contact/">Start your project <span aria-hidden="true">→</span></a></li></ol>
   </section>
 
   <section class="sf-wrap sf-used" aria-labelledby="sf-used-h">
     <div class="sf-head"><p class="eyebrow">Sectors</p><h2 id="sf-used-h">{f.usedHeading}</h2></div>
-    <ul role="list">{f.used.map((u) => <li class="sf-reveal"><figure>{u.image && <Picture id={u.image} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, calc(100vw - 40px)" />}</figure><h3>{u.title}</h3><p>{u.text}</p>{u.href && <a class="sf-link" href={u.href}>{u.link} <span aria-hidden="true">→</span></a>}</li>)}</ul>
+    <ul role="list">{f.used.map((u) => <li class="sf-reveal"><figure>{u.image && <Picture id={u.image} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, calc(100vw - 40px)" />}</figure><h3>{u.title}</h3><p>{segments(u.text).map((s) => s.href ? <a href={s.href}>{s.text}</a> : s.text)}</p>{u.href && <a class="sf-link" href={u.href}>{u.link} <span aria-hidden="true">→</span></a>}</li>)}</ul>
   </section>
 
   {f.extra?.map((x, n) => <section class="sf-wrap sf-extra sf-reveal" aria-labelledby={`sf-x${n}`}>
     <div><p class="eyebrow">{x.eyebrow}</p><h2 id={`sf-x${n}`}>{x.heading}</h2></div>
-    <div>{x.paragraphs.map((p) => <p>{segments(p).map((s) => s.href ? <a href={s.href}>{s.text}</a> : s.text)}</p>)}</div>
+    <div>{x.paragraphs.map((p) => <p>{segments(p).map((s) => s.href ? <a href={s.href}>{s.text}</a> : s.text)}</p>)}{x.image && <figure class="sf-extra-fig"><Picture id={x.image} sizes="(min-width: 900px) 40rem, calc(100vw - 40px)" /><figcaption>{x.caption}</figcaption></figure>}</div>
   </section>)}
 
   <section class="sf-band" aria-labelledby="sf-proj-h">
@@ -197,6 +197,9 @@ function segments(text: string) {
   .sf-types li { scroll-margin-top: 8rem; }
   .sf-extra { display: grid; gap: 1.5rem; border-top: 1px solid var(--color-line); }
   .sf-extra p { margin: 0 0 1rem; font-size: 1.08rem; line-height: 1.75; max-width: 46rem; color: var(--color-stone-deep); }
+  .sf-extra-fig { margin: 1.5rem 0 0; max-width: 46rem; }
+  .sf-extra-fig :global(img) { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+  .sf-extra-fig figcaption { margin-top: .6rem; color: var(--color-stone); font-size: var(--text-meta); }
   .sf-areas { margin: 1rem 0 0; font-size: var(--text-meta); }
   .sf-areas span { color: var(--color-stone); }
   .sf-brands { border-top: 1px solid var(--color-line); }

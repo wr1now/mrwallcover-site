@@ -85,7 +85,7 @@ Colour blocks, painted bands and decorative lines set out with a laser so they s
 
 One programme
 
-Ceilings, joinery and plain walls painted around specialist wallcoverings, so edges, colours and cut lines are planned rather than patched afterwards.
+Ceilings, joinery and plain walls painted around wallcoverings of every kind, so edges, colours and cut lines are planned rather than patched afterwards. [Window film](https://www.mrwallcover.com/services/window-film/) can go in the same programme.
 
 7. 07
 
@@ -93,7 +93,7 @@ Ceilings, joinery and plain walls painted around specialist wallcoverings, so ed
 
 The outside too
 
-Scaffolded façades as one commission with the interior, as at St George's Square and Inverness Terrace. Lime render is arranged through trusted specialist partners.
+Scaffolded façades as one commission with the interior, as at St George's Square and Inverness Terrace: see [exterior works](https://www.mrwallcover.com/services/exterior-works/). Lime render is arranged through trusted specialist partners and programmed with our work.
 
 ### Not sure which?
 
@@ -104,14 +104,6 @@ The address or area, the rooms, any drawings or schedule and the dates the build
 Sectors
 
 ## Where we decorate
-
-![Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-01-800.webp)
-
-### Hotels
-
-Floor by floor and room by room, out of hours where the operation needs it, so the hotel keeps taking guests and rooms go back on sale as they are finished.
-
-[Brown's Hotel, Mayfair →](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
 
 ![Built-in bookshelves painted dark blue.](https://www.mrwallcover.com/media/img/r/north-london-residence-12-800.webp)
 
@@ -133,9 +125,13 @@ Hotels
 
 ## Working in live hotels
 
-Hotels rarely close for us. We work a few rooms at a time, in an organised and discreet way, so guests barely know we are there and rooms go back on sale as they are finished.
+Hotels rarely close for us. We work floor by floor and a few rooms at a time, in an organised and discreet way, so the hotel keeps taking guests, guests barely know we are there and rooms go back on sale as they are finished.
 
-Where a project needs it, we work overnight shifts and weekends, planned with the hotel's operations and housekeeping teams, as on our record at [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/) and [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/).
+Where a project needs it, we work overnight shifts and weekends, planned with the hotel's operations and housekeeping teams. Out-of-hours work is on our published record, from [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/) and [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/) to an overnight installation at [Heathrow Terminal 4](https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/).
+
+![Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-01-800.webp)
+
+Navy-painted guest-room doors at Brown's Hotel, Mayfair, decorated while the hotel stayed open.
 
 For designers and architects
 
@@ -144,6 +140,10 @@ For designers and architects
 We work to the designer's schedule of finishes and the contractor's programme. Samples are applied in the room for sign-off, the approved sample is the standard the finished room is checked against, and progress is reported room by room.
 
 Because we hang wallcoverings too, paint and paper are sequenced properly: ceilings and joinery first, walls prepared to the tolerance the paper needs, cut lines agreed before the first drop. See our work [for designers](https://www.mrwallcover.com/professionals/).
+
+![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)
+
+Sample room at Hyde London City, approved before the full run.
 
 Preparation
 
@@ -167,7 +167,7 @@ Cleaner air: air-filtering stations with HEPA filters run while we prepare and p
 
 Projects
 
-## Decorating we have delivered
+## On the public record
 
 ![Guest bedroom at Brown's Hotel, Mayfair, with tall sash windows, full-length linen curtains, a red armchair and an upholstered bench at the foot of the bed.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-03-800.webp)
 
@@ -183,7 +183,7 @@ City of London
 
 ### [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/)
 
-A full decorating package across 111 guest rooms in a Grade II-listed building: paint, specialist wallcoverings and window film, from corridors to the stair.
+A full decorating package over about two years across 111 guest rooms in a Grade II-listed building: decoration, specialist wallcoverings and window film, from corridors to the stair.
 
 ![Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.](https://www.mrwallcover.com/media/img/r/pimlico-st-georges-square-exterior-11-800.webp)
 
@@ -191,7 +191,15 @@ Pimlico
 
 ### [St George's Square](https://www.mrwallcover.com/projects/pimlico-st-georges-square/)
 
-A scaffolded period elevation decorated as one commission with the interior, finished down to the columned entrance and railings.
+A full scaffolded exterior in 2024, scaffolding supplied and managed by us, decorated as one commission with the interior and finished down to the columned entrance and railings.
+
+![Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-10-800.webp)
+
+Bayswater
+
+### [Inverness Terrace](https://www.mrwallcover.com/projects/inverness-terrace/)
+
+A full scaffolded exterior in 2018: stucco, cornices, frieze and sash windows on a period terrace front.
 
 Process
 
@@ -284,64 +292,6 @@ Every room starts at the survey and a sample, so the colour, sheen and finish ar
 ![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)
 
 A finished guest room at [Brown’s Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/), part of our 2022–2024 decorating package. Photograph: Mr Wallcover.
-
-01
-
-## Prime residential
-
-Period houses and apartments are decorated with the furniture, floors and finishes protected throughout and the house left clean at the end of each day. Preparation decides the finish, so cracks, joints and old paint are dealt with properly before the first coat.
-
-Limewash is applied by our own team, for soft, mineral walls with depth and movement. Lime render is arranged through trusted specialist partners and programmed with our work.
-
-Interiors can be one commission with the outside: see [exterior works](https://www.mrwallcover.com/services/exterior-works/) for scaffolded elevations at St George's Square and Inverness Terrace.
-
-02
-
-## Hotels and commercial interiors
-
-Hotels rarely close for decorating. We work floor by floor and room by room, out of hours where the operation needs it, so rooms go back on sale as they are finished. Out-of-hours work is on our published record, from Brown's Hotel to an overnight installation at [Heathrow Terminal 4](https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/).
-
-Every job has risk assessments and method statements, a named supervisor and a snagging walk before handover, followed by the same [aftercare](https://www.mrwallcover.com/aftercare/) as our wallcovering work.
-
-03
-
-## What a decorating package can include
-
-Preparation, filling and lining; walls and ceilings; cornices and mouldings; doors, skirtings and joinery; limewash; wallcoverings of every kind; window film; and, where the job needs it, exteriors and lime render through partners.
-
-## On the public record
-
-[![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
-
-Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights. Photograph: Mr Wallcover.
-
-### [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
-
-Main decorating contractor, 2022–2024.
-
-[View the project](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)
-
-[![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
-
-Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed. Photograph: Dorin Burcus / Mr Wallcover.
-
-### [Hyde London City (the Old Bailey Hotel)](https://www.mrwallcover.com/projects/old-bailey-hotel/)
-
-Full decorating package: decoration, specialist wallcoverings and window film, c. 2 years.
-
-[View the project](https://www.mrwallcover.com/projects/old-bailey-hotel/)
-
-[![Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.](https://www.mrwallcover.com/media/img/r/pimlico-st-georges-square-exterior-11-800.webp)](https://www.mrwallcover.com/projects/pimlico-st-georges-square/)
-
-Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down. Photograph: Mr Wallcover.
-
-### [St George's Square, Pimlico](https://www.mrwallcover.com/projects/pimlico-st-georges-square/)
-
-Full exterior, scaffolding supplied and managed, 2024.
-
-[View the project](https://www.mrwallcover.com/projects/pimlico-st-georges-square/)
-
-- [Inverness Terrace, Bayswater](https://www.mrwallcover.com/projects/inverness-terrace/). Full scaffolded exterior, 2018.
 
 Questions
 
