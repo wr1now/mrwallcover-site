@@ -18,9 +18,11 @@ interface Props {
   crumbs: { name: string; href: string }[];
   eyebrow: string;
   kind: 'area' | 'specialism';
+  /** The page head is rendered by a feature layout above (ServiceFeature); keep everything else. */
+  bare?: boolean;
 }
 
-const { page, crumbs, eyebrow, kind } = Astro.props;
+const { page, crumbs, eyebrow, kind, bare = false } = Astro.props;
 const linked = linkedProjects(landingProjectSlugs(page), `${kind} page "${page.slug}"`);
 const otherAreas = areas.filter((a) => a.slug !== page.slug);
 const otherSpecialisms = specialisms.filter((s) => s.slug !== page.slug);
@@ -48,7 +50,7 @@ function segments(text: string) {
 ---
 
 <div class="container-page">
-  <header class="page-head">
+  {!bare && <header class="page-head">
     <Breadcrumb items={crumbs} />
     <p class="eyebrow">{eyebrow}</p>
     <h1>{page.heading}</h1>
@@ -57,7 +59,7 @@ function segments(text: string) {
       <Action href="/contact/">Start your project</Action>
       <Action variant="secondary" href="/projects/">See the work</Action>
     </div>
-  </header>
+  </header>}
   {page.sections && page.sections.length >= 3 && <nav class="landing-contents" aria-label="On this page">
     <p class="eyebrow">On this page</p>
     <ul>{page.sections.map((section, index) => <li><a href={`#landing-section-${index + 1}`}><Icon name="arrow-right" /><span>{section.heading}</span></a></li>)}</ul>

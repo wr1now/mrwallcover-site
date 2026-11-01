@@ -1,0 +1,216 @@
+---
+/**
+ * Photo-led feature layout for selected service pages (src/content/service-feature.json).
+ * Renders above LandingBody, which keeps all existing page copy. Real photographs only.
+ * Static HTML and CSS: reveals use CSS scroll-driven animation behind @supports and are off under reduced motion.
+ */
+import Picture from './Picture.astro';
+import Action from './Action.astro';
+import Breadcrumb from './Breadcrumb.astro';
+import WhatsAppLink from './WhatsAppLink.astro';
+import BookCallLink from './BookCallLink.astro';
+import { AWARD_TEXT, AWARD_URL } from '../lib/schema';
+
+interface Item { title: string; image: string | null; text: string; href?: string; link?: string; place?: string }
+export interface Feature {
+  heroImage: string; heroKicker: string; heroTitleLead: string; heroTitleEm: string;
+  heroFoot: { label: string; text: string; href: string };
+  proof: { label: string; value: string }[];
+  introHeading: string; intro: string[];
+  typesHeading: string; types: { name: string; for: string; text: string }[];
+  usedHeading: string; used: Item[];
+  projectsHeading: string; projects: Item[];
+  processHeading: string; process: { step: string; text: string }[];
+  whyHeading: string; why: string[];
+  ctaHeading: string; ctaText: string;
+  picker?: { heading: string; items: { label: string; target: string }[] };
+  extra?: { eyebrow: string; heading: string; paragraphs: string[] }[];
+  areas?: { heading: string; items: { label: string; href: string }[] };
+  links?: { label: string; href: string }[];
+}
+interface Props { feature: Feature; heading: string; lede: string; crumbs: { name: string; href: string }[] }
+const { feature: f, heading, lede, crumbs } = Astro.props;
+const slug = (s: string) => 'sf-' + s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+function segments(text: string) {
+  const parts: { text: string; href?: string }[] = []; let last = 0;
+  for (const m of text.matchAll(/\[([^\]]+)\]\(([^)\s]+)\)/g)) { if (m.index! > last) parts.push({ text: text.slice(last, m.index) }); parts.push({ text: m[1], href: m[2] }); last = m.index! + m[0].length; }
+  if (last < text.length) parts.push({ text: text.slice(last) }); return parts;
+}
+---
+<div class="sf">
+  <section class="sf-hero" aria-labelledby="sf-h1">
+    <div class="sf-hero-media"><Picture id={f.heroImage} loading="eager" fetchpriority="high" sizes="100vw" /></div>
+    <div class="sf-hero-shade" aria-hidden="true"></div>
+    <div class="sf-hero-content">
+      <div class="sf-crumbs"><Breadcrumb items={crumbs} /></div>
+      <p class="sf-kicker">{f.heroKicker}</p>
+      <p class="sf-display" aria-hidden="true">{f.heroTitleLead}<br /><em>{f.heroTitleEm}</em></p>
+      <h1 id="sf-h1">{heading}</h1>
+      <p class="sf-lede">{lede}</p>
+      <p class="sf-honour"><a href={AWARD_URL} rel="noopener">{AWARD_TEXT}</a></p>
+      <div class="sf-actions">
+        <Action href="/contact/">Start your project</Action>
+        <WhatsAppLink class="sf-wa" />
+      </div>
+    </div>
+    <a class="sf-hero-foot" href={f.heroFoot.href}><span>{f.heroFoot.label}</span> {f.heroFoot.text} <b aria-hidden="true">↗</b></a>
+  </section>
+
+  <section class="sf-proof" aria-label="On the record">
+    <ul role="list">{f.proof.map((p) => <li><span>{p.label}</span><strong>{p.value}</strong></li>)}</ul>
+  </section>
+
+  {f.picker && <nav class="sf-wrap sf-picker" aria-labelledby="sf-pick-h">
+    <h2 id="sf-pick-h">{f.picker.heading}</h2>
+    <ul role="list">{f.picker.items.map((i) => <li><a href={`#${slug(i.target)}`}><span>{i.label}</span><b>{i.target} <span aria-hidden="true">↓</span></b></a></li>)}</ul>
+  </nav>}
+
+  <section class="sf-wrap sf-intro sf-reveal">
+    <p class="eyebrow">Our approach</p>
+    <h2>{f.introHeading}</h2>
+    <div>{f.intro.map((p) => <p>{p}</p>)}</div>
+  </section>
+
+  <section class="sf-wrap sf-types" aria-labelledby="sf-types-h">
+    <div class="sf-head"><p class="eyebrow">The options</p><h2 id="sf-types-h">{f.typesHeading}</h2></div>
+    <ol role="list">{f.types.map((t, i) => <li class="sf-reveal" id={slug(t.name)}><span class="sf-num">{String(i + 1).padStart(2, '0')}</span><h3>{t.name}</h3><p class="sf-for">{t.for}</p><p>{t.text}</p></li>)}<li class="sf-types-cta"><h3>Not sure which?</h3><p>{f.ctaText}</p><a class="sf-link" href="/contact/">Start your project <span aria-hidden="true">→</span></a></li></ol>
+  </section>
+
+  <section class="sf-wrap sf-used" aria-labelledby="sf-used-h">
+    <div class="sf-head"><p class="eyebrow">Sectors</p><h2 id="sf-used-h">{f.usedHeading}</h2></div>
+    <ul role="list">{f.used.map((u) => <li class="sf-reveal"><figure>{u.image && <Picture id={u.image} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, calc(100vw - 40px)" />}</figure><h3>{u.title}</h3><p>{u.text}</p>{u.href && <a class="sf-link" href={u.href}>{u.link} <span aria-hidden="true">→</span></a>}</li>)}</ul>
+  </section>
+
+  {f.extra?.map((x, n) => <section class="sf-wrap sf-extra sf-reveal" aria-labelledby={`sf-x${n}`}>
+    <div><p class="eyebrow">{x.eyebrow}</p><h2 id={`sf-x${n}`}>{x.heading}</h2></div>
+    <div>{x.paragraphs.map((p) => <p>{segments(p).map((s) => s.href ? <a href={s.href}>{s.text}</a> : s.text)}</p>)}</div>
+  </section>)}
+
+  <section class="sf-band" aria-labelledby="sf-proj-h">
+    <div class="sf-wrap">
+      <div class="sf-head"><p class="eyebrow">Projects</p><h2 id="sf-proj-h">{f.projectsHeading}</h2></div>
+      <ul role="list" class="sf-projects">{f.projects.map((p) => <li class:list={['sf-reveal', !p.image && 'sf-noimg']}>
+        {p.image && <figure><Picture id={p.image} sizes="(min-width: 1024px) 30vw, calc(100vw - 40px)" /></figure>}
+        <div><p class="sf-place">{p.place}</p><h3>{p.href ? <a href={p.href}>{p.title}</a> : p.title}</h3><p>{p.text}</p></div>
+      </li>)}</ul>
+    </div>
+  </section>
+
+  <section class="sf-wrap sf-process" aria-labelledby="sf-proc-h">
+    <div class="sf-head"><p class="eyebrow">Process</p><h2 id="sf-proc-h">{f.processHeading}</h2></div>
+    <ol role="list">{f.process.map((s, i) => <li class="sf-reveal"><span class="sf-dot">{i + 1}</span><div><h3>{s.step}</h3><p>{s.text}</p></div></li>)}</ol>
+  </section>
+
+  <section class="sf-wrap sf-why" aria-labelledby="sf-why-h">
+    <div><p class="eyebrow">Credentials</p><h2 id="sf-why-h">{f.whyHeading}</h2><p class="sf-honour-line"><a href={AWARD_URL} rel="noopener">{AWARD_TEXT}</a></p></div>
+    <ul role="list">{f.why.map((w) => <li>{w}</li>)}</ul>
+  </section>
+
+  <section class="sf-cta" aria-labelledby="sf-cta-h">
+    <div class="sf-wrap">
+      <h2 id="sf-cta-h">{f.ctaHeading}</h2>
+      <p>{f.ctaText}</p>
+      <div class="sf-actions"><Action href="/contact/">Start your project</Action><WhatsAppLink class="sf-wa" /></div>
+      <BookCallLink wrap="sf-book" />
+      {f.areas && <p class="sf-areas"><span>{f.areas.heading}:</span> {f.areas.items.map((a, i) => <>{i > 0 && ' · '}<a href={a.href}>{a.label}</a></>)}</p>}
+      {f.links && <p class="sf-areas"><span>Related:</span> {f.links.map((a, i) => <>{i > 0 && ' · '}<a href={a.href}>{a.label}</a></>)}</p>}
+    </div>
+  </section>
+</div>
+
+<style>
+  .sf { --sf-w: min(78rem, calc(100vw - 2.5rem)); }
+  .sf-wrap { width: var(--sf-w); margin-inline: auto; }
+  .sf-hero { position: relative; min-height: min(92vh, 52rem); display: grid; align-items: end; color: #fff; overflow: hidden; background: var(--color-ink); }
+  .sf-hero-media, .sf-hero-shade { position: absolute; inset: 0; }
+  .sf-hero-media :global(picture), .sf-hero-media :global(img) { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .sf-hero-shade { background: linear-gradient(90deg, rgba(20,18,15,.72) 0%, rgba(20,18,15,.45) 45%, rgba(20,18,15,.1) 80%), linear-gradient(180deg, rgba(20,18,15,.2), rgba(20,18,15,.55)); }
+  .sf-hero-content { position: relative; width: var(--sf-w); margin: 0 auto; padding: 8rem 0 5.5rem; }
+  .sf-crumbs :global(a), .sf-crumbs :global(li), .sf-crumbs :global(span) { color: rgba(255,255,255,.85) !important; }
+  .sf-kicker { margin: 1rem 0 .8rem; font-size: var(--text-label); letter-spacing: .16em; text-transform: uppercase; color: #f3e6c8; }
+  .sf-display { margin: 0; font-family: var(--font-serif); font-size: clamp(2.5rem, 5.4vw, 4.8rem); line-height: 1; letter-spacing: -.01em; max-width: 16ch; text-shadow: 0 2px 24px rgba(0,0,0,.35); }
+  .sf-display em { font-style: italic; color: #f3e6c8; }
+  .sf .sf-hero h1 { margin: 1.2rem 0 0; max-width: none; font-family: var(--font-sans); font-size: 1.05rem; line-height: 1.4; font-weight: 600; letter-spacing: .02em; color: #fff; }
+  .sf-lede { max-width: 40rem; margin: .5rem 0 0; color: rgba(255,255,255,.88); font-size: 1.1rem; line-height: 1.6; }
+  .sf-honour a { color: #f3e6c8; font-size: var(--text-meta); text-decoration-color: rgba(243,230,200,.5); }
+  .sf-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.4rem; align-items: center; }
+  .sf-hero :global(.sf-wa) { color: #fff; }
+  .sf-hero-foot { position: absolute; right: max(1.25rem, calc((100vw - 78rem) / 2)); bottom: 1.4rem; color: #fff; font-size: var(--text-meta); text-decoration: none; }
+  .sf-hero-foot span { color: var(--color-gold); letter-spacing: .12em; font-size: var(--text-label); margin-right: .4rem; }
+  .sf-proof { border-bottom: 1px solid var(--color-line); background: var(--color-paper); }
+  .sf-proof ul { width: var(--sf-w); margin: 0 auto; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+  .sf-proof li { padding: 1.4rem 1rem 1.4rem 0; border-right: 1px solid var(--color-line); display: grid; gap: .3rem; }
+  .sf-proof li:last-child { border-right: 0; }
+  .sf-proof span { color: var(--color-stone); font-size: var(--text-label); letter-spacing: .1em; text-transform: uppercase; }
+  .sf-proof strong { font-family: var(--font-serif); font-weight: 500; font-size: 1.35rem; color: var(--color-ink); }
+  section.sf-wrap, .sf-band, .sf-cta { padding-block: clamp(3.5rem, 7vw, 6.5rem); }
+  .sf h2 { margin: 0; font-size: clamp(2rem, 3.6vw, 3.1rem); line-height: 1.08; max-width: 22ch; }
+  .sf-head { margin-bottom: 2.4rem; }
+  .sf-intro { display: grid; gap: 1.5rem; }
+  .sf-intro > div p { margin: 0 0 1rem; font-size: 1.12rem; line-height: 1.75; max-width: 46rem; color: var(--color-stone-deep); }
+  .sf-types ol { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1px; background: var(--color-line); border: 1px solid var(--color-line); }
+  .sf-types li { background: var(--color-ivory); padding: 1.8rem 1.6rem 2rem; }
+  .sf-types .sf-types-cta { background: var(--color-ink); color: #fff; }
+  .sf-types .sf-types-cta h3, .sf-types .sf-types-cta .sf-link { color: #fff; }
+  .sf .sf-types .sf-types-cta p { color: rgba(255,255,255,.8); }
+  .sf-num { color: var(--color-brass); font-size: var(--text-label); letter-spacing: .12em; }
+  .sf h3 { margin: .6rem 0 .6rem; font-family: var(--font-serif); font-weight: 500; font-size: 1.5rem; }
+  .sf-for { margin: 0 0 .8rem; color: var(--color-brass); font-size: var(--text-meta); }
+  .sf-types li p:last-child, .sf-used p, .sf-projects p, .sf-process p { margin: 0; line-height: 1.65; color: var(--color-stone-deep); }
+  .sf-used ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
+  .sf-used figure, .sf-projects figure { margin: 0 0 1rem; aspect-ratio: 4 / 5; overflow: hidden; background: var(--color-media-fill); }
+  .sf-used figure :global(img), .sf-projects figure :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease-decel); }
+  .sf-used li:hover figure :global(img), .sf-projects li:hover figure :global(img) { transform: scale(1.04); }
+  .sf-link { display: inline-block; margin-top: .9rem; color: var(--color-ink); }
+  .sf-band { background: var(--color-ink); color: var(--color-ivory); }
+  .sf-band h2, .sf-band h3, .sf-band h3 a { color: #fff; }
+  .sf-band .eyebrow, .sf-place { color: var(--color-gold); }
+  .sf-place { margin: 0; font-size: var(--text-label); letter-spacing: .1em; text-transform: uppercase; }
+  .sf-band .sf-projects p:not(.sf-place) { color: rgba(255,255,255,.78); }
+  .sf-projects { margin: 0; padding: 0; list-style: none; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
+  .sf-projects figure { aspect-ratio: 3 / 2; }
+  .sf-noimg > div { border-top: 1px solid rgba(255,255,255,.25); padding-top: 1.2rem; }
+  .sf-process ol { margin: 0; padding: 0; list-style: none; position: relative; display: grid; gap: 0; }
+  .sf-process li { display: grid; grid-template-columns: 3.2rem 1fr; gap: 1.2rem; padding: 0 0 2rem; position: relative; }
+  .sf-process li::before { content: ''; position: absolute; left: 1.55rem; top: 3rem; bottom: 0; width: 1px; background: var(--color-line); }
+  .sf-process li:last-child::before { display: none; }
+  .sf-dot { width: 3.2rem; height: 3.2rem; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--color-brass); color: var(--color-brass); font-family: var(--font-serif); font-size: 1.3rem; background: var(--color-ivory); }
+  .sf-process h3 { margin-top: .5rem; }
+  .sf-why { display: grid; gap: 2rem; border-top: 1px solid var(--color-line); }
+  .sf-why ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 1rem; }
+  .sf-why li { padding: 1rem 0 1rem 1.6rem; border-bottom: 1px solid var(--color-line); position: relative; font-size: 1.08rem; line-height: 1.6; }
+  .sf-why li::before { content: ''; position: absolute; left: 0; top: 1.55rem; width: .55rem; height: .55rem; background: var(--color-gold); transform: rotate(45deg); }
+  .sf-honour-line { margin-top: 1.2rem; }
+  .sf-picker { padding-block: clamp(2.5rem, 5vw, 4rem); }
+  .sf-picker h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); margin-bottom: 1.4rem; }
+  .sf-picker ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+  .sf-picker a { display: grid; gap: .5rem; height: 100%; padding: 1.1rem 1.2rem; border: 1px solid var(--color-line); border-radius: var(--radius-control); background: var(--color-paper); color: var(--color-ink); text-decoration: none; transition: border-color .2s, transform .2s; }
+  .sf-picker a:hover, .sf-picker a:focus-visible { border-color: var(--color-brass); transform: translateY(-2px); }
+  .sf-picker b { color: var(--color-brass); font-weight: 500; font-size: var(--text-meta); }
+  .sf-types li { scroll-margin-top: 8rem; }
+  .sf-extra { display: grid; gap: 1.5rem; border-top: 1px solid var(--color-line); }
+  .sf-extra p { margin: 0 0 1rem; font-size: 1.08rem; line-height: 1.75; max-width: 46rem; color: var(--color-stone-deep); }
+  .sf-areas { margin: 1rem 0 0; font-size: var(--text-meta); }
+  .sf-areas span { color: var(--color-stone); }
+  .sf-cta { background: var(--color-ivory-deep); text-align: left; }
+  .sf-cta p { max-width: 42rem; font-size: 1.1rem; line-height: 1.7; color: var(--color-stone-deep); }
+  @media (min-width: 900px) {
+    .sf-intro { grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr); column-gap: 5rem; }
+    .sf-intro .eyebrow { grid-column: 1 / -1; margin: 0; }
+    .sf-process ol { grid-template-columns: 1fr 1fr; column-gap: 4rem; }
+    .sf-extra { grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr); column-gap: 5rem; }
+    .sf-why { grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr); column-gap: 5rem; }
+  }
+  @media (max-width: 640px) {
+    .sf-hero { min-height: 88vh; }
+    .sf-hero-content { padding: 6rem 0 4.5rem; }
+    .sf-hero-foot { left: 1.25rem; right: auto; }
+    .sf-proof li { border-right: 0; border-bottom: 1px solid var(--color-line); }
+  }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .sf-reveal { animation: sf-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+      @keyframes sf-rise { from { opacity: 0; transform: translateY(2rem); } to { opacity: 1; transform: none; } }
+    }
+  }
+</style>
