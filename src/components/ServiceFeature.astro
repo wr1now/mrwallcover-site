@@ -27,6 +27,7 @@ export interface Feature {
   extra?: { eyebrow: string; heading: string; paragraphs: string[] }[];
   areas?: { heading: string; items: { label: string; href: string }[] };
   links?: { label: string; href: string }[];
+  brands?: { heading: string; items: string[]; note: string };
 }
 interface Props { feature: Feature; heading: string; lede: string; crumbs: { name: string; href: string }[] }
 const { feature: f, heading, lede, crumbs } = Astro.props;
@@ -105,6 +106,12 @@ function segments(text: string) {
     <div><p class="eyebrow">Credentials</p><h2 id="sf-why-h">{f.whyHeading}</h2><p class="sf-honour-line"><a href={AWARD_URL} rel="noopener">{AWARD_TEXT}</a></p></div>
     <ul role="list">{f.why.map((w) => <li>{w}</li>)}</ul>
   </section>
+
+  {f.brands && <section class="sf-wrap sf-brands" aria-labelledby="sf-brand-h">
+    <h2 id="sf-brand-h">{f.brands.heading}</h2>
+    <ul role="list">{f.brands.items.map((b) => <li>{b}</li>)}</ul>
+    <p>{f.brands.note}</p>
+  </section>}
 
   <section class="sf-cta" aria-labelledby="sf-cta-h">
     <div class="sf-wrap">
@@ -192,6 +199,11 @@ function segments(text: string) {
   .sf-extra p { margin: 0 0 1rem; font-size: 1.08rem; line-height: 1.75; max-width: 46rem; color: var(--color-stone-deep); }
   .sf-areas { margin: 1rem 0 0; font-size: var(--text-meta); }
   .sf-areas span { color: var(--color-stone); }
+  .sf-brands { border-top: 1px solid var(--color-line); }
+  .sf-brands h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); margin-bottom: 1.4rem; }
+  .sf-brands ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .6rem; }
+  .sf-brands li { padding: .55rem 1rem; border: 1px solid var(--color-line); border-radius: 999px; background: var(--color-paper); font-family: var(--font-serif); font-size: 1.15rem; }
+  .sf-brands p { max-width: 46rem; margin-top: 1.2rem; color: var(--color-stone); line-height: 1.65; }
   .sf-cta { background: var(--color-ivory-deep); text-align: left; }
   .sf-cta p { max-width: 42rem; font-size: 1.1rem; line-height: 1.7; color: var(--color-stone-deep); }
   @media (min-width: 900px) {

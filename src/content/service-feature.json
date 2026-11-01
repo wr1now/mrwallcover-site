@@ -265,6 +265,14 @@
             "Building Regulations ask for some low-level and full-height glass to be safe if it breaks, and for large areas of glass to be clearly marked. Safety film and manifestation film are common ways to deal with existing glass; your designer, building manager or building control confirms what each pane needs.",
             "On listed buildings, internal film is usually reversible and leaves the glass untouched, but check with the conservation officer first. We supply the product details for that conversation."
           ]
+        },
+        {
+          "eyebrow": "Hotels",
+          "heading": "Working in live hotels",
+          "paragraphs": [
+            "We film a few rooms at a time, in an organised and discreet way, so the hotel keeps trading and rooms go back on sale the same day.",
+            "Overnight shifts and weekends are planned with the hotel where the project needs them, as across every window at [Hyde London City](/projects/old-bailey-hotel/)."
+          ]
         }
       ],
       "links": [
@@ -284,7 +292,16 @@
           "label": "Get in touch",
           "href": "/get-in-touch/"
         }
-      ]
+      ],
+      "brands": {
+        "heading": "Film brands we have worked with",
+        "items": [
+          "3M",
+          "Solar Screen",
+          "Cover Styl'"
+        ],
+        "note": "Solar Screen and Cover Styl' are sister brands in the TEGO group in Luxembourg; the former Solar Screen design range is now sold as Cover Styl' Glass. We also fit other makers' films where the glazing calls for them. These are brands we have installed, not approvals or certifications."
+      }
     },
     "decorating": {
       "heroImage": "old-bailey-18",
@@ -501,6 +518,14 @@
       ],
       "extra": [
         {
+          "eyebrow": "Hotels",
+          "heading": "Working in live hotels",
+          "paragraphs": [
+            "Hotels rarely close for us. We work a few rooms at a time, in an organised and discreet way, so guests barely know we are there and rooms go back on sale as they are finished.",
+            "Where a project needs it, we work overnight shifts and weekends, planned with the hotel's operations and housekeeping teams, as on our record at [Brown's Hotel, Mayfair](/projects/browns-hotel-mayfair/) and [Hyde London City](/projects/old-bailey-hotel/)."
+          ]
+        },
+        {
           "eyebrow": "For designers and architects",
           "heading": "Working to your specification",
           "paragraphs": [
@@ -514,6 +539,16 @@
           "paragraphs": [
             "Protection of floors, furniture, art and anything already finished; dust control and a daily clean-down; filling and sanding; repairs to cracks and joints; lining where the plaster needs it; spot-priming and full priming; and checks in raking light before each finish coat.",
             "Older houses can hide old lead-based paint and lime plaster. Both are flagged at the survey, and the method is chosen to suit them rather than forcing a modern system onto a breathable wall."
+          ]
+        },
+        {
+          "eyebrow": "Equipment",
+          "heading": "The kit behind a clean, fine finish",
+          "paragraphs": [
+            "Fine spray finishes: three Graco HVLP spray stations for joinery, doors and furniture-grade surfaces, and two Graco airless sprayers for walls and ceilings on larger runs. Spraying gives an even, brush-mark-free coat where a room calls for it.",
+            "Dust-controlled sanding: three giraffe long-reach sanders for walls and ceilings, three dustless sanding stations, three Festool hand sanders and Mirka sanders, all extracted at the pad. Far less dust reaches the room, which is what makes sanding workable in occupied homes and in hotels that stay open.",
+            "Contained work areas: ZipWall systems put up temporary dust partitions floor to ceiling, so the work area is limited to the rooms being decorated and the rest of the house or hotel carries on.",
+            "Cleaner air: air-filtering stations with HEPA filters run while we prepare and paint, so the air stays cleaner for the people living or staying around the work."
           ]
         }
       ],
@@ -559,7 +594,27 @@
           "label": "Get in touch",
           "href": "/get-in-touch/"
         }
-      ]
+      ],
+      "brands": {
+        "heading": "Paint brands we have worked with",
+        "items": [
+          "Dulux Trade",
+          "Crown",
+          "Farrow & Ball",
+          "Little Greene",
+          "Paint & Paper Library",
+          "Tikkurila",
+          "COAT",
+          "Watco",
+          "Zinsser",
+          "Bradite",
+          "HV'ART (Henry van der Vijver)",
+          "Morrells",
+          "Marston & Langinger",
+          "Sika"
+        ],
+        "note": "From trade paints and primers to designer colours, Morrells wood stains and lacquers, Marston & Langinger for exterior paintwork, Sika for specialist industrial paints and coatings, and the HV'ART lacquer paint system for specialist finishes. Where a designer specifies a paint, we work to it. These are brands we have used, not approvals or certifications."
+      }
     }
   }
 }

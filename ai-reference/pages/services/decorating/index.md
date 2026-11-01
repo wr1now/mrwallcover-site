@@ -129,6 +129,14 @@ Offices, lobbies and shared spaces, with risk assessments, method statements and
 
 [Ask about a commercial job →](https://www.mrwallcover.com/contact/)
 
+Hotels
+
+## Working in live hotels
+
+Hotels rarely close for us. We work a few rooms at a time, in an organised and discreet way, so guests barely know we are there and rooms go back on sale as they are finished.
+
+Where a project needs it, we work overnight shifts and weekends, planned with the hotel's operations and housekeeping teams, as on our record at [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/) and [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/).
+
 For designers and architects
 
 ## Working to your specification
@@ -144,6 +152,18 @@ Preparation
 Protection of floors, furniture, art and anything already finished; dust control and a daily clean-down; filling and sanding; repairs to cracks and joints; lining where the plaster needs it; spot-priming and full priming; and checks in raking light before each finish coat.
 
 Older houses can hide old lead-based paint and lime plaster. Both are flagged at the survey, and the method is chosen to suit them rather than forcing a modern system onto a breathable wall.
+
+Equipment
+
+## The kit behind a clean, fine finish
+
+Fine spray finishes: three Graco HVLP spray stations for joinery, doors and furniture-grade surfaces, and two Graco airless sprayers for walls and ceilings on larger runs. Spraying gives an even, brush-mark-free coat where a room calls for it.
+
+Dust-controlled sanding: three giraffe long-reach sanders for walls and ceilings, three dustless sanding stations, three Festool hand sanders and Mirka sanders, all extracted at the pad. Far less dust reaches the room, which is what makes sanding workable in occupied homes and in hotels that stay open.
+
+Contained work areas: ZipWall systems put up temporary dust partitions floor to ceiling, so the work area is limited to the rooms being decorated and the rest of the house or hotel carries on.
+
+Cleaner air: air-filtering stations with HEPA filters run while we prepare and paint, so the air stays cleaner for the people living or staying around the work.
 
 Projects
 
@@ -223,6 +243,25 @@ Credentials
 - Decorators and wallcovering installers in one team, so paint and paper are one programme.
 - Risk assessments and method statements on every job, and Dorin Burcus supervises the site.
 - Out-of-hours and room-by-room working for buildings that cannot close.
+
+## Paint brands we have worked with
+
+- Dulux Trade
+- Crown
+- Farrow & Ball
+- Little Greene
+- Paint & Paper Library
+- Tikkurila
+- COAT
+- Watco
+- Zinsser
+- Bradite
+- HV'ART (Henry van der Vijver)
+- Morrells
+- Marston & Langinger
+- Sika
+
+From trade paints and primers to designer colours, Morrells wood stains and lacquers, Marston & Langinger for exterior paintwork, Sika for specialist industrial paints and coatings, and the HV'ART lacquer paint system for specialist finishes. Where a designer specifies a paint, we work to it. These are brands we have used, not approvals or certifications.
 
 ## Tell us about the rooms.
 

@@ -147,6 +147,14 @@ Building Regulations ask for some low-level and full-height glass to be safe if 
 
 On listed buildings, internal film is usually reversible and leaves the glass untouched, but check with the conservation officer first. We supply the product details for that conversation.
 
+Hotels
+
+## Working in live hotels
+
+We film a few rooms at a time, in an organised and discreet way, so the hotel keeps trading and rooms go back on sale the same day.
+
+Overnight shifts and weekends are planned with the hotel where the project needs them, as across every window at [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/).
+
 Projects
 
 ## Where our film is fitted
@@ -221,6 +229,14 @@ Credentials
 - Trained at Solar Screen's headquarters in Luxembourg in window film and Cover Styl' architectural film.
 - Risk assessments and method statements for every package, and Dorin Burcus supervises the site.
 - One team for film, paint and wallcoverings, so one programme and one point of contact.
+
+## Film brands we have worked with
+
+- 3M
+- Solar Screen
+- Cover Styl'
+
+Solar Screen and Cover Styl' are sister brands in the TEGO group in Luxembourg; the former Solar Screen design range is now sold as Cover Styl' Glass. We also fit other makers' films where the glazing calls for them. These are brands we have installed, not approvals or certifications.
 
 ## Send us a photo of the window.
 
