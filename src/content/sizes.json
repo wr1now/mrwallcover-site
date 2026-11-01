@@ -12895,5 +12895,85 @@
         1200
       ]
     }
+  },
+  "prime-gold-01": {
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/prime-gold-01-1600.webp",
+    "jpg": "/media/img/r/prime-gold-01-1600.jpg",
+    "thumb": "/media/img/r/prime-gold-01-800.webp",
+    "thumbJpg": "/media/img/r/prime-gold-01-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 600,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/prime-gold-01",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "prime-gold-02": {
+    "width": 1600,
+    "height": 1200,
+    "src": "/media/img/r/prime-gold-02-1600.webp",
+    "jpg": "/media/img/r/prime-gold-02-1600.jpg",
+    "thumb": "/media/img/r/prime-gold-02-800.webp",
+    "thumbJpg": "/media/img/r/prime-gold-02-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 600,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/prime-gold-02",
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ]
+    }
+  },
+  "prime-gold-03": {
+    "width": 1536,
+    "height": 2048,
+    "src": "/media/img/r/prime-gold-03-1536.webp",
+    "jpg": "/media/img/r/prime-gold-03-1536.jpg",
+    "thumb": "/media/img/r/prime-gold-03-800.webp",
+    "thumbJpg": "/media/img/r/prime-gold-03-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1067,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/prime-gold-03",
+      "widths": [
+        480,
+        800,
+        1200,
+        1536
+      ]
+    }
+  },
+  "prime-gold-04": {
+    "width": 1536,
+    "height": 2048,
+    "src": "/media/img/r/prime-gold-04-1536.webp",
+    "jpg": "/media/img/r/prime-gold-04-1536.jpg",
+    "thumb": "/media/img/r/prime-gold-04-800.webp",
+    "thumbJpg": "/media/img/r/prime-gold-04-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 1067,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/prime-gold-04",
+      "widths": [
+        480,
+        800,
+        1200,
+        1536
+      ]
+    }
   }
 }

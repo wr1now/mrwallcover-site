@@ -27,6 +27,28 @@ Interior painting and full decorating packages for London houses, hotels and com
 - In the trade**Since 2012**
 - One team**Paint, wallcoverings and film**
 
+Flagship · Prime residential
+
+## Hand-painted gold detailing, near the Royal Albert Hall
+
+In a prime residence near the Royal Albert Hall, the cornices, the ceiling rose, the carved frieze and the door panels were picked out in gold by hand. The client and the address are not named.
+
+![Drawing room with a gilded cornice and double doors whose panels are lined in hand-painted gold, under a crystal chandelier.](https://www.mrwallcover.com/media/img/r/prime-gold-01-800.webp)
+
+Gilded cornice and gold-lined door panels.
+
+![Ceiling with a deep cornice picked out in gold and grey, a gilded ceiling rose and a crystal chandelier.](https://www.mrwallcover.com/media/img/r/prime-gold-02-800.webp)
+
+Cornice and ceiling rose picked out in gold.
+
+![A decorator hand-painting gold detail on a carved frieze above a pilaster.](https://www.mrwallcover.com/media/img/r/prime-gold-03-800.webp)
+
+Gold detail painted by hand on the frieze.
+
+![Carved frieze and capital finished in hand-painted gold against white and grey.](https://www.mrwallcover.com/media/img/r/prime-gold-04-800.webp)
+
+The finished frieze and capital.
+
 Our approach
 
 ## Preparation decides the finish.
@@ -96,8 +118,6 @@ The outside too
 Scaffolded façades as one commission with the interior, as at St George's Square and Inverness Terrace: see [exterior works](https://www.mrwallcover.com/services/exterior-works/). Lime render is arranged through trusted specialist partners and programmed with our work.
 
 ### Not sure which?
-
-The address or area, the rooms, any drawings or schedule and the dates the building has to work around. Every decorating job is quoted after a survey.
 
 [Start your project →](https://www.mrwallcover.com/contact/)
 
@@ -244,8 +264,6 @@ A snagging walk with you before handover, then the same aftercare as our wallcov
 Credentials
 
 ## Why clients use us for decorating
-
-[Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards](https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg)
 
 - In the trade since 2012, with hotel decorating on the public record at Brown's Hotel and Hyde London City.
 - Decorators and wallcovering installers in one team, so paint and paper are one programme.

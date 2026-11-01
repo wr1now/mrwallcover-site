@@ -28,6 +28,7 @@ export interface Feature {
   areas?: { heading: string; items: { label: string; href: string }[] };
   links?: { label: string; href: string }[];
   brands?: { heading: string; items: string[]; note: string };
+  flagship?: { eyebrow: string; heading: string; paragraphs: string[]; images: { id: string; caption: string }[] };
 }
 interface Props { feature: Feature; heading: string; lede: string; crumbs: { name: string; href: string }[] }
 const { feature: f, heading, lede, crumbs } = Astro.props;
@@ -61,6 +62,12 @@ function segments(text: string) {
     <ul role="list">{f.proof.map((p) => <li><span>{p.label}</span><strong>{p.value}</strong></li>)}</ul>
   </section>
 
+  {f.flagship && <section class="sf-wrap sf-flagship" aria-labelledby="sf-flag-h">
+    <div class="sf-head"><p class="eyebrow">{f.flagship.eyebrow}</p><h2 id="sf-flag-h">{f.flagship.heading}</h2></div>
+    <div class="sf-flag-copy">{f.flagship.paragraphs.map((p) => <p>{p}</p>)}</div>
+    <ul role="list" class="sf-flag-grid">{f.flagship.images.map((im, n) => <li class:list={[n === 0 && 'sf-flag-lead']}><figure><Picture id={im.id} sizes={n === 0 ? '(min-width: 900px) 60vw, calc(100vw - 40px)' : '(min-width: 900px) 20vw, 50vw'} /><figcaption>{im.caption}</figcaption></figure></li>)}</ul>
+  </section>}
+
   {f.picker && <nav class="sf-wrap sf-picker" aria-labelledby="sf-pick-h">
     <h2 id="sf-pick-h">{f.picker.heading}</h2>
     <ul role="list">{f.picker.items.map((i) => <li><a href={`#${slug(i.target)}`}><span>{i.label}</span><b>{i.target} <span aria-hidden="true">↓</span></b></a></li>)}</ul>
@@ -74,7 +81,7 @@ function segments(text: string) {
 
   <section class="sf-wrap sf-types" aria-labelledby="sf-types-h">
     <div class="sf-head"><p class="eyebrow">The options</p><h2 id="sf-types-h">{f.typesHeading}</h2></div>
-    <ol role="list">{f.types.map((t, i) => <li class="sf-reveal" id={slug(t.name)}><span class="sf-num">{String(i + 1).padStart(2, '0')}</span><h3>{t.name}</h3><p class="sf-for">{t.for}</p><p>{segments(t.text).map((s) => s.href ? <a href={s.href}>{s.text}</a> : s.text)}</p></li>)}<li class="sf-types-cta"><h3>Not sure which?</h3><p>{f.ctaText}</p><a class="sf-link" href="/contact/">Start your project <span aria-hidden="true">→</span></a></li></ol>
+    <ol role="list">{f.types.map((t, i) => <li class="sf-reveal" id={slug(t.name)}><span class="sf-num">{String(i + 1).padStart(2, '0')}</span><h3>{t.name}</h3><p class="sf-for">{t.for}</p><p>{segments(t.text).map((s) => s.href ? <a href={s.href}>{s.text}</a> : s.text)}</p></li>)}<li class="sf-types-cta"><h3>Not sure which?</h3><a class="sf-link" href="/contact/">Start your project <span aria-hidden="true">→</span></a></li></ol>
   </section>
 
   <section class="sf-wrap sf-used" aria-labelledby="sf-used-h">
@@ -103,7 +110,7 @@ function segments(text: string) {
   </section>
 
   <section class="sf-wrap sf-why" aria-labelledby="sf-why-h">
-    <div><p class="eyebrow">Credentials</p><h2 id="sf-why-h">{f.whyHeading}</h2><p class="sf-honour-line"><a href={AWARD_URL} rel="noopener">{AWARD_TEXT}</a></p></div>
+    <div><p class="eyebrow">Credentials</p><h2 id="sf-why-h">{f.whyHeading}</h2></div>
     <ul role="list">{f.why.map((w) => <li>{w}</li>)}</ul>
   </section>
 
@@ -187,7 +194,6 @@ function segments(text: string) {
   .sf-why ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 1rem; }
   .sf-why li { padding: 1rem 0 1rem 1.6rem; border-bottom: 1px solid var(--color-line); position: relative; font-size: 1.08rem; line-height: 1.6; }
   .sf-why li::before { content: ''; position: absolute; left: 0; top: 1.55rem; width: .55rem; height: .55rem; background: var(--color-gold); transform: rotate(45deg); }
-  .sf-honour-line { margin-top: 1.2rem; }
   .sf-picker { padding-block: clamp(2.5rem, 5vw, 4rem); }
   .sf-picker h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); margin-bottom: 1.4rem; }
   .sf-picker ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
@@ -195,6 +201,15 @@ function segments(text: string) {
   .sf-picker a:hover, .sf-picker a:focus-visible { border-color: var(--color-brass); transform: translateY(-2px); }
   .sf-picker b { color: var(--color-brass); font-weight: 500; font-size: var(--text-meta); }
   .sf-types li { scroll-margin-top: 8rem; }
+  .sf-flag-copy p { margin: 0 0 1rem; font-size: 1.08rem; line-height: 1.75; max-width: 46rem; color: var(--color-stone-deep); }
+  .sf-flag-grid { margin: 1.5rem 0 0; padding: 0; list-style: none; display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sf-flag-grid li { min-width: 0; }
+  .sf-flag-lead { grid-column: 1 / -1; }
+  .sf-flag-grid figure { margin: 0; }
+  .sf-flag-grid figure :global(img) { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; background: var(--color-media-fill); }
+  .sf-flag-lead figure :global(img) { aspect-ratio: 3 / 2; }
+  .sf-flag-grid figcaption { margin-top: .5rem; color: var(--color-stone); font-size: var(--text-meta); }
+  @media (min-width: 900px) { .sf-flag-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } .sf-flag-lead { grid-column: auto; } .sf-flag-lead figure :global(img) { aspect-ratio: 4 / 5; } }
   .sf-extra { display: grid; gap: 1.5rem; border-top: 1px solid var(--color-line); }
   .sf-extra p { margin: 0 0 1rem; font-size: 1.08rem; line-height: 1.75; max-width: 46rem; color: var(--color-stone-deep); }
   .sf-extra-fig { margin: 1.5rem 0 0; max-width: 46rem; }

@@ -1,0 +1,11 @@
+{
+  "caseStudy": "prime-residence-gold-detailing",
+  "note": "Own iPhone photographs from Dorin's Apple Photos library (May-July 2020), located by GPS beside the Royal Albert Hall. The client and the address are never named. The window view in the room photograph is blurred.",
+  "credit": null,
+  "images": {
+    "prime-gold-01": { "photo": "IMG-233FB23F", "file": "gold-room.jpg", "widths": [480, 800, 1200, 1600], "redact": [[0.03, 0.24, 0.15, 0.64]], "alt": "Drawing room with a gilded cornice and double doors whose panels are lined in hand-painted gold, under a crystal chandelier." },
+    "prime-gold-02": { "photo": "IMG-C0C14422", "file": "gold-ceiling.jpg", "widths": [480, 800, 1200, 1600], "alt": "Ceiling with a deep cornice picked out in gold and grey, a gilded ceiling rose and a crystal chandelier." },
+    "prime-gold-03": { "photo": "IMG-ECCDD312", "file": "gold-paint.jpg", "widths": [480, 800, 1200, 1536], "alt": "A decorator hand-painting gold detail on a carved frieze above a pilaster." },
+    "prime-gold-04": { "photo": "IMG-FD90EAAE", "file": "gold-frieze.jpg", "widths": [480, 800, 1200, 1536], "alt": "Carved frieze and capital finished in hand-painted gold against white and grey." }
+  }
+}

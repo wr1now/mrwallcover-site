@@ -94,7 +94,7 @@
         {
           "title": "Hyde London City",
           "place": "15 Old Bailey, City of London",
-          "image": "old-bailey-15",
+          "image": "old-bailey-01",
           "text": "Solar Screen film fitted to every window of the Grade II-listed building, filmed room by room as part of our full decorating package of paint and specialist wallcoverings, over about two years. The hotel opened on 2 September 2024.",
           "href": "/projects/old-bailey-hotel/"
         },
@@ -295,8 +295,7 @@
         "heading": "Film brands we have worked with",
         "items": [
           "3M",
-          "Solar Screen",
-          "Cover Styl'"
+          "Solar Screen"
         ],
         "note": "Solar Screen and Cover Styl' are sister brands in the TEGO group in Luxembourg; the former Solar Screen design range is now sold as Cover Styl' Glass. We also fit other makers' films where the glazing calls for them. These are brands we have installed, not approvals or certifications."
       }
@@ -616,6 +615,31 @@
           "Sika"
         ],
         "note": "From trade paints and primers to designer colours, Morrells wood stains and lacquers, Marston & Langinger for exterior paintwork, Sika for specialist industrial paints and coatings, and the HV'ART lacquer paint system for specialist finishes. Where a designer specifies a paint, we work to it. These are brands we have used, not approvals or certifications."
+      },
+      "flagship": {
+        "eyebrow": "Flagship · Prime residential",
+        "heading": "Hand-painted gold detailing, near the Royal Albert Hall",
+        "paragraphs": [
+          "In a prime residence near the Royal Albert Hall, the cornices, the ceiling rose, the carved frieze and the door panels were picked out in gold by hand. The client and the address are not named."
+        ],
+        "images": [
+          {
+            "id": "prime-gold-01",
+            "caption": "Gilded cornice and gold-lined door panels."
+          },
+          {
+            "id": "prime-gold-02",
+            "caption": "Cornice and ceiling rose picked out in gold."
+          },
+          {
+            "id": "prime-gold-03",
+            "caption": "Gold detail painted by hand on the frieze."
+          },
+          {
+            "id": "prime-gold-04",
+            "caption": "The finished frieze and capital."
+          }
+        ]
       }
     }
   }

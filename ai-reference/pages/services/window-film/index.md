@@ -97,8 +97,6 @@ A clear sacrificial layer on shopfronts, lift glass and mirrors. When it is scra
 
 ### Not sure which?
 
-A photo of the glass and the room, the direction it faces and what is bothering you is enough to start. We will say which film, if any, will help.
-
 [Start your project →](https://www.mrwallcover.com/contact/)
 
 Sectors
@@ -161,7 +159,7 @@ Projects
 
 ## On the public record
 
-![Rolls of Solar Screen window film on site before installation.](https://www.mrwallcover.com/media/img/r/old-bailey-15-800.webp)
+![Corner façade of 15 Old Bailey, the 1874 hotel building in the City of London.](https://www.mrwallcover.com/media/img/r/old-bailey-01-800.webp)
 
 15 Old Bailey, City of London
 
@@ -225,8 +223,6 @@ Credentials
 
 ## Why clients use us for film
 
-[Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards](https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg)
-
 - In the trade since 2012, with window film delivered inside live hotel and office programmes.
 - Trained at Solar Screen's headquarters in Luxembourg in window film and Cover Styl' architectural film.
 - Risk assessments and method statements for every package, and Dorin Burcus supervises the site.
@@ -236,7 +232,6 @@ Credentials
 
 - 3M
 - Solar Screen
-- Cover Styl'
 
 Solar Screen and Cover Styl' are sister brands in the TEGO group in Luxembourg; the former Solar Screen design range is now sold as Cover Styl' Glass. We also fit other makers' films where the glazing calls for them. These are brands we have installed, not approvals or certifications.
 
