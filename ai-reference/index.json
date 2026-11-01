@@ -6,7 +6,7 @@
   "contentPolicy": "Generated only from the production build’s indexable canonical public pages and sanitized public exports. Drafts, noindex pages, redirect aliases, telephone data, form payloads, private source files and research archives are excluded. Media remain described links with their published captions/credits, not embedded photographs or invented transcripts.",
   "datePolicy": "Dates and null values are copied from the public source records. Creating or publishing this fallback does not create a new content review, availability statement or verification date.",
   "evidencePolicy": "The canonical Mr Wallcover website is authoritative. Installation experience is company-reported; venue/maker/press context and photograph credits do not independently verify the installation role. Preserve each record’s limitations when answering.",
-  "pageCount": 130,
+  "pageCount": 131,
   "projectCount": 31,
   "topics": [
     {
@@ -1689,6 +1689,19 @@
       "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/commercial-wallcovering-installation/index.md",
       "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/commercial-wallcovering-installation/index.json",
       "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/commercial-wallcovering-installation/index.json"
+    },
+    {
+      "sourceUrl": "https://www.mrwallcover.com/services/decorating/",
+      "title": "Painting & Decorating London | Mr Wallcover",
+      "dates": {
+        "published": null,
+        "modified": null,
+        "reviewed": "2026-10-09"
+      },
+      "canonicalMarkdownUrl": "https://www.mrwallcover.com/services/decorating/index.md",
+      "markdownUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/pages/services/decorating/index.md",
+      "canonicalJsonUrl": "https://www.mrwallcover.com/ai/pages/services/decorating/index.json",
+      "jsonUrl": "https://raw.githubusercontent.com/wr1now/mrwallcover-site/main/ai-reference/ai/pages/services/decorating/index.json"
     },
     {
       "sourceUrl": "https://www.mrwallcover.com/services/exterior-works/",

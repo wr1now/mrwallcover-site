@@ -296,7 +296,7 @@ export interface LandingPage {
   /** Visible caption under the page image: says where the photograph was taken, with a [label](href) link to the project. */
   imageCaption?: string;
   /** Original schematic for a service whose process is clearer than a generic room photograph. */
-  visualDiagram?: 'film-wrap';
+  visualDiagram?: 'film-wrap' | 'window-film';
   faq: FaqItem[];
   serviceType?: string;
   links?: { label: string; href: string }[];

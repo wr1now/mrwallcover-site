@@ -5,7 +5,7 @@ import { resolve } from 'node:path';
 import { launchBrowser, loadPage, serve } from '../visual-browser.mjs';
 // Primary row, the project action, then the labelled Resources row (desktop DOM order).
 const primary = [
-  ['Projects','/projects/'], ['Expertise','/services/'], ['Materials','/materials/'],
+  ['Projects','/projects/'], ['Expertise','/services/'], ['Decorating','/services/decorating/'], ['Window film','/services/window-film/'], ['Materials','/materials/'],
   ['For designers','/professionals/'], ['Guide','/advice/'], ['About','/about/'], ['Contact','/get-in-touch/'],
 ];
 const resources = [

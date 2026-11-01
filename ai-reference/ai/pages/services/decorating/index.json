@@ -1,0 +1,1113 @@
+{
+  "id": "https://www.mrwallcover.com/services/decorating/",
+  "url": "https://www.mrwallcover.com/services/decorating/",
+  "path": "/services/decorating/",
+  "title": "Painting & Decorating London | Mr Wallcover",
+  "description": "Painting and decorating for prime London homes, hotels and commercial interiors: preparation, fine paint finishes, limewash and out-of-hours hotel work.",
+  "language": "en-GB",
+  "author": "Dorin Burcus",
+  "dates": {
+    "published": null,
+    "modified": null,
+    "reviewed": "2026-10-09"
+  },
+  "formats": {
+    "html": "https://www.mrwallcover.com/services/decorating/",
+    "markdown": "https://www.mrwallcover.com/services/decorating/index.md",
+    "json": "https://www.mrwallcover.com/ai/pages/services/decorating/index.json",
+    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/112"
+  },
+  "headings": [
+    {
+      "level": 1,
+      "id": "sf-h1",
+      "text": "Decorating and painting for prime homes and hotels"
+    },
+    {
+      "level": 2,
+      "id": "sf-flag-h",
+      "text": "Hand-painted gold detailing, near the Royal Albert Hall"
+    },
+    {
+      "level": 2,
+      "id": null,
+      "text": "Preparation decides the finish."
+    },
+    {
+      "level": 2,
+      "id": "sf-types-h",
+      "text": "Finishes and services, in detail"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Walls and ceilings"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Joinery, doors and skirtings"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Cornices and mouldings"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Limewash"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Feature colour and lines"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Paint and paper together"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Exteriors and render"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Not sure which?"
+    },
+    {
+      "level": 2,
+      "id": "sf-used-h",
+      "text": "Where we decorate"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Prime residential"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Commercial interiors"
+    },
+    {
+      "level": 2,
+      "id": "sf-x0",
+      "text": "Working in live hotels"
+    },
+    {
+      "level": 2,
+      "id": "sf-x1",
+      "text": "Working to your specification"
+    },
+    {
+      "level": 2,
+      "id": "sf-x2",
+      "text": "What preparation actually includes"
+    },
+    {
+      "level": 2,
+      "id": "sf-x3",
+      "text": "The kit behind a clean, fine finish"
+    },
+    {
+      "level": 2,
+      "id": "sf-proj-h",
+      "text": "On the public record"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Brown's Hotel, Mayfair"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Hyde London City"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "St George's Square"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Inverness Terrace"
+    },
+    {
+      "level": 2,
+      "id": "sf-proc-h",
+      "text": "The job, step by step"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Survey and schedule"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Sample in the room"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Protection"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Preparation"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Set-out and finish coats"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Snagging and aftercare"
+    },
+    {
+      "level": 2,
+      "id": "sf-why-h",
+      "text": "Why clients use us for decorating"
+    },
+    {
+      "level": 2,
+      "id": "sf-brand-h",
+      "text": "Paint brands we have worked with"
+    },
+    {
+      "level": 2,
+      "id": "sf-cta-h",
+      "text": "Tell us about the rooms."
+    },
+    {
+      "level": 2,
+      "id": "faq-heading",
+      "text": "Questions we are asked"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Can you decorate while we live in the house or the hotel stays open?"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Do you apply limewash yourselves?"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Can we see the finish before you start?"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "What should I send for a decorating quotation?"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "How much does painting and decorating cost in London?"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "How long does it take to decorate a room?"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Do you decorate listed and period buildings?"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Do you work with interior designers and main contractors?"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Do you supply the paint or can we choose it?"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Do you hang wallpaper as well as paint?"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "How do you protect floors, furniture and art?"
+    },
+    {
+      "level": 3,
+      "id": null,
+      "text": "Do you produce sample boards or sample panels first?"
+    }
+  ],
+  "markdown": "![Green-painted guest corridor at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-18-800.webp)\n\nPainting and decorating · London\n\nThe last coat *is the one everyone sees.*\n\n# Decorating and painting for prime homes and hotels\n\nInterior painting and full decorating packages for London houses, hotels and commercial interiors, delivered by the same team that hangs the wallcoverings.\n\n[Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards](https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg)\n\n[Start your project](https://www.mrwallcover.com/contact/?service=exterior-decorating&topic=service%3Adecorating) [WhatsApp us](https://www.mrwallcover.com/contact/)\n\n[ON LOCATION Hyde London City, guest corridor **↗**](https://www.mrwallcover.com/projects/old-bailey-hotel/)\n\n- Brown's Hotel, Mayfair**Main decorating contractor, 2022–2024**\n- Hyde London City**111 guest rooms**\n- In the trade**Since 2012**\n- One team**Paint, wallcoverings and film**\n\nFlagship · Prime residential\n\n## Hand-painted gold detailing, near the Royal Albert Hall\n\nIn a prime residence near the Royal Albert Hall, the cornices, the ceiling rose, the carved frieze and the door panels were picked out in gold by hand. The client and the address are not named.\n\n![Drawing room with a gilded cornice and double doors whose panels are lined in hand-painted gold, under a crystal chandelier.](https://www.mrwallcover.com/media/img/r/prime-gold-01-800.webp)\n\nGilded cornice and gold-lined door panels.\n\n![Ceiling with a deep cornice picked out in gold and grey, a gilded ceiling rose and a crystal chandelier.](https://www.mrwallcover.com/media/img/r/prime-gold-02-800.webp)\n\nCornice and ceiling rose picked out in gold.\n\n![A decorator hand-painting gold detail on a carved frieze above a pilaster.](https://www.mrwallcover.com/media/img/r/prime-gold-03-800.webp)\n\nGold detail painted by hand on the frieze.\n\n![Carved frieze and capital finished in hand-painted gold against white and grey.](https://www.mrwallcover.com/media/img/r/prime-gold-04-800.webp)\n\nThe finished frieze and capital.\n\nOur approach\n\n## Preparation decides the finish.\n\nIn a prime house or a five-star bedroom, there is nowhere for a poor finish to hide. Raking light along a corridor shows every ridge in the filler, and a dark lacquered door shows every brush mark. So most of our time goes on the work you never see: protection, repairs, filling, sanding, lining and priming.\n\nWe are wallcovering installers as well as decorators. That matters, because the paint and the paper are planned as one programme, in the right order, by one team, with one person answerable for the result.\n\nThe options\n\n## Finishes and services, in detail\n\n1. 01\n\n### Walls and ceilings\n\nFlat, even, durable\n\nRepairs, filling and lining where the plaster needs it, then a primer and finish coats in the sheen the room calls for: flat matt for period rooms, harder-wearing finishes for corridors and family rooms.\n\n2. 02\n\n### Joinery, doors and skirtings\n\nThe close-up work\n\nDoors, architraves, skirtings, panelling, shutters and built-in joinery, sanded and finished by hand. Deep colours on joinery, like the navy doors at Brown's Hotel, need the most careful preparation of all.\n\n3. 03\n\n### Cornices and mouldings\n\nPeriod detail\n\nOrnate plaster cornices, ceiling roses and mouldings cleaned back and painted without filling the detail. Damaged runs are flagged at the survey, before any paint goes on.\n\n4. 04\n\n### Limewash\n\nSoft, mineral walls\n\nApplied by our own team in layers for walls with depth and movement. Each wall is sampled first, because limewash changes with the surface and the light.\n\n5. 05\n\n### Feature colour and lines\n\nBands, dados, stripes\n\nColour blocks, painted bands and decorative lines set out with a laser so they stay level and true around a whole room. The plumb line is the traditional method; it is not how we set out.\n\n6. 06\n\n### Paint and paper together\n\nOne programme\n\nCeilings, joinery and plain walls painted around wallcoverings of every kind, so edges, colours and cut lines are planned rather than patched afterwards. [Window film](https://www.mrwallcover.com/services/window-film/) can go in the same programme.\n\n7. 07\n\n### Exteriors and render\n\nThe outside too\n\nScaffolded façades as one commission with the interior, as at St George's Square and Inverness Terrace: see [exterior works](https://www.mrwallcover.com/services/exterior-works/). Lime render is arranged through trusted specialist partners and programmed with our work.\n\n### Not sure which?\n\n[Start your project →](https://www.mrwallcover.com/contact/)\n\nSectors\n\n## Where we decorate\n\n![Built-in bookshelves painted dark blue.](https://www.mrwallcover.com/media/img/r/north-london-residence-12-800.webp)\n\n### Prime residential\n\nPeriod houses and apartments, with furniture, floors and finishes protected throughout and the house left clean at the end of every day. Private clients are not named.\n\n[See the projects →](https://www.mrwallcover.com/projects/)\n\n![A residents’ lift lobby: walls in a warm, banded veneer-effect finish, bronze lift doors and a glazed screen, with the stair rail in the foreground.](https://www.mrwallcover.com/media/img/r/fs-residences-07-800.webp)\n\n### Commercial interiors\n\nOffices, lobbies and shared spaces, with risk assessments, method statements and a named supervisor on every job.\n\n[Ask about a commercial job →](https://www.mrwallcover.com/contact/)\n\nHotels\n\n## Working in live hotels\n\nHotels rarely close for us. We work floor by floor and a few rooms at a time, in an organised and discreet way, so the hotel keeps taking guests, guests barely know we are there and rooms go back on sale as they are finished.\n\nWhere a project needs it, we work overnight shifts and weekends, planned with the hotel's operations and housekeeping teams. Out-of-hours work is on our published record, from [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/) and [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/) to an overnight installation at [Heathrow Terminal 4](https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/).\n\n![Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-01-800.webp)\n\nNavy-painted guest-room doors at Brown's Hotel, Mayfair, decorated while the hotel stayed open.\n\nFor designers and architects\n\n## Working to your specification\n\nWe work to the designer's schedule of finishes and the contractor's programme. Samples are applied in the room for sign-off, the approved sample is the standard the finished room is checked against, and progress is reported room by room.\n\nBecause we hang wallcoverings too, paint and paper are sequenced properly: ceilings and joinery first, walls prepared to the tolerance the paper needs, cut lines agreed before the first drop. See our work [for designers](https://www.mrwallcover.com/professionals/).\n\n![Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.](https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp)\n\nSample room at Hyde London City, approved before the full run.\n\nPreparation\n\n## What preparation actually includes\n\nProtection of floors, furniture, art and anything already finished; dust control and a daily clean-down; filling and sanding; repairs to cracks and joints; lining where the plaster needs it; spot-priming and full priming; and checks in raking light before each finish coat.\n\nOlder houses can hide old lead-based paint and lime plaster. Both are flagged at the survey, and the method is chosen to suit them rather than forcing a modern system onto a breathable wall.\n\nEquipment\n\n## The kit behind a clean, fine finish\n\nFine spray finishes: three Graco HVLP spray stations for joinery, doors and furniture-grade surfaces, and two Graco airless sprayers for walls and ceilings on larger runs. Spraying gives an even, brush-mark-free coat where a room calls for it.\n\nDust-controlled sanding: three giraffe long-reach sanders for walls and ceilings, three dustless sanding stations, three Festool hand sanders and Mirka sanders, all extracted at the pad. Far less dust reaches the room, which is what makes sanding workable in occupied homes and in hotels that stay open.\n\nContained work areas: ZipWall systems put up temporary dust partitions floor to ceiling, so the work area is limited to the rooms being decorated and the rest of the house or hotel carries on.\n\nCleaner air: air-filtering stations with HEPA filters run while we prepare and paint, so the air stays cleaner for the people living or staying around the work.\n\nProjects\n\n## On the public record\n\n![Guest bedroom at Brown's Hotel, Mayfair, with tall sash windows, full-length linen curtains, a red armchair and an upholstered bench at the foot of the bed.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-03-800.webp)\n\nMayfair\n\n### [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/)\n\nMain decorating contractor from 2022 to 2024 while the hotel kept taking guests: guest rooms, corridors and joinery, with scenic and chinoiserie wallcoverings in the same programme.\n\n![Stair landing with terracotta walls at Hyde London City.](https://www.mrwallcover.com/media/img/r/old-bailey-16-800.webp)\n\nCity of London\n\n### [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/)\n\nA full decorating package over about two years across 111 guest rooms in a Grade II-listed building: decoration, specialist wallcoverings and window film, from corridors to the stair.\n\n![Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.](https://www.mrwallcover.com/media/img/r/pimlico-st-georges-square-exterior-11-800.webp)\n\nPimlico\n\n### [St George's Square](https://www.mrwallcover.com/projects/pimlico-st-georges-square/)\n\nA full scaffolded exterior in 2024, scaffolding supplied and managed by us, decorated as one commission with the interior and finished down to the columned entrance and railings.\n\n![Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down.](https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-10-800.webp)\n\nBayswater\n\n### [Inverness Terrace](https://www.mrwallcover.com/projects/inverness-terrace/)\n\nA full scaffolded exterior in 2018: stucco, cornices, frieze and sash windows on a period terrace front.\n\nProcess\n\n## The job, step by step\n\n1. 1\n\n### Survey and schedule\n\nWe walk the rooms, note the surfaces and repairs, and agree a written schedule of what is painted, in which finish, and in what order.\n\n2. 2\n\n### Sample in the room\n\nThe colour, sheen and finish are sampled on the wall so they can be approved in the room's own light before the full run starts.\n\n3. 3\n\n### Protection\n\nFloors, furniture, joinery and anything already finished are protected, and in hotels the work area is kept separate from guests.\n\n4. 4\n\n### Preparation\n\nCracks, joints and old paint are dealt with properly: filling, sanding, lining and priming. This is where the finish is decided.\n\n5. 5\n\n### Set-out and finish coats\n\nLines, bands and wallcovering positions are set out with a laser, then finish coats are applied and checked in raking light.\n\n6. 6\n\n### Snagging and aftercare\n\nA snagging walk with you before handover, then the same aftercare as our wallcovering work if anything needs attention.\n\nCredentials\n\n## Why clients use us for decorating\n\n- In the trade since 2012, with hotel decorating on the public record at Brown's Hotel and Hyde London City.\n- Decorators and wallcovering installers in one team, so paint and paper are one programme.\n- Risk assessments and method statements on every job, and Dorin Burcus supervises the site.\n- Out-of-hours and room-by-room working for buildings that cannot close.\n\n## Paint brands we have worked with\n\n- Dulux Trade\n- Crown\n- Farrow & Ball\n- Little Greene\n- Paint & Paper Library\n- Tikkurila\n- COAT\n- Watco\n- Zinsser\n- Bradite\n- HV'ART (Henry van der Vijver)\n- Morrells\n- Marston & Langinger\n- Sika\n\nFrom trade paints and primers to designer colours, Morrells wood stains and lacquers, Marston & Langinger for exterior paintwork, Sika for specialist industrial paints and coatings, and the HV'ART lacquer paint system for specialist finishes. Where a designer specifies a paint, we work to it. These are brands we have used, not approvals or certifications.\n\n## Tell us about the rooms.\n\nThe address or area, the rooms, any drawings or schedule and the dates the building has to work around. Every decorating job is quoted after a survey.\n\n[Start your project](https://www.mrwallcover.com/contact/?service=exterior-decorating&topic=service%3Adecorating) [WhatsApp us](https://www.mrwallcover.com/contact/)\n\n[Book a call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk)\n\nWhere in London: [Mayfair](https://www.mrwallcover.com/areas/mayfair/) · [Belgravia](https://www.mrwallcover.com/areas/belgravia/) · [Chelsea](https://www.mrwallcover.com/areas/chelsea/) · [Kensington](https://www.mrwallcover.com/areas/kensington/) · [City of London](https://www.mrwallcover.com/areas/city-of-london/)\n\nRelated: [Wallcovering installation](https://www.mrwallcover.com/services/) · [Window film](https://www.mrwallcover.com/services/window-film/) · [Exterior works](https://www.mrwallcover.com/services/exterior-works/) · [Get in touch](https://www.mrwallcover.com/get-in-touch/)\n\nA decorating package is more than paint. It is the preparation, the order of trades, the protection of what is already in the room and the last coat that everyone sees. We take on the whole of it: walls, ceilings, cornices, joinery and doors, with the wallcoverings in the same programme.\n\nAt [Brown's Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/) we were main decorating contractor from 2022 to 2024 while the hotel kept taking guests. At [Hyde London City](https://www.mrwallcover.com/projects/old-bailey-hotel/) the full decorating package covered 111 guest rooms, with paint, specialist wallcoverings and window film.\n\nEvery room starts at the survey and a sample, so the colour, sheen and finish are approved in the room's own light before the full run starts. Set-out for wallcoverings and decorative lines is done with a laser; the plumb line is the traditional method and is no longer how we set out.\n\n![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)\n\nA finished guest room at [Brown’s Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/), part of our 2022–2024 decorating package. Photograph: Mr Wallcover.\n\nQuestions\n\n## Questions we are asked\n\nIllustrative material studies\n\nPause motion\n\n### Can you decorate while we live in the house or the hotel stays open?\n\nYes. Rooms are protected and worked in an agreed order, and in hotels we work room by room and out of hours where needed, so the building keeps running.\n\n### Do you apply limewash yourselves?\n\nYes. Limewash is applied by our own team. Lime render is arranged through trusted specialist partners.\n\n### Can we see the finish before you start?\n\nYes. A sample of the colour and finish is applied in the room so it can be approved in its own light before the full run.\n\n### What should I send for a decorating quotation?\n\nThe address or area, the rooms involved, drawings or a schedule if you have them, the finishes in mind and any dates the building has to work around. Every decorating job is quoted after a survey.\n\n### How much does painting and decorating cost in London?\n\nIt depends on the condition of the surfaces, the amount of preparation, the finishes, access and whether the work is out of hours. We quote after a survey, against a written schedule, so you can see exactly what is included.\n\n### How long does it take to decorate a room?\n\nA straightforward room in good condition can take a few days; a period room with cornices, joinery and repairs takes longer, because preparation and drying times cannot be rushed. We give you a programme with the quotation.\n\n### Do you decorate listed and period buildings?\n\nYes. Hyde London City is Grade II listed, and much of our residential work is in period houses. Where a listed building needs specific materials, such as limewash, we follow the specification and the conservation officer's requirements.\n\n### Do you work with interior designers and main contractors?\n\nYes. We work to the designer's specification and the contractor's programme, give samples for sign-off and report progress room by room.\n\n### Do you supply the paint or can we choose it?\n\nTell us at the survey. Where a designer or specification names the paint, we work to it; otherwise we advise on the right product and sheen for each surface.\n\n### Do you hang wallpaper as well as paint?\n\nYes. Wallcovering installation is our core trade, so a room can be painted and papered by one team in one programme.\n\n### How do you protect floors, furniture and art?\n\nEverything is covered or moved under an agreed plan before work starts, dust is controlled, and the room is cleaned down at the end of each day.\n\n### Do you produce sample boards or sample panels first?\n\nYes. The colour and finish are sampled in the room itself, so they are approved in that room's light before the full run starts.\n\nBy [Dorin Burcus](https://www.mrwallcover.com/about/#dorin), founder\n",
+  "links": [
+    {
+      "url": "https://web.archive.org/web/20220625070338/https://www.renovart.co.uk/wp-content/uploads/2022/06/renovart-award.jpeg",
+      "text": "Award-winning (2021): Most Outstanding for Wallcovering Installation, BUILD Magazine 2021 Design & Build Awards"
+    },
+    {
+      "url": "https://www.mrwallcover.com/contact/?service=exterior-decorating&topic=service%3Adecorating",
+      "text": "Start your project"
+    },
+    {
+      "url": "https://www.mrwallcover.com/contact/",
+      "text": "WhatsApp us"
+    },
+    {
+      "url": "https://www.mrwallcover.com/projects/old-bailey-hotel/",
+      "text": "ON LOCATION Hyde London City, guest corridor ↗"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/window-film/",
+      "text": "Window film"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/exterior-works/",
+      "text": "exterior works"
+    },
+    {
+      "url": "https://www.mrwallcover.com/contact/",
+      "text": "Start your project →"
+    },
+    {
+      "url": "https://www.mrwallcover.com/projects/",
+      "text": "See the projects →"
+    },
+    {
+      "url": "https://www.mrwallcover.com/contact/",
+      "text": "Ask about a commercial job →"
+    },
+    {
+      "url": "https://www.mrwallcover.com/projects/browns-hotel-mayfair/",
+      "text": "Brown's Hotel, Mayfair"
+    },
+    {
+      "url": "https://www.mrwallcover.com/projects/old-bailey-hotel/",
+      "text": "Hyde London City"
+    },
+    {
+      "url": "https://www.mrwallcover.com/projects/heathrow-terminal-4-calico/",
+      "text": "Heathrow Terminal 4"
+    },
+    {
+      "url": "https://www.mrwallcover.com/professionals/",
+      "text": "for designers"
+    },
+    {
+      "url": "https://www.mrwallcover.com/projects/pimlico-st-georges-square/",
+      "text": "St George's Square"
+    },
+    {
+      "url": "https://www.mrwallcover.com/projects/inverness-terrace/",
+      "text": "Inverness Terrace"
+    },
+    {
+      "url": "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Aimn0z8hHnmqvg0zrZGV0Zt2PVu8UNOZPnrUJ34DgohlLAwO6xXIPaeH3mr_rE_JeJHr_DzUk",
+      "text": "Book a call"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/mayfair/",
+      "text": "Mayfair"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/belgravia/",
+      "text": "Belgravia"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/chelsea/",
+      "text": "Chelsea"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/kensington/",
+      "text": "Kensington"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/city-of-london/",
+      "text": "City of London"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/",
+      "text": "Wallcovering installation"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/exterior-works/",
+      "text": "Exterior works"
+    },
+    {
+      "url": "https://www.mrwallcover.com/get-in-touch/",
+      "text": "Get in touch"
+    },
+    {
+      "url": "https://www.mrwallcover.com/projects/browns-hotel-mayfair/",
+      "text": "Brown’s Hotel, Mayfair"
+    },
+    {
+      "url": "https://www.mrwallcover.com/about/#dorin",
+      "text": "Dorin Burcus"
+    },
+    {
+      "url": "https://www.mrwallcover.com/",
+      "text": "Home"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/",
+      "text": "Services"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/",
+      "text": "Hand-painted wallpaper installation"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/grasscloth-installation/",
+      "text": "Grasscloth installation"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/silk-wallcovering-installation/",
+      "text": "Silk wallcovering installation"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/fabric-walling/",
+      "text": "Fabric walling"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/mural-installation/",
+      "text": "Mural installation"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/",
+      "text": "Acoustic wallcovering installation"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/",
+      "text": "Hotel wallcovering installation"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/architectural-film-wrapping/",
+      "text": "Architectural & furniture film wrapping"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/window-film/",
+      "text": "Window film installation"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+      "text": "Joinery wallcoverings & bespoke panels"
+    },
+    {
+      "url": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/",
+      "text": "Commercial and showroom wallcovering installation"
+    },
+    {
+      "url": "https://www.mrwallcover.com/aftercare/",
+      "text": "Aftercare and the twelve-month guarantee"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/mayfair/",
+      "text": "Wallpaper installation in Mayfair"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/belgravia/",
+      "text": "Wallpaper installation in Belgravia"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/chelsea/",
+      "text": "Wallpaper installation in Chelsea"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/kensington/",
+      "text": "Wallpaper installation in Kensington"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/city-of-london/",
+      "text": "Wallpaper installation in the City of London"
+    },
+    {
+      "url": "https://www.mrwallcover.com/areas/cotswolds/",
+      "text": "Wallpaper installation in the Cotswolds"
+    }
+  ],
+  "images": [
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/old-bailey-18-800.webp",
+      "alt": "Green-painted guest corridor at Hyde London City.",
+      "caption": null,
+      "width": 1600,
+      "height": 2133
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/prime-gold-01-800.webp",
+      "alt": "Drawing room with a gilded cornice and double doors whose panels are lined in hand-painted gold, under a crystal chandelier.",
+      "caption": "Gilded cornice and gold-lined door panels.",
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/prime-gold-02-800.webp",
+      "alt": "Ceiling with a deep cornice picked out in gold and grey, a gilded ceiling rose and a crystal chandelier.",
+      "caption": "Cornice and ceiling rose picked out in gold.",
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/prime-gold-03-800.webp",
+      "alt": "A decorator hand-painting gold detail on a carved frieze above a pilaster.",
+      "caption": "Gold detail painted by hand on the frieze.",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/prime-gold-04-800.webp",
+      "alt": "Carved frieze and capital finished in hand-painted gold against white and grey.",
+      "caption": "The finished frieze and capital.",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/north-london-residence-12-800.webp",
+      "alt": "Built-in bookshelves painted dark blue.",
+      "caption": null,
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/fs-residences-07-800.webp",
+      "alt": "A residents’ lift lobby: walls in a warm, banded veneer-effect finish, bronze lift doors and a glazed screen, with the stair rail in the foreground.",
+      "caption": null,
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-01-800.webp",
+      "alt": "Navy-painted guest-room door at Brown's Hotel, Mayfair, lettered 'Sir Paul Smith' in gold, with a brass lever handle.",
+      "caption": "Navy-painted guest-room doors at Brown's Hotel, Mayfair, decorated while the hotel stayed open.",
+      "width": 1500,
+      "height": 2000
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/old-bailey-06-800.webp",
+      "alt": "Sample room at Hyde London City with a Timorous Beasties Tropical Clouded Leopard panel behind the bed.",
+      "caption": "Sample room at Hyde London City, approved before the full run.",
+      "width": 2400,
+      "height": 1800
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-03-800.webp",
+      "alt": "Guest bedroom at Brown's Hotel, Mayfair, with tall sash windows, full-length linen curtains, a red armchair and an upholstered bench at the foot of the bed.",
+      "caption": null,
+      "width": 1500,
+      "height": 2000
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/old-bailey-16-800.webp",
+      "alt": "Stair landing with terracotta walls at Hyde London City.",
+      "caption": null,
+      "width": 1600,
+      "height": 2133
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/pimlico-st-georges-square-exterior-11-800.webp",
+      "alt": "Finished white columned entrance and black railings on St George's Square, Pimlico, with the scaffold down.",
+      "caption": null,
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/inverness-terrace-exterior-10-800.webp",
+      "alt": "Finished white stucco frieze and sash windows on Inverness Terrace, Bayswater, with the scaffold down.",
+      "caption": null,
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "url": "https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp",
+      "alt": "Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.",
+      "caption": "A finished guest room at Brown’s Hotel, Mayfair , part of our 2022–2024 decorating package. Photograph: Mr Wallcover.",
+      "width": 2000,
+      "height": 1500
+    }
+  ],
+  "diagrams": [],
+  "media": [],
+  "structuredData": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": [
+            "HomeAndConstructionBusiness",
+            "ProfessionalService"
+          ],
+          "@id": "https://www.mrwallcover.com/#business",
+          "name": "Mr Wallcover",
+          "url": "https://www.mrwallcover.com",
+          "image": "https://www.mrwallcover.com/og.jpg",
+          "logo": "https://www.mrwallcover.com/logo-512.png",
+          "description": "Mr Wallcover is a London specialist wallcovering installer founded by Dorin Burcus, in the trade since 2012: survey to aftercare for hotels, homes and makers.",
+          "email": "info@mrwallcover.com",
+          "founder": {
+            "@id": "https://www.mrwallcover.com/about/#dorin"
+          },
+          "award": "Most Outstanding for Wallcovering Installation, 2021, BUILD Magazine 2021 Design & Build Awards",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "London",
+            "addressRegion": "Greater London",
+            "addressCountry": "GB"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "London"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "London and the surrounding areas"
+            },
+            {
+              "@type": "Country",
+              "name": "United Kingdom",
+              "description": "UK-wide for selected projects"
+            },
+            {
+              "@type": "Place",
+              "name": "Mayfair",
+              "url": "https://www.mrwallcover.com/areas/mayfair/"
+            },
+            {
+              "@type": "Place",
+              "name": "Belgravia",
+              "url": "https://www.mrwallcover.com/areas/belgravia/"
+            },
+            {
+              "@type": "Place",
+              "name": "Chelsea",
+              "url": "https://www.mrwallcover.com/areas/chelsea/"
+            },
+            {
+              "@type": "Place",
+              "name": "Kensington",
+              "url": "https://www.mrwallcover.com/areas/kensington/"
+            },
+            {
+              "@type": "Place",
+              "name": "the City of London",
+              "url": "https://www.mrwallcover.com/areas/city-of-london/"
+            },
+            {
+              "@type": "Place",
+              "name": "the Cotswolds",
+              "url": "https://www.mrwallcover.com/areas/cotswolds/"
+            }
+          ],
+          "slogan": "Specialist wallcovering installation for hotels and prime homes: survey, management, supply, installation and aftercare.",
+          "knowsAbout": [
+            "Wallpaper installation",
+            "Wallcovering installation for hotels",
+            "Grasscloth installation",
+            "Hand-painted wallcoverings",
+            "Acoustic wallcoverings",
+            "Silk wallcovering installation",
+            "Fabric walling",
+            "Wallpaper mural installation",
+            "Contract vinyl wallcoverings",
+            "Wallcoverings on joinery",
+            "Bespoke wallcovering panels",
+            "Architectural and furniture film wrapping",
+            "Window film installation"
+          ],
+          "sameAs": [
+            "https://www.instagram.com/mrwallcover/"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Mr Wallcover services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/#service",
+                  "name": "Hand-painted wallpaper installation",
+                  "serviceType": "Hand-painted wallpaper installation",
+                  "url": "https://www.mrwallcover.com/services/hand-painted-wallpaper-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/grasscloth-installation/#service",
+                  "name": "Grasscloth installation",
+                  "serviceType": "Grasscloth installation",
+                  "url": "https://www.mrwallcover.com/services/grasscloth-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/silk-wallcovering-installation/#service",
+                  "name": "Silk wallcovering installation",
+                  "serviceType": "Silk wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/silk-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/fabric-walling/#service",
+                  "name": "Fabric walling",
+                  "serviceType": "Fabric walling",
+                  "url": "https://www.mrwallcover.com/services/fabric-walling/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/#service",
+                  "name": "Hotel wallcovering installation",
+                  "serviceType": "Hotel wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/mural-installation/#service",
+                  "name": "Mural installation",
+                  "serviceType": "Mural installation",
+                  "url": "https://www.mrwallcover.com/services/mural-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/#service",
+                  "name": "Acoustic wallcovering installation",
+                  "serviceType": "Acoustic wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/acoustic-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/architectural-film-wrapping/#service",
+                  "name": "Architectural & furniture film wrapping",
+                  "serviceType": "Architectural film installation",
+                  "url": "https://www.mrwallcover.com/services/architectural-film-wrapping/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/window-film/#service",
+                  "name": "Window film installation",
+                  "serviceType": "Window film installation",
+                  "url": "https://www.mrwallcover.com/services/window-film/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/#service",
+                  "name": "Joinery wallcoverings & bespoke panels",
+                  "serviceType": "Wallcovering on joinery and bespoke wall panels",
+                  "url": "https://www.mrwallcover.com/services/joinery-wallcoverings-and-panels/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/decorating/#service",
+                  "name": "Decorating and painting",
+                  "serviceType": "Painting and decorating",
+                  "url": "https://www.mrwallcover.com/services/decorating/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/exterior-works/#service",
+                  "name": "Exterior works",
+                  "serviceType": "Exterior decorating",
+                  "url": "https://www.mrwallcover.com/services/exterior-works/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/#service",
+                  "name": "Commercial and showroom wallcovering installation",
+                  "serviceType": "Commercial wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/commercial-wallcovering-installation/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              }
+            ]
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@mrwallcover.com",
+            "url": "https://www.mrwallcover.com/contact/",
+            "contactType": "sales",
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "London"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "London and the surrounding areas"
+              },
+              {
+                "@type": "Country",
+                "name": "United Kingdom",
+                "description": "UK-wide for selected projects"
+              },
+              {
+                "@type": "Place",
+                "name": "Mayfair",
+                "url": "https://www.mrwallcover.com/areas/mayfair/"
+              },
+              {
+                "@type": "Place",
+                "name": "Belgravia",
+                "url": "https://www.mrwallcover.com/areas/belgravia/"
+              },
+              {
+                "@type": "Place",
+                "name": "Chelsea",
+                "url": "https://www.mrwallcover.com/areas/chelsea/"
+              },
+              {
+                "@type": "Place",
+                "name": "Kensington",
+                "url": "https://www.mrwallcover.com/areas/kensington/"
+              },
+              {
+                "@type": "Place",
+                "name": "the City of London",
+                "url": "https://www.mrwallcover.com/areas/city-of-london/"
+              },
+              {
+                "@type": "Place",
+                "name": "the Cotswolds",
+                "url": "https://www.mrwallcover.com/areas/cotswolds/"
+              }
+            ],
+            "availableLanguage": [
+              "English"
+            ]
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.mrwallcover.com/about/#dorin",
+          "name": "Dorin Burcus",
+          "jobTitle": "Founder",
+          "url": "https://www.mrwallcover.com/about/",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+            "contentUrl": "https://www.mrwallcover.com/media/img/r/dorin-burcus-portrait-1149.jpg",
+            "creditText": "Dorin Burcus / Mr Wallcover",
+            "creator": {
+              "@type": "Person",
+              "@id": "https://www.mrwallcover.com/about/#dorin",
+              "name": "Dorin Burcus",
+              "url": "https://www.mrwallcover.com/about/"
+            },
+            "copyrightNotice": "© Mr Wallcover",
+            "license": "https://www.mrwallcover.com/image-use/",
+            "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+          },
+          "worksFor": {
+            "@id": "https://www.mrwallcover.com/#business"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.mrwallcover.com/#website",
+          "url": "https://www.mrwallcover.com",
+          "name": "Mr Wallcover",
+          "inLanguage": "en-GB",
+          "publisher": {
+            "@id": "https://www.mrwallcover.com/#business"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.mrwallcover.com/services/decorating/#webpage",
+          "url": "https://www.mrwallcover.com/services/decorating/",
+          "name": "Painting & Decorating London | Mr Wallcover",
+          "description": "Painting and decorating for prime London homes, hotels and commercial interiors: preparation, fine paint finishes, limewash and out-of-hours hotel work.",
+          "inLanguage": "en-GB",
+          "isPartOf": {
+            "@id": "https://www.mrwallcover.com/#website"
+          },
+          "about": {
+            "@id": "https://www.mrwallcover.com/#business"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://www.mrwallcover.com/media/img/browns-hotel-mayfair-09.jpg",
+            "contentUrl": "https://www.mrwallcover.com/media/img/browns-hotel-mayfair-09.jpg",
+            "creditText": "Mr Wallcover",
+            "creator": {
+              "@type": "Organization",
+              "@id": "https://www.mrwallcover.com/#business",
+              "name": "Mr Wallcover",
+              "url": "https://www.mrwallcover.com/"
+            },
+            "copyrightNotice": "© Mr Wallcover",
+            "license": "https://www.mrwallcover.com/image-use/",
+            "acquireLicensePage": "https://www.mrwallcover.com/image-use/"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.mrwallcover.com/services/decorating/#service",
+          "name": "Decorating and painting",
+          "description": "Painting and decorating for prime London homes, hotels and commercial interiors: preparation, fine paint finishes, limewash and out-of-hours hotel work.",
+          "serviceType": "Painting and decorating",
+          "url": "https://www.mrwallcover.com/services/decorating/",
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "London"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "London and the surrounding areas"
+            },
+            {
+              "@type": "Country",
+              "name": "United Kingdom",
+              "description": "UK-wide for selected projects"
+            },
+            {
+              "@type": "Place",
+              "name": "Mayfair",
+              "url": "https://www.mrwallcover.com/areas/mayfair/"
+            },
+            {
+              "@type": "Place",
+              "name": "Belgravia",
+              "url": "https://www.mrwallcover.com/areas/belgravia/"
+            },
+            {
+              "@type": "Place",
+              "name": "Chelsea",
+              "url": "https://www.mrwallcover.com/areas/chelsea/"
+            },
+            {
+              "@type": "Place",
+              "name": "Kensington",
+              "url": "https://www.mrwallcover.com/areas/kensington/"
+            },
+            {
+              "@type": "Place",
+              "name": "the City of London",
+              "url": "https://www.mrwallcover.com/areas/city-of-london/"
+            },
+            {
+              "@type": "Place",
+              "name": "the Cotswolds",
+              "url": "https://www.mrwallcover.com/areas/cotswolds/"
+            }
+          ],
+          "provider": {
+            "@id": "https://www.mrwallcover.com/#business"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can you decorate while we live in the house or the hotel stays open?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Rooms are protected and worked in an agreed order, and in hotels we work room by room and out of hours where needed, so the building keeps running."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you apply limewash yourselves?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Limewash is applied by our own team. Lime render is arranged through trusted specialist partners."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we see the finish before you start?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. A sample of the colour and finish is applied in the room so it can be approved in its own light before the full run."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What should I send for a decorating quotation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The address or area, the rooms involved, drawings or a schedule if you have them, the finishes in mind and any dates the building has to work around. Every decorating job is quoted after a survey."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does painting and decorating cost in London?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the condition of the surfaces, the amount of preparation, the finishes, access and whether the work is out of hours. We quote after a survey, against a written schedule, so you can see exactly what is included."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does it take to decorate a room?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A straightforward room in good condition can take a few days; a period room with cornices, joinery and repairs takes longer, because preparation and drying times cannot be rushed. We give you a programme with the quotation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you decorate listed and period buildings?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Hyde London City is Grade II listed, and much of our residential work is in period houses. Where a listed building needs specific materials, such as limewash, we follow the specification and the conservation officer's requirements."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you work with interior designers and main contractors?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We work to the designer's specification and the contractor's programme, give samples for sign-off and report progress room by room."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you supply the paint or can we choose it?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tell us at the survey. Where a designer or specification names the paint, we work to it; otherwise we advise on the right product and sheen for each surface."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you hang wallpaper as well as paint?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Wallcovering installation is our core trade, so a room can be painted and papered by one team in one programme."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you protect floors, furniture and art?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Everything is covered or moved under an agreed plan before work starts, dust is controlled, and the room is cleaned down at the end of each day."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you produce sample boards or sample panels first?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The colour and finish are sampled in the room itself, so they are approved in that room's light before the full run starts."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.mrwallcover.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://www.mrwallcover.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Decorating and painting",
+              "item": "https://www.mrwallcover.com/services/decorating/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

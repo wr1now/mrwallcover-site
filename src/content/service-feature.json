@@ -1,0 +1,646 @@
+{
+  "_note": "Award-level feature layout for selected service pages, rendered above the existing landing copy (nothing from specialisms.json or service-depth.json is removed). Real Mr Wallcover photos only. No brand or performance figure appears here that is not already on the public record.",
+  "items": {
+    "window-film": {
+      "heroImage": "old-bailey-05",
+      "heroKicker": "Window film · London",
+      "heroTitleLead": "Glass that works",
+      "heroTitleEm": "harder for the room.",
+      "heroFoot": {
+        "label": "ON THE RECORD",
+        "text": "Hyde London City, every window",
+        "href": "/projects/old-bailey-hotel/"
+      },
+      "proof": [
+        {
+          "label": "Hyde London City",
+          "value": "Every window"
+        },
+        {
+          "label": "Gray's Inn Square",
+          "value": "Several sets of offices"
+        },
+        {
+          "label": "Private homes",
+          "value": "UV and acoustic film"
+        },
+        {
+          "label": "Trained",
+          "value": "Solar Screen, Luxembourg"
+        }
+      ],
+      "introHeading": "One survey, the right film, a clean edge.",
+      "intro": [
+        "Most window film companies sell film. We start with the room. A south-facing drawing room losing its silk to the sun, a hotel bedroom above a night bus route and a ground-floor office that people can see straight into are three different problems, and each needs a different film.",
+        "Because we are decorators and wallcovering installers first, we see the damage that sunlight and noise do to finished interiors. Film is often the cheapest way to protect a scheme that has just been hung, painted or upholstered."
+      ],
+      "typesHeading": "Seven kinds of film, and what each one is for",
+      "types": [
+        {
+          "name": "Solar control",
+          "for": "Heat and glare",
+          "text": "Reflects or absorbs part of the sun's energy, so south- and west-facing rooms stay cooler, blinds can stay up and screens stay readable. Neutral and low-reflective grades keep the look of a period façade."
+        },
+        {
+          "name": "UV protection",
+          "for": "Fading",
+          "text": "Clear films that filter most of the ultraviolet behind faded fabrics, timber floors, artwork and wallcoverings. The view and the daylight stay almost unchanged, so it suits listed and prime homes."
+        },
+        {
+          "name": "Acoustic",
+          "for": "Street noise",
+          "text": "Laminating films add damping to a single pane and take the edge off traffic and voices in bedrooms and meeting rooms. They improve the glass you have. Where noise is severe we will tell you at the survey that secondary glazing is the bigger step."
+        },
+        {
+          "name": "Privacy",
+          "for": "The view in",
+          "text": "Frosted, gradient, one-way-by-day and switchable-look films screen bathrooms, meeting rooms and street-level windows without losing light. Daytime one-way films reverse at night when the room is lit, and we explain that before you choose."
+        },
+        {
+          "name": "Safety and security",
+          "for": "Broken glass",
+          "text": "Clear films that help hold broken glass together, for low-level glazing, doors and places where a break would be dangerous. Thicker security grades slow down a forced entry."
+        },
+        {
+          "name": "Decorative and manifestation",
+          "for": "Pattern and identity",
+          "text": "Etched-look bands, patterns, logos and manifestation strips on full-height glass, cut to the pane and set out by laser so the lines run true across a whole run of doors."
+        },
+        {
+          "name": "Anti-graffiti",
+          "for": "Scratches and tags",
+          "text": "A clear sacrificial layer on shopfronts, lift glass and mirrors. When it is scratched or tagged, the film is replaced and the glass underneath is untouched."
+        }
+      ],
+      "usedHeading": "Where it is used",
+      "used": [
+        {
+          "title": "Prime residential",
+          "image": "old-bailey-04",
+          "text": "Clear UV film for drawing rooms, libraries and dressing rooms with silk, grasscloth or antique furniture, and acoustic film for bedrooms on busy roads.",
+          "href": "/services/decorating/",
+          "link": "Decorating and painting"
+        },
+        {
+          "title": "Offices and chambers",
+          "image": "old-bailey-03",
+          "text": "Privacy and manifestation film for meeting rooms and partitions, and solar film for screens in bright rooms, worked floor by floor around the people using them.",
+          "href": "/contact/",
+          "link": "Ask about an office"
+        }
+      ],
+      "projectsHeading": "On the public record",
+      "projects": [
+        {
+          "title": "Hyde London City",
+          "place": "15 Old Bailey, City of London",
+          "image": "old-bailey-01",
+          "text": "Solar Screen film fitted to every window of the Grade II-listed building, filmed room by room as part of our full decorating package of paint and specialist wallcoverings, over about two years. The hotel opened on 2 September 2024.",
+          "href": "/projects/old-bailey-hotel/"
+        },
+        {
+          "title": "Gray's Inn Square",
+          "place": "Holborn",
+          "image": null,
+          "text": "Film across several sets of offices, worked floor by floor so the people using them could keep working. Good film is close to invisible once it is on, which is why this job is described here rather than photographed."
+        },
+        {
+          "title": "Private homes",
+          "place": "Across London",
+          "image": null,
+          "text": "Many UV-protective and acoustic films in houses and apartments, to stop furnishings and finishes fading and to quieten rooms facing busy streets. Private clients are not named."
+        }
+      ],
+      "processHeading": "The job, step by step",
+      "process": [
+        {
+          "step": "Survey",
+          "text": "We look at the glass type, the frames, the orientation and what the room needs. The film maker's guidance decides what can go on that glazing, especially sealed double-glazed units."
+        },
+        {
+          "step": "Recommendation and sample",
+          "text": "One clear recommendation, not a catalogue. On larger jobs a sample pane is fitted first so the look and the light can be approved in the room."
+        },
+        {
+          "step": "Set-out",
+          "text": "Decorative bands and manifestation lines are set out with a laser so they run level across every pane. The plumb line is the traditional method; it is not how we set out."
+        },
+        {
+          "step": "Preparation",
+          "text": "Furniture and floors are protected, and the glass is cleaned to a high standard. Most problems people see in film, from specks to lifted edges, start with poor cleaning."
+        },
+        {
+          "step": "Installation",
+          "text": "Film is cut to the visible pane, squeegeed out and finished neatly to the frame. In hotels and offices we work room by room or floor by floor, out of hours where needed."
+        },
+        {
+          "step": "Curing and aftercare",
+          "text": "A slight haze while the adhesive cures is normal. We leave cleaning instructions on the day and come back if anything needs attention."
+        }
+      ],
+      "whyHeading": "Why clients use us for film",
+      "why": [
+        "In the trade since 2012, with window film delivered inside live hotel and office programmes.",
+        "Trained at Solar Screen's headquarters in Luxembourg in window film and Cover Styl' architectural film.",
+        "Risk assessments and method statements for every package, and Dorin Burcus supervises the site.",
+        "One team for film, paint and wallcoverings, so one programme and one point of contact. Film can be part of a wider decorating commission, as at Hyde London City, or a job on its own."
+      ],
+      "ctaHeading": "Send us a photo of the window.",
+      "ctaText": "A photo of the glass and the room, the direction it faces and what is bothering you is enough to start. We will say which film, if any, will help.",
+      "faq": [
+        {
+          "id": "wf-cost",
+          "question": "How much does window film cost in London?",
+          "paragraphs": [
+            "It depends on the film, the size and number of panes, access and whether the work has to be done out of hours. We quote after a survey or from photos and measurements, and the quotation names the film so you can compare like with like."
+          ]
+        },
+        {
+          "id": "wf-life",
+          "question": "How long does window film last?",
+          "paragraphs": [
+            "Internal film from a recognised maker lasts many years. The maker's warranty for that film and that glazing is the real answer, and we give it to you with the quotation."
+          ]
+        },
+        {
+          "id": "wf-warranty",
+          "question": "Will window film affect my double glazing warranty?",
+          "paragraphs": [
+            "It can if the wrong film goes on the wrong unit. We check the glazing type against the film maker's guidance before recommending anything,."
+          ]
+        },
+        {
+          "id": "wf-night",
+          "question": "Can people see in at night through one-way privacy film?",
+          "paragraphs": [
+            "Yes, when the room is lit and it is dark outside. One-way films work by day. For privacy at night we recommend frosted or gradient film, or film combined with blinds."
+          ]
+        },
+        {
+          "id": "wf-listed",
+          "question": "Can window film go on a listed building?",
+          "paragraphs": [
+            "Internal film is usually removable and does not change the glass, which is why it is often used on listed buildings, as at Hyde London City. Always check with your conservation officer or building manager first; we can supply the product details."
+          ]
+        },
+        {
+          "id": "wf-visible",
+          "question": "Will I notice the film once it is on?",
+          "paragraphs": [
+            "Clear UV, safety and acoustic films are close to invisible. Solar films can tint or slightly reflect the glass, so we show a sample before the full job."
+          ]
+        },
+        {
+          "id": "wf-signal",
+          "question": "Will window film affect phone signal?",
+          "paragraphs": [
+            "Some metallised solar films can weaken mobile and Wi-Fi signals. Where signal matters, a non-metallic film is chosen, and we raise it at the survey."
+          ]
+        },
+        {
+          "id": "wf-clean",
+          "question": "How do I clean window film, and how long does it take to cure?",
+          "paragraphs": [
+            "Leave it alone while the adhesive cures; a slight haze or small water pockets can take a short while to clear, depending on the film and the weather. After that, clean with a soft cloth and a mild, non-abrasive cleaner. We leave the maker's care instructions on the day."
+          ]
+        },
+        {
+          "id": "wf-hotel-night",
+          "question": "How long does installation take, and can you work at night in a hotel?",
+          "paragraphs": [
+            "Most rooms take hours, not days. In hotels we work room by room, out of hours where needed, so rooms go back on sale the same day, as we did across every window at Hyde London City."
+          ]
+        }
+      ],
+      "picker": {
+        "heading": "What is the problem with the glass?",
+        "items": [
+          {
+            "label": "The room is too hot or too bright",
+            "target": "Solar control"
+          },
+          {
+            "label": "Fabrics, floors or wallpaper are fading",
+            "target": "UV protection"
+          },
+          {
+            "label": "Street noise in a bedroom or office",
+            "target": "Acoustic"
+          },
+          {
+            "label": "People can see in",
+            "target": "Privacy"
+          },
+          {
+            "label": "The glass could be dangerous if it breaks",
+            "target": "Safety and security"
+          },
+          {
+            "label": "Full-height glass needs marking or branding",
+            "target": "Decorative and manifestation"
+          }
+        ]
+      },
+      "extra": [
+        {
+          "eyebrow": "Our angle",
+          "heading": "Protect the wallcoverings and interiors you have paid for",
+          "paragraphs": [
+            "Silk, grasscloth, hand-painted papers, natural dyes and antique timber are exactly the finishes that sunlight damages first. We see it in our own trade: a panel near a south-facing window that has faded a shade lighter than the rest of the room.",
+            "Clear UV film is the quiet insurance for a newly finished room. Fitted by the same team that hangs the paper, it can be planned into the programme, so the glass is protected before the furniture and the guests arrive. See [wallcovering installation](/services/) and [aftercare](/aftercare/)."
+          ],
+          "image": "old-bailey-06",
+          "caption": "Sample room at Hyde London City: new wallcoverings beside the glass."
+        },
+        {
+          "eyebrow": "Plain English",
+          "heading": "Glass checks, safety rules and listed buildings",
+          "paragraphs": [
+            "Not every film suits every pane. Darker or reflective films can heat the glass, which matters on some sealed double-glazed units and older glass, so the film maker's guidance for that glazing type decides what we fit.",
+            "Building Regulations ask for some low-level and full-height glass to be safe if it breaks, and for large areas of glass to be clearly marked. Safety film and manifestation film are common ways to deal with existing glass; your designer, building manager or building control confirms what each pane needs.",
+            "On listed buildings, internal film is usually reversible and leaves the glass untouched, but check with the conservation officer first. We supply the product details for that conversation."
+          ]
+        },
+        {
+          "eyebrow": "Hotels",
+          "heading": "Working in live hotels",
+          "paragraphs": [
+            "We film a few rooms at a time, in an organised and discreet way, inside the decorating programme where there is one, so the hotel keeps trading and rooms go back on sale the same day.",
+            "Solar and UV grades protect newly hung wallcoverings, and acoustic film helps bedrooms that face the street.",
+            "Overnight shifts and weekends are planned with the hotel where the project needs them, as across every window at [Hyde London City](/projects/old-bailey-hotel/)."
+          ],
+          "image": "old-bailey-19",
+          "caption": "An upper-floor window at Hyde London City, one of every window we filmed."
+        }
+      ],
+      "links": [
+        {
+          "label": "Wallcovering installation",
+          "href": "/services/"
+        },
+        {
+          "label": "Decorating and painting",
+          "href": "/services/decorating/"
+        },
+        {
+          "label": "Hyde London City",
+          "href": "/projects/old-bailey-hotel/"
+        },
+        {
+          "label": "Get in touch",
+          "href": "/get-in-touch/"
+        }
+      ],
+      "brands": {
+        "heading": "Film brands we have worked with",
+        "items": [
+          "3M",
+          "Solar Screen"
+        ],
+        "note": "Solar Screen and Cover Styl' are sister brands in the TEGO group in Luxembourg; the former Solar Screen design range is now sold as Cover Styl' Glass. We also fit other makers' films where the glazing calls for them. These are brands we have installed, not approvals or certifications."
+      }
+    },
+    "decorating": {
+      "heroImage": "old-bailey-18",
+      "heroKicker": "Painting and decorating · London",
+      "heroTitleLead": "The last coat",
+      "heroTitleEm": "is the one everyone sees.",
+      "heroFoot": {
+        "label": "ON LOCATION",
+        "text": "Hyde London City, guest corridor",
+        "href": "/projects/old-bailey-hotel/"
+      },
+      "proof": [
+        {
+          "label": "Brown's Hotel, Mayfair",
+          "value": "Main decorating contractor, 2022–2024"
+        },
+        {
+          "label": "Hyde London City",
+          "value": "111 guest rooms"
+        },
+        {
+          "label": "In the trade",
+          "value": "Since 2012"
+        },
+        {
+          "label": "One team",
+          "value": "Paint, wallcoverings and film"
+        }
+      ],
+      "introHeading": "Preparation decides the finish.",
+      "intro": [
+        "In a prime house or a five-star bedroom, there is nowhere for a poor finish to hide. Raking light along a corridor shows every ridge in the filler, and a dark lacquered door shows every brush mark. So most of our time goes on the work you never see: protection, repairs, filling, sanding, lining and priming.",
+        "We are wallcovering installers as well as decorators. That matters, because the paint and the paper are planned as one programme, in the right order, by one team, with one person answerable for the result."
+      ],
+      "typesHeading": "Finishes and services, in detail",
+      "types": [
+        {
+          "name": "Walls and ceilings",
+          "for": "Flat, even, durable",
+          "text": "Repairs, filling and lining where the plaster needs it, then a primer and finish coats in the sheen the room calls for: flat matt for period rooms, harder-wearing finishes for corridors and family rooms."
+        },
+        {
+          "name": "Joinery, doors and skirtings",
+          "for": "The close-up work",
+          "text": "Doors, architraves, skirtings, panelling, shutters and built-in joinery, sanded and finished by hand. Deep colours on joinery, like the navy doors at Brown's Hotel, need the most careful preparation of all."
+        },
+        {
+          "name": "Cornices and mouldings",
+          "for": "Period detail",
+          "text": "Ornate plaster cornices, ceiling roses and mouldings cleaned back and painted without filling the detail. Damaged runs are flagged at the survey, before any paint goes on."
+        },
+        {
+          "name": "Limewash",
+          "for": "Soft, mineral walls",
+          "text": "Applied by our own team in layers for walls with depth and movement. Each wall is sampled first, because limewash changes with the surface and the light."
+        },
+        {
+          "name": "Feature colour and lines",
+          "for": "Bands, dados, stripes",
+          "text": "Colour blocks, painted bands and decorative lines set out with a laser so they stay level and true around a whole room. The plumb line is the traditional method; it is not how we set out."
+        },
+        {
+          "name": "Paint and paper together",
+          "for": "One programme",
+          "text": "Ceilings, joinery and plain walls painted around wallcoverings of every kind, so edges, colours and cut lines are planned rather than patched afterwards. [Window film](/services/window-film/) can go in the same programme."
+        },
+        {
+          "name": "Exteriors and render",
+          "for": "The outside too",
+          "text": "Scaffolded façades as one commission with the interior, as at St George's Square and Inverness Terrace: see [exterior works](/services/exterior-works/). Lime render is arranged through trusted specialist partners and programmed with our work."
+        }
+      ],
+      "usedHeading": "Where we decorate",
+      "used": [
+        {
+          "title": "Prime residential",
+          "image": "north-london-residence-12",
+          "text": "Period houses and apartments, with furniture, floors and finishes protected throughout and the house left clean at the end of every day. Private clients are not named.",
+          "href": "/projects/",
+          "link": "See the projects"
+        },
+        {
+          "title": "Commercial interiors",
+          "image": "fs-residences-07",
+          "text": "Offices, lobbies and shared spaces, with risk assessments, method statements and a named supervisor on every job.",
+          "href": "/contact/",
+          "link": "Ask about a commercial job"
+        }
+      ],
+      "projectsHeading": "On the public record",
+      "projects": [
+        {
+          "title": "Brown's Hotel, Mayfair",
+          "place": "Mayfair",
+          "image": "browns-hotel-mayfair-03",
+          "text": "Main decorating contractor from 2022 to 2024 while the hotel kept taking guests: guest rooms, corridors and joinery, with scenic and chinoiserie wallcoverings in the same programme.",
+          "href": "/projects/browns-hotel-mayfair/"
+        },
+        {
+          "title": "Hyde London City",
+          "place": "City of London",
+          "image": "old-bailey-16",
+          "text": "A full decorating package over about two years across 111 guest rooms in a Grade II-listed building: decoration, specialist wallcoverings and window film, from corridors to the stair.",
+          "href": "/projects/old-bailey-hotel/"
+        },
+        {
+          "title": "St George's Square",
+          "place": "Pimlico",
+          "image": "pimlico-st-georges-square-exterior-11",
+          "text": "A full scaffolded exterior in 2024, scaffolding supplied and managed by us, decorated as one commission with the interior and finished down to the columned entrance and railings.",
+          "href": "/projects/pimlico-st-georges-square/"
+        },
+        {
+          "title": "Inverness Terrace",
+          "place": "Bayswater",
+          "image": "inverness-terrace-exterior-10",
+          "text": "A full scaffolded exterior in 2018: stucco, cornices, frieze and sash windows on a period terrace front.",
+          "href": "/projects/inverness-terrace/"
+        }
+      ],
+      "processHeading": "The job, step by step",
+      "process": [
+        {
+          "step": "Survey and schedule",
+          "text": "We walk the rooms, note the surfaces and repairs, and agree a written schedule of what is painted, in which finish, and in what order."
+        },
+        {
+          "step": "Sample in the room",
+          "text": "The colour, sheen and finish are sampled on the wall so they can be approved in the room's own light before the full run starts."
+        },
+        {
+          "step": "Protection",
+          "text": "Floors, furniture, joinery and anything already finished are protected, and in hotels the work area is kept separate from guests."
+        },
+        {
+          "step": "Preparation",
+          "text": "Cracks, joints and old paint are dealt with properly: filling, sanding, lining and priming. This is where the finish is decided."
+        },
+        {
+          "step": "Set-out and finish coats",
+          "text": "Lines, bands and wallcovering positions are set out with a laser, then finish coats are applied and checked in raking light."
+        },
+        {
+          "step": "Snagging and aftercare",
+          "text": "A snagging walk with you before handover, then the same aftercare as our wallcovering work if anything needs attention."
+        }
+      ],
+      "whyHeading": "Why clients use us for decorating",
+      "why": [
+        "In the trade since 2012, with hotel decorating on the public record at Brown's Hotel and Hyde London City.",
+        "Decorators and wallcovering installers in one team, so paint and paper are one programme.",
+        "Risk assessments and method statements on every job, and Dorin Burcus supervises the site.",
+        "Out-of-hours and room-by-room working for buildings that cannot close."
+      ],
+      "ctaHeading": "Tell us about the rooms.",
+      "ctaText": "The address or area, the rooms, any drawings or schedule and the dates the building has to work around. Every decorating job is quoted after a survey.",
+      "faq": [
+        {
+          "id": "dec-cost",
+          "question": "How much does painting and decorating cost in London?",
+          "paragraphs": [
+            "It depends on the condition of the surfaces, the amount of preparation, the finishes, access and whether the work is out of hours. We quote after a survey, against a written schedule, so you can see exactly what is included."
+          ]
+        },
+        {
+          "id": "dec-time",
+          "question": "How long does it take to decorate a room?",
+          "paragraphs": [
+            "A straightforward room in good condition can take a few days; a period room with cornices, joinery and repairs takes longer, because preparation and drying times cannot be rushed. We give you a programme with the quotation."
+          ]
+        },
+        {
+          "id": "dec-listed",
+          "question": "Do you decorate listed and period buildings?",
+          "paragraphs": [
+            "Yes. Hyde London City is Grade II listed, and much of our residential work is in period houses. Where a listed building needs specific materials, such as limewash, we follow the specification and the conservation officer's requirements."
+          ]
+        },
+        {
+          "id": "dec-designers",
+          "question": "Do you work with interior designers and main contractors?",
+          "paragraphs": [
+            "Yes. We work to the designer's specification and the contractor's programme, give samples for sign-off and report progress room by room."
+          ]
+        },
+        {
+          "id": "dec-paint-supply",
+          "question": "Do you supply the paint or can we choose it?",
+          "paragraphs": [
+            "Tell us at the survey. Where a designer or specification names the paint, we work to it; otherwise we advise on the right product and sheen for each surface."
+          ]
+        },
+        {
+          "id": "dec-wallpaper",
+          "question": "Do you hang wallpaper as well as paint?",
+          "paragraphs": [
+            "Yes. Wallcovering installation is our core trade, so a room can be painted and papered by one team in one programme."
+          ]
+        },
+        {
+          "id": "dec-protect",
+          "question": "How do you protect floors, furniture and art?",
+          "paragraphs": [
+            "Everything is covered or moved under an agreed plan before work starts, dust is controlled, and the room is cleaned down at the end of each day."
+          ]
+        },
+        {
+          "id": "dec-samples",
+          "question": "Do you produce sample boards or sample panels first?",
+          "paragraphs": [
+            "Yes. The colour and finish are sampled in the room itself, so they are approved in that room's light before the full run starts."
+          ]
+        }
+      ],
+      "extra": [
+        {
+          "eyebrow": "Hotels",
+          "heading": "Working in live hotels",
+          "paragraphs": [
+            "Hotels rarely close for us. We work floor by floor and a few rooms at a time, in an organised and discreet way, so the hotel keeps taking guests, guests barely know we are there and rooms go back on sale as they are finished.",
+            "Where a project needs it, we work overnight shifts and weekends, planned with the hotel's operations and housekeeping teams. Out-of-hours work is on our published record, from [Brown's Hotel, Mayfair](/projects/browns-hotel-mayfair/) and [Hyde London City](/projects/old-bailey-hotel/) to an overnight installation at [Heathrow Terminal 4](/projects/heathrow-terminal-4-calico/)."
+          ],
+          "image": "browns-hotel-mayfair-01",
+          "caption": "Navy-painted guest-room doors at Brown's Hotel, Mayfair, decorated while the hotel stayed open."
+        },
+        {
+          "eyebrow": "For designers and architects",
+          "heading": "Working to your specification",
+          "paragraphs": [
+            "We work to the designer's schedule of finishes and the contractor's programme. Samples are applied in the room for sign-off, the approved sample is the standard the finished room is checked against, and progress is reported room by room.",
+            "Because we hang wallcoverings too, paint and paper are sequenced properly: ceilings and joinery first, walls prepared to the tolerance the paper needs, cut lines agreed before the first drop. See our work [for designers](/professionals/)."
+          ],
+          "image": "old-bailey-06",
+          "caption": "Sample room at Hyde London City, approved before the full run."
+        },
+        {
+          "eyebrow": "Preparation",
+          "heading": "What preparation actually includes",
+          "paragraphs": [
+            "Protection of floors, furniture, art and anything already finished; dust control and a daily clean-down; filling and sanding; repairs to cracks and joints; lining where the plaster needs it; spot-priming and full priming; and checks in raking light before each finish coat.",
+            "Older houses can hide old lead-based paint and lime plaster. Both are flagged at the survey, and the method is chosen to suit them rather than forcing a modern system onto a breathable wall."
+          ]
+        },
+        {
+          "eyebrow": "Equipment",
+          "heading": "The kit behind a clean, fine finish",
+          "paragraphs": [
+            "Fine spray finishes: three Graco HVLP spray stations for joinery, doors and furniture-grade surfaces, and two Graco airless sprayers for walls and ceilings on larger runs. Spraying gives an even, brush-mark-free coat where a room calls for it.",
+            "Dust-controlled sanding: three giraffe long-reach sanders for walls and ceilings, three dustless sanding stations, three Festool hand sanders and Mirka sanders, all extracted at the pad. Far less dust reaches the room, which is what makes sanding workable in occupied homes and in hotels that stay open.",
+            "Contained work areas: ZipWall systems put up temporary dust partitions floor to ceiling, so the work area is limited to the rooms being decorated and the rest of the house or hotel carries on.",
+            "Cleaner air: air-filtering stations with HEPA filters run while we prepare and paint, so the air stays cleaner for the people living or staying around the work."
+          ]
+        }
+      ],
+      "areas": {
+        "heading": "Where in London",
+        "items": [
+          {
+            "label": "Mayfair",
+            "href": "/areas/mayfair/"
+          },
+          {
+            "label": "Belgravia",
+            "href": "/areas/belgravia/"
+          },
+          {
+            "label": "Chelsea",
+            "href": "/areas/chelsea/"
+          },
+          {
+            "label": "Kensington",
+            "href": "/areas/kensington/"
+          },
+          {
+            "label": "City of London",
+            "href": "/areas/city-of-london/"
+          }
+        ]
+      },
+      "links": [
+        {
+          "label": "Wallcovering installation",
+          "href": "/services/"
+        },
+        {
+          "label": "Window film",
+          "href": "/services/window-film/"
+        },
+        {
+          "label": "Exterior works",
+          "href": "/services/exterior-works/"
+        },
+        {
+          "label": "Get in touch",
+          "href": "/get-in-touch/"
+        }
+      ],
+      "brands": {
+        "heading": "Paint brands we have worked with",
+        "items": [
+          "Dulux Trade",
+          "Crown",
+          "Farrow & Ball",
+          "Little Greene",
+          "Paint & Paper Library",
+          "Tikkurila",
+          "COAT",
+          "Watco",
+          "Zinsser",
+          "Bradite",
+          "HV'ART (Henry van der Vijver)",
+          "Morrells",
+          "Marston & Langinger",
+          "Sika"
+        ],
+        "note": "From trade paints and primers to designer colours, Morrells wood stains and lacquers, Marston & Langinger for exterior paintwork, Sika for specialist industrial paints and coatings, and the HV'ART lacquer paint system for specialist finishes. Where a designer specifies a paint, we work to it. These are brands we have used, not approvals or certifications."
+      },
+      "flagship": {
+        "eyebrow": "Flagship · Prime residential",
+        "heading": "Hand-painted gold detailing, near the Royal Albert Hall",
+        "paragraphs": [
+          "In a prime residence near the Royal Albert Hall, the cornices, the ceiling rose, the carved frieze and the door panels were picked out in gold by hand. The client and the address are not named."
+        ],
+        "images": [
+          {
+            "id": "prime-gold-01",
+            "caption": "Gilded cornice and gold-lined door panels."
+          },
+          {
+            "id": "prime-gold-02",
+            "caption": "Cornice and ceiling rose picked out in gold."
+          },
+          {
+            "id": "prime-gold-03",
+            "caption": "Gold detail painted by hand on the frieze."
+          },
+          {
+            "id": "prime-gold-04",
+            "caption": "The finished frieze and capital."
+          }
+        ]
+      }
+    }
+  }
+}
