@@ -12895,5 +12895,100 @@
         1200
       ]
     }
+  },
+  "illus-specialist-mica": {
+    "width": 1152,
+    "height": 864,
+    "src": "/media/img/r/illus-specialist-mica-1152.webp",
+    "jpg": "/media/img/r/illus-specialist-mica-1152.jpg",
+    "thumb": "/media/img/r/illus-specialist-mica-800.webp",
+    "thumbJpg": "/media/img/r/illus-specialist-mica-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 600,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/illus-specialist-mica",
+      "widths": [
+        480,
+        800,
+        1152
+      ]
+    }
+  },
+  "illus-specialist-cork": {
+    "width": 1152,
+    "height": 864,
+    "src": "/media/img/r/illus-specialist-cork-1152.webp",
+    "jpg": "/media/img/r/illus-specialist-cork-1152.jpg",
+    "thumb": "/media/img/r/illus-specialist-cork-800.webp",
+    "thumbJpg": "/media/img/r/illus-specialist-cork-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 600,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/illus-specialist-cork",
+      "widths": [
+        480,
+        800,
+        1152
+      ]
+    }
+  },
+  "illus-specialist-metal-leaf": {
+    "width": 1152,
+    "height": 864,
+    "src": "/media/img/r/illus-specialist-metal-leaf-1152.webp",
+    "jpg": "/media/img/r/illus-specialist-metal-leaf-1152.jpg",
+    "thumb": "/media/img/r/illus-specialist-metal-leaf-800.webp",
+    "thumbJpg": "/media/img/r/illus-specialist-metal-leaf-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 600,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/illus-specialist-metal-leaf",
+      "widths": [
+        480,
+        800,
+        1152
+      ]
+    }
+  },
+  "illus-specialist-leather": {
+    "width": 1152,
+    "height": 864,
+    "src": "/media/img/r/illus-specialist-leather-1152.webp",
+    "jpg": "/media/img/r/illus-specialist-leather-1152.jpg",
+    "thumb": "/media/img/r/illus-specialist-leather-800.webp",
+    "thumbJpg": "/media/img/r/illus-specialist-leather-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 600,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/illus-specialist-leather",
+      "widths": [
+        480,
+        800,
+        1152
+      ]
+    }
+  },
+  "illus-specialist-wood-veneer": {
+    "width": 1152,
+    "height": 864,
+    "src": "/media/img/r/illus-specialist-wood-veneer-1152.webp",
+    "jpg": "/media/img/r/illus-specialist-wood-veneer-1152.jpg",
+    "thumb": "/media/img/r/illus-specialist-wood-veneer-800.webp",
+    "thumbJpg": "/media/img/r/illus-specialist-wood-veneer-800.jpg",
+    "thumbWidth": 800,
+    "thumbHeight": 600,
+    "hasFull": true,
+    "variants": {
+      "base": "/media/img/r/illus-specialist-wood-veneer",
+      "widths": [
+        480,
+        800,
+        1152
+      ]
+    }
   }
 }

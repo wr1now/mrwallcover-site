@@ -34,7 +34,7 @@ Silk has a cloth face with a sheen that changes as you move. It marks quickly: a
 
 ## The wall decides the finish
 
-A textured grasscloth forgives small undulations that a silk will show. Where the specification includes it, preparation means stripping old paper, sanding with dust extraction, and making good cracks and uneven surfaces before anything decorative goes up. Period walls can take days of filling and sanding before they are true.
+A textured grasscloth forgives small undulations that a silk will show. Where the specification includes it, preparation means [stripping old paper](https://www.mrwallcover.com/services/wallpaper-removal/), sanding with dust extraction, and making good cracks and uneven surfaces before anything decorative goes up. Period walls can take days of filling and sanding before they are true.
 
 Fresh plaster and filler need time to dry, and a moisture reading, not a calendar date, is the proof. Whether the wall is lined is the maker's call; where a lining is used, its joints never coincide with the joints of the silk, and it is dry first. The primer or size is the one the product's instruction names. The [wall preparation guide](https://www.mrwallcover.com/advice/wall-preparation/) covers each check.
 

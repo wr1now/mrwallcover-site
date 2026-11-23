@@ -1,0 +1,12 @@
+{
+  "caseStudy": "specialist-wallcoverings-illustrations",
+  "note": "Original illustrated room scenes made for the specialist wallcoverings page on Dorin's instruction (23 Nov 2026), in place of manufacturer photographs. They are illustrations, not photographs of completed Mr Wallcover work, and are always captioned 'Illustration: [material] wallcovering'. No maker's product is depicted or implied. Source files: /workspace/previews/2026-11-23/specialist-illustrations/ on the build box (kept off the repository).",
+  "credit": null,
+  "images": {
+    "illus-specialist-mica": { "photo": "illustration", "file": "mica.jpg", "widths": [480, 800, 1152], "alt": "Illustration: a living room with a shimmering mica wallcovering behind a curved cream sofa, a travertine table and a brass floor lamp." },
+    "illus-specialist-cork": { "photo": "illustration", "file": "cork.jpg", "widths": [480, 800, 1152], "alt": "Illustration: a study lined in a warm honey cork wallcovering, with a walnut desk, a leather chair and a brass desk lamp." },
+    "illus-specialist-metal-leaf": { "photo": "illustration", "file": "metal-leaf.jpg", "widths": [480, 800, 1152], "alt": "Illustration: a dining room in a silver metal leaf wallcovering under a cluster of glass pendant lights, with green velvet chairs." },
+    "illus-specialist-leather": { "photo": "illustration", "file": "leather.jpg", "widths": [480, 800, 1152], "alt": "Illustration: a lounge with padded brown leather wall panels, slim wall lights and two cream bouclé armchairs." },
+    "illus-specialist-wood-veneer": { "photo": "illustration", "file": "wood-veneer.jpg", "widths": [480, 800, 1152], "alt": "Illustration: a bedroom with a pale figured wood veneer wallcovering behind the bed, linen bedding and an oak bench." }
+  }
+}
