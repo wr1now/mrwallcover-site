@@ -20,6 +20,8 @@ Hotel work moves floor by floor or room by room around guests. Delivery of free-
 
 Where Mr Wallcover is appointed as main decorating contractor, the package can include fine painting, French polishing and other specialist finishes, as it did at Brown's Hotel, Mayfair, from 2022 to 2024.
 
+Refits often start with taking the old contract vinyl down. Removal, making good and the new hang can be one programme, room by room and out of hours: see [wallpaper removal](https://www.mrwallcover.com/services/wallpaper-removal/).
+
 ![Finished guest bedroom at Brown's Hotel, Mayfair: pale tree-and-leaf wallcovering behind a green patterned headboard, with velvet and fringed botanical cushions under lit wall lights.](https://www.mrwallcover.com/media/img/r/browns-hotel-mayfair-09-800.webp)
 
 A finished guest room at [Brown’s Hotel, Mayfair](https://www.mrwallcover.com/projects/browns-hotel-mayfair/), part of our 2022–2024 decorating package. Photograph: Mr Wallcover.

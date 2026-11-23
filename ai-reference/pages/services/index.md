@@ -163,6 +163,10 @@ The irregularity is the point of the material. Colour and weave vary from roll t
 
 Textile on the wall, often in wider goods, with care at the edges and where it meets joinery, skirtings and reveals.
 
+### [Specialist wallcoverings](https://www.mrwallcover.com/services/specialist-wallcoverings/)
+
+Mica, metallic papers, cork, hand-laid metal leaf, leather and wood veneer, hung to each maker's instruction, with gilding on the detail where it is wanted.
+
 ### [Vinyl and contract wallcoverings](https://www.mrwallcover.com/services/hotel-wallcovering-installation/)
 
 The usual specification in busy hotel rooms and corridors. At The OWO, Whitehall, the install was Vescom, to walls and to parts of the joinery.
@@ -178,6 +182,14 @@ Printed and hand-made murals, set out from a fixed point so the scene meets wher
 ### [Acoustic wallcoverings and panels](https://www.mrwallcover.com/services/acoustic-wallcovering-installation/)
 
 Acoustic wallcoverings and acoustic panels, hung so the face keeps the performance it was specified for. Adhesive, trimming and edges follow the maker's instruction.
+
+Before the finish
+
+## Wallpaper removal and wall preparation.
+
+### [Wallpaper removal](https://www.mrwallcover.com/services/wallpaper-removal/)
+
+Old wallpaper, vinyl wallcoverings and lining paper taken off properly, the wall made good, and the surface left ready for paint or a new wallcovering.
 
 Panel finishes and films
 

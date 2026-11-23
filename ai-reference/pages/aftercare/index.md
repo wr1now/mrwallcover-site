@@ -130,6 +130,8 @@ Support
 
 Use this for a seam, a repair, or a question about a finished room. It is kept apart from a new installation enquiry. Send a photograph and we will say whether it is the hang, a knock or the building before anything else.
 
+Replacing an old or damaged wallcovering rather than repairing it? See [wallpaper removal and wall preparation](https://www.mrwallcover.com/services/wallpaper-removal/).
+
 This form needs JavaScript to send. If it is switched off, email [info@mrwallcover.com](mailto:info@mrwallcover.com?subject=Wallcovering%20enquiry) with the same details and attach any photographs.
 
 Your material choices

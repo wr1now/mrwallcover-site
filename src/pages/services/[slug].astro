@@ -6,6 +6,8 @@ import type { LandingPage } from '../../lib/content';
 import { breadcrumbNode, faqNode, singleServiceNode } from '../../lib/schema';
 import { buyerFaqFor } from '../../lib/ai-layer-data';
 import { SITE_URL } from '../../config';
+import ServiceFeature from '../../components/ServiceFeature.astro';
+import featureJson from '../../content/service-feature.json';
 
 export function getStaticPaths() {
   return specialisms.map((page) => ({ params: { slug: page.slug }, props: { page } }));
@@ -24,7 +26,8 @@ const crumbs = [
 ];
 const url = new URL(path, SITE_URL).href;
 // The page's own questions first, then any buyer questions placed on it (src/data/buyer-answers.json `pages`): one visible list, one FAQPage.
-const withBuyer = { ...page, faq: [...page.faq, ...buyerFaqFor(path).map((item) => ({ id: item.id, question: item.question, paragraphs: [item.answer] }))] };
+const feature = (featureJson.items as Record<string, any>)[page.slug];
+const withBuyer = { ...page, faq: [...page.faq, ...(feature?.faq ?? []), ...buyerFaqFor(path).map((item) => ({ id: item.id, question: item.question, paragraphs: [item.answer] }))] };
 ---
 
 <Base
@@ -39,5 +42,6 @@ const withBuyer = { ...page, faq: [...page.faq, ...buyerFaqFor(path).map((item) 
     breadcrumbNode(crumbs),
   ]}
 >
-  <LandingBody page={withBuyer} crumbs={crumbs} eyebrow="Services" kind="specialism" />
+  {feature && <ServiceFeature feature={feature} heading={page.heading} lede={page.lede} crumbs={crumbs} />}
+  <LandingBody page={withBuyer} crumbs={crumbs} eyebrow="Services" kind="specialism" bare={!!feature} />
 </Base>

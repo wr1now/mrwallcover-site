@@ -30,6 +30,8 @@ export const ENQUIRY_TOPICS = [
   {"id": "service:grasscloth-installation", "label": "Grasscloth installation", "service": "wallcovering", "path": "/services/grasscloth-installation/"},
   {"id": "service:silk-wallcovering-installation", "label": "Silk wallcovering installation", "service": "wallcovering", "path": "/services/silk-wallcovering-installation/"},
   {"id": "service:fabric-walling", "label": "Fabric walling", "service": "wallcovering", "path": "/services/fabric-walling/"},
+  {"id": "service:specialist-wallcoverings", "label": "Specialist wallcoverings", "service": "wallcovering", "path": "/services/specialist-wallcoverings/"},
+  {"id": "service:wallpaper-removal", "label": "Wallpaper removal", "service": "wallcovering", "path": "/services/wallpaper-removal/"},
   {"id": "service:hotel-wallcovering-installation", "label": "Hotel wallcovering installation", "service": "wallcovering", "path": "/services/hotel-wallcovering-installation/"},
   {"id": "service:mural-installation", "label": "Mural installation", "service": "wallcovering", "path": "/services/mural-installation/"},
   {"id": "service:acoustic-wallcovering-installation", "label": "Acoustic wallcovering installation", "service": "wallcovering", "path": "/services/acoustic-wallcovering-installation/"},

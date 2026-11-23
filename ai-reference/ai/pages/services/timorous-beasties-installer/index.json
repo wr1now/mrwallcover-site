@@ -15,7 +15,7 @@
     "html": "https://www.mrwallcover.com/services/timorous-beasties-installer/",
     "markdown": "https://www.mrwallcover.com/services/timorous-beasties-installer/index.md",
     "json": "https://www.mrwallcover.com/ai/pages/services/timorous-beasties-installer/index.json",
-    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/122"
+    "corpus": "https://www.mrwallcover.com/ai/pages.json#/pages/123"
   },
   "headings": [
     {
@@ -279,6 +279,32 @@
                   "name": "Fabric walling",
                   "serviceType": "Fabric walling",
                   "url": "https://www.mrwallcover.com/services/fabric-walling/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/specialist-wallcoverings/#service",
+                  "name": "Specialist wallcoverings",
+                  "serviceType": "Specialist wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/specialist-wallcoverings/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/wallpaper-removal/#service",
+                  "name": "Wallpaper removal",
+                  "serviceType": "Wallpaper removal",
+                  "url": "https://www.mrwallcover.com/services/wallpaper-removal/",
                   "provider": {
                     "@id": "https://www.mrwallcover.com/#business"
                   }

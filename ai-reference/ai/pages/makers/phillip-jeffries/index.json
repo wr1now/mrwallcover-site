@@ -261,6 +261,32 @@
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/specialist-wallcoverings/#service",
+                  "name": "Specialist wallcoverings",
+                  "serviceType": "Specialist wallcovering installation",
+                  "url": "https://www.mrwallcover.com/services/specialist-wallcoverings/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.mrwallcover.com/services/wallpaper-removal/#service",
+                  "name": "Wallpaper removal",
+                  "serviceType": "Wallpaper removal",
+                  "url": "https://www.mrwallcover.com/services/wallpaper-removal/",
+                  "provider": {
+                    "@id": "https://www.mrwallcover.com/#business"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
                   "@id": "https://www.mrwallcover.com/services/hotel-wallcovering-installation/#service",
                   "name": "Hotel wallcovering installation",
                   "serviceType": "Hotel wallcovering installation",

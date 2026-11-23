@@ -1,0 +1,928 @@
+{
+ "_note": "Photo-led feature layouts for selected service pages, rendered by src/components/ServiceFeature.astro above LandingBody (which keeps every existing paragraph, section, record link and answer). Real Mr Wallcover photographs only; a 'slot' marks a photograph still to be supplied by Dorin, and an 'illustration' is an original generated room scene (scripts/originals/specialist-illustrations.json), always captioned 'Illustration: [material] wallcovering' and never presented as completed work. Added 23 Nov 2026: wallpaper-removal, fabric-walling, specialist-wallcoverings.",
+ "items": {
+  "wallpaper-removal": {
+   "heroImage": "trematon-24",
+   "heroKicker": "Wallpaper removal · London",
+   "heroTitleLead": "Every good hang",
+   "heroTitleEm": "starts with a bare wall.",
+   "heroFoot": {
+    "label": "ON LOCATION",
+    "text": "Trematon Castle, the atrium stripped back",
+    "href": "/projects/trematon-castle/"
+   },
+   "proof": [
+    {
+     "label": "Vinyl wallcoverings",
+     "value": "Face, then adhesive: two steps"
+    },
+    {
+     "label": "Paper over lining",
+     "value": "Both layers come off"
+    },
+    {
+     "label": "Dust control",
+     "value": "ZipWall partitions and HEPA air filters"
+    },
+    {
+     "label": "Occupied buildings",
+     "value": "Nights and weekends"
+    }
+   ],
+   "picker": {
+    "heading": "What is on your walls?",
+    "items": [
+     {
+      "label": "Contract vinyl, often white or plain",
+      "target": "Vinyl wallcoverings"
+     },
+     {
+      "label": "Traditional paper, often over lining",
+      "target": "Paper wallpapers and lining paper"
+     },
+     {
+      "label": "Modern non-woven papers",
+      "target": "Dry-strippable non-wovens"
+     },
+     {
+      "label": "Paper that has been painted over",
+      "target": "Painted-over wallpaper"
+     }
+    ]
+   },
+   "introHeading": "Removal decides how good the next wall can be.",
+   "intro": [
+    "Taking wallpaper down looks like the easy part of a decorating job. It is the part that most often goes wrong. Too much water blows old plaster. A scoring tool pressed too hard cuts the face paper of plasterboard, and the cuts show through the next finish in side light. Adhesive left on the wall stops paint and paste from bonding.",
+    "So we treat removal as preparation, not demolition. We find out what the covering is and how it was hung, test a small area, choose the gentlest method that works, and plan the making good from the start. The result should be a wall that is sound, clean, flat and ready for whatever goes on it next."
+   ],
+   "typesHeading": "Wallcoverings and how each comes off",
+   "types": [
+    {
+     "name": "Vinyl wallcoverings",
+     "for": "Two separate steps",
+     "text": "Many vinyl wallcoverings, including the white and plain contract vinyls common in hotels, offices and rented flats, have a plastic face that can be stripped off dry, often in whole lengths. That is only the first step. The paper or fabric backing and the adhesive stay on the wall, and they are removed as a second, separate step by soaking and scraping, then washing the wall down until no paste residue is left."
+    },
+    {
+     "name": "Paper wallpapers and lining paper",
+     "for": "Two layers, not one",
+     "text": "Traditional papers are usually wet-removable: soaked or steamed until the paste softens, then lifted with a broad scraper. Many were hung over a lining paper, and in most cases the lining comes off as well. A new wallcovering should not sit on an old lining whose bond nobody can vouch for, because the pull of a drying paper can lift it. Our [wall preparation guide](/advice/wall-preparation/) explains why."
+    },
+    {
+     "name": "Dry-strippable non-wovens",
+     "for": "The quickest, when it works",
+     "text": "Papers sold as dry strippable are made to come away whole and dry, without soaking, and many modern non-wovens behave this way. Peelable papers are different: the top layer comes off dry and the backing stays on the wall. We check which one we are dealing with before deciding the method, because a label on a roll that left years ago is rarely to hand."
+    },
+    {
+     "name": "Painted-over wallpaper",
+     "for": "The slowest",
+     "text": "Paint seals the paper and stops water getting to the paste, so painted-over paper is perforated with care, soaked or steamed in sections, and scraped. It is slow, and the wall underneath is often in worse condition than it looked, so we allow for extra making good."
+    },
+    {
+     "name": "Specialist and fabric wallcoverings",
+     "for": "Silk, grasscloth, fabric",
+     "text": "Silks, grasscloths, paper-backed fabrics and stretched [fabric walling](/services/fabric-walling/) each come off in their own way. Fabric on battens is unpicked rather than soaked, and the battens and staples are taken out and the holes filled. Joinery, cornices and adjoining finishes are protected throughout."
+    },
+    {
+     "name": "Ceilings and stairwells",
+     "for": "Height and access",
+     "text": "Papered ceilings and tall stairwells are stripped from mobile towers or platforms, with the same testing and protection as the walls. Lining on old ceilings is checked carefully, because lath-and-plaster ceilings must not be soaked heavily."
+    }
+   ],
+   "usedHeading": "Where we strip and prepare",
+   "used": [
+    {
+     "title": "Homes",
+     "image": "trematon-ig-09",
+     "caption": "Old coverings coming off a ceiling and wall at Trematon Castle, a private house in Cornwall.",
+     "text": "Period houses and apartments, often lived in while we work. One room at a time, with floors and furniture protected and the dust kept inside the work area.",
+     "href": "/projects/",
+     "link": "See the projects"
+    },
+    {
+     "title": "Hotels",
+     "image": "record-waldorf-astoria-london-admiralty-arch-2026-01",
+     "caption": "On the pasting table at Waldorf Astoria London Admiralty Arch, where suites and corridors were prepared, lined and papered before opening.",
+     "text": "Guest rooms and corridors in hotels that stay open, a few rooms at a time, at night or at weekends where the hotel needs it. See our [hotel wallcovering work](/services/hotel-wallcovering-installation/).",
+     "href": "/services/hotel-wallcovering-installation/",
+     "link": "Hotel wallcoverings"
+    },
+    {
+     "title": "Shops and offices",
+     "image": "record-mango-victoria-street-2018-02",
+     "caption": "Textured vinyl meeting an aluminium trim at Mango, Victoria Street, on a night-shift refit in 2018.",
+     "text": "Shops, showrooms, offices and lobbies, programmed around opening hours, with risk assessments and method statements issued for the package.",
+     "href": "/services/commercial-wallcovering-installation/",
+     "link": "Commercial work"
+    }
+   ],
+   "extra": [
+    {
+     "eyebrow": "Vinyl",
+     "heading": "Why vinyl removal needs more repair",
+     "paragraphs": [
+      "Contract vinyls are hung with strong, heavy-duty adhesives. Where the wall was not primed or sealed before they went up, that adhesive soaks into the plaster or the plasterboard paper and becomes part of the surface. When the backing is scraped off, the adhesive can take the surface with it.",
+      "It can also pull out the filler used in previous making good. Old cracks, screw holes and patched joints reappear, and filled areas can come away in pieces. So with white vinyl wallcoverings we always allow for more repair than with a traditional paper: re-filling, spot-sanding and, where the plasterboard face is torn, a penetrating sealer such as Zinsser Gardz before any new filler or finish.",
+      "This is also why we prime properly when we hang a vinyl ourselves. Our [wall preparation guide](/advice/wall-preparation/) notes that on vinyl and contract products, the primer is what lets the covering be stripped cleanly years later."
+     ]
+    },
+    {
+     "eyebrow": "The substrate",
+     "heading": "Plaster, plasterboard and what is underneath",
+     "paragraphs": [
+      "Solid plaster on older brick walls usually tolerates soaking and steam, though very old lime and gypsum plasters soften if soaked for too long, and hollow or loose areas show up once the paper is off. We tap the wall, mark anything hollow, and decide with you whether to fill, patch or replaster.",
+      "Plasterboard is less forgiving. Its face is paper, so heavy steam or soaking softens it, and a scraper held too steeply tears it. On unskimmed board we keep water to a minimum, work in short passes, and seal any torn face before filling.",
+      "Some older walls and ceilings carry a textured coating under the paper. In buildings from before 2000 these coatings can contain asbestos, and the [Health and Safety Executive](https://www.hse.gov.uk/pubns/guidance/a28.pdf) treats steaming or scraping them as asbestos work. If we find one, we stop and ask for it to be tested before anything else happens."
+     ]
+    },
+    {
+     "eyebrow": "Making good",
+     "heading": "After the strip: making good, sizing and priming",
+     "paragraphs": [
+      "In most cases some making good is needed once the paper is off: cracks opened up, nail and screw holes, torn board paper, lifted filler and the odd hollow patch. We fill, leave it to dry, and sand with dust extraction, using dustless sanding stations, giraffe sanders and Festool and Mirka sanders on extractors.",
+      "Then the wall is washed down, checked in raking light, and sealed. If the next finish is paint, it is primed for paint. If it is a new wallcovering, it is sized or primed with what the maker of that covering asks for, and lined where the specification calls for it. Our [lining papers, pastes and primers](/wallpapering/lining-and-adhesives/) page lists what we use and why.",
+      "A new paper is set out with a laser level, so the first drop goes up true on a wall that has just been made flat."
+     ]
+    },
+    {
+     "eyebrow": "Protection",
+     "heading": "Clean, contained and out of hours",
+     "paragraphs": [
+      "Stripping is wet and messy. Floors are covered and taped, furniture is moved or wrapped, sockets and switches are isolated and protected, and old paper goes straight into bags rather than across the floor.",
+      "In occupied homes and hotels we close the work area with ZipWall partitions and run HEPA air filters, so dust from sanding stays where it is made. In hotels we work a few rooms at a time, and overnight shifts and weekends are available where the building cannot close."
+     ]
+    }
+   ],
+   "projectsHeading": "Stripped and prepared, on the record",
+   "projects": [
+    {
+     "title": "Trematon Castle",
+     "place": "Cornwall",
+     "image": "trematon-24",
+     "text": "Rooms taken back to bare plaster and the atrium stripped and lined, then reinforced lining under hand-printed House of Hackney papers.",
+     "href": "/projects/trematon-castle/"
+    },
+    {
+     "title": "A house in Hampstead",
+     "place": "Hampstead, 2019",
+     "image": "record-a-house-in-hampstead-2019-03",
+     "text": "Reception rooms stripped and lined, then hung with Phillip Jeffries and Fromental wallcoverings, including wrapped arched window reveals.",
+     "href": "/projects/#record-a-house-in-hampstead-2019"
+    },
+    {
+     "title": "London Marriott Hotel Canary Wharf",
+     "place": "Canary Wharf, 2026",
+     "image": null,
+     "text": "A lobby feature wall stripped and prepared, and a large textured mural hung along a ground-floor corridor.",
+     "href": "/projects/#record-london-marriott-hotel-canary-wharf-2026"
+    },
+    {
+     "title": "A commercial unit in Chelsea",
+     "place": "Chelsea, 2026",
+     "image": null,
+     "text": "Wall stripping and preparation, a silk-effect strié wallcovering, then remedial priming and making good.",
+     "href": "/projects/#record-a-commercial-unit-in-chelsea-2026"
+    },
+    {
+     "title": "A cottage near Chichester",
+     "place": "West Sussex, 2024–26",
+     "image": null,
+     "text": "Bedrooms under sloping ceilings stripped, plaster made good and papered, with a later visit for the hall and stairs.",
+     "href": "/projects/#record-a-cottage-near-chichester-202426"
+    },
+    {
+     "title": "A Georgian house in Hackney",
+     "place": "Hackney, 2025",
+     "image": null,
+     "text": "Strip-out, wall preparation and redecoration around the period cornice, shutters and ceiling rose.",
+     "href": "/projects/#record-a-georgian-house-in-hackney-2025"
+    }
+   ],
+   "processHeading": "Wallpaper removal, step by step",
+   "process": [
+    {
+     "step": "Survey and test patch",
+     "text": "We identify the covering, look for lining, paint or textured coatings beneath, tap for hollow plaster, and strip a small test area to see how the wall behaves."
+    },
+    {
+     "step": "Protect the room",
+     "text": "Floors, joinery, furniture and electrics are protected. In occupied buildings the area is closed with ZipWall partitions and HEPA air filters are switched on."
+    },
+    {
+     "step": "Remove the face",
+     "text": "Vinyl faces and dry-strippable papers are lifted dry. Painted or paper faces are perforated with care where needed, never deep enough to mark the wall."
+    },
+    {
+     "step": "Soak or steam, then scrape",
+     "text": "Backing paper, lining and paste are softened with water or steam in controlled sections and lifted with a broad scraper held low, then the wall is washed free of adhesive."
+    },
+    {
+     "step": "Make good",
+     "text": "Cracks, holes, torn board paper and lifted filler are sealed, filled and sanded with dust extraction, then the wall is checked in raking light."
+    },
+    {
+     "step": "Seal, size or prime",
+     "text": "The wall is left primed for paint, or sized, primed and lined for a new wallcovering, ready to be set out with a laser."
+    }
+   ],
+   "whyHeading": "Why clients use us to strip walls",
+   "why": [
+    "We are wallcovering installers, so we strip a wall knowing exactly what the next finish needs from it.",
+    "Vinyls, papers, linings, silks and stretched fabrics all removed in-house, with the method chosen per wall after a test.",
+    "ZipWall partitions, HEPA air filters and dust-extracted sanding for occupied homes and live hotels.",
+    "Nights and weekends when the building needs it, with risk assessments and method statements and Dorin Burcus supervising."
+   ],
+   "ctaHeading": "Tell us what is on the walls.",
+   "ctaText": "Send a few photographs in daylight, including a close-up of an edge or a torn corner if there is one, and tell us roughly how many rooms. We will say what we think the covering is, what the wall is likely to need, and whether we should see it first. Every quotation is written from a survey or from photographs and drawings, because the layers and the wall underneath decide the work, not a price per room.",
+   "links": [
+    {
+     "label": "Wall preparation guide",
+     "href": "/advice/wall-preparation/"
+    },
+    {
+     "label": "Installation cost guide",
+     "href": "/advice/installation-cost/"
+    },
+    {
+     "label": "Preparation tables",
+     "href": "/wallpapering/preparation/"
+    },
+    {
+     "label": "Fabric walling",
+     "href": "/services/fabric-walling/"
+    },
+    {
+     "label": "Specialist wallcoverings",
+     "href": "/services/specialist-wallcoverings/"
+    },
+    {
+     "label": "Aftercare",
+     "href": "/aftercare/"
+    }
+   ],
+   "faq": [
+    {
+     "id": "removal-damage",
+     "question": "Can wallpaper be removed without damaging the wall?",
+     "paragraphs": [
+      "Usually the wall survives well, but not always untouched. Old plaster can be hollow under the paper, plasterboard face paper can tear, and adhesive can pull out old filler. We test first, use the gentlest method that works, and plan the making good as part of the job rather than as a surprise."
+     ]
+    },
+    {
+     "id": "removal-vinyl",
+     "question": "Why does removing vinyl wallpaper need more repairs?",
+     "paragraphs": [
+      "The vinyl face often strips off dry, but the backing and adhesive stay behind and come off as a second step. Contract adhesives are strong, and on a wall that was not primed they soak into the surface, so scraping them off can lift the plaster skin, the plasterboard paper or filler from earlier repairs. We allow for more making good on vinyl than on a traditional paper."
+     ]
+    },
+    {
+     "id": "removal-lining",
+     "question": "Do you remove the lining paper as well?",
+     "paragraphs": [
+      "In most cases, yes. Paper wallpapers are often hung over a lining, and an old lining whose bond cannot be checked is not a safe base for a new wallcovering. Where the specification is a new lining, the wall is made good and lined again."
+     ]
+    },
+    {
+     "id": "removal-cost",
+     "question": "How much does wallpaper removal cost?",
+     "paragraphs": [
+      "There is no fixed price per room, because the cost depends on what is on the wall: the type of covering, how many layers, whether there is lining or paint over it, the area and height, the condition of the plaster or board underneath, how much making good is needed, the protection required and whether the work is out of hours. We quote from a survey, or from photographs and measurements. The [installation cost guide](/advice/installation-cost/) explains each item."
+     ]
+    },
+    {
+     "id": "removal-occupied",
+     "question": "Can you strip wallpaper while we live in the house, or while the hotel is open?",
+     "paragraphs": [
+      "Yes. We work a room or a few rooms at a time, close the area with ZipWall partitions, run HEPA air filters and sand with extraction. In hotels we can work overnight or at weekends so that guests are not disturbed."
+     ]
+    },
+    {
+     "id": "removal-steam",
+     "question": "Do you use a steam stripper?",
+     "paragraphs": [
+      "Where the wall can take it. Steam works well on paper over sound plaster. On plasterboard and on fragile old plaster we use as little moisture as possible, in short controlled passes, because too much softens the surface."
+     ]
+    },
+    {
+     "id": "removal-next",
+     "question": "Can you hang the new wallpaper afterwards?",
+     "paragraphs": [
+      "Yes, and that is most of our work. Removal, making good, sizing or priming, lining and the new hang are planned as one programme, with the new paper set out with a laser level. If the room is going back to paint, we leave the wall primed and ready."
+     ]
+    }
+   ]
+  },
+  "fabric-walling": {
+   "heroImage": "fs-ig-35",
+   "heroKicker": "Fabric walling · London",
+   "heroTitleLead": "Soft walls,",
+   "heroTitleEm": "sharp edges.",
+   "heroFoot": {
+    "label": "ON LOCATION",
+    "text": "Four Seasons Hotel London at Ten Trinity Square",
+    "href": "/projects/four-seasons-ten-trinity-square/"
+   },
+   "proof": [
+    {
+     "label": "Upholstered walling",
+     "value": "Battened, padded and buttoned"
+    },
+    {
+     "label": "French profile systems",
+     "value": "Seamless stretched fabric"
+    },
+    {
+     "label": "Paper-backed textiles",
+     "value": "Hung like a wallcovering"
+    },
+    {
+     "label": "On the record",
+     "value": "Four Seasons, Ten Trinity Square"
+    }
+   ],
+   "picker": {
+    "heading": "Which kind of fabric wall?",
+    "items": [
+     {
+      "label": "Padded, with buttons",
+      "target": "Upholstered walling with buttons"
+     },
+     {
+      "label": "Seamless, on a clip profile",
+      "target": "French seamless profile systems"
+     },
+     {
+      "label": "Textile on a paper backing",
+      "target": "Paper-backed textiles"
+     }
+    ]
+   },
+   "introHeading": "Fabric on a wall is upholstery at room scale.",
+   "intro": [
+    "A fabric wall is quieter, warmer and softer than paper or paint, and it is the finish that most often shows the quality of the hands that put it up. The weave has to run true from corner to corner, joins have to fall where nobody looks, and every edge, socket and door frame has to finish crisply.",
+    "There are three ways to put fabric on a wall, and they are different trades. Paper-backed textiles are pasted and hung like a wallcovering. Traditional upholstered walling is stretched over battens and padding and can be buttoned. Modern seamless systems, most of them developed in France, hold the fabric in clip profiles around the edge of the wall. We have installed all three, and we help designers choose between them."
+   ],
+   "typesHeading": "Three techniques, in detail",
+   "types": [
+    {
+     "name": "Upholstered walling with buttons",
+     "for": "Battened, padded, buttoned",
+     "text": "The traditional method. Timber battens are fixed around the perimeter of each wall and around doors, windows, sockets and switches. A padding or interlining, such as bump or wadding, is stretched across, then the fabric, with its widths sewn together where it needs to be wider than the roll, is stretched over and fixed to the battens. For a buttoned wall the button positions are set out on a grid with a laser, and each button is drawn through the padding and fixed so the fabric dimples evenly. The fixings are then hidden behind a braid, a gimp or a fabric-covered edge."
+    },
+    {
+     "name": "French seamless profile systems",
+     "for": "Clip profiles, no adhesive",
+     "text": "Slim PVC or aluminium profiles are fixed around the edge of the wall and around every opening. The fabric is cut oversize, tucked into the jaws of the profile with a spatula and tensioned at room temperature until it sits perfectly flat, then trimmed. Nothing is glued to the wall, wide fabrics can cover a wall without a seam, an acoustic fleece can go behind, and the fabric can be taken out and replaced later with the profiles left in place."
+    },
+    {
+     "name": "Paper-backed textiles",
+     "for": "Hung like a wallcovering",
+     "text": "Silks, linens, tweeds and other fabrics laminated to a paper or non-woven backing are pasted and hung like a wallcovering, on a lined, primed wall. This is how most textile wallcoverings in hotels are supplied and hung. See [silk wallcovering installation](/services/silk-wallcovering-installation/) and the [silk and textiles](/materials/silk-and-textiles/) material page."
+    },
+    {
+     "name": "Fabric-wrapped panels",
+     "for": "Made off the wall",
+     "text": "Fabric stretched over boards or frames, made up and then fixed to the wall or to joinery as individual panels, like the fabric-wrapped panels in guest rooms at [Four Seasons Hotel London at Ten Trinity Square](/projects/four-seasons-ten-trinity-square/). For panels faced in wallcovering, see [joinery wallcoverings and panels](/services/joinery-wallcoverings-and-panels/)."
+    }
+   ],
+   "usedHeading": "Where fabric walls work",
+   "usedEyebrow": "Rooms",
+   "used": [
+    {
+     "title": "Bedrooms and dressing rooms",
+     "image": null,
+     "slot": "Our own photograph of a buttoned, upholstered wall from a past job will be added here.",
+     "text": "Padded and buttoned walls behind a bed, or a whole dressing room in fabric, where softness and quiet matter most."
+    },
+    {
+     "title": "Drawing rooms, dining rooms and studies",
+     "image": null,
+     "slot": "Our own photograph of a wall finished with a French seamless profile system will be added here.",
+     "text": "Seamless stretched fabric on long walls, where a pattern or a plain weave has to run unbroken from corner to corner."
+    },
+    {
+     "title": "Hotels and meeting rooms",
+     "image": "fs-ig-36",
+     "caption": "Fabric-wrapped wall panels beneath framed artworks at Four Seasons Hotel London at Ten Trinity Square.",
+     "text": "Guest rooms, suites, meeting rooms and lobbies, where fabric is chosen for sound as well as looks.",
+     "href": "/services/hotel-wallcovering-installation/",
+     "link": "Hotel wallcoverings"
+    }
+   ],
+   "extra": [
+    {
+     "eyebrow": "Buttons",
+     "heading": "The buttoned wall, step by step",
+     "paragraphs": [
+      "A buttoned wall is planned on paper first. The grid of buttons is drawn to the wall, with the spacing adjusted so that full diamonds or squares meet the corners, the skirting and the cornice evenly, and so that no button lands on a socket or a fixing.",
+      "Battens go up around the perimeter and every opening, and a backing is fixed where the buttons need something firm to pull against. The padding goes on next. The fabric is then stretched over, the buttons are drawn through and tied off, and the folds between them are dressed so they run in the same direction across the whole wall.",
+      "The grid is marked with a laser level. Across a wall several metres wide, a millimetre or two of drift per row shows clearly in a buttoned pattern."
+     ],
+     "slot": "Our own photograph of buttoned walling will be added here."
+    },
+    {
+     "eyebrow": "French systems",
+     "heading": "The French seamless profile systems",
+     "paragraphs": [
+      "The clip-profile method was developed in France, where stretched fabric walls (tissu tendu) are a long-established finish. Three French makers are the names most often specified.",
+      "SWAL describes itself as the inventor of the clip profile for stretched ceilings and stretched fabric walls. Its ClipSWAL profiles are designed and made in France, in rigid PVC, and its SWALtradition wall fabric is tensioned cold, without heat, with an overall build-up of about 10 mm on the wall ([SWAL](https://www.swaldeco.com/fr/murs-tendus/tissu-tendu)).",
+      "CLIPSO, also French, makes its own profiles and wide-width textiles, including SO ACOUSTIC, a micro-perforated fabric used with a polyester fleece behind it for acoustic walls and ceilings ([CLIPSO](https://www.clipso.com/fr/realisations/prestige/acoustique-design-architectural-en-volume-3d.html)).",
+      "Barrisol, based in Kembs in Alsace and best known for stretched ceilings, makes Artolis, a range of technical wall textiles up to 5 m wide without a seam, installed at room temperature ([Artolis by Barrisol](https://artolis.eu/)).",
+      "We follow each maker's own instructions for the profile, the fabric and the fixings. Naming a maker records how a system works, not an endorsement or a supply arrangement."
+     ],
+     "slot": "Our own close-up of a French profile system edge will be added here."
+    },
+    {
+     "eyebrow": "Fire and acoustics",
+     "heading": "Build-up, fire performance and sound",
+     "paragraphs": [
+      "A stretched or upholstered wall is a build-up, not just a fabric. The fabric, the padding or fleece, the battens or profiles and the cavity behind are considered together, and in hotels and public buildings the fire classification of that whole build-up is checked against the specification before anything is ordered. Our [wallcovering fire ratings guide](/advice/wallcovering-fire-ratings-uk/) explains why a rating for the fabric alone is not enough.",
+      "Padding and fleece also absorb sound. That is why fabric walls are chosen for meeting rooms, bedrooms and dining rooms, and why acoustic fabrics are made for the profile systems. For dedicated acoustic finishes, see [acoustic wallcoverings and panels](/services/acoustic-wallcovering-installation/)."
+     ]
+    }
+   ],
+   "projectsHeading": "Textiles on the public record",
+   "projects": [
+    {
+     "title": "Four Seasons Hotel London at Ten Trinity Square",
+     "place": "City of London",
+     "image": "fs-ig-37",
+     "text": "Fabric-wrapped joinery walls and panels, with Phillip Jeffries Tweed, Fromental silks and Dedar among the wallcoverings.",
+     "href": "/projects/four-seasons-ten-trinity-square/"
+    },
+    {
+     "title": "Hilton London Metropole",
+     "place": "Paddington",
+     "image": "metropole-05",
+     "text": "The wall panels of a large conference room covered panel by panel, so the wallcovering runs the same way on every one.",
+     "href": "/projects/hilton-london-metropole/"
+    },
+    {
+     "title": "Huntsman, Savile Row",
+     "place": "Mayfair",
+     "image": "huntsman-06",
+     "text": "Freestanding display boards covered in the house's printed tweed, with the pattern square on every edge and face.",
+     "href": "/projects/huntsman-savile-row/"
+    },
+    {
+     "title": "Sahco fabric wallcovering",
+     "place": "A private project, Chelsea, 2018",
+     "image": "brand-sahco-01",
+     "text": "A fine Sahco fabric wallcovering hung in a private home.",
+     "href": "/materials/silk-and-textiles/"
+    }
+   ],
+   "processHeading": "A fabric wall, step by step",
+   "process": [
+    {
+     "step": "Choose the technique",
+     "text": "Upholstered, profile system or paper-backed: decided with the designer from the fabric, the room, the fire specification and whether the fabric may need to come down one day."
+    },
+    {
+     "step": "Survey and set-out drawing",
+     "text": "Walls, openings, sockets and switches are measured, and the seams, pattern and any button grid are drawn so that they meet the corners evenly."
+    },
+    {
+     "step": "Prepare the wall",
+     "text": "The wall is made sound and dry. Old coverings are taken off and the wall made good where needed."
+    },
+    {
+     "step": "Battens or profiles",
+     "text": "Battens or clip profiles are fixed around the perimeter and every opening, set out with a laser so the lines are level and true."
+    },
+    {
+     "step": "Padding and fabric",
+     "text": "Padding or fleece goes on, then the fabric is stretched, tensioned and fixed, with the weave kept straight across the whole wall."
+    },
+    {
+     "step": "Edges, trims and aftercare",
+     "text": "Braid, gimp or profile edges are finished, socket and switch plates refitted, and the wall is checked again on the aftercare visit."
+    }
+   ],
+   "whyHeading": "Why designers use us for fabric walls",
+   "why": [
+    "Installers of paper-backed textiles in five-star hotels, including Four Seasons Hotel London at Ten Trinity Square.",
+    "Traditional buttoned upholstered walling and French seamless profile systems, both done on past jobs.",
+    "Laser set-out for seams, patterns and button grids.",
+    "Risk assessments and method statements on every job, with Dorin Burcus supervising on site."
+   ],
+   "ctaHeading": "Tell us about the fabric and the room.",
+   "ctaText": "Send the fabric name or a sample photograph, the width of the goods, rough wall sizes and whether you have a technique in mind. We will say which method suits the fabric and the room and what the wall needs first.",
+   "links": [
+    {
+     "label": "Silk wallcovering installation",
+     "href": "/services/silk-wallcovering-installation/"
+    },
+    {
+     "label": "Silk and textiles",
+     "href": "/materials/silk-and-textiles/"
+    },
+    {
+     "label": "Specialist wallcoverings",
+     "href": "/services/specialist-wallcoverings/"
+    },
+    {
+     "label": "Wallpaper removal",
+     "href": "/services/wallpaper-removal/"
+    },
+    {
+     "label": "Fire ratings guide",
+     "href": "/advice/wallcovering-fire-ratings-uk/"
+    }
+   ],
+   "faq": [
+    {
+     "id": "fabric-buttoned",
+     "question": "Do you install buttoned, upholstered fabric walls?",
+     "paragraphs": [
+      "Yes. We fix battens, stretch padding and fabric over them, and set out and fix the buttons on a laser-marked grid, finishing the edges with braid, gimp or a fabric-covered edge."
+     ]
+    },
+    {
+     "id": "fabric-profile",
+     "question": "What is a seamless stretched fabric wall system?",
+     "paragraphs": [
+      "Clip profiles, often from French makers such as SWAL, CLIPSO or Barrisol's Artolis range, are fixed around the edge of the wall. The fabric is tucked into the profiles and tensioned until it is flat, with no adhesive on the wall. Wide fabrics can cover a wall without a seam, and the fabric can be replaced later."
+     ]
+    },
+    {
+     "id": "fabric-which",
+     "question": "Which is better, upholstered walling or a profile system?",
+     "paragraphs": [
+      "It depends on the fabric and the look. Buttons and deep padding need the traditional method. A plain or patterned fabric that must run flat and unbroken suits a profile system. Paper-backed textiles are hung like a wallcovering. We advise once we have seen the fabric and the room."
+     ]
+    }
+   ]
+  },
+  "specialist-wallcoverings": {
+   "heroImage": "fs-residences-01",
+   "heroKicker": "Specialist wallcoverings · London",
+   "heroTitleLead": "Mineral, metal, bark",
+   "heroTitleEm": "and timber, on the wall.",
+   "heroFoot": {
+    "label": "ON LOCATION",
+    "text": "Four Seasons Private Residences, Ten Trinity Square",
+    "href": "/projects/four-seasons-ten-trinity-square/"
+   },
+   "proof": [
+    {
+     "label": "Mica",
+     "value": "Today Interiors Zaniah, Westminster"
+    },
+    {
+     "label": "Cork with metal leaf",
+     "value": "Battersea, 2019"
+    },
+    {
+     "label": "Silver leaf and gilded papers",
+     "value": "Kensington and Pimlico"
+    },
+    {
+     "label": "Metallic murals",
+     "value": "Calico Wallpaper, Primrose Hill"
+    }
+   ],
+   "picker": {
+    "heading": "Which material?",
+    "items": [
+     {
+      "label": "Glitter of natural mineral",
+      "target": "Mica and metallic"
+     },
+     {
+      "label": "Warm, textured bark",
+      "target": "Cork"
+     },
+     {
+      "label": "Hand-laid gold, silver or copper",
+      "target": "Metal leaf"
+     },
+     {
+      "label": "Gold on mouldings and detail",
+      "target": "Gilding"
+     },
+     {
+      "label": "Hide, padded or flat",
+      "target": "Leather panels"
+     },
+     {
+      "label": "Real timber, in sheets",
+      "target": "Wood veneer"
+     }
+    ]
+   },
+   "introHeading": "Real materials behave like real materials.",
+   "intro": [
+    "A printed paper forgives a lot. Mica sheds at a careless cut, cork cracks if it is folded, metal leaf shows every fingerprint and every hollow in the wall, leather stretches, and veneer splits across the grain. These are the materials designers choose for the rooms that matter most, and they are the ones where installation decides the result.",
+    "We hang them as craft work: wall prepared and lined to a higher standard, the product checked roll by roll for batch, shade and damage before anything is cut, the layout drawn and agreed, seams set out with a laser, and the maker's instruction followed to the letter. Where a material will show natural variation or visible joins, we say so before the hang, not after."
+   ],
+   "typesHeading": "The materials we install",
+   "types": [
+    {
+     "name": "Mica and metallic",
+     "for": "Mineral sparkle, metal sheen",
+     "text": "Mica wallcoverings are made from natural mineral flakes bonded to a paper backing, so they glint as the light moves. Metallic papers and foils have a reflective face. Both show every bump in the wall, both need fresh blades and clean edges, and metallic foils are kept away from live sockets and switches while they are trimmed."
+    },
+    {
+     "name": "Cork",
+     "for": "Natural bark, warm texture",
+     "text": "Thin cork veneer laminated to a paper backing, sometimes over a metal leaf ground so the gold or silver shows through, as in a Battersea bedroom we papered in 2019. Cork varies from roll to roll, cannot be creased, and its joins are part of its character. We also fix cork panels to walls. Phillip Jeffries cork wallcoverings are among those we have hung on several jobs."
+    },
+    {
+     "name": "Metal leaf",
+     "for": "Gold, silver, copper",
+     "text": "Squares of real or composition metal leaf laid by hand onto paper and sealed, so the grid of the leaves is part of the design. The face marks easily and the wall behind must be very flat. Phillip Jeffries makes many of these; we have hung leaf papers in Kensington and gilded wallcoverings in Pimlico."
+    },
+    {
+     "name": "Gilding",
+     "for": "Gold on the detail",
+     "text": "Gilding of cornices, mouldings, panel lines and joinery details with gold leaf or metal leaf over a size, sealed where the metal would otherwise tarnish. It is often planned in the same programme as a metal leaf or metallic wallcovering, so that the golds agree."
+    },
+    {
+     "name": "Leather panels",
+     "for": "Hide on the wall",
+     "text": "Real leather wall panels and tiles, flat or padded and stitched, fixed to a prepared wall or to a backing board. Hides vary in grain and colour, so panels are laid out and agreed before fixing. Padded leather walls are built up in the same way as [upholstered fabric walling](/services/fabric-walling/). For leather-look finishes on joinery, see [architectural film wrapping](/services/architectural-film-wrapping/)."
+    },
+    {
+     "name": "Wood veneer",
+     "for": "Real timber, flexible",
+     "text": "Thin slices of real wood laminated to a paper or fleece backing. Veneer lengths are often numbered in the order they were cut so the grain flows across the wall, and they are hung in that sequence. Veneer is flexible along the grain and brittle across it, and in hotels and public buildings its fire classification is checked first."
+    }
+   ],
+   "usedHeading": "Specialist wallcoverings we have hung",
+   "usedEyebrow": "Our own photographs",
+   "used": [
+    {
+     "title": "Mica-effect, Westminster",
+     "image": "record-the-westminster-london-curio-collection-by-hilto-02",
+     "caption": "Dark mica-effect wallcovering at The Westminster London, Curio Collection by Hilton, 2021.",
+     "text": "A glinting, granular mica-effect wallcovering in a hotel, with columns wrapped in a textured natural wallcovering.",
+     "href": "/projects/#record-the-westminster-london-curio-collection-by-hilto",
+     "link": "On the record"
+    },
+    {
+     "title": "Cork with gold and silver leaf",
+     "image": "record-an-apartment-in-battersea-2019-01",
+     "caption": "Grey cork flecked with gold and silver leaf on a bedroom wall, an apartment in Battersea, 2019.",
+     "text": "Cork over a metal leaf ground, hung so the flecks of gold and silver read evenly across the wall.",
+     "href": "/projects/#record-an-apartment-in-battersea-2019",
+     "link": "On the record"
+    },
+    {
+     "title": "Silver-leaf botanical",
+     "image": "record-a-mews-house-in-kensington-202021-02",
+     "caption": "Silver-leaf botanical paper wrapping a corner in a cloakroom, a mews house in Kensington, 2020–21.",
+     "text": "A silver-leaf paper turned around an external corner under a cornice, the kind of detail where leaf cracks if it is forced.",
+     "href": "/projects/#record-a-mews-house-in-kensington-202021",
+     "link": "On the record"
+    },
+    {
+     "title": "Gilded blossom panels",
+     "image": "record-a-house-in-kensington-2019-02",
+     "caption": "Chinoiserie blossom panels on a gilded ground in a cloakroom, a house in Kensington, 2019.",
+     "text": "Panels on a gilded ground cut around a round mirror and a shuttered window.",
+     "href": "/projects/#record-a-house-in-kensington-2019",
+     "link": "On the record"
+    },
+    {
+     "title": "Metallic marbled mural",
+     "image": "record-a-home-in-primrose-hill-2019-03",
+     "caption": "Metallic gold, silver and green marbling by Calico Wallpaper, a home in Primrose Hill, 2019.",
+     "text": "A made-to-measure metallic mural by Calico Wallpaper hung in panels across a dining-room wall to the maker's drawings.",
+     "href": "/projects/#record-a-home-in-primrose-hill-2019",
+     "link": "On the record"
+    },
+    {
+     "title": "Gilded marbling",
+     "image": "scp-pimlico-02",
+     "caption": "Gilded marbled wallcovering carried over a flush door at the SCP showroom, Pimlico.",
+     "text": "Gold veining run the full length of a showroom, with a flush door papered in so it almost disappears.",
+     "href": "/projects/scp-showroom-pimlico/",
+     "link": "See the case study"
+    }
+   ],
+   "extra": [
+    {
+     "id": "detail-mica",
+     "eyebrow": "Mica and metallic",
+     "heading": "Mica and metallic papers",
+     "paragraphs": [
+      "Mica is a natural mineral that splits into thin, glassy flakes. On a wallcovering the flakes are bonded to a paper backing, sometimes under a fine scrim, so they catch the light as you move through the room. Phillip Jeffries, for example, makes mica wallcoverings from authentic mica shavings ([Phillip Jeffries, Reflections](https://www.phillipjeffries.com/shop/CARD-AG-REFLECT)).",
+      "Mica sheds at a cut edge, so it is trimmed with a new blade every few cuts and the edges are handled as little as possible. Paste is kept off the face, because it dulls the flakes and cannot be washed out of them. In 2021 we installed Today Interiors Zaniah mica from a scaffold platform in a tall glazed atrium in Westminster, where daylight from above shows every seam.",
+      "Metallic papers and foils need the flattest wall of all. A reflective face turns every ridge of filler into a highlight, so the wall is filled, sanded with dust extraction and lined before it is hung, and checked in raking light at each stage."
+     ],
+     "image": "brand-today-interiors-zaniah-01",
+     "caption": "Scaffold platform in a glazed atrium during installation of Today Interiors Zaniah mica, a private project in Westminster, 2021.",
+     "illustration": {
+      "id": "illus-specialist-mica",
+      "caption": "Illustration: metallic and mica wallcovering. An illustrated room scene, not a photograph of our work."
+     }
+    },
+    {
+     "id": "detail-cork",
+     "eyebrow": "Cork",
+     "heading": "Cork wallcoverings and cork panels",
+     "paragraphs": [
+      "Cork wallcoverings are a thin veneer of natural cork bark on a paper backing. Some are laid over a metal leaf or coloured ground, so the ground glints through the open grain of the cork. Others combine cork with wood veneer, like Phillip Jeffries' Cosmic Cork ([Phillip Jeffries](https://www.phillipjeffries.com/shop/CARD-NAT-COSMICCORK)).",
+      "Because it is bark, cork varies in colour and texture from roll to roll, and its seams are visible. We lay rolls out together before hanging to agree the order, and we never fold or crease a length, because cork cracks where it is bent sharply. Cork panels and tiles are set out from the centre of the wall with a laser so the cut pieces at the edges are even."
+     ],
+     "image": "record-an-apartment-in-battersea-2019-02",
+     "caption": "Close detail of grey cork with gold-leaf inclusions, an apartment in Battersea, 2019.",
+     "illustration": {
+      "id": "illus-specialist-cork",
+      "caption": "Illustration: cork wallcovering. An illustrated room scene, not a photograph of our work."
+     }
+    },
+    {
+     "id": "detail-leaf",
+     "eyebrow": "Metal leaf",
+     "heading": "Metal leaf wallcoverings",
+     "paragraphs": [
+      "Metal leaf wallcoverings are made by laying squares of gold, silver, copper or composition leaf by hand onto paper, then sealing them. Phillip Jeffries describes its Artistry Collection as handcrafted metallic leaf wallcoverings made in a multi-step process ([Phillip Jeffries, The Artistry Collection](https://www.phillipjeffries.com/shop/CARD-AG-ARTISTR)).",
+      "The overlapping edges of the leaves form a grid that is part of the design, so the grid is set out to run level and to meet the corners evenly. The face marks with fingerprints and creases at the slightest fold, so lengths are handled with clean gloves and supported along their whole length. Seams are visible by nature, and we agree how they will look before the hang."
+     ],
+     "illustration": {
+      "id": "illus-specialist-metal-leaf",
+      "caption": "Illustration: metal leaf wallcovering. An illustrated room scene, not a photograph of our work."
+     }
+    },
+    {
+     "id": "detail-gilding",
+     "eyebrow": "Gilding",
+     "heading": "Gilding and gold detail",
+     "paragraphs": [
+      "Gilding puts real metal on the architecture itself: the run of a cornice, the bead of a panel moulding, the edge of a door or a carved detail. A size is applied to a sealed surface, the leaf is laid onto it once the size reaches the right tack, the loose leaf is brushed away, and the gilding is sealed where the metal would otherwise tarnish.",
+      "We offer gilding on its own or in the same programme as a metallic or metal leaf wallcovering, so that the gold on the walls and the gold on the detail are chosen and sampled together."
+     ]
+    },
+    {
+     "id": "detail-leather",
+     "eyebrow": "Leather",
+     "heading": "Leather panels and leather walls",
+     "paragraphs": [
+      "Leather walls are made from real hides, either as flat tiles and panels fixed to a prepared wall or backing board, or padded, stitched and upholstered in the same way as a fabric wall. Hides vary in grain and shade, so every panel is laid out, numbered and agreed before it is fixed.",
+      "On the record we have hung a Roberto Cavalli Home leather-effect wallcovering on the walls and ceilings of a private apartment in Southwark. That is a wallcovering, not real leather, and we describe it as such."
+     ],
+     "image": "record-two-apartments-in-southwark-201920-01",
+     "caption": "Pink and burgundy leather-effect wallcovering by Roberto Cavalli Home, a private apartment in Southwark, 2019–20.",
+     "illustration": {
+      "id": "illus-specialist-leather",
+      "caption": "Illustration: leather panel wallcovering. An illustrated room scene, not a photograph of our work."
+     }
+    },
+    {
+     "id": "detail-veneer",
+     "eyebrow": "Wood veneer",
+     "heading": "Wood veneer wallcoverings",
+     "paragraphs": [
+      "Wood veneer wallcoverings are thin slices of real timber laminated to a flexible backing, so a wall can be lined in walnut, oak or a figured veneer without solid panelling. Phillip Jeffries groups its wood veneer and cork wallcoverings together ([Phillip Jeffries, Wood Veneers](https://www.phillipjeffries.com/shop/categories/WOOD+VENEERS)).",
+      "Veneer lengths are often numbered in the order they were cut, so the grain flows across the room; they are hung in sequence, never shuffled. Veneer bends along the grain but splits across it, so it is never creased, and the wall behind is made flat and primed exactly as the maker asks. In hotels and public buildings, the fire classification of the veneer and its build-up is checked against the specification first; see our [fire ratings guide](/advice/wallcovering-fire-ratings-uk/)."
+     ],
+     "illustration": {
+      "id": "illus-specialist-wood-veneer",
+      "caption": "Illustration: wood veneer wallcovering. An illustrated room scene, not a photograph of our work."
+     }
+    }
+   ],
+   "projectsHeading": "Specialist work on the public record",
+   "projects": [
+    {
+     "title": "SCP showroom",
+     "place": "Pimlico",
+     "image": "scp-pimlico-05",
+     "text": "A gilded marbled wallcovering run unbroken along the showroom, with a flush door papered in, beside a deep blue gradient mural.",
+     "href": "/projects/scp-showroom-pimlico/"
+    },
+    {
+     "title": "Four Seasons Private Residences",
+     "place": "Ten Trinity Square",
+     "image": "fs-residences-01",
+     "text": "An entrance hall wall of dark, banded wallcovering with streaks of silver and gold, framed in pale panelling.",
+     "href": "/projects/four-seasons-ten-trinity-square/"
+    },
+    {
+     "title": "A house in Bayswater",
+     "place": "Bayswater, 2021",
+     "image": "record-a-house-in-bayswater-2021-01",
+     "text": "Hand-painted chinoiserie papers, including a willow-tree mural on a metallic ground.",
+     "href": "/projects/#record-a-house-in-bayswater-2021"
+    },
+    {
+     "title": "An apartment in Chelsea",
+     "place": "Chelsea, 2018",
+     "image": "record-an-apartment-in-chelsea-2018-01",
+     "text": "A metallic gold floral feature wall beneath a crystal chandelier, with linen-texture wallcoverings in the bedrooms.",
+     "href": "/projects/#record-an-apartment-in-chelsea-2018"
+    }
+   ],
+   "processHeading": "A specialist wallcovering, step by step",
+   "process": [
+    {
+     "step": "Specification and samples",
+     "text": "We read the maker's instruction, check the fire classification where it matters, and look at a sample in the room's own light with the designer."
+    },
+    {
+     "step": "Check every roll",
+     "text": "Batch, shade, sequence numbers and any damage are checked on delivery, and rolls are laid out together to agree the order before anything is cut."
+    },
+    {
+     "step": "Prepare and line",
+     "text": "The wall is made good, sanded with dust extraction, lined and primed to the standard a reflective or natural material needs, then checked in raking light."
+    },
+    {
+     "step": "Set out with a laser",
+     "text": "Seams, leaf grids, panel joints and veneer sequences are set out with a laser so they run level and meet the corners evenly."
+    },
+    {
+     "step": "Hang or fix",
+     "text": "Each length or panel is cut with fresh blades, pasted or fixed exactly as the maker asks, and handled with clean gloves to keep the face unmarked."
+    },
+    {
+     "step": "Aftercare",
+     "text": "A return visit once the room has settled, to check seams, edges and corners, and the twelve-month workmanship guarantee."
+    }
+   ],
+   "whyHeading": "Why designers trust us with precious materials",
+   "why": [
+    "Mica, cork, metal leaf, metallic murals and gilded papers already hung in London homes, hotels and showrooms.",
+    "Phillip Jeffries cork wallcoverings hung on several jobs, with the maker's instruction followed to the letter.",
+    "Laser set-out, fresh blades, clean gloves and a wall prepared for a reflective face.",
+    "Risk assessments and method statements on every job, with Dorin Burcus supervising on site."
+   ],
+   "brands": {
+    "heading": "Makers of specialist wallcoverings we have installed",
+    "items": [
+     "Phillip Jeffries",
+     "Today Interiors",
+     "Calico Wallpaper",
+     "Roberto Cavalli Home"
+    ],
+    "note": "Naming a maker records an installation, not an endorsement or a supply arrangement. We install materials from other specialist makers to their own instructions."
+   },
+   "ctaHeading": "Tell us what the designer has specified.",
+   "ctaText": "Send the maker and product name, the wall sizes and a photograph of the room. We will check the maker's instruction, tell you what the wall needs, and whether the material suits the room and its light. Every quotation comes from a survey or from drawings.",
+   "links": [
+    {
+     "label": "Hand-painted wallpaper",
+     "href": "/services/hand-painted-wallpaper-installation/"
+    },
+    {
+     "label": "Silk wallcoverings",
+     "href": "/services/silk-wallcovering-installation/"
+    },
+    {
+     "label": "Grasscloth",
+     "href": "/services/grasscloth-installation/"
+    },
+    {
+     "label": "Fabric walling",
+     "href": "/services/fabric-walling/"
+    },
+    {
+     "label": "Wallpaper removal",
+     "href": "/services/wallpaper-removal/"
+    },
+    {
+     "label": "Fire ratings guide",
+     "href": "/advice/wallcovering-fire-ratings-uk/"
+    }
+   ],
+   "faq": [
+    {
+     "id": "specialist-mica",
+     "question": "Do you install mica wallpaper?",
+     "paragraphs": [
+      "Yes. We have installed mica and mica-effect wallcoverings in London, including Today Interiors Zaniah in a glazed atrium in Westminster. Mica is trimmed with fresh blades, paste is kept off the face, and the wall is prepared and lined first."
+     ]
+    },
+    {
+     "id": "specialist-cork",
+     "question": "Can you hang cork wallpaper and cork panels?",
+     "paragraphs": [
+      "Yes, both. Cork wallcoverings, including cork over a metal leaf ground and Phillip Jeffries cork papers, and cork panels set out with a laser from the centre of the wall."
+     ]
+    },
+    {
+     "id": "specialist-leaf",
+     "question": "Are the seams visible on metal leaf wallcoverings?",
+     "paragraphs": [
+      "Usually, yes. Hand-laid leaf forms a visible grid and the joins between lengths are part of the material. We set the grid out to run level and agree how the seams will look with you before the hang."
+     ]
+    },
+    {
+     "id": "specialist-gilding",
+     "question": "Do you do gilding?",
+     "paragraphs": [
+      "Yes. We gild cornices, mouldings, panel lines and joinery details with gold leaf or metal leaf, on its own or alongside a metallic or leaf wallcovering."
+     ]
+    },
+    {
+     "id": "specialist-veneer",
+     "question": "Do you install wood veneer and leather wall panels?",
+     "paragraphs": [
+      "Yes. Wood veneer wallcoverings are hung in their cut sequence so the grain flows, and leather panels are laid out and agreed before fixing. In hotels and public buildings we check the fire classification of the build-up first."
+     ]
+    }
+   ]
+  }
+ }
+}

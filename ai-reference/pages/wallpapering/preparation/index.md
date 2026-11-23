@@ -71,6 +71,8 @@ Lining paper has no batch to match, but every roll on a job must be the same pro
 
 The products, grades and paste ladder are listed with their data sheets on [lining papers, pastes and primers](https://www.mrwallcover.com/wallpapering/lining-and-adhesives/). The long read, with what each maker says, is [Is the wall ready for wallpaper?](https://www.mrwallcover.com/advice/wall-preparation/)
 
+If an old wallpaper, vinyl or lining has to come off first, [wallpaper removal](https://www.mrwallcover.com/services/wallpaper-removal/) explains how each kind is stripped and what making good follows.
+
 Your next step
 
 ## Not sure what your wall is?
